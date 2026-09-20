@@ -514,7 +514,7 @@ function finish(){
  const stars=Array.from({length:earnedStars},()=>"⭐").join("");
  const rewardText=fmt(tt("scoreText"),{score:earnedStars,total:state.items.length});
  $("gameTitle").textContent=tt("finish");$("gameProgress").textContent="";
- $("gameContent").innerHTML=`<div class="finish"><div class="celebration" aria-label="Optional balloon celebration">${celebrationBalloons()}</div><div class="trophy">🏆</div><h2>${tt("finish")}</h2><div class="stars" aria-label="${earnedStars} stars">${stars||"☆"}</div><p>${rewardText}</p><div class="bottomRow"><button class="actionBtn nextBtn" onclick="startGame(state.mode)">${tt("continue")}</button><button class="actionBtn homeBtn" onclick="goHome()">🏠 ${tt("backHome")}</button></div></div>`;
+ $("gameContent").innerHTML=`<div class="finish"><div class="celebration" aria-label="Optional balloon celebration">${celebrationBalloons()}</div><div class="trophy">🏆</div><h2>${tt("finish")}</h2><div class="stars" aria-label="${earnedStars} stars">${stars}</div><p>${rewardText}</p><div class="bottomRow"><button class="actionBtn nextBtn" onclick="startGame(state.mode)">${tt("continue")}</button><button class="actionBtn homeBtn" onclick="goHome()">🏠 ${tt("backHome")}</button></div></div>`;
  $("feedback").textContent="";$("nextAction").disabled=true;$("hintAction").style.visibility="hidden";
  setupCelebration();
  scheduleSpeech(`${tt("finish")} ${rewardText}`)
