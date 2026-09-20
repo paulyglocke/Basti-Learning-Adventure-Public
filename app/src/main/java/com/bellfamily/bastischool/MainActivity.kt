@@ -131,6 +131,7 @@ class MainActivity : ComponentActivity() {
         var screen by remember { mutableStateOf(ShellScreen.HOME) }
         var language by remember { mutableStateOf(prefs.getString("lang", "en") ?: "en") }
         var sound by remember { mutableStateOf(prefs.getBoolean("sound", true)) }
+        var audioMode by remember { mutableStateOf(prefs.getString("audioMode", if (sound) "all" else "off") ?: "all") }
         var round by remember { mutableStateOf(prefs.getInt("round", 5)) }
         var numberMax by remember { mutableStateOf(prefs.getInt("numberMax", 10)) }
         var webMode by remember { mutableStateOf("verbs") }
@@ -167,20 +168,22 @@ class MainActivity : ComponentActivity() {
                         if (card.verbExplorer) webMode = "verbExplorer"
                         screen = ShellScreen.WEB
                     }
-                    ShellScreen.OPTIONS -> NativeOptions(language, sound, round, numberMax, padding,
-                        onLanguage = { language = it; saveAndSync(it, sound, round, numberMax) },
-                        onSound = { sound = it; saveAndSync(language, it, round, numberMax) },
-                        onRound = { round = it; saveAndSync(language, sound, it, numberMax) },
-                        onNumberMax = { numberMax = it; saveAndSync(language, sound, round, it) })
+                    ShellScreen.OPTIONS -> NativeOptions(language, audioMode, round, numberMax, padding,
+                        onLanguage = { language = it; saveAndSync(it, audioMode, round, numberMax) },
+                        onAudioMode = { audioMode = it; saveAndSync(language, it, round, numberMax) },
+                        onRound = { round = it; saveAndSync(language, audioMode, it, numberMax) },
+                        onNumberMax = { numberMax = it; saveAndSync(language, audioMode, round, it) },
+                        onResetTutorials = { webView?.evaluateJavascript("audioGuidance.reset()", null) })
                     ShellScreen.WEB -> ExistingLearningSurface(webMode, padding) { screen = ShellScreen.HOME }
                 }
             }
         }
     }
 
-    private fun saveAndSync(language: String, sound: Boolean, round: Int, numberMax: Int) {
-        prefs.edit().putString("lang", language).putBoolean("sound", sound).putInt("round", round).putInt("numberMax", numberMax).apply()
-        webView?.evaluateJavascript("setLang('$language');setSound($sound);setRound($round);setNumberMax($numberMax)", null)
+    private fun saveAndSync(language: String, audioMode: String, round: Int, numberMax: Int) {
+        val sound = audioMode != "off"
+        prefs.edit().putString("lang", language).putString("audioMode", audioMode).putBoolean("sound", sound).putInt("round", round).putInt("numberMax", numberMax).apply()
+        webView?.evaluateJavascript("setLang('$language');setAudioMode('$audioMode');setRound($round);setNumberMax($numberMax)", null)
     }
 
     @Composable
@@ -220,7 +223,8 @@ class MainActivity : ComponentActivity() {
         val sound = prefs.getBoolean("sound", true)
         val round = prefs.getInt("round", 5)
         val numberMax = prefs.getInt("numberMax", 10)
-        return "setLang('$language');setSound($sound);setRound($round);setNumberMax($numberMax);if(typeof startShellMode==='function')startShellMode('$mode')"
+        val audioMode = prefs.getString("audioMode", if (sound) "all" else "off") ?: "all"
+        return "setLang('$language');setAudioMode('$audioMode');setRound($round);setNumberMax($numberMax);if(typeof startShellMode==='function')startShellMode('$mode')"
     }
 
     private inner class AppBridge(private val context: Context, private val onHome: () -> Unit) {
@@ -284,14 +288,19 @@ private fun HomeGroup(title: String, cards: List<HomeCard>, language: String, on
 }
 
 @Composable
-private fun NativeOptions(language: String, sound: Boolean, round: Int, numberMax: Int, padding: PaddingValues, onLanguage: (String) -> Unit, onSound: (Boolean) -> Unit, onRound: (Int) -> Unit, onNumberMax: (Int) -> Unit) {
+private fun NativeOptions(language: String, audioMode: String, round: Int, numberMax: Int, padding: PaddingValues, onLanguage: (String) -> Unit, onAudioMode: (String) -> Unit, onRound: (Int) -> Unit, onNumberMax: (Int) -> Unit, onResetTutorials: () -> Unit) {
     Column(Modifier.fillMaxSize().padding(padding).padding(16.dp).background(Color(0xFFF9FCFE)).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(14.dp)) {
         Text(if (language == "de") "Optionen" else "Options", fontSize = 30.sp, fontWeight = FontWeight.Black, color = Ink)
         SettingCard(if (language == "de") "Sprache" else "Language") {
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) { FilterChip(selected = language == "en", onClick = { onLanguage("en") }, label = { Text("🇬🇧 English") }); FilterChip(selected = language == "de", onClick = { onLanguage("de") }, label = { Text("🇩🇪 Deutsch") }) }
         }
-        SettingCard(if (language == "de") "Fragen vorlesen" else "Read questions aloud") {
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) { Text(if (language == "de") "Lautsprecher in Spielen" else "Speaker in games", fontWeight = FontWeight.Bold); Switch(checked = sound, onCheckedChange = onSound) }
+        SettingCard(if (language == "de") "Audio-Hilfe" else "Audio guidance") {
+            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                FilterChip(selected = audioMode == "all", onClick = { onAudioMode("all") }, label = { Text(if (language == "de") "Alles vorlesen" else "Read everything") })
+                FilterChip(selected = audioMode == "questions", onClick = { onAudioMode("questions") }, label = { Text(if (language == "de") "Nur Fragen und Anweisungen" else "Questions and instructions only") })
+                FilterChip(selected = audioMode == "off", onClick = { onAudioMode("off") }, label = { Text(if (language == "de") "Ton aus" else "Sound off") })
+                Button(onClick = onResetTutorials) { Text(if (language == "de") "Einführungen wieder anhören" else "Replay activity introductions") }
+            }
         }
         SettingCard(if (language == "de") "Fragen pro Runde" else "Questions per round") {
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) { FilterChip(selected = round == 5, onClick = { onRound(5) }, label = { Text("5") }); FilterChip(selected = round == 10, onClick = { onRound(10) }, label = { Text("10") }) }

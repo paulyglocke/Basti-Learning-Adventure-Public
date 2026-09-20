@@ -4,7 +4,7 @@ const T={
   verbs:"Animal Actions",verbsDesc:"Lots of simple action words and animal sounds.",counting:"Numbers",countDesc:"Count, recognise and order numbers up to your chosen level.",math:"Easy Maths",mathDesc:"Add and take away within 10.",positions:"Where is it?",positionsDesc:"In, on, under, behind, next to and between.",letters:"Letters",lettersDesc:"Find first letters and sounds.",time:"Days & Seasons",timeDesc:"Days of the week and four seasons.",mixed:"Mixed Adventure",mixedDesc:"A little bit of everything.",parentNote:"Short rounds, no timer and no penalty for mistakes. The goal is confidence and repetition.",
   home:"Home",hint:"Hint",next:"Next",language:"Language",sound:"Read questions aloud",soundDesc:"Tap the speaker during a game too.",roundLength:"Questions per round",device:"Screen layout",deviceDesc:"The app changes automatically between phone and tablet layouts.",phone:"Phone layout",tablet:"Tablet layout",
   numberLevel:"Number level",numberLevelDesc:"Choose how high number practice can go. Start low and increase it as it becomes easy.",higherNumbers:"Higher later:",apply:"Apply",currentLevel:"Current maximum:",
-  question:"Question",of:"of",great:["Great! 🌟","Yes! 🎉","Correct! ⭐","Well done! 🐉"],try:"Try again!",look:"Look carefully 👀",listen:"Listen again 🔊",finish:"Adventure complete!",scoreText:"You got {score} of {total} stars!",again:"Play again",backHome:"Back home",
+  question:"Question",of:"of",great:["Great! 🌟","Yes! 🎉","Correct! ⭐","Well done! 🐉"],try:"Try again!",look:"Look carefully 👀",listen:"Listen again 🔊",finish:"Adventure complete!",scoreText:"You got {score} of {total} stars!",again:"Play again",backHome:"Back home",audioGuidance:"Audio guidance",readEverything:"Read everything",questionsOnly:"Questions and instructions only",soundOff:"Sound off",replayTutorials:"Hear the activity introductions again",tutorialResetDone:"Activity introductions will play again.",tutorials:{verbs:"I will show you an animal and ask what it can do. Listen to the question and tap the right animal.",count:"I will ask you about numbers. Listen carefully, then tap the answer you hear or see.",math:"Let’s do a little maths. Listen to the animals and numbers, then choose the answer.",positions:"I will show you where an animal is. Listen to the choices and tap the right place.",letters:"Listen to the letter sound, then choose the picture that starts with that sound.",time:"Listen to the day or season question, then choose the right answer.",mixed:"This adventure mixes different questions. Listen carefully and choose an answer.",verbExplorer:"I will show you action words. Tap a verb to watch its movement, hear what it means, and hear an example."},
   qVerb:"Which animal can {verb}?",qCount:"How many {name} can you see?",qHearNumber:"Tap the number you hear.",sHearNumber:"Find number {n}.",qAfterNumber:"What number comes after {n}?",qBeforeNumber:"What number comes before {n}?",qMissingNumber:"Which number is missing?",qBiggest:"Which number is the biggest?",qSmallest:"Which number is the smallest?",qTensOnes:"Which number has {tens} tens and {ones} ones?",
   qMathAdd:"There are {a} {name}. {b} more arrive. How many now?",qMathSub:"There are {a} {name}. {b} go away. How many are left?",qPosition:"Where is the {animal}?",qLetter:"Which word starts with {letter}?",qDayAfter:"What day comes after {day}?",qDayBefore:"What day comes before {day}?",qSeason:"Which season is this?",
   in:"in",on:"on",under:"under",behind:"behind",nextTo:"next to",between:"between",
@@ -16,7 +16,7 @@ const T={
   verbs:"Tier-Aktionen",verbsDesc:"Viele einfache Verben, Aktionen und Tiergeräusche.",counting:"Zahlen",countDesc:"Zählen, Zahlen erkennen und ordnen bis zu deinem gewählten Level.",math:"Einfache Mathe",mathDesc:"Plus und Minus bis 10.",positions:"Wo ist es?",positionsDesc:"In, auf, unter, hinter, neben und zwischen.",letters:"Buchstaben",lettersDesc:"Finde Anfangsbuchstaben und Laute.",time:"Tage & Jahreszeiten",timeDesc:"Wochentage und die vier Jahreszeiten.",mixed:"Gemischtes Abenteuer",mixedDesc:"Von allem ein bisschen.",parentNote:"Kurze Runden, kein Zeitdruck und keine Strafe für Fehler. Wichtig sind Sicherheit und Wiederholung.",
   home:"Start",hint:"Tipp",next:"Weiter",language:"Sprache",sound:"Fragen vorlesen",soundDesc:"Im Spiel kannst du auch auf den Lautsprecher tippen.",roundLength:"Fragen pro Runde",device:"Bildschirm-Layout",deviceDesc:"Die App wechselt automatisch zwischen Handy- und Tablet-Layout.",phone:"Handy-Layout",tablet:"Tablet-Layout",
   numberLevel:"Zahlen-Level",numberLevelDesc:"Wähle, wie hoch die Zahlenübungen gehen. Beginne niedrig und erhöhe es, wenn es leicht wird.",higherNumbers:"Später höher:",apply:"Übernehmen",currentLevel:"Aktuelles Maximum:",
-  question:"Frage",of:"von",great:["Super! 🌟","Ja! 🎉","Richtig! ⭐","Sehr gut! 🐉"],try:"Nochmal versuchen!",look:"Schau genau hin 👀",listen:"Hör noch einmal zu 🔊",finish:"Abenteuer geschafft!",scoreText:"Du hast {score} von {total} Sternen!",again:"Nochmal spielen",backHome:"Zurück zum Start",
+  question:"Frage",of:"von",great:["Super! 🌟","Ja! 🎉","Richtig! ⭐","Sehr gut! 🐉"],try:"Nochmal versuchen!",look:"Schau genau hin 👀",listen:"Hör noch einmal zu 🔊",finish:"Abenteuer geschafft!",scoreText:"Du hast {score} von {total} Sternen!",again:"Nochmal spielen",backHome:"Zurück zum Start",audioGuidance:"Audio-Hilfe",readEverything:"Alles vorlesen",questionsOnly:"Nur Fragen und Anweisungen",soundOff:"Ton aus",replayTutorials:"Einführungen wieder anhören",tutorialResetDone:"Die Einführungen werden wieder abgespielt.",tutorials:{verbs:"Ich zeige dir ein Tier und frage, was es kann. Höre die Frage und tippe auf das richtige Tier.",count:"Ich frage dich nach Zahlen. Höre gut zu und tippe auf die Zahl, die du hörst oder siehst.",math:"Wir machen ein bisschen Mathe. Höre auf die Tiere und Zahlen und wähle die Antwort.",positions:"Ich zeige dir, wo ein Tier ist. Höre die Möglichkeiten und tippe auf den richtigen Ort.",letters:"Höre den Laut des Buchstabens und wähle dann das Bild, das mit diesem Laut beginnt.",time:"Höre die Frage über den Tag oder die Jahreszeit und wähle die richtige Antwort.",mixed:"Dieses Abenteuer mischt verschiedene Fragen. Höre gut zu und wähle eine Antwort.",verbExplorer:"Ich zeige dir Verben. Tippe auf ein Verb, um die Bewegung zu sehen, die Bedeutung zu hören und ein Beispiel zu hören."},
   qVerb:"Welches Tier kann {verb}?",qCount:"Wie viele {name} siehst du?",qHearNumber:"Tippe auf die Zahl, die du hörst.",sHearNumber:"Finde die Zahl {n}.",qAfterNumber:"Welche Zahl kommt nach {n}?",qBeforeNumber:"Welche Zahl kommt vor {n}?",qMissingNumber:"Welche Zahl fehlt?",qBiggest:"Welche Zahl ist am größten?",qSmallest:"Welche Zahl ist am kleinsten?",qTensOnes:"Welche Zahl hat {tens} Zehner und {ones} Einer?",
   qMathAdd:"Da sind {a} {name}. {b} kommen dazu. Wie viele sind es jetzt?",qMathSub:"Da sind {a} {name}. {b} gehen weg. Wie viele bleiben?",qPosition:"Wo ist {animal}?",qLetter:"Welches Wort beginnt mit {letter}?",qDayAfter:"Welcher Tag kommt nach {day}?",qDayBefore:"Welcher Tag kommt vor {day}?",qSeason:"Welche Jahreszeit ist das?",
   in:"in",on:"auf",under:"unter",behind:"hinter",nextTo:"neben",between:"zwischen",
@@ -205,10 +205,11 @@ const seasons=[
 
 let settings={
  lang:localStorage.getItem("lang")==="de"?"de":"en",
- sound:localStorage.getItem("sound")!=="false",
+ sound:localStorage.getItem("audioMode")!="off" && localStorage.getItem("sound")!=="false",
  round:localStorage.getItem("round")==="10"?10:5,
  numberMax:Math.max(10,Math.min(9999,Math.round(Number(localStorage.getItem("numberMax"))||10)))
 };
+Object.defineProperty(settings,"audioMode",{value:localStorage.getItem("audioMode")|| (settings.sound?"all":"off"),writable:true,enumerable:false});
 let state={mode:null,items:[],i:0,score:0,answered:false,current:null};
 let activeScreen="home", activeLesson=null, speechTimer=null;
 
@@ -227,12 +228,19 @@ function germanCreatureName(id){
  return `${article} ${creatures[id].de}`;
 }
 function creatureCountName(id,n){const c=creatures[id];return n===1?c[settings.lang]:c[settings.lang+"Plural"]}
+const audioGuidance={
+ canSpeak(kind,force=false){return force||settings.audioMode!=="off"&&(settings.audioMode==="all"||["instruction","question","feedback","tutorial"].includes(kind))},
+ say(text,kind="question",force=false){return speak(text,force,kind)},
+ replay(){if(state.current) this.say(state.current.speak,"question",true)},
+ tutorial(type){const key=`bastiTutorial_${type}`;if(localStorage.getItem(key)==="1")return "";localStorage.setItem(key,"1");return T[settings.lang].tutorials[type]||T[settings.lang].tutorials.mixed},
+ reset(){Object.keys(localStorage).filter(k=>k.startsWith("bastiTutorial_")).forEach(k=>localStorage.removeItem(k));const n=$("tutorialResetStatus");if(n)n.textContent=tt("tutorialResetDone")}
+};
 function stopSpeech(){
  clearTimeout(speechTimer);
  try{if(window.Android&&Android.stopSpeaking)Android.stopSpeaking()}catch(e){}
  if("speechSynthesis" in window)speechSynthesis.cancel();
 }
-function scheduleSpeech(text){clearTimeout(speechTimer);speechTimer=setTimeout(()=>speak(text),220)}
+function scheduleSpeech(text,kind="question"){clearTimeout(speechTimer);speechTimer=setTimeout(()=>audioGuidance.say(text,kind),220)}
 function show(id){stopSpeech();activeScreen=id;["home","game","options","verbExplorer"].forEach(x=>$(x).classList.toggle("hidden",x!==id));window.scrollTo(0,0)}
 function updateDeviceInfo(){$("deviceInfo").textContent=`📱 ${tt(innerWidth>=850?"tablet":"phone")}`}
 
@@ -244,29 +252,32 @@ function applyLanguage(){
  document.querySelectorAll("[data-len]").forEach(b=>b.classList.toggle("selected",+b.dataset.len===settings.round));
  document.querySelectorAll("[data-nummax]").forEach(b=>b.classList.toggle("selected",+b.dataset.nummax===settings.numberMax));
  $("numberMaxDisplay").textContent=settings.numberMax;
- $("soundSwitch").classList.toggle("on",settings.sound);
- $("soundSwitch").setAttribute("aria-checked",String(settings.sound));
+ $("soundSwitch").classList.toggle("on",settings.audioMode!=="off");
+ $("soundSwitch").setAttribute("aria-checked",String(settings.audioMode!=="off"));
  $("soundSwitch").setAttribute("aria-label",tt("sound"));
+ document.querySelectorAll("[data-audio-mode]").forEach(b=>b.classList.toggle("selected",b.dataset.audioMode===settings.audioMode));
  ["backHome","optionsBack"].forEach(id=>$(id).setAttribute("aria-label",tt("backHome")));
  $("verbExplorerBack").setAttribute("aria-label",activeLesson?(settings.lang==="en"?"Back":"Zurück"):tt("backHome"));
  document.title=tt("brandTitle");
  updateDeviceInfo();
 }
 function setLang(l){stopSpeech();settings.lang=l;localStorage.setItem("lang",l);applyLanguage()}
-function setSound(v){stopSpeech();settings.sound=v;localStorage.setItem("sound",v);applyLanguage()}
+function setAudioMode(mode){stopSpeech();settings.audioMode=["all","questions","off"].includes(mode)?mode:"all";settings.sound=settings.audioMode!=="off";localStorage.setItem("audioMode",settings.audioMode);localStorage.setItem("sound",String(settings.sound));applyLanguage()}
+function setSound(v){setAudioMode(v?"all":"off")}
 function setRound(v){settings.round=v;localStorage.setItem("round",v);applyLanguage()}
 function setNumberMax(v){
  v=Math.max(10,Math.min(9999,Math.round(Number(v)||10)));
  settings.numberMax=v;localStorage.setItem("numberMax",v);$("customNumberMax").value="";applyLanguage();
 }
-function speak(text,force=false){
- if(!settings.sound&&!force)return;
+function speak(text,force=false,kind="question"){
+ if(!audioGuidance.canSpeak(kind,force))return;
  try{if(window.Android&&Android.speak){Android.speak(text,settings.lang);return}}catch(e){}
  if("speechSynthesis" in window){
   speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);
   u.lang=settings.lang==="de"?"de-DE":"en-GB";u.rate=.84;speechSynthesis.speak(u)
  }
 }
+function speakOption(text){audioGuidance.say(text,"option",true)}
 function vibrate(){try{if(window.Android&&Android.vibrate)Android.vibrate()}catch(e){if(navigator.vibrate)navigator.vibrate(40)}}
 function titleFor(mode){return ({verbs:tt("verbs"),count:tt("counting"),math:tt("math"),positions:tt("positions"),letters:tt("letters"),time:tt("time"),mixed:tt("mixed")})[mode]}
 
@@ -289,10 +300,15 @@ function renderQuestion(){
  if(type==="positions")renderPosition();
  if(type==="letters")renderLetter();
  if(type==="time")renderTime();
- scheduleSpeech(state.current.speak);
+ state.current.instruction=state.current.instruction||activityInstruction(type);
+ state.current.question=state.current.speak;
+ state.current.speak=`${state.current.instruction} ${state.current.question}`;
+ const tutorial=audioGuidance.tutorial(type);
+ scheduleSpeech(`${tutorial} ${state.current.speak}`);
 }
-function qHeader(text,sub=""){return `<div class="questionBox"><h3>${text} <button class="speakBtn" aria-label="${tt("listen")}" onclick="speak(state.current.speak,true)">🔊</button></h3>${sub?`<p>${sub}</p>`:""}</div>`}
-function choicesHtml(arr){return `<div class="answerGrid">${arr.map(x=>`<button class="answer" data-key="${x.key}" onclick="pick(this,'${x.key}')">${x.emoji?`<div class="bigEmoji">${x.emoji}</div>`:""}<div>${x.label}</div></button>`).join("")}</div>`}
+function activityInstruction(type){return ({verbs:settings.lang==="en"?"Listen to the action, then tap the animal that can do it.":"Höre auf die Bewegung und tippe dann auf das Tier, das sie kann.",count:settings.lang==="en"?"Listen to the number question, then tap the right answer.":"Höre auf die Zahlenfrage und tippe dann auf die richtige Antwort.",math:settings.lang==="en"?"Listen to the maths question, then tap the answer.":"Höre auf die Mathefrage und tippe dann auf die Antwort.",positions:settings.lang==="en"?"Look at the picture and listen to the places. Tap the right place.":"Schau dir das Bild an und höre die Orte. Tippe auf den richtigen Ort.",letters:settings.lang==="en"?"Listen to the letter sound, then tap the picture that starts with it.":"Höre den Buchstabenlaut und tippe dann auf das passende Bild.",time:settings.lang==="en"?"Listen to the question about the day or season, then tap the answer.":"Höre die Frage über den Tag oder die Jahreszeit und tippe auf die Antwort.",mixed:settings.lang==="en"?"Listen carefully and tap the answer.":"Höre gut zu und tippe auf die Antwort."})[type]}
+function qHeader(text,sub=""){return `<div class="questionBox"><h3>${text} <button class="speakBtn" aria-label="${tt("listen")}" onclick="audioGuidance.replay()">🔊</button></h3>${sub?`<p>${sub}</p>`:""}</div>`}
+function choicesHtml(arr){return `<div class="answerGrid">${arr.map(x=>{const speech=String(x.label).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");return `<div class="answer" role="button" tabindex="0" aria-label="${speech}" data-key="${x.key}" data-speech="${speech}" onclick="pick(this,'${x.key}')" onkeydown="if(event.key==='Enter'||event.key===' ')pick(this,'${x.key}')">${x.emoji?`<div class="bigEmoji">${x.emoji}</div>`:""}<div>${x.label}</div><button class="answerSpeak" aria-label="${tt("listen")}: ${speech}" onclick="event.stopPropagation();speakOption(this.parentElement.dataset.speech)">🔊</button></div>`}).join("")}</div>`}
 
 function renderVerb(){
  const q=sample(verbQs),correct=q.a;
@@ -393,9 +409,11 @@ function renderMath(){
 function renderPosition(){
  const allPositions=["on","under","behind","nextTo","in","between"];
  const pos=sample(allPositions),animal=sample(["snake","dinosaur","dragon","croc"]);
- const text=fmt(tt("qPosition"),{animal:settings.lang==="de"?germanCreatureName(animal):creatureName(animal)});
+ const animalName=settings.lang==="de"?germanCreatureName(animal):creatureName(animal);
+ const optionText=["on","under","behind","nextTo","between"].map(x=>tt(x)).join(settings.lang==="de"?", ":", ");
+ const text=settings.lang==="de"?`Wo ist ${animalName}? Schau dir das Bild an. Ist es ${optionText}?`:`Where is the ${animalName}? Look at the picture. Is it ${optionText}?`;
  const choices=shuffle([pos,...shuffle(allPositions.filter(x=>x!==pos)).slice(0,3)]);
- state.current={correct:pos,speak:text,hint:tt(pos)};
+ state.current={correct:pos,speak:text,hint:tt(pos),feedbackCorrect:settings.lang==="de"?`Super! ${animalName} ist ${tt(pos)} dem Stein.`:`Great! The ${animalName} is ${tt(pos)} the rock.`};
  const object=pos==="under"?"table":pos==="in"?"box":"rock";
  const scene=`<div class="visualScene position-${pos}"><div class="positionObject ${object}"></div>${pos==="between"?'<div class="positionObject rock secondRock"></div>':""}<div class="sceneAnimal">${creatures[animal].emoji}</div></div>`;
  $("gameContent").innerHTML=qHeader(text)+scene+choicesHtml(choices.map(x=>({key:x,label:tt(x)})))
@@ -404,7 +422,7 @@ function renderPosition(){
 function renderLetter(){
  const q=sample(letterWords),letter=q.l[settings.lang];
  const items=shuffle([{key:"a",...q.a},...q.d.map((x,i)=>({key:"d"+i,...x}))]);
- const text=fmt(tt("qLetter"),{letter});
+ const text=settings.lang==="de"?`Das ist der Buchstabe ${letter}. Welches Wort beginnt mit dem Laut ${letter}?`:`This is the letter ${letter}. Which picture starts with the ${letter} sound?`;
  state.current={correct:"a",speak:text,hint:q.a[settings.lang]};
  $("gameContent").innerHTML=qHeader(text)+`<div class="letterHero">${letter}</div>`+choicesHtml(items.map(x=>({key:x.key,label:x[settings.lang],emoji:x.e})))
 }
@@ -426,6 +444,14 @@ function renderTime(){
 
 function animationForVerb(en){
  const v=en.toLowerCase();
+ const detailed={
+  jump:"anim-jump-detail",hop:"anim-jump-detail",pounce:"anim-pounce-detail",gallop:"anim-run-detail",chase:"anim-run-detail",fetch:"anim-fetch-detail",
+  climb:"anim-climb-detail", "swim in the sea":"anim-swim-detail", "dive underwater":"anim-dive-detail", "paddle on a pond":"anim-paddle-detail", "float on its back":"anim-float-detail", "squirt ink":"anim-ink-detail",
+  slither:"anim-slither-detail", "crawl slowly":"anim-crawl-detail", "walk sideways":"anim-side-detail", dig:"anim-dig-detail", scratch:"anim-scratch-detail", kick:"anim-kick-detail", "flap its wings":"anim-flap-detail", flutter:"anim-flap-detail",
+  snap:"anim-snap-detail", "snap its jaws":"anim-snap-detail", roar:"anim-roar-detail", howl:"anim-howl-detail", bark:"anim-bark-detail", peck:"anim-peck-detail", stomp:"anim-stomp-detail", "stomp like a dinosaur":"anim-stomp-detail",
+  "build a dam":"anim-build-detail", "spin a web":"anim-web-detail", "stand on one leg":"anim-balance-detail", "wag its tail":"anim-wag-detail", "curl into a ball":"anim-curl-detail"
+ };
+ if(detailed[v])return {cls:detailed[v],scene:/swim|dive|paddle|float|ink/.test(v)?"water":"",extra:/climb/.test(v)?'<div class="climbTree">🌳</div>':/build a dam/.test(v)?'<div class="damProps">🪵💧</div>':/spin a web/.test(v)?'<div class="webProps">🕸️</div>':""};
  if(/breathe fire/.test(v))return {cls:"anim-fire",scene:"",extra:'<div class="firePuff">🔥</div>'};
  if(/fly|flap|flutter/.test(v))return {cls:"anim-fly",scene:"",extra:""};
  if(/swim|dive|paddle|float|squirt ink/.test(v))return {cls:"anim-swim",scene:"water",extra:'<div class="waterWave"></div>'};
@@ -445,7 +471,7 @@ function renderVerbLibrary(){
  const cards=verbQs.map((q,i)=>`<button class="verbLibraryCard" onclick="openVerbLesson(${i},false)"><div class="verbAnimal">${creatures[q.a].emoji}</div><div><div class="verbEn">${settings.lang==="en"?q.v.en:q.v.de}</div><div class="verbDe">${settings.lang==="en"?q.v.de:q.v.en}</div></div></button>`).join("");
  $("verbExplorerContent").innerHTML=`<p class="verbExplorerIntro">${tt("verbLibraryIntro")}</p><div class="verbLibraryGrid">${cards}</div>`;
 }
-function openVerbExplorer(){show("verbExplorer");renderVerbLibrary()}
+function openVerbExplorer(){show("verbExplorer");renderVerbLibrary();const tutorial=audioGuidance.tutorial("verbExplorer");if(tutorial)scheduleSpeech(tutorial,"tutorial")}
 function openVerbLessonByEnglish(en,fromQuiz=false){
  const idx=verbQs.findIndex(q=>q.v.en===en);if(idx>=0)openVerbLesson(idx,fromQuiz);
 }
@@ -459,9 +485,9 @@ function openVerbLesson(idx,fromQuiz=false){
  const spoken=settings.lang==="en"?`${q.v.en}. ${explanation}. ${example}`:`${q.v.de}. ${explanation}. ${example}`;
  $("verbExplorerContent").innerHTML=`<div class="verbLesson"><div class="verbAnimStage ${anim.scene}"><div class="animatedAnimal ${anim.cls}">${creatures[q.a].emoji}</div>${anim.extra}</div><div class="verbWords"><div class="mainWord">${main}</div><div class="translationWord">${other}</div></div><div class="verbExplain"><div class="verbInfoCard"><strong>${tt("whatMeans")}</strong>${explanation}</div><div class="verbInfoCard"><strong>${tt("example")}</strong>${example}</div><div class="verbInfoCard tryCard" style="grid-column:1/-1"><strong>${tt("tryIt")}</strong>${tt("tryPrompt")}</div></div><div class="verbLessonActions"><button class="verbLessonBtn" id="lessonListen">🔊 ${settings.lang==="en"?"Listen":"Anhören"}</button><button class="verbLessonBtn primary" onclick="${fromQuiz?'show(\'game\')':'renderVerbLibrary()'}">${fromQuiz?(settings.lang==="en"?"Back to question":"Zurück zur Frage"):tt("allVerbs")}</button></div></div>`;
  // Bind text as data, never as JavaScript inside an HTML attribute (e.g. 'hoo').
- $("verbExplorerContent").querySelector(".verbLessonBtn").onclick=()=>speak(spoken,true);
+ $("verbExplorerContent").querySelector(".verbLessonBtn").onclick=()=>audioGuidance.say(spoken,"vocab",true);
  $("verbExplorerContent").querySelectorAll(".roundBtn,.verbLessonBtn.primary").forEach(b=>b.onclick=backFromLesson);
- applyLanguage();scheduleSpeech(spoken);
+ applyLanguage();const tutorial=audioGuidance.tutorial("verbExplorer");scheduleSpeech(`${tutorial} ${spoken}`,"vocab");
 }
 function backFromLesson(){const fromQuiz=activeLesson&&activeLesson.fromQuiz;activeLesson=null;if(fromQuiz)show("game");else renderVerbLibrary()}
 function navigateBack(){
@@ -475,9 +501,10 @@ function pick(btn,key){
  if(key===state.current.correct){
   state.answered=true;state.score++;$("score").textContent=state.score;btn.classList.add("correct");
   document.querySelectorAll(".answer").forEach(x=>x.classList.add("locked"));
-  $("feedback").textContent=sample(tt("great"));$("nextAction").disabled=false;vibrate()
+  const feedback=state.current.feedbackCorrect||sample(tt("great"));
+  $("feedback").textContent=feedback;$("nextAction").disabled=false;audioGuidance.say(feedback,"feedback");vibrate()
  }else{
-  btn.classList.add("wrong");$("feedback").textContent=tt("try");
+  btn.classList.add("wrong");$("feedback").textContent=tt("try");audioGuidance.say(settings.lang==="de"?"Noch nicht. Versuch es noch einmal.":"Not quite. Try again.","feedback");
   setTimeout(()=>btn.classList.remove("wrong"),450)
  }
 }
@@ -511,6 +538,8 @@ $("verbExplorerBack").onclick=()=>activeLesson?backFromLesson():goHome();
 $("optionsBack").onclick=()=>{show("home");applyLanguage()};
 $("englishBtn").onclick=()=>setLang("en");$("germanBtn").onclick=()=>setLang("de");
 $("soundSwitch").onclick=()=>setSound(!settings.sound);
+document.querySelectorAll("[data-audio-mode]").forEach(b=>b.onclick=()=>setAudioMode(b.dataset.audioMode));
+$("resetTutorials").onclick=()=>audioGuidance.reset();
 document.querySelectorAll("[data-len]").forEach(b=>b.onclick=()=>setRound(+b.dataset.len));
 document.querySelectorAll("[data-nummax]").forEach(b=>b.onclick=()=>setNumberMax(+b.dataset.nummax));
 $("applyNumberMax").onclick=()=>setNumberMax($("customNumberMax").value);
