@@ -308,7 +308,13 @@ function renderQuestion(){
 }
 function activityInstruction(type){return ({verbs:settings.lang==="en"?"Listen to the action, then tap the animal that can do it.":"Höre auf die Bewegung und tippe dann auf das Tier, das sie kann.",count:settings.lang==="en"?"Listen to the number question, then tap the right answer.":"Höre auf die Zahlenfrage und tippe dann auf die richtige Antwort.",math:settings.lang==="en"?"Listen to the maths question, then tap the answer.":"Höre auf die Mathefrage und tippe dann auf die Antwort.",positions:settings.lang==="en"?"Look at the picture and listen to the places. Tap the right place.":"Schau dir das Bild an und höre die Orte. Tippe auf den richtigen Ort.",letters:settings.lang==="en"?"Listen to the letter sound, then tap the picture that starts with it.":"Höre den Buchstabenlaut und tippe dann auf das passende Bild.",time:settings.lang==="en"?"Listen to the question about the day or season, then tap the answer.":"Höre die Frage über den Tag oder die Jahreszeit und tippe auf die Antwort.",mixed:settings.lang==="en"?"Listen carefully and tap the answer.":"Höre gut zu und tippe auf die Antwort."})[type]}
 function qHeader(text,sub=""){return `<div class="questionBox"><h3>${text} <button class="speakBtn" aria-label="${tt("listen")}" onclick="audioGuidance.replay()">🔊</button></h3>${sub?`<p>${sub}</p>`:""}</div>`}
-function choicesHtml(arr){return `<div class="answerGrid">${arr.map(x=>{const speech=String(x.label).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");return `<div class="answer" role="button" tabindex="0" aria-label="${speech}" data-key="${x.key}" data-speech="${speech}" onclick="pick(this,'${x.key}')" onkeydown="if(event.key==='Enter'||event.key===' ')pick(this,'${x.key}')">${x.emoji?`<div class="bigEmoji">${x.emoji}</div>`:""}<div>${x.label}</div><button class="answerSpeak" aria-label="${tt("listen")}: ${speech}" onclick="event.stopPropagation();speakOption(this.parentElement.dataset.speech)">🔊</button></div>`}).join("")}</div>`}
+function choicesHtml(arr){
+ const escapeHtml=value=>String(value).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+ return `<div class="answerGrid">${arr.map(x=>{
+  const label=escapeHtml(x.label),key=escapeHtml(x.key);
+  return `<div class="answerCard"><button type="button" class="answer" aria-label="${label}" data-key="${key}" onclick="pick(this,this.dataset.key)">${x.emoji?`<span class="bigEmoji" aria-hidden="true">${x.emoji}</span>`:""}<span>${label}</span></button><button type="button" class="answerSpeak" aria-label="${tt("listen")}: ${label}" data-speech="${label}" onclick="speakOption(this.dataset.speech)">🔊</button></div>`;
+ }).join("")}</div>`;
+}
 
 function renderVerb(){
  const q=sample(verbQs),correct=q.a;
@@ -500,7 +506,7 @@ function pick(btn,key){
  if(state.answered)return;
  if(key===state.current.correct){
   state.answered=true;state.score++;$("score").textContent=state.score;btn.classList.add("correct");
-  document.querySelectorAll(".answer").forEach(x=>x.classList.add("locked"));
+  document.querySelectorAll(".answer").forEach(x=>{x.classList.add("locked");x.disabled=true});
   const feedback=state.current.feedbackCorrect||sample(tt("great"));
   $("feedback").textContent=feedback;$("nextAction").disabled=false;audioGuidance.say(feedback,"feedback");vibrate()
  }else{

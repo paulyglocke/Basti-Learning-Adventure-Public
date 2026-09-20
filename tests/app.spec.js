@@ -182,3 +182,45 @@ test('invalid persisted settings recover and mixed rounds include varied activit
   expect(await page.evaluate(() => state.items.length)).toBe(10);
   expect(await page.evaluate(() => new Set(state.items).size)).toBe(6);
 });
+
+for (const lang of ['en', 'de']) {
+  test(`answer audio never submits via pointer, Enter or Space (${lang})`, async ({page}) => {
+    for (const mode of ['verbs','count','math','positions','letters','time','mixed']) {
+      await page.evaluate(([lang,mode]) => {setLang(lang);setAudioMode('all');startGame(mode);stopSpeech();spoken.length=0}, [lang,mode]);
+      const correct = await page.evaluate(() => state.current.correct);
+      const answer = page.locator(`.answer[data-key="${correct}"]`);
+      const speaker = answer.locator('..').locator('.answerSpeak');
+      const label = await speaker.getAttribute('data-speech');
+      // Real sibling buttons: no interactive ancestor and native keyboard semantics.
+      expect(await speaker.evaluate(b => b.parentElement.closest('button,[role="button"]'))).toBeNull();
+      for (const action of ['click','Enter','Space']) {
+        await page.evaluate(() => spoken.length=0);
+        if(action==='click') await speaker.click();
+        else {await speaker.focus();await page.keyboard.press(action)}
+        expect(await page.evaluate(() => ({score:state.score,answered:state.answered,i:state.i,spoken}))).toEqual({score:0,answered:false,i:0,spoken:[{text:label,lang}]});
+        await expect(page.locator('#feedback')).toBeEmpty();
+        await expect(page.locator('#nextAction')).toBeDisabled();
+      }
+      await answer.focus();
+      await page.keyboard.press('Enter');
+      await expect(page.locator('#score')).toHaveText('1');
+      await expect(answer).toBeDisabled();
+      // Correctness locks only answer selection; listening remains available.
+      await page.evaluate(() => spoken.length=0);
+      await speaker.click();
+      expect(await page.evaluate(() => ({score:state.score,spoken}))).toEqual({score:1,spoken:[{text:label,lang}]});
+    }
+  });
+}
+
+test('Space selects an answer once; Tab visits selection then separate audio', async ({page}) => {
+  await page.evaluate(() => {startGame('count');stopSpeech()});
+  const key=await page.evaluate(()=>state.current.correct);
+  const answer=page.locator(`.answer[data-key="${key}"]`);
+  await answer.focus();await page.keyboard.press('Tab');
+  await expect(answer.locator('..').locator('.answerSpeak')).toBeFocused();
+  await answer.focus();await page.keyboard.press('Space');
+  await expect(page.locator('#score')).toHaveText('1');
+  await answer.evaluate(b=>{b.click();b.click()});
+  await expect(page.locator('#score')).toHaveText('1');
+});
