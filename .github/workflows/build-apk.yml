@@ -19,6 +19,11 @@ jobs:
           java-version: '17'
       - uses: gradle/actions/setup-gradle@v4
       - uses: android-actions/setup-android@v3
+        with:
+          # The legacy `tools` SDK package no longer exists. The action's
+          # default includes it, so request only the package still needed by
+          # the explicit sdkmanager install below.
+          packages: platform-tools
       - name: Install Android SDK packages
         run: sdkmanager 'platforms;android-35' 'build-tools;34.0.0'
       - name: Build debug APK
