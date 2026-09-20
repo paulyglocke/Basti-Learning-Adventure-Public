@@ -489,7 +489,17 @@ function finish(){
  $("feedback").textContent="";$("nextAction").disabled=true;$("hintAction").style.visibility="hidden";
  scheduleSpeech(tt("finish"))
 }
-function goHome(){show("home");$("hintAction").style.visibility="visible";applyLanguage()}
+function goHome(){
+ show("home");$("hintAction").style.visibility="visible";applyLanguage();
+ try{if(window.Android&&Android.onWebHome)Android.onWebHome()}catch(e){}
+}
+function startShellMode(mode){
+ if(window.__shellMode===mode)return;
+ window.__shellMode=mode;
+ document.querySelector(".topbar").style.display="none";
+ if(mode==="verbExplorer")openVerbExplorer();
+ else startGame(mode);
+}
 
 document.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>startGame(b.dataset.mode));
 $("backHome").onclick=goHome;$("homeAction").onclick=goHome;
