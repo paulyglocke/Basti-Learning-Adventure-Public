@@ -1,0 +1,11 @@
+2026-09-20: Final Playwright run: 9 passed (1.0m).
+
+PASS: persisted language, sound, round length and number maximum offline
+PASS: quiz-to-lesson navigation and return preserve question, score and answered state
+PASS: all 53 lessons in English and German, animations and replay buttons
+PASS: phone/tablet resizing preserves question and lesson state
+PASS: every quiz mode completes in both languages with retries and no penalty
+PASS: number ceilings, maximum 20 counting objects, arithmetic within 10
+PASS: phone/tablet controls and text fit 320/360/800/1280-pixel layouts
+PASS: manual speech and automatic speech cancellation with mock Android bridge
+PASS: corrupt settings recovery and mixed-round variety
