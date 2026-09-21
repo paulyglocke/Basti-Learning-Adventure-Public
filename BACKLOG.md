@@ -7,7 +7,7 @@ Shared implementation contracts: [NATIVE_ARCHITECTURE_SPEC.md](NATIVE_ARCHITECTU
 ## P0 — stabilise current activities
 
 - Finish Prepositions correctness: align scenes, spoken choices and English/German feedback.
-- Stop emoji/decorative glyphs leaking into speech; separate display/speech text and test the final boundary (VOICE_AUDIO_SPEC.md).
+- Physically confirm the implemented speech-safe feedback/boundary on S24/Fire in English/German (VOICE_AUDIO_SPEC.md); automated regression coverage is in tests/speech.spec.js.
 - Fix completion/reward layouts: wrapping stars and immediately accessible actions on narrow/short screens.
 - Fix Letters display-case consistency; review bilingual initial-letter/sound content.
 - Enforce audio policy and TTS readiness, cancellation and missing-offline-voice handling (VOICE_AUDIO_SPEC.md).

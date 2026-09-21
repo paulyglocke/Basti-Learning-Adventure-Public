@@ -34,9 +34,15 @@ Read this together with:
 
 ---
 
-# 2. Current problem
+# 2. Original problem and current boundary
 
-The current app sends visible UI strings directly to Android TextToSpeech.
+The original legacy app sent visible feedback strings directly to Android TextToSpeech. The P0 cleanup now gives all eight praise entries explicit `displayText` / `speechText` fields and sanitizes every legacy speech request in `app.js` → `speak()` before either `Android.speak()` or browser speech synthesis. Decoration-only requests are skipped.
+
+This is the single current speech-safety boundary. Kotlin forwards its result unchanged; no duplicate Kotlin sanitizer was added because all current narration enters through this JavaScript path. Future native speech callers must establish the equivalent shared native boundary before bypassing it. Semantic icons still require authored speech (for example Crocodile/Krokodil), not Unicode names.
+
+Existing audio policy is intentionally unchanged: forced Replay/options/lesson speech can bypass Off, questions mode includes feedback, and balloon tones ignore the speech policy. These remain separate P0 policy work; this patch does not endorse those behaviors as the final policy.
+
+The following examples describe the original bug and the continuing content rule.
 
 Some visible feedback strings contain emoji, for example:
 
@@ -771,7 +777,7 @@ The app’s teaching narration should not simply read the entire visual interfac
 - add final speech sanitisation,
 - add regression tests.
 
-This should happen soon because the current behavior is already user-visible.
+The legacy V0 implementation is now in place at the JavaScript boundary described in section 2. Automated results belong in BUILD_NOTES.md; physical S24/Fire confirmation remains required.
 
 ---
 

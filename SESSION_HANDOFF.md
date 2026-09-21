@@ -1,14 +1,18 @@
 # Session handoff — 2026-09-21
 
-## Current session
+## Current session — P0 Voice/TTS cleanup
 
-Documentation Pass 2 adds NATIVE_ARCHITECTURE_SPEC.md, CONTENT_DATA_SPEC.md, UX_NAVIGATION_SPEC.md and TESTING_QA_SPEC.md and integrates their reading order. No runtime code changed and no Compose migration started. Read AGENTS.md and the master specs first; BACKLOG.md is the current action queue. Historical audit recommendations and earlier task permissions do not override the current task or master specs.
+Root cause: `pick()` passed decorated praise directly through `audioGuidance.say()` → `speak()` → `Android.speak()` → Android TextToSpeech. All questions/instructions, tutorials, Replay, option speakers, feedback, completion and Verb Explorer already converge on that same JavaScript function. Hints are visual only; balloon decorations are not narrated (their WebAudio tones are separate).
 
-Current source: Kotlin MainActivity owns Compose home/Options/top bar, shell navigation, SharedPreferences, Android TTS and WebView hosting. All seven quiz modes, 53 Verb Explorer lessons, CSS animations, tutorials, scoring/completion and balloons remain legacy web code. All five Play cards are placeholders; Vocabulary Booster falls back to Animal Actions. No persistent skill-level progress exists.
+All eight English/German praise entries now pair `displayText` with explicit `speechText`; visible emoji remain. `sanitizeForSpeech()` runs inside `speak()` after the existing audio policy check and before either Android bridge or browser fallback. It removes pictographic/decorative ranges and emoji joiners/selectors/tags, normalizes whitespace/punctuation spacing and skips empty output while retaining ordinary numbers, punctuation, German characters and mathematical text. Semantic icons must still receive authored speech, not inferred emoji names.
 
-The prior P0 answer/audio activation isolation is complete: choicesHtml uses sibling selection/audio buttons and retains audio after a correct answer. Its recorded build/lint and 12 browser-test results are historical (2026-09-20); see BUILD_NOTES.md. Remaining correctness work is in BACKLOG.md, including Prepositions, speech glyph leakage, completion layouts, Letters case, audio policy, navigation/lifecycle and physical device validation.
+No Kotlin duplicate sanitizer: the current native engine has only the legacy bridge caller. Future native speech must move this boundary into the shared audio controller. MainActivity, index.html, content generation, scoring, navigation and the speech engine are unchanged. Supertonic/Piper, Voice Lab and neural integration have not started.
 
-Pass 2 verification is documentation-only: git diff, whitespace, Markdown/local file references and cross-spec consistency. No new device/build/browser validation is implied. The repository is ready to return to bounded implementation work from BACKLOG.md when requested. The detailed all/questions/off audio policy, mastery thresholds and parent-entry interaction still need decisions in their owning specs when those features are implemented; do not treat conceptual schemas as existing code.
+Seven new tests in tests/speech.spec.js cover every praise entry, both-language speech routes, decorated completion, Unicode/number preservation, empty requests, browser fallback and unchanged mode/force behavior. Existing pointer/Enter/Space answer-speaker isolation tests remain intact.
+
+Validation results will be recorded in BUILD_NOTES.md after the browser run. Android assembleDebug/lintDebug passed with Android Studio JDK 21 (Java/Kotlin compilation target 17), 0 lint errors / 7 warnings; APK assets match current source. Physical S24/Fire speech validation remains outstanding.
+
+Remaining P0 audio work: define/enforce all/questions/off and manual Replay semantics; balloon sound policy; TTS readiness/missing offline voices; stale speech/lifecycle cancellation; reliable language/version-aware tutorials/reset. Current forced manual speech still bypasses Off and questions mode includes feedback, deliberately unchanged here. P1 remains the shared native audio controller/engine abstraction and test doubles, followed separately by physical voice auditions. See BACKLOG.md and VOICE_AUDIO_SPEC.md.
 
 ## Historical session context (2026-09-20)
 
