@@ -1,24 +1,24 @@
 const T={
  en:{
   brandTitle:"Basti's Learning Adventure",brandSub:"Dragons, dinosaurs and school skills",options:"Options",ready:"Ready for an adventure?",chooseGame:"Choose a game. Each one is short and simple.",learnVerbs:"Learn Verbs",learnVerbsDesc:"Watch, hear and learn each action.",verbLibrary:"Verb Explorer",verbLibraryIntro:"Tap a verb to watch it, hear it and learn what it means.",whatMeans:"What it means",example:"Example",tryIt:"Try it!",tryPrompt:"Can you act it out or make the sound?",learnThisVerb:"Learn this verb",allVerbs:"All verbs",
-  verbs:"Animal Actions",verbsDesc:"Lots of simple action words and animal sounds.",counting:"Numbers",countDesc:"Count, recognise and order numbers up to your chosen level.",math:"Easy Maths",mathDesc:"Add and take away within 10.",positions:"Where is it?",positionsDesc:"In, on, under, behind, next to and between.",letters:"Letters",lettersDesc:"Find first letters and sounds.",time:"Days & Seasons",timeDesc:"Days of the week and four seasons.",mixed:"Mixed Adventure",mixedDesc:"A little bit of everything.",parentNote:"Short rounds, no timer and no penalty for mistakes. The goal is confidence and repetition.",
+  verbs:"Animal Actions",verbsDesc:"Lots of simple action words and animal sounds.",counting:"Numbers",countDesc:"Count, recognise and order numbers up to your chosen level.",math:"Easy Maths",mathDesc:"Add and take away within 10.",positions:"Where is it?",positionsDesc:"In, on, under, behind, next to and between.",letters:"Letters",lettersDesc:"Find words with the same first letter.",time:"Days & Seasons",timeDesc:"Days of the week and four seasons.",mixed:"Mixed Adventure",mixedDesc:"A little bit of everything.",parentNote:"Short rounds, no timer and no penalty for mistakes. The goal is confidence and repetition.",
   home:"Home",hint:"Hint",next:"Next",language:"Language",sound:"Read questions aloud",soundDesc:"Tap the speaker during a game too.",roundLength:"Questions per round",device:"Screen layout",deviceDesc:"The app changes automatically between phone and tablet layouts.",phone:"Phone layout",tablet:"Tablet layout",
   numberLevel:"Number level",numberLevelDesc:"Choose how high number practice can go. Start low and increase it as it becomes easy.",higherNumbers:"Higher later:",apply:"Apply",currentLevel:"Current maximum:",
-  question:"Question",of:"of",great:[{displayText:"Great! 🌟",speechText:"Great!"},{displayText:"Yes! 🎉",speechText:"Yes!"},{displayText:"Correct! ⭐",speechText:"Correct!"},{displayText:"Well done! 🐉",speechText:"Well done!"}],try:"Try again!",look:"Look carefully 👀",listen:"Listen again 🔊",finish:"Adventure complete!",scoreText:"You earned {score} stars out of {total}.",again:"Play again",continue:"Continue",backHome:"Back home",audioGuidance:"Audio guidance",readEverything:"Read everything",questionsOnly:"Questions and instructions only",soundOff:"Sound off",replayTutorials:"Hear the activity introductions again",tutorialResetDone:"Activity introductions will play again.",tutorials:{verbs:"I will show you an animal and ask what it can do. Listen to the question and tap the right animal.",count:"I will ask you about numbers. Listen carefully, then tap the answer you hear or see.",math:"Let’s do a little maths. Listen to the animals and numbers, then choose the answer.",positions:"I will show you where an animal is. Listen to the choices and tap the right place.",letters:"Listen to the letter sound, then choose the picture that starts with that sound.",time:"Listen to the day or season question, then choose the right answer.",mixed:"This adventure mixes different questions. Listen carefully and choose an answer.",verbExplorer:"I will show you action words. Tap a verb to watch its movement, hear what it means, and hear an example."},
+  question:"Question",of:"of",great:[{displayText:"Great! 🌟",speechText:"Great!"},{displayText:"Yes! 🎉",speechText:"Yes!"},{displayText:"Correct! ⭐",speechText:"Correct!"},{displayText:"Well done! 🐉",speechText:"Well done!"}],try:"Try again!",look:"Look carefully 👀",listen:"Listen again 🔊",finish:"Adventure complete!",scoreText:"You earned {score} stars out of {total}.",again:"Play again",continue:"Continue",backHome:"Back home",audioGuidance:"Audio guidance",readEverything:"Read everything",questionsOnly:"Questions and instructions only",soundOff:"Sound off",replayTutorials:"Hear the activity introductions again",tutorialResetDone:"Activity introductions will play again.",tutorials:{verbs:"I will show you an animal and ask what it can do. Listen to the question and tap the right animal.",count:"I will ask you about numbers. Listen carefully, then tap the answer you hear or see.",math:"Let’s do a little maths. Listen to the animals and numbers, then choose the answer.",positions:"I will show you where an animal is. Listen to the choices and tap the right place.",letters:"Each picture has a word underneath. Look at the large letter. Tap the word that starts with that letter. Tap a speaker to hear a word.",time:"Listen to the day or season question, then choose the right answer.",mixed:"This adventure mixes different questions. Listen carefully and choose an answer.",verbExplorer:"I will show you action words. Tap a verb to watch its movement, hear what it means, and hear an example."},
   qVerb:"Which animal can {verb}?",qCount:"How many {name} can you see?",qHearNumber:"Tap the number you hear.",sHearNumber:"Find number {n}.",qAfterNumber:"What number comes after {n}?",qBeforeNumber:"What number comes before {n}?",qMissingNumber:"Which number is missing?",qBiggest:"Which number is the biggest?",qSmallest:"Which number is the smallest?",qTensOnes:"Which number has {tens} tens and {ones} ones?",
-  qMathAdd:"There are {a} {name}. {b} more arrive. How many now?",qMathSub:"There are {a} {name}. {b} go away. How many are left?",qPosition:"Where is the {animal}?",qLetter:"Which word starts with {letter}?",qDayAfter:"What day comes after {day}?",qDayBefore:"What day comes before {day}?",qSeason:"Which season is this?",
+  qMathAdd:"There are {a} {name}. {b} more arrive. How many now?",qMathSub:"There are {a} {name}. {b} go away. How many are left?",qPosition:"Where is the {animal}?",qLetter:"Which word starts with the letter {letter}?",qDayAfter:"What day comes after {day}?",qDayBefore:"What day comes before {day}?",qSeason:"Which season is this?",
   in:"in",on:"on",under:"under",behind:"behind",nextTo:"next to",between:"between",
   spring:"spring",summer:"summer",autumn:"autumn",winter:"winter",
   monday:"Monday",tuesday:"Tuesday",wednesday:"Wednesday",thursday:"Thursday",friday:"Friday",saturday:"Saturday",sunday:"Sunday"
  },
  de:{
   brandTitle:"Bastis Lernabenteuer",brandSub:"Drachen, Dinosaurier und Schulwissen",options:"Optionen",ready:"Bereit für ein Abenteuer?",chooseGame:"Wähle ein Spiel. Jede Runde ist kurz und einfach.",learnVerbs:"Verben lernen",learnVerbsDesc:"Anschauen, anhören und Aktionen lernen.",verbLibrary:"Verben entdecken",verbLibraryIntro:"Tippe auf ein Verb. Schau die Bewegung an, hör das Wort und lerne seine Bedeutung.",whatMeans:"Was bedeutet das?",example:"Beispiel",tryIt:"Mach mit!",tryPrompt:"Kannst du die Bewegung vormachen oder das Geräusch nachmachen?",learnThisVerb:"Dieses Verb lernen",allVerbs:"Alle Verben",
-  verbs:"Tier-Aktionen",verbsDesc:"Viele einfache Verben, Aktionen und Tiergeräusche.",counting:"Zahlen",countDesc:"Zählen, Zahlen erkennen und ordnen bis zu deinem gewählten Level.",math:"Einfache Mathe",mathDesc:"Plus und Minus bis 10.",positions:"Wo ist es?",positionsDesc:"In, auf, unter, hinter, neben und zwischen.",letters:"Buchstaben",lettersDesc:"Finde Anfangsbuchstaben und Laute.",time:"Tage & Jahreszeiten",timeDesc:"Wochentage und die vier Jahreszeiten.",mixed:"Gemischtes Abenteuer",mixedDesc:"Von allem ein bisschen.",parentNote:"Kurze Runden, kein Zeitdruck und keine Strafe für Fehler. Wichtig sind Sicherheit und Wiederholung.",
+  verbs:"Tier-Aktionen",verbsDesc:"Viele einfache Verben, Aktionen und Tiergeräusche.",counting:"Zahlen",countDesc:"Zählen, Zahlen erkennen und ordnen bis zu deinem gewählten Level.",math:"Einfache Mathe",mathDesc:"Plus und Minus bis 10.",positions:"Wo ist es?",positionsDesc:"In, auf, unter, hinter, neben und zwischen.",letters:"Buchstaben",lettersDesc:"Finde passende Anfangsbuchstaben.",time:"Tage & Jahreszeiten",timeDesc:"Wochentage und die vier Jahreszeiten.",mixed:"Gemischtes Abenteuer",mixedDesc:"Von allem ein bisschen.",parentNote:"Kurze Runden, kein Zeitdruck und keine Strafe für Fehler. Wichtig sind Sicherheit und Wiederholung.",
   home:"Start",hint:"Tipp",next:"Weiter",language:"Sprache",sound:"Fragen vorlesen",soundDesc:"Im Spiel kannst du auch auf den Lautsprecher tippen.",roundLength:"Fragen pro Runde",device:"Bildschirm-Layout",deviceDesc:"Die App wechselt automatisch zwischen Handy- und Tablet-Layout.",phone:"Handy-Layout",tablet:"Tablet-Layout",
   numberLevel:"Zahlen-Level",numberLevelDesc:"Wähle, wie hoch die Zahlenübungen gehen. Beginne niedrig und erhöhe es, wenn es leicht wird.",higherNumbers:"Später höher:",apply:"Übernehmen",currentLevel:"Aktuelles Maximum:",
-  question:"Frage",of:"von",great:[{displayText:"Super! 🌟",speechText:"Super!"},{displayText:"Ja! 🎉",speechText:"Ja!"},{displayText:"Richtig! ⭐",speechText:"Richtig!"},{displayText:"Sehr gut! 🐉",speechText:"Sehr gut!"}],try:"Nochmal versuchen!",look:"Schau genau hin 👀",listen:"Hör noch einmal zu 🔊",finish:"Abenteuer geschafft!",scoreText:"Du hast {score} Sterne von {total} gesammelt.",again:"Nochmal spielen",continue:"Weiter",backHome:"Zurück zum Start",audioGuidance:"Audio-Hilfe",readEverything:"Alles vorlesen",questionsOnly:"Nur Fragen und Anweisungen",soundOff:"Ton aus",replayTutorials:"Einführungen wieder anhören",tutorialResetDone:"Die Einführungen werden wieder abgespielt.",tutorials:{verbs:"Ich zeige dir ein Tier und frage, was es kann. Höre die Frage und tippe auf das richtige Tier.",count:"Ich frage dich nach Zahlen. Höre gut zu und tippe auf die Zahl, die du hörst oder siehst.",math:"Wir machen ein bisschen Mathe. Höre auf die Tiere und Zahlen und wähle die Antwort.",positions:"Ich zeige dir, wo ein Tier ist. Höre die Möglichkeiten und tippe auf den richtigen Ort.",letters:"Höre den Laut des Buchstabens und wähle dann das Bild, das mit diesem Laut beginnt.",time:"Höre die Frage über den Tag oder die Jahreszeit und wähle die richtige Antwort.",mixed:"Dieses Abenteuer mischt verschiedene Fragen. Höre gut zu und wähle eine Antwort.",verbExplorer:"Ich zeige dir Verben. Tippe auf ein Verb, um die Bewegung zu sehen, die Bedeutung zu hören und ein Beispiel zu hören."},
+  question:"Frage",of:"von",great:[{displayText:"Super! 🌟",speechText:"Super!"},{displayText:"Ja! 🎉",speechText:"Ja!"},{displayText:"Richtig! ⭐",speechText:"Richtig!"},{displayText:"Sehr gut! 🐉",speechText:"Sehr gut!"}],try:"Nochmal versuchen!",look:"Schau genau hin 👀",listen:"Hör noch einmal zu 🔊",finish:"Abenteuer geschafft!",scoreText:"Du hast {score} Sterne von {total} gesammelt.",again:"Nochmal spielen",continue:"Weiter",backHome:"Zurück zum Start",audioGuidance:"Audio-Hilfe",readEverything:"Alles vorlesen",questionsOnly:"Nur Fragen und Anweisungen",soundOff:"Ton aus",replayTutorials:"Einführungen wieder anhören",tutorialResetDone:"Die Einführungen werden wieder abgespielt.",tutorials:{verbs:"Ich zeige dir ein Tier und frage, was es kann. Höre die Frage und tippe auf das richtige Tier.",count:"Ich frage dich nach Zahlen. Höre gut zu und tippe auf die Zahl, die du hörst oder siehst.",math:"Wir machen ein bisschen Mathe. Höre auf die Tiere und Zahlen und wähle die Antwort.",positions:"Ich zeige dir, wo ein Tier ist. Höre die Möglichkeiten und tippe auf den richtigen Ort.",letters:"Unter jedem Bild steht ein Wort. Schau dir den großen Buchstaben an. Tippe auf das Wort mit diesem Anfangsbuchstaben. Tippe auf einen Lautsprecher, um ein Wort zu hören.",time:"Höre die Frage über den Tag oder die Jahreszeit und wähle die richtige Antwort.",mixed:"Dieses Abenteuer mischt verschiedene Fragen. Höre gut zu und wähle eine Antwort.",verbExplorer:"Ich zeige dir Verben. Tippe auf ein Verb, um die Bewegung zu sehen, die Bedeutung zu hören und ein Beispiel zu hören."},
   qVerb:"Welches Tier kann {verb}?",qCount:"Wie viele {name} siehst du?",qHearNumber:"Tippe auf die Zahl, die du hörst.",sHearNumber:"Finde die Zahl {n}.",qAfterNumber:"Welche Zahl kommt nach {n}?",qBeforeNumber:"Welche Zahl kommt vor {n}?",qMissingNumber:"Welche Zahl fehlt?",qBiggest:"Welche Zahl ist am größten?",qSmallest:"Welche Zahl ist am kleinsten?",qTensOnes:"Welche Zahl hat {tens} Zehner und {ones} Einer?",
-  qMathAdd:"Da sind {a} {name}. {b} kommen dazu. Wie viele sind es jetzt?",qMathSub:"Da sind {a} {name}. {b} gehen weg. Wie viele bleiben?",qPosition:"Wo ist {animal}?",qLetter:"Welches Wort beginnt mit {letter}?",qDayAfter:"Welcher Tag kommt nach {day}?",qDayBefore:"Welcher Tag kommt vor {day}?",qSeason:"Welche Jahreszeit ist das?",
+  qMathAdd:"Da sind {a} {name}. {b} kommen dazu. Wie viele sind es jetzt?",qMathSub:"Da sind {a} {name}. {b} gehen weg. Wie viele bleiben?",qPosition:"Wo ist {animal}?",qLetter:"Welches Wort beginnt mit dem Buchstaben {letter}?",qDayAfter:"Welcher Tag kommt nach {day}?",qDayBefore:"Welcher Tag kommt vor {day}?",qSeason:"Welche Jahreszeit ist das?",
   in:"in",on:"auf",under:"unter",behind:"hinter",nextTo:"neben",between:"zwischen",
   spring:"Frühling",summer:"Sommer",autumn:"Herbst",winter:"Winter",
   monday:"Montag",tuesday:"Dienstag",wednesday:"Mittwoch",thursday:"Donnerstag",friday:"Freitag",saturday:"Samstag",sunday:"Sonntag"
@@ -189,14 +189,31 @@ const verbLessons={
   "stretch its long neck":{en:"make the neck reach as far as it can",de:"den langen Hals so weit wie möglich strecken"},
 };
 
-const letterWords=[
- {l:{en:"D",de:"D"},a:{en:"dinosaur",de:"Dinosaurier",e:"🦖"},d:[{en:"snake",de:"Schlange",e:"🐍"},{en:"whale",de:"Wal",e:"🐋"},{en:"shark",de:"Hai",e:"🦈"}]},
- {l:{en:"S",de:"S"},a:{en:"snake",de:"Schlange",e:"🐍"},d:[{en:"dragon",de:"Drache",e:"🐉"},{en:"whale",de:"Wal",e:"🐋"},{en:"crocodile",de:"Krokodil",e:"🐊"}]},
- {l:{en:"W",de:"W"},a:{en:"whale",de:"Wal",e:"🐋"},d:[{en:"shark",de:"Hai",e:"🦈"},{en:"dragon",de:"Drache",e:"🐉"},{en:"cat",de:"Katze",e:"🐈"}]},
- {l:{en:"H",de:"P"},a:{en:"horse",de:"Pferd",e:"🐎"},d:[{en:"snake",de:"Schlange",e:"🐍"},{en:"dragon",de:"Drache",e:"🐉"},{en:"crocodile",de:"Krokodil",e:"🐊"}]},
- {l:{en:"C",de:"K"},a:{en:"crocodile",de:"Krokodil",e:"🐊"},d:[{en:"snake",de:"Schlange",e:"🐍"},{en:"whale",de:"Wal",e:"🐋"},{en:"dragon",de:"Drache",e:"🐉"}]},
- {l:{en:"F",de:"F"},a:{en:"fish",de:"Fisch",e:"🐟"},d:[{en:"dog",de:"Hund",e:"🐕"},{en:"cat",de:"Katze",e:"🐈"},{en:"snake",de:"Schlange",e:"🐍"}]}
-];
+// Written initial letters, NOT phonemes. Locale packs deliberately specify their
+// own letter/word mappings; translating an animal must not create a phonics task.
+// Reuse creature IDs instead of duplicating bilingual words and illustrations.
+const initialLetterTasks={
+ en:[
+  {letter:"D",word:"dinosaur",distractors:["snake","whale","shark"]},
+  {letter:"S",word:"snake",distractors:["dragon","whale","croc"]},
+  {letter:"W",word:"whale",distractors:["shark","dragon","cat"]},
+  {letter:"H",word:"horse",distractors:["snake","dragon","croc"]},
+  {letter:"C",word:"croc",distractors:["snake","whale","dragon"]},
+  {letter:"F",word:"fish",distractors:["dog","cat","snake"]}
+ ],
+ de:[
+  {letter:"D",word:"dinosaur",distractors:["snake","whale","shark"]},
+  {letter:"S",word:"snake",distractors:["dragon","whale","croc"]},
+  {letter:"W",word:"whale",distractors:["shark","dragon","cat"]},
+  {letter:"P",word:"horse",distractors:["snake","dragon","croc"]},
+  {letter:"K",word:"croc",distractors:["snake","whale","dragon"]},
+  {letter:"F",word:"fish",distractors:["dog","cat","snake"]}
+ ]
+};
+function initialLetterLabel(id,lang=settings.lang){
+ const word=creatures[id][lang];
+ return word.charAt(0).toLocaleUpperCase(lang)+word.slice(1);
+}
 
 const days=["monday","tuesday","wednesday","thursday","friday","saturday","sunday"];
 const seasons=[
@@ -233,7 +250,7 @@ const audioGuidance={
  canSpeak(kind,manual=false){return settings.audioMode!=="off"&&(manual||settings.audioMode==="all"||["instruction","question","tutorial"].includes(kind))},
  say(text,kind="question",manual=false,onDone=null){return speak(text,manual,kind,onDone)},
  replay(){if(activeScreen==="game"&&state.current)this.say(state.current.speak,"question",true)},
- tutorialKey(type){return `bastiTutorial_v2_${settings.lang}_${type}`},
+ tutorialKey(type){return `bastiTutorial_v${type==="letters"?3:2}_${settings.lang}_${type}`},
  tutorial(type){return localStorage.getItem(this.tutorialKey(type))==="1"?"":T[settings.lang].tutorials[type]||T[settings.lang].tutorials.mixed},
  present(type,text,kind="question"){
   const tutorial=this.tutorial(type),key=this.tutorialKey(type);
@@ -364,7 +381,7 @@ function renderQuestion(){
  state.current.speak=`${state.current.instruction} ${state.current.question}`;
  audioGuidance.present(type,state.current.speak);
 }
-function activityInstruction(type){return ({verbs:settings.lang==="en"?"Listen to the action, then tap the animal that can do it.":"Höre auf die Bewegung und tippe dann auf das Tier, das sie kann.",count:settings.lang==="en"?"Listen to the number question, then tap the right answer.":"Höre auf die Zahlenfrage und tippe dann auf die richtige Antwort.",math:settings.lang==="en"?"Listen to the maths question, then tap the answer.":"Höre auf die Mathefrage und tippe dann auf die Antwort.",positions:settings.lang==="en"?"Look at the picture and listen to the places. Tap the right place.":"Schau dir das Bild an und höre die Orte. Tippe auf den richtigen Ort.",letters:settings.lang==="en"?"Listen to the letter sound, then tap the picture that starts with it.":"Höre den Buchstabenlaut und tippe dann auf das passende Bild.",time:settings.lang==="en"?"Listen to the question about the day or season, then tap the answer.":"Höre die Frage über den Tag oder die Jahreszeit und tippe auf die Antwort.",mixed:settings.lang==="en"?"Listen carefully and tap the answer.":"Höre gut zu und tippe auf die Antwort."})[type]}
+function activityInstruction(type){return ({verbs:settings.lang==="en"?"Listen to the action, then tap the animal that can do it.":"Höre auf die Bewegung und tippe dann auf das Tier, das sie kann.",count:settings.lang==="en"?"Listen to the number question, then tap the right answer.":"Höre auf die Zahlenfrage und tippe dann auf die richtige Antwort.",math:settings.lang==="en"?"Listen to the maths question, then tap the answer.":"Höre auf die Mathefrage und tippe dann auf die Antwort.",positions:settings.lang==="en"?"Look at the picture and listen to the places. Tap the right place.":"Schau dir das Bild an und höre die Orte. Tippe auf den richtigen Ort.",letters:settings.lang==="en"?"Look at the large letter. Find the word that starts with the same letter.":"Schau dir den großen Buchstaben an. Finde das Wort mit diesem Anfangsbuchstaben.",time:settings.lang==="en"?"Listen to the question about the day or season, then tap the answer.":"Höre die Frage über den Tag oder die Jahreszeit und tippe auf die Antwort.",mixed:settings.lang==="en"?"Listen carefully and tap the answer.":"Höre gut zu und tippe auf die Antwort."})[type]}
 function qHeader(text,sub=""){return `<div class="questionBox"><h3>${text} <button class="speakBtn" aria-label="${tt("listen")}" onclick="audioGuidance.replay()">🔊</button></h3>${sub?`<p>${sub}</p>`:""}</div>`}
 function choicesHtml(arr){
  const escapeHtml=value=>String(value).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
@@ -498,11 +515,13 @@ function renderPosition(){
 }
 
 function renderLetter(){
- const q=sample(letterWords),letter=q.l[settings.lang];
- const items=shuffle([{key:"a",...q.a},...q.d.map((x,i)=>({key:"d"+i,...x}))]);
- const text=settings.lang==="de"?`Das ist der Buchstabe ${letter}. Welches Wort beginnt mit dem Laut ${letter}?`:`This is the letter ${letter}. Which picture starts with the ${letter} sound?`;
- state.current={correct:"a",speak:text,hint:q.a[settings.lang]};
- $("gameContent").innerHTML=qHeader(text)+`<div class="letterHero">${letter}</div>`+choicesHtml(items.map(x=>({key:x.key,label:x[settings.lang],emoji:x.e})))
+ const q=sample(initialLetterTasks[settings.lang]);
+ const items=shuffle([q.word,...q.distractors]);
+ const text=fmt(tt("qLetter"),{letter:q.letter});
+ const word=initialLetterLabel(q.word);
+ state.current={kind:"initialLetter",letter:q.letter,correct:q.word,speak:text,hint:`${q.letter}: ${word}`,
+  feedbackCorrect:settings.lang==="de"?`Super! Das Wort ${word} beginnt mit dem Buchstaben ${q.letter}.`:`Great! The word ${word} starts with the letter ${q.letter}.`};
+ $("gameContent").innerHTML=qHeader(text)+`<div class="letterHero">${q.letter}</div>`+choicesHtml(items.map(id=>({key:id,label:initialLetterLabel(id),emoji:creatures[id].emoji})))
 }
 
 function renderTime(){

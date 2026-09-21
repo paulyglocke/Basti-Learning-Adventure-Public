@@ -91,7 +91,7 @@ private data class HomeCard(
 private val homeCards = listOf(
     HomeCard("📚", "Vocabulary Booster", "Wortschatz", "Learn useful words for school.", "Nützliche Wörter für die Schule lernen."),
     HomeCard("🎬", "Learn Verbs", "Verben lernen", "Watch, hear and learn each action.", "Aktionen anschauen, anhören und lernen.", verbExplorer = true),
-    HomeCard("🔤", "Letters", "Buchstaben", "Find first letters and sounds.", "Anfangsbuchstaben und Laute finden.", "letters"),
+    HomeCard("🔤", "Letters", "Buchstaben", "Find words with the same first letter.", "Finde passende Anfangsbuchstaben.", "letters"),
     HomeCard("🔢", "Numbers", "Zahlen", "Count and order numbers up to your level.", "Zahlen zählen und ordnen.", "count"),
     HomeCard("📅", "Days & Seasons", "Tage & Jahreszeiten", "Days of the week and four seasons.", "Wochentage und Jahreszeiten.", "time"),
     HomeCard("🦘", "Animal Actions", "Tier-Aktionen", "Jump, swim, fly and make animal sounds.", "Springen, schwimmen, fliegen und Tiergeräusche.", "verbs"),
