@@ -1,5 +1,41 @@
 # Session handoff — 2026-09-21
 
+## Current repository checkpoint — 2026-09-21
+
+Current remote `main` includes:
+
+- `f72c5f7` — `fix: prevent decorative emoji from leaking into TTS`
+- `796359e` — `docs: refine learning priorities and daily experience`
+
+The latest documentation refinement updated:
+- MASTER_PRODUCT_LEARNING_ROADMAP.md
+- PROGRESS_TRACKER_SPEC.md
+- UX_NAVIGATION_SPEC.md
+- GAME_DESIGN_SPEC.md
+- CONTENT_DATA_SPEC.md
+- BACKLOG.md
+
+No runtime code changed in the plan-refinement commit.
+
+Important revised priorities:
+- Today’s Adventure becomes the eventual primary child entry, with a secondary browse path.
+- Minimal persisted skill-progress events move into the early native foundation.
+- Prepositions remains the first end-to-end native migration proof.
+- Follow the Instructions remains the first true native game/learning engine.
+- Vocabulary Booster v1 moves earlier.
+- Tell Me! / expressive-language v1 moves earlier.
+- Memory Pairs is a reusable shared matching engine.
+- Early maths prioritises subitising, quantity, patterns and shapes over large-number drill.
+- English and German phonics are language-specific.
+- Classroom/self-advocacy language is raised in priority.
+- Discovery Book knowledge unlocks are a major reward direction.
+- Generalisation must use varied contexts rather than repeated object pairings.
+
+Immediate next implementation task:
+P0 Audio Reliability Pass — enforce all/questions/off policy, TTS readiness and offline voice handling, stale-speech/lifecycle cancellation, tutorial reliability and SFX policy. Do not start Supertonic/Piper/neural TTS yet.
+
+After that, continue remaining P0 correctness/layout/navigation work before entering the native foundation sequence.
+
 ## Current session — P0 Voice/TTS cleanup
 
 Root cause: `pick()` passed decorated praise directly through `audioGuidance.say()` → `speak()` → `Android.speak()` → Android TextToSpeech. All questions/instructions, tutorials, Replay, option speakers, feedback, completion and Verb Explorer already converge on that same JavaScript function. Hints are visual only; balloon decorations are not narrated (their WebAudio tones are separate).
