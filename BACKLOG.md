@@ -1,54 +1,40 @@
-# Follow-up backlog for the stronger review
+# Actionable backlog
 
-This is a review queue for the next model pass. Items are ordered by risk and
-usefulness; none are required to call the current source a working V1.
+This is the near-/mid-term work queue, not the full roadmap. Direction and acceptance rules live in [MASTER_PRODUCT_LEARNING_ROADMAP.md](MASTER_PRODUCT_LEARNING_ROADMAP.md), [PROGRESS_TRACKER_SPEC.md](PROGRESS_TRACKER_SPEC.md), [GAME_DESIGN_SPEC.md](GAME_DESIGN_SPEC.md), [VOICE_AUDIO_SPEC.md](VOICE_AUDIO_SPEC.md) and [ART_DIRECTION.md](ART_DIRECTION.md).
 
-## P0 — verify on real hardware
+## P0 — stabilise current activities
 
-- Install and launch the APK on a Samsung S24-series phone in airplane mode.
-- Install and launch it on an Amazon Fire Max tablet in airplane mode.
-- Check Android Back from home, game, Verb Explorer, and a verb lesson.
-- Confirm English and German offline TTS voices speak, and that switching
-  language changes the selected voice without requiring network access.
-- Check Android 15 edge-to-edge insets, rotation, touch targets, and emoji
-  rendering on both portrait and landscape screens.
-- Exercise a 5-question and 10-question round on every activity, including
-  Sunday-to-Monday and number maximum 9,999 cases.
+- Finish Prepositions correctness: align scenes, spoken choices and English/German feedback.
+- Stop emoji/decorative glyphs leaking into speech; separate display/speech text and test the final boundary (VOICE_AUDIO_SPEC.md).
+- Fix completion/reward layouts: wrapping stars and immediately accessible actions on narrow/short screens.
+- Fix Letters display-case consistency; review bilingual initial-letter/sound content.
+- Enforce audio policy and TTS readiness, cancellation and missing-offline-voice handling (VOICE_AUDIO_SPEC.md).
+- Repair native Back, WebView lifecycle and durable tutorial reset without losing lesson return behavior.
+- Validate physically on S24/Fire: airplane mode, EN/DE voices, portrait/landscape, insets, large text, touch/accessibility and lifecycle; exercise 5/10-question rounds and number/calendar boundaries.
 
-## P1 — correctness and maintainability
+## P1 — shared native foundation
 
-- Replace inline `onclick` handlers and raw `innerHTML` rendering with event
-  listeners and DOM helpers. Current content is bundled and static, but this
-  would reduce future injection and quoting risk and remove the intentional
-  WebView JavaScript lint warning.
-- Add a small content validator that checks every quiz verb has a lesson,
-  creature IDs resolve, bilingual fields exist, and answer generators always
-  include the correct answer.
-- Revisit the number level semantics: `1–10` currently permits zero in several
-  recognition/order exercises, while visual counting starts at one. Decide
-  whether zero should be taught explicitly or excluded consistently.
-- Review German grammar for all generated sentences with a native speaker,
-  especially articles, plural forms, and verb inflection.
-- Move the APK out of the Git repository if release size or signing policy
-  changes; retain checksum and GitHub release assets instead.
+- Establish shared native audio architecture and test doubles (VOICE_AUDIO_SPEC.md); evaluate enhanced voices separately through Voice Lab and physical auditions.
+- Introduce shared native content/data models and validators for bilingual fields, verb lessons, scene references and valid answers.
+- Establish local Progress Tracker foundation and shared skill/result API (PROGRESS_TRACKER_SPEC.md).
+- Build reusable native quiz/session, settings and completion components with restoration support.
+- Migrate Prepositions end-to-end; retain legacy routes until tested native parity.
+- Add native state/content/Compose tests and CI coverage, including navigation and accessibility.
+- Review generated German grammar, number-zero semantics and restore native custom-number entry; consider an independent parent maths ceiling.
 
-## P2 — product improvements
+## P2 — first learning/game extensions
 
-- Add a parent-only option for an independent maths difficulty ceiling.
-- Add progress or completion history without collecting identifying data.
-- Improve animation art beyond emoji/CSS while preserving offline packaging and
-  Fire OS compatibility.
-- Add a quiet audio fallback state that explains when no local voice is
-  installed, while keeping visual questions fully usable.
-- Add a release build/signing path separate from the debug sideload APK.
-- Add accessibility review with TalkBack, larger text settings, reduced motion,
-  and colour-contrast tooling.
+- Follow the Instructions MVP: one-step taps, bilingual replay and progress events (GAME_DESIGN_SPEC.md).
+- Memory Pairs: small untimed boards using shared content/audio/progress (GAME_DESIGN_SPEC.md).
+- Vocabulary Booster: reviewed starter packs and a real route replacing the current Animal Actions fallback.
+- Compare & Discover: illustrated comparisons using shared animal facts (MASTER_PRODUCT_LEARNING_ROADMAP.md).
+- Discovery Book foundation: local entries and meaningful learning unlocks.
 
-## CI / release follow-up
+## P3 — broader experiences and polish
 
-- Keep `android-actions/setup-android` constrained to `platform-tools`; the
-  obsolete default `tools` package caused the first GitHub run to fail.
-- After CI is green, publish the existing `v1.0.0` draft and verify its APK
-  checksum against `verification/apk-sha256.txt`.
-- Consider pinning third-party Actions to commit SHAs for a hardened release
-  workflow.
+- Dragon Treasure Hunt, then Build the Bridge, Dinosaur Rescue and Crocodile Snap (GAME_DESIGN_SPEC.md); implement separately using shared systems.
+- Broader custom art/animation polish, including action-specific Verb Explorer motion (ART_DIRECTION.md).
+- Today’s Adventure/adaptive selection driven by skill progress (PROGRESS_TRACKER_SPEC.md).
+- Measure performance and broaden accessibility/reduced-motion polish on both target devices.
+
+Answer/audio activation isolation was completed before this pass; retain its regression coverage. Build/test history belongs in BUILD_NOTES.md, not this queue.

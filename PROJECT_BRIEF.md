@@ -1,5 +1,7 @@
 # Basti's Learning Adventure — Project Brief
 
+This brief summarises the product and current constraints. Long-term direction belongs to [MASTER_PRODUCT_LEARNING_ROADMAP.md](MASTER_PRODUCT_LEARNING_ROADMAP.md) and its domain specs; the actionable queue is [BACKLOG.md](BACKLOG.md).
+
 ## 1. Purpose
 
 Basti's Learning Adventure is an offline Android learning app intended to help a child prepare for starting primary school in Germany.
@@ -10,6 +12,7 @@ The target child is approximately 6–7 years old. Keep vocabulary, explanations
 
 ## 2. Core design principles
 
+- Audio-first: core activities should be usable without independent reading.
 - Child-friendly first: simple wording, large controls, clear visual hierarchy.
 - No timers or pressure.
 - Wrong answers should allow another try; avoid punishment or negative scoring.
@@ -46,11 +49,12 @@ Changing language should update the whole UI, not only questions.
 
 The selected language must persist between launches.
 
-Text-to-speech should use the device's local TTS engine where possible:
+Current speech uses Android system TTS with installed offline voices. Long-term shared native audio and voice quality follow [VOICE_AUDIO_SPEC.md](VOICE_AUDIO_SPEC.md), retaining system TTS as a fallback:
+
 - English: suitable English locale.
 - German: de-DE.
 
-There should also be an option to turn spoken questions on/off, while retaining a speaker button to replay a question or lesson manually.
+Native Options currently offers all/questions/off audio modes and tutorial reset. Replay and sound-policy reliability remain backlog work; see VOICE_AUDIO_SPEC.md for the intended audio rules.
 
 ## 5. Child interests / visual theme
 
@@ -65,11 +69,11 @@ Use these interests heavily to make learning engaging:
 
 Other familiar animals can also appear.
 
-The app should look polished and cheerful, with a nature/adventure theme. Avoid a sterile worksheet appearance.
+The app should look polished and cheerful, with a nature/adventure theme. Avoid a sterile worksheet appearance. Custom illustrations will replace temporary emoji over time, following ART_DIRECTION.md; games target native 2D/2.5D.
 
 ## 6. Home screen / learning areas
 
-The current V1 concept includes:
+The implemented learning areas remain in the legacy WebView, with native Options alongside them:
 
 1. Animal Actions / Tier-Aktionen
 2. Numbers / Zahlen
@@ -94,6 +98,8 @@ Options should provide presets:
 - 1–100
 
 There should also be a custom maximum for future learning, currently intended to support up to 9,999.
+
+The legacy web Options and generators support custom maxima up to 9,999; current native Options exposes only 10/20/50/100 presets. Restoring custom entry is backlog work.
 
 This means the app can grow with the child without rebuilding it.
 
@@ -158,12 +164,12 @@ The exercise should teach meaning visually rather than rely on text alone.
 V1 focuses on initial letters/sounds rather than spelling whole words.
 
 Examples:
-- S → snake / Schlange
-- D → dinosaur / Dinosaurier
-- W → whale / Wal
+- S → Snake / Schlange
+- D → Dinosaur / Dinosaurier
+- W → Whale / Wal
 - K → Krokodil in German
 
-Keep these activities visually simple. Expand the letter pool over time rather than forcing every letter immediately.
+Match display case until uppercase/lowercase matching is explicitly taught; current case inconsistencies remain backlog work. Keep these activities visually simple. Expand the letter pool over time rather than forcing every letter immediately.
 
 ## 11. Days and seasons
 
@@ -288,7 +294,7 @@ Do not force them to guess.
 
 The goal is polished, cheerful, looping animation suitable for a children's learning app.
 
-Current V1 uses offline CSS/local animations so it remains lightweight and works on both Samsung Android and Fire OS without network access.
+The legacy learning surface currently uses local CSS animations for lightweight offline operation. Actual rendering on Samsung S24 and Fire OS still needs physical validation.
 
 Animation families include concepts such as:
 - jumping / bouncing
@@ -314,16 +320,18 @@ When improving animation quality:
 - use clear visual motion that genuinely explains the verb
 - do not make the animation visually noisy
 
-A future upgrade could use locally bundled vector/Lottie-style animations if licensing and offline packaging are clean, but V1 should remain buildable and reliable first.
+The native target uses action-specific animation and custom art under ART_DIRECTION.md. Keep the existing lessons working until their native replacements have tested parity.
 
 ## 16. Scoring and feedback
 
-Correct answers should produce friendly positive feedback such as:
+Current display feedback includes temporary emoji, for example:
 - Great! 🌟
 - Correct! ⭐
 - Well done! 🐉
 - Super! 🌟
 - Richtig! ⭐
+
+Spoken feedback must use deliberate speech-safe text without decorative glyphs (VOICE_AUDIO_SPEC.md); current leakage is P0 work.
 
 Wrong answers should say something like:
 - Try again!
@@ -344,57 +352,41 @@ End-of-round feedback should be encouraging and simple.
 - Avoid tiny controls.
 - Keep navigation shallow and obvious.
 
-## 18. Technical architecture of current V1
+## 18. Current technical architecture
 
-The current project is a small native Android wrapper around a locally bundled HTML/CSS/JavaScript learning app.
+The app is hybrid Compose + legacy WebView. Kotlin owns the native home, Options, top bar, shell navigation, SharedPreferences, WebView hosting and Android TTS. The seven quiz modes, 53 Verb Explorer lessons, scoring/completion, tutorials and CSS animations remain in bundled HTML/JavaScript for feature preservation. No shared persistent skill-level Progress Tracker is implemented yet.
 
 Important files include:
+- app/src/main/java/com/bellfamily/bastischool/MainActivity.kt
 - app/src/main/assets/index.html
-- app/src/main/java/com/bellfamily/bastischool/MainActivity.java
+- app/src/main/assets/app.js
 - app/src/main/AndroidManifest.xml
 - Gradle project files
 - .github/workflows/build-apk.yml
 
-The WebView approach is intentional for rapid iteration and a shared responsive phone/tablet UI.
+The long-term target is fully native Compose with no runtime WebView/HTML/JavaScript dependency. Migrate incrementally; remove legacy routes only after equivalent native content, behavior and tests establish parity.
 
-The app should:
-- load all core content locally
-- expose local Android TTS to the web UI where useful
-- not require internet permission for learning content
-- work without Google Play Services
-
-Do not rewrite the app into a completely different framework unless there is a clear technical reason and the migration preserves functionality.
+All core content must remain local and fully offline, without Google Play Services. Samsung S24 and Amazon Fire Max remain the physical validation targets; compatibility is not established by a successful build alone.
 
 ## 19. GitHub / build goal
 
 Repository:
 paulyglocke/Basti-Learning-Adventure-Public
 
-The repo should eventually contain the full Android Studio project.
+The repo contains the Android Studio project.
 
 There is a GitHub Actions workflow intended to build a debug APK.
 
 Expected debug APK path:
 app/build/outputs/apk/debug/app-debug.apk
 
-Codex should run/build the project and fix Gradle, SDK, Java, manifest, WebView, or workflow errors it discovers.
+Build commands and historical test evidence are in BUILD_NOTES.md; run checks appropriate to the change under AGENTS.md.
 
 ## 20. Current priorities
 
-For the first installable V1, prioritise in this order:
+See BACKLOG.md for the P0–P3 queue. Stabilise current correctness, audio, navigation and device layouts before migrating activities incrementally.
 
-1. Project builds successfully in Android Studio / CI.
-2. App launches successfully on Android.
-3. Phone and tablet layouts work.
-4. English/German switching works and persists.
-5. Core activities function without crashes.
-6. Number setting up to 100+ works as designed.
-7. Verb quiz works.
-8. Verb Explorer lessons work for every quiz verb.
-9. Looping animations render smoothly offline.
-10. Audio/TTS works where available.
-11. APK is easy to sideload to Samsung and Fire tablet.
-12. Polish animation/art quality without destabilising the core app.
+School readiness, communication/listening, shared skill-level progress and adaptive selection are long-term product goals defined by MASTER_PRODUCT_LEARNING_ROADMAP.md and PROGRESS_TRACKER_SPEC.md, not claims of current implementation.
 
 ## 21. Future ideas — not required to block V1
 
@@ -421,16 +413,4 @@ These are useful future directions but should not prevent shipping a stable V1.
 
 ## 22. Instructions for coding agents
 
-When modifying this project:
-
-- Read this document before making major product decisions.
-- Inspect existing implementation before replacing it.
-- Preserve the bilingual and offline requirements.
-- Preserve Fire OS compatibility.
-- Keep content suitable for a 6–7 year old.
-- Prefer incremental, testable changes.
-- Run the build after significant changes.
-- Fix build errors rather than merely describing them.
-- Do not remove existing learning modes without a clear reason.
-- If changing learning content, explain why the change is age-appropriate.
-- Treat polished animation as important, but reliability and clarity come first.
+Follow AGENTS.md for mandatory operating rules, source inspection and verification. Preserve the useful learning content above while following the master specs for future direction.

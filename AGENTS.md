@@ -4,10 +4,14 @@
 Before making product, architecture or learning-content decisions, read:
 1. MASTER_PRODUCT_LEARNING_ROADMAP.md
 2. PROGRESS_TRACKER_SPEC.md
-3. ART_DIRECTION.md
-4. PROJECT_BRIEF.md
-5. BACKLOG.md
-6. SESSION_HANDOFF.md if present
+3. GAME_DESIGN_SPEC.md
+4. VOICE_AUDIO_SPEC.md
+5. ART_DIRECTION.md
+6. PROJECT_BRIEF.md
+7. BACKLOG.md
+8. SESSION_HANDOFF.md if present
+
+The master roadmap and domain specs above are authoritative for long-term direction. Source code determines current implementation reality; older briefs, plans, audits and handoffs must not override the master specs.
 
 ## Product principles
 - audio-first
@@ -46,7 +50,7 @@ Prefer native shared models for:
 Avoid duplicating facts/words across unrelated arrays/files.
 
 ## Development behaviour
-- inspect git status/diff and handoff notes before editing
+- inspect git status/diff, current source and handoff notes before editing
 - preserve interrupted work
 - work in checkpoints
 - test before broadening scope

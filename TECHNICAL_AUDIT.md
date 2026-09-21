@@ -1,6 +1,8 @@
 # Technical and product audit — 2026-09-20
 
-Audited commit: `290ff03`, confirmed remote main. See `SESSION_HANDOFF.md` for continuation instructions and test evidence. This records the audit delivered to the user; implementation remains outstanding.
+> Historical/reference audit. Current master specs govern future direction and current source governs implementation reality. Findings below describe the audited revision, not an outstanding-work checklist; the later answer/audio activation fix is recorded in BUILD_NOTES.md.
+
+Audited commit: `290ff03`, confirmed remote main. See `SESSION_HANDOFF.md` for continuation instructions and test evidence. This records the audit delivered to the user; implementation was outstanding at audit time.
 
 ## Verdict
 
