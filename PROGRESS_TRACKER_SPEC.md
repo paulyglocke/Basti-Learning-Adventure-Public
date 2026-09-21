@@ -89,13 +89,16 @@ Differentiate:
 Support is not failure.
 
 ## Generalisation
-A skill should only become Secure after success across multiple contexts.
+A skill should only become Secure after success across multiple genuinely varied contexts, not repeated success with one memorised object pairing.
 
-Example for “under”:
+Use **interest first, ordinary context next**. For “under”, for example:
+- dinosaur egg-tree
 - snake-rock
-- dragon-table
 - pencil-book
+- shoe-chair
 - crocodile-bridge
+
+Track context IDs explicitly so repeated success in one pairing cannot by itself mark the skill Secure.
 
 ## Spaced review
 Bring secure skills back periodically:
@@ -121,6 +124,16 @@ No recording storage required.
 Optional:
 Seen outside app ✓
 
+## Universal support ladder
+Use the same broad support progression where applicable:
+1. independent attempt
+2. replay
+3. subtle visual/verbal hint
+4. stronger model/help
+5. optional parent help
+
+Support is not failure. Record the least-supportive level needed for a successful attempt and avoid harsh Wrong/Fail framing.
+
 ## Suggested Focus
 Recommend only 3–4 current areas, e.g.:
 - two-step spoken instructions
@@ -136,11 +149,42 @@ Daily mix:
 - 1 game/reward task
 
 ## Parent dashboard
-Show useful summaries, not grades or comparisons.
+Show useful change and next steps, not grades, comparisons or vanity totals.
 
-Shared identity/schema contracts are in [CONTENT_DATA_SPEC.md](CONTENT_DATA_SPEC.md), persistence/idempotency in [NATIVE_ARCHITECTURE_SPEC.md](NATIVE_ARCHITECTURE_SPEC.md), parent navigation in [UX_NAVIGATION_SPEC.md](UX_NAVIGATION_SPEC.md), and verification in [TESTING_QA_SPEC.md](TESTING_QA_SPEC.md). The skill names above illustrate the hierarchy; canonical native IDs use the shared registry.
+Prefer summaries such as:
+
+**Going well**
+- one-step instructions
+- quantities 1–5
+- under / next to
+
+**Suggested focus**
+- two-step instructions
+- between
+- describing actions
+
+Useful trends can say things like “Needed Replay less often for two-step instructions this week.” A headline such as “723 questions answered” should not be the main measure of progress.
 
 ## Implementation direction
+Establish a minimal shared progress event/storage layer immediately after the native content/session foundation, before many new native activities are built. The first version does not require the full parent dashboard.
+
+Minimum early event data:
+- stable skill ID
+- outcome/result
+- support level
+- context ID
+- session/event ID
+- local persistence
+- deduplication
+
+Example:
+
+```text
+skill.spatial.under
+independent_success
+context = crocodile_bridge
+```
+
 Prefer shared native Kotlin models:
 - SkillDefinition
 - SkillProgress
@@ -149,4 +193,4 @@ Prefer shared native Kotlin models:
 - ActivityResult
 - ParentObservation
 
-Every future activity should report progress through the same API.
+Every future activity should report progress through the same API so longitudinal data is collected from the start instead of retrofitted later.

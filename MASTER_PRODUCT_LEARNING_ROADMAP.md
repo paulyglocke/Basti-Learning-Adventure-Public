@@ -71,6 +71,8 @@ Also:
 Until uppercase/lowercase is explicitly taught, match display case:
 D → Dinosaur, not D → dinosaur.
 
+Treat phonics as language-specific content. Shared vocabulary does not imply that the same item is a good phonics example in English and German: English S → snake does not make German S → Schlange a simple /s/ lesson. Keep letter names, graphemes, phonemes and initial-sound tasks distinct, use reviewed language-specific phonics packs, and consider reviewed recorded phoneme clips rather than ordinary TTS for isolated sounds.
+
 ## Vocabulary Booster
 Core packs:
 school, home, people, food, clothes, body, feelings, weather, transport, colours, shapes, positions, actions, describing words, opposites.
@@ -81,11 +83,15 @@ dinosaurs, dragons, snakes, Komodo dragons, crocodiles/alligators, sharks, whale
 Each item should support:
 English, German, custom illustration, TTS, simple explanation, example sentence, category, difficulty, progress metadata.
 
+Start v1 deliberately small and reviewed: roughly 50–80 high-value shared words, including school objects, classroom/action words, core positions, describing words/opposites, feelings, colours/shapes and motivating animals. Reuse the same canonical content IDs across learning activities and games.
+
 ## Numbers & Maths
-- counting
-- number recognition
-- subitising
+Near-term learning should prioritise concepts over ever-larger numerals:
+- subitising 1–3, then 1–5
+- number ↔ quantity
 - more/fewer/same
+- making 5 and simple number bonds
+- counting and number recognition
 - number order
 - before/after
 - missing numbers
@@ -96,6 +102,8 @@ English, German, custom illustration, TTS, simple explanation, example sentence,
 - spatial reasoning
 - measurement concepts
 - simple charts/data
+
+Higher number recognition can remain available as the child grows, but it should not dominate the core early-maths experience.
 
 ## Think & Solve
 - sequencing
@@ -137,6 +145,10 @@ Teach:
 - It’s too loud.
 - Can I have a break?
 
+Prioritise practical classroom language and self-advocacy early, preferably in contextual scenes and Follow the Instructions rather than isolated flashcards.
+
+Useful German examples include: Hör zu; Schau mal; Setz dich hin; Steh auf; Warte bitte; Hol deinen Stift; Leg das Buch auf den Tisch; Stell dich an; Ich verstehe das nicht; Kannst du das noch einmal sagen?; Kannst du mir helfen?; Wo soll ich das hinlegen?; Es ist mir zu laut; Kann ich eine Pause machen?
+
 ## Feelings & self-regulation
 - happy, sad, angry, worried, scared, excited, frustrated, tired, surprised
 - My Turn / Your Turn
@@ -172,6 +184,8 @@ Avoid vague claims like “most dangerous” unless the comparison is explicitly
 - Real-World Missions
 - Build the Bridge
 
+Bring simple real-world and movement missions forward. Examples: find something red; find something longer than your hand; find three soft things; look outside and identify the weather; stomp like a T-Rex five times; stand on one leg; clap a rhythm; jump three times. No camera or sensor scoring is required; a parent/child Continue action is enough. Where useful, alternate screen tasks with movement or real-world interaction.
+
 ## Games
 - Follow the Instructions
 - Memory Pairs
@@ -198,22 +212,31 @@ Prioritise 15–20 common verbs first.
 Listen → Try → Celebrate → Finished
 
 ## Today’s Adventure
-Eventually present:
+Make this a central long-term child-facing entry rather than a late add-on. The home should eventually emphasise one large Today’s Adventure action, with a secondary Choose Something Else / browse path so the full library remains available without overwhelming the child.
+
+A recommended route contains:
 - 1 confidence task
 - 1 focus task
-- 1 communication task
-- 1 fun game
+- 1 communication/listening task
+- 1 fun game/reward task
 
-Progress data should drive selection.
+Individual modules remain short (about 3–5 minutes), the child may stop after any module, and missed days never create penalties or streak pressure. Progress data should drive selection.
 
 ## Development phases
-A. Stabilise current app
-B. Native learning foundation
-C. Core school-readiness
-D. Progress Tracker v1
-E. Broaden curriculum
-F. Speech & communication
-G. Discover
-H. Games
-I. Exploration
-J. Personalisation
+1. Finish current P0 correctness, audio and lifecycle work.
+2. Establish native foundations: shared content model, audio controller, session/question framework and minimal persisted progress-event storage.
+3. Migrate Prepositions end-to-end to prove the architecture.
+4. Build Follow the Instructions MVP as the first true native game/learning engine.
+5. Build Vocabulary Booster v1 using the shared content model.
+6. Add Tell Me! / expressive-language v1, with parent/child Continue rather than automatic speech scoring. Tell Me More may expand “Snake” → “A green snake” → “The green snake is slithering” → “The long green snake is slithering under the tree.”
+7. Build Memory Pairs on the shared matching engine.
+8. Add Progress dashboard v1.
+9. Expand native Numbers/Maths around subitising, quantities, patterns and shapes.
+10. Build Classroom / School Skills.
+11. Build Compare & Discover plus Discovery Book.
+12. Build larger games: Dragon Treasure Hunt, Build the Bridge, Dinosaur Rescue and Crocodile Snap.
+
+This ordering is guidance, not a ban on small opportunistic P0/P1 fixes.
+
+## Reasoning prompts
+Occasionally add unscored follow-ups such as “How did you know?”, “Why do you think that?” or “Can you explain?” after suitable tasks. These prompts encourage reasoning and expressive language and must not become automatic correctness scores.

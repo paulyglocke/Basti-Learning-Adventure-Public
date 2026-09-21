@@ -64,6 +64,8 @@ rather than:
 
 ---
 
+Child-facing native games should emphasise mission progress and completion rather than perfect-score pressure; internal progress can still record independence, Replay, hints and retries.
+
 # 3. Games should share systems, not identical mechanics
 
 Do **not** force every game into a generic multiple-choice quiz engine.
@@ -473,6 +475,8 @@ Games should help determine whether a skill generalises.
 
 # 13. Game 1 — Follow the Instructions
 
+Treat this as a reusable learning engine, not an isolated mini-game. The same engine should support listening, vocabulary, colours, numbers, prepositions, one/two/three-step instructions, working memory, classroom language and later inhibition.
+
 ## Role
 
 This should be the **first native game implemented**.
@@ -645,6 +649,8 @@ After MVP:
 ---
 
 # 14. Game 2 — Memory Pairs
+
+Build one shared matching engine rather than separate matching implementations for each content type. It should support picture ↔ picture, number ↔ quantity, uppercase ↔ lowercase, English ↔ German, animal ↔ action, animal ↔ habitat and emotion ↔ expression.
 
 ## Role
 
@@ -1121,6 +1127,8 @@ Completion navigation must always remain accessible immediately.
 Do not make reward interaction mandatory.
 
 ---
+
+Treat Discovery Book knowledge unlocks as a primary reward mechanism rather than relying mainly on abstract points/stars. Strong examples include Mosasaurus, Whale Shark, Komodo Dragon, T-Rex and Hammerhead Shark; entries can grow to include a custom illustration, spoken name, short fact, habitat and simple comparison.
 
 # 20. Discovery Book integration
 

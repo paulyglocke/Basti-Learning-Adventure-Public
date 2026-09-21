@@ -21,11 +21,15 @@ Long-term organisation:
 
 These are navigation groupings, not a second curriculum taxonomy or six mandatory rows of cards. Show a small set of useful choices and a clear way to browse more. Start with implemented, age-appropriate content; progressively reveal further packs/activities. Use familiar pictures and concise bilingual labels. Do not show enabled cards that do nothing or route to unrelated content. During transition, unavailable entries should be clearly non-interactive or omitted without removing working activities.
 
+The long-term child home should prioritise one large **Today’s Adventure** entry, with a secondary **Choose Something Else** / browse path. This should reduce choice overload without hiding the wider library.
+
 ## Today’s Adventure
 
 Offer a recommended short daily route drawn from shared skill progress: one confidence task, one focus task, one communication/listening task and one game/reward. Modules should be approximately 3–5 minutes, with an obvious ending; the whole route is not a forced timed session. Allow stopping after any module and choosing familiar activities instead.
 
 Use the selection/generalisation principles in PROGRESS_TRACKER_SPEC.md rather than maintaining a separate difficulty profile here. With little history, offer a reviewed beginner mix. Missed days have no penalty; avoid streak pressure or claims that a daily route must be completed.
+
+Today’s Adventure should reduce choice overload, not become a requirement or a streak mechanic.
 
 ## Activity flow
 
@@ -46,6 +50,13 @@ The predictable micro-flow is **Listen → Try/Play → Celebrate → Finished**
 Navigation must not strand the child in loading, missing-content or audio-failure states. Show a simple retry/return action and retain committed progress. Long-term audio requests follow the shared audio policy; Replay availability does not mean bypassing an explicitly chosen Sound Off setting. Resolve the detailed all/questions/off policy in VOICE_AUDIO_SPEC.md before implementation, and test that contract consistently across screens.
 
 Changing language updates visible and spoken content together, stops stale narration and preserves task identity where meaning remains valid. If a language-specific task cannot be translated in place (for example an initial-sound question), restart that task explicitly without recording a wrong answer. Configuration/recovery behavior follows NATIVE_ARCHITECTURE_SPEC.md.
+
+Use a consistent support ladder where applicable: independent attempt → Replay → subtle visual/verbal hint → stronger model/help → optional parent help. Support is useful progress information, not failure.
+
+## Child-facing progress and scoring
+Future native activities should emphasise task/mission progress, effort and completion rather than a prominent numerical score. Prefer **Mission 3 of 5** over **Score 3 / 5**. Completion rewards should not require perfect answers.
+
+Internal progress may still record independent success, Replay, hints, retries and parent help. A child who completes every item after support should not be shown a misleading “perfect mastery” score. The legacy score may remain during migration until native parity allows safe replacement.
 
 ## Parent areas
 

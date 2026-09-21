@@ -45,6 +45,8 @@ Keep letter names, phonemes and initial-letter tasks distinct. Match uppercase/l
 
 Generated narration uses deliberate semantic wording for numbers, operators and relations. Decorative emoji, stars or UI glyphs do not become speech content. The final speech boundary still sanitizes defensively as specified in VOICE_AUDIO_SPEC.md. Asset IDs resolve to local custom artwork; temporary migration placeholders must be explicit. Asset formats/style remain solely in ART_DIRECTION.md.
 
+Phonics content is language-specific even when the underlying vocabulary item is shared. English S → snake does not imply German S → Schlange is an equivalent simple /s/ lesson. Keep letter names, graphemes, phonemes and initial-sound tasks distinct, use separate reviewed phonics packs where needed, and reject misleading clusters/examples. Reviewed recorded phoneme clips may be preferable to ordinary TTS for isolated sounds.
+
 ## Facts and comparisons
 
 Fact values live once in data. Renderers and bilingual sentence templates derive their values and answers from those records; do not copy numeric facts into question strings. A reviewed verbal assertion can be stored as a fact, but numeric/comparison logic requires typed values.
@@ -60,6 +62,8 @@ The question, visual, spoken instruction, ordered answer choices and feedback mu
 For example, an `under` task binds a crocodile instance, a table instance and their relation. The renderer places the crocodile under that table; the answer rule accepts under; EN/DE speech and feedback name that same animal and table. A between task requires two reference instances. Spoken choices, when enumerated, must match the actual displayed options and order.
 
 Persist or retain the generated task while answering. A recomposition, Replay or hint must not resample the scene/choices. Derive feedback from the selected action and expected relation, not a generic hardcoded rock sentence. Context IDs describe meaningful learning variation (objects/setting), not random coordinates; progress can then measure generalisation.
+
+Content generation should deliberately vary contexts—for example interest-led dinosaur egg under tree followed by pencil under book, shoe under chair and crocodile under bridge—so mastery cannot arise from memorising one recurring picture pairing.
 
 ## Validation contract
 
