@@ -2,6 +2,25 @@
 
 This file records build/test evidence and should not be treated as a product or architecture specification.
 
+## P0 completion/reward layout — 2026-09-21
+
+Source: clean `ff57c8b` plus local checkpoint `fix: keep completion actions visible on small screens`.
+
+Completion now places Replay and Continue/Home before the reward area. Individual star spans wrap without clipping; the plain localized summary remains accessible while decorative trophy/stars are hidden from screen readers. Optional balloons occupy their own region below the rewards and cannot cover navigation. Duplicate web headers/quiz controls are hidden only during completion and restored on leaving/restarting. Completion resets scroll and focuses its heading, so keyboard navigation reaches Replay, Continue and Home before balloons. Scoring, reward count and speech policy are preserved.
+
+Validation:
+
+- Focused `npm test -- tests/completion.spec.js --reporter=line`: **4 passed / 0 failed** (2.9s). Layout matrix: EN/DE × scores 0/5, 2/5, 5/5, 10/10 × six viewports (320×480, 360×640, 568×320, 640×240, 800×1280, 1280×800). Checks cover star containment/wrapping, immediate unobstructed ≥48px controls, exact summary, no horizontal overflow and scroll reset.
+- Additional coverage: 200% CSS text in three small viewports, reduced motion, keyboard order/summary Replay, immediate Continue/Home without balloon interaction, and restored quiz layout after Continue. CSS text enlargement is browser evidence, not Android system-font validation.
+- Full `npm test -- --reporter=line`: **39 passed / 0 failed** (39.5s), including existing audio, Prepositions and learning regressions.
+- Visual review: German ten-star completion at 320×480 and 568×320, plus 200% text at 640×240. Navigation remains visible; optional rewards/summary may extend below the fold and remain scrollable on very short/large-text screens.
+- Android Studio JDK 21: `JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home' ANDROID_HOME='/Users/paulbell/Library/Android/sdk' ./gradlew testDebugUnitTest assembleDebug lintDebug --console=plain`: **BUILD SUCCESSFUL** (3s), assembleDebug/lintDebug passed. Native unit task was UP-TO-DATE with its unchanged **7 passing tests**.
+- Lint: **0 errors / 7 warnings / 2 informational findings**, unchanged categories from the audio checkpoint.
+- APK assets match `app.js` and `index.html` byte-for-byte. APK SHA-256: `bbd255dcc53400899ab4963ae5b3a90d287679672d5b3478b56dcca37b4c4321` at `app/build/outputs/apk/debug/app-debug.apk`.
+- Initial sandboxed Chromium launch failed on permissions. Authorized runs passed; an intermediate focused run was interrupted to correct the test's repeated fresh-shell setup.
+
+No physical Samsung S24/Amazon Fire Max testing was performed. Device insets, real system font scaling, TalkBack/touch and both orientations remain outstanding. No neural TTS or native migration was started. Next implementable P0: Letters display-case consistency and bilingual initial-letter/sound review.
+
 ## P0 Prepositions correctness — 2026-09-21
 
 Source: clean `231f875` plus the local checkpoint `fix: align preposition scenes and bilingual narration`. No native migration or neural audio work.

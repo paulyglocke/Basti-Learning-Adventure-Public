@@ -8,7 +8,7 @@ Shared implementation contracts: [NATIVE_ARCHITECTURE_SPEC.md](NATIVE_ARCHITECTU
 
 - [x] Align legacy Prepositions scenes, spoken choices, hints and English/German feedback across all six relations; fix narrow-screen scene spacing. Automated/browser visual evidence is in BUILD_NOTES.md; physical Samsung/Fire review remains required.
 - Physically confirm the implemented speech-safe feedback/boundary on S24/Fire in English/German (VOICE_AUDIO_SPEC.md); automated regression coverage is in tests/speech.spec.js.
-- Fix completion/reward layouts: wrapping stars and immediately accessible actions on narrow/short screens.
+- [x] Fix legacy completion/reward layouts: individually wrapping stars, immediately accessible Continue/Home, separate optional balloons and completion keyboard focus. Browser size/large-text coverage is in BUILD_NOTES.md; physical S24/Fire review remains required.
 - Fix Letters display-case consistency; review bilingual initial-letter/sound content.
 - [x] Implement legacy audio policy, TTS readiness, cancellation, missing-offline-voice handling, versioned successful tutorial completion/reset and SFX silence (VOICE_AUDIO_SPEC.md). Automated validation recorded in BUILD_NOTES.md; physical audio acceptance remains outstanding.
 - Finish native navigation/session recovery, including returning from Options to the originating activity. Audio cancellation, WebView disposal, lesson-aware Back routing and durable tutorial reset are implemented; physical lifecycle/Back validation remains outstanding.

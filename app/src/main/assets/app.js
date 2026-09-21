@@ -259,7 +259,7 @@ function scheduleSpeech(text,kind="question",onDone=null){
  stopSpeech();const owner=speechSerial;
  speechTimer=setTimeout(()=>{speechTimer=null;if(owner===speechSerial)audioGuidance.say(text,kind,false,onDone)},220);
 }
-function show(id){stopSpeech();activeScreen=id;["home","game","options","verbExplorer"].forEach(x=>$(x).classList.toggle("hidden",x!==id));window.scrollTo(0,0)}
+function show(id){stopSpeech();document.body.classList.remove("completionView");activeScreen=id;["home","game","options","verbExplorer"].forEach(x=>$(x).classList.toggle("hidden",x!==id));window.scrollTo(0,0)}
 function updateDeviceInfo(){$("deviceInfo").textContent=`📱 ${tt(innerWidth>=850?"tablet":"phone")}`}
 
 function applyLanguage(){
@@ -346,7 +346,7 @@ function startGame(mode){
  show("game");$("gameTitle").textContent=titleFor(mode);renderQuestion()
 }
 function renderQuestion(){
- stopSpeech();
+ stopSpeech();document.body.classList.remove("completionView");
  if(state.i>=state.items.length){finish();return}
  state.answered=false;$("feedback").textContent="";$("nextAction").disabled=true;$("score").textContent=state.score;
  $("hintAction").style.visibility="visible";
@@ -592,10 +592,12 @@ function finish(){
  stopSpeech();
  $("progressFill").style.width="100%";
  const earnedStars=Math.max(0,Math.min(state.items.length,state.score));
- const stars=Array.from({length:earnedStars},()=>"⭐").join("");
+ const stars=Array.from({length:earnedStars},()=>'<span class="rewardStar">⭐</span>').join("");
  const rewardText=fmt(tt("scoreText"),{score:earnedStars,total:state.items.length});
  $("gameTitle").textContent=tt("finish");$("gameProgress").textContent="";
- $("gameContent").innerHTML=`<div class="finish"><div class="celebration" aria-label="Optional balloon celebration">${celebrationBalloons()}</div><div class="trophy">🏆</div><h2>${tt("finish")} <button class="speakBtn" aria-label="${tt("listen")}" onclick="audioGuidance.replay()">🔊</button></h2><div class="stars" aria-label="${earnedStars} stars">${stars}</div><p>${rewardText}</p><div class="bottomRow"><button class="actionBtn nextBtn" onclick="startGame(state.mode)">${tt("continue")}</button><button class="actionBtn homeBtn" onclick="goHome()">🏠 ${tt("backHome")}</button></div></div>`;
+ document.body.classList.add("completionView");
+ $("gameContent").innerHTML=`<section class="finish" aria-labelledby="completionTitle"><div class="completionHeading"><h2 id="completionTitle" tabindex="-1">${tt("finish")}</h2><button class="speakBtn" aria-label="${tt("listen")}" onclick="audioGuidance.replay()">🔊</button></div><div class="bottomRow completionActions"><button class="actionBtn nextBtn" onclick="startGame(state.mode)">${tt("continue")}</button><button class="actionBtn homeBtn" onclick="goHome()"><span aria-hidden="true">🏠</span> ${tt("backHome")}</button></div><p>${rewardText}</p><div class="completionRewards" aria-hidden="true"><div class="trophy">🏆</div><div class="stars">${stars}</div></div><div class="celebration" aria-label="${settings.lang==="de"?"Freiwillige Luftballon-Feier":"Optional balloon celebration"}">${celebrationBalloons()}</div></section>`;
+ $("completionTitle").focus({preventScroll:true});window.scrollTo(0,0);
  $("feedback").textContent="";$("nextAction").disabled=true;$("hintAction").style.visibility="hidden";
  setupCelebration();
  state.current={speak:`${tt("finish")} ${rewardText}`};
@@ -603,7 +605,7 @@ function finish(){
 }
 function celebrationBalloons(){
  const colours=["red","blue","yellow","green","purple","orange"];
- return colours.map((colour,i)=>`<button class="balloon balloon-${colour}" style="--balloon-delay:${i*.12}s;--balloon-x:${12+i*15}%" aria-label="Pop balloon" onclick="popBalloon(this)"><span>🎈</span></button>`).join("")
+ return colours.map((colour,i)=>`<button class="balloon balloon-${colour}" style="--balloon-delay:${i*.12}s;--balloon-x:${12+i*15}%" aria-label="${settings.lang==="de"?"Luftballon platzen lassen":"Pop balloon"}" onclick="popBalloon(this)"><span>🎈</span></button>`).join("")
 }
 function setupCelebration(){document.querySelectorAll(".balloon").forEach((b,i)=>{b.dataset.surprise=i%3===0?"⭐":i%3===1?"✨":"🐉"})}
 function popBalloon(balloon){
