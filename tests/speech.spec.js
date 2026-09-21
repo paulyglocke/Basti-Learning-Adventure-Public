@@ -86,14 +86,14 @@ test('browser speech fallback uses the same sanitized boundary and skips decorat
   const results=await page.evaluate(()=>{
     delete window.Android;
     window.SpeechSynthesisUtterance=function(text){this.text=text};
-    Object.defineProperty(window,'speechSynthesis',{value:{cancel(){},speak(u){spoken.push({text:u.text,lang:u.lang})}}});
+    Object.defineProperty(window,'speechSynthesis',{value:{getVoices(){return [{localService:true,lang:'de-DE'}]},cancel(){},speak(u){spoken.push({text:u.text,lang:u.lang})}}});
     setLang('de');setAudioMode('all');speak('Ja! 🎉');speak('🐉');
     return spoken;
   });
   expect(results).toEqual([{text:'Ja!',lang:'de-DE'}]);
 });
 
-test('sanitization preserves existing all/questions/off and forced manual speech decisions', async ({page}) => {
+test('sanitization enforces all/questions/off including manual speech', async ({page}) => {
   const results=await page.evaluate(()=>{
     setLang('en');
     return ['all','questions','off'].map(mode=>{
@@ -101,13 +101,13 @@ test('sanitization preserves existing all/questions/off and forced manual speech
       audioGuidance.say('Question? 🔊','question');
       audioGuidance.say('Great! 🌟','feedback');
       audioGuidance.say('Lesson 🐉','vocab');
-      speakOption('Crocodile 🐊'); // Existing force semantics intentionally retained.
+      speakOption('Crocodile 🐊'); // Manual speech also respects Off.
       return spoken.map(x=>x.text);
     });
   });
   expect(results).toEqual([
     ['Question?','Great!','Lesson','Crocodile'],
-    ['Question?','Great!','Crocodile'],
-    ['Crocodile']
+    ['Question?','Crocodile'],
+    []
   ]);
 });

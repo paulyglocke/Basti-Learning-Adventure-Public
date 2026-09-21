@@ -10,8 +10,8 @@ Shared implementation contracts: [NATIVE_ARCHITECTURE_SPEC.md](NATIVE_ARCHITECTU
 - Physically confirm the implemented speech-safe feedback/boundary on S24/Fire in English/German (VOICE_AUDIO_SPEC.md); automated regression coverage is in tests/speech.spec.js.
 - Fix completion/reward layouts: wrapping stars and immediately accessible actions on narrow/short screens.
 - Fix Letters display-case consistency; review bilingual initial-letter/sound content.
-- Enforce audio policy and TTS readiness, cancellation and missing-offline-voice handling (VOICE_AUDIO_SPEC.md).
-- Repair native Back, WebView lifecycle and durable tutorial reset without losing lesson return behavior.
+- [x] Implement legacy audio policy, TTS readiness, cancellation, missing-offline-voice handling, versioned successful tutorial completion/reset and SFX silence (VOICE_AUDIO_SPEC.md). Automated validation recorded in BUILD_NOTES.md; physical audio acceptance remains outstanding.
+- Finish native navigation/session recovery, including returning from Options to the originating activity. Audio cancellation, WebView disposal, lesson-aware Back routing and durable tutorial reset are implemented; physical lifecycle/Back validation remains outstanding.
 - Validate physically on S24/Fire: airplane mode, EN/DE voices, portrait/landscape, insets, large text, touch/accessibility and lifecycle; exercise 5/10-question rounds and number/calendar boundaries.
 
 ## P1 — shared native foundation

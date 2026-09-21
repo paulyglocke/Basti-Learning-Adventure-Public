@@ -40,7 +40,31 @@ The original legacy app sent visible feedback strings directly to Android TextTo
 
 This is the single current speech-safety boundary. Kotlin forwards its result unchanged; no duplicate Kotlin sanitizer was added because all current narration enters through this JavaScript path. Future native speech callers must establish the equivalent shared native boundary before bypassing it. Semantic icons still require authored speech (for example Crocodile/Krokodil), not Unicode names.
 
-Existing audio policy is intentionally unchanged: forced Replay/options/lesson speech can bypass Off, questions mode includes feedback, and balloon tones ignore the speech policy. These remain separate P0 policy work; this patch does not endorse those behaviors as the final policy.
+The legacy P0 reliability pass implements the following policy. Manual means an explicit Replay, option/object speaker or lesson Listen action; it never overrides Sound Off.
+
+| Mode | Automatic speech | Manual speech | Balloon/completion tones |
+| --- | --- | --- | --- |
+| Read Everything | Questions, instructions, tutorials, lessons and relevant feedback/completion | Enabled | Enabled |
+| Questions / Instructions Only | Questions, instructions, instructional tutorials and lesson explanations | Enabled | Enabled |
+| Sound Off | None | None, even while controls remain visible | None |
+
+Questions Only does not automatically narrate praise, correct feedback, generic wrong-answer encouragement or the completion summary. Future necessary corrective *instruction* must be explicitly classified as instruction; generic feedback must not be relabelled to bypass this rule. Completion Replay reads the current summary. Existing display/speech praise pairs and `sanitizeForSpeech()` remain the final legacy speech-safety boundary.
+
+### Current system-TTS lifecycle
+
+`LegacySpeech` is a small main-thread-confined helper for the existing bridge, not the future shared native engine architecture. It has INITIALISING / READY / FAILED states. Initialisation retains only the latest relevant request; replacement, navigation, backgrounding and disposal invalidate it. Failure rejects pending/future requests while visuals and navigation remain usable. Options provides bilingual guidance to check installed offline EN/DE voices and restart after changing device voice data. There is no network or alternate-language fallback.
+
+Offline voices are enumerated once per engine initialization and cached by language, preferring en-GB / de-DE and otherwise another installed offline voice in the requested language, with stable name ordering. Network-required and not-installed voices are excluded. Every utterance explicitly sets its cached matching voice and only speaks when selection succeeds. Missing languages produce silence/failure, never the previous language's voice. Restart refreshes the cache. Browser development fallback likewise requires a local voice in the requested language. This filtering follows the [Android engine contract](https://developer.android.com/reference/android/speech/tts/TextToSpeech.Engine); real Samsung/Fire engine behavior still requires physical checks.
+
+A cancellable timer and request IDs own JavaScript narration. Every new speech action, including policy-muted feedback, cancels obsolete delayed speech. New questions, completion, language changes, Home, Back, lesson navigation and backgrounding stop pending/active narration. Native playback uses QUEUE_FLUSH; repeated controls replace rather than queue. Engine completion/error callbacks are matched to the current native request and its originating WebView. Leaving the native learning surface destroys its WebView; returning from native Options currently starts from Home (full destination/session recovery remains wider P0 work). Native Back delegates to the existing lesson-aware web Back path.
+
+In the legacy generated quiz, changing language explicitly regenerates the current question without an attempt or score change; an already answered question remains locked. Quiz-linked lessons refresh their return question too. Completion retains its summary and can be replayed. This is a bounded legacy behavior, not the future semantic task-identity migration.
+
+### Tutorial completion and reset
+
+Tutorials are persisted only after successful completion of their entire current utterance (tutorial plus instruction/lesson where combined). Requests, Sound Off, engine failure, interruption, Replay replacement and stale callbacks do not mark a tutorial heard. Keys are `bastiTutorial_v2_<language>_<activity>`; legacy unversioned marks are deliberately not trusted, so each language receives one successful new presentation. Increment the version when tutorial meaning changes. Reset clears all tutorial versions/languages and invalidates outstanding callbacks. Native Options persists a reset epoch even before any WebView exists; each WebView applies a new epoch once, before starting an activity.
+
+Balloon tones share one lazily created AudioContext per web surface. Off/background cancellation stops live oscillators and suspends it; enabled interactions may resume it. No context is created while Off, and celebration remains usable silently.
 
 The following examples describe the original bug and the continuing content rule.
 
@@ -627,11 +651,7 @@ READY
 FAILED
 ```
 
-Possible behavior:
-
-- short requests during initialisation may queue once,
-- stale requests should be discarded when screen changes,
-- failure should fall back to system TTS where possible.
+The current legacy implementation retains one latest request during initialisation, drops it on context cancellation, and rejects requests on failure. It already uses system TTS; there is no further engine fallback. The future enhanced engine may fall back to system TTS under the same offline and ownership rules. See section 2 for the implemented policy.
 
 ---
 

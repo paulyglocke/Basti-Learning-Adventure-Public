@@ -56,6 +56,7 @@ test('quiz lesson button and both return buttons preserve the exact question and
 
 test('all 53 bilingual lessons render and replay speech including quoted explanations', async ({page}) => {
   test.setTimeout(180000);
+  await page.evaluate(() => setAudioMode('all'));
   const errors = []; page.on('pageerror', e => errors.push(e.message));
   for (const lang of ['en', 'de']) {
     const count = await page.evaluate(lang => {setLang(lang);return verbQs.length}, lang);
@@ -161,12 +162,12 @@ test('small phone and tablet screens have no overflowing controls or text', asyn
   expect(failures).toEqual([]);
 });
 
-test('manual question speech works with automatic speech disabled; delayed speech cancels on exit', async ({page}) => {
+test('Sound Off blocks manual question speech; delayed speech cancels on exit', async ({page}) => {
   await page.locator('[data-mode="count"]').click();
   await page.waitForTimeout(300);
   expect(await page.evaluate(() => spoken)).toEqual([]);
   await page.locator('.speakBtn').click();
-  expect(await page.evaluate(() => spoken.at(-1).text)).toBe(await page.evaluate(() => state.current.speak));
+  expect(await page.evaluate(() => spoken)).toEqual([]);
   await page.evaluate(() => {spoken.length=0;setSound(true);startGame('verbs');goHome()});
   await page.waitForTimeout(300);
   expect(await page.evaluate(() => spoken)).toEqual([]);

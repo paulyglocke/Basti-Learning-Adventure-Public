@@ -2,6 +2,23 @@
 
 This file records build/test evidence and should not be treated as a product or architecture specification.
 
+## P0 audio reliability — 2026-09-21
+
+Source: local changes based on clean `eb5b68e`, committed as `fix: harden audio policy and TTS lifecycle`. Protected checkpoints `f72c5f7` (speech safety) and `796359e` (product priorities) remain intact. No neural engine, Voice Lab, downloaded model or personality pack was introduced.
+
+Final automated evidence:
+
+- Focused: `npm test -- tests/speech.spec.js tests/audio-reliability.spec.js --reporter=line`: **20 passed, 0 failed** (6.6s).
+- Full: `npm test -- --reporter=line`: **32 passed, 0 failed** (30.9s). All original tests remain; old force-through-Off expectations deliberately follow the new policy. Coverage includes all 53 bilingual lessons, seven quiz modes, sanitation and pointer/Enter/Space speaker isolation.
+- `JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home' ANDROID_HOME='/Users/paulbell/Library/Android/sdk' ./gradlew testDebugUnitTest assembleDebug lintDebug --console=plain`: **BUILD SUCCESSFUL** (10s).
+- Native unit tests: **7 passed, 0 failures, 0 errors, 0 skipped**. They exercise the actual pure Kotlin legacy lifecycle helper: latest-only readiness, cancellation, stale callbacks, initialization/playback failure, EN/DE switching, locale preference, same-language fallback and exclusion of network/uninstalled voices. They do not instantiate Android TextToSpeech or prove audible output.
+- `assembleDebug`: **passed**, APK at `app/build/outputs/apk/debug/app-debug.apk`.
+- `lintDebug`: **passed, 0 errors / 7 warnings / 2 informational findings**. Warnings: OldTargetApi (1), UnusedAttribute (2), GradleDependency (3), SetJavaScriptEnabled (1). Information: AutoboxingStateCreation (2). Separately, Kotlin emits one pre-existing VIBRATOR_SERVICE deprecation warning.
+- APK SHA-256: `1b998f60584d730dbf5ba89265b84ef4b2a2275e18d374dddbea6f4bd19e3fff`.
+- JDK: Android Studio bundled JDK 21; source/bytecode target remains 17. Initial sandbox runs failed on Chromium Mach-port permissions and Gradle socket initialization; authorized runs outside the sandbox produced the passes above.
+
+Speech mocks establish policy/ownership requests, not Samsung/Fire compatibility. No physical device was tested. Samsung S24 and Amazon Fire Max checks remain required: airplane-mode EN/DE voices, absent language data, first-use readiness, rapid Replay/options, pause/resume, Home/Back/lesson return, durable reset before first activity, actual silence in Off and audible clarity/sanitization. Full native Options return/session recovery remains wider P0; leaving the learning surface currently disposes it and Options returns Home. No legacy migration gate is declared closed.
+
 ## Evidence scope
 
 The V1 results below are historical verification from 2026-09-20, before the Compose shell and subsequent P0 work. They do not establish current native behavior. Source determines current implementation; master specs determine direction.
@@ -97,9 +114,7 @@ Browser tests exercise the actual packaged assets offline, with a mock native
 speech bridge; they cannot prove the device's TTS engine or installed voices.
 
 For spoken questions, install English and German offline voice data using the
-device's TTS settings. Current Kotlin speech selection prefers a matching offline voice but does not
-guarantee silence or a safe fallback when none is found. Missing-voice handling
-and actual offline speech require device testing; visual activities and Hint remain available.
+device's TTS settings. The historical implementation did not guarantee a safe fallback for missing voices. The P0 reliability implementation above now rejects missing-language requests; actual offline speech still requires device testing. Visual activities and Hint remain available.
 
 Artwork still uses system emoji and lightweight CSS. The emoji appearance and
 availability depend on the device's fonts. Some lessons share general motion

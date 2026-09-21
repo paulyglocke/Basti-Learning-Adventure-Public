@@ -1,54 +1,25 @@
 # Session handoff — 2026-09-21
 
-## Current repository checkpoint — 2026-09-21
+## Current checkpoint — P0 audio reliability
 
-Current remote `main` includes:
+Local checkpoint: `fix: harden audio policy and TTS lifecycle`, based on clean `eb5b68e`. Committed locally only; not pushed. Preserves `f72c5f7` speech safety and `796359e` product direction.
 
-- `f72c5f7` — `fix: prevent decorative emoji from leaking into TTS`
-- `796359e` — `docs: refine learning priorities and daily experience`
+Implemented in the existing legacy/system-TTS path:
 
-The latest documentation refinement updated:
-- MASTER_PRODUCT_LEARNING_ROADMAP.md
-- PROGRESS_TRACKER_SPEC.md
-- UX_NAVIGATION_SPEC.md
-- GAME_DESIGN_SPEC.md
-- CONTENT_DATA_SPEC.md
-- BACKLOG.md
+- All: automatic questions/instructions/tutorials/lessons and feedback. Questions Only: instructional audio, no automatic praise/generic wrong feedback/completion summary. Manual Replay/options/Listen work in both. Off blocks all speech and balloon tones, including manual controls.
+- Small Kotlin `LegacySpeech` helper with INITIALISING / READY / FAILED, at most one current pending request, flush/stop ownership, completion callbacks and cached installed offline EN/DE selection. Missing/network/uninstalled voices never fall through to a previous language. Parent Options offers voice-data/restart guidance.
+- Owned cancellable JS narration timers; new requests, questions, feedback, navigation, language, completion and backgrounding invalidate obsolete speech. Completion Replay reads the summary. Native Back delegates to lesson-aware web navigation; departing WebViews are disposed.
+- Versioned per-language tutorials marked only after current successful full playback. Interruption/failure/Off never consumes them. Durable native reset epoch works before a WebView exists. Old unversioned heard flags are deliberately not carried forward.
+- Balloon tones reuse a lazy context; Off/background stops oscillators and suspends it.
+- Explicit displayText/speechText praise and sanitizeForSpeech() remain intact, as does answer/speaker isolation.
 
-No runtime code changed in the plan-refinement commit.
+Validation: focused **20/20**, full Playwright **32/32**, Kotlin unit **7/7**; assembleDebug/lintDebug **passed**, lint **0 errors / 7 warnings** (plus 2 informational findings). Android Studio JDK 21, bytecode target 17. Exact commands, warnings, APK hash and limitations are in BUILD_NOTES.md.
 
-Important revised priorities:
-- Today’s Adventure becomes the eventual primary child entry, with a secondary browse path.
-- Minimal persisted skill-progress events move into the early native foundation.
-- Prepositions remains the first end-to-end native migration proof.
-- Follow the Instructions remains the first true native game/learning engine.
-- Vocabulary Booster v1 moves earlier.
-- Tell Me! / expressive-language v1 moves earlier.
-- Memory Pairs is a reusable shared matching engine.
-- Early maths prioritises subitising, quantity, patterns and shapes over large-number drill.
-- English and German phonics are language-specific.
-- Classroom/self-advocacy language is raised in priority.
-- Discovery Book knowledge unlocks are a major reward direction.
-- Generalisation must use varied contexts rather than repeated object pairings.
+No physical Samsung S24 or Amazon Fire Max testing was performed. Remaining P0 audio work is physical acceptance: actual airplane-mode EN/DE output/quality, missing voices, startup readiness, silence, interruption and lifecycle/reset behavior. Browser mocks and pure JVM tests are not hardware evidence. No neural TTS, Supertonic, Piper, sherpa-onnx, Voice Lab, downloaded voices or personality packs were started.
 
-Immediate next implementation task:
-P0 Audio Reliability Pass — enforce all/questions/off policy, TTS readiness and offline voice handling, stale-speech/lifecycle cancellation, tutorial reliability and SFX policy. Do not start Supertonic/Piper/neural TTS yet.
+Remaining wider P0: Prepositions scene/choice/feedback agreement; completion layout on narrow/short screens; Letters case and bilingual phonics review; native navigation/session recovery and physical lifecycle/layout/accessibility checks. Native Options currently returns Home and does not preserve an in-flight learning surface. Language changes regenerate the legacy current question without score changes; answered questions remain locked, including lesson return.
 
-After that, continue remaining P0 correctness/layout/navigation work before entering the native foundation sequence.
-
-## Current session — P0 Voice/TTS cleanup
-
-Root cause: `pick()` passed decorated praise directly through `audioGuidance.say()` → `speak()` → `Android.speak()` → Android TextToSpeech. All questions/instructions, tutorials, Replay, option speakers, feedback, completion and Verb Explorer already converge on that same JavaScript function. Hints are visual only; balloon decorations are not narrated (their WebAudio tones are separate).
-
-All eight English/German praise entries now pair `displayText` with explicit `speechText`; visible emoji remain. `sanitizeForSpeech()` runs inside `speak()` after the existing audio policy check and before either Android bridge or browser fallback. It removes pictographic/decorative ranges and emoji joiners/selectors/tags, normalizes whitespace/punctuation spacing and skips empty output while retaining ordinary numbers, punctuation, German characters and mathematical text. Semantic icons must still receive authored speech, not inferred emoji names.
-
-No Kotlin duplicate sanitizer: the current native engine has only the legacy bridge caller. Future native speech must move this boundary into the shared audio controller. MainActivity, index.html, content generation, scoring, navigation and the speech engine are unchanged. Supertonic/Piper, Voice Lab and neural integration have not started.
-
-Seven new tests in tests/speech.spec.js cover every praise entry, both-language speech routes, decorated completion, Unicode/number preservation, empty requests, browser fallback and unchanged mode/force behavior. Existing pointer/Enter/Space answer-speaker isolation tests remain intact.
-
-Validation results will be recorded in BUILD_NOTES.md after the browser run. Android assembleDebug/lintDebug passed with Android Studio JDK 21 (Java/Kotlin compilation target 17), 0 lint errors / 7 warnings; APK assets match current source. Physical S24/Fire speech validation remains outstanding.
-
-Remaining P0 audio work: define/enforce all/questions/off and manual Replay semantics; balloon sound policy; TTS readiness/missing offline voices; stale speech/lifecycle cancellation; reliable language/version-aware tutorials/reset. Current forced manual speech still bypasses Off and questions mode includes feedback, deliberately unchanged here. P1 remains the shared native audio controller/engine abstraction and test doubles, followed separately by physical voice auditions. See BACKLOG.md and VOICE_AUDIO_SPEC.md.
+Continue the established product sequence after P0: shared native content/audio/session and minimal persisted skill events, Prepositions migration proof, Follow the Instructions, Vocabulary Booster, Tell Me!, shared Memory Pairs, progress dashboard, concept-focused maths and classroom skills. Today's Adventure, varied-context generalisation and Discovery Book priorities remain unchanged. Do not begin neural voice work as part of this checkpoint.
 
 ## Historical session context (2026-09-20)
 

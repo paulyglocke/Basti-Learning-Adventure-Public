@@ -8,6 +8,8 @@ import android.os.VibrationEffect
 import android.os.Vibrator
 import android.speech.tts.TextToSpeech
 import android.speech.tts.Voice
+import android.speech.tts.UtteranceProgressListener
+import org.json.JSONObject
 import android.view.View
 import android.webkit.JavascriptInterface
 import android.webkit.WebResourceRequest
@@ -65,8 +67,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.view.WindowCompat
-import java.util.Locale
-import java.util.Set
 
 private val Sky = Color(0xFF79CEF7)
 private val Grass = Color(0xFFA8E66C)
@@ -109,17 +109,42 @@ class MainActivity : ComponentActivity() {
     private lateinit var prefs: android.content.SharedPreferences
     private var webView: WebView? = null
     private var tts: TextToSpeech? = null
-    private var ttsReady = false
+    private var audioStatus by mutableStateOf("initialising")
+    private var foreground = false
+    private var utteranceSerial = 0L
+    private val speech = LegacySpeech<Voice>(
+        stopEngine = { tts?.stop(); Unit },
+        play = { voice, text, id ->
+            val engine = tts
+            engine != null && engine.setVoice(voice) == TextToSpeech.SUCCESS &&
+                engine.speak(text, TextToSpeech.QUEUE_FLUSH, null, id) == TextToSpeech.SUCCESS
+        },
+        statusChanged = { audioStatus = it }
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
         prefs = getSharedPreferences("basti_shell", Context.MODE_PRIVATE)
         tts = TextToSpeech(this) { status ->
-            if (status == TextToSpeech.SUCCESS) {
-                ttsReady = true
-                tts?.setSpeechRate(0.88f)
-                tts?.setPitch(1.0f)
+            // Post so the constructor assignment is complete even for an immediate callback.
+            window.decorView.post {
+                val engine = tts ?: return@post
+                engine.setOnUtteranceProgressListener(object : UtteranceProgressListener() {
+                    override fun onStart(id: String) = Unit
+                    override fun onDone(id: String) = runOnUiThread { speech.completed(id, true) }
+                    @Deprecated("Platform callback")
+                    override fun onError(id: String) = runOnUiThread { speech.completed(id, false) }
+                    override fun onError(id: String, code: Int) = runOnUiThread { speech.completed(id, false) }
+                    override fun onStop(id: String, interrupted: Boolean) = runOnUiThread { speech.completed(id, false) }
+                })
+                engine.setSpeechRate(0.88f)
+                engine.setPitch(1.0f)
+                val installed = try { engine.voices.orEmpty().map {
+                    LegacySpeech.OfflineVoice(it, it.name, it.locale.language, it.locale.country, it.isNetworkConnectionRequired,
+                        !it.features.orEmpty().contains(TextToSpeech.Engine.KEY_FEATURE_NOT_INSTALLED))
+                } } catch (_: RuntimeException) { emptyList() }
+                speech.initialise(status == TextToSpeech.SUCCESS, installed)
             }
         }
         setContent { BastiApp() }
@@ -137,7 +162,12 @@ class MainActivity : ComponentActivity() {
         var webMode by remember { mutableStateOf("verbs") }
 
         MaterialTheme(colorScheme = BastiColors) {
-            BackHandler(enabled = screen != ShellScreen.HOME) { screen = ShellScreen.HOME }
+            fun back() {
+                cancelAudio()
+                if (screen == ShellScreen.WEB) webView?.evaluateJavascript("navigateBack()", null)
+                else screen = ShellScreen.HOME
+            }
+            BackHandler(enabled = screen != ShellScreen.HOME) { back() }
             Scaffold(
                 contentWindowInsets = WindowInsets.safeDrawing,
                 topBar = {
@@ -152,9 +182,9 @@ class MainActivity : ComponentActivity() {
                                 fontWeight = FontWeight.Black
                             )
                         },
-                        navigationIcon = { if (screen != ShellScreen.HOME) OutlinedButton(onClick = { screen = ShellScreen.HOME }, contentPadding = PaddingValues(horizontal = 12.dp)) { Text("←") } else Unit },
+                        navigationIcon = { if (screen != ShellScreen.HOME) OutlinedButton(onClick = { back() }, contentPadding = PaddingValues(horizontal = 12.dp)) { Text("←") } else Unit },
                         actions = {
-                            OutlinedButton(onClick = { screen = ShellScreen.OPTIONS }) { Text(if (language == "de") "⚙ Optionen" else "⚙ Options") }
+                            OutlinedButton(onClick = { cancelAudio(); screen = ShellScreen.OPTIONS }) { Text(if (language == "de") "⚙ Optionen" else "⚙ Options") }
                         },
                         colors = TopAppBarDefaults.topAppBarColors(containerColor = Gold),
                         windowInsets = WindowInsets.statusBars
@@ -168,12 +198,17 @@ class MainActivity : ComponentActivity() {
                         if (card.verbExplorer) webMode = "verbExplorer"
                         screen = ShellScreen.WEB
                     }
-                    ShellScreen.OPTIONS -> NativeOptions(language, audioMode, round, numberMax, padding,
+                    ShellScreen.OPTIONS -> NativeOptions(language, audioMode, round, numberMax, padding, audioStatus,
                         onLanguage = { language = it; saveAndSync(it, audioMode, round, numberMax) },
                         onAudioMode = { audioMode = it; saveAndSync(language, it, round, numberMax) },
                         onRound = { round = it; saveAndSync(language, audioMode, it, numberMax) },
                         onNumberMax = { numberMax = it; saveAndSync(language, audioMode, round, it) },
-                        onResetTutorials = { webView?.evaluateJavascript("audioGuidance.reset()", null) })
+                        onResetTutorials = {
+                            val epoch = prefs.getLong("tutorialResetEpoch", 0) + 1
+                            prefs.edit().putLong("tutorialResetEpoch", epoch).apply()
+                            webView?.evaluateJavascript("syncTutorialReset($epoch)", null)
+                        })
+                    // Recovery guidance stays in parent Options; learning UI remains usable.
                     ShellScreen.WEB -> ExistingLearningSurface(webMode, padding) { screen = ShellScreen.HOME }
                 }
             }
@@ -181,6 +216,7 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun saveAndSync(language: String, audioMode: String, round: Int, numberMax: Int) {
+        cancelAudio()
         val sound = audioMode != "off"
         prefs.edit().putString("lang", language).putString("audioMode", audioMode).putBoolean("sound", sound).putInt("round", round).putInt("numberMax", numberMax).apply()
         webView?.evaluateJavascript("setLang('$language');setAudioMode('$audioMode');setRound($round);setNumberMax($numberMax)", null)
@@ -188,10 +224,16 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     private fun ExistingLearningSurface(mode: String, padding: PaddingValues, onHome: () -> Unit) {
+        DisposableEffect(mode) {
+            onDispose {
+                cancelAudio()
+                webView?.let { it.removeJavascriptInterface("Android"); it.stopLoading(); it.destroy() }
+                webView = null
+            }
+        }
         AndroidView(
             modifier = Modifier.fillMaxSize().padding(padding).background(Color.White),
-            factory = { context -> createWebView(context, mode, onHome).also { webView = it } },
-            update = { it.evaluateJavascript(syncScript(mode), null) }
+            factory = { context -> createWebView(context, mode, onHome).also { webView = it } }
         )
     }
 
@@ -213,7 +255,7 @@ class MainActivity : ComponentActivity() {
                     view.evaluateJavascript(syncScript(mode), null)
                 }
             }
-            addJavascriptInterface(AppBridge(context, onHome), "Android")
+            addJavascriptInterface(AppBridge(context, this, onHome), "Android")
             loadUrl("file:///android_asset/index.html")
         }
     }
@@ -224,19 +266,19 @@ class MainActivity : ComponentActivity() {
         val round = prefs.getInt("round", 5)
         val numberMax = prefs.getInt("numberMax", 10)
         val audioMode = prefs.getString("audioMode", if (sound) "all" else "off") ?: "all"
-        return "setLang('$language');setAudioMode('$audioMode');setRound($round);setNumberMax($numberMax);if(typeof startShellMode==='function')startShellMode('$mode')"
+        return "syncTutorialReset(${prefs.getLong("tutorialResetEpoch", 0)});setLang('$language');setAudioMode('$audioMode');setRound($round);setNumberMax($numberMax);if(typeof startShellMode==='function')startShellMode('$mode')"
     }
 
-    private inner class AppBridge(private val context: Context, private val onHome: () -> Unit) {
-        @JavascriptInterface fun onWebHome() = runOnUiThread { onHome() }
-        @JavascriptInterface fun speak(text: String, language: String) = runOnUiThread {
-            if (!ttsReady) return@runOnUiThread
-            val locale = if (language.equals("de", true)) Locale.GERMANY else Locale.UK
-            val voice = tts?.voices?.firstOrNull { !it.isNetworkConnectionRequired && it.locale.language == locale.language }
-            if (voice != null) tts?.voice = voice
-            tts?.speak(text, TextToSpeech.QUEUE_FLUSH, null, "basti-school-question")
+    private inner class AppBridge(private val context: Context, private val owner: WebView, private val onHome: () -> Unit) {
+        @JavascriptInterface fun onWebHome() = runOnUiThread { if (webView === owner) { cancelAudio(); onHome() } }
+        @JavascriptInterface fun speak(text: String, language: String, requestId: String) = runOnUiThread {
+            if (webView !== owner || !foreground || prefs.getString("audioMode", "all") == "off") return@runOnUiThread
+            val id = (++utteranceSerial).toString()
+            speech.request(text, language, id) { success ->
+                if (webView === owner) owner.evaluateJavascript("speechResult(${JSONObject.quote(requestId)},$success)", null)
+            }
         }
-        @JavascriptInterface fun stopSpeaking() = runOnUiThread { tts?.stop() }
+        @JavascriptInterface fun stopSpeaking() = runOnUiThread { if (webView === owner) speech.stop() }
         @JavascriptInterface fun vibrate() {
             val vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator ?: return
             if (!vibrator.hasVibrator()) return
@@ -248,9 +290,13 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    override fun onPause() { webView?.onPause(); tts?.stop(); super.onPause() }
-    override fun onResume() { super.onResume(); webView?.onResume() }
-    override fun onDestroy() { ttsReady = false; tts?.shutdown(); webView?.destroy(); super.onDestroy() }
+    private fun cancelAudio() {
+        speech.stop()
+        webView?.evaluateJavascript("suspendAudio()", null)
+    }
+    override fun onPause() { foreground = false; cancelAudio(); webView?.onPause(); super.onPause() }
+    override fun onResume() { super.onResume(); foreground = true; webView?.onResume() }
+    override fun onDestroy() { speech.stop(); tts?.shutdown(); tts = null; webView?.destroy(); webView = null; super.onDestroy() }
 }
 
 @Composable
@@ -288,13 +334,16 @@ private fun HomeGroup(title: String, cards: List<HomeCard>, language: String, on
 }
 
 @Composable
-private fun NativeOptions(language: String, audioMode: String, round: Int, numberMax: Int, padding: PaddingValues, onLanguage: (String) -> Unit, onAudioMode: (String) -> Unit, onRound: (Int) -> Unit, onNumberMax: (Int) -> Unit, onResetTutorials: () -> Unit) {
+private fun NativeOptions(language: String, audioMode: String, round: Int, numberMax: Int, padding: PaddingValues, audioStatus: String, onLanguage: (String) -> Unit, onAudioMode: (String) -> Unit, onRound: (Int) -> Unit, onNumberMax: (Int) -> Unit, onResetTutorials: () -> Unit) {
     Column(Modifier.fillMaxSize().padding(padding).padding(16.dp).background(Color(0xFFF9FCFE)).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(14.dp)) {
         Text(if (language == "de") "Optionen" else "Options", fontSize = 30.sp, fontWeight = FontWeight.Black, color = Ink)
         SettingCard(if (language == "de") "Sprache" else "Language") {
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) { FilterChip(selected = language == "en", onClick = { onLanguage("en") }, label = { Text("🇬🇧 English") }); FilterChip(selected = language == "de", onClick = { onLanguage("de") }, label = { Text("🇩🇪 Deutsch") }) }
         }
         SettingCard(if (language == "de") "Audio-Hilfe" else "Audio guidance") {
+            if (audioStatus != "ready") Text(if (language == "de")
+                "Sprachausgabe: Bitte installierte Offline-Stimmen für Englisch und Deutsch in den Geräte-Einstellungen prüfen. Nach Änderungen die App neu starten."
+                else "Speech: Check installed offline English and German voices in device settings. Restart the app after changes.")
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 FilterChip(selected = audioMode == "all", onClick = { onAudioMode("all") }, label = { Text(if (language == "de") "Alles vorlesen" else "Read everything") })
                 FilterChip(selected = audioMode == "questions", onClick = { onAudioMode("questions") }, label = { Text(if (language == "de") "Nur Fragen und Anweisungen" else "Questions and instructions only") })

@@ -211,7 +211,8 @@ let settings={
 };
 Object.defineProperty(settings,"audioMode",{value:localStorage.getItem("audioMode")|| (settings.sound?"all":"off"),writable:true,enumerable:false});
 let state={mode:null,items:[],i:0,score:0,answered:false,current:null};
-let activeScreen="home", activeLesson=null, speechTimer=null;
+let activeScreen="home", activeLesson=null, speechTimer=null, speechSerial=0, activeSpeech=null, popContext=null;
+const popTones=new Set();
 
 const $=id=>document.getElementById(id);
 const shuffle=a=>{const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b};
@@ -229,18 +230,35 @@ function germanCreatureName(id){
 }
 function creatureCountName(id,n){const c=creatures[id];return n===1?c[settings.lang]:c[settings.lang+"Plural"]}
 const audioGuidance={
- canSpeak(kind,force=false){return force||settings.audioMode!=="off"&&(settings.audioMode==="all"||["instruction","question","feedback","tutorial"].includes(kind))},
- say(text,kind="question",force=false){return speak(text,force,kind)},
- replay(){if(state.current) this.say(state.current.speak,"question",true)},
- tutorial(type){const key=`bastiTutorial_${type}`;if(localStorage.getItem(key)==="1")return "";localStorage.setItem(key,"1");return T[settings.lang].tutorials[type]||T[settings.lang].tutorials.mixed},
- reset(){Object.keys(localStorage).filter(k=>k.startsWith("bastiTutorial_")).forEach(k=>localStorage.removeItem(k));const n=$("tutorialResetStatus");if(n)n.textContent=tt("tutorialResetDone")}
+ canSpeak(kind,manual=false){return settings.audioMode!=="off"&&(manual||settings.audioMode==="all"||["instruction","question","tutorial"].includes(kind))},
+ say(text,kind="question",manual=false,onDone=null){return speak(text,manual,kind,onDone)},
+ replay(){if(activeScreen==="game"&&state.current)this.say(state.current.speak,"question",true)},
+ tutorialKey(type){return `bastiTutorial_v2_${settings.lang}_${type}`},
+ tutorial(type){return localStorage.getItem(this.tutorialKey(type))==="1"?"":T[settings.lang].tutorials[type]||T[settings.lang].tutorials.mixed},
+ present(type,text,kind="question"){
+  const tutorial=this.tutorial(type),key=this.tutorialKey(type);
+  scheduleSpeech(`${tutorial} ${text}`,kind,tutorial?()=>localStorage.setItem(key,"1"):null);
+ },
+ reset(){stopSpeech();Object.keys(localStorage).filter(k=>k.startsWith("bastiTutorial_")).forEach(k=>localStorage.removeItem(k));const n=$("tutorialResetStatus");if(n)n.textContent=tt("tutorialResetDone")}
 };
+function syncTutorialReset(epoch){
+ if(localStorage.getItem("tutorialResetEpoch")!==String(epoch)){audioGuidance.reset();localStorage.setItem("tutorialResetEpoch",String(epoch))}
+}
+function speechResult(id,success){
+ if(!activeSpeech||activeSpeech.id!==id)return;
+ const done=activeSpeech.onDone;activeSpeech=null;
+ if(success&&done)done();
+}
 function stopSpeech(){
- clearTimeout(speechTimer);
+ clearTimeout(speechTimer);speechTimer=null;activeSpeech=null;++speechSerial;
  try{if(window.Android&&Android.stopSpeaking)Android.stopSpeaking()}catch(e){}
  if("speechSynthesis" in window)speechSynthesis.cancel();
 }
-function scheduleSpeech(text,kind="question"){clearTimeout(speechTimer);speechTimer=setTimeout(()=>audioGuidance.say(text,kind),220)}
+function suspendAudio(){stopSpeech();for(const osc of popTones){try{osc.stop()}catch(e){}}popTones.clear();if(popContext)popContext.suspend().catch(()=>{})}
+function scheduleSpeech(text,kind="question",onDone=null){
+ stopSpeech();const owner=speechSerial;
+ speechTimer=setTimeout(()=>{speechTimer=null;if(owner===speechSerial)audioGuidance.say(text,kind,false,onDone)},220);
+}
 function show(id){stopSpeech();activeScreen=id;["home","game","options","verbExplorer"].forEach(x=>$(x).classList.toggle("hidden",x!==id));window.scrollTo(0,0)}
 function updateDeviceInfo(){$("deviceInfo").textContent=`📱 ${tt(innerWidth>=850?"tablet":"phone")}`}
 
@@ -261,8 +279,30 @@ function applyLanguage(){
  document.title=tt("brandTitle");
  updateDeviceInfo();
 }
-function setLang(l){stopSpeech();settings.lang=l;localStorage.setItem("lang",l);applyLanguage()}
-function setAudioMode(mode){stopSpeech();settings.audioMode=["all","questions","off"].includes(mode)?mode:"all";settings.sound=settings.audioMode!=="off";localStorage.setItem("audioMode",settings.audioMode);localStorage.setItem("sound",String(settings.sound));applyLanguage()}
+function setLang(l){
+ l=l==="de"?"de":"en";if(l===settings.lang)return;
+ stopSpeech();settings.lang=l;localStorage.setItem("lang",l);applyLanguage();
+ // Generated questions are explicitly restarted in the new language, without scoring an attempt.
+ if(activeScreen==="game")refreshQuestionLanguage();
+ else if(activeScreen==="verbExplorer"){
+  if(activeLesson){
+   const lesson=activeLesson;
+   if(lesson.fromQuiz)refreshQuestionLanguage();
+   openVerbLesson(lesson.idx,lesson.fromQuiz);
+  }else renderVerbLibrary();
+ }
+}
+function refreshQuestionLanguage(){
+ if(state.i>=state.items.length){finish();return}
+ const answered=state.answered;
+ renderQuestion();
+ if(answered){
+  state.answered=true;
+  document.querySelectorAll(".answer").forEach(b=>{b.disabled=true;b.classList.add("locked")});
+  $("nextAction").disabled=false;
+ }
+}
+function setAudioMode(mode){suspendAudio();settings.audioMode=["all","questions","off"].includes(mode)?mode:"all";settings.sound=settings.audioMode!=="off";localStorage.setItem("audioMode",settings.audioMode);localStorage.setItem("sound",String(settings.sound));applyLanguage()}
 function setSound(v){setAudioMode(v?"all":"off")}
 function setRound(v){settings.round=v;localStorage.setItem("round",v);applyLanguage()}
 function setNumberMax(v){
@@ -280,14 +320,19 @@ function sanitizeForSpeech(text){
   .replace(/ +([,.;:!?])/g,"$1")
   .trim();
 }
-function speak(text,force=false,kind="question"){
- if(!audioGuidance.canSpeak(kind,force))return;
+function speak(text,manual=false,kind="question",onDone=null){
+ stopSpeech();
+ if(!audioGuidance.canSpeak(kind,manual))return;
  text=sanitizeForSpeech(text);
  if(!text)return;
- try{if(window.Android&&Android.speak){Android.speak(text,settings.lang);return}}catch(e){}
+ const id=String(++speechSerial);activeSpeech={id,onDone};
+ try{if(window.Android&&Android.speak){Android.speak(text,settings.lang,id);return}}catch(e){speechResult(id,false);return}
  if("speechSynthesis" in window){
   speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);
-  u.lang=settings.lang==="de"?"de-DE":"en-GB";u.rate=.84;speechSynthesis.speak(u)
+  const voice=speechSynthesis.getVoices().find(v=>v.localService&&v.lang.toLowerCase().startsWith(settings.lang));
+  if(!voice){speechResult(id,false);return}
+  u.voice=voice;u.lang=voice.lang;u.rate=.84;
+  u.onend=()=>speechResult(id,true);u.onerror=()=>speechResult(id,false);speechSynthesis.speak(u)
  }
 }
 function speakOption(text){audioGuidance.say(text,"option",true)}
@@ -301,6 +346,7 @@ function startGame(mode){
  show("game");$("gameTitle").textContent=titleFor(mode);renderQuestion()
 }
 function renderQuestion(){
+ stopSpeech();
  if(state.i>=state.items.length){finish();return}
  state.answered=false;$("feedback").textContent="";$("nextAction").disabled=true;$("score").textContent=state.score;
  $("hintAction").style.visibility="visible";
@@ -316,8 +362,7 @@ function renderQuestion(){
  state.current.instruction=state.current.instruction||activityInstruction(type);
  state.current.question=state.current.speak;
  state.current.speak=`${state.current.instruction} ${state.current.question}`;
- const tutorial=audioGuidance.tutorial(type);
- scheduleSpeech(`${tutorial} ${state.current.speak}`);
+ audioGuidance.present(type,state.current.speak);
 }
 function activityInstruction(type){return ({verbs:settings.lang==="en"?"Listen to the action, then tap the animal that can do it.":"Höre auf die Bewegung und tippe dann auf das Tier, das sie kann.",count:settings.lang==="en"?"Listen to the number question, then tap the right answer.":"Höre auf die Zahlenfrage und tippe dann auf die richtige Antwort.",math:settings.lang==="en"?"Listen to the maths question, then tap the answer.":"Höre auf die Mathefrage und tippe dann auf die Antwort.",positions:settings.lang==="en"?"Look at the picture and listen to the places. Tap the right place.":"Schau dir das Bild an und höre die Orte. Tippe auf den richtigen Ort.",letters:settings.lang==="en"?"Listen to the letter sound, then tap the picture that starts with it.":"Höre den Buchstabenlaut und tippe dann auf das passende Bild.",time:settings.lang==="en"?"Listen to the question about the day or season, then tap the answer.":"Höre die Frage über den Tag oder die Jahreszeit und tippe auf die Antwort.",mixed:settings.lang==="en"?"Listen carefully and tap the answer.":"Höre gut zu und tippe auf die Antwort."})[type]}
 function qHeader(text,sub=""){return `<div class="questionBox"><h3>${text} <button class="speakBtn" aria-label="${tt("listen")}" onclick="audioGuidance.replay()">🔊</button></h3>${sub?`<p>${sub}</p>`:""}</div>`}
@@ -490,7 +535,7 @@ function renderVerbLibrary(){
  const cards=verbQs.map((q,i)=>`<button class="verbLibraryCard" onclick="openVerbLesson(${i},false)"><div class="verbAnimal">${creatures[q.a].emoji}</div><div><div class="verbEn">${settings.lang==="en"?q.v.en:q.v.de}</div><div class="verbDe">${settings.lang==="en"?q.v.de:q.v.en}</div></div></button>`).join("");
  $("verbExplorerContent").innerHTML=`<p class="verbExplorerIntro">${tt("verbLibraryIntro")}</p><div class="verbLibraryGrid">${cards}</div>`;
 }
-function openVerbExplorer(){show("verbExplorer");renderVerbLibrary();const tutorial=audioGuidance.tutorial("verbExplorer");if(tutorial)scheduleSpeech(tutorial,"tutorial")}
+function openVerbExplorer(){show("verbExplorer");renderVerbLibrary();if(audioGuidance.tutorial("verbExplorer"))audioGuidance.present("verbExplorer","","tutorial")}
 function openVerbLessonByEnglish(en,fromQuiz=false){
  const idx=verbQs.findIndex(q=>q.v.en===en);if(idx>=0)openVerbLesson(idx,fromQuiz);
 }
@@ -506,7 +551,7 @@ function openVerbLesson(idx,fromQuiz=false){
  // Bind text as data, never as JavaScript inside an HTML attribute (e.g. 'hoo').
  $("verbExplorerContent").querySelector(".verbLessonBtn").onclick=()=>audioGuidance.say(spoken,"vocab",true);
  $("verbExplorerContent").querySelectorAll(".roundBtn,.verbLessonBtn.primary").forEach(b=>b.onclick=backFromLesson);
- applyLanguage();const tutorial=audioGuidance.tutorial("verbExplorer");scheduleSpeech(`${tutorial} ${spoken}`,"vocab");
+ applyLanguage();audioGuidance.present("verbExplorer",spoken,"instruction");
 }
 function backFromLesson(){const fromQuiz=activeLesson&&activeLesson.fromQuiz;activeLesson=null;if(fromQuiz)show("game");else renderVerbLibrary()}
 function navigateBack(){
@@ -530,15 +575,17 @@ function pick(btn,key){
  }
 }
 function finish(){
+ stopSpeech();
  $("progressFill").style.width="100%";
  const earnedStars=Math.max(0,Math.min(state.items.length,state.score));
  const stars=Array.from({length:earnedStars},()=>"⭐").join("");
  const rewardText=fmt(tt("scoreText"),{score:earnedStars,total:state.items.length});
  $("gameTitle").textContent=tt("finish");$("gameProgress").textContent="";
- $("gameContent").innerHTML=`<div class="finish"><div class="celebration" aria-label="Optional balloon celebration">${celebrationBalloons()}</div><div class="trophy">🏆</div><h2>${tt("finish")}</h2><div class="stars" aria-label="${earnedStars} stars">${stars}</div><p>${rewardText}</p><div class="bottomRow"><button class="actionBtn nextBtn" onclick="startGame(state.mode)">${tt("continue")}</button><button class="actionBtn homeBtn" onclick="goHome()">🏠 ${tt("backHome")}</button></div></div>`;
+ $("gameContent").innerHTML=`<div class="finish"><div class="celebration" aria-label="Optional balloon celebration">${celebrationBalloons()}</div><div class="trophy">🏆</div><h2>${tt("finish")} <button class="speakBtn" aria-label="${tt("listen")}" onclick="audioGuidance.replay()">🔊</button></h2><div class="stars" aria-label="${earnedStars} stars">${stars}</div><p>${rewardText}</p><div class="bottomRow"><button class="actionBtn nextBtn" onclick="startGame(state.mode)">${tt("continue")}</button><button class="actionBtn homeBtn" onclick="goHome()">🏠 ${tt("backHome")}</button></div></div>`;
  $("feedback").textContent="";$("nextAction").disabled=true;$("hintAction").style.visibility="hidden";
  setupCelebration();
- scheduleSpeech(`${tt("finish")} ${rewardText}`)
+ state.current={speak:`${tt("finish")} ${rewardText}`};
+ scheduleSpeech(state.current.speak,"feedback")
 }
 function celebrationBalloons(){
  const colours=["red","blue","yellow","green","purple","orange"];
@@ -550,7 +597,18 @@ function popBalloon(balloon){
  balloon.classList.add("popped");playPopTone();
  const surprise=balloon.dataset.surprise;balloon.querySelector("span").textContent=surprise;setTimeout(()=>balloon.classList.add("fade"),500)
 }
-function playPopTone(){try{const AudioContext=window.AudioContext||window.webkitAudioContext;if(!AudioContext)return;const ctx=new AudioContext(),osc=ctx.createOscillator(),gain=ctx.createGain();osc.type="sine";osc.frequency.setValueAtTime(520,ctx.currentTime);osc.frequency.exponentialRampToValueAtTime(180,ctx.currentTime+.12);gain.gain.setValueAtTime(.045,ctx.currentTime);gain.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+.14);osc.connect(gain).connect(ctx.destination);osc.start();osc.stop(ctx.currentTime+.14);setTimeout(()=>ctx.close(),220)}catch(e){}}
+function playPopTone(){
+ if(settings.audioMode==="off")return;
+ try{
+  const AudioContext=window.AudioContext||window.webkitAudioContext;if(!AudioContext)return;
+  const ctx=popContext||(popContext=new AudioContext());
+  if(ctx.state==="suspended")ctx.resume().catch(()=>{});
+  const osc=ctx.createOscillator(),gain=ctx.createGain();osc.type="sine";
+  osc.frequency.setValueAtTime(520,ctx.currentTime);osc.frequency.exponentialRampToValueAtTime(180,ctx.currentTime+.12);
+  gain.gain.setValueAtTime(.045,ctx.currentTime);gain.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+.14);
+  osc.connect(gain).connect(ctx.destination);popTones.add(osc);osc.onended=()=>{popTones.delete(osc);osc.disconnect();gain.disconnect()};osc.start();osc.stop(ctx.currentTime+.14);
+ }catch(e){}
+}
 function goHome(){
  show("home");$("hintAction").style.visibility="visible";applyLanguage();
  try{if(window.Android&&Android.onWebHome)Android.onWebHome()}catch(e){}
@@ -579,5 +637,5 @@ document.querySelectorAll("[data-len]").forEach(b=>b.onclick=()=>setRound(+b.dat
 document.querySelectorAll("[data-nummax]").forEach(b=>b.onclick=()=>setNumberMax(+b.dataset.nummax));
 $("applyNumberMax").onclick=()=>setNumberMax($("customNumberMax").value);
 window.addEventListener("resize",updateDeviceInfo);
-document.addEventListener("visibilitychange",()=>{if(document.hidden)stopSpeech()});
+document.addEventListener("visibilitychange",()=>{if(document.hidden)suspendAudio()});
 applyLanguage();show("home");
