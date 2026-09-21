@@ -56,6 +56,7 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.key
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -75,7 +76,6 @@ private val Gold = Color(0xFFFFD76A)
 private val PaleBlue = Color(0xFFEAF7FC)
 private val PaleYellow = Color(0xFFFFF5C8)
 
-private enum class ShellScreen { HOME, OPTIONS, WEB }
 
 private data class HomeCard(
     val emoji: String,
@@ -112,6 +112,11 @@ class MainActivity : ComponentActivity() {
     private var audioStatus by mutableStateOf("initialising")
     private var foreground = false
     private var utteranceSerial = 0L
+    private var navigation by mutableStateOf(ShellNavigation())
+    private var checkpoint = LegacyCheckpoint()
+    private var restoredSession: String? = null
+    private var webReady = false
+    private val backGate = LegacyBackGate()
     private val speech = LegacySpeech<Voice>(
         stopEngine = { tts?.stop(); Unit },
         play = { voice, text, id ->
@@ -126,6 +131,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
         prefs = getSharedPreferences("basti_shell", Context.MODE_PRIVATE)
+        restoredSession = savedInstanceState?.getString("legacySession")
+        navigation = ShellNavigation.restore(savedInstanceState?.getString("screen"),
+            savedInstanceState?.getString("optionsOrigin"), savedInstanceState?.getString("webMode"), restoredSession)
+        if (!navigation.ownsWebSession) restoredSession = null
+        checkpoint = LegacyCheckpoint(restoredSession)
         tts = TextToSpeech(this) { status ->
             // Post so the constructor assignment is complete even for an immediate callback.
             window.decorView.post {
@@ -153,21 +163,15 @@ class MainActivity : ComponentActivity() {
     @Composable
     @OptIn(ExperimentalMaterial3Api::class)
     private fun BastiApp() {
-        var screen by remember { mutableStateOf(ShellScreen.HOME) }
+        val screen = navigation.screen
         var language by remember { mutableStateOf(prefs.getString("lang", "en") ?: "en") }
         var sound by remember { mutableStateOf(prefs.getBoolean("sound", true)) }
         var audioMode by remember { mutableStateOf(prefs.getString("audioMode", if (sound) "all" else "off") ?: "all") }
         var round by remember { mutableStateOf(prefs.getInt("round", 5)) }
         var numberMax by remember { mutableStateOf(prefs.getInt("numberMax", 10)) }
-        var webMode by remember { mutableStateOf("verbs") }
 
         MaterialTheme(colorScheme = BastiColors) {
-            fun back() {
-                cancelAudio()
-                if (screen == ShellScreen.WEB) webView?.evaluateJavascript("navigateBack()", null)
-                else screen = ShellScreen.HOME
-            }
-            BackHandler(enabled = screen != ShellScreen.HOME) { back() }
+            BackHandler(enabled = screen != ShellScreen.HOME) { navigateBack() }
             Scaffold(
                 contentWindowInsets = WindowInsets.safeDrawing,
                 topBar = {
@@ -182,34 +186,72 @@ class MainActivity : ComponentActivity() {
                                 fontWeight = FontWeight.Black
                             )
                         },
-                        navigationIcon = { if (screen != ShellScreen.HOME) OutlinedButton(onClick = { back() }, contentPadding = PaddingValues(horizontal = 12.dp)) { Text("←") } else Unit },
+                        navigationIcon = { if (screen != ShellScreen.HOME) OutlinedButton(onClick = { navigateBack() }, contentPadding = PaddingValues(horizontal = 12.dp)) { Text("←") } else Unit },
                         actions = {
-                            OutlinedButton(onClick = { cancelAudio(); screen = ShellScreen.OPTIONS }) { Text(if (language == "de") "⚙ Optionen" else "⚙ Options") }
+                            OutlinedButton(onClick = { openOptions() }) { Text(if (language == "de") "⚙ Optionen" else "⚙ Options") }
                         },
                         colors = TopAppBarDefaults.topAppBarColors(containerColor = Gold),
                         windowInsets = WindowInsets.statusBars
                     )
                 },
             ) { padding ->
-                when (screen) {
-                    ShellScreen.HOME -> NativeHome(language, padding) { card ->
-                        if (card.play) return@NativeHome
-                        webMode = card.mode ?: "verbs"
-                        if (card.verbExplorer) webMode = "verbExplorer"
-                        screen = ShellScreen.WEB
+                Box(Modifier.fillMaxSize()) {
+                    // Keep exactly one WebView alive behind Options. Home ends its lifetime.
+                    if (navigation.ownsWebSession) key(navigation.mode) {
+                        ExistingLearningSurface(navigation.mode, padding, screen == ShellScreen.WEB)
                     }
-                    ShellScreen.OPTIONS -> NativeOptions(language, audioMode, round, numberMax, padding, audioStatus,
-                        onLanguage = { language = it; saveAndSync(it, audioMode, round, numberMax) },
-                        onAudioMode = { audioMode = it; saveAndSync(language, it, round, numberMax) },
-                        onRound = { round = it; saveAndSync(language, audioMode, it, numberMax) },
-                        onNumberMax = { numberMax = it; saveAndSync(language, audioMode, round, it) },
-                        onResetTutorials = {
-                            val epoch = prefs.getLong("tutorialResetEpoch", 0) + 1
-                            prefs.edit().putLong("tutorialResetEpoch", epoch).apply()
-                            webView?.evaluateJavascript("syncTutorialReset($epoch)", null)
-                        })
-                    // Recovery guidance stays in parent Options; learning UI remains usable.
-                    ShellScreen.WEB -> ExistingLearningSurface(webMode, padding) { screen = ShellScreen.HOME }
+                    when (screen) {
+                        ShellScreen.HOME -> NativeHome(language, padding, navigation.recoveryFailed) { card ->
+                            if (!card.play) {
+                                checkpoint = LegacyCheckpoint(); restoredSession = null
+                                changeRoute(navigation.openActivity(if (card.verbExplorer) "verbExplorer" else card.mode ?: "verbs"))
+                            }
+                        }
+                        ShellScreen.OPTIONS -> NativeOptions(language, audioMode, round, numberMax, padding, audioStatus,
+                            onLanguage = { language = it; saveAndSync(it, audioMode, round, numberMax) },
+                            onAudioMode = { audioMode = it; saveAndSync(language, it, round, numberMax) },
+                            onRound = { round = it; saveAndSync(language, audioMode, it, numberMax) },
+                            onNumberMax = { numberMax = it; saveAndSync(language, audioMode, round, it) },
+                            onResetTutorials = {
+                                val epoch = prefs.getLong("tutorialResetEpoch", 0) + 1
+                                prefs.edit().putLong("tutorialResetEpoch", epoch).apply()
+                                syncSettings()
+                            })
+                        ShellScreen.WEB -> Unit
+                    }
+                }
+            }
+        }
+    }
+
+    private fun changeRoute(route: ShellNavigation) {
+        if (route == navigation) return
+        cancelAudio()
+        backGate.invalidate()
+        navigation = route
+        updateWebActivity()
+    }
+
+    private fun openOptions() {
+        // Let the in-flight web Back settle before accepting another destination.
+        if (!backGate.isPending) changeRoute(navigation.openOptions())
+    }
+
+    private fun navigateBack() {
+        when (navigation.backAction) {
+            BackAction.EXIT -> Unit // BackHandler is disabled; Android owns exit.
+            BackAction.CLOSE_OPTIONS -> {
+                syncSettings()
+                changeRoute(navigation.closeOptions())
+            }
+            BackAction.LEGACY -> {
+                val owner = webView
+                if (owner == null || !webReady) { changeRoute(navigation.home()); return }
+                val ticket = backGate.begin() ?: return
+                cancelAudio()
+                owner.evaluateJavascript("navigateBack()") { handled ->
+                    if (owner !== webView || !backGate.finish(ticket)) return@evaluateJavascript
+                    if (handled != "true") changeRoute(navigation.home())
                 }
             }
         }
@@ -217,27 +259,49 @@ class MainActivity : ComponentActivity() {
 
     private fun saveAndSync(language: String, audioMode: String, round: Int, numberMax: Int) {
         cancelAudio()
-        val sound = audioMode != "off"
-        prefs.edit().putString("lang", language).putString("audioMode", audioMode).putBoolean("sound", sound).putInt("round", round).putInt("numberMax", numberMax).apply()
-        webView?.evaluateJavascript("setLang('$language');setAudioMode('$audioMode');setRound($round);setNumberMax($numberMax)", null)
+        prefs.edit().putString("lang", language).putString("audioMode", audioMode)
+            .putBoolean("sound", audioMode != "off").putInt("round", round).putInt("numberMax", numberMax).apply()
+        syncSettings()
+    }
+
+    private fun settingsJson(): String = JSONObject().apply {
+        put("lang", prefs.getString("lang", "en"))
+        put("audioMode", prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off"))
+        put("round", prefs.getInt("round", 5)); put("numberMax", prefs.getInt("numberMax", 10))
+        put("tutorialResetEpoch", prefs.getLong("tutorialResetEpoch", 0))
+    }.toString()
+
+    private fun syncSettings() {
+        if (webReady) webView?.evaluateJavascript("applyShellSettings(${settingsJson()})", null)
+    }
+
+    private fun updateWebActivity() {
+        val active = this@MainActivity.foreground && navigation.screen == ShellScreen.WEB
+        webView?.let {
+            if (active) it.onResume()
+            if (webReady) it.evaluateJavascript("setShellActive($active)", null)
+            if (!active) it.onPause()
+        }
     }
 
     @Composable
-    private fun ExistingLearningSurface(mode: String, padding: PaddingValues, onHome: () -> Unit) {
-        DisposableEffect(mode) {
-            onDispose {
-                cancelAudio()
-                webView?.let { it.removeJavascriptInterface("Android"); it.stopLoading(); it.destroy() }
-                webView = null
-            }
-        }
+    private fun ExistingLearningSurface(mode: String, padding: PaddingValues, visible: Boolean) {
+        DisposableEffect(mode) { onDispose { disposeWebView() } }
         AndroidView(
             modifier = Modifier.fillMaxSize().padding(padding).background(Color.White),
-            factory = { context -> createWebView(context, mode, onHome).also { webView = it } }
+            factory = { context -> createWebView(context, mode).also { webView = it } },
+            update = { it.visibility = if (visible) View.VISIBLE else View.INVISIBLE }
         )
     }
 
-    private fun createWebView(context: Context, mode: String, onHome: () -> Unit): WebView {
+    private fun disposeWebView() {
+        speech.stop()
+        val old = webView
+        webView = null; webReady = false; backGate.invalidate()
+        old?.let { it.removeJavascriptInterface("Android"); it.stopLoading(); it.destroy() }
+    }
+
+    private fun createWebView(context: Context, mode: String): WebView {
         return WebView(context).apply {
             setBackgroundColor(Color.White.value.toInt())
             settings.javaScriptEnabled = true
@@ -249,30 +313,37 @@ class MainActivity : ComponentActivity() {
             settings.displayZoomControls = false
             settings.mediaPlaybackRequiresUserGesture = false
             settings.textZoom = 100
+            val mailbox = checkpoint
+            val restore = restoredSession
+            restoredSession = null
             webViewClient = object : WebViewClient() {
+                private var booted = false
                 override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest) = true
                 override fun onPageFinished(view: WebView, url: String) {
-                    view.evaluateJavascript(syncScript(mode), null)
+                    if (view !== webView || booted) return
+                    booted = true
+                    val active = this@MainActivity.foreground && navigation.screen == ShellScreen.WEB
+                    val snapshot = restore?.let { JSONObject.quote(it) } ?: "null"
+                    val config = settingsJson()
+                    view.evaluateJavascript("bootLegacy(${JSONObject.quote(mode)},$config,$snapshot,$active)") { success ->
+                        if (view !== webView) return@evaluateJavascript
+                        if (success != "true") changeRoute(navigation.home(failed = true))
+                        else { webReady = true; if (config != settingsJson()) syncSettings(); updateWebActivity() }
+                    }
                 }
             }
-            addJavascriptInterface(AppBridge(context, this, onHome), "Android")
+            addJavascriptInterface(AppBridge(context, this, mailbox), "Android")
             loadUrl("file:///android_asset/index.html")
         }
     }
 
-    private fun syncScript(mode: String): String {
-        val language = prefs.getString("lang", "en") ?: "en"
-        val sound = prefs.getBoolean("sound", true)
-        val round = prefs.getInt("round", 5)
-        val numberMax = prefs.getInt("numberMax", 10)
-        val audioMode = prefs.getString("audioMode", if (sound) "all" else "off") ?: "all"
-        return "syncTutorialReset(${prefs.getLong("tutorialResetEpoch", 0)});setLang('$language');setAudioMode('$audioMode');setRound($round);setNumberMax($numberMax);if(typeof startShellMode==='function')startShellMode('$mode')"
-    }
-
-    private inner class AppBridge(private val context: Context, private val owner: WebView, private val onHome: () -> Unit) {
-        @JavascriptInterface fun onWebHome() = runOnUiThread { if (webView === owner) { cancelAudio(); onHome() } }
+    private inner class AppBridge(private val context: Context, private val owner: WebView, private val mailbox: LegacyCheckpoint) {
+        @JavascriptInterface fun saveSession(json: String) { mailbox.publish(json) }
+        @JavascriptInterface fun onWebHome() = runOnUiThread {
+            if (webView === owner && navigation.screen == ShellScreen.WEB) changeRoute(navigation.home())
+        }
         @JavascriptInterface fun speak(text: String, language: String, requestId: String) = runOnUiThread {
-            if (webView !== owner || !foreground || prefs.getString("audioMode", "all") == "off") return@runOnUiThread
+            if (webView !== owner || navigation.screen != ShellScreen.WEB || !foreground || prefs.getString("audioMode", "all") == "off") return@runOnUiThread
             val id = (++utteranceSerial).toString()
             speech.request(text, language, id) { success ->
                 if (webView === owner) owner.evaluateJavascript("speechResult(${JSONObject.quote(requestId)},$success)", null)
@@ -294,15 +365,23 @@ class MainActivity : ComponentActivity() {
         speech.stop()
         webView?.evaluateJavascript("suspendAudio()", null)
     }
-    override fun onPause() { foreground = false; cancelAudio(); webView?.onPause(); super.onPause() }
-    override fun onResume() { super.onResume(); foreground = true; webView?.onResume() }
-    override fun onDestroy() { speech.stop(); tts?.shutdown(); tts = null; webView?.destroy(); webView = null; super.onDestroy() }
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putString("screen", navigation.screen.name)
+        outState.putString("optionsOrigin", navigation.optionsOrigin.name)
+        outState.putString("webMode", navigation.mode)
+        if (navigation.ownsWebSession) outState.putString("legacySession", checkpoint.read())
+        super.onSaveInstanceState(outState)
+    }
+    override fun onPause() { foreground = false; cancelAudio(); updateWebActivity(); super.onPause() }
+    override fun onResume() { super.onResume(); foreground = true; updateWebActivity() }
+    override fun onDestroy() { disposeWebView(); tts?.shutdown(); tts = null; super.onDestroy() }
 }
 
 @Composable
-private fun NativeHome(language: String, padding: PaddingValues, onCard: (HomeCard) -> Unit) {
+private fun NativeHome(language: String, padding: PaddingValues, recoveryFailed: Boolean, onCard: (HomeCard) -> Unit) {
     val learn = homeCards.take(5); val practice = homeCards.slice(5..8); val play = homeCards.drop(9)
     Column(Modifier.fillMaxSize().padding(padding).background(Grass).padding(horizontal = 16.dp).verticalScroll(rememberScrollState())) {
+        if (recoveryFailed) Text(if (language == "de") "Das letzte Spiel konnte nicht wiederhergestellt werden. Wähle ein Spiel, um neu zu starten." else "The last activity could not be restored. Choose an activity to start again.", modifier = Modifier.padding(top = 12.dp))
         Text(if (language == "de") "Bereit für ein Abenteuer?" else "Ready for an adventure?", modifier = Modifier.fillMaxWidth().padding(top = 20.dp), textAlign = TextAlign.Center, fontSize = 32.sp, fontWeight = FontWeight.Black, color = Ink)
         Text(if (language == "de") "Wähle ein Spiel. Jede Runde ist kurz und einfach." else "Choose a game. Each round is short and simple.", modifier = Modifier.fillMaxWidth().padding(4.dp), textAlign = TextAlign.Center, fontSize = 18.sp, fontWeight = FontWeight.Bold, color = Ink)
         Spacer(Modifier.height(12.dp))

@@ -65,6 +65,14 @@ Keep learning history local, without accounts or analytics. Before storing it, r
 - Later checkpoints should include content/schema version, task identity or sufficient deterministic inputs, phase and support state. Incompatible checkpoints must safely restart rather than reconstruct a different question under the same attempt ID.
 - During transition, give each WebView an explicit destination lifetime and release it when no longer needed; cancel bridge work and pending narration before disposal.
 
+### Current legacy recovery implementation (P0)
+
+The shell now owns a small `ShellNavigation` route with an Options origin. Options retains one hidden, paused WebView; Home disposes it. Both Back controls delegate to the lesson-aware legacy path. A pending Back is coalesced, and Options taps are ignored until that Back settles; owner checks and a revision gate reject obsolete callbacks.
+
+The legacy bridge synchronously publishes a bounded JSON checkpoint into a per-WebView mailbox. `onSaveInstanceState` saves that checkpoint and the native route without waiting for asynchronous JavaScript evaluation. On recreation, a fresh WebView restores the compatible checkpoint silently. It includes the activity/round order, question index, score, answered/feedback state, lesson return target, screen and question-generation random draws/current number range. The selected verb record retains its load-time distractors. This is a transitional adapter, not the future native session engine or durable Progress Tracker.
+
+`LEGACY_SESSION_VERSION` covers both the schema and generator/content compatibility: bump it when generation draw order, indexed lesson content or saved field meaning changes. Checkpoints are limited to 100,000 characters. Missing, oversized, malformed or incompatible recovery returns to native Home with bilingual restart guidance. Saved Android task state is the recovery boundary; force-stop/new-task recovery and persisted learning history are not provided. Optional balloon animation/pop timing is not durable session state. Changing language translates the same question and preserves score/answer lock; round/range changes affect subsequent generation. Return/restoration never automatically replays narration or consumes a tutorial. Real device recreation/process/Back acceptance remains required.
+
 ## Legacy removal gate
 
 For each route, record a parity checklist and evidence under TESTING_QA_SPEC.md before removal:

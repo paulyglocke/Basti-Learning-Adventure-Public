@@ -2,6 +2,28 @@
 
 This file records build/test evidence and should not be treated as a product or architecture specification.
 
+## P0 native navigation/session recovery — 2026-09-21
+
+Source: clean `main` at `a7dd258` plus local checkpoint `fix: preserve sessions across navigation and recreation`. No push requested or performed.
+
+Audit: native Options destroyed the current WebView and always returned Home; the shell had no saved route/session. Language changes regenerated a random question under the existing score/answer state. Existing lesson-aware web Back, speech cancellation, tutorial reset and WebView disposal were retained.
+
+Changes: one hidden/paused WebView survives Options; Home disposes it. Native route/Options origin and the latest synchronous bridge checkpoint are stored in Android saved state. Versioned, bounded recovery reproduces the question/choices, round/index, score, answer/feedback state and lesson origin, without replaying speech or awarding answers. Language changes retain question identity; round changes apply to the next round and number-range changes to subsequent questions. Invalid recovery returns Home with bilingual restart guidance. Back requests are coalesced and obsolete callbacks ignored. See NATIVE_ARCHITECTURE_SPEC.md for compatibility/version policy and limits.
+
+Validation:
+
+- Focused `npm test -- tests/navigation.spec.js tests/audio-reliability.spec.js --reporter=line`: **24 passed / 0 failed** (10.3s).
+- Full `npm test -- --reporter=line`: **55 passed / 0 failed** (47.9s).
+- New browser coverage exercises every quiz in EN/DE, answered/unanswered questions, hints/retries, five-/ten-question progress, repeated Options/Back, Home/library/lesson origins, fresh-page checkpoint restoration, hidden native-shell restoration, completion, language/range changes, silent resume/Replay, no double score and malformed/incompatible/inconsistent checkpoint rejection. All 44 prior browser tests remain unchanged.
+- `JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home' ANDROID_HOME='/Users/paulbell/Library/Android/sdk' ./gradlew testDebugUnitTest assembleDebug lintDebug --console=plain`: **BUILD SUCCESSFUL**. Final run 3s; native compilation/unit execution succeeded in the preceding 10s run, and was UP-TO-DATE in the final asset-only rebuild.
+- Native unit XML: **15 passed / 0 failures / 0 errors / 0 skipped** (8 navigation/checkpoint/Back tests plus 7 preserved audio tests). These test production pure Kotlin policies; they do not instantiate Compose, WebView or Android saved-state lifecycle.
+- `assembleDebug`: **passed**. `lintDebug`: **passed, 0 errors / 7 warnings / 2 informational findings**. Warning categories unchanged: OldTargetApi (1), UnusedAttribute (2), GradleDependency (3), SetJavaScriptEnabled (1); information: AutoboxingStateCreation (2). Kotlin retains the existing VIBRATOR_SERVICE deprecation warning.
+- APK `app/build/outputs/apk/debug/app-debug.apk` SHA-256: `761096405f4e36c8e19dcfa3b1dda5d156ff68a99568f53d0f8a34d81ba4f2f2`. Packaged `app.js`, `index.html` and `legacy-session.js` match source byte-for-byte.
+- `git diff --check`: passed.
+- Intermediate checks caught and corrected a Kotlin receiver/name collision, restored correct-answer CSS ordering, a test fixture's retained round setting and inconsistent completion checkpoint acceptance. No existing test was weakened.
+
+No physical Samsung S24 or Amazon Fire Max validation was performed. Remaining checks: system/visible Back and rapid Options interactions from Home, unanswered/answered quizzes, quiz-linked lessons, library and completion; rotate/recreate/background and recover an OS-saved task with each origin, in both languages; verify exact score/answer lock, one learning surface, silent resume and actual offline audio. Browser reload and pure JVM tests are not physical lifecycle proof. Force-stop/new-task recovery and durable Progress Tracker records are outside this legacy saved-state implementation. Broader P0 device layout/insets/font/accessibility/audio acceptance remains outstanding. No neural TTS, animation/video assets or broad Compose migration work was started.
+
 ## P0 completion/reward layout — 2026-09-21
 
 Source: clean `ff57c8b` plus local checkpoint `fix: keep completion actions visible on small screens`.

@@ -230,6 +230,8 @@ Object.defineProperty(settings,"audioMode",{value:localStorage.getItem("audioMod
 let state={mode:null,items:[],i:0,score:0,answered:false,current:null};
 let activeScreen="home", activeLesson=null, speechTimer=null, speechSerial=0, activeSpeech=null, popContext=null;
 const popTones=new Set();
+let restoringSession=false,shellSuspended=false,optionsReturn=null,replayedVerb=null;
+function checkpointSession(){if(window.publishSession)publishSession()}
 
 const $=id=>document.getElementById(id);
 const shuffle=a=>{const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b};
@@ -247,7 +249,7 @@ function germanCreatureName(id){
 }
 function creatureCountName(id,n){const c=creatures[id];return n===1?c[settings.lang]:c[settings.lang+"Plural"]}
 const audioGuidance={
- canSpeak(kind,manual=false){return settings.audioMode!=="off"&&(manual||settings.audioMode==="all"||["instruction","question","tutorial"].includes(kind))},
+ canSpeak(kind,manual=false){return !restoringSession&&!shellSuspended&&settings.audioMode!=="off"&&(manual||settings.audioMode==="all"||["instruction","question","tutorial"].includes(kind))},
  say(text,kind="question",manual=false,onDone=null){return speak(text,manual,kind,onDone)},
  replay(){if(activeScreen==="game"&&state.current)this.say(state.current.speak,"question",true)},
  tutorialKey(type){return `bastiTutorial_v${type==="letters"?3:2}_${settings.lang}_${type}`},
@@ -273,7 +275,7 @@ function stopSpeech(){
 }
 function suspendAudio(){stopSpeech();for(const osc of popTones){try{osc.stop()}catch(e){}}popTones.clear();if(popContext)popContext.suspend().catch(()=>{})}
 function scheduleSpeech(text,kind="question",onDone=null){
- stopSpeech();const owner=speechSerial;
+ stopSpeech();if(restoringSession||shellSuspended)return;const owner=speechSerial;
  speechTimer=setTimeout(()=>{speechTimer=null;if(owner===speechSerial)audioGuidance.say(text,kind,false,onDone)},220);
 }
 function show(id){stopSpeech();document.body.classList.remove("completionView");activeScreen=id;["home","game","options","verbExplorer"].forEach(x=>$(x).classList.toggle("hidden",x!==id));window.scrollTo(0,0)}
@@ -291,7 +293,7 @@ function applyLanguage(){
  $("soundSwitch").setAttribute("aria-checked",String(settings.audioMode!=="off"));
  $("soundSwitch").setAttribute("aria-label",tt("sound"));
  document.querySelectorAll("[data-audio-mode]").forEach(b=>b.classList.toggle("selected",b.dataset.audioMode===settings.audioMode));
- ["backHome","optionsBack"].forEach(id=>$(id).setAttribute("aria-label",tt("backHome")));
+ $("backHome").setAttribute("aria-label",tt("backHome"));$("optionsBack").setAttribute("aria-label",settings.lang==="de"?"Zurück":"Back");
  $("verbExplorerBack").setAttribute("aria-label",activeLesson?(settings.lang==="en"?"Back":"Zurück"):tt("backHome"));
  document.title=tt("brandTitle");
  updateDeviceInfo();
@@ -299,25 +301,32 @@ function applyLanguage(){
 function setLang(l){
  l=l==="de"?"de":"en";if(l===settings.lang)return;
  stopSpeech();settings.lang=l;localStorage.setItem("lang",l);applyLanguage();
- // Generated questions are explicitly restarted in the new language, without scoring an attempt.
- if(activeScreen==="game")refreshQuestionLanguage();
- else if(activeScreen==="verbExplorer"){
+ const previousScreen=activeScreen,muted=restoringSession;
+ if(previousScreen==="options")restoringSession=true;
+ const contentScreen=activeScreen==="options"?optionsReturn?.screen:activeScreen;
+ if(contentScreen==="game")refreshQuestionLanguage();
+ else if(contentScreen==="verbExplorer"){
   if(activeLesson){
    const lesson=activeLesson;
    if(lesson.fromQuiz)refreshQuestionLanguage();
    openVerbLesson(lesson.idx,lesson.fromQuiz);
   }else renderVerbLibrary();
  }
+ if(previousScreen==="options")show("options");
+ restoringSession=muted;checkpointSession();
 }
 function refreshQuestionLanguage(){
- if(state.i>=state.items.length){finish();return}
- const answered=state.answered;
- renderQuestion();
- if(answered){
-  state.answered=true;
-  document.querySelectorAll(".answer").forEach(b=>{b.disabled=true;b.classList.add("locked")});
+ if(state.complete||state.i>=state.items.length){finish();return}
+ renderQuestion(true);
+}
+function restoreQuestionFeedback(){
+ if(state.answered){
+  document.querySelectorAll(".answer").forEach(b=>{b.disabled=true;b.classList.toggle("correct",b.dataset.key===state.current.correct);b.classList.add("locked")});
   $("nextAction").disabled=false;
  }
+ const feedback=state.feedback;
+ $("feedback").textContent=!feedback?"":feedback.kind==="hint"?`💡 ${state.current.hint||tt("look")}`:
+  feedback.kind==="wrong"?tt("try"):state.current.feedbackCorrect||tt("great")[feedback.praise||0].displayText;
 }
 function setAudioMode(mode){suspendAudio();settings.audioMode=["all","questions","off"].includes(mode)?mode:"all";settings.sound=settings.audioMode!=="off";localStorage.setItem("audioMode",settings.audioMode);localStorage.setItem("sound",String(settings.sound));applyLanguage()}
 function setSound(v){setAudioMode(v?"all":"off")}
@@ -362,24 +371,40 @@ function startGame(mode){
  state.items=state.items.slice(0,settings.round);
  show("game");$("gameTitle").textContent=titleFor(mode);renderQuestion()
 }
-function renderQuestion(){
+function renderQuestion(replay=false){
  stopSpeech();document.body.classList.remove("completionView");
  if(state.i>=state.items.length){finish();return}
- state.answered=false;$("feedback").textContent="";$("nextAction").disabled=true;$("score").textContent=state.score;
+ if(!replay){state.answered=false;state.feedback=null;state.complete=false}
+ $("feedback").textContent="";$("nextAction").disabled=true;$("score").textContent=state.score;
  $("hintAction").style.visibility="visible";
  $("gameProgress").textContent=`${tt("question")} ${state.i+1} ${tt("of")} ${state.items.length}`;
  $("progressFill").style.width=`${state.i/state.items.length*100}%`;
- const type=state.items[state.i]; if(state.mode==="mixed")$("gameTitle").textContent=titleFor(type);
+ const type=state.items[state.i];
+ const originalRandom=Math.random,numberMax=settings.numberMax;
+ const draws=replay?state.questionRandom:[];let draw=0;
+ if(replay&&!Array.isArray(draws))throw new Error("Missing question checkpoint");
+ if(replay)settings.numberMax=state.questionNumberMax;
+ replayedVerb=replay?state.current?.verb:null;
+ Math.random=()=>{
+  if(replay){if(draw>=draws.length)throw new Error("Incompatible question checkpoint");return draws[draw++]}
+  const value=originalRandom();draws.push(value);return value;
+ };
+ try{
+ $("gameTitle").textContent=titleFor(state.mode==="mixed"?type:state.mode);
  if(type==="verbs")renderVerb();
  if(type==="count")renderNumberPractice();
  if(type==="math")renderMath();
  if(type==="positions")renderPosition();
  if(type==="letters")renderLetter();
  if(type==="time")renderTime();
+ }finally{Math.random=originalRandom;settings.numberMax=numberMax;replayedVerb=null}
+ if(!replay){state.questionRandom=draws;state.questionNumberMax=numberMax}
  state.current.instruction=state.current.instruction||activityInstruction(type);
  state.current.question=state.current.speak;
  state.current.speak=`${state.current.instruction} ${state.current.question}`;
+ restoreQuestionFeedback();
  audioGuidance.present(type,state.current.speak);
+ checkpointSession();
 }
 function activityInstruction(type){return ({verbs:settings.lang==="en"?"Listen to the action, then tap the animal that can do it.":"Höre auf die Bewegung und tippe dann auf das Tier, das sie kann.",count:settings.lang==="en"?"Listen to the number question, then tap the right answer.":"Höre auf die Zahlenfrage und tippe dann auf die richtige Antwort.",math:settings.lang==="en"?"Listen to the maths question, then tap the answer.":"Höre auf die Mathefrage und tippe dann auf die Antwort.",positions:settings.lang==="en"?"Look at the picture and listen to the places. Tap the right place.":"Schau dir das Bild an und höre die Orte. Tippe auf den richtigen Ort.",letters:settings.lang==="en"?"Look at the large letter. Find the word that starts with the same letter.":"Schau dir den großen Buchstaben an. Finde das Wort mit diesem Anfangsbuchstaben.",time:settings.lang==="en"?"Listen to the question about the day or season, then tap the answer.":"Höre die Frage über den Tag oder die Jahreszeit und tippe auf die Antwort.",mixed:settings.lang==="en"?"Listen carefully and tap the answer.":"Höre gut zu und tippe auf die Antwort."})[type]}
 function qHeader(text,sub=""){return `<div class="questionBox"><h3>${text} <button class="speakBtn" aria-label="${tt("listen")}" onclick="audioGuidance.replay()">🔊</button></h3>${sub?`<p>${sub}</p>`:""}</div>`}
@@ -392,11 +417,11 @@ function choicesHtml(arr){
 }
 
 function renderVerb(){
- const q=sample(verbQs),correct=q.a;
+ const sampled=sample(verbQs),q=replayedVerb||sampled,correct=q.a;
  const arr=shuffle([q.a,...q.d]).map(id=>({key:id,label:creatureName(id),emoji:creatures[id].emoji}));
  const text=fmt(tt("qVerb"),{verb:q.v[settings.lang]});
  state.current={correct,speak:text,hint:creatures[correct].emoji+" "+creatureName(correct),verb:q};
- $("gameContent").innerHTML=qHeader(text)+`<div class="learnVerbInline"><button onclick="openVerbLesson(${verbQs.indexOf(q)},true)">🎬 ${tt("learnThisVerb")}</button></div>`+choicesHtml(arr)
+ $("gameContent").innerHTML=qHeader(text)+`<div class="learnVerbInline"><button onclick="openVerbLesson(${verbQs.findIndex(item=>item.v.en===q.v.en)},true)">🎬 ${tt("learnThisVerb")}</button></div>`+choicesHtml(arr)
 }
 
 function numberChoices(answer,min=0,max=settings.numberMax){
@@ -568,7 +593,7 @@ function renderVerbLibrary(){
  const cards=verbQs.map((q,i)=>`<button class="verbLibraryCard" onclick="openVerbLesson(${i},false)"><div class="verbAnimal">${creatures[q.a].emoji}</div><div><div class="verbEn">${settings.lang==="en"?q.v.en:q.v.de}</div><div class="verbDe">${settings.lang==="en"?q.v.de:q.v.en}</div></div></button>`).join("");
  $("verbExplorerContent").innerHTML=`<p class="verbExplorerIntro">${tt("verbLibraryIntro")}</p><div class="verbLibraryGrid">${cards}</div>`;
 }
-function openVerbExplorer(){show("verbExplorer");renderVerbLibrary();if(audioGuidance.tutorial("verbExplorer"))audioGuidance.present("verbExplorer","","tutorial")}
+function openVerbExplorer(){show("verbExplorer");renderVerbLibrary();if(audioGuidance.tutorial("verbExplorer"))audioGuidance.present("verbExplorer","","tutorial");checkpointSession()}
 function openVerbLessonByEnglish(en,fromQuiz=false){
  const idx=verbQs.findIndex(q=>q.v.en===en);if(idx>=0)openVerbLesson(idx,fromQuiz);
 }
@@ -584,10 +609,11 @@ function openVerbLesson(idx,fromQuiz=false){
  // Bind text as data, never as JavaScript inside an HTML attribute (e.g. 'hoo').
  $("verbExplorerContent").querySelector(".verbLessonBtn").onclick=()=>audioGuidance.say(spoken,"vocab",true);
  $("verbExplorerContent").querySelectorAll(".roundBtn,.verbLessonBtn.primary").forEach(b=>b.onclick=backFromLesson);
- applyLanguage();audioGuidance.present("verbExplorer",spoken,"instruction");
+ applyLanguage();audioGuidance.present("verbExplorer",spoken,"instruction");checkpointSession();
 }
-function backFromLesson(){const fromQuiz=activeLesson&&activeLesson.fromQuiz;activeLesson=null;if(fromQuiz)show("game");else renderVerbLibrary()}
+function backFromLesson(){const fromQuiz=activeLesson&&activeLesson.fromQuiz;activeLesson=null;if(fromQuiz)show("game");else renderVerbLibrary();checkpointSession()}
 function navigateBack(){
+ if(activeScreen==="options"){closeOptions();return true}
  if(activeScreen==="home")return false;
  if(activeScreen==="verbExplorer"&&activeLesson)backFromLesson();else goHome();
  return true;
@@ -601,13 +627,17 @@ function pick(btn,key){
   const feedback=state.current.feedbackCorrect
    ? {displayText:state.current.feedbackCorrect,speechText:state.current.feedbackCorrect}
    : sample(tt("great"));
+  state.feedback={kind:"correct",praise:Math.max(0,tt("great").indexOf(feedback))};
   $("feedback").textContent=feedback.displayText;$("nextAction").disabled=false;audioGuidance.say(feedback.speechText,"feedback");vibrate()
  }else{
+  state.feedback={kind:"wrong"};
   btn.classList.add("wrong");$("feedback").textContent=tt("try");audioGuidance.say(settings.lang==="de"?"Noch nicht. Versuch es noch einmal.":"Not quite. Try again.","feedback");
   setTimeout(()=>btn.classList.remove("wrong"),450)
  }
+ checkpointSession();
 }
 function finish(){
+ state.complete=true;
  stopSpeech();
  $("progressFill").style.width="100%";
  const earnedStars=Math.max(0,Math.min(state.items.length,state.score));
@@ -620,7 +650,7 @@ function finish(){
  $("feedback").textContent="";$("nextAction").disabled=true;$("hintAction").style.visibility="hidden";
  setupCelebration();
  state.current={speak:`${tt("finish")} ${rewardText}`};
- scheduleSpeech(state.current.speak,"feedback")
+ scheduleSpeech(state.current.speak,"feedback");checkpointSession()
 }
 function celebrationBalloons(){
  const colours=["red","blue","yellow","green","purple","orange"];
@@ -633,7 +663,7 @@ function popBalloon(balloon){
  const surprise=balloon.dataset.surprise;balloon.querySelector("span").textContent=surprise;setTimeout(()=>balloon.classList.add("fade"),500)
 }
 function playPopTone(){
- if(settings.audioMode==="off")return;
+ if(restoringSession||shellSuspended||settings.audioMode==="off")return;
  try{
   const AudioContext=window.AudioContext||window.webkitAudioContext;if(!AudioContext)return;
   const ctx=popContext||(popContext=new AudioContext());
@@ -645,7 +675,7 @@ function playPopTone(){
  }catch(e){}
 }
 function goHome(){
- show("home");$("hintAction").style.visibility="visible";applyLanguage();
+ optionsReturn=null;activeLesson=null;show("home");$("hintAction").style.visibility="visible";applyLanguage();
  try{if(window.Android&&Android.onWebHome)Android.onWebHome()}catch(e){}
 }
 function startShellMode(mode){
@@ -658,12 +688,12 @@ function startShellMode(mode){
 
 document.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>startGame(b.dataset.mode));
 $("backHome").onclick=goHome;$("homeAction").onclick=goHome;
-$("nextAction").onclick=()=>{state.i++;renderQuestion()};
-$("hintAction").onclick=()=>{$("feedback").textContent=`💡 ${state.current?.hint||tt("look")}`};
-$("optionsTop").onclick=()=>{show("options");applyLanguage()};
+$("nextAction").onclick=()=>{if(!state.answered||state.complete)return;state.i++;renderQuestion()};
+$("hintAction").onclick=()=>{state.feedback={kind:"hint"};$("feedback").textContent=`💡 ${state.current?.hint||tt("look")}`};
+$("optionsTop").onclick=()=>openOptions();
 $("verbExplorerCard").onclick=openVerbExplorer;
 $("verbExplorerBack").onclick=()=>activeLesson?backFromLesson():goHome();
-$("optionsBack").onclick=()=>{show("home");applyLanguage()};
+$("optionsBack").onclick=()=>closeOptions();
 $("englishBtn").onclick=()=>setLang("en");$("germanBtn").onclick=()=>setLang("de");
 $("soundSwitch").onclick=()=>setSound(!settings.sound);
 document.querySelectorAll("[data-audio-mode]").forEach(b=>b.onclick=()=>setAudioMode(b.dataset.audioMode));
