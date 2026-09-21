@@ -2,6 +2,8 @@
 
 This is the near-/mid-term work queue, not the full roadmap. Direction and acceptance rules live in [MASTER_PRODUCT_LEARNING_ROADMAP.md](MASTER_PRODUCT_LEARNING_ROADMAP.md), [PROGRESS_TRACKER_SPEC.md](PROGRESS_TRACKER_SPEC.md), [GAME_DESIGN_SPEC.md](GAME_DESIGN_SPEC.md), [VOICE_AUDIO_SPEC.md](VOICE_AUDIO_SPEC.md) and [ART_DIRECTION.md](ART_DIRECTION.md).
 
+Shared implementation contracts: [NATIVE_ARCHITECTURE_SPEC.md](NATIVE_ARCHITECTURE_SPEC.md) for native foundation/migration, [CONTENT_DATA_SPEC.md](CONTENT_DATA_SPEC.md) for models/validation, [UX_NAVIGATION_SPEC.md](UX_NAVIGATION_SPEC.md) for navigation/layouts and [TESTING_QA_SPEC.md](TESTING_QA_SPEC.md) for acceptance.
+
 ## P0 — stabilise current activities
 
 - Finish Prepositions correctness: align scenes, spoken choices and English/German feedback.

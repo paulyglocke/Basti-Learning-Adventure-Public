@@ -15,6 +15,8 @@ This specification should be read together with:
 - `PROGRESS_TRACKER_SPEC.md`
 - `ART_DIRECTION.md`
 
+Shared runtime boundaries and migration gates live in [NATIVE_ARCHITECTURE_SPEC.md](NATIVE_ARCHITECTURE_SPEC.md); canonical schemas/IDs in [CONTENT_DATA_SPEC.md](CONTENT_DATA_SPEC.md); navigation in [UX_NAVIGATION_SPEC.md](UX_NAVIGATION_SPEC.md); acceptance gates in [TESTING_QA_SPEC.md](TESTING_QA_SPEC.md). Package/type/short skill-ID examples below are conceptual and map to those shared contracts.
+
 The roadmap defines **what the app should teach**.
 
 This document defines **how the games should turn those learning goals into playable experiences**.

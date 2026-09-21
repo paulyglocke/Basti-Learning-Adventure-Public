@@ -1,17 +1,14 @@
 # Agent Instructions — Basti’s Learning Adventure
 
 ## Read first
-Before making product, architecture or learning-content decisions, read:
-1. MASTER_PRODUCT_LEARNING_ROADMAP.md
-2. PROGRESS_TRACKER_SPEC.md
-3. GAME_DESIGN_SPEC.md
-4. VOICE_AUDIO_SPEC.md
-5. ART_DIRECTION.md
-6. PROJECT_BRIEF.md
-7. BACKLOG.md
-8. SESSION_HANDOFF.md if present
+This file supplies mandatory operating rules. Before product, architecture or learning-content decisions, read in this order:
 
-The master roadmap and domain specs above are authoritative for long-term direction. Source code determines current implementation reality; older briefs, plans, audits and handoffs must not override the master specs.
+1. Product vision: MASTER_PRODUCT_LEARNING_ROADMAP.md.
+2. Shared engineering/UX contracts: NATIVE_ARCHITECTURE_SPEC.md, CONTENT_DATA_SPEC.md, UX_NAVIGATION_SPEC.md, TESTING_QA_SPEC.md.
+3. Domain rules: PROGRESS_TRACKER_SPEC.md, GAME_DESIGN_SPEC.md, VOICE_AUDIO_SPEC.md, ART_DIRECTION.md.
+4. Summary and execution state: PROJECT_BRIEF.md, BACKLOG.md, SESSION_HANDOFF.md if present.
+
+The roadmap owns long-term direction; each spec owns its named domain. Source code determines current implementation reality. Summaries, older plans/audits and handoffs must not override these specs. Use cross-references rather than duplicate rules; resolve conflicting requirements before implementing them.
 
 ## Product principles
 - audio-first

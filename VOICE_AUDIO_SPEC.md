@@ -234,6 +234,8 @@ No speech path should bypass the speech-safe transformation.
 
 # 7. Long-term architecture — SpeechEngine abstraction
 
+Shared lifecycle/ownership follows [NATIVE_ARCHITECTURE_SPEC.md](NATIVE_ARCHITECTURE_SPEC.md), authored speech data follows [CONTENT_DATA_SPEC.md](CONTENT_DATA_SPEC.md), and cross-device acceptance follows [TESTING_QA_SPEC.md](TESTING_QA_SPEC.md). This document remains authoritative for speech policy, engines and voice quality.
+
 The app should not make learning screens depend directly on Android `TextToSpeech`.
 
 Use a shared interface conceptually like:

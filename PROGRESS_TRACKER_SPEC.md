@@ -138,6 +138,8 @@ Daily mix:
 ## Parent dashboard
 Show useful summaries, not grades or comparisons.
 
+Shared identity/schema contracts are in [CONTENT_DATA_SPEC.md](CONTENT_DATA_SPEC.md), persistence/idempotency in [NATIVE_ARCHITECTURE_SPEC.md](NATIVE_ARCHITECTURE_SPEC.md), parent navigation in [UX_NAVIGATION_SPEC.md](UX_NAVIGATION_SPEC.md), and verification in [TESTING_QA_SPEC.md](TESTING_QA_SPEC.md). The skill names above illustrate the hierarchy; canonical native IDs use the shared registry.
+
 ## Implementation direction
 Prefer shared native Kotlin models:
 - SkillDefinition

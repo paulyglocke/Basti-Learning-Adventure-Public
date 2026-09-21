@@ -2,13 +2,13 @@
 
 ## Current session
 
-Documentation Cleanup Pass 1 normalises guidance only. No runtime code changed and no Compose migration started. Read AGENTS.md and the master specs first; BACKLOG.md is the current action queue. Historical audit recommendations and earlier task permissions do not override the current task or master specs.
+Documentation Pass 2 adds NATIVE_ARCHITECTURE_SPEC.md, CONTENT_DATA_SPEC.md, UX_NAVIGATION_SPEC.md and TESTING_QA_SPEC.md and integrates their reading order. No runtime code changed and no Compose migration started. Read AGENTS.md and the master specs first; BACKLOG.md is the current action queue. Historical audit recommendations and earlier task permissions do not override the current task or master specs.
 
 Current source: Kotlin MainActivity owns Compose home/Options/top bar, shell navigation, SharedPreferences, Android TTS and WebView hosting. All seven quiz modes, 53 Verb Explorer lessons, CSS animations, tutorials, scoring/completion and balloons remain legacy web code. All five Play cards are placeholders; Vocabulary Booster falls back to Animal Actions. No persistent skill-level progress exists.
 
 The prior P0 answer/audio activation isolation is complete: choicesHtml uses sibling selection/audio buttons and retains audio after a correct answer. Its recorded build/lint and 12 browser-test results are historical (2026-09-20); see BUILD_NOTES.md. Remaining correctness work is in BACKLOG.md, including Prepositions, speech glyph leakage, completion layouts, Letters case, audio policy, navigation/lifecycle and physical device validation.
 
-Pass 1 verification is documentation-only: review git diff, whitespace and local file references. No new device/build/browser validation is implied. Documentation Pass 2 is next; NATIVE_ARCHITECTURE_SPEC.md, CONTENT_DATA_SPEC.md, UX_NAVIGATION_SPEC.md and TESTING_QA_SPEC.md have deliberately not been created. Do not start implementation solely from this handoff.
+Pass 2 verification is documentation-only: git diff, whitespace, Markdown/local file references and cross-spec consistency. No new device/build/browser validation is implied. The repository is ready to return to bounded implementation work from BACKLOG.md when requested. The detailed all/questions/off audio policy, mastery thresholds and parent-entry interaction still need decisions in their owning specs when those features are implemented; do not treat conceptual schemas as existing code.
 
 ## Historical session context (2026-09-20)
 
