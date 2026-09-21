@@ -470,16 +470,30 @@ function renderMath(){
  $("gameContent").innerHTML=qHeader(text)+`<div class="countScene" style="min-height:145px"><div style="font-size:clamp(42px,7vw,70px);font-weight:1000">${a} ${creatures[id].emoji} ${add?"+":"−"} ${b} = ?</div></div>`+choicesHtml(numberChoices(answer,0,10))
 }
 
+// One relation record owns the depicted reference object and authored bilingual phrase.
+// These are legacy content records, to be migrated with the native Prepositions slice.
+const positionScenes={
+ on:{object:"rock",count:1,en:"on the rock",de:"auf dem Stein"},
+ under:{object:"table",count:1,en:"under the table",de:"unter dem Tisch"},
+ behind:{object:"rock",count:1,en:"behind the rock",de:"hinter dem Stein"},
+ nextTo:{object:"rock",count:1,en:"next to the rock",de:"neben dem Stein"},
+ in:{object:"box",count:1,en:"in the box",de:"in der Kiste"},
+ between:{object:"rock",count:2,en:"between the two rocks",de:"zwischen den beiden Steinen"}
+};
 function renderPosition(){
- const allPositions=["on","under","behind","nextTo","in","between"];
- const pos=sample(allPositions),animal=sample(["snake","dinosaur","dragon","croc"]);
- const animalName=settings.lang==="de"?germanCreatureName(animal):creatureName(animal);
- const optionText=["on","under","behind","nextTo","between"].map(x=>tt(x)).join(settings.lang==="de"?", ":", ");
- const text=settings.lang==="de"?`Wo ist ${animalName}? Schau dir das Bild an. Ist es ${optionText}?`:`Where is the ${animalName}? Look at the picture. Is it ${optionText}?`;
- const choices=shuffle([pos,...shuffle(allPositions.filter(x=>x!==pos)).slice(0,3)]);
- state.current={correct:pos,speak:text,hint:tt(pos),feedbackCorrect:settings.lang==="de"?`Super! ${animalName} ist ${tt(pos)} dem Stein.`:`Great! The ${animalName} is ${tt(pos)} the rock.`};
- const object=pos==="under"?"table":pos==="in"?"box":"rock";
- const scene=`<div class="visualScene position-${pos}"><div class="positionObject ${object}"></div>${pos==="between"?'<div class="positionObject rock secondRock"></div>':""}<div class="sceneAnimal">${creatures[animal].emoji}</div></div>`;
+ const allPositions=Object.keys(positionScenes);
+ const relation=sample(allPositions),animal=sample(["snake","dinosaur","dragon","croc"]);
+ const reference=positionScenes[relation];
+ const choices=shuffle([relation,...shuffle(allPositions.filter(x=>x!==relation)).slice(0,3)]);
+ const animalName=settings.lang==="de"?germanCreatureName(animal):`the ${creatureName(animal)}`;
+ const optionText=choices.map(x=>tt(x)).join(", ");
+ const text=settings.lang==="de"?`Wo ist ${animalName}? Schau dir das Bild an. Wähle: ${optionText}.`:`Where is ${animalName}? Look at the picture. Choose: ${optionText}.`;
+ const sentence=`${animalName.replace(/^./,c=>c.toUpperCase())} ${settings.lang==="de"?"ist":"is"} ${reference[settings.lang]}.`;
+ state.current={correct:relation,speak:text,hint:reference[settings.lang],
+  feedbackCorrect:`${settings.lang==="de"?"Super!":"Great!"} ${sentence}`,
+  scene:{relation,animal,object:reference.object,referenceCount:reference.count},choices};
+ const objects=Array.from({length:reference.count},(_,i)=>`<div class="positionObject ${reference.object}${i?" secondRock":""}"></div>`).join("");
+ const scene=`<div class="visualScene position-${relation}" role="img" aria-label="${sentence}">${objects}<div class="sceneAnimal" aria-hidden="true">${creatures[animal].emoji}</div></div>`;
  $("gameContent").innerHTML=qHeader(text)+scene+choicesHtml(choices.map(x=>({key:x,label:tt(x)})))
 }
 

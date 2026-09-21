@@ -6,7 +6,7 @@ Shared implementation contracts: [NATIVE_ARCHITECTURE_SPEC.md](NATIVE_ARCHITECTU
 
 ## P0 — stabilise current activities
 
-- Finish Prepositions correctness: align scenes, spoken choices and English/German feedback.
+- [x] Align legacy Prepositions scenes, spoken choices, hints and English/German feedback across all six relations; fix narrow-screen scene spacing. Automated/browser visual evidence is in BUILD_NOTES.md; physical Samsung/Fire review remains required.
 - Physically confirm the implemented speech-safe feedback/boundary on S24/Fire in English/German (VOICE_AUDIO_SPEC.md); automated regression coverage is in tests/speech.spec.js.
 - Fix completion/reward layouts: wrapping stars and immediately accessible actions on narrow/short screens.
 - Fix Letters display-case consistency; review bilingual initial-letter/sound content.

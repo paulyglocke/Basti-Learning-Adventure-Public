@@ -2,6 +2,25 @@
 
 This file records build/test evidence and should not be treated as a product or architecture specification.
 
+## P0 Prepositions correctness — 2026-09-21
+
+Source: clean `231f875` plus the local checkpoint `fix: align preposition scenes and bilingual narration`. No native migration or neural audio work.
+
+Changes: six relation records now bind the reference object/count to authored EN/DE phrases. Spoken choices are the actual four displayed choices in display order (including “in” when offered). Correct feedback and hints name the table, box or two rocks accurately, using German dative phrases and capitalized subjects. Scene accessibility text describes the same relation. Responsive spacing prevents next-to clipping/between overlap; the animal stays within the table legs in under scenes.
+
+Validation:
+
+- Focused `npm test -- tests/prepositions.spec.js --reporter=line`: **3 passed / 0 failed** (10.9s). Exhaustive matrix: 6 relations × 4 animals × 2 languages = 48 cases, covering actual choice ordering, Replay, speaker isolation, hints, retries and score/feedback. Geometry checks cover all six relations at 320×700, 360×800, 800×1280 and 1280×800.
+- Full `npm test -- --reporter=line`: **35 passed / 0 failed** (38.8s), preserving audio and learning regressions.
+- Browser visual review: inspected all six narrow-screen scenes as a montage; stacking, containment and object separation were visible as intended. This is Chromium/macOS rendering, not Android font/device evidence.
+- Android Studio JDK 21: `JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home' ANDROID_HOME='/Users/paulbell/Library/Android/sdk' ./gradlew testDebugUnitTest assembleDebug lintDebug --console=plain`: **BUILD SUCCESSFUL** (4s). `assembleDebug` and `lintDebug` passed. Unchanged native unit task was UP-TO-DATE, retaining its **7 passed / 0 failures / 0 errors** result.
+- Lint XML: **0 errors / 7 warnings / 2 informational findings**, same warning categories as the audio checkpoint below.
+- Packaged `app.js` and `index.html` match current source byte-for-byte.
+- APK: `app/build/outputs/apk/debug/app-debug.apk`; SHA-256 `ad708db0798064966dc96deb7668f344c70e67616a4239758d807d256fdb596b`.
+- Initial focused browser launch was sandbox-blocked; authorized Chromium runs produced the results above.
+
+Samsung S24 and Amazon Fire Max physical scene/voice review remains outstanding. Emoji remain temporary artwork; no native Prepositions migration or varied-context content expansion is claimed. Next implementable P0: completion/reward layout on narrow/short screens.
+
 ## P0 audio reliability — 2026-09-21
 
 Source: local changes based on clean `eb5b68e`, committed as `fix: harden audio policy and TTS lifecycle`. Protected checkpoints `f72c5f7` (speech safety) and `796359e` (product priorities) remain intact. No neural engine, Voice Lab, downloaded model or personality pack was introduced.
