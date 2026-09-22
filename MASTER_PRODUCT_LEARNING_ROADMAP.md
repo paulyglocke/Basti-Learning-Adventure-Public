@@ -313,6 +313,42 @@ Listen → Try → Celebrate → Finished
 
 Keep the child oriented within a short activity. Where useful, show a small concrete progress representation such as 3–5 eggs, footprints or mission steps. Do not use daily streak pressure. Before a transition, give a short predictable cue such as “One more, then finished” or “Next we’re going to move.”
 
+## Native completion celebration
+
+Use a shared native optional completion celebration across suitable activities. The child must never be required to interact with the celebration before continuing or going Home; completion controls remain immediately visible and usable.
+
+Preferred interaction:
+- show a small set of gently floating balloons in a dedicated safe celebration area
+- tapping a balloon pops it with a short native animation
+- the pop reveals a friendly animal that appears to jump out of the balloon and then settles visibly in place
+- trigger a brief, lightweight confetti burst around the popped balloon
+- once popped, that balloon cannot be popped again
+- revealed animals may remain visible for the rest of the completion screen so the surprise is not rushed
+
+Keep the effect playful but calm:
+- use roughly five balloons rather than filling the screen
+- slow floating and slight drift rather than chaotic motion
+- no flashing or rapid repetitive animation
+- confetti is local, short-lived and must not cover completion actions
+- balloons, animals and confetti must stay clear of system insets and Continue/Home controls
+- larger-font layouts must remain usable
+- the reward is decorative/playful and does not affect score, mastery, progress or access to the next activity
+
+Audio:
+- an optional soft pop tone may accompany each balloon
+- Sound Off means no pop tone or celebration audio
+- celebration audio follows the shared native audio/SFX policy and must not bypass user settings
+
+Architecture:
+- implement this once as a reusable native Compose completion component rather than independently in each activity
+- keep balloon animation/pop timing out of durable learning-session state
+- completion/progress must already be committed independently of reward interaction
+- use original child-friendly animal artwork; a small curated pool can include familiar interests such as T-Rex, Pteranodon, Mosasaurus, snake, crocodile, whale, shark and dragon
+- activity-specific reveal pools may be supported later, but a shared curated pool is sufficient for the first native version
+- do not require a collectible/reward economy; Discovery Book integration can be considered separately later
+
+This replaces the old WebView balloon celebration as native activities migrate. The native version should preserve the optional tactile fun of balloon popping while improving it with the animal jump-out reveal and brief confetti burst.
+
 ## Today’s Adventure
 Make this a central long-term child-facing entry rather than a late add-on. The home should eventually emphasise one large Today’s Adventure action, with a secondary Choose Something Else / browse path so the full library remains available without overwhelming the child.
 
@@ -327,6 +363,8 @@ Regularly substitute or combine one module with a brief Move & Learn / real-worl
 Individual modules remain short (about 3–5 minutes), the child may stop after any module, and missed days never create penalties or streak pressure. Progress data should drive selection.
 
 ## Development phases
+Build the shared native completion celebration before native activity migration spreads further: floating balloons, animal jump-out reveals, brief confetti and Sound Off-aware pop audio, with Continue/Home always immediately available.
+
 1. Finish current P0 correctness, audio and lifecycle work.
 2. Establish native foundations: shared content model, audio controller, session/question framework and minimal persisted progress-event storage.
 3. Migrate Prepositions end-to-end to prove the architecture.
