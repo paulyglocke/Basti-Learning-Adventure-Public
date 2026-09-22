@@ -4,7 +4,19 @@
 
 This document owns canonical content identity, schema contracts and validation. [MASTER_PRODUCT_LEARNING_ROADMAP.md](MASTER_PRODUCT_LEARNING_ROADMAP.md) defines what to teach; [NATIVE_ARCHITECTURE_SPEC.md](NATIVE_ARCHITECTURE_SPEC.md) defines storage/runtime ownership. Progress meaning belongs to [PROGRESS_TRACKER_SPEC.md](PROGRESS_TRACKER_SPEC.md), speech policy to [VOICE_AUDIO_SPEC.md](VOICE_AUDIO_SPEC.md), and artwork rules to [ART_DIRECTION.md](ART_DIRECTION.md).
 
-Presentation must derive from structured data. Do not independently hardcode a fact, picture arrangement, question, correct answer and feedback. These contracts are targets for incremental extraction from existing JavaScript arrays; no native content repository is claimed to exist yet. Start with the fields needed by the first migrated activity, not a general-purpose authoring platform.
+Presentation must derive from structured data. Do not independently hardcode a fact, picture arrangement, question, correct answer and feedback. The broader contracts below remain targets for incremental extraction from existing JavaScript arrays; the first native subset is described next. Start with the fields needed by the first migrated activity, not a general-purpose authoring platform.
+
+## Implemented native foundation (2026-09-22)
+
+The pure Kotlin `learning/models` and `learning/content` packages now provide semantic `ContentId`/`AssetId`, `ContentLanguage`, required `LocalizedText`, separate display/speech `ContentText`, positive schema/revision `ContentVersion`, and immutable colour, weekday and season definitions. `CoreContent.repository()` creates a validated offline snapshot with seven colours, seven weekdays, four seasons and four local image references. No activity consumes it yet; legacy content/routes are unchanged.
+
+`ContentRepository.find()` returns null for an unknown content ID; before/after queries reject unknown/non-weekday IDs. General enumeration is sorted by semantic ID, while `weekdays()` explicitly returns Monday–Sunday and `seasons()` Spring–Winter. Weekday previous/next derives cyclically from the validated sequence. Weekday colour references are supplementary metadata, never identity. Weekdays do not refer to Wilma artwork.
+
+Season names (display and short name speech) are separate from `spokenDescription`, whose EN/DE values exactly reproduce the master roadmap narration. `illustration: AssetId` resolves to an asset-relative path under `Seasons/`; the committed language-neutral PNGs remain unchanged. Asset IDs remain stable when filenames change. Domain code does not load files or render images. A future screen may choose to play the description; this layer does not imply automatic long narration for quiz questions or infer a real-calendar date.
+
+Construction rejects blank bilingual fields and malformed identifiers/versions/paths. Repository validation rejects duplicate content/asset IDs, incomplete or noncanonical weekday/season sets, invalid weekday ordering, missing/wrong-type colour references and unresolved image references. Returned lists and source-input snapshots are immutable. File presence/PNG signatures and exact season narration are checked in unit tests against the committed assets/roadmap; the pure validator checks references, not filesystem existence. Future platform loaders must handle asset-read failures.
+
+This is schema 1 / content revision 1. Persist the version alongside future saved references; changes to authored meaning/order/assets require an explicit revision, and incompatible schema changes require a schema increment and a restoration/migration decision. IDs must not be recycled. Skill registries, vocabulary/grammar, scenes, tasks, phonics, verb lessons, generators and progress persistence remain separate follow-up work; this subset does not claim those validation gates are complete.
 
 ## Identity and versioning
 

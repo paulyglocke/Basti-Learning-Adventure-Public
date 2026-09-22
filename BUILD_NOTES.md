@@ -2,6 +2,30 @@
 
 This file records build/test evidence and should not be treated as a product or architecture specification.
 
+## First shared native content/data foundation — 2026-09-22
+
+Source: existing session work begun at `ba22b15`, completed on `e6004e2` after the newer roadmap/Seasons commits. No pull, rebase, reset or discard. The newer roadmap, art direction, Wilma artwork and four Seasons PNGs were preserved. Changes are uncommitted for review; no push.
+
+Implementation (one app module, no new dependencies):
+
+- Pure Kotlin `learning/models/ContentModels.kt`: stable semantic `ContentId`, distinct `AssetId`, EN/DE `ContentLanguage`/`LocalizedText`, explicit display/speech `ContentText`, positive schema/revision `ContentVersion`, and immutable colour/weekday/season/image-reference records. Required bilingual fields reject blanks instead of falling back. No Android, Compose, Activity, WebView, JavaScript, preferences or file-loading dependency.
+- `learning/content/ContentRepository.kt`: small synchronous interface and validated immutable bundled implementation; ID-sorted enumeration and deterministic nullable lookup, explicit weekday and season order, cyclic previous/next weekdays, defensive collection snapshots. Validation rejects duplicate IDs, incomplete/unknown calendar sets, invalid weekday order, missing/wrong-type colour references and unresolved/duplicate image references. Asset paths must be relative/local; pure validation resolves the manifest, while tests verify actual files.
+- `CoreContent.kt` and `SeasonContent.kt`: schema 1/revision 1, 18 records (7 colours, 7 weekdays, 4 seasons) and 4 image references. Weekdays use the exact canonical IDs, separately authored EN/DE labels and prescribed colour cues. Colour/artwork never determines identity. Weekdays contain no Wilma asset references. Seasons provide short bilingual display/spoken names and separately authored long descriptions copied exactly from the master roadmap, preserving spring new growth/blossom versus summer full canopy. Season assets are referenced by stable semantic asset IDs; filenames are replaceable metadata. No real-date/hemisphere inference is introduced.
+- No activity is migrated or wired to this repository yet. No native playback engine/sanitizer, Wilma/Seasons UI, Follow the Instructions, Focus & Flex, progress storage or broad game framework was introduced. Existing routes, MainActivity, legacy assets/code and all prior tests are unchanged.
+- Hygiene: six tracked `.DS_Store` paths removed from Git and `.DS_Store` added to `.gitignore`. Locally recreated Finder metadata was retained as ignored files; no legitimate app asset was removed. No PNG compression/optimization.
+
+Validation:
+
+- Focused `JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home' ANDROID_HOME='/Users/paulbell/Library/Android/sdk' ./gradlew testDebugUnitTest --tests 'com.bellfamily.bastischool.learning.content.*' --console=plain`: **20 passed / 0 failed** (12 ContentRepositoryTest + 8 SeasonContentTest), BUILD SUCCESSFUL (20s). The earlier weekday-only checkpoint also passed before the Seasons extension.
+- New tests cover bilingual blanks, display/speech separation and German characters; invalid IDs/versions/paths; exact weekday IDs/names/colours/order and all seven cyclic neighbours; unknown IDs; missing/wrong-type/duplicate references; insertion-order-independent lookup and immutable input/output snapshots; season IDs/labels, all eight exact roadmap narrations, canonical PNG paths/signatures, asset replacement independent of identity and missing image references.
+- Full `JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home' ANDROID_HOME='/Users/paulbell/Library/Android/sdk' ./gradlew testDebugUnitTest assembleDebug lintDebug --console=plain`: **BUILD SUCCESSFUL** (21s). Native unit XML: **35 passed / 0 failures / 0 errors / 0 skipped** (20 new + 15 preserved). `assembleDebug` and `lintDebug` passed.
+- Full `npm test -- --reporter=line`: **55 passed / 0 failed** (50.1s). No existing test weakened or removed.
+- Lint: **0 errors / 7 warnings / 2 informational findings**, unchanged categories: OldTargetApi (1), UnusedAttribute (2), GradleDependency (3), SetJavaScriptEnabled (1), AutoboxingStateCreation information (2).
+- Debug APK: `app/build/outputs/apk/debug/app-debug.apk`, SHA-256 `eaf0d877f6292a1af3e7bb2f503e00f63d6be8149216d1ad4b8f16130b80c431`. All four season PNGs match both HEAD Git blobs and packaged APK bytes. Native content imports are limited to its own models and JDK collections.
+- `git diff --check` and staged diff check passed; tracked `.DS_Store` list is empty. New Kotlin files also checked for trailing whitespace.
+
+Remaining work/limits: the repository is a data foundation, not a migrated learning surface. Add skill/vocabulary/grammar, scene/task, phonics and verb lesson contracts only as needed by the first migration; native audio/session/progress remain separate P1 work. Schema validation cannot establish educational or linguistic quality, and a future asset loader must handle file-read failures. No new physical-device acceptance was claimed for this data-only addition; prior Samsung/Fire gaps remain. Canonical narration tests intentionally require the roadmap and authored data to stay in agreement.
+
 ## Samsung physical P0 pass and landscape top-bar fix — 2026-09-22
 
 Source: `6e44e10` plus `fix: keep native navigation clear of landscape system bars`. Device: **Samsung Galaxy S24 Ultra SM-S928B, Android 16 / API 36**, 1440×3120 physical resolution, density override 560 dpi (reported physical density 600), three-button system navigation. Tested portrait and both landscape directions, system font scales 1.0 and 1.3. This is a partial Samsung acceptance pass, not complete S24/Fire release validation.

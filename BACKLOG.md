@@ -16,7 +16,8 @@ Shared implementation contracts: [NATIVE_ARCHITECTURE_SPEC.md](NATIVE_ARCHITECTU
 - Validate physically on S24/Fire: airplane mode, EN/DE voices, portrait/landscape, insets, large text, touch/accessibility and lifecycle; exercise 5/10-question rounds and number/calendar boundaries. Partial S24 Ultra evidence now covers Options/lesson/library Back, one saved-task process recovery, 5/10 completion and user-confirmed EN/DE offline audio/Sound Off (BUILD_NOTES.md, 2026-09-22). Fire Max and the remaining Samsung accessibility/audio/content/lifecycle matrix are still open.
 
 ## P1 — shared native foundation
-- Introduce shared native content/data models and validators for bilingual fields, phonics packs, verb lessons, scene references and valid answers.
+- [x] Establish the first pure native content foundation: semantic IDs, required EN/DE display/speech, versioned deterministic repository, weekday cycle/colour cues and canonical season narration/local image references with unit validation. No UI migration; evidence in BUILD_NOTES.md.
+- Extend shared native content/data models and validators as the first migration needs them: skill/vocabulary/grammar records, phonics packs, verb lessons, scene references and valid answers. These broader P1 contracts are not completed by the initial calendar subset.
 - Establish shared native audio architecture and test doubles (VOICE_AUDIO_SPEC.md); evaluate enhanced voices separately through Voice Lab and physical auditions.
 - Build reusable native quiz/session, settings and completion components with restoration support.
 - Establish minimal local Progress Tracker event storage immediately after the content/session foundation: stable skill/result/support/context/session IDs, persistence and deduplication (PROGRESS_TRACKER_SPEC.md).
