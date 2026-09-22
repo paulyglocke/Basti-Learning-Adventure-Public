@@ -16,6 +16,13 @@ A calm, audio-first, visually rich school-readiness app focused on communication
 - Generalise skills across many contexts.
 - Include real-world and movement activities.
 - Open-ended speech tasks should encourage talking without automatic pronunciation scoring.
+- Present one clear learning job at a time; complexity should come from the skill being practised, not unnecessary screen clutter.
+- Break longer goals into small visible steps with frequent calm feedback.
+- Give useful feedback immediately, including recognition of successful strategy use such as replaying, asking for help or trying again.
+- Use predictable transitions where helpful, including cues such as “Two more, then we’re finished.”
+- Prefer meaningful generalisation over repeating a mastered drill format.
+- During thinking/choice moments, reduce irrelevant movement and visual distraction; animation should communicate meaning or celebrate rather than compete for attention.
+- Offer movement naturally as part of learning rather than treating it as a consequence for losing focus.
 
 ## Learning pillars
 1. Talk & Communicate
@@ -40,6 +47,13 @@ A calm, audio-first, visually rich school-readiness app focused on communication
 - Story Retell
 - Finish My Sentence
 - Conversation Starter
+- Say a Little More: model an expanded version of the child’s contribution without marking their original answer wrong
+- What’s in the Bag?: gradually reveal an object, then name, describe and talk about what it does
+- Yesterday / Tomorrow Talk: supported conversation about past and future events
+- My Turn / Your Turn: short reciprocal talking/listening exchanges
+- Listen for the Sound: identify and discuss familiar environmental and animal sounds
+
+Use modelling and expansion frequently. A short response such as “Snake” can be expanded naturally to “A green snake” and then “The green snake is slithering.” The goal is richer communication, not automatic speech scoring.
 
 ## Listen & Follow
 Progression:
@@ -73,6 +87,16 @@ D → Dinosaur, not D → dinosaur.
 
 Treat phonics as language-specific content. Shared vocabulary does not imply that the same item is a good phonics example in English and German: English S → snake does not make German S → Schlange a simple /s/ lesson. Keep letter names, graphemes, phonemes and initial-sound tasks distinct, use reviewed language-specific phonics packs, and consider reviewed recorded phoneme clips rather than ordinary TTS for isolated sounds.
 
+Build phonological awareness progressively rather than treating all sound work as formal phonics:
+1. notice and imitate environmental/animal sounds
+2. rhyme recognition and playful rhyme production
+3. clap/count syllables in familiar words
+4. hear whether words begin with the same sound
+5. identify an initial sound
+6. connect reviewed graphemes and phonemes when appropriate
+
+Keep written initial-letter matching as a distinct activity from true phoneme instruction.
+
 ## Vocabulary Booster
 Core packs:
 school, home, people, food, clothes, body, feelings, weather, transport, colours, shapes, positions, actions, describing words, opposites.
@@ -91,12 +115,16 @@ Near-term learning should prioritise concepts over ever-larger numerals:
 - number ↔ quantity
 - more/fewer/same
 - making 5 and simple number bonds
+- part–whole composition/decomposition, such as 5 = 4 + 1 and 5 = 3 + 2
+- one more / one less
+- conservation of quantity: the same number shown in different arrangements
+- simple number stories using meaningful objects/animals
 - counting and number recognition
 - number order
 - before/after
 - missing numbers
 - concrete addition/subtraction
-- estimation
+- estimate then count/check
 - patterns
 - shapes
 - spatial reasoning
@@ -114,6 +142,19 @@ Higher number recognition can remain available as the child grows, but it should
 - Spot the Mistake
 - flexible thinking
 - simple planning/problem solving
+
+### Focus & Flex / Aufpassen & Umschalten
+Use playful, non-clinical activities to practise working memory, inhibition, rule use and flexible switching. Do not present this as ADHD treatment or generic “brain training”; practise useful skills in meaningful contexts.
+
+Possible patterns:
+- Do What I Say: follow a simple rule, later adding “don’t touch X; touch Y”
+- Opposite Game: respond according to a deliberately reversed rule
+- Rule Switch: first choose by one property, then clearly announce a new rule
+- Freeze & Move: move like an animal, then stop on a spoken cue
+- Remember the Mission: briefly show or speak a small sequence, hide it, then carry it out
+- Plan the Mission: choose or order a few practical steps before acting
+
+Start with one rule and very small memory loads. Make the current rule visible/replayable when the goal is not memory. Increase difficulty only when the base version is comfortable.
 
 ## World Around Me
 - time
@@ -197,7 +238,17 @@ Avoid vague claims like “most dangerous” unless the comparison is explicitly
 - Real-World Missions
 - Build the Bridge
 
-Bring simple real-world and movement missions forward. Examples: find something red; find something longer than your hand; find three soft things; look outside and identify the weather; stomp like a T-Rex five times; stand on one leg; clap a rhythm; jump three times. No camera or sensor scoring is required; a parent/child Continue action is enough. Where useful, alternate screen tasks with movement or real-world interaction.
+Bring simple real-world and movement missions forward and use them regularly, not only as occasional rewards. Examples: find something red; find something longer than your hand; find three soft things; look outside and identify the weather; stomp like a T-Rex five times; stand on one leg; clap a rhythm; jump three times. No camera or sensor scoring is required; a parent/child Continue action is enough. Where useful, alternate screen tasks with movement or real-world interaction.
+
+Movement-learning patterns can include:
+- T-Rex Counting: stomp a requested quantity
+- Pteranodon Directions: wings out, turn left/right, up/down
+- Dragon Number Bonds: show a quantity on fingers, hide some, work out what remains
+- Snake Rhythm: copy short clap/stamp patterns
+- Freeze Animals: move to an animal/action cue and stop on “freeze”
+- classroom movement instructions such as stand up, sit down, turn around and line up
+
+Movement should support the learning goal and provide natural changes of state without requiring motion sensors or performance scoring.
 
 ## Games
 - Follow the Instructions
@@ -224,14 +275,18 @@ Prioritise 15–20 common verbs first.
 ## Predictable activity structure
 Listen → Try → Celebrate → Finished
 
+Keep the child oriented within a short activity. Where useful, show a small concrete progress representation such as 3–5 eggs, footprints or mission steps. Do not use daily streak pressure. Before a transition, give a short predictable cue such as “One more, then finished” or “Next we’re going to move.”
+
 ## Today’s Adventure
 Make this a central long-term child-facing entry rather than a late add-on. The home should eventually emphasise one large Today’s Adventure action, with a secondary Choose Something Else / browse path so the full library remains available without overwhelming the child.
 
 A recommended route contains:
 - 1 confidence task
-- 1 focus task
+- 1 focus / Focus & Flex task
 - 1 communication/listening task
 - 1 fun game/reward task
+
+Regularly substitute or combine one module with a brief Move & Learn / real-world mission so a session does not require continuous seated screen interaction.
 
 Individual modules remain short (about 3–5 minutes), the child may stop after any module, and missed days never create penalties or streak pressure. Progress data should drive selection.
 
@@ -244,10 +299,11 @@ Individual modules remain short (about 3–5 minutes), the child may stop after 
 6. Add Tell Me! / expressive-language v1, with parent/child Continue rather than automatic speech scoring. Tell Me More may expand “Snake” → “A green snake” → “The green snake is slithering” → “The long green snake is slithering under the tree.”
 7. Build Memory Pairs on the shared matching engine.
 8. Add Progress dashboard v1.
-9. Expand native Numbers/Maths around subitising, quantities, patterns and shapes.
+9. Expand native Numbers/Maths around subitising, quantities, composition/part–whole relationships, patterns and shapes.
 10. Build Classroom / School Skills.
-11. Build Compare & Discover plus Discovery Book.
-12. Build larger games: Dragon Treasure Hunt, Build the Bridge, Dinosaur Rescue and Crocodile Snap.
+11. Add Focus & Flex and regular Move & Learn missions using the established instruction/session systems.
+12. Build Compare & Discover plus Discovery Book.
+13. Build larger games: Dragon Treasure Hunt, Build the Bridge, Dinosaur Rescue and Crocodile Snap.
 
 This ordering is guidance, not a ban on small opportunistic P0/P1 fixes.
 
