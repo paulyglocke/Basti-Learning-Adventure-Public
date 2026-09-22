@@ -2,6 +2,55 @@
 
 This file records build/test evidence and should not be treated as a product or architecture specification.
 
+
+## Native Seasons migration — 2026-09-22
+
+Base: `main` at `e3bacd6` (committed native Prepositions). Resumed the interrupted Seasons changes after checking repository root, AGENTS.md, status, history and diff. Preserved all work; no reset, pull/rebase, commit or push. Existing browser tests, legacy code and production assets are unchanged.
+
+Legacy audit: `renderTime()` mixes cyclic weekday before/after questions (roughly 55%) with a four-choice season quiz using emoji. It has no dedicated season Explore lessons and does not use the canonical production PNGs/descriptions. Prompts are “Which season is this?” / “Welche Jahreszeit ist das?”; Hint identifies the season, Replay repeats the prompt, option speakers are isolated, correct answers score once, wrong answers allow retry without deductions and rounds use 5/10 questions. Existing browser mode/navigation/audio/completion coverage remains intact.
+
+Implemented:
+
+- Native Days & Seasons chooser leads to Seasons Learn/Practise or the existing legacy calendar activity. System/visible Back from Seasons returns to the chooser, then Home. Options retains its origin. No fake Wilma activity was added.
+- Explore selects each canonical `season.*` record and displays its authored EN/DE name/description and original 4:3 illustration. Selection explicitly speaks the canonical description; Replay repeats it. First opening/restoration is silent. Browsing does not create progress events.
+- Practice uses shared deterministic finite generation, visiting all four seasons before repeating, with five/ten tasks and stable four-choice ordering. Authored question speech enumerates that exact order. Correct answers lock/score once; wrong answers use explicit Retry without penalty; Help uses the canonical description. Returning to Learn during an unanswered task marks hint support without an attempt. Task-count progress and calm completion follow the existing native pattern, with reachable Play again/Home and no SFX/timer/lives.
+- Native ViewModel/audio/session boundaries preserve task identity, choices, score, attempts/support, selected season and phase through supported Options/recreation/navigation. Future settings do not mutate a round. Shared controller applies ALL/QUESTIONS/OFF, manual explanation/Replay/option speech, language-safe offline selection and owned cancellation; stale callbacks cannot change learning state. Missing speech/image/save availability is explicit. Images decode on a worker and cache at most two; Compose uses the original aspect ratio and ContentScale.Fit.
+- Extracted only the existing Prepositions write-ahead host into `DurableSessionHost`, injecting activity content/generation/validation. Its Prepositions adapter keeps the existing journal schema/path and behavior. Seasons has a separate atomic browsing checkpoint and quiz journal in private no-backup storage. An accepted transition durably retains its progress effect before publication; failed/uncertain delivery retries with the same identity, and completion deduplicates. Pending quiz delivery resumes when the quiz is loaded or Retry is selected; Explore alone does not start a background job. Corrupt/incompatible files remain preserved with Retry/Home/legacy access. No direct persistence/TTS in Compose, no new dependencies, no general migration framework.
+- Canonical names, all eight spoken descriptions and all four asset paths remain authored in the existing content pack, not copied into Compose. Byte comparison against HEAD confirmed every Seasons PNG unchanged (1448×1086). Spring blossom/sparser foliage and Summer dense canopy remain distinct; identity is semantic, not colour/path.
+
+Validation uses `JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'` and `ANDROID_HOME='/Users/paulbell/Library/Android/sdk'`:
+
+- Focused `./gradlew testDebugUnitTest --tests 'com.bellfamily.bastischool.learning.seasons.*' --tests 'com.bellfamily.bastischool.learning.prepositions.*' --tests 'com.bellfamily.bastischool.learning.content.SeasonContentTest' --console=plain`: **46 passed, 0 failures/errors/skipped**, BUILD SUCCESSFUL (8s). Includes 19 new Seasons tests, 19 existing Prepositions tests and 8 existing canonical-season tests. An initial compile check found an AndroidViewModel application-context access error, corrected before this passing run.
+- Full `./gradlew testDebugUnitTest assembleDebug lintDebug connectedDebugAndroidTest --console=plain`: **BUILD SUCCESSFUL (1m 55s)**. JVM: **188 passed, 0 failures/errors/skipped** (167 existing + 21 new). Debug APK assembled successfully.
+- Instrumentation: **7 passed, 0 failures/errors/skipped** (3 existing + 4 Seasons) on `Medium_Phone_API_35`, Android 15/API 35 arm64 emulator, headless/audio disabled. Covers all canonical Explore names/descriptions/real PNG aspect ratios, separate Listen/answer actions, Hint/wrong/Retry, five-question completion, German ten-question completion at 320dp/1.5 font scale, real native route, Options/Back, EN→DE selection identity, Activity recreation, quiz checkpoint retention, landscape/reverse-landscape/portrait requests, chooser return and no-WebView assertion. Pure tests additionally reconstruct disk repositories, test unanswered/answered/completed checkpoints, same-key failed attempt/completion redelivery, failures before/after journal commit, stale-host rejection, corrupt-file preservation and stale audio callbacks. Activity recreation/JVM reconstruction are not physical process-death proof.
+- Full `npm test -- --reporter=line`: **55 passed (59.6s)**. No existing browser tests weakened or removed.
+- Lint: **0 errors / 10 warnings / 2 informational findings**, unchanged from baseline. Warnings: GradleDependency 6, UnusedAttribute 2, OldTargetApi 1, SetJavaScriptEnabled 1. Information: AutoboxingStateCreation 2. Existing Kotlin VIBRATOR_SERVICE deprecation remains. No unrelated dependency upgrades.
+- `git diff --check` and added-file whitespace checks passed. APK SHA-256: `7f797e6e83aa07ee4d7630650230b9857a7a78be22d3e82c38ad054dae9e8b9b`.
+
+Physical acceptance remains outstanding on **Samsung S24 Ultra and Fire Max**. On each: airplane mode; installed EN/DE and missing offline voices; ALL/QUESTIONS/OFF (including silent Replay); repeated Replay/selection; portrait and both landscapes; larger fonts, safe insets, TalkBack and full-scene clarity/no cropping; Explore/Practice/legacy chooser, Options/visible/system Back; background/return; actual process recreation for selected/unanswered/answered/completed states; five/ten completion; progress and pending-delivery retry after app restart and normal same-signature upgrade. Also review 4:3 image memory/performance on Fire. Emulator tests do not establish audible quality, physical lifecycle/upgrade acceptance or Samsung/Fire compatibility. Storage capacity/corruption recovery UI remains a separate foundation limitation; no record is silently deleted. Legacy fallback stays available. No Wilma, neural TTS, dashboard or unrelated migration.
+
+Changed files for this migration:
+
+- `BACKLOG.md`
+- `BUILD_NOTES.md`
+- `NATIVE_ARCHITECTURE_SPEC.md`
+- `SESSION_HANDOFF.md`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/seasons/SeasonsRouteTest.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/seasons/SeasonsScreenTest.kt`
+- `app/src/main/java/com/bellfamily/bastischool/MainActivity.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ShellNavigation.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/prepositions/PrepositionsHost.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/seasons/SeasonsAudio.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/seasons/SeasonsContent.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/seasons/SeasonsSelectionStore.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/session/DurableSessionHost.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/seasons/SeasonsScreen.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/seasons/SeasonsViewModel.kt`
+- `app/src/test/java/com/bellfamily/bastischool/SeasonsNavigationTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/seasons/SeasonsAudioTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/seasons/SeasonsContentTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/seasons/SeasonsHostTest.kt`
+
 ## Native Prepositions migration — 2026-09-22
 
 Source: `main` at `9b247e5` (`feat: add durable native progress event storage`). Began clean; after the usage-limit interruption, reconfirmed root, AGENTS.md, status/diff/history and preserved the four untracked implementation files. No reset, pull/rebase, commit or push. Existing foundation tests, legacy source/assets and browser tests remain unchanged.

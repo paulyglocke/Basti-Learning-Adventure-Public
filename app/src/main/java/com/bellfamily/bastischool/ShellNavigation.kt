@@ -2,8 +2,8 @@ package com.bellfamily.bastischool
 
 import java.util.concurrent.atomic.AtomicReference
 
-internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS }
-internal enum class BackAction { EXIT, CLOSE_OPTIONS, LEGACY, NATIVE_HOME }
+internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS }
+internal enum class BackAction { EXIT, CLOSE_OPTIONS, LEGACY, NATIVE_HOME, DAYS_HUB }
 
 /** Options is an overlay on one destination, never another entry in a growing stack. */
 internal data class ShellNavigation(
@@ -16,12 +16,15 @@ internal data class ShellNavigation(
         ShellScreen.HOME -> BackAction.EXIT
         ShellScreen.OPTIONS -> BackAction.CLOSE_OPTIONS
         ShellScreen.WEB -> BackAction.LEGACY
-        ShellScreen.PREPOSITIONS -> BackAction.NATIVE_HOME
+        ShellScreen.PREPOSITIONS, ShellScreen.DAYS_SEASONS -> BackAction.NATIVE_HOME
+        ShellScreen.SEASONS -> BackAction.DAYS_HUB
     }
     val ownsWebSession: Boolean get() = screen == ShellScreen.WEB ||
         (screen == ShellScreen.OPTIONS && optionsOrigin == ShellScreen.WEB)
     fun openOptions() = if (screen == ShellScreen.OPTIONS) this else copy(screen = ShellScreen.OPTIONS, optionsOrigin = screen)
     fun closeOptions() = if (screen == ShellScreen.OPTIONS) copy(screen = optionsOrigin, optionsOrigin = ShellScreen.HOME) else this
+    fun openDaysSeasons() = ShellNavigation(ShellScreen.DAYS_SEASONS)
+    fun openSeasons() = ShellNavigation(ShellScreen.SEASONS)
     fun openPrepositions() = ShellNavigation(ShellScreen.PREPOSITIONS, mode = "positions")
     fun openActivity(mode: String) = ShellNavigation(ShellScreen.WEB, mode = mode)
     fun home(failed: Boolean = false) = ShellNavigation(recoveryFailed = failed)

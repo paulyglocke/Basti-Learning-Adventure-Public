@@ -26,6 +26,8 @@ Shared implementation contracts: [NATIVE_ARCHITECTURE_SPEC.md](NATIVE_ARCHITECTU
 - Native Prepositions now retains pending progress effects with its checkpoint and handles retry/capacity/schema failures. Validate physical Android process/filesystem and upgrade behavior before migration acceptance. Dashboard, rewards and broader retention/migration policy remain separate work.
 - [x] Implement the first native Prepositions slice: canonical bilingual scenes, deterministic rounds, shared session/audio, durable checkpoint plus pending-progress delivery, Compose and native shell route. Automated evidence is in BUILD_NOTES.md.
 - Physically accept native Prepositions on Samsung S24 Ultra and Fire Max before retiring its legacy fallback: artwork/scene meaning, voices, accessibility/insets, recovery, storage failure/retry and signed-upgrade persistence remain open.
+- [x] Implement native Seasons Explore/Practice using canonical names/narration/unchanged PNGs, shared sessions/audio, exact restoration and durable retryable progress. Days & Seasons retains a legacy route; Wilma remains separate future work. Automated evidence is in BUILD_NOTES.md.
+- Physically accept native Seasons on Samsung S24 Ultra and Fire Max: offline voices/silence, artwork/large-font/insets, navigation/recreation and progress after restart/signed upgrade. Keep legacy Days & Seasons until parity is accepted.
 - Add native state/content/Compose tests and CI coverage, including navigation and accessibility.
 - Review generated German grammar, language-specific phonics, number-zero semantics and restore native custom-number entry; consider an independent parent maths ceiling.
 

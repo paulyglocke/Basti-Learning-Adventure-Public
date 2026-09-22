@@ -72,6 +72,7 @@ import androidx.core.view.WindowCompat
 import androidx.lifecycle.ViewModelProvider
 import com.bellfamily.bastischool.ui.prepositions.PrepositionsViewModel
 import com.bellfamily.bastischool.ui.prepositions.PrepositionsScreen
+import com.bellfamily.bastischool.ui.seasons.*
 import com.bellfamily.bastischool.learning.models.ContentLanguage
 
 private val Sky = Color(0xFF79CEF7)
@@ -111,6 +112,7 @@ private val homeCards = listOf(
 )
 
 class MainActivity : ComponentActivity() {
+    private lateinit var nativeSeasons: SeasonsViewModel
     private lateinit var nativePositions: PrepositionsViewModel
     private lateinit var prefs: android.content.SharedPreferences
     private var webView: WebView? = null
@@ -138,6 +140,7 @@ class MainActivity : ComponentActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         prefs = getSharedPreferences("basti_shell", Context.MODE_PRIVATE)
         nativePositions = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[PrepositionsViewModel::class.java]
+        nativeSeasons = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[SeasonsViewModel::class.java]
         configurePositions()
         restoredSession = savedInstanceState?.getString("legacySession")
         navigation = ShellNavigation.restore(savedInstanceState?.getString("screen"),
@@ -191,6 +194,8 @@ class MainActivity : ComponentActivity() {
                                     ShellScreen.OPTIONS -> if (language == "de") "Optionen" else "Options"
                                     ShellScreen.WEB -> if (language == "de") "Lernen" else "Learning"
                                     ShellScreen.PREPOSITIONS -> if (language == "de") "Wo ist es?" else "Where is it?"
+                                    ShellScreen.DAYS_SEASONS -> if (language == "de") "Tage & Jahreszeiten" else "Days & Seasons"
+                                    ShellScreen.SEASONS -> if (language == "de") "Jahreszeiten" else "Seasons"
                                 },
                                 fontWeight = FontWeight.Black
                             )
@@ -214,7 +219,7 @@ class MainActivity : ComponentActivity() {
                         ShellScreen.HOME -> NativeHome(language, padding, navigation.recoveryFailed) { card ->
                             if (!card.play) {
                                 checkpoint = LegacyCheckpoint(); restoredSession = null
-                                changeRoute(if (card.mode == "positions") navigation.openPrepositions() else navigation.openActivity(if (card.verbExplorer) "verbExplorer" else card.mode ?: "verbs"))
+                                changeRoute(if (card.mode == "positions") navigation.openPrepositions() else if (card.mode == "time") navigation.openDaysSeasons() else navigation.openActivity(if (card.verbExplorer) "verbExplorer" else card.mode ?: "verbs"))
                             }
                         }
                         ShellScreen.OPTIONS -> NativeOptions(language, audioMode, round, numberMax, padding, audioStatus,
@@ -229,6 +234,17 @@ class MainActivity : ComponentActivity() {
                                 syncSettings()
                             })
                         ShellScreen.WEB -> Unit
+                        ShellScreen.DAYS_SEASONS -> DaysSeasonsHub(
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            onSeasons = { changeRoute(navigation.openSeasons()) },
+                            onLegacy = { checkpoint = LegacyCheckpoint(); restoredSession = null; changeRoute(navigation.openActivity("time")) },
+                            modifier = Modifier.padding(padding))
+                        ShellScreen.SEASONS -> SeasonsScreen(nativeSeasons.selection, nativeSeasons.state,
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            nativeSeasons.artwork, nativeSeasons.busy, nativeSeasons.saveFailed, nativeSeasons.imageFailed, nativeSeasons.audioFailed,
+                            nativeSeasons::select, nativeSeasons::phase, nativeSeasons::replay, nativeSeasons::action,
+                            nativeSeasons::option, nativeSeasons::again, nativeSeasons::retry,
+                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding))
                         ShellScreen.PREPOSITIONS -> PrepositionsScreen(
                             nativePositions.state, if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativePositions.busy, nativePositions.saveFailed, nativePositions.audioFailed,
@@ -251,6 +267,7 @@ class MainActivity : ComponentActivity() {
         backGate.invalidate()
         navigation = route
         nativePositions.setVisible(foreground && route.screen == ShellScreen.PREPOSITIONS)
+        nativeSeasons.setVisible(foreground && route.screen == ShellScreen.SEASONS)
         updateWebActivity()
     }
 
@@ -261,6 +278,7 @@ class MainActivity : ComponentActivity() {
 
     private fun navigateBack() {
         when (navigation.backAction) {
+            BackAction.DAYS_HUB -> changeRoute(navigation.openDaysSeasons())
             BackAction.NATIVE_HOME -> changeRoute(navigation.home())
             BackAction.EXIT -> Unit // BackHandler is disabled; Android owns exit.
             BackAction.CLOSE_OPTIONS -> {
@@ -290,6 +308,9 @@ class MainActivity : ComponentActivity() {
 
     private fun configurePositions() {
         nativePositions.configure(prefs.getString("lang", "en") ?: "en",
+            prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
+            prefs.getInt("round", 5))
+        nativeSeasons.configure(prefs.getString("lang", "en") ?: "en",
             prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
             prefs.getInt("round", 5))
     }
@@ -402,8 +423,8 @@ class MainActivity : ComponentActivity() {
         if (navigation.ownsWebSession) outState.putString("legacySession", checkpoint.read())
         super.onSaveInstanceState(outState)
     }
-    override fun onPause() { foreground = false; nativePositions.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
-    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); updateWebActivity() }
+    override fun onPause() { foreground = false; nativePositions.setVisible(false); nativeSeasons.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
+    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen == ShellScreen.SEASONS); updateWebActivity() }
     override fun onDestroy() { disposeWebView(); tts?.shutdown(); tts = null; super.onDestroy() }
 }
 
