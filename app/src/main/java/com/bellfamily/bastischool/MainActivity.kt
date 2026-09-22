@@ -73,6 +73,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.bellfamily.bastischool.ui.prepositions.PrepositionsViewModel
 import com.bellfamily.bastischool.ui.prepositions.PrepositionsScreen
 import com.bellfamily.bastischool.ui.seasons.*
+import com.bellfamily.bastischool.ui.wilma.*
 import com.bellfamily.bastischool.learning.models.ContentLanguage
 
 private val Sky = Color(0xFF79CEF7)
@@ -113,6 +114,7 @@ private val homeCards = listOf(
 
 class MainActivity : ComponentActivity() {
     private lateinit var nativeSeasons: SeasonsViewModel
+    private lateinit var nativeWilma: WilmaViewModel
     private lateinit var nativePositions: PrepositionsViewModel
     private lateinit var prefs: android.content.SharedPreferences
     private var webView: WebView? = null
@@ -141,6 +143,7 @@ class MainActivity : ComponentActivity() {
         prefs = getSharedPreferences("basti_shell", Context.MODE_PRIVATE)
         nativePositions = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[PrepositionsViewModel::class.java]
         nativeSeasons = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[SeasonsViewModel::class.java]
+        nativeWilma = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[WilmaViewModel::class.java]
         configurePositions()
         restoredSession = savedInstanceState?.getString("legacySession")
         navigation = ShellNavigation.restore(savedInstanceState?.getString("screen"),
@@ -195,6 +198,7 @@ class MainActivity : ComponentActivity() {
                                     ShellScreen.WEB -> if (language == "de") "Lernen" else "Learning"
                                     ShellScreen.PREPOSITIONS -> if (language == "de") "Wo ist es?" else "Where is it?"
                                     ShellScreen.DAYS_SEASONS -> if (language == "de") "Tage & Jahreszeiten" else "Days & Seasons"
+                                    ShellScreen.WILMA -> if (language == "de") "Wilmas Woche" else "Wilma’s Week"
                                     ShellScreen.SEASONS -> if (language == "de") "Jahreszeiten" else "Seasons"
                                 },
                                 fontWeight = FontWeight.Black
@@ -237,8 +241,15 @@ class MainActivity : ComponentActivity() {
                         ShellScreen.DAYS_SEASONS -> DaysSeasonsHub(
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             onSeasons = { changeRoute(navigation.openSeasons()) },
+                            onWilma = { changeRoute(navigation.openWilma()) },
                             onLegacy = { checkpoint = LegacyCheckpoint(); restoredSession = null; changeRoute(navigation.openActivity("time")) },
                             modifier = Modifier.padding(padding))
+                        ShellScreen.WILMA -> WilmaScreen(nativeWilma.selection, nativeWilma.quiz, nativeWilma.ordering,
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            nativeWilma.images, nativeWilma.busy, nativeWilma.saveFailed, nativeWilma.imageFailed, nativeWilma.audioFailed,
+                            nativeWilma::phase, nativeWilma::select, nativeWilma::replay, nativeWilma::option,
+                            nativeWilma::action, nativeWilma::orderAction, nativeWilma::again, nativeWilma::retry,
+                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding))
                         ShellScreen.SEASONS -> SeasonsScreen(nativeSeasons.selection, nativeSeasons.state,
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeSeasons.artwork, nativeSeasons.busy, nativeSeasons.saveFailed, nativeSeasons.imageFailed, nativeSeasons.audioFailed,
@@ -268,6 +279,7 @@ class MainActivity : ComponentActivity() {
         navigation = route
         nativePositions.setVisible(foreground && route.screen == ShellScreen.PREPOSITIONS)
         nativeSeasons.setVisible(foreground && route.screen == ShellScreen.SEASONS)
+        nativeWilma.setVisible(foreground && route.screen == ShellScreen.WILMA)
         updateWebActivity()
     }
 
@@ -311,6 +323,9 @@ class MainActivity : ComponentActivity() {
             prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
             prefs.getInt("round", 5))
         nativeSeasons.configure(prefs.getString("lang", "en") ?: "en",
+            prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
+            prefs.getInt("round", 5))
+        nativeWilma.configure(prefs.getString("lang", "en") ?: "en",
             prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
             prefs.getInt("round", 5))
     }
@@ -423,8 +438,8 @@ class MainActivity : ComponentActivity() {
         if (navigation.ownsWebSession) outState.putString("legacySession", checkpoint.read())
         super.onSaveInstanceState(outState)
     }
-    override fun onPause() { foreground = false; nativePositions.setVisible(false); nativeSeasons.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
-    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen == ShellScreen.SEASONS); updateWebActivity() }
+    override fun onPause() { foreground = false; nativePositions.setVisible(false); nativeSeasons.setVisible(false); nativeWilma.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
+    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen == ShellScreen.SEASONS); nativeWilma.setVisible(navigation.screen == ShellScreen.WILMA); updateWebActivity() }
     override fun onDestroy() { disposeWebView(); tts?.shutdown(); tts = null; super.onDestroy() }
 }
 

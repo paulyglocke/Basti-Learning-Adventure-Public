@@ -1,6 +1,17 @@
 # Session handoff — 2026-09-22
 
-## Current checkpoint — native Seasons, automated validation complete
+## Current checkpoint — native Wilma, automated validation complete
+
+Based on clean `main` at `b607b39` (Seasons committed). New Wilma code is uncommitted. Do not commit/push automatically or discard changes.
+
+Implemented native chooser entry, canonical seven-day Explore, Find Day, Before/After, and activity-specific tap-to-place ordering. Quiz sessions use the existing shared durable host; ordering retains exact scramble/support/retry state plus up to two pending progress effects before publishing completion. The shared progress codec now permits seven-step completion without changing its schema layout; old app downgrade over those new records is unsupported. PNGs are unchanged; head/tail are never weekday IDs or answers. Shared audio policy/cancellation is used, and restore remains silent. Today/Yesterday/Tomorrow is deferred pending an explicit anchor interaction; no clock inference exists.
+
+Validation: **17/17 focused**, **205/205 full JVM**, **12/12 emulator Compose/navigation**, **55/55 browser**. assembleDebug/lintDebug passed; lint **0 errors / 10 warnings / 2 informational findings** (unchanged). The emulator caught a real answered-target enablement bug; it was fixed while preserving the assertion, and the full suite passed. Diff/added-file whitespace checks passed. BUILD_NOTES.md records exact commands, file inventory, APK hash, portrait emulator review and outstanding hardware matrix.
+
+Next: batched physical validation on Samsung S24 Ultra and Fire Max, including airplane-mode EN/DE/missing voices and silence, segment colour/order/clarity, portrait/both landscapes/large fonts/insets/touch/TalkBack, Options/Back/background, true process restoration, 5/10 completion, partial/completed ordering recovery and progress after restart/normal signed upgrade. Emulator audio was disabled; no physical or audible-quality claim. Today/Yesterday/Tomorrow remains an explicitly anchored follow-up. Capacity/corrupt-file recovery and broader retention/migration remain existing foundation limitations. No neural TTS, unrelated activity migration, generic framework, cloud or dashboard work.
+
+
+## Previous checkpoint — native Seasons, automated validation complete
 
 Based on `main` at `e3bacd6`, which commits native Prepositions. Preserved the interrupted Seasons implementation and completed compilation, focused/unit/Compose/browser testing and documentation. These Seasons changes are **uncommitted**; do not commit or push automatically.
 

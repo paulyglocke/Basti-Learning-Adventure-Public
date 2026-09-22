@@ -38,7 +38,8 @@ Shared implementation contracts: [NATIVE_ARCHITECTURE_SPEC.md](NATIVE_ARCHITECTU
 - Memory Pairs: one shared untimed matching engine for picture/picture, number/quantity, case, bilingual, animal/action, animal/habitat and emotion/expression pairs (GAME_DESIGN_SPEC.md).
 - Progress dashboard v1: Going well, Suggested focus and useful support/independence trends rather than vanity totals.
 - Native Numbers/Maths expansion: prioritise subitising, quantity, more/fewer/same, making 5, patterns, shapes and spatial/measurement concepts over large-number drill.
-- Wilma Weekdays / Wochentage: build a bilingual weekday/calendar activity around the Kita-aligned Wilma caterpillar assets in `app/src/main/assets/Wilma/`. Wilma's head and tail are decorative; the seven body segments map Monday/Montag = green, Tuesday/Dienstag = red, Wednesday/Mittwoch = yellow, Thursday/Donnerstag = blue, Friday/Freitag = purple, Saturday/Samstag = orange and Sunday/Sonntag = pink. Progress from explore/hear/tap through day order, before/after and today/yesterday/tomorrow. Keep labels/speech in app content rather than baked into art, and never rely on colour alone.
+- [x] Implement native Wilma’s Week / Wilmas Woche: canonical weekday/art mapping, Explore, Find Day, Before/After, tap-to-place seven-day ordering, shared audio/session/progress and durable restoration/retry. Automated evidence in BUILD_NOTES.md; physical acceptance remains open.
+- Wilma follow-up: explicitly anchored Today/Yesterday/Tomorrow and wider contexts. Validate existing Wilma on S24 Ultra/Fire Max (segment clarity/order/colours, audio/accessibility, lifecycle/order restoration and restart/signed-upgrade persistence). No device-clock inference is implemented.
 - Classroom / School Skills: practical German/English instructions and self-advocacy embedded in contextual scenes.
 - Compare & Discover plus Discovery Book foundation, with meaningful knowledge unlocks as a primary reward.
 

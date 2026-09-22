@@ -65,7 +65,7 @@ data class CompletedTask(val evidence: TaskEvidence, val lastChoice: ContentId,
 class CompletionEvent(override val origin: ProgressOrigin, tasks: List<CompletedTask>) : ProgressEvent {
     val tasks: List<CompletedTask> = Collections.unmodifiableList(tasks.toList())
     init {
-        require(this.tasks.size == 5 || this.tasks.size == 10)
+        require(this.tasks.size in setOf(5, 7, 10))
         require(this.tasks.map { it.evidence.task } == (1..this.tasks.size).map { TaskInstanceId(origin.session, it) })
     }
     override val id get() = ProgressEventId.completion(origin.session)

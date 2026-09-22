@@ -3,6 +3,64 @@
 This file records build/test evidence and should not be treated as a product or architecture specification.
 
 
+## Native Wilma’s Week — 2026-09-22
+
+Base: clean `main` at `b607b39` (committed native Seasons). Confirmed repository root and read AGENTS.md/source-of-truth documents, current native hosts/screens, canonical weekday records and all Wilma assets before editing. No reset, pull/rebase, commit or push. Seasons and Prepositions behavior/foundations are preserved; the only Seasons screen-file change is adding Wilma to the shared chooser.
+
+Implementation:
+
+- Days & Seasons now offers Wilma’s Week / Wilmas Woche, Seasons and the existing legacy calendar fallback. Native Wilma Back returns to the chooser; Options returns to its exact origin. Legacy app.js/assets/tests remain unchanged.
+- Explore assembles a separate neutral head, seven semantic weekday segments in canonical Monday–Sunday order and neutral tail. Visible labels come from CoreContent; selecting/highlighting a day and Replay use authored short day speech. A whole-character overview and horizontal strip with large targets keep the sequence understandable on narrow displays. Colour accompanies position/name/speech rather than defining identity. No progress is recorded for browsing.
+- Find Day and Before/After reuse shared deterministic 5/10 sessions and DurableSessionHost. Task selection varies by seed; Wilma’s answer/segment order remains canonical rather than shuffling her body. Cyclic relationships derive from the repository, including Sunday→Monday and Monday←Sunday. Help, explicit Retry, Replay, score locks and task-count completion reuse the existing native policy. Language changes do not replace tasks.
+- Put the Week in Order uses a small pure Wilma-specific state/reducer with an actual persisted seven-ID scramble and seven placement states. Tap-to-place removes only correctly placed candidates. Wrong attempts keep the placed prefix, with calm Retry/Help. Actions carry task/attempt identity, so duplicates cannot place or score twice. Completion is seven placements, independent of the 5/10 quiz setting. No drag precision, timers, lives, punishment or mastery-star presentation.
+- Today/Yesterday/Tomorrow is deferred: explicit anchor selection and teaching support need a separate progression step. No weekday answer comes from the device clock.
+- Shared audio controller governs authored EN/DE instructions, generic feedback, manual day/option/Help/Replay and completion. OFF is silent including manual controls. Background/navigation/language changes cancel ownership; restoration/retry is silent and stale callbacks cannot mutate state. No direct Android TTS from Compose and no new speech engine.
+- Separate versioned Explore, Find, Relations and Order checkpoints live in private no-backup storage. Quiz journals use DurableSessionHost unchanged. Ordering’s bounded checksummed journal saves the next state plus pending placement/completion before publishing it, supports uncertain-write reload/stale-writer rejection and retries shared progress IDs. It can retain both final-placement and completion events. Failed delivery pauses learning actions while navigation/Retry remains usable. Corrupt/incompatible records are preserved. Opening another phase does not erase an unfinished phase.
+- Shared progress records recognition, before/after and sequence skills with honest Wilma context IDs, language, attempts/retries and support. The only shared persistence extension permits seven-step CompletionEvent records alongside five/ten; binary schema layout and existing data remain unchanged. Older app versions reject seven-step completions rather than partially rewriting them; downgrade is unsupported. Returning to Learn during unanswered practice records Help without an incorrect attempt. No dashboard, cloud, personal/device profiling or new generic framework.
+- All ten committed PNGs (plus README) are byte-identical to HEAD. Head/tail/reference have no weekday ContentId. Original assets are decoded off main with in-memory sampling, without file compression/renaming/replacement. Physical image/memory/touch acceptance remains outstanding.
+
+Validation uses `JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'` and `ANDROID_HOME='/Users/paulbell/Library/Android/sdk'`:
+
+- Focused `./gradlew testDebugUnitTest --tests 'com.bellfamily.bastischool.learning.wilma.*' --tests 'com.bellfamily.bastischool.WilmaNavigationTest' --console=plain`: **17 passed, 0 failures/errors/skipped**. Canonical content/assets 4, ordering state 4, durable integration 5, audio 3, navigation 1. Includes a 21-seed × 2-phase × 2-round generation matrix, all cycle boundaries, exact bilingual/colour mapping, actual durable file recreation, same-key failed delivery, seven-step completion, support/retry retention, stale journals/callbacks, malformed/incompatible checkpoints and silent restore.
+- Final `./gradlew testDebugUnitTest assembleDebug lintDebug connectedDebugAndroidTest --console=plain`: **BUILD SUCCESSFUL (2m 24s)**. JVM: **205 passed, 0 failures/errors/skipped** (188 existing + 17 new). Debug assembly passed.
+- Emulator instrumentation: **12 passed, 0 failures/errors/skipped** (7 existing + 5 Wilma) on `Medium_Phone_API_35`, Android 15/API 35 arm64, headless/audio disabled. Wilma tests cover seven semantic day targets/head non-clickability, EN→DE selection retention, speaker/Replay/answer isolation, Help/wrong/Retry, five-question Find completion, German ten-question Before/After and seven-step ordering at 320dp/1.5 font scale, reachable completion controls, real chooser/Options/Back/Seasons routing, Activity recreation, unanswered/answered quiz retention, partial ordering identity/scramble/steps, background/return, portrait/both landscape requests and explicit no-WebView assertion. No existing tests were weakened or removed. This does not establish real process-death, voice quality, physical accessibility or Fire acceptance.
+- Lint: **0 errors / 10 warnings / 2 informational findings**, unchanged. Warnings: GradleDependency 6, UnusedAttribute 2, OldTargetApi 1, SetJavaScriptEnabled 1; information: AutoboxingStateCreation 2. Existing VIBRATOR_SERVICE Kotlin deprecation remains. No unrelated dependency upgrade.
+- APK SHA-256: `f14e375e5d1532c31d03e6fd9f92e53e4bad069ad6836efb4a322881c9d365e3`. Manually installed/launched on the emulator after tests and visually inspected portrait Explore: neutral head, separate labelled interactive days and whole-week reference remain recognisable. Review capture was temporary, outside the repository. `git diff --check` and added-file trailing-whitespace checks passed.
+- Full `npm test -- --reporter=line`: **55 passed (53.2s)**. Existing browser tests unchanged.
+- Initial instrumentation compilation caught a nullable test-fixture bitmap decode; corrected with an explicit non-null check. The first emulator run then caught answered weekday targets still appearing enabled despite the reducer preventing duplicate scoring. The actual UI enablement was corrected; the assertion was retained.
+
+Physical checks remain outstanding on **Samsung S24 Ultra and Fire Max**, and do not block this implementation batch: airplane-mode install/launch; EN/DE installed and missing offline voices; ALL/QUESTIONS/OFF including Replay; repeated Replay/segment taps; separate head and exactly seven correctly coloured/ordered body segments; image clarity and horizontal discoverability; portrait/both landscapes; large fonts, insets, touch targets, TalkBack/keyboard/Switch Access; Options/system/visible Back; background/return; actual process recreation for selected/unanswered/answered/completed quiz and partial/completed ordering; 5/10 completion; progress and pending effects after restart and normal same-signature upgrade. No hardware, audible-quality or Fire-compatibility claim is made. Capacity/corrupt-file recovery and broader retention/migration remain existing foundation limitations; legacy fallback stays available.
+
+
+
+Changed-file inventory for Wilma (25 files):
+
+- `BACKLOG.md`
+- `BUILD_NOTES.md`
+- `CONTENT_DATA_SPEC.md`
+- `NATIVE_ARCHITECTURE_SPEC.md`
+- `PROGRESS_TRACKER_SPEC.md`
+- `SESSION_HANDOFF.md`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/wilma/WilmaRouteTest.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/wilma/WilmaScreenTest.kt`
+- `app/src/main/java/com/bellfamily/bastischool/MainActivity.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ShellNavigation.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/progress/ProgressCodec.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/progress/ProgressModels.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/wilma/WilmaAudio.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/wilma/WilmaContent.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/wilma/WilmaOrder.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/wilma/WilmaOrderHost.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/wilma/WilmaSelectionStore.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/seasons/SeasonsScreen.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/wilma/WilmaScreen.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/wilma/WilmaViewModel.kt`
+- `app/src/test/java/com/bellfamily/bastischool/WilmaNavigationTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/wilma/WilmaAudioTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/wilma/WilmaContentTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/wilma/WilmaHostTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/wilma/WilmaOrderTest.kt`
+
 ## Native Seasons migration — 2026-09-22
 
 Base: `main` at `e3bacd6` (committed native Prepositions). Resumed the interrupted Seasons changes after checking repository root, AGENTS.md, status, history and diff. Preserved all work; no reset, pull/rebase, commit or push. Existing browser tests, legacy code and production assets are unchanged.

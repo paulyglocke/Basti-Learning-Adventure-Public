@@ -73,7 +73,7 @@ internal object ProgressCodec {
                                 enumValueOf(input.string()), ContentId(input.string()), enumValueOf(input.string()), input.support())
                         }
                         ProgressEventKind.SESSION_COMPLETED -> {
-                            val size = input.readInt().also { require(it == 5 || it == 10) }
+                            val size = input.readInt().also { require(it in setOf(5, 7, 10)) }
                             CompletionEvent(origin, List(size) {
                                 CompletedTask(input.evidence(origin.session), ContentId(input.string()),
                                     enumValueOf(input.string()), input.readInt(), input.readInt(), input.support())
