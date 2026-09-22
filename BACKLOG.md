@@ -18,7 +18,8 @@ Shared implementation contracts: [NATIVE_ARCHITECTURE_SPEC.md](NATIVE_ARCHITECTU
 ## P1 — shared native foundation
 - [x] Establish the first pure native content foundation: semantic IDs, required EN/DE display/speech, versioned deterministic repository, weekday cycle/colour cues and canonical season narration/local image references with unit validation. No UI migration; evidence in BUILD_NOTES.md.
 - Extend shared native content/data models and validators as the first migration needs them: skill/vocabulary/grammar records, phonics packs, verb lessons, scene references and valid answers. These broader P1 contracts are not completed by the initial calendar subset.
-- Establish shared native audio architecture and test doubles (VOICE_AUDIO_SPEC.md); evaluate enhanced voices separately through Voice Lab and physical auditions.
+- [x] Implement shared native audio contracts/controller, owned cancellation, policy, speech safety, Android system-TTS adapter and deterministic test doubles (VOICE_AUDIO_SPEC.md). Foundation only; existing legacy routes remain unchanged. Automated evidence is in BUILD_NOTES.md.
+- Integrate the shared audio layer with the first native migration and validate actual EN/DE offline voices, lifecycle, missing voices and silence on Samsung/Fire. Evaluate enhanced voices separately through Voice Lab and physical auditions; no neural work is included in the foundation.
 - Build reusable native quiz/session, settings and completion components with restoration support.
 - Establish minimal local Progress Tracker event storage immediately after the content/session foundation: stable skill/result/support/context/session IDs, persistence and deduplication (PROGRESS_TRACKER_SPEC.md).
 - Migrate Prepositions end-to-end to prove the architecture; retain legacy routes until tested native parity.
