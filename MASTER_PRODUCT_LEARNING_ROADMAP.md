@@ -182,6 +182,42 @@ Learning progression:
 
 The colour mapping is a familiar teaching cue, not the sole identifier. Always combine it with segment position, spoken day name and localized visible text. Keep artwork language-neutral; English/German labels and speech belong to app content.
 
+
+### Seasons / Jahreszeiten
+Teach the four seasons using a consistent view of the same lakeside tree and meadow so the child can compare visible changes across the year.
+
+Use these canonical assets:
+- `app/src/main/assets/Seasons/blossoming_lakeside_spring_meadow.png`
+- `app/src/main/assets/Seasons/sunny_summer_lakeside_meadow.png`
+- `app/src/main/assets/Seasons/autumn_tree_by_the_lakeside.png`
+- `app/src/main/assets/Seasons/snowy_lakeside_meadow_with_bare_tree.png`
+
+The visual distinction must be deliberately strong:
+- Spring / Frühling: fresh new leaves, lighter/sparser tree growth and obvious flowers/blossom.
+- Summer / Sommer: dense full green tree canopy and lush green growth.
+- Autumn / Herbst: orange/red/yellow leaves, with leaves visibly falling.
+- Winter / Winter: bare tree, snow/ice and no leaves.
+
+Spring and summer must not rely only on slightly different shades of green. Spring is identified by new growth and blossom; summer by a full, dense green canopy.
+
+Each season should support an optional spoken learning description when the child opens or taps the season image. A Replay control should allow the narration to be heard again. Quiz questions should use shorter prompts rather than automatically replaying the full description.
+
+Canonical English narration:
+
+- Spring: “It’s spring. The weather is getting warmer, but it isn’t hot yet. New green leaves are growing on the trees, and lots of flowers are starting to bloom.”
+- Summer: “It’s summer. The weather is warm and sunny. The tree is full of thick green leaves, and the grass and plants are growing everywhere.”
+- Autumn: “It’s autumn. The weather is getting cooler. The leaves are turning orange, red and yellow, and some are falling from the trees. The days are getting shorter too.”
+- Winter: “It’s winter. The weather is very cold. The ground is covered with snow and ice, and the tree has lost all its leaves. The days are short, and it gets dark early.”
+
+Canonical German narration:
+
+- Frühling: „Es ist Frühling. Das Wetter wird wärmer, aber es ist noch nicht heiß. Neue grüne Blätter wachsen an den Bäumen, und viele Blumen fangen an zu blühen.“
+- Sommer: „Es ist Sommer. Das Wetter ist warm und sonnig. Der Baum ist voller grüner Blätter, und überall wachsen Gras und Pflanzen.“
+- Herbst: „Es ist Herbst. Das Wetter wird kühler. Die Blätter werden orange, rot und gelb, und einige fallen von den Bäumen. Die Tage werden auch kürzer.“
+- Winter: „Es ist Winter. Das Wetter ist sehr kalt. Der Boden ist mit Schnee und Eis bedeckt, und der Baum hat alle seine Blätter verloren. Die Tage sind kurz, und es wird früh dunkel.“
+
+The descriptions teach observable seasonal clues rather than rigid weather rules.
+
 ## School Skills
 Teach:
 - sit down, stand up, listen, look, wait

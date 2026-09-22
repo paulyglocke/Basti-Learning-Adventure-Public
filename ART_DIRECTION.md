@@ -74,3 +74,27 @@ Avoid heavy 3D engines and video-heavy assets.
 - do not rely on colour alone
 - strong contrast
 - reduced-motion support
+
+## Seasons / Jahreszeiten asset set
+
+The canonical season illustrations are stored under:
+
+- `app/src/main/assets/Seasons/blossoming_lakeside_spring_meadow.png`
+- `app/src/main/assets/Seasons/sunny_summer_lakeside_meadow.png`
+- `app/src/main/assets/Seasons/autumn_tree_by_the_lakeside.png`
+- `app/src/main/assets/Seasons/snowy_lakeside_meadow_with_bare_tree.png`
+
+They intentionally use the same lakeside/tree composition so seasonal change is easy to compare.
+
+Recognition requirements:
+
+- **Spring:** sparse/fresh new green foliage plus clearly visible flowers/blossom.
+- **Summer:** dense, mature, full green canopy and lush vegetation.
+- **Autumn:** strong orange/red/yellow foliage and visible falling leaves.
+- **Winter:** bare branches, snow/ice and no foliage.
+
+Spring and summer must remain distinguishable at small app-card sizes. Do not depend on subtle colour or brightness differences alone.
+
+The images remain language-neutral. Season names, descriptions, accessibility text and speech are supplied by app content/code.
+
+Production assets may later be converted to appropriately sized high-quality WebP after visual comparison on the target Samsung and Fire devices.
