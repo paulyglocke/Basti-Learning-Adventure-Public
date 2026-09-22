@@ -2,6 +2,34 @@
 
 This file records build/test evidence and should not be treated as a product or architecture specification.
 
+## Samsung physical P0 pass and landscape top-bar fix — 2026-09-22
+
+Source: `6e44e10` plus `fix: keep native navigation clear of landscape system bars`. Device: **Samsung Galaxy S24 Ultra SM-S928B, Android 16 / API 36**, 1440×3120 physical resolution, density override 560 dpi (reported physical density 600), three-button system navigation. Tested portrait and both landscape directions, system font scales 1.0 and 1.3. This is a partial Samsung acceptance pass, not complete S24/Fire release validation.
+
+The normal APK could not update the existing installed app: `INSTALL_FAILED_UPDATE_INCOMPATIBLE` (different signing key). The original installation/data were preserved. A temporary checkout built the same source with **only applicationId changed to `com.bellfamily.bastischool.p0qa`**, then installed it alongside the existing app. No package-ID change was made in the repository. The final QA and normal builds have identical MainActivity source and all three packaged web assets. The production-package upgrade path remains unverified. The QA copy remains installed; the original app was not uninstalled or cleared.
+
+Physical finding/fix: the native top bar applied only status-bar insets. In landscape, the German Options label extended to x=3022 while the right system navigation bar began at x=2952, visibly covering part of Options. The top bar now applies the top and horizontal safe-drawing insets, including side navigation/cutouts, without bottom padding. This follows the [Material 3 top-bar inset contract](https://developer.android.com/develop/ui/compose/system/material-insets). After the fix, the full Options touch target is [2422,133]–[2938,301], clear of the right bar [2952,0]–[3120,1440]. Reverse landscape and portrait measurements also passed for both Options and Back. Home/Options were physically retested on the corrected build. No learning/audio/animation logic changed.
+
+Device evidence (ADB UI input, UIAutomator hierarchy/screenshots and live debug-WebView state comparisons; no mocked audio engine):
+
+- Home → Options → system Back returned Home. Quiz → Options → system/visible Back preserved the unanswered question, then the answered question, choices, answer lock and score. English → German translated the same “climb/klettern” question with score 1 and correct answer monkey retained; German Options round-trip also preserved it.
+- Quiz-linked lesson → Options → Back returned the lesson; another Back returned the exact answered quiz. Library → Options → Back and standalone lesson → library → native Home passed. Back at native Home returned to the Samsung launcher.
+- Rotation and a system font-scale change preserved the answered quiz. Backgrounded the app, then `am kill com.bellfamily.bastischool.p0qa`; confirmed no remaining app PID before reopening the existing task. PID changed **27592 → 31395**. It restored native Options with the same hidden quiz; Back returned the exact question DOM/state/score. No active speech or pending narration remained after restoration. This is actual saved-task process recovery, not force-stop/relaunch.
+- Completed the existing five-question round (5/5), then used Continue with the native ten-question preference and completed 10/10; ten reward stars appeared. Landscape completion kept Replay/Continue/Home above the reward area. Screenshots of the English quiz and German Options at font scale 1.3 were reviewed; long quiz content remains scrollable. The WebView keeps its existing textZoom=100 policy, so native system-font enlargement is not a claim of equivalent web-text enlargement.
+- The user confirmed clear **English narration**, clear **German Replay in airplane mode with Wi-Fi off**, and clear **English “jump” lesson playback in airplane mode with Wi-Fi off**. Device logs show the app selected/bound `com.google.android.tts` (Samsung's private engine was unavailable to the app). Exact installed voice IDs were not extracted; no Samsung-engine compatibility claim is made.
+- The user confirmed complete silence during **Sound Off** Replay, option speaker, answers, completion and balloon interaction. Live state showed no active speech, no created balloon AudioContext and zero active tones. Narration timers settled without playback. This is an audible spot-check, not exhaustive missing-voice/interruption coverage.
+- Original device settings restored and read back: airplane mode 0, Wi-Fi 1, mobile data 1, font scale 1.0, accelerometer rotation 0, user rotation 0. No global speech-engine/voice settings changed. An intermittent UIAutomator dump termination/missing-node result was retried against the live UI; it was not counted as an app failure or a pass.
+
+Automated validation of the fix:
+
+- `npm test -- --reporter=line`: **55 passed / 0 failed** (50.2s); existing tests unchanged.
+- `JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home' ANDROID_HOME='/Users/paulbell/Library/Android/sdk' ./gradlew testDebugUnitTest assembleDebug lintDebug --console=plain`: **BUILD SUCCESSFUL** (11s), unit XML **15 passed / 0 failures / 0 errors / 0 skipped**; assembleDebug/lintDebug passed.
+- Lint: **0 errors / 7 warnings / 2 informational findings** (unchanged). Existing VIBRATOR_SERVICE compiler deprecation remains.
+- Separate QA build: assembleDebug passed (4s); upgrade of the QA copy succeeded. Normal debug APK SHA-256: `cbeaff6529e67999b32803eb962728e0666f9956573dac66c93597f4dc076266`. Physically tested fixed QA APK SHA-256: `7c2181dd902e1da6c1b8466fd1742799d50a4dfd5db714e705125c104c637777`.
+- `git diff --check`: passed. The regression for this small platform-layout fix is the measured physical inset matrix above; no test that merely mirrors the inset expression was added.
+
+Remaining physical P0: Amazon Fire Max (not connected/tested); Samsung gesture navigation, TalkBack/Switch Access and full touch/large-font/content matrix; missing-voice behavior, Questions Only and exhaustive speech-safety/interruption/reset cases; all activity/number/calendar boundaries and all recreation origins/languages. Audio spot-checks and one real process-recovery case do not close these wider matrices. No neural TTS, animation/video assets or broad native migration was started. No push performed.
+
 ## P0 native navigation/session recovery — 2026-09-21
 
 Source: clean `main` at `a7dd258` plus local checkpoint `fix: preserve sessions across navigation and recreation`. No push requested or performed.

@@ -34,7 +34,8 @@ import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.statusBars
+import androidx.compose.foundation.layout.WindowInsetsSides
+import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -191,7 +192,8 @@ class MainActivity : ComponentActivity() {
                             OutlinedButton(onClick = { openOptions() }) { Text(if (language == "de") "⚙ Optionen" else "⚙ Options") }
                         },
                         colors = TopAppBarDefaults.topAppBarColors(containerColor = Gold),
-                        windowInsets = WindowInsets.statusBars
+                        // Landscape button navigation and cutouts also occupy horizontal space.
+                        windowInsets = WindowInsets.safeDrawing.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal)
                     )
                 },
             ) { padding ->
