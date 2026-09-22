@@ -69,6 +69,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.view.WindowCompat
+import androidx.lifecycle.ViewModelProvider
+import com.bellfamily.bastischool.ui.prepositions.PrepositionsViewModel
+import com.bellfamily.bastischool.ui.prepositions.PrepositionsScreen
+import com.bellfamily.bastischool.learning.models.ContentLanguage
 
 private val Sky = Color(0xFF79CEF7)
 private val Grass = Color(0xFFA8E66C)
@@ -107,6 +111,7 @@ private val homeCards = listOf(
 )
 
 class MainActivity : ComponentActivity() {
+    private lateinit var nativePositions: PrepositionsViewModel
     private lateinit var prefs: android.content.SharedPreferences
     private var webView: WebView? = null
     private var tts: TextToSpeech? = null
@@ -132,6 +137,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
         prefs = getSharedPreferences("basti_shell", Context.MODE_PRIVATE)
+        nativePositions = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[PrepositionsViewModel::class.java]
+        configurePositions()
         restoredSession = savedInstanceState?.getString("legacySession")
         navigation = ShellNavigation.restore(savedInstanceState?.getString("screen"),
             savedInstanceState?.getString("optionsOrigin"), savedInstanceState?.getString("webMode"), restoredSession)
@@ -183,6 +190,7 @@ class MainActivity : ComponentActivity() {
                                     ShellScreen.HOME -> if (language == "de") "Bastis Lernabenteuer" else "Basti's Learning Adventure"
                                     ShellScreen.OPTIONS -> if (language == "de") "Optionen" else "Options"
                                     ShellScreen.WEB -> if (language == "de") "Lernen" else "Learning"
+                                    ShellScreen.PREPOSITIONS -> if (language == "de") "Wo ist es?" else "Where is it?"
                                 },
                                 fontWeight = FontWeight.Black
                             )
@@ -206,7 +214,7 @@ class MainActivity : ComponentActivity() {
                         ShellScreen.HOME -> NativeHome(language, padding, navigation.recoveryFailed) { card ->
                             if (!card.play) {
                                 checkpoint = LegacyCheckpoint(); restoredSession = null
-                                changeRoute(navigation.openActivity(if (card.verbExplorer) "verbExplorer" else card.mode ?: "verbs"))
+                                changeRoute(if (card.mode == "positions") navigation.openPrepositions() else navigation.openActivity(if (card.verbExplorer) "verbExplorer" else card.mode ?: "verbs"))
                             }
                         }
                         ShellScreen.OPTIONS -> NativeOptions(language, audioMode, round, numberMax, padding, audioStatus,
@@ -217,9 +225,20 @@ class MainActivity : ComponentActivity() {
                             onResetTutorials = {
                                 val epoch = prefs.getLong("tutorialResetEpoch", 0) + 1
                                 prefs.edit().putLong("tutorialResetEpoch", epoch).apply()
+                                nativePositions.resetTutorials()
                                 syncSettings()
                             })
                         ShellScreen.WEB -> Unit
+                        ShellScreen.PREPOSITIONS -> PrepositionsScreen(
+                            nativePositions.state, if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            nativePositions.busy, nativePositions.saveFailed, nativePositions.audioFailed,
+                            nativePositions::action, nativePositions::option, nativePositions::retrySave,
+                            nativePositions::again, nativePositions::introduction,
+                            onHome = { changeRoute(navigation.home()) },
+                            onLegacy = {
+                                checkpoint = LegacyCheckpoint(); restoredSession = null
+                                changeRoute(navigation.openActivity("positions"))
+                            }, modifier = Modifier.padding(padding))
                     }
                 }
             }
@@ -231,6 +250,7 @@ class MainActivity : ComponentActivity() {
         cancelAudio()
         backGate.invalidate()
         navigation = route
+        nativePositions.setVisible(foreground && route.screen == ShellScreen.PREPOSITIONS)
         updateWebActivity()
     }
 
@@ -241,6 +261,7 @@ class MainActivity : ComponentActivity() {
 
     private fun navigateBack() {
         when (navigation.backAction) {
+            BackAction.NATIVE_HOME -> changeRoute(navigation.home())
             BackAction.EXIT -> Unit // BackHandler is disabled; Android owns exit.
             BackAction.CLOSE_OPTIONS -> {
                 syncSettings()
@@ -263,7 +284,14 @@ class MainActivity : ComponentActivity() {
         cancelAudio()
         prefs.edit().putString("lang", language).putString("audioMode", audioMode)
             .putBoolean("sound", audioMode != "off").putInt("round", round).putInt("numberMax", numberMax).apply()
+        configurePositions()
         syncSettings()
+    }
+
+    private fun configurePositions() {
+        nativePositions.configure(prefs.getString("lang", "en") ?: "en",
+            prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
+            prefs.getInt("round", 5))
     }
 
     private fun settingsJson(): String = JSONObject().apply {
@@ -374,8 +402,8 @@ class MainActivity : ComponentActivity() {
         if (navigation.ownsWebSession) outState.putString("legacySession", checkpoint.read())
         super.onSaveInstanceState(outState)
     }
-    override fun onPause() { foreground = false; cancelAudio(); updateWebActivity(); super.onPause() }
-    override fun onResume() { super.onResume(); foreground = true; updateWebActivity() }
+    override fun onPause() { foreground = false; nativePositions.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
+    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); updateWebActivity() }
     override fun onDestroy() { disposeWebView(); tts?.shutdown(); tts = null; super.onDestroy() }
 }
 

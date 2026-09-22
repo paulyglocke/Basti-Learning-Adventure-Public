@@ -921,3 +921,9 @@ The voice system is successful when:
 - visual decoration cannot leak into narration,
 - specialist vocabulary is pronounced acceptably,
 - the app can change speech engines without rewriting learning screens.
+
+## First native caller: Prepositions (2026-09-22)
+
+`PrepositionsAudio` handles shared reducer narration effects and independent option pronunciation through `AudioController`; Compose never calls TTS. The Android ViewModel supplies `AndroidSystemSpeechEngine`, keeps audio calls on main and disk work on a worker, and invalidates late worker/audio callbacks on navigation, backgrounding, task/phase and language boundaries. Returning and checkpoint restoration do not narrate automatically. OFF suppresses Replay, options, hints and tutorials as well as automatic requests; QUESTIONS suppresses automatic generic feedback/completion. There are no native SFX in this slice.
+
+The existing bilingual introduction is combined with the current authored question on a fresh instructional presentation until successfully heard. Only a current completed utterance marks the language/version heard. Two native preference keys hold the shared tutorial reset epoch; Sound Off, failure, interruption and stale completions do not consume an introduction. Options reset invalidates both native callback ownership and the epoch, retaining the legacy reset behavior. “How to play” manually presents the introduction; Replay presents the current question or completion summary. Missing offline voices produce visible bilingual guidance and never select another language. Audible quality and actual device interruption/voice behavior still require Samsung/Fire acceptance.

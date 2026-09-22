@@ -15,7 +15,7 @@ object AndroidProgressRepository {
             File(context.applicationContext.noBackupFilesDir, "native-progress"), AndroidAtomicCommit), clock)
 }
 
-private object AndroidAtomicCommit : AtomicProgressCommit {
+internal object AndroidAtomicCommit : AtomicProgressCommit {
     override fun replace(source: File, target: File) {
         try { Os.rename(source.absolutePath, target.absolutePath) }
         catch (error: ErrnoException) { throw IOException("Progress commit failed", error) }

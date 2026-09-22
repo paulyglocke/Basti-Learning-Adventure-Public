@@ -112,3 +112,13 @@ Automate structural validation and generator invariants under [TESTING_QA_SPEC.m
 - Every quiz verb has its intended lesson; custom assets and speech references exist locally.
 
 Human review remains required for age appropriateness, factual credibility, natural German/English, clear phonics and whether artwork actually teaches the intended concept. A valid schema alone does not make learning content correct.
+
+## Native Prepositions slice (2026-09-22)
+
+`PrepositionsContent` supplies an activity-local validated `ContentRepository` using the shared `PrepositionDefinition`, `ContentId`, `ContentText` and `ContentVersion` contracts. It does not change the calendar pack. The six canonical choice IDs are `position.in`, `position.on`, `position.under`, `position.behind`, `position.next_to`, `position.between`; skill IDs use the matching `skill.spatial.*` suffixes. Legacy `nextTo` maps semantically to `next_to`, not a second skill.
+
+Twenty-four semantic scenes/tasks combine snake, dinosaur, dragon and crocodile with those relations. Scene IDs use `scene.prepositions.<animal>.<relation>`; task definitions use `task.prepositions.<animal>.<relation>`. A context identifies the animal/reference-object pairing, not coordinates. The one authored relation record owns the correct choice, rock/table/box reference and count, bilingual phrase and feedback. German subjects/articles and dative phrases are authored separately. `between` requires two rocks; `under` uses the table, not a rock.
+
+There are no legacy Prepositions PNGs to migrate. `ReferenceObject` and `PositionGeometry` are native drawing contracts for rock/table/box and their layer order; animal glyphs remain explicit temporary migration placeholders. No season/Wilma image is repurposed. A scene ID is independent of its drawing or future asset path.
+
+The finite seeded generator selects five or ten distinct scenes and four distinct choices per task, including the answer, then constructs bilingual instructions enumerating that exact choice order. Task instance IDs come from the frozen session and ordinal. Missing vocabulary/invalid choices reject generation. Restoration validates saved questions against the authored scene and pack revision, without rerunning the seed. This activity pack is schema 1 / revision 1, with activity revision 1; incompatible meaning/geometry changes require a deliberate revision and recovery decision. The wider context/generalisation curriculum remains future work; these 24 familiar scenes do not prove mastery.

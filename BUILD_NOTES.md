@@ -2,6 +2,71 @@
 
 This file records build/test evidence and should not be treated as a product or architecture specification.
 
+## Native Prepositions migration — 2026-09-22
+
+Source: `main` at `9b247e5` (`feat: add durable native progress event storage`). Began clean; after the usage-limit interruption, reconfirmed root, AGENTS.md, status/diff/history and preserved the four untracked implementation files. No reset, pull/rebase, commit or push. Existing foundation tests, legacy source/assets and browser tests remain unchanged.
+
+Legacy audit (before implementation):
+
+- `renderPosition()` and `positionScenes` in `app.js` select snake, dinosaur, dragon or crocodile with one of six relations. Reference phrases are on the rock / auf dem Stein; under the table / unter dem Tisch; behind the rock / hinter dem Stein; next to the rock / neben dem Stein; in the box / in der Kiste; between the two rocks / zwischen den beiden Steinen.
+- Four unique choices include the correct relation. EN/DE questions enumerate displayed choices in the same order. Correct feedback names the actual animal/reference phrase. Hint shows that phrase; option speakers never answer. Replay repeats instruction/question. Wrong answers allow another try without deduction; correct answers lock and increment score once. Rounds support 5/10 questions; completion offers Continue/Home immediately, score/stars and optional balloon tones.
+- Home `positions` previously opened the bundled WebView; mixed rounds also include positions. Art is CSS rock/table/box shapes and platform animal emoji, not separate PNGs. Existing `tests/prepositions.spec.js` covers all 24 bilingual combinations and scene geometry; broader speech/navigation/completion browser tests also apply.
+
+Implemented:
+
+- Canonical activity content repository with six `position.*` choices, 24 `scene.prepositions.*` / `task.prepositions.*` records, skill/context IDs, authored bilingual subject/article/phrase and separate display/speech contracts. Native object geometry derives from the semantic relation and reference count. Seeded finite selection creates five/ten distinct scenes with stable four-choice order. The calendar pack is unchanged.
+- Compose `PrepositionsScreen`, retained `PrepositionsViewModel` and the existing native shell route. No WebView exists on this route. Large separate answer/listen controls, Replay, Help, explicit Retry, Next, How to play, Home and Play again; portrait/width-adaptive scene/answers and scrolling for short height/large fonts. Insets come from the existing shell Scaffold.
+- Shared reducer/checkpoint/progress/audio APIs are used without rewriting those foundations. Wrong answers now use the shared explicit Retry action; hints can be spoken on request. Task-count progress and calm completion replace the prominent legacy star/mastery-style display, per UX_NAVIGATION_SPEC.md; internal score remains exact. No native balloon/SFX subsystem is introduced. Temporary animal glyphs deliberately preserve legacy imagery pending artwork acceptance.
+- A bounded version-1 activity journal atomically saves checkpoint plus at most one pending progress event **before** publishing accepted state. Worker-thread delivery uses stable event/session keys; successful delivery is acknowledged in another journal write. Failure retains evidence and blocks further answers until retry; navigation/fallback stays usable. Retry re-reads uncertain commits. Atomic last-loaded-byte comparison prevents an older host overwriting newer state. Journal corruption/incompatibility is preserved, with calm Retry/Home/fallback rather than deletion. The only foundation change exposes the existing Android atomic commit adapter internally for reuse.
+- Options, Home, language changes, backgrounding and recreation retain supported state and cancel obsolete speech. Returning/restoring is silent; re-entering after a cold launch resumes the disk checkpoint. New round settings apply only to Play again, which creates a new ID. Shared system TTS remains offline/language-safe; missing voice failures have visual guidance. Tutorial heard state is language/version/reset-epoch specific and only follows current successful playback; Sound Off/interruption do not consume it.
+- Legacy `positions`, mixed rounds, checkpoints, all original tests and assets remain available. “Use previous version” starts that separate fallback. No Wilma/Seasons UI, Follow the Instructions, dashboard, neural TTS, new game engine, Room, DI framework or network dependency.
+
+Validation (JDK from `JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'`, SDK from `ANDROID_HOME='/Users/paulbell/Library/Android/sdk'`):
+
+- Focused `./gradlew testDebugUnitTest --tests 'com.bellfamily.bastischool.learning.prepositions.*' --tests 'com.bellfamily.bastischool.PrepositionsNavigationTest' --console=plain`: **20 passed / 0 failures / 0 errors / 0 skipped**, BUILD SUCCESSFUL (5s). Content 4, host 11, audio 4, navigation 1. Tests include 102 seed/round combinations, exact choice order/text, native reference geometry, incomplete content rejection, correct-once scoring, wrong/retry/support/language metadata, unanswered/answered/completed restoration, actual temporary-file progress/journal recreation, failures before/after journal replacement, stable completion deduplication, corrupt journal preservation and stale-host rejection.
+- Final `./gradlew testDebugUnitTest assembleDebug lintDebug connectedDebugAndroidTest --console=plain`: **BUILD SUCCESSFUL (55s)**. JVM XML: **167 passed / 0 failures / 0 errors / 0 skipped**. Debug assembly passed.
+- Instrumentation: **3 passed / 0 failures / 0 errors / 0 skipped** on existing `Medium_Phone_API_35`, Android 15/API 35 arm64 emulator, started headlessly with audio disabled. English Replay/speaker/Hint/wrong/Retry/completion isolation; German 10-question round at 320dp/1.5 font scale with reachable completion controls; actual MainActivity route, Options visible/system Back, Activity recreation, both landscape requests/portrait, Home/re-entry, EN→DE task/score retention and explicit no-WebView assertion. Activity recreation/orientation requests and JVM repository reconstruction are not physical process-death acceptance. The emulator's image does not add a Google Play dependency to the app.
+- Full `npm test -- --reporter=line`: **55 passed (49.0s)**; legacy tests unchanged. Node emitted module.register deprecation and NO_COLOR/FORCE_COLOR notices.
+- Lint: **0 errors / 10 warnings / 2 informational findings**. Warnings: GradleDependency 6, UnusedAttribute 2, OldTargetApi 1, SetJavaScriptEnabled 1. Information: AutoboxingStateCreation 2. The three additional GradleDependency notices concern the aligned test Compose BOM and AndroidX test runner/ext-junit versions; no unrelated dependency upgrade was attempted. Existing VIBRATOR_SERVICE Kotlin deprecation remains.
+- `git diff --check` and new-file trailing-whitespace checks passed. APK: `app/build/outputs/apk/debug/app-debug.apk`, SHA-256 `c48575b1b62a322537ce50d0299a1520841cef1508ab914036bd8637af57caab`.
+
+Exact changed-file inventory for this migration (25 files):
+
+- `BACKLOG.md`
+- `BUILD_NOTES.md`
+- `CONTENT_DATA_SPEC.md`
+- `NATIVE_ARCHITECTURE_SPEC.md`
+- `PROGRESS_TRACKER_SPEC.md`
+- `SESSION_HANDOFF.md`
+- `TESTING_QA_SPEC.md`
+- `VOICE_AUDIO_SPEC.md`
+- `app/build.gradle`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/prepositions/PrepositionsRouteTest.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/prepositions/PrepositionsScreenTest.kt`
+- `app/src/main/java/com/bellfamily/bastischool/MainActivity.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ShellNavigation.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/models/PrepositionDefinition.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/prepositions/PositionGeometry.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/prepositions/PrepositionsAudio.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/prepositions/PrepositionsContent.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/prepositions/PrepositionsHost.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/progress/android/AndroidProgressRepository.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/prepositions/PrepositionsScreen.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/prepositions/PrepositionsViewModel.kt`
+- `app/src/test/java/com/bellfamily/bastischool/PrepositionsNavigationTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/prepositions/PrepositionsAudioTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/prepositions/PrepositionsContentTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/prepositions/PrepositionsHostTest.kt`
+
+Physical acceptance checklist — run on **Samsung S24 Ultra and Amazon Fire Max** before removing the fallback:
+
+1. Record device/OS, APK/signature, system TTS engine and installed EN/DE offline voices. Test clean QA installation and a normal same-signature `adb install -r` upgrade without clearing data; do not overwrite an incompatible user installation.
+2. In airplane mode, open/resume Prepositions, hear EN and DE questions/choice pronunciation, Replay, hints, introduction and feedback. Verify All versus Questions-only; OFF must silence automatic/manual narration and remain visually usable. Remove/disable one offline language in a controlled QA configuration and confirm explicit guidance, no wrong-language/network fallback; restore settings afterward.
+3. Review all six relation geometries and four animal glyphs for clear meaning on each device, including occlusion for behind/in, table legs for under and two rocks for between. Check native fallback availability and unchanged legacy behavior.
+4. Exercise portrait, both landscape orientations, larger font, gesture/three-button navigation, cutout/insets, German wrapping, TalkBack/focus and separated speaker/answer targets. Check Replay and completion/Home/Play again remain reachable without shrinking targets.
+5. Check unanswered, wrong/retry/hint and answered states through repeated Options/Back (visible and system), language changes, Home/re-entry, background/return, rotation and process recreation. Task ID/order, attempts/support, index and score must survive; no old narration, double score or duplicated completion. Change 5/10 preference mid-round and confirm only the next round changes.
+6. Complete both 5- and 10-question rounds after independent and supported attempts. Inspect local debug repository records by event/session ID (no dashboard is added), restart the app and repeat after the normal signed upgrade: saved attempts/completion must remain once. Test pending delivery and retry with controlled storage-failure injection, including interruption around journal replacement and progress acknowledgement; confirm no accepted event disappears. Actual power-loss/fsync durability is not proven by JVM fault injection or Activity recreation.
+
 ## Minimal durable native Progress Tracker foundation — 2026-09-22
 
 Source: clean `main` at `148e756` (`feat: add native learning sessions with checkpoint restoration`). Confirmed repository root, AGENTS.md, status/history and authoritative documents before editing. Existing content/audio/session foundations, legacy routes, assets and tests were preserved. No commit or push.

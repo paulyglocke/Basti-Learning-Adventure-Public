@@ -6,7 +6,7 @@ This document defines verification and feature completion gates. [NATIVE_ARCHITE
 
 **A feature is not done only because it builds.** Record evidence for its behavior and relevant device risks. A code-complete slice awaiting required hardware checks must be labelled as such, not fully verified or eligible for legacy removal.
 
-Current baseline: CI builds/lints Android and runs legacy Playwright tests. Native unit/Compose test foundations are not yet present. Browser speech mocks do not prove native audio, Compose behavior, Android navigation or device compatibility. The requirements below guide implementation; they are not a record of passed tests. [BUILD_NOTES.md](BUILD_NOTES.md) holds dated evidence, revisions, commands, artifacts and outstanding checks.
+Current baseline: CI builds/lints Android and runs legacy Playwright tests. Native foundation/unit tests and Prepositions Compose/navigation instrumentation now exist. Run instrumented tests on an available emulator/device; CI does not yet run that device suite. Browser speech mocks do not prove native audio, Compose behavior, Android navigation or device compatibility. The requirements below guide implementation; they are not a record of passed tests. [BUILD_NOTES.md](BUILD_NOTES.md) holds dated evidence, revisions, commands, artifacts and outstanding checks.
 
 ## Automated coverage
 
