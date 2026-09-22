@@ -2,6 +2,29 @@
 
 This file records build/test evidence and should not be treated as a product or architecture specification.
 
+## Minimal durable native Progress Tracker foundation — 2026-09-22
+
+Source: clean `main` at `148e756` (`feat: add native learning sessions with checkpoint restoration`). Confirmed repository root, AGENTS.md, status/history and authoritative documents before editing. Existing content/audio/session foundations, legacy routes, assets and tests were preserved. No commit or push.
+
+Implemented six source files under `learning/progress`: `ProgressModels.kt`, `ProgressCodec.kt`, `FileProgressRepository.kt`, `AtomicProgressStorage.kt`, `SessionProgressRecorder.kt`, and `android/AndroidProgressRepository.kt`. Four new test files: `ProgressFixtures.kt`, `ProgressRepositoryTest.kt`, `ProgressCodecTest.kt`, `SessionProgressRecorderTest.kt`.
+
+Typed attempt/completion evidence preserves semantic IDs, session/activity/content versions, skill/context/difficulty, language on attempts, choice/outcome, retries and support separately. Stable attempt/session completion keys deduplicate across repository recreation and changed completion delivery IDs. Conflicting duplicates fail explicitly. Queries filter skill/session/activity/kind and use stable acceptance sequence with optional newest-first limits.
+
+Version-1 bounded deterministic binary snapshots include checksum and strict validation, capped at 10,000 records / 16 MiB. Exclusive process/file locks, synced temporary data, atomic replacement and directory sync provide the local storage boundary. Android uses application-context no-backup storage and system rename/fsync behind the pure storage interface. Corrupt/incompatible/capacity/I/O/clock/conflict failures are explicit; existing data is not silently reset or pruned. Duplicate retries reconfirm durability even after uncertain replacement. No new dependency, Room, network, profiling or telemetry.
+
+The worker-thread session-effect adapter validates against the frozen plan and returns completion acknowledgements for the current delivery. It does not alter the reducer or audio. This remains unwired: native hosts still need delivery/checkpoint coordination and retention of failed effects. Checkpoints are not a durable attempt outbox. No dashboard, rewards, activity migration, settings rewrite, Wilma/Seasons UI, Follow the Instructions or neural TTS.
+
+Validation used `JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'` and `ANDROID_HOME='/Users/paulbell/Library/Android/sdk'`:
+
+- `./gradlew testDebugUnitTest --tests 'com.bellfamily.bastischool.learning.progress.*' --console=plain`: **31 passed, 0 failures/errors/skips**, BUILD SUCCESSFUL (6s). Repository 15, codec 8, session adapter 8. Initial compile found an unavailable Android `O_DIRECTORY` constant; adapter now uses supported read-only directory open, and all subsequent checks passed.
+- `./gradlew testDebugUnitTest assembleDebug lintDebug --console=plain`: **147 passed, 0 failures/errors/skips**, **BUILD SUCCESSFUL (17s)**; assembleDebug and lintDebug passed.
+- `npm test -- --reporter=line`: **55 passed (51.1s)**. Node emitted module.register deprecation and NO_COLOR/FORCE_COLOR notices; no test failure.
+- Lint XML: **0 errors, 7 warnings, 2 informational findings**, unchanged categories: OldTargetApi 1, UnusedAttribute 2, GradleDependency 3, SetJavaScriptEnabled 1; AutoboxingStateCreation informational 2.
+- `git diff --check` and new-source trailing-whitespace checks passed.
+- Debug APK: `app/build/outputs/apk/debug/app-debug.apk`; SHA-256 `77baf8cb2f3cc46b77d0d3bdc4cb8f08e8495314e77dc3a945f7aeabc378db3b`.
+
+Tests use real JVM temporary files with atomic replacement and injected failures before rename, after rename and during directory sync; they cover concurrency, durable restart, duplicate/conflicting delivery, filters, metadata, empty/corrupt/unknown-version/oversized stores, deterministic serialization, restored completion retry and five-/ten-task outcomes. These are not physical Android power-loss or backup/restore tests. Samsung/Fire filesystem/process acceptance remains outstanding. Full-file rewrite/linear query costs and bounded retention require reassessment before sustained live history; capacity currently reports failure without deletion.
+
 ## Shared native choice-session framework — 2026-09-22
 
 Source: `main` at `4c254c4` (`feat: add shared native audio foundation`). Started clean, then resumed after the usage-limit interruption with the five existing untracked session source files intact. Reconfirmed repository root, AGENTS.md, history, source-of-truth docs, status and current work before continuing. No reset, pull/rebase, discard, commit or push.
