@@ -37,6 +37,28 @@ These are conceptual data types, not fixed Kotlin constructors. Prefer small imm
 
 A task kind can be choice, sequence, placement, matching or open-ended communication. Do not force game state machines or speaking prompts into a single correct-answer quiz schema. Open-ended tasks use participation/parent observation where appropriate, not automatic pronunciation scoring.
 
+## Weekday/calendar content
+
+Use stable language-independent weekday IDs:
+
+| ID | English | German | Wilma cue |
+| --- | --- | --- | --- |
+| `day.monday` | Monday | Montag | green |
+| `day.tuesday` | Tuesday | Dienstag | red |
+| `day.wednesday` | Wednesday | Mittwoch | yellow |
+| `day.thursday` | Thursday | Donnerstag | blue |
+| `day.friday` | Friday | Freitag | purple |
+| `day.saturday` | Saturday | Samstag | orange |
+| `day.sunday` | Sunday | Sonntag | pink |
+
+The order above is canonical and cyclic. Before/after and yesterday/tomorrow tasks should derive from that ordered data rather than hardcoding language strings into question logic.
+
+Wilma is a presentation model over this data, not the identity of a weekday. Her head and tail are decorative; exactly seven body segments correspond to the seven weekday IDs in canonical order. Current source artwork lives under `app/src/main/assets/Wilma/`. Do not encode English/German text into those images.
+
+The Kita-aligned colour is a familiar retrieval cue, but colour must not be the only carrier of meaning. Presentation and accessibility should also expose segment position, localized visible text and spoken day name. A future content model may store the cue as a typed colour reference, but code must not infer that every green object means Monday.
+
+For real-calendar prompts such as “today”, “yesterday” and “tomorrow”, derive the date/day from the relevant local calendar context. For simulated practice tasks, explicitly establish the pretend/current day in the task state so the answer is deterministic.
+
 ## Bilingual and speech authoring
 
 English and German share semantic IDs and task meaning, but phrasing is authored separately where grammar matters. Store German noun gender, singular/plural forms, articles and required case forms when templates need them; verbs may need reviewed inflections. Metadata is not permission to mechanically generate complex German feedback. Use reviewed whole sentences or constrained templates with validated forms.

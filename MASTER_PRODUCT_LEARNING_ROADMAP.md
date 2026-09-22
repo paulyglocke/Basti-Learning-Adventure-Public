@@ -128,6 +128,19 @@ Higher number recognition can remain available as the child grows, but it should
 - My World / belonging
 - simple science investigations
 
+### Wilma Weekdays / Wochentage
+Use Wilma, the familiar Kita weekday caterpillar, as a recurring bridge between home/app learning and the classroom routine. Wilma's head is only the character head; the seven body segments represent the days in this fixed Kita-aligned order: Monday/Montag = green, Tuesday/Dienstag = red, Wednesday/Mittwoch = yellow, Thursday/Donnerstag = blue, Friday/Freitag = purple, Saturday/Samstag = orange and Sunday/Sonntag = pink.
+
+Learning progression:
+- explore Wilma and hear each day name
+- tap the requested day from spoken English/German
+- identify days from their place in the weekly sequence
+- practise before/after and first/last in the cycle
+- order the seven days
+- introduce today/yesterday/tomorrow with explicit visual and spoken support
+
+The colour mapping is a familiar teaching cue, not the sole identifier. Always combine it with segment position, spoken day name and localized visible text. Keep artwork language-neutral; English/German labels and speech belong to app content.
+
 ## School Skills
 Teach:
 - sit down, stand up, listen, look, wait

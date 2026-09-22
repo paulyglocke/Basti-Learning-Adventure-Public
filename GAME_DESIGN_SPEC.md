@@ -773,6 +773,69 @@ Memory Pairs is for learning and retrieval, not speed competition.
 
 ---
 
+# 14A. Learning activity — Wilma Weekdays / Wochentage
+
+## Role
+
+A calm bilingual weekday/calendar activity that deliberately mirrors the Kita's existing Wilma routine. It belongs primarily to World Around Me and sequencing/school-readiness practice rather than speed or score competition.
+
+Primary skills may include:
+
+- weekday vocabulary
+- listening comprehension
+- sequencing
+- before/after
+- today/yesterday/tomorrow
+- bilingual vocabulary transfer
+
+## Visual model
+
+Assemble Wilma from the committed modular assets. The head is only the head; the seven body segments are the days:
+
+1. Monday / Montag — green
+2. Tuesday / Dienstag — red
+3. Wednesday / Mittwoch — yellow
+4. Thursday / Donnerstag — blue
+5. Friday / Freitag — purple
+6. Saturday / Samstag — orange
+7. Sunday / Sonntag — pink
+
+The tail is decorative. English/German labels must be rendered by the UI rather than baked into the artwork.
+
+## Learning progression
+
+### Stage A — explore
+
+Show the complete caterpillar. Selecting a segment speaks and displays its localized day name. No question pressure is required.
+
+### Stage B — hear and tap
+
+Speak a day such as “Mittwoch” or “Wednesday”; the child taps the corresponding segment. Replay remains available.
+
+### Stage C — sequence position
+
+Ask simple order questions such as “What comes after Tuesday?” / “Was kommt nach Dienstag?” using the same seven-day cycle.
+
+### Stage D — order the week
+
+Present day segments/cards out of order and let the child place or select them in sequence. Use an accessible tap-to-place alternative to precision dragging.
+
+### Stage E — today, yesterday, tomorrow
+
+Clearly mark an established “today” day, then ask for yesterday or tomorrow. Do not require the child to infer the device's actual date unless the activity explicitly says it is using today's real date.
+
+## Feedback and accessibility
+
+- No timer, lives or penalties.
+- Wrong answers should replay or gently support rather than punish.
+- Colour is a familiar Kita cue, never the only identifier.
+- Spoken day name, localized text and segment position remain available.
+- Selection/highlight/correct states should be drawn in UI code where practical rather than requiring duplicate image assets.
+- Core play must remain usable without reading.
+- English and German share weekday IDs/order but use separately authored labels and speech.
+
+---
+
 # 15. Game 3 — Dragon Treasure Hunt
 
 ## Role
