@@ -432,6 +432,16 @@ Individual modules remain short (about 3–5 minutes), the child may stop after 
 ## Development phases
 Build the shared native completion celebration before native activity migration spreads further: floating balloons, animal jump-out reveals, brief confetti and Sound Off-aware pop audio, with Continue/Home always immediately available.
 
+Later visual-polish work should include a proper native splash / launch experience as part of the app's unified visual identity:
+- use Android's native splash-screen behavior rather than an artificial timed loading screen
+- show the app title/logo with original prehistoric/adventure artwork or a simple mascot element
+- keep launch fast; never delay entry merely to display branding
+- work fully offline and require no network/service startup
+- transition cleanly into Home without a second fake splash screen
+- coordinate splash artwork, app icon, typography and Home styling so they feel like one product
+- support phone/tablet, portrait/landscape, system insets and accessibility/reduced-motion expectations
+- treat this as P3 polish, after core native learning flows and stability are established
+
 1. Finish current P0 correctness, audio and lifecycle work.
 2. Establish native foundations: shared content model, audio controller, session/question framework and minimal persisted progress-event storage.
 3. Migrate Prepositions end-to-end to prove the architecture.
