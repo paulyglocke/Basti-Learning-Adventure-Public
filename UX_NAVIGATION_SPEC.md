@@ -4,7 +4,7 @@
 
 This document owns child/parent navigation, information organisation and shared interaction behavior. [MASTER_PRODUCT_LEARNING_ROADMAP.md](MASTER_PRODUCT_LEARNING_ROADMAP.md) owns curriculum; [GAME_DESIGN_SPEC.md](GAME_DESIGN_SPEC.md) owns game mechanics; [PROGRESS_TRACKER_SPEC.md](PROGRESS_TRACKER_SPEC.md) owns skill states and adaptation. Use [VOICE_AUDIO_SPEC.md](VOICE_AUDIO_SPEC.md) for speech policy, [ART_DIRECTION.md](ART_DIRECTION.md) for visuals and [TESTING_QA_SPEC.md](TESTING_QA_SPEC.md) for acceptance checks.
 
-The current Compose home has Learn, Practice and Play groups, native Options, and legacy WebView activities. All five Play cards are inactive; Vocabulary Booster routes incorrectly to Animal Actions. The structure below is the intended native UX, not a claim that these destinations are implemented. Introduce it incrementally under [NATIVE_ARCHITECTURE_SPEC.md](NATIVE_ARCHITECTURE_SPEC.md), preserving working routes until tested parity.
+The current Compose home has Learn, Practice and Play groups, native Options, and legacy WebView activities. All five Play cards are inactive. Vocabulary Booster now opens its native six-word animal starter slice (Explore, word-to-picture and picture-to-word); Animal Actions remains separately available. The structure below is the intended native UX, not a claim that these destinations are implemented. Introduce it incrementally under [NATIVE_ARCHITECTURE_SPEC.md](NATIVE_ARCHITECTURE_SPEC.md), preserving working routes until tested parity.
 
 ## Home and progressive disclosure
 

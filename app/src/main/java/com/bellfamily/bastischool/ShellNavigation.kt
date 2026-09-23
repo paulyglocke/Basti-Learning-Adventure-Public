@@ -2,7 +2,7 @@ package com.bellfamily.bastischool
 
 import java.util.concurrent.atomic.AtomicReference
 
-internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS, WILMA }
+internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS, WILMA, VOCABULARY }
 internal enum class BackAction { EXIT, CLOSE_OPTIONS, LEGACY, NATIVE_HOME, DAYS_HUB }
 
 /** Options is an overlay on one destination, never another entry in a growing stack. */
@@ -16,7 +16,7 @@ internal data class ShellNavigation(
         ShellScreen.HOME -> BackAction.EXIT
         ShellScreen.OPTIONS -> BackAction.CLOSE_OPTIONS
         ShellScreen.WEB -> BackAction.LEGACY
-        ShellScreen.PREPOSITIONS, ShellScreen.DAYS_SEASONS -> BackAction.NATIVE_HOME
+        ShellScreen.PREPOSITIONS, ShellScreen.DAYS_SEASONS, ShellScreen.VOCABULARY -> BackAction.NATIVE_HOME
         ShellScreen.SEASONS, ShellScreen.WILMA -> BackAction.DAYS_HUB
     }
     val ownsWebSession: Boolean get() = screen == ShellScreen.WEB ||
@@ -24,6 +24,7 @@ internal data class ShellNavigation(
     fun openOptions() = if (screen == ShellScreen.OPTIONS) this else copy(screen = ShellScreen.OPTIONS, optionsOrigin = screen)
     fun closeOptions() = if (screen == ShellScreen.OPTIONS) copy(screen = optionsOrigin, optionsOrigin = ShellScreen.HOME) else this
     fun openDaysSeasons() = ShellNavigation(ShellScreen.DAYS_SEASONS)
+    fun openVocabulary() = ShellNavigation(ShellScreen.VOCABULARY)
     fun openWilma() = ShellNavigation(ShellScreen.WILMA)
     fun openSeasons() = ShellNavigation(ShellScreen.SEASONS)
     fun openPrepositions() = ShellNavigation(ShellScreen.PREPOSITIONS, mode = "positions")

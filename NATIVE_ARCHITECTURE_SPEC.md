@@ -136,3 +136,21 @@ Seven-day ordering has a small pure `WilmaOrderState`/reducer. Its saved actual 
 `WilmaOrderHost` applies the proven write-ahead pattern to this specific state. Its checksummed schema-1 journal (`wilma-order`, maximum 32,000 bytes) records content/activity versions, session/language, scramble, seven answer/attempt/retry/support states, completion acknowledgement and at most two pending progress events: the final placement and completion. The state/effects commit before publication; pending delivery blocks more learning actions, retries read disk first and compare last-loaded bytes to prevent stale-writer overwrite. Shared progress keys deduplicate uncertain delivery. Completion persists once; restore emits no narration or fresh completion. Corrupt/incompatible files remain preserved with Retry/Home/legacy access. No generic queue, ordering framework or quiz-reducer extension is introduced.
 
 Today/Yesterday/Tomorrow is deliberately deferred; it needs an explicit anchor interaction and authored teaching support. There is no clock-derived learning answer. Physical segment/accessibility/voice/process/upgrade acceptance remains outstanding.
+
+
+## Native Vocabulary Booster starter slice (2026-09-22)
+
+The existing Learn card now opens `ShellScreen.VOCABULARY`; Back returns Home and Options retains that native origin. Other native and legacy routes remain unchanged. `VocabularyViewModel` owns one serial worker and shared-audio owner; Compose only renders and sends actions. No new framework or foundation rewrite is required.
+
+Explore stores selected semantic item and phase in `noBackupFilesDir/vocabulary-selection`, a bounded version-1 browsing checkpoint, without progress events. Find the Word combines spoken/written word-to-picture recognition; What Is It? provides picture-to-word naming. Each uses the unchanged `DurableSessionHost` with a separate journal (`vocabulary-find`, `vocabulary-name`), frozen 5/10 plan, attempt/support state and exact task restoration. Switching modes preserves both rounds. Help reveals names on Find picture choices; entering Explore from an unanswered round records help separately from attempts.
+
+Progress effects are saved with the next checkpoint before publication and delivered through the shared repository. Failed or uncertain writes pause learning actions; retry reloads the journal with the same deduplication identity. Loaded journals are retried together; an unopened practice journal is loaded/retried when that mode is entered. No background delivery service is added. Corrupt/incompatible files remain untouched with Retry/Home available; broader repair/retention policy remains a follow-up. Completed rounds retain their acknowledgement and cannot award twice after restore.
+
+Shared audio receives authored words, examples, questions and feedback. Language/mode/navigation/background boundaries cancel owned speech. Restore/retry is silent until an explicit Listen/Replay or new task. The system engine's matching offline-language requirement remains unchanged. Vocabulary has no WebView, direct TTS or filesystem work in Compose/reducer; no remote services, new engine or neural speech work.
+
+
+## APK identity and upgrade boundary (2026-09-23)
+
+`com.bellfamily.bastischool` is stable across debug and release. Debug uses the ordinary machine-local SDK key and is not the distribution identity. Physical distribution uses the existing release build type with externally supplied persistent signing credentials and an explicit increasing version code; missing credentials/version fail before release packaging. CI allocates bounded run/attempt codes and only exposes private signing to manually requested main-branch distribution after validation. Setup/version-allocation details live in README.md, and install-over-data acceptance lives in TESTING_QA_SPEC.md.
+
+Same-key upgrades retain Android app-private storage, including no-backup native journals/progress, subject to compatible app schemas and device validation. Uninstall erases that storage; different certificates cannot be fixed by version changes. This work adds no key rotation, cross-signature data migration/export, storage schema change or cloud backup. Never wipe progress merely to make an incompatible APK install.

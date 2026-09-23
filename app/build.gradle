@@ -4,6 +4,37 @@ plugins {
     id 'org.jetbrains.kotlin.plugin.compose'
 }
 
+// Credentials are supplied outside Git. Never log their values; do not pass passwords on the command line.
+def setting = { String name -> providers.environmentVariable(name).orElse(providers.gradleProperty(name)).orNull }
+def codeText = setting('BASTI_VERSION_CODE') ?: '1'
+if (!(codeText ==~ /[0-9]{1,10}/) || codeText.toLong() < 1 || codeText.toLong() > 2100000000L) {
+    throw new GradleException('BASTI_VERSION_CODE must be an integer from 1 to 2100000000')
+}
+def distributionCode = codeText.toInteger()
+def distributionName = setting('BASTI_VERSION_NAME') ?: '1.1'
+if (!(distributionName ==~ /[A-Za-z0-9][A-Za-z0-9._-]{0,79}/)) {
+    throw new GradleException('BASTI_VERSION_NAME must be a short human-readable version without whitespace')
+}
+def signingValues = ['BASTI_KEYSTORE_PATH', 'BASTI_STORE_PASSWORD', 'BASTI_KEY_ALIAS', 'BASTI_KEY_PASSWORD']
+    .collectEntries { name -> [(name): setting(name)] }
+def signingComplete = signingValues.values().every { it != null && !it.isEmpty() }
+
+def verifyDistributionSigning = tasks.register('verifyDistributionSigning') {
+    group = 'verification'
+    description = 'Reject distribution packaging without explicit version and persistent signing credentials.'
+    doLast {
+        if (!signingComplete) throw new GradleException('Signed release requires BASTI_KEYSTORE_PATH, BASTI_STORE_PASSWORD, BASTI_KEY_ALIAS and BASTI_KEY_PASSWORD (environment or private Gradle properties).')
+        if (!file(signingValues.BASTI_KEYSTORE_PATH).isFile()) throw new GradleException('The configured distribution keystore file does not exist.')
+        if (setting('BASTI_VERSION_CODE') == null || distributionCode <= 1) throw new GradleException('Signed release requires explicit BASTI_VERSION_CODE greater than 1 and greater than the installed distribution version.')
+    }
+}
+// Covers APK and bundle packaging, including direct invocation: never silently publish unsigned release.
+tasks.configureEach {
+    if (name in ['preReleaseBuild', 'validateSigningRelease', 'packageRelease', 'packageReleaseBundle', 'signReleaseBundle']) {
+        dependsOn verifyDistributionSigning
+    }
+}
+
 android {
     namespace 'com.bellfamily.bastischool'
     compileSdk 35
@@ -12,13 +43,26 @@ android {
         applicationId 'com.bellfamily.bastischool'
         minSdk 23
         targetSdk 35
-        versionCode 1
-        versionName '1.0'
+        versionCode distributionCode
+        versionName distributionName
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
+    signingConfigs {
+        distribution {
+            if (signingComplete) {
+                storeFile file(signingValues.BASTI_KEYSTORE_PATH)
+                storePassword signingValues.BASTI_STORE_PASSWORD
+                keyAlias signingValues.BASTI_KEY_ALIAS
+                keyPassword signingValues.BASTI_KEY_PASSWORD
+            }
+        }
+    }
+
     buildTypes {
+        debug { versionNameSuffix '-dev' }
         release {
+            signingConfig signingConfigs.distribution
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }

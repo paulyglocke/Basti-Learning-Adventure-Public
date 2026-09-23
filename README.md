@@ -2,7 +2,7 @@
 
 Offline Android learning app designed for a young child preparing for school.
 
-Current source is **hybrid Kotlin/Compose + legacy WebView**, with English/German learning activities and 53 verb lessons. Compose owns home, Options and the shell; learning logic remains in bundled HTML/JavaScript. The long-term target is fully native Compose without runtime WebView/HTML/JavaScript, migrated incrementally with tested parity before legacy removal.
+Current source is **hybrid Kotlin/Compose + legacy WebView**, with English/German learning activities and 53 verb lessons. Compose owns home, Options, native Prepositions, Seasons, Wilma and the Vocabulary starter slice; other learning activities remain in bundled HTML/JavaScript. The long-term target is fully native Compose without runtime WebView/HTML/JavaScript, migrated incrementally with tested parity before legacy removal.
 
 The links below refer to the **historical v1.0.0 APK**, not a build of current main.
 
@@ -113,14 +113,54 @@ remaining checks on Samsung and Fire devices.
 
 ## Installing the APK
 
-Copy `app/build/outputs/apk/debug/app-debug.apk` to the phone or tablet, open it,
-and allow installation from the app used to open the file when Android asks.
-This is a debug-signed APK for sideload testing.
+For ongoing physical testing use the **stable-signed distribution** artifact described below, not a CI debug APK. Copy the APK to the device and open it, allowing that installer when Android asks, or use `adb install -r path/to/app-release.apk`. Do not uninstall or clear app data between upgrades.
+
+Local `assembleDebug` remains available without secrets and uses the machine's standard `~/.android/debug.keystore`. Its default version is code **1**, name **1.1-dev**. CI debug artifacts are named `Basti-debug-only-<run>-<attempt>`: fresh hosted runners do not share a persistent debug key, so these are not a reliable physical upgrade stream. The application ID remains `com.bellfamily.bastischool` for both build types; do not switch debug/distribution streams on a data-bearing device.
 
 Speech uses installed offline voices. Install English/German voice data in the
 device's text-to-speech settings, then test in airplane mode. The learning app
 itself does not download voice data. If audio is unavailable, the Hint button
 also shows the answer to listening questions.
+
+## Stable signing setup (one time, owner action)
+
+1. Create a dedicated long-lived signing keystore **outside this checkout**, using Android Studio → Build → Generate Signed Bundle/APK → APK → Create new. Keep the alias and passwords private. Choose at least 25 years validity, save an encrypted offline backup of the keystore and credentials, and retain its public certificate SHA-256 fingerprint. Do not regenerate the key for subsequent builds. The wizard can be cancelled after key creation; builds below use the repository's explicit signing configuration.
+2. In GitHub repository Settings → Secrets and variables → Actions, add these **repository secrets** (no secret values belong in Git, workflow YAML, issues or logs):
+
+   | Secret | Value |
+   | --- | --- |
+   | `BASTI_KEYSTORE_BASE64` | Base64 encoding of the entire private keystore file |
+   | `BASTI_STORE_PASSWORD` | Keystore password |
+   | `BASTI_KEY_ALIAS` | Key alias selected during creation |
+   | `BASTI_KEY_PASSWORD` | Private-key password |
+
+   On macOS, `base64 -i /absolute/private/path/basti-distribution.jks | pbcopy` copies the encoding without printing it. Paste it directly into the secret form, then clear the clipboard. Base64 is encoding, not encryption. Never upload the keystore as an artifact. Keep access to repository secrets and the default branch restricted to trusted maintainers.
+3. Actions → **Build Android APK** → Run workflow → branch **main** → enable **distribution**. Ordinary push/PR builds do not need or receive signing secrets. The distribution job waits for JVM/debug/lint and browser jobs, decodes the key with restrictive permissions into runner temporary storage, signs `assembleRelease`, verifies the APK signature, and removes the decoded key on exit/cleanup. Signed builds disable Gradle configuration caching and run without a persistent daemon; no credentials are echoed. Private release signing is never used for PR code.
+4. Download `Basti-stable-signed-v<versionCode>`. Verify its certificate fingerprint matches the saved identity before distribution. This is a non-debuggable release APK, not a Play upload requirement; no cloud runtime or Play Services is added.
+
+Release packaging fails clearly if any signing field is missing, the file is absent, or an explicit distribution version code greater than 1 is not supplied. It never silently falls back to debug signing or an unsigned release.
+
+### Version policy
+
+CI derives `versionCode = 1_000_000 + 100 × GITHUB_RUN_NUMBER + GITHUB_RUN_ATTEMPT` and `versionName = 1.1.<run>.<attempt>`. Run numbers and attempts must be positive; attempt must be 1–99; the code must not exceed **2,100,000,000**. Reruns of the same run receive distinct increasing codes, and a new run exceeds all attempts of the previous run. Range exhaustion fails rather than wrapping or reusing a code. Python unit tests cover the boundaries.
+
+Keep this workflow's version stream stable. **Never distribute an older run's rerun after a newer run has already been installed**: dispatch a new run instead. Download/install order can differ from build order; always check that the candidate code is greater than the device's installed code. If the workflow is renamed/recreated, the repository is recreated, or local signed builds use higher codes, explicitly advance the base after checking the highest distributed code. Do not reset the counter or use `adb -d` to force a downgrade.
+
+Local signed builds read the following environment variables, or identically named properties in private `~/.gradle/gradle.properties`: `BASTI_KEYSTORE_PATH` (absolute path), `BASTI_STORE_PASSWORD`, `BASTI_KEY_ALIAS`, `BASTI_KEY_PASSWORD`, `BASTI_VERSION_CODE` (explicitly above the installed/distributed code), and optionally `BASTI_VERSION_NAME` (default `1.1`). Environment variables take precedence. Load credentials privately; do not put passwords in `-P` command arguments/shell history or tracked Gradle properties. Then run:
+
+```sh
+./gradlew assembleRelease --no-daemon --no-configuration-cache --console=plain
+```
+
+Prefer CI as the sole distribution version allocator. Ordinary development remains `./gradlew assembleDebug`; it does not require these credentials. Avoid switching back to a lower-code debug build over a distribution installation.
+
+### Existing installations and data
+
+An installed app can only update with a compatible signing certificate and package ID. A higher version code cannot fix a certificate mismatch. Earlier S24 evidence recorded `INSTALL_FAILED_UPDATE_INCOMPATIBLE`; CI runner debug keys were not retained by the workflow. A private signing key cannot be recovered from the certificate in an APK.
+
+Before migration, compare the installed APK's public certificate against the intended key and look for the original keystore. If the original signing identity cannot be retained, **one final owner-approved uninstall/reinstall may be necessary**, and uninstall erases local data. There is currently no implemented cross-signature progress export/import. Do not do this silently or describe it as a data-preserving upgrade. After moving to one permanent key, subsequent same-key/higher-code installs should preserve data; both target devices still need the procedure in [TESTING_QA_SPEC.md](TESTING_QA_SPEC.md).
+
+References: [Android app signing](https://developer.android.com/studio/publish/app-signing), [Android versioning](https://developer.android.com/studio/publish/versioning), [GitHub run variables](https://docs.github.com/en/actions/reference/workflows-and-actions/variables), [GitHub secret handling](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets).
 
 ## Project guidance
 

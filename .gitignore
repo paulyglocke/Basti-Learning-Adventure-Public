@@ -7,3 +7,17 @@ local.properties
 node_modules/
 test-results/
 .DS_Store
+
+# Private signing material; use environment variables or ~/.gradle/gradle.properties.
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.key
+*.pem
+keystore.properties
+signing.properties
+key.properties
+.env
+.env.*
+__pycache__/

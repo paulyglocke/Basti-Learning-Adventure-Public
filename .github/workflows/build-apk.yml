@@ -1,6 +1,11 @@
 name: Build Android APK
 on:
   workflow_dispatch:
+    inputs:
+      distribution:
+        description: 'Build a stable-signed physical-test APK (main only; signing secrets required)'
+        type: boolean
+        default: false
   push:
     branches: [ main ]
   pull_request:
@@ -26,12 +31,71 @@ jobs:
           packages: platform-tools
       - name: Install Android SDK packages
         run: sdkmanager 'platforms;android-35' 'build-tools;34.0.0'
-      - name: Build debug APK
-        run: ./gradlew assembleDebug lintDebug --console=plain
+      - name: Test CI version policy
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
+      - name: Test and build development APK
+        run: ./gradlew testDebugUnitTest assembleDebug lintDebug --console=plain
+      - name: Verify release guards without secrets
+        run: python3 scripts/check_distribution_build.py
       - uses: actions/upload-artifact@v4
         with:
-          name: Basti-Learning-Adventure-V1-debug-apk
+          name: Basti-debug-only-${{ github.run_number }}-${{ github.run_attempt }}
           path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+
+  distribution:
+    if: github.event_name == 'workflow_dispatch' && inputs.distribution && github.ref == 'refs/heads/main'
+    needs: [build, browser-tests]
+    runs-on: ubuntu-latest
+    # Keep this workflow/stream and key stable. Never distribute an older run over a newer one.
+    concurrency:
+      group: basti-signed-distribution
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-disabled: true
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
+      - name: Install Android SDK packages
+        run: sdkmanager 'platforms;android-35' 'build-tools;34.0.0'
+      - name: Set monotonic distribution version
+        run: python3 scripts/distribution_version.py >> "$GITHUB_ENV"
+      - name: Build with persistent private signing identity
+        env:
+          BASTI_KEYSTORE_BASE64: ${{ secrets.BASTI_KEYSTORE_BASE64 }}
+          BASTI_STORE_PASSWORD: ${{ secrets.BASTI_STORE_PASSWORD }}
+          BASTI_KEY_ALIAS: ${{ secrets.BASTI_KEY_ALIAS }}
+          BASTI_KEY_PASSWORD: ${{ secrets.BASTI_KEY_PASSWORD }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for required in BASTI_KEYSTORE_BASE64 BASTI_STORE_PASSWORD BASTI_KEY_ALIAS BASTI_KEY_PASSWORD; do
+            if [[ -z "${!required}" ]]; then
+              echo "::error::Missing required signing secret: $required"
+              exit 1
+            fi
+          done
+          umask 077
+          export BASTI_KEYSTORE_PATH="$RUNNER_TEMP/basti-distribution.jks"
+          trap 'rm -f "$BASTI_KEYSTORE_PATH"' EXIT
+          printf '%s' "$BASTI_KEYSTORE_BASE64" | base64 --decode > "$BASTI_KEYSTORE_PATH"
+          unset BASTI_KEYSTORE_BASE64
+          ./gradlew assembleRelease --no-daemon --no-configuration-cache --console=plain
+          "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --verbose --print-certs app/build/outputs/apk/release/app-release.apk
+      - name: Remove temporary signing material
+        if: always()
+        run: rm -f "$RUNNER_TEMP/basti-distribution.jks"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Basti-stable-signed-v${{ env.BASTI_VERSION_CODE }}
+          path: app/build/outputs/apk/release/app-release.apk
           if-no-files-found: error
 
   browser-tests:

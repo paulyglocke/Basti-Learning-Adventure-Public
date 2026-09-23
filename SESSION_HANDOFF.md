@@ -1,6 +1,24 @@
-# Session handoff — 2026-09-22
+# Session handoff — 2026-09-23
 
-## Current checkpoint — native Wilma, automated validation complete
+## Current checkpoint — Vocabulary validated; stable signing setup ready
+
+Started from clean `main` at `0ac4711`, which commits native Wilma. Vocabulary work remains **uncommitted**; do not commit/push automatically or discard it. The content/audio/session/progress foundations and all previous native/legacy activities remain intact.
+
+The Learn card now opens native Vocabulary: six canonical bilingual animal words, Explore/examples, Find the Word (spoken/written word-to-picture) and What Is It? (picture-to-word). The modes use deterministic 5/10 sessions, stable choices, Help/Retry/Replay, score locks, shared audio and separate durable host journals. Options/Back/language/recreation preserve supported state; restoration is silent. Progress effects are committed with accepted state before delivery, deduplicate after restore and remain retryable after failure. Explore has no correctness events. No new framework, engine, remote dependency or UI persistence/TTS.
+
+Validation reconfirmed after signing changes: **33/33 focused Vocabulary, 238/238 full JVM, 16/16 emulator, 55/55 browser**; debug build/lint passed. Final lint **0 errors / 3 warnings / 2 informational findings** (no suppressions). Version-policy tests **5/5**, no-secret Gradle guard checks **6/6**, workflow YAML/shell syntax and diff checks passed. BUILD_NOTES.md records the audit, exact commands/results, file list, artifact identity and outstanding checks.
+
+
+Resumed on newer `main` at `dbaa8d4`; its completion-celebration roadmap text is preserved and no celebration implementation was started. Stable APK distribution now uses the existing release type with external persistent signing credentials, fail-closed guards and bounded CI run/attempt versioning. Debug defaults remain code 1/name 1.1-dev with this machine's debug key; CI debug artifacts are explicitly debug-only. The applicationId is unchanged. Main-branch manual dispatch can produce `Basti-stable-signed-v<code>` after checks, once the owner sets `BASTI_KEYSTORE_BASE64`, `BASTI_STORE_PASSWORD`, `BASTI_KEY_ALIAS`, `BASTI_KEY_PASSWORD` secrets (README setup).
+
+Manual setup/acceptance remains: create and back up the permanent key, configure secrets, dispatch and verify its certificate, compare with installed APKs, then test a higher-code same-key install without uninstalling on S24 Ultra/Fire Max. Prior evidence proves a certificate mismatch; code bumps alone cannot fix that. One final owner-approved reinstall may be needed if the old key is unavailable, and would erase data; no export/import is implemented. No key was generated, no secrets were set, no permanent signed APK or physical upgrade was claimed. Release progress inspection is currently limited without authorised QA access; do not infer preserved/deduplicated records merely from restored UI. See TESTING_QA_SPEC for the exact acceptance procedure. All changes remain uncommitted; no push.
+
+Next: original language-neutral illustrations for dinosaur, snake, whale, horse, crocodile and fish; bilingual/educational review; broader roadmap vocabulary and useful category/context diversity. Existing glyphs are explicit temporary migration placeholders, not final production art. No images were generated or altered. Categories practice is deferred because this starter set has only one meaningful category. This does not complete the roughly 50–80-word v1 curriculum or establish independent reading mastery.
+
+Batch physical checks on S24 Ultra/Fire Max remain open: airplane-mode EN/DE/missing voices and Sound Off/manual Listen; image/word clarity, portrait/both landscapes, large font/insets/accessibility/touch; Options/Back/background; actual process recreation; 5/10 completion and progress after restart/normal signed upgrade. Corrupt/capacity recovery and broader retention/migration remain existing foundation limitations. No neural TTS, dashboard, new cloud service or unrelated activity migration was started.
+
+
+## Previous checkpoint — native Wilma, automated validation complete
 
 Based on clean `main` at `b607b39` (Seasons committed). New Wilma code is uncommitted. Do not commit/push automatically or discard changes.
 

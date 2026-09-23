@@ -3,6 +3,120 @@
 This file records build/test evidence and should not be treated as a product or architecture specification.
 
 
+
+
+## Vocabulary completion and stable APK upgrade workflow — 2026-09-23
+
+Resumed in the repository root on `main` at `dbaa8d4`. Preserved all interrupted Vocabulary changes and the newer committed completion-celebration roadmap text. No Vocabulary implementation change was needed; no balloon celebration or other activity was started. No commit, push or pull/rebase was performed. No physical installation was modified or cleared; emulator instrumentation used its normal test-install/cleanup lifecycle.
+
+### Signing audit and implementation
+
+- `app/build.gradle` previously used fixed code 1/name 1.0, ordinary SDK debug signing and no release signing configuration. Local debug builds use the persistent key at `~/.android/debug.keystore`. The GitHub workflow built only debug APKs and provided neither a persistent keystore nor an Android debug-key cache; hosted runners therefore did not establish a stable certificate across runs.
+- Earlier physical evidence in this file records `INSTALL_FAILED_UPDATE_INCOMPATIBLE`. The current local debug APK certificate SHA-256 is `7a118e4624854245cb62c73466e2e37fa2da603786e1ed68b92360c1d44c0938`; the tracked historical v1.0.0 APK certificate is `13033774c1654f3e878ebd00dd7c1ff1ac835a8a82324b2413309f965851a8a4`. Both signatures verify, but the certificates differ. No physical device is currently attached, so the currently installed S24/Fire certificate was not re-read. A fixed/equal version code alone does not prove a signature mismatch or require uninstall; it also failed to provide an ordered distribution stream.
+- Existing `release` now reads private signing inputs from environment variables or identically named Gradle properties. Debug remains independent. `verifyDistributionSigning` blocks release APK/bundle packaging without all four credentials, an existing keystore and an explicit code greater than 1. Values are not logged. No key/password/alias was invented, generated, embedded or committed, and no secret setup was performed remotely.
+- Manual main-branch workflow dispatch with `distribution=true` builds a verified release APK after JVM/debug/lint and browser jobs pass. Required repository secrets: `BASTI_KEYSTORE_BASE64`, `BASTI_STORE_PASSWORD`, `BASTI_KEY_ALIAS`, `BASTI_KEY_PASSWORD`. The decoded file is permission-restricted in RUNNER_TEMP, excluded from artifacts/cache, and removed by trap plus an always-run cleanup step. Private signing is not available to PR jobs. Signed builds use no daemon/configuration cache.
+- CI version is `1_000_000 + 100 * run_number + run_attempt`; name is `1.1.<run>.<attempt>`. Attempts 1–99 and Android's 2,100,000,000 code ceiling are validated. New runs exceed prior runs; attempts within a run increase. Do not redistribute an older run's rerun after a newer run, reset the workflow counter, or mix locally allocated higher codes without advancing the stream. Always compare with installed version before upgrade.
+- Artifact names distinguish `Basti-debug-only-<run>-<attempt>` from `Basti-stable-signed-v<code>`. Local defaults are code 1/name 1.1-dev, ordinary debug key, unchanged applicationId `com.bellfamily.bastischool`. README documents private local inputs, key backup, exact GitHub setup and allocation constraints. TESTING_QA_SPEC documents a non-destructive baseline→higher-code upgrade procedure and the current non-debuggable progress-inspection limitation.
+- One final owner-approved cross-certificate reinstall may be necessary if the original signing key cannot be recovered/retained. It erases local data and is not an upgrade test; no cross-signature export/import exists. Do not uninstall to bypass errors during validation. After transition, same-key/higher-code installs are the intended data-preserving path, still awaiting physical acceptance on both targets.
+
+### Validation after build configuration changes
+
+Toolchain: Android Studio JBR, SDK `/Users/paulbell/Library/Android/sdk` (same environment as the Vocabulary evidence below).
+
+- Focused Vocabulary command from the previous entry: **33/33 passed**.
+- `./gradlew testDebugUnitTest assembleDebug lintDebug connectedDebugAndroidTest --console=plain`: **BUILD SUCCESSFUL (2m 27s)**. JVM **238 passed**, emulator **16 passed**, all **0 failures/errors/skipped**. Debug APK assembled successfully. Vocabulary, Prepositions, Seasons and Wilma tests remain intact.
+- `npm test -- --reporter=line`: **55 passed (49.5s)**. Legacy/browser sources and assets unchanged.
+- `python3 -m unittest discover -s scripts -p 'test_*.py'`: **5 passed** (first version/name, new-run ordering, rerun ordering, invalid counters, Android maximum).
+- `python3 scripts/check_distribution_build.py`: **6 passed**. Release APK and bundle without credentials correctly fail (exit 1), invalid/overflow versions correctly fail (exit 1), maximum valid code configures (exit 0), and release dry-run includes the guard (exit 0). The script explicitly blanks signing inputs, never fabricates a key or prints credentials, and now runs in CI.
+- Workflow YAML parses (three jobs); every run step passes `bash -n`. No hosted workflow was dispatched, no permanent keystore/secrets were available, and an actual permanently signed release APK was **not** built. Successful private signing and real install-over-data remain setup/acceptance gaps, not claimed passes.
+- Final lint XML: **0 errors / 3 warnings / 2 informational findings**: UnusedAttribute 2, SetJavaScriptEnabled 1; information AutoboxingStateCreation 2. The earlier 10-warning report included GradleDependency 6 and OldTargetApi 1 advisories not emitted in this final report. No lint suppression/rule/baseline change. Existing Kotlin VIBRATOR_SERVICE deprecation remains.
+- Current debug APK package/code/name verified with aapt: `com.bellfamily.bastischool`, `1`, `1.1-dev`. SHA-256: `09fe028145227a97886dab993d47733ffa0192be0813f26d6aee08e42407dead`. apksigner verifies the local debug signature; this is **not** a stable-distribution APK.
+- Signing-file ignore probes pass for keystores, p12/pfx, private keys/PEM, signing/key property files and environment files. No tracked private signing material or actual credential literals were introduced. `git diff --check`, new-file whitespace and final scope/security review passed. Working tree: 13 modified tracked files and 15 new files, all unstaged; main remains at `dbaa8d4`..
+
+Remaining owner setup: create/retain and securely back up the permanent keystore, set the four GitHub repository secrets, dispatch main's distribution build, verify the saved certificate fingerprint, then test without uninstalling per TESTING_QA_SPEC. S24 Ultra/Fire Max signing transition/data-preservation, audible voices, actual process death, physical accessibility and original Vocabulary art remain outstanding. Neural TTS, celebration implementation, cloud, dashboard and unrelated migrations were not started.
+
+Exact combined file inventory (28 files):
+
+- `.github/workflows/build-apk.yml`
+- `.gitignore`
+- `BACKLOG.md`
+- `BUILD_NOTES.md`
+- `CONTENT_DATA_SPEC.md`
+- `NATIVE_ARCHITECTURE_SPEC.md`
+- `README.md`
+- `SESSION_HANDOFF.md`
+- `TESTING_QA_SPEC.md`
+- `UX_NAVIGATION_SPEC.md`
+- `app/build.gradle`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/vocabulary/VocabularyRouteTest.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/vocabulary/VocabularyScreenTest.kt`
+- `app/src/main/java/com/bellfamily/bastischool/MainActivity.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ShellNavigation.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/models/VocabularyDefinition.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/vocabulary/VocabularyAudio.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/vocabulary/VocabularyContent.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/vocabulary/VocabularySelectionStore.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/vocabulary/VocabularyScreen.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/vocabulary/VocabularyViewModel.kt`
+- `app/src/test/java/com/bellfamily/bastischool/VocabularyNavigationTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/vocabulary/VocabularyAudioTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/vocabulary/VocabularyContentTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/vocabulary/VocabularyHostTest.kt`
+- `scripts/check_distribution_build.py`
+- `scripts/distribution_version.py`
+- `scripts/test_distribution_version.py`
+
+
+## Native Vocabulary Booster starter slice — 2026-09-22
+
+Base: clean `main` at `0ac4711` (native Wilma committed). Confirmed repository root, read AGENTS/source-of-truth hierarchy and audited existing vocabulary, native activities, shared content/session/audio/progress and DurableSessionHost before editing. No reset, pull/rebase, commit or push. All legacy source/tests/assets and existing native activities are preserved.
+
+Audit and scope:
+
+- Vocabulary Booster previously had no dedicated activity: its Home card fell through to Animal Actions. Legacy content includes bilingual animal records, 53 Verb Explorer lessons and six initial-letter target words (dinosaur, snake, whale, horse, crocodile, fish). Those six familiar nouns form this small native slice, with natural separately authored EN/DE prompts and short animal/action examples. Legacy `croc` becomes canonical `animal.crocodile`; no runtime text/filename identity or translation is used.
+- Available production PNGs are Seasons/Wilma, not standalone animal illustrations. No image was generated, fabricated, renamed, compressed or repurposed. The six existing animal glyphs are explicitly typed temporary migration visuals. Missing original language-neutral illustrations: dinosaur, snake, whale, horse, crocodile, fish. Review visual distinguishability, EN/DE wording and educational quality before production acceptance. The roadmap's broader roughly 50–80-word curriculum remains open.
+- Explore selects an item, displays its localized name/visual and short example, supports word Replay and sentence Listen, and invites an unscored sentence of the child's own. Browsing does not emit learning events. One animal-category metadata record is sufficient; a category quiz would be filler with this single-category set, so none is implemented.
+- Find the Word combines spoken/written word-to-picture recognition. What Is It? reverses the mapping using a visual and four authored word choices. Both use stable semantic answers and deterministic 5/10 rounds. A finite shuffled six-item cycle visits all candidates before repetition; each question has four distinct animal choices and exactly one correct answer. Help reveals Find picture labels; explicit Retry is calm, Replay is not an attempt, answers lock/score once and task-count completion is idempotent. No timer, lives, penalty, mastery-star presentation or speech/reading-mastery claim.
+- The existing Learn Home card opens the native route and describes the animal starter set. Back returns Home; Options returns to the same activity. Existing Animal Actions, Letters, Verb Explorer, Prepositions, Seasons and Wilma routes remain intact. Compose uses semantic labels, separate answer/Listen controls, minimum 56dp control heights and scrollable completion; it does not call TTS/filesystem/WebView.
+- VocabularyViewModel reuses two unchanged DurableSessionHost instances, one per practice mode, on one worker. Separate version-1 browsing/quiz journals retain selected item, phase, exact task/choice order, score/index, retry/support and completed state. Language/settings do not regenerate active rounds. New rounds use current 5/10 settings. Restored or returned sessions are silent.
+- Shared audio receives authored words, sentences, instructions, feedback, Help and Replay. ALL/QUESTIONS/OFF semantics are unchanged; OFF includes manual controls. Navigation/background/language changes revoke ownership; late callbacks only affect the current diagnostic ticket, never session state. Missing matching offline voices remain explicit failures with no cross-language/network fallback.
+- The shared durable host commits checkpoint plus pending attempt/completion before publishing an accepted transition, delivers shared progress and acknowledges it. Failed/uncertain writes remain retryable with identical event IDs; loaded journals reload/retry before accepting more actions, and unopened practice journals retry on entry. No generic queue/background service was added. Corrupt/incompatible data is kept with Retry/Home available; storage capacity and broader repair/retention remain existing limitations.
+
+Validation uses `JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'` and `ANDROID_HOME='/Users/paulbell/Library/Android/sdk'`:
+
+- Focused `./gradlew testDebugUnitTest --tests 'com.bellfamily.bastischool.learning.vocabulary.*' --tests 'com.bellfamily.bastischool.VocabularyNavigationTest' --console=plain`: **33 passed, 0 failures/errors/skipped** (content/selection 6, two-mode host integration 22, audio 4, navigation 1). Includes 21 seeds × 2 modes × 2 round lengths, exact bilingual IDs/visual mapping, invalid data/references, durable unanswered/answered/retry/support/completed restoration, uncertain-write recovery, stale writers, same-key failed-delivery retry, audio policy/language/stale callbacks and silent restore.
+- Full JVM: **238 passed, 0 failures/errors/skipped** (205 existing + 33 new). `assembleDebug` and `lintDebug` passed. Final command/evidence: `./gradlew testDebugUnitTest assembleDebug lintDebug connectedDebugAndroidTest --console=plain`: BUILD SUCCESSFUL (3m 4s); its final report was recovered after the usage interruption.
+- Full `npm test -- --reporter=line`: **55 passed (51.5s)**. Browser source/tests unchanged.
+- Emulator Compose/navigation: **16 passed, 0 failures/errors/skipped** (12 existing + 4 Vocabulary), API 35 / Android 15 arm64 on `Medium_Phone_API_35`, headless/audio disabled. Tests cover all Explore entries/examples, separate Listen/answer actions, Help/Retry, five-question English recognition, ten-question German naming at 320dp/1.5 font scale, reachable completion, actual Home route, mode round-trips, language/Options/system and visible Back, background/return, recreation, portrait/both landscape requests and no-WebView assertion. These checks are not proof of true process death, audible voice quality or physical accessibility.
+- Lint: **0 errors / 10 warnings / 2 informational findings**, unchanged: GradleDependency 6, UnusedAttribute 2, OldTargetApi 1, SetJavaScriptEnabled 1; information AutoboxingStateCreation 2. Existing VIBRATOR_SERVICE Kotlin deprecation remains.
+- APK SHA-256: `280e3077c283cbe8f1139485dc1834263ac6e6668ac0eda0dca8f8144385b2e7` (before the subsequent signing/version workflow change below). Final `git diff --check` and added-file whitespace check: passed. No existing test was weakened or removed.
+
+Physical validation remains outstanding on **Samsung S24 Ultra and Fire Max**: airplane-mode launch; installed/missing EN/DE offline voices; ALL/QUESTIONS/OFF including word/sentence/option Listen and Replay; image/word clarity and correct semantic matches; portrait/both landscapes; large text, safe insets, touch targets, TalkBack/keyboard/Switch Access; Options/system/visible Back; background/return; actual process recreation for Explore and unanswered/answered/retry/completed rounds; 5/10 completion; progress/pending-effect recovery after restart and normal same-signature APK upgrade. Emulator audio is disabled. Original-art acceptance, bilingual human review, broader vocabulary/categories/contexts and foundation storage recovery remain follow-ups. No physical acceptance, neural TTS, cloud, dashboard or unrelated migration is claimed.
+
+Exact file inventory (20 files):
+
+- `BACKLOG.md`
+- `BUILD_NOTES.md`
+- `CONTENT_DATA_SPEC.md`
+- `NATIVE_ARCHITECTURE_SPEC.md`
+- `SESSION_HANDOFF.md`
+- `UX_NAVIGATION_SPEC.md`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/vocabulary/VocabularyRouteTest.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/vocabulary/VocabularyScreenTest.kt`
+- `app/src/main/java/com/bellfamily/bastischool/MainActivity.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ShellNavigation.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/models/VocabularyDefinition.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/vocabulary/VocabularyAudio.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/vocabulary/VocabularyContent.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/vocabulary/VocabularySelectionStore.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/vocabulary/VocabularyScreen.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/vocabulary/VocabularyViewModel.kt`
+- `app/src/test/java/com/bellfamily/bastischool/VocabularyNavigationTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/vocabulary/VocabularyAudioTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/vocabulary/VocabularyContentTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/vocabulary/VocabularyHostTest.kt`
+
+
 ## Native Wilma’s Week — 2026-09-22
 
 Base: clean `main` at `b607b39` (committed native Seasons). Confirmed repository root and read AGENTS.md/source-of-truth documents, current native hosts/screens, canonical weekday records and all Wilma assets before editing. No reset, pull/rebase, commit or push. Seasons and Prepositions behavior/foundations are preserved; the only Seasons screen-file change is adding Wilma to the shared chooser.

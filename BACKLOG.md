@@ -33,7 +33,8 @@ Shared implementation contracts: [NATIVE_ARCHITECTURE_SPEC.md](NATIVE_ARCHITECTU
 
 ## P2 — first learning/game extensions
 - Follow the Instructions MVP: first true native game/learning engine for one-step taps, bilingual replay, classroom language and progress events (GAME_DESIGN_SPEC.md).
-- Vocabulary Booster v1: roughly 50–80 reviewed starter words using canonical shared IDs and a real route replacing the current Animal Actions fallback.
+- [x] Implement the first native Vocabulary Booster slice: six canonical bilingual animal words, Explore/examples, word-to-picture and picture-to-word practice, 5/10 sessions, shared audio, exact restoration and durable retryable progress. The existing Learn card now opens the native route. Automated evidence is in BUILD_NOTES.md; artwork and physical acceptance remain open.
+- Vocabulary Booster follow-up: replace the six explicit temporary animal glyphs with reviewed original illustrations (dinosaur, snake, whale, horse, crocodile, fish), then expand toward the roadmap's roughly 50–80 reviewed words and useful categories/multiple contexts. Validate S24 Ultra/Fire Max voices, accessibility, lifecycle, persistence and signed upgrades. This six-word slice does not complete the wider v1 curriculum.
 - Tell Me! / Erzähl mal v1: picture prompt → child speaks → Continue → model/expand language; no automatic speech scoring.
 - Memory Pairs: one shared untimed matching engine for picture/picture, number/quantity, case, bilingual, animal/action, animal/habitat and emotion/expression pairs (GAME_DESIGN_SPEC.md).
 - Progress dashboard v1: Going well, Suggested focus and useful support/independence trends rather than vanity totals.

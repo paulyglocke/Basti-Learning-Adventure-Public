@@ -74,6 +74,7 @@ import com.bellfamily.bastischool.ui.prepositions.PrepositionsViewModel
 import com.bellfamily.bastischool.ui.prepositions.PrepositionsScreen
 import com.bellfamily.bastischool.ui.seasons.*
 import com.bellfamily.bastischool.ui.wilma.*
+import com.bellfamily.bastischool.ui.vocabulary.*
 import com.bellfamily.bastischool.learning.models.ContentLanguage
 
 private val Sky = Color(0xFF79CEF7)
@@ -96,7 +97,7 @@ private data class HomeCard(
 )
 
 private val homeCards = listOf(
-    HomeCard("📚", "Vocabulary Booster", "Wortschatz", "Learn useful words for school.", "Nützliche Wörter für die Schule lernen."),
+    HomeCard("📚", "Vocabulary Booster", "Wortschatz", "Explore familiar animal words.", "Vertraute Tiernamen entdecken.", mode = "vocabulary"),
     HomeCard("🎬", "Learn Verbs", "Verben lernen", "Watch, hear and learn each action.", "Aktionen anschauen, anhören und lernen.", verbExplorer = true),
     HomeCard("🔤", "Letters", "Buchstaben", "Find words with the same first letter.", "Finde passende Anfangsbuchstaben.", "letters"),
     HomeCard("🔢", "Numbers", "Zahlen", "Count and order numbers up to your level.", "Zahlen zählen und ordnen.", "count"),
@@ -114,6 +115,7 @@ private val homeCards = listOf(
 
 class MainActivity : ComponentActivity() {
     private lateinit var nativeSeasons: SeasonsViewModel
+    private lateinit var nativeVocabulary: VocabularyViewModel
     private lateinit var nativeWilma: WilmaViewModel
     private lateinit var nativePositions: PrepositionsViewModel
     private lateinit var prefs: android.content.SharedPreferences
@@ -143,6 +145,7 @@ class MainActivity : ComponentActivity() {
         prefs = getSharedPreferences("basti_shell", Context.MODE_PRIVATE)
         nativePositions = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[PrepositionsViewModel::class.java]
         nativeSeasons = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[SeasonsViewModel::class.java]
+        nativeVocabulary = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[VocabularyViewModel::class.java]
         nativeWilma = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[WilmaViewModel::class.java]
         configurePositions()
         restoredSession = savedInstanceState?.getString("legacySession")
@@ -198,6 +201,7 @@ class MainActivity : ComponentActivity() {
                                     ShellScreen.WEB -> if (language == "de") "Lernen" else "Learning"
                                     ShellScreen.PREPOSITIONS -> if (language == "de") "Wo ist es?" else "Where is it?"
                                     ShellScreen.DAYS_SEASONS -> if (language == "de") "Tage & Jahreszeiten" else "Days & Seasons"
+                                    ShellScreen.VOCABULARY -> if (language == "de") "Wortschatz" else "Vocabulary Booster"
                                     ShellScreen.WILMA -> if (language == "de") "Wilmas Woche" else "Wilma’s Week"
                                     ShellScreen.SEASONS -> if (language == "de") "Jahreszeiten" else "Seasons"
                                 },
@@ -223,7 +227,7 @@ class MainActivity : ComponentActivity() {
                         ShellScreen.HOME -> NativeHome(language, padding, navigation.recoveryFailed) { card ->
                             if (!card.play) {
                                 checkpoint = LegacyCheckpoint(); restoredSession = null
-                                changeRoute(if (card.mode == "positions") navigation.openPrepositions() else if (card.mode == "time") navigation.openDaysSeasons() else navigation.openActivity(if (card.verbExplorer) "verbExplorer" else card.mode ?: "verbs"))
+                                changeRoute(if (card.mode == "vocabulary") navigation.openVocabulary() else if (card.mode == "positions") navigation.openPrepositions() else if (card.mode == "time") navigation.openDaysSeasons() else navigation.openActivity(if (card.verbExplorer) "verbExplorer" else card.mode ?: "verbs"))
                             }
                         }
                         ShellScreen.OPTIONS -> NativeOptions(language, audioMode, round, numberMax, padding, audioStatus,
@@ -244,6 +248,12 @@ class MainActivity : ComponentActivity() {
                             onWilma = { changeRoute(navigation.openWilma()) },
                             onLegacy = { checkpoint = LegacyCheckpoint(); restoredSession = null; changeRoute(navigation.openActivity("time")) },
                             modifier = Modifier.padding(padding))
+                        ShellScreen.VOCABULARY -> VocabularyScreen(nativeVocabulary.selection, nativeVocabulary.quiz,
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            nativeVocabulary.busy, nativeVocabulary.saveFailed, nativeVocabulary.audioFailed,
+                            nativeVocabulary::select, nativeVocabulary::phase, nativeVocabulary::replay, nativeVocabulary::example,
+                            nativeVocabulary::action, nativeVocabulary::option, nativeVocabulary::again, nativeVocabulary::retry,
+                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding))
                         ShellScreen.WILMA -> WilmaScreen(nativeWilma.selection, nativeWilma.quiz, nativeWilma.ordering,
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeWilma.images, nativeWilma.busy, nativeWilma.saveFailed, nativeWilma.imageFailed, nativeWilma.audioFailed,
@@ -279,6 +289,7 @@ class MainActivity : ComponentActivity() {
         navigation = route
         nativePositions.setVisible(foreground && route.screen == ShellScreen.PREPOSITIONS)
         nativeSeasons.setVisible(foreground && route.screen == ShellScreen.SEASONS)
+        nativeVocabulary.setVisible(foreground && route.screen == ShellScreen.VOCABULARY)
         nativeWilma.setVisible(foreground && route.screen == ShellScreen.WILMA)
         updateWebActivity()
     }
@@ -323,6 +334,9 @@ class MainActivity : ComponentActivity() {
             prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
             prefs.getInt("round", 5))
         nativeSeasons.configure(prefs.getString("lang", "en") ?: "en",
+            prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
+            prefs.getInt("round", 5))
+        nativeVocabulary.configure(prefs.getString("lang", "en") ?: "en",
             prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
             prefs.getInt("round", 5))
         nativeWilma.configure(prefs.getString("lang", "en") ?: "en",
@@ -438,8 +452,8 @@ class MainActivity : ComponentActivity() {
         if (navigation.ownsWebSession) outState.putString("legacySession", checkpoint.read())
         super.onSaveInstanceState(outState)
     }
-    override fun onPause() { foreground = false; nativePositions.setVisible(false); nativeSeasons.setVisible(false); nativeWilma.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
-    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen == ShellScreen.SEASONS); nativeWilma.setVisible(navigation.screen == ShellScreen.WILMA); updateWebActivity() }
+    override fun onPause() { foreground = false; nativePositions.setVisible(false); nativeSeasons.setVisible(false); nativeWilma.setVisible(false); nativeVocabulary.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
+    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen == ShellScreen.SEASONS); nativeWilma.setVisible(navigation.screen == ShellScreen.WILMA); nativeVocabulary.setVisible(navigation.screen == ShellScreen.VOCABULARY); updateWebActivity() }
     override fun onDestroy() { disposeWebView(); tts?.shutdown(); tts = null; super.onDestroy() }
 }
 
