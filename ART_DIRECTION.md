@@ -16,6 +16,31 @@ Emoji may remain temporarily as migration placeholders only.
 - shark
 - whale
 
+## Canonical reusable animal library
+
+Create one coherent set of original, language-neutral recurring animal/creature illustrations before generating isolated replacements activity by activity.
+
+Initial reusable subjects:
+- T-Rex
+- Velociraptor
+- Pteranodon
+- Mosasaurus
+- dragon
+- snake
+- Komodo dragon
+- crocodile
+- shark
+- whale
+- dinosaur/general dinosaur where a species-specific subject is not intended
+- fish
+- horse where retained by the reviewed Vocabulary starter content
+
+A canonical illustration should be reusable across Vocabulary, Prepositions, completion rewards, Follow the Instructions, Memory/matching, Compare & Discover, Discovery Book and future games where the same semantic subject is appropriate.
+
+Create activity-specific poses or action frames when they teach meaning—such as slithering, flying, snapping or swimming—but do not independently redesign the same animal for every screen. Stable semantic content IDs remain separate from asset filenames so artwork can improve without changing learning identity.
+
+Prioritise replacement of explicit temporary glyph/emoji placeholders before producing decorative variants.
+
 ## Recurring learning mascot — Wilma
 Wilma is the weekday caterpillar used to reinforce the Kita's existing day-colour routine.
 

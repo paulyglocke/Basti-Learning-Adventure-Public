@@ -66,6 +66,17 @@ rather than:
 
 Child-facing native games should emphasise mission progress and completion rather than perfect-score pressure; internal progress can still record independence, Replay, hints and retries.
 
+# 2A. Reusable interaction engines
+
+Reuse interaction/state models where the learning job is genuinely the same; do not build a separate engine for every curriculum label.
+
+- **Instruction/action engine:** Follow the Instructions is the first consumer. The same core should later support classroom/School Skills, Remember the Mission, spatial placement, selected Focus & Flex inhibition/rule-switch variants and compatible movement prompts.
+- **Sequencing model:** reuse the proven tap-to-place ordering pattern for Wilma, Seasons Build the Year and later number/routine/story sequences. Precision drag may enhance a task but should not be the only interaction.
+- **Semantic matching model:** Memory Pairs should establish reusable pair relationships for picture/picture, word/picture, number/quantity, case, bilingual, animal/action, animal/habitat, emotion/expression and season/clue content.
+- **Shared knowledge:** Discovery Book and Compare & Discover should consume the same canonical animal/vocabulary/fact records used elsewhere rather than maintaining parallel data.
+
+These are focused reusable state/interaction models, not a mandate for one giant game engine.
+
 # 3. Games should share systems, not identical mechanics
 
 Do **not** force every game into a generic multiple-choice quiz engine.

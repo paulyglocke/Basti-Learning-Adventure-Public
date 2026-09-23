@@ -25,11 +25,31 @@ The long-term child home should prioritise one large **Today’s Adventure** ent
 
 ## Today’s Adventure
 
-Offer a recommended short daily route drawn from shared skill progress: one confidence task, one focus task, one communication/listening task and one game/reward. Modules should be approximately 3–5 minutes, with an obvious ending; the whole route is not a forced timed session. Allow stopping after any module and choosing familiar activities instead.
+Introduce this in two stages.
 
-Use the selection/generalisation principles in PROGRESS_TRACKER_SPEC.md rather than maintaining a separate difficulty profile here. With little history, offer a reviewed beginner mix. Missed days have no penalty; avoid streak pressure or claims that a daily route must be completed.
+### v1 — curated route
+Offer a short reviewed route without requiring an adaptive algorithm: for example one confidence/familiar task, one listening/focus task, one learning task and one playful task. Rotate from implemented content. Modules remain optional and approximately 3–5 minutes; the child may stop after any module or choose something else.
 
-Today’s Adventure should reduce choice overload, not become a requirement or a streak mechanic.
+### v2 — progress-informed route
+Once enough native activities produce useful progress evidence, use the selection/generalisation principles in PROGRESS_TRACKER_SPEC.md to choose sensible next activities. Do not maintain a second difficulty profile here.
+
+In both versions, missed days have no penalty, there is no streak pressure, and Today’s Adventure reduces choice overload rather than becoming a requirement.
+
+## Shared native visual design system
+
+Establish a lightweight reusable visual system before adding many more native screens. This is not a separate UI framework; it is a small set of consistent Compose components and tokens.
+
+Prioritise:
+- primary action buttons for Start/Continue
+- secondary controls for Replay/Help
+- navigation controls for Home/Back
+- child-facing image/choice cards with clear neutral, selected, correct, retry and disabled states
+- activity headers and short prompt hierarchy
+- small calm progress indicators such as eggs, footprints or mission steps
+- the shared completion layout
+- consistent spacing, corner treatment, typography hierarchy, touch feedback and restrained animation timing
+
+Activities may keep their own visual identity—Seasons should still feel like Seasons and Wilma like Wilma—but controls should behave and read consistently. The system should reduce later retrofit work, not force every learning activity into the same generic quiz appearance.
 
 ## Activity flow
 

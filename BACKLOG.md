@@ -1,52 +1,106 @@
 # Actionable backlog
 
-This is the near-/mid-term work queue, not the full roadmap. Direction and acceptance rules live in [MASTER_PRODUCT_LEARNING_ROADMAP.md](MASTER_PRODUCT_LEARNING_ROADMAP.md), [PROGRESS_TRACKER_SPEC.md](PROGRESS_TRACKER_SPEC.md), [GAME_DESIGN_SPEC.md](GAME_DESIGN_SPEC.md), [VOICE_AUDIO_SPEC.md](VOICE_AUDIO_SPEC.md) and [ART_DIRECTION.md](ART_DIRECTION.md).
+This is the execution queue, not the full curriculum. Product direction lives in [MASTER_PRODUCT_LEARNING_ROADMAP.md](MASTER_PRODUCT_LEARNING_ROADMAP.md). Detailed contracts live in the specialist specs linked there.
 
-Shared implementation contracts: [NATIVE_ARCHITECTURE_SPEC.md](NATIVE_ARCHITECTURE_SPEC.md) for native foundation/migration, [CONTENT_DATA_SPEC.md](CONTENT_DATA_SPEC.md) for models/validation, [UX_NAVIGATION_SPEC.md](UX_NAVIGATION_SPEC.md) for navigation/layouts and [TESTING_QA_SPEC.md](TESTING_QA_SPEC.md) for acceptance.
+Completed implementation history and validation evidence belong in [BUILD_NOTES.md](BUILD_NOTES.md) and [SESSION_HANDOFF.md](SESSION_HANDOFF.md), not as a growing list of checked-off backlog items.
 
-## P0 — stabilise current activities
+## Established baseline
 
-- [x] Align legacy Prepositions scenes, spoken choices, hints and English/German feedback across all six relations; fix narrow-screen scene spacing. Automated/browser visual evidence is in BUILD_NOTES.md; physical Samsung/Fire review remains required.
-- Physically confirm the implemented speech-safe feedback/boundary on S24/Fire in English/German (VOICE_AUDIO_SPEC.md); automated regression coverage is in tests/speech.spec.js.
-- [x] Fix legacy completion/reward layouts: individually wrapping stars, immediately accessible Continue/Home, separate optional balloons and completion keyboard focus. Browser size/large-text coverage is in BUILD_NOTES.md; physical S24/Fire review remains required.
-- [x] Fix legacy Letters display-case consistency and bilingual initial-letter content; the activity now teaches written initial-letter matching rather than claiming system TTS provides phonemes. Automated coverage is in tests/letters.spec.js; physical Samsung/Fire review remains required.
-- [x] Implement legacy audio policy, TTS readiness, cancellation, missing-offline-voice handling, versioned successful tutorial completion/reset and SFX silence (VOICE_AUDIO_SPEC.md). Automated validation recorded in BUILD_NOTES.md; physical audio acceptance remains outstanding.
-- [x] Implement native Options origin/session return and bounded saved-state recovery, preserving question identity, answer/feedback state, score and lesson return. Audio cancellation, single-WebView lifetime, guarded Back callbacks and durable tutorial reset are retained; native policy/browser recovery tests are recorded in BUILD_NOTES.md. Physical recreation/process/Back validation remains outstanding.
-- [x] Fix native top-bar overlap with landscape system navigation/cutouts; measured Options/Back on the physical S24 Ultra in both landscape directions and portrait (BUILD_NOTES.md, 2026-09-22).
-- Validate physically on S24/Fire: airplane mode, EN/DE voices, portrait/landscape, insets, large text, touch/accessibility and lifecycle; exercise 5/10-question rounds and number/calendar boundaries. Partial S24 Ultra evidence now covers Options/lesson/library Back, one saved-task process recovery, 5/10 completion and user-confirmed EN/DE offline audio/Sound Off (BUILD_NOTES.md, 2026-09-22). Fire Max and the remaining Samsung accessibility/audio/content/lifecycle matrix are still open.
+Already implemented and not active backlog unless a regression is found:
+- shared native content IDs/repository foundation
+- shared native audio controller/system-TTS boundary
+- deterministic native session/checkpoint framework
+- durable deduplicated native progress-event storage
+- native Prepositions
+- native Seasons Explore/Practice
+- native Wilma Explore/Find Day/Before-After/Ordering
+- native Vocabulary starter slice
+- stable external distribution signing and monotonic CI versioning
+- Samsung landscape safe-inset fix
+- legacy correctness/audio/session fixes already marked complete in historical notes
 
-## P1 — shared native foundation
-- [x] Establish the first pure native content foundation: semantic IDs, required EN/DE display/speech, versioned deterministic repository, weekday cycle/colour cues and canonical season narration/local image references with unit validation. No UI migration; evidence in BUILD_NOTES.md.
-- Extend shared native content/data models and validators as the first migration needs them: skill/vocabulary/grammar records, phonics packs, verb lessons, scene references and valid answers. These broader P1 contracts are not completed by the initial calendar subset.
-- [x] Implement shared native audio contracts/controller, owned cancellation, policy, speech safety, Android system-TTS adapter and deterministic test doubles (VOICE_AUDIO_SPEC.md). Foundation only; existing legacy routes remain unchanged. Automated evidence is in BUILD_NOTES.md.
-- The shared audio layer is integrated with native Prepositions. Validate actual EN/DE offline voices, lifecycle, missing voices and silence on Samsung/Fire. Evaluate enhanced voices separately through Voice Lab and physical auditions; no neural work is included in the foundation.
-- [x] Implement the first pure native choice-session framework: immutable plans/state, deterministic bounded generation, answer/retry/support policy, completion effects, versioned exact-task checkpoints and native audio coordination. Unwired foundation; evidence in BUILD_NOTES.md.
-- Native Prepositions now integrates session restoration/lifecycle and its completion UI. Broader shared settings/completion UI components remain follow-up work. Native progress storage/deduplication is implemented separately; live delivery integration, reward deduplication and physical recovery acceptance remain requirements; the framework does not complete those parts of this P1 item.
-- [x] Establish minimal local native Progress Tracker event storage: typed attempt/completion evidence, bounded versioned atomic file persistence, stable event/session deduplication, queries and session-effect adapter. Unwired foundation; validation in BUILD_NOTES.md and contracts in PROGRESS_TRACKER_SPEC.md.
-- Native Prepositions now retains pending progress effects with its checkpoint and handles retry/capacity/schema failures. Validate physical Android process/filesystem and upgrade behavior before migration acceptance. Dashboard, rewards and broader retention/migration policy remain separate work.
-- [x] Implement the first native Prepositions slice: canonical bilingual scenes, deterministic rounds, shared session/audio, durable checkpoint plus pending-progress delivery, Compose and native shell route. Automated evidence is in BUILD_NOTES.md.
-- Physically accept native Prepositions on Samsung S24 Ultra and Fire Max before retiring its legacy fallback: artwork/scene meaning, voices, accessibility/insets, recovery, storage failure/retry and signed-upgrade persistence remain open.
-- [x] Implement native Seasons Explore/Practice using canonical names/narration/unchanged PNGs, shared sessions/audio, exact restoration and durable retryable progress. Days & Seasons retains a legacy route; Wilma remains separate future work. Automated evidence is in BUILD_NOTES.md.
-- Physically accept native Seasons on Samsung S24 Ultra and Fire Max: offline voices/silence, artwork/large-font/insets, navigation/recreation and progress after restart/signed upgrade. Keep legacy Days & Seasons until parity is accepted.
-- Add native state/content/Compose tests and CI coverage, including navigation and accessibility.
-- Review generated German grammar, language-specific phonics, number-zero semantics and restore native custom-number entry; consider an independent parent maths ceiling.
+## P0 — trusted daily build
 
-## P2 — first learning/game extensions
-- Follow the Instructions MVP: first true native game/learning engine for one-step taps, bilingual replay, classroom language and progress events (GAME_DESIGN_SPEC.md).
-- [x] Implement the first native Vocabulary Booster slice: six canonical bilingual animal words, Explore/examples, word-to-picture and picture-to-word practice, 5/10 sessions, shared audio, exact restoration and durable retryable progress. The existing Learn card now opens the native route. Automated evidence is in BUILD_NOTES.md; artwork and physical acceptance remain open.
-- Vocabulary Booster follow-up: replace the six explicit temporary animal glyphs with reviewed original illustrations (dinosaur, snake, whale, horse, crocodile, fish), then expand toward the roadmap's roughly 50–80 reviewed words and useful categories/multiple contexts. Validate S24 Ultra/Fire Max voices, accessibility, lifecycle, persistence and signed upgrades. This six-word slice does not complete the wider v1 curriculum.
-- Tell Me! / Erzähl mal v1: picture prompt → child speaks → Continue → model/expand language; no automatic speech scoring.
-- Memory Pairs: one shared untimed matching engine for picture/picture, number/quantity, case, bilingual, animal/action, animal/habitat and emotion/expression pairs (GAME_DESIGN_SPEC.md).
-- Progress dashboard v1: Going well, Suggested focus and useful support/independence trends rather than vanity totals.
-- Native Numbers/Maths expansion: prioritise subitising, quantity, more/fewer/same, making 5, patterns, shapes and spatial/measurement concepts over large-number drill.
-- [x] Implement native Wilma’s Week / Wilmas Woche: canonical weekday/art mapping, Explore, Find Day, Before/After, tap-to-place seven-day ordering, shared audio/session/progress and durable restoration/retry. Automated evidence in BUILD_NOTES.md; physical acceptance remains open.
-- Wilma follow-up: explicitly anchored Today/Yesterday/Tomorrow and wider contexts. Validate existing Wilma on S24 Ultra/Fire Max (segment clarity/order/colours, audio/accessibility, lifecycle/order restoration and restart/signed-upgrade persistence). No device-clock inference is implemented.
-- Classroom / School Skills: practical German/English instructions and self-advocacy embedded in contextual scenes.
-- Compare & Discover plus Discovery Book foundation, with meaningful knowledge unlocks as a primary reward.
+- Finish and validate the shared native completion celebration: balloons, one-time pop, animal reveal, brief local confetti, Sound Off-aware SFX, immediate Continue/Home, no progress/session coupling.
+- Produce a newer stable-signed distribution APK and prove **in-place `adb install -r` upgrade** over the current permanent-key S24 installation while preserving settings/progress/session behavior.
+- Run one batched S24 Ultra acceptance sweep across Prepositions, Seasons, Wilma and Vocabulary:
+  - airplane-mode EN/DE and missing-voice behavior
+  - Sound Off / Replay
+  - portrait + both landscapes
+  - large text / insets / touch / basic accessibility
+  - Options/Back/background/return
+  - true process recreation
+  - 5/10 completion
+  - progress after restart and signed upgrade
+- Run the equivalent Fire Max sweep.
+- Fix critical defects found by those sweeps; avoid unrelated feature work inside P0.
+- Once the same-key upgrade is proven, treat signing/versioning as maintenance rather than an active roadmap project.
 
-## P3 — broader experiences and polish
-- Make Today’s Adventure the central recommended child entry (confidence + focus + communication/listening + game/reward), with a secondary browse path and no streak pressure (UX_NAVIGATION_SPEC.md).
-- Dragon Treasure Hunt, then Build the Bridge, Dinosaur Rescue and Crocodile Snap (GAME_DESIGN_SPEC.md); implement separately using shared systems.
-- Broader custom art/animation polish, including action-specific Verb Explorer motion (ART_DIRECTION.md).
-- Add more real-world/movement missions and occasional unscored “How did you know?” reasoning prompts.
-- Measure performance and broaden accessibility/reduced-motion polish on both target devices.
+## P1 — shared native experience
+
+- Introduce a lightweight shared visual design system before many more native screens are built:
+  - primary action
+  - secondary/replay/help action
+  - navigation action
+  - image/choice card
+  - activity header
+  - progress marker
+  - completion layout
+  - shared spacing/typography/press/motion rules
+- Create a canonical original animal-art library, starting with assets that immediately replace current placeholders and can be reused across activities.
+- Replace temporary animal visuals in Vocabulary and review temporary native animal representations elsewhere.
+- Reuse/extract the Wilma ordering model when implementing Seasons **Build the Year**; do not build a separate precision-drag-only sequence engine.
+- Build **Follow the Instructions MVP** as the reusable instruction/action engine:
+  - one-step tap instructions first
+  - bilingual Replay
+  - shared audio/progress/session contracts
+  - responsive phone/tablet layouts
+- Extend that engine later rather than creating separate frameworks for School Skills, Remember the Mission, inhibition/rule switching and compatible Move & Learn prompts.
+- Build Memory Pairs on a reusable semantic matching model when that work starts.
+- Extend content/data schemas only for concrete activity needs; avoid speculative framework work.
+- Review German grammar, language-specific phonics, number-zero semantics and native custom-number entry when their relevant activities are touched.
+
+## P2 — core school-readiness curriculum
+
+- **Seasons expansion**:
+  - What comes next?
+  - What comes before?
+  - Build the Year
+  - Missing season
+  - identify season from observable clue
+  - match season to clue
+  - later combined before/after reasoning
+- School Skills as an early Follow-the-Instructions content pack: classroom instructions plus help-seeking/self-advocacy.
+- Grow Vocabulary toward roughly 50–80 reviewed words through shared curriculum additions rather than one monolithic vocabulary task.
+- Tell Me! / Erzähl mal v1 with parent/child Continue and model/expand language; no automatic pronunciation scoring.
+- Memory Pairs variants: picture/picture, word/picture, number/quantity, case, bilingual, animal/action, animal/habitat, emotion/expression and season/clue where educationally appropriate.
+- Conceptual native Maths: subitising, quantity, more/fewer/same, making 5, part-whole, one more/less, conservation, number stories, patterns, shapes and spatial/measurement concepts.
+- Letters & Sounds / phonological-awareness progression, keeping written letter matching distinct from true phoneme instruction.
+- Wilma Today/Yesterday/Tomorrow using an explicit established anchor; no silent device-date inference.
+- Focus & Flex variants built on shared instruction/rule systems.
+- Feelings and calm self-advocacy language.
+- Compare & Discover backed by shared animal/fact data.
+- Continue collecting progress evidence; build the parent Progress dashboard only once enough native curriculum exists for useful summaries.
+
+## P3 — product experience and broader play
+
+- Today’s Adventure v1: curated short route with a secondary browse path and no streak pressure.
+- Today’s Adventure v2: progress-informed recommendations after evidence coverage is broad enough.
+- Discovery Book as a presentation layer over shared knowledge/content rather than a duplicate fact database.
+- Dragon Treasure Hunt.
+- Build the Bridge.
+- Dinosaur Rescue.
+- Crocodile Snap.
+- Native/action-specific Verb Explorer polish.
+- Broader original illustration/animation polish.
+- Real-world and Move & Learn missions.
+- Final app-wide visual polish: Home, buttons/cards, typography, spacing, transitions, feedback states and cohesive decorative motifs.
+- Coordinated app icon/branding and proper native splash/launch screen with no artificial delay.
+- Broader accessibility, reduced-motion and performance tuning on both target devices.
+
+## Internal milestones
+
+- **A — Native Core:** current native activities + shared foundations + stable update stream + completion celebration.
+- **B — School Ready:** richer Seasons + Follow Instructions/School Skills + broader Vocabulary + early Maths.
+- **C — Learning World:** Tell Me + Memory/matching + Focus & Flex + feelings + Compare/Discover + Discovery Book foundation.
+- **D — Polished Adventure:** Today’s Adventure + larger games + cohesive art/design/branding + final cross-device polish.

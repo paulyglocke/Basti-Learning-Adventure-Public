@@ -24,6 +24,31 @@ A calm, audio-first, visually rich school-readiness app focused on communication
 - During thinking/choice moments, reduce irrelevant movement and visual distraction; animation should communicate meaning or celebrate rather than compete for attention.
 - Offer movement naturally as part of learning rather than treating it as a consequence for losing focus.
 
+## Roadmap operating model
+
+This master roadmap owns product direction, learning priorities and sequencing. Detailed implementation contracts belong in the specialist specifications:
+
+- `CONTENT_DATA_SPEC.md` — canonical IDs, authored content and validation
+- `NATIVE_ARCHITECTURE_SPEC.md` — runtime/component boundaries
+- `VOICE_AUDIO_SPEC.md` — speech/audio policy
+- `PROGRESS_TRACKER_SPEC.md` — evidence and adaptation
+- `UX_NAVIGATION_SPEC.md` — navigation/shared interaction behavior
+- `GAME_DESIGN_SPEC.md` — reusable game mechanics
+- `ART_DIRECTION.md` — visual/asset rules
+- `TESTING_QA_SPEC.md` — acceptance
+
+Keep this file focused on **what to teach, why it matters and when it should be built**. Do not duplicate low-level contracts here when another specification already owns them.
+
+Development should favour reusable systems that unlock several learning goals:
+
+- **sequencing**: Wilma ordering first, then Seasons, number/story/school-routine sequences
+- **instruction/action**: Follow the Instructions first, then School Skills, Focus & Flex, Remember the Mission and movement variants
+- **matching**: Memory Pairs first, then picture/picture, number/quantity, case, bilingual, animal/action, animal/habitat, emotion/expression and season/clue variants
+- **shared knowledge**: canonical vocabulary/animal data should feed Vocabulary, Prepositions, instructions, comparisons, Discovery Book and games
+- **shared visual language**: establish reusable buttons, cards, headers, progress, completion and feedback before many more native screens are added
+
+Build a shared abstraction when a second real use needs it; do not create a speculative general-purpose engine.
+
 ## Learning pillars
 1. Talk & Communicate
 2. Listen & Follow
@@ -353,6 +378,33 @@ Movement-learning patterns can include:
 
 Movement should support the learning goal and provide natural changes of state without requiring motion sensors or performance scoring.
 
+## Reusable learning engines
+
+Treat several curriculum areas as content/rule variants over shared native interaction systems rather than separate engineering projects.
+
+### Sequencing
+Reuse the ordering model proven by Wilma for Seasons **Build the Year**, and later for numbers, routines and simple story sequences. Prefer tap-to-place as the baseline accessible interaction; drag may be an optional enhancement, never the only route.
+
+### Instruction/action
+**Follow the Instructions** is the primary reusable engine for:
+- Listen & Follow
+- classroom / School Skills
+- spatial missions
+- Remember the Mission
+- Focus & Flex inhibition/rule-switch variants
+- selected Move & Learn prompts
+
+Start with one-step tap instructions, then grow the same model deliberately into multi-step, placement, inhibition and memory tasks.
+
+### Matching
+Build Memory Pairs on a reusable semantic matching model so the same content relationships can later support picture/picture, word/picture, number/quantity, upper/lower case, bilingual, animal/action, animal/habitat, emotion/expression and season/clue matching.
+
+### Shared content growth
+Do not treat Vocabulary Booster as one giant 50–80-word content project. New curriculum work should add reviewed canonical words to the shared library, making them available to Vocabulary Booster and other compatible activities automatically.
+
+### Discovery Book
+Treat Discovery Book primarily as a child-facing presentation of shared knowledge rather than a separate fact database. Animal/vocabulary records should be reusable across learning activities, comparisons, rewards and discovery.
+
 ## Games
 - Follow the Instructions
 - Memory Pairs
@@ -429,34 +481,86 @@ Regularly substitute or combine one module with a brief Move & Learn / real-worl
 
 Individual modules remain short (about 3–5 minutes), the child may stop after any module, and missed days never create penalties or streak pressure. Progress data should drive selection.
 
-## Development phases
-Build the shared native completion celebration before native activity migration spreads further: floating balloons, animal jump-out reveals, brief confetti and Sound Off-aware pop audio, with Continue/Home always immediately available.
+## Development priorities
 
-Later visual-polish work should include a proper native splash / launch experience as part of the app's unified visual identity:
-- use Android's native splash-screen behavior rather than an artificial timed loading screen
-- show the app title/logo with original prehistoric/adventure artwork or a simple mascot element
-- keep launch fast; never delay entry merely to display branding
-- work fully offline and require no network/service startup
-- transition cleanly into Home without a second fake splash screen
-- coordinate splash artwork, app icon, typography and Home styling so they feel like one product
-- support phone/tablet, portrait/landscape, system insets and accessibility/reduced-motion expectations
-- treat this as P3 polish, after core native learning flows and stability are established
+The detailed learning sections above describe product scope. The execution plan is deliberately shorter.
 
-1. Finish current P0 correctness, audio and lifecycle work.
-2. Establish native foundations: shared content model, audio controller, session/question framework and minimal persisted progress-event storage.
-3. Migrate Prepositions end-to-end to prove the architecture.
-4. Build Follow the Instructions MVP as the first true native game/learning engine.
-5. Build Vocabulary Booster v1 using the shared content model.
-6. Add Tell Me! / expressive-language v1, with parent/child Continue rather than automatic speech scoring. Tell Me More may expand “Snake” → “A green snake” → “The green snake is slithering” → “The long green snake is slithering under the tree.”
-7. Build Memory Pairs on the shared matching engine.
-8. Add Progress dashboard v1.
-9. Expand native Numbers/Maths around subitising, quantities, composition/part–whole relationships, patterns and shapes.
-10. Build Classroom / School Skills.
-11. Add Focus & Flex and regular Move & Learn missions using the established instruction/session systems.
-12. Build Compare & Discover plus Discovery Book.
-13. Build larger games: Dragon Treasure Hunt, Build the Bridge, Dinosaur Rescue and Crocodile Snap.
+### P0 — Trusted daily build
+Close the current app-quality/infrastructure chapter before broad expansion:
+- finish the shared native completion celebration and integrate it with suitable native activities
+- prove a **same-key, higher-version in-place stable APK upgrade** while preserving settings/progress
+- run one batched Samsung S24 Ultra acceptance sweep across current native activities
+- run the equivalent Fire Max acceptance sweep
+- fix only the critical audio, accessibility, layout, lifecycle or persistence issues those sweeps expose
 
-This ordering is guidance, not a ban on small opportunistic P0/P1 fixes.
+Once these pass, signing/versioning becomes maintenance infrastructure rather than an active roadmap stream.
 
+### P1 — Shared native experience
+Build the reusable product pieces that make subsequent activities cheaper and more polished:
+- a lightweight native visual design system: primary/secondary/navigation buttons, choice cards, activity headers, progress markers, completion layout, spacing/typography and restrained motion
+- a canonical original animal-art library reused across Vocabulary, Prepositions, completion rewards, instructions, matching, comparisons, Discovery Book, Verb Explorer and future games
+- sequencing reuse extracted from the proven Wilma pattern when Seasons needs it
+- Follow the Instructions as the shared instruction/action engine
+- Memory Pairs as the first consumer of a shared semantic matching model
+- extend content schemas only when a concrete second use requires it
+
+Do not build speculative generic frameworks.
+
+### P2 — Core school-readiness curriculum
+Use the shared systems to add learning breadth:
+- **Seasons expansion**: next, before, missing season, Build the Year, season-from-clue, clue-from-season, then combined before/after
+- Follow the Instructions + practical School Skills as content packs over the same engine
+- Vocabulary growth through every new curriculum area, moving toward the reviewed 50–80-word target
+- Tell Me! / expressive-language v1 and model/expand prompts
+- Memory Pairs and matching variants
+- conceptual native Maths: subitising, quantity, more/fewer/same, making 5, part-whole, patterns, shapes and spatial/measurement concepts
+- Letters & Sounds / phonological-awareness progression with language-specific phonics
+- Wilma today/yesterday/tomorrow with an explicit established anchor
+- Focus & Flex variants built on instruction/rule systems
+- feelings, self-advocacy and classroom language
+- Compare & Discover using shared animal/knowledge data
+
+Keep the Progress Tracker collecting useful evidence throughout. Delay a substantial parent dashboard until enough native curriculum exists to make its summaries meaningful.
+
+### P3 — Product experience and broader play
+Turn the strong learning core into a cohesive, polished adventure:
+- **Today’s Adventure v1**: curated short route with no adaptive algorithm required
+- **Today’s Adventure v2**: progress-informed recommendations once evidence is broad enough
+- Discovery Book as a shared-knowledge exploration surface
+- Dragon Treasure Hunt
+- Build the Bridge
+- Dinosaur Rescue
+- Crocodile Snap
+- native/action-specific Verb Explorer polish
+- broader custom illustration and animation polish
+- real-world and Move & Learn missions
+- full accessibility/reduced-motion/performance polish
+- coordinated app icon, branding, Home redesign and native splash/launch experience
+
+The splash must use Android's native splash behavior, work offline, add no artificial wait and transition directly into Home.
+
+## Internal milestones
+
+Use milestone names to keep the project finite and understandable:
+
+### Milestone A — Native Core
+Shared content/audio/session/progress foundations, native Prepositions/Seasons/Wilma/Vocabulary, stable signing/update stream and shared completion behavior.
+
+### Milestone B — School Ready
+Richer Seasons, Follow the Instructions, practical School Skills, broader Vocabulary and early conceptual Maths.
+
+### Milestone C — Learning World
+Tell Me!, Memory/matching, Focus & Flex, feelings/self-advocacy, Compare & Discover and Discovery Book foundations.
+
+### Milestone D — Polished Adventure
+Today’s Adventure, larger games, cohesive visual design, app-wide original art/animation, splash/branding and final cross-device polish.
+
+## Delivery strategy
+
+Prefer **batched physical acceptance** over repeatedly testing one feature in isolation. A device sweep should exercise the current native activities together across EN/DE, Sound Off, portrait, both landscapes, larger text, accessibility, background/return, process recreation, 5/10-question sessions, progress persistence and signed upgrades.
+
+Prefer **content reuse** over standalone packs. For example, School Skills can add pencil/book/chair/table and action vocabulary to the shared library; Maths can add more/less/same and size concepts; feelings work can add emotion vocabulary. Vocabulary Booster should benefit from those additions rather than duplicating them.
+
+Prefer **one canonical art asset** per reusable concept where practical. Activity-specific poses/variants can be added when they teach meaning, but do not regenerate the same animal independently for every screen.
 ## Reasoning prompts
 Occasionally add unscored follow-ups such as “How did you know?”, “Why do you think that?” or “Can you explain?” after suitable tasks. These prompts encourage reasoning and expressive language and must not become automatic correctness scores.
