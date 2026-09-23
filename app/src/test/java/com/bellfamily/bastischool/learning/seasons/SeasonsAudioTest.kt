@@ -67,4 +67,28 @@ class SeasonsAudioTest {
         assertEquals(2,engine.spoken.size)
         audio.visible(false);engine.emit(old);assertNull(status)
     }
+    @Test fun newModesFollowPolicyAndRestoredOrderingIsSilentUntilReplay() {
+        for(mode in AudioMode.entries) for(lang in ContentLanguage.entries) {
+            val engine=FakeSpeechEngine();val audio=SeasonsAudio(DefaultAudioController(engine,mode));audio.visible(true)
+            for(phase in listOf(SeasonsPhase.NEXT,SeasonsPhase.BEFORE)) {
+                val plan=(SeasonsCycle.generate(phase,SessionId(phase.name),RoundLength.FIVE,42) as GenerationResult.Generated).plan
+                val start=SessionReducer.start(plan,lang,SeasonsContent.repository)
+                audio.effects(start.state,start.effects)
+                if(mode!=AudioMode.OFF) assertEquals(start.state.task.question.instruction.speech[lang],engine.spoken.last().text)
+            }
+            var order=SeasonsOrder.start(SessionId("year"),42,lang)
+            val before=engine.spoken.size
+            audio.order(order,null);assertEquals(before,engine.spoken.size)
+            val replay=SeasonsOrder.reduce(order,SeasonsOrderAction.Replay(order.task));order=replay.state
+            audio.order(order,replay.speech)
+            if(mode!=AudioMode.OFF) {assertEquals(SeasonsOrder.introduction.speech[lang],engine.spoken.last().text);assertEquals(SpeechTrigger.REPLAY,engine.spoken.last().trigger)}
+            val spoken=engine.spoken.size
+            val wrong=SeasonsOrder.reduce(order,SeasonsOrderAction.Place(order.nextAttempt!!,SeasonIds.WINTER))
+            audio.order(wrong.state,wrong.speech)
+            assertEquals(spoken+if(mode==AudioMode.ALL)1 else 0,engine.spoken.size)
+            audio.visible(false);val stopped=engine.spoken.size;audio.order(order,replay.speech);assertEquals(stopped,engine.spoken.size)
+            if(mode==AudioMode.OFF) assertTrue(engine.spoken.isEmpty())
+            assertTrue(engine.spoken.all {it.context.language==lang})
+        }
+    }
 }

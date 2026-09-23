@@ -6,7 +6,9 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import com.bellfamily.bastischool.ui.common.NativeCompletionScreen
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
+import androidx.compose.animation.core.tween
+import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -122,10 +124,25 @@ fun WilmaScreen(selection:WilmaSelection?,quiz:SessionState?,ordering:WilmaOrder
 
 /** One neutral head, semantic weekday cells and optional neutral tail. Decorations have no click action. */
 @Composable
-private fun WilmaStrip(images:Map<String,ImageBitmap>,language:ContentLanguage,days:List<ContentId>,selected:ContentId?,
+internal fun WilmaStrip(images:Map<String,ImageBitmap>,language:ContentLanguage,days:List<ContentId>,selected:ContentId?,
     enabled:Set<ContentId>,onDay:(ContentId)->Unit,prefix:String="day",showTail:Boolean=true,
     onOption:((ContentId)->Unit)?=null,listenEnabled:Boolean=false) {
-    Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).testTag("wilma-strip-$prefix"),verticalAlignment=Alignment.Bottom) {
+    val follow = prefix == "placed"
+    // First layout/restoration starts at the growing end without an animation.
+    val scroll = rememberScrollState(if(follow) Int.MAX_VALUE else 0)
+    var viewportWidth by remember {mutableIntStateOf(0)}
+    var previousCount by remember {mutableIntStateOf(days.size)}
+    LaunchedEffect(follow, days.size, viewportWidth) {
+        if(follow && viewportWidth > 0) {
+            // Wait for the new segment's measure pass, not a wall-clock timer.
+            withFrameNanos { }
+            val grew = days.size > previousCount
+            previousCount = days.size
+            if(grew) scroll.animateScrollTo(scroll.maxValue, tween(400))
+            else scroll.scrollTo(scroll.maxValue)
+        }
+    }
+    Row(Modifier.fillMaxWidth().onSizeChanged {viewportWidth = it.width}.horizontalScroll(scroll).testTag("wilma-strip-$prefix"),verticalAlignment=Alignment.Bottom) {
         Column(Modifier.width(120.dp),horizontalAlignment=Alignment.CenterHorizontally) {
             images[WilmaContent.HEAD]?.let {Image(it,null,Modifier.size(120.dp).testTag("wilma-head-$prefix"))}
             Spacer(Modifier.height(if(onOption==null)64.dp else 120.dp))

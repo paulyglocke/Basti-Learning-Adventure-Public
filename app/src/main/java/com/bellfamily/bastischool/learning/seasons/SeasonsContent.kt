@@ -51,7 +51,15 @@ object SeasonsContent {
         activity, REVISION, repository, ::generate, ::validate)
 }
 
-enum class SeasonsPhase { EXPLORE, PRACTICE }
+enum class SeasonsPhase(val title: ContentText) {
+    EXPLORE(ContentText.plain("Learn", "Lernen")),
+    PRACTICE(ContentText.plain("Practise", "Üben")),
+    NEXT(ContentText.plain("What comes next?", "Was kommt danach?")),
+    BEFORE(ContentText.plain("What comes before?", "Was kommt davor?")),
+    ORDER(ContentText.plain("Build the Year", "Ordne die Jahreszeiten"));
+    val isQuiz get() = this == PRACTICE || this == NEXT || this == BEFORE
+    val tag get() = when(this) { EXPLORE -> "learn"; PRACTICE -> "practice"; else -> "seasons-${name.lowercase()}-mode" }
+}
 /** Browsing is not a learning attempt. Language belongs to settings, never season identity. */
 data class SeasonsSelection(val selected: ContentId = SeasonIds.SPRING, val phase: SeasonsPhase = SeasonsPhase.EXPLORE) {
     init { SeasonsContent.season(selected) }

@@ -43,26 +43,26 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
                   busy: Boolean, saveFailed: Boolean, imageFailed: Boolean, audioFailed: Boolean,
                   onSelect: (ContentId) -> Unit, onPhase: (SeasonsPhase) -> Unit, onReplay: () -> Unit,
                   onAction: (SessionAction) -> Unit, onOption: (ContentId) -> Unit, onAgain: () -> Unit,
-                  onRetry: () -> Unit, onHome: () -> Unit, modifier: Modifier = Modifier, onPop: (String) -> Unit = {}) {
+                  onRetry: () -> Unit, onHome: () -> Unit, modifier: Modifier = Modifier, onPop: (String) -> Unit = {},
+                  ordering: SeasonsOrderState? = null, orderArtwork: Map<ContentId,ImageBitmap> = emptyMap(),
+                  onOrder: (SeasonsOrderAction) -> Unit = {}) {
     val de=language==ContentLanguage.GERMAN
     fun t(en:String,german:String)=if(de)german else en
     val ready=!busy && !saveFailed && selection!=null
-    if(selection?.phase == SeasonsPhase.PRACTICE && state?.phase == SessionPhase.COMPLETED) {
-        NativeCompletionScreen(state.plan.id.value, language, state.plan.completionText.display[language],
-            ready && state.language == language, "seasons-", onReplay, onAgain, onHome, onPop,
-            modifier, saveFailed, onRetry, audioFailed) {
-            OutlinedButton(onClick = {onPhase(SeasonsPhase.EXPLORE)}, enabled = ready, modifier = Modifier.heightIn(min = 56.dp).testTag("learn")) {Text(t("Learn", "Lernen"))}
+    val completedOrder = selection?.phase == SeasonsPhase.ORDER && ordering?.completed == true
+    if(completedOrder || selection?.phase?.isQuiz == true && state?.phase == SessionPhase.COMPLETED) {
+        NativeCompletionScreen(if(completedOrder) ordering!!.id.value else state!!.plan.id.value, language,
+            if(completedOrder) SeasonsOrder.completion.display[language] else state!!.plan.completionText.display[language],
+            ready && (if(completedOrder) ordering!!.language else state!!.language) == language,
+            "seasons-", onReplay, onAgain, onHome, onPop, modifier, saveFailed, onRetry, audioFailed) {
+            if(completedOrder) PlacedSeasons(ordering!!,orderArtwork,language)
+            SeasonModes(selection!!.phase,language,ready,onPhase)
         }
         return
     }
     Column(modifier.fillMaxSize().background(Color(0xFFEAF7FC)).verticalScroll(rememberScrollState()).padding(16.dp), verticalArrangement=Arrangement.spacedBy(12.dp)) {
         Text(t("Seasons", "Jahreszeiten"),style=MaterialTheme.typography.headlineMedium)
-        Row(horizontalArrangement=Arrangement.spacedBy(8.dp)) {
-            FilterChip(selected=selection?.phase==SeasonsPhase.EXPLORE,onClick={onPhase(SeasonsPhase.EXPLORE)},enabled=ready,
-                label={Text(t("Learn","Lernen"))},modifier=Modifier.testTag("learn"))
-            FilterChip(selected=selection?.phase==SeasonsPhase.PRACTICE,onClick={onPhase(SeasonsPhase.PRACTICE)},enabled=ready,
-                label={Text(t("Practise","Üben"))},modifier=Modifier.testTag("practice"))
-        }
+        SeasonModes(selection?.phase,language,ready,onPhase)
         if(saveFailed) Text(t("Progress could not be saved or restored. Please try again. Saved records are kept.",
             "Der Fortschritt konnte nicht gespeichert oder wiederhergestellt werden. Bitte versuche es erneut. Gespeicherte Einträge bleiben erhalten."))
         if(imageFailed) Text(t("The picture could not be opened. Please try again.","Das Bild konnte nicht geöffnet werden. Bitte versuche es erneut."))
@@ -90,6 +90,34 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
                     Text(selection.season.spokenDescription[language],modifier=Modifier.testTag("season-description"))
                 }
             }
+        } else if(selection.phase == SeasonsPhase.ORDER && ordering != null) {
+            val canAct=ready && ordering.language==language
+            Button(onClick=onReplay,enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-replay")) {Text(t("Listen again","Noch einmal hören"))}
+            Text(SeasonsOrder.prompt(ordering).display[language],style=MaterialTheme.typography.titleLarge,modifier=Modifier.testTag("seasons-order-prompt"))
+            PlacedSeasons(ordering,orderArtwork,language)
+            ordering.choices.filter {it !in ordering.placed}.chunked(2).forEach {row ->
+                Row(horizontalArrangement=Arrangement.spacedBy(8.dp)) {row.forEach {id ->
+                    Column(Modifier.weight(1f)) {
+                        OutlinedButton(onClick={ordering.nextAttempt?.let {onOrder(SeasonsOrderAction.Place(it,id))}},
+                            enabled=canAct && !imageFailed && ordering.nextAttempt!=null,
+                            modifier=Modifier.fillMaxWidth().heightIn(min=64.dp).testTag("season-order-${id.value}")) {
+                            Column {
+                                orderArtwork[id]?.let {Image(it,null,Modifier.fillMaxWidth().aspectRatio(4f/3f),contentScale=ContentScale.Fit)}
+                                Text(SeasonsContent.season(id).text.display[language])
+                            }
+                        }
+                        OutlinedButton(onClick={onOption(id)},enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=48.dp).testTag("order-speaker-${id.value}").semantics {contentDescription=t("Listen: ","Anhören: ")+SeasonsContent.season(id).text.display[language]}) {
+                            Text(t("Listen","Hören"))
+                        }
+                    }
+                }}
+            }
+            if(ordering.current.answer==AnswerState.RETRY_AVAILABLE) {
+                Text(t("Try again. The seasons already placed stay here.","Versuche es noch einmal. Die eingeordneten Jahreszeiten bleiben hier."))
+                Button(onClick={onOrder(SeasonsOrderAction.Retry(AttemptId(ordering.task,ordering.current.attempts)))},enabled=canAct,modifier=Modifier.testTag("seasons-retry")) {Text(t("Try again","Nochmal versuchen"))}
+            }
+            if(ordering.current.support.hint) Text(SeasonsOrder.help(ordering).display[language])
+            OutlinedButton(onClick={onOrder(SeasonsOrderAction.Help(ordering.task))},enabled=canAct,modifier=Modifier.heightIn(min=56.dp).testTag("seasons-hint")) {Text(t("Help","Hilfe"))}
         } else if(state!=null) {
             val task=state.task
             val canAct=ready && state.language==language
@@ -98,13 +126,15 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
                 style=MaterialTheme.typography.headlineSmall,modifier=Modifier.testTag("seasons-progress"))
             Button(onClick=onReplay,enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-replay")) {Text(t("Listen again","Noch einmal hören"))}
             if(state.phase==SessionPhase.ACTIVE) {
-                Text(task.question.instruction.display[language],style=MaterialTheme.typography.titleLarge)
+                Text(task.question.instruction.display[language],style=MaterialTheme.typography.titleLarge,modifier=Modifier.testTag("seasons-prompt"))
+                val pictured=if(selection.phase==SeasonsPhase.PRACTICE) task.question.correct else SeasonsCycle.anchor(selection.phase,task.question)
+                if(selection.phase!=SeasonsPhase.PRACTICE) Text(SeasonsContent.season(pictured).text.display[language],modifier=Modifier.testTag("season-anchor"))
                 BoxWithConstraints {
                     if(maxWidth>=700.dp) Row(horizontalArrangement=Arrangement.spacedBy(16.dp)) {
-                        SeasonPicture(artwork,SeasonsContent.season(task.question.correct).spokenDescription[language],Modifier.weight(1.4f))
+                        SeasonPicture(artwork,SeasonsContent.season(pictured).spokenDescription[language],Modifier.weight(1.4f))
                         SeasonAnswers(state,language,canAct,onAction,onOption,imageFailed,Modifier.weight(1f))
                     } else Column(verticalArrangement=Arrangement.spacedBy(12.dp)) {
-                        SeasonPicture(artwork,SeasonsContent.season(task.question.correct).spokenDescription[language],Modifier.fillMaxWidth())
+                        SeasonPicture(artwork,SeasonsContent.season(pictured).spokenDescription[language],Modifier.fillMaxWidth())
                         SeasonAnswers(state,language,canAct,onAction,onOption,imageFailed,Modifier.fillMaxWidth())
                     }
                 }
@@ -145,4 +175,29 @@ private fun SeasonAnswers(state:SessionState,language:ContentLanguage,ready:Bool
 private fun SeasonPicture(bitmap:ImageBitmap?,description:String,modifier:Modifier) {
     if(bitmap!=null) Image(bitmap,description,modifier.aspectRatio(bitmap.width.toFloat()/bitmap.height).testTag("season-artwork"),contentScale=ContentScale.Fit)
     else Box(modifier.aspectRatio(4f/3f))
+}
+
+
+@Composable
+private fun SeasonModes(selected: SeasonsPhase?, language: ContentLanguage, ready: Boolean, onPhase: (SeasonsPhase)->Unit) {
+    SeasonsPhase.entries.chunked(2).forEach {row ->
+        Row(horizontalArrangement=Arrangement.spacedBy(8.dp)) {row.forEach {phase ->
+            FilterChip(selected=selected==phase,onClick={onPhase(phase)},enabled=ready,
+                label={Text(phase.title.display[language])},modifier=Modifier.weight(1f).heightIn(min=48.dp).testTag(phase.tag))
+        }}
+    }
+}
+
+@Composable
+private fun PlacedSeasons(state: SeasonsOrderState, images: Map<ContentId,ImageBitmap>, language: ContentLanguage) {
+    Text(if(language==ContentLanguage.GERMAN) "${state.index} von 4 Jahreszeiten eingeordnet" else "${state.index} of 4 seasons placed",
+        modifier=Modifier.testTag("seasons-placed-count"))
+    state.placed.chunked(2).forEach {row ->
+        Row(horizontalArrangement=Arrangement.spacedBy(8.dp)) {row.forEach {id ->
+            Column(Modifier.weight(1f).testTag("placed-${id.value}")) {
+                images[id]?.let {Image(it,null,Modifier.fillMaxWidth().aspectRatio(4f/3f),contentScale=ContentScale.Fit)}
+                Text("${state.placed.indexOf(id)+1}. ${SeasonsContent.season(id).text.display[language]}")
+            }
+        }}
+    }
 }

@@ -277,7 +277,8 @@ class MainActivity : ComponentActivity() {
                             nativeSeasons.artwork, nativeSeasons.busy, nativeSeasons.saveFailed, nativeSeasons.imageFailed, nativeSeasons.audioFailed,
                             nativeSeasons::select, { celebrationSound.cancel(); nativeSeasons.phase(it) }, { celebrationSound.cancel(); nativeSeasons.replay() }, nativeSeasons::action,
                             nativeSeasons::option, { celebrationSound.cancel(); nativeSeasons.again() }, nativeSeasons::retry,
-                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration)
+                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration,
+                            ordering = nativeSeasons.ordering, orderArtwork = nativeSeasons.orderArtwork, onOrder = nativeSeasons::orderAction)
                         ShellScreen.PREPOSITIONS -> PrepositionsScreen(
                             nativePositions.state, if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativePositions.busy, nativePositions.saveFailed, nativePositions.audioFailed,
@@ -306,7 +307,8 @@ class MainActivity : ComponentActivity() {
         if(unavailable) return
         val current = when(navigation.screen) {
             ShellScreen.PREPOSITIONS -> nativePositions.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
-            ShellScreen.SEASONS -> if(nativeSeasons.selection?.phase == SeasonsPhase.PRACTICE) nativeSeasons.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value else null
+            ShellScreen.SEASONS -> if(nativeSeasons.selection?.phase == SeasonsPhase.ORDER) nativeSeasons.ordering?.takeIf {it.completed}?.id?.value
+                else if(nativeSeasons.selection?.phase?.isQuiz == true) nativeSeasons.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value else null
             ShellScreen.VOCABULARY -> if(nativeVocabulary.selection?.phase != VocabularyPhase.EXPLORE) nativeVocabulary.quiz?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value else null
             ShellScreen.WILMA -> when(nativeWilma.selection?.phase) {
                 WilmaPhase.ORDER -> nativeWilma.ordering?.takeIf {it.completed}?.id?.value

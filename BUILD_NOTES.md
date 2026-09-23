@@ -2,6 +2,79 @@
 
 This file records build/test evidence and should not be treated as a product or architecture specification.
 
+## Seasons Next/Before/Build the Year and Wilma auto-follow — 2026-09-23
+
+Started with clean main at `5bf2383`, then continued the interrupted local changes while preserving newer commits `a8877b5` (clean celebration PNGs) and `56e837a` (authoritative consolidated roadmap). The roadmap/artwork/signing/versioning/distribution files are unchanged. No commit/push or destructive Git operation.
+
+### Implemented behavior and reuse decisions
+
+- Existing Explore and recognition Practice remain, including the original activity/revision/journal. Added NEXT and BEFORE as independent deterministic five/ten-question durable rounds. Every four-candidate cycle visits all seasons, explicitly including Winter → Spring and Spring ← Winter. The scene is the anchor, not the answer. Three distractors represent choosing the anchor, reversing direction, or skipping a season; all are canonical seasons, never unrelated random content.
+- Build the Year has exactly four placements, a deterministic non-identity scramble and Spring–Summer–Autumn–Winter display order. Its EN/DE introduction explicitly describes a cycle and chooses Spring for this display; completion reiterates Winter → Spring. No holiday/weather claims were introduced. Correctly placed cards remain after mistakes; Help/Replay, retries, repeated-tap locks, semantic task IDs and completion evidence follow the existing patterns.
+- Extracted only `OrderedPlacement` (scramble, invariant validation, one placement transition) for the two real consumers. Wilma's seed behavior, IDs, action envelopes and seven-step journal format remain unchanged. Content and bounded storage adapters stay activity-specific, avoiding a generic game engine. Seasons ordering persists exact scramble/steps plus pending final-attempt/completion effects before publication. Retry/recreation deduplicate the same IDs; corrupt files are preserved.
+- Progress model/codec now accepts four-step completion without changing schema-1 field layout or existing records. Old builds cannot read new four-step completion records: downgrade over these records is unsupported. Next/Before journals are separate from recognition; phase selection restores by stable enum name. New-mode restoration/language synchronization/retry stays silent. Shared audio still enforces ALL/QUESTIONS/OFF including Replay; no direct Compose TTS or file I/O.
+- Native mode controls/cards use the existing screen style. All completed practice/order modes reuse the pinned shared celebration/actions; Explore does not. Placed season images remain visible as cards and use the unchanged canonical PNGs. The ViewModel caches at most four images and decodes them off-thread at half resolution.
+- Wilma's ordering strip follows the latest correct placement with a cancellable 400ms horizontal animation after layout. Restored/initial presentation and viewport changes snap to the growing end without a distracting scroll animation. Wrong attempts/recomposition do not move it. Explore/other Wilma strips and learning rules are unchanged.
+- Preserved the eight original season narrations in a fixed exact test fixture after the intentional roadmap consolidation removed its inline prose. No content regression assertion was dropped. The existing celebration test caught replacement images exceeding its original 200px decoded-dimension bound; the loader now derives sampling from image bounds instead of always using 2. No cleaned artwork, reveal logic, test limit or completion styling was changed.
+
+### Focused validation and exact file inventory
+
+Gradle environment: `JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'`, `ANDROID_HOME='/Users/paulbell/Library/Android/sdk'`; all instrumented commands additionally use `ANDROID_SERIAL=emulator-5554`. The physical phone was excluded. Emulator: `Medium_Phone_API_35`, Android 15, headless/audio disabled.
+
+- `./gradlew testDebugUnitTest --tests 'com.bellfamily.bastischool.learning.seasons.*' --tests 'com.bellfamily.bastischool.learning.wilma.*' --tests 'com.bellfamily.bastischool.learning.progress.*' --tests 'com.bellfamily.bastischool.learning.content.SeasonContentTest' connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.bellfamily.bastischool.ui.common.CompletionCelebrationTest --console=plain`: **91 JVM + 5 celebration tests passed**, zero failures/errors/skips, BUILD SUCCESSFUL (47s).
+- `./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.package=com.bellfamily.bastischool.ui.seasons --console=plain`: **8 passed**, zero failures/skips, BUILD SUCCESSFUL (1m 36s). Existing three screen/one route tests plus three progression screen/one progression route test. Covers Next EN five, Before DE ten, ordering wrong/help/retry/retained cards, native Options/language/recreation, completed-state restore, celebration and immediately visible completion controls in portrait/both landscapes. Bitmap nullability in the new test was corrected before this passing run; no test removed.
+- `./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.bellfamily.bastischool.ui.wilma.WilmaFollowTest --console=plain`: **3 passed**, zero failures/skips, BUILD SUCCESSFUL (55s). Portrait 320dp, landscape/reverse-landscape 640dp × short 220dp strip, German 1.5× text; restored partial strip, successive growth, stable restore position and final segment. Final full run also uses strengthened unclipped-layout bounds assertions.
+- `npm test -- --reporter=line`: **55 passed (53.2s)**. Browser runtime/tests unchanged.
+- `python3 -m unittest discover -s scripts -p 'test_*.py'`: **5 passed**.
+- `python3 scripts/check_distribution_build.py`: **6 passed** (expected release/bundle missing-credential rejection, invalid/overflow version rejection, maximum valid code configuration, release graph guard). No real signing material supplied or altered, no distribution build attempted.
+
+Final full validation (same environment and explicit emulator serial):
+
+- `./gradlew testDebugUnitTest assembleDebug lintDebug connectedDebugAndroidTest --console=plain`: **BUILD SUCCESSFUL in 3m 24s; 264 JVM and 28 emulator tests passed, 0 failures/errors/skips**. Includes existing Prepositions, Seasons, Wilma, Vocabulary, celebration and strengthened Wilma full-segment visibility assertions.
+- Final lint XML: **0 errors, 3 warnings, 2 informational findings**. Warnings: `UnusedAttribute` ×2, `SetJavaScriptEnabled` ×1. Information: `AutoboxingStateCreation` ×2. No lint suppression/baseline/rule changes.
+- Debug APK SHA-256: `4636781fdeb982541e6e69b754f5a2ea8a2bc75b24b99f665505f92f00d1650f`.
+- `git diff --check` and untracked Kotlin whitespace checks passed. Protected-path diff is empty for the roadmap, assets, signing/build/workflow configuration and distribution scripts. No staged changes; main remains at `56e837a`.
+
+31 changed files (21 modified tracked, 10 new), unstaged. Suggested commit: `feat: expand Seasons cycle learning and follow Wilma ordering`.
+
+- `BACKLOG.md`
+- `BUILD_NOTES.md`
+- `CONTENT_DATA_SPEC.md`
+- `NATIVE_ARCHITECTURE_SPEC.md`
+- `PROGRESS_TRACKER_SPEC.md`
+- `SESSION_HANDOFF.md`
+- `TESTING_QA_SPEC.md`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/seasons/SeasonsProgressionRouteTest.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/seasons/SeasonsProgressionScreenTest.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/seasons/SeasonsRouteTest.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/wilma/WilmaFollowTest.kt`
+- `app/src/main/java/com/bellfamily/bastischool/MainActivity.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/content/SeasonContent.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/progress/ProgressCodec.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/progress/ProgressModels.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/seasons/SeasonsAudio.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/seasons/SeasonsContent.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/seasons/SeasonsCycle.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/seasons/SeasonsOrder.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/seasons/SeasonsOrderHost.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/sequencing/OrderedPlacement.kt`
+- `app/src/main/java/com/bellfamily/bastischool/learning/wilma/WilmaOrder.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/common/CelebrationArtViewModel.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/seasons/SeasonsScreen.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/seasons/SeasonsViewModel.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/wilma/WilmaScreen.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/content/SeasonContentTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/seasons/SeasonsAudioTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/seasons/SeasonsCycleTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/seasons/SeasonsOrderTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/learning/seasons/SeasonsProgressionHostTest.kt`
+
+### Physical evidence supplied by the owner; not repeated here
+
+S24 same-key in-place upgrade is **proven**, `1003901 / 1.1.39.1` → `1004501 / 1.1.45.1`, certificate SHA-256 `bea808b0c0b891d73e61b739fd43f361a952d5297892318821b97ce91b553507`. The cleaned celebration artwork in `a8877b5` is also physically verified on S24. These are no longer outstanding signing-setup/transparency-cleanup tasks. This implementation did not install, uninstall or clear the attached physical phone; Android tests target the emulator explicitly.
+
+Remaining S24 checks: new Next/Before/ordering learning flow, meaningful feedback, Options/Back, partial/completed restore, Wilma follow after each placement and restore, portrait/both landscapes/large font, new progress after restart/normal signed upgrade. Separately review subjective motion and image legibility, audible EN/DE voice/pop volume and Sound Off, TalkBack/keyboard/accessibility, background/process lifecycle. Fire Max still needs the full equivalent acceptance sweep and same-key upgrade proof. Emulator results do not establish those checks. Missing-season/clue tasks, support settings/presentation, visual-system/button redesign and unrelated roadmap work were not started.
+
+
 ## Shared native completion celebration — 2026-09-23
 
 Continued the interrupted uncommitted celebration implementation, then resumed on `main` at `b3313a3` after the owner's wave 1–3 animal-library commit. Preserved all newer roadmap/README/art commits and existing Kotlin/test changes. No pull/rebase/reset/clean/restore/discard, commit or push; no signing credentials/configuration, version allocation, applicationId, canonical PNGs or legacy source changed.
@@ -11,7 +84,7 @@ Continued the interrupted uncommitted celebration implementation, then resumed o
 - Legacy audit: six glyph balloons, brief surprises and WebAudio tones existed in `app.js`/`index.html`; native screens had separate inline completion branches. The legacy code/tests remain intact.
 - `NativeCompletionScreen` now shares completion across Prepositions, Seasons Practice, Wilma Find/Before–After/Ordering and Vocabulary practice. Play again/Home/Replay are pinned before the optional scrollable celebration. Explore never shows balloons. Existing mode/fallback actions remain; Wilma's completed seven-day strip/count is retained.
 - Exactly five stable slots rotate a curated semantic pool deterministically by completion ID. A six-second, phase-offset gentle float is shared; one tap starts ~100ms anticipation, then a jump and eight local fading confetti pieces within a 720ms bounded reveal. Settled animals remain visible and have no click action. Repeated captured activation cannot repop. Clipped reward bounds keep decoration away from actions/system insets. Android animator-scale zero simplifies motion; background stops the float and settles a pending reveal.
-- Uses unchanged `Animals/canonical/{dinosaur,snake,crocodile,whale,fish}.png` from `b3313a3`, with canonical semantic IDs/bilingual Vocabulary names. No glyph/emoji reveal remains. `CelebrationArtViewModel` decodes the five images off-thread with sample size 2, retains a bounded Activity-scoped map through configuration recreation, and supplies Compose through `LocalCelebrationArt`. Missing art degrades to the localized name. No asset I/O occurs in Compose. No additional art is needed for this pool; the library's edge/background cleanup still needs visual device review.
+- Uses unchanged `Animals/canonical/{dinosaur,snake,crocodile,whale,fish}.png` from `b3313a3`, with canonical semantic IDs/bilingual Vocabulary names. No glyph/emoji reveal remains. `CelebrationArtViewModel` decodes the five images off-thread with sample size 2, retains a bounded Activity-scoped map through configuration recreation, and supplies Compose through `LocalCelebrationArt`. Missing art degrades to the localized name. No asset I/O occurs in Compose. No additional art is needed for this pool. Later owner update: the corrected artwork in `a8877b5` is physically verified on S24; that transparency issue is closed.
 - `CelebrationSound` is a small owner-checked SFX port using existing AudioMode: ALL/QUESTIONS permit a manual pop; OFF blocks it. One lazy quiet 45ms ToneGenerator replaces prior tones, never requests focus or touches TTS. Host navigation/background/settings/Replay/new round/phase/disposal cancel or release it. Compose sends an intent only; optional sound failure cannot block learning.
 - Reward state uses ordinary remember, never rememberSaveable/checkpoints/progress. No session, score, mastery, dedupe, storage or audio-speech contracts were rewritten. A real durable-host unit test completes/persists a round before any pop, then pops/resets/restores and proves unchanged checkpoint bytes and six deduplicated learning records. Optional UI reset after Options/recreation is permitted; restored learning stays silent and locked.
 - Accessibility: localized balloon action labels; revealed canonical animal descriptions; individual keyboard/semantic activation; no popped action; immediately visible navigation at 320×480 and 700×240 dp with German 1.5× font in Compose tests. Five image targets are decoded/rendered in an additional instrumented test. No heavy animation dependency, network, neural TTS, new activity or reward economy.
@@ -62,7 +135,9 @@ All Gradle commands used `JAVA_HOME='/Applications/Android Studio.app/Contents/j
 - `app/src/test/java/com/bellfamily/bastischool/audio/CelebrationSoundTest.kt`
 - `app/src/test/java/com/bellfamily/bastischool/ui/common/CelebrationStateTest.kt`
 
-### Physical acceptance still required
+### Physical acceptance checklist from the celebration implementation
+
+Status correction: S24 same-key upgrade and cleaned-art transparency were subsequently verified by the owner; see the newest entry. Fire Max and broader functional/accessibility checks remain open.
 
 On **S24 Ultra and Fire Max**, validate airplane-mode operation; five visible non-obstructing balloons; calm float; single pop; recognizable animal jump/settle; brief local confetti; no repop; immediately usable Play again/Home/Replay; Sound Off silence and optional tone loudness; EN/DE TalkBack/keyboard labels; portrait and both landscapes; larger text, touch targets, insets and image edges; Options/Back/background/return; process recreation without duplicate completion/progress; next activity; same-key higher-version signed install-over-existing-app retaining settings/progress. Emulator has audio disabled and does not prove audible or physical acceptance. Do not uninstall/wipe as an upgrade test.
 
@@ -82,7 +157,7 @@ Resumed in the repository root on `main` at `dbaa8d4`. Preserved all interrupted
 - Manual main-branch workflow dispatch with `distribution=true` builds a verified release APK after JVM/debug/lint and browser jobs pass. Required repository secrets: `BASTI_KEYSTORE_BASE64`, `BASTI_STORE_PASSWORD`, `BASTI_KEY_ALIAS`, `BASTI_KEY_PASSWORD`. The decoded file is permission-restricted in RUNNER_TEMP, excluded from artifacts/cache, and removed by trap plus an always-run cleanup step. Private signing is not available to PR jobs. Signed builds use no daemon/configuration cache.
 - CI version is `1_000_000 + 100 * run_number + run_attempt`; name is `1.1.<run>.<attempt>`. Attempts 1–99 and Android's 2,100,000,000 code ceiling are validated. New runs exceed prior runs; attempts within a run increase. Do not redistribute an older run's rerun after a newer run, reset the workflow counter, or mix locally allocated higher codes without advancing the stream. Always compare with installed version before upgrade.
 - Artifact names distinguish `Basti-debug-only-<run>-<attempt>` from `Basti-stable-signed-v<code>`. Local defaults are code 1/name 1.1-dev, ordinary debug key, unchanged applicationId `com.bellfamily.bastischool`. README documents private local inputs, key backup, exact GitHub setup and allocation constraints. TESTING_QA_SPEC documents a non-destructive baseline→higher-code upgrade procedure and the current non-debuggable progress-inspection limitation.
-- One final owner-approved cross-certificate reinstall may be necessary if the original signing key cannot be recovered/retained. It erases local data and is not an upgrade test; no cross-signature export/import exists. Do not uninstall to bypass errors during validation. After transition, same-key/higher-code installs are the intended data-preserving path, still awaiting physical acceptance on both targets.
+- One final owner-approved cross-certificate reinstall may be necessary if the original signing key cannot be recovered/retained. It erases local data and is not an upgrade test; no cross-signature export/import exists. Do not uninstall to bypass errors during validation. After transition, same-key/higher-code installs are the intended data-preserving path. Later owner update: the S24 transition/upgrade is proven (see the newest entry); Fire Max remains outstanding.
 
 ### Validation after build configuration changes
 
@@ -98,7 +173,7 @@ Toolchain: Android Studio JBR, SDK `/Users/paulbell/Library/Android/sdk` (same e
 - Current debug APK package/code/name verified with aapt: `com.bellfamily.bastischool`, `1`, `1.1-dev`. SHA-256: `09fe028145227a97886dab993d47733ffa0192be0813f26d6aee08e42407dead`. apksigner verifies the local debug signature; this is **not** a stable-distribution APK.
 - Signing-file ignore probes pass for keystores, p12/pfx, private keys/PEM, signing/key property files and environment files. No tracked private signing material or actual credential literals were introduced. `git diff --check`, new-file whitespace and final scope/security review passed. Working tree: 13 modified tracked files and 15 new files, all unstaged; main remains at `dbaa8d4`..
 
-Remaining owner setup: create/retain and securely back up the permanent keystore, set the four GitHub repository secrets, dispatch main's distribution build, verify the saved certificate fingerprint, then test without uninstalling per TESTING_QA_SPEC. S24 Ultra/Fire Max signing transition/data-preservation, audible voices, actual process death, physical accessibility and original Vocabulary art remain outstanding. Neural TTS, celebration implementation, cloud, dashboard and unrelated migrations were not started.
+Historical owner setup (superseded for the current S24 stream by the proof in the newest entry): create/retain and securely back up the permanent keystore, set the four GitHub repository secrets, dispatch main's distribution build, verify the saved certificate fingerprint, then test without uninstalling per TESTING_QA_SPEC. S24 Ultra/Fire Max signing transition/data-preservation, audible voices, actual process death, physical accessibility and original Vocabulary art remain outstanding. Neural TTS, celebration implementation, cloud, dashboard and unrelated migrations were not started.
 
 Exact combined file inventory (28 files):
 

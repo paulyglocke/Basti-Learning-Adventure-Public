@@ -12,8 +12,8 @@ Already implemented and not active backlog unless a regression is found:
 - deterministic native session/checkpoint framework
 - durable deduplicated native progress-event storage
 - native Prepositions
-- native Seasons Explore/Practice
-- native Wilma Explore/Find Day/Before-After/Ordering
+- native Seasons Explore/recognition, Next/Before and Build the Year (shared placement rules with Wilma; physical functional acceptance pending)
+- native Wilma Explore/Find Day/Before-After/Ordering, with ordering viewport auto-follow (physical motion acceptance pending)
 - native Vocabulary starter slice
 - shared native completion celebration across the four native activities (automated evidence in BUILD_NOTES.md; physical acceptance remains below)
 - stable external distribution signing and monotonic CI versioning
@@ -22,8 +22,8 @@ Already implemented and not active backlog unless a regression is found:
 
 ## P0 — trusted daily build
 
-- Physically accept the implemented shared native completion celebration: five balloons, one-time pop, canonical animal reveal, brief local confetti, Sound Off-aware SFX, immediate Continue/Home, no progress/session coupling. Verify original artwork edges and motion on both devices.
-- Produce a newer stable-signed distribution APK and prove **in-place `adb install -r` upgrade** over the current permanent-key S24 installation while preserving settings/progress/session behavior.
+- Physically accept the implemented shared native completion celebration: five balloons, one-time pop, canonical animal reveal, brief local confetti, Sound Off-aware SFX, immediate Continue/Home, no progress/session coupling. Cleaned celebration artwork is physically verified on S24 (`a8877b5`); do not repeat transparency cleanup. Remaining motion/audio/accessibility checks and Fire Max acceptance are separate.
+- S24 same-key in-place upgrade is proven: 1003901 / 1.1.39.1 → 1004501 / 1.1.45.1 (owner-reported physical evidence in BUILD_NOTES.md). Keep signing/versioning as maintenance; perform the equivalent Fire Max upgrade check.
 - Run one batched S24 Ultra acceptance sweep across Prepositions, Seasons, Wilma and Vocabulary:
   - airplane-mode EN/DE and missing-voice behavior
   - Sound Off / Replay
@@ -35,7 +35,7 @@ Already implemented and not active backlog unless a regression is found:
   - progress after restart and signed upgrade
 - Run the equivalent Fire Max sweep.
 - Fix critical defects found by those sweeps; avoid unrelated feature work inside P0.
-- Once the same-key upgrade is proven, treat signing/versioning as maintenance rather than an active roadmap project.
+- Preserve the proven permanent signing identity and monotonic versioning during all future builds.
 
 ## P1 — shared native experience
 
@@ -50,7 +50,7 @@ Already implemented and not active backlog unless a regression is found:
   - shared spacing/typography/press/motion rules
 - Create a canonical original animal-art library, starting with assets that immediately replace current placeholders and can be reused across activities.
 - Replace temporary animal visuals in Vocabulary and review temporary native animal representations elsewhere.
-- Reuse/extract the Wilma ordering model when implementing Seasons **Build the Year**; do not build a separate precision-drag-only sequence engine.
+- Reuse the small Wilma/Seasons `OrderedPlacement` helper for future concrete sequencing consumers; extend it only for a demonstrated need.
 - Build **Follow the Instructions MVP** as the reusable instruction/action engine:
   - one-step tap instructions first
   - bilingual Replay
@@ -64,9 +64,6 @@ Already implemented and not active backlog unless a regression is found:
 ## P2 — core school-readiness curriculum
 
 - **Seasons expansion**:
-  - What comes next?
-  - What comes before?
-  - Build the Year
   - Missing season
   - identify season from observable clue
   - match season to clue

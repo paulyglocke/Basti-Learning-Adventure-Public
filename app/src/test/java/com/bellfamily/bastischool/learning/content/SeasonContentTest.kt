@@ -23,12 +23,20 @@ class SeasonContentTest {
         }
     }
 
-    @Test fun allEightDescriptionsMatchTheAuthoritativeRoadmapExactly() {
-        val roadmap = projectFile("MASTER_PRODUCT_LEARNING_ROADMAP.md").readText()
-        repository.seasons().forEach {
-            assertTrue("English narration differs for ${it.id.value}", roadmap.contains("- ${it.text.display.en}: “${it.spokenDescription.en}”"))
-            assertTrue("German narration differs for ${it.id.value}", roadmap.contains("- ${it.text.display.de}: „${it.spokenDescription.de}“"))
-        }
+    @Test fun allEightCanonicalDescriptionsRemainExactlyAsAuthored() {
+        // The consolidated roadmap delegates authored content to the content layer. Retain the
+        // reviewed narration as a fixed regression fixture rather than requiring prose in that doc.
+        val expected = listOf(
+            LocalizedText("It’s spring. The weather is getting warmer, but it isn’t hot yet. New green leaves are growing on the trees, and lots of flowers are starting to bloom.",
+                "Es ist Frühling. Das Wetter wird wärmer, aber es ist noch nicht heiß. Neue grüne Blätter wachsen an den Bäumen, und viele Blumen fangen an zu blühen."),
+            LocalizedText("It’s summer. The weather is warm and sunny. The tree is full of thick green leaves, and the grass and plants are growing everywhere.",
+                "Es ist Sommer. Das Wetter ist warm und sonnig. Der Baum ist voller grüner Blätter, und überall wachsen Gras und Pflanzen."),
+            LocalizedText("It’s autumn. The weather is getting cooler. The leaves are turning orange, red and yellow, and some are falling from the trees. The days are getting shorter too.",
+                "Es ist Herbst. Das Wetter wird kühler. Die Blätter werden orange, rot und gelb, und einige fallen von den Bäumen. Die Tage werden auch kürzer."),
+            LocalizedText("It’s winter. The weather is very cold. The ground is covered with snow and ice, and the tree has lost all its leaves. The days are short, and it gets dark early.",
+                "Es ist Winter. Das Wetter ist sehr kalt. Der Boden ist mit Schnee und Eis bedeckt, und der Baum hat alle seine Blätter verloren. Die Tage sind kurz, und es wird früh dunkel.")
+        )
+        assertEquals(expected, repository.seasons().map {it.spokenDescription})
         val spring = repository.seasons()[0].spokenDescription
         val summer = repository.seasons()[1].spokenDescription
         assertTrue(spring.en.contains("New green leaves")); assertTrue(spring.en.contains("bloom"))

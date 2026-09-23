@@ -23,8 +23,12 @@ class CelebrationArtViewModel(application: Application) : AndroidViewModel(appli
         worker.execute {
             val loaded = CelebrationState.artwork.mapNotNull { (id, path) ->
                 try {
+                    val bounds = BitmapFactory.Options().apply {inJustDecodeBounds = true}
+                    application.assets.open(path).use {BitmapFactory.decodeStream(it, null, bounds)}
+                    var sample = 2
+                    while((maxOf(bounds.outWidth, bounds.outHeight).toLong() + sample - 1) / sample > 200) sample *= 2
                     application.assets.open(path).use { stream ->
-                        BitmapFactory.decodeStream(stream, null, BitmapFactory.Options().apply { inSampleSize = 2 })
+                        BitmapFactory.decodeStream(stream, null, BitmapFactory.Options().apply { inSampleSize = sample })
                             ?.asImageBitmap()?.let { id to it }
                     }
                 } catch (_: java.io.IOException) { null }

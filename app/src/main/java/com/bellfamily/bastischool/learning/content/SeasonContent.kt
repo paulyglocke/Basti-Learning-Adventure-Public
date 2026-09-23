@@ -8,6 +8,13 @@ object SeasonIds {
     val SUMMER = ContentId("season.summer")
     val AUTUMN = ContentId("season.autumn")
     val WINTER = ContentId("season.winter")
+    fun next(id: ContentId): ContentId = adjacent(id, 1)
+    fun previous(id: ContentId): ContentId = adjacent(id, -1)
+    private fun adjacent(id: ContentId, direction: Int): ContentId {
+        val index = canonicalOrder.indexOf(id)
+        require(index >= 0) { "Unknown season" }
+        return canonicalOrder[Math.floorMod(index + direction, canonicalOrder.size)]
+    }
     val canonicalOrder: List<ContentId> = Collections.unmodifiableList(listOf(SPRING, SUMMER, AUTUMN, WINTER))
 }
 

@@ -5,35 +5,22 @@ import com.bellfamily.bastischool.learning.session.*
 import com.bellfamily.bastischool.learning.progress.*
 import com.bellfamily.bastischool.audio.SpeechTrigger
 import java.util.Collections
-import java.util.Random
+import com.bellfamily.bastischool.learning.sequencing.OrderedPlacement
 
 /** Seven placement steps, not a quiz round. Immutable snapshots contain the actual scramble. */
 class WilmaOrderState internal constructor(val id: SessionId, val language: ContentLanguage,
     choices: List<ContentId>, steps: List<TaskProgress>, val acknowledged: Boolean = false) {
     val choices: List<ContentId> = Collections.unmodifiableList(choices.toList())
     val steps: List<TaskProgress> = Collections.unmodifiableList(steps.toList())
-    val index get() = steps.takeWhile {it.answer==AnswerState.CORRECT}.size
+    private val placement = OrderedPlacement(WilmaContent.days, this.choices, this.steps)
+    val index get() = placement.index
     val completed get() = index==7
     val placed get() = WilmaContent.days.take(index)
     val task get() = TaskInstanceId(id,(index+1).coerceAtMost(7))
     val current get() = steps[index.coerceAtMost(6)]
     val nextAttempt get() = if(!completed && current.answer==AnswerState.UNANSWERED) AttemptId(task,current.attempts+1) else null
     init {
-        require(this.choices.size==7 && this.choices.toSet()==WilmaContent.days.toSet())
-        require(this.steps.size==7)
         require(!acknowledged || completed)
-        this.steps.forEachIndexed { i,p ->
-            require(p.attempts in 0..10000 && p.support.replays in 0..10000)
-            require(p.answer!=AnswerState.INCORRECT)
-            if(i<index) require(p.answer==AnswerState.CORRECT && p.lastChoice==WilmaContent.days[i])
-            if(i>index) require(p==TaskProgress())
-            if(p.attempts==0) require(p.lastChoice==null && p.retries==0 && p.answer==AnswerState.UNANSWERED)
-            else {
-                require(p.lastChoice in WilmaContent.days.drop(i))
-                require(p.retries==p.attempts-(if(p.answer==AnswerState.UNANSWERED)0 else 1))
-                require((p.answer==AnswerState.CORRECT)==(p.lastChoice==WilmaContent.days[i]))
-            }
-        }
     }
     internal fun changed(language: ContentLanguage=this.language, steps:List<TaskProgress> = this.steps, acknowledged:Boolean=this.acknowledged) =
         WilmaOrderState(id,language,choices,steps,acknowledged)
@@ -50,8 +37,7 @@ data class WilmaOrderTransition(val state:WilmaOrderState,val events:List<Progre
 object WilmaOrder {
     val activity=ActivityId("activity.wilma.order")
     fun start(id:SessionId,seed:Long,language:ContentLanguage):WilmaOrderState {
-        val choices=WilmaContent.days.toMutableList();Collections.shuffle(choices,Random(seed))
-        if(choices==WilmaContent.days) Collections.rotate(choices,1)
+        val choices=OrderedPlacement.scramble(WilmaContent.days,seed)
         return WilmaOrderState(id,language,choices,List(7){TaskProgress()})
     }
     fun prompt(state:WilmaOrderState):ContentText = when {
@@ -72,8 +58,8 @@ object WilmaOrder {
             is WilmaOrderAction.Place -> {
                 if(s.nextAttempt!=a.attempt || a.day !in s.choices || a.day in s.placed || s.current.attempts>=10000) return unchanged()
                 val correct=a.day==WilmaContent.days[s.index]
-                val n=update(s.current.copy(answer=if(correct)AnswerState.CORRECT else AnswerState.RETRY_AVAILABLE,
-                    attempts=s.current.attempts+1,lastChoice=a.day))
+                val steps=OrderedPlacement(WilmaContent.days,s.choices,s.steps).place(a.day) ?: return unchanged()
+                val n=s.changed(steps=steps)
                 val events=listOf(attempt(n,s.index)) + if(n.completed)listOf(completion(n)) else emptyList()
                 val text=if(correct)prompt(n) else ContentText.plain("Try again. The days already placed stay here.","Versuche es noch einmal. Die eingeordneten Tage bleiben hier.")
                 WilmaOrderTransition(n,events,SessionEffect.Narrate(text,

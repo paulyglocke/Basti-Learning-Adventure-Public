@@ -19,6 +19,16 @@ class SeasonsAudio(private val controller: AudioController, private val status: 
         if (id in state.task.question.choices) speak(state.plan.id.value, state.language, SeasonsContent.season(id).text,
             SpeechKind.OPTION, SpeechTrigger.MANUAL)
     }
+    fun order(state: SeasonsOrderState, effect: SessionEffect.Narrate?) {
+        if(effect != null) speak(state.id.value,state.language,effect.text,when(effect.kind) {
+            NarrationKind.INSTRUCTION -> SpeechKind.INSTRUCTION
+            NarrationKind.FEEDBACK -> SpeechKind.FEEDBACK
+            NarrationKind.COMPLETION -> SpeechKind.COMPLETION
+        },effect.trigger)
+    }
+    fun orderOption(state: SeasonsOrderState,id: ContentId) {
+        if(id in state.choices) speak(state.id.value,state.language,SeasonsContent.season(id).text,SpeechKind.OPTION,SpeechTrigger.MANUAL)
+    }
     fun effects(state: SessionState, effects: List<SessionEffect>) {
         if (!active) return
         effects.forEach { effect -> when(effect) {
