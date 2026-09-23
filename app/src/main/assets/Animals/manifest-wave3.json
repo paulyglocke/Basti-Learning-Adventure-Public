@@ -1,0 +1,74 @@
+[
+  {
+    "file": "turtle.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "has_transparency": true
+  },
+  {
+    "file": "mole.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "has_transparency": true
+  },
+  {
+    "file": "basking_shark.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "has_transparency": true
+  },
+  {
+    "file": "deer.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "has_transparency": true
+  },
+  {
+    "file": "alligator.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "has_transparency": true
+  },
+  {
+    "file": "orca.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "has_transparency": true
+  },
+  {
+    "file": "anaconda.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "has_transparency": true
+  },
+  {
+    "file": "bear.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "has_transparency": true
+  }
+]

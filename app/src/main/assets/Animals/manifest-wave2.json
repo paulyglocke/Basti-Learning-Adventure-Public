@@ -1,0 +1,83 @@
+[
+  {
+    "file": "trex.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "has_transparency": true
+  },
+  {
+    "file": "velociraptor.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "has_transparency": true
+  },
+  {
+    "file": "pteranodon.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "has_transparency": true
+  },
+  {
+    "file": "mosasaurus.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "has_transparency": true
+  },
+  {
+    "file": "great_white_shark.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "has_transparency": true
+  },
+  {
+    "file": "dolphin.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "has_transparency": true
+  },
+  {
+    "file": "eagle.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "has_transparency": true
+  },
+  {
+    "file": "monkey.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "has_transparency": true
+  },
+  {
+    "file": "mammoth.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "has_transparency": true
+  }
+]

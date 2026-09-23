@@ -1,0 +1,101 @@
+[
+  {
+    "file": "dinosaur.png",
+    "size": [
+      352,
+      331
+    ],
+    "mode": "RGBA",
+    "has_alpha": true
+  },
+  {
+    "file": "snake.png",
+    "size": [
+      308,
+      299
+    ],
+    "mode": "RGBA",
+    "has_alpha": true
+  },
+  {
+    "file": "crocodile.png",
+    "size": [
+      374,
+      255
+    ],
+    "mode": "RGBA",
+    "has_alpha": true
+  },
+  {
+    "file": "dragon.png",
+    "size": [
+      374,
+      331
+    ],
+    "mode": "RGBA",
+    "has_alpha": true
+  },
+  {
+    "file": "whale.png",
+    "size": [
+      365,
+      332
+    ],
+    "mode": "RGBA",
+    "has_alpha": true
+  },
+  {
+    "file": "fish.png",
+    "size": [
+      325,
+      332
+    ],
+    "mode": "RGBA",
+    "has_alpha": true
+  },
+  {
+    "file": "horse.png",
+    "size": [
+      345,
+      332
+    ],
+    "mode": "RGBA",
+    "has_alpha": true
+  },
+  {
+    "file": "dog.png",
+    "size": [
+      305,
+      332
+    ],
+    "mode": "RGBA",
+    "has_alpha": true
+  },
+  {
+    "file": "cat.png",
+    "size": [
+      307,
+      322
+    ],
+    "mode": "RGBA",
+    "has_alpha": true
+  },
+  {
+    "file": "rabbit.png",
+    "size": [
+      282,
+      327
+    ],
+    "mode": "RGBA",
+    "has_alpha": true
+  },
+  {
+    "file": "mouse.png",
+    "size": [
+      321,
+      331
+    ],
+    "mode": "RGBA",
+    "has_alpha": true
+  }
+]
