@@ -1,55 +1,65 @@
 # Basti’s Learning Adventure — Master Product & Learning Roadmap
 
 ## Purpose
+
 A calm, audio-first, visually rich school-readiness app focused on communication, listening, language, early maths, school routines, self-regulation, curiosity and confidence.
 
+The app should increasingly feel like a coherent learning adventure rather than a collection of quizzes: short activities, familiar characters and animals, shared learning systems, meaningful missions, calm support, and progression that works fully offline.
+
 ## Core principles
-- Audio-first; a child should be able to complete activities without reading.
-- Short, predictable 3–5 minute sessions.
-- No lives, forced timers, punishment or loss streaks.
-- Custom illustrated assets in final production; emoji only as temporary placeholders.
-- Native 2D/2.5D visual style, not true 3D.
-- Fully offline, no Google Play Services dependency.
-- Long-term target: fully native Android/Jetpack Compose with no runtime WebView/HTML/JavaScript dependency.
-- Reuse shared native data models rather than duplicating facts and vocabulary.
-- Explain mistakes constructively.
-- Generalise skills across many contexts.
-- Include real-world and movement activities.
-- Open-ended speech tasks should encourage talking without automatic pronunciation scoring.
-- Present one clear learning job at a time; complexity should come from the skill being practised, not unnecessary screen clutter.
-- Break longer goals into small visible steps with frequent calm feedback.
-- Give useful feedback immediately, including recognition of successful strategy use such as replaying, asking for help or trying again.
-- Use predictable transitions where helpful, including cues such as “Two more, then we’re finished.”
-- Prefer meaningful generalisation over repeating a mastered drill format.
-- During thinking/choice moments, reduce irrelevant movement and visual distraction; animation should communicate meaning or celebrate rather than compete for attention.
-- Offer movement naturally as part of learning rather than treating it as a consequence for losing focus.
+
+- Audio-first; a child should be able to complete activities without reading independently.
+- Short, predictable 3–5 minute activities.
+- No lives, forced timers, punishment, loss streaks or reaction-speed pressure.
+- Fully offline; no Google Play Services dependency.
+- Native Android / Jetpack Compose; continue removing runtime WebView/HTML/JavaScript dependencies as native replacements become trusted.
+- Native 2D / 2.5D presentation. Do not introduce a true 3D engine without a concrete learning/product need.
+- Custom original artwork in final production; emoji are temporary placeholders only.
+- One clear learning job at a time.
+- Calm, immediate feedback. Mistakes normally lead to replay, support and another try rather than penalties.
+- Support is not failure. Record how much help was needed rather than treating supported success as incorrect.
+- Generalise skills across varied contexts rather than drilling one memorised pairing.
+- Reuse shared semantic content, art, audio and learning systems instead of rebuilding them per activity.
+- Movement and real-world tasks are regular learning modes, not rewards for losing focus.
+- Open-ended speech encourages talking without automatic pronunciation scoring.
+- During thinking moments, reduce irrelevant animation. Motion should explain, guide or celebrate.
+- Build shared abstractions only when a second real use needs them.
 
 ## Roadmap operating model
 
-This master roadmap owns product direction, learning priorities and sequencing. Detailed implementation contracts belong in the specialist specifications:
+This roadmap owns product direction, learning priorities and sequencing. Detailed implementation contracts remain in the specialist specifications:
 
-- `CONTENT_DATA_SPEC.md` — canonical IDs, authored content and validation
-- `NATIVE_ARCHITECTURE_SPEC.md` — runtime/component boundaries
-- `VOICE_AUDIO_SPEC.md` — speech/audio policy
-- `PROGRESS_TRACKER_SPEC.md` — evidence and adaptation
-- `UX_NAVIGATION_SPEC.md` — navigation/shared interaction behavior
-- `GAME_DESIGN_SPEC.md` — reusable game mechanics
-- `ART_DIRECTION.md` — visual/asset rules
-- `TESTING_QA_SPEC.md` — acceptance
+- `CONTENT_DATA_SPEC.md`
+- `NATIVE_ARCHITECTURE_SPEC.md`
+- `VOICE_AUDIO_SPEC.md`
+- `PROGRESS_TRACKER_SPEC.md`
+- `UX_NAVIGATION_SPEC.md`
+- `GAME_DESIGN_SPEC.md`
+- `ART_DIRECTION.md`
+- `TESTING_QA_SPEC.md`
 
-Keep this file focused on **what to teach, why it matters and when it should be built**. Do not duplicate low-level contracts here when another specification already owns them.
+Do not duplicate low-level contracts here when a specialist spec already owns them.
 
-Development should favour reusable systems that unlock several learning goals:
+## Shared learning grammar
 
-- **sequencing**: Wilma ordering first, then Seasons, number/story/school-routine sequences
-- **instruction/action**: Follow the Instructions first, then School Skills, Focus & Flex, Remember the Mission and movement variants
-- **matching**: Memory Pairs first, then picture/picture, number/quantity, case, bilingual, animal/action, animal/habitat, emotion/expression and season/clue variants
-- **shared knowledge**: canonical vocabulary/animal data should feed Vocabulary, Prepositions, instructions, comparisons, Discovery Book and games
-- **shared visual language**: establish reusable buttons, cards, headers, progress, completion and feedback before many more native screens are added
+Where appropriate, curriculum should follow:
 
-Build a shared abstraction when a second real use needs it; do not create a speculative general-purpose engine.
+**Explore / Hear → Recognise / Find → Recall / Use → Generalise**
+
+For early maths and other concept-heavy areas, also use:
+
+**Concrete → Pictorial → Abstract**
+
+For supported practice, use the universal support ladder:
+
+**Independent attempt → Replay → subtle verbal/visual hint → stronger model/help → optional parent help**
+
+Progress should record the least support needed for successful completion.
+
+For generated choice tasks, prefer **pedagogically meaningful distractors** over random unrelated answers. Wrong choices should represent plausible misunderstandings when the skill allows this.
 
 ## Learning pillars
+
 1. Talk & Communicate
 2. Listen & Follow
 3. Letters & Sounds
@@ -64,6 +74,8 @@ Build a shared abstraction when a second real use needs it; do not create a spec
 12. Discovery Book
 
 ## Talk & Communicate
+
+Priority activities:
 - Let’s Talk / Erzähl mal
 - Tell Me More
 - Sentence Builder
@@ -72,81 +84,96 @@ Build a shared abstraction when a second real use needs it; do not create a spec
 - Story Retell
 - Finish My Sentence
 - Conversation Starter
-- Say a Little More: model an expanded version of the child’s contribution without marking their original answer wrong
-- What’s in the Bag?: gradually reveal an object, then name, describe and talk about what it does
-- Yesterday / Tomorrow Talk: supported conversation about past and future events
-- My Turn / Your Turn: short reciprocal talking/listening exchanges
-- Listen for the Sound: identify and discuss familiar environmental and animal sounds
+- Say a Little More
+- What’s in the Bag?
+- Yesterday / Tomorrow Talk
+- My Turn / Your Turn
+- Listen for the Sound
 
-Use modelling and expansion frequently. A short response such as “Snake” can be expanded naturally to “A green snake” and then “The green snake is slithering.” The goal is richer communication, not automatic speech scoring.
+Model and expand language naturally. For example: “Snake” → “A green snake” → “The green snake is slithering.” The goal is richer communication, not speech scoring.
 
 ## Listen & Follow
-Progression:
-1. Touch the snake.
-2. Touch the green snake.
-3. Touch the snake, then the crocodile.
-4. Put the egg under the tree.
-5. Put the small red egg next to the Komodo dragon.
-6. Touch the crocodile, then put the egg under the rock.
-7. Don’t touch the dinosaur. Touch the snake.
 
-Also:
-- Remember the Mission
-- one/two/three-step instructions
-- delayed instructions
-- spatial instructions
-- inhibition instructions
+Progress from:
+1. one-step object instructions
+2. adjective + object instructions
+3. two-step instructions
+4. spatial placement
+5. multi-attribute placement
+6. mixed action + placement
+7. simple inhibition instructions
+
+Reuse the same instruction/action system for Remember the Mission, School Skills, Focus & Flex and compatible movement tasks.
 
 ## Letters & Sounds
-- letter recognition
-- letter sounds
-- beginning sounds
-- same-initial-sound grouping
-- uppercase/lowercase matching
-- syllables
-- rhyme
-- phonological awareness
 
-Until uppercase/lowercase is explicitly taught, match display case:
-D → Dinosaur, not D → dinosaur.
+Keep written letter work separate from phonics.
 
-Treat phonics as language-specific content. Shared vocabulary does not imply that the same item is a good phonics example in English and German: English S → snake does not make German S → Schlange a simple /s/ lesson. Keep letter names, graphemes, phonemes and initial-sound tasks distinct, use reviewed language-specific phonics packs, and consider reviewed recorded phoneme clips rather than ordinary TTS for isolated sounds.
-
-Build phonological awareness progressively rather than treating all sound work as formal phonics:
-1. notice and imitate environmental/animal sounds
-2. rhyme recognition and playful rhyme production
-3. clap/count syllables in familiar words
-4. hear whether words begin with the same sound
+Phonological-awareness progression:
+1. environmental and animal sounds
+2. rhyme
+3. syllables
+4. same initial sound
 5. identify an initial sound
-6. connect reviewed graphemes and phonemes when appropriate
+6. reviewed grapheme ↔ phoneme links
 
-Keep written initial-letter matching as a distinct activity from true phoneme instruction.
+Critical rule:
 
-## Vocabulary Booster
-Core packs:
-school, home, people, food, clothes, body, feelings, weather, transport, colours, shapes, positions, actions, describing words, opposites.
+**grapheme ≠ phoneme ≠ letter name**
 
-Interest packs:
-dinosaurs, dragons, snakes, Komodo dragons, crocodiles/alligators, sharks, whales, sea animals, prehistoric sea reptiles.
+Use normal TTS for words/sentences where appropriate. Isolated phonemes should use reviewed language-specific recorded clips rather than Android letter-name TTS.
 
-Each item should support:
-English, German, custom illustration, TTS, simple explanation, example sentence, category, difficulty, progress metadata.
+English and German phonics content must be reviewed independently. A good English example is not automatically a good German example.
 
-Start v1 deliberately small and reviewed: roughly 50–80 high-value shared words, including school objects, classroom/action words, core positions, describing words/opposites, feelings, colours/shapes and motivating animals. Reuse the same canonical content IDs across learning activities and games.
+## Words & Vocabulary
+
+Grow toward roughly 50–80 high-value reviewed shared words through normal curriculum development rather than one giant vocabulary project.
+
+Core areas:
+- school
+- home
+- people
+- food
+- clothes
+- body
+- feelings
+- weather
+- transport
+- colours
+- shapes
+- positions
+- actions
+- describing words
+- opposites
+
+Interest areas:
+- dinosaurs
+- dragons
+- snakes
+- Komodo dragons
+- crocodiles/alligators
+- sharks
+- whales
+- sea animals
+- prehistoric sea reptiles
+
+Each reusable content item should support stable semantic ID, EN/DE labels, illustration, spoken form, simple explanation, example sentence, category and progress/context metadata.
 
 ## Numbers & Maths
-Near-term learning should prioritise concepts over ever-larger numerals:
+
+Prioritise concepts over ever-larger numerals:
+
 - subitising 1–3, then 1–5
 - number ↔ quantity
-- more/fewer/same
-- making 5 and simple number bonds
-- part–whole composition/decomposition, such as 5 = 4 + 1 and 5 = 3 + 2
+- more / fewer / same
+- making 5 and early number bonds
+- part-whole composition/decomposition
 - one more / one less
-- conservation of quantity: the same number shown in different arrangements
-- simple number stories using meaningful objects/animals
+- conservation of quantity
+- meaningful number stories
 - counting and number recognition
 - number order
-- before/after
+- before / after
 - missing numbers
 - concrete addition/subtraction
 - estimate then count/check
@@ -156,32 +183,39 @@ Near-term learning should prioritise concepts over ever-larger numerals:
 - measurement concepts
 - simple charts/data
 
-Higher number recognition can remain available as the child grows, but it should not dominate the core early-maths experience.
+Useful future mechanics:
+- tap counting
+- T-Rex stomp counting
+- number line movement
+- object grouping
+- build/construct quantities
+- simple pattern reproduction
+- concrete → pictorial → numeral progression
 
-## Think & Solve
-- sequencing
+Procedural generation should be deterministic and introduced only when enough Maths activities exist to justify a shared generator.
+
+## Think & Solve / Focus & Flex
+
+Use playful, non-clinical practice for working memory, inhibition, rule use and flexible switching.
+
+Patterns:
+- Do What I Say
+- Opposite Game
+- Rule Switch
+- Freeze & Move
+- Remember the Mission
 - Plan the Mission
-- Sort & Switch
+- sequencing
 - classification
 - True or Silly?
 - Spot the Mistake
-- flexible thinking
-- simple planning/problem solving
+- Sort & Switch
 
-### Focus & Flex / Aufpassen & Umschalten
-Use playful, non-clinical activities to practise working memory, inhibition, rule use and flexible switching. Do not present this as ADHD treatment or generic “brain training”; practise useful skills in meaningful contexts.
-
-Possible patterns:
-- Do What I Say: follow a simple rule, later adding “don’t touch X; touch Y”
-- Opposite Game: respond according to a deliberately reversed rule
-- Rule Switch: first choose by one property, then clearly announce a new rule
-- Freeze & Move: move like an animal, then stop on a spoken cue
-- Remember the Mission: briefly show or speak a small sequence, hide it, then carry it out
-- Plan the Mission: choose or order a few practical steps before acting
-
-Start with one rule and very small memory loads. Make the current rule visible/replayable when the goal is not memory. Increase difficulty only when the base version is comfortable.
+Do not present these as ADHD treatment or generic “brain training”.
 
 ## World Around Me
+
+Areas:
 - time
 - weather
 - home
@@ -191,134 +225,62 @@ Start with one rule and very small memory loads. Make the current rule visible/r
 - habitats
 - transport
 - people who help us
-- My World / belonging
+- belonging / My World
 - simple science investigations
 
 ### Wilma Weekdays / Wochentage
-Use Wilma, the familiar Kita weekday caterpillar, as a recurring bridge between home/app learning and the classroom routine. Wilma's head is only the character head; the seven body segments represent the days in this fixed Kita-aligned order: Monday/Montag = green, Tuesday/Dienstag = red, Wednesday/Mittwoch = yellow, Thursday/Donnerstag = blue, Friday/Freitag = purple, Saturday/Samstag = orange and Sunday/Sonntag = pink.
 
-Learning progression:
-- explore Wilma and hear each day name
-- tap the requested day from spoken English/German
-- identify days from their place in the weekly sequence
-- practise before/after and first/last in the cycle
-- order the seven days
-- introduce today/yesterday/tomorrow with explicit visual and spoken support
+Use the familiar Kita Wilma caterpillar.
 
-The colour mapping is a familiar teaching cue, not the sole identifier. Always combine it with segment position, spoken day name and localized visible text. Keep artwork language-neutral; English/German labels and speech belong to app content.
+Fixed day colours:
+- Monday / Montag — green
+- Tuesday / Dienstag — red
+- Wednesday / Mittwoch — yellow
+- Thursday / Donnerstag — blue
+- Friday / Freitag — purple
+- Saturday / Samstag — orange
+- Sunday / Sonntag — pink
 
+Progression:
+- explore/hear days
+- find requested day
+- before/after
+- order seven days
+- today/yesterday/tomorrow with an explicit visual/spoken anchor
+
+Colour is a familiar cue, never the sole identifier.
 
 ### Seasons / Jahreszeiten
-Teach the four seasons using a consistent view of the same lakeside tree and meadow so the child can compare visible changes across the year.
 
-Use these canonical assets:
-- `app/src/main/assets/Seasons/blossoming_lakeside_spring_meadow.png`
-- `app/src/main/assets/Seasons/sunny_summer_lakeside_meadow.png`
-- `app/src/main/assets/Seasons/autumn_tree_by_the_lakeside.png`
-- `app/src/main/assets/Seasons/snowy_lakeside_meadow_with_bare_tree.png`
+Use the existing canonical lakeside assets and observable seasonal clues.
 
-The visual distinction must be deliberately strong:
-- Spring / Frühling: fresh new leaves, lighter/sparser tree growth and obvious flowers/blossom.
-- Summer / Sommer: dense full green tree canopy and lush green growth.
-- Autumn / Herbst: orange/red/yellow leaves, with leaves visibly falling.
-- Winter / Winter: bare tree, snow/ice and no leaves.
+Cycle:
+**Spring → Summer → Autumn → Winter → Spring**
 
-Spring and summer must not rely only on slightly different shades of green. Spring is identified by new growth and blossom; summer by a full, dense green canopy.
-
-Each season should support an optional spoken learning description when the child opens or taps the season image. A Replay control should allow the narration to be heard again. Quiz questions should use shorter prompts rather than automatically replaying the full description.
-
-Canonical English narration:
-
-- Spring: “It’s spring. The weather is getting warmer, but it isn’t hot yet. New green leaves are growing on the trees, and lots of flowers are starting to bloom.”
-- Summer: “It’s summer. The weather is warm and sunny. The tree is full of thick green leaves, and the grass and plants are growing everywhere.”
-- Autumn: “It’s autumn. The weather is getting cooler. The leaves are turning orange, red and yellow, and some are falling from the trees. The days are getting shorter too.”
-- Winter: “It’s winter. The weather is very cold. The ground is covered with snow and ice, and the tree has lost all its leaves. The days are short, and it gets dark early.”
-
-Canonical German narration:
-
-- Frühling: „Es ist Frühling. Das Wetter wird wärmer, aber es ist noch nicht heiß. Neue grüne Blätter wachsen an den Bäumen, und viele Blumen fangen an zu blühen.“
-- Sommer: „Es ist Sommer. Das Wetter ist warm und sonnig. Der Baum ist voller grüner Blätter, und überall wachsen Gras und Pflanzen.“
-- Herbst: „Es ist Herbst. Das Wetter wird kühler. Die Blätter werden orange, rot und gelb, und einige fallen von den Bäumen. Die Tage werden auch kürzer.“
-- Winter: „Es ist Winter. Das Wetter ist sehr kalt. Der Boden ist mit Schnee und Eis bedeckt, und der Baum hat alle seine Blätter verloren. Die Tage sind kurz, und es wird früh dunkel.“
-
-The descriptions teach observable seasonal clues rather than rigid weather rules.
-
-### Seasons learning progression
-
-Treat the seasons as both four observable concepts and a repeating yearly cycle. Build beyond simple recognition in a calm progression:
-
+Progression:
 1. Explore / recognise
-   - identify Spring, Summer, Autumn and Winter from the canonical images
-   - hear the season name and optional description
-   - Replay remains available
-
 2. What comes next?
-   - ask questions such as “What comes after summer?” / “Was kommt nach dem Sommer?”
-   - derive answers from the canonical cycle:
-     Spring → Summer → Autumn → Winter → Spring
-   - include the Winter → Spring boundary so the child learns that the sequence repeats
-
 3. What comes before?
-   - ask questions such as “What comes before spring?” / “Was kommt vor dem Frühling?”
-   - derive answers from the same canonical cycle
-   - include the Spring ← Winter boundary
-
-4. Build the Year / Put the seasons in order
-   - show the four season cards in a deterministic scrambled order
-   - child places them into:
-     Spring → Summer → Autumn → Winter
-   - prefer tap-to-place / select-next ordering over precision drag-and-drop for the primary accessible interaction
-   - a drag interaction may be added later if it works reliably on both phone and Fire tablet, but it must not become required
-   - wrong choices should preserve already placed seasons and give calm support rather than resetting the whole sequence
-   - exact partial ordering state should restore cleanly when this becomes a native session task
-
+4. Build the Year
 5. Missing season
-   - show three parts of the cycle and ask which season is missing
-   - examples:
-     Spring → Summer → ? → Winter
-     Winter → ? → Summer
-   - use semantic season IDs, never display text matching
-
 6. Identify from observable clues
-   - ask which season matches one or more canonical clues
-   - examples:
-     blossoms and new leaves → Spring
-     dense green canopy and warm sunny weather → Summer
-     orange/red/yellow and falling leaves → Autumn
-     bare tree, snow and ice → Winter
-   - clues should come from the same canonical content used by Explore, not duplicated ad hoc in the UI
-
 7. Match season to clue
-   - reverse the previous task: show a season, then choose the matching observable clue
-   - use short child-friendly wording rather than replaying the full narration automatically
+8. Combined before/after
 
-8. Before and after together
-   - later progression may ask a two-sided relation such as:
-     “Summer comes after ___ and before ___.”
-   - keep this unhurried and only introduce it after single before/after questions are comfortable
-
-Ordering note:
-- seasons are a cycle, so there is no universal “first” season in nature
-- for the explicit Build the Year ordering task, use the conventional teaching sequence Spring → Summer → Autumn → Winter
-- still teach the cycle across the boundary with “What comes after winter?” → Spring and “What comes before spring?” → Winter
-
-Learning-design constraints:
-- avoid relying on events such as Christmas, school holidays or rigid weather stereotypes as defining season cues
-- prefer observable changes in plants, leaves, daylight, snow/ice and temperature
-- do not equate Summer with “very hot” or Winter with guaranteed snow in every real-world context; the canonical artwork is the learning scene
-- short 5/10-question rounds remain appropriate for recognition, before/after, missing-season and clue practice
-- ordering should remain a distinct sequencing interaction rather than being forced into ordinary multiple-choice state
-- Help, Retry, audio policy, silent restoration and durable progress should follow the established native session contracts
+Treat Spring → Summer → Autumn → Winter as the conventional display sequence while explicitly teaching that seasons are cyclic.
 
 ## School Skills
-Teach:
-- sit down, stand up, listen, look, wait
-- open/close book
-- take/put away pencil
+
+Prioritise practical classroom language and self-advocacy:
+
+- sit down / stand up
+- listen / look / wait
+- open / close book
+- take / put away pencil
 - raise hand
 - line up
-- your turn/my turn
-- finished/again
+- your turn / my turn
+- finished / again
 - I don’t understand
 - Can you say that again?
 - Can you help me?
@@ -327,240 +289,476 @@ Teach:
 - It’s too loud.
 - Can I have a break?
 
-Prioritise practical classroom language and self-advocacy early, preferably in contextual scenes and Follow the Instructions rather than isolated flashcards.
-
-Useful German examples include: Hör zu; Schau mal; Setz dich hin; Steh auf; Warte bitte; Hol deinen Stift; Leg das Buch auf den Tisch; Stell dich an; Ich verstehe das nicht; Kannst du das noch einmal sagen?; Kannst du mir helfen?; Wo soll ich das hinlegen?; Es ist mir zu laut; Kann ich eine Pause machen?
+Prefer contextual Follow-the-Instructions scenes over isolated flashcards.
 
 ## Feelings & self-regulation
-- happy, sad, angry, worried, scared, excited, frustrated, tired, surprised
-- My Turn / Your Turn
-- Stop–Think–Choose
-- calm self-advocacy language
-- avoid treating social situations as if only one response is always correct
+
+Include:
+- happy
+- sad
+- angry
+- worried
+- scared
+- excited
+- frustrated
+- tired
+- surprised
+
+Use My Turn / Your Turn, Stop–Think–Choose and self-advocacy language. Avoid implying that one social response is always universally correct.
 
 ## Compare & Discover
-Use custom illustrated animal comparisons:
-- bigger/smaller
-- longer/shorter
-- faster/slower
-- heavier/lighter
-- venomous/non-venomous
-- land/water/air
-- extinct/living
-- habitat and classification
 
-Core animal groups:
-T-Rex, Velociraptor, Pteranodon, Mosasaurus, dragon, snake, Komodo dragon, crocodile, shark, whale.
+Use shared animal/knowledge records for:
+- bigger / smaller
+- longer / shorter
+- faster / slower
+- heavier / lighter
+- venomous / non-venomous
+- land / water / air
+- extinct / living
+- habitat
+- classification
 
-Precise facts should live in shared data, not hardcoded question text.
-Avoid vague claims like “most dangerous” unless the comparison is explicitly defined.
+Precise facts belong in shared data, not hardcoded question prose.
 
-## Exploration & play
-- Explore First, Explain Later
-- Make a Scene
+## Reusable learning systems
+
+### Sequencing
+
+Use the proven Wilma → Seasons tap-to-place model for:
+- weekdays
+- seasons
+- numbers
+- routines
+- simple stories
+
+Drag may enhance later but must never be the only interaction.
+
+### Instruction / action
+
+Follow the Instructions is the first major consumer.
+
+Grow deliberately into:
+- multi-step actions
+- spatial placement
+- delayed instructions
+- inhibition
+- Remember the Mission
+- Focus & Flex
+- selected Move & Learn prompts
+
+### Semantic matching
+
+Memory Pairs should match stable semantic relationships, not display strings.
+
+Future variants:
+- picture ↔ picture
+- picture ↔ word
+- EN ↔ DE
+- number ↔ quantity
+- uppercase ↔ lowercase
+- animal ↔ action
+- animal ↔ habitat
+- emotion ↔ expression
+- season ↔ clue
+
+### Shared support presentation
+
+Build one consistent way to expose:
+- Replay
+- Need help?
+- visual/concrete hint
+- stronger model
+- optional parent help
+
+Do not make every activity invent its own help UI.
+
+### Shared support settings
+
+Introduce only concrete settings needed by real features:
+- Reduced motion
+- Calm celebrations
+- Help sooner
+- Simpler/literal instructions
+- Visual steps
+- Larger controls/text where useful
+
+Use experience-based labels, not diagnosis-labelled modes.
+
+### Shared knowledge
+
+Vocabulary, Discovery Book, Compare & Discover, games and rewards should consume the same canonical content records and artwork.
+
+## Game mechanic catalogue
+
+Before inventing another custom activity architecture, check whether the learning goal fits an established mechanic:
+
+- choice
+- semantic matching
+- ordering
+- sequence recall
+- tap counting
+- number line
+- trace path
+- place / move object
+- sort / classify
+- odd one out
+- build / construct
+- mission / exploration
+- sound identification
+- movement mission
+
+These are reusable mechanics, not one giant generic game engine.
+
+## Game direction
+
+Ordinary activities should remain native 2D Compose.
+
+Larger adventure experiences may use layered/parallax/isometric **2.5D** presentation where it adds value.
+
+Do not adopt Unity, a true 3D engine or heavy real-time 3D rendering without a specific demonstrated requirement.
+
+Responsive animation is welcome; reaction-time pressure is not.
+
+### Memory Pairs
+
+A workhorse shared game using semantic matching. No move-count or completion-time pressure.
+
+### Dinosaur Rescue
+
+Mission-led learning rather than visible quizzing. Example:
+- find the missing egg
+- count objects
+- follow spatial instructions
+- execute two-step missions
+- combine vocabulary, colour, quantity and listening
+
+### Dragon Treasure Hunt
+
+Use instructions, matching, numbers, sorting, memory and simple planning inside a coherent mission.
+
+### Build the Bridge
+
+Use construction as feedback. If five planks are needed and four are placed, show the missing space and model “one more” rather than displaying a punitive error state.
+
+### Crocodile Snap
+
+Fast-feeling recognition with satisfying animation, but no countdown or reaction-time scoring.
+
+### Other later game ideas
+
+- Mosasaurus Ocean Hunt
+- Pteranodon Letter Flight
+- Snake Path
+- Feed the T-Rex
 - Dinosaur Café
 - Dragon Doctor
 - Komodo Expedition
-- I Spy
-- Move & Learn
-- Real-World Missions
-- Build the Bridge
+- Make a Scene
 
-Bring simple real-world and movement missions forward and use them regularly, not only as occasional rewards. Examples: find something red; find something longer than your hand; find three soft things; look outside and identify the weather; stomp like a T-Rex five times; stand on one leg; clap a rhythm; jump three times. No camera or sensor scoring is required; a parent/child Continue action is enough. Where useful, alternate screen tasks with movement or real-world interaction.
+## Move & Learn
 
-Movement-learning patterns can include:
-- T-Rex Counting: stomp a requested quantity
-- Pteranodon Directions: wings out, turn left/right, up/down
-- Dragon Number Bonds: show a quantity on fingers, hide some, work out what remains
-- Snake Rhythm: copy short clap/stamp patterns
-- Freeze Animals: move to an animal/action cue and stop on “freeze”
-- classroom movement instructions such as stand up, sit down, turn around and line up
+Use movement regularly.
 
-Movement should support the learning goal and provide natural changes of state without requiring motion sensors or performance scoring.
+Examples:
+- T-Rex Counting
+- Pteranodon Directions
+- Dragon Number Bonds
+- Snake Rhythm
+- Freeze Animals
+- classroom movement instructions
+- real-world find missions
 
-## Reusable learning engines
+Sensor scoring is not required. A parent/child Continue action is enough.
 
-Treat several curriculum areas as content/rule variants over shared native interaction systems rather than separate engineering projects.
-
-### Sequencing
-Reuse the ordering model proven by Wilma for Seasons **Build the Year**, and later for numbers, routines and simple story sequences. Prefer tap-to-place as the baseline accessible interaction; drag may be an optional enhancement, never the only route.
-
-### Instruction/action
-**Follow the Instructions** is the primary reusable engine for:
-- Listen & Follow
-- classroom / School Skills
-- spatial missions
-- Remember the Mission
-- Focus & Flex inhibition/rule-switch variants
-- selected Move & Learn prompts
-
-Start with one-step tap instructions, then grow the same model deliberately into multi-step, placement, inhibition and memory tasks.
-
-### Matching
-Build Memory Pairs on a reusable semantic matching model so the same content relationships can later support picture/picture, word/picture, number/quantity, upper/lower case, bilingual, animal/action, animal/habitat, emotion/expression and season/clue matching.
-
-### Shared content growth
-Do not treat Vocabulary Booster as one giant 50–80-word content project. New curriculum work should add reviewed canonical words to the shared library, making them available to Vocabulary Booster and other compatible activities automatically.
-
-### Discovery Book
-Treat Discovery Book primarily as a child-facing presentation of shared knowledge rather than a separate fact database. Animal/vocabulary records should be reusable across learning activities, comparisons, rewards and discovery.
-
-## Games
-- Follow the Instructions
-- Memory Pairs
-- Dragon Treasure Hunt
-- Dinosaur Rescue
-- Crocodile Snap
-- Build the Bridge
-- later: Mosasaurus Ocean Hunt, Pteranodon Letter Flight, Snake Path, Feed the T-Rex
-
-All should be polished native 2D/2.5D experiences.
+Optional future sensor/tap enhancement may be explored only when the same activity remains usable without it.
 
 ## Verb Explorer
-Replace generic emoji/CSS motion over time with native action-specific animation.
-Examples:
-- jump: crouch → launch → airborne → land → recover
-- slither: travelling S-wave
-- dig: scoop → dirt movement → repeat
-- snap: open → pause → snap → recoil
-- build: pick up → carry → place
 
-Prioritise 15–20 common verbs first.
+Move toward native action-specific animation:
+- jump
+- slither
+- dig
+- snap
+- build
+- fly
+- swim
+
+Prioritise 15–20 common verbs first. Local video may remain appropriate where it demonstrably teaches the movement better.
 
 ## Predictable activity structure
-Listen → Try → Celebrate → Finished
 
-Keep the child oriented within a short activity. Where useful, show a small concrete progress representation such as 3–5 eggs, footprints or mission steps. Do not use daily streak pressure. Before a transition, give a short predictable cue such as “One more, then finished” or “Next we’re going to move.”
+Preferred flow:
 
-## Native completion celebration
+**Listen → Try → Support if needed → Celebrate → Finished**
 
-Use a shared native optional completion celebration across suitable activities. The child must never be required to interact with the celebration before continuing or going Home; completion controls remain immediately visible and usable.
+Use small concrete progress cues where useful. Avoid daily streak pressure.
 
-Preferred interaction:
-- show a small set of gently floating balloons in a dedicated safe celebration area
-- tapping a balloon pops it with a short native animation
-- the pop reveals a friendly animal that appears to jump out of the balloon and then settles visibly in place
-- trigger a brief, lightweight confetti burst around the popped balloon
-- once popped, that balloon cannot be popped again
-- revealed animals may remain visible for the rest of the completion screen so the surprise is not rushed
+Child-controlled continuation is preferred after meaningful feedback; do not rapidly auto-advance just because an answer was correct.
 
-Keep the effect playful but calm:
-- use roughly five balloons rather than filling the screen
-- slow floating and slight drift rather than chaotic motion
-- no flashing or rapid repetitive animation
-- confetti is local, short-lived and must not cover completion actions
-- balloons, animals and confetti must stay clear of system insets and Continue/Home controls
-- larger-font layouts must remain usable
-- the reward is decorative/playful and does not affect score, mastery, progress or access to the next activity
+## Completion celebration
 
-Audio:
-- an optional soft pop tone may accompany each balloon
-- Sound Off means no pop tone or celebration audio
-- celebration audio follows the shared native audio/SFX policy and must not bypass user settings
+The shared native completion celebration is part of the accepted native experience.
 
-Architecture:
-- implement this once as a reusable native Compose completion component rather than independently in each activity
-- keep balloon animation/pop timing out of durable learning-session state
-- completion/progress must already be committed independently of reward interaction
-- use original child-friendly animal artwork; a small curated pool can include familiar interests such as T-Rex, Pteranodon, Mosasaurus, snake, crocodile, whale, shark and dragon
-- activity-specific reveal pools may be supported later, but a shared curated pool is sufficient for the first native version
-- do not require a collectible/reward economy; Discovery Book integration can be considered separately later
+Requirements:
+- optional playful interaction
+- controls always remain usable
+- no score/mastery coupling
+- reward interaction is non-durable
+- Sound Off blocks celebration audio
+- use clean canonical animal art
+- keep motion calm
+- do not re-investigate already-fixed artwork unless a regression appears
 
-This replaces the old WebView balloon celebration as native activities migrate. The native version should preserve the optional tactile fun of balloon popping while improving it with the animal jump-out reveal and brief confetti burst.
+Future improvement:
+- select five distinct animals deterministically from the canonical available animal pool per completed round/session
+- same completed round reproduces the same assignments
+- new rounds vary naturally
+- no duplicate within one celebration
 
 ## Today’s Adventure
-Make this a central long-term child-facing entry rather than a late add-on. The home should eventually emphasise one large Today’s Adventure action, with a secondary Choose Something Else / browse path so the full library remains available without overwhelming the child.
 
-A recommended route contains:
+Long-term primary child-facing entry.
+
+### v1 — Curated route
+
+No adaptive algorithm required.
+
+A short route should normally contain:
 - 1 confidence task
-- 1 focus / Focus & Flex task
-- 1 communication/listening task
-- 1 fun game/reward task
+- 1 focus/listening task
+- 1 communication/learning task
+- 1 game/movement task
 
-Regularly substitute or combine one module with a brief Move & Learn / real-world mission so a session does not require continuous seated screen interaction.
+The child may stop after any module. No missed-day penalties.
 
-Individual modules remain short (about 3–5 minutes), the child may stop after any module, and missed days never create penalties or streak pressure. Progress data should drive selection.
+### v2 — Progress-informed
 
-## Development priorities
+Once enough evidence exists:
+- mix secure and developing skills
+- schedule spaced review
+- vary contexts
+- avoid repetitive drilling
+- include movement and communication regularly
 
-The detailed learning sections above describe product scope. The execution plan is deliberately shorter.
+## Discovery Book
 
-### P0 — Trusted daily build
-Close the current app-quality/infrastructure chapter before broad expansion:
-- finish the shared native completion celebration and integrate it with suitable native activities
-- prove a **same-key, higher-version in-place stable APK upgrade** while preserving settings/progress
-- run one batched Samsung S24 Ultra acceptance sweep across current native activities
+Treat Discovery Book as a presentation layer over shared knowledge, not a parallel fact database.
+
+Animals, vocabulary, actions, habitats and facts learned elsewhere should naturally surface here.
+
+# Development priorities
+
+## P0 — Trusted daily build
+
+Finish and trust the current native core before broad expansion.
+
+Current goals:
+- complete the in-progress Seasons next/before/Build-the-Year work
+- fix Wilma ordering auto-follow/auto-shift
+- preserve the already-fixed completion artwork
+- record the proven same-key S24 upgrade in existing docs
+- run one complete Samsung S24 Ultra acceptance/debug sweep
 - run the equivalent Fire Max acceptance sweep
-- fix only the critical audio, accessibility, layout, lifecycle or persistence issues those sweeps expose
+- fix only meaningful crashes, persistence, audio ownership, accessibility, lifecycle and layout defects found by those sweeps
 
-Once these pass, signing/versioning becomes maintenance infrastructure rather than an active roadmap stream.
+Already proven:
+- stable signing identity
+- same-key higher-version S24 in-place upgrade
+- shared native completion celebration
+- corrected celebration animal artwork on physical S24
 
-### P1 — Shared native experience
-Build the reusable product pieces that make subsequent activities cheaper and more polished:
-- a lightweight native visual design system: primary/secondary/navigation buttons, choice cards, activity headers, progress markers, completion layout, spacing/typography and restrained motion
-- a canonical original animal-art library reused across Vocabulary, Prepositions, completion rewards, instructions, matching, comparisons, Discovery Book, Verb Explorer and future games
-- sequencing reuse extracted from the proven Wilma pattern when Seasons needs it
-- Follow the Instructions as the shared instruction/action engine
-- Memory Pairs as the first consumer of a shared semantic matching model
-- extend content schemas only when a concrete second use requires it
+Once S24 and Fire acceptance pass, signing/versioning becomes maintenance infrastructure.
 
-Do not build speculative generic frameworks.
+**P0 exit condition:** current native activities are trustworthy enough for regular daily use on both target devices.
 
-### P2 — Core school-readiness curriculum
-Use the shared systems to add learning breadth:
-- **Seasons expansion**: next, before, missing season, Build the Year, season-from-clue, clue-from-season, then combined before/after
-- Follow the Instructions + practical School Skills as content packs over the same engine
-- Vocabulary growth through every new curriculum area, moving toward the reviewed 50–80-word target
-- Tell Me! / expressive-language v1 and model/expand prompts
-- Memory Pairs and matching variants
-- conceptual native Maths: subitising, quantity, more/fewer/same, making 5, part-whole, patterns, shapes and spatial/measurement concepts
-- Letters & Sounds / phonological-awareness progression with language-specific phonics
-- Wilma today/yesterday/tomorrow with an explicit established anchor
-- Focus & Flex variants built on instruction/rule systems
-- feelings, self-advocacy and classroom language
-- Compare & Discover using shared animal/knowledge data
+## P1 — Shared native experience
 
-Keep the Progress Tracker collecting useful evidence throughout. Delay a substantial parent dashboard until enough native curriculum exists to make its summaries meaningful.
+Build the small reusable systems that make later curriculum cheaper and more consistent.
 
-### P3 — Product experience and broader play
-Turn the strong learning core into a cohesive, polished adventure:
-- **Today’s Adventure v1**: curated short route with no adaptive algorithm required
-- **Today’s Adventure v2**: progress-informed recommendations once evidence is broad enough
-- Discovery Book as a shared-knowledge exploration surface
+1. **Lightweight visual design system**
+   - primary / secondary / navigation buttons
+   - choice/image cards
+   - activity headers
+   - progress markers
+   - feedback
+   - completion layout
+   - spacing / typography
+   - restrained press and motion feedback
+   - comfortable 48–56dp touch targets
+
+2. **Shared support presentation**
+   - Replay
+   - Hint
+   - stronger model/help
+   - parent-help path where appropriate
+   - integrate with existing progress/support evidence
+
+3. **Minimal support-settings contract**
+   - reduced motion
+   - calm celebrations
+   - help sooner
+   - simpler/literal prompts
+   - visual steps
+   - larger controls/text where useful
+
+4. **Canonical art/content completion**
+   - finish remaining animal assets
+   - keep one canonical reusable asset/record per concept where practical
+   - generalise celebration pool to deterministic five-distinct-animal selection
+
+5. **Sequencing reuse**
+   - finish the Wilma → Seasons extraction only as far as the second real use justifies
+
+6. **Follow the Instructions**
+   - establish the shared instruction/action engine
+
+7. **Memory Pairs**
+   - establish semantic matching relationships and the first reusable matching UI
+
+8. Extend schemas only when concrete second uses require it.
+
+Do not build speculative mega-frameworks.
+
+## P2 — Core school-readiness curriculum
+
+Use the P1 systems to add breadth.
+
+Priority order:
+- finish remaining Seasons progression: missing season, clue recognition, clue matching, combined before/after
+- Follow the Instructions + practical School Skills
+- vocabulary growth through all new curriculum
+- Tell Me! / expressive-language v1
+- Memory Pairs variants
+- conceptual native Maths
+- Letters & Sounds / phonological awareness
+- Wilma today/yesterday/tomorrow with explicit anchor
+- Focus & Flex variants
+- feelings and self-advocacy
+- Compare & Discover
+
+Maths should use Concrete → Pictorial → Abstract where appropriate.
+
+Choice tasks should use meaningful distractors where practical.
+
+Phonics should use reviewed phoneme audio and language-specific mappings.
+
+Keep Progress Tracker collecting useful evidence, but delay a large parent dashboard until the curriculum is broad enough for its summaries to be meaningful.
+
+## P3 — Learning world and polished adventure
+
+Turn the learning core into a coherent child-facing adventure.
+
+Priority areas:
+- Today’s Adventure v1
+- Today’s Adventure v2 after enough evidence exists
+- Discovery Book
+- Dinosaur Rescue
 - Dragon Treasure Hunt
 - Build the Bridge
-- Dinosaur Rescue
 - Crocodile Snap
+- number-line and tap-counting Maths mechanics
+- sequence-recall activities
+- tracing / pre-writing mechanic where useful
 - native/action-specific Verb Explorer polish
-- broader custom illustration and animation polish
 - real-world and Move & Learn missions
+- broader original illustration and 2.5D/parallax/isometric polish where useful
 - full accessibility/reduced-motion/performance polish
-- coordinated app icon, branding, Home redesign and native splash/launch experience
+- coordinated Home redesign, branding, icon and native splash
 
-The splash must use Android's native splash behavior, work offline, add no artificial wait and transition directly into Home.
+The splash must use Android native splash behavior, add no artificial wait and transition directly to Home.
 
-## Internal milestones
+# Internal milestones
 
-Use milestone names to keep the project finite and understandable:
+## Milestone A — Native Core
 
-### Milestone A — Native Core
-Shared content/audio/session/progress foundations, native Prepositions/Seasons/Wilma/Vocabulary, stable signing/update stream and shared completion behavior.
+Trusted native Prepositions, Seasons, Wilma and Vocabulary; shared content/audio/session/progress foundations; stable update stream; shared completion; physical S24 + Fire acceptance.
 
-### Milestone B — School Ready
-Richer Seasons, Follow the Instructions, practical School Skills, broader Vocabulary and early conceptual Maths.
+## Milestone B — School Ready
 
-### Milestone C — Learning World
+Follow Instructions, practical School Skills, richer Seasons, broader Vocabulary and early conceptual Maths.
+
+## Milestone C — Learning World
+
 Tell Me!, Memory/matching, Focus & Flex, feelings/self-advocacy, Compare & Discover and Discovery Book foundations.
 
-### Milestone D — Polished Adventure
-Today’s Adventure, larger games, cohesive visual design, app-wide original art/animation, splash/branding and final cross-device polish.
+## Milestone D — Polished Adventure
 
-## Delivery strategy
+Today’s Adventure, mission-led games, cohesive 2D/2.5D presentation, app-wide original art/animation, accessibility/performance polish, splash/branding and final cross-device acceptance.
 
-Prefer **batched physical acceptance** over repeatedly testing one feature in isolation. A device sweep should exercise the current native activities together across EN/DE, Sound Off, portrait, both landscapes, larger text, accessibility, background/return, process recreation, 5/10-question sessions, progress persistence and signed upgrades.
+# Delivery strategy
 
-Prefer **content reuse** over standalone packs. For example, School Skills can add pencil/book/chair/table and action vocabulary to the shared library; Maths can add more/less/same and size concepts; feelings work can add emotion vocabulary. Vocabulary Booster should benefit from those additions rather than duplicating them.
+Prefer batched physical acceptance over repeatedly testing one feature in isolation.
 
-Prefer **one canonical art asset** per reusable concept where practical. Activity-specific poses/variants can be added when they teach meaning, but do not regenerate the same animal independently for every screen.
+Prefer content reuse over standalone packs.
+
+Prefer one canonical art/content record per reusable concept.
+
+Prefer deterministic generators and exact restore over ad-hoc randomness.
+
+Prefer child-controlled continuation after meaningful feedback.
+
+Prefer game mechanics that embed learning in a mission over obvious quiz wrappers where practical.
+
+## Open-source reference principles
+
+External projects may be studied for ideas, but Basti’s specifications and architecture remain authoritative.
+
+Useful reference areas:
+- **Kids Math Pup Tutor** — progressive help, accessibility, adaptive Compose layouts
+- **Multiply** — plausible distractors, generator ideas, StateFlow + one-shot effects
+- **Joju Learn** — semantic match groups, Concrete/Pictorial/Abstract, Explore/Recognise/Recall
+- **AI4Kids Android** — child UI ideas and phoneme/audio design reference only
+- **z.Mantra** — accessible touch/audio/movement interaction ideas
+- **Oppia Android** — mature offline learning/state/testing reference
+- **eduActiv8** — curriculum/activity taxonomy reference
+
+Licensing discipline:
+- permissively licensed code may be adapted only with required notices/attribution
+- GPL/unlicensed projects are idea/reference sources unless explicitly approved
+- external artwork/content is not copied merely because the repository is public
+- do not transplant another app’s architecture wholesale
+
+## Agent prompt guidance
+
+Future Astra prompts should normally emphasise:
+- architecture and state
+- deterministic generation
+- durable restore
+- semantic IDs
+- progress/support integration
+- audio ownership
+- lifecycle
+- reusable sequencing/matching/instruction models
+- phoneme/content architecture
+- difficult regression fixes
+
+Future Luna prompts should normally emphasise:
+- bounded Compose UI implementation
+- visual design-system components
+- adaptive layouts
+- accessibility
+- Memory Pairs presentation after the model exists
+- content packs
+- bounded game presentation
+- UI/component tests
+
+Shared prompt rules:
+- existing Basti specs remain authoritative
+- preserve current architecture
+- no timers/lives/streak pressure
+- no second state/progress/audio architecture
+- meaningful distractors where applicable
+- semantic matching, never localized-string equality
+- 2D/2.5D by default
+- support reduced motion
+- do not commit/push unless explicitly requested
+
 ## Reasoning prompts
-Occasionally add unscored follow-ups such as “How did you know?”, “Why do you think that?” or “Can you explain?” after suitable tasks. These prompts encourage reasoning and expressive language and must not become automatic correctness scores.
+
+Occasionally add unscored follow-ups such as:
+- “How did you know?”
+- “Why do you think that?”
+- “Can you explain?”
+
+These encourage reasoning and expressive language and must never become automatic correctness scores.
