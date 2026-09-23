@@ -110,7 +110,9 @@ Human reviews may remain manual for voice quality, natural phrasing, fact credib
 
 ## Stable APK upgrade acceptance (2026-09-23)
 
-Use the persistent-key release stream in README.md, not unrelated hosted-runner debug APKs. On **S24 Ultra**, then **Fire Max**, perform this exact procedure; never uninstall, clear storage or use a downgrade flag as part of the test:
+Status update supplied by the owner on 2026-09-23: **S24 same-key in-place upgrade passed**, versionCode/versionName `1003901 / 1.1.39.1` → `1004501 / 1.1.45.1`, certificate SHA-256 `bea808b0c0b891d73e61b739fd43f361a952d5297892318821b97ce91b553507`. Cleaned celebration artwork (`a8877b5`) was also physically verified on S24. These are supplied physical results, not emulator claims or actions repeated in the Seasons task. Fire Max upgrade and broader new-mode/lifecycle/accessibility checks remain separate acceptance work.
+
+Use the persistent-key release stream in README.md, not unrelated hosted-runner debug APKs. For **Fire Max** acceptance and future upgrade regressions, use this exact procedure; never uninstall, clear storage or use a downgrade flag as part of the test:
 
 1. Record baseline/candidate APK SHA-256, package ID, versionCode/versionName and signing certificate SHA-256 (`apksigner verify --print-certs`). Record the installed code with `adb shell dumpsys package com.bellfamily.bastischool`. To inspect an installed certificate, locate its APK using `adb shell pm path com.bellfamily.bastischool`, copy that base APK to a private local path with `adb pull`, then run apksigner on the copy. These are public certificate checks, not private-key extraction.
 2. Confirm both APKs use `com.bellfamily.bastischool`, the same certificate, and a strictly greater candidate code. Stop on mismatch; preserve the installation/data. Resolve signing history first. A deliberately chosen cross-certificate reinstall is a separate destructive migration, not a passing upgrade test.
