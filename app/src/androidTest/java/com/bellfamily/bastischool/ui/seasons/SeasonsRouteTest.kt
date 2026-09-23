@@ -38,7 +38,7 @@ class SeasonsRouteTest {
             compose.onNodeWithTag("season-name").assertTextEquals("Herbst")
             scenario.onActivity {assertEquals(SeasonIds.AUTUMN,ViewModelProvider(it)[SeasonsViewModel::class.java].selection!!.selected)}
             compose.onNodeWithTag("practice").performScrollTo().performClick();settled()
-            if(current()!!.phase==SessionPhase.COMPLETED) {compose.onNodeWithTag("seasons-again").performScrollTo().performClick();settled()}
+            if(current()!!.phase==SessionPhase.COMPLETED) {compose.onNodeWithTag("seasons-again").assertIsDisplayed().performClick();settled()}
             val unanswered=SessionCheckpoint.encode(current()!!)
             scenario.recreate();settled();assertArrayEquals(unanswered,SessionCheckpoint.encode(current()!!))
             if(!current()!!.current.locked) {

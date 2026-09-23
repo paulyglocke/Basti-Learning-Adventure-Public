@@ -25,7 +25,7 @@ class PrepositionsRouteTest {
             fun current():SessionState? {var result:SessionState?=null;scenario.onActivity {result=ViewModelProvider(it)[PrepositionsViewModel::class.java].state};return result}
             fun settled() {compose.waitUntil(10_000) { var ready=false;scenario.onActivity {val vm=ViewModelProvider(it)[PrepositionsViewModel::class.java];ready=vm.state!=null && !vm.busy};ready }}
             compose.onNodeWithText("Prepositions").performScrollTo().performClick();settled()
-            if(current()!!.phase==SessionPhase.COMPLETED) {compose.onNodeWithTag("again").performScrollTo().performClick();settled()}
+            if(current()!!.phase==SessionPhase.COMPLETED) {compose.onNodeWithTag("again").assertIsDisplayed().performClick();settled()}
             if(!current()!!.current.locked) {
                 if(current()!!.current.answer==AnswerState.RETRY_AVAILABLE) {compose.onNodeWithTag("retry").performScrollTo().performClick();settled()}
                 compose.onNodeWithTag("answer-${current()!!.task.question.correct.value}").performScrollTo().performClick();settled()

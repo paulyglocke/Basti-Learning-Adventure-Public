@@ -66,6 +66,9 @@ Tutorials are persisted only after successful completion of their entire current
 
 Balloon tones share one lazily created AudioContext per web surface. Off/background cancellation stops live oscillators and suspends it; enabled interactions may resume it. No context is created while Off, and celebration remains usable silently.
 
+Native completion uses the same mode table through `AudioMode.allowsCelebrationSound()`: ALL and QUESTIONS permit an explicit balloon pop; OFF rejects it. `CelebrationSound` requires the current completed-session owner, replaces any prior short tone, and has no speech callbacks. MainActivity checks the active completed route/foreground/settings, and cancels on navigation, background, settings, Replay, a new round or phase change. `AndroidPopSound` lazily owns one quiet 45ms ToneGenerator tone, stops/releases on disposal, and never requests audio focus or touches the TTS controller. Compose sends a pop intent only. Optional tone failure cannot block completion; actual loudness and device silence remain physical checks.
+
+
 The following examples describe the original bug and the continuing content rule.
 
 Some visible feedback strings contain emoji, for example:

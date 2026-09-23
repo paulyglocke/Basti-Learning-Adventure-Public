@@ -41,6 +41,7 @@ class VocabularyScreenTest {
     }
     @Test fun allExploreWordsAndSentencesAreReachableWithoutAttempts() {
         show(ContentLanguage.ENGLISH)
+        compose.onNodeWithTag("completion-celebration").assertDoesNotExist()
         VocabularyContent.items.forEach {item ->
             compose.onNodeWithTag("word-${item.id.value}").performScrollTo().performClick()
             compose.onNodeWithTag("vocabulary-word").assertTextEquals(item.text.display.en)
@@ -67,8 +68,9 @@ class VocabularyScreenTest {
             compose.onNodeWithTag("answer-$correct").assertIsNotEnabled()
             compose.onNodeWithTag("vocabulary-next").performScrollTo().performClick()
         }
-        compose.onNodeWithTag("vocabulary-again").performScrollTo().assertIsDisplayed().performClick()
-        compose.onNodeWithTag("vocabulary-home").performScrollTo().assertIsDisplayed().performClick()
+        compose.onNodeWithTag("completion-celebration").assertExists()
+        compose.onNodeWithTag("vocabulary-again").assertIsDisplayed().performClick()
+        compose.onNodeWithTag("vocabulary-home").assertIsDisplayed().performClick()
         compose.runOnIdle {assertEquals(5,current.value.score);assertEquals(1,again);assertEquals(1,home);assertTrue(current.value.progress.first().support.hint)}
     }
     @Test fun germanPictureToWordTenLargeFontCompletionIsReachable() {
@@ -81,8 +83,9 @@ class VocabularyScreenTest {
             compose.onNodeWithTag("answer-${id.value}").performScrollTo().assertTextEquals(VocabularyContent.item(id).text.display.de).performClick()
             compose.onNodeWithTag("vocabulary-next").performScrollTo().performClick()
         }
-        compose.onNodeWithTag("vocabulary-again").performScrollTo().assertIsDisplayed()
-        compose.onNodeWithTag("vocabulary-home").performScrollTo().assertIsDisplayed()
+        compose.onNodeWithTag("completion-celebration").assertExists()
+        compose.onNodeWithTag("vocabulary-again").assertIsDisplayed()
+        compose.onNodeWithTag("vocabulary-home").assertIsDisplayed()
         compose.runOnIdle {assertEquals(10,current.value.score);assertEquals(SessionPhase.COMPLETED,current.value.phase)}
     }
 }

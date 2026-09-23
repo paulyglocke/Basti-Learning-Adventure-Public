@@ -59,8 +59,9 @@ class PrepositionsScreenTest {
             compose.onNodeWithTag("speaker-${correct.value}").assertIsEnabled()
             compose.onNodeWithTag("next").performScrollTo().performClick()
         }
-        compose.onNodeWithTag("again").performScrollTo().assertIsDisplayed().performClick()
-        compose.onNodeWithTag("home").performScrollTo().assertIsDisplayed().performClick()
+        compose.onNodeWithTag("completion-celebration").assertExists()
+        compose.onNodeWithTag("again").assertIsDisplayed().performClick()
+        compose.onNodeWithTag("home").assertIsDisplayed().performClick()
         compose.runOnIdle {assertEquals(5,current.value.score);assertEquals(1,home);assertEquals(1,again)}
     }
     @Test fun germanLargeFontTenQuestionRoundKeepsCompletionReachable() {
@@ -69,9 +70,10 @@ class PrepositionsScreenTest {
             compose.onNodeWithTag("answer-${current.value.task.question.correct.value}").performScrollTo().performClick()
             compose.onNodeWithTag("next").performScrollTo().performClick()
         }
-        compose.onNodeWithTag("replay").performScrollTo().assertIsDisplayed()
-        compose.onNodeWithTag("again").performScrollTo().assertIsDisplayed()
-        compose.onNodeWithTag("home").performScrollTo().assertIsDisplayed()
+        compose.onNodeWithTag("replay").assertIsDisplayed()
+        compose.onNodeWithTag("completion-celebration").assertExists()
+        compose.onNodeWithTag("again").assertIsDisplayed()
+        compose.onNodeWithTag("home").assertIsDisplayed()
         compose.runOnIdle {assertEquals(SessionPhase.COMPLETED,current.value.phase);assertEquals(10,current.value.score)}
     }
 }

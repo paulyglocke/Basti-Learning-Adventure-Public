@@ -37,7 +37,7 @@ class WilmaRouteTest {
             compose.onNodeWithTag("wilma-selected").assertTextEquals("Sonntag")
             compose.onNodeWithTag("wilma-phase-FIND").performScrollTo().performClick();settled()
             if(quiz().current.locked && quiz().phase!=SessionPhase.COMPLETED){compose.onNodeWithTag("wilma-next").performScrollTo().performClick();settled()}
-            if(quiz().phase==SessionPhase.COMPLETED){compose.onNodeWithTag("wilma-again").performScrollTo().performClick();settled()}
+            if(quiz().phase==SessionPhase.COMPLETED){compose.onNodeWithTag("wilma-again").assertIsDisplayed().performClick();settled()}
             if(quiz().current.answer==AnswerState.RETRY_AVAILABLE){compose.onNodeWithTag("wilma-retry").performScrollTo().performClick();settled()}
             val unanswered=SessionCheckpoint.encode(quiz());scenario.recreate();settled();assertArrayEquals(unanswered,SessionCheckpoint.encode(quiz()))
             compose.onNodeWithTag("day-${quiz().task.question.correct.value}").performScrollTo().performClick();settled()
@@ -45,7 +45,7 @@ class WilmaRouteTest {
             compose.onNodeWithText("⚙ Optionen").performClick();compose.onNodeWithText("←").performClick();settled()
             assertArrayEquals(answered,SessionCheckpoint.encode(quiz()))
             compose.onNodeWithTag("wilma-phase-ORDER").performScrollTo().performClick();settled()
-            if(order().completed){compose.onNodeWithTag("wilma-again").performScrollTo().performClick();settled()}
+            if(order().completed){compose.onNodeWithTag("wilma-again").assertIsDisplayed().performClick();settled()}
             if(order().current.answer==AnswerState.RETRY_AVAILABLE){compose.onNodeWithTag("wilma-retry").performScrollTo().performClick();settled()}
             while(order().index<3){compose.onNodeWithTag("order-${WilmaContent.days[order().index].value}").performScrollTo().performClick();settled()}
             val saved=order();scenario.recreate();settled()

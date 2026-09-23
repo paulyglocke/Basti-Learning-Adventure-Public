@@ -38,7 +38,7 @@ class VocabularyRouteTest {
             compose.onNodeWithTag("vocabulary-word").assertTextEquals("Pferd")
             scenario.onActivity {assertEquals(ContentId("animal.horse"),ViewModelProvider(it)[VocabularyViewModel::class.java].selection!!.selected)}
             compose.onNodeWithTag("vocabulary-find").performScrollTo().performClick();settled()
-            if(current()!!.phase==SessionPhase.COMPLETED) {compose.onNodeWithTag("vocabulary-again").performScrollTo().performClick();settled()}
+            if(current()!!.phase==SessionPhase.COMPLETED) {compose.onNodeWithTag("vocabulary-again").assertIsDisplayed().performClick();settled()}
             val unanswered=SessionCheckpoint.encode(current()!!)
             scenario.recreate();settled();assertArrayEquals(unanswered,SessionCheckpoint.encode(current()!!))
             if(!current()!!.current.locked) {

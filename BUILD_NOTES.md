@@ -2,6 +2,71 @@
 
 This file records build/test evidence and should not be treated as a product or architecture specification.
 
+## Shared native completion celebration — 2026-09-23
+
+Continued the interrupted uncommitted celebration implementation, then resumed on `main` at `b3313a3` after the owner's wave 1–3 animal-library commit. Preserved all newer roadmap/README/art commits and existing Kotlin/test changes. No pull/rebase/reset/clean/restore/discard, commit or push; no signing credentials/configuration, version allocation, applicationId, canonical PNGs or legacy source changed.
+
+### Implementation and review
+
+- Legacy audit: six glyph balloons, brief surprises and WebAudio tones existed in `app.js`/`index.html`; native screens had separate inline completion branches. The legacy code/tests remain intact.
+- `NativeCompletionScreen` now shares completion across Prepositions, Seasons Practice, Wilma Find/Before–After/Ordering and Vocabulary practice. Play again/Home/Replay are pinned before the optional scrollable celebration. Explore never shows balloons. Existing mode/fallback actions remain; Wilma's completed seven-day strip/count is retained.
+- Exactly five stable slots rotate a curated semantic pool deterministically by completion ID. A six-second, phase-offset gentle float is shared; one tap starts ~100ms anticipation, then a jump and eight local fading confetti pieces within a 720ms bounded reveal. Settled animals remain visible and have no click action. Repeated captured activation cannot repop. Clipped reward bounds keep decoration away from actions/system insets. Android animator-scale zero simplifies motion; background stops the float and settles a pending reveal.
+- Uses unchanged `Animals/canonical/{dinosaur,snake,crocodile,whale,fish}.png` from `b3313a3`, with canonical semantic IDs/bilingual Vocabulary names. No glyph/emoji reveal remains. `CelebrationArtViewModel` decodes the five images off-thread with sample size 2, retains a bounded Activity-scoped map through configuration recreation, and supplies Compose through `LocalCelebrationArt`. Missing art degrades to the localized name. No asset I/O occurs in Compose. No additional art is needed for this pool; the library's edge/background cleanup still needs visual device review.
+- `CelebrationSound` is a small owner-checked SFX port using existing AudioMode: ALL/QUESTIONS permit a manual pop; OFF blocks it. One lazy quiet 45ms ToneGenerator replaces prior tones, never requests focus or touches TTS. Host navigation/background/settings/Replay/new round/phase/disposal cancel or release it. Compose sends an intent only; optional sound failure cannot block learning.
+- Reward state uses ordinary remember, never rememberSaveable/checkpoints/progress. No session, score, mastery, dedupe, storage or audio-speech contracts were rewritten. A real durable-host unit test completes/persists a round before any pop, then pops/resets/restores and proves unchanged checkpoint bytes and six deduplicated learning records. Optional UI reset after Options/recreation is permitted; restored learning stays silent and locked.
+- Accessibility: localized balloon action labels; revealed canonical animal descriptions; individual keyboard/semantic activation; no popped action; immediately visible navigation at 320×480 and 700×240 dp with German 1.5× font in Compose tests. Five image targets are decoded/rendered in an additional instrumented test. No heavy animation dependency, network, neural TTS, new activity or reward economy.
+- Validation exposed and fixed the removed Wilma completed-strip regression. Old tests now assert completion actions are displayed immediately instead of attempting to scroll their new pinned parent. Keyboard testing explicitly enters keyboard input mode before focus; required experimental test API opt-ins were added. The real-image marker was moved outside cleared semantics. No assertion/test was removed or weakened.
+
+### Final automated validation
+
+All Gradle commands used `JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'` and `ANDROID_HOME='/Users/paulbell/Library/Android/sdk'`.
+
+- Focused JVM selection: `./gradlew testDebugUnitTest --tests 'com.bellfamily.bastischool.ui.common.*' --tests 'com.bellfamily.bastischool.audio.CelebrationSoundTest'` — **9 passed, 0 failures/errors/skips**. The first combined run subsequently failed instrumented-test compilation on an opt-in, fixed before the passing emulator runs. All nine are also included in the final full JVM result below.
+- `./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.bellfamily.bastischool.ui.common.CompletionCelebrationTest --console=plain` — **5 passed, 0 failures/skips**, BUILD SUCCESSFUL (40s).
+- `./gradlew testDebugUnitTest assembleDebug lintDebug connectedDebugAndroidTest --console=plain` — **BUILD SUCCESSFUL (2m 52s)**; **247 JVM passed** and **21 emulator tests passed**, all **0 failures/errors/skips**. Includes all existing Prepositions, Seasons, Wilma and Vocabulary suites. Emulator: `Medium_Phone_API_35`, Android 15, headless/audio disabled.
+- Final lint XML: **0 errors, 3 warnings, 2 informational findings**. Warnings: UnusedAttribute 2 (existing manifest), SetJavaScriptEnabled 1 (legacy surface). Information: AutoboxingStateCreation 2 (existing shell settings). No suppression/baseline/rule changes. Existing VIBRATOR_SERVICE compiler deprecation remains.
+- `npm test -- --reporter=line` — **55 passed (54.3s)**.
+- `python3 -m unittest discover -s scripts -p 'test_*.py'` — **5 passed**. Existing `python3 scripts/check_distribution_build.py` — **6 passed** during this task (missing credentials for APK/bundle, invalid/overflow code rejection, maximum valid code, guard in release task graph). No credentials fabricated or signed distribution generated.
+- `git diff --check` and untracked Kotlin whitespace checks passed. Scope checks prove no diff in signing/version files, scripts, application assets, roadmap or art direction. No staged changes.
+- Debug APK: `app/build/outputs/apk/debug/app-debug.apk`; SHA-256 **d1d80a8071bb4582a6b65090effe58f07fab9e56df49b640376ae236d200a491**. Ordinary local debug signing; not a distribution/physical-upgrade acceptance artifact.
+
+### Exact changed-file inventory
+
+27 files: 19 modified tracked files, 8 new Kotlin/test files, all unstaged on `main` at `b3313a3`. No commit/push. Suggested message: `feat: add shared native completion celebration`.
+
+- `BACKLOG.md`
+- `BUILD_NOTES.md`
+- `NATIVE_ARCHITECTURE_SPEC.md`
+- `SESSION_HANDOFF.md`
+- `UX_NAVIGATION_SPEC.md`
+- `VOICE_AUDIO_SPEC.md`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/common/CompletionCelebrationTest.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/prepositions/PrepositionsRouteTest.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/prepositions/PrepositionsScreenTest.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/seasons/SeasonsRouteTest.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/seasons/SeasonsScreenTest.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/vocabulary/VocabularyRouteTest.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/vocabulary/VocabularyScreenTest.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/wilma/WilmaRouteTest.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/wilma/WilmaScreenTest.kt`
+- `app/src/main/java/com/bellfamily/bastischool/MainActivity.kt`
+- `app/src/main/java/com/bellfamily/bastischool/audio/CelebrationSound.kt`
+- `app/src/main/java/com/bellfamily/bastischool/audio/android/AndroidPopSound.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/common/CelebrationArtViewModel.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/common/CelebrationState.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/common/NativeCompletionCelebration.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/prepositions/PrepositionsScreen.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/seasons/SeasonsScreen.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/vocabulary/VocabularyScreen.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/wilma/WilmaScreen.kt`
+- `app/src/test/java/com/bellfamily/bastischool/audio/CelebrationSoundTest.kt`
+- `app/src/test/java/com/bellfamily/bastischool/ui/common/CelebrationStateTest.kt`
+
+### Physical acceptance still required
+
+On **S24 Ultra and Fire Max**, validate airplane-mode operation; five visible non-obstructing balloons; calm float; single pop; recognizable animal jump/settle; brief local confetti; no repop; immediately usable Play again/Home/Replay; Sound Off silence and optional tone loudness; EN/DE TalkBack/keyboard labels; portrait and both landscapes; larger text, touch targets, insets and image edges; Options/Back/background/return; process recreation without duplicate completion/progress; next activity; same-key higher-version signed install-over-existing-app retaining settings/progress. Emulator has audio disabled and does not prove audible or physical acceptance. Do not uninstall/wipe as an upgrade test.
+
+
 
 
 

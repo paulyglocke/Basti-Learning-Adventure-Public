@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
+import com.bellfamily.bastischool.ui.common.NativeCompletionScreen
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -27,9 +28,17 @@ import com.bellfamily.bastischool.learning.session.*
 fun PrepositionsScreen(state: SessionState?, language: ContentLanguage, busy: Boolean, saveFailed: Boolean,
                        audioFailed: Boolean, onAction: (SessionAction) -> Unit, onOption: (ContentId) -> Unit,
                        onRetrySave: () -> Unit, onAgain: () -> Unit, onIntroduction: () -> Unit,
-                       onHome: () -> Unit, onLegacy: () -> Unit, modifier: Modifier = Modifier) {
+                       onHome: () -> Unit, onLegacy: () -> Unit, modifier: Modifier = Modifier, onPop: (String) -> Unit = {}) {
     val de = language == ContentLanguage.GERMAN
     fun t(en: String, german: String) = if (de) german else en
+    if(state?.phase == SessionPhase.COMPLETED) {
+        NativeCompletionScreen(state.plan.id.value, language, state.plan.completionText.display[language],
+            !busy && !saveFailed && state.language == language, "", {onAction(SessionAction.Replay(state.task.id))},
+            onAgain, onHome, onPop, modifier, saveFailed, onRetrySave, audioFailed) {
+            OutlinedButton(onClick = onLegacy, modifier = Modifier.heightIn(min = 48.dp).testTag("legacy")) {Text(t("Use previous version", "Bisherige Version öffnen"))}
+        }
+        return
+    }
     Column(modifier.fillMaxSize().background(Color(0xFFEAF7FC)).verticalScroll(rememberScrollState()).padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)) {
         if (saveFailed) {
@@ -49,11 +58,7 @@ fun PrepositionsScreen(state: SessionState?, language: ContentLanguage, busy: Bo
                 style = MaterialTheme.typography.headlineSmall, modifier = Modifier.testTag("progress"))
             Button(onClick = { onAction(SessionAction.Replay(task.id)) }, enabled = ready,
                 modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("replay")) { Text(t("Listen again", "Noch einmal hören")) }
-            if (state.phase == SessionPhase.COMPLETED) {
-                Text(state.plan.completionText.display[language])
-                Text(t("You finished ${state.plan.tasks.size} questions.", "Du hast ${state.plan.tasks.size} Fragen geschafft."))
-                Button(onClick = onAgain, enabled = ready, modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("again")) { Text(t("Play again", "Nochmal spielen")) }
-            } else {
+            if (state.phase == SessionPhase.ACTIVE) {
                 Text(task.question.instruction.display[language], style = MaterialTheme.typography.titleLarge)
                 BoxWithConstraints {
                     if (maxWidth >= 640.dp) Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {

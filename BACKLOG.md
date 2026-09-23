@@ -15,13 +15,14 @@ Already implemented and not active backlog unless a regression is found:
 - native Seasons Explore/Practice
 - native Wilma Explore/Find Day/Before-After/Ordering
 - native Vocabulary starter slice
+- shared native completion celebration across the four native activities (automated evidence in BUILD_NOTES.md; physical acceptance remains below)
 - stable external distribution signing and monotonic CI versioning
 - Samsung landscape safe-inset fix
 - legacy correctness/audio/session fixes already marked complete in historical notes
 
 ## P0 — trusted daily build
 
-- Finish and validate the shared native completion celebration: balloons, one-time pop, animal reveal, brief local confetti, Sound Off-aware SFX, immediate Continue/Home, no progress/session coupling.
+- Physically accept the implemented shared native completion celebration: five balloons, one-time pop, canonical animal reveal, brief local confetti, Sound Off-aware SFX, immediate Continue/Home, no progress/session coupling. Verify original artwork edges and motion on both devices.
 - Produce a newer stable-signed distribution APK and prove **in-place `adb install -r` upgrade** over the current permanent-key S24 installation while preserving settings/progress/session behavior.
 - Run one batched S24 Ultra acceptance sweep across Prepositions, Seasons, Wilma and Vocabulary:
   - airplane-mode EN/DE and missing-voice behavior

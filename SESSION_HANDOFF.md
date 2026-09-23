@@ -1,6 +1,17 @@
 # Session handoff — 2026-09-23
 
-## Current checkpoint — Vocabulary validated; stable signing setup ready
+## Current checkpoint — shared native completion celebration
+
+Resumed the existing uncommitted Kotlin/test implementation on `main` at `b3313a3`. Preserved that animal-art commit and the newer roadmap/README commits; no pull, reset, discard, commit or push. Signing configuration, credentials, applicationId and version allocation are unchanged.
+
+All four native activities now share pinned completion actions and five optional balloons: Prepositions, Seasons Practice, Wilma practice/order and Vocabulary practice. Explore remains unchanged. Pop is one-shot; a brief local burst reveals a canonical dinosaur/snake/crocodile/whale/fish PNG, jumps then settles. Wilma retains its completed seven-day sequence. All images reuse the committed library unchanged; the previously implemented glyph reveal is replaced. A small Activity-scoped artwork owner decodes five images off-thread once; Compose renders only.
+
+Reward state is ordinary in-memory Compose state, not a session/progress field. Restoring completion may reset balloons without replaying narration or adding progress. Completion is persisted independently. The optional quiet native pop tone respects ALL/QUESTIONS/OFF through a separate owned SFX policy port; Compose does not own playback and TTS ownership is unchanged. Background/navigation/new round/Replay cancel tones; animation-scale zero simplifies motion.
+
+Validation: **9 focused JVM, 5 focused Compose, 247 full JVM, 21 full emulator and 55 browser tests passed**; build passed; lint **0 errors / 3 warnings / 2 information**. Version-policy tests **5/5** and no-secret signing guards **6/6** passed. Diff/new-file whitespace checks passed. See the newest BUILD_NOTES.md entry for exact commands, APK checksum and all 27 changed files. Remaining acceptance: S24 Ultra/Fire Max, airplane mode, five targets clear of controls/insets, calm float/pop/jump/settle/local confetti, repeated taps, EN/DE accessibility, Sound Off/Replay/missing voices, portrait/both landscapes/large fonts, Options/Back/background/return, process recreation without duplicate progress, next activity, and same-key higher-code APK upgrade preserving settings/progress. The library README requests visual edge cleanup review; assets were not altered. No additional animal artwork is required for this five-animal pool. Broader animal-art integration into Vocabulary is outside this task.
+
+
+## Previous checkpoint — Vocabulary validated; stable signing setup ready
 
 Started from clean `main` at `0ac4711`, which commits native Wilma. Vocabulary work remains **uncommitted**; do not commit/push automatically or discard it. The content/audio/session/progress foundations and all previous native/legacy activities remain intact.
 

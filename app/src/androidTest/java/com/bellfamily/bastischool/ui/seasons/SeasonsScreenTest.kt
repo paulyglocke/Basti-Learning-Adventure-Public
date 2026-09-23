@@ -49,6 +49,7 @@ class SeasonsScreenTest {
     }
     @Test fun exploreUsesAllCanonicalNamesDescriptionsAndUncroppedArtwork() {
         show(ContentLanguage.ENGLISH)
+        compose.onNodeWithTag("completion-celebration").assertDoesNotExist()
         SeasonIds.canonicalOrder.forEach {id ->
             compose.onNodeWithTag("season-${id.value}").performScrollTo().performClick()
             compose.onNodeWithTag("season-name").assertTextEquals(SeasonsContent.season(id).text.display.en)
@@ -75,8 +76,9 @@ class SeasonsScreenTest {
             compose.onNodeWithTag("answer-$correct").assertIsNotEnabled()
             compose.onNodeWithTag("seasons-next").performScrollTo().performClick()
         }
-        compose.onNodeWithTag("seasons-again").performScrollTo().assertIsDisplayed().performClick()
-        compose.onNodeWithTag("seasons-home").performScrollTo().assertIsDisplayed().performClick()
+        compose.onNodeWithTag("completion-celebration").assertExists()
+        compose.onNodeWithTag("seasons-again").assertIsDisplayed().performClick()
+        compose.onNodeWithTag("seasons-home").assertIsDisplayed().performClick()
         compose.runOnIdle {assertEquals(5,current.value.score);assertEquals(1,again);assertEquals(1,home)}
     }
     @Test fun germanLargeFontTenQuestionCompletionIsReachable() {
@@ -88,8 +90,9 @@ class SeasonsScreenTest {
             compose.onNodeWithTag("answer-${current.value.task.question.correct.value}").performScrollTo().performClick()
             compose.onNodeWithTag("seasons-next").performScrollTo().performClick()
         }
-        compose.onNodeWithTag("seasons-again").performScrollTo().assertIsDisplayed()
-        compose.onNodeWithTag("seasons-home").performScrollTo().assertIsDisplayed()
+        compose.onNodeWithTag("completion-celebration").assertExists()
+        compose.onNodeWithTag("seasons-again").assertIsDisplayed()
+        compose.onNodeWithTag("seasons-home").assertIsDisplayed()
         compose.runOnIdle {assertEquals(10,current.value.score);assertEquals(SessionPhase.COMPLETED,current.value.phase)}
     }
 }

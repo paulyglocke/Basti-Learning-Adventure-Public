@@ -67,6 +67,8 @@ The predictable micro-flow is **Listen → Try/Play → Celebrate → Finished**
 | Next / Continue | Advances only through a valid state transition, once per activation. After completion, Continue starts the next recommended module or another round as labelled, with a new session identity. It must not silently create an endless loop. |
 | Completion | Calm acknowledgement, accessible summary/replay, and immediately usable Continue and Home. Do not require balloon popping, animation completion or reward interaction to leave. |
 
+The implemented shared native completion layout keeps Play again, Home and Replay outside the scrollable reward/summary area. Short landscape reduces the reward space rather than placing navigation below balloons. Optional animal reveals may reset after leaving/recreating completion; completion and saved progress do not reset. Existing mode/fallback controls and Wilma's completed sequence remain below the reward.
+
 Navigation must not strand the child in loading, missing-content or audio-failure states. Show a simple retry/return action and retain committed progress. Long-term audio requests follow the shared audio policy; Replay availability does not mean bypassing an explicitly chosen Sound Off setting. Resolve the detailed all/questions/off policy in VOICE_AUDIO_SPEC.md before implementation, and test that contract consistently across screens.
 
 Changing language updates visible and spoken content together, stops stale narration and preserves task identity where meaning remains valid. If a language-specific task cannot be translated in place (for example an initial-sound question), restart that task explicitly without recording a wrong answer. Configuration/recovery behavior follows NATIVE_ARCHITECTURE_SPEC.md.

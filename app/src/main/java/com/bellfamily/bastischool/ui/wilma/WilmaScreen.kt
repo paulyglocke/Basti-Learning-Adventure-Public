@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
+import com.bellfamily.bastischool.ui.common.NativeCompletionScreen
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -25,10 +26,27 @@ fun WilmaScreen(selection:WilmaSelection?,quiz:SessionState?,ordering:WilmaOrder
     images:Map<String,ImageBitmap>,busy:Boolean,saveFailed:Boolean,imageFailed:Boolean,audioFailed:Boolean,
     onPhase:(WilmaPhase)->Unit,onDay:(ContentId)->Unit,onReplay:()->Unit,onOption:(ContentId)->Unit,
     onAction:(SessionAction)->Unit,onOrder:(WilmaOrderAction)->Unit,onAgain:()->Unit,onRetry:()->Unit,onHome:()->Unit,
-    modifier:Modifier=Modifier) {
+    modifier:Modifier=Modifier,onPop:(String)->Unit={}) {
     val de=language==ContentLanguage.GERMAN
     fun t(en:String,german:String)=if(de)german else en
     val ready=!busy && !saveFailed && selection!=null
+    val completedOrder = selection?.phase == WilmaPhase.ORDER && ordering?.completed == true
+    val completedQuiz = selection?.phase in listOf(WilmaPhase.FIND, WilmaPhase.RELATIONS) && quiz?.phase == SessionPhase.COMPLETED
+    if(completedOrder || completedQuiz) {
+        val id = if(completedOrder) ordering!!.id.value else quiz!!.plan.id.value
+        val sameLanguage = (if(completedOrder) ordering!!.language else quiz!!.language) == language
+        NativeCompletionScreen(id, language, if(completedOrder) t("You put the whole week in order!","Du hast die ganze Woche geordnet!") else quiz!!.plan.completionText.display[language],
+            ready && sameLanguage, "wilma-", onReplay, onAgain, onHome, onPop, modifier, saveFailed, onRetry, audioFailed) {
+            if(completedOrder) {
+                Text(t("7 of 7 days placed","7 von 7 Tagen eingeordnet"),modifier=Modifier.testTag("wilma-placed-count"))
+                WilmaStrip(images,language,ordering!!.placed,null,emptySet(),{},prefix="placed")
+            }
+            WilmaPhase.entries.forEach {phase ->
+                OutlinedButton(onClick = {onPhase(phase)}, enabled = ready, modifier = Modifier.heightIn(min = 56.dp).testTag("wilma-phase-${phase.name}")) {Text(phase.title.display[language])}
+            }
+        }
+        return
+    }
     Column(modifier.fillMaxSize().background(Color(0xFFF1F8E9)).verticalScroll(rememberScrollState()).padding(16.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
         Text(t("Wilma’s Week","Wilmas Woche"),style=MaterialTheme.typography.headlineMedium)
         WilmaPhase.entries.chunked(2).forEach {row -> Row(horizontalArrangement=Arrangement.spacedBy(8.dp)) {row.forEach {phase ->
@@ -53,10 +71,7 @@ fun WilmaScreen(selection:WilmaSelection?,quiz:SessionState?,ordering:WilmaOrder
                 }
                 WilmaPhase.FIND,WilmaPhase.RELATIONS -> if(quiz!=null) {
                     val canAct=ready && quiz.language==language
-                    if(quiz.phase==SessionPhase.COMPLETED) {
-                        Text(quiz.plan.completionText.display[language],modifier=Modifier.testTag("wilma-complete"))
-                        Button(onClick=onAgain,enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("wilma-again")){Text(t("Play again","Nochmal spielen"))}
-                    } else {
+                    if(quiz.phase==SessionPhase.ACTIVE) {
                         Text(t("Question ${quiz.index+1} of ${quiz.plan.tasks.size}","Frage ${quiz.index+1} von ${quiz.plan.tasks.size}"))
                         Text(quiz.task.question.instruction.display[language],style=MaterialTheme.typography.headlineSmall,modifier=Modifier.testTag("wilma-prompt"))
                         Text(t("Swipe along Wilma to find all seven days.","Wische an Wilma entlang, um alle sieben Tage zu finden."))
@@ -78,10 +93,7 @@ fun WilmaScreen(selection:WilmaSelection?,quiz:SessionState?,ordering:WilmaOrder
                     Text(WilmaOrder.prompt(ordering).display[language],style=MaterialTheme.typography.headlineSmall,modifier=Modifier.testTag("wilma-prompt"))
                     Text(t("${ordering.index} of 7 days placed","${ordering.index} von 7 Tagen eingeordnet"),modifier=Modifier.testTag("wilma-placed-count"))
                     WilmaStrip(images,language,ordering.placed,null,emptySet(),{},prefix="placed",showTail=ordering.completed)
-                    if(ordering.completed) {
-                        Text(t("You put the whole week in order!","Du hast die ganze Woche geordnet!"),modifier=Modifier.testTag("wilma-complete"))
-                        Button(onClick=onAgain,enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("wilma-again")){Text(t("Play again","Nochmal spielen"))}
-                    } else {
+                    if(!ordering.completed) {
                         Text(t("Tap the next day below. The days already placed stay on Wilma.","Tippe unten auf den nächsten Tag. Die eingeordneten Tage bleiben an Wilma."))
                         ordering.choices.filter {it !in ordering.placed}.chunked(2).forEach {row -> Row(horizontalArrangement=Arrangement.spacedBy(8.dp)) {row.forEach {id ->
                             Column(Modifier.weight(1f)) {

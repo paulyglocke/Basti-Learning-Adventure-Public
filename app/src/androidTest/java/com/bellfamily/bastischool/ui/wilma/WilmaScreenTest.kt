@@ -50,6 +50,7 @@ class WilmaScreenTest {
     @Test fun sevenDayTargetsSelectBilingualNamesAndHeadIsNotADay() {
         show(WilmaPhase.EXPLORE)
         compose.onNodeWithTag("wilma-head-day").assert(hasNoClickAction())
+        compose.onNodeWithTag("completion-celebration").assertDoesNotExist()
         WilmaContent.days.forEach {id ->
             compose.onNodeWithTag("day-${id.value}").performScrollTo().performClick()
             compose.onNodeWithTag("wilma-selected").assertTextEquals(WilmaContent.day(id).text.display.en)
@@ -73,8 +74,9 @@ class WilmaScreenTest {
             compose.onNodeWithTag("day-${quiz.value.task.question.correct.value}").assertIsNotEnabled()
             compose.onNodeWithTag("wilma-next").performScrollTo().performClick()
         }
-        compose.onNodeWithTag("wilma-again").performScrollTo().assertIsDisplayed().performClick()
-        compose.onNodeWithTag("wilma-home").performScrollTo().assertIsDisplayed().performClick()
+        compose.onNodeWithTag("completion-celebration").assertExists()
+        compose.onNodeWithTag("wilma-again").assertIsDisplayed().performClick()
+        compose.onNodeWithTag("wilma-home").assertIsDisplayed().performClick()
         compose.runOnIdle {assertEquals(5,quiz.value.score);assertEquals(1,again);assertEquals(1,home)}
     }
     @Test fun germanBeforeAfterTenRoundLargeTextCompletes() {
@@ -84,8 +86,9 @@ class WilmaScreenTest {
             compose.onNodeWithTag("wilma-next").performScrollTo().performClick()
         }
         compose.onNodeWithTag("wilma-complete").assertExists()
-        compose.onNodeWithTag("wilma-again").performScrollTo().assertIsDisplayed()
-        compose.onNodeWithTag("wilma-home").performScrollTo().assertIsDisplayed()
+        compose.onNodeWithTag("completion-celebration").assertExists()
+        compose.onNodeWithTag("wilma-again").assertIsDisplayed()
+        compose.onNodeWithTag("wilma-home").assertIsDisplayed()
     }
     @Test fun germanOrderingLargeTextPreservesPlacedDaysAfterMistakeAndCompletes() {
         show(WilmaPhase.ORDER,ContentLanguage.GERMAN,large=true)
@@ -98,8 +101,9 @@ class WilmaScreenTest {
             compose.onNodeWithTag("placed-${id.value}").assertExists()
         }
         compose.onNodeWithTag("wilma-placed-count").assertTextEquals("7 von 7 Tagen eingeordnet")
-        compose.onNodeWithTag("wilma-again").performScrollTo().assertIsDisplayed()
-        compose.onNodeWithTag("wilma-home").performScrollTo().assertIsDisplayed()
+        compose.onNodeWithTag("completion-celebration").assertExists()
+        compose.onNodeWithTag("wilma-again").assertIsDisplayed()
+        compose.onNodeWithTag("wilma-home").assertIsDisplayed()
         compose.runOnIdle {assertTrue(ordering.value.completed);assertEquals(2,ordering.value.steps.first().attempts)}
     }
 }

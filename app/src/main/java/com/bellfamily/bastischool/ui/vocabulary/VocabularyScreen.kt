@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
+import com.bellfamily.bastischool.ui.common.NativeCompletionScreen
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -21,9 +22,21 @@ import com.bellfamily.bastischool.learning.vocabulary.*
 fun VocabularyScreen(selection:VocabularySelection?,state:SessionState?,language:ContentLanguage,
     busy:Boolean,saveFailed:Boolean,audioFailed:Boolean,onSelect:(ContentId)->Unit,onPhase:(VocabularyPhase)->Unit,
     onReplay:()->Unit,onExample:()->Unit,onAction:(SessionAction)->Unit,onOption:(ContentId)->Unit,
-    onAgain:()->Unit,onRetry:()->Unit,onHome:()->Unit,modifier:Modifier=Modifier) {
+    onAgain:()->Unit,onRetry:()->Unit,onHome:()->Unit,modifier:Modifier=Modifier,onPop:(String)->Unit={}) {
     fun t(en:String,de:String)=if(language==ContentLanguage.GERMAN)de else en
     val ready=!busy && !saveFailed && selection!=null
+    if(selection != null && selection.phase != VocabularyPhase.EXPLORE && state?.phase == SessionPhase.COMPLETED) {
+        NativeCompletionScreen(state.plan.id.value, language, state.plan.completionText.display[language],
+            ready && state.language == language, "vocabulary-", onReplay, onAgain, onHome, onPop,
+            modifier, saveFailed, onRetry, audioFailed) {
+            VocabularyPhase.entries.forEach {phase ->
+                OutlinedButton({onPhase(phase)}, enabled = ready, modifier = Modifier.heightIn(min = 56.dp).testTag("vocabulary-${phase.name.lowercase()}")) {
+                    Text(when(phase) {VocabularyPhase.EXPLORE -> t("Learn words","Wörter kennenlernen"); VocabularyPhase.FIND -> t("Find the word","Finde das Wort"); VocabularyPhase.NAME -> t("What is it?","Was ist das?")})
+                }
+            }
+        }
+        return
+    }
     Column(modifier.fillMaxSize().background(Color(0xFFEAF7FC)).verticalScroll(rememberScrollState()).padding(16.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
         Text(t("Vocabulary Booster","Wortschatz"),style=MaterialTheme.typography.headlineMedium)
         VocabularyPhase.entries.forEach { phase ->
@@ -54,10 +67,7 @@ fun VocabularyScreen(selection:VocabularySelection?,state:SessionState?,language
             Text(if(state.phase==SessionPhase.COMPLETED)t("Adventure complete!","Abenteuer geschafft!") else
                 t("Question ${state.index+1} of ${state.plan.tasks.size}","Frage ${state.index+1} von ${state.plan.tasks.size}"),style=MaterialTheme.typography.headlineSmall)
             Button(onReplay,enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("vocabulary-replay")){Text(t("Listen again","Noch einmal hören"))}
-            if(state.phase==SessionPhase.COMPLETED) {
-                Text(state.plan.completionText.display[language])
-                Button(onAgain,enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("vocabulary-again")){Text(t("Play again","Nochmal spielen"))}
-            } else {
+            if(state.phase==SessionPhase.ACTIVE) {
                 Text(state.task.question.instruction.display[language],style=MaterialTheme.typography.titleLarge)
                 if(selection.phase==VocabularyPhase.NAME) AnimalPicture(VocabularyContent.item(state.task.question.correct),language,Modifier.fillMaxWidth())
                 state.task.question.choices.chunked(2).forEach { row ->

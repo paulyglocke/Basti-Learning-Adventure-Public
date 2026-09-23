@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
+import com.bellfamily.bastischool.ui.common.NativeCompletionScreen
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -42,10 +43,18 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
                   busy: Boolean, saveFailed: Boolean, imageFailed: Boolean, audioFailed: Boolean,
                   onSelect: (ContentId) -> Unit, onPhase: (SeasonsPhase) -> Unit, onReplay: () -> Unit,
                   onAction: (SessionAction) -> Unit, onOption: (ContentId) -> Unit, onAgain: () -> Unit,
-                  onRetry: () -> Unit, onHome: () -> Unit, modifier: Modifier = Modifier) {
+                  onRetry: () -> Unit, onHome: () -> Unit, modifier: Modifier = Modifier, onPop: (String) -> Unit = {}) {
     val de=language==ContentLanguage.GERMAN
     fun t(en:String,german:String)=if(de)german else en
     val ready=!busy && !saveFailed && selection!=null
+    if(selection?.phase == SeasonsPhase.PRACTICE && state?.phase == SessionPhase.COMPLETED) {
+        NativeCompletionScreen(state.plan.id.value, language, state.plan.completionText.display[language],
+            ready && state.language == language, "seasons-", onReplay, onAgain, onHome, onPop,
+            modifier, saveFailed, onRetry, audioFailed) {
+            OutlinedButton(onClick = {onPhase(SeasonsPhase.EXPLORE)}, enabled = ready, modifier = Modifier.heightIn(min = 56.dp).testTag("learn")) {Text(t("Learn", "Lernen"))}
+        }
+        return
+    }
     Column(modifier.fillMaxSize().background(Color(0xFFEAF7FC)).verticalScroll(rememberScrollState()).padding(16.dp), verticalArrangement=Arrangement.spacedBy(12.dp)) {
         Text(t("Seasons", "Jahreszeiten"),style=MaterialTheme.typography.headlineMedium)
         Row(horizontalArrangement=Arrangement.spacedBy(8.dp)) {
@@ -88,10 +97,7 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
                 else t("Question ${state.index+1} of ${state.plan.tasks.size}","Frage ${state.index+1} von ${state.plan.tasks.size}"),
                 style=MaterialTheme.typography.headlineSmall,modifier=Modifier.testTag("seasons-progress"))
             Button(onClick=onReplay,enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-replay")) {Text(t("Listen again","Noch einmal hören"))}
-            if(state.phase==SessionPhase.COMPLETED) {
-                Text(state.plan.completionText.display[language])
-                Button(onClick=onAgain,enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-again")) {Text(t("Play again","Nochmal spielen"))}
-            } else {
+            if(state.phase==SessionPhase.ACTIVE) {
                 Text(task.question.instruction.display[language],style=MaterialTheme.typography.titleLarge)
                 BoxWithConstraints {
                     if(maxWidth>=700.dp) Row(horizontalArrangement=Arrangement.spacedBy(16.dp)) {

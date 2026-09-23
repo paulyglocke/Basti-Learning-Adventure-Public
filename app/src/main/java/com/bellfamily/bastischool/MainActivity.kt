@@ -75,6 +75,16 @@ import com.bellfamily.bastischool.ui.prepositions.PrepositionsScreen
 import com.bellfamily.bastischool.ui.seasons.*
 import com.bellfamily.bastischool.ui.wilma.*
 import com.bellfamily.bastischool.ui.vocabulary.*
+import androidx.compose.runtime.CompositionLocalProvider
+import com.bellfamily.bastischool.ui.common.CelebrationArtViewModel
+import com.bellfamily.bastischool.ui.common.LocalCelebrationArt
+import com.bellfamily.bastischool.audio.AudioMode
+import com.bellfamily.bastischool.audio.CelebrationSound
+import com.bellfamily.bastischool.audio.android.AndroidPopSound
+import com.bellfamily.bastischool.learning.session.SessionPhase
+import com.bellfamily.bastischool.learning.seasons.SeasonsPhase
+import com.bellfamily.bastischool.learning.vocabulary.VocabularyPhase
+import com.bellfamily.bastischool.learning.wilma.WilmaPhase
 import com.bellfamily.bastischool.learning.models.ContentLanguage
 
 private val Sky = Color(0xFF79CEF7)
@@ -114,6 +124,7 @@ private val homeCards = listOf(
 )
 
 class MainActivity : ComponentActivity() {
+    private val celebrationSound = CelebrationSound(AndroidPopSound())
     private lateinit var nativeSeasons: SeasonsViewModel
     private lateinit var nativeVocabulary: VocabularyViewModel
     private lateinit var nativeWilma: WilmaViewModel
@@ -174,7 +185,8 @@ class MainActivity : ComponentActivity() {
                 speech.initialise(status == TextToSpeech.SUCCESS, installed)
             }
         }
-        setContent { BastiApp() }
+        val celebrationArt = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[CelebrationArtViewModel::class.java]
+        setContent { CompositionLocalProvider(LocalCelebrationArt provides celebrationArt.images) { BastiApp() } }
     }
 
     @Composable
@@ -251,39 +263,66 @@ class MainActivity : ComponentActivity() {
                         ShellScreen.VOCABULARY -> VocabularyScreen(nativeVocabulary.selection, nativeVocabulary.quiz,
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeVocabulary.busy, nativeVocabulary.saveFailed, nativeVocabulary.audioFailed,
-                            nativeVocabulary::select, nativeVocabulary::phase, nativeVocabulary::replay, nativeVocabulary::example,
-                            nativeVocabulary::action, nativeVocabulary::option, nativeVocabulary::again, nativeVocabulary::retry,
-                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding))
+                            nativeVocabulary::select, { celebrationSound.cancel(); nativeVocabulary.phase(it) }, { celebrationSound.cancel(); nativeVocabulary.replay() }, nativeVocabulary::example,
+                            nativeVocabulary::action, nativeVocabulary::option, { celebrationSound.cancel(); nativeVocabulary.again() }, nativeVocabulary::retry,
+                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration)
                         ShellScreen.WILMA -> WilmaScreen(nativeWilma.selection, nativeWilma.quiz, nativeWilma.ordering,
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeWilma.images, nativeWilma.busy, nativeWilma.saveFailed, nativeWilma.imageFailed, nativeWilma.audioFailed,
-                            nativeWilma::phase, nativeWilma::select, nativeWilma::replay, nativeWilma::option,
-                            nativeWilma::action, nativeWilma::orderAction, nativeWilma::again, nativeWilma::retry,
-                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding))
+                            { celebrationSound.cancel(); nativeWilma.phase(it) }, nativeWilma::select, { celebrationSound.cancel(); nativeWilma.replay() }, nativeWilma::option,
+                            nativeWilma::action, nativeWilma::orderAction, { celebrationSound.cancel(); nativeWilma.again() }, nativeWilma::retry,
+                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration)
                         ShellScreen.SEASONS -> SeasonsScreen(nativeSeasons.selection, nativeSeasons.state,
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeSeasons.artwork, nativeSeasons.busy, nativeSeasons.saveFailed, nativeSeasons.imageFailed, nativeSeasons.audioFailed,
-                            nativeSeasons::select, nativeSeasons::phase, nativeSeasons::replay, nativeSeasons::action,
-                            nativeSeasons::option, nativeSeasons::again, nativeSeasons::retry,
-                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding))
+                            nativeSeasons::select, { celebrationSound.cancel(); nativeSeasons.phase(it) }, { celebrationSound.cancel(); nativeSeasons.replay() }, nativeSeasons::action,
+                            nativeSeasons::option, { celebrationSound.cancel(); nativeSeasons.again() }, nativeSeasons::retry,
+                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration)
                         ShellScreen.PREPOSITIONS -> PrepositionsScreen(
                             nativePositions.state, if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativePositions.busy, nativePositions.saveFailed, nativePositions.audioFailed,
-                            nativePositions::action, nativePositions::option, nativePositions::retrySave,
-                            nativePositions::again, nativePositions::introduction,
+                            { celebrationSound.cancel(); nativePositions.action(it) }, nativePositions::option, nativePositions::retrySave,
+                            { celebrationSound.cancel(); nativePositions.again() }, nativePositions::introduction,
                             onHome = { changeRoute(navigation.home()) },
                             onLegacy = {
                                 checkpoint = LegacyCheckpoint(); restoredSession = null
                                 changeRoute(navigation.openActivity("positions"))
-                            }, modifier = Modifier.padding(padding))
+                            }, modifier = Modifier.padding(padding), onPop = ::popCelebration)
                     }
                 }
             }
         }
     }
 
+    private fun popCelebration(completion: String) {
+        if(!foreground) return
+        val unavailable = when(navigation.screen) {
+            ShellScreen.PREPOSITIONS -> nativePositions.busy || nativePositions.saveFailed
+            ShellScreen.SEASONS -> nativeSeasons.busy || nativeSeasons.saveFailed
+            ShellScreen.WILMA -> nativeWilma.busy || nativeWilma.saveFailed
+            ShellScreen.VOCABULARY -> nativeVocabulary.busy || nativeVocabulary.saveFailed
+            else -> true
+        }
+        if(unavailable) return
+        val current = when(navigation.screen) {
+            ShellScreen.PREPOSITIONS -> nativePositions.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
+            ShellScreen.SEASONS -> if(nativeSeasons.selection?.phase == SeasonsPhase.PRACTICE) nativeSeasons.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value else null
+            ShellScreen.VOCABULARY -> if(nativeVocabulary.selection?.phase != VocabularyPhase.EXPLORE) nativeVocabulary.quiz?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value else null
+            ShellScreen.WILMA -> when(nativeWilma.selection?.phase) {
+                WilmaPhase.ORDER -> nativeWilma.ordering?.takeIf {it.completed}?.id?.value
+                WilmaPhase.FIND, WilmaPhase.RELATIONS -> nativeWilma.quiz?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
+                else -> null
+            }
+            else -> null
+        }
+        val mode = when(prefs.getString("audioMode", if(prefs.getBoolean("sound", true)) "all" else "off")) {"all" -> AudioMode.ALL; "questions" -> AudioMode.QUESTIONS; else -> AudioMode.OFF}
+        celebrationSound.activate(mode, current)
+        if(current == completion) celebrationSound.pop(completion)
+    }
+
     private fun changeRoute(route: ShellNavigation) {
         if (route == navigation) return
+        celebrationSound.cancel()
         cancelAudio()
         backGate.invalidate()
         navigation = route
@@ -330,6 +369,7 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun configurePositions() {
+        celebrationSound.cancel()
         nativePositions.configure(prefs.getString("lang", "en") ?: "en",
             prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
             prefs.getInt("round", 5))
@@ -452,9 +492,9 @@ class MainActivity : ComponentActivity() {
         if (navigation.ownsWebSession) outState.putString("legacySession", checkpoint.read())
         super.onSaveInstanceState(outState)
     }
-    override fun onPause() { foreground = false; nativePositions.setVisible(false); nativeSeasons.setVisible(false); nativeWilma.setVisible(false); nativeVocabulary.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
+    override fun onPause() { celebrationSound.cancel(); foreground = false; nativePositions.setVisible(false); nativeSeasons.setVisible(false); nativeWilma.setVisible(false); nativeVocabulary.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
     override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen == ShellScreen.SEASONS); nativeWilma.setVisible(navigation.screen == ShellScreen.WILMA); nativeVocabulary.setVisible(navigation.screen == ShellScreen.VOCABULARY); updateWebActivity() }
-    override fun onDestroy() { disposeWebView(); tts?.shutdown(); tts = null; super.onDestroy() }
+    override fun onDestroy() { celebrationSound.close(); disposeWebView(); tts?.shutdown(); tts = null; super.onDestroy() }
 }
 
 @Composable
