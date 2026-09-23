@@ -1,8 +1,8 @@
 # Basti's Learning Adventure
 
-Offline Android learning app designed for a young child preparing for school.
+Offline, bilingual Android school-readiness app built around short, calm, audio-first learning activities in English and German.
 
-Current source is **hybrid Kotlin/Compose + legacy WebView**, with English/German learning activities and 53 verb lessons. Compose owns home, Options, native Prepositions, Seasons, Wilma and the Vocabulary starter slice; other learning activities remain in bundled HTML/JavaScript. The long-term target is fully native Compose without runtime WebView/HTML/JavaScript, migrated incrementally with tested parity before legacy removal.
+Current source is **hybrid Kotlin/Jetpack Compose + legacy WebView**. The native side now includes Home/Options plus end-to-end native **Prepositions, Seasons, Wilma’s Week and Vocabulary Booster**, backed by shared native content, audio, deterministic session/restoration and durable progress foundations. Legacy activities remain bundled locally in HTML/JavaScript while migration continues. The long-term target is fully native Compose with no runtime WebView/HTML/JavaScript dependency.
 
 The links below refer to the **historical v1.0.0 APK**, not a build of current main.
 
@@ -10,56 +10,69 @@ The links below refer to the **historical v1.0.0 APK**, not a build of current m
 · [Historical APK in this repository](releases/v1.0.0/Basti-Learning-Adventure-V1-debug.apk)
 · [Build and test results](BUILD_NOTES.md)
 
-The APK is debug-signed for sideload testing. Native launch and speech output
-still need verification on the target Samsung and Fire devices.
+The historical v1.0.0 APK is debug-signed. Current `main` also supports a separate **stable-signed distribution APK** for repeat physical testing and in-place upgrades without changing the application ID. Samsung S24 Ultra testing has covered key native navigation, lifecycle, 5/10-question completion and offline English/German speech paths; broader Samsung accessibility/content checks and Fire Max acceptance remain open.
 
-## Implemented learning features
-- Number practice is configurable from 1–10 up to 1–100.
-- Legacy web Options/generators support custom maxima up to 9,999; native Options currently exposes presets only.
-- Higher number levels do not show 100 individual animals. The app adapts to:
-  - visual counting (mainly up to 20)
-  - number recognition by listening
-  - before / after
-  - missing numbers
-  - biggest / smallest
-  - tens and ones (when working up to 100)
-- Animal verbs/actions expanded from 12 to more than 50 child-friendly items.
-- Counting and maths wording was cleaned up for English and German plurals.
-- Added "between / zwischen" to position practice.
+## Current learning features
 
-## Activities
-- Animal actions / verbs
-- Number practice with a parent-selected maximum
+### Native Compose
+- **Prepositions**: in/on/under/behind/next to/between with deterministic 5/10-question rounds, Help/Retry, shared audio, exact restoration and durable progress delivery.
+- **Seasons**: Explore plus Practice using four canonical season scenes and authored English/German narration. The roadmap now also defines next/before, missing-season, clue matching and **Build the Year** ordering as the next expansion.
+- **Wilma’s Week / Wilmas Woche**: familiar seven-day caterpillar with Explore, Find Day, Before/After and tap-to-place weekday ordering.
+- **Vocabulary Booster**: first reviewed native slice with six bilingual animal words, Explore/examples, word-to-picture and picture-to-word practice. The current animal glyphs are temporary pending original illustrations.
+- Shared native foundations provide semantic content IDs, English/German speech/display text, audio policy, deterministic sessions, checkpoint restoration and local durable progress events.
+
+### Legacy bundled activities still available
+- Animal actions / verbs and Verb Explorer
+- Number practice with parent-selected maximum
 - Addition and subtraction within 10
-- Prepositions: in, on, under, behind, next to, between
 - First-letter matching
-- Days of the week
-- Seasons
-- Mixed practice mode
+- Mixed practice
+- Remaining calendar/legacy routes retained where migration parity is not yet retired
 
-All five Play cards are currently inactive placeholders. Vocabulary Booster is not implemented and currently falls back to Animal Actions. Persistent skill tracking and the broader school-readiness curriculum are planned.
+Number practice remains configurable from 1–10 up to 1–100 in native Options, while legacy generators support custom maxima up to 9,999. Higher number levels adapt between visual counting, listening/recognition, before/after, missing numbers, biggest/smallest and tens/ones instead of drawing hundreds of individual animals.
+
+## Native migration status
+
+The project is no longer only a WebView prototype. Four substantial learning areas now run natively in Compose:
+
+- Prepositions
+- Seasons
+- Wilma’s Week
+- Vocabulary Booster
+
+These native activities use the shared session/audio/progress architecture rather than duplicating state logic per screen. Explore-only browsing does not create correctness events; practice rounds persist meaningful attempt/completion evidence locally and restore silently after supported navigation/recreation.
+
+The wider school-readiness curriculum is still in progress. Near-term roadmap work includes richer Seasons sequencing/reasoning, Follow the Instructions, expressive-language activities, Memory Pairs, broader Vocabulary, Maths concepts, School Skills, Focus & Flex, Compare & Discover and larger native games.
+
+A shared native completion celebration is also on the roadmap: gently floating balloons, tap-to-pop interaction, an animal jumping out, and a brief confetti burst, with Continue/Home always immediately usable.
 
 ## Options
 - English / German switch
-- Audio guidance: all / questions and instructions / off (policy reliability remains backlog work)
-- Replay activity introductions (reset reliability remains backlog work)
+- Audio guidance: **All / Questions & Instructions / Off**
+- Sound Off blocks manual Replay/Listen and completion SFX where implemented
+- Replay/help controls use authored activity speech through the shared audio policy
 - 5 or 10 questions per round
 - Number maximum presets: 10, 20, 50, 100
 - Settings persist locally on the device
 
 ## Phone and tablet
-Targets are Samsung Galaxy S24 phones and Amazon Fire Max tablets. Legacy learning pages use responsive CSS; native home currently uses fixed two-column cards. Full phone/tablet and landscape adaptation still needs work and physical validation.
+Primary physical targets are Samsung Galaxy S24-class phones and Amazon Fire Max tablets. Native screens are tested in portrait/landscape and include safe-inset and larger-font work, while the remaining physical acceptance matrix is tracked in [TESTING_QA_SPEC.md](TESTING_QA_SPEC.md).
 
-The project has no Google Play Services dependency. Physical S24/Fire compatibility has not yet been verified.
+Samsung S24 Ultra checks already cover important navigation/inset behavior, 5/10-question completion, one saved-task process-recovery path and user-confirmed offline English/German speech plus Sound Off. Fire Max validation and broader accessibility/audio/content/lifecycle coverage are still outstanding.
+
+The project has no Google Play Services dependency.
 
 ## Offline
 The app is offline-first and core learning must remain fully offline. All current learning content is stored in the APK; there is no INTERNET permission. Speech depends on installed English/German offline voices.
 
 ## Build
-Open the project in a recent Android Studio and build the `app` module, or push it to GitHub and use the included workflow.
+Open the project in a recent Android Studio and build the `app` module, or push to GitHub and use the included workflow.
 
-Debug APK:
+Local development APK:
+
 `app/build/outputs/apk/debug/app-debug.apk`
+
+For ongoing physical testing, use the stable-signed distribution workflow described under **Installing the APK** rather than treating hosted debug artifacts as an upgrade stream.
 
 
 ## Verb Explorer (included in V1)
@@ -72,7 +85,20 @@ Debug APK:
 - Verb quiz questions contain a **Learn this verb** button that opens the matching lesson and returns to the same question.
 - Audio reads the verb, explanation and example using the device text-to-speech engine.
 
-Current animations use local CSS/emoji and share some generic motion families; teaching quality and device rendering still need validation. The audio-first production direction uses custom artwork and native 2D/2.5D animation, with calm feedback and no punitive gamification.
+Current legacy Verb Explorer animations use local CSS/emoji and generic motion families. The production direction is custom artwork plus native 2D/2.5D action-specific animation; several local MP4 demonstrations are being prepared for future native verb work. Teaching quality and device rendering still require broader physical validation.
+
+## Native architecture at a glance
+
+The native migration is built around shared foundations rather than one-off screens:
+
+- **Content**: stable semantic IDs, required EN/DE display/speech fields, deterministic canonical repositories and validation.
+- **Audio**: one shared policy/controller with owned cancellation, explicit language/voice failures and silent restore.
+- **Sessions**: immutable deterministic task plans, Help/Retry/support tracking, correct-once scoring and exact checkpoint restoration.
+- **Progress**: bounded local event storage with stable dedupe keys and retryable delivery.
+- **Navigation**: Compose owns native destinations while legacy WebView routes remain available during migration.
+- **Offline-first**: no INTERNET permission is required for learning; system speech depends only on installed offline voices.
+
+See [NATIVE_ARCHITECTURE_SPEC.md](NATIVE_ARCHITECTURE_SPEC.md), [CONTENT_DATA_SPEC.md](CONTENT_DATA_SPEC.md), [VOICE_AUDIO_SPEC.md](VOICE_AUDIO_SPEC.md) and [PROGRESS_TRACKER_SPEC.md](PROGRESS_TRACKER_SPEC.md) for the detailed contracts.
 
 ## Building current source
 
