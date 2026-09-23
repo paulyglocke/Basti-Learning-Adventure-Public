@@ -218,6 +218,73 @@ Canonical German narration:
 
 The descriptions teach observable seasonal clues rather than rigid weather rules.
 
+### Seasons learning progression
+
+Treat the seasons as both four observable concepts and a repeating yearly cycle. Build beyond simple recognition in a calm progression:
+
+1. Explore / recognise
+   - identify Spring, Summer, Autumn and Winter from the canonical images
+   - hear the season name and optional description
+   - Replay remains available
+
+2. What comes next?
+   - ask questions such as “What comes after summer?” / “Was kommt nach dem Sommer?”
+   - derive answers from the canonical cycle:
+     Spring → Summer → Autumn → Winter → Spring
+   - include the Winter → Spring boundary so the child learns that the sequence repeats
+
+3. What comes before?
+   - ask questions such as “What comes before spring?” / “Was kommt vor dem Frühling?”
+   - derive answers from the same canonical cycle
+   - include the Spring ← Winter boundary
+
+4. Build the Year / Put the seasons in order
+   - show the four season cards in a deterministic scrambled order
+   - child places them into:
+     Spring → Summer → Autumn → Winter
+   - prefer tap-to-place / select-next ordering over precision drag-and-drop for the primary accessible interaction
+   - a drag interaction may be added later if it works reliably on both phone and Fire tablet, but it must not become required
+   - wrong choices should preserve already placed seasons and give calm support rather than resetting the whole sequence
+   - exact partial ordering state should restore cleanly when this becomes a native session task
+
+5. Missing season
+   - show three parts of the cycle and ask which season is missing
+   - examples:
+     Spring → Summer → ? → Winter
+     Winter → ? → Summer
+   - use semantic season IDs, never display text matching
+
+6. Identify from observable clues
+   - ask which season matches one or more canonical clues
+   - examples:
+     blossoms and new leaves → Spring
+     dense green canopy and warm sunny weather → Summer
+     orange/red/yellow and falling leaves → Autumn
+     bare tree, snow and ice → Winter
+   - clues should come from the same canonical content used by Explore, not duplicated ad hoc in the UI
+
+7. Match season to clue
+   - reverse the previous task: show a season, then choose the matching observable clue
+   - use short child-friendly wording rather than replaying the full narration automatically
+
+8. Before and after together
+   - later progression may ask a two-sided relation such as:
+     “Summer comes after ___ and before ___.”
+   - keep this unhurried and only introduce it after single before/after questions are comfortable
+
+Ordering note:
+- seasons are a cycle, so there is no universal “first” season in nature
+- for the explicit Build the Year ordering task, use the conventional teaching sequence Spring → Summer → Autumn → Winter
+- still teach the cycle across the boundary with “What comes after winter?” → Spring and “What comes before spring?” → Winter
+
+Learning-design constraints:
+- avoid relying on events such as Christmas, school holidays or rigid weather stereotypes as defining season cues
+- prefer observable changes in plants, leaves, daylight, snow/ice and temperature
+- do not equate Summer with “very hot” or Winter with guaranteed snow in every real-world context; the canonical artwork is the learning scene
+- short 5/10-question rounds remain appropriate for recognition, before/after, missing-season and clue practice
+- ordering should remain a distinct sequencing interaction rather than being forced into ordinary multiple-choice state
+- Help, Retry, audio policy, silent restoration and durable progress should follow the established native session contracts
+
 ## School Skills
 Teach:
 - sit down, stand up, listen, look, wait
