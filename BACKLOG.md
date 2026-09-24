@@ -48,7 +48,7 @@ Already implemented and not active backlog unless a regression is found:
   - progress marker
   - completion layout
   - shared spacing/typography/press/motion rules
-- Next bounded visual-system slice: shared primary/secondary/navigation action styling in the existing native completion component; preserve pinned layout, callbacks, semantics and reward behavior. No implementation in this documentation pass.
+- First visual-system slice implemented: shared primary/secondary/navigation action button adopted only by native completion; pinned layout/callbacks/semantics/reward behavior preserved. Physical review of the new styling remains separate from prior accepted learning flows. Next bounded slice: adopt the same component for Replay/Help/Retry in one ordinary activity, preserving all behavior; no global rewrite.
 - Then implement shared support presentation: independent attempt → Replay → subtle hint → stronger model/help → optional parent help; supported success remains success.
 - Then add only the minimal support-settings contract required by real consumers; no diagnosis-labelled modes.
 - Complete/reuse the existing canonical animal-art library; do not recreate accepted art.

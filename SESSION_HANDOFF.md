@@ -1,6 +1,14 @@
 # Session handoff — 2026-09-23
 
-## Current checkpoint — P0 acceptance ledger updated, P1 planned only
+## Current checkpoint — first P1 action-button slice
+
+Started on clean main `3c52a1c`. `NativeActionButton` introduces presentation-only PRIMARY (filled), SECONDARY (tonal) and NAVIGATION (outlined) roles using the existing Material3 theme. Adopted only inside `NativeCompletionScreen`: Play again, Home, Replay and save retry. No activity/shell, learning, content, audio, persistence, navigation, reward-state, artwork or signing/version changes. No commit/push.
+
+Buttons have 56dp minimum height, rounded 16dp corners, consistent padding, centered semibold labels that fill the allocated content width and wrap without a fixed line cap. Material owns semantics/focus/press feedback; no custom motion. Existing completion slots/tags/callbacks/enabled state and pinned reward separation remain. The new large-font tests caught mismatched paragraph/text measurement; aligning text width fixed it without weakening overflow assertions.
+
+Validation: 9 focused Compose, 264 JVM and 32 full emulator tests passed (0 failures/errors/skips); debug build passed; lint 0 errors/3 warnings/2 information; diff/new-file whitespace checks passed. An extra emulator-only render run passed all 4 new tests. Reviewed German 1.5× text at 320×480dp and 700×240dp: no clipped labels or reward overlap. See the latest BUILD_NOTES entry for exact commands and file inventory. New styling still needs physical visual/accessibility review on S24/Fire; prior accepted Seasons/Wilma/artwork behavior remains accepted. The broader P0 acceptance matrix is unchanged. The component is available for later constrained-width adoption; next bounded visual slice could adopt Replay/Help/Retry in one ordinary activity, without changing support behavior or starting support settings.
+
+## Previous checkpoint — P0 acceptance ledger updated, P1 planned only
 
 Main inspected at `3efcb04` with a clean tree; implementation is committed in `d3ec6a9`. This pass changes documentation only, with no commit/push, code/assets/signing/versioning changes or new roadmap work.
 

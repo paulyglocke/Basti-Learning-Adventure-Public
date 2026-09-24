@@ -43,17 +43,17 @@ fun NativeCompletionScreen(completion: String, language: ContentLanguage, summar
             Text(t("Adventure complete!", "Abenteuer geschafft!"), style = MaterialTheme.typography.titleLarge,
                 modifier = Modifier.testTag("completion-title"))
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                Button(onClick = onAgain, enabled = ready, modifier = Modifier.weight(1f).heightIn(min = 56.dp).testTag("${prefix}again")) {Text(t("Play again", "Nochmal spielen"))}
-                Button(onClick = onHome, modifier = Modifier.weight(1f).heightIn(min = 56.dp).testTag("${prefix}home")) {Text(t("Back home", "Zurück zum Start"))}
-                if(wide) OutlinedButton(onClick = onReplay, enabled = ready, modifier = Modifier.weight(1f).heightIn(min = 56.dp).testTag("${prefix}replay")) {Text(t("Listen again", "Noch einmal hören"))}
+                NativeActionButton(t("Play again", "Nochmal spielen"), NativeActionRole.PRIMARY, onAgain, Modifier.weight(1f).testTag("${prefix}again"), enabled = ready)
+                NativeActionButton(t("Back home", "Zurück zum Start"), NativeActionRole.NAVIGATION, onHome, Modifier.weight(1f).testTag("${prefix}home"))
+                if(wide) NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY, onReplay, Modifier.weight(1f).testTag("${prefix}replay"), enabled = ready)
             }
-            if(!wide) OutlinedButton(onClick = onReplay, enabled = ready, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("${prefix}replay")) {Text(t("Listen again", "Noch einmal hören"))}
+            if(!wide) NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY, onReplay, Modifier.fillMaxWidth().testTag("${prefix}replay"), enabled = ready)
             BoxWithConstraints(Modifier.weight(1f)) {
                 val rewardHeight = maxHeight.coerceIn(88.dp, 220.dp)
                 Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     if(saveFailed) {
                         Text(t("Your saved work is kept. Please try saving again.", "Deine gespeicherte Arbeit bleibt erhalten. Versuche erneut zu speichern."))
-                        Button(onClick = onRetry, modifier = Modifier.heightIn(min = 56.dp).testTag("completion-retry-save")) {Text(t("Try again", "Erneut versuchen"))}
+                        NativeActionButton(t("Try again", "Erneut versuchen"), NativeActionRole.SECONDARY, onRetry, Modifier.testTag("completion-retry-save"))
                     }
                     if(audioFailed) Text(t("Speech is unavailable. Check installed offline voices in Options.", "Die Sprachausgabe ist nicht verfügbar. Prüfe die Offline-Stimmen in den Optionen."))
                     NativeCompletionCelebration(completion, language, onPop, Modifier.fillMaxWidth().height(rewardHeight), enabled = ready)

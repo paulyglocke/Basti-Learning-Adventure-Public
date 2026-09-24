@@ -51,6 +51,8 @@ Prioritise:
 
 Activities may keep their own visual identity—Seasons should still feel like Seasons and Wilma like Wilma—but controls should behave and read consistently. The system should reduce later retrofit work, not force every learning activity into the same generic quiz appearance.
 
+The first implemented slice is `NativeActionButton(label, role, onClick, modifier, enabled)`, adopted only inside `NativeCompletionScreen`. PRIMARY is filled (Play again), SECONDARY tonal (Replay/save retry), NAVIGATION outlined (Home). Roles are presentation only; labels, callbacks, enabled state and semantics remain caller-owned. Material3 supplies theme colors, button semantics, keyboard/focus behavior and restrained press feedback. Shared geometry is a 56dp minimum height that grows for wrapped text, 16dp rounded corners and 16dp horizontal/10dp vertical padding. Labels use the existing labelLarge typography with semibold weight and centered wrapping; no fixed line limit, custom animation or new theme is introduced. Completion actions remain pinned above the optional reward area. Adoption by ordinary activity screens is a later bounded task, not a global restyle.
+
 ## Activity flow
 
 Home → activity intro → Listen → Try/Play → feedback → next task or completion → Home/Continue.

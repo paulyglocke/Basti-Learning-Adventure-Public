@@ -2,6 +2,32 @@
 
 This file records build/test evidence and should not be treated as a product or architecture specification.
 
+## First P1 shared completion action buttons — 2026-09-24
+
+Started clean at `3c52a1c`. Added `NativeActionButton(label, role, onClick, modifier, enabled)` with PRIMARY filled, SECONDARY tonal, NAVIGATION outlined Material3 roles. Uses existing theme colors/type, 16dp corners, 16dp horizontal/10dp vertical padding, 56dp minimum growing height and centered semibold wrapping labels. Text fills allocated width; callers should supply appropriate width constraints. No custom animation/dependency/theme framework.
+
+Adopted only in NativeCompletionScreen: Play again primary, Home navigation, Replay and save retry secondary. Existing pinned structure, tags, labels, callbacks, enabled state, optional balloons and resource ownership remain unchanged. Narrow Replay now shares the 56dp minimum (previously 48dp). Save retry uses the same available-width label geometry. No individual activity, learning/session/progress/audio/navigation/signing/version/artwork changes. No commit/push.
+
+Validation environment: `JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'`, `ANDROID_HOME='/Users/paulbell/Library/Android/sdk'`, `ANDROID_SERIAL=emulator-5554`. Only Medium_Phone_API_35 Android 15 emulator used; no physical installation/data touched.
+
+- `./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.package=com.bellfamily.bastischool.ui.common --console=plain`: final **9 passed / 0 failed/skipped**, BUILD SUCCESSFUL (54s). Four new button tests plus five existing celebration tests. Earlier new large-font assertions failed twice per run because centered paragraph width exceeded the measured label box; full-width text allocation fixed this, with the overflow assertions retained. Existing tests were not weakened.
+- `./gradlew testDebugUnitTest assembleDebug lintDebug connectedDebugAndroidTest --console=plain`: **264 JVM + 32 emulator tests passed**, **0 failures/errors/skips**, BUILD SUCCESSFUL (3m 29s). Includes all Prepositions/Seasons/Wilma/Vocabulary completion regressions. No new pure JVM test is needed for a Compose-only presentation API; the existing full JVM suite remains green.
+- Lint: **0 errors / 3 warnings / 2 informational**. Existing `UnusedAttribute` ×2, `SetJavaScriptEnabled` ×1; `AutoboxingStateCreation` ×2. No suppression/baseline changes.
+- Gradle removes its test installations/cache after instrumentation. To retrieve review captures, installed only on the emulator with `adb -s emulator-5554 install -r app/build/outputs/apk/debug/app-debug.apk` and `adb -s emulator-5554 install -r app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk`, then ran `adb -s emulator-5554 shell am instrument -w -e class com.bellfamily.bastischool.ui.common.NativeActionButtonTest com.bellfamily.bastischool.test/androidx.test.runner.AndroidJUnitRunner`: **4 passed (15.597s)**. Retrieved `cache/action-portrait.png` and `cache/action-landscape.png` using emulator-only `exec-out run-as com.bellfamily.bastischool cat`.
+- Inspected actual renderings at 320×480dp portrait and 700×240dp short landscape with German 1.5× font. Labels readable and uncut, primary filled green clearly dominant, outlined Home active/readable, tonal Replay available; pinned controls separate from balloons. New tests verify semantic button roles, enabled/disabled touch behavior, independent callbacks, keyboard focus/Enter, 56dp+ height/48dp+ width, no text layout overflow, and Home remaining enabled when Replay/Play again are disabled.
+- `git diff --check` and new-file whitespace checks passed. Browser tests not rerun: browser code/assets unchanged, as requested. Distribution configuration unchanged; no signing guard rerun needed for this presentation-only slice.
+
+Exact changed files:
+- `app/src/main/java/com/bellfamily/bastischool/ui/common/NativeActionButton.kt` (new)
+- `app/src/main/java/com/bellfamily/bastischool/ui/common/NativeCompletionCelebration.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/common/NativeActionButtonTest.kt` (new)
+- `BACKLOG.md`
+- `BUILD_NOTES.md`
+- `SESSION_HANDOFF.md`
+- `UX_NAVIGATION_SPEC.md`
+
+Remaining: physical visual/large-font/orientation/touch/screen-reader review of the new button styling on S24 and Fire Max. No new hardware acceptance claimed; prior accepted Seasons/Wilma/clean-art results remain closed absent regression. The component is ready for later constrained-width adoption, not automatically rolled out elsewhere. Suggested next bounded slice: adopt Replay/Help/Retry in one ordinary activity using the same presentation API, with no support behavior/settings redesign. Suggested commit: `feat: add shared native completion action buttons`.
+
 ## P0 acceptance documentation and existing-run results — 2026-09-24
 
 Inspected clean main `3efcb04` / implementation `d3ec6a9`. Updated only BACKLOG.md, BUILD_NOTES.md, SESSION_HANDOFF.md and TESTING_QA_SPEC.md. No code, artwork, signing/version/distribution changes; no commit/push. Current acceptance ledger supersedes historical outstanding-work statements below.
