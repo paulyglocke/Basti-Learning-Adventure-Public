@@ -12,8 +12,8 @@ Already implemented and not active backlog unless a regression is found:
 - deterministic native session/checkpoint framework
 - durable deduplicated native progress-event storage
 - native Prepositions
-- native Seasons Explore/recognition, Next/Before and Build the Year (shared placement rules with Wilma; physical functional acceptance pending)
-- native Wilma Explore/Find Day/Before-After/Ordering, with ordering viewport auto-follow (physical motion acceptance pending)
+- native Seasons Explore/recognition, Next/Before and Build the Year (shared placement rules with Wilma; new flows owner-verified on S24, remaining matrix below)
+- native Wilma Explore/Find Day/Before-After/Ordering, with ordering viewport auto-follow (ordering auto-follow owner-verified on S24; Fire acceptance pending)
 - native Vocabulary starter slice
 - shared native completion celebration across the four native activities (automated evidence in BUILD_NOTES.md; physical acceptance remains below)
 - stable external distribution signing and monotonic CI versioning
@@ -24,7 +24,7 @@ Already implemented and not active backlog unless a regression is found:
 
 - Physically accept the implemented shared native completion celebration: five balloons, one-time pop, canonical animal reveal, brief local confetti, Sound Off-aware SFX, immediate Continue/Home, no progress/session coupling. Cleaned celebration artwork is physically verified on S24 (`a8877b5`); do not repeat transparency cleanup. Remaining motion/audio/accessibility checks and Fire Max acceptance are separate.
 - S24 same-key in-place upgrade is proven: 1003901 / 1.1.39.1 → 1004501 / 1.1.45.1 (owner-reported physical evidence in BUILD_NOTES.md). Keep signing/versioning as maintenance; perform the equivalent Fire Max upgrade check.
-- Run one batched S24 Ultra acceptance sweep across Prepositions, Seasons, Wilma and Vocabulary:
+- Finish only the unverified S24 Ultra acceptance matrix across Prepositions, Seasons, Wilma and Vocabulary (owner-passed Seasons new flows/normal restore/completion and Wilma auto-follow are closed; see TESTING_QA_SPEC acceptance ledger):
   - airplane-mode EN/DE and missing-voice behavior
   - Sound Off / Replay
   - portrait + both landscapes
@@ -33,7 +33,7 @@ Already implemented and not active backlog unless a regression is found:
   - true process recreation
   - 5/10 completion
   - progress after restart and signed upgrade
-- Run the equivalent Fire Max sweep.
+- Run the Fire Max checklist in TESTING_QA_SPEC.md, including same-key upgrade/data retention. Fire acceptance is still open.
 - Fix critical defects found by those sweeps; avoid unrelated feature work inside P0.
 - Preserve the proven permanent signing identity and monotonic versioning during all future builds.
 
@@ -48,7 +48,10 @@ Already implemented and not active backlog unless a regression is found:
   - progress marker
   - completion layout
   - shared spacing/typography/press/motion rules
-- Create a canonical original animal-art library, starting with assets that immediately replace current placeholders and can be reused across activities.
+- Next bounded visual-system slice: shared primary/secondary/navigation action styling in the existing native completion component; preserve pinned layout, callbacks, semantics and reward behavior. No implementation in this documentation pass.
+- Then implement shared support presentation: independent attempt → Replay → subtle hint → stronger model/help → optional parent help; supported success remains success.
+- Then add only the minimal support-settings contract required by real consumers; no diagnosis-labelled modes.
+- Complete/reuse the existing canonical animal-art library; do not recreate accepted art.
 - Replace temporary animal visuals in Vocabulary and review temporary native animal representations elsewhere.
 - Reuse the small Wilma/Seasons `OrderedPlacement` helper for future concrete sequencing consumers; extend it only for a demonstrated need.
 - Build **Follow the Instructions MVP** as the reusable instruction/action engine:

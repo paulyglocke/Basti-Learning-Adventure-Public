@@ -123,3 +123,21 @@ Use the persistent-key release stream in README.md, not unrelated hosted-runner 
 7. Repeat on Fire Max and record device/OS/signature/version evidence separately. True process death, production-key signing, voice quality and device filesystem durability must not be inferred from JVM tests or Activity recreation.
 
 No uninstall/data wipe is authorised by this checklist. If the installed legacy certificate differs from the new permanent identity and its private key is unavailable, document the remaining one-time migration decision and lack of cross-signature export/import before asking the owner to act.
+
+
+## Current physical acceptance ledger and Fire Max checklist — 2026-09-24
+
+Owner-reported S24 passes after the latest stable-signed install: Seasons Explore, What Comes Next, What Comes Before, Winter → Spring and Spring ← Winter boundaries, Build the Year, wrong choices retaining correct placements, partial restore, completed restore, completion actions/celebration, and Wilma ordering auto-follow. Do not reopen these checks without a regression. This is owner evidence, not emulator acceptance; normal partial/completed restore does not establish process-death recovery.
+
+Still unverified in this report on S24: both landscape orientations for these new flows, larger font, TalkBack/full accessibility, detailed EN/DE ALL/QUESTIONS/OFF and Replay sweep, pop-volume judgement, true process recreation beyond normal return/restore, and the full airplane-mode/offline-voice matrix. Recognition Practice and an exhaustive 5/10-round/settings/navigation matrix were not explicitly included in this latest report. File-level progress retention/deduplication requires the evidence described in the upgrade procedure above; visible restored state alone is insufficient.
+
+Fire Max remains **not physically accepted**. Record device/Fire OS, installed/candidate version and certificate, language/audio mode, observed result and any defect for each row below. Reuse the stable APK upgrade procedure above rather than creating a separate install flow.
+
+- Upgrade: same package/certificate, strictly higher version, install over existing app without uninstall/data clear. Preserve settings, known partial session and progress; distinguish inspected records from UI-only evidence.
+- Activities: Seasons Explore/recognition/Next/Before/both wrap boundaries/Build the Year; wrong placements retained; Wilma Explore/practice/order and smooth follow; Prepositions and Vocabulary Explore/practice as applicable. Exercise 5/10 rounds where supported, Help/Retry/Replay, completion, Play again/Home, Options/language/return.
+- Celebration: five optional targets, single pop/reveal, clean animals, brief local confetti, immediate actions, no score/progress coupling; no balloons during Explore.
+- Audio/offline: airplane mode with installed offline EN/DE voices; ALL, QUESTIONS and OFF including Replay/pop silence; no wrong-language fallback or duplicated narration on return. Check unavailable voice behavior where practical without deleting existing voice data merely for testing. No runtime network dependency.
+- Presentation/accessibility: portrait and both landscape orientations where supported, larger text, clear art/cards, safe insets, reachable separated touch targets, device screen reader/TalkBack-equivalent and keyboard/focus where available. Record unavailable assistive paths explicitly.
+- Recovery: background/return, partial and completed ordering, answered/unanswered tasks, process recreation where practical without clearing data; restore silently and avoid duplicate completion. Confirm settings/session/progress after restart and signed upgrade; mark raw-progress inspection blocked if release storage cannot be inspected safely.
+
+Instrumentation belongs on the designated emulator (`ANDROID_SERIAL=emulator-5554`), not the stable S24/Fire installation. Do not bypass certificate/version failures by uninstalling, downgrading or clearing data.

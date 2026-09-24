@@ -1,6 +1,18 @@
 # Session handoff — 2026-09-23
 
-## Current checkpoint — Seasons cycle progression and Wilma auto-follow
+## Current checkpoint — P0 acceptance ledger updated, P1 planned only
+
+Main inspected at `3efcb04` with a clean tree; implementation is committed in `d3ec6a9`. This pass changes documentation only, with no commit/push, code/assets/signing/versioning changes or new roadmap work.
+
+Owner physically verified on S24 after the latest stable install: Seasons Explore, What Comes Next, What Comes Before, Winter → Spring and Spring ← Winter boundaries, Build the Year, wrong choices retaining correct placements, partial restore, completed restore, completion actions/celebration, and Wilma ordering auto-follow. These are closed unless a regression appears. Previous same-key upgrade and cleaned-art acceptance remain valid.
+
+Remaining S24: both landscape orientations for these new flows, larger font, TalkBack/full accessibility, detailed EN/DE ALL/QUESTIONS/OFF and Replay sweep, pop-volume judgement, true process recreation beyond normal return/restore, and the full airplane-mode/offline-voice matrix. Fire Max still needs the concise checklist in TESTING_QA_SPEC.md. P0 implementation is in place, but the trusted-daily-build exit gate remains open until the remaining device evidence is supplied; do not label P0 complete or retire legacy fallbacks.
+
+The regression run already started before this documentation request finished: 264 JVM, 28 emulator and 55 browser tests passed; debug build passed; lint 0 errors/3 warnings/2 informational. No repeat full run was started for these doc edits. See BUILD_NOTES.md for commands and evidence limitations.
+
+Recommended first P1 slice (not implemented): a small shared action-button style/role component used only by NativeCompletionScreen, benefiting all four current activities. Reuse Material3/theme/ripple and the existing pinned responsive layout. Preserve callbacks, tags, enabled states, 48–56dp minimum targets, wrapping labels, accessibility and reduced-motion behavior. Do not refactor activity state, audio, progress, navigation, celebration art/motion or unrelated screens. Later P1 order stays visual system → support presentation → minimal support settings → canonical art/content → justified sequencing reuse → Follow the Instructions → semantic Memory Pairs.
+
+## Previous implementation checkpoint — Seasons cycle progression and Wilma auto-follow
 
 Continued the existing Seasons working tree from `5bf2383`, preserving the later `a8877b5` cleaned celebration assets and authoritative roadmap consolidation `56e837a`. No pull/reset/clean/restore/rebase/stash/discard, commit or push. No signing/version/distribution configuration or PNG changed.
 
@@ -16,7 +28,7 @@ The existing celebration regression test caught larger replacement PNGs exceedin
 
 Final validation: **91 focused JVM, 8 focused Seasons UI, 3 focused Wilma UI, 5 focused celebration UI; 264 full JVM, 28 full emulator, 55 browser tests passed**. Version-policy tests **5/5**, distribution guards **6/6**; debug build passed; lint **0 errors / 3 warnings / 2 information**. Diff/added-file whitespace checks passed. All 31 files remain unstaged; no commit/push.
 
-See the newest BUILD_NOTES.md entry for final validation, exact changed files and APK evidence. Remaining: S24 functional review of new cycle/order modes and Wilma follow, Fire Max acceptance/upgrade, EN/DE audible quality/Sound Off, subjective image size/motion, TalkBack/keyboard/large text, lifecycle/process recovery and new four-step progress retention after an ordinary signed upgrade. Missing Season/clues/matching, support settings/presentation, broader visual system and all unrelated roadmap work remain deferred.
+See the newest BUILD_NOTES.md entry for final validation, exact changed files and APK evidence. Remaining (updated 2026-09-24): broader S24 matrix and Fire Max acceptance/upgrade, EN/DE audible quality/Sound Off, subjective image size/motion, TalkBack/keyboard/large text, lifecycle/process recovery and new four-step progress retention after an ordinary signed upgrade. Missing Season/clues/matching, support settings/presentation, broader visual system and all unrelated roadmap work remain deferred.
 
 
 ## Previous checkpoint — shared native completion celebration

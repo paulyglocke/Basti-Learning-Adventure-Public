@@ -2,6 +2,25 @@
 
 This file records build/test evidence and should not be treated as a product or architecture specification.
 
+## P0 acceptance documentation and existing-run results — 2026-09-24
+
+Inspected clean main `3efcb04` / implementation `d3ec6a9`. Updated only BACKLOG.md, BUILD_NOTES.md, SESSION_HANDOFF.md and TESTING_QA_SPEC.md. No code, artwork, signing/version/distribution changes; no commit/push. Current acceptance ledger supersedes historical outstanding-work statements below.
+
+Owner-reported S24 passes after latest stable install: Seasons Explore, What Comes Next, What Comes Before, Winter → Spring and Spring ← Winter boundaries, Build the Year, wrong choices retaining correct placements, partial restore, completed restore, completion actions/celebration, and Wilma ordering auto-follow. Do not infer unreported orientation/font/audio/offline/accessibility/process-death or file-level progress checks. The remaining matrix and Fire Max checklist are in TESTING_QA_SPEC.md. Fire Max has not passed acceptance. P0 is not yet closed.
+
+An automated run requested immediately before this docs-only task was already underway; it completed successfully and was not repeated for documentation edits:
+
+- Environment: `JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'`, `ANDROID_HOME='/Users/paulbell/Library/Android/sdk'`, `ANDROID_SERIAL=emulator-5554`.
+- `./gradlew testDebugUnitTest assembleDebug lintDebug connectedDebugAndroidTest --console=plain`: BUILD SUCCESSFUL in 3m 45s; XML totals **264 JVM / 28 emulator passed, 0 failures/errors/skips**. Some build/unit tasks were up-to-date; instrumentation ran on Medium_Phone_API_35 Android 15 only. Full suite includes Seasons, WilmaFollowTest and CompletionCelebrationTest; no additional focused rerun was needed after the scope changed to docs.
+- `npm test -- --reporter=line`: **55 passed (59.4s)**.
+- `python3 -m unittest discover -s scripts -p 'test_*.py'`: **5 passed**. Distribution guard results remain the prior six-pass evidence; not rerun in this documentation pass.
+- Lint: **0 errors / 3 warnings / 2 informational** (`UnusedAttribute` ×2, `SetJavaScriptEnabled` ×1; `AutoboxingStateCreation` ×2). No fixes or suppressions required.
+- `git diff --check`: passed after documentation edits.
+
+Read-only ADB in the preceding verification attempt found serial R3CXA08L3KY but returned no com.bellfamily.bastischool package/version, including personal/work-profile queries. That observation did not verify or disprove the owner's later physical report; installed version was not independently confirmed by this run. No physical install/uninstall/data clear or debug instrumentation was performed. The reported downgrade error is not an application test failure; keep stable physical testing and emulator automation separate.
+
+P1 preparation only: shared completion action-button roles/geometry in the existing component are the smallest first visual-system slice; likely files are new ui/common/NativeActionButton.kt, existing ui/common/NativeCompletionCelebration.kt, new Android UI component tests, and existing CompletionCelebrationTest.kt. All four native activity completion screens benefit without four integrations or state rewrites. Preserve pinned positions/current labels/tags/callbacks; test minimum targets, German wrapping at large font, short landscape, enabled/focus/keyboard semantics, and existing route/celebration regressions. No new animation/framework or support implementation.
+
 ## Seasons Next/Before/Build the Year and Wilma auto-follow — 2026-09-23
 
 Started with clean main at `5bf2383`, then continued the interrupted local changes while preserving newer commits `a8877b5` (clean celebration PNGs) and `56e837a` (authoritative consolidated roadmap). The roadmap/artwork/signing/versioning/distribution files are unchanged. No commit/push or destructive Git operation.
@@ -72,7 +91,7 @@ Final full validation (same environment and explicit emulator serial):
 
 S24 same-key in-place upgrade is **proven**, `1003901 / 1.1.39.1` → `1004501 / 1.1.45.1`, certificate SHA-256 `bea808b0c0b891d73e61b739fd43f361a952d5297892318821b97ce91b553507`. The cleaned celebration artwork in `a8877b5` is also physically verified on S24. These are no longer outstanding signing-setup/transparency-cleanup tasks. This implementation did not install, uninstall or clear the attached physical phone; Android tests target the emulator explicitly.
 
-Remaining S24 checks: new Next/Before/ordering learning flow, meaningful feedback, Options/Back, partial/completed restore, Wilma follow after each placement and restore, portrait/both landscapes/large font, new progress after restart/normal signed upgrade. Separately review subjective motion and image legibility, audible EN/DE voice/pop volume and Sound Off, TalkBack/keyboard/accessibility, background/process lifecycle. Fire Max still needs the full equivalent acceptance sweep and same-key upgrade proof. Emulator results do not establish those checks. Missing-season/clue tasks, support settings/presentation, visual-system/button redesign and unrelated roadmap work were not started.
+Updated 2026-09-24: owner has accepted the new Seasons flows, placement retention, normal partial/completed restore, completion/celebration and Wilma auto-follow. Remaining S24 checks are the unreported broader matrix in TESTING_QA_SPEC, including both landscapes/large font and file-level progress after restart/normal signed upgrade. Separately review subjective motion and image legibility, audible EN/DE voice/pop volume and Sound Off, TalkBack/keyboard/accessibility, background/process lifecycle. Fire Max still needs the full equivalent acceptance sweep and same-key upgrade proof. Emulator results do not establish those checks. Missing-season/clue tasks, support settings/presentation, visual-system/button redesign and unrelated roadmap work were not started.
 
 
 ## Shared native completion celebration — 2026-09-23
