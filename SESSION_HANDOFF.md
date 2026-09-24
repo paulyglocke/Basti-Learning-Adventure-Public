@@ -1,6 +1,16 @@
 # Session handoff — 2026-09-23
 
-## Current checkpoint — first P1 action-button slice
+## Current checkpoint — shared action buttons adopted in Seasons
+
+Started clean at `702f00f`. Only Seasons non-answer action presentation changed: Replay in Explore/quiz/order, Help and attempt Retry in quiz/order, load/save retry, Next and Home. Uses the existing NativeActionButton unchanged: SECONDARY for support/retry, PRIMARY for Next, NAVIGATION for Home. Ten call sites; all labels/callbacks/enabled expressions/test tags and existing modifiers retained. Help/retry now inherit the shared available-width text geometry and 56dp minimum; scroll hierarchy remains unchanged.
+
+Answer/season/order cards, per-choice speaker buttons, FilterChips, placed cards, Days & Seasons hub, activity logic/state, audio/navigation/progress, completion celebration and canonical artwork are unchanged. No signing/version/distribution changes. No commit/push.
+
+Four new Seasons UI tests cover actions/support/attempts, keyboard Replay, busy/save/image/language gates, order Retry/Help and disabled Next, plus German 1.5× text in portrait and both short landscape orientations. Validation: 21 focused tests (12 Seasons + 9 ui.common), 264 JVM and 36 full emulator tests passed, all zero failures/errors/skips. Debug build passed; lint 0 errors/3 warnings/2 information; diff/new-file whitespace checks passed. Extra emulator-only rendering run: 4 passed; reviewed German 1.5× short-landscape Next/Home captures. See latest BUILD_NOTES for exact commands and rendering limits. Shared completion and Seasons are now the two bounded consumers; do not expand into other activities automatically.
+
+Prior S24 Seasons/Wilma/art acceptance remains closed absent regression. New button styling still needs physical visual/touch/accessibility checks on S24 and Fire Max; this is not acceptance of the wider P0 matrix. Suggested next bounded P1 slice: adopt suitable non-answer actions in Prepositions only, preserving all behavior; no new support presentation/settings or card redesign.
+
+## Previous checkpoint — first P1 action-button slice
 
 Started on clean main `3c52a1c`. `NativeActionButton` introduces presentation-only PRIMARY (filled), SECONDARY (tonal) and NAVIGATION (outlined) roles using the existing Material3 theme. Adopted only inside `NativeCompletionScreen`: Play again, Home, Replay and save retry. No activity/shell, learning, content, audio, persistence, navigation, reward-state, artwork or signing/version changes. No commit/push.
 

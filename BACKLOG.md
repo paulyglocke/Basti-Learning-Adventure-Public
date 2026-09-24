@@ -48,7 +48,7 @@ Already implemented and not active backlog unless a regression is found:
   - progress marker
   - completion layout
   - shared spacing/typography/press/motion rules
-- First visual-system slice implemented: shared primary/secondary/navigation action button adopted only by native completion; pinned layout/callbacks/semantics/reward behavior preserved. Physical review of the new styling remains separate from prior accepted learning flows. Next bounded slice: adopt the same component for Replay/Help/Retry in one ordinary activity, preserving all behavior; no global rewrite.
+- Shared action buttons now have two consumers: native completion and Seasons non-answer actions (Next, Replay, Help, Retry, Home). Callbacks/tags/enabled rules and excluded choice/speaker/chip controls remain intact. Physical styling review remains separate from accepted learning flows. Next bounded visual slice: adopt appropriate non-answer actions in Prepositions only; no global rewrite or new support behavior.
 - Then implement shared support presentation: independent attempt → Replay → subtle hint → stronger model/help → optional parent help; supported success remains success.
 - Then add only the minimal support-settings contract required by real consumers; no diagnosis-labelled modes.
 - Complete/reuse the existing canonical animal-art library; do not recreate accepted art.

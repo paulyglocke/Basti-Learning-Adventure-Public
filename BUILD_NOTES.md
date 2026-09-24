@@ -2,6 +2,38 @@
 
 This file records build/test evidence and should not be treated as a product or architecture specification.
 
+## Seasons adoption of shared action buttons — 2026-09-24
+
+Started clean main at `702f00f`. Reused NativeActionButton unchanged in ten SeasonsScreen non-answer call sites:
+
+- SECONDARY: Replay in Explore, quiz and ordering (three); Help and attempt Retry in quiz/ordering (four); common load/save/image retry (one).
+- PRIMARY: quiz Next (one).
+- NAVIGATION: non-completion Home (one). Completion continues using the already-migrated shared completion screen.
+
+All labels, callbacks, enabled expressions, test tags and existing modifiers retained. Source parity check compared each migrated callback/enabled expression and all test tags against HEAD. Shared geometry supplies at least 56dp height; Help/retry now take the available content width through the existing shared label geometry. The same vertically scrollable structure and order remain. Answer cards, season selection cards, ordering cards, per-choice Listen buttons, mode FilterChips, placed-season cards and Days & Seasons hub were not converted. Excluded helper bodies compare unchanged. No state/audio/progress/navigation/signing/versioning/artwork/common-component changes, no commit/push.
+
+Added four SeasonsActionButtonTest instrumented tests for callback/attempt/support behavior, keyboard Replay, button semantics/56dp targets, load/save/image/busy/language rules, ordering Help/Retry, disabled Next and Home availability, plus German 1.5× text at 320×480dp portrait and 700×240dp in both landscape orientations. TextLayoutResult checks retain all labels without overflow; actions remain scroll-reachable. Existing tests unchanged; no exact-color assertions or new role semantics added solely for tests.
+
+Validation environment: `JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'`, `ANDROID_HOME='/Users/paulbell/Library/Android/sdk'`, `ANDROID_SERIAL=emulator-5554`. Android 15 Medium_Phone_API_35 emulator only; stable S24 not touched.
+
+- `./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.package=com.bellfamily.bastischool.ui.seasons,com.bellfamily.bastischool.ui.common --console=plain`: **21 passed / 0 failures/errors/skips**, BUILD SUCCESSFUL (4m 8s): 12 Seasons (8 existing + 4 new), 9 ui.common (button/celebration).
+
+- `./gradlew testDebugUnitTest assembleDebug lintDebug connectedDebugAndroidTest --console=plain`: **264 JVM + 36 emulator tests passed, 0 failures/errors/skips**, BUILD SUCCESSFUL (4m 3s). All native activity/completion regressions included.
+- Lint: **0 errors / 3 warnings / 2 informational**. `UnusedAttribute` ×2, `SetJavaScriptEnabled` ×1; `AutoboxingStateCreation` ×2. No new suppression or baseline change.
+- For rendering retrieval after Gradle removed the test installation: `adb -s emulator-5554 install -r app/build/outputs/apk/debug/app-debug.apk`; `adb -s emulator-5554 install -r app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk`; `adb -s emulator-5554 shell am instrument -w -e class com.bellfamily.bastischool.ui.seasons.SeasonsActionButtonTest com.bellfamily.bastischool.test/androidx.test.runner.AndroidJUnitRunner`: **4 passed (24.321s)**. Retrieved `cache/seasons-actions-landscape.png` and `cache/seasons-actions-reverse.png` using emulator-only `exec-out run-as com.bellfamily.bastischool cat`.
+- Inspected both short-landscape rendering captures at German 1.5× font: Next has the primary filled emphasis, Home is clearly outlined/readable, labels remain uncut and controls separate in the existing scroll layout. Portrait and both landscapes also have automated text-overflow/target/reachability assertions for Replay, Help, Retry, Next and Home. No claim of physical screen-reader or hardware acceptance.
+- `git diff --check`, new-file whitespace, callback/enabled/tag parity and protected-path diff checks passed. Shared button/completion source, canonical assets, learning/session/audio/progress/navigation and signing/versioning/distribution remain unchanged. No browser tests rerun because browser sources did not change; no unrelated version-policy rerun required.
+
+Exact files changed:
+- `app/src/main/java/com/bellfamily/bastischool/ui/seasons/SeasonsScreen.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/seasons/SeasonsActionButtonTest.kt` (new)
+- `BACKLOG.md`
+- `BUILD_NOTES.md`
+- `SESSION_HANDOFF.md`
+- `UX_NAVIGATION_SPEC.md`
+
+New styling needs physical visual/touch/screen-reader review on S24 and Fire Max. Existing accepted Seasons/Wilma/artwork behavior is not reopened absent a regression; broader P0 acceptance remains separate. Two bounded consumers now use NativeActionButton: shared completion and ordinary Seasons actions. Suggested next slice: suitable non-answer actions in Prepositions only; no card redesign or support-system changes. Suggested commit: `feat: adopt shared action buttons in Seasons`.
+
 ## First P1 shared completion action buttons — 2026-09-24
 
 Started clean at `3c52a1c`. Added `NativeActionButton(label, role, onClick, modifier, enabled)` with PRIMARY filled, SECONDARY tonal, NAVIGATION outlined Material3 roles. Uses existing theme colors/type, 16dp corners, 16dp horizontal/10dp vertical padding, 56dp minimum growing height and centered semibold wrapping labels. Text fills allocated width; callers should supply appropriate width constraints. No custom animation/dependency/theme framework.

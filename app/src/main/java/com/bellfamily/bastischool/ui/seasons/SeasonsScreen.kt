@@ -7,6 +7,8 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import com.bellfamily.bastischool.ui.common.NativeCompletionScreen
+import com.bellfamily.bastischool.ui.common.NativeActionButton
+import com.bellfamily.bastischool.ui.common.NativeActionRole
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -66,7 +68,7 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
         if(saveFailed) Text(t("Progress could not be saved or restored. Please try again. Saved records are kept.",
             "Der Fortschritt konnte nicht gespeichert oder wiederhergestellt werden. Bitte versuche es erneut. Gespeicherte Einträge bleiben erhalten."))
         if(imageFailed) Text(t("The picture could not be opened. Please try again.","Das Bild konnte nicht geöffnet werden. Bitte versuche es erneut."))
-        if(saveFailed || imageFailed) Button(onClick=onRetry,enabled=!busy,modifier=Modifier.testTag("retry-load")) {Text(t("Try again","Erneut versuchen"))}
+        if(saveFailed || imageFailed) NativeActionButton(t("Try again","Erneut versuchen"), NativeActionRole.SECONDARY, onClick=onRetry,enabled=!busy,modifier=Modifier.testTag("retry-load"))
         if(audioFailed) Text(t("Speech is unavailable. Please check installed offline English and German voices in device settings.",
             "Die Sprachausgabe ist nicht verfügbar. Bitte prüfe installierte Offline-Stimmen für Englisch und Deutsch in den Geräte-Einstellungen."))
         if(selection==null) Text(t("Opening…","Wird geöffnet…"))
@@ -80,7 +82,7 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
                 } }
             }
             Text(selection.season.text.display[language],style=MaterialTheme.typography.headlineSmall,modifier=Modifier.testTag("season-name"))
-            Button(onClick=onReplay,enabled=ready,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-replay")) {Text(t("Listen again","Noch einmal hören"))}
+            NativeActionButton(t("Listen again","Noch einmal hören"), NativeActionRole.SECONDARY, onClick=onReplay,enabled=ready,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-replay"))
             BoxWithConstraints {
                 if(maxWidth>=700.dp) Row(horizontalArrangement=Arrangement.spacedBy(16.dp)) {
                     SeasonPicture(artwork,selection.season.text.display[language],Modifier.weight(1.4f))
@@ -92,7 +94,7 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
             }
         } else if(selection.phase == SeasonsPhase.ORDER && ordering != null) {
             val canAct=ready && ordering.language==language
-            Button(onClick=onReplay,enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-replay")) {Text(t("Listen again","Noch einmal hören"))}
+            NativeActionButton(t("Listen again","Noch einmal hören"), NativeActionRole.SECONDARY, onClick=onReplay,enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-replay"))
             Text(SeasonsOrder.prompt(ordering).display[language],style=MaterialTheme.typography.titleLarge,modifier=Modifier.testTag("seasons-order-prompt"))
             PlacedSeasons(ordering,orderArtwork,language)
             ordering.choices.filter {it !in ordering.placed}.chunked(2).forEach {row ->
@@ -114,17 +116,17 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
             }
             if(ordering.current.answer==AnswerState.RETRY_AVAILABLE) {
                 Text(t("Try again. The seasons already placed stay here.","Versuche es noch einmal. Die eingeordneten Jahreszeiten bleiben hier."))
-                Button(onClick={onOrder(SeasonsOrderAction.Retry(AttemptId(ordering.task,ordering.current.attempts)))},enabled=canAct,modifier=Modifier.testTag("seasons-retry")) {Text(t("Try again","Nochmal versuchen"))}
+                NativeActionButton(t("Try again","Nochmal versuchen"), NativeActionRole.SECONDARY, onClick={onOrder(SeasonsOrderAction.Retry(AttemptId(ordering.task,ordering.current.attempts)))},enabled=canAct,modifier=Modifier.testTag("seasons-retry"))
             }
             if(ordering.current.support.hint) Text(SeasonsOrder.help(ordering).display[language])
-            OutlinedButton(onClick={onOrder(SeasonsOrderAction.Help(ordering.task))},enabled=canAct,modifier=Modifier.heightIn(min=56.dp).testTag("seasons-hint")) {Text(t("Help","Hilfe"))}
+            NativeActionButton(t("Help","Hilfe"), NativeActionRole.SECONDARY, onClick={onOrder(SeasonsOrderAction.Help(ordering.task))},enabled=canAct,modifier=Modifier.heightIn(min=56.dp).testTag("seasons-hint"))
         } else if(state!=null) {
             val task=state.task
             val canAct=ready && state.language==language
             Text(if(state.phase==SessionPhase.COMPLETED)t("Adventure complete!","Abenteuer geschafft!")
                 else t("Question ${state.index+1} of ${state.plan.tasks.size}","Frage ${state.index+1} von ${state.plan.tasks.size}"),
                 style=MaterialTheme.typography.headlineSmall,modifier=Modifier.testTag("seasons-progress"))
-            Button(onClick=onReplay,enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-replay")) {Text(t("Listen again","Noch einmal hören"))}
+            NativeActionButton(t("Listen again","Noch einmal hören"), NativeActionRole.SECONDARY, onClick=onReplay,enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-replay"))
             if(state.phase==SessionPhase.ACTIVE) {
                 Text(task.question.instruction.display[language],style=MaterialTheme.typography.titleLarge,modifier=Modifier.testTag("seasons-prompt"))
                 val pictured=if(selection.phase==SeasonsPhase.PRACTICE) task.question.correct else SeasonsCycle.anchor(selection.phase,task.question)
@@ -141,14 +143,14 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
                 if(state.current.answer==AnswerState.CORRECT) Text(task.question.correctFeedback.display[language])
                 if(state.current.answer==AnswerState.RETRY_AVAILABLE) {
                     Text(task.question.wrongFeedback.display[language])
-                    Button(onClick={onAction(SessionAction.Retry(AttemptId(task.id,state.current.attempts)))},enabled=canAct,modifier=Modifier.testTag("seasons-retry")) {Text(t("Try again","Nochmal versuchen"))}
+                    NativeActionButton(t("Try again","Nochmal versuchen"), NativeActionRole.SECONDARY, onClick={onAction(SessionAction.Retry(AttemptId(task.id,state.current.attempts)))},enabled=canAct,modifier=Modifier.testTag("seasons-retry"))
                 }
                 if(state.current.support.hint) Text(task.question.hint!!.display[language])
-                if(!state.current.locked) OutlinedButton(onClick={onAction(SessionAction.Hint(task.id))},enabled=canAct,modifier=Modifier.heightIn(min=56.dp).testTag("seasons-hint")) {Text(t("Help","Hilfe"))}
-                if(state.current.locked) Button(onClick={onAction(SessionAction.Next(task.id))},enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-next")) {Text(t("Next","Weiter"))}
+                if(!state.current.locked) NativeActionButton(t("Help","Hilfe"), NativeActionRole.SECONDARY, onClick={onAction(SessionAction.Hint(task.id))},enabled=canAct,modifier=Modifier.heightIn(min=56.dp).testTag("seasons-hint"))
+                if(state.current.locked) NativeActionButton(t("Next","Weiter"), NativeActionRole.PRIMARY, onClick={onAction(SessionAction.Next(task.id))},enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-next"))
             }
         }
-        Button(onClick=onHome,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-home")) {Text(t("Back home","Zurück zum Start"))}
+        NativeActionButton(t("Back home","Zurück zum Start"), NativeActionRole.NAVIGATION, onClick=onHome,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-home"))
     }
 }
 
