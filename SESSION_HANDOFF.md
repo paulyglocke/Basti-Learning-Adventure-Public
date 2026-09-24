@@ -1,6 +1,16 @@
 # Session handoff — 2026-09-23
 
-## Current checkpoint — Wilma day-colour usability cue
+## Current checkpoint — action-button rollout across native activities
+
+Started clean main `ebe76eb`; preserved the committed Seasons adoption and Wilma colour-cue fix. Prepositions, Vocabulary and Wilma non-day actions now use the existing NativeActionButton unchanged. PRIMARY: Next. SECONDARY: Replay, Help, attempt/load/save retry, Prepositions How to play and Vocabulary sentence Listen. NAVIGATION: Home and Prepositions legacy fallback (including its completion footer). Labels, callbacks, enabled expressions, tags, existing modifiers and screen order are retained. Shared geometry makes previously compact support actions fill the available width and supplies a growing 56dp minimum height.
+
+Answer/picture cards, mode selectors, individual answer speakers, Wilma coloured strip/order choices, auto-follow and celebration are unchanged. No learning/content/session/progress/audio/navigation, signing/versioning/distribution or artwork changes. All changes remain uncommitted; do not push.
+
+Validation: 39/39 focused instrumentation, 265/265 JVM and 51/51 final fresh-emulator instrumentation passed; debug assembly passed; lint 0 errors / 3 existing warnings / 2 informational; diff/new-file whitespace checks passed. An earlier full run was 50/51 due to an existing Compose startup failure, which did not reproduce after emulator restart; no production behavior or existing tests changed in response. Exact commands and intermediate evidence are in the newest BUILD_NOTES entry. New parameterized UI coverage exercises all three activities plus Wilma ordering in German at 1.5× text, portrait and both short landscape orientations, including accessible/keyboard activation, attempts/support, disabled/save-failure rules, labels and 56dp targets. Existing tests are preserved.
+
+Audit: completion, Seasons, Prepositions, Vocabulary and Wilma now use the same three roles. No extra API is needed; allocated width and surrounding spacing stay caller-owned. Semantic answer/day controls intentionally remain custom. Next bounded P1 candidate: a choice/image-card contract with two concrete consumers, preserving semantic answers and Wilma colour cues; do not start it automatically. Physical S24/Fire visual, touch and TalkBack review remains outstanding; previous accepted learning/artwork/upgrade checks remain closed absent regression. Re-test Wilma colour recognition with Basti separately.
+
+## Previous checkpoint — Wilma day-colour usability cue
 
 Started on clean main `d0a8c94`, newer than the requested `702f00f`; preserved the committed Seasons action-button adoption. Physical child-use finding: generic weekday choices were confusing. Wilma selectable day-strip labels (Explore/Find/Before–After) and ordering choices now reinforce the established weekday colours. No prompt, correctness, generation, sequencing, restore, auto-follow, audio, progress, navigation, celebration or language-string changes.
 

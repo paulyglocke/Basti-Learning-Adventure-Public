@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
+import com.bellfamily.bastischool.ui.common.NativeActionButton
+import com.bellfamily.bastischool.ui.common.NativeActionRole
 import com.bellfamily.bastischool.ui.common.NativeCompletionScreen
 import androidx.compose.runtime.*
 import androidx.compose.animation.core.tween
@@ -58,11 +60,11 @@ fun WilmaScreen(selection:WilmaSelection?,quiz:SessionState?,ordering:WilmaOrder
         } } }
         if(saveFailed) Text(t("Your saved work is kept. Please try saving or opening it again.","Deine gespeicherte Arbeit bleibt erhalten. Versuche erneut, sie zu speichern oder zu öffnen."))
         if(imageFailed) Text(t("Wilma’s pictures could not be opened. Please try again.","Wilmas Bilder konnten nicht geöffnet werden. Bitte versuche es erneut."))
-        if(saveFailed || imageFailed) Button(onClick=onRetry,enabled=!busy,modifier=Modifier.testTag("wilma-retry-save")){Text(t("Try again","Erneut versuchen"))}
+        if(saveFailed || imageFailed) NativeActionButton(t("Try again", "Erneut versuchen"), NativeActionRole.SECONDARY, onClick=onRetry,enabled=!busy,modifier=Modifier.testTag("wilma-retry-save"))
         if(audioFailed) Text(t("Speech is unavailable. Check the installed offline English and German voices in device settings.","Die Sprachausgabe ist nicht verfügbar. Prüfe die installierten Offline-Stimmen für Englisch und Deutsch in den Geräte-Einstellungen."))
         if(selection==null) Text(t("Opening…","Wird geöffnet…")) else {
             Text(selection.phase.title.display[language],style=MaterialTheme.typography.titleLarge)
-            Button(onClick=onReplay,enabled=ready,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("wilma-replay")) {Text(t("Listen again","Noch einmal hören"))}
+            NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY, onClick=onReplay,enabled=ready,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("wilma-replay"))
             when(selection.phase) {
                 WilmaPhase.EXPLORE -> {
                     Text(t("Tap a day to hear its name. Swipe along Wilma to see the whole week.","Tippe auf einen Tag, um seinen Namen zu hören. Wische an Wilma entlang, um die ganze Woche zu sehen."))
@@ -83,11 +85,11 @@ fun WilmaScreen(selection:WilmaSelection?,quiz:SessionState?,ordering:WilmaOrder
                         if(quiz.current.answer==AnswerState.CORRECT)Text(quiz.task.question.correctFeedback.display[language])
                         if(quiz.current.answer==AnswerState.RETRY_AVAILABLE) {
                             Text(quiz.task.question.wrongFeedback.display[language])
-                            Button(onClick={onAction(SessionAction.Retry(AttemptId(quiz.task.id,quiz.current.attempts)))},enabled=canAct,modifier=Modifier.testTag("wilma-retry")){Text(t("Try again","Nochmal versuchen"))}
+                            NativeActionButton(t("Try again", "Nochmal versuchen"), NativeActionRole.SECONDARY, onClick={onAction(SessionAction.Retry(AttemptId(quiz.task.id,quiz.current.attempts)))},enabled=canAct,modifier=Modifier.testTag("wilma-retry"))
                         }
                         if(quiz.current.support.hint)Text(quiz.task.question.hint!!.display[language])
-                        if(!quiz.current.locked)OutlinedButton(onClick={onAction(SessionAction.Hint(quiz.task.id))},enabled=canAct,modifier=Modifier.heightIn(min=56.dp).testTag("wilma-help")){Text(t("Help","Hilfe"))}
-                        if(quiz.current.locked)Button(onClick={onAction(SessionAction.Next(quiz.task.id))},enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("wilma-next")){Text(t("Next","Weiter"))}
+                        if(!quiz.current.locked)NativeActionButton(t("Help", "Hilfe"), NativeActionRole.SECONDARY, onClick={onAction(SessionAction.Hint(quiz.task.id))},enabled=canAct,modifier=Modifier.heightIn(min=56.dp).testTag("wilma-help"))
+                        if(quiz.current.locked)NativeActionButton(t("Next", "Weiter"), NativeActionRole.PRIMARY, onClick={onAction(SessionAction.Next(quiz.task.id))},enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("wilma-next"))
                     }
                 }
                 WilmaPhase.ORDER -> if(ordering!=null) {
@@ -111,15 +113,15 @@ fun WilmaScreen(selection:WilmaSelection?,quiz:SessionState?,ordering:WilmaOrder
                         } } }
                         if(ordering.current.answer==AnswerState.RETRY_AVAILABLE) {
                             Text(t("Try again. Your placed days stay here.","Versuche es noch einmal. Deine eingeordneten Tage bleiben hier."))
-                            Button(onClick={onOrder(WilmaOrderAction.Retry(AttemptId(ordering.task,ordering.current.attempts)))},enabled=canAct,modifier=Modifier.testTag("wilma-retry")){Text(t("Try again","Nochmal versuchen"))}
+                            NativeActionButton(t("Try again", "Nochmal versuchen"), NativeActionRole.SECONDARY, onClick={onOrder(WilmaOrderAction.Retry(AttemptId(ordering.task,ordering.current.attempts)))},enabled=canAct,modifier=Modifier.testTag("wilma-retry"))
                         }
                         if(ordering.current.support.hint)Text(WilmaOrder.help(ordering).display[language])
-                        OutlinedButton(onClick={onOrder(WilmaOrderAction.Help(ordering.task))},enabled=canAct,modifier=Modifier.heightIn(min=56.dp).testTag("wilma-help")){Text(t("Help","Hilfe"))}
+                        NativeActionButton(t("Help", "Hilfe"), NativeActionRole.SECONDARY, onClick={onOrder(WilmaOrderAction.Help(ordering.task))},enabled=canAct,modifier=Modifier.heightIn(min=56.dp).testTag("wilma-help"))
                     }
                 }
             }
         }
-        Button(onClick=onHome,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("wilma-home")){Text(t("Back home","Zurück zum Start"))}
+        NativeActionButton(t("Back home", "Zurück zum Start"), NativeActionRole.NAVIGATION, onClick=onHome,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("wilma-home"))
     }
 }
 

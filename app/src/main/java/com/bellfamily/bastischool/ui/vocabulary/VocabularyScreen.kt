@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
+import com.bellfamily.bastischool.ui.common.NativeActionButton
+import com.bellfamily.bastischool.ui.common.NativeActionRole
 import com.bellfamily.bastischool.ui.common.NativeCompletionScreen
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -46,7 +48,7 @@ fun VocabularyScreen(selection:VocabularySelection?,state:SessionState?,language
         }
         if(saveFailed) {
             Text(t("Progress could not be saved or restored. Saved records are kept.","Der Fortschritt konnte nicht gespeichert oder wiederhergestellt werden. Gespeicherte Einträge bleiben erhalten."))
-            Button(onRetry,enabled=!busy,modifier=Modifier.heightIn(min=56.dp).testTag("vocabulary-load")){Text(t("Try again","Erneut versuchen"))}
+            NativeActionButton(t("Try again", "Erneut versuchen"), NativeActionRole.SECONDARY, onClick=onRetry,enabled=!busy,modifier=Modifier.heightIn(min=56.dp).testTag("vocabulary-load"))
         }
         if(audioFailed) Text(t("Speech is unavailable. Please check installed offline English and German voices in device settings.","Die Sprachausgabe ist nicht verfügbar. Bitte prüfe installierte Offline-Stimmen für Englisch und Deutsch in den Geräte-Einstellungen."))
         if(selection==null) Text(t("Opening…","Wird geöffnet…"))
@@ -58,15 +60,15 @@ fun VocabularyScreen(selection:VocabularySelection?,state:SessionState?,language
             }
             Text(selection.item.text.display[language],style=MaterialTheme.typography.headlineMedium,modifier=Modifier.testTag("vocabulary-word"))
             AnimalPicture(selection.item,language,Modifier.fillMaxWidth())
-            Button(onReplay,enabled=ready,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("vocabulary-replay")){Text(t("Listen again","Noch einmal hören"))}
+            NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY, onClick=onReplay,enabled=ready,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("vocabulary-replay"))
             Text(selection.item.example.display[language],style=MaterialTheme.typography.titleLarge)
-            OutlinedButton(onExample,enabled=ready,modifier=Modifier.heightIn(min=56.dp).testTag("vocabulary-example")){Text(t("Listen to the sentence","Satz anhören"))}
+            NativeActionButton(t("Listen to the sentence", "Satz anhören"), NativeActionRole.SECONDARY, onClick = onExample,enabled=ready,modifier=Modifier.heightIn(min=56.dp).testTag("vocabulary-example"))
             Text(t("Can you say the word in your own sentence? You can ask someone to help.","Kannst du mit dem Wort einen eigenen Satz sagen? Du kannst dir helfen lassen."))
         } else if(state!=null) {
             val canAct=ready && state.language==language
             Text(if(state.phase==SessionPhase.COMPLETED)t("Adventure complete!","Abenteuer geschafft!") else
                 t("Question ${state.index+1} of ${state.plan.tasks.size}","Frage ${state.index+1} von ${state.plan.tasks.size}"),style=MaterialTheme.typography.headlineSmall)
-            Button(onReplay,enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("vocabulary-replay")){Text(t("Listen again","Noch einmal hören"))}
+            NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY, onClick = onReplay,enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("vocabulary-replay"))
             if(state.phase==SessionPhase.ACTIVE) {
                 Text(state.task.question.instruction.display[language],style=MaterialTheme.typography.titleLarge)
                 if(selection.phase==VocabularyPhase.NAME) AnimalPicture(VocabularyContent.item(state.task.question.correct),language,Modifier.fillMaxWidth())
@@ -92,14 +94,14 @@ fun VocabularyScreen(selection:VocabularySelection?,state:SessionState?,language
                 if(state.current.answer==AnswerState.CORRECT)Text(state.task.question.correctFeedback.display[language])
                 if(state.current.answer==AnswerState.RETRY_AVAILABLE) {
                     Text(state.task.question.wrongFeedback.display[language])
-                    Button({onAction(SessionAction.Retry(AttemptId(state.task.id,state.current.attempts)))},enabled=canAct,modifier=Modifier.heightIn(min=56.dp).testTag("vocabulary-retry")){Text(t("Try again","Nochmal versuchen"))}
+                    NativeActionButton(t("Try again", "Nochmal versuchen"), NativeActionRole.SECONDARY, onClick = {onAction(SessionAction.Retry(AttemptId(state.task.id,state.current.attempts)))},enabled=canAct,modifier=Modifier.heightIn(min=56.dp).testTag("vocabulary-retry"))
                 }
                 if(state.current.support.hint)Text(state.task.question.hint!!.display[language])
-                if(!state.current.locked)OutlinedButton({onAction(SessionAction.Hint(state.task.id))},enabled=canAct,modifier=Modifier.heightIn(min=56.dp).testTag("vocabulary-help")){Text(t("Help","Hilfe"))}
-                if(state.current.locked)Button({onAction(SessionAction.Next(state.task.id))},enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("vocabulary-next")){Text(t("Next","Weiter"))}
+                if(!state.current.locked)NativeActionButton(t("Help", "Hilfe"), NativeActionRole.SECONDARY, onClick = {onAction(SessionAction.Hint(state.task.id))},enabled=canAct,modifier=Modifier.heightIn(min=56.dp).testTag("vocabulary-help"))
+                if(state.current.locked)NativeActionButton(t("Next", "Weiter"), NativeActionRole.PRIMARY, onClick = {onAction(SessionAction.Next(state.task.id))},enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("vocabulary-next"))
             }
         }
-        Button(onHome,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("vocabulary-home")){Text(t("Back home","Zurück zum Start"))}
+        NativeActionButton(t("Back home", "Zurück zum Start"), NativeActionRole.NAVIGATION, onClick = onHome,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("vocabulary-home"))
     }
 }
 

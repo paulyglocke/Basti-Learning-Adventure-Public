@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
+import com.bellfamily.bastischool.ui.common.NativeActionButton
+import com.bellfamily.bastischool.ui.common.NativeActionRole
 import com.bellfamily.bastischool.ui.common.NativeCompletionScreen
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -35,7 +37,7 @@ fun PrepositionsScreen(state: SessionState?, language: ContentLanguage, busy: Bo
         NativeCompletionScreen(state.plan.id.value, language, state.plan.completionText.display[language],
             !busy && !saveFailed && state.language == language, "", {onAction(SessionAction.Replay(state.task.id))},
             onAgain, onHome, onPop, modifier, saveFailed, onRetrySave, audioFailed) {
-            OutlinedButton(onClick = onLegacy, modifier = Modifier.heightIn(min = 48.dp).testTag("legacy")) {Text(t("Use previous version", "Bisherige Version öffnen"))}
+            NativeActionButton(t("Use previous version", "Bisherige Version öffnen"), NativeActionRole.NAVIGATION, onClick = onLegacy, modifier = Modifier.heightIn(min = 48.dp).testTag("legacy"))
         }
         return
     }
@@ -44,7 +46,7 @@ fun PrepositionsScreen(state: SessionState?, language: ContentLanguage, busy: Bo
         if (saveFailed) {
             Text(t("Progress could not be saved. Please try again. Your saved progress is kept.",
                 "Der Fortschritt konnte nicht gespeichert werden. Bitte versuche es erneut. Gespeicherter Fortschritt bleibt erhalten."))
-            Button(onClick = onRetrySave, enabled = !busy, modifier = Modifier.testTag("retry-save")) { Text(t("Try saving again", "Speichern erneut versuchen")) }
+            NativeActionButton(t("Try saving again", "Speichern erneut versuchen"), NativeActionRole.SECONDARY, onClick = onRetrySave, enabled = !busy, modifier = Modifier.testTag("retry-save"))
         }
         if (audioFailed) Text(t("Speech is unavailable. Check installed offline voices in Options. You can still use the pictures.",
             "Die Sprachausgabe ist nicht verfügbar. Prüfe die installierten Offline-Stimmen in den Optionen. Du kannst die Bilder weiter nutzen."))
@@ -56,8 +58,8 @@ fun PrepositionsScreen(state: SessionState?, language: ContentLanguage, busy: Bo
             Text(if (state.phase == SessionPhase.COMPLETED) t("Adventure complete!", "Abenteuer geschafft!")
                 else t("Question ${state.index + 1} of ${state.plan.tasks.size}", "Frage ${state.index + 1} von ${state.plan.tasks.size}"),
                 style = MaterialTheme.typography.headlineSmall, modifier = Modifier.testTag("progress"))
-            Button(onClick = { onAction(SessionAction.Replay(task.id)) }, enabled = ready,
-                modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("replay")) { Text(t("Listen again", "Noch einmal hören")) }
+            NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY, onClick = { onAction(SessionAction.Replay(task.id)) }, enabled = ready,
+                modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("replay"))
             if (state.phase == SessionPhase.ACTIVE) {
                 Text(task.question.instruction.display[language], style = MaterialTheme.typography.titleLarge)
                 BoxWithConstraints {
@@ -72,18 +74,18 @@ fun PrepositionsScreen(state: SessionState?, language: ContentLanguage, busy: Bo
                 if (current.answer == AnswerState.CORRECT) Text(task.question.correctFeedback.display[language], modifier = Modifier.testTag("feedback"))
                 else if (current.answer == AnswerState.RETRY_AVAILABLE) Text(task.question.wrongFeedback.display[language], modifier = Modifier.testTag("feedback"))
                 if (current.support.hint) Text(task.question.hint!!.display[language], modifier = Modifier.testTag("hint-text"))
-                if (!current.locked) OutlinedButton(onClick = { onAction(SessionAction.Hint(task.id)) }, enabled = ready,
-                    modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("hint")) { Text(t("Help", "Hilfe")) }
-                if (current.answer == AnswerState.RETRY_AVAILABLE) Button(
+                if (!current.locked) NativeActionButton(t("Help", "Hilfe"), NativeActionRole.SECONDARY, onClick = { onAction(SessionAction.Hint(task.id)) }, enabled = ready,
+                    modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("hint"))
+                if (current.answer == AnswerState.RETRY_AVAILABLE) NativeActionButton(t("Try again", "Nochmal versuchen"), NativeActionRole.SECONDARY,
                     onClick = { onAction(SessionAction.Retry(AttemptId(task.id, current.attempts))) }, enabled = ready,
-                    modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("retry")) { Text(t("Try again", "Nochmal versuchen")) }
-                if (current.locked) Button(onClick = { onAction(SessionAction.Next(task.id)) }, enabled = ready,
-                    modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("next")) { Text(t("Next", "Weiter")) }
-                OutlinedButton(onClick = onIntroduction, enabled = ready) { Text(t("How to play", "So geht’s")) }
+                    modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("retry"))
+                if (current.locked) NativeActionButton(t("Next", "Weiter"), NativeActionRole.PRIMARY, onClick = { onAction(SessionAction.Next(task.id)) }, enabled = ready,
+                    modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("next"))
+                NativeActionButton(t("How to play", "So geht’s"), NativeActionRole.SECONDARY, onClick = onIntroduction, enabled = ready)
             }
         }
-        Button(onClick = onHome, modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("home")) { Text(t("Back home", "Zurück zum Start")) }
-        OutlinedButton(onClick = onLegacy, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("legacy")) { Text(t("Use previous version", "Bisherige Version öffnen")) }
+        NativeActionButton(t("Back home", "Zurück zum Start"), NativeActionRole.NAVIGATION, onClick = onHome, modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("home"))
+        NativeActionButton(t("Use previous version", "Bisherige Version öffnen"), NativeActionRole.NAVIGATION, onClick = onLegacy, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("legacy"))
     }
 }
 

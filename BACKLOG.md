@@ -49,7 +49,7 @@ Already implemented and not active backlog unless a regression is found:
   - progress marker
   - completion layout
   - shared spacing/typography/press/motion rules
-- Shared action buttons now have two consumers: native completion and Seasons non-answer actions (Next, Replay, Help, Retry, Home). Callbacks/tags/enabled rules and excluded choice/speaker/chip controls remain intact. Physical styling review remains separate from accepted learning flows. Next bounded visual slice: adopt appropriate non-answer actions in Prepositions only; no global rewrite or new support behavior.
+- Shared action buttons now cover native completion, Seasons, Prepositions, Vocabulary and Wilma non-day actions. PRIMARY/SECONDARY/NAVIGATION remain sufficient; caller-owned labels/tags/callbacks/enabled rules are preserved. Answer cards, mode selectors, individual option speakers and Wilma colour-cued day choices intentionally stay custom. Physical styling review remains separate from accepted learning flows. Next bounded visual slice: review a shared choice/image-card contract with two concrete consumers, without changing answer semantics or Wilma colour cues; do not begin a global rewrite.
 - Then implement shared support presentation: independent attempt → Replay → subtle hint → stronger model/help → optional parent help; supported success remains success.
 - Then add only the minimal support-settings contract required by real consumers; no diagnosis-labelled modes.
 - Complete/reuse the existing canonical animal-art library; do not recreate accepted art.

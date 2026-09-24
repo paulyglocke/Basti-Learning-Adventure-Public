@@ -1,5 +1,48 @@
 # V1 verification and fixes
 
+## Native action-button rollout — 2026-09-24
+
+Started from clean main `ebe76eb`. Presentation-only adoption of the unchanged NativeActionButton in three screens (25 call sites):
+
+- Prepositions (9): PRIMARY Next; SECONDARY Replay, Help, attempt Retry, save Retry and How to play; NAVIGATION Home and legacy fallback in active/completed views.
+- Vocabulary (8): PRIMARY Next; SECONDARY Explore/practice Replay, sentence Listen, Help, attempt Retry and load/save Retry; NAVIGATION Home.
+- Wilma (8): PRIMARY quiz Next; SECONDARY Replay, quiz/order Help and Retry, load/save/image Retry; NAVIGATION Home.
+
+All labels, callbacks, enabled expressions, test tags, existing modifiers and screen hierarchy retained. The component adds its existing 56dp minimum height/16dp rounded geometry and allocated-width wrapping label; previously compact supportive actions now fill available width. No new role/API/theme/dependency. Three roles are sufficient across completion, Seasons and these three activities; layout width/spacing remain caller-owned. Answer cards, per-option speakers, modes/chips and Wilma colour-cued choices intentionally remain custom. WilmaStrip/auto-follow and palette are unchanged. No learning/session/progress/audio/navigation logic, signing/version/distribution configuration or canonical artwork changed.
+
+New ActivityActionAdoptionTest parameterizes Prepositions, Vocabulary, Wilma Find and Wilma Order over portrait and both landscape orientations: 12 cases, German 1.5× font, 320×480dp / 700×240dp. Checks button labels/no text overflow, 56dp targets, Material Button semantics, keyboard Replay, callbacks, support/attempt separation, wrong/retry/correct/Next, busy/save-failure gates, Home availability, Vocabulary sentence Listen and Prepositions introduction/legacy link. Existing tests are unchanged. Roles are verified by the source mapping and existing shared-component tests, not new test-only semantics or duplicated colour literals.
+
+Environment for every Gradle command below:
+
+```sh
+export JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'
+export ANDROID_HOME='/Users/paulbell/Library/Android/sdk'
+export ANDROID_SERIAL=emulator-5554
+```
+
+Only Medium_Phone_API_35 (Android 15) was used. No stable S24 installation was accessed.
+
+- Initial `./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.bellfamily.bastischool.ui.common.ActivityActionAdoptionTest --console=plain`: 10 passed / 2 failed. Diagnostic rerun with an explicit correct-answer state assertion: same 10/2. These new tests attempted a center-coordinate click on the unmodified tall Wilma strip in a deliberately 240dp-high viewport. The new fixture now uses the segment's accessible OnClick action for that setup step; correct-answer/Next assertions remain, and existing Wilma touch tests remain unchanged. No production behavior was changed to satisfy this fixture.
+- `./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.package=com.bellfamily.bastischool.ui.common,com.bellfamily.bastischool.ui.prepositions,com.bellfamily.bastischool.ui.vocabulary,com.bellfamily.bastischool.ui.wilma --console=plain`: **39 passed / 0 failures/errors/skips**, BUILD SUCCESSFUL (3m 56s). Includes all 12 new cases, shared buttons/completion celebration, existing activity tests, Wilma colours and WilmaFollowTest.
+- First full `./gradlew testDebugUnitTest assembleDebug lintDebug connectedDebugAndroidTest --console=plain`: 265 JVM passed; instrumentation 50 passed / 1 failed. Existing NativeActionButtonTest.allRolesExposeButtonSemanticsTargetsAndRespectDisabledState reported “No compose hierarchies found” at startup (it passed in the focused run); no production assertion failed. Restarted only the emulator without loading snapshots, retaining all assertions/tests.
+- Final fresh-emulator `./gradlew testDebugUnitTest assembleDebug lintDebug connectedDebugAndroidTest --console=plain`: **265 JVM + 51 instrumentation passed / 0 failures/errors/skips**, BUILD SUCCESSFUL (6m 2s). Debug APK assembly passed; lint completed with **0 errors / 3 warnings / 2 informational findings**: UnusedAttribute ×2, SetJavaScriptEnabled ×1, AutoboxingStateCreation ×2 informational. XML reports independently checked after the interrupted session resumed. The earlier single Compose-startup failure did not reproduce; recorded as transient emulator/test infrastructure evidence, with no production fix or test weakening.
+- Final `git diff --check`, new-file whitespace and protected-path checks passed. All 25 adopted sites retain original tags; excluded drawing/choice helpers and Wilma auto-follow compare unchanged. No additional suite was rerun after resuming because the in-flight final run had already completed successfully.
+
+Rendering review: saved test captures using `adb -s emulator-5554 exec-out run-as com.bellfamily.bastischool cat cache/actions-<surface>-<orientation>.png` to `/private/tmp/basti-actions-*.png`. Reviewed all four surfaces in portrait/short landscape with German 1.5× text and the existing primary/secondary theme colours. Filled green Next is distinct from tonal support and outlined Home; no migrated label clipping or overlap. Captures are scrolled action-region views, not whole-screen hardware acceptance. The isolated Wilma fixture omits artwork; existing Wilma image tests remain in the regression. Existing narrow-column Wilma day/Listen words can still wrap within words at 320dp/1.5×; those excluded controls were not redesigned. Subjective readability remains a physical check.
+
+Exact changed files:
+- `app/src/main/java/com/bellfamily/bastischool/ui/prepositions/PrepositionsScreen.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/vocabulary/VocabularyScreen.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/wilma/WilmaScreen.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/common/ActivityActionAdoptionTest.kt` (new)
+- `BACKLOG.md`
+- `BUILD_NOTES.md`
+- `SESSION_HANDOFF.md`
+- `UX_NAVIGATION_SPEC.md`
+
+Remaining: S24/Fire physical visual/touch/TalkBack/focus review in both landscapes and larger text; re-test Wilma's already-implemented colour cues with Basti. Prior owner-accepted Seasons/Wilma/celebration-art/upgrade behavior remains closed absent regression. No browser tests needed because browser sources are unchanged. No signing/version guards rerun for this presentation-only change; their configuration is untouched. Suggested next bounded P1 slice: choice/image-card contract using two concrete consumers, without altering semantic answers or Wilma cues. No next feature started. Suggested commit: `feat: adopt shared action buttons across native activities`. No commit/push.
+
+
 This file records build/test evidence and should not be treated as a product or architecture specification.
 
 ## Wilma selectable weekday colour cues — 2026-09-24
