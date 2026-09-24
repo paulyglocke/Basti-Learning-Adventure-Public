@@ -1,6 +1,14 @@
 # Session handoff — 2026-09-23
 
-## Current checkpoint — action-button rollout across native activities
+## Current checkpoint — shared support text, Seasons and Prepositions
+
+Started clean main `a2a750e`. Added `NativeSupportMessage(text, modifier)`: one non-interactive Material3 Text node with a neutral rounded background, readable theme colour pair, 12dp padding, bodyLarge typography and unrestricted wrapping. It shares presentation only; no enum/escalation/state/actions/audio/persistence. Two existing content uses are represented: authored hints and gentle retry guidance. No distinct stronger-help state exists in these consumers, so none was added.
+
+Six message sites migrated: Seasons quiz retry/hint (recognition and cycle modes), Seasons ordering retry/hint, Prepositions retry/hint. Exact content, visibility conditions and existing tags retained. Buttons, prompts, success feedback, technical error text, scene/answer layouts, completion, learning/session/progress/audio, artwork, Wilma colours and signing/versioning remain unchanged. Vocabulary/Wilma adoption is deferred. No commit/push.
+
+Validation: 14/14 focused support tests, 265/265 JVM and 65/65 full emulator tests passed with zero failures/errors/skips; debug assembly passed; lint 0 errors / 3 existing warnings / 2 informational. Diff/new-file whitespace and exact consumer source-parity checks passed. No flake/retry. EN/DE portrait and German short-landscape 1.5× renders reviewed; long Seasons hints remain scrollable with full-size text and reachable actions. Exact commands and rendering limits are in the newest BUILD_NOTES entry. Physical S24/Fire readability, touch/scroll and TalkBack review remain separate from emulator evidence. Next bounded task could adopt this same small primitive for existing Vocabulary/Wilma retry/hint text after review, without new support levels or settings. No next task started.
+
+## Previous checkpoint — action-button rollout across native activities
 
 Started clean main `ebe76eb`; preserved the committed Seasons adoption and Wilma colour-cue fix. Prepositions, Vocabulary and Wilma non-day actions now use the existing NativeActionButton unchanged. PRIMARY: Next. SECONDARY: Replay, Help, attempt/load/save retry, Prepositions How to play and Vocabulary sentence Listen. NAVIGATION: Home and Prepositions legacy fallback (including its completion footer). Labels, callbacks, enabled expressions, tags, existing modifiers and screen order are retained. Shared geometry makes previously compact support actions fill the available width and supplies a growing 56dp minimum height.
 

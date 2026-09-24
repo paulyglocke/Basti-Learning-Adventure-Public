@@ -1,5 +1,42 @@
 # V1 verification and fixes
 
+## Shared support presentation — first two consumers — 2026-09-24
+
+Started from clean main `a2a750e` (action-button rollout committed). Added `NativeSupportMessage(text, modifier)` and adopted it only for six child-facing support text sites: Prepositions wrong-attempt retry guidance and authored hint; Seasons quiz retry guidance/hint (shared by recognition/next/before), and ordering retry guidance/hint. Exact text, visibility predicates, existing tags and all button callbacks/enabled rules are unchanged. Correct feedback, prompts, technical error messages, Explore, completion, answer/scene/image layout and How to play remain separate.
+
+Implementation is deliberately one Text node with a neutral Material3 surfaceVariant/onSurfaceVariant rounded background (16dp), 12dp padding, bodyLarge type and allocated-width wrapping; no fixed height/maxLines. A visible container separates support from the prompt without error colours, symbols, motion or extra labels. Natural Text semantics preserve reading order and caller tags, without duplicate content descriptions, focus, live announcements or click actions. NativeActionButton remains separate. Retry guidance and hints are existing content uses, not newly invented learning categories: both need the same presentation, so there is no unnecessary category enum. Neither consumer exposes a genuinely distinct stronger-help state; no parent-help workflow was added.
+
+No reducer, support tracking, progress schema, scoring, checkpoint, audio, navigation, canonical artwork, Wilma colour, signing/version/distribution or browser changes. No existing tests removed or weakened. Vocabulary/Wilma adoption is deferred. Shared commonality is the calm authored-text container; content, visibility, support accounting and actions remain activity-specific. The API is ready for bounded later adoption with no extension presently needed.
+
+Validation environment:
+
+```sh
+export JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'
+export ANDROID_HOME='/Users/paulbell/Library/Android/sdk'
+export ANDROID_SERIAL=emulator-5554
+```
+
+Only Medium_Phone_API_35 (Android 15) is used; stable S24 installation is untouched.
+
+- `./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.bellfamily.bastischool.ui.common.NativeSupportMessageTest,com.bellfamily.bastischool.ui.common.SupportPresentationTest --console=plain`: **14 passed / 0 failures/errors/skips**, BUILD SUCCESSFUL (2m 1s). Two shared component tests plus twelve actual screen/reducer cases: Prepositions, Seasons quiz and Seasons ordering, each in German 1.5× portrait/both short landscapes and English 1.5× portrait. Tests check exact text/timing, no duplicate interactive semantics, natural long-text growth, Replay/hint/attempt/retry accounting, supported scoring/Next, hint retention, ordering placement retention and reachable Home/actions. No pixel-colour assertions.
+- `./gradlew testDebugUnitTest assembleDebug lintDebug connectedDebugAndroidTest --console=plain`: **265 JVM + 65 instrumentation passed / 0 failures/errors/skips**, BUILD SUCCESSFUL (6m 51s). Includes all existing Seasons, Prepositions, action-button, celebration, Wilma and Vocabulary tests. Debug assembly passed. Lint: **0 errors / 3 existing warnings / 2 informational** (UnusedAttribute ×2, SetJavaScriptEnabled ×1; AutoboxingStateCreation ×2 informational). No emulator startup flake or retry occurred in this task.
+- `git diff --check` and new-file whitespace checks passed. Source parity check reconstructs both original screens exactly by replacing NativeSupportMessage with Text and removing its import: confirms no text, predicate, tag, callback, button or scene change. Browser tests are omitted because browser sources are unchanged. No signing/distribution configuration changed.
+- Rendering: reviewed EN/DE portrait and German short-landscape support regions for Prepositions, Seasons quiz and Seasons ordering, captured from the emulator tests via `adb -s emulator-5554 exec-out run-as com.bellfamily.bastischool cat cache/support-<surface>-<orientation>-<language>.png`. Neutral containers separate normal-weight, left-aligned support text from bold action buttons; no error symbols/colours. Long authored Seasons hints naturally require vertical scrolling at 1.5×; text is not shrunk and tests reach Retry/Help/Next/Home. Fixtures use Material3 default theme and omit Seasons artwork; these are text/layout checks, not whole-app/device visual acceptance. Initial capture attempted after focused-test cleanup found the app already removed; captures were successfully collected during the full run, with no extra app install or test rerun.
+
+Changed files:
+- `app/src/main/java/com/bellfamily/bastischool/ui/common/NativeSupportMessage.kt` (new)
+- `app/src/main/java/com/bellfamily/bastischool/ui/seasons/SeasonsScreen.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/prepositions/PrepositionsScreen.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/common/NativeSupportMessageTest.kt` (new)
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/common/SupportPresentationTest.kt` (new)
+- `BACKLOG.md`
+- `BUILD_NOTES.md`
+- `SESSION_HANDOFF.md`
+- `UX_NAVIGATION_SPEC.md`
+
+Remaining physical S24/Fire checks: subjective calmness/contrast/readability, full artwork/answer/support hierarchy, both landscapes, larger text, scroll/touch separation and TalkBack reading order. Existing accepted learning/artwork/upgrade checks remain accepted absent regression. No hardware acceptance is claimed. Suggested next bounded P1 task: adopt the same text primitive in existing Vocabulary/Wilma retry/hint surfaces after review, preserving their semantics and coloured choices. Suggested commit: `feat: share support messages in Seasons and Prepositions`. No commit/push or next-task implementation.
+
+
 ## Native action-button rollout — 2026-09-24
 
 Started from clean main `ebe76eb`. Presentation-only adoption of the unchanged NativeActionButton in three screens (25 call sites):

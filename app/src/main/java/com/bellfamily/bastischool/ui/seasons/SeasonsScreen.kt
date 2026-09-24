@@ -8,6 +8,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import com.bellfamily.bastischool.ui.common.NativeCompletionScreen
 import com.bellfamily.bastischool.ui.common.NativeActionButton
+import com.bellfamily.bastischool.ui.common.NativeSupportMessage
 import com.bellfamily.bastischool.ui.common.NativeActionRole
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -115,10 +116,10 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
                 }}
             }
             if(ordering.current.answer==AnswerState.RETRY_AVAILABLE) {
-                Text(t("Try again. The seasons already placed stay here.","Versuche es noch einmal. Die eingeordneten Jahreszeiten bleiben hier."))
+                NativeSupportMessage(t("Try again. The seasons already placed stay here.","Versuche es noch einmal. Die eingeordneten Jahreszeiten bleiben hier."))
                 NativeActionButton(t("Try again","Nochmal versuchen"), NativeActionRole.SECONDARY, onClick={onOrder(SeasonsOrderAction.Retry(AttemptId(ordering.task,ordering.current.attempts)))},enabled=canAct,modifier=Modifier.testTag("seasons-retry"))
             }
-            if(ordering.current.support.hint) Text(SeasonsOrder.help(ordering).display[language])
+            if(ordering.current.support.hint) NativeSupportMessage(SeasonsOrder.help(ordering).display[language])
             NativeActionButton(t("Help","Hilfe"), NativeActionRole.SECONDARY, onClick={onOrder(SeasonsOrderAction.Help(ordering.task))},enabled=canAct,modifier=Modifier.heightIn(min=56.dp).testTag("seasons-hint"))
         } else if(state!=null) {
             val task=state.task
@@ -142,10 +143,10 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
                 }
                 if(state.current.answer==AnswerState.CORRECT) Text(task.question.correctFeedback.display[language])
                 if(state.current.answer==AnswerState.RETRY_AVAILABLE) {
-                    Text(task.question.wrongFeedback.display[language])
+                    NativeSupportMessage(task.question.wrongFeedback.display[language])
                     NativeActionButton(t("Try again","Nochmal versuchen"), NativeActionRole.SECONDARY, onClick={onAction(SessionAction.Retry(AttemptId(task.id,state.current.attempts)))},enabled=canAct,modifier=Modifier.testTag("seasons-retry"))
                 }
-                if(state.current.support.hint) Text(task.question.hint!!.display[language])
+                if(state.current.support.hint) NativeSupportMessage(task.question.hint!!.display[language])
                 if(!state.current.locked) NativeActionButton(t("Help","Hilfe"), NativeActionRole.SECONDARY, onClick={onAction(SessionAction.Hint(task.id))},enabled=canAct,modifier=Modifier.heightIn(min=56.dp).testTag("seasons-hint"))
                 if(state.current.locked) NativeActionButton(t("Next","Weiter"), NativeActionRole.PRIMARY, onClick={onAction(SessionAction.Next(task.id))},enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-next"))
             }

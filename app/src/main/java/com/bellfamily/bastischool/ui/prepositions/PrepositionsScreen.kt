@@ -8,6 +8,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import com.bellfamily.bastischool.ui.common.NativeActionButton
+import com.bellfamily.bastischool.ui.common.NativeSupportMessage
 import com.bellfamily.bastischool.ui.common.NativeActionRole
 import com.bellfamily.bastischool.ui.common.NativeCompletionScreen
 import androidx.compose.runtime.Composable
@@ -72,8 +73,8 @@ fun PrepositionsScreen(state: SessionState?, language: ContentLanguage, busy: Bo
                     }
                 }
                 if (current.answer == AnswerState.CORRECT) Text(task.question.correctFeedback.display[language], modifier = Modifier.testTag("feedback"))
-                else if (current.answer == AnswerState.RETRY_AVAILABLE) Text(task.question.wrongFeedback.display[language], modifier = Modifier.testTag("feedback"))
-                if (current.support.hint) Text(task.question.hint!!.display[language], modifier = Modifier.testTag("hint-text"))
+                else if (current.answer == AnswerState.RETRY_AVAILABLE) NativeSupportMessage(task.question.wrongFeedback.display[language], modifier = Modifier.testTag("feedback"))
+                if (current.support.hint) NativeSupportMessage(task.question.hint!!.display[language], modifier = Modifier.testTag("hint-text"))
                 if (!current.locked) NativeActionButton(t("Help", "Hilfe"), NativeActionRole.SECONDARY, onClick = { onAction(SessionAction.Hint(task.id)) }, enabled = ready,
                     modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("hint"))
                 if (current.answer == AnswerState.RETRY_AVAILABLE) NativeActionButton(t("Try again", "Nochmal versuchen"), NativeActionRole.SECONDARY,
