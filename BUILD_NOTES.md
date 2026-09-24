@@ -2,6 +2,36 @@
 
 This file records build/test evidence and should not be treated as a product or architecture specification.
 
+## Wilma selectable weekday colour cues — 2026-09-24
+
+Clean baseline was `d0a8c94` (Seasons action buttons already committed), preserving the newer main rather than reverting to the prompt's `702f00f`. Real physical child-use observation supplied by the owner: generic day-choice controls were confusing. This bounded UI fix reinforces Wilma's fixed day-colour mapping in selectable strip labels (Explore/Find Day/Before–After) and ordering choices. Placed/read-only labels, head/tail, speakers, geometry, tags, callbacks, enabled conditions, prompts, state/generation/order/restore/auto-follow, progress/audio/navigation/celebration stay unchanged.
+
+Canonical semantic mapping remains CoreContent weekday colourCue: Monday green, Tuesday red, Wednesday yellow, Thursday blue, Friday purple, Saturday orange, Sunday pink. No prior RGB constants existed. New UI-only WilmaDayColours samples the committed segment art into seven swatches keyed by those references; see ART_DIRECTION for exact values. No PNG changed; no runtime image-derived colour computation or broad colour framework. White text on purple; black on the other six. Active contrast ratios (Monday–Sunday): 10.67, 5.35, 15.21, 9.00, 5.05, 7.69, 6.93. Disabled backgrounds retain 25% day colour over theme surface, with contrasting neutral text; both active/disabled variants pass 4.5:1 on light/dark test surfaces. Existing selection border and Material/selectable press/focus handling remain; no correctness-only colour signal.
+
+Validation environment: `JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'`, `ANDROID_HOME='/Users/paulbell/Library/Android/sdk'`, `ANDROID_SERIAL=emulator-5554`. Medium_Phone_API_35 Android 15 only; physical S24 installation untouched.
+
+- `./gradlew testDebugUnitTest --tests 'com.bellfamily.bastischool.ui.wilma.*' --tests 'com.bellfamily.bastischool.learning.wilma.*' connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.package=com.bellfamily.bastischool.ui.wilma --console=plain`: **17 JVM + 11 emulator tests passed**, zero failures/errors/skips, BUILD SUCCESSFUL (1m 33s). Includes WilmaFollowTest and original Find/Before–After/ordering/retry/restore coverage. Initial compile-only failure in the new test used lateinit with inline Color; fixed with an initialized local, no assertions removed.
+- Intermediate validation exposed timing-sensitive single-pixel checks: first full run had 265 JVM passes and two new UI colour failures; subsequent combined runs had one colour failure, then two colour failures plus one existing celebration test reporting no Compose hierarchy at startup. The production palette was not changed to satisfy tests. Final colour tests clear focus, settle the Compose clock, then wait up to five seconds for the actual rendered resting fill and require the canonical colour over more than half of sampled pixels. Rounded borders/text are not mistaken for the fill; colour tolerance is unchanged. Focus/keyboard callbacks are checked separately. Restarted only the emulator without loading snapshots after the startup issue; no existing test was changed or disabled.
+- `./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.package=com.bellfamily.bastischool.ui.common,com.bellfamily.bastischool.ui.wilma --console=plain`: final **20 passed / 0 failures/errors/skips**, BUILD SUCCESSFUL (3m 27s), including the existing celebration startup case, all new colour checks and auto-follow.
+- Diagnostic/rendering run on emulator only: installed the debug/test APKs with `adb -s emulator-5554 install -r` and ran `adb -s emulator-5554 shell am instrument -w -e class com.bellfamily.bastischool.ui.common.NativeActionButtonTest,com.bellfamily.bastischool.ui.wilma.WilmaDayColoursScreenTest com.bellfamily.bastischool.test/androidx.test.runner.AndroidJUnitRunner`: **7 passed (34.597s)**. Captured control/portrait/landscape PNGs via emulator `exec-out run-as com.bellfamily.bastischool cat cache/...`. This preceded the final sampling synchronization change; production UI was identical.
+- Render review: bright canonical ordering fills, black text on yellow/orange/pink and white on purple, clearly paler disabled Sunday, unchanged neutral Listen controls. Short landscape labels are clear; at narrow 320dp portrait with German 1.5× font, long names still wrap within words (existing geometry retained), so physical reading/usability review remains important. No artwork was used in these isolated choice captures; original Wilma reference was viewed separately to compare the cue hues. No physical acceptance claimed.
+- `./gradlew testDebugUnitTest assembleDebug lintDebug connectedDebugAndroidTest --console=plain`: final **265 JVM + 39 emulator tests passed, 0 failures/errors/skips**, BUILD SUCCESSFUL (4m 18s). Includes every existing activity/completion/auto-follow regression and final rendering-synchronization assertions.
+- Final lint XML: **0 errors / 3 warnings / 2 informational** (`UnusedAttribute` ×2, `SetJavaScriptEnabled` ×1; `AutoboxingStateCreation` ×2). No suppression/baseline changes.
+- `git diff --check`, new-file whitespace and protected-path checks passed; all existing Wilma test tags and auto-follow code compare unchanged. Browser tests not rerun because browser sources are unchanged. Signing/version/distribution checks not rerun for this UI-only change; their configuration is unchanged.
+- New JVM test covers exact semantic cue order, seven distinct swatches and text contrast in both states. Three new UI tests compare actual rendered pixels against WilmaDayColours, preserve labels/selection/keyboard callbacks, block disabled input, and exercise ordering wrong/retry/placement in German 1.5× portrait/short landscape. Existing tests unchanged. Rendering captures use isolated ordering controls without artwork; original segment artwork was inspected separately for palette correspondence.
+
+Exact files changed:
+- `app/src/main/java/com/bellfamily/bastischool/ui/wilma/WilmaScreen.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/wilma/WilmaDayColours.kt` (new)
+- `app/src/test/java/com/bellfamily/bastischool/ui/wilma/WilmaDayColoursTest.kt` (new)
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/wilma/WilmaDayColoursScreenTest.kt` (new)
+- `ART_DIRECTION.md`
+- `BACKLOG.md`
+- `BUILD_NOTES.md`
+- `SESSION_HANDOFF.md`
+
+Physical follow-up: re-test the reported recognition confusion with Basti; judge seven-colour distinction, text/disabled contrast and focus/press visibility on S24 and Fire Max, portrait/landscape/large font/TalkBack. Do not infer educational benefit or physical acceptance from tests. Suggested next bounded task: this child/device usability check and fixes only if a defect is found. Suggested commit: `fix: reinforce Wilma weekday colours in selectable controls`. No commit/push.
+
 ## Seasons adoption of shared action buttons — 2026-09-24
 
 Started clean main at `702f00f`. Reused NativeActionButton unchanged in ten SeasonsScreen non-answer call sites:

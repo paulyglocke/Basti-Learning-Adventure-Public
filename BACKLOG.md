@@ -34,6 +34,7 @@ Already implemented and not active backlog unless a regression is found:
   - 5/10 completion
   - progress after restart and signed upgrade
 - Run the Fire Max checklist in TESTING_QA_SPEC.md, including same-key upgrade/data retention. Fire acceptance is still open.
+- Wilma child-use finding: generic day choices were confusing. Selectable strip labels and ordering choices now reinforce canonical weekday colours with readable/disabled states; physically re-test recognition with Basti and check S24/Fire contrast/focus. No learning logic or auto-follow change.
 - Fix critical defects found by those sweeps; avoid unrelated feature work inside P0.
 - Preserve the proven permanent signing identity and monotonic versioning during all future builds.
 

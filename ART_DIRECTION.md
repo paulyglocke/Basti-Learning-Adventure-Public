@@ -54,6 +54,22 @@ Asset contract:
 - prefer assembling/highlighting segments in UI code so one art set serves English and German
 - colour is supplementary: visible labels, position and spoken names must also identify the day
 
+### Wilma selectable day cues (2026-09-24)
+
+A physical child-use report found generic day choices confusing. Wilma's selectable strip labels (Explore/Find/Before–After) and ordering buttons now reinforce the existing day-colour routine. `ui/wilma/WilmaDayColours` resolves each weekday's canonical `colourCue` from CoreContent; it does not maintain a second day mapping. No RGB palette previously existed in code, so UI swatches were sampled from the committed segment PNGs (representative most-frequent opaque saturated pixels, four-pixel sampling), without changing images:
+
+| Cue | UI swatch | Label |
+| --- | --- | --- |
+| green | #8ECA3F | black |
+| red | #FB2032 | black |
+| yellow | #FDDA0B | black |
+| blue | #06B5FA | black |
+| purple | #9E40D6 | white |
+| orange | #FC7507 | black |
+| pink | #FC559E | black |
+
+This is a small Wilma UI palette, not an app-wide colour system. Normal labels choose the higher-contrast black/white foreground (at least 4.5:1; sampled active minimum 5.05:1). Disabled containers blend 25% cue over the theme surface, retaining day association without looking like active choices; text contrast is recalculated. Existing Material/selectable press/focus behavior, disabled semantics and selection border remain. Written/spoken weekday names and semantic IDs remain authoritative: colour neither defines correctness nor replaces the label. Placed/read-only labels, head/tail, per-day Listen controls, learning state and auto-follow are unchanged. Physical recognition benefit and device accessibility still require a child/device review.
+
 ## Supporting packs
 - school objects
 - home/everyday objects

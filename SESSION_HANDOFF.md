@@ -1,6 +1,16 @@
 # Session handoff — 2026-09-23
 
-## Current checkpoint — shared action buttons adopted in Seasons
+## Current checkpoint — Wilma day-colour usability cue
+
+Started on clean main `d0a8c94`, newer than the requested `702f00f`; preserved the committed Seasons action-button adoption. Physical child-use finding: generic weekday choices were confusing. Wilma selectable day-strip labels (Explore/Find/Before–After) and ordering choices now reinforce the established weekday colours. No prompt, correctness, generation, sequencing, restore, auto-follow, audio, progress, navigation, celebration or language-string changes.
+
+`ui/wilma/WilmaDayColours` is a small UI-only palette keyed through CoreContent's existing weekday colourCue. No existing RGB constants were present; swatches were sampled from the committed Wilma segment PNGs, with no image changes. Black text is used on green/red/yellow/blue/orange/pink; white on purple. Minimum active contrast 5.05:1. Disabled cue is 25% over theme surface with recalculated contrasting text; disabled semantics/callback guards and existing Material/selectable focus/press/selection treatment remain. Placed labels, head/tail and Listen controls are unchanged.
+
+Focused validation: 17 JVM and 11 Wilma emulator tests passed, including existing WilmaFollowTest. Final combined ui.common/Wilma suite: 20 passed. Full validation: 265 JVM and 39 emulator tests passed, zero failures/errors/skips; debug build passed; lint 0 errors/3 warnings/2 informational; diff/new-file whitespace checks passed. New pixel assertions wait for rendered resting fills (native feedback can outlive the Compose test clock), with palette tolerance and focus/activation coverage preserved. An intermediate existing Compose startup failure passed after an emulator-only fresh boot; no existing test changed. See newest BUILD_NOTES for exact commands, intermediate evidence and rendering limits. Tests compare rendered colour against the shared palette rather than duplicating RGB literals, and verify all seven labels, disabled/callback/keyboard behavior, German 1.5× portrait/short-landscape and wrong/retry/placement behavior.
+
+Physically re-test with Basti to confirm the cue resolves the reported confusion; automated checks cannot establish learning benefit. Also check device colour distinction, readability, disabled/pressed/focused appearance, TalkBack and orientation/large-font behavior on S24/Fire Max. Prior accepted learning/auto-follow/artwork checks remain closed absent regression. No commit/push; no unrelated feature started.
+
+## Previous checkpoint — shared action buttons adopted in Seasons
 
 Started clean at `702f00f`. Only Seasons non-answer action presentation changed: Replay in Explore/quiz/order, Help and attempt Retry in quiz/order, load/save retry, Next and Home. Uses the existing NativeActionButton unchanged: SECONDARY for support/retry, PRIMARY for Next, NAVIGATION for Home. Ten call sites; all labels/callbacks/enabled expressions/test tags and existing modifiers retained. Help/retry now inherit the shared available-width text geometry and 56dp minimum; scroll hierarchy remains unchanged.
 

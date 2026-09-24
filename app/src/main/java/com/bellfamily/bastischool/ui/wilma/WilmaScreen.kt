@@ -100,6 +100,7 @@ fun WilmaScreen(selection:WilmaSelection?,quiz:SessionState?,ordering:WilmaOrder
                         ordering.choices.filter {it !in ordering.placed}.chunked(2).forEach {row -> Row(horizontalArrangement=Arrangement.spacedBy(8.dp)) {row.forEach {id ->
                             Column(Modifier.weight(1f)) {
                                 OutlinedButton(onClick={ordering.nextAttempt?.let {onOrder(WilmaOrderAction.Place(it,id))}},
+                                    colors=wilmaDayButtonColours(id),
                                     enabled=canAct && !imageFailed && ordering.nextAttempt!=null,modifier=Modifier.fillMaxWidth().heightIn(min=64.dp).testTag("order-${id.value}")) {
                                     Text(WilmaContent.day(id).text.display[language])
                                 }
@@ -154,7 +155,11 @@ internal fun WilmaStrip(images:Map<String,ImageBitmap>,language:ContentLanguage,
                     .border(if(selected==id)3.dp else 1.dp,if(selected==id)Color(0xFF275C2F) else Color.Transparent,RoundedCornerShape(12.dp))
                     .testTag("$prefix-${id.value}"),horizontalAlignment=Alignment.CenterHorizontally) {
                     images[WilmaContent.image(id)]?.let {Image(it,null,Modifier.size(128.dp).graphicsLayer(scaleX=1.3f,scaleY=1.3f))}
-                    Text(label,modifier=Modifier.fillMaxWidth().heightIn(min=64.dp).padding(4.dp),textAlign=TextAlign.Center)
+                    val cue = WilmaDayColours.background(id, id in enabled, MaterialTheme.colorScheme.surface)
+                    Text(label,modifier=Modifier.fillMaxWidth().heightIn(min=64.dp)
+                        .then(if(prefix=="day") Modifier.background(cue,RoundedCornerShape(12.dp)) else Modifier)
+                        .padding(4.dp),textAlign=TextAlign.Center,
+                        color=if(prefix=="day") WilmaDayColours.foreground(cue) else Color.Unspecified)
                 }
                 if(onOption!=null)OutlinedButton(onClick={onOption(id)},enabled=listenEnabled,
                     modifier=Modifier.heightIn(min=56.dp).testTag("wilma-speaker-${id.value}").semantics {contentDescription=if(language==ContentLanguage.GERMAN)"Anhören: $label" else "Listen: $label"}) {
@@ -167,4 +172,13 @@ internal fun WilmaStrip(images:Map<String,ImageBitmap>,language:ContentLanguage,
             Spacer(Modifier.height(if(onOption==null)64.dp else 120.dp))
         }
     }
+}
+
+@Composable
+private fun wilmaDayButtonColours(id: ContentId): ButtonColors {
+    val active = WilmaDayColours.day(id)
+    val disabled = WilmaDayColours.background(id, false, MaterialTheme.colorScheme.surface)
+    return ButtonDefaults.outlinedButtonColors(containerColor = active,
+        contentColor = WilmaDayColours.foreground(active), disabledContainerColor = disabled,
+        disabledContentColor = WilmaDayColours.foreground(disabled))
 }
