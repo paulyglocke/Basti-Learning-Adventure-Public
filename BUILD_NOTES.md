@@ -1,5 +1,62 @@
 # V1 verification and fixes
 
+## Minimal support setting — larger hints/retry guidance — 2026-09-25
+
+Continued on `952db56` with the previous four-consumer support rollout still uncommitted; preserved that work. Selected a concrete existing presentation behavior instead of adding support states: Options now offers “Larger hints and retry guidance” / “Größere Hinweise und Hilfetexte”. Default Off exactly preserves bodyLarge. On multiplies only NativeSupportMessage font size and line height by 1.25, in addition to Android font scaling. The four activities keep authored text, visibility, support accounting and actions. Prompts, correct feedback, errors, Explore/examples, answer-embedded hints, individual Listen, completion and Wilma day colours/order/follow are unchanged.
+
+The existing shell owns one Boolean (`basti_shell/largerSupportText`, absent=false), writes it through the existing SharedPreferences pattern, and provides LocalLargerSupportText to presentation. NativeSupportMessage's public function signature is unchanged. No reducer/session/progress/checkpoint/audio or WebView settings change. NATIVE_ARCHITECTURE_SPEC documents the narrow transitional storage exception and inclusion in the later DataStore migration; no extra persistence framework/dependency was introduced. Switch changes apply on returning from Options without regeneration or narration. This is a visual preference, never recorded as support use.
+
+SupportTextSetting is one labelled, minimum-56dp toggle row with a non-interactive child Switch, naturally wrapping EN/DE text, no redundant contentDescription and no custom motion. NativeSupportMessage keeps its single non-interactive text node and unrestricted height. Four new layout cases exercise English portrait and German portrait/both short landscape orientations at 1.5× system font: opt-in/default/reversion, font and line-height scaling, unchanged prompt/default-provider text, support semantics, scroll reachability, switch focus/Enter activation. A real Prepositions route test verifies missing-key default, Options/recreation/relaunch persistence, visible hint sizing and byte-identical learning checkpoint after the setting change. Existing tests are preserved.
+
+Validation uses JAVA_HOME `/Applications/Android Studio.app/Contents/jbr/Contents/Home`, ANDROID_HOME `/Users/paulbell/Library/Android/sdk`, ANDROID_SERIAL `emulator-5554`. No physical S24 access, signing/distribution/browser/artwork changes, commit or push.
+
+- `./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.bellfamily.bastischool.ui.common.SupportTextSettingTest,com.bellfamily.bastischool.ui.common.SupportTextSettingRouteTest,com.bellfamily.bastischool.ui.common.NativeSupportMessageTest --console=plain`: **7 passed / 0 failures/errors/skips**, BUILD SUCCESSFUL (1m 4s).
+- Initial test compilation required the experimental keyboard-test API opt-in. First executed focused run: 3 passed / 4 failed at the final Space-key assertion; Android's Material toggle responds to Enter, as used in existing action-button tests. The new test now explicitly asserts focus and uses Enter. No production workaround or existing test weakening. No emulator startup flake.
+- `./gradlew testDebugUnitTest assembleDebug lintDebug connectedDebugAndroidTest --console=plain`: **265 JVM + 82 instrumentation passed / 0 failures/errors/skips**, BUILD SUCCESSFUL (8m 14s). Debug assembly passed. Lint: **0 errors / 3 existing warnings / 2 informational findings** (UnusedAttribute ×2, SetJavaScriptEnabled ×1; AutoboxingStateCreation ×2 informational). Kotlin also reports the existing VIBRATOR_SERVICE deprecation. Full instrumentation includes all four activities, previous support rollout, action buttons, celebration, Wilma colours/follow and the new setting cases.
+- `git diff --check` and new Kotlin-file whitespace checks passed. Original Vocabulary/Wilma rollout source parity is preserved. Browser tests were not run because browser source is unchanged. No emulator restart/startup flake or physical-device test occurred. EN/DE wording was reviewed and layout/accessibility behavior exercised by the new tests; subjective device visual/TalkBack acceptance remains outstanding.
+
+Files added/changed by this slice: MainActivity.kt; ui/common/NativeSupportMessage.kt; new ui/common/SupportTextSetting.kt; new androidTest/ui/common/SupportTextSettingTest.kt and SupportTextSettingRouteTest.kt; BACKLOG.md, BUILD_NOTES.md, SESSION_HANDOFF.md, UX_NAVIGATION_SPEC.md and NATIVE_ARCHITECTURE_SPEC.md. Prior uncommitted VocabularyScreen/WilmaScreen adoption and RemainingSupportPresentationTest remain intact.
+
+Remaining physical checks: S24/Fire Options label/switch readability and TalkBack, 1.5×/larger system text with the preference enabled, both landscape orientations, support/action scroll reachability, preference retention after a normal restart/signed upgrade, and Basti's preference/readability judgement. No physical acceptance is claimed. Suggested commit: `feat: add opt-in larger native support text`.
+
+## Support presentation rollout — Vocabulary and Wilma — 2026-09-24
+
+Started clean main `952db56`. Adopted the existing NativeSupportMessage unchanged in six Text sites: Vocabulary wrong-attempt guidance and authored hint (Find/What is it), Wilma wrong-attempt guidance and authored hint (Find/Before–After), and Wilma ordering retry guidance and hint. Copy, EN/DE selection, visibility predicates, callbacks, tags and enabled rules are unchanged. Replacing only the six component names back to Text and removing the import reproduces both original source files exactly.
+
+Intentionally excluded: Vocabulary hint-revealed answer labels, Explore descriptions/examples/sentence text, prompts, correct feedback, technical/storage/audio errors, completion, answer choices and per-option speakers. Wilma coloured day/order choices, placed segments, head/tail, per-day Listen, prompts/success/errors/completion and viewport follow remain unchanged. All seven canonical colour cues and existing colour/follow tests are preserved. No new state/support level/parent workflow, API/enum/variant, audio, progress/schema, learning/session, art, navigation or signing/version/distribution changes.
+
+Twelve new RemainingSupportPresentationTest cases cover Vocabulary Find, Wilma Find and Wilma ordering, each in German 1.5× portrait/both short landscapes and English 1.5× portrait. They use real reducers to check initial absence, Replay not an attempt, Help visibility, wrong/retry timing, persistent support evidence, supported score/Next, ordering retention and reachable Home. Text layout and non-interactive semantics are checked without colour literals. Existing tests are untouched; original Vocabulary Name, Wilma Before–After, colour and auto-follow coverage remains in the suite. Tall Wilma quiz strip setup uses its accessible OnClick action in the constrained viewport, following the previous fixture pattern; existing touch tests are not replaced.
+
+Validation environment:
+
+```sh
+export JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'
+export ANDROID_HOME='/Users/paulbell/Library/Android/sdk'
+export ANDROID_SERIAL=emulator-5554
+```
+
+Medium_Phone_API_35 / Android 15 only. Stable S24 installation untouched.
+
+- `./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.package=com.bellfamily.bastischool.ui.common,com.bellfamily.bastischool.ui.vocabulary,com.bellfamily.bastischool.ui.wilma --console=plain`: final focused run **62 passed / 0 failures/errors/skips**, BUILD SUCCESSFUL (6m 10s). Includes new twelve cases, shared support/action/completion tests, Vocabulary, Wilma day-colour and WilmaFollowTest coverage.
+- `./gradlew testDebugUnitTest assembleDebug lintDebug connectedDebugAndroidTest --console=plain`: **265 JVM + 77 instrumentation passed / 0 failures/errors/skips**, BUILD SUCCESSFUL (7m 46s). Includes all existing activity, completion, colour and follow regressions. Debug assembly passed. Lint: **0 errors / 3 existing warnings / 2 informational findings** (UnusedAttribute ×2, SetJavaScriptEnabled ×1; AutoboxingStateCreation ×2 informational). No Compose startup flake or emulator restart was needed. The run completed during the session interruption; XML totals and final successful log were verified on 2026-09-25 rather than rerunning green tests.
+- `git diff --check` and new-file whitespace checks passed. Exact source-parity check passed for both screens. Browser tests were not run because browser source is unchanged; signing/version/distribution configuration is unchanged.
+
+Initial focused run: 58 passed / 4 failed (6m 7s). All four failures were in the new Vocabulary fixture: Help intentionally reveals the same word inside the clickable answer card and in the non-interactive hint, so a text-only selector matched two nodes. The test now selects the non-interactive message and separately asserts the answer-card label. No production behavior or existing test assertion changed. This was a test-selector defect, not an emulator startup flake.
+
+Rendering review: inspected English/German portrait and German short-landscape captures for Vocabulary, Wilma quiz and Wilma ordering at 1.5× font. Neutral left-aligned support text remains separate from bold action buttons and coloured day controls. Text wraps without a fixed-height cap; small viewports require normal scrolling to see the whole support/action region, with reachability tested. Captures use the isolated Material3 test theme and omit Wilma artwork, so they verify support layout rather than full device visual acceptance. Captures were copied during the focused run with `adb -s emulator-5554 exec-out run-as com.bellfamily.bastischool cat cache/remaining-support-<surface>-<orientation>-<language>.png`; no physical device was accessed.
+
+Exact changed files:
+- `app/src/main/java/com/bellfamily/bastischool/ui/vocabulary/VocabularyScreen.kt`
+- `app/src/main/java/com/bellfamily/bastischool/ui/wilma/WilmaScreen.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/common/RemainingSupportPresentationTest.kt` (new)
+- `BACKLOG.md`
+- `BUILD_NOTES.md`
+- `SESSION_HANDOFF.md`
+- `UX_NAVIGATION_SPEC.md`
+
+Audit: one small non-interactive text component still covers authored retry/hint messages in all four native activities; no extension is justified. Answer-embedded cues/labels and all day controls remain custom. This bounded text-presentation rollout is implemented, not the entire future support ladder/settings. Physical S24/Fire review remains: calmness/readability, larger text/both landscapes, scroll/touch separation and TalkBack, plus Basti's day-colour recognition. Earlier accepted learning/artwork/upgrade evidence is not reopened. Next bounded P1 task may define a minimal support-settings contract for one existing concrete behavior; do not implement speculative modes. Suggested commit: `feat: adopt shared support messages in Vocabulary and Wilma`. No commit/push or next feature.
+
+
 ## Shared support presentation — first two consumers — 2026-09-24
 
 Started from clean main `a2a750e` (action-button rollout committed). Added `NativeSupportMessage(text, modifier)` and adopted it only for six child-facing support text sites: Prepositions wrong-attempt retry guidance and authored hint; Seasons quiz retry guidance/hint (shared by recognition/next/before), and ordering retry guidance/hint. Exact text, visibility predicates, existing tags and all button callbacks/enabled rules are unchanged. Correct feedback, prompts, technical error messages, Explore, completion, answer/scene/image layout and How to play remain separate.

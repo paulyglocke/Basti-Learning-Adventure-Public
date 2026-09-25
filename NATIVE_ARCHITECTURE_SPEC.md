@@ -65,6 +65,8 @@ The first native persistence boundary is implemented in `learning/progress`: pur
 
 Use DataStore for small settings such as language, audio mode, reduced motion, parent difficulty/session preferences and versioned tutorial status. Migrate relevant SharedPreferences/localStorage values deliberately: validate them, define precedence and record successful import so it is not repeated. Preserve existing preferences until import is verified.
 
+Bounded transitional exception: the first support-text size preference reuses the existing shell-owned `basti_shell` SharedPreferences Boolean `largerSupportText` (absent = false), alongside current Options preferences. The shell supplies a presentation-only `LocalLargerSupportText` value to NativeSupportMessage; activities/reducers do not read storage. It is not mirrored to the WebView or serialized into learning checkpoints/progress. This avoids a second settings store or a broad migration for one Boolean; include this key in the eventual deliberate DataStore migration above. Existing SharedPreferences write semantics apply; this is not a durable learning-event queue.
+
 Use Room when structured attempts, context history, progress queries and durable rewards require it; do not put an ever-growing history blob in settings. Bundled content can initially be typed Kotlin records or validated local data files. No remote content service is required.
 
 Every new/migrated activity reports through the shared progress API, with skill IDs, language, context, difficulty and support metadata. Completion score is not evidence of independent mastery. A small persistent progress foundation is sufficient initially; a full dashboard/adaptive scheduler need not block the first migration.

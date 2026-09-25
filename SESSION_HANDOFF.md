@@ -1,6 +1,22 @@
-# Session handoff — 2026-09-23
+# Session handoff — 2026-09-25
 
-## Current checkpoint — shared support text, Seasons and Prepositions
+## Current checkpoint — optional larger support text
+
+2026-09-25: preserved the uncommitted four-consumer rollout on `952db56`. Added one Options preference: larger existing hints/retry guidance, default Off; On scales NativeSupportMessage font/line height by 25% on top of device font scaling. Shell-owned Boolean persists in the existing transitional preference store; see UX/NATIVE specs for the narrow contract. No support state, content, learning/session/progress/audio change; prompts, answers, completion, individual Listen and Wilma colour/order/follow remain intact. Shared message call signature remains unchanged.
+
+New focused component/route tests cover EN/DE, 1.5× portrait/both short landscapes, accessibility/keyboard, default/reversion, persistence/recreation and unchanged session checkpoint. Exact validation evidence is in the latest BUILD_NOTES entry. Physical S24/Fire readability, TalkBack and preference-retention acceptance remain open. Work remains uncommitted; no push, physical S24 install or next feature.
+
+Final validation: 7/7 focused instrumentation, 265/265 JVM, 82/82 full instrumentation; debug build passed; lint 0 errors, 3 existing warnings and 2 informational findings. Diff/new-file whitespace checks passed. Initial new-test API opt-in and keyboard Space/Enter mismatch were corrected without production workarounds or weakening existing tests; no emulator startup flake.
+
+## Previous checkpoint — shared support text rollout complete for current activities
+
+Started clean main `952db56`. Reused NativeSupportMessage unchanged at six additional sites: Vocabulary quiz retry/hint (Find/What is it), Wilma quiz retry/hint (Find/Before–After), and Wilma ordering retry/hint. Exact copy, visibility, tags, callbacks and enabled rules retained. Vocabulary answer-embedded hint labels, Explore/example text, prompts, correct feedback, technical errors, completion and all Wilma day/ordering/placed controls remain unchanged. No support/session/progress/audio, artwork, day colours, auto-follow, signing/versioning or navigation change.
+
+The same small text primitive now covers all four current native activities. No category, variant or API extension is needed. Future support levels/settings are not implemented by this rollout. All work remains uncommitted; do not push. Validation and rendering evidence are in the newest BUILD_NOTES entry. Physical S24/Fire readability, contrast, TalkBack, larger text and orientation review remain open; re-test day-colour recognition with Basti separately. Next bounded P1 task: define the minimal support-settings contract for one existing concrete behavior, before any broad settings UI or new support state. No next feature started.
+
+Validation finalized 2026-09-25: focused instrumentation 62/62; full JVM 265/265 and instrumentation 77/77, zero failures/errors/skips. Debug build and lint passed (0 errors, 3 existing warnings, 2 informational findings); diff/whitespace checks passed. Initial focused run had four new Vocabulary test-selector failures because the same word appeared in the answer and hint; the selector was corrected and the answer-label assertion retained separately. No production fix, weakened existing test, emulator startup flake or physical-device access. EN/DE 1.5× portrait/short-landscape support captures reviewed; device visual/accessibility acceptance remains separate.
+
+## Previous checkpoint — shared support text, Seasons and Prepositions
 
 Started clean main `a2a750e`. Added `NativeSupportMessage(text, modifier)`: one non-interactive Material3 Text node with a neutral rounded background, readable theme colour pair, 12dp padding, bodyLarge typography and unrestricted wrapping. It shares presentation only; no enum/escalation/state/actions/audio/persistence. Two existing content uses are represented: authored hints and gentle retry guidance. No distinct stronger-help state exists in these consumers, so none was added.
 

@@ -1,5 +1,7 @@
 package com.bellfamily.bastischool
 
+import com.bellfamily.bastischool.ui.common.LocalLargerSupportText
+import com.bellfamily.bastischool.ui.common.SupportTextSetting
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
@@ -197,8 +199,10 @@ class MainActivity : ComponentActivity() {
         var sound by remember { mutableStateOf(prefs.getBoolean("sound", true)) }
         var audioMode by remember { mutableStateOf(prefs.getString("audioMode", if (sound) "all" else "off") ?: "all") }
         var round by remember { mutableStateOf(prefs.getInt("round", 5)) }
+        var largerSupportText by remember { mutableStateOf(prefs.getBoolean("largerSupportText", false)) }
         var numberMax by remember { mutableStateOf(prefs.getInt("numberMax", 10)) }
 
+        CompositionLocalProvider(LocalLargerSupportText provides largerSupportText) {
         MaterialTheme(colorScheme = BastiColors) {
             BackHandler(enabled = screen != ShellScreen.HOME) { navigateBack() }
             Scaffold(
@@ -243,6 +247,11 @@ class MainActivity : ComponentActivity() {
                             }
                         }
                         ShellScreen.OPTIONS -> NativeOptions(language, audioMode, round, numberMax, padding, audioStatus,
+                            largerSupportText = largerSupportText,
+                            onLargerSupportText = {
+                                largerSupportText = it
+                                prefs.edit().putBoolean("largerSupportText", it).apply()
+                            },
                             onLanguage = { language = it; saveAndSync(it, audioMode, round, numberMax) },
                             onAudioMode = { audioMode = it; saveAndSync(language, it, round, numberMax) },
                             onRound = { round = it; saveAndSync(language, audioMode, it, numberMax) },
@@ -292,6 +301,7 @@ class MainActivity : ComponentActivity() {
                     }
                 }
             }
+        }
         }
     }
 
@@ -535,7 +545,7 @@ private fun HomeGroup(title: String, cards: List<HomeCard>, language: String, on
 }
 
 @Composable
-private fun NativeOptions(language: String, audioMode: String, round: Int, numberMax: Int, padding: PaddingValues, audioStatus: String, onLanguage: (String) -> Unit, onAudioMode: (String) -> Unit, onRound: (Int) -> Unit, onNumberMax: (Int) -> Unit, onResetTutorials: () -> Unit) {
+private fun NativeOptions(language: String, audioMode: String, round: Int, numberMax: Int, padding: PaddingValues, audioStatus: String, largerSupportText: Boolean, onLargerSupportText: (Boolean) -> Unit, onLanguage: (String) -> Unit, onAudioMode: (String) -> Unit, onRound: (Int) -> Unit, onNumberMax: (Int) -> Unit, onResetTutorials: () -> Unit) {
     Column(Modifier.fillMaxSize().padding(padding).padding(16.dp).background(Color(0xFFF9FCFE)).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(14.dp)) {
         Text(if (language == "de") "Optionen" else "Options", fontSize = 30.sp, fontWeight = FontWeight.Black, color = Ink)
         SettingCard(if (language == "de") "Sprache" else "Language") {
@@ -552,6 +562,7 @@ private fun NativeOptions(language: String, audioMode: String, round: Int, numbe
                 Button(onClick = onResetTutorials) { Text(if (language == "de") "Einführungen wieder anhören" else "Replay activity introductions") }
             }
         }
+        SupportTextSetting(language, largerSupportText, onLargerSupportText)
         SettingCard(if (language == "de") "Fragen pro Runde" else "Questions per round") {
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) { FilterChip(selected = round == 5, onClick = { onRound(5) }, label = { Text("5") }); FilterChip(selected = round == 10, onClick = { onRound(10) }, label = { Text("10") }) }
         }

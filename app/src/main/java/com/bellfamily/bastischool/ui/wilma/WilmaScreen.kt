@@ -6,6 +6,7 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import com.bellfamily.bastischool.ui.common.NativeActionButton
+import com.bellfamily.bastischool.ui.common.NativeSupportMessage
 import com.bellfamily.bastischool.ui.common.NativeActionRole
 import com.bellfamily.bastischool.ui.common.NativeCompletionScreen
 import androidx.compose.runtime.*
@@ -84,10 +85,10 @@ fun WilmaScreen(selection:WilmaSelection?,quiz:SessionState?,ordering:WilmaOrder
                             {id -> quiz.nextAttempt?.let {onAction(SessionAction.Answer(it,id))}},onOption=onOption,listenEnabled=canAct)
                         if(quiz.current.answer==AnswerState.CORRECT)Text(quiz.task.question.correctFeedback.display[language])
                         if(quiz.current.answer==AnswerState.RETRY_AVAILABLE) {
-                            Text(quiz.task.question.wrongFeedback.display[language])
+                            NativeSupportMessage(quiz.task.question.wrongFeedback.display[language])
                             NativeActionButton(t("Try again", "Nochmal versuchen"), NativeActionRole.SECONDARY, onClick={onAction(SessionAction.Retry(AttemptId(quiz.task.id,quiz.current.attempts)))},enabled=canAct,modifier=Modifier.testTag("wilma-retry"))
                         }
-                        if(quiz.current.support.hint)Text(quiz.task.question.hint!!.display[language])
+                        if(quiz.current.support.hint)NativeSupportMessage(quiz.task.question.hint!!.display[language])
                         if(!quiz.current.locked)NativeActionButton(t("Help", "Hilfe"), NativeActionRole.SECONDARY, onClick={onAction(SessionAction.Hint(quiz.task.id))},enabled=canAct,modifier=Modifier.heightIn(min=56.dp).testTag("wilma-help"))
                         if(quiz.current.locked)NativeActionButton(t("Next", "Weiter"), NativeActionRole.PRIMARY, onClick={onAction(SessionAction.Next(quiz.task.id))},enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("wilma-next"))
                     }
@@ -112,10 +113,10 @@ fun WilmaScreen(selection:WilmaSelection?,quiz:SessionState?,ordering:WilmaOrder
                             }
                         } } }
                         if(ordering.current.answer==AnswerState.RETRY_AVAILABLE) {
-                            Text(t("Try again. Your placed days stay here.","Versuche es noch einmal. Deine eingeordneten Tage bleiben hier."))
+                            NativeSupportMessage(t("Try again. Your placed days stay here.","Versuche es noch einmal. Deine eingeordneten Tage bleiben hier."))
                             NativeActionButton(t("Try again", "Nochmal versuchen"), NativeActionRole.SECONDARY, onClick={onOrder(WilmaOrderAction.Retry(AttemptId(ordering.task,ordering.current.attempts)))},enabled=canAct,modifier=Modifier.testTag("wilma-retry"))
                         }
-                        if(ordering.current.support.hint)Text(WilmaOrder.help(ordering).display[language])
+                        if(ordering.current.support.hint)NativeSupportMessage(WilmaOrder.help(ordering).display[language])
                         NativeActionButton(t("Help", "Hilfe"), NativeActionRole.SECONDARY, onClick={onOrder(WilmaOrderAction.Help(ordering.task))},enabled=canAct,modifier=Modifier.heightIn(min=56.dp).testTag("wilma-help"))
                     }
                 }
