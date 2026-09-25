@@ -49,12 +49,12 @@ Changing language should update the whole UI, not only questions.
 
 The selected language must persist between launches.
 
-Current speech uses Android system TTS with installed offline voices. Long-term shared native audio and voice quality follow [VOICE_AUDIO_SPEC.md](VOICE_AUDIO_SPEC.md), retaining system TTS as a fallback:
+Current native speech uses the shared audio-controller/system-TTS boundary with installed offline voices, following [VOICE_AUDIO_SPEC.md](VOICE_AUDIO_SPEC.md):
 
 - English: suitable English locale.
 - German: de-DE.
 
-Native Options currently offers all/questions/off audio modes and tutorial reset. Replay and sound-policy reliability remain backlog work; see VOICE_AUDIO_SPEC.md for the intended audio rules.
+Native Options offers all/questions/off audio modes and tutorial reset. Replay/help/listen requests use the shared policy and owned cancellation model on the current native activities. Physical voice quality, missing-voice behavior and remaining Samsung/Fire acceptance are still tracked separately in TESTING_QA_SPEC.md.
 
 ## 5. Child interests / visual theme
 

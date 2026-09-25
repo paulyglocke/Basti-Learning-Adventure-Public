@@ -14,8 +14,10 @@ import com.bellfamily.bastischool.audio.SystemSpeechEngine
 import com.bellfamily.bastischool.audio.SystemTtsPort
 
 /**
- * Construct/use/close on main. Holds application context only. Not wired to legacy or a screen yet.
- * The owner must close the controller/engine on disposal and cancel its context on backgrounding.
+ * Construct/use/close on main. Holds application context only.
+ * Current native activity owners wrap this through DefaultAudioController; the legacy WebView
+ * keeps its separate compatibility TTS path. The owner must close the controller/engine on
+ * disposal and cancel its context on backgrounding.
  */
 class AndroidSystemSpeechEngine(context: Context) : SpeechEngine by
     SystemSpeechEngine(AndroidSystemTtsPort(context.applicationContext))

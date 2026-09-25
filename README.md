@@ -16,7 +16,7 @@ The historical v1.0.0 APK is debug-signed. Current `main` also supports a separa
 
 ### Native Compose
 - **Prepositions**: in/on/under/behind/next to/between with deterministic 5/10-question rounds, Help/Retry, shared audio, exact restoration and durable progress delivery.
-- **Seasons**: Explore plus Practice using four canonical season scenes and authored English/German narration. The roadmap now also defines next/before, missing-season, clue matching and **Build the Year** ordering as the next expansion.
+- **Seasons**: Explore plus Practice using four canonical season scenes and authored English/German narration, plus native Next/Before reasoning and **Build the Year** ordering. Remaining planned expansion includes missing-season and observable-clue matching/reasoning.
 - **Wilma’s Week / Wilmas Woche**: familiar seven-day caterpillar with Explore, Find Day, Before/After and tap-to-place weekday ordering.
 - **Vocabulary Booster**: first reviewed native slice with six bilingual animal words, Explore/examples, word-to-picture and picture-to-word practice. The current animal glyphs are temporary pending original illustrations.
 - Shared native foundations provide semantic content IDs, English/German speech/display text, audio policy, deterministic sessions, checkpoint restoration and local durable progress events.

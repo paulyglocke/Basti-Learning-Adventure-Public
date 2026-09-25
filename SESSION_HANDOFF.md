@@ -23,10 +23,12 @@ are examples, never an automatic answer key; Farm count and narrative/cropped-pa
 caveats remain. This is not new all-image acceptance or independent native-speaker
 review. No UI/navigation/session/progress/audio/image/signing/browser changes.
 
-This targeted-review work is uncommitted; no push. Next bounded slice: a read-only
-bilingual Tell Me scene browser using this repository and canonical local images,
-with optional adult-support text; no automatic grading, speech input or new learning
-engine. Do not start it automatically. Existing S24/Fire acceptance is unchanged.
+This targeted-review work is committed and pushed on main as `fb8ff15`
+(`fix: resolve scene description ambiguities`). Before the first Tell Me consumer,
+finish the small remaining shared-native cleanup: Vocabulary's text-only What Is It?
+choice adoption and a bounded native TTS ownership audit so another eager platform
+engine is not added blindly. Tell Me remains read-only/open-ended in its first slice,
+with no automatic grading or speech input. Existing S24/Fire acceptance is unchanged.
 
 ## Previous checkpoint — all Scene Description runtime text bilingual
 
