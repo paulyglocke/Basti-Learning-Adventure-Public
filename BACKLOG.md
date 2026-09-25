@@ -75,7 +75,7 @@ Already implemented and not active backlog unless a regression is found:
   - later combined before/after reasoning
 - School Skills as an early Follow-the-Instructions content pack: classroom instructions plus help-seeking/self-advocacy.
 - Grow Vocabulary toward roughly 50–80 reviewed words through shared curriculum additions rather than one monolithic vocabulary task.
-- Tell Me! / Erzähl mal v1 with parent/child Continue and model/expand language; no automatic pronunciation scoring.
+- Tell Me! / Erzähl mal v1 with parent/child Continue and model/expand language; no automatic pronunciation scoring. **Content foundation implemented:** typed manifest-only catalogue of 81 approved scenes / nine categories; UI/activity remains deferred. Wave 1 has 27 bilingual records; 54 Wave 2/3 records still need authored/reviewed German before bilingual use. See CONTENT_DATA_SPEC.md and BUILD_NOTES.md.
 - Memory Pairs variants: picture/picture, word/picture, number/quantity, case, bilingual, animal/action, animal/habitat, emotion/expression and season/clue where educationally appropriate.
 - Conceptual native Maths: subitising, quantity, more/fewer/same, making 5, part-whole, one more/less, conservation, number stories, patterns, shapes and spatial/measurement concepts.
 - Letters & Sounds / phonological-awareness progression, keeping written letter matching distinct from true phoneme instruction.

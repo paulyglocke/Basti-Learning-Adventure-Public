@@ -18,6 +18,44 @@ Construction rejects blank bilingual fields and malformed identifiers/versions/p
 
 This is schema 1 / content revision 1. Persist the version alongside future saved references; changes to authored meaning/order/assets require an explicit revision, and incompatible schema changes require a schema increment and a restoration/migration decision. IDs must not be recycled. Skill registries, vocabulary/grammar, scenes, tasks, phonics, verb lessons, generators and progress persistence remain separate follow-up work; this subset does not claim those validation gates are complete.
 
+## Implemented Scene Description catalogue (2026-09-25)
+
+`learning/scenedescription` is a small pure Kotlin boundary for the committed
+SceneDescriptions pack, separate from the quiz-oriented `ContentRepository` (unchanged).
+`SceneId` preserves authored IDs such as `scene.ocean.reef_actions.01`; the existing
+ContentId grammar is not broadened to accommodate numeric final segments.
+`SceneCategoryId` preserves root category IDs. Semantic image AssetIds derive from
+scene IDs, independently of filenames, and reuse `LocalImageAsset` for local paths.
+
+`BundledSceneDescriptions.repository()` supplies an immutable schema 1/revision 1
+snapshot: `categories()` in root-manifest order, `scenes(category)` in category-manifest
+order, `all()`, `find(sceneId)` and `image(sceneId)`. Unknown scene/image IDs return
+null; unknown categories return an empty list. Records include approved status, wave,
+source metadata path, authored title/purpose or learning focus, typed target-language
+groups, examples and adult-support groups/expansion pairs where present. A source
+review caution preserves the farm chicken-count limitation; it is not a child prompt.
+
+`SceneText` and `SceneLines` explicitly represent unavailable German as null, without
+fallback. Wave 1's 27 records contain bilingual titles/targets/examples/support;
+Waves 2/3's 54 records contain English-only titles/purpose/targets/support. Locale lists
+remain separately authored lists, not forced positional translations. These are
+teaching/reference data, **not** speech-ready ContentText or accepted-answer lists.
+No missing purpose, German wording, object graph or grading rules are fabricated.
+Visible-target graphs and visual audit/prompt/reference material remain authoring-only.
+
+The standard-library generator `scripts/generate_scene_descriptions.py` follows only
+root/category manifests and approved metadata, validates IDs, schema/wave, canonical
+PNG/metadata references and known teaching fields, then emits bundled Kotlin. It
+rejects malformed/duplicate/missing references before writing output. `--check` verifies
+the checked-in output; JVM source-fingerprint checks detect stale manifests/metadata.
+The generator is not a runtime parser or a general CMS. Pure repository construction
+also rejects duplicate IDs/assets, unresolved categories and invalid record fields.
+No Android/Compose/filesystem dependency enters the domain model. Revisions must be
+bumped when authored meaning/order changes before any future persisted consumer ships.
+
+Tell Me UI, asset decoding, German completion/review, sessions, audio mapping, progress,
+speech input and automatic answer evaluation are not implemented by this catalogue.
+
 ## Identity and versioning
 
 Use stable, language-independent semantic IDs, for example `animal.crocodile`, `animal.mosasaurus`, `verb.slither`, `colour.red` and `skill.spatial.under`. IDs must not depend on display spelling, translation, list position or asset filename. Content IDs and skill IDs are different: `colour.red` is content, while recognising red may reference `skill.colours.red`.

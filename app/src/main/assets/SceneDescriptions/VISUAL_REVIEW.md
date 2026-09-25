@@ -2,9 +2,14 @@
 
 Review date: 2026-09-25
 
-## Scope
+Current library checkpoint: **Wave 3 complete, 81 approved scenes across nine
+categories (nine each)**. See `SANITY_CHECK.md` and `WAVE_3_STATUS.md`.
+The detailed review below preserves the historical 27-scene Wave 1 evidence;
+it does not claim a new visual review of all 81 scenes during native integration.
 
-All 27 canonical illustrations were reviewed against:
+## Historical Wave 1 scope
+
+The 27 Wave 1 canonical illustrations were reviewed against:
 - the specific learning task for that scene
 - focal subject counts
 - obvious anatomy / duplication problems
@@ -12,7 +17,7 @@ All 27 canonical illustrations were reviewed against:
 - likely readability at phone size
 - obvious conflicts with the authored generation brief
 
-## Result
+## Historical Wave 1 result
 
 ### Fully acceptable for the intended task
 
@@ -59,7 +64,7 @@ Do not use this scene to ask "How many chickens?"
 - Park 2 was regenerated to make the sharing interaction explicit.
 - Mountains 3 was regenerated so the sheep now reads clearly as BELOW the hill.
 
-## Overall
+## Historical Wave 1 overall
 
 - Canonical scene files: **27**
 - Fully acceptable: **26**

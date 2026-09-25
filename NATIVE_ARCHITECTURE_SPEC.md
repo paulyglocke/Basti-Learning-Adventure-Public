@@ -180,3 +180,16 @@ Only `OrderedPlacement` is extracted into `learning/sequencing`: canonical-set/s
 The Seasons host supplies bounded cached canonical images off-thread. Relation questions show the anchor season, not the correct answer's illustration. Ordering uses accessible tap-to-place cards and retained placed cards. All completed modes use the existing shared celebration/actions; Explore does not. Reward state remains non-durable and independent of progress.
 
 Wilma's placed-day strip follows growth with a cancellable 400ms horizontal scroll after layout. Initial/recreated presentation and viewport-size changes position at the growing end without a scroll animation; wrong attempts/recompositions do not initiate movement. This is presentation only, independent of ordering state/checkpoints. Explore/Find/Before-After strips retain their prior manual-scroll behavior. No general navigation/button redesign.
+
+## Scene Description content boundary (implemented 2026-09-25)
+
+The future Tell Me consumer has a pure `learning/scenedescription` catalogue;
+see CONTENT_DATA_SPEC.md for identities, language availability and query behavior.
+A standard-library authoring script validates manifest-selected source data and emits
+checked-in Kotlin, matching the existing bundled-content approach without adding a
+runtime JSON dependency. The general ContentRepository and current activities are unchanged.
+Future platform hosts resolve LocalImageAsset paths and decode off the main thread;
+Compose must not parse metadata. No asset loader, ViewModel, route, session, progress,
+speech or grading behavior is introduced. Authoring prompts/references never enter
+the generated production catalogue. Source paths/hash provide reproducible validation,
+not a new persistence mechanism.

@@ -27,18 +27,18 @@ one exact sentence that a child must reproduce.
 
 ## Category IDs and current status
 
-1. `ocean_underwater` — Wave 1 complete (3 approved scenes)
-2. `jungle_rainforest` — Wave 1 complete (3 approved scenes)
-3. `woodland_forest` — Wave 1 complete (3 approved scenes)
-4. `park_playground` — Wave 1 complete (3 approved scenes)
-5. `sky_flying` — Wave 1 complete (3 approved scenes)
-6. `mountains_alpine` — Wave 1 complete (3 approved scenes)
-7. `countryside_farm` — Wave 1 complete (3 approved scenes)
-8. `classroom_school` — Wave 1 complete (3 approved scenes); functional tasks are the primary focus
-9. `zoo_wildlife` — Wave 1 complete (3 approved scenes)
+1. `ocean_underwater` — Wave 3 complete (9 approved scenes)
+2. `jungle_rainforest` — Wave 3 complete (9 approved scenes)
+3. `woodland_forest` — Wave 3 complete (9 approved scenes)
+4. `park_playground` — Wave 3 complete (9 approved scenes)
+5. `sky_flying` — Wave 3 complete (9 approved scenes)
+6. `mountains_alpine` — Wave 3 complete (9 approved scenes)
+7. `countryside_farm` — Wave 3 complete (9 approved scenes)
+8. `classroom_school` — Wave 3 complete (9 approved scenes); functional tasks are the primary focus
+9. `zoo_wildlife` — Wave 3 complete (9 approved scenes)
 
-Only categories with authored material need a physical subfolder yet. Planned
-categories remain indexed in the root manifest until their Wave 1 work begins.
+All nine categories are present. Each category manifest lists nine production scenes;
+files outside those approved lists are not runtime content.
 
 ## Folder conventions
 
@@ -83,17 +83,14 @@ metadata/content, not inside the pixels.
 
 ## Language/content rules
 
-Each approved scene metadata file records:
+The 81 approved scenes have two authored metadata formats:
 
-- primary and secondary learning focus
-- visible target subjects and relationships
-- EN/DE target language
-- example child descriptions
-- adult-support questions
-- sentence starters
-- modelling examples
-- expansion examples
-- a visual acceptance audit
+- Wave 1 (27 scenes): bilingual titles, target language, example child descriptions
+  and adult-support lists/expansions; primary/secondary learning focus.
+- Waves 2/3 (54 scenes): English titles, purpose, target words/sentence models and
+  adult-support focus/starter/expansion prompts. German is not yet authored.
+- Visual audits remain authoring evidence. Do not infer missing translations,
+  example sentences or a machine-gradable answer set.
 
 Adult support follows a simple principle: accept the child's answer first, then
 model one small step more language without requiring exact repetition.
@@ -121,18 +118,12 @@ When this work reaches implementation:
 
 ## Current checkpoint
 
-Wave 1 approved production artwork:
+Wave 3 is complete: **9 categories × 9 approved scenes = 81 production scenes**.
+See `manifest.json`, `WAVE_3_STATUS.md` and `SANITY_CHECK.md` for the current
+checkpoint. Wave 1 summaries and the detailed Wave 1 visual review are historical.
 
-- Ocean / Underwater: 3 scenes
-- Jungle / Rainforest: 3 scenes
-- Woodland / Forest: 3 scenes
-- Park / Playground: 3 scenes
-- Sky / Flying Adventure: 3 scenes
-- Mountains / Alpine Nature: 3 scenes
-- Countryside / Farm: 3 scenes
-- Classroom / School: 3 scenes
-- Zoo / Wildlife Park: 3 scenes
-
-**Total approved scenes: 27.**
-
-Wave 1 complete across all nine planned categories.
+The pure native scene catalogue is generated from the root/category manifests and
+referenced metadata by `scripts/generate_scene_descriptions.py`. It exposes only
+approved canonical scenes; no runtime JSON parsing or UI is introduced. German
+lookups for the 54 English-only records return unavailable, never English fallback.
+See CONTENT_DATA_SPEC.md at the repository root for the typed contract.

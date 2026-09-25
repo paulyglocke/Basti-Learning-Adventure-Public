@@ -1,6 +1,36 @@
 # Session handoff — 2026-09-25
 
-## Current checkpoint — first shared text-answer choice slice
+## Current checkpoint — Scene Description catalogue, no activity UI
+
+2026-09-25: started clean main `48ca578`. Pure `learning/scenedescription` models
+and bundled repository now expose all 81 approved scenes, nine per category, in
+manifest order. `ContentRepository` is unchanged. Run
+`python3 scripts/generate_scene_descriptions.py` after relevant source edits, then
+`--check` and the Python/JVM tests. No runtime JSON/Android dependency. See
+CONTENT_DATA_SPEC.md for the exact nullable-language/query/validation contract.
+
+All 27 Wave 1 records have bilingual learning/support text; 54 Wave 2/3 records are
+English-only. German is explicitly unavailable, never fabricated/fallback. The
+known wave/schema format differences are normalized; farm .01's count caution is
+retained. Root asset docs now state Wave 3 / 81 scenes without rewriting historical
+Wave 1 review outcomes. PNGs, manifests/metadata, existing learning/UI/audio/progress,
+completed support work and signing/distribution are untouched.
+
+Validation: 19/19 Python boundary tests, 10/10 focused JVM, 275/275 full JVM; zero
+failures/errors/skips. assembleDebug/lintDebug passed; lint 0 errors, 3 existing
+warnings and 2 informational findings. Generator freshness and diff/new-file
+whitespace checks passed. Initial Gradle sandbox socket denial was resolved by a
+permitted rerun, not code changes. No instrumentation/browser/device run was needed
+for this pure content slice; see BUILD_NOTES for exact commands/evidence.
+
+Uncommitted work only; no push. Deferred: Tell Me screen/navigation/ViewModel,
+asset decoding, session/progress/audio, speech input and automatic evaluation.
+Recommended next bounded slice: author/review German for the six English-only
+records in one nine-scene category before designing bilingual consumption. Broader
+existing S24/Fire acceptance remains separate and unchanged; no hardware claim.
+
+
+## Previous checkpoint — first shared text-answer choice slice
 
 Started clean main `93b0120`, which commits both the four-activity support rollout and larger-support-text setting. Those tasks are complete; older handoff references to uncommitted support work describe their earlier checkpoint. The highest-priority unfinished P1 remains the lightweight visual system. Added NativeTextChoice only for Prepositions and Seasons quiz text answers (recognition/next/before): neutral outlined surface, rounded geometry, 64dp minimum target and naturally wrapping labels. Preserved exact answer labels/order/IDs, callbacks, tags, gates, separate Listen and all learning/support/session behavior. No changes to Wilma, Vocabulary, artwork, completion, audio, browser, signing or distribution.
 

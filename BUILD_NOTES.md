@@ -1,5 +1,64 @@
 # V1 verification and fixes
 
+## Scene Description native content foundation — 2026-09-25
+
+Started from clean main `48ca578` (81-scene asset library), preserving the committed
+native support/text-choice work. Added a pure scene-specific repository, without
+extending ContentRepository or changing any current activity. Semantic SceneId and
+SceneCategoryId preserve source identity; immutable records expose canonical
+LocalImageAsset, approved status, wave, authored title/purpose/focus, typed language
+and adult-support groups, optional examples/expansions and the existing farm review
+caution. Category/scene order follows the manifests. Unknown IDs return null/empty.
+
+Chosen boundary: standard-library Python validation/generation into checked-in
+Kotlin, consistent with bundled native packs; no runtime JSON or new dependency.
+Only root/category manifest entries become records. Prompts, reference images,
+unlisted files and authoring object/audit graphs do not become runtime content.
+Generator rejects malformed JSON/duplicate keys, duplicate IDs, invalid schemas,
+approval/wave/identity mismatches, missing canonical image/metadata references and
+unknown teaching/support fields before writing. JVM validation checks immutable
+records, repository references, PNG signatures and the source fingerprint. Generated
+output is reproducible; do not hand-edit BundledSceneDescriptions.kt.
+
+Metadata limitations found across all 81 records:
+- Wave 1: 27 records with bilingual titles/target language/examples/adult support,
+  integer wave and schemaVersion 1; learningFocus rather than purpose.
+- Waves 2/3: 54 records with English-only title/purpose/target language/support,
+  string wave identifiers and no explicit schemaVersion. Wave 2 manifest entries
+  omit wave; the referenced metadata supplies it. These known formats normalize
+  into the typed catalogue; unknown schema/wave values are rejected.
+- Missing German is null/unavailable, never English fallback. Locale lists are
+  not forced into positional translation pairs. No missing wording is invented.
+- Farm tasks .01 retains its authored four-versus-three-chickens caution; do not
+  use that scene for chicken counting. Authored examples are not grading rules.
+
+Validation (JAVA_HOME `/Applications/Android Studio.app/Contents/jbr/Contents/Home`,
+ANDROID_HOME `/Users/paulbell/Library/Android/sdk`):
+- `python3 scripts/test_scene_descriptions.py`: **19 passed / 0 failures/errors**.
+- `python3 scripts/generate_scene_descriptions.py --check`: **9 categories / 81
+  approved scenes**, exactly nine each; generated Kotlin current.
+- `./gradlew testDebugUnitTest --tests 'com.bellfamily.bastischool.learning.scenedescription.*' --console=plain`:
+  **10 passed / 0 failures/errors/skips**, BUILD SUCCESSFUL (22s).
+- `./gradlew testDebugUnitTest assembleDebug lintDebug --console=plain`:
+  **275 JVM passed / 0 failures/errors/skips**, debug assembly and lint successful
+  (1m 1s). Lint **0 errors / 3 pre-existing warnings / 2 informational findings**:
+  UnusedAttribute ×2, SetJavaScriptEnabled ×1; AutoboxingStateCreation ×2 info.
+- Initial sandboxed Gradle launch failed before tests with a local-socket
+  `Operation not permitted`; the permitted rerun passed. No test/production workaround.
+- `git diff --check` and untracked-source whitespace checks passed. Browser and
+  instrumentation were not run: no browser/UI/Android behavior changed. No device
+  installation or physical acceptance claimed.
+
+Root SceneDescriptions README/VALIDATION/VISUAL_REVIEW now distinguish current
+Wave 3 / 81-scene status from preserved historical Wave 1 visual-review evidence.
+No PNG, source manifest/metadata, existing activity, audio/session/progress, signing
+or distribution changes. No UI, route, ViewModel, asset loader, speech input/TTS,
+automatic grading or scoring. No commit/push. Future work: reviewed German for the
+54 English-only records and a separately bounded Tell Me consumer after its content
+availability policy is agreed. Next suggested slice: bilingual content review for
+one nine-scene category, preserving IDs/artwork and the six existing English-only
+records' authored meaning. Do not start automatically.
+
 ## Shared text-answer choices — first two consumers — 2026-09-25
 
 Started clean at `93b0120`, after both support slices were committed. Current backlog/roadmap still place the lightweight visual system ahead of new learning engines; chose its first text-answer choice slice, not an older handoff's completed support task. NativeTextChoice(label, onClick, modifier, enabled) shares neutral Material3 outlined surface/onSurface styling, 16dp corners, 64dp minimum height, 16dp horizontal/12dp vertical padding and centred semibold bodyLarge wrapping. Material retains disabled/ripple/focus/Button semantics. No fixed text height/line limit or extra interaction state.
