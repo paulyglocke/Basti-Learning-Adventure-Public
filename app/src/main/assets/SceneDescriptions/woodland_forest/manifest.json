@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "woodland_forest",
+  "approvedScenes": [
+    {
+      "sceneId": "scene.woodland.features.01",
+      "slug": "woodland_001_features",
+      "asset": "canonical/woodland_001_features.png",
+      "metadata": "metadata/woodland_001_features.json",
+      "prompt": "prompts/woodland_001_features.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.woodland.actions.02",
+      "slug": "woodland_002_actions",
+      "asset": "canonical/woodland_002_actions.png",
+      "metadata": "metadata/woodland_002_actions.json",
+      "prompt": "prompts/woodland_002_actions.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.woodland.positions.03",
+      "slug": "woodland_003_positions",
+      "asset": "canonical/woodland_003_positions.png",
+      "metadata": "metadata/woodland_003_positions.json",
+      "prompt": "prompts/woodland_003_positions.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.woodland.autumn_prep.04",
+      "title": "Woodland Scene 4 — Autumn Preparation",
+      "asset": "canonical/woodland_004_autumn_prep.png",
+      "metadata": "metadata/woodland_004_autumn_prep.json",
+      "prompt": "prompts/woodland_004_autumn_prep.md"
+    },
+    {
+      "sceneId": "scene.woodland.animal_homes.05",
+      "title": "Woodland Scene 5 — Woodland Homes",
+      "asset": "canonical/woodland_005_animal_homes.png",
+      "metadata": "metadata/woodland_005_animal_homes.json",
+      "prompt": "prompts/woodland_005_animal_homes.md"
+    },
+    {
+      "sceneId": "scene.woodland.compare_groups.06",
+      "title": "Woodland Scene 6 — Compare and Count",
+      "asset": "canonical/woodland_006_compare_groups.png",
+      "metadata": "metadata/woodland_006_compare_groups.json",
+      "prompt": "prompts/woodland_006_compare_groups.md"
+    },
+    {
+      "sceneId": "scene.woodland.before_rain.07",
+      "slug": "woodland_007_before_rain",
+      "asset": "canonical/woodland_007_before_rain.png",
+      "metadata": "metadata/woodland_007_before_rain.json",
+      "prompt": "prompts/woodland_007_before_rain.md",
+      "wave": 3
+    },
+    {
+      "sceneId": "scene.woodland.homes_choices.08",
+      "slug": "woodland_008_homes_choices",
+      "asset": "canonical/woodland_008_homes_choices.png",
+      "metadata": "metadata/woodland_008_homes_choices.json",
+      "prompt": "prompts/woodland_008_homes_choices.md",
+      "wave": 3
+    },
+    {
+      "sceneId": "scene.woodland.find_animals.09",
+      "slug": "woodland_009_find_animals",
+      "asset": "canonical/woodland_009_find_animals.png",
+      "metadata": "metadata/woodland_009_find_animals.json",
+      "prompt": "prompts/woodland_009_find_animals.md",
+      "wave": 3
+    }
+  ],
+  "note": "Woodland Wave 1 complete: three user-approved production scenes. Wave 3 batch 1 complete: scenes 007–009 added."
+}

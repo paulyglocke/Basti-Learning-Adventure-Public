@@ -1,0 +1,374 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.ocean.hiding_places.03",
+  "categoryId": "ocean_underwater",
+  "slug": "ocean_003_hiding_places",
+  "asset": "canonical/ocean_003_hiding_places.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Hiding Places",
+    "de": "Verstecke und Positionen"
+  },
+  "learningFocus": {
+    "primary": [
+      "spatial_language",
+      "prepositions",
+      "nouns"
+    ],
+    "secondary": [
+      "verbs",
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "crab",
+        "en": "crab",
+        "de": "Krabbe"
+      },
+      "relation": {
+        "id": "under",
+        "en": "under the rock",
+        "de": "unter dem Stein"
+      },
+      "notes": "One red/orange crab clearly underneath a large arch-shaped rock on the lower-left."
+    },
+    {
+      "subject": {
+        "id": "starfish",
+        "en": "starfish",
+        "de": "Seestern"
+      },
+      "relation": {
+        "id": "on",
+        "en": "on the sand",
+        "de": "auf dem Sand"
+      },
+      "notes": "One orange starfish flat and clearly visible on the sandy seabed near the lower-middle."
+    },
+    {
+      "subject": {
+        "id": "turtle",
+        "en": "turtle",
+        "de": "Schildkröte"
+      },
+      "relation": {
+        "id": "above",
+        "en": "above the starfish",
+        "de": "über dem Seestern"
+      },
+      "action": {
+        "en": "swimming",
+        "de": "schwimmt"
+      },
+      "notes": "One green turtle clearly above the starfish with obvious vertical separation."
+    },
+    {
+      "subject": {
+        "id": "seahorse",
+        "en": "seahorse",
+        "de": "Seepferdchen"
+      },
+      "relation": {
+        "id": "next_to",
+        "en": "next to the seaweed",
+        "de": "neben dem Seegras"
+      },
+      "notes": "One yellow/orange seahorse immediately next to tall green seaweed on the right."
+    },
+    {
+      "subject": {
+        "id": "octopus",
+        "en": "octopus",
+        "de": "Oktopus"
+      },
+      "relation": {
+        "id": "behind",
+        "en": "behind the coral",
+        "de": "hinter der Koralle"
+      },
+      "notes": "One orange octopus partly behind a large pink coral formation on the far right."
+    },
+    {
+      "subject": {
+        "id": "fish_group",
+        "en": "two small fish",
+        "de": "zwei kleine Fische"
+      },
+      "relation": {
+        "id": "near",
+        "en": "near the coral",
+        "de": "nahe bei der Koralle"
+      },
+      "quantity": 2,
+      "notes": "Exactly two small fish swimming near a separate coral formation in the upper-left."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "crab",
+        "de": "Krabbe"
+      },
+      {
+        "en": "rock",
+        "de": "Stein"
+      },
+      {
+        "en": "starfish",
+        "de": "Seestern"
+      },
+      {
+        "en": "sand",
+        "de": "Sand"
+      },
+      {
+        "en": "turtle",
+        "de": "Schildkröte"
+      },
+      {
+        "en": "seahorse",
+        "de": "Seepferdchen"
+      },
+      {
+        "en": "seaweed",
+        "de": "Seegras"
+      },
+      {
+        "en": "octopus",
+        "de": "Oktopus"
+      },
+      {
+        "en": "coral",
+        "de": "Koralle"
+      },
+      {
+        "en": "fish",
+        "de": "Fisch / Fische"
+      }
+    ],
+    "spatialLanguage": [
+      {
+        "en": "under",
+        "de": "unter"
+      },
+      {
+        "en": "on",
+        "de": "auf"
+      },
+      {
+        "en": "above",
+        "de": "über"
+      },
+      {
+        "en": "next to",
+        "de": "neben"
+      },
+      {
+        "en": "behind",
+        "de": "hinter"
+      },
+      {
+        "en": "near",
+        "de": "nahe bei"
+      }
+    ],
+    "verbs": [
+      {
+        "en": "hide",
+        "de": "sich verstecken"
+      },
+      {
+        "en": "swim",
+        "de": "schwimmen"
+      },
+      {
+        "en": "crawl",
+        "de": "krabbeln"
+      },
+      {
+        "en": "float",
+        "de": "schweben"
+      }
+    ],
+    "optionalAdjectives": [
+      {
+        "en": "little",
+        "de": "klein"
+      },
+      {
+        "en": "orange",
+        "de": "orange"
+      },
+      {
+        "en": "pink",
+        "de": "pink"
+      },
+      {
+        "en": "green",
+        "de": "grün"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The crab is under the rock.",
+      "The starfish is on the sand.",
+      "The turtle is above the starfish.",
+      "The seahorse is next to the seaweed.",
+      "The octopus is behind the coral.",
+      "The two fish are near the coral."
+    ],
+    "de": [
+      "Die Krabbe ist unter dem Stein.",
+      "Der Seestern liegt auf dem Sand.",
+      "Die Schildkröte ist über dem Seestern.",
+      "Das Seepferdchen ist neben dem Seegras.",
+      "Der Oktopus ist hinter der Koralle.",
+      "Die zwei Fische sind nahe bei der Koralle."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Ask where an animal is, accept short answers first, then model the full spatial sentence.",
+      "de": "Fragen, wo sich ein Tier befindet, kurze Antworten zuerst annehmen und danach den vollständigen Satz mit der Ortsangabe vormachen."
+    },
+    "wordsToModel": {
+      "en": [
+        "under",
+        "on",
+        "above",
+        "next to",
+        "behind",
+        "near",
+        "crab",
+        "rock",
+        "starfish",
+        "turtle",
+        "seahorse",
+        "seaweed",
+        "octopus",
+        "coral",
+        "fish"
+      ],
+      "de": [
+        "unter",
+        "auf",
+        "über",
+        "neben",
+        "hinter",
+        "nahe bei",
+        "Krabbe",
+        "Stein",
+        "Seestern",
+        "Schildkröte",
+        "Seepferdchen",
+        "Seegras",
+        "Oktopus",
+        "Koralle",
+        "Fische"
+      ]
+    },
+    "questions": {
+      "en": [
+        "Where is the crab?",
+        "Which animal is under the rock?",
+        "Where is the starfish?",
+        "What is above the starfish?",
+        "What is next to the seaweed?",
+        "Who is behind the coral?",
+        "Where are the two fish?"
+      ],
+      "de": [
+        "Wo ist die Krabbe?",
+        "Welches Tier ist unter dem Stein?",
+        "Wo ist der Seestern?",
+        "Was ist über dem Seestern?",
+        "Was ist neben dem Seegras?",
+        "Wer ist hinter der Koralle?",
+        "Wo sind die zwei Fische?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The ___ is under...",
+        "The ___ is on...",
+        "The ___ is above...",
+        "The ___ is next to...",
+        "The ___ is behind...",
+        "The ___ are near..."
+      ],
+      "de": [
+        "Die/Der ___ ist unter...",
+        "Die/Der ___ ist auf...",
+        "Die/Der ___ ist über...",
+        "Die/Der ___ ist neben...",
+        "Die/Der ___ ist hinter...",
+        "Die ___ sind nahe bei..."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The crab is hiding under the rock.",
+        "The starfish is on the sand.",
+        "The turtle is swimming above the starfish.",
+        "The seahorse is next to the seaweed.",
+        "The octopus is behind the pink coral.",
+        "The two little fish are near the coral."
+      ],
+      "de": [
+        "Die Krabbe versteckt sich unter dem Stein.",
+        "Der Seestern liegt auf dem Sand.",
+        "Die Schildkröte schwimmt über dem Seestern.",
+        "Das Seepferdchen ist neben dem Seegras.",
+        "Der Oktopus ist hinter der pinken Koralle.",
+        "Die zwei kleinen Fische sind nahe bei der Koralle."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Crab under.",
+          "de": "Krabbe unter."
+        },
+        "adult": {
+          "en": "Yes, the crab is under the rock.",
+          "de": "Ja, die Krabbe ist unter dem Stein."
+        }
+      },
+      {
+        "child": {
+          "en": "Octopus coral.",
+          "de": "Oktopus Koralle."
+        },
+        "adult": {
+          "en": "Yes, the octopus is behind the coral.",
+          "de": "Ja, der Oktopus ist hinter der Koralle."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "oneCrab": true,
+      "oneStarfish": true,
+      "oneTurtle": true,
+      "oneSeahorse": true,
+      "oneOctopus": true,
+      "twoSmallFish": true,
+      "crabClearlyUnderRock": true,
+      "starfishClearlyOnSand": true,
+      "turtleClearlyAboveStarfish": true,
+      "seahorseClearlyNextToSeaweed": true,
+      "octopusClearlyBehindCoral": true,
+      "fishClearlyNearCoral": true,
+      "noBackgroundAnimals": true,
+      "noTextOrUI": true,
+      "spatialExamplesSeparated": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

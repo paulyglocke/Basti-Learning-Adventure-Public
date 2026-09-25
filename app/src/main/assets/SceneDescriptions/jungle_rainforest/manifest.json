@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "jungle_rainforest",
+  "approvedScenes": [
+    {
+      "sceneId": "scene.jungle.actions.01",
+      "slug": "jungle_001_actions",
+      "asset": "canonical/jungle_001_actions.png",
+      "metadata": "metadata/jungle_001_actions.json",
+      "prompt": "prompts/jungle_001_actions.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.jungle.colours_features.02",
+      "slug": "jungle_002_colours_features",
+      "asset": "canonical/jungle_002_colours_features.png",
+      "metadata": "metadata/jungle_002_colours_features.json",
+      "prompt": "prompts/jungle_002_colours_features.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.jungle.positions.03",
+      "slug": "jungle_003_positions",
+      "asset": "canonical/jungle_003_positions.png",
+      "metadata": "metadata/jungle_003_positions.json",
+      "prompt": "prompts/jungle_003_positions.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.jungle.animal_homes.04",
+      "title": "Jungle Scene 4 — Animal Homes and Shelter",
+      "asset": "canonical/jungle_004_animal_homes.png",
+      "metadata": "metadata/jungle_004_animal_homes.json",
+      "prompt": "prompts/jungle_004_animal_homes.md"
+    },
+    {
+      "sceneId": "scene.jungle.busy_actions.05",
+      "title": "Jungle Scene 5 — Busy Jungle Actions",
+      "asset": "canonical/jungle_005_busy_actions.png",
+      "metadata": "metadata/jungle_005_busy_actions.json",
+      "prompt": "prompts/jungle_005_busy_actions.md"
+    },
+    {
+      "sceneId": "scene.jungle.big_small_groups.06",
+      "title": "Jungle Scene 6 — Big, Small and Groups",
+      "asset": "canonical/jungle_006_big_small_groups.png",
+      "metadata": "metadata/jungle_006_big_small_groups.json",
+      "prompt": "prompts/jungle_006_big_small_groups.md"
+    },
+    {
+      "sceneId": "scene.jungle.story_actions.07",
+      "slug": "jungle_007_story_actions",
+      "asset": "canonical/jungle_007_story_actions.png",
+      "metadata": "metadata/jungle_007_story_actions.json",
+      "prompt": "prompts/jungle_007_story_actions.md",
+      "wave": 3
+    },
+    {
+      "sceneId": "scene.jungle.clue_finding.08",
+      "slug": "jungle_008_clue_finding",
+      "asset": "canonical/jungle_008_clue_finding.png",
+      "metadata": "metadata/jungle_008_clue_finding.json",
+      "prompt": "prompts/jungle_008_clue_finding.md",
+      "wave": 3
+    },
+    {
+      "sceneId": "scene.jungle.actions_directions.09",
+      "slug": "jungle_009_actions_directions",
+      "asset": "canonical/jungle_009_actions_directions.png",
+      "metadata": "metadata/jungle_009_actions_directions.json",
+      "prompt": "prompts/jungle_009_actions_directions.md",
+      "wave": 3
+    }
+  ],
+  "note": "Jungle Wave 1 complete: three user-approved production scenes. Wave 3 batch 1 complete: scenes 007–009 added."
+}

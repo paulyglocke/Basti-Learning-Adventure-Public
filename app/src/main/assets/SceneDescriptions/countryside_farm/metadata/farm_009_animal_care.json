@@ -1,0 +1,61 @@
+{
+  "sceneId": "scene.farm.animal_care.09",
+  "categoryId": "countryside_farm",
+  "title": "Farm Scene 9 — Looking After the Animals",
+  "status": "approved",
+  "purpose": "Support inference, needs-based language and purposeful action verbs using a farm care scene.",
+  "asset": "canonical/farm_009_animal_care.png",
+  "promptFile": "prompts/farm_009_animal_care.md",
+  "targetLanguage": {
+    "nouns": [
+      "cow",
+      "pig",
+      "chickens",
+      "gate",
+      "water trough",
+      "bucket",
+      "vegetables",
+      "crate"
+    ],
+    "verbs": [
+      "carrying",
+      "feeding",
+      "closing",
+      "picking",
+      "looking after"
+    ],
+    "adjectives": [
+      "thirsty",
+      "safe",
+      "open",
+      "full",
+      "fresh"
+    ],
+    "sentenceModels": [
+      "The child is carrying water to the cow.",
+      "The child is feeding the chickens.",
+      "The pig is inside the gate.",
+      "The child is picking vegetables."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Ask what each animal needs and which child is helping with that need.",
+    "starterPrompts": [
+      "Who needs water?",
+      "Who is feeding the chickens?",
+      "Why is the gate important?",
+      "What is in the crate?",
+      "Which child is helping the cow?"
+    ],
+    "expansionPrompts": [
+      "What should happen next after the water arrives?",
+      "Tell me how the children are looking after the farm animals."
+    ]
+  },
+  "visualAudit": [
+    "Reviewed in Wave 3 Batch 3 automatic pass against the main teaching targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_3"
+}

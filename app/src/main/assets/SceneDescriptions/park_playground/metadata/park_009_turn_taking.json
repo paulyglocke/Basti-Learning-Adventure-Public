@@ -1,0 +1,54 @@
+{
+  "sceneId": "scene.park.turn_taking.09",
+  "categoryId": "park_playground",
+  "title": "Park Scene 9 — Turn-Taking and Waiting",
+  "status": "approved",
+  "purpose": "Social communication, waiting, sharing equipment and predicting the next turn.",
+  "asset": "canonical/park_009_turn_taking.png",
+  "promptFile": "prompts/park_009_turn_taking.md",
+  "targetLanguage": {
+    "nouns": [
+      "seesaw",
+      "slide",
+      "playground",
+      "toy"
+    ],
+    "verbs": [
+      "waiting",
+      "sitting",
+      "playing",
+      "taking turns"
+    ],
+    "adjectives": [
+      "happy",
+      "ready",
+      "next"
+    ],
+    "sentenceModels": [
+      "The children are taking turns.",
+      "The child is waiting.",
+      "The children are sitting on the seesaw.",
+      "Who goes next?"
+    ]
+  },
+  "adultSupport": {
+    "focus": "Practise waiting and turn-taking language rather than judging behaviour.",
+    "starterPrompts": [
+      "Who is waiting?",
+      "Who is using the seesaw?",
+      "Who might go next?",
+      "Which child is ready?",
+      "What could the child say?"
+    ],
+    "expansionPrompts": [
+      "What can you say when you want a turn?",
+      "What should happen after one child finishes?"
+    ]
+  },
+  "visualAudit": [
+    "Reviewed in Wave 3 Batch 2 automatic pass against the visible teaching targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_2"
+}

@@ -1,0 +1,67 @@
+{
+  "sceneId": "scene.jungle.clue_finding.08",
+  "categoryId": "jungle_rainforest",
+  "title": "Jungle Scene 8 — Find the Animal From Clues",
+  "status": "approved",
+  "purpose": "Finding the right rainforest animal from multiple location and feature clues.",
+  "asset": "canonical/jungle_008_clue_finding.png",
+  "promptFile": "prompts/jungle_008_clue_finding.md",
+  "targetLanguage": {
+    "nouns": [
+      "monkey",
+      "branch",
+      "parrot",
+      "sloth",
+      "vine",
+      "toucan",
+      "frog",
+      "leaf",
+      "tiger",
+      "waterfall"
+    ],
+    "verbs": [
+      "find",
+      "point",
+      "show",
+      "look"
+    ],
+    "adjectives": [
+      "small",
+      "big",
+      "colourful",
+      "green",
+      "striped"
+    ],
+    "sentenceModels": [
+      "Find the frog under the leaf.",
+      "Point to the sloth on the vine.",
+      "Show me the striped animal behind the leaves.",
+      "Which bird is on the right?",
+      "First point to the monkey, then point to the toucan."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Use multi-part clue sentences to identify the correct animal.",
+    "starterPrompts": [
+      "Can you find the frog under the leaf?",
+      "Which animal is hanging from the vine?",
+      "Where is the tiger?",
+      "Which bird is on the right?",
+      "Who is on the branch on the left?"
+    ],
+    "expansionPrompts": [
+      "First point to the parrot, then point to the sloth.",
+      "Find the striped animal behind the leaves and then the green animal under the leaf."
+    ]
+  },
+  "visualAudit": [
+    "One monkey sitting on a branch on the left.",
+    "One parrot flying near the top centre-left.",
+    "One sloth hanging from a vine on the right of centre.",
+    "One toucan on the upper-right.",
+    "One frog under a leaf on the lower-left and one tiger partly behind leaves on the lower-right."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_1"
+}

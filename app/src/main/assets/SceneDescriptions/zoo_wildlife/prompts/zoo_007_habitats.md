@@ -1,0 +1,1 @@
+Create a bright children’s-book zoo scene with several familiar animals in easy-to-understand places: an elephant by water, a giraffe near trees, a lion resting in shade, a penguin by a pool, and a monkey on a branch. No readable text or signs.

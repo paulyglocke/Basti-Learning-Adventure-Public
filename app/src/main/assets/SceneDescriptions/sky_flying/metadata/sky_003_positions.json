@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.sky.positions.03",
+  "categoryId": "sky_flying",
+  "slug": "sky_003_positions",
+  "asset": "canonical/sky_003_positions.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "High, Low and Around",
+    "de": "Oben, unten und rundherum"
+  },
+  "learningFocus": {
+    "primary": [
+      "spatial_language",
+      "prepositions",
+      "nouns"
+    ],
+    "secondary": [
+      "movement_verbs",
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "balloon",
+        "en": "hot-air balloon",
+        "de": "Heißluftballon"
+      },
+      "relation": {
+        "id": "above",
+        "en": "above the mountain",
+        "de": "über dem Berg"
+      },
+      "notes": "One colourful hot-air balloon clearly above the mountain peak on the left."
+    },
+    {
+      "subject": {
+        "id": "airplane",
+        "en": "airplane",
+        "de": "Flugzeug"
+      },
+      "relation": {
+        "id": "below",
+        "en": "below the cloud",
+        "de": "unter der Wolke"
+      },
+      "notes": "One red airplane clearly below the large white cloud in the upper-middle."
+    },
+    {
+      "subject": {
+        "id": "eagle",
+        "en": "eagle",
+        "de": "Adler"
+      },
+      "relation": {
+        "id": "next_to",
+        "en": "next to the balloon",
+        "de": "neben dem Ballon"
+      },
+      "notes": "One eagle clearly next to, but separate from, the hot-air balloon."
+    },
+    {
+      "subject": {
+        "id": "helicopter",
+        "en": "helicopter",
+        "de": "Hubschrauber"
+      },
+      "relation": {
+        "id": "between",
+        "en": "between the clouds",
+        "de": "zwischen den Wolken"
+      },
+      "notes": "One helicopter clearly between two separate small white clouds on the right."
+    },
+    {
+      "subject": {
+        "id": "kite",
+        "en": "kite",
+        "de": "Drachen"
+      },
+      "relation": {
+        "id": "under",
+        "en": "under the rainbow",
+        "de": "unter dem Regenbogen"
+      },
+      "notes": "One colourful kite clearly under the rainbow with visible sky separating them."
+    },
+    {
+      "subject": {
+        "id": "bird_group",
+        "en": "three small birds",
+        "de": "drei kleine Vögel"
+      },
+      "relation": {
+        "id": "near",
+        "en": "near the cloud",
+        "de": "nahe bei der Wolke"
+      },
+      "quantity": 3,
+      "notes": "Exactly three small yellow birds flying near one small white cloud; all three remain countable."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "hot-air balloon",
+        "de": "Heißluftballon"
+      },
+      {
+        "en": "mountain",
+        "de": "Berg"
+      },
+      {
+        "en": "airplane",
+        "de": "Flugzeug"
+      },
+      {
+        "en": "cloud",
+        "de": "Wolke"
+      },
+      {
+        "en": "eagle",
+        "de": "Adler"
+      },
+      {
+        "en": "helicopter",
+        "de": "Hubschrauber"
+      },
+      {
+        "en": "kite",
+        "de": "Drachen"
+      },
+      {
+        "en": "rainbow",
+        "de": "Regenbogen"
+      },
+      {
+        "en": "birds",
+        "de": "Vögel"
+      },
+      {
+        "en": "sky",
+        "de": "Himmel"
+      }
+    ],
+    "spatialLanguage": [
+      {
+        "en": "above",
+        "de": "über"
+      },
+      {
+        "en": "below",
+        "de": "unter"
+      },
+      {
+        "en": "next to",
+        "de": "neben"
+      },
+      {
+        "en": "between",
+        "de": "zwischen"
+      },
+      {
+        "en": "under",
+        "de": "unter"
+      },
+      {
+        "en": "near",
+        "de": "nahe bei"
+      }
+    ],
+    "optionalVerbs": [
+      {
+        "en": "fly",
+        "de": "fliegen"
+      },
+      {
+        "en": "glide",
+        "de": "gleiten"
+      },
+      {
+        "en": "hover",
+        "de": "schweben"
+      }
+    ],
+    "countingLanguage": [
+      {
+        "en": "three",
+        "de": "drei"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The balloon is above the mountain.",
+      "The airplane is below the cloud.",
+      "The eagle is next to the balloon.",
+      "The helicopter is between the clouds.",
+      "The kite is under the rainbow.",
+      "The birds are near the cloud.",
+      "There are three birds near the cloud."
+    ],
+    "de": [
+      "Der Ballon ist über dem Berg.",
+      "Das Flugzeug ist unter der Wolke.",
+      "Der Adler ist neben dem Ballon.",
+      "Der Hubschrauber ist zwischen den Wolken.",
+      "Der Drachen ist unter dem Regenbogen.",
+      "Die Vögel sind nahe bei der Wolke.",
+      "Es gibt drei Vögel nahe bei der Wolke."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Ask where each flying object or animal is. Accept a short location word first, then model the complete spatial sentence.",
+      "de": "Fragen, wo sich das Flugobjekt oder Tier befindet. Eine kurze Ortsangabe zuerst annehmen und danach den vollständigen Satz vormachen."
+    },
+    "wordsToModel": {
+      "en": [
+        "above",
+        "below",
+        "next to",
+        "between",
+        "under",
+        "near",
+        "balloon",
+        "mountain",
+        "airplane",
+        "cloud",
+        "eagle",
+        "helicopter",
+        "kite",
+        "rainbow",
+        "birds"
+      ],
+      "de": [
+        "über",
+        "unter",
+        "neben",
+        "zwischen",
+        "nahe bei",
+        "Ballon",
+        "Berg",
+        "Flugzeug",
+        "Wolke",
+        "Adler",
+        "Hubschrauber",
+        "Drachen",
+        "Regenbogen",
+        "Vögel"
+      ]
+    },
+    "questions": {
+      "en": [
+        "What is above the mountain?",
+        "Where is the airplane?",
+        "What is next to the balloon?",
+        "What is between the two clouds?",
+        "What is under the rainbow?",
+        "Where are the three birds?"
+      ],
+      "de": [
+        "Was ist über dem Berg?",
+        "Wo ist das Flugzeug?",
+        "Was ist neben dem Ballon?",
+        "Was ist zwischen den zwei Wolken?",
+        "Was ist unter dem Regenbogen?",
+        "Wo sind die drei Vögel?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The ___ is above...",
+        "The ___ is below...",
+        "The ___ is next to...",
+        "The ___ is between...",
+        "The ___ is under...",
+        "The ___ are near..."
+      ],
+      "de": [
+        "Der/Die/Das ___ ist über...",
+        "Der/Die/Das ___ ist unter...",
+        "Der/Die/Das ___ ist neben...",
+        "Der/Die/Das ___ ist zwischen...",
+        "Der/Die/Das ___ ist unter...",
+        "Die ___ sind nahe bei..."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The colourful balloon is above the mountain.",
+        "The red airplane is below the big white cloud.",
+        "The eagle is flying next to the balloon.",
+        "The helicopter is hovering between two clouds.",
+        "The colourful kite is under the rainbow.",
+        "The three little birds are near the cloud."
+      ],
+      "de": [
+        "Der bunte Ballon ist über dem Berg.",
+        "Das rote Flugzeug ist unter der großen weißen Wolke.",
+        "Der Adler fliegt neben dem Ballon.",
+        "Der Hubschrauber schwebt zwischen zwei Wolken.",
+        "Der bunte Drachen ist unter dem Regenbogen.",
+        "Die drei kleinen Vögel sind nahe bei der Wolke."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Balloon above.",
+          "de": "Ballon oben."
+        },
+        "adult": {
+          "en": "Yes, the balloon is above the mountain.",
+          "de": "Ja, der Ballon ist über dem Berg."
+        }
+      },
+      {
+        "child": {
+          "en": "Helicopter clouds.",
+          "de": "Hubschrauber Wolken."
+        },
+        "adult": {
+          "en": "Yes, the helicopter is between the two clouds.",
+          "de": "Ja, der Hubschrauber ist zwischen den zwei Wolken."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "oneBalloon": true,
+      "oneAirplane": true,
+      "oneEagle": true,
+      "oneHelicopter": true,
+      "oneKite": true,
+      "threeSmallBirds": true,
+      "balloonClearlyAboveMountain": true,
+      "airplaneClearlyBelowCloud": true,
+      "eagleClearlyNextToBalloon": true,
+      "helicopterClearlyBetweenClouds": true,
+      "kiteClearlyUnderRainbow": true,
+      "birdsClearlyNearCloud": true,
+      "birdsCountable": true,
+      "spatialExamplesReadable": true,
+      "noTextOrUI": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

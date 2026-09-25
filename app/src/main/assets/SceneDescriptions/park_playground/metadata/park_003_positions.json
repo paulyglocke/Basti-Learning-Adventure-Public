@@ -1,0 +1,331 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.park.positions.03",
+  "categoryId": "park_playground",
+  "slug": "park_003_positions",
+  "asset": "canonical/park_003_positions.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Playground Positions",
+    "de": "Positionen auf dem Spielplatz"
+  },
+  "learningFocus": {
+    "primary": [
+      "spatial_language",
+      "prepositions",
+      "nouns"
+    ],
+    "secondary": [
+      "sentence_expansion",
+      "everyday_objects"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "backpack",
+        "en": "backpack",
+        "de": "Rucksack"
+      },
+      "relation": {
+        "id": "under",
+        "en": "under the bench",
+        "de": "unter der Bank"
+      },
+      "notes": "One blue backpack clearly positioned underneath the bench on the lower-left."
+    },
+    {
+      "subject": {
+        "id": "hat",
+        "en": "hat",
+        "de": "Mütze"
+      },
+      "relation": {
+        "id": "on",
+        "en": "on the bench",
+        "de": "auf der Bank"
+      },
+      "notes": "One blue hat clearly resting on the bench seat."
+    },
+    {
+      "subject": {
+        "id": "kite",
+        "en": "kite",
+        "de": "Drachen"
+      },
+      "relation": {
+        "id": "above",
+        "en": "above the tree",
+        "de": "über dem Baum"
+      },
+      "notes": "One colourful kite clearly above the large tree with visible sky around it."
+    },
+    {
+      "subject": {
+        "id": "child_behind_slide",
+        "en": "child",
+        "de": "Kind"
+      },
+      "relation": {
+        "id": "behind",
+        "en": "behind the slide",
+        "de": "hinter der Rutsche"
+      },
+      "notes": "One child partly obscured by the blue slide, clearly reading as behind it."
+    },
+    {
+      "subject": {
+        "id": "scooter",
+        "en": "scooter",
+        "de": "Roller"
+      },
+      "relation": {
+        "id": "next_to",
+        "en": "next to the sandbox",
+        "de": "neben dem Sandkasten"
+      },
+      "notes": "One blue scooter clearly beside the sandbox, not inside or behind it."
+    },
+    {
+      "subject": {
+        "id": "child_near_swing",
+        "en": "child",
+        "de": "Kind"
+      },
+      "relation": {
+        "id": "near",
+        "en": "near the swing",
+        "de": "nahe bei der Schaukel"
+      },
+      "notes": "One child standing close to the swing without being on it."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "backpack",
+        "de": "Rucksack"
+      },
+      {
+        "en": "bench",
+        "de": "Bank"
+      },
+      {
+        "en": "hat",
+        "de": "Mütze"
+      },
+      {
+        "en": "kite",
+        "de": "Drachen"
+      },
+      {
+        "en": "tree",
+        "de": "Baum"
+      },
+      {
+        "en": "child",
+        "de": "Kind"
+      },
+      {
+        "en": "slide",
+        "de": "Rutsche"
+      },
+      {
+        "en": "scooter",
+        "de": "Roller"
+      },
+      {
+        "en": "sandbox",
+        "de": "Sandkasten"
+      },
+      {
+        "en": "swing",
+        "de": "Schaukel"
+      }
+    ],
+    "spatialLanguage": [
+      {
+        "en": "under",
+        "de": "unter"
+      },
+      {
+        "en": "on",
+        "de": "auf"
+      },
+      {
+        "en": "above",
+        "de": "über"
+      },
+      {
+        "en": "behind",
+        "de": "hinter"
+      },
+      {
+        "en": "next to",
+        "de": "neben"
+      },
+      {
+        "en": "near",
+        "de": "nahe bei"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The backpack is under the bench.",
+      "The hat is on the bench.",
+      "The kite is above the tree.",
+      "The child is behind the slide.",
+      "The scooter is next to the sandbox.",
+      "The child is near the swing."
+    ],
+    "de": [
+      "Der Rucksack ist unter der Bank.",
+      "Die Mütze ist auf der Bank.",
+      "Der Drachen ist über dem Baum.",
+      "Das Kind ist hinter der Rutsche.",
+      "Der Roller ist neben dem Sandkasten.",
+      "Das Kind ist nahe bei der Schaukel."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Ask where an object or child is, accept a short spatial answer first, then model the full sentence.",
+      "de": "Fragen, wo sich ein Gegenstand oder Kind befindet, kurze Ortsangaben zuerst annehmen und danach den vollständigen Satz vormachen."
+    },
+    "wordsToModel": {
+      "en": [
+        "under",
+        "on",
+        "above",
+        "behind",
+        "next to",
+        "near",
+        "backpack",
+        "bench",
+        "hat",
+        "kite",
+        "tree",
+        "slide",
+        "scooter",
+        "sandbox",
+        "swing"
+      ],
+      "de": [
+        "unter",
+        "auf",
+        "über",
+        "hinter",
+        "neben",
+        "nahe bei",
+        "Rucksack",
+        "Bank",
+        "Mütze",
+        "Drachen",
+        "Baum",
+        "Rutsche",
+        "Roller",
+        "Sandkasten",
+        "Schaukel"
+      ]
+    },
+    "questions": {
+      "en": [
+        "Where is the backpack?",
+        "What is on the bench?",
+        "What is above the tree?",
+        "Where is the child by the slide?",
+        "What is next to the sandbox?",
+        "Where is the other child?"
+      ],
+      "de": [
+        "Wo ist der Rucksack?",
+        "Was ist auf der Bank?",
+        "Was ist über dem Baum?",
+        "Wo ist das Kind an der Rutsche?",
+        "Was ist neben dem Sandkasten?",
+        "Wo ist das andere Kind?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The ___ is under...",
+        "The ___ is on...",
+        "The ___ is above...",
+        "The ___ is behind...",
+        "The ___ is next to...",
+        "The ___ is near..."
+      ],
+      "de": [
+        "Der/Die/Das ___ ist unter...",
+        "Der/Die/Das ___ ist auf...",
+        "Der/Die/Das ___ ist über...",
+        "Der/Die/Das ___ ist hinter...",
+        "Der/Die/Das ___ ist neben...",
+        "Der/Die/Das ___ ist nahe bei..."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The blue backpack is under the bench.",
+        "The blue hat is on the bench.",
+        "The colourful kite is above the tree.",
+        "The child is behind the blue slide.",
+        "The scooter is next to the sandbox.",
+        "The child is standing near the swing."
+      ],
+      "de": [
+        "Der blaue Rucksack ist unter der Bank.",
+        "Die blaue Mütze ist auf der Bank.",
+        "Der bunte Drachen ist über dem Baum.",
+        "Das Kind ist hinter der blauen Rutsche.",
+        "Der Roller ist neben dem Sandkasten.",
+        "Das Kind steht nahe bei der Schaukel."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Backpack under.",
+          "de": "Rucksack unter."
+        },
+        "adult": {
+          "en": "Yes, the backpack is under the bench.",
+          "de": "Ja, der Rucksack ist unter der Bank."
+        }
+      },
+      {
+        "child": {
+          "en": "Scooter sandbox.",
+          "de": "Roller Sandkasten."
+        },
+        "adult": {
+          "en": "Yes, the scooter is next to the sandbox.",
+          "de": "Ja, der Roller ist neben dem Sandkasten."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "oneBackpack": true,
+      "oneHat": true,
+      "oneKite": true,
+      "oneChildBehindSlide": true,
+      "oneScooter": true,
+      "oneChildNearSwing": true,
+      "noExtraChildren": true,
+      "backpackClearlyUnderBench": true,
+      "hatClearlyOnBench": true,
+      "kiteClearlyAboveTree": true,
+      "childClearlyBehindSlide": true,
+      "scooterClearlyNextToSandbox": true,
+      "childClearlyNearSwing": true,
+      "spatialExamplesSeparated": true,
+      "noTextOrUI": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

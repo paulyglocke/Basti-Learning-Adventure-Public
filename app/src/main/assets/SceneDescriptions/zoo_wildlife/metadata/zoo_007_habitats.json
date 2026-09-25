@@ -1,0 +1,60 @@
+{
+  "sceneId": "scene.zoo.habitats_story.07",
+  "categoryId": "zoo_wildlife",
+  "title": "Zoo Scene 7 — Animals in Different Places",
+  "status": "approved",
+  "purpose": "Support habitat talk, location language and simple observation in a wildlife-park scene.",
+  "asset": "canonical/zoo_007_habitats.png",
+  "promptFile": "prompts/zoo_007_habitats.md",
+  "targetLanguage": {
+    "nouns": [
+      "elephant",
+      "giraffe",
+      "lion",
+      "penguin",
+      "monkey",
+      "pool",
+      "branch",
+      "shade"
+    ],
+    "verbs": [
+      "standing",
+      "resting",
+      "sitting",
+      "splashing"
+    ],
+    "adjectives": [
+      "tall",
+      "big",
+      "small",
+      "shady",
+      "wet"
+    ],
+    "sentenceModels": [
+      "The penguin is near the pool.",
+      "The lion is in the shade.",
+      "The monkey is on the branch.",
+      "The elephant is by the water."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Talk about where animals are and why those places suit them.",
+    "starterPrompts": [
+      "Which animal is by the water?",
+      "Who is resting in the shade?",
+      "Which animal is on the branch?",
+      "Which animal is the tallest?",
+      "Where is the penguin?"
+    ],
+    "expansionPrompts": [
+      "Why might the lion like the shade?",
+      "Tell me where each animal is in the zoo."
+    ]
+  },
+  "visualAudit": [
+    "Reviewed in Wave 3 Batch 3 automatic pass against the main teaching targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_3"
+}

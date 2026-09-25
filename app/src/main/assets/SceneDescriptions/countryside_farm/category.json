@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "countryside_farm",
+  "display": {
+    "en": "Countryside / farm",
+    "de": "Land / Bauernhof"
+  },
+  "status": "wave_3_complete",
+  "focus": {
+    "primary": [
+      "functional_tasks",
+      "verbs",
+      "everyday_nouns"
+    ],
+    "secondary": [
+      "animal_nouns",
+      "adjectives",
+      "counting",
+      "spatial_language",
+      "sentence_expansion"
+    ],
+    "tasks": "high"
+  },
+  "recommendedFocalSubjectsPerScene": {
+    "min": 5,
+    "max": 7
+  },
+  "approvedSceneCount": 9,
+  "wave2Status": "complete",
+  "wave3Status": "complete"
+}

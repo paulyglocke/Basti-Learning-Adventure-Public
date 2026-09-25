@@ -1,0 +1,69 @@
+{
+  "sceneId": "scene.mountains.busy_routines.04",
+  "categoryId": "mountains_alpine",
+  "title": "Mountains Scene 4 — Busy Mountain Routines",
+  "status": "approved",
+  "purpose": "Linked mountain-animal actions and simple storytelling.",
+  "asset": "canonical/mountains_004_busy_routines.png",
+  "promptFile": "prompts/mountains_004_busy_routines.md",
+  "targetLanguage": {
+    "nouns": [
+      "goat",
+      "rock",
+      "eagle",
+      "twig",
+      "nest",
+      "marmot",
+      "grass",
+      "burrow",
+      "sheep",
+      "stream",
+      "rabbit",
+      "flowers"
+    ],
+    "verbs": [
+      "climbing",
+      "carrying",
+      "drinking",
+      "eating",
+      "flying"
+    ],
+    "adjectives": [
+      "white",
+      "brown",
+      "busy",
+      "mountain"
+    ],
+    "sentenceModels": [
+      "The goat is climbing.",
+      "The eagle is carrying a twig.",
+      "The marmot is carrying grass.",
+      "The sheep is drinking water.",
+      "The rabbit is eating flowers."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Tell a simple mountain story using one action for each animal.",
+    "starterPrompts": [
+      "Who is climbing?",
+      "Who is carrying a twig?",
+      "Who is drinking?",
+      "What is the rabbit eating?",
+      "Where is the marmot going?"
+    ],
+    "expansionPrompts": [
+      "What might the eagle do next?",
+      "Why is the marmot carrying grass?"
+    ]
+  },
+  "visualAudit": [
+    "One goat climbing on rocks.",
+    "One eagle carrying a twig toward one nest.",
+    "One marmot carrying grass near a burrow.",
+    "One sheep drinking from a stream.",
+    "One rabbit eating flowers."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_2"
+}

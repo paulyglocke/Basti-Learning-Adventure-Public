@@ -1,0 +1,1 @@
+Create a bright child-friendly 2D cartoon farm scene showing children looking after farm animals. Include clear actions such as bringing water to a cow, feeding chickens, gathering vegetables, and keeping a pig safely inside a gate. No readable text or logos.

@@ -1,0 +1,1 @@
+Create a bright zoo / wildlife-park scene showing familiar animals around water and shade. Include animals such as elephants near the pool, penguins near rocks, a lion resting under shelter, and tree-dwelling animals above. Keep everything child-friendly and easy to discuss. No readable text.

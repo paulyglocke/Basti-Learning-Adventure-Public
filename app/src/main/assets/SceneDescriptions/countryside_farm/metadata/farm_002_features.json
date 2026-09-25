@@ -1,0 +1,416 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.farm.features.02",
+  "categoryId": "countryside_farm",
+  "slug": "farm_002_features",
+  "asset": "canonical/farm_002_features.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Farm Animals, Colours and Counting",
+    "de": "Bauernhoftiere, Farben und Zählen"
+  },
+  "learningFocus": {
+    "primary": [
+      "animal_nouns",
+      "adjectives",
+      "counting",
+      "comparisons"
+    ],
+    "secondary": [
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "cow",
+        "en": "cow",
+        "de": "Kuh"
+      },
+      "properties": [
+        {
+          "en": "big",
+          "de": "groß"
+        },
+        {
+          "en": "black and white",
+          "de": "schwarz-weiß"
+        },
+        {
+          "en": "spotted",
+          "de": "gefleckt"
+        }
+      ],
+      "notes": "One very large black-and-white cow, clearly the largest animal."
+    },
+    {
+      "subject": {
+        "id": "horse",
+        "en": "horse",
+        "de": "Pferd"
+      },
+      "properties": [
+        {
+          "en": "brown",
+          "de": "braun"
+        },
+        {
+          "en": "medium-sized",
+          "de": "mittelgroß"
+        },
+        {
+          "en": "long mane",
+          "de": "lange Mähne"
+        }
+      ],
+      "notes": "One medium-sized brown horse with clearly visible mane and tail."
+    },
+    {
+      "subject": {
+        "id": "pig",
+        "en": "pig",
+        "de": "Schwein"
+      },
+      "properties": [
+        {
+          "en": "small",
+          "de": "klein"
+        },
+        {
+          "en": "pink",
+          "de": "rosa"
+        },
+        {
+          "en": "curly tail",
+          "de": "Ringelschwanz"
+        }
+      ],
+      "notes": "One small pink pig with a visible curly tail."
+    },
+    {
+      "subject": {
+        "id": "sheep_group",
+        "en": "three sheep",
+        "de": "drei Schafe"
+      },
+      "quantity": 3,
+      "properties": [
+        {
+          "en": "white",
+          "de": "weiß"
+        },
+        {
+          "en": "fluffy",
+          "de": "flauschig"
+        }
+      ],
+      "notes": "Exactly three white fluffy sheep together and individually countable."
+    },
+    {
+      "subject": {
+        "id": "duckling_group",
+        "en": "two ducklings",
+        "de": "zwei Entenküken"
+      },
+      "quantity": 2,
+      "properties": [
+        {
+          "en": "little",
+          "de": "klein"
+        },
+        {
+          "en": "yellow",
+          "de": "gelb"
+        }
+      ],
+      "notes": "Exactly two little yellow ducklings together by the pond and individually countable."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "cow",
+        "de": "Kuh"
+      },
+      {
+        "en": "horse",
+        "de": "Pferd"
+      },
+      {
+        "en": "pig",
+        "de": "Schwein"
+      },
+      {
+        "en": "sheep",
+        "de": "Schaf"
+      },
+      {
+        "en": "duckling",
+        "de": "Entenküken"
+      },
+      {
+        "en": "mane",
+        "de": "Mähne"
+      },
+      {
+        "en": "tail",
+        "de": "Schwanz"
+      },
+      {
+        "en": "pond",
+        "de": "Teich"
+      }
+    ],
+    "adjectives": [
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "black and white",
+        "de": "schwarz-weiß"
+      },
+      {
+        "en": "spotted",
+        "de": "gefleckt"
+      },
+      {
+        "en": "brown",
+        "de": "braun"
+      },
+      {
+        "en": "pink",
+        "de": "rosa"
+      },
+      {
+        "en": "white",
+        "de": "weiß"
+      },
+      {
+        "en": "fluffy",
+        "de": "flauschig"
+      },
+      {
+        "en": "yellow",
+        "de": "gelb"
+      },
+      {
+        "en": "long",
+        "de": "lang"
+      }
+    ],
+    "countingLanguage": [
+      {
+        "en": "two",
+        "de": "zwei"
+      },
+      {
+        "en": "three",
+        "de": "drei"
+      },
+      {
+        "en": "more",
+        "de": "mehr"
+      },
+      {
+        "en": "fewer",
+        "de": "weniger"
+      }
+    ],
+    "comparisonLanguage": [
+      {
+        "en": "bigger than",
+        "de": "größer als"
+      },
+      {
+        "en": "smaller than",
+        "de": "kleiner als"
+      },
+      {
+        "en": "more than",
+        "de": "mehr als"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The cow is big.",
+      "The cow is black and white.",
+      "The horse is brown.",
+      "The pig is small and pink.",
+      "The pig has a curly tail.",
+      "There are three white sheep.",
+      "The sheep are fluffy.",
+      "There are two little yellow ducklings.",
+      "The cow is bigger than the pig.",
+      "There are more sheep than ducklings."
+    ],
+    "de": [
+      "Die Kuh ist groß.",
+      "Die Kuh ist schwarz-weiß.",
+      "Das Pferd ist braun.",
+      "Das Schwein ist klein und rosa.",
+      "Das Schwein hat einen Ringelschwanz.",
+      "Es gibt drei weiße Schafe.",
+      "Die Schafe sind flauschig.",
+      "Es gibt zwei kleine gelbe Entenküken.",
+      "Die Kuh ist größer als das Schwein.",
+      "Es gibt mehr Schafe als Entenküken."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Start with naming the animal, then add one visible feature, number or comparison. Encourage counting by pointing to each animal once.",
+      "de": "Zuerst das Tier benennen, dann ein sichtbares Merkmal, eine Anzahl oder einen Vergleich ergänzen. Beim Zählen jedes Tier einmal zeigen."
+    },
+    "wordsToModel": {
+      "en": [
+        "cow",
+        "horse",
+        "pig",
+        "sheep",
+        "ducklings",
+        "big",
+        "small",
+        "black and white",
+        "brown",
+        "pink",
+        "white",
+        "fluffy",
+        "yellow",
+        "three",
+        "two",
+        "bigger",
+        "more"
+      ],
+      "de": [
+        "Kuh",
+        "Pferd",
+        "Schwein",
+        "Schafe",
+        "Entenküken",
+        "groß",
+        "klein",
+        "schwarz-weiß",
+        "braun",
+        "rosa",
+        "weiß",
+        "flauschig",
+        "gelb",
+        "drei",
+        "zwei",
+        "größer",
+        "mehr"
+      ]
+    },
+    "questions": {
+      "en": [
+        "Which animal is the biggest?",
+        "What colours is the cow?",
+        "What colour is the horse?",
+        "Which animal is small and pink?",
+        "How many sheep can you see?",
+        "How many ducklings can you see?",
+        "Which are fluffy?",
+        "Which is bigger, the cow or the pig?",
+        "Are there more sheep or ducklings?"
+      ],
+      "de": [
+        "Welches Tier ist am größten?",
+        "Welche Farben hat die Kuh?",
+        "Welche Farbe hat das Pferd?",
+        "Welches Tier ist klein und rosa?",
+        "Wie viele Schafe kannst du sehen?",
+        "Wie viele Entenküken kannst du sehen?",
+        "Welche Tiere sind flauschig?",
+        "Was ist größer, die Kuh oder das Schwein?",
+        "Gibt es mehr Schafe oder Entenküken?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The ___ is big.",
+        "The ___ is ___.",
+        "There are ___ sheep.",
+        "There are ___ ducklings.",
+        "The ___ is bigger than the ___.",
+        "There are more ___ than ___."
+      ],
+      "de": [
+        "Der/Die/Das ___ ist groß.",
+        "Der/Die/Das ___ ist ___.",
+        "Es gibt ___ Schafe.",
+        "Es gibt ___ Entenküken.",
+        "Der/Die/Das ___ ist größer als der/die/das ___.",
+        "Es gibt mehr ___ als ___."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The big cow is black and white.",
+        "The brown horse has a long mane.",
+        "The little pig is pink and has a curly tail.",
+        "There are three fluffy white sheep.",
+        "There are two little yellow ducklings.",
+        "The cow is much bigger than the pig.",
+        "There are more sheep than ducklings."
+      ],
+      "de": [
+        "Die große Kuh ist schwarz-weiß.",
+        "Das braune Pferd hat eine lange Mähne.",
+        "Das kleine Schwein ist rosa und hat einen Ringelschwanz.",
+        "Es gibt drei flauschige weiße Schafe.",
+        "Es gibt zwei kleine gelbe Entenküken.",
+        "Die Kuh ist viel größer als das Schwein.",
+        "Es gibt mehr Schafe als Entenküken."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Three sheep.",
+          "de": "Drei Schafe."
+        },
+        "adult": {
+          "en": "Yes, there are three fluffy white sheep.",
+          "de": "Ja, es gibt drei flauschige weiße Schafe."
+        }
+      },
+      {
+        "child": {
+          "en": "Big cow.",
+          "de": "Große Kuh."
+        },
+        "adult": {
+          "en": "Yes, the big cow is black and white.",
+          "de": "Ja, die große Kuh ist schwarz-weiß."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "oneCow": true,
+      "oneHorse": true,
+      "onePig": true,
+      "threeSheep": true,
+      "twoDucklings": true,
+      "noOtherAnimals": true,
+      "cowClearlyLargest": true,
+      "cowBlackAndWhitePatchesClear": true,
+      "horseBrownAndManeVisible": true,
+      "pigPinkAndCurlyTailVisible": true,
+      "sheepClearlyFluffy": true,
+      "groupsIndividuallyCountable": true,
+      "noPeople": true,
+      "noTextOrUI": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

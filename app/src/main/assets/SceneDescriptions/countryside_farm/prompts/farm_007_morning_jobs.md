@@ -1,0 +1,1 @@
+Create a polished, bright 2D cartoon countryside / farm scene for a young child’s educational language app. Show several children clearly doing different morning farm jobs: watering vegetables, collecting eggs, feeding chickens, carrying vegetables and sweeping the path. Keep the scene child-friendly, uncluttered and easy to discuss. No readable text or logos.

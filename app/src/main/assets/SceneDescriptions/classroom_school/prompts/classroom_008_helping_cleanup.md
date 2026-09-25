@@ -1,0 +1,1 @@
+Create a bright child-friendly classroom illustration showing children helping and tidying up. Show one child giving work to the teacher, one child picking up crayons or pencils from the floor, one child packing a backpack, and one child putting a book on a shelf. No readable text or numbers.

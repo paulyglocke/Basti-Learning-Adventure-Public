@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "zoo_wildlife",
+  "approvedScenes": [
+    {
+      "sceneId": "scene.zoo.features.01",
+      "slug": "zoo_001_features",
+      "asset": "canonical/zoo_001_features.png",
+      "metadata": "metadata/zoo_001_features.json",
+      "prompt": "prompts/zoo_001_features.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.zoo.actions.02",
+      "slug": "zoo_002_actions",
+      "asset": "canonical/zoo_002_actions.png",
+      "metadata": "metadata/zoo_002_actions.json",
+      "prompt": "prompts/zoo_002_actions.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.zoo.positions.03",
+      "slug": "zoo_003_positions",
+      "asset": "canonical/zoo_003_positions.png",
+      "metadata": "metadata/zoo_003_positions.json",
+      "prompt": "prompts/zoo_003_positions.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.zoo.habitats.04",
+      "title": "Zoo Scene 4 — Different Animal Habitats",
+      "asset": "canonical/zoo_004_habitats.png",
+      "metadata": "metadata/zoo_004_habitats.json",
+      "prompt": "prompts/zoo_004_habitats.md"
+    },
+    {
+      "sceneId": "scene.zoo.feeding_time.05",
+      "title": "Zoo Scene 5 — Feeding Time",
+      "asset": "canonical/zoo_005_feeding_time.png",
+      "metadata": "metadata/zoo_005_feeding_time.json",
+      "prompt": "prompts/zoo_005_feeding_time.md"
+    },
+    {
+      "sceneId": "scene.zoo.positions_story.06",
+      "title": "Zoo Scene 6 — Zoo Positions and Observation",
+      "asset": "canonical/zoo_006_positions_story.png",
+      "metadata": "metadata/zoo_006_positions_story.json",
+      "prompt": "prompts/zoo_006_positions_story.md"
+    },
+    {
+      "sceneId": "scene.zoo.habitats_story.07",
+      "slug": "zoo_007_habitats",
+      "asset": "canonical/zoo_007_habitats.png",
+      "metadata": "metadata/zoo_007_habitats.json",
+      "prompt": "prompts/zoo_007_habitats.md",
+      "title": "Zoo Scene 7 — Animals in Different Places",
+      "wave": 3
+    },
+    {
+      "sceneId": "scene.zoo.feature_clues.08",
+      "slug": "zoo_008_feature_clues",
+      "asset": "canonical/zoo_008_feature_clues.png",
+      "metadata": "metadata/zoo_008_feature_clues.json",
+      "prompt": "prompts/zoo_008_feature_clues.md",
+      "title": "Zoo Scene 8 — Animal Feature Clues",
+      "wave": 3
+    },
+    {
+      "sceneId": "scene.zoo.water_shade.09",
+      "slug": "zoo_009_water_and_shade",
+      "asset": "canonical/zoo_009_water_and_shade.png",
+      "metadata": "metadata/zoo_009_water_and_shade.json",
+      "prompt": "prompts/zoo_009_water_and_shade.md",
+      "title": "Zoo Scene 9 — Water, Shade and Rest",
+      "wave": 3
+    }
+  ],
+  "note": "Wave 3 complete: nine approved production scenes."
+}

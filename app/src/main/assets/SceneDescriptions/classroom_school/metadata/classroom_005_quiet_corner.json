@@ -1,0 +1,59 @@
+{
+  "sceneId": "scene.classroom.quiet_corner.05",
+  "categoryId": "classroom_school",
+  "title": "Classroom Scene 5 — Quiet Corner",
+  "status": "approved",
+  "purpose": "Calm-state language, simple inference and positional description.",
+  "asset": "canonical/classroom_005_quiet_corner.png",
+  "promptFile": "prompts/classroom_005_quiet_corner.md",
+  "targetLanguage": {
+    "nouns": [
+      "cat",
+      "beanbag",
+      "dog",
+      "rug",
+      "rabbit",
+      "fish bowl",
+      "shelf",
+      "books"
+    ],
+    "verbs": [
+      "sitting",
+      "sleeping",
+      "resting"
+    ],
+    "adjectives": [
+      "quiet",
+      "calm",
+      "soft",
+      "blue",
+      "white"
+    ],
+    "sentenceModels": [
+      "The cat is on the beanbag.",
+      "The dog is sleeping on the rug.",
+      "The rabbit is next to the dog.",
+      "The fish bowl is on the shelf."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Use this as a calm-language and 'where is it?' scene, not as a behaviour test.",
+    "starterPrompts": [
+      "Who is sleeping?",
+      "Where is the cat?",
+      "Who is next to the dog?",
+      "Where is the fish bowl?",
+      "Which place looks quiet?"
+    ],
+    "expansionPrompts": [
+      "What could you do in a quiet corner?",
+      "Can you tell me a full sentence about the dog?"
+    ]
+  },
+  "visualAudit": [
+    "Auto-batch panel reviewed for the described targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_3"
+}

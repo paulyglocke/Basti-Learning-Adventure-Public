@@ -1,0 +1,57 @@
+{
+  "sceneId": "scene.classroom.objects_places.04",
+  "categoryId": "classroom_school",
+  "title": "Classroom Scene 4 — Objects and Where They Belong",
+  "status": "approved",
+  "purpose": "Functional classroom-object vocabulary and tidy-up/location language.",
+  "asset": "canonical/classroom_004_objects_places.png",
+  "promptFile": "prompts/classroom_004_objects_places.md",
+  "targetLanguage": {
+    "nouns": [
+      "table",
+      "chair",
+      "pencils",
+      "crayons",
+      "backpack",
+      "shelf",
+      "storage box",
+      "teddy bear"
+    ],
+    "verbs": [
+      "put",
+      "tidy"
+    ],
+    "adjectives": [
+      "blue",
+      "red",
+      "yellow",
+      "green"
+    ],
+    "sentenceModels": [
+      "The pencils are on the table.",
+      "The backpack is next to the shelf.",
+      "The boxes are in the shelf.",
+      "The teddy bear is on top of the shelf."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Turn location questions into practical school instructions.",
+    "starterPrompts": [
+      "Where are the pencils?",
+      "Where is the backpack?",
+      "What is on top of the shelf?",
+      "What is next to the table?",
+      "Where do the boxes belong?"
+    ],
+    "expansionPrompts": [
+      "Tell Basti: put the pencils on the table.",
+      "What should we tidy away first?"
+    ]
+  },
+  "visualAudit": [
+    "Auto-batch panel reviewed for the described targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_3"
+}

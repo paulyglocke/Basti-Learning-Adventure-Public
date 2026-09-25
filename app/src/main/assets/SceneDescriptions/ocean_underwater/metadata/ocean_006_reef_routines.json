@@ -1,0 +1,64 @@
+{
+  "sceneId": "scene.ocean.reef_routines.06",
+  "categoryId": "ocean_underwater",
+  "title": "Ocean Scene 6 — Reef Routines",
+  "status": "approved",
+  "purpose": "Who is doing what, simple inference, and place language in one reef scene.",
+  "asset": "canonical/ocean_006_reef_routines.png",
+  "promptFile": "prompts/ocean_006_reef_routines.md",
+  "targetLanguage": {
+    "nouns": [
+      "turtle",
+      "crab",
+      "octopus",
+      "cave",
+      "seahorse",
+      "coral",
+      "fish",
+      "seaweed"
+    ],
+    "verbs": [
+      "eating",
+      "digging",
+      "hiding",
+      "swimming"
+    ],
+    "adjectives": [
+      "blue",
+      "orange",
+      "green",
+      "little"
+    ],
+    "sentenceModels": [
+      "The turtle is eating seaweed.",
+      "The crab is digging in the sand.",
+      "The octopus is hiding in the cave.",
+      "The seahorse is next to the coral.",
+      "The three fish are swimming together."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Support simple description plus light functional questions like who is hiding or who is working.",
+    "starterPrompts": [
+      "Who is hiding?",
+      "Who is digging?",
+      "Where is the octopus?",
+      "How many blue fish are there?",
+      "What is the turtle eating?"
+    ],
+    "expansionPrompts": [
+      "Can you tell me which animal is next to the coral?",
+      "What might the crab find in the sand?"
+    ]
+  },
+  "visualAudit": [
+    "One turtle eating seaweed in the centre.",
+    "One crab digging in the sand on the left.",
+    "One octopus in a rocky cave on the right.",
+    "One seahorse beside coral and three blue fish above.",
+    "Clear action and location targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_1"
+}

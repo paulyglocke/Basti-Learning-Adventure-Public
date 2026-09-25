@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.category.example.01",
+  "categoryId": "category_id",
+  "slug": "category_001_example",
+  "asset": "canonical/category_001_example.png",
+  "status": "draft",
+  "wave": 1,
+  "title": {
+    "en": "Example scene",
+    "de": "Beispielszene"
+  },
+  "learningFocus": {
+    "primary": [
+      "verbs",
+      "nouns"
+    ],
+    "secondary": [
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "example_subject",
+        "en": "example",
+        "de": "Beispiel"
+      },
+      "action": {
+        "id": "example_action",
+        "en": "doing something",
+        "de": "macht etwas"
+      },
+      "notes": "Record only language that is genuinely visible in the approved image."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [],
+    "verbs": [],
+    "adjectives": [],
+    "spatialLanguage": [],
+    "comparisonLanguage": []
+  },
+  "exampleChildDescriptions": {
+    "en": [],
+    "de": []
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Accept the child's answer first, then model one small step more language.",
+      "de": "Die Antwort des Kindes zuerst annehmen und dann sprachlich um einen kleinen Schritt erweitern."
+    },
+    "wordsToModel": {
+      "en": [],
+      "de": []
+    },
+    "questions": {
+      "en": [],
+      "de": []
+    },
+    "sentenceStarters": {
+      "en": [],
+      "de": []
+    },
+    "modellingExamples": {
+      "en": [],
+      "de": []
+    },
+    "expansionExamples": []
+  },
+  "visualAudit": {
+    "approvedByUser": false,
+    "checks": {
+      "languageTargetsVisible": false,
+      "actionsOrRelationsUnambiguous": false,
+      "anatomyAcceptable": false,
+      "countsCorrect": false,
+      "noTextOrUI": false,
+      "phoneReadableComposition": false
+    }
+  }
+}

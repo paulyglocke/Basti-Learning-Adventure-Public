@@ -1,0 +1,58 @@
+{
+  "sceneId": "scene.classroom.end_of_day.09",
+  "categoryId": "classroom_school",
+  "title": "Classroom Scene 9 — End of the School Day",
+  "status": "approved",
+  "purpose": "Support inference, classroom routines and multi-step listening in a familiar end-of-day classroom scene.",
+  "asset": "canonical/classroom_009_end_of_day.png",
+  "promptFile": "prompts/classroom_009_end_of_day.md",
+  "targetLanguage": {
+    "nouns": [
+      "teacher",
+      "picture",
+      "backpack",
+      "book",
+      "desk",
+      "shelf"
+    ],
+    "verbs": [
+      "receiving",
+      "packing",
+      "waiting",
+      "working",
+      "putting away"
+    ],
+    "adjectives": [
+      "quiet",
+      "ready",
+      "finished",
+      "tidy"
+    ],
+    "sentenceModels": [
+      "The child is packing the backpack.",
+      "The child is waiting near the teacher.",
+      "The child is putting the book away.",
+      "The child is working at the desk."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Use the scene for end-of-day routines and for following two-step directions.",
+    "starterPrompts": [
+      "Who is packing a backpack?",
+      "Who is near the teacher?",
+      "Who is still working?",
+      "Where does the book go?",
+      "What is the teacher receiving?"
+    ],
+    "expansionPrompts": [
+      "What usually happens before children go home?",
+      "First point to the child packing the backpack, then point to the child putting the book away."
+    ]
+  },
+  "visualAudit": [
+    "Reviewed in Wave 3 Batch 3 automatic pass against the main teaching targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_3"
+}

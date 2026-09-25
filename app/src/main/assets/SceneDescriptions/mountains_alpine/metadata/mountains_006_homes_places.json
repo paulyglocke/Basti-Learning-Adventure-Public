@@ -1,0 +1,66 @@
+{
+  "sceneId": "scene.mountains.homes_places.06",
+  "categoryId": "mountains_alpine",
+  "title": "Mountains Scene 6 — Homes and Places",
+  "status": "approved",
+  "purpose": "Animal homes, places and spatial language in an alpine setting.",
+  "asset": "canonical/mountains_006_homes_places.png",
+  "promptFile": "prompts/mountains_006_homes_places.md",
+  "targetLanguage": {
+    "nouns": [
+      "cliff",
+      "goat",
+      "eagle",
+      "nest",
+      "marmot",
+      "burrow",
+      "flowers",
+      "rocks",
+      "sheep",
+      "hill",
+      "rabbit",
+      "bush"
+    ],
+    "verbs": [
+      "standing",
+      "sitting"
+    ],
+    "adjectives": [
+      "rocky",
+      "white",
+      "fluffy",
+      "small"
+    ],
+    "sentenceModels": [
+      "The goat is on the cliff.",
+      "The eagle is in the nest.",
+      "The marmot is near the burrow.",
+      "The flowers are between the rocks.",
+      "The rabbit is under the bush."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Talk about where the mountain animals live or rest and use position words.",
+    "starterPrompts": [
+      "Where is the goat?",
+      "Where is the eagle?",
+      "Where is the marmot?",
+      "What is between the rocks?",
+      "Where is the rabbit?"
+    ],
+    "expansionPrompts": [
+      "Which place looks high?",
+      "Which place looks safe and hidden?"
+    ]
+  },
+  "visualAudit": [
+    "One goat on a cliff.",
+    "One eagle in one nest.",
+    "One marmot near one burrow.",
+    "One flower patch between rocks.",
+    "One rabbit under a bush and one sheep beside a hill."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_2"
+}

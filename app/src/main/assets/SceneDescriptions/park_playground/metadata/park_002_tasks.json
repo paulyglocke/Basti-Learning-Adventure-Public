@@ -1,0 +1,385 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.park.tasks.02",
+  "categoryId": "park_playground",
+  "slug": "park_002_tasks",
+  "asset": "canonical/park_002_tasks.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Helping and Everyday Tasks",
+    "de": "Helfen und Alltagsaufgaben auf dem Spielplatz"
+  },
+  "learningFocus": {
+    "primary": [
+      "functional_tasks",
+      "social_actions",
+      "everyday_language"
+    ],
+    "secondary": [
+      "nouns",
+      "verbs",
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "giving_pair",
+        "en": "two children",
+        "de": "zwei Kinder"
+      },
+      "action": {
+        "id": "give",
+        "en": "giving a red ball",
+        "de": "gibt einen roten Ball"
+      },
+      "object": {
+        "id": "ball",
+        "en": "red ball",
+        "de": "roter Ball"
+      },
+      "notes": "Two children on the left; one clearly passes one red ball toward the other."
+    },
+    {
+      "subject": {
+        "id": "sharing_pair",
+        "en": "two children",
+        "de": "zwei Kinder"
+      },
+      "action": {
+        "id": "share",
+        "en": "sharing sandbox toys",
+        "de": "teilen sich Sandspielzeug"
+      },
+      "objects": [
+        {
+          "id": "bucket",
+          "en": "bucket",
+          "de": "Eimer"
+        },
+        {
+          "id": "spade",
+          "en": "spade",
+          "de": "Schaufel"
+        }
+      ],
+      "notes": "Two children in the sandbox clearly cooperate with one shared bucket and one shared spade: one child holds/steadies the bucket while the other uses the spade to put sand into that same bucket."
+    },
+    {
+      "subject": {
+        "id": "tidying_child",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "tidy",
+        "en": "putting a toy away",
+        "de": "räumt ein Spielzeug weg"
+      },
+      "object": {
+        "id": "toy_car",
+        "en": "toy car",
+        "de": "Spielzeugauto"
+      },
+      "destination": {
+        "id": "storage_box",
+        "en": "storage box",
+        "de": "Spielzeugkiste"
+      },
+      "notes": "One child clearly placing a toy vehicle into the open storage box."
+    },
+    {
+      "subject": {
+        "id": "bin_child",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "throw_away",
+        "en": "throwing rubbish in the bin",
+        "de": "wirft Müll in den Mülleimer"
+      },
+      "object": {
+        "id": "rubbish",
+        "en": "paper rubbish",
+        "de": "Papiermüll"
+      },
+      "destination": {
+        "id": "bin",
+        "en": "bin",
+        "de": "Mülleimer"
+      },
+      "notes": "One child clearly dropping a white paper item into the black bin."
+    },
+    {
+      "subject": {
+        "id": "drinking_child",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "drink",
+        "en": "drinking water",
+        "de": "trinkt Wasser"
+      },
+      "object": {
+        "id": "water_bottle",
+        "en": "water bottle",
+        "de": "Trinkflasche"
+      },
+      "notes": "One child on the right clearly drinking from a blue water bottle."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "child / children",
+        "de": "Kind / Kinder"
+      },
+      {
+        "en": "ball",
+        "de": "Ball"
+      },
+      {
+        "en": "bucket",
+        "de": "Eimer"
+      },
+      {
+        "en": "spade",
+        "de": "Schaufel"
+      },
+      {
+        "en": "toy",
+        "de": "Spielzeug"
+      },
+      {
+        "en": "toy car",
+        "de": "Spielzeugauto"
+      },
+      {
+        "en": "storage box",
+        "de": "Spielzeugkiste"
+      },
+      {
+        "en": "rubbish",
+        "de": "Müll"
+      },
+      {
+        "en": "bin",
+        "de": "Mülleimer"
+      },
+      {
+        "en": "water bottle",
+        "de": "Trinkflasche"
+      },
+      {
+        "en": "sandbox",
+        "de": "Sandkasten"
+      }
+    ],
+    "verbs": [
+      {
+        "en": "give",
+        "de": "geben"
+      },
+      {
+        "en": "share",
+        "de": "teilen"
+      },
+      {
+        "en": "tidy up / put away",
+        "de": "aufräumen / wegräumen"
+      },
+      {
+        "en": "throw away",
+        "de": "wegwerfen"
+      },
+      {
+        "en": "drink",
+        "de": "trinken"
+      }
+    ],
+    "socialLanguage": [
+      {
+        "en": "Can I have it?",
+        "de": "Kann ich das haben?"
+      },
+      {
+        "en": "Here you are.",
+        "de": "Hier, bitte."
+      },
+      {
+        "en": "Can we share?",
+        "de": "Können wir teilen?"
+      },
+      {
+        "en": "Thank you.",
+        "de": "Danke."
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The child is giving the ball.",
+      "The girl is giving the red ball to the boy.",
+      "The children are sharing.",
+      "They are sharing the bucket and spade.",
+      "The child is putting the toy away.",
+      "The child is throwing the rubbish in the bin.",
+      "The child is drinking water."
+    ],
+    "de": [
+      "Das Kind gibt den Ball.",
+      "Das Mädchen gibt dem Jungen den roten Ball.",
+      "Die Kinder teilen.",
+      "Die Kinder teilen sich Eimer und Schaufel.",
+      "Das Kind räumt das Spielzeug weg.",
+      "Das Kind wirft den Müll in den Mülleimer.",
+      "Das Kind trinkt Wasser."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Start with what the child is doing, then connect the action to its purpose or social meaning. Accept short answers and model one step more.",
+      "de": "Zuerst die Handlung benennen lassen und dann mit Zweck oder sozialer Bedeutung verbinden. Kurze Antworten annehmen und sprachlich um einen Schritt erweitern."
+    },
+    "wordsToModel": {
+      "en": [
+        "give",
+        "ball",
+        "share",
+        "bucket",
+        "spade",
+        "tidy up",
+        "put away",
+        "toy",
+        "bin",
+        "rubbish",
+        "drink",
+        "water bottle"
+      ],
+      "de": [
+        "geben",
+        "Ball",
+        "teilen",
+        "Eimer",
+        "Schaufel",
+        "aufräumen",
+        "wegräumen",
+        "Spielzeug",
+        "Mülleimer",
+        "Müll",
+        "trinken",
+        "Trinkflasche"
+      ]
+    },
+    "questions": {
+      "en": [
+        "What is the girl giving to the boy?",
+        "What are the children in the sandbox doing?",
+        "What is the child putting in the box?",
+        "Where is the child putting the rubbish?",
+        "What is the child on the right drinking?",
+        "Which children are helping or sharing?"
+      ],
+      "de": [
+        "Was gibt das Mädchen dem Jungen?",
+        "Was machen die Kinder im Sandkasten?",
+        "Was räumt das Kind in die Kiste?",
+        "Wohin wirft das Kind den Müll?",
+        "Was trinkt das Kind rechts?",
+        "Welche Kinder helfen oder teilen?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The child is giving...",
+        "The children are sharing...",
+        "The child is putting...",
+        "The child is throwing...",
+        "The child is drinking..."
+      ],
+      "de": [
+        "Das Kind gibt...",
+        "Die Kinder teilen...",
+        "Das Kind räumt...",
+        "Das Kind wirft...",
+        "Das Kind trinkt..."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The girl is giving the red ball to the boy.",
+        "The two children are sharing the bucket and spade.",
+        "The child is putting the toy car away in the box.",
+        "The child is throwing the paper rubbish in the bin.",
+        "The child is drinking water from the bottle.",
+        "The children are helping to keep the playground tidy."
+      ],
+      "de": [
+        "Das Mädchen gibt dem Jungen den roten Ball.",
+        "Die zwei Kinder teilen sich Eimer und Schaufel.",
+        "Das Kind räumt das Spielzeugauto in die Kiste.",
+        "Das Kind wirft den Papiermüll in den Mülleimer.",
+        "Das Kind trinkt Wasser aus der Flasche.",
+        "Die Kinder helfen dabei, den Spielplatz ordentlich zu halten."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Ball.",
+          "de": "Ball."
+        },
+        "adult": {
+          "en": "Yes, she is giving the red ball to the boy.",
+          "de": "Ja, sie gibt dem Jungen den roten Ball."
+        }
+      },
+      {
+        "child": {
+          "en": "Bin.",
+          "de": "Mülleimer."
+        },
+        "adult": {
+          "en": "Yes, the child is putting the rubbish in the bin.",
+          "de": "Ja, das Kind wirft den Müll in den Mülleimer."
+        }
+      }
+    ],
+    "functionalFollowUps": {
+      "en": [
+        "What could you say when someone gives you the ball?",
+        "Why do we put rubbish in the bin?",
+        "What should we do with toys when we finish playing?",
+        "How can two children use the same toys?"
+      ],
+      "de": [
+        "Was kannst du sagen, wenn dir jemand den Ball gibt?",
+        "Warum werfen wir Müll in den Mülleimer?",
+        "Was machen wir mit Spielzeug, wenn wir fertig sind?",
+        "Wie können zwei Kinder dieselben Spielsachen benutzen?"
+      ]
+    }
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "replacementReviewed": true,
+    "checks": {
+      "sevenFocalChildren": true,
+      "givingPairClear": true,
+      "oneRedBall": true,
+      "sharingPairClear": true,
+      "sharingUsesOneBucketAndOneSpade": true,
+      "tidyingActionClear": true,
+      "storageBoxVisible": true,
+      "binActionClear": true,
+      "drinkingActionClear": true,
+      "noExtraChildren": true,
+      "tasksSpatiallySeparated": true,
+      "noTextOrUI": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

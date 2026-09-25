@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "woodland_forest",
+  "display": {
+    "en": "Woodland / forest",
+    "de": "Wald"
+  },
+  "status": "wave_3_complete",
+  "focus": {
+    "primary": [
+      "nouns",
+      "adjectives",
+      "visible_features",
+      "comparisons"
+    ],
+    "secondary": [
+      "verbs",
+      "spatial_language",
+      "sentence_expansion"
+    ],
+    "tasks": "low"
+  },
+  "recommendedFocalSubjectsPerScene": {
+    "min": 5,
+    "max": 6
+  },
+  "approvedSceneCount": 9,
+  "wave2Status": "complete",
+  "wave3Status": "complete"
+}

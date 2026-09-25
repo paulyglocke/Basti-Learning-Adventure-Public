@@ -1,0 +1,59 @@
+{
+  "sceneId": "scene.zoo.water_shade.09",
+  "categoryId": "zoo_wildlife",
+  "title": "Zoo Scene 9 — Water, Shade and Rest",
+  "status": "approved",
+  "purpose": "Support simple inference, action talk and needs-based language using a calm zoo landscape.",
+  "asset": "canonical/zoo_009_water_and_shade.png",
+  "promptFile": "prompts/zoo_009_water_and_shade.md",
+  "targetLanguage": {
+    "nouns": [
+      "elephant",
+      "lion",
+      "penguin",
+      "monkey",
+      "water",
+      "pool",
+      "rock",
+      "shelter"
+    ],
+    "verbs": [
+      "resting",
+      "standing",
+      "drinking",
+      "sitting"
+    ],
+    "adjectives": [
+      "cool",
+      "shady",
+      "wet",
+      "calm"
+    ],
+    "sentenceModels": [
+      "The elephant is near the water.",
+      "The lion is resting in the shade.",
+      "The penguin is by the pool.",
+      "The monkey is on the branch."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Use the scene for talking about heat, water, rest and which places animals might like.",
+    "starterPrompts": [
+      "Which animals are near the water?",
+      "Who is resting?",
+      "Where is the monkey?",
+      "Which place looks shady?",
+      "Why might an animal go near the water?"
+    ],
+    "expansionPrompts": [
+      "Tell me which animals might want shade and which might want water.",
+      "First point to an animal near the pool, then point to an animal in the shade."
+    ]
+  },
+  "visualAudit": [
+    "Reviewed in Wave 3 Batch 3 automatic pass against the main teaching targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_3"
+}

@@ -1,0 +1,375 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.ocean.colours_sizes.02",
+  "categoryId": "ocean_underwater",
+  "slug": "ocean_002_colours_sizes",
+  "asset": "canonical/ocean_002_colours_sizes.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Colours and Sizes",
+    "de": "Farben und Größen"
+  },
+  "learningFocus": {
+    "primary": [
+      "adjectives",
+      "nouns",
+      "comparisons",
+      "counting"
+    ],
+    "secondary": [
+      "sentence_expansion",
+      "simple_describing_language"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "turtle",
+        "en": "turtle",
+        "de": "Schildkröte"
+      },
+      "properties": [
+        {
+          "en": "big",
+          "de": "groß"
+        },
+        {
+          "en": "green",
+          "de": "grün"
+        }
+      ],
+      "notes": "One very large green turtle, clearly the biggest animal in the picture."
+    },
+    {
+      "subject": {
+        "id": "seahorse",
+        "en": "seahorse",
+        "de": "Seepferdchen"
+      },
+      "properties": [
+        {
+          "en": "small",
+          "de": "klein"
+        },
+        {
+          "en": "orange",
+          "de": "orange"
+        },
+        {
+          "en": "yellow",
+          "de": "gelb"
+        }
+      ],
+      "notes": "One clearly small orange-and-yellow seahorse on the right."
+    },
+    {
+      "subject": {
+        "id": "clownfish",
+        "en": "clownfish",
+        "de": "Clownfisch"
+      },
+      "properties": [
+        {
+          "en": "medium-sized",
+          "de": "mittelgroß"
+        },
+        {
+          "en": "orange and white",
+          "de": "orange und weiß"
+        }
+      ],
+      "notes": "One medium clownfish, orange with white stripes."
+    },
+    {
+      "subject": {
+        "id": "fish_group",
+        "en": "three little fish",
+        "de": "drei kleine Fische"
+      },
+      "properties": [
+        {
+          "en": "very small",
+          "de": "sehr klein"
+        },
+        {
+          "en": "blue",
+          "de": "blau"
+        }
+      ],
+      "quantity": 3,
+      "notes": "Exactly three very small blue fish grouped together."
+    },
+    {
+      "subject": {
+        "id": "coral",
+        "en": "coral",
+        "de": "Koralle"
+      },
+      "properties": [
+        {
+          "en": "colourful",
+          "de": "bunt"
+        },
+        {
+          "en": "pink/purple",
+          "de": "pink/lila"
+        },
+        {
+          "en": "orange/yellow",
+          "de": "orange/gelb"
+        }
+      ],
+      "notes": "Strong colourful coral visible in multiple bright colours."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "turtle",
+        "de": "Schildkröte"
+      },
+      {
+        "en": "seahorse",
+        "de": "Seepferdchen"
+      },
+      {
+        "en": "clownfish",
+        "de": "Clownfisch"
+      },
+      {
+        "en": "fish",
+        "de": "Fisch / Fische"
+      },
+      {
+        "en": "coral",
+        "de": "Koralle"
+      },
+      {
+        "en": "bubbles",
+        "de": "Blasen"
+      }
+    ],
+    "adjectives": [
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "little",
+        "de": "klein"
+      },
+      {
+        "en": "colourful",
+        "de": "bunt"
+      },
+      {
+        "en": "orange",
+        "de": "orange"
+      },
+      {
+        "en": "white",
+        "de": "weiß"
+      },
+      {
+        "en": "blue",
+        "de": "blau"
+      },
+      {
+        "en": "yellow",
+        "de": "gelb"
+      },
+      {
+        "en": "green",
+        "de": "grün"
+      },
+      {
+        "en": "bright",
+        "de": "hell / leuchtend"
+      }
+    ],
+    "comparisonLanguage": [
+      {
+        "en": "bigger",
+        "de": "größer"
+      },
+      {
+        "en": "smaller",
+        "de": "kleiner"
+      },
+      {
+        "en": "one",
+        "de": "eins / eine"
+      },
+      {
+        "en": "three",
+        "de": "drei"
+      }
+    ],
+    "optionalVerbs": [
+      {
+        "en": "swim",
+        "de": "schwimmen"
+      },
+      {
+        "en": "float",
+        "de": "schweben"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The turtle is big.",
+      "The seahorse is small.",
+      "The clownfish is orange and white.",
+      "The fish are little.",
+      "The coral is colourful.",
+      "The turtle is bigger than the fish.",
+      "There are three little fish.",
+      "There is one turtle."
+    ],
+    "de": [
+      "Die Schildkröte ist groß.",
+      "Das Seepferdchen ist klein.",
+      "Der Clownfisch ist orange und weiß.",
+      "Die Fische sind klein.",
+      "Die Koralle ist bunt.",
+      "Die Schildkröte ist größer als die Fische.",
+      "Es gibt drei kleine Fische.",
+      "Es gibt eine Schildkröte."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Help Basti notice visible properties first, then expand to comparisons and counting without insisting on exact phrasing.",
+      "de": "Basti soll zuerst sichtbare Eigenschaften bemerken; danach kann man Vergleiche und Zählen sprachlich erweitern, ohne auf einer exakten Formulierung zu bestehen."
+    },
+    "wordsToModel": {
+      "en": [
+        "big",
+        "small",
+        "little",
+        "orange",
+        "white",
+        "blue",
+        "yellow",
+        "green",
+        "colourful",
+        "turtle",
+        "seahorse",
+        "clownfish",
+        "fish",
+        "coral"
+      ],
+      "de": [
+        "groß",
+        "klein",
+        "orange",
+        "weiß",
+        "blau",
+        "gelb",
+        "grün",
+        "bunt",
+        "Schildkröte",
+        "Seepferdchen",
+        "Clownfisch",
+        "Fische",
+        "Koralle"
+      ]
+    },
+    "questions": {
+      "en": [
+        "Which animal is big?",
+        "Which animal is small?",
+        "What colour is the clownfish?",
+        "Can you find something orange?",
+        "Which is bigger, the turtle or the fish?",
+        "How many little fish can you see?",
+        "How many turtles are there?"
+      ],
+      "de": [
+        "Welches Tier ist groß?",
+        "Welches Tier ist klein?",
+        "Welche Farbe hat der Clownfisch?",
+        "Kannst du etwas Oranges finden?",
+        "Was ist größer, die Schildkröte oder die Fische?",
+        "Wie viele kleine Fische kannst du sehen?",
+        "Wie viele Schildkröten gibt es?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The ___ is big.",
+        "The ___ is small.",
+        "It is ___ .",
+        "The ___ is bigger than the ___ .",
+        "There are ___ fish."
+      ],
+      "de": [
+        "Die/Der ___ ist groß.",
+        "Die/Der ___ ist klein.",
+        "Es ist ___ .",
+        "Die/Der ___ ist größer als ___ .",
+        "Es gibt ___ Fische."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The big turtle is green.",
+        "The small seahorse is orange and yellow.",
+        "The clownfish is orange and white.",
+        "The turtle is much bigger than the little fish.",
+        "There are three little blue fish.",
+        "The coral is very colourful."
+      ],
+      "de": [
+        "Die große Schildkröte ist grün.",
+        "Das kleine Seepferdchen ist orange und gelb.",
+        "Der Clownfisch ist orange und weiß.",
+        "Die Schildkröte ist viel größer als die kleinen Fische.",
+        "Es gibt drei kleine blaue Fische.",
+        "Die Koralle ist sehr bunt."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Big turtle.",
+          "de": "Große Schildkröte."
+        },
+        "adult": {
+          "en": "Yes, the turtle is big. The big turtle is green.",
+          "de": "Ja, die Schildkröte ist groß. Die große Schildkröte ist grün."
+        }
+      },
+      {
+        "child": {
+          "en": "Three fish.",
+          "de": "Drei Fische."
+        },
+        "adult": {
+          "en": "Yes, there are three little blue fish.",
+          "de": "Ja, es gibt drei kleine blaue Fische."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "oneTurtle": true,
+      "oneSeahorse": true,
+      "oneClownfish": true,
+      "threeSmallFish": true,
+      "clearSizeHierarchy": true,
+      "colourfulCoral": true,
+      "exactlyFourTurtleFlippers": true,
+      "noTextOrUI": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

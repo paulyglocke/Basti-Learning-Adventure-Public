@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "classroom_school",
+  "approvedScenes": [
+    {
+      "sceneId": "scene.classroom.tasks.01",
+      "slug": "classroom_001_tasks",
+      "asset": "canonical/classroom_001_tasks.png",
+      "metadata": "metadata/classroom_001_tasks.json",
+      "prompt": "prompts/classroom_001_tasks.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.classroom.routines.02",
+      "slug": "classroom_002_routines",
+      "asset": "canonical/classroom_002_routines.png",
+      "metadata": "metadata/classroom_002_routines.json",
+      "prompt": "prompts/classroom_002_routines.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.classroom.positions.03",
+      "slug": "classroom_003_positions",
+      "asset": "canonical/classroom_003_positions.png",
+      "metadata": "metadata/classroom_003_positions.json",
+      "prompt": "prompts/classroom_003_positions.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.classroom.objects_places.04",
+      "title": "Classroom Scene 4 — Objects and Where They Belong",
+      "asset": "canonical/classroom_004_objects_places.png",
+      "metadata": "metadata/classroom_004_objects_places.json",
+      "prompt": "prompts/classroom_004_objects_places.md"
+    },
+    {
+      "sceneId": "scene.classroom.quiet_corner.05",
+      "title": "Classroom Scene 5 — Quiet Corner",
+      "asset": "canonical/classroom_005_quiet_corner.png",
+      "metadata": "metadata/classroom_005_quiet_corner.json",
+      "prompt": "prompts/classroom_005_quiet_corner.md"
+    },
+    {
+      "sceneId": "scene.classroom.art_sorting.06",
+      "title": "Classroom Scene 6 — Art Table and What Belongs",
+      "asset": "canonical/classroom_006_art_sorting.png",
+      "metadata": "metadata/classroom_006_art_sorting.json",
+      "prompt": "prompts/classroom_006_art_sorting.md"
+    },
+    {
+      "sceneId": "scene.classroom.school_routines.07",
+      "slug": "classroom_007_school_routines",
+      "asset": "canonical/classroom_007_school_routines.png",
+      "metadata": "metadata/classroom_007_school_routines.json",
+      "prompt": "prompts/classroom_007_school_routines.md",
+      "title": "Classroom Scene 7 — School Routines",
+      "wave": 3
+    },
+    {
+      "sceneId": "scene.classroom.helping_cleanup.08",
+      "slug": "classroom_008_helping_cleanup",
+      "asset": "canonical/classroom_008_helping_cleanup.png",
+      "metadata": "metadata/classroom_008_helping_cleanup.json",
+      "prompt": "prompts/classroom_008_helping_cleanup.md",
+      "title": "Classroom Scene 8 — Helping and Cleaning Up",
+      "wave": 3
+    },
+    {
+      "sceneId": "scene.classroom.end_of_day.09",
+      "slug": "classroom_009_end_of_day",
+      "asset": "canonical/classroom_009_end_of_day.png",
+      "metadata": "metadata/classroom_009_end_of_day.json",
+      "prompt": "prompts/classroom_009_end_of_day.md",
+      "title": "Classroom Scene 9 — End of the School Day",
+      "wave": 3
+    }
+  ],
+  "note": "Wave 3 complete: nine approved production scenes."
+}

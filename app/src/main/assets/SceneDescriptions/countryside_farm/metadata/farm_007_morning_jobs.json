@@ -1,0 +1,62 @@
+{
+  "sceneId": "scene.farm.morning_jobs.07",
+  "categoryId": "countryside_farm",
+  "title": "Farm Scene 7 — Morning Jobs on the Farm",
+  "status": "approved",
+  "purpose": "Support sequencing, action verbs and functional farm language using a busy but clear morning-jobs scene.",
+  "asset": "canonical/farm_007_morning_jobs.png",
+  "promptFile": "prompts/farm_007_morning_jobs.md",
+  "targetLanguage": {
+    "nouns": [
+      "watering can",
+      "egg basket",
+      "chickens",
+      "vegetables",
+      "broom",
+      "barn",
+      "coop",
+      "garden"
+    ],
+    "verbs": [
+      "watering",
+      "collecting",
+      "feeding",
+      "carrying",
+      "sweeping"
+    ],
+    "adjectives": [
+      "green",
+      "red",
+      "brown",
+      "full",
+      "busy"
+    ],
+    "sentenceModels": [
+      "The child is watering the plants.",
+      "The child is collecting eggs.",
+      "The child is feeding the chickens.",
+      "The child is carrying the vegetables.",
+      "The child is sweeping the path."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Use the picture to talk about morning jobs on a farm and to build simple first/then sequences.",
+    "starterPrompts": [
+      "Who is watering the plants?",
+      "Who is collecting eggs?",
+      "What are the chickens doing?",
+      "Who is carrying vegetables?",
+      "What job is happening on the path?"
+    ],
+    "expansionPrompts": [
+      "Tell me the farm story from first to last.",
+      "Which job helps the garden? Which job helps the chickens?"
+    ]
+  },
+  "visualAudit": [
+    "Reviewed in Wave 3 Batch 3 automatic pass against the main teaching targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_3"
+}

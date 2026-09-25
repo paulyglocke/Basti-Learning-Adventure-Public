@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.classroom.positions.03",
+  "categoryId": "classroom_school",
+  "slug": "classroom_003_positions",
+  "asset": "canonical/classroom_003_positions.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Classroom Positions and Instructions",
+    "de": "Positionen und Anweisungen im Klassenraum"
+  },
+  "learningFocus": {
+    "primary": [
+      "spatial_language",
+      "functional_comprehension",
+      "classroom_nouns"
+    ],
+    "secondary": [
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "backpack_under_desk",
+        "en": "backpack",
+        "de": "Rucksack"
+      },
+      "relation": {
+        "id": "under",
+        "en": "under the desk",
+        "de": "unter dem Tisch"
+      },
+      "notes": "One blue backpack clearly under the lower-left desk."
+    },
+    {
+      "subject": {
+        "id": "pencil_case_on_desk",
+        "en": "pencil case",
+        "de": "Federmäppchen"
+      },
+      "relation": {
+        "id": "on",
+        "en": "on the desk",
+        "de": "auf dem Tisch"
+      },
+      "notes": "One purple pencil case clearly resting on the left/middle desk."
+    },
+    {
+      "subject": {
+        "id": "book_in_bag",
+        "en": "book",
+        "de": "Buch"
+      },
+      "relation": {
+        "id": "in",
+        "en": "in the bag",
+        "de": "in der Tasche"
+      },
+      "notes": "One red book clearly inside the open green school bag near the centre."
+    },
+    {
+      "subject": {
+        "id": "child_next_to_teacher",
+        "en": "child",
+        "de": "Kind"
+      },
+      "relation": {
+        "id": "next_to",
+        "en": "next to the teacher",
+        "de": "neben der Lehrerin"
+      },
+      "notes": "One child clearly standing next to the teacher without overlap."
+    },
+    {
+      "subject": {
+        "id": "chair_behind_desk",
+        "en": "chair",
+        "de": "Stuhl"
+      },
+      "relation": {
+        "id": "behind",
+        "en": "behind the desk",
+        "de": "hinter dem Tisch"
+      },
+      "notes": "One blue chair clearly behind the desk on the right, partly overlapped by the desk."
+    },
+    {
+      "subject": {
+        "id": "crayon_box_between_books",
+        "en": "crayons",
+        "de": "Buntstifte"
+      },
+      "relation": {
+        "id": "between",
+        "en": "between the books",
+        "de": "zwischen den Büchern"
+      },
+      "notes": "One yellow crayon box clearly between exactly two books on the far-right shelf."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "backpack",
+        "de": "Rucksack"
+      },
+      {
+        "en": "desk",
+        "de": "Tisch"
+      },
+      {
+        "en": "pencil case",
+        "de": "Federmäppchen"
+      },
+      {
+        "en": "book",
+        "de": "Buch"
+      },
+      {
+        "en": "bag",
+        "de": "Tasche"
+      },
+      {
+        "en": "child",
+        "de": "Kind"
+      },
+      {
+        "en": "teacher",
+        "de": "Lehrerin"
+      },
+      {
+        "en": "chair",
+        "de": "Stuhl"
+      },
+      {
+        "en": "crayons",
+        "de": "Buntstifte"
+      },
+      {
+        "en": "shelf",
+        "de": "Regal"
+      }
+    ],
+    "spatialLanguage": [
+      {
+        "en": "under",
+        "de": "unter"
+      },
+      {
+        "en": "on",
+        "de": "auf"
+      },
+      {
+        "en": "in",
+        "de": "in"
+      },
+      {
+        "en": "next to",
+        "de": "neben"
+      },
+      {
+        "en": "behind",
+        "de": "hinter"
+      },
+      {
+        "en": "between",
+        "de": "zwischen"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The backpack is under the desk.",
+      "The pencil case is on the desk.",
+      "The book is in the bag.",
+      "The child is next to the teacher.",
+      "The chair is behind the desk.",
+      "The crayons are between the books."
+    ],
+    "de": [
+      "Der Rucksack ist unter dem Tisch.",
+      "Das Federmäppchen ist auf dem Tisch.",
+      "Das Buch ist in der Tasche.",
+      "Das Kind ist neben der Lehrerin.",
+      "Der Stuhl ist hinter dem Tisch.",
+      "Die Buntstifte sind zwischen den Büchern."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Ask where each classroom object or person is, then turn the same relation into a simple instruction Basti could follow.",
+      "de": "Fragen, wo sich jeder Gegenstand oder jede Person befindet, und dieselbe Ortsangabe anschließend in eine einfache Anweisung umwandeln, die Basti befolgen kann."
+    },
+    "wordsToModel": {
+      "en": [
+        "under",
+        "on",
+        "in",
+        "next to",
+        "behind",
+        "between",
+        "backpack",
+        "desk",
+        "pencil case",
+        "book",
+        "bag",
+        "teacher",
+        "chair",
+        "crayons",
+        "books"
+      ],
+      "de": [
+        "unter",
+        "auf",
+        "in",
+        "neben",
+        "hinter",
+        "zwischen",
+        "Rucksack",
+        "Tisch",
+        "Federmäppchen",
+        "Buch",
+        "Tasche",
+        "Lehrerin",
+        "Stuhl",
+        "Buntstifte",
+        "Bücher"
+      ]
+    },
+    "questions": {
+      "en": [
+        "Where is the backpack?",
+        "What is on the desk?",
+        "Where is the book?",
+        "Who is next to the teacher?",
+        "Where is the chair?",
+        "What is between the two books?"
+      ],
+      "de": [
+        "Wo ist der Rucksack?",
+        "Was ist auf dem Tisch?",
+        "Wo ist das Buch?",
+        "Wer ist neben der Lehrerin?",
+        "Wo ist der Stuhl?",
+        "Was ist zwischen den zwei Büchern?"
+      ]
+    },
+    "instructionExamples": {
+      "en": [
+        "Put the backpack under the desk.",
+        "Put the pencil case on the desk.",
+        "Put the book in the bag.",
+        "Stand next to the teacher.",
+        "Put the chair behind the desk.",
+        "Put the crayons between the books."
+      ],
+      "de": [
+        "Stell den Rucksack unter den Tisch.",
+        "Leg das Federmäppchen auf den Tisch.",
+        "Leg das Buch in die Tasche.",
+        "Stell dich neben die Lehrerin.",
+        "Stell den Stuhl hinter den Tisch.",
+        "Stell die Buntstifte zwischen die Bücher."
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The ___ is under...",
+        "The ___ is on...",
+        "The ___ is in...",
+        "The ___ is next to...",
+        "The ___ is behind...",
+        "The ___ are between..."
+      ],
+      "de": [
+        "Der/Die/Das ___ ist unter...",
+        "Der/Die/Das ___ ist auf...",
+        "Der/Die/Das ___ ist in...",
+        "Der/Die/Das ___ ist neben...",
+        "Der/Die/Das ___ ist hinter...",
+        "Die ___ sind zwischen..."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The blue backpack is under the desk.",
+        "The purple pencil case is on the desk.",
+        "The red book is in the green bag.",
+        "The child is standing next to the teacher.",
+        "The blue chair is behind the desk.",
+        "The crayons are between the green and purple books."
+      ],
+      "de": [
+        "Der blaue Rucksack ist unter dem Tisch.",
+        "Das lila Federmäppchen ist auf dem Tisch.",
+        "Das rote Buch ist in der grünen Tasche.",
+        "Das Kind steht neben der Lehrerin.",
+        "Der blaue Stuhl ist hinter dem Tisch.",
+        "Die Buntstifte sind zwischen dem grünen und dem lila Buch."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Backpack under.",
+          "de": "Rucksack unter."
+        },
+        "adult": {
+          "en": "Yes, the backpack is under the desk.",
+          "de": "Ja, der Rucksack ist unter dem Tisch."
+        }
+      },
+      {
+        "child": {
+          "en": "Book in bag.",
+          "de": "Buch in Tasche."
+        },
+        "adult": {
+          "en": "Yes, the book is in the bag.",
+          "de": "Ja, das Buch ist in der Tasche."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "oneFocalBackpackUnderDesk": true,
+      "oneFocalPencilCaseOnDesk": true,
+      "oneBookInOpenBag": true,
+      "oneChildNextToTeacher": true,
+      "oneTeacher": true,
+      "oneChairBehindDesk": true,
+      "oneCrayonBoxBetweenTwoBooks": true,
+      "noExtraPeople": true,
+      "spatialExamplesReadable": true,
+      "noReadableText": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

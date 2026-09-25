@@ -1,0 +1,63 @@
+{
+  "sceneId": "scene.jungle.big_small_groups.06",
+  "categoryId": "jungle_rainforest",
+  "title": "Jungle Scene 6 — Big, Small and Groups",
+  "status": "approved",
+  "purpose": "Comparisons, colour vocabulary and counting small groups.",
+  "asset": "canonical/jungle_006_big_small_groups.png",
+  "promptFile": "prompts/jungle_006_big_small_groups.md",
+  "targetLanguage": {
+    "nouns": [
+      "elephant",
+      "tiger",
+      "frog",
+      "parrot",
+      "toucan",
+      "monkey"
+    ],
+    "verbs": [
+      "standing",
+      "perching",
+      "hanging"
+    ],
+    "adjectives": [
+      "big",
+      "small",
+      "grey",
+      "orange",
+      "colourful",
+      "three"
+    ],
+    "sentenceModels": [
+      "The elephant is big.",
+      "The frog is small.",
+      "The tiger is orange and black.",
+      "The parrot is colourful.",
+      "There are three monkeys."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Use the scene for comparison and quantity questions rather than only actions.",
+    "starterPrompts": [
+      "Which animal is the biggest?",
+      "Which animal is the smallest?",
+      "How many monkeys can you count?",
+      "What colour is the tiger?",
+      "Which bird has a big beak?"
+    ],
+    "expansionPrompts": [
+      "Compare the elephant and the frog.",
+      "Tell me a sentence with three."
+    ]
+  },
+  "visualAudit": [
+    "Large elephant in the centre-left.",
+    "One tiger on the right and one small frog at the bottom left.",
+    "One parrot and one toucan on branches above.",
+    "Exactly three monkeys hanging or sitting on vines.",
+    "Clear size and group-counting targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_1"
+}

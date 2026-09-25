@@ -1,0 +1,61 @@
+{
+  "sceneId": "scene.farm.farmyard_friends.08",
+  "categoryId": "countryside_farm",
+  "title": "Farm Scene 8 — Farmyard Friends and Counting",
+  "status": "approved",
+  "purpose": "Support animal nouns, counting and simple comparisons in a cheerful mixed farmyard scene.",
+  "asset": "canonical/farm_008_farmyard_friends.png",
+  "promptFile": "prompts/farm_008_farmyard_friends.md",
+  "targetLanguage": {
+    "nouns": [
+      "cow",
+      "horse",
+      "pig",
+      "sheep",
+      "ducklings",
+      "pond",
+      "barn",
+      "basket"
+    ],
+    "verbs": [
+      "standing",
+      "carrying",
+      "swimming"
+    ],
+    "adjectives": [
+      "big",
+      "brown",
+      "pink",
+      "white",
+      "yellow",
+      "fluffy"
+    ],
+    "sentenceModels": [
+      "The cow is big.",
+      "The horse is brown.",
+      "The pig is pink.",
+      "There are three sheep.",
+      "There are two ducklings."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Use the image for naming farm animals, counting groups, and making simple comparisons.",
+    "starterPrompts": [
+      "Which animal is the biggest?",
+      "Can you count the sheep?",
+      "Can you count the ducklings?",
+      "What colour is the pig?",
+      "Where are the ducklings?"
+    ],
+    "expansionPrompts": [
+      "Tell me which animals are bigger or smaller.",
+      "Which animals are near the pond and which are near the barn?"
+    ]
+  },
+  "visualAudit": [
+    "Reviewed in Wave 3 Batch 3 automatic pass against the main teaching targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_3"
+}

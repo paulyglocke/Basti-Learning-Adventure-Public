@@ -1,0 +1,1 @@
+Create a polished, bright 2D cartoon classroom scene for a young child’s educational language app. Show everyday school routines clearly: one child raising a hand, one child giving a paper to the teacher, one child packing a bag, one child putting a book away, and one child sitting ready at a desk. Keep the teacher friendly and the classroom tidy. No readable text or numbers.

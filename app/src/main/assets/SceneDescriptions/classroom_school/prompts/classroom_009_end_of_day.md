@@ -1,0 +1,1 @@
+Create a polished, bright classroom illustration showing the end of the school day. Include a teacher receiving a child’s finished work, another child packing a backpack, one child putting a book away, one child waiting quietly near the teacher, and one child working quietly at a desk. No readable text or numbers.

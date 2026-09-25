@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "countryside_farm",
+  "approvedScenes": [
+    {
+      "sceneId": "scene.farm.tasks.01",
+      "slug": "farm_001_tasks",
+      "asset": "canonical/farm_001_tasks.png",
+      "metadata": "metadata/farm_001_tasks.json",
+      "prompt": "prompts/farm_001_tasks.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.farm.features.02",
+      "slug": "farm_002_features",
+      "asset": "canonical/farm_002_features.png",
+      "metadata": "metadata/farm_002_features.json",
+      "prompt": "prompts/farm_002_features.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.farm.positions.03",
+      "slug": "farm_003_positions",
+      "asset": "canonical/farm_003_positions.png",
+      "metadata": "metadata/farm_003_positions.json",
+      "prompt": "prompts/farm_003_positions.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.farm.animal_actions.04",
+      "title": "Farm Scene 4 — Animal Actions Around the Barn",
+      "asset": "canonical/farm_004_animal_actions.png",
+      "metadata": "metadata/farm_004_animal_actions.json",
+      "prompt": "prompts/farm_004_animal_actions.md"
+    },
+    {
+      "sceneId": "scene.farm.transport_places.05",
+      "title": "Farm Scene 5 — Transport, Animals and Places",
+      "asset": "canonical/farm_005_transport_and_places.png",
+      "metadata": "metadata/farm_005_transport_and_places.json",
+      "prompt": "prompts/farm_005_transport_and_places.md"
+    },
+    {
+      "sceneId": "scene.farm.garden_food.06",
+      "title": "Farm Scene 6 — Garden and Growing Food",
+      "asset": "canonical/farm_006_garden_food.png",
+      "metadata": "metadata/farm_006_garden_food.json",
+      "prompt": "prompts/farm_006_garden_food.md"
+    },
+    {
+      "sceneId": "scene.farm.morning_jobs.07",
+      "slug": "farm_007_morning_jobs",
+      "asset": "canonical/farm_007_morning_jobs.png",
+      "metadata": "metadata/farm_007_morning_jobs.json",
+      "prompt": "prompts/farm_007_morning_jobs.md",
+      "title": "Farm Scene 7 — Morning Jobs on the Farm",
+      "wave": 3
+    },
+    {
+      "sceneId": "scene.farm.farmyard_friends.08",
+      "slug": "farm_008_farmyard_friends",
+      "asset": "canonical/farm_008_farmyard_friends.png",
+      "metadata": "metadata/farm_008_farmyard_friends.json",
+      "prompt": "prompts/farm_008_farmyard_friends.md",
+      "title": "Farm Scene 8 — Farmyard Friends and Counting",
+      "wave": 3
+    },
+    {
+      "sceneId": "scene.farm.animal_care.09",
+      "slug": "farm_009_animal_care",
+      "asset": "canonical/farm_009_animal_care.png",
+      "metadata": "metadata/farm_009_animal_care.json",
+      "prompt": "prompts/farm_009_animal_care.md",
+      "title": "Farm Scene 9 — Looking After the Animals",
+      "wave": 3
+    }
+  ],
+  "note": "Wave 3 complete: nine approved production scenes."
+}

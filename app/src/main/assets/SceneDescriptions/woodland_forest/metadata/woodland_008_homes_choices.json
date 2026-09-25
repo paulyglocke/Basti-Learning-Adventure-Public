@@ -1,0 +1,68 @@
+{
+  "sceneId": "scene.woodland.homes_choices.08",
+  "categoryId": "woodland_forest",
+  "title": "Woodland Scene 8 — Homes and Hiding Places",
+  "status": "approved",
+  "purpose": "Animal homes, shelter, and choosing the right place for each animal.",
+  "asset": "canonical/woodland_008_homes_choices.png",
+  "promptFile": "prompts/woodland_008_homes_choices.md",
+  "targetLanguage": {
+    "nouns": [
+      "squirrel",
+      "stump",
+      "rabbit",
+      "burrow",
+      "fox",
+      "den",
+      "owl",
+      "tree hole",
+      "hedgehog",
+      "leaves",
+      "mushrooms"
+    ],
+    "verbs": [
+      "sitting",
+      "waiting",
+      "hiding",
+      "looking"
+    ],
+    "adjectives": [
+      "spiky",
+      "soft",
+      "orange",
+      "brown",
+      "small"
+    ],
+    "sentenceModels": [
+      "The rabbit is next to the burrow.",
+      "The fox is by the den.",
+      "The owl is on the branch.",
+      "The hedgehog is in the leaves.",
+      "The squirrel is on the stump."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Talk about where animals might rest, hide or live.",
+    "starterPrompts": [
+      "Where is the rabbit?",
+      "Which animal is by the den?",
+      "Who is in the leaves?",
+      "Which animal is on the stump?",
+      "Where might the owl go?"
+    ],
+    "expansionPrompts": [
+      "Which place looks best for the rabbit?",
+      "Which animal might hide in the hollow log?",
+      "Can you match each animal to a place?"
+    ]
+  },
+  "visualAudit": [
+    "One squirrel on a stump holding an acorn.",
+    "One rabbit next to a burrow at the centre-right.",
+    "One fox beside a hollow log den on the right.",
+    "One owl on a branch above and one hedgehog in a pile of leaves on the left foreground."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_1"
+}

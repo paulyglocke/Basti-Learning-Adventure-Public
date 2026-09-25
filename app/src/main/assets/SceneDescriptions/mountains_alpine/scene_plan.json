@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "mountains_alpine",
+  "status": "wave_3_batch_2_complete",
+  "scenes": [
+    {
+      "sceneId": "scene.mountains.busy_routines.04",
+      "title": "Mountains Scene 4 — Busy Mountain Routines",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/mountains_004_busy_routines.png",
+      "metadata": "metadata/mountains_004_busy_routines.json",
+      "prompt": "prompts/mountains_004_busy_routines.md",
+      "primaryFocus": [
+        "verbs",
+        "nouns",
+        "storytelling"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Linked mountain-animal action scene with climbing, carrying, drinking and eating.",
+      "targetExamples": [
+        "The goat is climbing.",
+        "The eagle is carrying a twig.",
+        "The marmot is carrying grass.",
+        "The sheep is drinking water.",
+        "The rabbit is eating flowers."
+      ]
+    },
+    {
+      "sceneId": "scene.mountains.big_small_groups.05",
+      "title": "Mountains Scene 5 — Big, Small and Groups",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/mountains_005_big_small_groups.png",
+      "metadata": "metadata/mountains_005_big_small_groups.json",
+      "prompt": "prompts/mountains_005_big_small_groups.md",
+      "primaryFocus": [
+        "adjectives",
+        "counting",
+        "comparisons"
+      ],
+      "secondaryFocus": [
+        "nouns",
+        "sentence_expansion"
+      ],
+      "brief": "Mountain comparison scene featuring horns, fluffy wool, group counting and colour description.",
+      "targetExamples": [
+        "The goat is big.",
+        "The sheep is fluffy.",
+        "There are three marmots.",
+        "The rabbit is small and white.",
+        "The eagle is on the rock."
+      ]
+    },
+    {
+      "sceneId": "scene.mountains.homes_places.06",
+      "title": "Mountains Scene 6 — Homes and Places",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/mountains_006_homes_places.png",
+      "metadata": "metadata/mountains_006_homes_places.json",
+      "prompt": "prompts/mountains_006_homes_places.md",
+      "primaryFocus": [
+        "spatial_language",
+        "animal_homes"
+      ],
+      "secondaryFocus": [
+        "nouns",
+        "sentence_expansion"
+      ],
+      "brief": "Alpine homes-and-places scene with nest, burrow, cliff, rocks, hill and bush.",
+      "targetExamples": [
+        "The goat is on the cliff.",
+        "The eagle is in the nest.",
+        "The marmot is near the burrow.",
+        "The flowers are between the rocks.",
+        "The rabbit is under the bush."
+      ]
+    },
+    {
+      "sceneId": "scene.mountains.journey_story.07",
+      "title": "Mountains Scene 7 — Mountain Journey",
+      "slug": "mountains_007_journey_story",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/mountains_007_journey_story.png",
+      "metadata": "metadata/mountains_007_journey_story.json",
+      "prompt": "prompts/mountains_007_journey_story.md"
+    },
+    {
+      "sceneId": "scene.mountains.weather_shelter.08",
+      "title": "Mountains Scene 8 — Weather and Shelter",
+      "slug": "mountains_008_weather_shelter",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/mountains_008_weather_shelter.png",
+      "metadata": "metadata/mountains_008_weather_shelter.json",
+      "prompt": "prompts/mountains_008_weather_shelter.md"
+    },
+    {
+      "sceneId": "scene.mountains.spatial_clues.09",
+      "title": "Mountains Scene 9 — Mountain Spatial Clues",
+      "slug": "mountains_009_spatial_clues",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/mountains_009_spatial_clues.png",
+      "metadata": "metadata/mountains_009_spatial_clues.json",
+      "prompt": "prompts/mountains_009_spatial_clues.md"
+    },
+    {
+      "sceneId": "scene.mountains.actions.02",
+      "slug": "mountains_002_actions",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "verbs",
+        "nouns"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Five alpine animals each showing one clear action: goat climbing, eagle flying, marmot digging, rabbit hopping and sheep eating grass.",
+      "targetExamples": [
+        "The goat is climbing.",
+        "The eagle is flying.",
+        "The marmot is digging.",
+        "The rabbit is hopping.",
+        "The sheep is eating grass."
+      ]
+    },
+    {
+      "sceneId": "scene.mountains.features.01",
+      "slug": "mountains_001_features",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "nouns",
+        "adjectives",
+        "visible_features",
+        "comparisons"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Alpine animal comparison scene showing a large mountain goat, small marmot, white rabbit, eagle, and fluffy sheep with clear visible features.",
+      "targetExamples": [
+        "The mountain goat is big.",
+        "The marmot is small.",
+        "The rabbit has long ears.",
+        "The sheep is fluffy.",
+        "The eagle has a beak.",
+        "The mountain goat is bigger than the marmot.",
+        "The rabbit is white.",
+        "The sheep is white."
+      ]
+    },
+    {
+      "sceneId": "scene.mountains.positions.03",
+      "slug": "mountains_003_positions",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "spatial_language",
+        "nouns"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Six spatial relationships in an alpine scene: on, near, above, between, below and next to.",
+      "targetExamples": [
+        "The goat is on the rock.",
+        "The marmot is near the burrow.",
+        "The eagle is above the mountain.",
+        "The rabbit is between the rocks.",
+        "The sheep is below the hill.",
+        "The flowers are next to the rock."
+      ]
+    }
+  ]
+}

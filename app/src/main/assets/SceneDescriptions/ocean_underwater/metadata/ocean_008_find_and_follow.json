@@ -1,0 +1,66 @@
+{
+  "sceneId": "scene.ocean.find_and_follow.08",
+  "categoryId": "ocean_underwater",
+  "title": "Ocean Scene 8 — Find and Follow Directions",
+  "status": "approved",
+  "purpose": "Following two-step directions and finding animals from location clues.",
+  "asset": "canonical/ocean_008_find_and_follow.png",
+  "promptFile": "prompts/ocean_008_find_and_follow.md",
+  "targetLanguage": {
+    "nouns": [
+      "turtle",
+      "seahorse",
+      "crab",
+      "rock",
+      "octopus",
+      "coral",
+      "starfish",
+      "fish",
+      "seaweed"
+    ],
+    "verbs": [
+      "find",
+      "point",
+      "show",
+      "look"
+    ],
+    "adjectives": [
+      "yellow",
+      "purple",
+      "orange",
+      "big",
+      "little"
+    ],
+    "sentenceModels": [
+      "Find the crab under the rock.",
+      "Point to the octopus behind the coral.",
+      "Show me the starfish on the sand.",
+      "Where is the seahorse?",
+      "First point to the turtle, then point to the yellow fish."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Use one-step and two-step instructions with clear spatial clues.",
+    "starterPrompts": [
+      "Can you find the crab under the rock?",
+      "Where is the octopus?",
+      "Show me the starfish on the sand.",
+      "Which animal is next to the seaweed?",
+      "Where are the yellow fish?"
+    ],
+    "expansionPrompts": [
+      "First point to the seahorse, then point to the turtle.",
+      "Find the animal behind the coral and then the animal under the rock."
+    ]
+  },
+  "visualAudit": [
+    "One turtle swimming in the middle.",
+    "One seahorse next to tall seaweed on the left.",
+    "One crab clearly under a rock on the lower-left.",
+    "One starfish on the sand near the bottom centre.",
+    "One octopus behind coral on the right and three yellow fish at the top-right."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_1"
+}

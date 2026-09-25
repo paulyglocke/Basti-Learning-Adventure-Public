@@ -1,0 +1,1 @@
+Create a polished, bright 2D cartoon farmyard scene with clear familiar animals and a couple of children on a sunny farm. Include a cow, horse, pig, three sheep, and two ducklings by a pond. Keep the animals easy to identify and the composition uncluttered. No readable text or logos.

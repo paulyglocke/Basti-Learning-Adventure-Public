@@ -1,0 +1,365 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.woodland.positions.03",
+  "categoryId": "woodland_forest",
+  "slug": "woodland_003_positions",
+  "asset": "canonical/woodland_003_positions.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Hiding and Positions",
+    "de": "Verstecke und Positionen im Wald"
+  },
+  "learningFocus": {
+    "primary": [
+      "spatial_language",
+      "prepositions",
+      "nouns"
+    ],
+    "secondary": [
+      "verbs",
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "rabbit",
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      "relation": {
+        "id": "under",
+        "en": "under the log",
+        "de": "unter dem Baumstamm"
+      },
+      "notes": "One small grey-brown rabbit clearly under the fallen log in the lower-left."
+    },
+    {
+      "subject": {
+        "id": "squirrel",
+        "en": "squirrel",
+        "de": "Eichhörnchen"
+      },
+      "relation": {
+        "id": "on",
+        "en": "on the branch",
+        "de": "auf dem Ast"
+      },
+      "notes": "One brown squirrel clearly resting on a tree branch in the upper-left."
+    },
+    {
+      "subject": {
+        "id": "owl",
+        "en": "owl",
+        "de": "Eule"
+      },
+      "relation": {
+        "id": "above",
+        "en": "above the fox",
+        "de": "über dem Fuchs"
+      },
+      "notes": "One brown owl perched high in the upper-right, clearly above the fox."
+    },
+    {
+      "subject": {
+        "id": "fox",
+        "en": "fox",
+        "de": "Fuchs"
+      },
+      "relation": {
+        "id": "behind",
+        "en": "behind the bush",
+        "de": "hinter dem Busch"
+      },
+      "notes": "One orange-red fox partly obscured by a leafy bush on the lower-right."
+    },
+    {
+      "subject": {
+        "id": "deer",
+        "en": "deer",
+        "de": "Reh"
+      },
+      "relation": {
+        "id": "next_to",
+        "en": "next to the tree",
+        "de": "neben dem Baum"
+      },
+      "notes": "One large brown deer standing immediately next to a thick tree trunk near the centre-right."
+    },
+    {
+      "subject": {
+        "id": "hedgehog",
+        "en": "hedgehog",
+        "de": "Igel"
+      },
+      "relation": {
+        "id": "near",
+        "en": "near the leaves / mushrooms",
+        "de": "nahe bei den Blättern / Pilzen"
+      },
+      "notes": "One small brown hedgehog close to a visible pile of leaves and mushrooms in the lower-middle."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      {
+        "en": "log",
+        "de": "Baumstamm"
+      },
+      {
+        "en": "squirrel",
+        "de": "Eichhörnchen"
+      },
+      {
+        "en": "branch",
+        "de": "Ast"
+      },
+      {
+        "en": "owl",
+        "de": "Eule"
+      },
+      {
+        "en": "fox",
+        "de": "Fuchs"
+      },
+      {
+        "en": "bush",
+        "de": "Busch"
+      },
+      {
+        "en": "deer",
+        "de": "Reh"
+      },
+      {
+        "en": "tree",
+        "de": "Baum"
+      },
+      {
+        "en": "hedgehog",
+        "de": "Igel"
+      },
+      {
+        "en": "leaves",
+        "de": "Blätter"
+      },
+      {
+        "en": "mushrooms",
+        "de": "Pilze"
+      }
+    ],
+    "spatialLanguage": [
+      {
+        "en": "under",
+        "de": "unter"
+      },
+      {
+        "en": "on",
+        "de": "auf"
+      },
+      {
+        "en": "above",
+        "de": "über"
+      },
+      {
+        "en": "behind",
+        "de": "hinter"
+      },
+      {
+        "en": "next to",
+        "de": "neben"
+      },
+      {
+        "en": "near",
+        "de": "nahe bei"
+      }
+    ],
+    "optionalVerbs": [
+      {
+        "en": "sit",
+        "de": "sitzen"
+      },
+      {
+        "en": "stand",
+        "de": "stehen"
+      },
+      {
+        "en": "hide",
+        "de": "sich verstecken"
+      },
+      {
+        "en": "perch",
+        "de": "sitzen"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The rabbit is under the log.",
+      "The squirrel is on the branch.",
+      "The owl is above the fox.",
+      "The fox is behind the bush.",
+      "The deer is next to the tree.",
+      "The hedgehog is near the leaves.",
+      "The hedgehog is near the mushrooms."
+    ],
+    "de": [
+      "Das Kaninchen ist unter dem Baumstamm.",
+      "Das Eichhörnchen ist auf dem Ast.",
+      "Die Eule ist über dem Fuchs.",
+      "Der Fuchs ist hinter dem Busch.",
+      "Das Reh ist neben dem Baum.",
+      "Der Igel ist nahe bei den Blättern.",
+      "Der Igel ist nahe bei den Pilzen."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Ask where each animal is, accept a short spatial answer first, then model the complete sentence.",
+      "de": "Fragen, wo sich jedes Tier befindet, kurze Ortsangaben zuerst annehmen und danach den vollständigen Satz vormachen."
+    },
+    "wordsToModel": {
+      "en": [
+        "under",
+        "on",
+        "above",
+        "behind",
+        "next to",
+        "near",
+        "rabbit",
+        "log",
+        "squirrel",
+        "branch",
+        "owl",
+        "fox",
+        "bush",
+        "deer",
+        "tree",
+        "hedgehog",
+        "leaves",
+        "mushrooms"
+      ],
+      "de": [
+        "unter",
+        "auf",
+        "über",
+        "hinter",
+        "neben",
+        "nahe bei",
+        "Kaninchen",
+        "Baumstamm",
+        "Eichhörnchen",
+        "Ast",
+        "Eule",
+        "Fuchs",
+        "Busch",
+        "Reh",
+        "Baum",
+        "Igel",
+        "Blätter",
+        "Pilze"
+      ]
+    },
+    "questions": {
+      "en": [
+        "Where is the rabbit?",
+        "What is on the branch?",
+        "What is above the fox?",
+        "Where is the fox?",
+        "What is next to the tree?",
+        "Where is the hedgehog?"
+      ],
+      "de": [
+        "Wo ist das Kaninchen?",
+        "Was ist auf dem Ast?",
+        "Was ist über dem Fuchs?",
+        "Wo ist der Fuchs?",
+        "Was ist neben dem Baum?",
+        "Wo ist der Igel?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The ___ is under...",
+        "The ___ is on...",
+        "The ___ is above...",
+        "The ___ is behind...",
+        "The ___ is next to...",
+        "The ___ is near..."
+      ],
+      "de": [
+        "Der/Die/Das ___ ist unter...",
+        "Der/Die/Das ___ ist auf...",
+        "Der/Die/Das ___ ist über...",
+        "Der/Die/Das ___ ist hinter...",
+        "Der/Die/Das ___ ist neben...",
+        "Der/Die/Das ___ ist nahe bei..."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The rabbit is hiding under the log.",
+        "The squirrel is sitting on the branch.",
+        "The owl is above the fox.",
+        "The fox is hiding behind the bush.",
+        "The deer is standing next to the tree.",
+        "The hedgehog is near the leaves and mushrooms."
+      ],
+      "de": [
+        "Das Kaninchen versteckt sich unter dem Baumstamm.",
+        "Das Eichhörnchen sitzt auf dem Ast.",
+        "Die Eule ist über dem Fuchs.",
+        "Der Fuchs versteckt sich hinter dem Busch.",
+        "Das Reh steht neben dem Baum.",
+        "Der Igel ist nahe bei den Blättern und Pilzen."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Rabbit under.",
+          "de": "Kaninchen unter."
+        },
+        "adult": {
+          "en": "Yes, the rabbit is under the log.",
+          "de": "Ja, das Kaninchen ist unter dem Baumstamm."
+        }
+      },
+      {
+        "child": {
+          "en": "Fox behind.",
+          "de": "Fuchs hinter."
+        },
+        "adult": {
+          "en": "Yes, the fox is behind the bush.",
+          "de": "Ja, der Fuchs ist hinter dem Busch."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "oneRabbit": true,
+      "oneSquirrel": true,
+      "oneOwl": true,
+      "oneFox": true,
+      "oneDeer": true,
+      "oneHedgehog": true,
+      "noOtherAnimals": true,
+      "rabbitClearlyUnderLog": true,
+      "squirrelClearlyOnBranch": true,
+      "owlClearlyAboveFox": true,
+      "foxClearlyBehindBush": true,
+      "deerClearlyNextToTree": true,
+      "hedgehogClearlyNearLeavesOrMushrooms": true,
+      "subjectsSeparated": true,
+      "noTextOrUI": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

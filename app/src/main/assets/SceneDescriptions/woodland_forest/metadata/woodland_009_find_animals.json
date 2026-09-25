@@ -1,0 +1,69 @@
+{
+  "sceneId": "scene.woodland.find_animals.09",
+  "categoryId": "woodland_forest",
+  "title": "Woodland Scene 9 — Find the Woodland Animal",
+  "status": "approved",
+  "purpose": "Finding an animal from several descriptive clues and comparing features.",
+  "asset": "canonical/woodland_009_find_animals.png",
+  "promptFile": "prompts/woodland_009_find_animals.md",
+  "targetLanguage": {
+    "nouns": [
+      "deer",
+      "antlers",
+      "rabbit",
+      "fox",
+      "tail",
+      "hedgehog",
+      "squirrel",
+      "owl",
+      "stump"
+    ],
+    "verbs": [
+      "find",
+      "point",
+      "show",
+      "look"
+    ],
+    "adjectives": [
+      "big",
+      "small",
+      "spiky",
+      "bushy",
+      "long ears",
+      "brown",
+      "orange"
+    ],
+    "sentenceModels": [
+      "Find the animal with antlers.",
+      "Point to the animal with long ears.",
+      "Show me the spiky animal.",
+      "Which animal has the bushy tail?",
+      "The deer is bigger than the rabbit."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Encourage Basti to listen for several features and find the correct animal.",
+    "starterPrompts": [
+      "Which animal has antlers?",
+      "Can you find the spiky animal?",
+      "Who has long ears?",
+      "Which one has a big bushy tail?",
+      "Who is sitting on the stump?"
+    ],
+    "expansionPrompts": [
+      "First point to the rabbit, then point to the fox.",
+      "Which animal is biggest?",
+      "Tell me two things about the owl."
+    ]
+  },
+  "visualAudit": [
+    "One deer with antlers in the centre-left.",
+    "One rabbit with long ears on the lower-left.",
+    "One squirrel on a stump and one owl on a branch on the right.",
+    "One fox on the lower-right with a bushy tail.",
+    "One hedgehog near the bottom centre."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_1"
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "park_playground",
+  "display": {
+    "en": "Park / playground",
+    "de": "Park / Spielplatz"
+  },
+  "status": "wave_3_complete",
+  "focus": {
+    "primary": [
+      "verbs",
+      "nouns",
+      "everyday_actions"
+    ],
+    "secondary": [
+      "functional_tasks",
+      "spatial_language",
+      "sentence_expansion"
+    ],
+    "tasks": "medium"
+  },
+  "recommendedFocalSubjectsPerScene": {
+    "min": 5,
+    "max": 7
+  },
+  "approvedSceneCount": 9,
+  "wave2Status": "complete",
+  "wave3Status": "complete"
+}

@@ -1,0 +1,68 @@
+{
+  "sceneId": "scene.jungle.busy_actions.05",
+  "categoryId": "jungle_rainforest",
+  "title": "Jungle Scene 5 — Busy Jungle Actions",
+  "status": "approved",
+  "purpose": "Longer action descriptions in a lively but readable scene.",
+  "asset": "canonical/jungle_005_busy_actions.png",
+  "promptFile": "prompts/jungle_005_busy_actions.md",
+  "targetLanguage": {
+    "nouns": [
+      "monkey",
+      "banana",
+      "elephant",
+      "frog",
+      "parrot",
+      "sloth",
+      "tiger",
+      "waterfall"
+    ],
+    "verbs": [
+      "holding",
+      "spraying",
+      "jumping",
+      "flying",
+      "hanging",
+      "walking"
+    ],
+    "adjectives": [
+      "grey",
+      "green",
+      "red",
+      "orange",
+      "long"
+    ],
+    "sentenceModels": [
+      "The monkey is holding a banana.",
+      "The elephant is spraying water.",
+      "The frog is jumping.",
+      "The parrot is flying.",
+      "The sloth is hanging from the branch.",
+      "The tiger is walking."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Help Basti describe several actions one after another without losing clarity.",
+    "starterPrompts": [
+      "Who is spraying water?",
+      "Which animal is flying?",
+      "What is the monkey holding?",
+      "Can you find the jumping animal?",
+      "Which animal is walking through the grass?"
+    ],
+    "expansionPrompts": [
+      "Tell me three things happening in the jungle.",
+      "Can you make a long sentence about the elephant?"
+    ]
+  },
+  "visualAudit": [
+    "Monkey on a branch holding a banana.",
+    "Elephant spraying water on the left.",
+    "Frog jumping across leaves in front.",
+    "Parrot flying and sloth hanging above.",
+    "Tiger walking on the right."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_1"
+}

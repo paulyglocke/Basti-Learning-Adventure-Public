@@ -1,0 +1,66 @@
+{
+  "sceneId": "scene.sky.weather_story.04",
+  "categoryId": "sky_flying",
+  "title": "Sky Scene 4 — Weather Story in the Sky",
+  "status": "approved",
+  "purpose": "Weather language, movement and linked scene description.",
+  "asset": "canonical/sky_004_weather_story.png",
+  "promptFile": "prompts/sky_004_weather_story.md",
+  "targetLanguage": {
+    "nouns": [
+      "sun",
+      "balloon",
+      "airplane",
+      "cloud",
+      "helicopter",
+      "rain",
+      "birds",
+      "rainbow",
+      "kite"
+    ],
+    "verbs": [
+      "rising",
+      "flying",
+      "hovering",
+      "raining"
+    ],
+    "adjectives": [
+      "sunny",
+      "rainy",
+      "colourful",
+      "bright",
+      "grey"
+    ],
+    "sentenceModels": [
+      "The balloon is rising.",
+      "The airplane is flying.",
+      "The helicopter is near the rain cloud.",
+      "It is raining.",
+      "The kite is under the rainbow."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Talk about weather words and what is happening in the sky.",
+    "starterPrompts": [
+      "Where is the sun?",
+      "What is the helicopter near?",
+      "Can you see the rain?",
+      "How many birds are there?",
+      "Where is the kite?"
+    ],
+    "expansionPrompts": [
+      "Which part of the picture looks sunny?",
+      "Which part looks rainy?"
+    ]
+  },
+  "visualAudit": [
+    "One hot-air balloon near the sun.",
+    "One red airplane below a cloud.",
+    "One helicopter near one rain cloud with raindrops.",
+    "Exactly three birds flying together.",
+    "One kite under one rainbow."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_2"
+}

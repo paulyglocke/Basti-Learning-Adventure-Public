@@ -1,0 +1,58 @@
+{
+  "sceneId": "scene.mountains.spatial_clues.09",
+  "categoryId": "mountains_alpine",
+  "title": "Mountains Scene 9 — Mountain Spatial Clues",
+  "status": "approved",
+  "purpose": "Complex spatial clues and multi-step listening using alpine animals and landmarks.",
+  "asset": "canonical/mountains_009_spatial_clues.png",
+  "promptFile": "prompts/mountains_009_spatial_clues.md",
+  "targetLanguage": {
+    "nouns": [
+      "eagle",
+      "goat",
+      "marmot",
+      "rock",
+      "bridge",
+      "stream",
+      "mountain"
+    ],
+    "verbs": [
+      "flying",
+      "standing",
+      "sitting"
+    ],
+    "adjectives": [
+      "high",
+      "low",
+      "above",
+      "below",
+      "near"
+    ],
+    "sentenceModels": [
+      "The eagle is above the mountains.",
+      "The goat is on the high rock.",
+      "The marmot is below the goat.",
+      "The bridge is over the stream."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Use two-part spatial clues and compare high/low positions.",
+    "starterPrompts": [
+      "Which animal is highest?",
+      "Where is the goat?",
+      "What is below the goat?",
+      "What is over the stream?",
+      "Where is the eagle?"
+    ],
+    "expansionPrompts": [
+      "First point to the goat, then point to the marmot.",
+      "Find the animal below the high rock and near the water."
+    ]
+  },
+  "visualAudit": [
+    "Reviewed in Wave 3 Batch 2 automatic pass against the visible teaching targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_2"
+}

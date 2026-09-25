@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "sky_flying",
+  "approvedScenes": [
+    {
+      "sceneId": "scene.sky.actions.01",
+      "slug": "sky_001_actions",
+      "asset": "canonical/sky_001_actions.png",
+      "metadata": "metadata/sky_001_actions.json",
+      "prompt": "prompts/sky_001_actions.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.sky.features.02",
+      "slug": "sky_002_features",
+      "asset": "canonical/sky_002_features.png",
+      "metadata": "metadata/sky_002_features.json",
+      "prompt": "prompts/sky_002_features.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.sky.positions.03",
+      "slug": "sky_003_positions",
+      "asset": "canonical/sky_003_positions.png",
+      "metadata": "metadata/sky_003_positions.json",
+      "prompt": "prompts/sky_003_positions.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.sky.weather_story.04",
+      "title": "Sky Scene 4 — Weather Story in the Sky",
+      "asset": "canonical/sky_004_weather_story.png",
+      "metadata": "metadata/sky_004_weather_story.json",
+      "prompt": "prompts/sky_004_weather_story.md"
+    },
+    {
+      "sceneId": "scene.sky.big_small_counting.05",
+      "title": "Sky Scene 5 — Big, Small and Counting",
+      "asset": "canonical/sky_005_big_small_counting.png",
+      "metadata": "metadata/sky_005_big_small_counting.json",
+      "prompt": "prompts/sky_005_big_small_counting.md"
+    },
+    {
+      "sceneId": "scene.sky.travel_directions.06",
+      "title": "Sky Scene 6 — Travelling Through the Sky",
+      "asset": "canonical/sky_006_travel_directions.png",
+      "metadata": "metadata/sky_006_travel_directions.json",
+      "prompt": "prompts/sky_006_travel_directions.md"
+    },
+    {
+      "sceneId": "scene.sky.weather_sequence.07",
+      "slug": "sky_007_weather_sequence",
+      "asset": "canonical/sky_007_weather_sequence.png",
+      "metadata": "metadata/sky_007_weather_sequence.json",
+      "prompt": "prompts/sky_007_weather_sequence.md",
+      "wave": 3
+    },
+    {
+      "sceneId": "scene.sky.flying_directions.08",
+      "slug": "sky_008_flying_directions",
+      "asset": "canonical/sky_008_flying_directions.png",
+      "metadata": "metadata/sky_008_flying_directions.json",
+      "prompt": "prompts/sky_008_flying_directions.md",
+      "wave": 3
+    },
+    {
+      "sceneId": "scene.sky.night_sky_clues.09",
+      "slug": "sky_009_night_sky_clues",
+      "asset": "canonical/sky_009_night_sky_clues.png",
+      "metadata": "metadata/sky_009_night_sky_clues.json",
+      "prompt": "prompts/sky_009_night_sky_clues.md",
+      "wave": 3
+    }
+  ],
+  "note": "Wave 3 Batch 2 complete: scenes 007–009 added."
+}

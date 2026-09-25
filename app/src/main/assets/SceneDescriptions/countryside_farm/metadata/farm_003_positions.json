@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.farm.positions.03",
+  "categoryId": "countryside_farm",
+  "slug": "farm_003_positions",
+  "asset": "canonical/farm_003_positions.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Around the Farm",
+    "de": "Rund um den Bauernhof"
+  },
+  "learningFocus": {
+    "primary": [
+      "spatial_language",
+      "prepositions",
+      "nouns"
+    ],
+    "secondary": [
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "cat",
+        "en": "cat",
+        "de": "Katze"
+      },
+      "relation": {
+        "id": "on",
+        "en": "on the hay bale",
+        "de": "auf dem Heuballen"
+      },
+      "notes": "One orange farm cat clearly on top of one hay bale."
+    },
+    {
+      "subject": {
+        "id": "pig",
+        "en": "pig",
+        "de": "Schwein"
+      },
+      "relation": {
+        "id": "behind",
+        "en": "behind the fence",
+        "de": "hinter dem Zaun"
+      },
+      "notes": "One pink pig partly behind a short wooden fence, with the fence overlapping part of the pig."
+    },
+    {
+      "subject": {
+        "id": "horse",
+        "en": "horse",
+        "de": "Pferd"
+      },
+      "relation": {
+        "id": "next_to",
+        "en": "next to the barn",
+        "de": "neben der Scheune"
+      },
+      "notes": "One brown horse clearly next to the red barn and fully visible."
+    },
+    {
+      "subject": {
+        "id": "chicken",
+        "en": "chicken",
+        "de": "Huhn"
+      },
+      "relation": {
+        "id": "under",
+        "en": "under the shelter",
+        "de": "unter dem Unterstand"
+      },
+      "notes": "One white chicken clearly under a small wooden shelter / raised coop section."
+    },
+    {
+      "subject": {
+        "id": "cow",
+        "en": "cow",
+        "de": "Kuh"
+      },
+      "relation": {
+        "id": "between",
+        "en": "between the fence posts",
+        "de": "zwischen den Zaunpfosten"
+      },
+      "notes": "One black-and-white cow clearly between two fence posts on the right."
+    },
+    {
+      "subject": {
+        "id": "duck",
+        "en": "duck",
+        "de": "Ente"
+      },
+      "relation": {
+        "id": "near",
+        "en": "near the pond",
+        "de": "nahe beim Teich"
+      },
+      "notes": "One yellow duck clearly near the pond, close to the water but not in it."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "cat",
+        "de": "Katze"
+      },
+      {
+        "en": "hay bale",
+        "de": "Heuballen"
+      },
+      {
+        "en": "pig",
+        "de": "Schwein"
+      },
+      {
+        "en": "fence",
+        "de": "Zaun"
+      },
+      {
+        "en": "horse",
+        "de": "Pferd"
+      },
+      {
+        "en": "barn",
+        "de": "Scheune"
+      },
+      {
+        "en": "chicken",
+        "de": "Huhn"
+      },
+      {
+        "en": "shelter",
+        "de": "Unterstand"
+      },
+      {
+        "en": "cow",
+        "de": "Kuh"
+      },
+      {
+        "en": "fence posts",
+        "de": "Zaunpfosten"
+      },
+      {
+        "en": "duck",
+        "de": "Ente"
+      },
+      {
+        "en": "pond",
+        "de": "Teich"
+      }
+    ],
+    "spatialLanguage": [
+      {
+        "en": "on",
+        "de": "auf"
+      },
+      {
+        "en": "behind",
+        "de": "hinter"
+      },
+      {
+        "en": "next to",
+        "de": "neben"
+      },
+      {
+        "en": "under",
+        "de": "unter"
+      },
+      {
+        "en": "between",
+        "de": "zwischen"
+      },
+      {
+        "en": "near",
+        "de": "nahe bei"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The cat is on the hay bale.",
+      "The pig is behind the fence.",
+      "The horse is next to the barn.",
+      "The chicken is under the shelter.",
+      "The cow is between the fence posts.",
+      "The duck is near the pond."
+    ],
+    "de": [
+      "Die Katze ist auf dem Heuballen.",
+      "Das Schwein ist hinter dem Zaun.",
+      "Das Pferd ist neben der Scheune.",
+      "Das Huhn ist unter dem Unterstand.",
+      "Die Kuh ist zwischen den Zaunpfosten.",
+      "Die Ente ist nahe beim Teich."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Ask where each animal is. Accept a short location word first, then model a full sentence with the animal and place.",
+      "de": "Fragen, wo jedes Tier ist. Zuerst eine kurze Ortsangabe annehmen und dann einen vollständigen Satz mit Tier und Ort vormachen."
+    },
+    "wordsToModel": {
+      "en": [
+        "on",
+        "behind",
+        "next to",
+        "under",
+        "between",
+        "near",
+        "cat",
+        "hay bale",
+        "pig",
+        "fence",
+        "horse",
+        "barn",
+        "chicken",
+        "shelter",
+        "cow",
+        "fence posts",
+        "duck",
+        "pond"
+      ],
+      "de": [
+        "auf",
+        "hinter",
+        "neben",
+        "unter",
+        "zwischen",
+        "nahe bei",
+        "Katze",
+        "Heuballen",
+        "Schwein",
+        "Zaun",
+        "Pferd",
+        "Scheune",
+        "Huhn",
+        "Unterstand",
+        "Kuh",
+        "Zaunpfosten",
+        "Ente",
+        "Teich"
+      ]
+    },
+    "questions": {
+      "en": [
+        "Where is the cat?",
+        "Where is the pig?",
+        "What is next to the barn?",
+        "What is under the shelter?",
+        "Where is the cow?",
+        "What is near the pond?"
+      ],
+      "de": [
+        "Wo ist die Katze?",
+        "Wo ist das Schwein?",
+        "Was ist neben der Scheune?",
+        "Was ist unter dem Unterstand?",
+        "Wo ist die Kuh?",
+        "Was ist nahe beim Teich?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The ___ is on...",
+        "The ___ is behind...",
+        "The ___ is next to...",
+        "The ___ is under...",
+        "The ___ is between...",
+        "The ___ is near..."
+      ],
+      "de": [
+        "Der/Die/Das ___ ist auf...",
+        "Der/Die/Das ___ ist hinter...",
+        "Der/Die/Das ___ ist neben...",
+        "Der/Die/Das ___ ist unter...",
+        "Der/Die/Das ___ ist zwischen...",
+        "Der/Die/Das ___ ist nahe bei..."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The orange cat is on the hay bale.",
+        "The pink pig is behind the wooden fence.",
+        "The brown horse is next to the red barn.",
+        "The white chicken is under the shelter.",
+        "The black-and-white cow is between the fence posts.",
+        "The yellow duck is near the pond."
+      ],
+      "de": [
+        "Die orange Katze ist auf dem Heuballen.",
+        "Das rosa Schwein ist hinter dem Holzzaun.",
+        "Das braune Pferd ist neben der roten Scheune.",
+        "Das weiße Huhn ist unter dem Unterstand.",
+        "Die schwarz-weiße Kuh ist zwischen den Zaunpfosten.",
+        "Die gelbe Ente ist nahe beim Teich."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Cat on hay.",
+          "de": "Katze auf Heu."
+        },
+        "adult": {
+          "en": "Yes, the cat is on the hay bale.",
+          "de": "Ja, die Katze ist auf dem Heuballen."
+        }
+      },
+      {
+        "child": {
+          "en": "Cow between.",
+          "de": "Kuh zwischen."
+        },
+        "adult": {
+          "en": "Yes, the cow is between the fence posts.",
+          "de": "Ja, die Kuh ist zwischen den Zaunpfosten."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "oneCat": true,
+      "onePig": true,
+      "oneHorse": true,
+      "oneChicken": true,
+      "oneCow": true,
+      "oneDuck": true,
+      "noOtherAnimals": true,
+      "catClearlyOnHayBale": true,
+      "pigClearlyBehindFence": true,
+      "horseClearlyNextToBarn": true,
+      "chickenClearlyUnderShelter": true,
+      "cowClearlyBetweenFencePosts": true,
+      "duckClearlyNearPond": true,
+      "spatialExamplesReadable": true,
+      "noPeople": true,
+      "noTextOrUI": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

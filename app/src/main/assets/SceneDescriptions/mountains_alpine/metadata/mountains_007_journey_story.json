@@ -1,0 +1,57 @@
+{
+  "sceneId": "scene.mountains.journey_story.07",
+  "categoryId": "mountains_alpine",
+  "title": "Mountains Scene 7 — Mountain Journey",
+  "status": "approved",
+  "purpose": "Journey sequencing, route language and observation.",
+  "asset": "canonical/mountains_007_journey_story.png",
+  "promptFile": "prompts/mountains_007_journey_story.md",
+  "targetLanguage": {
+    "nouns": [
+      "path",
+      "mountain",
+      "goat",
+      "rock",
+      "sign",
+      "flowers",
+      "dog"
+    ],
+    "verbs": [
+      "walking",
+      "climbing",
+      "following"
+    ],
+    "adjectives": [
+      "high",
+      "rocky",
+      "steep",
+      "colourful"
+    ],
+    "sentenceModels": [
+      "They are walking along the mountain path.",
+      "The goat is on the rock.",
+      "The path goes past the flowers.",
+      "They are going up the mountain."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Describe a journey with first/next and simple route language.",
+    "starterPrompts": [
+      "Where are they walking?",
+      "Where is the goat?",
+      "What is beside the path?",
+      "Are they going up or down?",
+      "What might they see next?"
+    ],
+    "expansionPrompts": [
+      "Tell me the journey from the bottom of the path upward.",
+      "What should they follow to stay on the path?"
+    ]
+  },
+  "visualAudit": [
+    "Reviewed in Wave 3 Batch 2 automatic pass against the visible teaching targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_2"
+}

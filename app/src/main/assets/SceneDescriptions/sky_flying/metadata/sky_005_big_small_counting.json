@@ -1,0 +1,62 @@
+{
+  "sceneId": "scene.sky.big_small_counting.05",
+  "categoryId": "sky_flying",
+  "title": "Sky Scene 5 — Big, Small and Counting",
+  "status": "approved",
+  "purpose": "Colours, size, quantity and simple comparison in the sky.",
+  "asset": "canonical/sky_005_big_small_counting.png",
+  "promptFile": "prompts/sky_005_big_small_counting.md",
+  "targetLanguage": {
+    "nouns": [
+      "balloon",
+      "airplane",
+      "cloud",
+      "birds",
+      "kite"
+    ],
+    "verbs": [
+      "flying"
+    ],
+    "adjectives": [
+      "big",
+      "small",
+      "long",
+      "round",
+      "yellow",
+      "blue",
+      "red",
+      "colourful"
+    ],
+    "sentenceModels": [
+      "The balloon is big.",
+      "The airplane is small.",
+      "The long cloud is white.",
+      "There are three little yellow birds.",
+      "The kite is colourful."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Talk about size, colour and counting in the sky.",
+    "starterPrompts": [
+      "What is big?",
+      "What is small?",
+      "Can you count the birds?",
+      "Which cloud is long?",
+      "What colours can you see on the kite?"
+    ],
+    "expansionPrompts": [
+      "Which is bigger, the balloon or the airplane?",
+      "Can you describe the clouds?"
+    ]
+  },
+  "visualAudit": [
+    "One very large balloon.",
+    "One small blue airplane.",
+    "One long cloud and one small round cloud.",
+    "Exactly three yellow birds.",
+    "One colourful kite."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_2"
+}

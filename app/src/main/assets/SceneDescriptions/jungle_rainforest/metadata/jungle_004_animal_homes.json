@@ -1,0 +1,68 @@
+{
+  "sceneId": "scene.jungle.animal_homes.04",
+  "categoryId": "jungle_rainforest",
+  "title": "Jungle Scene 4 — Animal Homes and Shelter",
+  "status": "approved",
+  "purpose": "Animal homes, shelter and gentle inference questions.",
+  "asset": "canonical/jungle_004_animal_homes.png",
+  "promptFile": "prompts/jungle_004_animal_homes.md",
+  "targetLanguage": {
+    "nouns": [
+      "sloth",
+      "branch",
+      "monkey",
+      "tree hole",
+      "parrot",
+      "leaf",
+      "toucan",
+      "nest",
+      "frog",
+      "tiger",
+      "water"
+    ],
+    "verbs": [
+      "sleeping",
+      "looking",
+      "carrying",
+      "drinking",
+      "sitting"
+    ],
+    "adjectives": [
+      "big",
+      "green",
+      "wet",
+      "colourful"
+    ],
+    "sentenceModels": [
+      "The sloth is sleeping on the branch.",
+      "The monkey is looking into the tree hole.",
+      "The parrot is carrying a leaf.",
+      "The toucan is next to the nest.",
+      "The tiger is drinking water."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Talk about where animals rest, hide, or make homes.",
+    "starterPrompts": [
+      "Which animal is sleeping?",
+      "Where is the monkey looking?",
+      "Who has a nest nearby?",
+      "Who is under the leaf?",
+      "What is the tiger doing?"
+    ],
+    "expansionPrompts": [
+      "Which place looks safe and dry?",
+      "What might the parrot do with the leaf next?"
+    ]
+  },
+  "visualAudit": [
+    "Sleeping sloth on a branch.",
+    "Monkey peering into a tree hole.",
+    "Parrot carrying one leaf in flight.",
+    "Toucan beside one nest.",
+    "Frog sheltering under a leaf and tiger drinking from water."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_1"
+}

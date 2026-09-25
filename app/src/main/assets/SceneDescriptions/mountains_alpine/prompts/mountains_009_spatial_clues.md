@@ -1,0 +1,1 @@
+Create a polished alpine wildlife scene with one eagle flying above, one mountain goat on a high rock, one marmot on a lower rock near a stream, and a bridge crossing the water. No readable text. Keep all positions clear.

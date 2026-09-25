@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "mountains_alpine",
+  "approvedScenes": [
+    {
+      "sceneId": "scene.mountains.features.01",
+      "slug": "mountains_001_features",
+      "asset": "canonical/mountains_001_features.png",
+      "metadata": "metadata/mountains_001_features.json",
+      "prompt": "prompts/mountains_001_features.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.mountains.actions.02",
+      "slug": "mountains_002_actions",
+      "asset": "canonical/mountains_002_actions.png",
+      "metadata": "metadata/mountains_002_actions.json",
+      "prompt": "prompts/mountains_002_actions.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.mountains.positions.03",
+      "slug": "mountains_003_positions",
+      "asset": "canonical/mountains_003_positions.png",
+      "metadata": "metadata/mountains_003_positions.json",
+      "prompt": "prompts/mountains_003_positions.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.mountains.busy_routines.04",
+      "title": "Mountains Scene 4 — Busy Mountain Routines",
+      "asset": "canonical/mountains_004_busy_routines.png",
+      "metadata": "metadata/mountains_004_busy_routines.json",
+      "prompt": "prompts/mountains_004_busy_routines.md"
+    },
+    {
+      "sceneId": "scene.mountains.big_small_groups.05",
+      "title": "Mountains Scene 5 — Big, Small and Groups",
+      "asset": "canonical/mountains_005_big_small_groups.png",
+      "metadata": "metadata/mountains_005_big_small_groups.json",
+      "prompt": "prompts/mountains_005_big_small_groups.md"
+    },
+    {
+      "sceneId": "scene.mountains.homes_places.06",
+      "title": "Mountains Scene 6 — Homes and Places",
+      "asset": "canonical/mountains_006_homes_places.png",
+      "metadata": "metadata/mountains_006_homes_places.json",
+      "prompt": "prompts/mountains_006_homes_places.md"
+    },
+    {
+      "sceneId": "scene.mountains.journey_story.07",
+      "slug": "mountains_007_journey_story",
+      "asset": "canonical/mountains_007_journey_story.png",
+      "metadata": "metadata/mountains_007_journey_story.json",
+      "prompt": "prompts/mountains_007_journey_story.md",
+      "wave": 3
+    },
+    {
+      "sceneId": "scene.mountains.weather_shelter.08",
+      "slug": "mountains_008_weather_shelter",
+      "asset": "canonical/mountains_008_weather_shelter.png",
+      "metadata": "metadata/mountains_008_weather_shelter.json",
+      "prompt": "prompts/mountains_008_weather_shelter.md",
+      "wave": 3
+    },
+    {
+      "sceneId": "scene.mountains.spatial_clues.09",
+      "slug": "mountains_009_spatial_clues",
+      "asset": "canonical/mountains_009_spatial_clues.png",
+      "metadata": "metadata/mountains_009_spatial_clues.json",
+      "prompt": "prompts/mountains_009_spatial_clues.md",
+      "wave": 3
+    }
+  ],
+  "note": "Wave 3 Batch 2 complete: scenes 007–009 added."
+}

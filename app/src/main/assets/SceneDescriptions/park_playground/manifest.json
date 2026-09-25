@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "park_playground",
+  "approvedScenes": [
+    {
+      "sceneId": "scene.park.actions.01",
+      "slug": "park_001_actions",
+      "asset": "canonical/park_001_actions.png",
+      "metadata": "metadata/park_001_actions.json",
+      "prompt": "prompts/park_001_actions.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.park.tasks.02",
+      "slug": "park_002_tasks",
+      "asset": "canonical/park_002_tasks.png",
+      "metadata": "metadata/park_002_tasks.json",
+      "prompt": "prompts/park_002_tasks.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.park.positions.03",
+      "slug": "park_003_positions",
+      "asset": "canonical/park_003_positions.png",
+      "metadata": "metadata/park_003_positions.json",
+      "prompt": "prompts/park_003_positions.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.park.social_play.04",
+      "title": "Park Scene 4 — Social Play and Helping",
+      "asset": "canonical/park_004_social_play.png",
+      "metadata": "metadata/park_004_social_play.json",
+      "prompt": "prompts/park_004_social_play.md"
+    },
+    {
+      "sceneId": "scene.park.big_small_counting.05",
+      "title": "Park Scene 5 — Big, Small and Counting",
+      "asset": "canonical/park_005_big_small_counting.png",
+      "metadata": "metadata/park_005_big_small_counting.json",
+      "prompt": "prompts/park_005_big_small_counting.md"
+    },
+    {
+      "sceneId": "scene.park.routines_positions.06",
+      "title": "Park Scene 6 — Playground Routines and Positions",
+      "asset": "canonical/park_006_routines_positions.png",
+      "metadata": "metadata/park_006_routines_positions.json",
+      "prompt": "prompts/park_006_routines_positions.md"
+    },
+    {
+      "sceneId": "scene.park.playground_actions.07",
+      "slug": "park_007_playground_actions",
+      "asset": "canonical/park_007_playground_actions.png",
+      "metadata": "metadata/park_007_playground_actions.json",
+      "prompt": "prompts/park_007_playground_actions.md",
+      "wave": 3
+    },
+    {
+      "sceneId": "scene.park.helping_clean_up.08",
+      "slug": "park_008_helping_clean_up",
+      "asset": "canonical/park_008_helping_clean_up.png",
+      "metadata": "metadata/park_008_helping_clean_up.json",
+      "prompt": "prompts/park_008_helping_clean_up.md",
+      "wave": 3
+    },
+    {
+      "sceneId": "scene.park.turn_taking.09",
+      "slug": "park_009_turn_taking",
+      "asset": "canonical/park_009_turn_taking.png",
+      "metadata": "metadata/park_009_turn_taking.json",
+      "prompt": "prompts/park_009_turn_taking.md",
+      "wave": 3
+    }
+  ],
+  "note": "Wave 3 Batch 2 complete: scenes 007–009 added."
+}

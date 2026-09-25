@@ -1,0 +1,375 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.mountains.features.01",
+  "categoryId": "mountains_alpine",
+  "slug": "mountains_001_features",
+  "asset": "canonical/mountains_001_features.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Alpine Features and Comparisons",
+    "de": "Merkmale und Vergleiche in den Bergen"
+  },
+  "learningFocus": {
+    "primary": [
+      "nouns",
+      "adjectives",
+      "visible_features",
+      "comparisons"
+    ],
+    "secondary": [
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "mountain_goat",
+        "en": "mountain goat",
+        "de": "Bergziege"
+      },
+      "properties": [
+        {
+          "en": "big",
+          "de": "groß"
+        },
+        {
+          "en": "brown",
+          "de": "braun"
+        },
+        {
+          "en": "horns",
+          "de": "Hörner"
+        }
+      ],
+      "notes": "One large brown mountain goat near the centre-left, clearly the largest animal, with curved horns."
+    },
+    {
+      "subject": {
+        "id": "marmot",
+        "en": "marmot",
+        "de": "Murmeltier"
+      },
+      "properties": [
+        {
+          "en": "small",
+          "de": "klein"
+        },
+        {
+          "en": "grey-brown",
+          "de": "graubraun"
+        }
+      ],
+      "notes": "One small grey-brown marmot near the lower-middle, clearly much smaller than the goat."
+    },
+    {
+      "subject": {
+        "id": "rabbit",
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      "properties": [
+        {
+          "en": "white",
+          "de": "weiß"
+        },
+        {
+          "en": "small",
+          "de": "klein"
+        },
+        {
+          "en": "long ears",
+          "de": "lange Ohren"
+        }
+      ],
+      "notes": "One white rabbit near the lower-right with clearly visible long ears."
+    },
+    {
+      "subject": {
+        "id": "eagle",
+        "en": "eagle",
+        "de": "Adler"
+      },
+      "properties": [
+        {
+          "en": "big bird",
+          "de": "großer Vogel"
+        },
+        {
+          "en": "brown",
+          "de": "braun"
+        },
+        {
+          "en": "beak",
+          "de": "Schnabel"
+        }
+      ],
+      "notes": "One eagle near the upper-right perched on a rocky ledge with wings folded and its beak clearly visible."
+    },
+    {
+      "subject": {
+        "id": "sheep",
+        "en": "sheep",
+        "de": "Schaf"
+      },
+      "properties": [
+        {
+          "en": "white",
+          "de": "weiß"
+        },
+        {
+          "en": "fluffy",
+          "de": "flauschig"
+        }
+      ],
+      "notes": "One white sheep near the lower-left, clearly fluffy and visually distinct from the goat."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "mountain goat",
+        "de": "Bergziege"
+      },
+      {
+        "en": "marmot",
+        "de": "Murmeltier"
+      },
+      {
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      {
+        "en": "eagle",
+        "de": "Adler"
+      },
+      {
+        "en": "sheep",
+        "de": "Schaf"
+      },
+      {
+        "en": "horns",
+        "de": "Hörner"
+      },
+      {
+        "en": "ears",
+        "de": "Ohren"
+      },
+      {
+        "en": "beak",
+        "de": "Schnabel"
+      },
+      {
+        "en": "mountains",
+        "de": "Berge"
+      },
+      {
+        "en": "rocks",
+        "de": "Felsen"
+      },
+      {
+        "en": "flowers",
+        "de": "Blumen"
+      }
+    ],
+    "adjectives": [
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "brown",
+        "de": "braun"
+      },
+      {
+        "en": "grey-brown",
+        "de": "graubraun"
+      },
+      {
+        "en": "white",
+        "de": "weiß"
+      },
+      {
+        "en": "fluffy",
+        "de": "flauschig"
+      },
+      {
+        "en": "long",
+        "de": "lang"
+      }
+    ],
+    "comparisonLanguage": [
+      {
+        "en": "bigger than",
+        "de": "größer als"
+      },
+      {
+        "en": "smaller than",
+        "de": "kleiner als"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The mountain goat is big.",
+      "The marmot is small.",
+      "The rabbit has long ears.",
+      "The sheep is fluffy.",
+      "The eagle has a beak.",
+      "The mountain goat is bigger than the marmot.",
+      "The rabbit is white.",
+      "The sheep is white."
+    ],
+    "de": [
+      "Die Bergziege ist groß.",
+      "Das Murmeltier ist klein.",
+      "Das Kaninchen hat lange Ohren.",
+      "Das Schaf ist flauschig.",
+      "Der Adler hat einen Schnabel.",
+      "Die Bergziege ist größer als das Murmeltier.",
+      "Das Kaninchen ist weiß.",
+      "Das Schaf ist weiß."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Start with what the animal is or what feature is visible, then help Basti combine size, colour or body feature into a fuller description.",
+      "de": "Mit dem Tier oder einem sichtbaren Merkmal beginnen und Basti dann helfen, Größe, Farbe oder Körpermerkmal zu einer ausführlicheren Beschreibung zu verbinden."
+    },
+    "wordsToModel": {
+      "en": [
+        "mountain goat",
+        "marmot",
+        "rabbit",
+        "eagle",
+        "sheep",
+        "big",
+        "small",
+        "brown",
+        "white",
+        "fluffy",
+        "horns",
+        "long ears",
+        "beak"
+      ],
+      "de": [
+        "Bergziege",
+        "Murmeltier",
+        "Kaninchen",
+        "Adler",
+        "Schaf",
+        "groß",
+        "klein",
+        "braun",
+        "weiß",
+        "flauschig",
+        "Hörner",
+        "lange Ohren",
+        "Schnabel"
+      ]
+    },
+    "questions": {
+      "en": [
+        "Which animal is big?",
+        "Which animal is small?",
+        "Who has horns?",
+        "Who has long ears?",
+        "Which animal is fluffy?",
+        "Which animal is white?",
+        "What does the eagle have on its face?",
+        "Which is bigger, the goat or the marmot?"
+      ],
+      "de": [
+        "Welches Tier ist groß?",
+        "Welches Tier ist klein?",
+        "Wer hat Hörner?",
+        "Wer hat lange Ohren?",
+        "Welches Tier ist flauschig?",
+        "Welches Tier ist weiß?",
+        "Was hat der Adler im Gesicht?",
+        "Was ist größer, die Ziege oder das Murmeltier?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The ___ is big.",
+        "The ___ is small.",
+        "The ___ has ___",
+        "The ___ is white.",
+        "The ___ is bigger than the ___"
+      ],
+      "de": [
+        "Der/Die/Das ___ ist groß.",
+        "Der/Die/Das ___ ist klein.",
+        "Der/Die/Das ___ hat ___",
+        "Der/Die/Das ___ ist weiß.",
+        "Der/Die/Das ___ ist größer als der/die/das ___"
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The mountain goat is big and brown.",
+        "The mountain goat has big curved horns.",
+        "The marmot is small and grey-brown.",
+        "The rabbit is white and has long ears.",
+        "The sheep is white and fluffy.",
+        "The eagle has a strong beak.",
+        "The mountain goat is bigger than the marmot."
+      ],
+      "de": [
+        "Die Bergziege ist groß und braun.",
+        "Die Bergziege hat große gebogene Hörner.",
+        "Das Murmeltier ist klein und graubraun.",
+        "Das Kaninchen ist weiß und hat lange Ohren.",
+        "Das Schaf ist weiß und flauschig.",
+        "Der Adler hat einen starken Schnabel.",
+        "Die Bergziege ist größer als das Murmeltier."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Big goat.",
+          "de": "Große Ziege."
+        },
+        "adult": {
+          "en": "Yes, the mountain goat is big and brown.",
+          "de": "Ja, die Bergziege ist groß und braun."
+        }
+      },
+      {
+        "child": {
+          "en": "White rabbit.",
+          "de": "Weißes Kaninchen."
+        },
+        "adult": {
+          "en": "Yes, the rabbit is white and has long ears.",
+          "de": "Ja, das Kaninchen ist weiß und hat lange Ohren."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "oneMountainGoat": true,
+      "oneMarmot": true,
+      "oneRabbit": true,
+      "oneEagle": true,
+      "oneSheep": true,
+      "goatClearlyLargest": true,
+      "goatHornsVisible": true,
+      "marmotClearlySmall": true,
+      "rabbitLongEarsVisible": true,
+      "sheepClearlyFluffy": true,
+      "eagleBeakVisible": true,
+      "noOtherAnimals": true,
+      "noTextOrUI": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

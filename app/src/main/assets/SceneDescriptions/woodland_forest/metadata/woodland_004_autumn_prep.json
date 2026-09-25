@@ -1,0 +1,70 @@
+{
+  "sceneId": "scene.woodland.autumn_prep.04",
+  "categoryId": "woodland_forest",
+  "title": "Woodland Scene 4 — Autumn Preparation",
+  "status": "approved",
+  "purpose": "Describe several woodland actions and simple seasonal ideas.",
+  "asset": "canonical/woodland_004_autumn_prep.png",
+  "promptFile": "prompts/woodland_004_autumn_prep.md",
+  "targetLanguage": {
+    "nouns": [
+      "squirrel",
+      "acorns",
+      "deer",
+      "leaves",
+      "rabbit",
+      "burrow",
+      "fox",
+      "log",
+      "hedgehog",
+      "owl"
+    ],
+    "verbs": [
+      "carrying",
+      "eating",
+      "hopping",
+      "sniffing",
+      "walking",
+      "flying"
+    ],
+    "adjectives": [
+      "orange",
+      "brown",
+      "small",
+      "long ears",
+      "bushy tail"
+    ],
+    "sentenceModels": [
+      "The squirrel is carrying acorns.",
+      "The deer is eating leaves.",
+      "The rabbit is hopping to the burrow.",
+      "The fox is sniffing near the log.",
+      "The hedgehog has a leaf on its back.",
+      "The owl is flying."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Support longer descriptions and talk about getting ready for autumn or winter.",
+    "starterPrompts": [
+      "Who is carrying something?",
+      "Which animal is hopping?",
+      "What is the fox doing?",
+      "Who is up in the sky?",
+      "What is on the hedgehog's back?"
+    ],
+    "expansionPrompts": [
+      "Why might the squirrel carry acorns?",
+      "Can you tell me what the deer is eating?"
+    ]
+  },
+  "visualAudit": [
+    "Squirrel carrying two acorns near a stump.",
+    "Deer eating leaves from a branch.",
+    "Rabbit hopping near its burrow.",
+    "Fox sniffing beside a log.",
+    "Hedgehog with a leaf on its back and owl flying above."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_1"
+}

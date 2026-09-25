@@ -1,0 +1,70 @@
+{
+  "sceneId": "scene.woodland.animal_homes.05",
+  "categoryId": "woodland_forest",
+  "title": "Woodland Scene 5 — Woodland Homes",
+  "status": "approved",
+  "purpose": "Talk about where woodland animals live, rest or store food.",
+  "asset": "canonical/woodland_005_animal_homes.png",
+  "promptFile": "prompts/woodland_005_animal_homes.md",
+  "targetLanguage": {
+    "nouns": [
+      "owl",
+      "tree hollow",
+      "squirrel",
+      "stump",
+      "acorns",
+      "rabbit",
+      "burrow",
+      "hedgehog",
+      "leaf pile",
+      "fox",
+      "den",
+      "deer",
+      "stream"
+    ],
+    "verbs": [
+      "sitting",
+      "storing",
+      "entering",
+      "resting",
+      "looking"
+    ],
+    "adjectives": [
+      "inside",
+      "next to",
+      "under",
+      "near"
+    ],
+    "sentenceModels": [
+      "The owl is in the tree hollow.",
+      "The squirrel is putting an acorn into the stump.",
+      "The rabbit is going into the burrow.",
+      "The fox is resting in the den.",
+      "The hedgehog is near the leaves."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Prompt 'where' questions and simple home-related inference.",
+    "starterPrompts": [
+      "Where is the owl?",
+      "Where is the rabbit going?",
+      "Which animal is in the den?",
+      "What is the squirrel storing?",
+      "Which animal is near the leaf pile?"
+    ],
+    "expansionPrompts": [
+      "Who lives in a hole in the tree?",
+      "Can you tell me which animal is by the water?"
+    ]
+  },
+  "visualAudit": [
+    "Owl sitting inside a tree hollow.",
+    "Squirrel storing acorns in a stump.",
+    "Rabbit entering a burrow.",
+    "Fox resting in a root den.",
+    "Hedgehog near a leaf pile and deer by the water."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_1"
+}

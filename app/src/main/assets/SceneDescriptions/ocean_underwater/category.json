@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "ocean_underwater",
+  "display": {
+    "en": "Ocean / underwater",
+    "de": "Ozean / Unterwasserwelt"
+  },
+  "status": "wave_3_complete",
+  "focus": {
+    "primary": [
+      "verbs",
+      "nouns",
+      "spatial_language"
+    ],
+    "secondary": [
+      "adjectives",
+      "sentence_expansion"
+    ],
+    "tasks": "low"
+  },
+  "recommendedFocalSubjectsPerScene": {
+    "min": 4,
+    "max": 6
+  },
+  "nouns": [
+    {
+      "id": "dolphin",
+      "en": "dolphin",
+      "de": "Delfin"
+    },
+    {
+      "id": "turtle",
+      "en": "turtle",
+      "de": "Schildkröte"
+    },
+    {
+      "id": "fish",
+      "en": "fish",
+      "de": "Fisch"
+    },
+    {
+      "id": "clownfish",
+      "en": "clownfish",
+      "de": "Clownfisch"
+    },
+    {
+      "id": "octopus",
+      "en": "octopus",
+      "de": "Oktopus"
+    },
+    {
+      "id": "crab",
+      "en": "crab",
+      "de": "Krabbe"
+    },
+    {
+      "id": "seahorse",
+      "en": "seahorse",
+      "de": "Seepferdchen"
+    },
+    {
+      "id": "jellyfish",
+      "en": "jellyfish",
+      "de": "Qualle"
+    },
+    {
+      "id": "starfish",
+      "en": "starfish",
+      "de": "Seestern"
+    },
+    {
+      "id": "coral",
+      "en": "coral",
+      "de": "Koralle"
+    },
+    {
+      "id": "seaweed",
+      "en": "seaweed",
+      "de": "Seegras"
+    },
+    {
+      "id": "rock",
+      "en": "rock",
+      "de": "Stein"
+    },
+    {
+      "id": "shell",
+      "en": "shell",
+      "de": "Muschel"
+    },
+    {
+      "id": "sand",
+      "en": "sand",
+      "de": "Sand"
+    },
+    {
+      "id": "bubbles",
+      "en": "bubbles",
+      "de": "Blasen"
+    },
+    {
+      "id": "cave",
+      "en": "cave",
+      "de": "Höhle"
+    }
+  ],
+  "verbs": [
+    {
+      "id": "swim",
+      "en": "swim",
+      "de": "schwimmen"
+    },
+    {
+      "id": "dive",
+      "en": "dive",
+      "de": "tauchen"
+    },
+    {
+      "id": "jump",
+      "en": "jump",
+      "de": "springen"
+    },
+    {
+      "id": "hide",
+      "en": "hide",
+      "de": "sich verstecken"
+    },
+    {
+      "id": "crawl",
+      "en": "crawl",
+      "de": "krabbeln"
+    },
+    {
+      "id": "float",
+      "en": "float",
+      "de": "schweben"
+    },
+    {
+      "id": "chase",
+      "en": "chase",
+      "de": "hinterherjagen"
+    },
+    {
+      "id": "splash",
+      "en": "splash",
+      "de": "spritzen"
+    },
+    {
+      "id": "eat",
+      "en": "eat",
+      "de": "fressen"
+    },
+    {
+      "id": "carry",
+      "en": "carry",
+      "de": "tragen"
+    },
+    {
+      "id": "look",
+      "en": "look",
+      "de": "schauen"
+    },
+    {
+      "id": "blow_bubbles",
+      "en": "blow bubbles",
+      "de": "Blasen machen"
+    }
+  ],
+  "adjectives": [
+    {
+      "id": "big",
+      "en": "big",
+      "de": "groß"
+    },
+    {
+      "id": "small",
+      "en": "small",
+      "de": "klein"
+    },
+    {
+      "id": "long",
+      "en": "long",
+      "de": "lang"
+    },
+    {
+      "id": "short",
+      "en": "short",
+      "de": "kurz"
+    },
+    {
+      "id": "colourful",
+      "en": "colourful",
+      "de": "bunt"
+    },
+    {
+      "id": "bright",
+      "en": "bright",
+      "de": "hell"
+    },
+    {
+      "id": "dark",
+      "en": "dark",
+      "de": "dunkel"
+    },
+    {
+      "id": "striped",
+      "en": "striped",
+      "de": "gestreift"
+    },
+    {
+      "id": "spotted",
+      "en": "spotted",
+      "de": "gefleckt"
+    },
+    {
+      "id": "many",
+      "en": "many",
+      "de": "viele"
+    },
+    {
+      "id": "few",
+      "en": "few",
+      "de": "wenige"
+    }
+  ],
+  "spatialLanguage": [
+    {
+      "id": "above",
+      "en": "above",
+      "de": "über"
+    },
+    {
+      "id": "below",
+      "en": "below",
+      "de": "unter"
+    },
+    {
+      "id": "next_to",
+      "en": "next to",
+      "de": "neben"
+    },
+    {
+      "id": "between",
+      "en": "between",
+      "de": "zwischen"
+    },
+    {
+      "id": "behind",
+      "en": "behind",
+      "de": "hinter"
+    },
+    {
+      "id": "in_front_of",
+      "en": "in front of",
+      "de": "vor"
+    },
+    {
+      "id": "inside",
+      "en": "inside",
+      "de": "in"
+    },
+    {
+      "id": "near",
+      "en": "near",
+      "de": "nah"
+    },
+    {
+      "id": "far",
+      "en": "far away",
+      "de": "weit weg"
+    }
+  ],
+  "approvedSceneCount": 9,
+  "wave2Status": "complete",
+  "wave3Status": "complete"
+}

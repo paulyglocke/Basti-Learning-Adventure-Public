@@ -1,0 +1,58 @@
+{
+  "sceneId": "scene.farm.garden_food.06",
+  "categoryId": "countryside_farm",
+  "title": "Farm Scene 6 — Garden and Growing Food",
+  "status": "approved",
+  "purpose": "Talk about garden nouns, food, locations and simple inference.",
+  "asset": "canonical/farm_006_garden_food.png",
+  "promptFile": "prompts/farm_006_garden_food.md",
+  "targetLanguage": {
+    "nouns": [
+      "carrots",
+      "vegetables",
+      "scarecrow",
+      "rabbit",
+      "chicken",
+      "apple tree",
+      "apples",
+      "fence"
+    ],
+    "verbs": [
+      "growing",
+      "standing"
+    ],
+    "adjectives": [
+      "orange",
+      "green",
+      "red",
+      "grey"
+    ],
+    "sentenceModels": [
+      "The carrots are growing in the garden.",
+      "The rabbit is next to the carrots.",
+      "The chicken is near the vegetables.",
+      "The scarecrow is in the garden.",
+      "The apples are on the tree."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Use the picture to connect food words with where food grows.",
+    "starterPrompts": [
+      "What is growing in the garden?",
+      "Where is the rabbit?",
+      "What is on the tree?",
+      "What colour are the carrots?",
+      "What is the scarecrow for?"
+    ],
+    "expansionPrompts": [
+      "Which food grows under the ground?",
+      "What could we pick from the tree?"
+    ]
+  },
+  "visualAudit": [
+    "Auto-batch panel reviewed for the described targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_3"
+}

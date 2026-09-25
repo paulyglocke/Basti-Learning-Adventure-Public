@@ -1,0 +1,67 @@
+{
+  "sceneId": "scene.ocean.describing_sea_friends.09",
+  "categoryId": "ocean_underwater",
+  "title": "Ocean Scene 9 — Describing Sea Friends",
+  "status": "approved",
+  "purpose": "Multi-clue descriptions, comparing size, and finding the right animal from features.",
+  "asset": "canonical/ocean_009_describing_sea_friends.png",
+  "promptFile": "prompts/ocean_009_describing_sea_friends.md",
+  "targetLanguage": {
+    "nouns": [
+      "turtle",
+      "jellyfish",
+      "seahorse",
+      "clownfish",
+      "crab",
+      "shell",
+      "fish",
+      "coral"
+    ],
+    "verbs": [
+      "swimming",
+      "floating",
+      "holding"
+    ],
+    "adjectives": [
+      "big",
+      "small",
+      "green",
+      "purple",
+      "orange",
+      "blue",
+      "yellow"
+    ],
+    "sentenceModels": [
+      "The turtle is big and green.",
+      "The jellyfish is purple.",
+      "The crab is holding a blue shell.",
+      "The clownfish is orange and white.",
+      "The little seahorse is yellow and orange."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Encourage Basti to combine colour, size and feature words in one sentence.",
+    "starterPrompts": [
+      "Which animal is the biggest?",
+      "Who is holding the blue shell?",
+      "Can you find the purple animal?",
+      "Which one is orange and white?",
+      "Where are the little blue fish?"
+    ],
+    "expansionPrompts": [
+      "Tell me two things about the turtle.",
+      "Can you find the small yellow-orange animal?",
+      "Which animal is bigger than the clownfish?"
+    ]
+  },
+  "visualAudit": [
+    "One large turtle in the centre.",
+    "One purple jellyfish floating on the upper-right.",
+    "One yellow-orange seahorse on the right.",
+    "One orange-and-white clownfish near the lower-middle.",
+    "One red crab on the lower-left holding a blue shell and three little blue fish above."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_1"
+}

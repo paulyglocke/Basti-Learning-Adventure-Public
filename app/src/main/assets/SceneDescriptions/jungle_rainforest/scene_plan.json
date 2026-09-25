@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "jungle_rainforest",
+  "status": "wave_3_batch_1_complete",
+  "scenes": [
+    {
+      "sceneId": "scene.jungle.animal_homes.04",
+      "title": "Jungle Scene 4 — Animal Homes and Shelter",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/jungle_004_animal_homes.png",
+      "metadata": "metadata/jungle_004_animal_homes.json",
+      "prompt": "prompts/jungle_004_animal_homes.md"
+    },
+    {
+      "sceneId": "scene.jungle.busy_actions.05",
+      "title": "Jungle Scene 5 — Busy Jungle Actions",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/jungle_005_busy_actions.png",
+      "metadata": "metadata/jungle_005_busy_actions.json",
+      "prompt": "prompts/jungle_005_busy_actions.md"
+    },
+    {
+      "sceneId": "scene.jungle.big_small_groups.06",
+      "title": "Jungle Scene 6 — Big, Small and Groups",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/jungle_006_big_small_groups.png",
+      "metadata": "metadata/jungle_006_big_small_groups.json",
+      "prompt": "prompts/jungle_006_big_small_groups.md"
+    },
+    {
+      "sceneId": "scene.jungle.story_actions.07",
+      "title": "Jungle Scene 7 — Rainforest Story Actions",
+      "slug": "jungle_007_story_actions",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/jungle_007_story_actions.png",
+      "metadata": "metadata/jungle_007_story_actions.json",
+      "prompt": "prompts/jungle_007_story_actions.md"
+    },
+    {
+      "sceneId": "scene.jungle.clue_finding.08",
+      "title": "Jungle Scene 8 — Find the Animal From Clues",
+      "slug": "jungle_008_clue_finding",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/jungle_008_clue_finding.png",
+      "metadata": "metadata/jungle_008_clue_finding.json",
+      "prompt": "prompts/jungle_008_clue_finding.md"
+    },
+    {
+      "sceneId": "scene.jungle.actions_directions.09",
+      "title": "Jungle Scene 9 — Rainforest Actions and Directions",
+      "slug": "jungle_009_actions_directions",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/jungle_009_actions_directions.png",
+      "metadata": "metadata/jungle_009_actions_directions.json",
+      "prompt": "prompts/jungle_009_actions_directions.md"
+    },
+    {
+      "sceneId": "scene.jungle.actions.01",
+      "slug": "jungle_001_actions",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "verbs",
+        "nouns"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Five rainforest animals each showing one clear action: monkey swinging, elephant spraying water, frog jumping, parrot flying, sloth hanging.",
+      "targetExamples": [
+        "The monkey is swinging.",
+        "The elephant is spraying water.",
+        "The frog is jumping.",
+        "The parrot is flying.",
+        "The sloth is hanging from the branch."
+      ]
+    },
+    {
+      "sceneId": "scene.jungle.colours_features.02",
+      "slug": "jungle_002_colours_features",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "adjectives",
+        "comparisons",
+        "nouns"
+      ],
+      "secondaryFocus": [
+        "counting"
+      ],
+      "brief": "Visible size, colour and animal-feature contrasts such as big/small, striped and colourful.",
+      "targetExamples": [
+        "The elephant is big.",
+        "The frog is small.",
+        "The tiger is striped.",
+        "The parrot is colourful.",
+        "The toucan has a long beak."
+      ]
+    },
+    {
+      "sceneId": "scene.jungle.positions.03",
+      "slug": "jungle_003_positions",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "spatial_language",
+        "nouns"
+      ],
+      "secondaryFocus": [
+        "verbs",
+        "sentence_expansion"
+      ],
+      "brief": "Six spatial relationships across a rainforest scene: on, under, above, behind, next to and near.",
+      "targetExamples": [
+        "The frog is on the leaf.",
+        "The sloth is under the branch.",
+        "The parrot is above the sloth.",
+        "The tiger is behind the leaves.",
+        "The toucan is next to the tree.",
+        "The monkey is near the log."
+      ]
+    }
+  ]
+}

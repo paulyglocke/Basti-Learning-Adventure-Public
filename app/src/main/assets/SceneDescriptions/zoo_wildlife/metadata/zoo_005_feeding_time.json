@@ -1,0 +1,59 @@
+{
+  "sceneId": "scene.zoo.feeding_time.05",
+  "categoryId": "zoo_wildlife",
+  "title": "Zoo Scene 5 — Feeding Time",
+  "status": "approved",
+  "purpose": "Animal-care language, eating actions and feature comparison.",
+  "asset": "canonical/zoo_005_feeding_time.png",
+  "promptFile": "prompts/zoo_005_feeding_time.md",
+  "targetLanguage": {
+    "nouns": [
+      "giraffe",
+      "elephant",
+      "zebra",
+      "leaves",
+      "trunk",
+      "neck",
+      "stripes"
+    ],
+    "verbs": [
+      "eating",
+      "reaching",
+      "holding",
+      "standing"
+    ],
+    "adjectives": [
+      "tall",
+      "grey",
+      "striped",
+      "green"
+    ],
+    "sentenceModels": [
+      "The giraffe is reaching for leaves.",
+      "The elephant is holding leaves with its trunk.",
+      "The zebra is standing in front.",
+      "The giraffe has a long neck.",
+      "The zebra is striped."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Talk about feeding and the body features animals use to reach food.",
+    "starterPrompts": [
+      "Who is eating leaves?",
+      "What is the elephant using?",
+      "Which animal has a long neck?",
+      "Which animal is striped?",
+      "Who is standing in front?"
+    ],
+    "expansionPrompts": [
+      "How can the giraffe reach high food?",
+      "How can the elephant pick up leaves?"
+    ]
+  },
+  "visualAudit": [
+    "Auto-batch panel reviewed for the described targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_3"
+}

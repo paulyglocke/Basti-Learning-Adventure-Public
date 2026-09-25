@@ -1,0 +1,64 @@
+{
+  "sceneId": "scene.park.routines_positions.06",
+  "categoryId": "park_playground",
+  "title": "Park Scene 6 — Playground Routines and Positions",
+  "status": "approved",
+  "purpose": "Simple playground routines combined with clear spatial language.",
+  "asset": "canonical/park_006_routines_positions.png",
+  "promptFile": "prompts/park_006_routines_positions.md",
+  "targetLanguage": {
+    "nouns": [
+      "helmet",
+      "scooter",
+      "backpack",
+      "basket",
+      "water bottle",
+      "bench",
+      "ball",
+      "cone",
+      "slide",
+      "child"
+    ],
+    "verbs": [
+      "wearing",
+      "standing"
+    ],
+    "adjectives": [
+      "yellow",
+      "blue",
+      "red",
+      "orange"
+    ],
+    "sentenceModels": [
+      "The child is wearing a helmet.",
+      "The backpack is in the basket.",
+      "The water bottle is under the bench.",
+      "The ball is between the cones.",
+      "The child is behind the slide."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Practise position words and simple playground routines.",
+    "starterPrompts": [
+      "Who is wearing the helmet?",
+      "Where is the backpack?",
+      "Where is the bottle?",
+      "What is between the cones?",
+      "Who is behind the slide?"
+    ],
+    "expansionPrompts": [
+      "Can you tell me where the scooter is?",
+      "What do you wear before riding a scooter?"
+    ]
+  },
+  "visualAudit": [
+    "One child wearing a helmet beside one scooter.",
+    "One backpack in one basket.",
+    "One bottle under the bench.",
+    "One ball between two cones.",
+    "One child behind the slide."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_2"
+}

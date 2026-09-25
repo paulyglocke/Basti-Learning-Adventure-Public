@@ -1,0 +1,60 @@
+{
+  "sceneId": "scene.classroom.art_sorting.06",
+  "categoryId": "classroom_school",
+  "title": "Classroom Scene 6 — Art Table and What Belongs",
+  "status": "approved",
+  "purpose": "Classroom problem solving, object categories and simple two-step instructions.",
+  "asset": "canonical/classroom_006_art_sorting.png",
+  "promptFile": "prompts/classroom_006_art_sorting.md",
+  "targetLanguage": {
+    "nouns": [
+      "painting",
+      "paper",
+      "paint",
+      "pencils",
+      "table",
+      "chair",
+      "football",
+      "shelf"
+    ],
+    "verbs": [
+      "draw",
+      "paint",
+      "put away",
+      "sort"
+    ],
+    "adjectives": [
+      "colourful",
+      "red",
+      "yellow",
+      "green"
+    ],
+    "sentenceModels": [
+      "The painting is on the table.",
+      "The pencils are in the cup.",
+      "The paint is on the table.",
+      "The football is on the chair.",
+      "The football does not belong with the art things."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Practise simple categorisation and two-step classroom instructions.",
+    "starterPrompts": [
+      "What can we use for drawing?",
+      "Where are the pencils?",
+      "What is on the green chair?",
+      "Which thing does not belong with the art materials?",
+      "Where should the football go?"
+    ],
+    "expansionPrompts": [
+      "First point to the paint, then point to the football.",
+      "Tell me two things you could put away."
+    ]
+  },
+  "visualAudit": [
+    "Auto-batch panel reviewed for the described targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_3"
+}

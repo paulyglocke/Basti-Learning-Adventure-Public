@@ -1,0 +1,301 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.jungle.actions.01",
+  "categoryId": "jungle_rainforest",
+  "slug": "jungle_001_actions",
+  "asset": "canonical/jungle_001_actions.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Jungle Actions",
+    "de": "Dschungel-Aktionen"
+  },
+  "learningFocus": {
+    "primary": [
+      "verbs",
+      "nouns"
+    ],
+    "secondary": [
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "monkey",
+        "en": "monkey",
+        "de": "Affe"
+      },
+      "action": {
+        "id": "swing",
+        "en": "swinging",
+        "de": "schwingt"
+      },
+      "notes": "One brown monkey in the upper-left/middle, airborne and holding one vine with both hands."
+    },
+    {
+      "subject": {
+        "id": "elephant",
+        "en": "elephant",
+        "de": "Elefant"
+      },
+      "action": {
+        "id": "spray",
+        "en": "spraying water",
+        "de": "spritzt Wasser"
+      },
+      "notes": "One grey elephant near the river, visibly spraying a stream of water from its trunk."
+    },
+    {
+      "subject": {
+        "id": "frog",
+        "en": "frog",
+        "de": "Frosch"
+      },
+      "action": {
+        "id": "jump",
+        "en": "jumping",
+        "de": "springt"
+      },
+      "notes": "One green frog airborne between two large leaves."
+    },
+    {
+      "subject": {
+        "id": "parrot",
+        "en": "parrot",
+        "de": "Papagei"
+      },
+      "action": {
+        "id": "fly",
+        "en": "flying",
+        "de": "fliegt"
+      },
+      "notes": "One colourful parrot in flight with wings extended."
+    },
+    {
+      "subject": {
+        "id": "sloth",
+        "en": "sloth",
+        "de": "Faultier"
+      },
+      "action": {
+        "id": "hang",
+        "en": "hanging from the branch",
+        "de": "hängt am Ast"
+      },
+      "notes": "One brown sloth hanging under one thick horizontal branch."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "monkey",
+        "de": "Affe"
+      },
+      {
+        "en": "elephant",
+        "de": "Elefant"
+      },
+      {
+        "en": "frog",
+        "de": "Frosch"
+      },
+      {
+        "en": "parrot",
+        "de": "Papagei"
+      },
+      {
+        "en": "sloth",
+        "de": "Faultier"
+      },
+      {
+        "en": "vine",
+        "de": "Liane"
+      },
+      {
+        "en": "branch",
+        "de": "Ast"
+      },
+      {
+        "en": "river / water",
+        "de": "Fluss / Wasser"
+      },
+      {
+        "en": "leaf",
+        "de": "Blatt"
+      }
+    ],
+    "verbs": [
+      {
+        "en": "swing",
+        "de": "schwingen"
+      },
+      {
+        "en": "spray",
+        "de": "spritzen"
+      },
+      {
+        "en": "jump",
+        "de": "springen"
+      },
+      {
+        "en": "fly",
+        "de": "fliegen"
+      },
+      {
+        "en": "hang",
+        "de": "hängen"
+      }
+    ],
+    "optionalAdjectives": [
+      {
+        "en": "brown",
+        "de": "braun"
+      },
+      {
+        "en": "grey",
+        "de": "grau"
+      },
+      {
+        "en": "green",
+        "de": "grün"
+      },
+      {
+        "en": "colourful",
+        "de": "bunt"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The monkey is swinging.",
+      "The elephant is spraying water.",
+      "The frog is jumping.",
+      "The parrot is flying.",
+      "The sloth is hanging from the branch."
+    ],
+    "de": [
+      "Der Affe schwingt an der Liane.",
+      "Der Elefant spritzt Wasser.",
+      "Der Frosch springt.",
+      "Der Papagei fliegt.",
+      "Das Faultier hängt am Ast."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Help Basti name the animal and action first, then model a full sentence with one extra detail.",
+      "de": "Basti soll zuerst das Tier und die Handlung benennen; danach kann man einen vollständigen Satz mit einem zusätzlichen Detail vormachen."
+    },
+    "wordsToModel": {
+      "en": [
+        "monkey",
+        "elephant",
+        "frog",
+        "parrot",
+        "sloth",
+        "swinging",
+        "spraying water",
+        "jumping",
+        "flying",
+        "hanging"
+      ],
+      "de": [
+        "Affe",
+        "Elefant",
+        "Frosch",
+        "Papagei",
+        "Faultier",
+        "schwingt",
+        "spritzt Wasser",
+        "springt",
+        "fliegt",
+        "hängt"
+      ]
+    },
+    "questions": {
+      "en": [
+        "What is the monkey doing?",
+        "Who is spraying water?",
+        "What is the frog doing?",
+        "Which animal is flying?",
+        "Who is hanging from the branch?"
+      ],
+      "de": [
+        "Was macht der Affe?",
+        "Wer spritzt Wasser?",
+        "Was macht der Frosch?",
+        "Welches Tier fliegt?",
+        "Wer hängt am Ast?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The ___ is…",
+        "The ___ is ___ing.",
+        "I can see a ___."
+      ],
+      "de": [
+        "Der/Die ___ …",
+        "Der/Die ___ ___ .",
+        "Ich sehe einen/eine ___."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The monkey is swinging on the vine.",
+        "The elephant is spraying water in the river.",
+        "The frog is jumping from one leaf to another.",
+        "The colourful parrot is flying.",
+        "The sloth is hanging from the branch."
+      ],
+      "de": [
+        "Der Affe schwingt an der Liane.",
+        "Der Elefant spritzt Wasser im Fluss.",
+        "Der Frosch springt von einem Blatt zum anderen.",
+        "Der bunte Papagei fliegt.",
+        "Das Faultier hängt am Ast."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Monkey swinging.",
+          "de": "Affe schwingt."
+        },
+        "adult": {
+          "en": "Yes, the monkey is swinging on the vine.",
+          "de": "Ja, der Affe schwingt an der Liane."
+        }
+      },
+      {
+        "child": {
+          "en": "Elephant water.",
+          "de": "Elefant Wasser."
+        },
+        "adult": {
+          "en": "Yes, the elephant is spraying water.",
+          "de": "Ja, der Elefant spritzt Wasser."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "oneMonkey": true,
+      "oneElephant": true,
+      "oneFrog": true,
+      "oneParrot": true,
+      "oneSloth": true,
+      "actionsReadable": true,
+      "monkeySwinging": true,
+      "elephantSprayingWater": true,
+      "frogJumping": true,
+      "parrotFlying": true,
+      "slothHanging": true,
+      "noTextOrUI": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.farm.tasks.01",
+  "categoryId": "countryside_farm",
+  "slug": "farm_001_tasks",
+  "asset": "canonical/farm_001_tasks.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Farm Jobs and Tasks",
+    "de": "Aufgaben auf dem Bauernhof"
+  },
+  "learningFocus": {
+    "primary": [
+      "functional_tasks",
+      "verbs",
+      "everyday_nouns"
+    ],
+    "secondary": [
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "watering_child",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "water",
+        "en": "watering the plants",
+        "de": "gießt die Pflanzen"
+      },
+      "object": {
+        "id": "watering_can",
+        "en": "watering can",
+        "de": "Gießkanne"
+      },
+      "notes": "One child on the left clearly pours water from one watering can onto the vegetable plants."
+    },
+    {
+      "subject": {
+        "id": "egg_child",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "collect_eggs",
+        "en": "collecting eggs",
+        "de": "sammelt Eier"
+      },
+      "object": {
+        "id": "egg_basket",
+        "en": "egg basket",
+        "de": "Eierkorb"
+      },
+      "notes": "One child near the coop clearly holds one egg over one visible basket containing eggs."
+    },
+    {
+      "subject": {
+        "id": "feeding_child",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "feed",
+        "en": "feeding the chickens",
+        "de": "füttert die Hühner"
+      },
+      "notes": "One child scatters grain toward the chickens. Four chickens are visible in the approved image; the teaching target is the action 'feeding the chickens', not counting them."
+    },
+    {
+      "subject": {
+        "id": "carrying_child",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "carry",
+        "en": "carrying the vegetables",
+        "de": "trägt das Gemüse"
+      },
+      "object": {
+        "id": "vegetable_crate",
+        "en": "vegetable crate",
+        "de": "Gemüsekiste"
+      },
+      "notes": "One child carries one small crate of visible vegetables with both hands."
+    },
+    {
+      "subject": {
+        "id": "sweeping_child",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "sweep",
+        "en": "sweeping",
+        "de": "fegt"
+      },
+      "object": {
+        "id": "broom",
+        "en": "broom",
+        "de": "Besen"
+      },
+      "notes": "One child near the barn clearly sweeps straw on the ground with one broom."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "child",
+        "de": "Kind"
+      },
+      {
+        "en": "plants",
+        "de": "Pflanzen"
+      },
+      {
+        "en": "watering can",
+        "de": "Gießkanne"
+      },
+      {
+        "en": "egg",
+        "de": "Ei"
+      },
+      {
+        "en": "basket",
+        "de": "Korb"
+      },
+      {
+        "en": "chickens",
+        "de": "Hühner"
+      },
+      {
+        "en": "vegetables",
+        "de": "Gemüse"
+      },
+      {
+        "en": "crate",
+        "de": "Kiste"
+      },
+      {
+        "en": "broom",
+        "de": "Besen"
+      },
+      {
+        "en": "barn",
+        "de": "Scheune"
+      },
+      {
+        "en": "chicken coop",
+        "de": "Hühnerstall"
+      }
+    ],
+    "verbs": [
+      {
+        "en": "water",
+        "de": "gießen"
+      },
+      {
+        "en": "collect",
+        "de": "sammeln"
+      },
+      {
+        "en": "feed",
+        "de": "füttern"
+      },
+      {
+        "en": "carry",
+        "de": "tragen"
+      },
+      {
+        "en": "sweep",
+        "de": "fegen"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The child is watering the plants.",
+      "The child is collecting eggs.",
+      "The child is feeding the chickens.",
+      "The child is carrying the vegetables.",
+      "The child is sweeping."
+    ],
+    "de": [
+      "Das Kind gießt die Pflanzen.",
+      "Das Kind sammelt Eier.",
+      "Das Kind füttert die Hühner.",
+      "Das Kind trägt das Gemüse.",
+      "Das Kind fegt."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Ask what job each child is doing and why. Accept a short verb first, then model a full sentence with the object or purpose.",
+      "de": "Fragen, welche Aufgabe jedes Kind macht und warum. Zuerst ein kurzes Verb annehmen und dann einen vollständigen Satz mit Gegenstand oder Zweck vormachen."
+    },
+    "wordsToModel": {
+      "en": [
+        "watering",
+        "plants",
+        "collecting eggs",
+        "feeding",
+        "chickens",
+        "carrying",
+        "vegetables",
+        "sweeping",
+        "broom"
+      ],
+      "de": [
+        "gießt",
+        "Pflanzen",
+        "Eier sammeln",
+        "füttert",
+        "Hühner",
+        "trägt",
+        "Gemüse",
+        "fegt",
+        "Besen"
+      ]
+    },
+    "questions": {
+      "en": [
+        "What is the child doing with the watering can?",
+        "What is the child putting in the basket?",
+        "Who is feeding the chickens?",
+        "What is the child carrying?",
+        "What is the child doing with the broom?",
+        "Why do we water plants?",
+        "Why do we collect the eggs?"
+      ],
+      "de": [
+        "Was macht das Kind mit der Gießkanne?",
+        "Was legt das Kind in den Korb?",
+        "Wer füttert die Hühner?",
+        "Was trägt das Kind?",
+        "Was macht das Kind mit dem Besen?",
+        "Warum gießen wir Pflanzen?",
+        "Warum sammeln wir die Eier?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The child is watering...",
+        "The child is collecting...",
+        "The child is feeding...",
+        "The child is carrying...",
+        "The child is sweeping..."
+      ],
+      "de": [
+        "Das Kind gießt...",
+        "Das Kind sammelt...",
+        "Das Kind füttert...",
+        "Das Kind trägt...",
+        "Das Kind fegt..."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The child is watering the green vegetable plants.",
+        "The child is collecting eggs in the basket.",
+        "The child is feeding grain to the chickens.",
+        "The child is carrying a crate of vegetables.",
+        "The child is sweeping the straw near the barn."
+      ],
+      "de": [
+        "Das Kind gießt die grünen Gemüsepflanzen.",
+        "Das Kind sammelt Eier im Korb.",
+        "Das Kind füttert die Hühner mit Körnern.",
+        "Das Kind trägt eine Kiste mit Gemüse.",
+        "Das Kind fegt das Stroh bei der Scheune."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Watering.",
+          "de": "Gießen."
+        },
+        "adult": {
+          "en": "Yes, the child is watering the plants.",
+          "de": "Ja, das Kind gießt die Pflanzen."
+        }
+      },
+      {
+        "child": {
+          "en": "Eggs.",
+          "de": "Eier."
+        },
+        "adult": {
+          "en": "Yes, the child is collecting eggs in the basket.",
+          "de": "Ja, das Kind sammelt Eier im Korb."
+        }
+      }
+    ],
+    "functionalFollowUps": {
+      "en": [
+        "What do plants need to grow?",
+        "Where should the eggs go?",
+        "What are the chickens eating?",
+        "Where might the vegetables go next?",
+        "Why do we sweep the path?"
+      ],
+      "de": [
+        "Was brauchen Pflanzen zum Wachsen?",
+        "Wohin kommen die Eier?",
+        "Was fressen die Hühner?",
+        "Wohin könnte das Gemüse als Nächstes kommen?",
+        "Warum fegen wir den Weg?"
+      ]
+    }
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "knownDeviation": "Four chickens are visible instead of the requested three. This is logged as non-blocking because the scene teaches feeding, not chicken counting.",
+    "checks": {
+      "fiveFocalChildren": true,
+      "wateringActionClear": true,
+      "collectingEggsClear": true,
+      "feedingChickensClear": true,
+      "requestedExactlyThreeChickens": false,
+      "actualVisibleChickenCount": 4,
+      "carryingVegetablesClear": true,
+      "sweepingClear": true,
+      "oneWateringCan": true,
+      "oneEggBasket": true,
+      "oneVegetableCrate": true,
+      "oneBroom": true,
+      "noOtherPeople": true,
+      "noOtherFarmAnimals": true,
+      "noTextOrUI": true,
+      "phoneReadableComposition": true
+    }
+  },
+  "strictReview": {
+    "status": "task_acceptable_with_logged_deviation",
+    "reason": "The image contains four chickens instead of the requested three. All five functional tasks are clear, and chicken quantity is not a teaching target in this scene, so this does not block the task."
+  }
+}

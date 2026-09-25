@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.sky.actions.01",
+  "categoryId": "sky_flying",
+  "slug": "sky_001_actions",
+  "asset": "canonical/sky_001_actions.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Sky Actions",
+    "de": "Aktionen am Himmel"
+  },
+  "learningFocus": {
+    "primary": [
+      "verbs",
+      "nouns",
+      "movement"
+    ],
+    "secondary": [
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "balloon",
+        "en": "hot-air balloon",
+        "de": "Heißluftballon"
+      },
+      "action": {
+        "id": "rise",
+        "en": "rising",
+        "de": "steigt"
+      },
+      "notes": "One large colourful hot-air balloon on the left with one basket, clearly rising upward."
+    },
+    {
+      "subject": {
+        "id": "airplane",
+        "en": "airplane",
+        "de": "Flugzeug"
+      },
+      "action": {
+        "id": "fly",
+        "en": "flying",
+        "de": "fliegt"
+      },
+      "notes": "One small red propeller airplane near the upper-middle, clearly flying from left to right."
+    },
+    {
+      "subject": {
+        "id": "eagle",
+        "en": "eagle",
+        "de": "Adler"
+      },
+      "action": {
+        "id": "glide",
+        "en": "gliding",
+        "de": "gleitet"
+      },
+      "notes": "One eagle near the upper-right with wings extended and level, clearly gliding."
+    },
+    {
+      "subject": {
+        "id": "helicopter",
+        "en": "helicopter",
+        "de": "Hubschrauber"
+      },
+      "action": {
+        "id": "hover",
+        "en": "hovering",
+        "de": "schwebt"
+      },
+      "notes": "One helicopter near the middle-right with one main rotor and one tail rotor, clearly hovering."
+    },
+    {
+      "subject": {
+        "id": "kite",
+        "en": "kite",
+        "de": "Drachen"
+      },
+      "action": {
+        "id": "fly_wind",
+        "en": "flying in the wind",
+        "de": "fliegt im Wind"
+      },
+      "notes": "One colourful kite in the lower-middle sky with a visible string and one ribbon tail."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "hot-air balloon",
+        "de": "Heißluftballon"
+      },
+      {
+        "en": "basket",
+        "de": "Korb"
+      },
+      {
+        "en": "airplane",
+        "de": "Flugzeug"
+      },
+      {
+        "en": "propeller",
+        "de": "Propeller"
+      },
+      {
+        "en": "eagle",
+        "de": "Adler"
+      },
+      {
+        "en": "helicopter",
+        "de": "Hubschrauber"
+      },
+      {
+        "en": "kite",
+        "de": "Drachen"
+      },
+      {
+        "en": "string",
+        "de": "Schnur"
+      },
+      {
+        "en": "sky",
+        "de": "Himmel"
+      },
+      {
+        "en": "cloud",
+        "de": "Wolke"
+      },
+      {
+        "en": "mountains",
+        "de": "Berge"
+      }
+    ],
+    "verbs": [
+      {
+        "en": "rise",
+        "de": "steigen"
+      },
+      {
+        "en": "fly",
+        "de": "fliegen"
+      },
+      {
+        "en": "glide",
+        "de": "gleiten"
+      },
+      {
+        "en": "hover",
+        "de": "schweben"
+      }
+    ],
+    "optionalAdjectives": [
+      {
+        "en": "colourful",
+        "de": "bunt"
+      },
+      {
+        "en": "red",
+        "de": "rot"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "big",
+        "de": "groß"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The balloon is rising.",
+      "The airplane is flying.",
+      "The eagle is gliding.",
+      "The helicopter is hovering.",
+      "The kite is flying in the wind."
+    ],
+    "de": [
+      "Der Ballon steigt.",
+      "Das Flugzeug fliegt.",
+      "Der Adler gleitet.",
+      "Der Hubschrauber schwebt.",
+      "Der Drachen fliegt im Wind."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Help Basti name the flying thing and its movement first, then expand to a full sentence with one extra detail.",
+      "de": "Basti soll zuerst das Flugobjekt oder Tier und seine Bewegung benennen; danach kann mit einem zusätzlichen Detail zu einem vollständigen Satz erweitert werden."
+    },
+    "wordsToModel": {
+      "en": [
+        "balloon",
+        "airplane",
+        "eagle",
+        "helicopter",
+        "kite",
+        "rising",
+        "flying",
+        "gliding",
+        "hovering",
+        "wind"
+      ],
+      "de": [
+        "Ballon",
+        "Flugzeug",
+        "Adler",
+        "Hubschrauber",
+        "Drachen",
+        "steigt",
+        "fliegt",
+        "gleitet",
+        "schwebt",
+        "Wind"
+      ]
+    },
+    "questions": {
+      "en": [
+        "What is the balloon doing?",
+        "Which thing is flying across the sky?",
+        "What is the eagle doing?",
+        "Which one is hovering?",
+        "What is the kite doing in the wind?"
+      ],
+      "de": [
+        "Was macht der Ballon?",
+        "Welches Ding fliegt über den Himmel?",
+        "Was macht der Adler?",
+        "Welches schwebt?",
+        "Was macht der Drachen im Wind?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The balloon is...",
+        "The airplane is...",
+        "The eagle is...",
+        "The helicopter is...",
+        "The kite is..."
+      ],
+      "de": [
+        "Der Ballon ...",
+        "Das Flugzeug ...",
+        "Der Adler ...",
+        "Der Hubschrauber ...",
+        "Der Drachen ..."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The colourful balloon is rising up into the sky.",
+        "The small red airplane is flying from left to right.",
+        "The eagle is gliding with its wings open.",
+        "The helicopter is hovering in the air.",
+        "The kite is flying in the wind."
+      ],
+      "de": [
+        "Der bunte Ballon steigt in den Himmel.",
+        "Das kleine rote Flugzeug fliegt von links nach rechts.",
+        "Der Adler gleitet mit ausgebreiteten Flügeln.",
+        "Der Hubschrauber schwebt in der Luft.",
+        "Der Drachen fliegt im Wind."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Balloon up.",
+          "de": "Ballon hoch."
+        },
+        "adult": {
+          "en": "Yes, the balloon is rising up into the sky.",
+          "de": "Ja, der Ballon steigt in den Himmel."
+        }
+      },
+      {
+        "child": {
+          "en": "Helicopter.",
+          "de": "Hubschrauber."
+        },
+        "adult": {
+          "en": "Yes, the helicopter is hovering in the air.",
+          "de": "Ja, der Hubschrauber schwebt in der Luft."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "oneBalloon": true,
+      "oneAirplane": true,
+      "oneEagle": true,
+      "oneHelicopter": true,
+      "oneKite": true,
+      "noOtherAircraft": true,
+      "noAdditionalBirds": true,
+      "balloonClearlyRising": true,
+      "airplaneClearlyFlying": true,
+      "eagleClearlyGliding": true,
+      "helicopterClearlyHovering": true,
+      "kiteClearlyFlyingInWind": true,
+      "subjectsSeparated": true,
+      "noTextOrUI": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

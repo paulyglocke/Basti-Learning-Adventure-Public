@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.zoo.actions.02",
+  "categoryId": "zoo_wildlife",
+  "slug": "zoo_002_actions",
+  "asset": "canonical/zoo_002_actions.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Wildlife Actions",
+    "de": "Aktionen der Zootiere"
+  },
+  "learningFocus": {
+    "primary": [
+      "action_verbs",
+      "animal_nouns"
+    ],
+    "secondary": [
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "elephant",
+        "en": "elephant",
+        "de": "Elefant"
+      },
+      "action": {
+        "id": "spray_water",
+        "en": "spraying water",
+        "de": "spritzt Wasser"
+      },
+      "notes": "One elephant on the left clearly spraying a visible stream of water from its trunk."
+    },
+    {
+      "subject": {
+        "id": "giraffe",
+        "en": "giraffe",
+        "de": "Giraffe"
+      },
+      "action": {
+        "id": "eat_leaves",
+        "en": "eating leaves",
+        "de": "frisst Blätter"
+      },
+      "notes": "One giraffe near the centre-left clearly reaching leaves with its mouth."
+    },
+    {
+      "subject": {
+        "id": "lion",
+        "en": "lion",
+        "de": "Löwe"
+      },
+      "action": {
+        "id": "walk",
+        "en": "walking",
+        "de": "läuft"
+      },
+      "notes": "One lion near the lower-middle clearly walking in a natural pose."
+    },
+    {
+      "subject": {
+        "id": "penguin",
+        "en": "penguin",
+        "de": "Pinguin"
+      },
+      "action": {
+        "id": "swim",
+        "en": "swimming",
+        "de": "schwimmt"
+      },
+      "notes": "One penguin clearly swimming in the pool with its flippers extended."
+    },
+    {
+      "subject": {
+        "id": "monkey",
+        "en": "monkey",
+        "de": "Affe"
+      },
+      "action": {
+        "id": "climb",
+        "en": "climbing",
+        "de": "klettert"
+      },
+      "notes": "One monkey in the upper-right clearly climbing the wooden structure with hands and feet gripping it."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "elephant",
+        "de": "Elefant"
+      },
+      {
+        "en": "giraffe",
+        "de": "Giraffe"
+      },
+      {
+        "en": "lion",
+        "de": "Löwe"
+      },
+      {
+        "en": "penguin",
+        "de": "Pinguin"
+      },
+      {
+        "en": "monkey",
+        "de": "Affe"
+      },
+      {
+        "en": "water",
+        "de": "Wasser"
+      },
+      {
+        "en": "leaves",
+        "de": "Blätter"
+      },
+      {
+        "en": "pool",
+        "de": "Becken"
+      }
+    ],
+    "verbs": [
+      {
+        "en": "spray",
+        "de": "spritzen"
+      },
+      {
+        "en": "eat",
+        "de": "fressen"
+      },
+      {
+        "en": "walk",
+        "de": "laufen"
+      },
+      {
+        "en": "swim",
+        "de": "schwimmen"
+      },
+      {
+        "en": "climb",
+        "de": "klettern"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The elephant is spraying water.",
+      "The giraffe is eating leaves.",
+      "The lion is walking.",
+      "The penguin is swimming.",
+      "The monkey is climbing."
+    ],
+    "de": [
+      "Der Elefant spritzt Wasser.",
+      "Die Giraffe frisst Blätter.",
+      "Der Löwe läuft.",
+      "Der Pinguin schwimmt.",
+      "Der Affe klettert."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Ask what each animal is doing. Accept the animal name or verb first, then model the full action sentence.",
+      "de": "Fragen, was jedes Tier macht. Zuerst Tiername oder Verb annehmen und danach den vollständigen Handlungssatz vormachen."
+    },
+    "wordsToModel": {
+      "en": [
+        "spraying",
+        "water",
+        "eating",
+        "leaves",
+        "walking",
+        "swimming",
+        "climbing"
+      ],
+      "de": [
+        "spritzt",
+        "Wasser",
+        "frisst",
+        "Blätter",
+        "läuft",
+        "schwimmt",
+        "klettert"
+      ]
+    },
+    "questions": {
+      "en": [
+        "What is the elephant doing?",
+        "What is the giraffe eating?",
+        "Which animal is walking?",
+        "Which animal is swimming?",
+        "What is the monkey doing?"
+      ],
+      "de": [
+        "Was macht der Elefant?",
+        "Was frisst die Giraffe?",
+        "Welches Tier läuft?",
+        "Welches Tier schwimmt?",
+        "Was macht der Affe?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The elephant is...",
+        "The giraffe is...",
+        "The lion is...",
+        "The penguin is...",
+        "The monkey is..."
+      ],
+      "de": [
+        "Der Elefant ...",
+        "Die Giraffe ...",
+        "Der Löwe ...",
+        "Der Pinguin ...",
+        "Der Affe ..."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The elephant is spraying water from its trunk.",
+        "The giraffe is eating green leaves.",
+        "The lion is walking across the grass.",
+        "The penguin is swimming in the pool.",
+        "The monkey is climbing the wooden frame."
+      ],
+      "de": [
+        "Der Elefant spritzt Wasser mit seinem Rüssel.",
+        "Die Giraffe frisst grüne Blätter.",
+        "Der Löwe läuft über das Gras.",
+        "Der Pinguin schwimmt im Becken.",
+        "Der Affe klettert am Holzgerüst."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Elephant water.",
+          "de": "Elefant Wasser."
+        },
+        "adult": {
+          "en": "Yes, the elephant is spraying water.",
+          "de": "Ja, der Elefant spritzt Wasser."
+        }
+      },
+      {
+        "child": {
+          "en": "Monkey climbing.",
+          "de": "Affe klettert."
+        },
+        "adult": {
+          "en": "Yes, the monkey is climbing the wooden frame.",
+          "de": "Ja, der Affe klettert am Holzgerüst."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "oneElephant": true,
+      "oneGiraffe": true,
+      "oneLion": true,
+      "onePenguin": true,
+      "oneMonkey": true,
+      "noOtherAnimals": true,
+      "elephantClearlySprayingWater": true,
+      "giraffeClearlyEatingLeaves": true,
+      "lionClearlyWalking": true,
+      "penguinClearlySwimming": true,
+      "monkeyClearlyClimbing": true,
+      "noPeople": true,
+      "noReadableSigns": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

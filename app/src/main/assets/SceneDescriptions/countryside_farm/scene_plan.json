@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "countryside_farm",
+  "status": "wave_3_complete",
+  "scenes": [
+    {
+      "sceneId": "scene.farm.animal_actions.04",
+      "title": "Farm Scene 4 — Animal Actions Around the Barn",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/farm_004_animal_actions.png",
+      "metadata": "metadata/farm_004_animal_actions.json",
+      "prompt": "prompts/farm_004_animal_actions.md",
+      "brief": "Describe familiar farm animals, what they are doing, and where they are.",
+      "targetExamples": [
+        "The cow is by the barn.",
+        "The pig is in the mud.",
+        "The chickens are pecking the grain.",
+        "The sheep is near the fence."
+      ]
+    },
+    {
+      "sceneId": "scene.farm.transport_places.05",
+      "title": "Farm Scene 5 — Transport, Animals and Places",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/farm_005_transport_and_places.png",
+      "metadata": "metadata/farm_005_transport_and_places.json",
+      "prompt": "prompts/farm_005_transport_and_places.md",
+      "brief": "Combine farm nouns, actions and simple positional language.",
+      "targetExamples": [
+        "The tractor is carrying hay.",
+        "The horse is eating grass.",
+        "The goat is on the rock.",
+        "The duck is in the pond."
+      ]
+    },
+    {
+      "sceneId": "scene.farm.garden_food.06",
+      "title": "Farm Scene 6 — Garden and Growing Food",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/farm_006_garden_food.png",
+      "metadata": "metadata/farm_006_garden_food.json",
+      "prompt": "prompts/farm_006_garden_food.md",
+      "brief": "Talk about garden nouns, food, locations and simple inference.",
+      "targetExamples": [
+        "The carrots are growing in the garden.",
+        "The rabbit is next to the carrots.",
+        "The chicken is near the vegetables.",
+        "The scarecrow is in the garden.",
+        "The apples are on the tree."
+      ]
+    },
+    {
+      "sceneId": "scene.farm.morning_jobs.07",
+      "title": "Farm Scene 7 — Morning Jobs on the Farm",
+      "slug": "farm_007_morning_jobs",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/farm_007_morning_jobs.png",
+      "metadata": "metadata/farm_007_morning_jobs.json",
+      "prompt": "prompts/farm_007_morning_jobs.md",
+      "brief": "Tell a simple farmyard story using several children doing purposeful jobs.",
+      "targetExamples": [
+        "The child is watering the plants.",
+        "The child is collecting eggs.",
+        "The child is feeding the chickens.",
+        "The child is carrying the vegetables.",
+        "The child is sweeping.",
+        "First the child waters the plants, then the child feeds the chickens."
+      ]
+    },
+    {
+      "sceneId": "scene.farm.farmyard_friends.08",
+      "title": "Farm Scene 8 — Farmyard Friends and Counting",
+      "slug": "farm_008_farmyard_friends",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/farm_008_farmyard_friends.png",
+      "metadata": "metadata/farm_008_farmyard_friends.json",
+      "prompt": "prompts/farm_008_farmyard_friends.md",
+      "brief": "Observe familiar farm animals, compare them, and talk about number and size.",
+      "targetExamples": [
+        "The cow is big.",
+        "The horse is brown.",
+        "The pig is pink.",
+        "There are three sheep.",
+        "There are two ducklings.",
+        "There are more sheep than ducklings."
+      ]
+    },
+    {
+      "sceneId": "scene.farm.animal_care.09",
+      "title": "Farm Scene 9 — Looking After the Animals",
+      "slug": "farm_009_animal_care",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/farm_009_animal_care.png",
+      "metadata": "metadata/farm_009_animal_care.json",
+      "prompt": "prompts/farm_009_animal_care.md",
+      "brief": "Talk about what animals need and which farm job matches each need.",
+      "targetExamples": [
+        "The cow needs water.",
+        "The child is carrying water to the cow.",
+        "The child is feeding the chickens.",
+        "The pig is inside the gate.",
+        "The child is picking vegetables."
+      ]
+    },
+    {
+      "sceneId": "scene.farm.features.02",
+      "slug": "farm_002_features",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "animal_nouns",
+        "adjectives",
+        "counting",
+        "comparisons"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Farm animals with clear size, colour, texture and quantity contrasts.",
+      "targetExamples": [
+        "The cow is big.",
+        "The pig is small and pink.",
+        "There are three white sheep.",
+        "There are two little yellow ducklings.",
+        "The cow is bigger than the pig."
+      ]
+    },
+    {
+      "sceneId": "scene.farm.positions.03",
+      "slug": "farm_003_positions",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "spatial_language",
+        "nouns"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Six clear spatial examples around a farmyard: on, behind, next to, under, between and near.",
+      "targetExamples": [
+        "The cat is on the hay bale.",
+        "The pig is behind the fence.",
+        "The horse is next to the barn.",
+        "The chicken is under the shelter.",
+        "The cow is between the fence posts.",
+        "The duck is near the pond."
+      ]
+    },
+    {
+      "sceneId": "scene.farm.tasks.01",
+      "slug": "farm_001_tasks",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "functional_tasks",
+        "verbs",
+        "everyday_nouns"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Five children each showing one purposeful farm task: watering plants, collecting eggs, feeding chickens, carrying vegetables and sweeping.",
+      "targetExamples": [
+        "The child is watering the plants.",
+        "The child is collecting eggs.",
+        "The child is feeding the chickens.",
+        "The child is carrying the vegetables.",
+        "The child is sweeping."
+      ],
+      "knownVisualDeviation": "The approved image contains four chickens rather than the requested three. This does not block the functional-language target because counting chickens is not a teaching objective in this scene."
+    }
+  ]
+}

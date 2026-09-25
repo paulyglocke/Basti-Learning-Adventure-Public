@@ -1,0 +1,64 @@
+{
+  "sceneId": "scene.park.big_small_counting.05",
+  "categoryId": "park_playground",
+  "title": "Park Scene 5 — Big, Small and Counting",
+  "status": "approved",
+  "purpose": "Size, counting and everyday playground-object description.",
+  "asset": "canonical/park_005_big_small_counting.png",
+  "promptFile": "prompts/park_005_big_small_counting.md",
+  "targetLanguage": {
+    "nouns": [
+      "slide",
+      "ball",
+      "scooter",
+      "bucket",
+      "sandbox",
+      "bench",
+      "child"
+    ],
+    "verbs": [
+      "standing",
+      "playing"
+    ],
+    "adjectives": [
+      "big",
+      "small",
+      "tall",
+      "long",
+      "red",
+      "blue",
+      "yellow"
+    ],
+    "sentenceModels": [
+      "The slide is tall.",
+      "The ball is big.",
+      "The scooter is small.",
+      "There are three yellow buckets.",
+      "The bench is long."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Talk about size words, colours and counting at the playground.",
+    "starterPrompts": [
+      "What is big?",
+      "What is small?",
+      "Can you count the buckets?",
+      "Which child is taller?",
+      "What colour is the scooter?"
+    ],
+    "expansionPrompts": [
+      "Which object is the biggest?",
+      "Can you make a sentence with three yellow buckets?"
+    ]
+  },
+  "visualAudit": [
+    "One tall red slide.",
+    "One big red ball.",
+    "One small blue scooter.",
+    "Exactly three yellow buckets in the sandbox.",
+    "One long bench and two children of different sizes."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_2"
+}

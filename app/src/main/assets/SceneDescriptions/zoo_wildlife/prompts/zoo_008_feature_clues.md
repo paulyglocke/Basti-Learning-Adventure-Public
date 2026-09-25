@@ -1,0 +1,1 @@
+Create a polished bright zoo illustration with clear animals that are easy to describe: a tall giraffe, a big grey elephant, a lion with a mane, a striped zebra, a monkey on a tree branch, and a small penguin by the water. No readable text.

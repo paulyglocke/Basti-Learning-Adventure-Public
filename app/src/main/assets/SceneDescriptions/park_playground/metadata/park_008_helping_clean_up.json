@@ -1,0 +1,58 @@
+{
+  "sceneId": "scene.park.helping_clean_up.08",
+  "categoryId": "park_playground",
+  "title": "Park Scene 8 — Helping Clean Up",
+  "status": "approved",
+  "purpose": "Functional social language, helping, tidying and simple cause-and-effect.",
+  "asset": "canonical/park_008_helping_clean_up.png",
+  "promptFile": "prompts/park_008_helping_clean_up.md",
+  "targetLanguage": {
+    "nouns": [
+      "bin",
+      "bottle",
+      "paper",
+      "bag",
+      "bench",
+      "park"
+    ],
+    "verbs": [
+      "picking up",
+      "carrying",
+      "throwing away",
+      "helping",
+      "cleaning"
+    ],
+    "adjectives": [
+      "clean",
+      "dirty",
+      "blue",
+      "green"
+    ],
+    "sentenceModels": [
+      "The children are cleaning the park.",
+      "The child is picking up a bottle.",
+      "The child is carrying rubbish to the bin.",
+      "They are helping."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Use the scene for helping language, what should happen next, and simple functional choices.",
+    "starterPrompts": [
+      "What are the children doing?",
+      "What should go in the bin?",
+      "Who is helping?",
+      "What is on the ground?",
+      "What should happen next?"
+    ],
+    "expansionPrompts": [
+      "Why are they putting the rubbish in the bin?",
+      "Can you tell me the clean-up story from first to last?"
+    ]
+  },
+  "visualAudit": [
+    "Reviewed in Wave 3 Batch 2 automatic pass against the visible teaching targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_2"
+}

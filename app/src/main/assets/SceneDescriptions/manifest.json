@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "assetFamily": "scene_descriptions",
+  "proposedRepoPath": "app/src/main/assets/SceneDescriptions",
+  "categories": [
+    {
+      "id": "ocean_underwater",
+      "display": {
+        "en": "Ocean / underwater",
+        "de": "Ozean / Unterwasserwelt"
+      },
+      "status": "wave_3_complete",
+      "wave2Status": "complete",
+      "wave3Status": "complete"
+    },
+    {
+      "id": "jungle_rainforest",
+      "display": {
+        "en": "Jungle / rainforest",
+        "de": "Dschungel / Regenwald"
+      },
+      "status": "wave_3_complete",
+      "wave2Status": "complete",
+      "wave3Status": "complete"
+    },
+    {
+      "id": "woodland_forest",
+      "display": {
+        "en": "Woodland / forest",
+        "de": "Wald"
+      },
+      "status": "wave_3_complete",
+      "wave2Status": "complete",
+      "wave3Status": "complete"
+    },
+    {
+      "id": "park_playground",
+      "display": {
+        "en": "Park / playground",
+        "de": "Park / Spielplatz"
+      },
+      "status": "wave_3_complete",
+      "wave2Status": "complete",
+      "wave3Status": "complete"
+    },
+    {
+      "id": "sky_flying",
+      "display": {
+        "en": "Sky / flying adventure",
+        "de": "Himmel / Flugabenteuer"
+      },
+      "status": "wave_3_complete",
+      "wave2Status": "complete",
+      "wave3Status": "complete"
+    },
+    {
+      "id": "mountains_alpine",
+      "display": {
+        "en": "Mountains / alpine nature",
+        "de": "Berge / Alpenwelt"
+      },
+      "status": "wave_3_complete",
+      "wave2Status": "complete",
+      "wave3Status": "complete"
+    },
+    {
+      "id": "countryside_farm",
+      "display": {
+        "en": "Countryside / farm",
+        "de": "Land / Bauernhof"
+      },
+      "status": "wave_3_complete",
+      "wave2Status": "complete",
+      "wave3Status": "complete"
+    },
+    {
+      "id": "classroom_school",
+      "display": {
+        "en": "Classroom / school",
+        "de": "Klassenzimmer / Schule"
+      },
+      "status": "wave_3_complete",
+      "wave2Status": "complete",
+      "wave3Status": "complete"
+    },
+    {
+      "id": "zoo_wildlife",
+      "display": {
+        "en": "Zoo / wildlife park",
+        "de": "Zoo / Tierpark"
+      },
+      "status": "wave_3_complete",
+      "wave2Status": "complete",
+      "wave3Status": "complete"
+    }
+  ]
+}

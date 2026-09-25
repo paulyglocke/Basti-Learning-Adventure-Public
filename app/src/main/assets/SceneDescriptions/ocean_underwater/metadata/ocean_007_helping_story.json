@@ -1,0 +1,70 @@
+{
+  "sceneId": "scene.ocean.helping_story.07",
+  "categoryId": "ocean_underwater",
+  "title": "Ocean Scene 7 — Helping at the Reef",
+  "status": "approved",
+  "purpose": "Sequencing, simple inference, and longer who-doing-what descriptions in one connected reef story.",
+  "asset": "canonical/ocean_007_helping_story.png",
+  "promptFile": "prompts/ocean_007_helping_story.md",
+  "targetLanguage": {
+    "nouns": [
+      "turtle",
+      "seaweed",
+      "clownfish",
+      "octopus",
+      "cave",
+      "crab",
+      "shell",
+      "fish",
+      "rock",
+      "coral"
+    ],
+    "verbs": [
+      "bringing",
+      "waiting",
+      "carrying",
+      "following",
+      "peeking",
+      "swimming"
+    ],
+    "adjectives": [
+      "big",
+      "small",
+      "green",
+      "orange",
+      "blue"
+    ],
+    "sentenceModels": [
+      "The turtle is bringing seaweed.",
+      "The clownfish is waiting by the cave.",
+      "The crab is carrying a shell.",
+      "The octopus is peeking out of the cave.",
+      "Two little blue fish are following the turtle."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Talk about what is happening first, what might happen next, and make longer sentences about who is helping at the reef.",
+    "starterPrompts": [
+      "Who is bringing something?",
+      "Who is waiting near the cave?",
+      "What is the crab carrying?",
+      "Which animals are following the turtle?",
+      "What is the octopus doing?"
+    ],
+    "expansionPrompts": [
+      "What might happen next when the turtle reaches the cave?",
+      "Can you make a longer sentence about the clownfish?",
+      "Who is helping and who is waiting?"
+    ]
+  },
+  "visualAudit": [
+    "One large turtle swimming toward the cave with seaweed in its mouth.",
+    "One orange clownfish waiting beside the rocky cave entrance.",
+    "One orange octopus peeking out from the cave.",
+    "One red crab on the sand carrying a single shell.",
+    "Two small blue fish following the turtle."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_1"
+}

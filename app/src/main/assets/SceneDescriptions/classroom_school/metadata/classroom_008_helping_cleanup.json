@@ -1,0 +1,58 @@
+{
+  "sceneId": "scene.classroom.helping_cleanup.08",
+  "categoryId": "classroom_school",
+  "title": "Classroom Scene 8 — Helping and Cleaning Up",
+  "status": "approved",
+  "purpose": "Support social language, helping, tidying and end-of-task routines in a classroom setting.",
+  "asset": "canonical/classroom_008_helping_cleanup.png",
+  "promptFile": "prompts/classroom_008_helping_cleanup.md",
+  "targetLanguage": {
+    "nouns": [
+      "teacher",
+      "picture",
+      "pencils",
+      "backpack",
+      "book",
+      "shelf"
+    ],
+    "verbs": [
+      "giving",
+      "picking up",
+      "packing",
+      "putting away",
+      "helping"
+    ],
+    "adjectives": [
+      "helpful",
+      "tidy",
+      "open",
+      "colourful"
+    ],
+    "sentenceModels": [
+      "The child is giving the picture to the teacher.",
+      "The child is picking up the pencils.",
+      "The child is packing the backpack.",
+      "The child is putting the book on the shelf."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Talk about what to do when something is on the floor, where classroom things belong, and how children can help.",
+    "starterPrompts": [
+      "What is on the floor?",
+      "Who is helping tidy up?",
+      "Where does the book belong?",
+      "What is the child putting into the backpack?",
+      "Who is showing work to the teacher?"
+    ],
+    "expansionPrompts": [
+      "What should happen after the pencils are picked up?",
+      "Can you tell me the tidy-up story from start to finish?"
+    ]
+  },
+  "visualAudit": [
+    "Reviewed in Wave 3 Batch 3 automatic pass against the main teaching targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_3"
+}

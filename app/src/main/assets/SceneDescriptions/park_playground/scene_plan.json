@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "park_playground",
+  "status": "wave_3_batch_2_complete",
+  "scenes": [
+    {
+      "sceneId": "scene.park.social_play.04",
+      "title": "Park Scene 4 — Social Play and Helping",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/park_004_social_play.png",
+      "metadata": "metadata/park_004_social_play.json",
+      "prompt": "prompts/park_004_social_play.md",
+      "primaryFocus": [
+        "social_language",
+        "verbs",
+        "nouns"
+      ],
+      "secondaryFocus": [
+        "storytelling",
+        "sentence_expansion"
+      ],
+      "brief": "Social-play scene with pushing, building together, giving, tidying up and drinking water.",
+      "targetExamples": [
+        "The child is pushing the swing.",
+        "The children are building a sandcastle.",
+        "The child is giving the ball.",
+        "The child is putting the toy away.",
+        "The child is drinking water."
+      ]
+    },
+    {
+      "sceneId": "scene.park.big_small_counting.05",
+      "title": "Park Scene 5 — Big, Small and Counting",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/park_005_big_small_counting.png",
+      "metadata": "metadata/park_005_big_small_counting.json",
+      "prompt": "prompts/park_005_big_small_counting.md",
+      "primaryFocus": [
+        "adjectives",
+        "counting",
+        "comparisons"
+      ],
+      "secondaryFocus": [
+        "nouns",
+        "sentence_expansion"
+      ],
+      "brief": "Playground comparison scene focused on big/small, tall/long, colours and counting.",
+      "targetExamples": [
+        "The slide is tall.",
+        "The ball is big.",
+        "The scooter is small.",
+        "There are three yellow buckets.",
+        "The bench is long."
+      ]
+    },
+    {
+      "sceneId": "scene.park.routines_positions.06",
+      "title": "Park Scene 6 — Playground Routines and Positions",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/park_006_routines_positions.png",
+      "metadata": "metadata/park_006_routines_positions.json",
+      "prompt": "prompts/park_006_routines_positions.md",
+      "primaryFocus": [
+        "spatial_language",
+        "functional_routines"
+      ],
+      "secondaryFocus": [
+        "nouns",
+        "sentence_expansion"
+      ],
+      "brief": "Routine and position scene with helmet, backpack, bottle, ball, cones, scooter and slide.",
+      "targetExamples": [
+        "The child is wearing a helmet.",
+        "The backpack is in the basket.",
+        "The water bottle is under the bench.",
+        "The ball is between the cones.",
+        "The child is behind the slide."
+      ]
+    },
+    {
+      "sceneId": "scene.park.playground_actions.07",
+      "title": "Park Scene 7 — Playground Actions",
+      "slug": "park_007_playground_actions",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/park_007_playground_actions.png",
+      "metadata": "metadata/park_007_playground_actions.json",
+      "prompt": "prompts/park_007_playground_actions.md"
+    },
+    {
+      "sceneId": "scene.park.helping_clean_up.08",
+      "title": "Park Scene 8 — Helping Clean Up",
+      "slug": "park_008_helping_clean_up",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/park_008_helping_clean_up.png",
+      "metadata": "metadata/park_008_helping_clean_up.json",
+      "prompt": "prompts/park_008_helping_clean_up.md"
+    },
+    {
+      "sceneId": "scene.park.turn_taking.09",
+      "title": "Park Scene 9 — Turn-Taking and Waiting",
+      "slug": "park_009_turn_taking",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/park_009_turn_taking.png",
+      "metadata": "metadata/park_009_turn_taking.json",
+      "prompt": "prompts/park_009_turn_taking.md"
+    },
+    {
+      "sceneId": "scene.park.actions.01",
+      "slug": "park_001_actions",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "verbs",
+        "nouns",
+        "everyday_actions"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Five playground children each showing one clear action: sliding, swinging, kicking a ball, riding a scooter and climbing.",
+      "targetExamples": [
+        "The child is sliding.",
+        "The child is swinging.",
+        "The child is kicking the ball.",
+        "The child is riding a scooter.",
+        "The child is climbing."
+      ]
+    },
+    {
+      "sceneId": "scene.park.positions.03",
+      "slug": "park_003_positions",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "spatial_language",
+        "nouns"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Six spatial relationships in a playground scene: under, on, above, behind, next to and near.",
+      "targetExamples": [
+        "The backpack is under the bench.",
+        "The hat is on the bench.",
+        "The kite is above the tree.",
+        "The child is behind the slide.",
+        "The scooter is next to the sandbox.",
+        "The child is near the swing."
+      ]
+    },
+    {
+      "sceneId": "scene.park.tasks.02",
+      "slug": "park_002_tasks",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "functional_tasks",
+        "social_actions",
+        "nouns"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Everyday playground task and social-language scene: giving, sharing, tidying up, using the bin, drinking water.",
+      "targetExamples": [
+        "The child is giving the ball.",
+        "The children are sharing.",
+        "The child is putting the toy away.",
+        "The child is throwing the rubbish in the bin.",
+        "The child is drinking water."
+      ]
+    }
+  ]
+}

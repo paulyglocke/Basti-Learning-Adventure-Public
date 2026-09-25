@@ -1,0 +1,334 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.classroom.routines.02",
+  "categoryId": "classroom_school",
+  "slug": "classroom_002_routines",
+  "asset": "canonical/classroom_002_routines.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Classroom Routines, Listening and Helping",
+    "de": "Klassenraum-Routinen, Zuhören und Helfen"
+  },
+  "learningFocus": {
+    "primary": [
+      "routines",
+      "social_language",
+      "functional_comprehension"
+    ],
+    "secondary": [
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "raising_hand_child",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "raise_hand",
+        "en": "raising a hand",
+        "de": "meldet sich"
+      },
+      "notes": "One seated child on the left clearly raises one hand above head level."
+    },
+    {
+      "subject": {
+        "id": "listening_child",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "listen",
+        "en": "listening to the teacher",
+        "de": "hört der Lehrerin zu"
+      },
+      "notes": "One seated child near the centre-left faces the teacher with calm hands."
+    },
+    {
+      "subject": {
+        "id": "giving_child",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "give_teacher",
+        "en": "giving the paper to the teacher",
+        "de": "gibt der Lehrerin das Blatt"
+      },
+      "object": {
+        "id": "paper",
+        "en": "finished picture / worksheet",
+        "de": "fertiges Bild / Arbeitsblatt"
+      },
+      "notes": "One child clearly hands one finished picture to the same teacher, who is receiving it."
+    },
+    {
+      "subject": {
+        "id": "packing_child",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "pack_bag",
+        "en": "packing the bag",
+        "de": "packt den Schulranzen"
+      },
+      "object": {
+        "id": "book",
+        "en": "book",
+        "de": "Buch"
+      },
+      "notes": "One child near the centre-right clearly places one book into one open backpack."
+    },
+    {
+      "subject": {
+        "id": "ready_child",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "sit_ready",
+        "en": "sitting ready to work",
+        "de": "sitzt arbeitsbereit am Tisch"
+      },
+      "notes": "One child on the right sits properly at a desk with hands calm and a closed pencil case."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "teacher",
+        "de": "Lehrerin"
+      },
+      {
+        "en": "hand",
+        "de": "Hand"
+      },
+      {
+        "en": "paper",
+        "de": "Blatt"
+      },
+      {
+        "en": "book",
+        "de": "Buch"
+      },
+      {
+        "en": "backpack",
+        "de": "Schulranzen"
+      },
+      {
+        "en": "desk",
+        "de": "Tisch"
+      },
+      {
+        "en": "chair",
+        "de": "Stuhl"
+      },
+      {
+        "en": "pencil case",
+        "de": "Federmäppchen"
+      }
+    ],
+    "verbs": [
+      {
+        "en": "raise a hand",
+        "de": "sich melden"
+      },
+      {
+        "en": "listen",
+        "de": "zuhören"
+      },
+      {
+        "en": "give",
+        "de": "geben"
+      },
+      {
+        "en": "pack",
+        "de": "packen"
+      },
+      {
+        "en": "sit",
+        "de": "sitzen"
+      }
+    ],
+    "functionalLanguage": [
+      {
+        "en": "I have finished.",
+        "de": "Ich bin fertig."
+      },
+      {
+        "en": "Can I show you?",
+        "de": "Kann ich es dir zeigen?"
+      },
+      {
+        "en": "I am listening.",
+        "de": "Ich höre zu."
+      },
+      {
+        "en": "I am ready.",
+        "de": "Ich bin bereit."
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The child is raising a hand.",
+      "The child is listening to the teacher.",
+      "The child is giving the paper to the teacher.",
+      "The child is packing the bag.",
+      "The child is sitting at the desk.",
+      "The child is ready to work."
+    ],
+    "de": [
+      "Das Kind meldet sich.",
+      "Das Kind hört der Lehrerin zu.",
+      "Das Kind gibt der Lehrerin das Blatt.",
+      "Das Kind packt den Schulranzen.",
+      "Das Kind sitzt am Tisch.",
+      "Das Kind ist bereit zu arbeiten."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Connect each visible routine to language Basti can use at school. Accept short descriptions first, then model the useful full sentence or classroom phrase.",
+      "de": "Jede sichtbare Routine mit Sprache verbinden, die Basti in der Schule benutzen kann. Kurze Beschreibungen zuerst annehmen und dann den nützlichen ganzen Satz oder Klassenzimmer-Ausdruck vormachen."
+    },
+    "wordsToModel": {
+      "en": [
+        "raise your hand",
+        "listen",
+        "teacher",
+        "give",
+        "paper",
+        "pack",
+        "book",
+        "backpack",
+        "sit",
+        "ready"
+      ],
+      "de": [
+        "melden",
+        "zuhören",
+        "Lehrerin",
+        "geben",
+        "Blatt",
+        "packen",
+        "Buch",
+        "Schulranzen",
+        "sitzen",
+        "bereit"
+      ]
+    },
+    "questions": {
+      "en": [
+        "Who is raising a hand?",
+        "Who is listening to the teacher?",
+        "What is the child giving to the teacher?",
+        "What is going into the backpack?",
+        "Which child is sitting ready to work?",
+        "What could you say when you are finished?",
+        "What could you say when you are ready?"
+      ],
+      "de": [
+        "Wer meldet sich?",
+        "Wer hört der Lehrerin zu?",
+        "Was gibt das Kind der Lehrerin?",
+        "Was kommt in den Schulranzen?",
+        "Welches Kind sitzt arbeitsbereit am Tisch?",
+        "Was kannst du sagen, wenn du fertig bist?",
+        "Was kannst du sagen, wenn du bereit bist?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The child is raising...",
+        "The child is listening...",
+        "The child is giving...",
+        "The child is packing...",
+        "The child is ready..."
+      ],
+      "de": [
+        "Das Kind meldet...",
+        "Das Kind hört...",
+        "Das Kind gibt...",
+        "Das Kind packt...",
+        "Das Kind ist bereit..."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The child is raising a hand to answer.",
+        "The child is listening to the teacher.",
+        "The child is giving the finished picture to the teacher.",
+        "The child is putting the book into the backpack.",
+        "The child is sitting calmly and is ready to work."
+      ],
+      "de": [
+        "Das Kind meldet sich, um zu antworten.",
+        "Das Kind hört der Lehrerin zu.",
+        "Das Kind gibt der Lehrerin das fertige Bild.",
+        "Das Kind legt das Buch in den Schulranzen.",
+        "Das Kind sitzt ruhig und ist bereit zu arbeiten."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Hand up.",
+          "de": "Hand hoch."
+        },
+        "adult": {
+          "en": "Yes, the child is raising a hand.",
+          "de": "Ja, das Kind meldet sich."
+        }
+      },
+      {
+        "child": {
+          "en": "Book bag.",
+          "de": "Buch Tasche."
+        },
+        "adult": {
+          "en": "Yes, the child is putting the book into the backpack.",
+          "de": "Ja, das Kind legt das Buch in den Schulranzen."
+        }
+      }
+    ],
+    "functionalFollowUps": {
+      "en": [
+        "What should you do when you want to answer?",
+        "What should you do when the teacher is talking?",
+        "What can you say when you give your work to the teacher?",
+        "What do you put in your backpack before going home?",
+        "How do you show that you are ready to start?"
+      ],
+      "de": [
+        "Was machst du, wenn du antworten möchtest?",
+        "Was machst du, wenn die Lehrerin spricht?",
+        "Was kannst du sagen, wenn du deine Arbeit abgibst?",
+        "Was packst du vor dem Nachhausegehen in deinen Schulranzen?",
+        "Wie zeigst du, dass du bereit bist anzufangen?"
+      ]
+    }
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "fiveFocalChildren": true,
+      "oneTeacher": true,
+      "raisingHandClear": true,
+      "listeningClear": true,
+      "givingPaperClear": true,
+      "sameTeacherUsedForListeningAndGiving": true,
+      "packingBagClear": true,
+      "oneBackpack": true,
+      "oneBookGoingIntoBackpack": true,
+      "sittingReadyClear": true,
+      "noExtraPeople": true,
+      "noReadableText": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

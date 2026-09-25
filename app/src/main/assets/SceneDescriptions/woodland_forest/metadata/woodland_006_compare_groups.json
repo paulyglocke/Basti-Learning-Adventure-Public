@@ -1,0 +1,63 @@
+{
+  "sceneId": "scene.woodland.compare_groups.06",
+  "categoryId": "woodland_forest",
+  "title": "Woodland Scene 6 — Compare and Count",
+  "status": "approved",
+  "purpose": "Adjectives, visible features and counting a small group.",
+  "asset": "canonical/woodland_006_compare_groups.png",
+  "promptFile": "prompts/woodland_006_compare_groups.md",
+  "targetLanguage": {
+    "nouns": [
+      "deer",
+      "rabbit",
+      "fox",
+      "hedgehog",
+      "owl",
+      "squirrels"
+    ],
+    "verbs": [
+      "standing",
+      "sitting",
+      "perching"
+    ],
+    "adjectives": [
+      "big",
+      "small",
+      "three",
+      "fluffy tail",
+      "long ears",
+      "big eyes"
+    ],
+    "sentenceModels": [
+      "The deer is big.",
+      "The rabbit has long ears.",
+      "The fox has a fluffy tail.",
+      "The owl has big eyes.",
+      "There are three squirrels."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Use the scene for describing features and counting.",
+    "starterPrompts": [
+      "Which animal is the biggest?",
+      "Which animal has long ears?",
+      "Which animal has a fluffy tail?",
+      "How many squirrels can you see?",
+      "Who has big eyes?"
+    ],
+    "expansionPrompts": [
+      "Compare the deer and the rabbit.",
+      "Tell me two things about the fox."
+    ]
+  },
+  "visualAudit": [
+    "Large deer in the centre-left.",
+    "Small rabbit with long ears in the lower left.",
+    "Fox with a big fluffy tail on the right.",
+    "Owl with big eyes on a branch.",
+    "Exactly three squirrels grouped together."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_1"
+}

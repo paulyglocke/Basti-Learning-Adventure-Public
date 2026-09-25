@@ -1,0 +1,57 @@
+{
+  "sceneId": "scene.sky.flying_directions.08",
+  "categoryId": "sky_flying",
+  "title": "Sky Scene 8 — Flying in Different Directions",
+  "status": "approved",
+  "purpose": "Direction words, movement descriptions and multi-clue identification.",
+  "asset": "canonical/sky_008_flying_directions.png",
+  "promptFile": "prompts/sky_008_flying_directions.md",
+  "targetLanguage": {
+    "nouns": [
+      "balloon",
+      "helicopter",
+      "airplane",
+      "eagle",
+      "mountains",
+      "lake"
+    ],
+    "verbs": [
+      "flying",
+      "floating",
+      "gliding"
+    ],
+    "adjectives": [
+      "high",
+      "low",
+      "red",
+      "blue",
+      "big"
+    ],
+    "sentenceModels": [
+      "The balloon is floating above the lake.",
+      "The helicopter is flying on the right.",
+      "The airplane is below the helicopter.",
+      "The eagle is gliding near the balloon."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Ask where each flying subject is and combine location with movement.",
+    "starterPrompts": [
+      "Where is the balloon?",
+      "Which thing is highest?",
+      "What is flying on the right?",
+      "Where is the airplane?",
+      "Which animal is flying?"
+    ],
+    "expansionPrompts": [
+      "First point to the balloon, then point to the airplane.",
+      "Find the animal that is flying near the balloon."
+    ]
+  },
+  "visualAudit": [
+    "Reviewed in Wave 3 Batch 2 automatic pass against the visible teaching targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_2"
+}

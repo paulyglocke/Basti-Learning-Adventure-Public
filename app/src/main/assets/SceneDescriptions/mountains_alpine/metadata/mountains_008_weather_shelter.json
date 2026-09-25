@@ -1,0 +1,57 @@
+{
+  "sceneId": "scene.mountains.weather_shelter.08",
+  "categoryId": "mountains_alpine",
+  "title": "Mountains Scene 8 — Weather and Shelter",
+  "status": "approved",
+  "purpose": "Weather changes, needs and simple cause/effect language.",
+  "asset": "canonical/mountains_008_weather_shelter.png",
+  "promptFile": "prompts/mountains_008_weather_shelter.md",
+  "targetLanguage": {
+    "nouns": [
+      "sun",
+      "cloud",
+      "snow",
+      "hut",
+      "mountains",
+      "backpack"
+    ],
+    "verbs": [
+      "resting",
+      "waiting",
+      "sheltering"
+    ],
+    "adjectives": [
+      "sunny",
+      "cloudy",
+      "cold",
+      "warm",
+      "snowy"
+    ],
+    "sentenceModels": [
+      "The weather is changing.",
+      "The hut gives shelter.",
+      "It is cold near the snow.",
+      "It is sunny on the left."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Talk about what people or animals need when mountain weather changes.",
+    "starterPrompts": [
+      "Where is it sunny?",
+      "Where is it snowy?",
+      "What gives shelter?",
+      "Which part looks cold?",
+      "What might you need in cold weather?"
+    ],
+    "expansionPrompts": [
+      "Why would someone go to the hut?",
+      "What happens after the sunny weather changes?"
+    ]
+  },
+  "visualAudit": [
+    "Reviewed in Wave 3 Batch 2 automatic pass against the visible teaching targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_2"
+}

@@ -1,0 +1,63 @@
+{
+  "sceneId": "scene.mountains.big_small_groups.05",
+  "categoryId": "mountains_alpine",
+  "title": "Mountains Scene 5 — Big, Small and Groups",
+  "status": "approved",
+  "purpose": "Mountain-animal features, size, colour and counting.",
+  "asset": "canonical/mountains_005_big_small_groups.png",
+  "promptFile": "prompts/mountains_005_big_small_groups.md",
+  "targetLanguage": {
+    "nouns": [
+      "goat",
+      "horns",
+      "sheep",
+      "marmots",
+      "rabbit",
+      "eagle",
+      "flowers"
+    ],
+    "verbs": [
+      "standing",
+      "sitting",
+      "perching"
+    ],
+    "adjectives": [
+      "big",
+      "small",
+      "white",
+      "brown",
+      "fluffy"
+    ],
+    "sentenceModels": [
+      "The goat is big.",
+      "The sheep is fluffy.",
+      "There are three marmots.",
+      "The rabbit is small and white.",
+      "The eagle is on the rock."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Talk about features, big and small animals, and counting in the mountains.",
+    "starterPrompts": [
+      "Who is big?",
+      "Who is fluffy?",
+      "Can you count the marmots?",
+      "What colour is the rabbit?",
+      "Where is the eagle?"
+    ],
+    "expansionPrompts": [
+      "Which animal has horns?",
+      "Which animals are small?"
+    ]
+  },
+  "visualAudit": [
+    "One big mountain goat with horns.",
+    "One fluffy white sheep.",
+    "Exactly three marmots.",
+    "One small white rabbit.",
+    "One eagle on a rock and one flower patch."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_2"
+}

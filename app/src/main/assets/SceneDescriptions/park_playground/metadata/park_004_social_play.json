@@ -1,0 +1,67 @@
+{
+  "sceneId": "scene.park.social_play.04",
+  "categoryId": "park_playground",
+  "title": "Park Scene 4 — Social Play and Helping",
+  "status": "approved",
+  "purpose": "Social play, helping, sharing and linked playground routines.",
+  "asset": "canonical/park_004_social_play.png",
+  "promptFile": "prompts/park_004_social_play.md",
+  "targetLanguage": {
+    "nouns": [
+      "swing",
+      "sandbox",
+      "sandcastle",
+      "bucket",
+      "spade",
+      "ball",
+      "basket",
+      "toy truck",
+      "water bottle"
+    ],
+    "verbs": [
+      "pushing",
+      "swinging",
+      "building",
+      "giving",
+      "putting away",
+      "drinking"
+    ],
+    "adjectives": [
+      "red",
+      "blue",
+      "happy",
+      "busy"
+    ],
+    "sentenceModels": [
+      "The child is pushing the swing.",
+      "The children are building a sandcastle.",
+      "The child is giving the ball.",
+      "The child is putting the toy away.",
+      "The child is drinking water."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Talk about social routines, helping and what each child is doing.",
+    "starterPrompts": [
+      "Who is pushing?",
+      "Who is drinking?",
+      "Who is giving the ball?",
+      "What are the children building?",
+      "Who is tidying up?"
+    ],
+    "expansionPrompts": [
+      "What might happen next on the swing?",
+      "Can you tell the story from left to right?"
+    ]
+  },
+  "visualAudit": [
+    "One child pushing one child on a swing.",
+    "Two children building one sandcastle together in the sandbox.",
+    "One child giving one red ball to another child.",
+    "One child putting one toy truck into one blue basket.",
+    "One child drinking from one water bottle."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_2"
+}

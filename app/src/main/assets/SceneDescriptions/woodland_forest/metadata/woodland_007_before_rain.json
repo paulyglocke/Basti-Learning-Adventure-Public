@@ -1,0 +1,70 @@
+{
+  "sceneId": "scene.woodland.before_rain.07",
+  "categoryId": "woodland_forest",
+  "title": "Woodland Scene 7 — Before the Rain",
+  "status": "approved",
+  "purpose": "Weather-linked sequencing and discussion about what animals do before the rain comes.",
+  "asset": "canonical/woodland_007_before_rain.png",
+  "promptFile": "prompts/woodland_007_before_rain.md",
+  "targetLanguage": {
+    "nouns": [
+      "squirrel",
+      "acorns",
+      "tree hole",
+      "deer",
+      "rabbit",
+      "burrow",
+      "fox",
+      "bush",
+      "owl",
+      "clouds",
+      "sun"
+    ],
+    "verbs": [
+      "carrying",
+      "looking",
+      "running",
+      "hiding",
+      "waiting"
+    ],
+    "adjectives": [
+      "sunny",
+      "dark",
+      "small",
+      "brown",
+      "grey"
+    ],
+    "sentenceModels": [
+      "The squirrel is carrying acorns to the tree hole.",
+      "The deer is looking at the sky.",
+      "The rabbit is running to the burrow.",
+      "The fox is going under the bush.",
+      "The owl is waiting on the branch."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Talk about changing weather and what each animal might do before the rain starts.",
+    "starterPrompts": [
+      "What is the squirrel carrying?",
+      "Why is the rabbit going to the burrow?",
+      "What is the deer looking at?",
+      "Where is the fox going?",
+      "What can you see in the sky?"
+    ],
+    "expansionPrompts": [
+      "What might happen next when the rain comes?",
+      "Which animals are getting ready?",
+      "Can you tell the story from left to right?"
+    ]
+  },
+  "visualAudit": [
+    "One squirrel carrying acorns to a tree hole on the left.",
+    "One deer standing in the middle looking up at the sky.",
+    "One rabbit hopping toward a burrow.",
+    "One fox moving under a bush on the right.",
+    "One owl on a branch with sunny sky on the left and dark clouds on the right."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_1"
+}

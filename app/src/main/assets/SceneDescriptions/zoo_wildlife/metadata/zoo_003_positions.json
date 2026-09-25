@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.zoo.positions.03",
+  "categoryId": "zoo_wildlife",
+  "slug": "zoo_003_positions",
+  "asset": "canonical/zoo_003_positions.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Around the Wildlife Park",
+    "de": "Rund um den Wildpark"
+  },
+  "learningFocus": {
+    "primary": [
+      "spatial_language",
+      "prepositions",
+      "animal_nouns"
+    ],
+    "secondary": [
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "monkey",
+        "en": "monkey",
+        "de": "Affe"
+      },
+      "relation": {
+        "id": "on",
+        "en": "on the branch",
+        "de": "auf dem Ast"
+      },
+      "notes": "One brown monkey clearly sitting on a thick horizontal branch in the upper-left."
+    },
+    {
+      "subject": {
+        "id": "penguin",
+        "en": "penguin",
+        "de": "Pinguin"
+      },
+      "relation": {
+        "id": "near",
+        "en": "near the pool",
+        "de": "nahe beim Becken"
+      },
+      "notes": "One black-and-white penguin standing close to the pool, but not in it."
+    },
+    {
+      "subject": {
+        "id": "giraffe",
+        "en": "giraffe",
+        "de": "Giraffe"
+      },
+      "relation": {
+        "id": "behind",
+        "en": "behind the tree",
+        "de": "hinter dem Baum"
+      },
+      "notes": "One giraffe partly hidden by a large tree trunk, with its head and long neck clearly visible."
+    },
+    {
+      "subject": {
+        "id": "elephant",
+        "en": "elephant",
+        "de": "Elefant"
+      },
+      "relation": {
+        "id": "next_to",
+        "en": "next to the rock",
+        "de": "neben dem Felsen"
+      },
+      "notes": "One grey elephant clearly next to a large rock and fully visible."
+    },
+    {
+      "subject": {
+        "id": "lion",
+        "en": "lion",
+        "de": "Löwe"
+      },
+      "relation": {
+        "id": "under",
+        "en": "under the shelter",
+        "de": "unter dem Unterstand"
+      },
+      "notes": "One lion clearly lying under a simple wooden shelter with the roof extending above it."
+    },
+    {
+      "subject": {
+        "id": "zebra",
+        "en": "zebra",
+        "de": "Zebra"
+      },
+      "relation": {
+        "id": "between",
+        "en": "between the posts",
+        "de": "zwischen den Pfosten"
+      },
+      "notes": "One zebra clearly positioned between two short wooden posts."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "monkey",
+        "de": "Affe"
+      },
+      {
+        "en": "branch",
+        "de": "Ast"
+      },
+      {
+        "en": "penguin",
+        "de": "Pinguin"
+      },
+      {
+        "en": "pool",
+        "de": "Becken"
+      },
+      {
+        "en": "giraffe",
+        "de": "Giraffe"
+      },
+      {
+        "en": "tree",
+        "de": "Baum"
+      },
+      {
+        "en": "elephant",
+        "de": "Elefant"
+      },
+      {
+        "en": "rock",
+        "de": "Felsen"
+      },
+      {
+        "en": "lion",
+        "de": "Löwe"
+      },
+      {
+        "en": "shelter",
+        "de": "Unterstand"
+      },
+      {
+        "en": "zebra",
+        "de": "Zebra"
+      },
+      {
+        "en": "posts",
+        "de": "Pfosten"
+      }
+    ],
+    "spatialLanguage": [
+      {
+        "en": "on",
+        "de": "auf"
+      },
+      {
+        "en": "near",
+        "de": "nahe bei"
+      },
+      {
+        "en": "behind",
+        "de": "hinter"
+      },
+      {
+        "en": "next to",
+        "de": "neben"
+      },
+      {
+        "en": "under",
+        "de": "unter"
+      },
+      {
+        "en": "between",
+        "de": "zwischen"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The monkey is on the branch.",
+      "The penguin is near the pool.",
+      "The giraffe is behind the tree.",
+      "The elephant is next to the rock.",
+      "The lion is under the shelter.",
+      "The zebra is between the posts."
+    ],
+    "de": [
+      "Der Affe ist auf dem Ast.",
+      "Der Pinguin ist nahe beim Becken.",
+      "Die Giraffe ist hinter dem Baum.",
+      "Der Elefant ist neben dem Felsen.",
+      "Der Löwe ist unter dem Unterstand.",
+      "Das Zebra ist zwischen den Pfosten."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Ask where each animal is. Accept a short spatial word first, then model the full sentence.",
+      "de": "Fragen, wo jedes Tier ist. Zuerst eine kurze Ortsangabe annehmen und danach den vollständigen Satz vormachen."
+    },
+    "wordsToModel": {
+      "en": [
+        "on",
+        "near",
+        "behind",
+        "next to",
+        "under",
+        "between",
+        "monkey",
+        "branch",
+        "penguin",
+        "pool",
+        "giraffe",
+        "tree",
+        "elephant",
+        "rock",
+        "lion",
+        "shelter",
+        "zebra",
+        "posts"
+      ],
+      "de": [
+        "auf",
+        "nahe bei",
+        "hinter",
+        "neben",
+        "unter",
+        "zwischen",
+        "Affe",
+        "Ast",
+        "Pinguin",
+        "Becken",
+        "Giraffe",
+        "Baum",
+        "Elefant",
+        "Felsen",
+        "Löwe",
+        "Unterstand",
+        "Zebra",
+        "Pfosten"
+      ]
+    },
+    "questions": {
+      "en": [
+        "Where is the monkey?",
+        "What is near the pool?",
+        "Where is the giraffe?",
+        "What is next to the rock?",
+        "Where is the lion?",
+        "What is between the posts?"
+      ],
+      "de": [
+        "Wo ist der Affe?",
+        "Was ist nahe beim Becken?",
+        "Wo ist die Giraffe?",
+        "Was ist neben dem Felsen?",
+        "Wo ist der Löwe?",
+        "Was ist zwischen den Pfosten?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The ___ is on...",
+        "The ___ is near...",
+        "The ___ is behind...",
+        "The ___ is next to...",
+        "The ___ is under...",
+        "The ___ is between..."
+      ],
+      "de": [
+        "Der/Die/Das ___ ist auf...",
+        "Der/Die/Das ___ ist nahe bei...",
+        "Der/Die/Das ___ ist hinter...",
+        "Der/Die/Das ___ ist neben...",
+        "Der/Die/Das ___ ist unter...",
+        "Der/Die/Das ___ ist zwischen..."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The brown monkey is on the branch.",
+        "The penguin is near the pool.",
+        "The tall giraffe is behind the tree.",
+        "The grey elephant is next to the rock.",
+        "The lion is under the wooden shelter.",
+        "The striped zebra is between the two posts."
+      ],
+      "de": [
+        "Der braune Affe ist auf dem Ast.",
+        "Der Pinguin ist nahe beim Becken.",
+        "Die große Giraffe ist hinter dem Baum.",
+        "Der graue Elefant ist neben dem Felsen.",
+        "Der Löwe ist unter dem Holzunterstand.",
+        "Das gestreifte Zebra ist zwischen den zwei Pfosten."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Monkey on branch.",
+          "de": "Affe auf Ast."
+        },
+        "adult": {
+          "en": "Yes, the monkey is on the branch.",
+          "de": "Ja, der Affe ist auf dem Ast."
+        }
+      },
+      {
+        "child": {
+          "en": "Zebra between.",
+          "de": "Zebra zwischen."
+        },
+        "adult": {
+          "en": "Yes, the zebra is between the two posts.",
+          "de": "Ja, das Zebra ist zwischen den zwei Pfosten."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "oneMonkey": true,
+      "onePenguin": true,
+      "oneGiraffe": true,
+      "oneElephant": true,
+      "oneLion": true,
+      "oneZebra": true,
+      "noOtherAnimals": true,
+      "monkeyClearlyOnBranch": true,
+      "penguinClearlyNearPool": true,
+      "giraffeClearlyBehindTree": true,
+      "elephantClearlyNextToRock": true,
+      "lionClearlyUnderShelter": true,
+      "zebraClearlyBetweenPosts": true,
+      "noPeople": true,
+      "noReadableSigns": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

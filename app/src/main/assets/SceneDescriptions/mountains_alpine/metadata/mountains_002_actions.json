@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.mountains.actions.02",
+  "categoryId": "mountains_alpine",
+  "slug": "mountains_002_actions",
+  "asset": "canonical/mountains_002_actions.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Alpine Actions",
+    "de": "Aktionen in den Bergen"
+  },
+  "learningFocus": {
+    "primary": [
+      "verbs",
+      "nouns"
+    ],
+    "secondary": [
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "goat",
+        "en": "mountain goat",
+        "de": "Bergziege"
+      },
+      "action": {
+        "id": "climb",
+        "en": "climbing",
+        "de": "klettert"
+      },
+      "object": {
+        "id": "rock",
+        "en": "rock",
+        "de": "Felsen"
+      },
+      "notes": "One mountain goat on the left clearly climbing onto a rock, with one front hoof visibly higher."
+    },
+    {
+      "subject": {
+        "id": "eagle",
+        "en": "eagle",
+        "de": "Adler"
+      },
+      "action": {
+        "id": "fly",
+        "en": "flying",
+        "de": "fliegt"
+      },
+      "notes": "One eagle near the upper-middle clearly flying with both wings extended."
+    },
+    {
+      "subject": {
+        "id": "marmot",
+        "en": "marmot",
+        "de": "Murmeltier"
+      },
+      "action": {
+        "id": "dig",
+        "en": "digging",
+        "de": "gräbt"
+      },
+      "object": {
+        "id": "burrow",
+        "en": "burrow",
+        "de": "Bau"
+      },
+      "notes": "One marmot near the lower-middle clearly digging at a visible burrow opening."
+    },
+    {
+      "subject": {
+        "id": "rabbit",
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      "action": {
+        "id": "hop",
+        "en": "hopping",
+        "de": "hüpft"
+      },
+      "notes": "One white rabbit near the lower-right clearly hopping in an airborne pose."
+    },
+    {
+      "subject": {
+        "id": "sheep",
+        "en": "sheep",
+        "de": "Schaf"
+      },
+      "action": {
+        "id": "eat_grass",
+        "en": "eating grass",
+        "de": "frisst Gras"
+      },
+      "object": {
+        "id": "grass",
+        "en": "grass",
+        "de": "Gras"
+      },
+      "notes": "One sheep near the right side clearly eating grass with its head lowered."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "mountain goat",
+        "de": "Bergziege"
+      },
+      {
+        "en": "eagle",
+        "de": "Adler"
+      },
+      {
+        "en": "marmot",
+        "de": "Murmeltier"
+      },
+      {
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      {
+        "en": "sheep",
+        "de": "Schaf"
+      },
+      {
+        "en": "rock",
+        "de": "Felsen"
+      },
+      {
+        "en": "burrow",
+        "de": "Bau"
+      },
+      {
+        "en": "grass",
+        "de": "Gras"
+      },
+      {
+        "en": "flowers",
+        "de": "Blumen"
+      },
+      {
+        "en": "mountains",
+        "de": "Berge"
+      }
+    ],
+    "verbs": [
+      {
+        "en": "climb",
+        "de": "klettern"
+      },
+      {
+        "en": "fly",
+        "de": "fliegen"
+      },
+      {
+        "en": "dig",
+        "de": "graben"
+      },
+      {
+        "en": "hop",
+        "de": "hüpfen"
+      },
+      {
+        "en": "eat",
+        "de": "essen / fressen"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The goat is climbing.",
+      "The eagle is flying.",
+      "The marmot is digging.",
+      "The rabbit is hopping.",
+      "The sheep is eating grass."
+    ],
+    "de": [
+      "Die Ziege klettert.",
+      "Der Adler fliegt.",
+      "Das Murmeltier gräbt.",
+      "Das Kaninchen hüpft.",
+      "Das Schaf frisst Gras."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Help Basti name the animal first, then the action. After that, expand to a full sentence with one extra detail if helpful.",
+      "de": "Basti soll zuerst das Tier und dann die Handlung benennen. Danach kann die Antwort bei Bedarf mit einem zusätzlichen Detail zu einem ganzen Satz erweitert werden."
+    },
+    "wordsToModel": {
+      "en": [
+        "goat",
+        "eagle",
+        "marmot",
+        "rabbit",
+        "sheep",
+        "climbing",
+        "flying",
+        "digging",
+        "hopping",
+        "eating grass"
+      ],
+      "de": [
+        "Ziege",
+        "Adler",
+        "Murmeltier",
+        "Kaninchen",
+        "Schaf",
+        "klettert",
+        "fliegt",
+        "gräbt",
+        "hüpft",
+        "frisst Gras"
+      ]
+    },
+    "questions": {
+      "en": [
+        "What is the goat doing?",
+        "Which animal is flying?",
+        "What is the marmot doing at the burrow?",
+        "Which animal is hopping?",
+        "What is the sheep doing with the grass?"
+      ],
+      "de": [
+        "Was macht die Ziege?",
+        "Welches Tier fliegt?",
+        "Was macht das Murmeltier am Bau?",
+        "Welches Tier hüpft?",
+        "Was macht das Schaf mit dem Gras?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The goat is...",
+        "The eagle is...",
+        "The marmot is...",
+        "The rabbit is...",
+        "The sheep is..."
+      ],
+      "de": [
+        "Die Ziege ...",
+        "Der Adler ...",
+        "Das Murmeltier ...",
+        "Das Kaninchen ...",
+        "Das Schaf ..."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The goat is climbing onto the rock.",
+        "The eagle is flying in the sky.",
+        "The marmot is digging at the burrow.",
+        "The rabbit is hopping across the grass.",
+        "The sheep is eating grass."
+      ],
+      "de": [
+        "Die Ziege klettert auf den Felsen.",
+        "Der Adler fliegt am Himmel.",
+        "Das Murmeltier gräbt am Bau.",
+        "Das Kaninchen hüpft über das Gras.",
+        "Das Schaf frisst Gras."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Goat climbing.",
+          "de": "Ziege klettert."
+        },
+        "adult": {
+          "en": "Yes, the goat is climbing onto the rock.",
+          "de": "Ja, die Ziege klettert auf den Felsen."
+        }
+      },
+      {
+        "child": {
+          "en": "Rabbit.",
+          "de": "Kaninchen."
+        },
+        "adult": {
+          "en": "Yes, the rabbit is hopping.",
+          "de": "Ja, das Kaninchen hüpft."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "oneGoat": true,
+      "oneEagle": true,
+      "oneMarmot": true,
+      "oneRabbit": true,
+      "oneSheep": true,
+      "goatClearlyClimbing": true,
+      "eagleClearlyFlying": true,
+      "marmotClearlyDigging": true,
+      "rabbitClearlyHopping": true,
+      "sheepClearlyEatingGrass": true,
+      "noOtherAnimals": true,
+      "noTextOrUI": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

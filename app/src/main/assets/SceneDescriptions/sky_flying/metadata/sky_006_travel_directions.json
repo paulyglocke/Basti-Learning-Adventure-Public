@@ -1,0 +1,63 @@
+{
+  "sceneId": "scene.sky.travel_directions.06",
+  "categoryId": "sky_flying",
+  "title": "Sky Scene 6 — Travelling Through the Sky",
+  "status": "approved",
+  "purpose": "Travelling movement, direction language and linked sky description.",
+  "asset": "canonical/sky_006_travel_directions.png",
+  "promptFile": "prompts/sky_006_travel_directions.md",
+  "targetLanguage": {
+    "nouns": [
+      "airplane",
+      "helicopter",
+      "balloon",
+      "birds",
+      "kite",
+      "sun",
+      "rainbow",
+      "mountains"
+    ],
+    "verbs": [
+      "flying",
+      "floating",
+      "gliding"
+    ],
+    "adjectives": [
+      "high",
+      "low",
+      "colourful",
+      "bright"
+    ],
+    "sentenceModels": [
+      "The airplane is flying across the sky.",
+      "The helicopter is flying on the right.",
+      "The balloon is floating in the middle.",
+      "The birds are flying together.",
+      "The kite is near the rainbow."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Talk about where things are moving in the sky and describe the whole scene.",
+    "starterPrompts": [
+      "What is flying on the left?",
+      "What is flying on the right?",
+      "What is in the middle?",
+      "Where is the kite?",
+      "How many birds can you see?"
+    ],
+    "expansionPrompts": [
+      "Can you tell the story from left to right?",
+      "Which object looks highest?"
+    ]
+  },
+  "visualAudit": [
+    "One red airplane flying across the upper left.",
+    "One blue helicopter on the upper right.",
+    "One colourful balloon in the middle.",
+    "Exactly three birds together.",
+    "One kite near a rainbow and sun."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_2"
+}

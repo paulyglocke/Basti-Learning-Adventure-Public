@@ -1,0 +1,72 @@
+{
+  "sceneId": "scene.ocean.story_actions.04",
+  "categoryId": "ocean_underwater",
+  "title": "Ocean Scene 4 — Reef Story Actions",
+  "status": "approved",
+  "purpose": "Longer sentences and linked observations in one shared reef scene.",
+  "asset": "canonical/ocean_004_story_actions.png",
+  "promptFile": "prompts/ocean_004_story_actions.md",
+  "targetLanguage": {
+    "nouns": [
+      "turtle",
+      "octopus",
+      "hermit crab",
+      "shell",
+      "starfish",
+      "seahorse",
+      "fish",
+      "treasure chest",
+      "seaweed",
+      "rock"
+    ],
+    "verbs": [
+      "eating",
+      "swimming",
+      "opening",
+      "looking",
+      "choosing",
+      "watching"
+    ],
+    "adjectives": [
+      "big",
+      "small",
+      "orange",
+      "purple",
+      "green",
+      "open"
+    ],
+    "sentenceModels": [
+      "The turtle is eating seaweed.",
+      "The octopus is opening the treasure chest.",
+      "The hermit crab is looking at the shells.",
+      "The starfish is on the rock.",
+      "The seahorse is next to the coral."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Encourage Basti to make two-part and three-part sentences about who is doing what and where.",
+    "starterPrompts": [
+      "What can you see first?",
+      "Who is doing something?",
+      "Can you tell me where the starfish is?",
+      "Which animal is near the treasure chest?",
+      "Can you make a longer sentence?"
+    ],
+    "expansionPrompts": [
+      "Tell me two things about the turtle.",
+      "What is the octopus doing?",
+      "Which shells are big and small?",
+      "What might the hermit crab choose next?"
+    ]
+  },
+  "visualAudit": [
+    "One turtle eating seaweed in the centre.",
+    "One octopus beside an open treasure chest on the right.",
+    "One hermit crab near multiple shells on the lower left.",
+    "Two fish swimming together and one seahorse watching.",
+    "Readable, uncluttered story composition."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_1"
+}

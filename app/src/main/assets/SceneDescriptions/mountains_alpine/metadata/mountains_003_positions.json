@@ -1,0 +1,333 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.mountains.positions.03",
+  "categoryId": "mountains_alpine",
+  "slug": "mountains_003_positions",
+  "asset": "canonical/mountains_003_positions.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Alpine Positions",
+    "de": "Positionen in den Bergen"
+  },
+  "learningFocus": {
+    "primary": [
+      "spatial_language",
+      "prepositions",
+      "nouns"
+    ],
+    "secondary": [
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "goat",
+        "en": "mountain goat",
+        "de": "Bergziege"
+      },
+      "relation": {
+        "id": "on",
+        "en": "on the rock",
+        "de": "auf dem Felsen"
+      },
+      "notes": "One mountain goat clearly standing on top of a large rock on the left."
+    },
+    {
+      "subject": {
+        "id": "marmot",
+        "en": "marmot",
+        "de": "Murmeltier"
+      },
+      "relation": {
+        "id": "near",
+        "en": "near the burrow",
+        "de": "nahe beim Bau"
+      },
+      "notes": "One marmot close to a visible burrow opening, but not inside it."
+    },
+    {
+      "subject": {
+        "id": "eagle",
+        "en": "eagle",
+        "de": "Adler"
+      },
+      "relation": {
+        "id": "above",
+        "en": "above the mountain",
+        "de": "über dem Berg"
+      },
+      "notes": "One eagle flying clearly above the central mountain peak."
+    },
+    {
+      "subject": {
+        "id": "rabbit",
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      "relation": {
+        "id": "between",
+        "en": "between the rocks",
+        "de": "zwischen den Felsen"
+      },
+      "notes": "One white rabbit clearly positioned between two medium-sized rocks."
+    },
+    {
+      "subject": {
+        "id": "sheep",
+        "en": "sheep",
+        "de": "Schaf"
+      },
+      "relation": {
+        "id": "below",
+        "en": "below the hill",
+        "de": "unterhalb des Hügels"
+      },
+      "notes": "One sheep clearly lower than the grassy hill rising behind and above it."
+    },
+    {
+      "subject": {
+        "id": "flower_patch",
+        "en": "flowers",
+        "de": "Blumen"
+      },
+      "relation": {
+        "id": "next_to",
+        "en": "next to the rock",
+        "de": "neben dem Felsen"
+      },
+      "notes": "One focal patch of alpine flowers clearly beside the goat's rock."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "mountain goat",
+        "de": "Bergziege"
+      },
+      {
+        "en": "rock",
+        "de": "Felsen"
+      },
+      {
+        "en": "marmot",
+        "de": "Murmeltier"
+      },
+      {
+        "en": "burrow",
+        "de": "Bau"
+      },
+      {
+        "en": "eagle",
+        "de": "Adler"
+      },
+      {
+        "en": "mountain",
+        "de": "Berg"
+      },
+      {
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      {
+        "en": "sheep",
+        "de": "Schaf"
+      },
+      {
+        "en": "hill",
+        "de": "Hügel"
+      },
+      {
+        "en": "flowers",
+        "de": "Blumen"
+      }
+    ],
+    "spatialLanguage": [
+      {
+        "en": "on",
+        "de": "auf"
+      },
+      {
+        "en": "near",
+        "de": "nahe bei"
+      },
+      {
+        "en": "above",
+        "de": "über"
+      },
+      {
+        "en": "between",
+        "de": "zwischen"
+      },
+      {
+        "en": "below",
+        "de": "unterhalb"
+      },
+      {
+        "en": "next to",
+        "de": "neben"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The goat is on the rock.",
+      "The marmot is near the burrow.",
+      "The eagle is above the mountain.",
+      "The rabbit is between the rocks.",
+      "The sheep is below the hill.",
+      "The flowers are next to the rock."
+    ],
+    "de": [
+      "Die Ziege ist auf dem Felsen.",
+      "Das Murmeltier ist nahe beim Bau.",
+      "Der Adler ist über dem Berg.",
+      "Das Kaninchen ist zwischen den Felsen.",
+      "Das Schaf ist unterhalb des Hügels.",
+      "Die Blumen sind neben dem Felsen."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Ask where each animal or object is, accept a short spatial word first, then model the full sentence.",
+      "de": "Fragen, wo sich Tier oder Gegenstand befindet, zuerst eine kurze Ortsangabe annehmen und danach den vollständigen Satz vormachen."
+    },
+    "wordsToModel": {
+      "en": [
+        "on",
+        "near",
+        "above",
+        "between",
+        "below",
+        "next to",
+        "goat",
+        "rock",
+        "marmot",
+        "burrow",
+        "eagle",
+        "mountain",
+        "rabbit",
+        "sheep",
+        "hill",
+        "flowers"
+      ],
+      "de": [
+        "auf",
+        "nahe bei",
+        "über",
+        "zwischen",
+        "unterhalb",
+        "neben",
+        "Ziege",
+        "Felsen",
+        "Murmeltier",
+        "Bau",
+        "Adler",
+        "Berg",
+        "Kaninchen",
+        "Schaf",
+        "Hügel",
+        "Blumen"
+      ]
+    },
+    "questions": {
+      "en": [
+        "Where is the goat?",
+        "What is near the burrow?",
+        "What is above the mountain?",
+        "Where is the rabbit?",
+        "What is below the hill?",
+        "What is next to the rock?"
+      ],
+      "de": [
+        "Wo ist die Ziege?",
+        "Was ist nahe beim Bau?",
+        "Was ist über dem Berg?",
+        "Wo ist das Kaninchen?",
+        "Was ist unterhalb des Hügels?",
+        "Was ist neben dem Felsen?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The ___ is on...",
+        "The ___ is near...",
+        "The ___ is above...",
+        "The ___ is between...",
+        "The ___ is below...",
+        "The ___ are next to..."
+      ],
+      "de": [
+        "Der/Die/Das ___ ist auf...",
+        "Der/Die/Das ___ ist nahe bei...",
+        "Der/Die/Das ___ ist über...",
+        "Der/Die/Das ___ ist zwischen...",
+        "Der/Die/Das ___ ist unterhalb...",
+        "Die ___ sind neben..."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The goat is standing on the rock.",
+        "The marmot is near its burrow.",
+        "The eagle is flying above the mountain.",
+        "The white rabbit is between the two rocks.",
+        "The sheep is below the grassy hill.",
+        "The alpine flowers are next to the goat's rock."
+      ],
+      "de": [
+        "Die Ziege steht auf dem Felsen.",
+        "Das Murmeltier ist nahe bei seinem Bau.",
+        "Der Adler fliegt über dem Berg.",
+        "Das weiße Kaninchen ist zwischen den zwei Felsen.",
+        "Das Schaf ist unterhalb des grünen Hügels.",
+        "Die Alpenblumen sind neben dem Felsen der Ziege."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Goat on rock.",
+          "de": "Ziege auf Felsen."
+        },
+        "adult": {
+          "en": "Yes, the goat is on the rock.",
+          "de": "Ja, die Ziege ist auf dem Felsen."
+        }
+      },
+      {
+        "child": {
+          "en": "Rabbit between.",
+          "de": "Kaninchen zwischen."
+        },
+        "adult": {
+          "en": "Yes, the rabbit is between the two rocks.",
+          "de": "Ja, das Kaninchen ist zwischen den zwei Felsen."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "replacementReviewed": true,
+    "checks": {
+      "oneGoat": true,
+      "oneMarmot": true,
+      "oneEagle": true,
+      "oneRabbit": true,
+      "oneSheep": true,
+      "oneFocalFlowerPatch": true,
+      "noOtherAnimals": true,
+      "goatClearlyOnRock": true,
+      "marmotClearlyNearBurrow": true,
+      "eagleClearlyAboveMountain": true,
+      "rabbitClearlyBetweenRocks": true,
+      "sheepClearlyBelowHill": true,
+      "flowersClearlyNextToRock": true,
+      "spatialExamplesReadable": true,
+      "noTextOrUI": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

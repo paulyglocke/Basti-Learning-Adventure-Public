@@ -1,0 +1,377 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.jungle.positions.03",
+  "categoryId": "jungle_rainforest",
+  "slug": "jungle_003_positions",
+  "asset": "canonical/jungle_003_positions.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Jungle Positions",
+    "de": "Dschungel-Positionen"
+  },
+  "learningFocus": {
+    "primary": [
+      "spatial_language",
+      "prepositions",
+      "nouns"
+    ],
+    "secondary": [
+      "verbs",
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "frog",
+        "en": "frog",
+        "de": "Frosch"
+      },
+      "relation": {
+        "id": "on",
+        "en": "on the leaf",
+        "de": "auf dem Blatt"
+      },
+      "notes": "One green frog clearly resting on top of one large broad leaf in the lower-left."
+    },
+    {
+      "subject": {
+        "id": "sloth",
+        "en": "sloth",
+        "de": "Faultier"
+      },
+      "relation": {
+        "id": "under",
+        "en": "under the branch",
+        "de": "unter dem Ast"
+      },
+      "notes": "One brown sloth hanging underneath one thick horizontal tree branch in the upper-left/middle."
+    },
+    {
+      "subject": {
+        "id": "parrot",
+        "en": "parrot",
+        "de": "Papagei"
+      },
+      "relation": {
+        "id": "above",
+        "en": "above the sloth",
+        "de": "über dem Faultier"
+      },
+      "action": {
+        "en": "flying",
+        "de": "fliegt"
+      },
+      "notes": "One colourful flying parrot clearly above the sloth with obvious vertical separation."
+    },
+    {
+      "subject": {
+        "id": "tiger",
+        "en": "tiger",
+        "de": "Tiger"
+      },
+      "relation": {
+        "id": "behind",
+        "en": "behind the leaves",
+        "de": "hinter den Blättern"
+      },
+      "notes": "One orange striped tiger partly behind a large cluster of broad green leaves on the lower-right."
+    },
+    {
+      "subject": {
+        "id": "toucan",
+        "en": "toucan",
+        "de": "Tukan"
+      },
+      "relation": {
+        "id": "next_to",
+        "en": "next to the tree",
+        "de": "neben dem Baum"
+      },
+      "notes": "One toucan perched on a small branch immediately next to a thick tree trunk in the upper-right."
+    },
+    {
+      "subject": {
+        "id": "monkey",
+        "en": "monkey",
+        "de": "Affe"
+      },
+      "relation": {
+        "id": "near",
+        "en": "near the log",
+        "de": "nahe beim Baumstamm"
+      },
+      "notes": "One brown monkey sitting near a fallen log in the lower-middle, close but not on, under, or behind it."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "frog",
+        "de": "Frosch"
+      },
+      {
+        "en": "leaf",
+        "de": "Blatt"
+      },
+      {
+        "en": "sloth",
+        "de": "Faultier"
+      },
+      {
+        "en": "branch",
+        "de": "Ast"
+      },
+      {
+        "en": "parrot",
+        "de": "Papagei"
+      },
+      {
+        "en": "tiger",
+        "de": "Tiger"
+      },
+      {
+        "en": "leaves",
+        "de": "Blätter"
+      },
+      {
+        "en": "toucan",
+        "de": "Tukan"
+      },
+      {
+        "en": "tree",
+        "de": "Baum"
+      },
+      {
+        "en": "monkey",
+        "de": "Affe"
+      },
+      {
+        "en": "log",
+        "de": "Baumstamm"
+      }
+    ],
+    "spatialLanguage": [
+      {
+        "en": "on",
+        "de": "auf"
+      },
+      {
+        "en": "under",
+        "de": "unter"
+      },
+      {
+        "en": "above",
+        "de": "über"
+      },
+      {
+        "en": "behind",
+        "de": "hinter"
+      },
+      {
+        "en": "next to",
+        "de": "neben"
+      },
+      {
+        "en": "near",
+        "de": "nahe bei"
+      }
+    ],
+    "verbs": [
+      {
+        "en": "fly",
+        "de": "fliegen"
+      },
+      {
+        "en": "hang",
+        "de": "hängen"
+      },
+      {
+        "en": "sit",
+        "de": "sitzen"
+      }
+    ],
+    "optionalAdjectives": [
+      {
+        "en": "green",
+        "de": "grün"
+      },
+      {
+        "en": "brown",
+        "de": "braun"
+      },
+      {
+        "en": "colourful",
+        "de": "bunt"
+      },
+      {
+        "en": "orange",
+        "de": "orange"
+      },
+      {
+        "en": "striped",
+        "de": "gestreift"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The frog is on the leaf.",
+      "The sloth is under the branch.",
+      "The parrot is above the sloth.",
+      "The tiger is behind the leaves.",
+      "The toucan is next to the tree.",
+      "The monkey is near the log."
+    ],
+    "de": [
+      "Der Frosch ist auf dem Blatt.",
+      "Das Faultier ist unter dem Ast.",
+      "Der Papagei ist über dem Faultier.",
+      "Der Tiger ist hinter den Blättern.",
+      "Der Tukan ist neben dem Baum.",
+      "Der Affe ist nahe beim Baumstamm."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Ask where each animal is, accept a short answer first, then model the full preposition sentence.",
+      "de": "Fragen, wo sich jedes Tier befindet, kurze Antworten zuerst annehmen und danach den vollständigen Satz mit Präposition vormachen."
+    },
+    "wordsToModel": {
+      "en": [
+        "on",
+        "under",
+        "above",
+        "behind",
+        "next to",
+        "near",
+        "frog",
+        "leaf",
+        "sloth",
+        "branch",
+        "parrot",
+        "tiger",
+        "toucan",
+        "tree",
+        "monkey",
+        "log"
+      ],
+      "de": [
+        "auf",
+        "unter",
+        "über",
+        "hinter",
+        "neben",
+        "nahe bei",
+        "Frosch",
+        "Blatt",
+        "Faultier",
+        "Ast",
+        "Papagei",
+        "Tiger",
+        "Tukan",
+        "Baum",
+        "Affe",
+        "Baumstamm"
+      ]
+    },
+    "questions": {
+      "en": [
+        "Where is the frog?",
+        "Who is under the branch?",
+        "What is above the sloth?",
+        "Who is behind the leaves?",
+        "What is next to the tree?",
+        "Where is the monkey?"
+      ],
+      "de": [
+        "Wo ist der Frosch?",
+        "Wer ist unter dem Ast?",
+        "Was ist über dem Faultier?",
+        "Wer ist hinter den Blättern?",
+        "Was ist neben dem Baum?",
+        "Wo ist der Affe?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The ___ is on...",
+        "The ___ is under...",
+        "The ___ is above...",
+        "The ___ is behind...",
+        "The ___ is next to...",
+        "The ___ is near..."
+      ],
+      "de": [
+        "Der/Die ___ ist auf...",
+        "Der/Die ___ ist unter...",
+        "Der/Die ___ ist über...",
+        "Der/Die ___ ist hinter...",
+        "Der/Die ___ ist neben...",
+        "Der/Die ___ ist nahe bei..."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The frog is on the leaf.",
+        "The sloth is hanging under the branch.",
+        "The colourful parrot is above the sloth.",
+        "The tiger is behind the leaves.",
+        "The toucan is next to the tree.",
+        "The monkey is sitting near the log."
+      ],
+      "de": [
+        "Der Frosch ist auf dem Blatt.",
+        "Das Faultier hängt unter dem Ast.",
+        "Der bunte Papagei ist über dem Faultier.",
+        "Der Tiger ist hinter den Blättern.",
+        "Der Tukan ist neben dem Baum.",
+        "Der Affe sitzt nahe beim Baumstamm."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Frog on leaf.",
+          "de": "Frosch auf Blatt."
+        },
+        "adult": {
+          "en": "Yes, the frog is on the leaf.",
+          "de": "Ja, der Frosch ist auf dem Blatt."
+        }
+      },
+      {
+        "child": {
+          "en": "Tiger behind.",
+          "de": "Tiger hinter."
+        },
+        "adult": {
+          "en": "Yes, the tiger is behind the leaves.",
+          "de": "Ja, der Tiger ist hinter den Blättern."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "oneFrog": true,
+      "oneSloth": true,
+      "oneParrot": true,
+      "oneTiger": true,
+      "oneToucan": true,
+      "oneMonkey": true,
+      "noOtherAnimals": true,
+      "frogClearlyOnLeaf": true,
+      "slothClearlyUnderBranch": true,
+      "parrotClearlyAboveSloth": true,
+      "tigerClearlyBehindLeaves": true,
+      "toucanClearlyNextToTree": true,
+      "monkeyClearlyNearLog": true,
+      "subjectsSeparated": true,
+      "noTextOrUI": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

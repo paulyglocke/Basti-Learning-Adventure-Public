@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "sky_flying",
+  "status": "wave_3_batch_2_complete",
+  "scenes": [
+    {
+      "sceneId": "scene.sky.weather_story.04",
+      "title": "Sky Scene 4 — Weather Story in the Sky",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/sky_004_weather_story.png",
+      "metadata": "metadata/sky_004_weather_story.json",
+      "prompt": "prompts/sky_004_weather_story.md",
+      "primaryFocus": [
+        "weather_language",
+        "verbs",
+        "nouns"
+      ],
+      "secondaryFocus": [
+        "storytelling",
+        "sentence_expansion"
+      ],
+      "brief": "Weather-themed sky scene combining sun, rain, rainbow and moving flying objects.",
+      "targetExamples": [
+        "The balloon is rising.",
+        "The airplane is flying.",
+        "The helicopter is near the rain cloud.",
+        "It is raining.",
+        "The kite is under the rainbow."
+      ]
+    },
+    {
+      "sceneId": "scene.sky.big_small_counting.05",
+      "title": "Sky Scene 5 — Big, Small and Counting",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/sky_005_big_small_counting.png",
+      "metadata": "metadata/sky_005_big_small_counting.json",
+      "prompt": "prompts/sky_005_big_small_counting.md",
+      "primaryFocus": [
+        "adjectives",
+        "counting",
+        "comparisons"
+      ],
+      "secondaryFocus": [
+        "nouns",
+        "sentence_expansion"
+      ],
+      "brief": "Sky comparison scene with one big balloon, one small airplane, two clouds, three birds and one kite.",
+      "targetExamples": [
+        "The balloon is big.",
+        "The airplane is small.",
+        "The long cloud is white.",
+        "There are three little yellow birds.",
+        "The kite is colourful."
+      ]
+    },
+    {
+      "sceneId": "scene.sky.travel_directions.06",
+      "title": "Sky Scene 6 — Travelling Through the Sky",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/sky_006_travel_directions.png",
+      "metadata": "metadata/sky_006_travel_directions.json",
+      "prompt": "prompts/sky_006_travel_directions.md",
+      "primaryFocus": [
+        "storytelling",
+        "movement_language",
+        "nouns"
+      ],
+      "secondaryFocus": [
+        "counting",
+        "sentence_expansion"
+      ],
+      "brief": "Travel-and-direction sky scene with airplane, helicopter, balloon, birds and kite.",
+      "targetExamples": [
+        "The airplane is flying across the sky.",
+        "The helicopter is flying on the right.",
+        "The balloon is floating in the middle.",
+        "The birds are flying together.",
+        "The kite is near the rainbow."
+      ]
+    },
+    {
+      "sceneId": "scene.sky.weather_sequence.07",
+      "title": "Sky Scene 7 — Weather Changes",
+      "slug": "sky_007_weather_sequence",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/sky_007_weather_sequence.png",
+      "metadata": "metadata/sky_007_weather_sequence.json",
+      "prompt": "prompts/sky_007_weather_sequence.md"
+    },
+    {
+      "sceneId": "scene.sky.flying_directions.08",
+      "title": "Sky Scene 8 — Flying in Different Directions",
+      "slug": "sky_008_flying_directions",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/sky_008_flying_directions.png",
+      "metadata": "metadata/sky_008_flying_directions.json",
+      "prompt": "prompts/sky_008_flying_directions.md"
+    },
+    {
+      "sceneId": "scene.sky.night_sky_clues.09",
+      "title": "Sky Scene 9 — Night Sky Clues",
+      "slug": "sky_009_night_sky_clues",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/sky_009_night_sky_clues.png",
+      "metadata": "metadata/sky_009_night_sky_clues.json",
+      "prompt": "prompts/sky_009_night_sky_clues.md"
+    },
+    {
+      "sceneId": "scene.sky.actions.01",
+      "slug": "sky_001_actions",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "verbs",
+        "nouns",
+        "movement"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Five flying subjects each showing one clear type of movement: hot-air balloon rising, airplane flying, eagle gliding, helicopter hovering and kite flying in the wind.",
+      "targetExamples": [
+        "The balloon is rising.",
+        "The airplane is flying.",
+        "The eagle is gliding.",
+        "The helicopter is hovering.",
+        "The kite is flying in the wind."
+      ]
+    },
+    {
+      "sceneId": "scene.sky.features.02",
+      "slug": "sky_002_features",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "adjectives",
+        "comparisons",
+        "counting",
+        "nouns"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Visible size, colour and counting contrasts among flying objects and clouds.",
+      "targetExamples": [
+        "The balloon is big.",
+        "The airplane is small.",
+        "The balloon is bigger than the airplane.",
+        "There are three little yellow birds.",
+        "The kite is colourful."
+      ]
+    },
+    {
+      "sceneId": "scene.sky.positions.03",
+      "slug": "sky_003_positions",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "spatial_language",
+        "nouns"
+      ],
+      "secondaryFocus": [
+        "verbs",
+        "sentence_expansion"
+      ],
+      "brief": "Six spatial relationships in the sky: above, below, next to, between, under and near.",
+      "targetExamples": [
+        "The balloon is above the mountain.",
+        "The airplane is below the cloud.",
+        "The eagle is next to the balloon.",
+        "The helicopter is between the clouds.",
+        "The kite is under the rainbow.",
+        "The birds are near the cloud."
+      ]
+    }
+  ]
+}

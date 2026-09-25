@@ -1,0 +1,1 @@
+Create a bright child-friendly sky illustration showing sunny weather changing to clouds, rain and then a rainbow. Include simple flying subjects but keep the weather progression clear. No readable text.

@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.park.actions.01",
+  "categoryId": "park_playground",
+  "slug": "park_001_actions",
+  "asset": "canonical/park_001_actions.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Playground Actions",
+    "de": "Aktionen auf dem Spielplatz"
+  },
+  "learningFocus": {
+    "primary": [
+      "verbs",
+      "nouns",
+      "everyday_actions"
+    ],
+    "secondary": [
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "child_sliding",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "slide",
+        "en": "sliding",
+        "de": "rutscht"
+      },
+      "object": {
+        "id": "slide",
+        "en": "slide",
+        "de": "Rutsche"
+      },
+      "notes": "One child clearly sliding down the slide on the left."
+    },
+    {
+      "subject": {
+        "id": "child_swinging",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "swing",
+        "en": "swinging",
+        "de": "schaukelt"
+      },
+      "object": {
+        "id": "swing",
+        "en": "swing",
+        "de": "Schaukel"
+      },
+      "notes": "One child seated on one swing, clearly swinging."
+    },
+    {
+      "subject": {
+        "id": "child_kicking",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "kick",
+        "en": "kicking the ball",
+        "de": "kickt den Ball"
+      },
+      "object": {
+        "id": "ball",
+        "en": "ball",
+        "de": "Ball"
+      },
+      "notes": "One child near the lower-middle clearly kicking one football."
+    },
+    {
+      "subject": {
+        "id": "child_riding",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "ride",
+        "en": "riding a scooter",
+        "de": "fährt Roller"
+      },
+      "object": {
+        "id": "scooter",
+        "en": "scooter",
+        "de": "Roller"
+      },
+      "notes": "One child clearly riding a scooter on the path."
+    },
+    {
+      "subject": {
+        "id": "child_climbing",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "climb",
+        "en": "climbing",
+        "de": "klettert"
+      },
+      "object": {
+        "id": "climbing_frame",
+        "en": "climbing frame",
+        "de": "Klettergerüst"
+      },
+      "notes": "One child on the right clearly climbing a ladder / climbing frame."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "child",
+        "de": "Kind"
+      },
+      {
+        "en": "slide",
+        "de": "Rutsche"
+      },
+      {
+        "en": "swing",
+        "de": "Schaukel"
+      },
+      {
+        "en": "ball",
+        "de": "Ball"
+      },
+      {
+        "en": "scooter",
+        "de": "Roller"
+      },
+      {
+        "en": "climbing frame",
+        "de": "Klettergerüst"
+      },
+      {
+        "en": "sandbox",
+        "de": "Sandkasten"
+      },
+      {
+        "en": "bench",
+        "de": "Bank"
+      }
+    ],
+    "verbs": [
+      {
+        "en": "slide",
+        "de": "rutschen"
+      },
+      {
+        "en": "swing",
+        "de": "schaukeln"
+      },
+      {
+        "en": "kick",
+        "de": "kicken"
+      },
+      {
+        "en": "ride",
+        "de": "fahren"
+      },
+      {
+        "en": "climb",
+        "de": "klettern"
+      }
+    ],
+    "optionalAdjectives": [
+      {
+        "en": "pink",
+        "de": "pink"
+      },
+      {
+        "en": "yellow",
+        "de": "gelb"
+      },
+      {
+        "en": "red",
+        "de": "rot"
+      },
+      {
+        "en": "purple",
+        "de": "lila"
+      },
+      {
+        "en": "green",
+        "de": "grün"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The child is sliding.",
+      "The child is swinging.",
+      "The child is kicking the ball.",
+      "The child is riding a scooter.",
+      "The child is climbing."
+    ],
+    "de": [
+      "Das Kind rutscht.",
+      "Das Kind schaukelt.",
+      "Das Kind kickt den Ball.",
+      "Das Kind fährt Roller.",
+      "Das Kind klettert."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Help Basti name the action first, then expand to a full sentence with the object or place.",
+      "de": "Basti soll zuerst die Handlung benennen; danach kann die Antwort mit Gegenstand oder Ort zu einem ganzen Satz erweitert werden."
+    },
+    "wordsToModel": {
+      "en": [
+        "slide",
+        "swing",
+        "kick",
+        "ball",
+        "ride",
+        "scooter",
+        "climb",
+        "child"
+      ],
+      "de": [
+        "rutschen",
+        "schaukeln",
+        "kicken",
+        "Ball",
+        "fahren",
+        "Roller",
+        "klettern",
+        "Kind"
+      ]
+    },
+    "questions": {
+      "en": [
+        "What is the child on the slide doing?",
+        "Who is swinging?",
+        "What is the child doing with the ball?",
+        "Who is riding the scooter?",
+        "Which child is climbing?"
+      ],
+      "de": [
+        "Was macht das Kind auf der Rutsche?",
+        "Wer schaukelt?",
+        "Was macht das Kind mit dem Ball?",
+        "Wer fährt Roller?",
+        "Welches Kind klettert?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The child is...",
+        "The child is sliding on the...",
+        "The child is kicking the...",
+        "The child is riding a...",
+        "The child is climbing the..."
+      ],
+      "de": [
+        "Das Kind ...",
+        "Das Kind rutscht auf der...",
+        "Das Kind kickt den...",
+        "Das Kind fährt...",
+        "Das Kind klettert auf dem..."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The child is sliding down the slide.",
+        "The child is swinging on the swing.",
+        "The child is kicking the ball.",
+        "The child is riding a scooter.",
+        "The child is climbing the climbing frame."
+      ],
+      "de": [
+        "Das Kind rutscht die Rutsche hinunter.",
+        "Das Kind schaukelt auf der Schaukel.",
+        "Das Kind kickt den Ball.",
+        "Das Kind fährt Roller.",
+        "Das Kind klettert auf dem Klettergerüst."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Sliding.",
+          "de": "Rutscht."
+        },
+        "adult": {
+          "en": "Yes, the child is sliding down the slide.",
+          "de": "Ja, das Kind rutscht die Rutsche hinunter."
+        }
+      },
+      {
+        "child": {
+          "en": "Kick ball.",
+          "de": "Ball kicken."
+        },
+        "adult": {
+          "en": "Yes, the child is kicking the ball.",
+          "de": "Ja, das Kind kickt den Ball."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "fiveFocalChildren": true,
+      "oneSliding": true,
+      "oneSwinging": true,
+      "oneKickingBall": true,
+      "oneRidingScooter": true,
+      "oneClimbing": true,
+      "noExtraChildren": true,
+      "noDuplicateKeyProps": true,
+      "actionsReadable": true,
+      "noTextOrUI": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

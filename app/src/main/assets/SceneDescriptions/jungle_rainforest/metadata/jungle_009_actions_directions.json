@@ -1,0 +1,67 @@
+{
+  "sceneId": "scene.jungle.actions_directions.09",
+  "categoryId": "jungle_rainforest",
+  "title": "Jungle Scene 9 — Rainforest Actions and Directions",
+  "status": "approved",
+  "purpose": "Combining action verbs with one-step and two-step listening tasks.",
+  "asset": "canonical/jungle_009_actions_directions.png",
+  "promptFile": "prompts/jungle_009_actions_directions.md",
+  "targetLanguage": {
+    "nouns": [
+      "elephant",
+      "trunk",
+      "water",
+      "parrot",
+      "toucan",
+      "tiger",
+      "frog",
+      "leaf",
+      "waterfall"
+    ],
+    "verbs": [
+      "spraying",
+      "walking",
+      "sitting",
+      "pointing",
+      "find"
+    ],
+    "adjectives": [
+      "big",
+      "grey",
+      "striped",
+      "green",
+      "colourful"
+    ],
+    "sentenceModels": [
+      "The elephant is spraying water.",
+      "The tiger is walking.",
+      "The frog is on the leaf.",
+      "First point to the elephant, then point to the toucan.",
+      "Show me the striped animal."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Support listening with two-step instructions and short action descriptions.",
+    "starterPrompts": [
+      "What is the elephant doing?",
+      "Which animal is walking?",
+      "Where is the frog?",
+      "Which birds can you see?",
+      "Who is the biggest animal?"
+    ],
+    "expansionPrompts": [
+      "First point to the elephant, then point to the frog.",
+      "Find the striped animal and then the bird with the big beak."
+    ]
+  },
+  "visualAudit": [
+    "One elephant on the left spraying water with its trunk.",
+    "One tiger on the right walking beside the stream.",
+    "One frog sitting on a leaf near the bottom centre.",
+    "One parrot perched on the upper-left.",
+    "One toucan perched on the upper-right."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_1"
+}

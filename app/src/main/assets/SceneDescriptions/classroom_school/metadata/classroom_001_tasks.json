@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.classroom.tasks.01",
+  "categoryId": "classroom_school",
+  "slug": "classroom_001_tasks",
+  "asset": "canonical/classroom_001_tasks.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Classroom Learning Tasks",
+    "de": "Lernaufgaben im Klassenraum"
+  },
+  "learningFocus": {
+    "primary": [
+      "functional_tasks",
+      "verbs",
+      "classroom_nouns"
+    ],
+    "secondary": [
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "reading_child",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "read",
+        "en": "reading a book",
+        "de": "liest ein Buch"
+      },
+      "object": {
+        "id": "book",
+        "en": "book",
+        "de": "Buch"
+      },
+      "notes": "One child seated on the left clearly reading one open picture book."
+    },
+    {
+      "subject": {
+        "id": "writing_child",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "write",
+        "en": "writing",
+        "de": "schreibt"
+      },
+      "object": {
+        "id": "paper_pencil",
+        "en": "paper and pencil",
+        "de": "Papier und Bleistift"
+      },
+      "notes": "One child near the centre-left clearly writing on one sheet of paper with one pencil."
+    },
+    {
+      "subject": {
+        "id": "cutting_child",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "cut",
+        "en": "cutting the paper",
+        "de": "schneidet das Papier"
+      },
+      "object": {
+        "id": "scissors",
+        "en": "scissors",
+        "de": "Schere"
+      },
+      "notes": "One child in the centre clearly cutting coloured paper with one pair of child-safe scissors."
+    },
+    {
+      "subject": {
+        "id": "gluing_child",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "glue",
+        "en": "gluing",
+        "de": "klebt"
+      },
+      "object": {
+        "id": "glue_stick",
+        "en": "glue stick",
+        "de": "Klebestift"
+      },
+      "notes": "One child near the centre-right clearly gluing a paper shape onto another sheet using one glue stick."
+    },
+    {
+      "subject": {
+        "id": "shelving_child",
+        "en": "child",
+        "de": "Kind"
+      },
+      "action": {
+        "id": "put_away",
+        "en": "putting the book away",
+        "de": "räumt das Buch weg"
+      },
+      "object": {
+        "id": "shelf",
+        "en": "shelf",
+        "de": "Regal"
+      },
+      "notes": "One child on the right clearly putting one book onto a low classroom shelf."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "book",
+        "de": "Buch"
+      },
+      {
+        "en": "paper",
+        "de": "Papier"
+      },
+      {
+        "en": "pencil",
+        "de": "Bleistift"
+      },
+      {
+        "en": "scissors",
+        "de": "Schere"
+      },
+      {
+        "en": "glue stick",
+        "de": "Klebestift"
+      },
+      {
+        "en": "desk",
+        "de": "Tisch"
+      },
+      {
+        "en": "chair",
+        "de": "Stuhl"
+      },
+      {
+        "en": "shelf",
+        "de": "Regal"
+      },
+      {
+        "en": "classroom",
+        "de": "Klassenraum"
+      }
+    ],
+    "verbs": [
+      {
+        "en": "read",
+        "de": "lesen"
+      },
+      {
+        "en": "write",
+        "de": "schreiben"
+      },
+      {
+        "en": "cut",
+        "de": "schneiden"
+      },
+      {
+        "en": "glue",
+        "de": "kleben"
+      },
+      {
+        "en": "put away",
+        "de": "wegräumen"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The child is reading a book.",
+      "The child is writing.",
+      "The child is cutting the paper.",
+      "The child is gluing.",
+      "The child is putting the book away."
+    ],
+    "de": [
+      "Das Kind liest ein Buch.",
+      "Das Kind schreibt.",
+      "Das Kind schneidet das Papier.",
+      "Das Kind klebt.",
+      "Das Kind räumt das Buch weg."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Name the school activity first, then add the object if needed. Encourage Basti to say what each child is doing in a short full sentence.",
+      "de": "Zuerst die Schultätigkeit benennen und bei Bedarf den Gegenstand ergänzen. Basti soll sagen, was jedes Kind in einem kurzen ganzen Satz macht."
+    },
+    "wordsToModel": {
+      "en": [
+        "reading",
+        "book",
+        "writing",
+        "paper",
+        "pencil",
+        "cutting",
+        "scissors",
+        "gluing",
+        "glue stick",
+        "putting the book away",
+        "shelf"
+      ],
+      "de": [
+        "liest",
+        "Buch",
+        "schreibt",
+        "Papier",
+        "Bleistift",
+        "schneidet",
+        "Schere",
+        "klebt",
+        "Klebestift",
+        "räumt das Buch weg",
+        "Regal"
+      ]
+    },
+    "questions": {
+      "en": [
+        "What is the child doing with the book?",
+        "Who is writing?",
+        "What is the child doing with the scissors?",
+        "Who is gluing?",
+        "What is the child doing at the shelf?"
+      ],
+      "de": [
+        "Was macht das Kind mit dem Buch?",
+        "Wer schreibt?",
+        "Was macht das Kind mit der Schere?",
+        "Wer klebt?",
+        "Was macht das Kind am Regal?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The child is reading...",
+        "The child is writing...",
+        "The child is cutting...",
+        "The child is gluing...",
+        "The child is putting..."
+      ],
+      "de": [
+        "Das Kind liest...",
+        "Das Kind schreibt...",
+        "Das Kind schneidet...",
+        "Das Kind klebt...",
+        "Das Kind räumt..."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The child is reading a picture book.",
+        "The child is writing on the paper.",
+        "The child is cutting the red paper.",
+        "The child is gluing the shape onto the page.",
+        "The child is putting the book away on the shelf."
+      ],
+      "de": [
+        "Das Kind liest ein Bilderbuch.",
+        "Das Kind schreibt auf das Papier.",
+        "Das Kind schneidet das rote Papier.",
+        "Das Kind klebt die Form auf das Blatt.",
+        "Das Kind räumt das Buch ins Regal."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Reading.",
+          "de": "Lesen."
+        },
+        "adult": {
+          "en": "Yes, the child is reading a book.",
+          "de": "Ja, das Kind liest ein Buch."
+        }
+      },
+      {
+        "child": {
+          "en": "Cutting paper.",
+          "de": "Papier schneiden."
+        },
+        "adult": {
+          "en": "Yes, the child is cutting the paper.",
+          "de": "Ja, das Kind schneidet das Papier."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "fiveFocalChildren": true,
+      "readingClear": true,
+      "writingClear": true,
+      "cuttingClear": true,
+      "gluingClear": true,
+      "puttingBookAwayClear": true,
+      "noTeacher": true,
+      "noExtraChildren": true,
+      "oneScissors": true,
+      "oneGlueStick": true,
+      "oneWritingPencil": true,
+      "noReadableText": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

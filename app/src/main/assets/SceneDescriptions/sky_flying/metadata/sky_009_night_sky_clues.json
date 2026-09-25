@@ -1,0 +1,56 @@
+{
+  "sceneId": "scene.sky.night_sky_clues.09",
+  "categoryId": "sky_flying",
+  "title": "Sky Scene 9 — Night Sky Clues",
+  "status": "approved",
+  "purpose": "Day/night vocabulary, multi-clue identification and simple inference.",
+  "asset": "canonical/sky_009_night_sky_clues.png",
+  "promptFile": "prompts/sky_009_night_sky_clues.md",
+  "targetLanguage": {
+    "nouns": [
+      "moon",
+      "stars",
+      "rocket",
+      "satellite",
+      "owl",
+      "hang glider"
+    ],
+    "verbs": [
+      "flying",
+      "gliding",
+      "orbiting"
+    ],
+    "adjectives": [
+      "dark",
+      "bright",
+      "high",
+      "white"
+    ],
+    "sentenceModels": [
+      "The moon is bright.",
+      "The rocket is flying up.",
+      "The satellite is high in the sky.",
+      "The owl is flying at night."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Use clues about night, height and object type to find the right subject.",
+    "starterPrompts": [
+      "What tells you it is night?",
+      "Which thing is flying up?",
+      "What is high near the stars?",
+      "Which animal is flying?",
+      "Can you find the moon?"
+    ],
+    "expansionPrompts": [
+      "What would be different in the daytime?",
+      "First point to the owl, then point to the satellite."
+    ]
+  },
+  "visualAudit": [
+    "Reviewed in Wave 3 Batch 2 automatic pass against the visible teaching targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_2"
+}

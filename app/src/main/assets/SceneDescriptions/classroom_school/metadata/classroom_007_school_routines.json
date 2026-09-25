@@ -1,0 +1,58 @@
+{
+  "sceneId": "scene.classroom.school_routines.07",
+  "categoryId": "classroom_school",
+  "title": "Classroom Scene 7 — School Routines",
+  "status": "approved",
+  "purpose": "Support classroom routines, social language and functional comprehension.",
+  "asset": "canonical/classroom_007_school_routines.png",
+  "promptFile": "prompts/classroom_007_school_routines.md",
+  "targetLanguage": {
+    "nouns": [
+      "teacher",
+      "paper",
+      "backpack",
+      "book",
+      "desk",
+      "shelf"
+    ],
+    "verbs": [
+      "raising",
+      "giving",
+      "packing",
+      "putting away",
+      "sitting"
+    ],
+    "adjectives": [
+      "ready",
+      "tidy",
+      "open",
+      "closed"
+    ],
+    "sentenceModels": [
+      "The child is raising a hand.",
+      "The child is giving the paper to the teacher.",
+      "The child is packing the bag.",
+      "The child is sitting at the desk."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Use the scene for naming routines, following simple instructions and talking about classroom expectations.",
+    "starterPrompts": [
+      "Who is raising a hand?",
+      "Who is giving the paper to the teacher?",
+      "Who is packing a bag?",
+      "Who is putting a book away?",
+      "Which child is ready at the desk?"
+    ],
+    "expansionPrompts": [
+      "Tell me what happens first and what happens next.",
+      "Which things belong in the backpack and which things belong on the shelf?"
+    ]
+  },
+  "visualAudit": [
+    "Reviewed in Wave 3 Batch 3 automatic pass against the main teaching targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_3"
+}

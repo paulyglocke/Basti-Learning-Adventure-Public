@@ -1,0 +1,69 @@
+{
+  "sceneId": "scene.jungle.story_actions.07",
+  "categoryId": "jungle_rainforest",
+  "title": "Jungle Scene 7 — Rainforest Story Actions",
+  "status": "approved",
+  "purpose": "Linked actions and simple “what happens next?” discussion in one rainforest scene.",
+  "asset": "canonical/jungle_007_story_actions.png",
+  "promptFile": "prompts/jungle_007_story_actions.md",
+  "targetLanguage": {
+    "nouns": [
+      "monkey",
+      "banana",
+      "sloth",
+      "parrot",
+      "leaf",
+      "nest",
+      "frog",
+      "leaf",
+      "tiger",
+      "waterfall",
+      "stream"
+    ],
+    "verbs": [
+      "holding",
+      "hanging",
+      "bringing",
+      "jumping",
+      "drinking"
+    ],
+    "adjectives": [
+      "green",
+      "big",
+      "colourful",
+      "orange"
+    ],
+    "sentenceModels": [
+      "The monkey is holding a banana.",
+      "The sloth is hanging from the branch.",
+      "The parrot is bringing a leaf to the nest.",
+      "The frog is jumping.",
+      "The tiger is drinking water."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Talk about several linked rainforest actions and predict what might happen next.",
+    "starterPrompts": [
+      "Who is holding something?",
+      "What is the parrot carrying?",
+      "Which animal is jumping?",
+      "Who is drinking?",
+      "Where is the sloth?"
+    ],
+    "expansionPrompts": [
+      "What might the parrot do when it reaches the nest?",
+      "What might happen next after the frog jumps?",
+      "Can you tell the whole rainforest story?"
+    ]
+  },
+  "visualAudit": [
+    "One monkey on the left holding a banana.",
+    "One sloth hanging from a branch at the top centre.",
+    "One parrot flying with a green leaf toward a nest on the right.",
+    "One frog jumping beside a wet leaf near the stream.",
+    "One tiger drinking from the stream on the right."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_1"
+}

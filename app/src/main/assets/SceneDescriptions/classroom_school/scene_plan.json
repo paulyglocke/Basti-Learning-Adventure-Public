@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "classroom_school",
+  "status": "wave_3_complete",
+  "scenes": [
+    {
+      "sceneId": "scene.classroom.objects_places.04",
+      "title": "Classroom Scene 4 — Objects and Where They Belong",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/classroom_004_objects_places.png",
+      "metadata": "metadata/classroom_004_objects_places.json",
+      "prompt": "prompts/classroom_004_objects_places.md",
+      "brief": "Functional classroom-object vocabulary and tidy-up/location language.",
+      "targetExamples": [
+        "The pencils are on the table.",
+        "The backpack is next to the shelf.",
+        "The boxes are in the shelf.",
+        "The teddy bear is on top of the shelf."
+      ]
+    },
+    {
+      "sceneId": "scene.classroom.quiet_corner.05",
+      "title": "Classroom Scene 5 — Quiet Corner",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/classroom_005_quiet_corner.png",
+      "metadata": "metadata/classroom_005_quiet_corner.json",
+      "prompt": "prompts/classroom_005_quiet_corner.md",
+      "brief": "Calm-state language, simple inference and positional description.",
+      "targetExamples": [
+        "The cat is on the beanbag.",
+        "The dog is sleeping on the rug.",
+        "The rabbit is next to the dog.",
+        "The fish bowl is on the shelf."
+      ]
+    },
+    {
+      "sceneId": "scene.classroom.art_sorting.06",
+      "title": "Classroom Scene 6 — Art Table and What Belongs",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/classroom_006_art_sorting.png",
+      "metadata": "metadata/classroom_006_art_sorting.json",
+      "prompt": "prompts/classroom_006_art_sorting.md",
+      "brief": "Classroom problem solving, object categories and simple two-step instructions.",
+      "targetExamples": [
+        "The painting is on the table.",
+        "The pencils are in the cup.",
+        "The paint is on the table.",
+        "The football is on the chair.",
+        "The football does not belong with the art things."
+      ]
+    },
+    {
+      "sceneId": "scene.classroom.school_routines.07",
+      "title": "Classroom Scene 7 — School Routines",
+      "slug": "classroom_007_school_routines",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/classroom_007_school_routines.png",
+      "metadata": "metadata/classroom_007_school_routines.json",
+      "prompt": "prompts/classroom_007_school_routines.md",
+      "brief": "Show several children following everyday classroom routines in one calm scene.",
+      "targetExamples": [
+        "The child is raising a hand.",
+        "The child is giving the paper to the teacher.",
+        "The child is packing the bag.",
+        "The child is putting the book away.",
+        "The child is sitting at the desk."
+      ]
+    },
+    {
+      "sceneId": "scene.classroom.helping_cleanup.08",
+      "title": "Classroom Scene 8 — Helping and Cleaning Up",
+      "slug": "classroom_008_helping_cleanup",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/classroom_008_helping_cleanup.png",
+      "metadata": "metadata/classroom_008_helping_cleanup.json",
+      "prompt": "prompts/classroom_008_helping_cleanup.md",
+      "brief": "Talk about helping in the classroom, putting things away and solving little problems.",
+      "targetExamples": [
+        "The child is giving the picture to the teacher.",
+        "The child is picking up the pencils.",
+        "The child is packing the backpack.",
+        "The child is putting the book on the shelf.",
+        "They are helping in the classroom."
+      ]
+    },
+    {
+      "sceneId": "scene.classroom.end_of_day.09",
+      "title": "Classroom Scene 9 — End of the School Day",
+      "slug": "classroom_009_end_of_day",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/classroom_009_end_of_day.png",
+      "metadata": "metadata/classroom_009_end_of_day.json",
+      "prompt": "prompts/classroom_009_end_of_day.md",
+      "brief": "Use the scene to discuss calm end-of-day routines and what children do before going home.",
+      "targetExamples": [
+        "The teacher is receiving the picture.",
+        "The child is packing the backpack.",
+        "The child is putting a book away.",
+        "The child is waiting near the teacher.",
+        "The child is working at the desk."
+      ]
+    },
+    {
+      "sceneId": "scene.classroom.positions.03",
+      "slug": "classroom_003_positions",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "spatial_language",
+        "nouns"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Six spatial examples in a classroom: under, on, in, next to, behind and between.",
+      "targetExamples": [
+        "The backpack is under the desk.",
+        "The pencil case is on the desk.",
+        "The book is in the bag.",
+        "The child is next to the teacher.",
+        "The chair is behind the desk.",
+        "The crayons are between the books."
+      ]
+    },
+    {
+      "sceneId": "scene.classroom.routines.02",
+      "slug": "classroom_002_routines",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "routines",
+        "social_language",
+        "functional_comprehension"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Five classroom routines: raising a hand, listening to the teacher, giving paper to the teacher, packing a bag, and sitting ready.",
+      "targetExamples": [
+        "The child is raising a hand.",
+        "The child is listening to the teacher.",
+        "The child is giving the paper to the teacher.",
+        "The child is packing the bag.",
+        "The child is ready to work."
+      ]
+    },
+    {
+      "sceneId": "scene.classroom.tasks.01",
+      "slug": "classroom_001_tasks",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "functional_tasks",
+        "verbs",
+        "classroom_nouns"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Five children each showing one classroom task: reading, writing, cutting, gluing, and putting a book away.",
+      "targetExamples": [
+        "The child is reading a book.",
+        "The child is writing.",
+        "The child is cutting the paper.",
+        "The child is gluing.",
+        "The child is putting the book away."
+      ]
+    }
+  ]
+}

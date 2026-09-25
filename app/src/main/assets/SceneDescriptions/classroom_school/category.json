@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "classroom_school",
+  "display": {
+    "en": "Classroom / school",
+    "de": "Klassenraum / Schule"
+  },
+  "status": "wave_3_complete",
+  "focus": {
+    "primary": [
+      "functional_tasks",
+      "verbs",
+      "classroom_nouns"
+    ],
+    "secondary": [
+      "routines",
+      "social_language",
+      "spatial_language",
+      "sentence_expansion"
+    ],
+    "tasks": "high"
+  },
+  "recommendedFocalSubjectsPerScene": {
+    "min": 5,
+    "max": 7
+  },
+  "approvedSceneCount": 9,
+  "wave2Status": "complete",
+  "wave3Status": "complete"
+}

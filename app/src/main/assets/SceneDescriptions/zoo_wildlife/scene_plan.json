@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "zoo_wildlife",
+  "status": "wave_3_complete",
+  "scenes": [
+    {
+      "sceneId": "scene.zoo.habitats.04",
+      "title": "Zoo Scene 4 — Different Animal Habitats",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/zoo_004_habitats.png",
+      "metadata": "metadata/zoo_004_habitats.json",
+      "prompt": "prompts/zoo_004_habitats.md",
+      "brief": "Compare where different zoo animals live, stand and swim.",
+      "targetExamples": [
+        "The bear is near the cave.",
+        "The kangaroo is on the ground.",
+        "The otter is swimming in the water."
+      ]
+    },
+    {
+      "sceneId": "scene.zoo.feeding_time.05",
+      "title": "Zoo Scene 5 — Feeding Time",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/zoo_005_feeding_time.png",
+      "metadata": "metadata/zoo_005_feeding_time.json",
+      "prompt": "prompts/zoo_005_feeding_time.md",
+      "brief": "Animal-care language, eating actions and feature comparison.",
+      "targetExamples": [
+        "The giraffe is reaching for leaves.",
+        "The elephant is holding leaves with its trunk.",
+        "The zebra is standing in front.",
+        "The giraffe has a long neck.",
+        "The zebra is striped."
+      ]
+    },
+    {
+      "sceneId": "scene.zoo.positions_story.06",
+      "title": "Zoo Scene 6 — Zoo Positions and Observation",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/zoo_006_positions_story.png",
+      "metadata": "metadata/zoo_006_positions_story.json",
+      "prompt": "prompts/zoo_006_positions_story.md",
+      "brief": "Spatial language, observation and simple inference in a zoo habitat.",
+      "targetExamples": [
+        "The lion is on the rock.",
+        "The penguin is near the pool.",
+        "The monkey is climbing the frame.",
+        "The lion is above the penguin."
+      ]
+    },
+    {
+      "sceneId": "scene.zoo.habitats_story.07",
+      "title": "Zoo Scene 7 — Animals in Different Places",
+      "slug": "zoo_007_habitats",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/zoo_007_habitats.png",
+      "metadata": "metadata/zoo_007_habitats.json",
+      "prompt": "prompts/zoo_007_habitats.md",
+      "brief": "Observe familiar zoo animals in places that suit them: by water, on a branch, or in shade.",
+      "targetExamples": [
+        "The penguin is near the pool.",
+        "The lion is in the shade.",
+        "The monkey is on the branch.",
+        "The elephant is by the water.",
+        "The giraffe is tall."
+      ]
+    },
+    {
+      "sceneId": "scene.zoo.feature_clues.08",
+      "title": "Zoo Scene 8 — Animal Feature Clues",
+      "slug": "zoo_008_feature_clues",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/zoo_008_feature_clues.png",
+      "metadata": "metadata/zoo_008_feature_clues.json",
+      "prompt": "prompts/zoo_008_feature_clues.md",
+      "brief": "Find animals from clues about their visible features and size.",
+      "targetExamples": [
+        "The giraffe has a long neck.",
+        "The elephant is big and grey.",
+        "The lion has a mane.",
+        "The zebra is striped.",
+        "The penguin is small."
+      ]
+    },
+    {
+      "sceneId": "scene.zoo.water_shade.09",
+      "title": "Zoo Scene 9 — Water, Shade and Rest",
+      "slug": "zoo_009_water_and_shade",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/zoo_009_water_and_shade.png",
+      "metadata": "metadata/zoo_009_water_and_shade.json",
+      "prompt": "prompts/zoo_009_water_and_shade.md",
+      "brief": "Talk about what animals are doing and what they need in a warm zoo setting.",
+      "targetExamples": [
+        "The elephant is near the water.",
+        "The lion is resting in the shade.",
+        "The penguin is by the pool.",
+        "The monkey is on the tree branch.",
+        "The animals look calm."
+      ]
+    },
+    {
+      "sceneId": "scene.zoo.actions.02",
+      "slug": "zoo_002_actions",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "action_verbs",
+        "animal_nouns"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Five different zoo-animal actions: spraying, eating leaves, walking, swimming and climbing."
+    },
+    {
+      "sceneId": "scene.zoo.features.01",
+      "slug": "zoo_001_features",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "animal_nouns",
+        "adjectives",
+        "visible_features",
+        "comparisons"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "One giraffe, elephant, lion, zebra and penguin with strong contrasts in height, size, colour and visible animal features.",
+      "targetExamples": [
+        "The giraffe is tall.",
+        "The giraffe has a long neck.",
+        "The elephant is big and grey.",
+        "The elephant has a long trunk.",
+        "The lion has a big mane.",
+        "The zebra is striped.",
+        "The penguin is small."
+      ]
+    },
+    {
+      "sceneId": "scene.zoo.positions.03",
+      "slug": "zoo_003_positions",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "spatial_language",
+        "nouns"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Six spatial examples in a wildlife park: on, near, behind, next to, under and between."
+    }
+  ]
+}

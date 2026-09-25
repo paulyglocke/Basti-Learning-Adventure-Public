@@ -1,0 +1,58 @@
+{
+  "sceneId": "scene.farm.animal_actions.04",
+  "categoryId": "countryside_farm",
+  "title": "Farm Scene 4 — Animal Actions Around the Barn",
+  "status": "approved",
+  "purpose": "Describe familiar farm animals, what they are doing, and where they are.",
+  "asset": "canonical/farm_004_animal_actions.png",
+  "promptFile": "prompts/farm_004_animal_actions.md",
+  "targetLanguage": {
+    "nouns": [
+      "cow",
+      "pig",
+      "chickens",
+      "sheep",
+      "barn",
+      "mud",
+      "grain",
+      "fence"
+    ],
+    "verbs": [
+      "standing",
+      "pecking",
+      "eating"
+    ],
+    "adjectives": [
+      "black and white",
+      "pink",
+      "fluffy",
+      "muddy"
+    ],
+    "sentenceModels": [
+      "The cow is by the barn.",
+      "The pig is in the mud.",
+      "The chickens are pecking the grain.",
+      "The sheep is near the fence."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Move from naming the animals to saying what each one is doing and where it is.",
+    "starterPrompts": [
+      "What animals can you see?",
+      "Where is the pig?",
+      "What are the chickens doing?",
+      "Which animal is fluffy?",
+      "Where is the cow?"
+    ],
+    "expansionPrompts": [
+      "Can you make a longer sentence about the pig?",
+      "Why might the chickens be pecking the ground?"
+    ]
+  },
+  "visualAudit": [
+    "Auto-batch panel reviewed for the described targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_3"
+}

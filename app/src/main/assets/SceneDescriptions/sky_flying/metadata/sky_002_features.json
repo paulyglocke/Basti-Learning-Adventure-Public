@@ -1,0 +1,407 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.sky.features.02",
+  "categoryId": "sky_flying",
+  "slug": "sky_002_features",
+  "asset": "canonical/sky_002_features.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Sky Colours and Comparisons",
+    "de": "Farben und Vergleiche am Himmel"
+  },
+  "learningFocus": {
+    "primary": [
+      "adjectives",
+      "colour",
+      "size",
+      "counting",
+      "comparisons"
+    ],
+    "secondary": [
+      "nouns",
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "balloon",
+        "en": "hot-air balloon",
+        "de": "Heißluftballon"
+      },
+      "properties": [
+        {
+          "en": "big",
+          "de": "groß"
+        },
+        {
+          "en": "red",
+          "de": "rot"
+        },
+        {
+          "en": "yellow",
+          "de": "gelb"
+        },
+        {
+          "en": "colourful",
+          "de": "bunt"
+        }
+      ],
+      "notes": "One very large red-and-yellow hot-air balloon, clearly the largest flying object."
+    },
+    {
+      "subject": {
+        "id": "airplane",
+        "en": "airplane",
+        "de": "Flugzeug"
+      },
+      "properties": [
+        {
+          "en": "small",
+          "de": "klein"
+        },
+        {
+          "en": "blue",
+          "de": "blau"
+        }
+      ],
+      "notes": "One clearly small blue propeller airplane, much smaller than the balloon."
+    },
+    {
+      "subject": {
+        "id": "long_cloud",
+        "en": "long cloud",
+        "de": "lange Wolke"
+      },
+      "properties": [
+        {
+          "en": "long",
+          "de": "lang"
+        },
+        {
+          "en": "white",
+          "de": "weiß"
+        }
+      ],
+      "notes": "One long horizontal white cloud in the upper-left."
+    },
+    {
+      "subject": {
+        "id": "small_cloud",
+        "en": "small round cloud",
+        "de": "kleine runde Wolke"
+      },
+      "properties": [
+        {
+          "en": "small",
+          "de": "klein"
+        },
+        {
+          "en": "round",
+          "de": "rund"
+        },
+        {
+          "en": "white",
+          "de": "weiß"
+        }
+      ],
+      "notes": "One visibly small, rounded white cloud in the upper-right."
+    },
+    {
+      "subject": {
+        "id": "bird_group",
+        "en": "three little yellow birds",
+        "de": "drei kleine gelbe Vögel"
+      },
+      "quantity": 3,
+      "properties": [
+        {
+          "en": "little",
+          "de": "klein"
+        },
+        {
+          "en": "yellow",
+          "de": "gelb"
+        }
+      ],
+      "notes": "Exactly three small yellow birds, clearly countable individually."
+    },
+    {
+      "subject": {
+        "id": "kite",
+        "en": "kite",
+        "de": "Drachen"
+      },
+      "properties": [
+        {
+          "en": "colourful",
+          "de": "bunt"
+        },
+        {
+          "en": "bright",
+          "de": "leuchtend"
+        }
+      ],
+      "notes": "One bright multi-coloured kite with one string and one ribbon tail."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "hot-air balloon",
+        "de": "Heißluftballon"
+      },
+      {
+        "en": "airplane",
+        "de": "Flugzeug"
+      },
+      {
+        "en": "cloud",
+        "de": "Wolke"
+      },
+      {
+        "en": "bird",
+        "de": "Vogel"
+      },
+      {
+        "en": "kite",
+        "de": "Drachen"
+      },
+      {
+        "en": "sky",
+        "de": "Himmel"
+      }
+    ],
+    "adjectives": [
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "long",
+        "de": "lang"
+      },
+      {
+        "en": "round",
+        "de": "rund"
+      },
+      {
+        "en": "red",
+        "de": "rot"
+      },
+      {
+        "en": "yellow",
+        "de": "gelb"
+      },
+      {
+        "en": "blue",
+        "de": "blau"
+      },
+      {
+        "en": "white",
+        "de": "weiß"
+      },
+      {
+        "en": "colourful",
+        "de": "bunt"
+      },
+      {
+        "en": "bright",
+        "de": "leuchtend"
+      }
+    ],
+    "comparisonLanguage": [
+      {
+        "en": "bigger",
+        "de": "größer"
+      },
+      {
+        "en": "smaller",
+        "de": "kleiner"
+      },
+      {
+        "en": "longer",
+        "de": "länger"
+      }
+    ],
+    "countingLanguage": [
+      {
+        "en": "one",
+        "de": "eins"
+      },
+      {
+        "en": "three",
+        "de": "drei"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The balloon is big.",
+      "The airplane is small.",
+      "The balloon is bigger than the airplane.",
+      "The airplane is blue.",
+      "The long cloud is white.",
+      "One cloud is long and one cloud is small.",
+      "There are three little yellow birds.",
+      "The kite is colourful."
+    ],
+    "de": [
+      "Der Ballon ist groß.",
+      "Das Flugzeug ist klein.",
+      "Der Ballon ist größer als das Flugzeug.",
+      "Das Flugzeug ist blau.",
+      "Die lange Wolke ist weiß.",
+      "Eine Wolke ist lang und eine Wolke ist klein.",
+      "Es gibt drei kleine gelbe Vögel.",
+      "Der Drachen ist bunt."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Start with one visible property, then help Basti combine colour, size or quantity into a fuller description.",
+      "de": "Mit einer sichtbaren Eigenschaft beginnen und Basti dann helfen, Farbe, Größe oder Anzahl zu einer ausführlicheren Beschreibung zu verbinden."
+    },
+    "wordsToModel": {
+      "en": [
+        "big",
+        "small",
+        "long",
+        "round",
+        "red",
+        "yellow",
+        "blue",
+        "white",
+        "colourful",
+        "three",
+        "balloon",
+        "airplane",
+        "cloud",
+        "birds",
+        "kite"
+      ],
+      "de": [
+        "groß",
+        "klein",
+        "lang",
+        "rund",
+        "rot",
+        "gelb",
+        "blau",
+        "weiß",
+        "bunt",
+        "drei",
+        "Ballon",
+        "Flugzeug",
+        "Wolke",
+        "Vögel",
+        "Drachen"
+      ]
+    },
+    "questions": {
+      "en": [
+        "Which flying object is big?",
+        "Which flying object is small?",
+        "What colour is the airplane?",
+        "Which cloud is long?",
+        "Which cloud is small and round?",
+        "How many little yellow birds can you see?",
+        "Which is bigger, the balloon or the airplane?",
+        "What colours can you see on the kite?"
+      ],
+      "de": [
+        "Welches Flugobjekt ist groß?",
+        "Welches Flugobjekt ist klein?",
+        "Welche Farbe hat das Flugzeug?",
+        "Welche Wolke ist lang?",
+        "Welche Wolke ist klein und rund?",
+        "Wie viele kleine gelbe Vögel kannst du sehen?",
+        "Was ist größer, der Ballon oder das Flugzeug?",
+        "Welche Farben siehst du am Drachen?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The ___ is big.",
+        "The ___ is small.",
+        "The ___ is ___.",
+        "The ___ is bigger than the ___.",
+        "There are ___ birds."
+      ],
+      "de": [
+        "Der/Die/Das ___ ist groß.",
+        "Der/Die/Das ___ ist klein.",
+        "Der/Die/Das ___ ist ___.",
+        "Der/Die/Das ___ ist größer als der/die/das ___.",
+        "Es gibt ___ Vögel."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The big balloon is red and yellow.",
+        "The small airplane is blue.",
+        "The balloon is much bigger than the airplane.",
+        "The long cloud is white.",
+        "The other cloud is small and round.",
+        "There are three little yellow birds.",
+        "The kite is bright and colourful."
+      ],
+      "de": [
+        "Der große Ballon ist rot und gelb.",
+        "Das kleine Flugzeug ist blau.",
+        "Der Ballon ist viel größer als das Flugzeug.",
+        "Die lange Wolke ist weiß.",
+        "Die andere Wolke ist klein und rund.",
+        "Es gibt drei kleine gelbe Vögel.",
+        "Der Drachen ist leuchtend und bunt."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Big balloon.",
+          "de": "Großer Ballon."
+        },
+        "adult": {
+          "en": "Yes, the big balloon is red and yellow.",
+          "de": "Ja, der große Ballon ist rot und gelb."
+        }
+      },
+      {
+        "child": {
+          "en": "Three birds.",
+          "de": "Drei Vögel."
+        },
+        "adult": {
+          "en": "Yes, there are three little yellow birds.",
+          "de": "Ja, es gibt drei kleine gelbe Vögel."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "oneBalloon": true,
+      "oneAirplane": true,
+      "twoFocalClouds": true,
+      "threeBirds": true,
+      "oneKite": true,
+      "noExtraBirds": true,
+      "noExtraAircraft": true,
+      "balloonClearlyLargest": true,
+      "airplaneClearlySmall": true,
+      "longCloudDistinct": true,
+      "smallRoundCloudDistinct": true,
+      "birdsClearlyCountable": true,
+      "kiteClearlyColourful": true,
+      "noTextOrUI": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

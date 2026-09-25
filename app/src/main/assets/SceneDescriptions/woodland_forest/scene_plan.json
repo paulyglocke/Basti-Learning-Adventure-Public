@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "woodland_forest",
+  "status": "wave_3_batch_1_complete",
+  "scenes": [
+    {
+      "sceneId": "scene.woodland.autumn_prep.04",
+      "title": "Woodland Scene 4 — Autumn Preparation",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/woodland_004_autumn_prep.png",
+      "metadata": "metadata/woodland_004_autumn_prep.json",
+      "prompt": "prompts/woodland_004_autumn_prep.md"
+    },
+    {
+      "sceneId": "scene.woodland.animal_homes.05",
+      "title": "Woodland Scene 5 — Woodland Homes",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/woodland_005_animal_homes.png",
+      "metadata": "metadata/woodland_005_animal_homes.json",
+      "prompt": "prompts/woodland_005_animal_homes.md"
+    },
+    {
+      "sceneId": "scene.woodland.compare_groups.06",
+      "title": "Woodland Scene 6 — Compare and Count",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/woodland_006_compare_groups.png",
+      "metadata": "metadata/woodland_006_compare_groups.json",
+      "prompt": "prompts/woodland_006_compare_groups.md"
+    },
+    {
+      "sceneId": "scene.woodland.before_rain.07",
+      "title": "Woodland Scene 7 — Before the Rain",
+      "slug": "woodland_007_before_rain",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/woodland_007_before_rain.png",
+      "metadata": "metadata/woodland_007_before_rain.json",
+      "prompt": "prompts/woodland_007_before_rain.md"
+    },
+    {
+      "sceneId": "scene.woodland.homes_choices.08",
+      "title": "Woodland Scene 8 — Homes and Hiding Places",
+      "slug": "woodland_008_homes_choices",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/woodland_008_homes_choices.png",
+      "metadata": "metadata/woodland_008_homes_choices.json",
+      "prompt": "prompts/woodland_008_homes_choices.md"
+    },
+    {
+      "sceneId": "scene.woodland.find_animals.09",
+      "title": "Woodland Scene 9 — Find the Woodland Animal",
+      "slug": "woodland_009_find_animals",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/woodland_009_find_animals.png",
+      "metadata": "metadata/woodland_009_find_animals.json",
+      "prompt": "prompts/woodland_009_find_animals.md"
+    },
+    {
+      "sceneId": "scene.woodland.actions.02",
+      "slug": "woodland_002_actions",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "verbs",
+        "nouns"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Five woodland animals each showing one clear action: squirrel carrying an acorn, rabbit hopping, fox walking, owl flying, deer drinking water.",
+      "targetExamples": [
+        "The squirrel is carrying an acorn.",
+        "The rabbit is hopping.",
+        "The fox is walking.",
+        "The owl is flying.",
+        "The deer is drinking water."
+      ]
+    },
+    {
+      "sceneId": "scene.woodland.features.01",
+      "slug": "woodland_001_features",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "nouns",
+        "adjectives",
+        "visible_features",
+        "comparisons"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Woodland animals chosen to highlight visible features such as long ears, bushy tails, fluffy tails and big eyes, with clear size differences.",
+      "targetExamples": [
+        "The deer is big.",
+        "The rabbit has long ears.",
+        "The fox has a bushy tail.",
+        "The squirrel has a fluffy tail.",
+        "The owl has big eyes.",
+        "The deer is bigger than the rabbit."
+      ]
+    },
+    {
+      "sceneId": "scene.woodland.positions.03",
+      "slug": "woodland_003_positions",
+      "status": "approved",
+      "wave": 1,
+      "primaryFocus": [
+        "spatial_language",
+        "nouns"
+      ],
+      "secondaryFocus": [
+        "verbs",
+        "sentence_expansion"
+      ],
+      "brief": "Six spatial relationships across a woodland scene: under, on, above, behind, next to and near.",
+      "targetExamples": [
+        "The rabbit is under the log.",
+        "The squirrel is on the branch.",
+        "The owl is above the fox.",
+        "The fox is behind the bush.",
+        "The deer is next to the tree.",
+        "The hedgehog is near the leaves."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,379 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.woodland.features.01",
+  "categoryId": "woodland_forest",
+  "slug": "woodland_001_features",
+  "asset": "canonical/woodland_001_features.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Forest Animals and Features",
+    "de": "Waldtiere und Merkmale"
+  },
+  "learningFocus": {
+    "primary": [
+      "nouns",
+      "adjectives",
+      "visible_features",
+      "comparisons"
+    ],
+    "secondary": [
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "deer",
+        "en": "deer",
+        "de": "Reh"
+      },
+      "properties": [
+        {
+          "en": "big",
+          "de": "groß"
+        },
+        {
+          "en": "brown",
+          "de": "braun"
+        }
+      ],
+      "notes": "One large brown deer, clearly the largest animal in the picture."
+    },
+    {
+      "subject": {
+        "id": "rabbit",
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      "properties": [
+        {
+          "en": "small",
+          "de": "klein"
+        },
+        {
+          "en": "long ears",
+          "de": "lange Ohren"
+        },
+        {
+          "en": "grey-brown",
+          "de": "graubraun"
+        }
+      ],
+      "notes": "One clearly small rabbit with long ears."
+    },
+    {
+      "subject": {
+        "id": "fox",
+        "en": "fox",
+        "de": "Fuchs"
+      },
+      "properties": [
+        {
+          "en": "orange-red",
+          "de": "orange-rot"
+        },
+        {
+          "en": "bushy tail",
+          "de": "buschiger Schwanz"
+        }
+      ],
+      "notes": "One fox with a clearly large bushy tail."
+    },
+    {
+      "subject": {
+        "id": "squirrel",
+        "en": "squirrel",
+        "de": "Eichhörnchen"
+      },
+      "properties": [
+        {
+          "en": "small",
+          "de": "klein"
+        },
+        {
+          "en": "fluffy tail",
+          "de": "flauschiger Schwanz"
+        },
+        {
+          "en": "brown",
+          "de": "braun"
+        }
+      ],
+      "notes": "One small brown squirrel with a very visible fluffy tail."
+    },
+    {
+      "subject": {
+        "id": "owl",
+        "en": "owl",
+        "de": "Eule"
+      },
+      "properties": [
+        {
+          "en": "big eyes",
+          "de": "große Augen"
+        },
+        {
+          "en": "brown / grey",
+          "de": "braun / grau"
+        }
+      ],
+      "notes": "One owl perched on a branch with clearly visible large eyes."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "deer",
+        "de": "Reh"
+      },
+      {
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      {
+        "en": "fox",
+        "de": "Fuchs"
+      },
+      {
+        "en": "squirrel",
+        "de": "Eichhörnchen"
+      },
+      {
+        "en": "owl",
+        "de": "Eule"
+      },
+      {
+        "en": "tail",
+        "de": "Schwanz"
+      },
+      {
+        "en": "ears",
+        "de": "Ohren"
+      },
+      {
+        "en": "eyes",
+        "de": "Augen"
+      },
+      {
+        "en": "branch",
+        "de": "Ast"
+      }
+    ],
+    "adjectives": [
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "brown",
+        "de": "braun"
+      },
+      {
+        "en": "grey-brown",
+        "de": "graubraun"
+      },
+      {
+        "en": "orange-red",
+        "de": "orange-rot"
+      },
+      {
+        "en": "long",
+        "de": "lang"
+      },
+      {
+        "en": "bushy",
+        "de": "buschig"
+      },
+      {
+        "en": "fluffy",
+        "de": "flauschig"
+      }
+    ],
+    "featureLanguage": [
+      {
+        "en": "long ears",
+        "de": "lange Ohren"
+      },
+      {
+        "en": "bushy tail",
+        "de": "buschiger Schwanz"
+      },
+      {
+        "en": "fluffy tail",
+        "de": "flauschiger Schwanz"
+      },
+      {
+        "en": "big eyes",
+        "de": "große Augen"
+      }
+    ],
+    "comparisonLanguage": [
+      {
+        "en": "bigger",
+        "de": "größer"
+      },
+      {
+        "en": "smaller",
+        "de": "kleiner"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The deer is big.",
+      "The rabbit is small.",
+      "The rabbit has long ears.",
+      "The fox has a bushy tail.",
+      "The squirrel has a fluffy tail.",
+      "The owl has big eyes.",
+      "The deer is bigger than the rabbit."
+    ],
+    "de": [
+      "Das Reh ist groß.",
+      "Das Kaninchen ist klein.",
+      "Das Kaninchen hat lange Ohren.",
+      "Der Fuchs hat einen buschigen Schwanz.",
+      "Das Eichhörnchen hat einen flauschigen Schwanz.",
+      "Die Eule hat große Augen.",
+      "Das Reh ist größer als das Kaninchen."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Start by naming one animal and one visible feature, then help Basti combine noun + adjective or noun + feature in a full sentence.",
+      "de": "Zuerst ein Tier und ein sichtbares Merkmal benennen, dann Basti dabei helfen, Nomen + Adjektiv oder Nomen + Merkmal in einem vollständigen Satz zu verbinden."
+    },
+    "wordsToModel": {
+      "en": [
+        "big",
+        "small",
+        "brown",
+        "long ears",
+        "bushy tail",
+        "fluffy tail",
+        "big eyes",
+        "deer",
+        "rabbit",
+        "fox",
+        "squirrel",
+        "owl"
+      ],
+      "de": [
+        "groß",
+        "klein",
+        "braun",
+        "lange Ohren",
+        "buschiger Schwanz",
+        "flauschiger Schwanz",
+        "große Augen",
+        "Reh",
+        "Kaninchen",
+        "Fuchs",
+        "Eichhörnchen",
+        "Eule"
+      ]
+    },
+    "questions": {
+      "en": [
+        "Which animal is big?",
+        "Which animal is small?",
+        "Who has long ears?",
+        "Who has a bushy tail?",
+        "Who has a fluffy tail?",
+        "Which animal has big eyes?",
+        "Which is bigger, the deer or the rabbit?"
+      ],
+      "de": [
+        "Welches Tier ist groß?",
+        "Welches Tier ist klein?",
+        "Wer hat lange Ohren?",
+        "Wer hat einen buschigen Schwanz?",
+        "Wer hat einen flauschigen Schwanz?",
+        "Welches Tier hat große Augen?",
+        "Was ist größer, das Reh oder das Kaninchen?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The ___ is big.",
+        "The ___ is small.",
+        "The ___ has long ___.",
+        "The ___ has a ___ tail.",
+        "The ___ has big ___.",
+        "The ___ is bigger than the ___."
+      ],
+      "de": [
+        "Der/Die/Das ___ ist groß.",
+        "Der/Die/Das ___ ist klein.",
+        "Der/Die/Das ___ hat lange ___.",
+        "Der/Die/Das ___ hat einen ___ Schwanz.",
+        "Der/Die/Das ___ hat große ___.",
+        "Der/Die/Das ___ ist größer als der/die/das ___."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The big deer is brown.",
+        "The small rabbit has long ears.",
+        "The fox has a big bushy tail.",
+        "The squirrel has a fluffy tail.",
+        "The owl has big eyes.",
+        "The deer is much bigger than the rabbit."
+      ],
+      "de": [
+        "Das große Reh ist braun.",
+        "Das kleine Kaninchen hat lange Ohren.",
+        "Der Fuchs hat einen großen buschigen Schwanz.",
+        "Das Eichhörnchen hat einen flauschigen Schwanz.",
+        "Die Eule hat große Augen.",
+        "Das Reh ist viel größer als das Kaninchen."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Big deer.",
+          "de": "Großes Reh."
+        },
+        "adult": {
+          "en": "Yes, the deer is big and brown.",
+          "de": "Ja, das Reh ist groß und braun."
+        }
+      },
+      {
+        "child": {
+          "en": "Rabbit ears.",
+          "de": "Kaninchen Ohren."
+        },
+        "adult": {
+          "en": "Yes, the rabbit has long ears.",
+          "de": "Ja, das Kaninchen hat lange Ohren."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "oneDeer": true,
+      "oneRabbit": true,
+      "oneFox": true,
+      "oneSquirrel": true,
+      "oneOwl": true,
+      "noOtherAnimals": true,
+      "deerClearlyLargest": true,
+      "rabbitLongEarsVisible": true,
+      "foxBushyTailVisible": true,
+      "squirrelFluffyTailVisible": true,
+      "owlBigEyesVisible": true,
+      "subjectsSeparated": true,
+      "noTextOrUI": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

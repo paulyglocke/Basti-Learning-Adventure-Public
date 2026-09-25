@@ -1,0 +1,332 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.ocean.reef_actions.01",
+  "categoryId": "ocean_underwater",
+  "slug": "ocean_001_reef_actions",
+  "asset": "canonical/ocean_001_reef_actions.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Reef Actions",
+    "de": "Aktionen am Riff"
+  },
+  "learningFocus": {
+    "primary": [
+      "verbs",
+      "nouns"
+    ],
+    "secondary": [
+      "sentence_expansion",
+      "simple_spatial_language"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "dolphin",
+        "en": "dolphin",
+        "de": "Delfin"
+      },
+      "action": {
+        "id": "jump",
+        "en": "jumping out of the water",
+        "de": "springt aus dem Wasser"
+      },
+      "notes": "One dolphin, upper-left, visibly airborne with splash."
+    },
+    {
+      "subject": {
+        "id": "turtle",
+        "en": "turtle",
+        "de": "Schildkröte"
+      },
+      "action": {
+        "id": "swim",
+        "en": "swimming",
+        "de": "schwimmt"
+      },
+      "notes": "One green turtle, central, horizontal swimming pose."
+    },
+    {
+      "subject": {
+        "id": "crab",
+        "en": "crab",
+        "de": "Krabbe"
+      },
+      "action": {
+        "id": "carry",
+        "en": "carrying a shell",
+        "de": "trägt eine Muschel"
+      },
+      "object": {
+        "id": "shell",
+        "en": "shell",
+        "de": "Muschel"
+      },
+      "notes": "One shell visibly held in the crab's claws."
+    },
+    {
+      "subject": {
+        "id": "octopus",
+        "en": "octopus",
+        "de": "Oktopus"
+      },
+      "action": {
+        "id": "crawl",
+        "en": "crawling over a rock",
+        "de": "krabbelt über einen Stein"
+      },
+      "object": {
+        "id": "rock",
+        "en": "rock",
+        "de": "Stein"
+      },
+      "notes": "One orange octopus clearly positioned across one large rock."
+    },
+    {
+      "subject": {
+        "id": "fish_group",
+        "en": "three little fish",
+        "de": "drei kleine Fische"
+      },
+      "action": {
+        "id": "swim",
+        "en": "swimming together",
+        "de": "schwimmen zusammen"
+      },
+      "quantity": 3,
+      "notes": "Exactly three small fish, grouped and travelling in the same direction."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "dolphin",
+        "de": "Delfin"
+      },
+      {
+        "en": "turtle",
+        "de": "Schildkröte"
+      },
+      {
+        "en": "crab",
+        "de": "Krabbe"
+      },
+      {
+        "en": "shell",
+        "de": "Muschel"
+      },
+      {
+        "en": "octopus",
+        "de": "Oktopus"
+      },
+      {
+        "en": "fish",
+        "de": "Fisch / Fische"
+      },
+      {
+        "en": "rock",
+        "de": "Stein"
+      },
+      {
+        "en": "coral",
+        "de": "Koralle"
+      },
+      {
+        "en": "sea / water",
+        "de": "Meer / Wasser"
+      }
+    ],
+    "verbs": [
+      {
+        "en": "jump",
+        "de": "springen"
+      },
+      {
+        "en": "swim",
+        "de": "schwimmen"
+      },
+      {
+        "en": "carry",
+        "de": "tragen"
+      },
+      {
+        "en": "crawl / climb",
+        "de": "krabbeln / klettern"
+      },
+      {
+        "en": "look",
+        "de": "schauen"
+      }
+    ],
+    "optionalAdjectives": [
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "small / little",
+        "de": "klein"
+      },
+      {
+        "en": "orange",
+        "de": "orange"
+      },
+      {
+        "en": "blue",
+        "de": "blau"
+      },
+      {
+        "en": "green",
+        "de": "grün"
+      }
+    ],
+    "spatialLanguage": [
+      {
+        "en": "in",
+        "de": "in"
+      },
+      {
+        "en": "on",
+        "de": "auf"
+      },
+      {
+        "en": "out of",
+        "de": "aus"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "Dolphin jumping.",
+      "The dolphin is jumping.",
+      "The turtle is swimming.",
+      "The crab is carrying a shell.",
+      "The octopus is on the rock.",
+      "The three little fish are swimming together."
+    ],
+    "de": [
+      "Delfin springt.",
+      "Der Delfin springt aus dem Wasser.",
+      "Die Schildkröte schwimmt.",
+      "Die Krabbe trägt eine Muschel.",
+      "Der Oktopus ist auf dem Stein.",
+      "Die drei kleinen Fische schwimmen zusammen."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Accept the child's answer first, then model one small step more language without requiring repetition.",
+      "de": "Die Antwort des Kindes zuerst annehmen und dann sprachlich um einen kleinen Schritt erweitern, ohne eine Wiederholung zu verlangen."
+    },
+    "wordsToModel": {
+      "en": [
+        "dolphin",
+        "turtle",
+        "crab",
+        "shell",
+        "octopus",
+        "fish",
+        "jumping",
+        "swimming",
+        "carrying"
+      ],
+      "de": [
+        "Delfin",
+        "Schildkröte",
+        "Krabbe",
+        "Muschel",
+        "Oktopus",
+        "Fische",
+        "springen",
+        "schwimmen",
+        "tragen"
+      ]
+    },
+    "questions": {
+      "en": [
+        "What is the dolphin doing?",
+        "Who is swimming?",
+        "What is the crab carrying?",
+        "Where is the octopus?",
+        "What are the three little fish doing?"
+      ],
+      "de": [
+        "Was macht der Delfin?",
+        "Wer schwimmt?",
+        "Was trägt die Krabbe?",
+        "Wo ist der Oktopus?",
+        "Was machen die drei kleinen Fische?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The ___ is…",
+        "I can see a…",
+        "The crab is…",
+        "The fish are…"
+      ],
+      "de": [
+        "Der/Die ___ …",
+        "Ich sehe …",
+        "Die Krabbe …",
+        "Die Fische …"
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The dolphin is jumping out of the water.",
+        "The turtle is swimming in the sea.",
+        "The little crab is carrying a shell.",
+        "The octopus is crawling over the rock.",
+        "The three little fish are swimming together."
+      ],
+      "de": [
+        "Der Delfin springt aus dem Wasser.",
+        "Die Schildkröte schwimmt im Meer.",
+        "Die kleine Krabbe trägt eine Muschel.",
+        "Der Oktopus krabbelt über den Stein.",
+        "Die drei kleinen Fische schwimmen zusammen."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Crab.",
+          "de": "Krabbe."
+        },
+        "adult": {
+          "en": "Yes, a crab. The little crab is carrying a shell.",
+          "de": "Ja, eine Krabbe. Die kleine Krabbe trägt eine Muschel."
+        }
+      },
+      {
+        "child": {
+          "en": "Fish swimming.",
+          "de": "Fische schwimmen."
+        },
+        "adult": {
+          "en": "Yes. The three little fish are swimming together.",
+          "de": "Ja. Die drei kleinen Fische schwimmen zusammen."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "replacementReviewed": true,
+    "checks": {
+      "oneDolphin": true,
+      "oneTurtle": true,
+      "oneCrab": true,
+      "oneOctopus": true,
+      "threeSmallFish": true,
+      "oneCarriedShell": true,
+      "turtleHasFourFlippers": true,
+      "octopusArmsCoherent": true,
+      "actionsReadable": true,
+      "noTextOrUI": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "ocean_underwater",
+  "status": "wave_3_batch_1_complete",
+  "scenes": [
+    {
+      "sceneId": "scene.ocean.story_actions.04",
+      "title": "Ocean Scene 4 — Reef Story Actions",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/ocean_004_story_actions.png",
+      "metadata": "metadata/ocean_004_story_actions.json",
+      "prompt": "prompts/ocean_004_story_actions.md"
+    },
+    {
+      "sceneId": "scene.ocean.big_small_numbers.05",
+      "title": "Ocean Scene 5 — Big, Small and How Many",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/ocean_005_big_small_numbers.png",
+      "metadata": "metadata/ocean_005_big_small_numbers.json",
+      "prompt": "prompts/ocean_005_big_small_numbers.md"
+    },
+    {
+      "sceneId": "scene.ocean.reef_routines.06",
+      "title": "Ocean Scene 6 — Reef Routines",
+      "status": "approved",
+      "wave": "wave_2",
+      "asset": "canonical/ocean_006_reef_routines.png",
+      "metadata": "metadata/ocean_006_reef_routines.json",
+      "prompt": "prompts/ocean_006_reef_routines.md"
+    },
+    {
+      "sceneId": "scene.ocean.helping_story.07",
+      "title": "Ocean Scene 7 — Helping at the Reef",
+      "slug": "ocean_007_helping_story",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/ocean_007_helping_story.png",
+      "metadata": "metadata/ocean_007_helping_story.json",
+      "prompt": "prompts/ocean_007_helping_story.md"
+    },
+    {
+      "sceneId": "scene.ocean.find_and_follow.08",
+      "title": "Ocean Scene 8 — Find and Follow Directions",
+      "slug": "ocean_008_find_and_follow",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/ocean_008_find_and_follow.png",
+      "metadata": "metadata/ocean_008_find_and_follow.json",
+      "prompt": "prompts/ocean_008_find_and_follow.md"
+    },
+    {
+      "sceneId": "scene.ocean.describing_sea_friends.09",
+      "title": "Ocean Scene 9 — Describing Sea Friends",
+      "slug": "ocean_009_describing_sea_friends",
+      "status": "approved",
+      "wave": "wave_3",
+      "asset": "canonical/ocean_009_describing_sea_friends.png",
+      "metadata": "metadata/ocean_009_describing_sea_friends.json",
+      "prompt": "prompts/ocean_009_describing_sea_friends.md"
+    },
+    {
+      "sceneId": "scene.ocean.busy_reef_story.06",
+      "slug": "ocean_006_busy_reef_story",
+      "primaryFocus": [
+        "sentence_expansion",
+        "verbs",
+        "spatial_language"
+      ],
+      "secondaryFocus": [
+        "adjectives",
+        "nouns"
+      ],
+      "brief": "A later mixed scene for combining who + action + object/location/property in fuller descriptions.",
+      "targetExamples": [
+        "The big turtle is swimming next to the colourful coral.",
+        "The little crab is carrying a shell across the sand.",
+        "The dolphin is jumping above the fish.",
+        "The octopus is hiding behind a rock."
+      ]
+    },
+    {
+      "sceneId": "scene.ocean.colours_sizes.02",
+      "slug": "ocean_002_colours_sizes",
+      "primaryFocus": [
+        "adjectives",
+        "nouns",
+        "comparisons",
+        "counting"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Strong visible contrasts in size, colour and pattern without turning the image into an object chart.",
+      "targetExamples": [
+        "big green turtle",
+        "small orange-and-yellow seahorse",
+        "orange-and-white clownfish",
+        "three little blue fish",
+        "colourful coral",
+        "turtle bigger than the fish"
+      ],
+      "wave": 1,
+      "status": "approved"
+    },
+    {
+      "sceneId": "scene.ocean.feeding_carrying.04",
+      "slug": "ocean_004_feeding_carrying",
+      "primaryFocus": [
+        "verbs",
+        "object_language"
+      ],
+      "secondaryFocus": [
+        "nouns",
+        "sentence_expansion"
+      ],
+      "brief": "Natural purposeful animal actions rather than human-style tasks.",
+      "targetExamples": [
+        "turtle eating seaweed",
+        "crab carrying a shell",
+        "octopus reaching toward food",
+        "fish looking near the coral",
+        "dolphin chasing bubbles"
+      ]
+    },
+    {
+      "sceneId": "scene.ocean.hiding_places.03",
+      "slug": "ocean_003_hiding_places",
+      "primaryFocus": [
+        "spatial_language",
+        "nouns"
+      ],
+      "secondaryFocus": [
+        "verbs"
+      ],
+      "brief": "Reef scene designed around clear relative positions and hiding places.",
+      "targetExamples": [
+        "crab under a rock",
+        "starfish on the sand",
+        "turtle above the starfish",
+        "seahorse next to seaweed",
+        "octopus behind coral",
+        "two fish near coral"
+      ],
+      "wave": 1,
+      "status": "approved"
+    },
+    {
+      "sceneId": "scene.ocean.reef_actions.01",
+      "slug": "ocean_001_reef_actions",
+      "primaryFocus": [
+        "verbs",
+        "nouns"
+      ],
+      "secondaryFocus": [
+        "sentence_expansion"
+      ],
+      "brief": "Busy but readable coral reef with several different animals each performing one clearly different action.",
+      "targetExamples": [
+        "dolphin jumping out of the water",
+        "turtle swimming",
+        "crab carrying a shell",
+        "octopus crawling over a rock",
+        "three little fish swimming together"
+      ],
+      "status": "approved",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.ocean.up_down_through.05",
+      "slug": "ocean_005_up_down_through",
+      "primaryFocus": [
+        "movement_verbs",
+        "spatial_language"
+      ],
+      "secondaryFocus": [
+        "nouns"
+      ],
+      "brief": "Directional movement with unmistakable paths and positions.",
+      "targetExamples": [
+        "dolphin diving down",
+        "fish swimming through coral",
+        "turtle swimming over a rock",
+        "crab crawling across the sand",
+        "jellyfish floating above the reef"
+      ]
+    }
+  ]
+}

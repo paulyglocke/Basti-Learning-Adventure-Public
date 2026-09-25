@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "ocean_underwater",
+  "approvedScenes": [
+    {
+      "sceneId": "scene.ocean.reef_actions.01",
+      "slug": "ocean_001_reef_actions",
+      "asset": "canonical/ocean_001_reef_actions.png",
+      "metadata": "metadata/ocean_001_reef_actions.json",
+      "prompt": "prompts/ocean_001_reef_actions.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.ocean.colours_sizes.02",
+      "slug": "ocean_002_colours_sizes",
+      "asset": "canonical/ocean_002_colours_sizes.png",
+      "metadata": "metadata/ocean_002_colours_sizes.json",
+      "prompt": "prompts/ocean_002_colours_sizes.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.ocean.hiding_places.03",
+      "slug": "ocean_003_hiding_places",
+      "asset": "canonical/ocean_003_hiding_places.png",
+      "metadata": "metadata/ocean_003_hiding_places.json",
+      "prompt": "prompts/ocean_003_hiding_places.md",
+      "wave": 1
+    },
+    {
+      "sceneId": "scene.ocean.story_actions.04",
+      "title": "Ocean Scene 4 — Reef Story Actions",
+      "asset": "canonical/ocean_004_story_actions.png",
+      "metadata": "metadata/ocean_004_story_actions.json",
+      "prompt": "prompts/ocean_004_story_actions.md"
+    },
+    {
+      "sceneId": "scene.ocean.big_small_numbers.05",
+      "title": "Ocean Scene 5 — Big, Small and How Many",
+      "asset": "canonical/ocean_005_big_small_numbers.png",
+      "metadata": "metadata/ocean_005_big_small_numbers.json",
+      "prompt": "prompts/ocean_005_big_small_numbers.md"
+    },
+    {
+      "sceneId": "scene.ocean.reef_routines.06",
+      "title": "Ocean Scene 6 — Reef Routines",
+      "asset": "canonical/ocean_006_reef_routines.png",
+      "metadata": "metadata/ocean_006_reef_routines.json",
+      "prompt": "prompts/ocean_006_reef_routines.md"
+    },
+    {
+      "sceneId": "scene.ocean.helping_story.07",
+      "slug": "ocean_007_helping_story",
+      "asset": "canonical/ocean_007_helping_story.png",
+      "metadata": "metadata/ocean_007_helping_story.json",
+      "prompt": "prompts/ocean_007_helping_story.md",
+      "wave": 3
+    },
+    {
+      "sceneId": "scene.ocean.find_and_follow.08",
+      "slug": "ocean_008_find_and_follow",
+      "asset": "canonical/ocean_008_find_and_follow.png",
+      "metadata": "metadata/ocean_008_find_and_follow.json",
+      "prompt": "prompts/ocean_008_find_and_follow.md",
+      "wave": 3
+    },
+    {
+      "sceneId": "scene.ocean.describing_sea_friends.09",
+      "slug": "ocean_009_describing_sea_friends",
+      "asset": "canonical/ocean_009_describing_sea_friends.png",
+      "metadata": "metadata/ocean_009_describing_sea_friends.json",
+      "prompt": "prompts/ocean_009_describing_sea_friends.md",
+      "wave": 3
+    }
+  ],
+  "note": "Ocean Wave 1 complete: three user-approved production scenes. Wave 3 batch 1 complete: scenes 007–009 added."
+}

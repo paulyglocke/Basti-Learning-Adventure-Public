@@ -1,0 +1,57 @@
+{
+  "sceneId": "scene.sky.weather_sequence.07",
+  "categoryId": "sky_flying",
+  "title": "Sky Scene 7 — Weather Changes",
+  "status": "approved",
+  "purpose": "Sequencing weather changes and using before/after language.",
+  "asset": "canonical/sky_007_weather_sequence.png",
+  "promptFile": "prompts/sky_007_weather_sequence.md",
+  "targetLanguage": {
+    "nouns": [
+      "sun",
+      "cloud",
+      "rain",
+      "rainbow",
+      "airplane",
+      "birds"
+    ],
+    "verbs": [
+      "flying",
+      "raining",
+      "changing"
+    ],
+    "adjectives": [
+      "sunny",
+      "cloudy",
+      "rainy",
+      "bright",
+      "dark"
+    ],
+    "sentenceModels": [
+      "First it is sunny.",
+      "Then the clouds come.",
+      "After that it rains.",
+      "The rainbow comes after the rain."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Use first, then, after and before to describe the weather from left to right.",
+    "starterPrompts": [
+      "What is the weather like first?",
+      "What comes after the sun?",
+      "Where is the rain?",
+      "What comes after the rain?",
+      "Can you find the airplane?"
+    ],
+    "expansionPrompts": [
+      "Tell me the weather story from first to last.",
+      "What happens before the rainbow appears?"
+    ]
+  },
+  "visualAudit": [
+    "Reviewed in Wave 3 Batch 2 automatic pass against the visible teaching targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_2"
+}

@@ -1,0 +1,58 @@
+{
+  "sceneId": "scene.zoo.feature_clues.08",
+  "categoryId": "zoo_wildlife",
+  "title": "Zoo Scene 8 — Animal Feature Clues",
+  "status": "approved",
+  "purpose": "Support adjectives, visible body features and clue-based identification in a zoo scene.",
+  "asset": "canonical/zoo_008_feature_clues.png",
+  "promptFile": "prompts/zoo_008_feature_clues.md",
+  "targetLanguage": {
+    "nouns": [
+      "giraffe",
+      "elephant",
+      "lion",
+      "zebra",
+      "monkey",
+      "penguin"
+    ],
+    "verbs": [
+      "standing",
+      "sitting"
+    ],
+    "adjectives": [
+      "tall",
+      "big",
+      "grey",
+      "striped",
+      "small",
+      "brown"
+    ],
+    "sentenceModels": [
+      "The giraffe has a long neck.",
+      "The elephant is big and grey.",
+      "The lion has a mane.",
+      "The zebra is striped.",
+      "The penguin is small."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Use descriptive clues to identify each animal and compare them.",
+    "starterPrompts": [
+      "Which animal has a long neck?",
+      "Which animal is striped?",
+      "Who has a mane?",
+      "Which animal is small?",
+      "Can you find the big grey animal?"
+    ],
+    "expansionPrompts": [
+      "Tell me two clues for each animal.",
+      "Which animals are big and which are small?"
+    ]
+  },
+  "visualAudit": [
+    "Reviewed in Wave 3 Batch 3 automatic pass against the main teaching targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_3",
+  "batch": "wave_3_batch_3"
+}

@@ -1,0 +1,55 @@
+{
+  "sceneId": "scene.zoo.habitats.04",
+  "categoryId": "zoo_wildlife",
+  "title": "Zoo Scene 4 — Different Animal Habitats",
+  "status": "approved",
+  "purpose": "Compare where different zoo animals live, stand and swim.",
+  "asset": "canonical/zoo_004_habitats.png",
+  "promptFile": "prompts/zoo_004_habitats.md",
+  "targetLanguage": {
+    "nouns": [
+      "bear",
+      "cave",
+      "kangaroo",
+      "otter",
+      "pool",
+      "rock",
+      "water"
+    ],
+    "verbs": [
+      "standing",
+      "swimming"
+    ],
+    "adjectives": [
+      "brown",
+      "rocky",
+      "wet",
+      "dry"
+    ],
+    "sentenceModels": [
+      "The bear is near the cave.",
+      "The kangaroo is on the ground.",
+      "The otter is swimming in the water."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Compare habitats and ask which animals are on land or in water.",
+    "starterPrompts": [
+      "Where is the bear?",
+      "Which animal is swimming?",
+      "Which animal is on land?",
+      "What is near the cave?",
+      "Which place is wet?"
+    ],
+    "expansionPrompts": [
+      "How is the otter's place different from the bear's place?",
+      "Tell me a sentence about the kangaroo."
+    ]
+  },
+  "visualAudit": [
+    "Auto-batch panel reviewed for the described targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_3"
+}

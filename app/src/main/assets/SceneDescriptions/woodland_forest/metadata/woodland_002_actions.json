@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scene.woodland.actions.02",
+  "categoryId": "woodland_forest",
+  "slug": "woodland_002_actions",
+  "asset": "canonical/woodland_002_actions.png",
+  "status": "approved",
+  "wave": 1,
+  "title": {
+    "en": "Forest Actions",
+    "de": "Aktionen im Wald"
+  },
+  "learningFocus": {
+    "primary": [
+      "verbs",
+      "nouns"
+    ],
+    "secondary": [
+      "sentence_expansion"
+    ]
+  },
+  "visibleTargets": [
+    {
+      "subject": {
+        "id": "squirrel",
+        "en": "squirrel",
+        "de": "Eichhörnchen"
+      },
+      "action": {
+        "id": "carry",
+        "en": "carrying an acorn",
+        "de": "trägt eine Eichel"
+      },
+      "object": {
+        "id": "acorn",
+        "en": "acorn",
+        "de": "Eichel"
+      },
+      "notes": "One small brown squirrel clearly holding and carrying one acorn."
+    },
+    {
+      "subject": {
+        "id": "rabbit",
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      "action": {
+        "id": "hop",
+        "en": "hopping",
+        "de": "hoppelt"
+      },
+      "notes": "One grey-brown rabbit visibly airborne in a clear hopping pose."
+    },
+    {
+      "subject": {
+        "id": "fox",
+        "en": "fox",
+        "de": "Fuchs"
+      },
+      "action": {
+        "id": "walk",
+        "en": "walking",
+        "de": "läuft"
+      },
+      "notes": "One orange-red fox in a clear walking pose with one front paw raised."
+    },
+    {
+      "subject": {
+        "id": "owl",
+        "en": "owl",
+        "de": "Eule"
+      },
+      "action": {
+        "id": "fly",
+        "en": "flying",
+        "de": "fliegt"
+      },
+      "notes": "One brown owl flying with both wings extended."
+    },
+    {
+      "subject": {
+        "id": "deer",
+        "en": "deer",
+        "de": "Reh"
+      },
+      "action": {
+        "id": "drink",
+        "en": "drinking water",
+        "de": "trinkt Wasser"
+      },
+      "notes": "One large brown deer with head lowered to the pond, clearly drinking."
+    }
+  ],
+  "targetLanguage": {
+    "nouns": [
+      {
+        "en": "squirrel",
+        "de": "Eichhörnchen"
+      },
+      {
+        "en": "acorn",
+        "de": "Eichel"
+      },
+      {
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      {
+        "en": "fox",
+        "de": "Fuchs"
+      },
+      {
+        "en": "owl",
+        "de": "Eule"
+      },
+      {
+        "en": "deer",
+        "de": "Reh"
+      },
+      {
+        "en": "water",
+        "de": "Wasser"
+      },
+      {
+        "en": "pond / stream",
+        "de": "Teich / Bach"
+      }
+    ],
+    "verbs": [
+      {
+        "en": "carry",
+        "de": "tragen"
+      },
+      {
+        "en": "hop",
+        "de": "hoppeln"
+      },
+      {
+        "en": "walk",
+        "de": "laufen"
+      },
+      {
+        "en": "fly",
+        "de": "fliegen"
+      },
+      {
+        "en": "drink",
+        "de": "trinken"
+      }
+    ],
+    "optionalAdjectives": [
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "brown",
+        "de": "braun"
+      },
+      {
+        "en": "grey-brown",
+        "de": "graubraun"
+      },
+      {
+        "en": "orange-red",
+        "de": "orange-rot"
+      },
+      {
+        "en": "big",
+        "de": "groß"
+      }
+    ]
+  },
+  "exampleChildDescriptions": {
+    "en": [
+      "The squirrel is carrying an acorn.",
+      "The rabbit is hopping.",
+      "The fox is walking.",
+      "The owl is flying.",
+      "The deer is drinking water."
+    ],
+    "de": [
+      "Das Eichhörnchen trägt eine Eichel.",
+      "Das Kaninchen hoppelt.",
+      "Der Fuchs läuft.",
+      "Die Eule fliegt.",
+      "Das Reh trinkt Wasser."
+    ]
+  },
+  "adultSupport": {
+    "principle": {
+      "en": "Help Basti name the animal and action first, then expand the answer with the object or setting.",
+      "de": "Basti soll zuerst Tier und Handlung benennen; danach kann die Antwort um Gegenstand oder Ort erweitert werden."
+    },
+    "wordsToModel": {
+      "en": [
+        "squirrel",
+        "acorn",
+        "rabbit",
+        "fox",
+        "owl",
+        "deer",
+        "carrying",
+        "hopping",
+        "walking",
+        "flying",
+        "drinking"
+      ],
+      "de": [
+        "Eichhörnchen",
+        "Eichel",
+        "Kaninchen",
+        "Fuchs",
+        "Eule",
+        "Reh",
+        "trägt",
+        "hoppelt",
+        "läuft",
+        "fliegt",
+        "trinkt"
+      ]
+    },
+    "questions": {
+      "en": [
+        "What is the squirrel carrying?",
+        "What is the rabbit doing?",
+        "Which animal is walking?",
+        "Which animal is flying?",
+        "What is the deer doing?",
+        "Who is drinking water?"
+      ],
+      "de": [
+        "Was trägt das Eichhörnchen?",
+        "Was macht das Kaninchen?",
+        "Welches Tier läuft?",
+        "Welches Tier fliegt?",
+        "Was macht das Reh?",
+        "Wer trinkt Wasser?"
+      ]
+    },
+    "sentenceStarters": {
+      "en": [
+        "The squirrel is carrying...",
+        "The rabbit is...",
+        "The fox is...",
+        "The owl is...",
+        "The deer is..."
+      ],
+      "de": [
+        "Das Eichhörnchen trägt...",
+        "Das Kaninchen...",
+        "Der Fuchs...",
+        "Die Eule...",
+        "Das Reh..."
+      ]
+    },
+    "modellingExamples": {
+      "en": [
+        "The little squirrel is carrying an acorn.",
+        "The rabbit is hopping through the forest.",
+        "The orange fox is walking.",
+        "The owl is flying above the clearing.",
+        "The deer is drinking water from the pond."
+      ],
+      "de": [
+        "Das kleine Eichhörnchen trägt eine Eichel.",
+        "Das Kaninchen hoppelt durch den Wald.",
+        "Der orangefarbene Fuchs läuft.",
+        "Die Eule fliegt über die Lichtung.",
+        "Das Reh trinkt Wasser aus dem Teich."
+      ]
+    },
+    "expansionExamples": [
+      {
+        "child": {
+          "en": "Squirrel acorn.",
+          "de": "Eichhörnchen Eichel."
+        },
+        "adult": {
+          "en": "Yes, the squirrel is carrying an acorn.",
+          "de": "Ja, das Eichhörnchen trägt eine Eichel."
+        }
+      },
+      {
+        "child": {
+          "en": "Deer drinking.",
+          "de": "Reh trinkt."
+        },
+        "adult": {
+          "en": "Yes, the deer is drinking water from the pond.",
+          "de": "Ja, das Reh trinkt Wasser aus dem Teich."
+        }
+      }
+    ]
+  },
+  "visualAudit": {
+    "approvedByUser": true,
+    "checks": {
+      "oneSquirrel": true,
+      "oneRabbit": true,
+      "oneFox": true,
+      "oneOwl": true,
+      "oneDeer": true,
+      "noOtherAnimals": true,
+      "oneCarriedAcorn": true,
+      "squirrelClearlyCarrying": true,
+      "rabbitClearlyHopping": true,
+      "foxClearlyWalking": true,
+      "owlClearlyFlying": true,
+      "deerClearlyDrinking": true,
+      "actionsReadable": true,
+      "noTextOrUI": true,
+      "phoneReadableComposition": true
+    }
+  }
+}

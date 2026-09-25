@@ -1,0 +1,57 @@
+{
+  "sceneId": "scene.zoo.positions_story.06",
+  "categoryId": "zoo_wildlife",
+  "title": "Zoo Scene 6 — Zoo Positions and Observation",
+  "status": "approved",
+  "purpose": "Spatial language, observation and simple inference in a zoo habitat.",
+  "asset": "canonical/zoo_006_positions_story.png",
+  "promptFile": "prompts/zoo_006_positions_story.md",
+  "targetLanguage": {
+    "nouns": [
+      "lion",
+      "rock",
+      "penguin",
+      "pool",
+      "monkey",
+      "rope",
+      "climbing frame",
+      "waterfall"
+    ],
+    "verbs": [
+      "lying",
+      "standing",
+      "climbing"
+    ],
+    "adjectives": [
+      "high",
+      "low",
+      "near"
+    ],
+    "sentenceModels": [
+      "The lion is on the rock.",
+      "The penguin is near the pool.",
+      "The monkey is climbing the frame.",
+      "The lion is above the penguin."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Combine spatial words with simple observation questions.",
+    "starterPrompts": [
+      "Where is the lion?",
+      "What is near the pool?",
+      "What is the monkey doing?",
+      "Which animal is highest?",
+      "Which animal is close to the water?"
+    ],
+    "expansionPrompts": [
+      "Tell me two things about the lion.",
+      "What might the monkey do next?"
+    ]
+  },
+  "visualAudit": [
+    "Auto-batch panel reviewed for the described targets."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_3"
+}

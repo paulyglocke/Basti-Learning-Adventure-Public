@@ -1,0 +1,64 @@
+{
+  "sceneId": "scene.ocean.big_small_numbers.05",
+  "categoryId": "ocean_underwater",
+  "title": "Ocean Scene 5 — Big, Small and How Many",
+  "status": "approved",
+  "purpose": "Adjectives, quantity and comparison language.",
+  "asset": "canonical/ocean_005_big_small_numbers.png",
+  "promptFile": "prompts/ocean_005_big_small_numbers.md",
+  "targetLanguage": {
+    "nouns": [
+      "whale",
+      "turtle",
+      "seahorse",
+      "fish",
+      "starfish",
+      "seaweed"
+    ],
+    "verbs": [
+      "swimming"
+    ],
+    "adjectives": [
+      "big",
+      "small",
+      "blue",
+      "green",
+      "yellow",
+      "purple",
+      "long",
+      "little"
+    ],
+    "sentenceModels": [
+      "The whale is big.",
+      "The turtle is smaller than the whale.",
+      "The seahorse is small.",
+      "There are four little fish.",
+      "The seaweed is long."
+    ]
+  },
+  "adultSupport": {
+    "focus": "Prompt comparison language and counting without overloading the scene.",
+    "starterPrompts": [
+      "Which animal is the biggest?",
+      "Which one is small?",
+      "How many little fish can you count?",
+      "What colour is the whale?",
+      "What is purple?"
+    ],
+    "expansionPrompts": [
+      "Can you compare the whale and the turtle?",
+      "Tell me a sentence with big.",
+      "Tell me a sentence with four."
+    ]
+  },
+  "visualAudit": [
+    "Very large whale on the left.",
+    "One turtle in the middle and one small seahorse on the right.",
+    "Exactly four small orange fish.",
+    "One purple starfish and one tall seaweed clump.",
+    "Strong size contrast for comparison work."
+  ],
+  "visualStatus": "accepted_in_auto_batch",
+  "wave": "wave_2",
+  "batch": "wave_2_batch_1"
+}
