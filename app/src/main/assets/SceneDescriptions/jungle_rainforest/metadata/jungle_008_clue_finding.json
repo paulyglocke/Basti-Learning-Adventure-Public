@@ -1,58 +1,154 @@
 {
   "sceneId": "scene.jungle.clue_finding.08",
   "categoryId": "jungle_rainforest",
-  "title": "Jungle Scene 8 — Find the Animal From Clues",
+  "title": {
+    "en": "Jungle Scene 8 — Find the Animal From Clues",
+    "de": "Dschungel, Szene 8 — Tiere mit Hinweisen finden"
+  },
   "status": "approved",
-  "purpose": "Finding the right rainforest animal from multiple location and feature clues.",
+  "purpose": {
+    "en": "Finding the right rainforest animal from multiple location and feature clues.",
+    "de": "Das passende Regenwaldtier anhand mehrerer Hinweise zu Ort und Merkmalen finden."
+  },
   "asset": "canonical/jungle_008_clue_finding.png",
   "promptFile": "prompts/jungle_008_clue_finding.md",
   "targetLanguage": {
     "nouns": [
-      "monkey",
-      "branch",
-      "parrot",
-      "sloth",
-      "vine",
-      "toucan",
-      "frog",
-      "leaf",
-      "tiger",
-      "waterfall"
+      {
+        "en": "monkey",
+        "de": "Affe"
+      },
+      {
+        "en": "branch",
+        "de": "Ast"
+      },
+      {
+        "en": "parrot",
+        "de": "Papagei"
+      },
+      {
+        "en": "sloth",
+        "de": "Faultier"
+      },
+      {
+        "en": "vine",
+        "de": "Liane"
+      },
+      {
+        "en": "toucan",
+        "de": "Tukan"
+      },
+      {
+        "en": "frog",
+        "de": "Frosch"
+      },
+      {
+        "en": "leaf",
+        "de": "Blatt"
+      },
+      {
+        "en": "tiger",
+        "de": "Tiger"
+      },
+      {
+        "en": "waterfall",
+        "de": "Wasserfall"
+      }
     ],
     "verbs": [
-      "find",
-      "point",
-      "show",
-      "look"
+      {
+        "en": "find",
+        "de": "finden"
+      },
+      {
+        "en": "point",
+        "de": "zeigen"
+      },
+      {
+        "en": "show",
+        "de": "zeigen"
+      },
+      {
+        "en": "look",
+        "de": "schauen"
+      }
     ],
     "adjectives": [
-      "small",
-      "big",
-      "colourful",
-      "green",
-      "striped"
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "colourful",
+        "de": "bunt"
+      },
+      {
+        "en": "green",
+        "de": "grün"
+      },
+      {
+        "en": "striped",
+        "de": "gestreift"
+      }
     ],
     "sentenceModels": [
-      "Find the frog under the leaf.",
-      "Point to the sloth on the vine.",
-      "Show me the striped animal behind the leaves.",
-      "Which bird is on the right?",
-      "First point to the monkey, then point to the toucan."
+      {
+        "en": "Find the frog under the leaf.",
+        "de": "Finde den Frosch unter dem Blatt."
+      },
+      {
+        "en": "Point to the sloth on the vine.",
+        "de": "Zeige auf das Faultier an der Liane."
+      },
+      {
+        "en": "Show me the striped animal behind the leaves.",
+        "de": "Zeig mir das gestreifte Tier hinter den Blättern."
+      },
+      {
+        "en": "Which bird is on the right?",
+        "de": "Welcher Vogel ist rechts?"
+      },
+      {
+        "en": "First point to the monkey, then point to the toucan.",
+        "de": "Zeige zuerst auf den Affen und dann auf den Tukan."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Use multi-part clue sentences to identify the correct animal.",
-    "starterPrompts": [
-      "Can you find the frog under the leaf?",
-      "Which animal is hanging from the vine?",
-      "Where is the tiger?",
-      "Which bird is on the right?",
-      "Who is on the branch on the left?"
-    ],
-    "expansionPrompts": [
-      "First point to the parrot, then point to the sloth.",
-      "Find the striped animal behind the leaves and then the green animal under the leaf."
-    ]
+    "focus": {
+      "en": "Use multi-part clue sentences to identify the correct animal.",
+      "de": "Sätze mit mehreren Hinweisen verwenden, um das passende Tier zu finden."
+    },
+    "starterPrompts": {
+      "en": [
+        "Can you find the frog under the leaf?",
+        "Which animal is hanging from the vine?",
+        "Where is the tiger?",
+        "Which bird is on the right?",
+        "Who is on the branch on the left?"
+      ],
+      "de": [
+        "Findest du den Frosch unter dem Blatt?",
+        "Welches Tier hängt an der Liane?",
+        "Wo ist der Tiger?",
+        "Welcher Vogel ist rechts?",
+        "Wer ist links auf dem Ast?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "First point to the parrot, then point to the sloth.",
+        "Find the striped animal behind the leaves and then the green animal under the leaf."
+      ],
+      "de": [
+        "Zeige zuerst auf den Papagei und dann auf das Faultier.",
+        "Finde das gestreifte Tier hinter den Blättern und dann das grüne Tier unter dem Blatt."
+      ]
+    }
   },
   "visualAudit": [
     "One monkey sitting on a branch on the left.",

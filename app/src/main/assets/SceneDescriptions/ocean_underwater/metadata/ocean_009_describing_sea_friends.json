@@ -1,58 +1,152 @@
 {
   "sceneId": "scene.ocean.describing_sea_friends.09",
   "categoryId": "ocean_underwater",
-  "title": "Ocean Scene 9 — Describing Sea Friends",
+  "title": {
+    "en": "Ocean Scene 9 — Describing Sea Friends",
+    "de": "Meer, Szene 9 — Freunde im Meer beschreiben"
+  },
   "status": "approved",
-  "purpose": "Multi-clue descriptions, comparing size, and finding the right animal from features.",
+  "purpose": {
+    "en": "Multi-clue descriptions, comparing size, and finding the right animal from features.",
+    "de": "Beschreibungen mit mehreren Hinweisen, Größenvergleiche und Tiere anhand ihrer Merkmale finden."
+  },
   "asset": "canonical/ocean_009_describing_sea_friends.png",
   "promptFile": "prompts/ocean_009_describing_sea_friends.md",
   "targetLanguage": {
     "nouns": [
-      "turtle",
-      "jellyfish",
-      "seahorse",
-      "clownfish",
-      "crab",
-      "shell",
-      "fish",
-      "coral"
+      {
+        "en": "turtle",
+        "de": "Schildkröte"
+      },
+      {
+        "en": "jellyfish",
+        "de": "Qualle"
+      },
+      {
+        "en": "seahorse",
+        "de": "Seepferdchen"
+      },
+      {
+        "en": "clownfish",
+        "de": "Clownfisch"
+      },
+      {
+        "en": "crab",
+        "de": "Krabbe"
+      },
+      {
+        "en": "shell",
+        "de": "Muschel"
+      },
+      {
+        "en": "fish",
+        "de": "Fisch"
+      },
+      {
+        "en": "coral",
+        "de": "Koralle"
+      }
     ],
     "verbs": [
-      "swimming",
-      "floating",
-      "holding"
+      {
+        "en": "swimming",
+        "de": "schwimmen"
+      },
+      {
+        "en": "floating",
+        "de": "treiben"
+      },
+      {
+        "en": "holding",
+        "de": "halten"
+      }
     ],
     "adjectives": [
-      "big",
-      "small",
-      "green",
-      "purple",
-      "orange",
-      "blue",
-      "yellow"
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "green",
+        "de": "grün"
+      },
+      {
+        "en": "purple",
+        "de": "lila"
+      },
+      {
+        "en": "orange",
+        "de": "orange"
+      },
+      {
+        "en": "blue",
+        "de": "blau"
+      },
+      {
+        "en": "yellow",
+        "de": "gelb"
+      }
     ],
     "sentenceModels": [
-      "The turtle is big and green.",
-      "The jellyfish is purple.",
-      "The crab is holding a blue shell.",
-      "The clownfish is orange and white.",
-      "The little seahorse is yellow and orange."
+      {
+        "en": "The turtle is big and green.",
+        "de": "Die Schildkröte ist groß und grün."
+      },
+      {
+        "en": "The jellyfish is purple.",
+        "de": "Die Qualle ist lila."
+      },
+      {
+        "en": "The crab is holding a blue shell.",
+        "de": "Die Krabbe hält eine blaue Muschel."
+      },
+      {
+        "en": "The clownfish is orange and white.",
+        "de": "Der Clownfisch ist orange und weiß."
+      },
+      {
+        "en": "The little seahorse is yellow and orange.",
+        "de": "Das kleine Seepferdchen ist gelb und orange."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Encourage Basti to combine colour, size and feature words in one sentence.",
-    "starterPrompts": [
-      "Which animal is the biggest?",
-      "Who is holding the blue shell?",
-      "Can you find the purple animal?",
-      "Which one is orange and white?",
-      "Where are the little blue fish?"
-    ],
-    "expansionPrompts": [
-      "Tell me two things about the turtle.",
-      "Can you find the small yellow-orange animal?",
-      "Which animal is bigger than the clownfish?"
-    ]
+    "focus": {
+      "en": "Encourage Basti to combine colour, size and feature words in one sentence.",
+      "de": "Basti ermutigen, Farbe, Größe und andere Merkmale in einem Satz zu verbinden."
+    },
+    "starterPrompts": {
+      "en": [
+        "Which animal is the biggest?",
+        "Who is holding the blue shell?",
+        "Can you find the purple animal?",
+        "Which one is orange and white?",
+        "Where are the little blue fish?"
+      ],
+      "de": [
+        "Welches Tier ist am größten?",
+        "Wer hält die blaue Muschel?",
+        "Findest du das lila Tier?",
+        "Welches Tier ist orange und weiß?",
+        "Wo sind die kleinen blauen Fische?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Tell me two things about the turtle.",
+        "Can you find the small yellow-orange animal?",
+        "Which animal is bigger than the clownfish?"
+      ],
+      "de": [
+        "Erzähl mir zwei Dinge über die Schildkröte.",
+        "Findest du das kleine gelb-orange Tier?",
+        "Welches Tier ist größer als der Clownfisch?"
+      ]
+    }
   },
   "visualAudit": [
     "One large turtle in the centre.",

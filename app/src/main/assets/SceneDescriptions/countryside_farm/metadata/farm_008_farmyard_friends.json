@@ -1,56 +1,146 @@
 {
   "sceneId": "scene.farm.farmyard_friends.08",
   "categoryId": "countryside_farm",
-  "title": "Farm Scene 8 — Farmyard Friends and Counting",
+  "title": {
+    "en": "Farm Scene 8 — Farmyard Friends and Counting",
+    "de": "Bauernhof, Szene 8 — Tiere auf dem Hof und zählen"
+  },
   "status": "approved",
-  "purpose": "Support animal nouns, counting and simple comparisons in a cheerful mixed farmyard scene.",
+  "purpose": {
+    "en": "Support animal nouns, counting and simple comparisons in a cheerful mixed farmyard scene.",
+    "de": "Tiernamen, Zählen und einfache Vergleiche in einer fröhlichen Hofszene mit verschiedenen Tieren unterstützen."
+  },
   "asset": "canonical/farm_008_farmyard_friends.png",
   "promptFile": "prompts/farm_008_farmyard_friends.md",
   "targetLanguage": {
     "nouns": [
-      "cow",
-      "horse",
-      "pig",
-      "sheep",
-      "ducklings",
-      "pond",
-      "barn",
-      "basket"
+      {
+        "en": "cow",
+        "de": "Kuh"
+      },
+      {
+        "en": "horse",
+        "de": "Pferd"
+      },
+      {
+        "en": "pig",
+        "de": "Schwein"
+      },
+      {
+        "en": "sheep",
+        "de": "Schaf"
+      },
+      {
+        "en": "ducklings",
+        "de": "Entenküken"
+      },
+      {
+        "en": "pond",
+        "de": "Teich"
+      },
+      {
+        "en": "barn",
+        "de": "Scheune"
+      },
+      {
+        "en": "basket",
+        "de": "Korb"
+      }
     ],
     "verbs": [
-      "standing",
-      "carrying",
-      "swimming"
+      {
+        "en": "standing",
+        "de": "stehen"
+      },
+      {
+        "en": "carrying",
+        "de": "tragen"
+      },
+      {
+        "en": "swimming",
+        "de": "schwimmen"
+      }
     ],
     "adjectives": [
-      "big",
-      "brown",
-      "pink",
-      "white",
-      "yellow",
-      "fluffy"
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "brown",
+        "de": "braun"
+      },
+      {
+        "en": "pink",
+        "de": "rosa"
+      },
+      {
+        "en": "white",
+        "de": "weiß"
+      },
+      {
+        "en": "yellow",
+        "de": "gelb"
+      },
+      {
+        "en": "fluffy",
+        "de": "flauschig"
+      }
     ],
     "sentenceModels": [
-      "The cow is big.",
-      "The horse is brown.",
-      "The pig is pink.",
-      "There are three sheep.",
-      "There are two ducklings."
+      {
+        "en": "The cow is big.",
+        "de": "Die Kuh ist groß."
+      },
+      {
+        "en": "The horse is brown.",
+        "de": "Das Pferd ist braun."
+      },
+      {
+        "en": "The pig is pink.",
+        "de": "Das Schwein ist rosa."
+      },
+      {
+        "en": "There are three sheep.",
+        "de": "Da sind drei Schafe."
+      },
+      {
+        "en": "There are two ducklings.",
+        "de": "Da sind zwei Entenküken."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Use the image for naming farm animals, counting groups, and making simple comparisons.",
-    "starterPrompts": [
-      "Which animal is the biggest?",
-      "Can you count the sheep?",
-      "Can you count the ducklings?",
-      "What colour is the pig?",
-      "Where are the ducklings?"
-    ],
-    "expansionPrompts": [
-      "Tell me which animals are bigger or smaller.",
-      "Which animals are near the pond and which are near the barn?"
-    ]
+    "focus": {
+      "en": "Use the image for naming farm animals, counting groups, and making simple comparisons.",
+      "de": "Das Bild zum Benennen der Bauernhoftiere, Zählen von Gruppen und für einfache Vergleiche nutzen."
+    },
+    "starterPrompts": {
+      "en": [
+        "Which animal is the biggest?",
+        "Can you count the sheep?",
+        "Can you count the ducklings?",
+        "What colour is the pig?",
+        "Where are the ducklings?"
+      ],
+      "de": [
+        "Welches Tier ist am größten?",
+        "Kannst du die Schafe zählen?",
+        "Kannst du die Entenküken zählen?",
+        "Welche Farbe hat das Schwein?",
+        "Wo sind die Entenküken?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Tell me which animals are bigger or smaller.",
+        "Which animals are near the pond and which are near the barn?"
+      ],
+      "de": [
+        "Sag mir, welche Tiere größer oder kleiner sind.",
+        "Welche Tiere sind in der Nähe des Teichs und welche bei der Scheune?"
+      ]
+    }
   },
   "visualAudit": [
     "Reviewed in Wave 3 Batch 3 automatic pass against the main teaching targets."

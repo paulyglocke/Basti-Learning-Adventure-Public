@@ -1,55 +1,142 @@
 {
   "sceneId": "scene.park.big_small_counting.05",
   "categoryId": "park_playground",
-  "title": "Park Scene 5 — Big, Small and Counting",
+  "title": {
+    "en": "Park Scene 5 — Big, Small and Counting",
+    "de": "Park, Szene 5 — Groß, klein und zählen"
+  },
   "status": "approved",
-  "purpose": "Size, counting and everyday playground-object description.",
+  "purpose": {
+    "en": "Size, counting and everyday playground-object description.",
+    "de": "Größe, Zählen und alltägliche Gegenstände auf dem Spielplatz beschreiben."
+  },
   "asset": "canonical/park_005_big_small_counting.png",
   "promptFile": "prompts/park_005_big_small_counting.md",
   "targetLanguage": {
     "nouns": [
-      "slide",
-      "ball",
-      "scooter",
-      "bucket",
-      "sandbox",
-      "bench",
-      "child"
+      {
+        "en": "slide",
+        "de": "Rutsche"
+      },
+      {
+        "en": "ball",
+        "de": "Ball"
+      },
+      {
+        "en": "scooter",
+        "de": "Roller"
+      },
+      {
+        "en": "bucket",
+        "de": "Eimer"
+      },
+      {
+        "en": "sandbox",
+        "de": "Sandkasten"
+      },
+      {
+        "en": "bench",
+        "de": "Bank"
+      },
+      {
+        "en": "child",
+        "de": "Kind"
+      }
     ],
     "verbs": [
-      "standing",
-      "playing"
+      {
+        "en": "standing",
+        "de": "stehen"
+      },
+      {
+        "en": "playing",
+        "de": "spielen"
+      }
     ],
     "adjectives": [
-      "big",
-      "small",
-      "tall",
-      "long",
-      "red",
-      "blue",
-      "yellow"
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "tall",
+        "de": "hoch"
+      },
+      {
+        "en": "long",
+        "de": "lang"
+      },
+      {
+        "en": "red",
+        "de": "rot"
+      },
+      {
+        "en": "blue",
+        "de": "blau"
+      },
+      {
+        "en": "yellow",
+        "de": "gelb"
+      }
     ],
     "sentenceModels": [
-      "The slide is tall.",
-      "The ball is big.",
-      "The scooter is small.",
-      "There are three yellow buckets.",
-      "The bench is long."
+      {
+        "en": "The slide is tall.",
+        "de": "Die Rutsche ist hoch."
+      },
+      {
+        "en": "The ball is big.",
+        "de": "Der Ball ist groß."
+      },
+      {
+        "en": "The scooter is small.",
+        "de": "Der Roller ist klein."
+      },
+      {
+        "en": "There are four yellow buckets.",
+        "de": "Da sind vier gelbe Eimer."
+      },
+      {
+        "en": "The bench is long.",
+        "de": "Die Bank ist lang."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Talk about size words, colours and counting at the playground.",
-    "starterPrompts": [
-      "What is big?",
-      "What is small?",
-      "Can you count the buckets?",
-      "Which child is taller?",
-      "What colour is the scooter?"
-    ],
-    "expansionPrompts": [
-      "Which object is the biggest?",
-      "Can you make a sentence with three yellow buckets?"
-    ]
+    "focus": {
+      "en": "Talk about size words, colours and counting at the playground.",
+      "de": "Über Größen und Farben sprechen und auf dem Spielplatz zählen."
+    },
+    "starterPrompts": {
+      "en": [
+        "What is big?",
+        "What is small?",
+        "Can you count the buckets?",
+        "Which child is taller?",
+        "What colour is the scooter?"
+      ],
+      "de": [
+        "Was ist groß?",
+        "Was ist klein?",
+        "Kannst du die Eimer zählen?",
+        "Welches Kind ist größer?",
+        "Welche Farbe hat der Roller?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Which object is the biggest?",
+        "Can you make a sentence with four yellow buckets?"
+      ],
+      "de": [
+        "Welcher Gegenstand ist am größten?",
+        "Kannst du einen Satz mit „vier gelbe Eimer“ sagen?"
+      ]
+    }
   },
   "visualAudit": [
     "One tall red slide.",

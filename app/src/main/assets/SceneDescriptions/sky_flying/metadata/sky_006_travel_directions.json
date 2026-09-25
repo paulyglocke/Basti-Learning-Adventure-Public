@@ -1,54 +1,138 @@
 {
   "sceneId": "scene.sky.travel_directions.06",
   "categoryId": "sky_flying",
-  "title": "Sky Scene 6 — Travelling Through the Sky",
+  "title": {
+    "en": "Sky Scene 6 — Travelling Through the Sky",
+    "de": "Himmel, Szene 6 — Unterwegs am Himmel"
+  },
   "status": "approved",
-  "purpose": "Travelling movement, direction language and linked sky description.",
+  "purpose": {
+    "en": "Travelling movement, direction language and linked sky description.",
+    "de": "Bewegung, Richtungsangaben und eine zusammenhängende Beschreibung des Himmels."
+  },
   "asset": "canonical/sky_006_travel_directions.png",
   "promptFile": "prompts/sky_006_travel_directions.md",
   "targetLanguage": {
     "nouns": [
-      "airplane",
-      "helicopter",
-      "balloon",
-      "birds",
-      "kite",
-      "sun",
-      "rainbow",
-      "mountains"
+      {
+        "en": "airplane",
+        "de": "Flugzeug"
+      },
+      {
+        "en": "helicopter",
+        "de": "Hubschrauber"
+      },
+      {
+        "en": "balloon",
+        "de": "Heißluftballon"
+      },
+      {
+        "en": "birds",
+        "de": "Vögel"
+      },
+      {
+        "en": "kite",
+        "de": "Drachen"
+      },
+      {
+        "en": "sun",
+        "de": "Sonne"
+      },
+      {
+        "en": "rainbow",
+        "de": "Regenbogen"
+      },
+      {
+        "en": "mountains",
+        "de": "Berge"
+      }
     ],
     "verbs": [
-      "flying",
-      "floating",
-      "gliding"
+      {
+        "en": "flying",
+        "de": "fliegen"
+      },
+      {
+        "en": "floating",
+        "de": "schweben"
+      },
+      {
+        "en": "gliding",
+        "de": "gleiten"
+      }
     ],
     "adjectives": [
-      "high",
-      "low",
-      "colourful",
-      "bright"
+      {
+        "en": "high",
+        "de": "hoch"
+      },
+      {
+        "en": "low",
+        "de": "tief"
+      },
+      {
+        "en": "colourful",
+        "de": "bunt"
+      },
+      {
+        "en": "bright",
+        "de": "hell"
+      }
     ],
     "sentenceModels": [
-      "The airplane is flying across the sky.",
-      "The helicopter is flying on the right.",
-      "The balloon is floating in the middle.",
-      "The birds are flying together.",
-      "The kite is near the rainbow."
+      {
+        "en": "The airplane is flying across the sky.",
+        "de": "Das Flugzeug fliegt über den Himmel."
+      },
+      {
+        "en": "The helicopter is flying on the right.",
+        "de": "Der Hubschrauber fliegt rechts."
+      },
+      {
+        "en": "The balloon is floating in the middle.",
+        "de": "Der Ballon schwebt in der Mitte."
+      },
+      {
+        "en": "The birds are flying together.",
+        "de": "Die Vögel fliegen zusammen."
+      },
+      {
+        "en": "The kite is near the rainbow.",
+        "de": "Der Drachen ist in der Nähe des Regenbogens."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Talk about where things are moving in the sky and describe the whole scene.",
-    "starterPrompts": [
-      "What is flying on the left?",
-      "What is flying on the right?",
-      "What is in the middle?",
-      "Where is the kite?",
-      "How many birds can you see?"
-    ],
-    "expansionPrompts": [
-      "Can you tell the story from left to right?",
-      "Which object looks highest?"
-    ]
+    "focus": {
+      "en": "Talk about where things are moving in the sky and describe the whole scene.",
+      "de": "Darüber sprechen, wo sich die Dinge am Himmel bewegen, und die ganze Szene beschreiben."
+    },
+    "starterPrompts": {
+      "en": [
+        "What is flying on the left?",
+        "What is flying on the right?",
+        "What is in the middle?",
+        "Where is the kite?",
+        "How many birds can you see?"
+      ],
+      "de": [
+        "Was fliegt links?",
+        "Was fliegt rechts?",
+        "Was ist in der Mitte?",
+        "Wo ist der Drachen?",
+        "Wie viele Vögel siehst du?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Can you tell the story from left to right?",
+        "Which object looks highest?"
+      ],
+      "de": [
+        "Kannst du die Geschichte von links nach rechts erzählen?",
+        "Welcher Gegenstand scheint am höchsten zu sein?"
+      ]
+    }
   },
   "visualAudit": [
     "One red airplane flying across the upper left.",

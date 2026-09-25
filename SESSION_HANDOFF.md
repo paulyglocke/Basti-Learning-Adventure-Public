@@ -1,6 +1,41 @@
 # Session handoff — 2026-09-25
 
-## Current checkpoint — Scene Description catalogue, no activity UI
+## Current checkpoint — all Scene Description runtime text bilingual
+
+2026-09-25: started clean main `296d6ef`. Added **1,698 German values to all 54 Wave
+2/3 scenes**, plus the existing Farm Wave 1 review caution in German (1,699 total).
+All 81 production scenes now have EN/DE for every present runtime teaching/support
+field. Existing bilingual pair/list shapes are reused; no third schema. Generator
+requires both locales; domain missing-language handling remains null, never fallback.
+Scene content revision is 2, schema remains 1. Existing activity behavior is unchanged.
+
+Verified Park 005's PNG has four yellow buckets. Exactly two English count phrases
+were corrected from three to four and explicitly covered by the preservation test.
+Everything else in the English catalogue, identity/order and source technical fields
+is preserved. No manifest, PNG, authoring prompt/reference, UI, session, progress,
+audio, navigation or signing/distribution changes.
+
+Read `app/src/main/assets/SceneDescriptions/GERMAN_REVIEW.md` for per-category counts,
+normalization, wording decisions, exact English exception, metadata file list and
+limited ten-image spot-check. Park 007 climbing and Mountains 007 uphill direction
+are not unambiguous in still images; owner/content review remains necessary before
+constrained use. Existing Farm .01 chicken-count caution is retained. Bilingual
+completeness does not prove all images pixel-perfect or replace independent language
+review. Wave 1's two synonym-consolidating locale lists remain separately authored.
+
+Validation: **22 Python tests, 12 focused JVM, 277 full JVM passed**, zero failures,
+errors or skips. assembleDebug/lintDebug passed; lint **0 errors, 3 existing warnings,
+2 informational findings**. Two generation/check cycles were byte-identical. Diff
+and new-file whitespace checks passed. No browser/instrumentation/device run because
+there is no UI/platform behavior change. Exact commands/evidence are in BUILD_NOTES.
+
+Work is uncommitted; no push. No Tell Me screen/route/ViewModel/session/progress/TTS
+or speech input/evaluation was built. Next bounded slice: owner/native-speaker review
+of the documented wording/visual ambiguities before a separately scoped Tell Me
+consumer. Do not start it automatically. Other S24/Fire acceptance remains unchanged.
+
+
+## Previous checkpoint — Scene Description catalogue, no activity UI
 
 2026-09-25: started clean main `48ca578`. Pure `learning/scenedescription` models
 and bundled repository now expose all 81 approved scenes, nine per category, in

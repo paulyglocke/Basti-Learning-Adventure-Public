@@ -1,59 +1,158 @@
 {
   "sceneId": "scene.jungle.animal_homes.04",
   "categoryId": "jungle_rainforest",
-  "title": "Jungle Scene 4 — Animal Homes and Shelter",
+  "title": {
+    "en": "Jungle Scene 4 — Animal Homes and Shelter",
+    "de": "Dschungel, Szene 4 — Tierwohnungen und Unterschlüpfe"
+  },
   "status": "approved",
-  "purpose": "Animal homes, shelter and gentle inference questions.",
+  "purpose": {
+    "en": "Animal homes, shelter and gentle inference questions.",
+    "de": "Tierwohnungen, Schutz und behutsame Fragen zum Weiterdenken."
+  },
   "asset": "canonical/jungle_004_animal_homes.png",
   "promptFile": "prompts/jungle_004_animal_homes.md",
   "targetLanguage": {
     "nouns": [
-      "sloth",
-      "branch",
-      "monkey",
-      "tree hole",
-      "parrot",
-      "leaf",
-      "toucan",
-      "nest",
-      "frog",
-      "tiger",
-      "water"
+      {
+        "en": "sloth",
+        "de": "Faultier"
+      },
+      {
+        "en": "branch",
+        "de": "Ast"
+      },
+      {
+        "en": "monkey",
+        "de": "Affe"
+      },
+      {
+        "en": "tree hole",
+        "de": "Baumhöhle"
+      },
+      {
+        "en": "parrot",
+        "de": "Papagei"
+      },
+      {
+        "en": "leaf",
+        "de": "Blatt"
+      },
+      {
+        "en": "toucan",
+        "de": "Tukan"
+      },
+      {
+        "en": "nest",
+        "de": "Nest"
+      },
+      {
+        "en": "frog",
+        "de": "Frosch"
+      },
+      {
+        "en": "tiger",
+        "de": "Tiger"
+      },
+      {
+        "en": "water",
+        "de": "Wasser"
+      }
     ],
     "verbs": [
-      "sleeping",
-      "looking",
-      "carrying",
-      "drinking",
-      "sitting"
+      {
+        "en": "sleeping",
+        "de": "schlafen"
+      },
+      {
+        "en": "looking",
+        "de": "schauen"
+      },
+      {
+        "en": "carrying",
+        "de": "tragen"
+      },
+      {
+        "en": "drinking",
+        "de": "trinken"
+      },
+      {
+        "en": "sitting",
+        "de": "sitzen"
+      }
     ],
     "adjectives": [
-      "big",
-      "green",
-      "wet",
-      "colourful"
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "green",
+        "de": "grün"
+      },
+      {
+        "en": "wet",
+        "de": "nass"
+      },
+      {
+        "en": "colourful",
+        "de": "bunt"
+      }
     ],
     "sentenceModels": [
-      "The sloth is sleeping on the branch.",
-      "The monkey is looking into the tree hole.",
-      "The parrot is carrying a leaf.",
-      "The toucan is next to the nest.",
-      "The tiger is drinking water."
+      {
+        "en": "The sloth is sleeping on the branch.",
+        "de": "Das Faultier schläft auf dem Ast."
+      },
+      {
+        "en": "The monkey is looking into the tree hole.",
+        "de": "Der Affe schaut in die Baumhöhle."
+      },
+      {
+        "en": "The parrot is carrying a leaf.",
+        "de": "Der Papagei trägt ein Blatt."
+      },
+      {
+        "en": "The toucan is next to the nest.",
+        "de": "Der Tukan ist neben dem Nest."
+      },
+      {
+        "en": "The tiger is drinking water.",
+        "de": "Der Tiger trinkt Wasser."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Talk about where animals rest, hide, or make homes.",
-    "starterPrompts": [
-      "Which animal is sleeping?",
-      "Where is the monkey looking?",
-      "Who has a nest nearby?",
-      "Who is under the leaf?",
-      "What is the tiger doing?"
-    ],
-    "expansionPrompts": [
-      "Which place looks safe and dry?",
-      "What might the parrot do with the leaf next?"
-    ]
+    "focus": {
+      "en": "Talk about where animals rest, hide, or make homes.",
+      "de": "Darüber sprechen, wo Tiere sich ausruhen, sich verstecken oder ihr Zuhause einrichten."
+    },
+    "starterPrompts": {
+      "en": [
+        "Which animal is sleeping?",
+        "Where is the monkey looking?",
+        "Who has a nest nearby?",
+        "Who is under the leaf?",
+        "What is the tiger doing?"
+      ],
+      "de": [
+        "Welches Tier schläft?",
+        "Wohin schaut der Affe?",
+        "Bei wem ist ein Nest in der Nähe?",
+        "Wer ist unter dem Blatt?",
+        "Was macht der Tiger?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Which place looks safe and dry?",
+        "What might the parrot do with the leaf next?"
+      ],
+      "de": [
+        "Welcher Platz sieht sicher und trocken aus?",
+        "Was könnte der Papagei als Nächstes mit dem Blatt machen?"
+      ]
+    }
   },
   "visualAudit": [
     "Sleeping sloth on a branch.",

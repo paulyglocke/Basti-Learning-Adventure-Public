@@ -1,60 +1,160 @@
 {
   "sceneId": "scene.woodland.find_animals.09",
   "categoryId": "woodland_forest",
-  "title": "Woodland Scene 9 — Find the Woodland Animal",
+  "title": {
+    "en": "Woodland Scene 9 — Find the Woodland Animal",
+    "de": "Wald, Szene 9 — Finde das Waldtier"
+  },
   "status": "approved",
-  "purpose": "Finding an animal from several descriptive clues and comparing features.",
+  "purpose": {
+    "en": "Finding an animal from several descriptive clues and comparing features.",
+    "de": "Ein Tier anhand mehrerer Hinweise finden und Merkmale vergleichen."
+  },
   "asset": "canonical/woodland_009_find_animals.png",
   "promptFile": "prompts/woodland_009_find_animals.md",
   "targetLanguage": {
     "nouns": [
-      "deer",
-      "antlers",
-      "rabbit",
-      "fox",
-      "tail",
-      "hedgehog",
-      "squirrel",
-      "owl",
-      "stump"
+      {
+        "en": "deer",
+        "de": "Reh"
+      },
+      {
+        "en": "antlers",
+        "de": "Geweih"
+      },
+      {
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      {
+        "en": "fox",
+        "de": "Fuchs"
+      },
+      {
+        "en": "tail",
+        "de": "Schwanz"
+      },
+      {
+        "en": "hedgehog",
+        "de": "Igel"
+      },
+      {
+        "en": "squirrel",
+        "de": "Eichhörnchen"
+      },
+      {
+        "en": "owl",
+        "de": "Eule"
+      },
+      {
+        "en": "stump",
+        "de": "Baumstumpf"
+      }
     ],
     "verbs": [
-      "find",
-      "point",
-      "show",
-      "look"
+      {
+        "en": "find",
+        "de": "finden"
+      },
+      {
+        "en": "point",
+        "de": "zeigen"
+      },
+      {
+        "en": "show",
+        "de": "zeigen"
+      },
+      {
+        "en": "look",
+        "de": "schauen"
+      }
     ],
     "adjectives": [
-      "big",
-      "small",
-      "spiky",
-      "bushy",
-      "long ears",
-      "brown",
-      "orange"
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "spiky",
+        "de": "stachelig"
+      },
+      {
+        "en": "bushy",
+        "de": "buschig"
+      },
+      {
+        "en": "long ears",
+        "de": "lange Ohren"
+      },
+      {
+        "en": "brown",
+        "de": "braun"
+      },
+      {
+        "en": "orange",
+        "de": "orange"
+      }
     ],
     "sentenceModels": [
-      "Find the animal with antlers.",
-      "Point to the animal with long ears.",
-      "Show me the spiky animal.",
-      "Which animal has the bushy tail?",
-      "The deer is bigger than the rabbit."
+      {
+        "en": "Find the animal with antlers.",
+        "de": "Finde das Tier mit dem Geweih."
+      },
+      {
+        "en": "Point to the animal with long ears.",
+        "de": "Zeige auf das Tier mit den langen Ohren."
+      },
+      {
+        "en": "Show me the spiky animal.",
+        "de": "Zeig mir das stachelige Tier."
+      },
+      {
+        "en": "Which animal has the bushy tail?",
+        "de": "Welches Tier hat den buschigen Schwanz?"
+      },
+      {
+        "en": "The deer is bigger than the rabbit.",
+        "de": "Das Reh ist größer als das Kaninchen."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Encourage Basti to listen for several features and find the correct animal.",
-    "starterPrompts": [
-      "Which animal has antlers?",
-      "Can you find the spiky animal?",
-      "Who has long ears?",
-      "Which one has a big bushy tail?",
-      "Who is sitting on the stump?"
-    ],
-    "expansionPrompts": [
-      "First point to the rabbit, then point to the fox.",
-      "Which animal is biggest?",
-      "Tell me two things about the owl."
-    ]
+    "focus": {
+      "en": "Encourage Basti to listen for several features and find the correct animal.",
+      "de": "Basti ermutigen, auf mehrere Merkmale zu hören und das passende Tier zu finden."
+    },
+    "starterPrompts": {
+      "en": [
+        "Which animal has antlers?",
+        "Can you find the spiky animal?",
+        "Who has long ears?",
+        "Which one has a big bushy tail?",
+        "Who is sitting on the stump?"
+      ],
+      "de": [
+        "Welches Tier hat ein Geweih?",
+        "Findest du das stachelige Tier?",
+        "Wer hat lange Ohren?",
+        "Welches Tier hat einen großen buschigen Schwanz?",
+        "Wer sitzt auf dem Baumstumpf?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "First point to the rabbit, then point to the fox.",
+        "Which animal is biggest?",
+        "Tell me two things about the owl."
+      ],
+      "de": [
+        "Zeige zuerst auf das Kaninchen und dann auf den Fuchs.",
+        "Welches Tier ist am größten?",
+        "Erzähl mir zwei Dinge über die Eule."
+      ]
+    }
   },
   "visualAudit": [
     "One deer with antlers in the centre-left.",

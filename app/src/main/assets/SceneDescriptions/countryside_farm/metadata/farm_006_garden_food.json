@@ -1,53 +1,134 @@
 {
   "sceneId": "scene.farm.garden_food.06",
   "categoryId": "countryside_farm",
-  "title": "Farm Scene 6 — Garden and Growing Food",
+  "title": {
+    "en": "Farm Scene 6 — Garden and Growing Food",
+    "de": "Bauernhof, Szene 6 — Im Garten wächst unser Essen"
+  },
   "status": "approved",
-  "purpose": "Talk about garden nouns, food, locations and simple inference.",
+  "purpose": {
+    "en": "Talk about garden nouns, food, locations and simple inference.",
+    "de": "Über Gartenwörter, Lebensmittel und Orte sprechen und einfache Überlegungen anstellen."
+  },
   "asset": "canonical/farm_006_garden_food.png",
   "promptFile": "prompts/farm_006_garden_food.md",
   "targetLanguage": {
     "nouns": [
-      "carrots",
-      "vegetables",
-      "scarecrow",
-      "rabbit",
-      "chicken",
-      "apple tree",
-      "apples",
-      "fence"
+      {
+        "en": "carrots",
+        "de": "Karotten"
+      },
+      {
+        "en": "vegetables",
+        "de": "Gemüse"
+      },
+      {
+        "en": "scarecrow",
+        "de": "Vogelscheuche"
+      },
+      {
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      {
+        "en": "chicken",
+        "de": "Huhn"
+      },
+      {
+        "en": "apple tree",
+        "de": "Apfelbaum"
+      },
+      {
+        "en": "apples",
+        "de": "Äpfel"
+      },
+      {
+        "en": "fence",
+        "de": "Zaun"
+      }
     ],
     "verbs": [
-      "growing",
-      "standing"
+      {
+        "en": "growing",
+        "de": "wachsen"
+      },
+      {
+        "en": "standing",
+        "de": "stehen"
+      }
     ],
     "adjectives": [
-      "orange",
-      "green",
-      "red",
-      "grey"
+      {
+        "en": "orange",
+        "de": "orange"
+      },
+      {
+        "en": "green",
+        "de": "grün"
+      },
+      {
+        "en": "red",
+        "de": "rot"
+      },
+      {
+        "en": "grey",
+        "de": "grau"
+      }
     ],
     "sentenceModels": [
-      "The carrots are growing in the garden.",
-      "The rabbit is next to the carrots.",
-      "The chicken is near the vegetables.",
-      "The scarecrow is in the garden.",
-      "The apples are on the tree."
+      {
+        "en": "The carrots are growing in the garden.",
+        "de": "Die Karotten wachsen im Garten."
+      },
+      {
+        "en": "The rabbit is next to the carrots.",
+        "de": "Das Kaninchen ist neben den Karotten."
+      },
+      {
+        "en": "The chicken is near the vegetables.",
+        "de": "Das Huhn ist in der Nähe des Gemüses."
+      },
+      {
+        "en": "The scarecrow is in the garden.",
+        "de": "Die Vogelscheuche steht im Garten."
+      },
+      {
+        "en": "The apples are on the tree.",
+        "de": "Die Äpfel hängen am Baum."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Use the picture to connect food words with where food grows.",
-    "starterPrompts": [
-      "What is growing in the garden?",
-      "Where is the rabbit?",
-      "What is on the tree?",
-      "What colour are the carrots?",
-      "What is the scarecrow for?"
-    ],
-    "expansionPrompts": [
-      "Which food grows under the ground?",
-      "What could we pick from the tree?"
-    ]
+    "focus": {
+      "en": "Use the picture to connect food words with where food grows.",
+      "de": "Das Bild nutzen, um Lebensmittel mit den Orten zu verbinden, an denen sie wachsen."
+    },
+    "starterPrompts": {
+      "en": [
+        "What is growing in the garden?",
+        "Where is the rabbit?",
+        "What is on the tree?",
+        "What colour are the carrots?",
+        "What is the scarecrow for?"
+      ],
+      "de": [
+        "Was wächst im Garten?",
+        "Wo ist das Kaninchen?",
+        "Was hängt am Baum?",
+        "Welche Farbe haben die Karotten?",
+        "Wozu ist die Vogelscheuche da?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Which food grows under the ground?",
+        "What could we pick from the tree?"
+      ],
+      "de": [
+        "Welches Essen wächst unter der Erde?",
+        "Was könnten wir vom Baum pflücken?"
+      ]
+    }
   },
   "visualAudit": [
     "Auto-batch panel reviewed for the described targets."

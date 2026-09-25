@@ -1,52 +1,130 @@
 {
   "sceneId": "scene.zoo.positions_story.06",
   "categoryId": "zoo_wildlife",
-  "title": "Zoo Scene 6 — Zoo Positions and Observation",
+  "title": {
+    "en": "Zoo Scene 6 — Zoo Positions and Observation",
+    "de": "Zoo, Szene 6 — Orte und Beobachtungen"
+  },
   "status": "approved",
-  "purpose": "Spatial language, observation and simple inference in a zoo habitat.",
+  "purpose": {
+    "en": "Spatial language, observation and simple inference in a zoo habitat.",
+    "de": "Ortsangaben, Beobachtungen und einfache Schlussfolgerungen in einem Zoogehege."
+  },
   "asset": "canonical/zoo_006_positions_story.png",
   "promptFile": "prompts/zoo_006_positions_story.md",
   "targetLanguage": {
     "nouns": [
-      "lion",
-      "rock",
-      "penguin",
-      "pool",
-      "monkey",
-      "rope",
-      "climbing frame",
-      "waterfall"
+      {
+        "en": "lion",
+        "de": "Löwe"
+      },
+      {
+        "en": "rock",
+        "de": "Fels"
+      },
+      {
+        "en": "penguin",
+        "de": "Pinguin"
+      },
+      {
+        "en": "pool",
+        "de": "Wasserbecken"
+      },
+      {
+        "en": "monkey",
+        "de": "Affe"
+      },
+      {
+        "en": "rope",
+        "de": "Seil"
+      },
+      {
+        "en": "climbing frame",
+        "de": "Klettergerüst"
+      },
+      {
+        "en": "waterfall",
+        "de": "Wasserfall"
+      }
     ],
     "verbs": [
-      "lying",
-      "standing",
-      "climbing"
+      {
+        "en": "lying",
+        "de": "liegen"
+      },
+      {
+        "en": "standing",
+        "de": "stehen"
+      },
+      {
+        "en": "climbing",
+        "de": "klettern"
+      }
     ],
     "adjectives": [
-      "high",
-      "low",
-      "near"
+      {
+        "en": "high",
+        "de": "hoch"
+      },
+      {
+        "en": "low",
+        "de": "tief"
+      },
+      {
+        "en": "near",
+        "de": "in der Nähe"
+      }
     ],
     "sentenceModels": [
-      "The lion is on the rock.",
-      "The penguin is near the pool.",
-      "The monkey is climbing the frame.",
-      "The lion is above the penguin."
+      {
+        "en": "The lion is on the rock.",
+        "de": "Der Löwe ist auf dem Felsen."
+      },
+      {
+        "en": "The penguin is near the pool.",
+        "de": "Der Pinguin ist in der Nähe des Wasserbeckens."
+      },
+      {
+        "en": "The monkey is climbing the frame.",
+        "de": "Der Affe klettert am Gerüst."
+      },
+      {
+        "en": "The lion is above the penguin.",
+        "de": "Der Löwe ist oberhalb des Pinguins."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Combine spatial words with simple observation questions.",
-    "starterPrompts": [
-      "Where is the lion?",
-      "What is near the pool?",
-      "What is the monkey doing?",
-      "Which animal is highest?",
-      "Which animal is close to the water?"
-    ],
-    "expansionPrompts": [
-      "Tell me two things about the lion.",
-      "What might the monkey do next?"
-    ]
+    "focus": {
+      "en": "Combine spatial words with simple observation questions.",
+      "de": "Ortsangaben mit einfachen Beobachtungsfragen verbinden."
+    },
+    "starterPrompts": {
+      "en": [
+        "Where is the lion?",
+        "What is near the pool?",
+        "What is the monkey doing?",
+        "Which animal is highest?",
+        "Which animal is close to the water?"
+      ],
+      "de": [
+        "Wo ist der Löwe?",
+        "Was ist in der Nähe des Wasserbeckens?",
+        "Was macht der Affe?",
+        "Welches Tier ist am höchsten?",
+        "Welches Tier ist nah am Wasser?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Tell me two things about the lion.",
+        "What might the monkey do next?"
+      ],
+      "de": [
+        "Erzähl mir zwei Dinge über den Löwen.",
+        "Was könnte der Affe als Nächstes machen?"
+      ]
+    }
   },
   "visualAudit": [
     "Auto-batch panel reviewed for the described targets."

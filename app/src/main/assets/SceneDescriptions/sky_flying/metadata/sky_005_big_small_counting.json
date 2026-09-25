@@ -1,53 +1,134 @@
 {
   "sceneId": "scene.sky.big_small_counting.05",
   "categoryId": "sky_flying",
-  "title": "Sky Scene 5 — Big, Small and Counting",
+  "title": {
+    "en": "Sky Scene 5 — Big, Small and Counting",
+    "de": "Himmel, Szene 5 — Groß, klein und zählen"
+  },
   "status": "approved",
-  "purpose": "Colours, size, quantity and simple comparison in the sky.",
+  "purpose": {
+    "en": "Colours, size, quantity and simple comparison in the sky.",
+    "de": "Farben, Größe, Mengen und einfache Vergleiche am Himmel."
+  },
   "asset": "canonical/sky_005_big_small_counting.png",
   "promptFile": "prompts/sky_005_big_small_counting.md",
   "targetLanguage": {
     "nouns": [
-      "balloon",
-      "airplane",
-      "cloud",
-      "birds",
-      "kite"
+      {
+        "en": "balloon",
+        "de": "Heißluftballon"
+      },
+      {
+        "en": "airplane",
+        "de": "Flugzeug"
+      },
+      {
+        "en": "cloud",
+        "de": "Wolke"
+      },
+      {
+        "en": "birds",
+        "de": "Vögel"
+      },
+      {
+        "en": "kite",
+        "de": "Drachen"
+      }
     ],
     "verbs": [
-      "flying"
+      {
+        "en": "flying",
+        "de": "fliegen"
+      }
     ],
     "adjectives": [
-      "big",
-      "small",
-      "long",
-      "round",
-      "yellow",
-      "blue",
-      "red",
-      "colourful"
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "long",
+        "de": "lang"
+      },
+      {
+        "en": "round",
+        "de": "rund"
+      },
+      {
+        "en": "yellow",
+        "de": "gelb"
+      },
+      {
+        "en": "blue",
+        "de": "blau"
+      },
+      {
+        "en": "red",
+        "de": "rot"
+      },
+      {
+        "en": "colourful",
+        "de": "bunt"
+      }
     ],
     "sentenceModels": [
-      "The balloon is big.",
-      "The airplane is small.",
-      "The long cloud is white.",
-      "There are three little yellow birds.",
-      "The kite is colourful."
+      {
+        "en": "The balloon is big.",
+        "de": "Der Ballon ist groß."
+      },
+      {
+        "en": "The airplane is small.",
+        "de": "Das Flugzeug ist klein."
+      },
+      {
+        "en": "The long cloud is white.",
+        "de": "Die lange Wolke ist weiß."
+      },
+      {
+        "en": "There are three little yellow birds.",
+        "de": "Da sind drei kleine gelbe Vögel."
+      },
+      {
+        "en": "The kite is colourful.",
+        "de": "Der Drachen ist bunt."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Talk about size, colour and counting in the sky.",
-    "starterPrompts": [
-      "What is big?",
-      "What is small?",
-      "Can you count the birds?",
-      "Which cloud is long?",
-      "What colours can you see on the kite?"
-    ],
-    "expansionPrompts": [
-      "Which is bigger, the balloon or the airplane?",
-      "Can you describe the clouds?"
-    ]
+    "focus": {
+      "en": "Talk about size, colour and counting in the sky.",
+      "de": "Über Größe und Farbe sprechen und Dinge am Himmel zählen."
+    },
+    "starterPrompts": {
+      "en": [
+        "What is big?",
+        "What is small?",
+        "Can you count the birds?",
+        "Which cloud is long?",
+        "What colours can you see on the kite?"
+      ],
+      "de": [
+        "Was ist groß?",
+        "Was ist klein?",
+        "Kannst du die Vögel zählen?",
+        "Welche Wolke ist lang?",
+        "Welche Farben siehst du am Drachen?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Which is bigger, the balloon or the airplane?",
+        "Can you describe the clouds?"
+      ],
+      "de": [
+        "Was ist größer, der Ballon oder das Flugzeug?",
+        "Kannst du die Wolken beschreiben?"
+      ]
+    }
   },
   "visualAudit": [
     "One very large balloon.",

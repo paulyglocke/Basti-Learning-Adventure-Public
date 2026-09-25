@@ -1,53 +1,134 @@
 {
   "sceneId": "scene.classroom.school_routines.07",
   "categoryId": "classroom_school",
-  "title": "Classroom Scene 7 — School Routines",
+  "title": {
+    "en": "Classroom Scene 7 — School Routines",
+    "de": "Klassenraum, Szene 7 — Abläufe in der Schule"
+  },
   "status": "approved",
-  "purpose": "Support classroom routines, social language and functional comprehension.",
+  "purpose": {
+    "en": "Support classroom routines, social language and functional comprehension.",
+    "de": "Schulabläufe, Sprache für das Miteinander und das Verstehen praktischer Aufgaben unterstützen."
+  },
   "asset": "canonical/classroom_007_school_routines.png",
   "promptFile": "prompts/classroom_007_school_routines.md",
   "targetLanguage": {
     "nouns": [
-      "teacher",
-      "paper",
-      "backpack",
-      "book",
-      "desk",
-      "shelf"
+      {
+        "en": "teacher",
+        "de": "Lehrkraft"
+      },
+      {
+        "en": "paper",
+        "de": "Papier"
+      },
+      {
+        "en": "backpack",
+        "de": "Rucksack"
+      },
+      {
+        "en": "book",
+        "de": "Buch"
+      },
+      {
+        "en": "desk",
+        "de": "Tisch"
+      },
+      {
+        "en": "shelf",
+        "de": "Regal"
+      }
     ],
     "verbs": [
-      "raising",
-      "giving",
-      "packing",
-      "putting away",
-      "sitting"
+      {
+        "en": "raising",
+        "de": "heben"
+      },
+      {
+        "en": "giving",
+        "de": "geben"
+      },
+      {
+        "en": "packing",
+        "de": "packen"
+      },
+      {
+        "en": "putting away",
+        "de": "wegräumen"
+      },
+      {
+        "en": "sitting",
+        "de": "sitzen"
+      }
     ],
     "adjectives": [
-      "ready",
-      "tidy",
-      "open",
-      "closed"
+      {
+        "en": "ready",
+        "de": "bereit"
+      },
+      {
+        "en": "tidy",
+        "de": "ordentlich"
+      },
+      {
+        "en": "open",
+        "de": "offen"
+      },
+      {
+        "en": "closed",
+        "de": "geschlossen"
+      }
     ],
     "sentenceModels": [
-      "The child is raising a hand.",
-      "The child is giving the paper to the teacher.",
-      "The child is packing the bag.",
-      "The child is sitting at the desk."
+      {
+        "en": "The child is raising a hand.",
+        "de": "Das Kind hebt die Hand."
+      },
+      {
+        "en": "The child is giving the paper to the teacher.",
+        "de": "Das Kind gibt der Lehrkraft das Blatt."
+      },
+      {
+        "en": "The child is packing the bag.",
+        "de": "Das Kind packt die Tasche."
+      },
+      {
+        "en": "The child is sitting at the desk.",
+        "de": "Das Kind sitzt am Tisch."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Use the scene for naming routines, following simple instructions and talking about classroom expectations.",
-    "starterPrompts": [
-      "Who is raising a hand?",
-      "Who is giving the paper to the teacher?",
-      "Who is packing a bag?",
-      "Who is putting a book away?",
-      "Which child is ready at the desk?"
-    ],
-    "expansionPrompts": [
-      "Tell me what happens first and what happens next.",
-      "Which things belong in the backpack and which things belong on the shelf?"
-    ]
+    "focus": {
+      "en": "Use the scene for naming routines, following simple instructions and talking about classroom expectations.",
+      "de": "Mit der Szene Abläufe benennen, einfachen Anweisungen folgen und über Erwartungen im Klassenraum sprechen."
+    },
+    "starterPrompts": {
+      "en": [
+        "Who is raising a hand?",
+        "Who is giving the paper to the teacher?",
+        "Who is packing a bag?",
+        "Who is putting a book away?",
+        "Which child is ready at the desk?"
+      ],
+      "de": [
+        "Wer hebt die Hand?",
+        "Wer gibt der Lehrkraft das Blatt?",
+        "Wer packt eine Tasche?",
+        "Wer räumt ein Buch weg?",
+        "Welches Kind sitzt bereit am Tisch?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Tell me what happens first and what happens next.",
+        "Which things belong in the backpack and which things belong on the shelf?"
+      ],
+      "de": [
+        "Erzähl mir, was zuerst passiert und was danach.",
+        "Welche Dinge gehören in den Rucksack und welche ins Regal?"
+      ]
+    }
   },
   "visualAudit": [
     "Reviewed in Wave 3 Batch 3 automatic pass against the main teaching targets."

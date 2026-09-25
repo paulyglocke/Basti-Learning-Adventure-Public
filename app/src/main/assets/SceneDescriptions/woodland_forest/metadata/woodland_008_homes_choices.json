@@ -1,60 +1,160 @@
 {
   "sceneId": "scene.woodland.homes_choices.08",
   "categoryId": "woodland_forest",
-  "title": "Woodland Scene 8 — Homes and Hiding Places",
+  "title": {
+    "en": "Woodland Scene 8 — Homes and Hiding Places",
+    "de": "Wald, Szene 8 — Tierwohnungen und Verstecke"
+  },
   "status": "approved",
-  "purpose": "Animal homes, shelter, and choosing the right place for each animal.",
+  "purpose": {
+    "en": "Animal homes, shelter, and choosing the right place for each animal.",
+    "de": "Tierwohnungen, Schutz und einen passenden Platz für jedes Tier finden."
+  },
   "asset": "canonical/woodland_008_homes_choices.png",
   "promptFile": "prompts/woodland_008_homes_choices.md",
   "targetLanguage": {
     "nouns": [
-      "squirrel",
-      "stump",
-      "rabbit",
-      "burrow",
-      "fox",
-      "den",
-      "owl",
-      "tree hole",
-      "hedgehog",
-      "leaves",
-      "mushrooms"
+      {
+        "en": "squirrel",
+        "de": "Eichhörnchen"
+      },
+      {
+        "en": "stump",
+        "de": "Baumstumpf"
+      },
+      {
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      {
+        "en": "burrow",
+        "de": "Bau"
+      },
+      {
+        "en": "fox",
+        "de": "Fuchs"
+      },
+      {
+        "en": "den",
+        "de": "Bau"
+      },
+      {
+        "en": "owl",
+        "de": "Eule"
+      },
+      {
+        "en": "tree hole",
+        "de": "Baumhöhle"
+      },
+      {
+        "en": "hedgehog",
+        "de": "Igel"
+      },
+      {
+        "en": "leaves",
+        "de": "Blätter"
+      },
+      {
+        "en": "mushrooms",
+        "de": "Pilze"
+      }
     ],
     "verbs": [
-      "sitting",
-      "waiting",
-      "hiding",
-      "looking"
+      {
+        "en": "sitting",
+        "de": "sitzen"
+      },
+      {
+        "en": "waiting",
+        "de": "warten"
+      },
+      {
+        "en": "hiding",
+        "de": "sich verstecken"
+      },
+      {
+        "en": "looking",
+        "de": "schauen"
+      }
     ],
     "adjectives": [
-      "spiky",
-      "soft",
-      "orange",
-      "brown",
-      "small"
+      {
+        "en": "spiky",
+        "de": "stachelig"
+      },
+      {
+        "en": "soft",
+        "de": "weich"
+      },
+      {
+        "en": "orange",
+        "de": "orange"
+      },
+      {
+        "en": "brown",
+        "de": "braun"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      }
     ],
     "sentenceModels": [
-      "The rabbit is next to the burrow.",
-      "The fox is by the den.",
-      "The owl is on the branch.",
-      "The hedgehog is in the leaves.",
-      "The squirrel is on the stump."
+      {
+        "en": "The rabbit is next to the burrow.",
+        "de": "Das Kaninchen ist neben dem Bau."
+      },
+      {
+        "en": "The fox is by the den.",
+        "de": "Der Fuchs ist beim Bau."
+      },
+      {
+        "en": "The owl is on the branch.",
+        "de": "Die Eule ist auf dem Ast."
+      },
+      {
+        "en": "The hedgehog is in the leaves.",
+        "de": "Der Igel ist in den Blättern."
+      },
+      {
+        "en": "The squirrel is on the stump.",
+        "de": "Das Eichhörnchen ist auf dem Baumstumpf."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Talk about where animals might rest, hide or live.",
-    "starterPrompts": [
-      "Where is the rabbit?",
-      "Which animal is by the den?",
-      "Who is in the leaves?",
-      "Which animal is on the stump?",
-      "Where might the owl go?"
-    ],
-    "expansionPrompts": [
-      "Which place looks best for the rabbit?",
-      "Which animal might hide in the hollow log?",
-      "Can you match each animal to a place?"
-    ]
+    "focus": {
+      "en": "Talk about where animals might rest, hide or live.",
+      "de": "Darüber sprechen, wo Tiere sich ausruhen, sich verstecken oder wohnen könnten."
+    },
+    "starterPrompts": {
+      "en": [
+        "Where is the rabbit?",
+        "Which animal is by the den?",
+        "Who is in the leaves?",
+        "Which animal is on the stump?",
+        "Where might the owl go?"
+      ],
+      "de": [
+        "Wo ist das Kaninchen?",
+        "Welches Tier ist beim Bau?",
+        "Wer ist in den Blättern?",
+        "Welches Tier ist auf dem Baumstumpf?",
+        "Wohin könnte die Eule gehen?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Which place looks best for the rabbit?",
+        "Which animal might hide in the hollow log?",
+        "Can you match each animal to a place?"
+      ],
+      "de": [
+        "Welcher Platz sieht für das Kaninchen am besten aus?",
+        "Welches Tier könnte sich im hohlen Baumstamm verstecken?",
+        "Findest du für jedes Tier einen passenden Platz?"
+      ]
+    }
   },
   "visualAudit": [
     "One squirrel on a stump holding an acorn.",

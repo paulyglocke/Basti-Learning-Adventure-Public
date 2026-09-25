@@ -1,61 +1,166 @@
 {
   "sceneId": "scene.woodland.autumn_prep.04",
   "categoryId": "woodland_forest",
-  "title": "Woodland Scene 4 — Autumn Preparation",
+  "title": {
+    "en": "Woodland Scene 4 — Autumn Preparation",
+    "de": "Wald, Szene 4 — Vorbereitungen auf den Herbst"
+  },
   "status": "approved",
-  "purpose": "Describe several woodland actions and simple seasonal ideas.",
+  "purpose": {
+    "en": "Describe several woodland actions and simple seasonal ideas.",
+    "de": "Verschiedene Handlungen im Wald und einfache Gedanken zu den Jahreszeiten beschreiben."
+  },
   "asset": "canonical/woodland_004_autumn_prep.png",
   "promptFile": "prompts/woodland_004_autumn_prep.md",
   "targetLanguage": {
     "nouns": [
-      "squirrel",
-      "acorns",
-      "deer",
-      "leaves",
-      "rabbit",
-      "burrow",
-      "fox",
-      "log",
-      "hedgehog",
-      "owl"
+      {
+        "en": "squirrel",
+        "de": "Eichhörnchen"
+      },
+      {
+        "en": "acorns",
+        "de": "Eicheln"
+      },
+      {
+        "en": "deer",
+        "de": "Reh"
+      },
+      {
+        "en": "leaves",
+        "de": "Blätter"
+      },
+      {
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      {
+        "en": "burrow",
+        "de": "Bau"
+      },
+      {
+        "en": "fox",
+        "de": "Fuchs"
+      },
+      {
+        "en": "log",
+        "de": "Baumstamm"
+      },
+      {
+        "en": "hedgehog",
+        "de": "Igel"
+      },
+      {
+        "en": "owl",
+        "de": "Eule"
+      }
     ],
     "verbs": [
-      "carrying",
-      "eating",
-      "hopping",
-      "sniffing",
-      "walking",
-      "flying"
+      {
+        "en": "carrying",
+        "de": "tragen"
+      },
+      {
+        "en": "eating",
+        "de": "fressen"
+      },
+      {
+        "en": "hopping",
+        "de": "hoppeln"
+      },
+      {
+        "en": "sniffing",
+        "de": "schnuppern"
+      },
+      {
+        "en": "walking",
+        "de": "gehen"
+      },
+      {
+        "en": "flying",
+        "de": "fliegen"
+      }
     ],
     "adjectives": [
-      "orange",
-      "brown",
-      "small",
-      "long ears",
-      "bushy tail"
+      {
+        "en": "orange",
+        "de": "orange"
+      },
+      {
+        "en": "brown",
+        "de": "braun"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "long ears",
+        "de": "lange Ohren"
+      },
+      {
+        "en": "bushy tail",
+        "de": "buschiger Schwanz"
+      }
     ],
     "sentenceModels": [
-      "The squirrel is carrying acorns.",
-      "The deer is eating leaves.",
-      "The rabbit is hopping to the burrow.",
-      "The fox is sniffing near the log.",
-      "The hedgehog has a leaf on its back.",
-      "The owl is flying."
+      {
+        "en": "The squirrel is carrying acorns.",
+        "de": "Das Eichhörnchen trägt Eicheln."
+      },
+      {
+        "en": "The deer is eating leaves.",
+        "de": "Das Reh frisst Blätter."
+      },
+      {
+        "en": "The rabbit is hopping to the burrow.",
+        "de": "Das Kaninchen hoppelt zum Bau."
+      },
+      {
+        "en": "The fox is sniffing near the log.",
+        "de": "Der Fuchs schnuppert beim Baumstamm."
+      },
+      {
+        "en": "The hedgehog has a leaf on its back.",
+        "de": "Der Igel hat ein Blatt auf dem Rücken."
+      },
+      {
+        "en": "The owl is flying.",
+        "de": "Die Eule fliegt."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Support longer descriptions and talk about getting ready for autumn or winter.",
-    "starterPrompts": [
-      "Who is carrying something?",
-      "Which animal is hopping?",
-      "What is the fox doing?",
-      "Who is up in the sky?",
-      "What is on the hedgehog's back?"
-    ],
-    "expansionPrompts": [
-      "Why might the squirrel carry acorns?",
-      "Can you tell me what the deer is eating?"
-    ]
+    "focus": {
+      "en": "Support longer descriptions and talk about getting ready for autumn or winter.",
+      "de": "Längere Beschreibungen unterstützen und über Vorbereitungen auf Herbst oder Winter sprechen."
+    },
+    "starterPrompts": {
+      "en": [
+        "Who is carrying something?",
+        "Which animal is hopping?",
+        "What is the fox doing?",
+        "Who is up in the sky?",
+        "What is on the hedgehog's back?"
+      ],
+      "de": [
+        "Wer trägt etwas?",
+        "Welches Tier hoppelt?",
+        "Was macht der Fuchs?",
+        "Wer ist oben am Himmel?",
+        "Was ist auf dem Rücken des Igels?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Why might the squirrel carry acorns?",
+        "Can you tell me what the deer is eating?"
+      ],
+      "de": [
+        "Warum könnte das Eichhörnchen Eicheln tragen?",
+        "Kannst du mir sagen, was das Reh frisst?"
+      ]
+    }
   },
   "visualAudit": [
     "Squirrel carrying two acorns near a stump.",

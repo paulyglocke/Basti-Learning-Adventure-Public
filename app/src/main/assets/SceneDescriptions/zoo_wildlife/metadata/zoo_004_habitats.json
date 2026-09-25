@@ -1,50 +1,122 @@
 {
   "sceneId": "scene.zoo.habitats.04",
   "categoryId": "zoo_wildlife",
-  "title": "Zoo Scene 4 — Different Animal Habitats",
+  "title": {
+    "en": "Zoo Scene 4 — Different Animal Habitats",
+    "de": "Zoo, Szene 4 — Verschiedene Lebensräume"
+  },
   "status": "approved",
-  "purpose": "Compare where different zoo animals live, stand and swim.",
+  "purpose": {
+    "en": "Compare where different zoo animals live, stand and swim.",
+    "de": "Vergleichen, wo verschiedene Zootiere leben, stehen und schwimmen."
+  },
   "asset": "canonical/zoo_004_habitats.png",
   "promptFile": "prompts/zoo_004_habitats.md",
   "targetLanguage": {
     "nouns": [
-      "bear",
-      "cave",
-      "kangaroo",
-      "otter",
-      "pool",
-      "rock",
-      "water"
+      {
+        "en": "bear",
+        "de": "Bär"
+      },
+      {
+        "en": "cave",
+        "de": "Höhle"
+      },
+      {
+        "en": "kangaroo",
+        "de": "Känguru"
+      },
+      {
+        "en": "otter",
+        "de": "Otter"
+      },
+      {
+        "en": "pool",
+        "de": "Wasserbecken"
+      },
+      {
+        "en": "rock",
+        "de": "Fels"
+      },
+      {
+        "en": "water",
+        "de": "Wasser"
+      }
     ],
     "verbs": [
-      "standing",
-      "swimming"
+      {
+        "en": "standing",
+        "de": "stehen"
+      },
+      {
+        "en": "swimming",
+        "de": "schwimmen"
+      }
     ],
     "adjectives": [
-      "brown",
-      "rocky",
-      "wet",
-      "dry"
+      {
+        "en": "brown",
+        "de": "braun"
+      },
+      {
+        "en": "rocky",
+        "de": "felsig"
+      },
+      {
+        "en": "wet",
+        "de": "nass"
+      },
+      {
+        "en": "dry",
+        "de": "trocken"
+      }
     ],
     "sentenceModels": [
-      "The bear is near the cave.",
-      "The kangaroo is on the ground.",
-      "The otter is swimming in the water."
+      {
+        "en": "The bear is near the cave.",
+        "de": "Der Bär ist in der Nähe der Höhle."
+      },
+      {
+        "en": "The kangaroo is on the ground.",
+        "de": "Das Känguru ist auf dem Boden."
+      },
+      {
+        "en": "The otter is swimming in the water.",
+        "de": "Der Otter schwimmt im Wasser."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Compare habitats and ask which animals are on land or in water.",
-    "starterPrompts": [
-      "Where is the bear?",
-      "Which animal is swimming?",
-      "Which animal is on land?",
-      "What is near the cave?",
-      "Which place is wet?"
-    ],
-    "expansionPrompts": [
-      "How is the otter's place different from the bear's place?",
-      "Tell me a sentence about the kangaroo."
-    ]
+    "focus": {
+      "en": "Compare habitats and ask which animals are on land or in water.",
+      "de": "Lebensräume vergleichen und fragen, welche Tiere an Land oder im Wasser sind."
+    },
+    "starterPrompts": {
+      "en": [
+        "Where is the bear?",
+        "Which animal is swimming?",
+        "Which animal is on land?",
+        "What is near the cave?",
+        "Which place is wet?"
+      ],
+      "de": [
+        "Wo ist der Bär?",
+        "Welches Tier schwimmt?",
+        "Welches Tier ist an Land?",
+        "Was ist in der Nähe der Höhle?",
+        "Welcher Platz ist nass?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "How is the otter's place different from the bear's place?",
+        "Tell me a sentence about the kangaroo."
+      ],
+      "de": [
+        "Wie unterscheidet sich der Platz des Otters vom Platz des Bären?",
+        "Sag mir einen Satz über das Känguru."
+      ]
+    }
   },
   "visualAudit": [
     "Auto-batch panel reviewed for the described targets."

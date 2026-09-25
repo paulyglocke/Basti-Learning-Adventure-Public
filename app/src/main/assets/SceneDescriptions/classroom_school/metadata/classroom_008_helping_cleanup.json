@@ -1,53 +1,134 @@
 {
   "sceneId": "scene.classroom.helping_cleanup.08",
   "categoryId": "classroom_school",
-  "title": "Classroom Scene 8 — Helping and Cleaning Up",
+  "title": {
+    "en": "Classroom Scene 8 — Helping and Cleaning Up",
+    "de": "Klassenraum, Szene 8 — Helfen und aufräumen"
+  },
   "status": "approved",
-  "purpose": "Support social language, helping, tidying and end-of-task routines in a classroom setting.",
+  "purpose": {
+    "en": "Support social language, helping, tidying and end-of-task routines in a classroom setting.",
+    "de": "Sprache für das Miteinander, Helfen, Aufräumen und Abläufe nach einer Aufgabe im Klassenraum unterstützen."
+  },
   "asset": "canonical/classroom_008_helping_cleanup.png",
   "promptFile": "prompts/classroom_008_helping_cleanup.md",
   "targetLanguage": {
     "nouns": [
-      "teacher",
-      "picture",
-      "pencils",
-      "backpack",
-      "book",
-      "shelf"
+      {
+        "en": "teacher",
+        "de": "Lehrkraft"
+      },
+      {
+        "en": "picture",
+        "de": "Bild"
+      },
+      {
+        "en": "pencils",
+        "de": "Bleistifte"
+      },
+      {
+        "en": "backpack",
+        "de": "Rucksack"
+      },
+      {
+        "en": "book",
+        "de": "Buch"
+      },
+      {
+        "en": "shelf",
+        "de": "Regal"
+      }
     ],
     "verbs": [
-      "giving",
-      "picking up",
-      "packing",
-      "putting away",
-      "helping"
+      {
+        "en": "giving",
+        "de": "geben"
+      },
+      {
+        "en": "picking up",
+        "de": "aufheben"
+      },
+      {
+        "en": "packing",
+        "de": "packen"
+      },
+      {
+        "en": "putting away",
+        "de": "wegräumen"
+      },
+      {
+        "en": "helping",
+        "de": "helfen"
+      }
     ],
     "adjectives": [
-      "helpful",
-      "tidy",
-      "open",
-      "colourful"
+      {
+        "en": "helpful",
+        "de": "hilfsbereit"
+      },
+      {
+        "en": "tidy",
+        "de": "ordentlich"
+      },
+      {
+        "en": "open",
+        "de": "offen"
+      },
+      {
+        "en": "colourful",
+        "de": "bunt"
+      }
     ],
     "sentenceModels": [
-      "The child is giving the picture to the teacher.",
-      "The child is picking up the pencils.",
-      "The child is packing the backpack.",
-      "The child is putting the book on the shelf."
+      {
+        "en": "The child is giving the picture to the teacher.",
+        "de": "Das Kind gibt der Lehrkraft das Bild."
+      },
+      {
+        "en": "The child is picking up the pencils.",
+        "de": "Das Kind hebt die Bleistifte auf."
+      },
+      {
+        "en": "The child is packing the backpack.",
+        "de": "Das Kind packt den Rucksack."
+      },
+      {
+        "en": "The child is putting the book on the shelf.",
+        "de": "Das Kind stellt das Buch ins Regal."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Talk about what to do when something is on the floor, where classroom things belong, and how children can help.",
-    "starterPrompts": [
-      "What is on the floor?",
-      "Who is helping tidy up?",
-      "Where does the book belong?",
-      "What is the child putting into the backpack?",
-      "Who is showing work to the teacher?"
-    ],
-    "expansionPrompts": [
-      "What should happen after the pencils are picked up?",
-      "Can you tell me the tidy-up story from start to finish?"
-    ]
+    "focus": {
+      "en": "Talk about what to do when something is on the floor, where classroom things belong, and how children can help.",
+      "de": "Darüber sprechen, was zu tun ist, wenn etwas auf dem Boden liegt, wohin die Dinge im Klassenraum gehören und wie Kinder helfen können."
+    },
+    "starterPrompts": {
+      "en": [
+        "What is on the floor?",
+        "Who is helping tidy up?",
+        "Where does the book belong?",
+        "What is the child putting into the backpack?",
+        "Who is showing work to the teacher?"
+      ],
+      "de": [
+        "Was liegt auf dem Boden?",
+        "Wer hilft beim Aufräumen?",
+        "Wohin gehört das Buch?",
+        "Was steckt das Kind in den Rucksack?",
+        "Wer zeigt der Lehrkraft seine Arbeit?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "What should happen after the pencils are picked up?",
+        "Can you tell me the tidy-up story from start to finish?"
+      ],
+      "de": [
+        "Was sollte passieren, nachdem die Bleistifte aufgehoben wurden?",
+        "Kannst du die Aufräumgeschichte vom Anfang bis zum Ende erzählen?"
+      ]
+    }
   },
   "visualAudit": [
     "Reviewed in Wave 3 Batch 3 automatic pass against the main teaching targets."

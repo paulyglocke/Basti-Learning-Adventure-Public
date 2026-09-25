@@ -1,57 +1,150 @@
 {
   "sceneId": "scene.mountains.homes_places.06",
   "categoryId": "mountains_alpine",
-  "title": "Mountains Scene 6 — Homes and Places",
+  "title": {
+    "en": "Mountains Scene 6 — Homes and Places",
+    "de": "Berge, Szene 6 — Tierwohnungen und Orte"
+  },
   "status": "approved",
-  "purpose": "Animal homes, places and spatial language in an alpine setting.",
+  "purpose": {
+    "en": "Animal homes, places and spatial language in an alpine setting.",
+    "de": "Tierwohnungen, Orte und räumliche Begriffe in den Alpen."
+  },
   "asset": "canonical/mountains_006_homes_places.png",
   "promptFile": "prompts/mountains_006_homes_places.md",
   "targetLanguage": {
     "nouns": [
-      "cliff",
-      "goat",
-      "eagle",
-      "nest",
-      "marmot",
-      "burrow",
-      "flowers",
-      "rocks",
-      "sheep",
-      "hill",
-      "rabbit",
-      "bush"
+      {
+        "en": "cliff",
+        "de": "Felsklippe"
+      },
+      {
+        "en": "goat",
+        "de": "Ziege"
+      },
+      {
+        "en": "eagle",
+        "de": "Adler"
+      },
+      {
+        "en": "nest",
+        "de": "Nest"
+      },
+      {
+        "en": "marmot",
+        "de": "Murmeltier"
+      },
+      {
+        "en": "burrow",
+        "de": "Bau"
+      },
+      {
+        "en": "flowers",
+        "de": "Blumen"
+      },
+      {
+        "en": "rocks",
+        "de": "Felsen"
+      },
+      {
+        "en": "sheep",
+        "de": "Schaf"
+      },
+      {
+        "en": "hill",
+        "de": "Hügel"
+      },
+      {
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      {
+        "en": "bush",
+        "de": "Busch"
+      }
     ],
     "verbs": [
-      "standing",
-      "sitting"
+      {
+        "en": "standing",
+        "de": "stehen"
+      },
+      {
+        "en": "sitting",
+        "de": "sitzen"
+      }
     ],
     "adjectives": [
-      "rocky",
-      "white",
-      "fluffy",
-      "small"
+      {
+        "en": "rocky",
+        "de": "felsig"
+      },
+      {
+        "en": "white",
+        "de": "weiß"
+      },
+      {
+        "en": "fluffy",
+        "de": "flauschig"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      }
     ],
     "sentenceModels": [
-      "The goat is on the cliff.",
-      "The eagle is in the nest.",
-      "The marmot is near the burrow.",
-      "The flowers are between the rocks.",
-      "The rabbit is under the bush."
+      {
+        "en": "The goat is on the cliff.",
+        "de": "Die Ziege ist auf der Felsklippe."
+      },
+      {
+        "en": "The eagle is in the nest.",
+        "de": "Der Adler ist im Nest."
+      },
+      {
+        "en": "The marmot is near the burrow.",
+        "de": "Das Murmeltier ist in der Nähe des Baus."
+      },
+      {
+        "en": "The flowers are between the rocks.",
+        "de": "Die Blumen sind zwischen den Felsen."
+      },
+      {
+        "en": "The rabbit is under the bush.",
+        "de": "Das Kaninchen ist unter dem Busch."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Talk about where the mountain animals live or rest and use position words.",
-    "starterPrompts": [
-      "Where is the goat?",
-      "Where is the eagle?",
-      "Where is the marmot?",
-      "What is between the rocks?",
-      "Where is the rabbit?"
-    ],
-    "expansionPrompts": [
-      "Which place looks high?",
-      "Which place looks safe and hidden?"
-    ]
+    "focus": {
+      "en": "Talk about where the mountain animals live or rest and use position words.",
+      "de": "Darüber sprechen, wo Bergtiere wohnen oder sich ausruhen, und Ortsangaben verwenden."
+    },
+    "starterPrompts": {
+      "en": [
+        "Where is the goat?",
+        "Where is the eagle?",
+        "Where is the marmot?",
+        "What is between the rocks?",
+        "Where is the rabbit?"
+      ],
+      "de": [
+        "Wo ist die Ziege?",
+        "Wo ist der Adler?",
+        "Wo ist das Murmeltier?",
+        "Was ist zwischen den Felsen?",
+        "Wo ist das Kaninchen?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Which place looks high?",
+        "Which place looks safe and hidden?"
+      ],
+      "de": [
+        "Welcher Platz sieht hoch aus?",
+        "Welcher Platz sieht sicher und versteckt aus?"
+      ]
+    }
   },
   "visualAudit": [
     "One goat on a cliff.",

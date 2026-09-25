@@ -1,52 +1,130 @@
 {
   "sceneId": "scene.mountains.weather_shelter.08",
   "categoryId": "mountains_alpine",
-  "title": "Mountains Scene 8 — Weather and Shelter",
+  "title": {
+    "en": "Mountains Scene 8 — Weather and Shelter",
+    "de": "Berge, Szene 8 — Wetter und Schutz"
+  },
   "status": "approved",
-  "purpose": "Weather changes, needs and simple cause/effect language.",
+  "purpose": {
+    "en": "Weather changes, needs and simple cause/effect language.",
+    "de": "Wetterwechsel, Bedürfnisse und einfache Aussagen zu Ursache und Wirkung."
+  },
   "asset": "canonical/mountains_008_weather_shelter.png",
   "promptFile": "prompts/mountains_008_weather_shelter.md",
   "targetLanguage": {
     "nouns": [
-      "sun",
-      "cloud",
-      "snow",
-      "hut",
-      "mountains",
-      "backpack"
+      {
+        "en": "sun",
+        "de": "Sonne"
+      },
+      {
+        "en": "cloud",
+        "de": "Wolke"
+      },
+      {
+        "en": "snow",
+        "de": "Schnee"
+      },
+      {
+        "en": "hut",
+        "de": "Hütte"
+      },
+      {
+        "en": "mountains",
+        "de": "Berge"
+      },
+      {
+        "en": "backpack",
+        "de": "Rucksack"
+      }
     ],
     "verbs": [
-      "resting",
-      "waiting",
-      "sheltering"
+      {
+        "en": "resting",
+        "de": "sich ausruhen"
+      },
+      {
+        "en": "waiting",
+        "de": "warten"
+      },
+      {
+        "en": "sheltering",
+        "de": "Schutz suchen"
+      }
     ],
     "adjectives": [
-      "sunny",
-      "cloudy",
-      "cold",
-      "warm",
-      "snowy"
+      {
+        "en": "sunny",
+        "de": "sonnig"
+      },
+      {
+        "en": "cloudy",
+        "de": "bewölkt"
+      },
+      {
+        "en": "cold",
+        "de": "kalt"
+      },
+      {
+        "en": "warm",
+        "de": "warm"
+      },
+      {
+        "en": "snowy",
+        "de": "verschneit"
+      }
     ],
     "sentenceModels": [
-      "The weather is changing.",
-      "The hut gives shelter.",
-      "It is cold near the snow.",
-      "It is sunny on the left."
+      {
+        "en": "The weather is changing.",
+        "de": "Das Wetter ändert sich."
+      },
+      {
+        "en": "The hut gives shelter.",
+        "de": "Die Hütte bietet Schutz."
+      },
+      {
+        "en": "It is cold near the snow.",
+        "de": "In der Nähe des Schnees ist es kalt."
+      },
+      {
+        "en": "It is sunny on the left.",
+        "de": "Links ist es sonnig."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Talk about what people or animals need when mountain weather changes.",
-    "starterPrompts": [
-      "Where is it sunny?",
-      "Where is it snowy?",
-      "What gives shelter?",
-      "Which part looks cold?",
-      "What might you need in cold weather?"
-    ],
-    "expansionPrompts": [
-      "Why would someone go to the hut?",
-      "What happens after the sunny weather changes?"
-    ]
+    "focus": {
+      "en": "Talk about what people or animals need when mountain weather changes.",
+      "de": "Darüber sprechen, was Menschen oder Tiere brauchen, wenn sich das Wetter in den Bergen ändert."
+    },
+    "starterPrompts": {
+      "en": [
+        "Where is it sunny?",
+        "Where is it snowy?",
+        "What gives shelter?",
+        "Which part looks cold?",
+        "What might you need in cold weather?"
+      ],
+      "de": [
+        "Wo ist es sonnig?",
+        "Wo liegt Schnee?",
+        "Was bietet Schutz?",
+        "Welcher Teil sieht kalt aus?",
+        "Was könntest du bei kaltem Wetter brauchen?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Why would someone go to the hut?",
+        "What happens after the sunny weather changes?"
+      ],
+      "de": [
+        "Warum könnte jemand zur Hütte gehen?",
+        "Was passiert, nachdem sich das sonnige Wetter geändert hat?"
+      ]
+    }
   },
   "visualAudit": [
     "Reviewed in Wave 3 Batch 2 automatic pass against the visible teaching targets."

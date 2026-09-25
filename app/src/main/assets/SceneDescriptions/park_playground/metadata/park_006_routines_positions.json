@@ -1,55 +1,142 @@
 {
   "sceneId": "scene.park.routines_positions.06",
   "categoryId": "park_playground",
-  "title": "Park Scene 6 — Playground Routines and Positions",
+  "title": {
+    "en": "Park Scene 6 — Playground Routines and Positions",
+    "de": "Park, Szene 6 — Alltag und Orte auf dem Spielplatz"
+  },
   "status": "approved",
-  "purpose": "Simple playground routines combined with clear spatial language.",
+  "purpose": {
+    "en": "Simple playground routines combined with clear spatial language.",
+    "de": "Einfache Spielplatzabläufe mit klaren Ortsangaben verbinden."
+  },
   "asset": "canonical/park_006_routines_positions.png",
   "promptFile": "prompts/park_006_routines_positions.md",
   "targetLanguage": {
     "nouns": [
-      "helmet",
-      "scooter",
-      "backpack",
-      "basket",
-      "water bottle",
-      "bench",
-      "ball",
-      "cone",
-      "slide",
-      "child"
+      {
+        "en": "helmet",
+        "de": "Helm"
+      },
+      {
+        "en": "scooter",
+        "de": "Roller"
+      },
+      {
+        "en": "backpack",
+        "de": "Rucksack"
+      },
+      {
+        "en": "basket",
+        "de": "Korb"
+      },
+      {
+        "en": "water bottle",
+        "de": "Trinkflasche"
+      },
+      {
+        "en": "bench",
+        "de": "Bank"
+      },
+      {
+        "en": "ball",
+        "de": "Ball"
+      },
+      {
+        "en": "cone",
+        "de": "Pylon"
+      },
+      {
+        "en": "slide",
+        "de": "Rutsche"
+      },
+      {
+        "en": "child",
+        "de": "Kind"
+      }
     ],
     "verbs": [
-      "wearing",
-      "standing"
+      {
+        "en": "wearing",
+        "de": "tragen"
+      },
+      {
+        "en": "standing",
+        "de": "stehen"
+      }
     ],
     "adjectives": [
-      "yellow",
-      "blue",
-      "red",
-      "orange"
+      {
+        "en": "yellow",
+        "de": "gelb"
+      },
+      {
+        "en": "blue",
+        "de": "blau"
+      },
+      {
+        "en": "red",
+        "de": "rot"
+      },
+      {
+        "en": "orange",
+        "de": "orange"
+      }
     ],
     "sentenceModels": [
-      "The child is wearing a helmet.",
-      "The backpack is in the basket.",
-      "The water bottle is under the bench.",
-      "The ball is between the cones.",
-      "The child is behind the slide."
+      {
+        "en": "The child is wearing a helmet.",
+        "de": "Das Kind trägt einen Helm."
+      },
+      {
+        "en": "The backpack is in the basket.",
+        "de": "Der Rucksack ist im Korb."
+      },
+      {
+        "en": "The water bottle is under the bench.",
+        "de": "Die Trinkflasche ist unter der Bank."
+      },
+      {
+        "en": "The ball is between the cones.",
+        "de": "Der Ball ist zwischen den Pylonen."
+      },
+      {
+        "en": "The child is behind the slide.",
+        "de": "Das Kind ist hinter der Rutsche."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Practise position words and simple playground routines.",
-    "starterPrompts": [
-      "Who is wearing the helmet?",
-      "Where is the backpack?",
-      "Where is the bottle?",
-      "What is between the cones?",
-      "Who is behind the slide?"
-    ],
-    "expansionPrompts": [
-      "Can you tell me where the scooter is?",
-      "What do you wear before riding a scooter?"
-    ]
+    "focus": {
+      "en": "Practise position words and simple playground routines.",
+      "de": "Ortsangaben und einfache Abläufe auf dem Spielplatz üben."
+    },
+    "starterPrompts": {
+      "en": [
+        "Who is wearing the helmet?",
+        "Where is the backpack?",
+        "Where is the bottle?",
+        "What is between the cones?",
+        "Who is behind the slide?"
+      ],
+      "de": [
+        "Wer trägt den Helm?",
+        "Wo ist der Rucksack?",
+        "Wo ist die Flasche?",
+        "Was ist zwischen den Pylonen?",
+        "Wer ist hinter der Rutsche?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Can you tell me where the scooter is?",
+        "What do you wear before riding a scooter?"
+      ],
+      "de": [
+        "Kannst du mir sagen, wo der Roller ist?",
+        "Was setzt du auf, bevor du Roller fährst?"
+      ]
+    }
   },
   "visualAudit": [
     "One child wearing a helmet beside one scooter.",

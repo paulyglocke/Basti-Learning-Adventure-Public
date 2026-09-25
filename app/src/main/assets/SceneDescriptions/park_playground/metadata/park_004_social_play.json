@@ -1,58 +1,154 @@
 {
   "sceneId": "scene.park.social_play.04",
   "categoryId": "park_playground",
-  "title": "Park Scene 4 — Social Play and Helping",
+  "title": {
+    "en": "Park Scene 4 — Social Play and Helping",
+    "de": "Park, Szene 4 — Gemeinsam spielen und helfen"
+  },
   "status": "approved",
-  "purpose": "Social play, helping, sharing and linked playground routines.",
+  "purpose": {
+    "en": "Social play, helping, sharing and linked playground routines.",
+    "de": "Gemeinsames Spielen, Helfen, Teilen und zusammenhängende Abläufe auf dem Spielplatz."
+  },
   "asset": "canonical/park_004_social_play.png",
   "promptFile": "prompts/park_004_social_play.md",
   "targetLanguage": {
     "nouns": [
-      "swing",
-      "sandbox",
-      "sandcastle",
-      "bucket",
-      "spade",
-      "ball",
-      "basket",
-      "toy truck",
-      "water bottle"
+      {
+        "en": "swing",
+        "de": "Schaukel"
+      },
+      {
+        "en": "sandbox",
+        "de": "Sandkasten"
+      },
+      {
+        "en": "sandcastle",
+        "de": "Sandburg"
+      },
+      {
+        "en": "bucket",
+        "de": "Eimer"
+      },
+      {
+        "en": "spade",
+        "de": "Schaufel"
+      },
+      {
+        "en": "ball",
+        "de": "Ball"
+      },
+      {
+        "en": "basket",
+        "de": "Korb"
+      },
+      {
+        "en": "toy truck",
+        "de": "Spielzeuglastwagen"
+      },
+      {
+        "en": "water bottle",
+        "de": "Trinkflasche"
+      }
     ],
     "verbs": [
-      "pushing",
-      "swinging",
-      "building",
-      "giving",
-      "putting away",
-      "drinking"
+      {
+        "en": "pushing",
+        "de": "anschubsen"
+      },
+      {
+        "en": "swinging",
+        "de": "schaukeln"
+      },
+      {
+        "en": "building",
+        "de": "bauen"
+      },
+      {
+        "en": "giving",
+        "de": "geben"
+      },
+      {
+        "en": "putting away",
+        "de": "wegräumen"
+      },
+      {
+        "en": "drinking",
+        "de": "trinken"
+      }
     ],
     "adjectives": [
-      "red",
-      "blue",
-      "happy",
-      "busy"
+      {
+        "en": "red",
+        "de": "rot"
+      },
+      {
+        "en": "blue",
+        "de": "blau"
+      },
+      {
+        "en": "happy",
+        "de": "fröhlich"
+      },
+      {
+        "en": "busy",
+        "de": "beschäftigt"
+      }
     ],
     "sentenceModels": [
-      "The child is pushing the swing.",
-      "The children are building a sandcastle.",
-      "The child is giving the ball.",
-      "The child is putting the toy away.",
-      "The child is drinking water."
+      {
+        "en": "The child is pushing the swing.",
+        "de": "Das Kind schubst die Schaukel an."
+      },
+      {
+        "en": "The children are building a sandcastle.",
+        "de": "Die Kinder bauen eine Sandburg."
+      },
+      {
+        "en": "The child is giving the ball.",
+        "de": "Das Kind gibt den Ball weiter."
+      },
+      {
+        "en": "The child is putting the toy away.",
+        "de": "Das Kind räumt das Spielzeug weg."
+      },
+      {
+        "en": "The child is drinking water.",
+        "de": "Das Kind trinkt Wasser."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Talk about social routines, helping and what each child is doing.",
-    "starterPrompts": [
-      "Who is pushing?",
-      "Who is drinking?",
-      "Who is giving the ball?",
-      "What are the children building?",
-      "Who is tidying up?"
-    ],
-    "expansionPrompts": [
-      "What might happen next on the swing?",
-      "Can you tell the story from left to right?"
-    ]
+    "focus": {
+      "en": "Talk about social routines, helping and what each child is doing.",
+      "de": "Über das Miteinander, das Helfen und die Handlungen der einzelnen Kinder sprechen."
+    },
+    "starterPrompts": {
+      "en": [
+        "Who is pushing?",
+        "Who is drinking?",
+        "Who is giving the ball?",
+        "What are the children building?",
+        "Who is tidying up?"
+      ],
+      "de": [
+        "Wer schubst an?",
+        "Wer trinkt?",
+        "Wer gibt den Ball weiter?",
+        "Was bauen die Kinder?",
+        "Wer räumt auf?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "What might happen next on the swing?",
+        "Can you tell the story from left to right?"
+      ],
+      "de": [
+        "Was könnte als Nächstes auf der Schaukel passieren?",
+        "Kannst du die Geschichte von links nach rechts erzählen?"
+      ]
+    }
   },
   "visualAudit": [
     "One child pushing one child on a swing.",

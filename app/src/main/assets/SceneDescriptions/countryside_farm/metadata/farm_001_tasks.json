@@ -337,6 +337,9 @@
   },
   "strictReview": {
     "status": "task_acceptable_with_logged_deviation",
-    "reason": "The image contains four chickens instead of the requested three. All five functional tasks are clear, and chicken quantity is not a teaching target in this scene, so this does not block the task."
+    "reason": {
+      "en": "The image contains four chickens instead of the requested three. All five functional tasks are clear, and chicken quantity is not a teaching target in this scene, so this does not block the task.",
+      "de": "Das Bild zeigt vier Hühner statt der gewünschten drei. Alle fünf praktischen Aufgaben sind klar erkennbar. Die Anzahl der Hühner ist in dieser Szene kein Lernziel und steht der Aufgabe deshalb nicht im Weg."
+    }
   }
 }

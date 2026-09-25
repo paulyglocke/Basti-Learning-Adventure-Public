@@ -52,6 +52,15 @@ above describe only Wave 1, not a new visual review of all 81 scenes.
 
 The generator validates all manifest-selected image/metadata references, IDs,
 approval, wave and available authored language/support fields before bundling Kotlin.
-Wave 1 has 27 bilingual records; Waves 2/3 have 54 English-only records. Missing
-German is explicit. Runtime production data excludes prompts/reference/unlisted files.
+All 81 records now have bilingual runtime teaching/support text. The 54 Wave 2/3
+records use the existing EN/DE text/list forms; missing or blank German is rejected.
+The optional domain text model still does not fall back to English. Runtime production data excludes prompts/reference/unlisted files.
 Exact automated test evidence is recorded in the repository root BUILD_NOTES.md.
+
+## German content checkpoint
+
+54 later-wave scenes translated: 1,698 German values plus one existing Farm Wave 1
+review caution (1,699 added total). Structural bilingual completeness is distinct
+from visual-semantic acceptance. `GERMAN_REVIEW.md` records the inspected Park 005
+bucket correction, targeted ten-image review, remaining ambiguities and scope limits.
+Historical visual acceptance counts above are not expanded by translation tests.

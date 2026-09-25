@@ -1,57 +1,150 @@
 {
   "sceneId": "scene.ocean.find_and_follow.08",
   "categoryId": "ocean_underwater",
-  "title": "Ocean Scene 8 — Find and Follow Directions",
+  "title": {
+    "en": "Ocean Scene 8 — Find and Follow Directions",
+    "de": "Meer, Szene 8 — Finden und Anweisungen folgen"
+  },
   "status": "approved",
-  "purpose": "Following two-step directions and finding animals from location clues.",
+  "purpose": {
+    "en": "Following two-step directions and finding animals from location clues.",
+    "de": "Anweisungen mit zwei Schritten folgen und Tiere mithilfe von Ortsangaben finden."
+  },
   "asset": "canonical/ocean_008_find_and_follow.png",
   "promptFile": "prompts/ocean_008_find_and_follow.md",
   "targetLanguage": {
     "nouns": [
-      "turtle",
-      "seahorse",
-      "crab",
-      "rock",
-      "octopus",
-      "coral",
-      "starfish",
-      "fish",
-      "seaweed"
+      {
+        "en": "turtle",
+        "de": "Schildkröte"
+      },
+      {
+        "en": "seahorse",
+        "de": "Seepferdchen"
+      },
+      {
+        "en": "crab",
+        "de": "Krabbe"
+      },
+      {
+        "en": "rock",
+        "de": "Stein"
+      },
+      {
+        "en": "octopus",
+        "de": "Oktopus"
+      },
+      {
+        "en": "coral",
+        "de": "Koralle"
+      },
+      {
+        "en": "starfish",
+        "de": "Seestern"
+      },
+      {
+        "en": "fish",
+        "de": "Fisch"
+      },
+      {
+        "en": "seaweed",
+        "de": "Seegras"
+      }
     ],
     "verbs": [
-      "find",
-      "point",
-      "show",
-      "look"
+      {
+        "en": "find",
+        "de": "finden"
+      },
+      {
+        "en": "point",
+        "de": "zeigen"
+      },
+      {
+        "en": "show",
+        "de": "zeigen"
+      },
+      {
+        "en": "look",
+        "de": "schauen"
+      }
     ],
     "adjectives": [
-      "yellow",
-      "purple",
-      "orange",
-      "big",
-      "little"
+      {
+        "en": "yellow",
+        "de": "gelb"
+      },
+      {
+        "en": "purple",
+        "de": "lila"
+      },
+      {
+        "en": "orange",
+        "de": "orange"
+      },
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "little",
+        "de": "klein"
+      }
     ],
     "sentenceModels": [
-      "Find the crab under the rock.",
-      "Point to the octopus behind the coral.",
-      "Show me the starfish on the sand.",
-      "Where is the seahorse?",
-      "First point to the turtle, then point to the yellow fish."
+      {
+        "en": "Find the crab under the rock.",
+        "de": "Finde die Krabbe unter dem Stein."
+      },
+      {
+        "en": "Point to the octopus behind the coral.",
+        "de": "Zeige auf den Oktopus hinter der Koralle."
+      },
+      {
+        "en": "Show me the starfish on the sand.",
+        "de": "Zeig mir den Seestern auf dem Sand."
+      },
+      {
+        "en": "Where is the seahorse?",
+        "de": "Wo ist das Seepferdchen?"
+      },
+      {
+        "en": "First point to the turtle, then point to the yellow fish.",
+        "de": "Zeige zuerst auf die Schildkröte und dann auf die gelben Fische."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Use one-step and two-step instructions with clear spatial clues.",
-    "starterPrompts": [
-      "Can you find the crab under the rock?",
-      "Where is the octopus?",
-      "Show me the starfish on the sand.",
-      "Which animal is next to the seaweed?",
-      "Where are the yellow fish?"
-    ],
-    "expansionPrompts": [
-      "First point to the seahorse, then point to the turtle.",
-      "Find the animal behind the coral and then the animal under the rock."
-    ]
+    "focus": {
+      "en": "Use one-step and two-step instructions with clear spatial clues.",
+      "de": "Anweisungen mit einem oder zwei Schritten und eindeutigen Ortsangaben verwenden."
+    },
+    "starterPrompts": {
+      "en": [
+        "Can you find the crab under the rock?",
+        "Where is the octopus?",
+        "Show me the starfish on the sand.",
+        "Which animal is next to the seaweed?",
+        "Where are the yellow fish?"
+      ],
+      "de": [
+        "Findest du die Krabbe unter dem Stein?",
+        "Wo ist der Oktopus?",
+        "Zeig mir den Seestern auf dem Sand.",
+        "Welches Tier ist neben dem Seegras?",
+        "Wo sind die gelben Fische?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "First point to the seahorse, then point to the turtle.",
+        "Find the animal behind the coral and then the animal under the rock."
+      ],
+      "de": [
+        "Zeige zuerst auf das Seepferdchen und dann auf die Schildkröte.",
+        "Finde das Tier hinter der Koralle und dann das Tier unter dem Stein."
+      ]
+    }
   },
   "visualAudit": [
     "One turtle swimming in the middle.",

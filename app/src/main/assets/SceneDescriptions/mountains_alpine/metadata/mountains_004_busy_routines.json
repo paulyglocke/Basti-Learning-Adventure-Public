@@ -1,60 +1,162 @@
 {
   "sceneId": "scene.mountains.busy_routines.04",
   "categoryId": "mountains_alpine",
-  "title": "Mountains Scene 4 — Busy Mountain Routines",
+  "title": {
+    "en": "Mountains Scene 4 — Busy Mountain Routines",
+    "de": "Berge, Szene 4 — Viel los in den Bergen"
+  },
   "status": "approved",
-  "purpose": "Linked mountain-animal actions and simple storytelling.",
+  "purpose": {
+    "en": "Linked mountain-animal actions and simple storytelling.",
+    "de": "Zusammenhängende Handlungen von Bergtieren und einfache Geschichten."
+  },
   "asset": "canonical/mountains_004_busy_routines.png",
   "promptFile": "prompts/mountains_004_busy_routines.md",
   "targetLanguage": {
     "nouns": [
-      "goat",
-      "rock",
-      "eagle",
-      "twig",
-      "nest",
-      "marmot",
-      "grass",
-      "burrow",
-      "sheep",
-      "stream",
-      "rabbit",
-      "flowers"
+      {
+        "en": "goat",
+        "de": "Ziege"
+      },
+      {
+        "en": "rock",
+        "de": "Fels"
+      },
+      {
+        "en": "eagle",
+        "de": "Adler"
+      },
+      {
+        "en": "twig",
+        "de": "Zweig"
+      },
+      {
+        "en": "nest",
+        "de": "Nest"
+      },
+      {
+        "en": "marmot",
+        "de": "Murmeltier"
+      },
+      {
+        "en": "grass",
+        "de": "Gras"
+      },
+      {
+        "en": "burrow",
+        "de": "Bau"
+      },
+      {
+        "en": "sheep",
+        "de": "Schaf"
+      },
+      {
+        "en": "stream",
+        "de": "Bach"
+      },
+      {
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      {
+        "en": "flowers",
+        "de": "Blumen"
+      }
     ],
     "verbs": [
-      "climbing",
-      "carrying",
-      "drinking",
-      "eating",
-      "flying"
+      {
+        "en": "climbing",
+        "de": "klettern"
+      },
+      {
+        "en": "carrying",
+        "de": "tragen"
+      },
+      {
+        "en": "drinking",
+        "de": "trinken"
+      },
+      {
+        "en": "eating",
+        "de": "fressen"
+      },
+      {
+        "en": "flying",
+        "de": "fliegen"
+      }
     ],
     "adjectives": [
-      "white",
-      "brown",
-      "busy",
-      "mountain"
+      {
+        "en": "white",
+        "de": "weiß"
+      },
+      {
+        "en": "brown",
+        "de": "braun"
+      },
+      {
+        "en": "busy",
+        "de": "beschäftigt"
+      },
+      {
+        "en": "mountain",
+        "de": "in den Bergen"
+      }
     ],
     "sentenceModels": [
-      "The goat is climbing.",
-      "The eagle is carrying a twig.",
-      "The marmot is carrying grass.",
-      "The sheep is drinking water.",
-      "The rabbit is eating flowers."
+      {
+        "en": "The goat is climbing.",
+        "de": "Die Ziege klettert."
+      },
+      {
+        "en": "The eagle is carrying a twig.",
+        "de": "Der Adler trägt einen Zweig."
+      },
+      {
+        "en": "The marmot is carrying grass.",
+        "de": "Das Murmeltier trägt Gras."
+      },
+      {
+        "en": "The sheep is drinking water.",
+        "de": "Das Schaf trinkt Wasser."
+      },
+      {
+        "en": "The rabbit is eating flowers.",
+        "de": "Das Kaninchen frisst Blumen."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Tell a simple mountain story using one action for each animal.",
-    "starterPrompts": [
-      "Who is climbing?",
-      "Who is carrying a twig?",
-      "Who is drinking?",
-      "What is the rabbit eating?",
-      "Where is the marmot going?"
-    ],
-    "expansionPrompts": [
-      "What might the eagle do next?",
-      "Why is the marmot carrying grass?"
-    ]
+    "focus": {
+      "en": "Tell a simple mountain story using one action for each animal.",
+      "de": "Eine einfache Berggeschichte erzählen und für jedes Tier eine Handlung benennen."
+    },
+    "starterPrompts": {
+      "en": [
+        "Who is climbing?",
+        "Who is carrying a twig?",
+        "Who is drinking?",
+        "What is the rabbit eating?",
+        "Where is the marmot going?"
+      ],
+      "de": [
+        "Wer klettert?",
+        "Wer trägt einen Zweig?",
+        "Wer trinkt?",
+        "Was frisst das Kaninchen?",
+        "Wohin geht das Murmeltier?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "What might the eagle do next?",
+        "Why is the marmot carrying grass?"
+      ],
+      "de": [
+        "Was könnte der Adler als Nächstes machen?",
+        "Warum trägt das Murmeltier Gras?"
+      ]
+    }
   },
   "visualAudit": [
     "One goat climbing on rocks.",

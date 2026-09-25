@@ -1,54 +1,138 @@
 {
   "sceneId": "scene.classroom.quiet_corner.05",
   "categoryId": "classroom_school",
-  "title": "Classroom Scene 5 — Quiet Corner",
+  "title": {
+    "en": "Classroom Scene 5 — Quiet Corner",
+    "de": "Klassenraum, Szene 5 — Die Ruhe-Ecke"
+  },
   "status": "approved",
-  "purpose": "Calm-state language, simple inference and positional description.",
+  "purpose": {
+    "en": "Calm-state language, simple inference and positional description.",
+    "de": "Wörter für Ruhe, einfache Überlegungen und Beschreibungen von Orten."
+  },
   "asset": "canonical/classroom_005_quiet_corner.png",
   "promptFile": "prompts/classroom_005_quiet_corner.md",
   "targetLanguage": {
     "nouns": [
-      "cat",
-      "beanbag",
-      "dog",
-      "rug",
-      "rabbit",
-      "fish bowl",
-      "shelf",
-      "books"
+      {
+        "en": "cat",
+        "de": "Katze"
+      },
+      {
+        "en": "beanbag",
+        "de": "Sitzsack"
+      },
+      {
+        "en": "dog",
+        "de": "Hund"
+      },
+      {
+        "en": "rug",
+        "de": "Teppich"
+      },
+      {
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      {
+        "en": "fish bowl",
+        "de": "Goldfischglas"
+      },
+      {
+        "en": "shelf",
+        "de": "Regal"
+      },
+      {
+        "en": "books",
+        "de": "Bücher"
+      }
     ],
     "verbs": [
-      "sitting",
-      "sleeping",
-      "resting"
+      {
+        "en": "sitting",
+        "de": "sitzen"
+      },
+      {
+        "en": "sleeping",
+        "de": "schlafen"
+      },
+      {
+        "en": "resting",
+        "de": "sich ausruhen"
+      }
     ],
     "adjectives": [
-      "quiet",
-      "calm",
-      "soft",
-      "blue",
-      "white"
+      {
+        "en": "quiet",
+        "de": "leise"
+      },
+      {
+        "en": "calm",
+        "de": "ruhig"
+      },
+      {
+        "en": "soft",
+        "de": "weich"
+      },
+      {
+        "en": "blue",
+        "de": "blau"
+      },
+      {
+        "en": "white",
+        "de": "weiß"
+      }
     ],
     "sentenceModels": [
-      "The cat is on the beanbag.",
-      "The dog is sleeping on the rug.",
-      "The rabbit is next to the dog.",
-      "The fish bowl is on the shelf."
+      {
+        "en": "The cat is on the beanbag.",
+        "de": "Die Katze ist auf dem Sitzsack."
+      },
+      {
+        "en": "The dog is sleeping on the rug.",
+        "de": "Der Hund schläft auf dem Teppich."
+      },
+      {
+        "en": "The rabbit is next to the dog.",
+        "de": "Das Kaninchen ist neben dem Hund."
+      },
+      {
+        "en": "The fish bowl is on the shelf.",
+        "de": "Das Goldfischglas ist auf dem Regal."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Use this as a calm-language and 'where is it?' scene, not as a behaviour test.",
-    "starterPrompts": [
-      "Who is sleeping?",
-      "Where is the cat?",
-      "Who is next to the dog?",
-      "Where is the fish bowl?",
-      "Which place looks quiet?"
-    ],
-    "expansionPrompts": [
-      "What could you do in a quiet corner?",
-      "Can you tell me a full sentence about the dog?"
-    ]
+    "focus": {
+      "en": "Use this as a calm-language and 'where is it?' scene, not as a behaviour test.",
+      "de": "Die Szene für Wörter rund um Ruhe und Wo-Fragen nutzen, nicht als Verhaltenstest."
+    },
+    "starterPrompts": {
+      "en": [
+        "Who is sleeping?",
+        "Where is the cat?",
+        "Who is next to the dog?",
+        "Where is the fish bowl?",
+        "Which place looks quiet?"
+      ],
+      "de": [
+        "Wer schläft?",
+        "Wo ist die Katze?",
+        "Wer ist neben dem Hund?",
+        "Wo ist das Goldfischglas?",
+        "Welcher Platz sieht ruhig aus?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "What could you do in a quiet corner?",
+        "Can you tell me a full sentence about the dog?"
+      ],
+      "de": [
+        "Was könntest du in einer Ruhe-Ecke machen?",
+        "Kannst du mir einen ganzen Satz über den Hund sagen?"
+      ]
+    }
   },
   "visualAudit": [
     "Auto-batch panel reviewed for the described targets."

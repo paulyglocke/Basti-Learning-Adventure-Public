@@ -1,55 +1,142 @@
 {
   "sceneId": "scene.zoo.habitats_story.07",
   "categoryId": "zoo_wildlife",
-  "title": "Zoo Scene 7 — Animals in Different Places",
+  "title": {
+    "en": "Zoo Scene 7 — Animals in Different Places",
+    "de": "Zoo, Szene 7 — Tiere an verschiedenen Orten"
+  },
   "status": "approved",
-  "purpose": "Support habitat talk, location language and simple observation in a wildlife-park scene.",
+  "purpose": {
+    "en": "Support habitat talk, location language and simple observation in a wildlife-park scene.",
+    "de": "Gespräche über Lebensräume, Ortsangaben und einfache Beobachtungen in einer Tierparkszene unterstützen."
+  },
   "asset": "canonical/zoo_007_habitats.png",
   "promptFile": "prompts/zoo_007_habitats.md",
   "targetLanguage": {
     "nouns": [
-      "elephant",
-      "giraffe",
-      "lion",
-      "penguin",
-      "monkey",
-      "pool",
-      "branch",
-      "shade"
+      {
+        "en": "elephant",
+        "de": "Elefant"
+      },
+      {
+        "en": "giraffe",
+        "de": "Giraffe"
+      },
+      {
+        "en": "lion",
+        "de": "Löwe"
+      },
+      {
+        "en": "penguin",
+        "de": "Pinguin"
+      },
+      {
+        "en": "monkey",
+        "de": "Affe"
+      },
+      {
+        "en": "pool",
+        "de": "Wasserbecken"
+      },
+      {
+        "en": "branch",
+        "de": "Ast"
+      },
+      {
+        "en": "shade",
+        "de": "Schatten"
+      }
     ],
     "verbs": [
-      "standing",
-      "resting",
-      "sitting",
-      "splashing"
+      {
+        "en": "standing",
+        "de": "stehen"
+      },
+      {
+        "en": "resting",
+        "de": "sich ausruhen"
+      },
+      {
+        "en": "sitting",
+        "de": "sitzen"
+      },
+      {
+        "en": "splashing",
+        "de": "planschen"
+      }
     ],
     "adjectives": [
-      "tall",
-      "big",
-      "small",
-      "shady",
-      "wet"
+      {
+        "en": "tall",
+        "de": "groß"
+      },
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "shady",
+        "de": "schattig"
+      },
+      {
+        "en": "wet",
+        "de": "nass"
+      }
     ],
     "sentenceModels": [
-      "The penguin is near the pool.",
-      "The lion is in the shade.",
-      "The monkey is on the branch.",
-      "The elephant is by the water."
+      {
+        "en": "The penguin is near the pool.",
+        "de": "Der Pinguin ist in der Nähe des Wasserbeckens."
+      },
+      {
+        "en": "The lion is in the shade.",
+        "de": "Der Löwe ist im Schatten."
+      },
+      {
+        "en": "The monkey is on the branch.",
+        "de": "Der Affe ist auf dem Ast."
+      },
+      {
+        "en": "The elephant is by the water.",
+        "de": "Der Elefant ist am Wasser."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Talk about where animals are and why those places suit them.",
-    "starterPrompts": [
-      "Which animal is by the water?",
-      "Who is resting in the shade?",
-      "Which animal is on the branch?",
-      "Which animal is the tallest?",
-      "Where is the penguin?"
-    ],
-    "expansionPrompts": [
-      "Why might the lion like the shade?",
-      "Tell me where each animal is in the zoo."
-    ]
+    "focus": {
+      "en": "Talk about where animals are and why those places suit them.",
+      "de": "Darüber sprechen, wo die Tiere sind und warum diese Plätze zu ihnen passen."
+    },
+    "starterPrompts": {
+      "en": [
+        "Which animal is by the water?",
+        "Who is resting in the shade?",
+        "Which animal is on the branch?",
+        "Which animal is the tallest?",
+        "Where is the penguin?"
+      ],
+      "de": [
+        "Welches Tier ist am Wasser?",
+        "Wer ruht sich im Schatten aus?",
+        "Welches Tier ist auf dem Ast?",
+        "Welches Tier ist am größten?",
+        "Wo ist der Pinguin?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Why might the lion like the shade?",
+        "Tell me where each animal is in the zoo."
+      ],
+      "de": [
+        "Warum könnte der Löwe den Schatten mögen?",
+        "Sag mir, wo die einzelnen Tiere im Zoo sind."
+      ]
+    }
   },
   "visualAudit": [
     "Reviewed in Wave 3 Batch 3 automatic pass against the main teaching targets."

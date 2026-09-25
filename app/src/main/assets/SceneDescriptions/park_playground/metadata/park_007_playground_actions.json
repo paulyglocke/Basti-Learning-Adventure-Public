@@ -1,54 +1,138 @@
 {
   "sceneId": "scene.park.playground_actions.07",
   "categoryId": "park_playground",
-  "title": "Park Scene 7 — Playground Actions",
+  "title": {
+    "en": "Park Scene 7 — Playground Actions",
+    "de": "Park, Szene 7 — Was auf dem Spielplatz passiert"
+  },
   "status": "approved",
-  "purpose": "Combine multiple playground actions with longer descriptions and two-step listening tasks.",
+  "purpose": {
+    "en": "Combine multiple playground actions with longer descriptions and two-step listening tasks.",
+    "de": "Mehrere Handlungen auf dem Spielplatz mit längeren Beschreibungen und zweischrittigen Höraufgaben verbinden."
+  },
   "asset": "canonical/park_007_playground_actions.png",
   "promptFile": "prompts/park_007_playground_actions.md",
   "targetLanguage": {
     "nouns": [
-      "slide",
-      "swing",
-      "climbing frame",
-      "sandbox",
-      "bucket",
-      "toy truck",
-      "dog"
+      {
+        "en": "slide",
+        "de": "Rutsche"
+      },
+      {
+        "en": "swing",
+        "de": "Schaukel"
+      },
+      {
+        "en": "climbing frame",
+        "de": "Klettergerüst"
+      },
+      {
+        "en": "sandbox",
+        "de": "Sandkasten"
+      },
+      {
+        "en": "bucket",
+        "de": "Eimer"
+      },
+      {
+        "en": "toy truck",
+        "de": "Spielzeuglastwagen"
+      },
+      {
+        "en": "dog",
+        "de": "Hund"
+      }
     ],
     "verbs": [
-      "sliding",
-      "swinging",
-      "climbing",
-      "playing",
-      "digging"
+      {
+        "en": "sliding",
+        "de": "rutschen"
+      },
+      {
+        "en": "swinging",
+        "de": "schaukeln"
+      },
+      {
+        "en": "climbing",
+        "de": "klettern"
+      },
+      {
+        "en": "playing",
+        "de": "spielen"
+      },
+      {
+        "en": "digging",
+        "de": "graben"
+      }
     ],
     "adjectives": [
-      "blue",
-      "yellow",
-      "red",
-      "small"
+      {
+        "en": "blue",
+        "de": "blau"
+      },
+      {
+        "en": "yellow",
+        "de": "gelb"
+      },
+      {
+        "en": "red",
+        "de": "rot"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      }
     ],
     "sentenceModels": [
-      "The child is sliding down the slide.",
-      "The child is swinging.",
-      "The child is climbing.",
-      "The child is playing in the sandbox."
+      {
+        "en": "The child is sliding down the slide.",
+        "de": "Das Kind rutscht die Rutsche hinunter."
+      },
+      {
+        "en": "The child is swinging.",
+        "de": "Das Kind schaukelt."
+      },
+      {
+        "en": "The child is climbing.",
+        "de": "Das Kind klettert."
+      },
+      {
+        "en": "The child is playing in the sandbox.",
+        "de": "Das Kind spielt im Sandkasten."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Ask Basti to identify several playground actions and then follow two-step pointing instructions.",
-    "starterPrompts": [
-      "Who is sliding?",
-      "Who is swinging?",
-      "Who is climbing?",
-      "What is happening in the sandbox?",
-      "Can you find the dog?"
-    ],
-    "expansionPrompts": [
-      "First point to the slide, then point to the swing.",
-      "Tell me two things happening in the playground."
-    ]
+    "focus": {
+      "en": "Ask Basti to identify several playground actions and then follow two-step pointing instructions.",
+      "de": "Basti mehrere Handlungen auf dem Spielplatz benennen lassen und danach zweischrittige Zeigeaufgaben geben."
+    },
+    "starterPrompts": {
+      "en": [
+        "Who is sliding?",
+        "Who is swinging?",
+        "Who is climbing?",
+        "What is happening in the sandbox?",
+        "Can you find the dog?"
+      ],
+      "de": [
+        "Wer rutscht?",
+        "Wer schaukelt?",
+        "Wer klettert?",
+        "Was passiert im Sandkasten?",
+        "Findest du den Hund?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "First point to the slide, then point to the swing.",
+        "Tell me two things happening in the playground."
+      ],
+      "de": [
+        "Zeige zuerst auf die Rutsche und dann auf die Schaukel.",
+        "Erzähl mir zwei Dinge, die auf dem Spielplatz passieren."
+      ]
+    }
   },
   "visualAudit": [
     "Reviewed in Wave 3 Batch 2 automatic pass against the visible teaching targets."

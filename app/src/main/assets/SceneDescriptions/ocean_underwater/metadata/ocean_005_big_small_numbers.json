@@ -1,55 +1,140 @@
 {
   "sceneId": "scene.ocean.big_small_numbers.05",
   "categoryId": "ocean_underwater",
-  "title": "Ocean Scene 5 — Big, Small and How Many",
+  "title": {
+    "en": "Ocean Scene 5 — Big, Small and How Many",
+    "de": "Meer, Szene 5 — Groß, klein und wie viele?"
+  },
   "status": "approved",
-  "purpose": "Adjectives, quantity and comparison language.",
+  "purpose": {
+    "en": "Adjectives, quantity and comparison language.",
+    "de": "Eigenschaftswörter, Mengen und Vergleiche."
+  },
   "asset": "canonical/ocean_005_big_small_numbers.png",
   "promptFile": "prompts/ocean_005_big_small_numbers.md",
   "targetLanguage": {
     "nouns": [
-      "whale",
-      "turtle",
-      "seahorse",
-      "fish",
-      "starfish",
-      "seaweed"
+      {
+        "en": "whale",
+        "de": "Wal"
+      },
+      {
+        "en": "turtle",
+        "de": "Schildkröte"
+      },
+      {
+        "en": "seahorse",
+        "de": "Seepferdchen"
+      },
+      {
+        "en": "fish",
+        "de": "Fisch"
+      },
+      {
+        "en": "starfish",
+        "de": "Seestern"
+      },
+      {
+        "en": "seaweed",
+        "de": "Seegras"
+      }
     ],
     "verbs": [
-      "swimming"
+      {
+        "en": "swimming",
+        "de": "schwimmen"
+      }
     ],
     "adjectives": [
-      "big",
-      "small",
-      "blue",
-      "green",
-      "yellow",
-      "purple",
-      "long",
-      "little"
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "blue",
+        "de": "blau"
+      },
+      {
+        "en": "green",
+        "de": "grün"
+      },
+      {
+        "en": "yellow",
+        "de": "gelb"
+      },
+      {
+        "en": "purple",
+        "de": "lila"
+      },
+      {
+        "en": "long",
+        "de": "lang"
+      },
+      {
+        "en": "little",
+        "de": "klein"
+      }
     ],
     "sentenceModels": [
-      "The whale is big.",
-      "The turtle is smaller than the whale.",
-      "The seahorse is small.",
-      "There are four little fish.",
-      "The seaweed is long."
+      {
+        "en": "The whale is big.",
+        "de": "Der Wal ist groß."
+      },
+      {
+        "en": "The turtle is smaller than the whale.",
+        "de": "Die Schildkröte ist kleiner als der Wal."
+      },
+      {
+        "en": "The seahorse is small.",
+        "de": "Das Seepferdchen ist klein."
+      },
+      {
+        "en": "There are four little fish.",
+        "de": "Da sind vier kleine Fische."
+      },
+      {
+        "en": "The seaweed is long.",
+        "de": "Das Seegras ist lang."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Prompt comparison language and counting without overloading the scene.",
-    "starterPrompts": [
-      "Which animal is the biggest?",
-      "Which one is small?",
-      "How many little fish can you count?",
-      "What colour is the whale?",
-      "What is purple?"
-    ],
-    "expansionPrompts": [
-      "Can you compare the whale and the turtle?",
-      "Tell me a sentence with big.",
-      "Tell me a sentence with four."
-    ]
+    "focus": {
+      "en": "Prompt comparison language and counting without overloading the scene.",
+      "de": "Zum Vergleichen und Zählen anregen, ohne zu viele Aufgaben auf einmal zu stellen."
+    },
+    "starterPrompts": {
+      "en": [
+        "Which animal is the biggest?",
+        "Which one is small?",
+        "How many little fish can you count?",
+        "What colour is the whale?",
+        "What is purple?"
+      ],
+      "de": [
+        "Welches Tier ist am größten?",
+        "Welches ist klein?",
+        "Wie viele kleine Fische kannst du zählen?",
+        "Welche Farbe hat der Wal?",
+        "Was ist lila?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Can you compare the whale and the turtle?",
+        "Tell me a sentence with big.",
+        "Tell me a sentence with four."
+      ],
+      "de": [
+        "Kannst du den Wal und die Schildkröte vergleichen?",
+        "Sag mir einen Satz mit „groß“.",
+        "Sag mir einen Satz mit „vier“."
+      ]
+    }
   },
   "visualAudit": [
     "Very large whale on the left.",

@@ -1,57 +1,150 @@
 {
   "sceneId": "scene.farm.morning_jobs.07",
   "categoryId": "countryside_farm",
-  "title": "Farm Scene 7 — Morning Jobs on the Farm",
+  "title": {
+    "en": "Farm Scene 7 — Morning Jobs on the Farm",
+    "de": "Bauernhof, Szene 7 — Aufgaben am Morgen"
+  },
   "status": "approved",
-  "purpose": "Support sequencing, action verbs and functional farm language using a busy but clear morning-jobs scene.",
+  "purpose": {
+    "en": "Support sequencing, action verbs and functional farm language using a busy but clear morning-jobs scene.",
+    "de": "Abfolgen, Handlungswörter und praktische Sprache am Bauernhof anhand einer geschäftigen, aber klaren Morgenszene unterstützen."
+  },
   "asset": "canonical/farm_007_morning_jobs.png",
   "promptFile": "prompts/farm_007_morning_jobs.md",
   "targetLanguage": {
     "nouns": [
-      "watering can",
-      "egg basket",
-      "chickens",
-      "vegetables",
-      "broom",
-      "barn",
-      "coop",
-      "garden"
+      {
+        "en": "watering can",
+        "de": "Gießkanne"
+      },
+      {
+        "en": "egg basket",
+        "de": "Eierkorb"
+      },
+      {
+        "en": "chickens",
+        "de": "Hühner"
+      },
+      {
+        "en": "vegetables",
+        "de": "Gemüse"
+      },
+      {
+        "en": "broom",
+        "de": "Besen"
+      },
+      {
+        "en": "barn",
+        "de": "Scheune"
+      },
+      {
+        "en": "coop",
+        "de": "Hühnerstall"
+      },
+      {
+        "en": "garden",
+        "de": "Garten"
+      }
     ],
     "verbs": [
-      "watering",
-      "collecting",
-      "feeding",
-      "carrying",
-      "sweeping"
+      {
+        "en": "watering",
+        "de": "gießen"
+      },
+      {
+        "en": "collecting",
+        "de": "sammeln"
+      },
+      {
+        "en": "feeding",
+        "de": "füttern"
+      },
+      {
+        "en": "carrying",
+        "de": "tragen"
+      },
+      {
+        "en": "sweeping",
+        "de": "fegen"
+      }
     ],
     "adjectives": [
-      "green",
-      "red",
-      "brown",
-      "full",
-      "busy"
+      {
+        "en": "green",
+        "de": "grün"
+      },
+      {
+        "en": "red",
+        "de": "rot"
+      },
+      {
+        "en": "brown",
+        "de": "braun"
+      },
+      {
+        "en": "full",
+        "de": "voll"
+      },
+      {
+        "en": "busy",
+        "de": "beschäftigt"
+      }
     ],
     "sentenceModels": [
-      "The child is watering the plants.",
-      "The child is collecting eggs.",
-      "The child is feeding the chickens.",
-      "The child is carrying the vegetables.",
-      "The child is sweeping the path."
+      {
+        "en": "The child is watering the plants.",
+        "de": "Das Kind gießt die Pflanzen."
+      },
+      {
+        "en": "The child is collecting eggs.",
+        "de": "Das Kind sammelt Eier."
+      },
+      {
+        "en": "The child is feeding the chickens.",
+        "de": "Das Kind füttert die Hühner."
+      },
+      {
+        "en": "The child is carrying the vegetables.",
+        "de": "Das Kind trägt das Gemüse."
+      },
+      {
+        "en": "The child is sweeping the path.",
+        "de": "Das Kind fegt den Weg."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Use the picture to talk about morning jobs on a farm and to build simple first/then sequences.",
-    "starterPrompts": [
-      "Who is watering the plants?",
-      "Who is collecting eggs?",
-      "What are the chickens doing?",
-      "Who is carrying vegetables?",
-      "What job is happening on the path?"
-    ],
-    "expansionPrompts": [
-      "Tell me the farm story from first to last.",
-      "Which job helps the garden? Which job helps the chickens?"
-    ]
+    "focus": {
+      "en": "Use the picture to talk about morning jobs on a farm and to build simple first/then sequences.",
+      "de": "Mit dem Bild über Aufgaben am Morgen auf dem Bauernhof sprechen und einfache Abfolgen mit „zuerst“ und „dann“ bilden."
+    },
+    "starterPrompts": {
+      "en": [
+        "Who is watering the plants?",
+        "Who is collecting eggs?",
+        "What are the chickens doing?",
+        "Who is carrying vegetables?",
+        "What job is happening on the path?"
+      ],
+      "de": [
+        "Wer gießt die Pflanzen?",
+        "Wer sammelt Eier?",
+        "Was machen die Hühner?",
+        "Wer trägt Gemüse?",
+        "Welche Aufgabe wird auf dem Weg erledigt?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Tell me the farm story from first to last.",
+        "Which job helps the garden? Which job helps the chickens?"
+      ],
+      "de": [
+        "Erzähl mir die Bauernhofgeschichte vom Anfang bis zum Ende.",
+        "Welche Aufgabe hilft dem Garten? Welche Aufgabe hilft den Hühnern?"
+      ]
+    }
   },
   "visualAudit": [
     "Reviewed in Wave 3 Batch 3 automatic pass against the main teaching targets."

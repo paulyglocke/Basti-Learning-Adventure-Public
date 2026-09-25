@@ -102,7 +102,7 @@ class SceneDescription(
 
 /** Separate from quiz ContentRepository: open-ended scenes do not require invented bilingual speech. */
 class SceneDescriptionRepository(categories: List<SceneCategory>, scenes: List<SceneDescription>) {
-    val version = ContentVersion(1, 1)
+    val version = ContentVersion(1, 2)
     private val categoryRecords = frozen(categories)
     private val records = frozen(scenes)
     init {

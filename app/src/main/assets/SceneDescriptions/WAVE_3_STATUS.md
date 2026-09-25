@@ -21,3 +21,10 @@
 - Categories complete: **9 / 9**
 - Total approved scenes: **81**
 - Each category now contains **9 approved scenes**.
+
+## Teaching/support language checkpoint — 2026-09-25
+
+The complete 81-scene catalogue now has authored EN/DE runtime teaching/support
+content. Wave 2/3 German completion and the two Park counting source corrections are
+recorded in `GERMAN_REVIEW.md`. Artwork completion, bilingual completeness and
+visual-semantic review are separate; no new all-image acceptance is claimed.

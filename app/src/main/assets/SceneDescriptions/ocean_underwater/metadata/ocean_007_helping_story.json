@@ -1,61 +1,164 @@
 {
   "sceneId": "scene.ocean.helping_story.07",
   "categoryId": "ocean_underwater",
-  "title": "Ocean Scene 7 — Helping at the Reef",
+  "title": {
+    "en": "Ocean Scene 7 — Helping at the Reef",
+    "de": "Meer, Szene 7 — Helfen am Riff"
+  },
   "status": "approved",
-  "purpose": "Sequencing, simple inference, and longer who-doing-what descriptions in one connected reef story.",
+  "purpose": {
+    "en": "Sequencing, simple inference, and longer who-doing-what descriptions in one connected reef story.",
+    "de": "Abfolgen, einfache Schlussfolgerungen und längere Sätze darüber, wer was macht, in einer zusammenhängenden Riffgeschichte."
+  },
   "asset": "canonical/ocean_007_helping_story.png",
   "promptFile": "prompts/ocean_007_helping_story.md",
   "targetLanguage": {
     "nouns": [
-      "turtle",
-      "seaweed",
-      "clownfish",
-      "octopus",
-      "cave",
-      "crab",
-      "shell",
-      "fish",
-      "rock",
-      "coral"
+      {
+        "en": "turtle",
+        "de": "Schildkröte"
+      },
+      {
+        "en": "seaweed",
+        "de": "Seegras"
+      },
+      {
+        "en": "clownfish",
+        "de": "Clownfisch"
+      },
+      {
+        "en": "octopus",
+        "de": "Oktopus"
+      },
+      {
+        "en": "cave",
+        "de": "Höhle"
+      },
+      {
+        "en": "crab",
+        "de": "Krabbe"
+      },
+      {
+        "en": "shell",
+        "de": "Muschel"
+      },
+      {
+        "en": "fish",
+        "de": "Fisch"
+      },
+      {
+        "en": "rock",
+        "de": "Stein"
+      },
+      {
+        "en": "coral",
+        "de": "Koralle"
+      }
     ],
     "verbs": [
-      "bringing",
-      "waiting",
-      "carrying",
-      "following",
-      "peeking",
-      "swimming"
+      {
+        "en": "bringing",
+        "de": "bringen"
+      },
+      {
+        "en": "waiting",
+        "de": "warten"
+      },
+      {
+        "en": "carrying",
+        "de": "tragen"
+      },
+      {
+        "en": "following",
+        "de": "folgen"
+      },
+      {
+        "en": "peeking",
+        "de": "hervorschauen"
+      },
+      {
+        "en": "swimming",
+        "de": "schwimmen"
+      }
     ],
     "adjectives": [
-      "big",
-      "small",
-      "green",
-      "orange",
-      "blue"
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "green",
+        "de": "grün"
+      },
+      {
+        "en": "orange",
+        "de": "orange"
+      },
+      {
+        "en": "blue",
+        "de": "blau"
+      }
     ],
     "sentenceModels": [
-      "The turtle is bringing seaweed.",
-      "The clownfish is waiting by the cave.",
-      "The crab is carrying a shell.",
-      "The octopus is peeking out of the cave.",
-      "Two little blue fish are following the turtle."
+      {
+        "en": "The turtle is bringing seaweed.",
+        "de": "Die Schildkröte bringt Seegras."
+      },
+      {
+        "en": "The clownfish is waiting by the cave.",
+        "de": "Der Clownfisch wartet bei der Höhle."
+      },
+      {
+        "en": "The crab is carrying a shell.",
+        "de": "Die Krabbe trägt eine Muschel."
+      },
+      {
+        "en": "The octopus is peeking out of the cave.",
+        "de": "Der Oktopus schaut aus der Höhle heraus."
+      },
+      {
+        "en": "Two little blue fish are following the turtle.",
+        "de": "Zwei kleine blaue Fische folgen der Schildkröte."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Talk about what is happening first, what might happen next, and make longer sentences about who is helping at the reef.",
-    "starterPrompts": [
-      "Who is bringing something?",
-      "Who is waiting near the cave?",
-      "What is the crab carrying?",
-      "Which animals are following the turtle?",
-      "What is the octopus doing?"
-    ],
-    "expansionPrompts": [
-      "What might happen next when the turtle reaches the cave?",
-      "Can you make a longer sentence about the clownfish?",
-      "Who is helping and who is waiting?"
-    ]
+    "focus": {
+      "en": "Talk about what is happening first, what might happen next, and make longer sentences about who is helping at the reef.",
+      "de": "Darüber sprechen, was zuerst passiert und was als Nächstes passieren könnte. Längere Sätze darüber bilden, wer am Riff hilft."
+    },
+    "starterPrompts": {
+      "en": [
+        "Who is bringing something?",
+        "Who is waiting near the cave?",
+        "What is the crab carrying?",
+        "Which animals are following the turtle?",
+        "What is the octopus doing?"
+      ],
+      "de": [
+        "Wer bringt etwas?",
+        "Wer wartet in der Nähe der Höhle?",
+        "Was trägt die Krabbe?",
+        "Welche Tiere folgen der Schildkröte?",
+        "Was macht der Oktopus?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "What might happen next when the turtle reaches the cave?",
+        "Can you make a longer sentence about the clownfish?",
+        "Who is helping and who is waiting?"
+      ],
+      "de": [
+        "Was könnte als Nächstes passieren, wenn die Schildkröte an der Höhle ankommt?",
+        "Kannst du einen längeren Satz über den Clownfisch sagen?",
+        "Wer hilft und wer wartet?"
+      ]
+    }
   },
   "visualAudit": [
     "One large turtle swimming toward the cave with seaweed in its mouth.",

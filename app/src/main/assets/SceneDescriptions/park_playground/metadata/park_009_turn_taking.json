@@ -1,49 +1,118 @@
 {
   "sceneId": "scene.park.turn_taking.09",
   "categoryId": "park_playground",
-  "title": "Park Scene 9 — Turn-Taking and Waiting",
+  "title": {
+    "en": "Park Scene 9 — Turn-Taking and Waiting",
+    "de": "Park, Szene 9 — Abwechseln und warten"
+  },
   "status": "approved",
-  "purpose": "Social communication, waiting, sharing equipment and predicting the next turn.",
+  "purpose": {
+    "en": "Social communication, waiting, sharing equipment and predicting the next turn.",
+    "de": "Miteinander sprechen, warten, Spielgeräte teilen und überlegen, wer als Nächstes dran ist."
+  },
   "asset": "canonical/park_009_turn_taking.png",
   "promptFile": "prompts/park_009_turn_taking.md",
   "targetLanguage": {
     "nouns": [
-      "seesaw",
-      "slide",
-      "playground",
-      "toy"
+      {
+        "en": "seesaw",
+        "de": "Wippe"
+      },
+      {
+        "en": "slide",
+        "de": "Rutsche"
+      },
+      {
+        "en": "playground",
+        "de": "Spielplatz"
+      },
+      {
+        "en": "toy",
+        "de": "Spielzeug"
+      }
     ],
     "verbs": [
-      "waiting",
-      "sitting",
-      "playing",
-      "taking turns"
+      {
+        "en": "waiting",
+        "de": "warten"
+      },
+      {
+        "en": "sitting",
+        "de": "sitzen"
+      },
+      {
+        "en": "playing",
+        "de": "spielen"
+      },
+      {
+        "en": "taking turns",
+        "de": "sich abwechseln"
+      }
     ],
     "adjectives": [
-      "happy",
-      "ready",
-      "next"
+      {
+        "en": "happy",
+        "de": "fröhlich"
+      },
+      {
+        "en": "ready",
+        "de": "bereit"
+      },
+      {
+        "en": "next",
+        "de": "als Nächstes"
+      }
     ],
     "sentenceModels": [
-      "The children are taking turns.",
-      "The child is waiting.",
-      "The children are sitting on the seesaw.",
-      "Who goes next?"
+      {
+        "en": "The children are taking turns.",
+        "de": "Die Kinder wechseln sich ab."
+      },
+      {
+        "en": "The child is waiting.",
+        "de": "Das Kind wartet."
+      },
+      {
+        "en": "The children are sitting on the seesaw.",
+        "de": "Die Kinder sitzen auf der Wippe."
+      },
+      {
+        "en": "Who goes next?",
+        "de": "Wer ist als Nächstes dran?"
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Practise waiting and turn-taking language rather than judging behaviour.",
-    "starterPrompts": [
-      "Who is waiting?",
-      "Who is using the seesaw?",
-      "Who might go next?",
-      "Which child is ready?",
-      "What could the child say?"
-    ],
-    "expansionPrompts": [
-      "What can you say when you want a turn?",
-      "What should happen after one child finishes?"
-    ]
+    "focus": {
+      "en": "Practise waiting and turn-taking language rather than judging behaviour.",
+      "de": "Sprache zum Warten und Abwechseln üben, ohne das Verhalten zu bewerten."
+    },
+    "starterPrompts": {
+      "en": [
+        "Who is waiting?",
+        "Who is using the seesaw?",
+        "Who might go next?",
+        "Which child is ready?",
+        "What could the child say?"
+      ],
+      "de": [
+        "Wer wartet?",
+        "Wer ist auf der Wippe?",
+        "Wer könnte als Nächstes dran sein?",
+        "Welches Kind ist bereit?",
+        "Was könnte das Kind sagen?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "What can you say when you want a turn?",
+        "What should happen after one child finishes?"
+      ],
+      "de": [
+        "Was kannst du sagen, wenn du auch mal dran sein möchtest?",
+        "Was sollte passieren, wenn ein Kind fertig ist?"
+      ]
+    }
   },
   "visualAudit": [
     "Reviewed in Wave 3 Batch 2 automatic pass against the visible teaching targets."

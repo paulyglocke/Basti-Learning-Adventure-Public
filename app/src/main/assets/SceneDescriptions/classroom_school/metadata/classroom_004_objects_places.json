@@ -1,52 +1,130 @@
 {
   "sceneId": "scene.classroom.objects_places.04",
   "categoryId": "classroom_school",
-  "title": "Classroom Scene 4 — Objects and Where They Belong",
+  "title": {
+    "en": "Classroom Scene 4 — Objects and Where They Belong",
+    "de": "Klassenraum, Szene 4 — Dinge und ihre Plätze"
+  },
   "status": "approved",
-  "purpose": "Functional classroom-object vocabulary and tidy-up/location language.",
+  "purpose": {
+    "en": "Functional classroom-object vocabulary and tidy-up/location language.",
+    "de": "Praktische Wörter für Dinge im Klassenraum sowie Sprache zum Aufräumen und zu Orten."
+  },
   "asset": "canonical/classroom_004_objects_places.png",
   "promptFile": "prompts/classroom_004_objects_places.md",
   "targetLanguage": {
     "nouns": [
-      "table",
-      "chair",
-      "pencils",
-      "crayons",
-      "backpack",
-      "shelf",
-      "storage box",
-      "teddy bear"
+      {
+        "en": "table",
+        "de": "Tisch"
+      },
+      {
+        "en": "chair",
+        "de": "Stuhl"
+      },
+      {
+        "en": "pencils",
+        "de": "Bleistifte"
+      },
+      {
+        "en": "crayons",
+        "de": "Wachsmalstifte"
+      },
+      {
+        "en": "backpack",
+        "de": "Rucksack"
+      },
+      {
+        "en": "shelf",
+        "de": "Regal"
+      },
+      {
+        "en": "storage box",
+        "de": "Aufbewahrungsbox"
+      },
+      {
+        "en": "teddy bear",
+        "de": "Teddybär"
+      }
     ],
     "verbs": [
-      "put",
-      "tidy"
+      {
+        "en": "put",
+        "de": "hinlegen"
+      },
+      {
+        "en": "tidy",
+        "de": "aufräumen"
+      }
     ],
     "adjectives": [
-      "blue",
-      "red",
-      "yellow",
-      "green"
+      {
+        "en": "blue",
+        "de": "blau"
+      },
+      {
+        "en": "red",
+        "de": "rot"
+      },
+      {
+        "en": "yellow",
+        "de": "gelb"
+      },
+      {
+        "en": "green",
+        "de": "grün"
+      }
     ],
     "sentenceModels": [
-      "The pencils are on the table.",
-      "The backpack is next to the shelf.",
-      "The boxes are in the shelf.",
-      "The teddy bear is on top of the shelf."
+      {
+        "en": "The pencils are on the table.",
+        "de": "Die Bleistifte liegen auf dem Tisch."
+      },
+      {
+        "en": "The backpack is next to the shelf.",
+        "de": "Der Rucksack ist neben dem Regal."
+      },
+      {
+        "en": "The boxes are in the shelf.",
+        "de": "Die Boxen sind im Regal."
+      },
+      {
+        "en": "The teddy bear is on top of the shelf.",
+        "de": "Der Teddybär ist oben auf dem Regal."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Turn location questions into practical school instructions.",
-    "starterPrompts": [
-      "Where are the pencils?",
-      "Where is the backpack?",
-      "What is on top of the shelf?",
-      "What is next to the table?",
-      "Where do the boxes belong?"
-    ],
-    "expansionPrompts": [
-      "Tell Basti: put the pencils on the table.",
-      "What should we tidy away first?"
-    ]
+    "focus": {
+      "en": "Turn location questions into practical school instructions.",
+      "de": "Aus Fragen zu Orten praktische Anweisungen für die Schule machen."
+    },
+    "starterPrompts": {
+      "en": [
+        "Where are the pencils?",
+        "Where is the backpack?",
+        "What is on top of the shelf?",
+        "What is next to the table?",
+        "Where do the boxes belong?"
+      ],
+      "de": [
+        "Wo sind die Bleistifte?",
+        "Wo ist der Rucksack?",
+        "Was ist oben auf dem Regal?",
+        "Was ist neben dem Tisch?",
+        "Wohin gehören die Boxen?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Tell Basti: put the pencils on the table.",
+        "What should we tidy away first?"
+      ],
+      "de": [
+        "Sag zu Basti: Lege die Bleistifte auf den Tisch.",
+        "Was sollten wir zuerst wegräumen?"
+      ]
+    }
   },
   "visualAudit": [
     "Auto-batch panel reviewed for the described targets."

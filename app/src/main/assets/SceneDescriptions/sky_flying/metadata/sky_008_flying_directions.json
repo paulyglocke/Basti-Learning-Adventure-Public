@@ -1,52 +1,130 @@
 {
   "sceneId": "scene.sky.flying_directions.08",
   "categoryId": "sky_flying",
-  "title": "Sky Scene 8 — Flying in Different Directions",
+  "title": {
+    "en": "Sky Scene 8 — Flying in Different Directions",
+    "de": "Himmel, Szene 8 — In verschiedene Richtungen fliegen"
+  },
   "status": "approved",
-  "purpose": "Direction words, movement descriptions and multi-clue identification.",
+  "purpose": {
+    "en": "Direction words, movement descriptions and multi-clue identification.",
+    "de": "Richtungswörter, Bewegungen beschreiben und Dinge anhand mehrerer Hinweise finden."
+  },
   "asset": "canonical/sky_008_flying_directions.png",
   "promptFile": "prompts/sky_008_flying_directions.md",
   "targetLanguage": {
     "nouns": [
-      "balloon",
-      "helicopter",
-      "airplane",
-      "eagle",
-      "mountains",
-      "lake"
+      {
+        "en": "balloon",
+        "de": "Heißluftballon"
+      },
+      {
+        "en": "helicopter",
+        "de": "Hubschrauber"
+      },
+      {
+        "en": "airplane",
+        "de": "Flugzeug"
+      },
+      {
+        "en": "eagle",
+        "de": "Adler"
+      },
+      {
+        "en": "mountains",
+        "de": "Berge"
+      },
+      {
+        "en": "lake",
+        "de": "See"
+      }
     ],
     "verbs": [
-      "flying",
-      "floating",
-      "gliding"
+      {
+        "en": "flying",
+        "de": "fliegen"
+      },
+      {
+        "en": "floating",
+        "de": "schweben"
+      },
+      {
+        "en": "gliding",
+        "de": "gleiten"
+      }
     ],
     "adjectives": [
-      "high",
-      "low",
-      "red",
-      "blue",
-      "big"
+      {
+        "en": "high",
+        "de": "hoch"
+      },
+      {
+        "en": "low",
+        "de": "tief"
+      },
+      {
+        "en": "red",
+        "de": "rot"
+      },
+      {
+        "en": "blue",
+        "de": "blau"
+      },
+      {
+        "en": "big",
+        "de": "groß"
+      }
     ],
     "sentenceModels": [
-      "The balloon is floating above the lake.",
-      "The helicopter is flying on the right.",
-      "The airplane is below the helicopter.",
-      "The eagle is gliding near the balloon."
+      {
+        "en": "The balloon is floating above the lake.",
+        "de": "Der Ballon schwebt über dem See."
+      },
+      {
+        "en": "The helicopter is flying on the right.",
+        "de": "Der Hubschrauber fliegt rechts."
+      },
+      {
+        "en": "The airplane is below the helicopter.",
+        "de": "Das Flugzeug ist unter dem Hubschrauber."
+      },
+      {
+        "en": "The eagle is gliding near the balloon.",
+        "de": "Der Adler gleitet in der Nähe des Ballons."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Ask where each flying subject is and combine location with movement.",
-    "starterPrompts": [
-      "Where is the balloon?",
-      "Which thing is highest?",
-      "What is flying on the right?",
-      "Where is the airplane?",
-      "Which animal is flying?"
-    ],
-    "expansionPrompts": [
-      "First point to the balloon, then point to the airplane.",
-      "Find the animal that is flying near the balloon."
-    ]
+    "focus": {
+      "en": "Ask where each flying subject is and combine location with movement.",
+      "de": "Fragen, wo die einzelnen fliegenden Dinge sind, und Ortsangaben mit Bewegung verbinden."
+    },
+    "starterPrompts": {
+      "en": [
+        "Where is the balloon?",
+        "Which thing is highest?",
+        "What is flying on the right?",
+        "Where is the airplane?",
+        "Which animal is flying?"
+      ],
+      "de": [
+        "Wo ist der Ballon?",
+        "Was ist am höchsten?",
+        "Was fliegt rechts?",
+        "Wo ist das Flugzeug?",
+        "Welches Tier fliegt?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "First point to the balloon, then point to the airplane.",
+        "Find the animal that is flying near the balloon."
+      ],
+      "de": [
+        "Zeige zuerst auf den Ballon und dann auf das Flugzeug.",
+        "Finde das Tier, das in der Nähe des Ballons fliegt."
+      ]
+    }
   },
   "visualAudit": [
     "Reviewed in Wave 3 Batch 2 automatic pass against the visible teaching targets."

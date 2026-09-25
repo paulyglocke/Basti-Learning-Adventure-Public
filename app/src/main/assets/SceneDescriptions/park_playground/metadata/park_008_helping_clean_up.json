@@ -1,53 +1,134 @@
 {
   "sceneId": "scene.park.helping_clean_up.08",
   "categoryId": "park_playground",
-  "title": "Park Scene 8 — Helping Clean Up",
+  "title": {
+    "en": "Park Scene 8 — Helping Clean Up",
+    "de": "Park, Szene 8 — Beim Aufräumen helfen"
+  },
   "status": "approved",
-  "purpose": "Functional social language, helping, tidying and simple cause-and-effect.",
+  "purpose": {
+    "en": "Functional social language, helping, tidying and simple cause-and-effect.",
+    "de": "Sprache für das Miteinander, Helfen, Aufräumen und einfache Zusammenhänge zwischen Ursache und Wirkung."
+  },
   "asset": "canonical/park_008_helping_clean_up.png",
   "promptFile": "prompts/park_008_helping_clean_up.md",
   "targetLanguage": {
     "nouns": [
-      "bin",
-      "bottle",
-      "paper",
-      "bag",
-      "bench",
-      "park"
+      {
+        "en": "bin",
+        "de": "Mülleimer"
+      },
+      {
+        "en": "bottle",
+        "de": "Flasche"
+      },
+      {
+        "en": "paper",
+        "de": "Papier"
+      },
+      {
+        "en": "bag",
+        "de": "Tüte"
+      },
+      {
+        "en": "bench",
+        "de": "Bank"
+      },
+      {
+        "en": "park",
+        "de": "Park"
+      }
     ],
     "verbs": [
-      "picking up",
-      "carrying",
-      "throwing away",
-      "helping",
-      "cleaning"
+      {
+        "en": "picking up",
+        "de": "aufheben"
+      },
+      {
+        "en": "carrying",
+        "de": "tragen"
+      },
+      {
+        "en": "throwing away",
+        "de": "wegwerfen"
+      },
+      {
+        "en": "helping",
+        "de": "helfen"
+      },
+      {
+        "en": "cleaning",
+        "de": "sauber machen"
+      }
     ],
     "adjectives": [
-      "clean",
-      "dirty",
-      "blue",
-      "green"
+      {
+        "en": "clean",
+        "de": "sauber"
+      },
+      {
+        "en": "dirty",
+        "de": "schmutzig"
+      },
+      {
+        "en": "blue",
+        "de": "blau"
+      },
+      {
+        "en": "green",
+        "de": "grün"
+      }
     ],
     "sentenceModels": [
-      "The children are cleaning the park.",
-      "The child is picking up a bottle.",
-      "The child is carrying rubbish to the bin.",
-      "They are helping."
+      {
+        "en": "The children are cleaning the park.",
+        "de": "Die Kinder machen den Park sauber."
+      },
+      {
+        "en": "The child is picking up a bottle.",
+        "de": "Das Kind hebt eine Flasche auf."
+      },
+      {
+        "en": "The child is carrying rubbish to the bin.",
+        "de": "Das Kind trägt Müll zum Mülleimer."
+      },
+      {
+        "en": "They are helping.",
+        "de": "Sie helfen."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Use the scene for helping language, what should happen next, and simple functional choices.",
-    "starterPrompts": [
-      "What are the children doing?",
-      "What should go in the bin?",
-      "Who is helping?",
-      "What is on the ground?",
-      "What should happen next?"
-    ],
-    "expansionPrompts": [
-      "Why are they putting the rubbish in the bin?",
-      "Can you tell me the clean-up story from first to last?"
-    ]
+    "focus": {
+      "en": "Use the scene for helping language, what should happen next, and simple functional choices.",
+      "de": "Die Szene nutzen, um über Helfen, mögliche nächste Schritte und einfache praktische Entscheidungen zu sprechen."
+    },
+    "starterPrompts": {
+      "en": [
+        "What are the children doing?",
+        "What should go in the bin?",
+        "Who is helping?",
+        "What is on the ground?",
+        "What should happen next?"
+      ],
+      "de": [
+        "Was machen die Kinder?",
+        "Was gehört in den Mülleimer?",
+        "Wer hilft?",
+        "Was liegt auf dem Boden?",
+        "Was sollte als Nächstes passieren?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Why are they putting the rubbish in the bin?",
+        "Can you tell me the clean-up story from first to last?"
+      ],
+      "de": [
+        "Warum werfen sie den Müll in den Mülleimer?",
+        "Kannst du die Aufräumgeschichte vom Anfang bis zum Ende erzählen?"
+      ]
+    }
   },
   "visualAudit": [
     "Reviewed in Wave 3 Batch 2 automatic pass against the visible teaching targets."

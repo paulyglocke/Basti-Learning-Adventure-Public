@@ -1,4 +1,5 @@
 """Authoring-boundary fixtures; no Android, image decoding or third-party packages."""
+import hashlib
 import json
 import tempfile
 import unittest
@@ -54,9 +55,62 @@ class SceneDescriptionBoundaryTest(unittest.TestCase):
     def test_language_availability_is_not_fabricated(self):
         scenes = self.pack[1]
         self.assertEqual({1: 27, 2: 27, 3: 27}, {w: sum(s['wave'] == w for s in scenes) for w in (1, 2, 3)})
-        self.assertEqual(27, sum(s['title']['de'] is not None for s in scenes))
+        self.assertEqual(81, sum(s['title']['de'] is not None for s in scenes))
         self.assertTrue(all(s['purpose'] is None for s in scenes if s['wave'] == 1))
-        self.assertTrue(all(s['title']['de'] is None for s in scenes if s['wave'] > 1))
+        self.assertTrue(all(s['purpose']['de'] for s in scenes if s['wave'] > 1))
+
+    def test_every_runtime_text_has_authored_german(self):
+        def check(value):
+            if isinstance(value, dict):
+                if set(value) == {'en', 'de'}:
+                    for locale in ('en', 'de'):
+                        authored = value[locale]
+                        self.assertIsNotNone(authored)
+                        self.assertTrue(authored)
+                        self.assertTrue(all(v.strip() for v in authored) if isinstance(authored, list) else authored.strip())
+                else:
+                    for v in value.values(): check(v)
+            elif isinstance(value, (list, tuple)):
+                for v in value: check(v)
+        check(self.pack[:2])
+
+    def test_english_identity_references_and_order_preserved_except_reviewed_bucket_fix(self):
+        # Fingerprint of the normalized English catalogue at 296d6ef. No Git needed at test time.
+        def english(value):
+            if isinstance(value, dict):
+                if set(value) == {'en', 'de'}: return english(value['en'])
+                return {k: english(v) for k, v in value.items()}
+            if isinstance(value, (list, tuple)): return [english(v) for v in value]
+            return value
+        projection = english(self.pack[:2])
+        park = next(s for s in projection[1] if s['id'] == 'scene.park.big_small_counting.05')
+        self.assertEqual('There are four yellow buckets.', park['targets'][3][1][3])
+        self.assertEqual('Can you make a sentence with four yellow buckets?', park['groups'][1][1][1])
+        # Reverse ONLY these two documented source-error corrections for the preservation comparison.
+        park['targets'][3][1][3] = 'There are three yellow buckets.'
+        park['groups'][1][1][1] = 'Can you make a sentence with three yellow buckets?'
+        digest = hashlib.sha256(json.dumps(projection, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+        self.assertEqual('ae45295414d87446f053b4cb2e09667bc3dfe4f192734bb6b0315338c33acd05', digest)
+
+    def test_wave_two_and_three_missing_or_blank_german_is_rejected(self):
+        for wave in (2, 3):
+            scene = next(s for s in self.pack[1] if s['wave'] == wave)
+            path = self.root / scene['metadata'].removeprefix('SceneDescriptions/')
+            original = path.read_text()
+            for keys in (('title',), ('purpose',), ('targetLanguage', 'nouns', 0),
+                         ('targetLanguage', 'verbs', 0), ('targetLanguage', 'adjectives', 0),
+                         ('targetLanguage', 'sentenceModels', 0), ('adultSupport', 'focus'),
+                         ('adultSupport', 'starterPrompts'), ('adultSupport', 'expansionPrompts')):
+                for replacement in (None, '', []):
+                    with self.subTest(wave=wave, field=keys, value=replacement):
+                        data = json.loads(original)
+                        value = data
+                        for key in keys: value = value[key]
+                        if replacement is None: value.pop('de')
+                        else: value['de'] = replacement
+                        path.write_text(json.dumps(data))
+                        self.rejected()
+            path.write_text(original)
 
     def test_authoring_and_unlisted_material_never_enters_pack(self):
         for relative in ('reference/extra.json', 'prompts/extra.json', 'metadata/unlisted.json'):

@@ -1,55 +1,142 @@
 {
   "sceneId": "scene.ocean.reef_routines.06",
   "categoryId": "ocean_underwater",
-  "title": "Ocean Scene 6 — Reef Routines",
+  "title": {
+    "en": "Ocean Scene 6 — Reef Routines",
+    "de": "Meer, Szene 6 — Alltag am Riff"
+  },
   "status": "approved",
-  "purpose": "Who is doing what, simple inference, and place language in one reef scene.",
+  "purpose": {
+    "en": "Who is doing what, simple inference, and place language in one reef scene.",
+    "de": "Wer macht was? Einfache Schlussfolgerungen und Ortsangaben in einer Riffszene."
+  },
   "asset": "canonical/ocean_006_reef_routines.png",
   "promptFile": "prompts/ocean_006_reef_routines.md",
   "targetLanguage": {
     "nouns": [
-      "turtle",
-      "crab",
-      "octopus",
-      "cave",
-      "seahorse",
-      "coral",
-      "fish",
-      "seaweed"
+      {
+        "en": "turtle",
+        "de": "Schildkröte"
+      },
+      {
+        "en": "crab",
+        "de": "Krabbe"
+      },
+      {
+        "en": "octopus",
+        "de": "Oktopus"
+      },
+      {
+        "en": "cave",
+        "de": "Höhle"
+      },
+      {
+        "en": "seahorse",
+        "de": "Seepferdchen"
+      },
+      {
+        "en": "coral",
+        "de": "Koralle"
+      },
+      {
+        "en": "fish",
+        "de": "Fisch"
+      },
+      {
+        "en": "seaweed",
+        "de": "Seegras"
+      }
     ],
     "verbs": [
-      "eating",
-      "digging",
-      "hiding",
-      "swimming"
+      {
+        "en": "eating",
+        "de": "fressen"
+      },
+      {
+        "en": "digging",
+        "de": "graben"
+      },
+      {
+        "en": "hiding",
+        "de": "sich verstecken"
+      },
+      {
+        "en": "swimming",
+        "de": "schwimmen"
+      }
     ],
     "adjectives": [
-      "blue",
-      "orange",
-      "green",
-      "little"
+      {
+        "en": "blue",
+        "de": "blau"
+      },
+      {
+        "en": "orange",
+        "de": "orange"
+      },
+      {
+        "en": "green",
+        "de": "grün"
+      },
+      {
+        "en": "little",
+        "de": "klein"
+      }
     ],
     "sentenceModels": [
-      "The turtle is eating seaweed.",
-      "The crab is digging in the sand.",
-      "The octopus is hiding in the cave.",
-      "The seahorse is next to the coral.",
-      "The three fish are swimming together."
+      {
+        "en": "The turtle is eating seaweed.",
+        "de": "Die Schildkröte frisst Seegras."
+      },
+      {
+        "en": "The crab is digging in the sand.",
+        "de": "Die Krabbe gräbt im Sand."
+      },
+      {
+        "en": "The octopus is hiding in the cave.",
+        "de": "Der Oktopus versteckt sich in der Höhle."
+      },
+      {
+        "en": "The seahorse is next to the coral.",
+        "de": "Das Seepferdchen ist neben der Koralle."
+      },
+      {
+        "en": "The three fish are swimming together.",
+        "de": "Die drei Fische schwimmen zusammen."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Support simple description plus light functional questions like who is hiding or who is working.",
-    "starterPrompts": [
-      "Who is hiding?",
-      "Who is digging?",
-      "Where is the octopus?",
-      "How many blue fish are there?",
-      "What is the turtle eating?"
-    ],
-    "expansionPrompts": [
-      "Can you tell me which animal is next to the coral?",
-      "What might the crab find in the sand?"
-    ]
+    "focus": {
+      "en": "Support simple description plus light functional questions like who is hiding or who is working.",
+      "de": "Einfache Beschreibungen unterstützen und leichte Fragen stellen, etwa wer sich versteckt oder wer arbeitet."
+    },
+    "starterPrompts": {
+      "en": [
+        "Who is hiding?",
+        "Who is digging?",
+        "Where is the octopus?",
+        "How many blue fish are there?",
+        "What is the turtle eating?"
+      ],
+      "de": [
+        "Wer versteckt sich?",
+        "Wer gräbt?",
+        "Wo ist der Oktopus?",
+        "Wie viele blaue Fische sind da?",
+        "Was frisst die Schildkröte?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Can you tell me which animal is next to the coral?",
+        "What might the crab find in the sand?"
+      ],
+      "de": [
+        "Kannst du mir sagen, welches Tier neben der Koralle ist?",
+        "Was könnte die Krabbe im Sand finden?"
+      ]
+    }
   },
   "visualAudit": [
     "One turtle eating seaweed in the centre.",

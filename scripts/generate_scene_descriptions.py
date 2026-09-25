@@ -123,7 +123,7 @@ def _load(root=ROOT):
             w = wave(data.get("wave"))
             require("wave" not in entry or wave(entry["wave"]) == w, f"Wave mismatch: {sid}")
             require(data.get("schemaVersion", 1 if w > 1 else None) == 1, f"Unsupported metadata schema: {sid}")
-            bilingual = w == 1
+            bilingual = True  # Approved production teaching/support text must now have both locales.
             title = text(data["title"], bilingual)
             require("title" not in entry or entry["title"] == title["en"], f"Title mismatch: {sid}")
             target = data["targetLanguage"]
@@ -146,12 +146,12 @@ def _load(root=ROOT):
             require(focus is None or isinstance(focus, dict) and set(focus) == {"primary", "secondary"}, "Invalid learning focus")
             scenes.append(dict(id=sid, category=cid, asset="SceneDescriptions/" + full_asset,
                 metadata="SceneDescriptions/" + full_metadata, wave=w, title=title,
-                purpose=text(data["purpose"]) if "purpose" in data else None,
+                purpose=text(data["purpose"], bilingual) if "purpose" in data else None,
                 primary=strings(focus["primary"]) if focus else [], secondary=strings(focus["secondary"]) if focus else [],
                 targets=targets, examples=lines(data["exampleChildDescriptions"], True) if "exampleChildDescriptions" in data else None,
                 principle=text(adult["principle"], bilingual) if "principle" in adult else None,
-                focus=text(adult["focus"]) if "focus" in adult else None, groups=groups, expansions=expansions,
-                caution=text(data["strictReview"]["reason"]) if "strictReview" in data else None))
+                focus=text(adult["focus"], bilingual) if "focus" in adult else None, groups=groups, expansions=expansions,
+                caution=text(data["strictReview"]["reason"], bilingual) if "strictReview" in data else None))
     return categories, scenes, source_paths, digest.hexdigest()
 
 

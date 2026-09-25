@@ -1,54 +1,138 @@
 {
   "sceneId": "scene.jungle.big_small_groups.06",
   "categoryId": "jungle_rainforest",
-  "title": "Jungle Scene 6 — Big, Small and Groups",
+  "title": {
+    "en": "Jungle Scene 6 — Big, Small and Groups",
+    "de": "Dschungel, Szene 6 — Groß, klein und Gruppen"
+  },
   "status": "approved",
-  "purpose": "Comparisons, colour vocabulary and counting small groups.",
+  "purpose": {
+    "en": "Comparisons, colour vocabulary and counting small groups.",
+    "de": "Vergleiche, Farbwörter und kleine Gruppen zählen."
+  },
   "asset": "canonical/jungle_006_big_small_groups.png",
   "promptFile": "prompts/jungle_006_big_small_groups.md",
   "targetLanguage": {
     "nouns": [
-      "elephant",
-      "tiger",
-      "frog",
-      "parrot",
-      "toucan",
-      "monkey"
+      {
+        "en": "elephant",
+        "de": "Elefant"
+      },
+      {
+        "en": "tiger",
+        "de": "Tiger"
+      },
+      {
+        "en": "frog",
+        "de": "Frosch"
+      },
+      {
+        "en": "parrot",
+        "de": "Papagei"
+      },
+      {
+        "en": "toucan",
+        "de": "Tukan"
+      },
+      {
+        "en": "monkey",
+        "de": "Affe"
+      }
     ],
     "verbs": [
-      "standing",
-      "perching",
-      "hanging"
+      {
+        "en": "standing",
+        "de": "stehen"
+      },
+      {
+        "en": "perching",
+        "de": "sitzen"
+      },
+      {
+        "en": "hanging",
+        "de": "hängen"
+      }
     ],
     "adjectives": [
-      "big",
-      "small",
-      "grey",
-      "orange",
-      "colourful",
-      "three"
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "grey",
+        "de": "grau"
+      },
+      {
+        "en": "orange",
+        "de": "orange"
+      },
+      {
+        "en": "colourful",
+        "de": "bunt"
+      },
+      {
+        "en": "three",
+        "de": "drei"
+      }
     ],
     "sentenceModels": [
-      "The elephant is big.",
-      "The frog is small.",
-      "The tiger is orange and black.",
-      "The parrot is colourful.",
-      "There are three monkeys."
+      {
+        "en": "The elephant is big.",
+        "de": "Der Elefant ist groß."
+      },
+      {
+        "en": "The frog is small.",
+        "de": "Der Frosch ist klein."
+      },
+      {
+        "en": "The tiger is orange and black.",
+        "de": "Der Tiger ist orange und schwarz."
+      },
+      {
+        "en": "The parrot is colourful.",
+        "de": "Der Papagei ist bunt."
+      },
+      {
+        "en": "There are three monkeys.",
+        "de": "Da sind drei Affen."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Use the scene for comparison and quantity questions rather than only actions.",
-    "starterPrompts": [
-      "Which animal is the biggest?",
-      "Which animal is the smallest?",
-      "How many monkeys can you count?",
-      "What colour is the tiger?",
-      "Which bird has a big beak?"
-    ],
-    "expansionPrompts": [
-      "Compare the elephant and the frog.",
-      "Tell me a sentence with three."
-    ]
+    "focus": {
+      "en": "Use the scene for comparison and quantity questions rather than only actions.",
+      "de": "Die Szene für Fragen zum Vergleichen und zu Mengen nutzen, nicht nur zu Handlungen."
+    },
+    "starterPrompts": {
+      "en": [
+        "Which animal is the biggest?",
+        "Which animal is the smallest?",
+        "How many monkeys can you count?",
+        "What colour is the tiger?",
+        "Which bird has a big beak?"
+      ],
+      "de": [
+        "Welches Tier ist am größten?",
+        "Welches Tier ist am kleinsten?",
+        "Wie viele Affen kannst du zählen?",
+        "Welche Farbe hat der Tiger?",
+        "Welcher Vogel hat einen großen Schnabel?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Compare the elephant and the frog.",
+        "Tell me a sentence with three."
+      ],
+      "de": [
+        "Vergleiche den Elefanten und den Frosch.",
+        "Sag mir einen Satz mit „drei“."
+      ]
+    }
   },
   "visualAudit": [
     "Large elephant in the centre-left.",

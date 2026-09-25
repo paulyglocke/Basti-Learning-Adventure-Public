@@ -87,8 +87,9 @@ The 81 approved scenes have two authored metadata formats:
 
 - Wave 1 (27 scenes): bilingual titles, target language, example child descriptions
   and adult-support lists/expansions; primary/secondary learning focus.
-- Waves 2/3 (54 scenes): English titles, purpose, target words/sentence models and
-  adult-support focus/starter/expansion prompts. German is not yet authored.
+- Waves 2/3 (54 scenes): bilingual titles, purpose, target words/sentence models and
+  adult-support focus/starter/expansion prompts. German completion is recorded in
+  `GERMAN_REVIEW.md`.
 - Visual audits remain authoring evidence. Do not infer missing translations,
   example sentences or a machine-gradable answer set.
 
@@ -124,6 +125,9 @@ checkpoint. Wave 1 summaries and the detailed Wave 1 visual review are historica
 
 The pure native scene catalogue is generated from the root/category manifests and
 referenced metadata by `scripts/generate_scene_descriptions.py`. It exposes only
-approved canonical scenes; no runtime JSON parsing or UI is introduced. German
-lookups for the 54 English-only records return unavailable, never English fallback.
+approved canonical scenes; no runtime JSON parsing or UI is introduced. All 81
+scenes now expose authored EN/DE runtime teaching/support data. Production
+validation rejects missing German; the pure optional model still never falls back
+to English. See `GERMAN_REVIEW.md` for the two verified Park counting corrections
+and the distinction between language completeness and visual-semantic acceptance.
 See CONTENT_DATA_SPEC.md at the repository root for the typed contract.

@@ -1,56 +1,146 @@
 {
   "sceneId": "scene.farm.transport_places.05",
   "categoryId": "countryside_farm",
-  "title": "Farm Scene 5 — Transport, Animals and Places",
+  "title": {
+    "en": "Farm Scene 5 — Transport, Animals and Places",
+    "de": "Bauernhof, Szene 5 — Fahrzeuge, Tiere und Orte"
+  },
   "status": "approved",
-  "purpose": "Combine farm nouns, actions and simple positional language.",
+  "purpose": {
+    "en": "Combine farm nouns, actions and simple positional language.",
+    "de": "Bauernhofwörter, Handlungen und einfache Ortsangaben verbinden."
+  },
   "asset": "canonical/farm_005_transport_and_places.png",
   "promptFile": "prompts/farm_005_transport_and_places.md",
   "targetLanguage": {
     "nouns": [
-      "tractor",
-      "trailer",
-      "hay",
-      "horse",
-      "goat",
-      "rock",
-      "duck",
-      "pond",
-      "barn"
+      {
+        "en": "tractor",
+        "de": "Traktor"
+      },
+      {
+        "en": "trailer",
+        "de": "Anhänger"
+      },
+      {
+        "en": "hay",
+        "de": "Heu"
+      },
+      {
+        "en": "horse",
+        "de": "Pferd"
+      },
+      {
+        "en": "goat",
+        "de": "Ziege"
+      },
+      {
+        "en": "rock",
+        "de": "Fels"
+      },
+      {
+        "en": "duck",
+        "de": "Ente"
+      },
+      {
+        "en": "pond",
+        "de": "Teich"
+      },
+      {
+        "en": "barn",
+        "de": "Scheune"
+      }
     ],
     "verbs": [
-      "carrying",
-      "grazing",
-      "standing",
-      "swimming"
+      {
+        "en": "carrying",
+        "de": "tragen"
+      },
+      {
+        "en": "grazing",
+        "de": "grasen"
+      },
+      {
+        "en": "standing",
+        "de": "stehen"
+      },
+      {
+        "en": "swimming",
+        "de": "schwimmen"
+      }
     ],
     "adjectives": [
-      "green",
-      "brown",
-      "white",
-      "big",
-      "small"
+      {
+        "en": "green",
+        "de": "grün"
+      },
+      {
+        "en": "brown",
+        "de": "braun"
+      },
+      {
+        "en": "white",
+        "de": "weiß"
+      },
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      }
     ],
     "sentenceModels": [
-      "The tractor is carrying hay.",
-      "The horse is eating grass.",
-      "The goat is on the rock.",
-      "The duck is in the pond."
+      {
+        "en": "The tractor is carrying hay.",
+        "de": "Der Traktor transportiert Heu."
+      },
+      {
+        "en": "The horse is eating grass.",
+        "de": "Das Pferd frisst Gras."
+      },
+      {
+        "en": "The goat is on the rock.",
+        "de": "Die Ziege ist auf dem Felsen."
+      },
+      {
+        "en": "The duck is in the pond.",
+        "de": "Die Ente ist im Teich."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Practise action-plus-place sentences and familiar farm transport vocabulary.",
-    "starterPrompts": [
-      "What is the tractor carrying?",
-      "What is the horse doing?",
-      "Where is the goat?",
-      "Where is the duck?",
-      "Which thing has wheels?"
-    ],
-    "expansionPrompts": [
-      "What might the tractor do next?",
-      "Tell me two things about the horse."
-    ]
+    "focus": {
+      "en": "Practise action-plus-place sentences and familiar farm transport vocabulary.",
+      "de": "Sätze mit Handlung und Ort sowie vertraute Wörter zu Bauernhoffahrzeugen üben."
+    },
+    "starterPrompts": {
+      "en": [
+        "What is the tractor carrying?",
+        "What is the horse doing?",
+        "Where is the goat?",
+        "Where is the duck?",
+        "Which thing has wheels?"
+      ],
+      "de": [
+        "Was transportiert der Traktor?",
+        "Was macht das Pferd?",
+        "Wo ist die Ziege?",
+        "Wo ist die Ente?",
+        "Was hat Räder?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "What might the tractor do next?",
+        "Tell me two things about the horse."
+      ],
+      "de": [
+        "Was könnte der Traktor als Nächstes machen?",
+        "Erzähl mir zwei Dinge über das Pferd."
+      ]
+    }
   },
   "visualAudit": [
     "Auto-batch panel reviewed for the described targets."

@@ -1,53 +1,134 @@
 {
   "sceneId": "scene.zoo.feature_clues.08",
   "categoryId": "zoo_wildlife",
-  "title": "Zoo Scene 8 — Animal Feature Clues",
+  "title": {
+    "en": "Zoo Scene 8 — Animal Feature Clues",
+    "de": "Zoo, Szene 8 — Tiere an Merkmalen erkennen"
+  },
   "status": "approved",
-  "purpose": "Support adjectives, visible body features and clue-based identification in a zoo scene.",
+  "purpose": {
+    "en": "Support adjectives, visible body features and clue-based identification in a zoo scene.",
+    "de": "Eigenschaftswörter, sichtbare Körpermerkmale und das Finden von Tieren anhand von Hinweisen in einer Zooszene unterstützen."
+  },
   "asset": "canonical/zoo_008_feature_clues.png",
   "promptFile": "prompts/zoo_008_feature_clues.md",
   "targetLanguage": {
     "nouns": [
-      "giraffe",
-      "elephant",
-      "lion",
-      "zebra",
-      "monkey",
-      "penguin"
+      {
+        "en": "giraffe",
+        "de": "Giraffe"
+      },
+      {
+        "en": "elephant",
+        "de": "Elefant"
+      },
+      {
+        "en": "lion",
+        "de": "Löwe"
+      },
+      {
+        "en": "zebra",
+        "de": "Zebra"
+      },
+      {
+        "en": "monkey",
+        "de": "Affe"
+      },
+      {
+        "en": "penguin",
+        "de": "Pinguin"
+      }
     ],
     "verbs": [
-      "standing",
-      "sitting"
+      {
+        "en": "standing",
+        "de": "stehen"
+      },
+      {
+        "en": "sitting",
+        "de": "sitzen"
+      }
     ],
     "adjectives": [
-      "tall",
-      "big",
-      "grey",
-      "striped",
-      "small",
-      "brown"
+      {
+        "en": "tall",
+        "de": "groß"
+      },
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "grey",
+        "de": "grau"
+      },
+      {
+        "en": "striped",
+        "de": "gestreift"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "brown",
+        "de": "braun"
+      }
     ],
     "sentenceModels": [
-      "The giraffe has a long neck.",
-      "The elephant is big and grey.",
-      "The lion has a mane.",
-      "The zebra is striped.",
-      "The penguin is small."
+      {
+        "en": "The giraffe has a long neck.",
+        "de": "Die Giraffe hat einen langen Hals."
+      },
+      {
+        "en": "The elephant is big and grey.",
+        "de": "Der Elefant ist groß und grau."
+      },
+      {
+        "en": "The lion has a mane.",
+        "de": "Der Löwe hat eine Mähne."
+      },
+      {
+        "en": "The zebra is striped.",
+        "de": "Das Zebra ist gestreift."
+      },
+      {
+        "en": "The penguin is small.",
+        "de": "Der Pinguin ist klein."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Use descriptive clues to identify each animal and compare them.",
-    "starterPrompts": [
-      "Which animal has a long neck?",
-      "Which animal is striped?",
-      "Who has a mane?",
-      "Which animal is small?",
-      "Can you find the big grey animal?"
-    ],
-    "expansionPrompts": [
-      "Tell me two clues for each animal.",
-      "Which animals are big and which are small?"
-    ]
+    "focus": {
+      "en": "Use descriptive clues to identify each animal and compare them.",
+      "de": "Beschreibende Hinweise nutzen, um jedes Tier zu finden und die Tiere zu vergleichen."
+    },
+    "starterPrompts": {
+      "en": [
+        "Which animal has a long neck?",
+        "Which animal is striped?",
+        "Who has a mane?",
+        "Which animal is small?",
+        "Can you find the big grey animal?"
+      ],
+      "de": [
+        "Welches Tier hat einen langen Hals?",
+        "Welches Tier ist gestreift?",
+        "Wer hat eine Mähne?",
+        "Welches Tier ist klein?",
+        "Findest du das große graue Tier?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Tell me two clues for each animal.",
+        "Which animals are big and which are small?"
+      ],
+      "de": [
+        "Nenne mir zwei Hinweise zu jedem Tier.",
+        "Welche Tiere sind groß und welche klein?"
+      ]
+    }
   },
   "visualAudit": [
     "Reviewed in Wave 3 Batch 3 automatic pass against the main teaching targets."

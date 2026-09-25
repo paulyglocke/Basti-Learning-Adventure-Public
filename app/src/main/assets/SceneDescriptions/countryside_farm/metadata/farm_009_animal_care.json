@@ -1,56 +1,146 @@
 {
   "sceneId": "scene.farm.animal_care.09",
   "categoryId": "countryside_farm",
-  "title": "Farm Scene 9 — Looking After the Animals",
+  "title": {
+    "en": "Farm Scene 9 — Looking After the Animals",
+    "de": "Bauernhof, Szene 9 — Für die Tiere sorgen"
+  },
   "status": "approved",
-  "purpose": "Support inference, needs-based language and purposeful action verbs using a farm care scene.",
+  "purpose": {
+    "en": "Support inference, needs-based language and purposeful action verbs using a farm care scene.",
+    "de": "Mit einer Pflegeszene auf dem Bauernhof Überlegungen zu Bedürfnissen und zielgerichtete Handlungswörter unterstützen."
+  },
   "asset": "canonical/farm_009_animal_care.png",
   "promptFile": "prompts/farm_009_animal_care.md",
   "targetLanguage": {
     "nouns": [
-      "cow",
-      "pig",
-      "chickens",
-      "gate",
-      "water trough",
-      "bucket",
-      "vegetables",
-      "crate"
+      {
+        "en": "cow",
+        "de": "Kuh"
+      },
+      {
+        "en": "pig",
+        "de": "Schwein"
+      },
+      {
+        "en": "chickens",
+        "de": "Hühner"
+      },
+      {
+        "en": "gate",
+        "de": "Tor"
+      },
+      {
+        "en": "water trough",
+        "de": "Wassertrog"
+      },
+      {
+        "en": "bucket",
+        "de": "Eimer"
+      },
+      {
+        "en": "vegetables",
+        "de": "Gemüse"
+      },
+      {
+        "en": "crate",
+        "de": "Kiste"
+      }
     ],
     "verbs": [
-      "carrying",
-      "feeding",
-      "closing",
-      "picking",
-      "looking after"
+      {
+        "en": "carrying",
+        "de": "tragen"
+      },
+      {
+        "en": "feeding",
+        "de": "füttern"
+      },
+      {
+        "en": "closing",
+        "de": "schließen"
+      },
+      {
+        "en": "picking",
+        "de": "ernten"
+      },
+      {
+        "en": "looking after",
+        "de": "versorgen"
+      }
     ],
     "adjectives": [
-      "thirsty",
-      "safe",
-      "open",
-      "full",
-      "fresh"
+      {
+        "en": "thirsty",
+        "de": "durstig"
+      },
+      {
+        "en": "safe",
+        "de": "sicher"
+      },
+      {
+        "en": "open",
+        "de": "offen"
+      },
+      {
+        "en": "full",
+        "de": "voll"
+      },
+      {
+        "en": "fresh",
+        "de": "frisch"
+      }
     ],
     "sentenceModels": [
-      "The child is carrying water to the cow.",
-      "The child is feeding the chickens.",
-      "The pig is inside the gate.",
-      "The child is picking vegetables."
+      {
+        "en": "The child is carrying water to the cow.",
+        "de": "Das Kind trägt Wasser zur Kuh."
+      },
+      {
+        "en": "The child is feeding the chickens.",
+        "de": "Das Kind füttert die Hühner."
+      },
+      {
+        "en": "The pig is inside the gate.",
+        "de": "Das Schwein ist im Gatter."
+      },
+      {
+        "en": "The child is picking vegetables.",
+        "de": "Das Kind erntet Gemüse."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Ask what each animal needs and which child is helping with that need.",
-    "starterPrompts": [
-      "Who needs water?",
-      "Who is feeding the chickens?",
-      "Why is the gate important?",
-      "What is in the crate?",
-      "Which child is helping the cow?"
-    ],
-    "expansionPrompts": [
-      "What should happen next after the water arrives?",
-      "Tell me how the children are looking after the farm animals."
-    ]
+    "focus": {
+      "en": "Ask what each animal needs and which child is helping with that need.",
+      "de": "Fragen, was jedes Tier braucht und welches Kind ihm dabei hilft."
+    },
+    "starterPrompts": {
+      "en": [
+        "Who needs water?",
+        "Who is feeding the chickens?",
+        "Why is the gate important?",
+        "What is in the crate?",
+        "Which child is helping the cow?"
+      ],
+      "de": [
+        "Wer braucht Wasser?",
+        "Wer füttert die Hühner?",
+        "Warum ist das Tor wichtig?",
+        "Was ist in der Kiste?",
+        "Welches Kind hilft der Kuh?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "What should happen next after the water arrives?",
+        "Tell me how the children are looking after the farm animals."
+      ],
+      "de": [
+        "Was sollte passieren, nachdem das Wasser angekommen ist?",
+        "Erzähl mir, wie die Kinder die Bauernhoftiere versorgen."
+      ]
+    }
   },
   "visualAudit": [
     "Reviewed in Wave 3 Batch 3 automatic pass against the main teaching targets."

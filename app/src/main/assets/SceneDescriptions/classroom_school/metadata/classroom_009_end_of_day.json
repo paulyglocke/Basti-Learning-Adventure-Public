@@ -1,53 +1,134 @@
 {
   "sceneId": "scene.classroom.end_of_day.09",
   "categoryId": "classroom_school",
-  "title": "Classroom Scene 9 — End of the School Day",
+  "title": {
+    "en": "Classroom Scene 9 — End of the School Day",
+    "de": "Klassenraum, Szene 9 — Am Ende des Schultags"
+  },
   "status": "approved",
-  "purpose": "Support inference, classroom routines and multi-step listening in a familiar end-of-day classroom scene.",
+  "purpose": {
+    "en": "Support inference, classroom routines and multi-step listening in a familiar end-of-day classroom scene.",
+    "de": "Überlegungen, Schulabläufe und mehrschrittiges Zuhören in einer vertrauten Szene am Ende des Schultags unterstützen."
+  },
   "asset": "canonical/classroom_009_end_of_day.png",
   "promptFile": "prompts/classroom_009_end_of_day.md",
   "targetLanguage": {
     "nouns": [
-      "teacher",
-      "picture",
-      "backpack",
-      "book",
-      "desk",
-      "shelf"
+      {
+        "en": "teacher",
+        "de": "Lehrkraft"
+      },
+      {
+        "en": "picture",
+        "de": "Bild"
+      },
+      {
+        "en": "backpack",
+        "de": "Rucksack"
+      },
+      {
+        "en": "book",
+        "de": "Buch"
+      },
+      {
+        "en": "desk",
+        "de": "Tisch"
+      },
+      {
+        "en": "shelf",
+        "de": "Regal"
+      }
     ],
     "verbs": [
-      "receiving",
-      "packing",
-      "waiting",
-      "working",
-      "putting away"
+      {
+        "en": "receiving",
+        "de": "bekommen"
+      },
+      {
+        "en": "packing",
+        "de": "packen"
+      },
+      {
+        "en": "waiting",
+        "de": "warten"
+      },
+      {
+        "en": "working",
+        "de": "arbeiten"
+      },
+      {
+        "en": "putting away",
+        "de": "wegräumen"
+      }
     ],
     "adjectives": [
-      "quiet",
-      "ready",
-      "finished",
-      "tidy"
+      {
+        "en": "quiet",
+        "de": "leise"
+      },
+      {
+        "en": "ready",
+        "de": "bereit"
+      },
+      {
+        "en": "finished",
+        "de": "fertig"
+      },
+      {
+        "en": "tidy",
+        "de": "ordentlich"
+      }
     ],
     "sentenceModels": [
-      "The child is packing the backpack.",
-      "The child is waiting near the teacher.",
-      "The child is putting the book away.",
-      "The child is working at the desk."
+      {
+        "en": "The child is packing the backpack.",
+        "de": "Das Kind packt den Rucksack."
+      },
+      {
+        "en": "The child is waiting near the teacher.",
+        "de": "Das Kind wartet bei der Lehrkraft."
+      },
+      {
+        "en": "The child is putting the book away.",
+        "de": "Das Kind räumt das Buch weg."
+      },
+      {
+        "en": "The child is working at the desk.",
+        "de": "Das Kind arbeitet am Tisch."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Use the scene for end-of-day routines and for following two-step directions.",
-    "starterPrompts": [
-      "Who is packing a backpack?",
-      "Who is near the teacher?",
-      "Who is still working?",
-      "Where does the book go?",
-      "What is the teacher receiving?"
-    ],
-    "expansionPrompts": [
-      "What usually happens before children go home?",
-      "First point to the child packing the backpack, then point to the child putting the book away."
-    ]
+    "focus": {
+      "en": "Use the scene for end-of-day routines and for following two-step directions.",
+      "de": "Die Szene für Abläufe am Tagesende und zum Befolgen zweischrittiger Anweisungen nutzen."
+    },
+    "starterPrompts": {
+      "en": [
+        "Who is packing a backpack?",
+        "Who is near the teacher?",
+        "Who is still working?",
+        "Where does the book go?",
+        "What is the teacher receiving?"
+      ],
+      "de": [
+        "Wer packt einen Rucksack?",
+        "Wer ist bei der Lehrkraft?",
+        "Wer arbeitet noch?",
+        "Wohin kommt das Buch?",
+        "Was bekommt die Lehrkraft?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "What usually happens before children go home?",
+        "First point to the child packing the backpack, then point to the child putting the book away."
+      ],
+      "de": [
+        "Was passiert normalerweise, bevor die Kinder nach Hause gehen?",
+        "Zeige zuerst auf das Kind, das den Rucksack packt, und dann auf das Kind, das das Buch wegräumt."
+      ]
+    }
   },
   "visualAudit": [
     "Reviewed in Wave 3 Batch 3 automatic pass against the main teaching targets."

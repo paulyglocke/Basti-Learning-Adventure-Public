@@ -1,53 +1,134 @@
 {
   "sceneId": "scene.mountains.spatial_clues.09",
   "categoryId": "mountains_alpine",
-  "title": "Mountains Scene 9 — Mountain Spatial Clues",
+  "title": {
+    "en": "Mountains Scene 9 — Mountain Spatial Clues",
+    "de": "Berge, Szene 9 — Hinweise auf Orte in den Bergen"
+  },
   "status": "approved",
-  "purpose": "Complex spatial clues and multi-step listening using alpine animals and landmarks.",
+  "purpose": {
+    "en": "Complex spatial clues and multi-step listening using alpine animals and landmarks.",
+    "de": "Genauere Ortsangaben und mehrschrittige Höraufgaben mit Bergtieren und markanten Orten."
+  },
   "asset": "canonical/mountains_009_spatial_clues.png",
   "promptFile": "prompts/mountains_009_spatial_clues.md",
   "targetLanguage": {
     "nouns": [
-      "eagle",
-      "goat",
-      "marmot",
-      "rock",
-      "bridge",
-      "stream",
-      "mountain"
+      {
+        "en": "eagle",
+        "de": "Adler"
+      },
+      {
+        "en": "goat",
+        "de": "Ziege"
+      },
+      {
+        "en": "marmot",
+        "de": "Murmeltier"
+      },
+      {
+        "en": "rock",
+        "de": "Fels"
+      },
+      {
+        "en": "bridge",
+        "de": "Brücke"
+      },
+      {
+        "en": "stream",
+        "de": "Bach"
+      },
+      {
+        "en": "mountain",
+        "de": "Berg"
+      }
     ],
     "verbs": [
-      "flying",
-      "standing",
-      "sitting"
+      {
+        "en": "flying",
+        "de": "fliegen"
+      },
+      {
+        "en": "standing",
+        "de": "stehen"
+      },
+      {
+        "en": "sitting",
+        "de": "sitzen"
+      }
     ],
     "adjectives": [
-      "high",
-      "low",
-      "above",
-      "below",
-      "near"
+      {
+        "en": "high",
+        "de": "hoch"
+      },
+      {
+        "en": "low",
+        "de": "tief"
+      },
+      {
+        "en": "above",
+        "de": "über"
+      },
+      {
+        "en": "below",
+        "de": "unter"
+      },
+      {
+        "en": "near",
+        "de": "in der Nähe"
+      }
     ],
     "sentenceModels": [
-      "The eagle is above the mountains.",
-      "The goat is on the high rock.",
-      "The marmot is below the goat.",
-      "The bridge is over the stream."
+      {
+        "en": "The eagle is above the mountains.",
+        "de": "Der Adler ist über den Bergen."
+      },
+      {
+        "en": "The goat is on the high rock.",
+        "de": "Die Ziege ist auf dem hohen Felsen."
+      },
+      {
+        "en": "The marmot is below the goat.",
+        "de": "Das Murmeltier ist unterhalb der Ziege."
+      },
+      {
+        "en": "The bridge is over the stream.",
+        "de": "Die Brücke führt über den Bach."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Use two-part spatial clues and compare high/low positions.",
-    "starterPrompts": [
-      "Which animal is highest?",
-      "Where is the goat?",
-      "What is below the goat?",
-      "What is over the stream?",
-      "Where is the eagle?"
-    ],
-    "expansionPrompts": [
-      "First point to the goat, then point to the marmot.",
-      "Find the animal below the high rock and near the water."
-    ]
+    "focus": {
+      "en": "Use two-part spatial clues and compare high/low positions.",
+      "de": "Ortsangaben mit zwei Hinweisen verwenden und hohe und tiefe Positionen vergleichen."
+    },
+    "starterPrompts": {
+      "en": [
+        "Which animal is highest?",
+        "Where is the goat?",
+        "What is below the goat?",
+        "What is over the stream?",
+        "Where is the eagle?"
+      ],
+      "de": [
+        "Welches Tier ist am höchsten?",
+        "Wo ist die Ziege?",
+        "Was ist unterhalb der Ziege?",
+        "Was ist über dem Bach?",
+        "Wo ist der Adler?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "First point to the goat, then point to the marmot.",
+        "Find the animal below the high rock and near the water."
+      ],
+      "de": [
+        "Zeige zuerst auf die Ziege und dann auf das Murmeltier.",
+        "Finde das Tier unterhalb des hohen Felsens und in der Nähe des Wassers."
+      ]
+    }
   },
   "visualAudit": [
     "Reviewed in Wave 3 Batch 2 automatic pass against the visible teaching targets."

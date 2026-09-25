@@ -1,61 +1,164 @@
 {
   "sceneId": "scene.woodland.before_rain.07",
   "categoryId": "woodland_forest",
-  "title": "Woodland Scene 7 — Before the Rain",
+  "title": {
+    "en": "Woodland Scene 7 — Before the Rain",
+    "de": "Wald, Szene 7 — Bevor der Regen kommt"
+  },
   "status": "approved",
-  "purpose": "Weather-linked sequencing and discussion about what animals do before the rain comes.",
+  "purpose": {
+    "en": "Weather-linked sequencing and discussion about what animals do before the rain comes.",
+    "de": "Abfolgen rund um das Wetter und ein Gespräch darüber, was Tiere tun, bevor der Regen kommt."
+  },
   "asset": "canonical/woodland_007_before_rain.png",
   "promptFile": "prompts/woodland_007_before_rain.md",
   "targetLanguage": {
     "nouns": [
-      "squirrel",
-      "acorns",
-      "tree hole",
-      "deer",
-      "rabbit",
-      "burrow",
-      "fox",
-      "bush",
-      "owl",
-      "clouds",
-      "sun"
+      {
+        "en": "squirrel",
+        "de": "Eichhörnchen"
+      },
+      {
+        "en": "acorns",
+        "de": "Eicheln"
+      },
+      {
+        "en": "tree hole",
+        "de": "Baumhöhle"
+      },
+      {
+        "en": "deer",
+        "de": "Reh"
+      },
+      {
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      {
+        "en": "burrow",
+        "de": "Bau"
+      },
+      {
+        "en": "fox",
+        "de": "Fuchs"
+      },
+      {
+        "en": "bush",
+        "de": "Busch"
+      },
+      {
+        "en": "owl",
+        "de": "Eule"
+      },
+      {
+        "en": "clouds",
+        "de": "Wolken"
+      },
+      {
+        "en": "sun",
+        "de": "Sonne"
+      }
     ],
     "verbs": [
-      "carrying",
-      "looking",
-      "running",
-      "hiding",
-      "waiting"
+      {
+        "en": "carrying",
+        "de": "tragen"
+      },
+      {
+        "en": "looking",
+        "de": "schauen"
+      },
+      {
+        "en": "running",
+        "de": "rennen"
+      },
+      {
+        "en": "hiding",
+        "de": "sich verstecken"
+      },
+      {
+        "en": "waiting",
+        "de": "warten"
+      }
     ],
     "adjectives": [
-      "sunny",
-      "dark",
-      "small",
-      "brown",
-      "grey"
+      {
+        "en": "sunny",
+        "de": "sonnig"
+      },
+      {
+        "en": "dark",
+        "de": "dunkel"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "brown",
+        "de": "braun"
+      },
+      {
+        "en": "grey",
+        "de": "grau"
+      }
     ],
     "sentenceModels": [
-      "The squirrel is carrying acorns to the tree hole.",
-      "The deer is looking at the sky.",
-      "The rabbit is running to the burrow.",
-      "The fox is going under the bush.",
-      "The owl is waiting on the branch."
+      {
+        "en": "The squirrel is carrying acorns to the tree hole.",
+        "de": "Das Eichhörnchen trägt Eicheln zur Baumhöhle."
+      },
+      {
+        "en": "The deer is looking at the sky.",
+        "de": "Das Reh schaut zum Himmel."
+      },
+      {
+        "en": "The rabbit is running to the burrow.",
+        "de": "Das Kaninchen rennt zum Bau."
+      },
+      {
+        "en": "The fox is going under the bush.",
+        "de": "Der Fuchs geht unter den Busch."
+      },
+      {
+        "en": "The owl is waiting on the branch.",
+        "de": "Die Eule wartet auf dem Ast."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Talk about changing weather and what each animal might do before the rain starts.",
-    "starterPrompts": [
-      "What is the squirrel carrying?",
-      "Why is the rabbit going to the burrow?",
-      "What is the deer looking at?",
-      "Where is the fox going?",
-      "What can you see in the sky?"
-    ],
-    "expansionPrompts": [
-      "What might happen next when the rain comes?",
-      "Which animals are getting ready?",
-      "Can you tell the story from left to right?"
-    ]
+    "focus": {
+      "en": "Talk about changing weather and what each animal might do before the rain starts.",
+      "de": "Über wechselndes Wetter sprechen und überlegen, was die Tiere tun könnten, bevor der Regen beginnt."
+    },
+    "starterPrompts": {
+      "en": [
+        "What is the squirrel carrying?",
+        "Why is the rabbit going to the burrow?",
+        "What is the deer looking at?",
+        "Where is the fox going?",
+        "What can you see in the sky?"
+      ],
+      "de": [
+        "Was trägt das Eichhörnchen?",
+        "Warum geht das Kaninchen zum Bau?",
+        "Was schaut sich das Reh an?",
+        "Wohin geht der Fuchs?",
+        "Was siehst du am Himmel?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "What might happen next when the rain comes?",
+        "Which animals are getting ready?",
+        "Can you tell the story from left to right?"
+      ],
+      "de": [
+        "Was könnte als Nächstes passieren, wenn der Regen kommt?",
+        "Welche Tiere bereiten sich vor?",
+        "Kannst du die Geschichte von links nach rechts erzählen?"
+      ]
+    }
   },
   "visualAudit": [
     "One squirrel carrying acorns to a tree hole on the left.",

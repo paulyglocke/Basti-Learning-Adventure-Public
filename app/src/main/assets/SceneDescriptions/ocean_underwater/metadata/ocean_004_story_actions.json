@@ -1,63 +1,170 @@
 {
   "sceneId": "scene.ocean.story_actions.04",
   "categoryId": "ocean_underwater",
-  "title": "Ocean Scene 4 — Reef Story Actions",
+  "title": {
+    "en": "Ocean Scene 4 — Reef Story Actions",
+    "de": "Meer, Szene 4 — Geschichten am Riff"
+  },
   "status": "approved",
-  "purpose": "Longer sentences and linked observations in one shared reef scene.",
+  "purpose": {
+    "en": "Longer sentences and linked observations in one shared reef scene.",
+    "de": "Längere Sätze und zusammenhängende Beobachtungen in einer gemeinsamen Riffszene."
+  },
   "asset": "canonical/ocean_004_story_actions.png",
   "promptFile": "prompts/ocean_004_story_actions.md",
   "targetLanguage": {
     "nouns": [
-      "turtle",
-      "octopus",
-      "hermit crab",
-      "shell",
-      "starfish",
-      "seahorse",
-      "fish",
-      "treasure chest",
-      "seaweed",
-      "rock"
+      {
+        "en": "turtle",
+        "de": "Schildkröte"
+      },
+      {
+        "en": "octopus",
+        "de": "Oktopus"
+      },
+      {
+        "en": "hermit crab",
+        "de": "Einsiedlerkrebs"
+      },
+      {
+        "en": "shell",
+        "de": "Muschel"
+      },
+      {
+        "en": "starfish",
+        "de": "Seestern"
+      },
+      {
+        "en": "seahorse",
+        "de": "Seepferdchen"
+      },
+      {
+        "en": "fish",
+        "de": "Fisch"
+      },
+      {
+        "en": "treasure chest",
+        "de": "Schatztruhe"
+      },
+      {
+        "en": "seaweed",
+        "de": "Seegras"
+      },
+      {
+        "en": "rock",
+        "de": "Stein"
+      }
     ],
     "verbs": [
-      "eating",
-      "swimming",
-      "opening",
-      "looking",
-      "choosing",
-      "watching"
+      {
+        "en": "eating",
+        "de": "fressen"
+      },
+      {
+        "en": "swimming",
+        "de": "schwimmen"
+      },
+      {
+        "en": "opening",
+        "de": "öffnen"
+      },
+      {
+        "en": "looking",
+        "de": "schauen"
+      },
+      {
+        "en": "choosing",
+        "de": "auswählen"
+      },
+      {
+        "en": "watching",
+        "de": "beobachten"
+      }
     ],
     "adjectives": [
-      "big",
-      "small",
-      "orange",
-      "purple",
-      "green",
-      "open"
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "orange",
+        "de": "orange"
+      },
+      {
+        "en": "purple",
+        "de": "lila"
+      },
+      {
+        "en": "green",
+        "de": "grün"
+      },
+      {
+        "en": "open",
+        "de": "offen"
+      }
     ],
     "sentenceModels": [
-      "The turtle is eating seaweed.",
-      "The octopus is opening the treasure chest.",
-      "The hermit crab is looking at the shells.",
-      "The starfish is on the rock.",
-      "The seahorse is next to the coral."
+      {
+        "en": "The turtle is eating seaweed.",
+        "de": "Die Schildkröte frisst Seegras."
+      },
+      {
+        "en": "The octopus is opening the treasure chest.",
+        "de": "Der Oktopus öffnet die Schatztruhe."
+      },
+      {
+        "en": "The hermit crab is looking at the shells.",
+        "de": "Der Einsiedlerkrebs schaut sich die Muscheln an."
+      },
+      {
+        "en": "The starfish is on the rock.",
+        "de": "Der Seestern ist auf dem Stein."
+      },
+      {
+        "en": "The seahorse is next to the coral.",
+        "de": "Das Seepferdchen ist neben der Koralle."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Encourage Basti to make two-part and three-part sentences about who is doing what and where.",
-    "starterPrompts": [
-      "What can you see first?",
-      "Who is doing something?",
-      "Can you tell me where the starfish is?",
-      "Which animal is near the treasure chest?",
-      "Can you make a longer sentence?"
-    ],
-    "expansionPrompts": [
-      "Tell me two things about the turtle.",
-      "What is the octopus doing?",
-      "Which shells are big and small?",
-      "What might the hermit crab choose next?"
-    ]
+    "focus": {
+      "en": "Encourage Basti to make two-part and three-part sentences about who is doing what and where.",
+      "de": "Basti ermutigen, in Sätzen zwei oder drei Angaben zu verbinden: Wer macht was und wo?"
+    },
+    "starterPrompts": {
+      "en": [
+        "What can you see first?",
+        "Who is doing something?",
+        "Can you tell me where the starfish is?",
+        "Which animal is near the treasure chest?",
+        "Can you make a longer sentence?"
+      ],
+      "de": [
+        "Was siehst du zuerst?",
+        "Wer macht etwas?",
+        "Kannst du mir sagen, wo der Seestern ist?",
+        "Welches Tier ist in der Nähe der Schatztruhe?",
+        "Kannst du einen längeren Satz sagen?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Tell me two things about the turtle.",
+        "What is the octopus doing?",
+        "Which shells are big and small?",
+        "What might the hermit crab choose next?"
+      ],
+      "de": [
+        "Erzähl mir zwei Dinge über die Schildkröte.",
+        "Was macht der Oktopus?",
+        "Welche Muscheln sind groß und welche klein?",
+        "Was könnte sich der Einsiedlerkrebs als Nächstes aussuchen?"
+      ]
+    }
   },
   "visualAudit": [
     "One turtle eating seaweed in the centre.",

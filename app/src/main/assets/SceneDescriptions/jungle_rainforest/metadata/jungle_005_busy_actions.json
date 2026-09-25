@@ -1,59 +1,158 @@
 {
   "sceneId": "scene.jungle.busy_actions.05",
   "categoryId": "jungle_rainforest",
-  "title": "Jungle Scene 5 — Busy Jungle Actions",
+  "title": {
+    "en": "Jungle Scene 5 — Busy Jungle Actions",
+    "de": "Dschungel, Szene 5 — Viel los im Dschungel"
+  },
   "status": "approved",
-  "purpose": "Longer action descriptions in a lively but readable scene.",
+  "purpose": {
+    "en": "Longer action descriptions in a lively but readable scene.",
+    "de": "Längere Beschreibungen von Handlungen in einer lebhaften, aber übersichtlichen Szene."
+  },
   "asset": "canonical/jungle_005_busy_actions.png",
   "promptFile": "prompts/jungle_005_busy_actions.md",
   "targetLanguage": {
     "nouns": [
-      "monkey",
-      "banana",
-      "elephant",
-      "frog",
-      "parrot",
-      "sloth",
-      "tiger",
-      "waterfall"
+      {
+        "en": "monkey",
+        "de": "Affe"
+      },
+      {
+        "en": "banana",
+        "de": "Banane"
+      },
+      {
+        "en": "elephant",
+        "de": "Elefant"
+      },
+      {
+        "en": "frog",
+        "de": "Frosch"
+      },
+      {
+        "en": "parrot",
+        "de": "Papagei"
+      },
+      {
+        "en": "sloth",
+        "de": "Faultier"
+      },
+      {
+        "en": "tiger",
+        "de": "Tiger"
+      },
+      {
+        "en": "waterfall",
+        "de": "Wasserfall"
+      }
     ],
     "verbs": [
-      "holding",
-      "spraying",
-      "jumping",
-      "flying",
-      "hanging",
-      "walking"
+      {
+        "en": "holding",
+        "de": "halten"
+      },
+      {
+        "en": "spraying",
+        "de": "spritzen"
+      },
+      {
+        "en": "jumping",
+        "de": "springen"
+      },
+      {
+        "en": "flying",
+        "de": "fliegen"
+      },
+      {
+        "en": "hanging",
+        "de": "hängen"
+      },
+      {
+        "en": "walking",
+        "de": "gehen"
+      }
     ],
     "adjectives": [
-      "grey",
-      "green",
-      "red",
-      "orange",
-      "long"
+      {
+        "en": "grey",
+        "de": "grau"
+      },
+      {
+        "en": "green",
+        "de": "grün"
+      },
+      {
+        "en": "red",
+        "de": "rot"
+      },
+      {
+        "en": "orange",
+        "de": "orange"
+      },
+      {
+        "en": "long",
+        "de": "lang"
+      }
     ],
     "sentenceModels": [
-      "The monkey is holding a banana.",
-      "The elephant is spraying water.",
-      "The frog is jumping.",
-      "The parrot is flying.",
-      "The sloth is hanging from the branch.",
-      "The tiger is walking."
+      {
+        "en": "The monkey is holding a banana.",
+        "de": "Der Affe hält eine Banane."
+      },
+      {
+        "en": "The elephant is spraying water.",
+        "de": "Der Elefant spritzt Wasser."
+      },
+      {
+        "en": "The frog is jumping.",
+        "de": "Der Frosch springt."
+      },
+      {
+        "en": "The parrot is flying.",
+        "de": "Der Papagei fliegt."
+      },
+      {
+        "en": "The sloth is hanging from the branch.",
+        "de": "Das Faultier hängt am Ast."
+      },
+      {
+        "en": "The tiger is walking.",
+        "de": "Der Tiger geht."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Help Basti describe several actions one after another without losing clarity.",
-    "starterPrompts": [
-      "Who is spraying water?",
-      "Which animal is flying?",
-      "What is the monkey holding?",
-      "Can you find the jumping animal?",
-      "Which animal is walking through the grass?"
-    ],
-    "expansionPrompts": [
-      "Tell me three things happening in the jungle.",
-      "Can you make a long sentence about the elephant?"
-    ]
+    "focus": {
+      "en": "Help Basti describe several actions one after another without losing clarity.",
+      "de": "Basti dabei helfen, mehrere Handlungen nacheinander klar zu beschreiben."
+    },
+    "starterPrompts": {
+      "en": [
+        "Who is spraying water?",
+        "Which animal is flying?",
+        "What is the monkey holding?",
+        "Can you find the jumping animal?",
+        "Which animal is walking through the grass?"
+      ],
+      "de": [
+        "Wer spritzt Wasser?",
+        "Welches Tier fliegt?",
+        "Was hält der Affe?",
+        "Findest du das Tier, das springt?",
+        "Welches Tier geht durch das Gras?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Tell me three things happening in the jungle.",
+        "Can you make a long sentence about the elephant?"
+      ],
+      "de": [
+        "Erzähl mir drei Dinge, die im Dschungel passieren.",
+        "Kannst du einen langen Satz über den Elefanten sagen?"
+      ]
+    }
   },
   "visualAudit": [
     "Monkey on a branch holding a banana.",

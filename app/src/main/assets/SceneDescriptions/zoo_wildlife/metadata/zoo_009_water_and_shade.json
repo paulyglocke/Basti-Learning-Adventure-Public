@@ -1,54 +1,138 @@
 {
   "sceneId": "scene.zoo.water_shade.09",
   "categoryId": "zoo_wildlife",
-  "title": "Zoo Scene 9 — Water, Shade and Rest",
+  "title": {
+    "en": "Zoo Scene 9 — Water, Shade and Rest",
+    "de": "Zoo, Szene 9 — Wasser, Schatten und Ruhe"
+  },
   "status": "approved",
-  "purpose": "Support simple inference, action talk and needs-based language using a calm zoo landscape.",
+  "purpose": {
+    "en": "Support simple inference, action talk and needs-based language using a calm zoo landscape.",
+    "de": "Einfache Überlegungen, Gespräche über Handlungen und Bedürfnisse in einer ruhigen Zoolandschaft unterstützen."
+  },
   "asset": "canonical/zoo_009_water_and_shade.png",
   "promptFile": "prompts/zoo_009_water_and_shade.md",
   "targetLanguage": {
     "nouns": [
-      "elephant",
-      "lion",
-      "penguin",
-      "monkey",
-      "water",
-      "pool",
-      "rock",
-      "shelter"
+      {
+        "en": "elephant",
+        "de": "Elefant"
+      },
+      {
+        "en": "lion",
+        "de": "Löwe"
+      },
+      {
+        "en": "penguin",
+        "de": "Pinguin"
+      },
+      {
+        "en": "monkey",
+        "de": "Affe"
+      },
+      {
+        "en": "water",
+        "de": "Wasser"
+      },
+      {
+        "en": "pool",
+        "de": "Wasserbecken"
+      },
+      {
+        "en": "rock",
+        "de": "Fels"
+      },
+      {
+        "en": "shelter",
+        "de": "Unterschlupf"
+      }
     ],
     "verbs": [
-      "resting",
-      "standing",
-      "drinking",
-      "sitting"
+      {
+        "en": "resting",
+        "de": "sich ausruhen"
+      },
+      {
+        "en": "standing",
+        "de": "stehen"
+      },
+      {
+        "en": "drinking",
+        "de": "trinken"
+      },
+      {
+        "en": "sitting",
+        "de": "sitzen"
+      }
     ],
     "adjectives": [
-      "cool",
-      "shady",
-      "wet",
-      "calm"
+      {
+        "en": "cool",
+        "de": "kühl"
+      },
+      {
+        "en": "shady",
+        "de": "schattig"
+      },
+      {
+        "en": "wet",
+        "de": "nass"
+      },
+      {
+        "en": "calm",
+        "de": "ruhig"
+      }
     ],
     "sentenceModels": [
-      "The elephant is near the water.",
-      "The lion is resting in the shade.",
-      "The penguin is by the pool.",
-      "The monkey is on the branch."
+      {
+        "en": "The elephant is near the water.",
+        "de": "Der Elefant ist in der Nähe des Wassers."
+      },
+      {
+        "en": "The lion is resting in the shade.",
+        "de": "Der Löwe ruht sich im Schatten aus."
+      },
+      {
+        "en": "The penguin is by the pool.",
+        "de": "Der Pinguin ist beim Wasserbecken."
+      },
+      {
+        "en": "The monkey is on the branch.",
+        "de": "Der Affe ist auf dem Ast."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Use the scene for talking about heat, water, rest and which places animals might like.",
-    "starterPrompts": [
-      "Which animals are near the water?",
-      "Who is resting?",
-      "Where is the monkey?",
-      "Which place looks shady?",
-      "Why might an animal go near the water?"
-    ],
-    "expansionPrompts": [
-      "Tell me which animals might want shade and which might want water.",
-      "First point to an animal near the pool, then point to an animal in the shade."
-    ]
+    "focus": {
+      "en": "Use the scene for talking about heat, water, rest and which places animals might like.",
+      "de": "Mit der Szene über Hitze, Wasser, Ruhe und mögliche Lieblingsplätze der Tiere sprechen."
+    },
+    "starterPrompts": {
+      "en": [
+        "Which animals are near the water?",
+        "Who is resting?",
+        "Where is the monkey?",
+        "Which place looks shady?",
+        "Why might an animal go near the water?"
+      ],
+      "de": [
+        "Welche Tiere sind in der Nähe des Wassers?",
+        "Wer ruht sich aus?",
+        "Wo ist der Affe?",
+        "Welcher Platz sieht schattig aus?",
+        "Warum könnte ein Tier ans Wasser gehen?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Tell me which animals might want shade and which might want water.",
+        "First point to an animal near the pool, then point to an animal in the shade."
+      ],
+      "de": [
+        "Sag mir, welche Tiere vielleicht Schatten suchen und welche Wasser möchten.",
+        "Zeige zuerst auf ein Tier beim Wasserbecken und dann auf ein Tier im Schatten."
+      ]
+    }
   },
   "visualAudit": [
     "Reviewed in Wave 3 Batch 3 automatic pass against the main teaching targets."

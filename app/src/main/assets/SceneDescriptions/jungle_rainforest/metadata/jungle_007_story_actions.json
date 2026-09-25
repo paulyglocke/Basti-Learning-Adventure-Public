@@ -1,60 +1,160 @@
 {
   "sceneId": "scene.jungle.story_actions.07",
   "categoryId": "jungle_rainforest",
-  "title": "Jungle Scene 7 — Rainforest Story Actions",
+  "title": {
+    "en": "Jungle Scene 7 — Rainforest Story Actions",
+    "de": "Dschungel, Szene 7 — Eine Geschichte im Regenwald"
+  },
   "status": "approved",
-  "purpose": "Linked actions and simple “what happens next?” discussion in one rainforest scene.",
+  "purpose": {
+    "en": "Linked actions and simple “what happens next?” discussion in one rainforest scene.",
+    "de": "Zusammenhängende Handlungen und ein einfaches Gespräch über „Was passiert als Nächstes?“ in einer Regenwaldszene."
+  },
   "asset": "canonical/jungle_007_story_actions.png",
   "promptFile": "prompts/jungle_007_story_actions.md",
   "targetLanguage": {
     "nouns": [
-      "monkey",
-      "banana",
-      "sloth",
-      "parrot",
-      "leaf",
-      "nest",
-      "frog",
-      "leaf",
-      "tiger",
-      "waterfall",
-      "stream"
+      {
+        "en": "monkey",
+        "de": "Affe"
+      },
+      {
+        "en": "banana",
+        "de": "Banane"
+      },
+      {
+        "en": "sloth",
+        "de": "Faultier"
+      },
+      {
+        "en": "parrot",
+        "de": "Papagei"
+      },
+      {
+        "en": "leaf",
+        "de": "Blatt"
+      },
+      {
+        "en": "nest",
+        "de": "Nest"
+      },
+      {
+        "en": "frog",
+        "de": "Frosch"
+      },
+      {
+        "en": "leaf",
+        "de": "Blatt"
+      },
+      {
+        "en": "tiger",
+        "de": "Tiger"
+      },
+      {
+        "en": "waterfall",
+        "de": "Wasserfall"
+      },
+      {
+        "en": "stream",
+        "de": "Bach"
+      }
     ],
     "verbs": [
-      "holding",
-      "hanging",
-      "bringing",
-      "jumping",
-      "drinking"
+      {
+        "en": "holding",
+        "de": "halten"
+      },
+      {
+        "en": "hanging",
+        "de": "hängen"
+      },
+      {
+        "en": "bringing",
+        "de": "bringen"
+      },
+      {
+        "en": "jumping",
+        "de": "springen"
+      },
+      {
+        "en": "drinking",
+        "de": "trinken"
+      }
     ],
     "adjectives": [
-      "green",
-      "big",
-      "colourful",
-      "orange"
+      {
+        "en": "green",
+        "de": "grün"
+      },
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "colourful",
+        "de": "bunt"
+      },
+      {
+        "en": "orange",
+        "de": "orange"
+      }
     ],
     "sentenceModels": [
-      "The monkey is holding a banana.",
-      "The sloth is hanging from the branch.",
-      "The parrot is bringing a leaf to the nest.",
-      "The frog is jumping.",
-      "The tiger is drinking water."
+      {
+        "en": "The monkey is holding a banana.",
+        "de": "Der Affe hält eine Banane."
+      },
+      {
+        "en": "The sloth is hanging from the branch.",
+        "de": "Das Faultier hängt am Ast."
+      },
+      {
+        "en": "The parrot is bringing a leaf to the nest.",
+        "de": "Der Papagei bringt ein Blatt zum Nest."
+      },
+      {
+        "en": "The frog is jumping.",
+        "de": "Der Frosch springt."
+      },
+      {
+        "en": "The tiger is drinking water.",
+        "de": "Der Tiger trinkt Wasser."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Talk about several linked rainforest actions and predict what might happen next.",
-    "starterPrompts": [
-      "Who is holding something?",
-      "What is the parrot carrying?",
-      "Which animal is jumping?",
-      "Who is drinking?",
-      "Where is the sloth?"
-    ],
-    "expansionPrompts": [
-      "What might the parrot do when it reaches the nest?",
-      "What might happen next after the frog jumps?",
-      "Can you tell the whole rainforest story?"
-    ]
+    "focus": {
+      "en": "Talk about several linked rainforest actions and predict what might happen next.",
+      "de": "Über mehrere zusammenhängende Handlungen im Regenwald sprechen und überlegen, was als Nächstes passieren könnte."
+    },
+    "starterPrompts": {
+      "en": [
+        "Who is holding something?",
+        "What is the parrot carrying?",
+        "Which animal is jumping?",
+        "Who is drinking?",
+        "Where is the sloth?"
+      ],
+      "de": [
+        "Wer hält etwas?",
+        "Was trägt der Papagei?",
+        "Welches Tier springt?",
+        "Wer trinkt?",
+        "Wo ist das Faultier?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "What might the parrot do when it reaches the nest?",
+        "What might happen next after the frog jumps?",
+        "Can you tell the whole rainforest story?"
+      ],
+      "de": [
+        "Was könnte der Papagei machen, wenn er am Nest ankommt?",
+        "Was könnte passieren, nachdem der Frosch gesprungen ist?",
+        "Kannst du die ganze Regenwaldgeschichte erzählen?"
+      ]
+    }
   },
   "visualAudit": [
     "One monkey on the left holding a banana.",

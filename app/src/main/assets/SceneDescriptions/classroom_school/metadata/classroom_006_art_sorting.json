@@ -1,55 +1,142 @@
 {
   "sceneId": "scene.classroom.art_sorting.06",
   "categoryId": "classroom_school",
-  "title": "Classroom Scene 6 — Art Table and What Belongs",
+  "title": {
+    "en": "Classroom Scene 6 — Art Table and What Belongs",
+    "de": "Klassenraum, Szene 6 — Was gehört auf den Maltisch?"
+  },
   "status": "approved",
-  "purpose": "Classroom problem solving, object categories and simple two-step instructions.",
+  "purpose": {
+    "en": "Classroom problem solving, object categories and simple two-step instructions.",
+    "de": "Probleme im Klassenraum lösen, Gegenstände zuordnen und einfache zweischrittige Anweisungen befolgen."
+  },
   "asset": "canonical/classroom_006_art_sorting.png",
   "promptFile": "prompts/classroom_006_art_sorting.md",
   "targetLanguage": {
     "nouns": [
-      "painting",
-      "paper",
-      "paint",
-      "pencils",
-      "table",
-      "chair",
-      "football",
-      "shelf"
+      {
+        "en": "painting",
+        "de": "Bild"
+      },
+      {
+        "en": "paper",
+        "de": "Papier"
+      },
+      {
+        "en": "paint",
+        "de": "Farbe"
+      },
+      {
+        "en": "pencils",
+        "de": "Bleistifte"
+      },
+      {
+        "en": "table",
+        "de": "Tisch"
+      },
+      {
+        "en": "chair",
+        "de": "Stuhl"
+      },
+      {
+        "en": "football",
+        "de": "Fußball"
+      },
+      {
+        "en": "shelf",
+        "de": "Regal"
+      }
     ],
     "verbs": [
-      "draw",
-      "paint",
-      "put away",
-      "sort"
+      {
+        "en": "draw",
+        "de": "zeichnen"
+      },
+      {
+        "en": "paint",
+        "de": "malen"
+      },
+      {
+        "en": "put away",
+        "de": "wegräumen"
+      },
+      {
+        "en": "sort",
+        "de": "sortieren"
+      }
     ],
     "adjectives": [
-      "colourful",
-      "red",
-      "yellow",
-      "green"
+      {
+        "en": "colourful",
+        "de": "bunt"
+      },
+      {
+        "en": "red",
+        "de": "rot"
+      },
+      {
+        "en": "yellow",
+        "de": "gelb"
+      },
+      {
+        "en": "green",
+        "de": "grün"
+      }
     ],
     "sentenceModels": [
-      "The painting is on the table.",
-      "The pencils are in the cup.",
-      "The paint is on the table.",
-      "The football is on the chair.",
-      "The football does not belong with the art things."
+      {
+        "en": "The painting is on the table.",
+        "de": "Das Bild liegt auf dem Tisch."
+      },
+      {
+        "en": "The pencils are in the cup.",
+        "de": "Die Bleistifte sind im Becher."
+      },
+      {
+        "en": "The paint is on the table.",
+        "de": "Die Farbe ist auf dem Tisch."
+      },
+      {
+        "en": "The football is on the chair.",
+        "de": "Der Fußball ist auf dem Stuhl."
+      },
+      {
+        "en": "The football does not belong with the art things.",
+        "de": "Der Fußball gehört nicht zu den Malsachen."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Practise simple categorisation and two-step classroom instructions.",
-    "starterPrompts": [
-      "What can we use for drawing?",
-      "Where are the pencils?",
-      "What is on the green chair?",
-      "Which thing does not belong with the art materials?",
-      "Where should the football go?"
-    ],
-    "expansionPrompts": [
-      "First point to the paint, then point to the football.",
-      "Tell me two things you could put away."
-    ]
+    "focus": {
+      "en": "Practise simple categorisation and two-step classroom instructions.",
+      "de": "Einfaches Zuordnen und zweischrittige Anweisungen im Klassenraum üben."
+    },
+    "starterPrompts": {
+      "en": [
+        "What can we use for drawing?",
+        "Where are the pencils?",
+        "What is on the green chair?",
+        "Which thing does not belong with the art materials?",
+        "Where should the football go?"
+      ],
+      "de": [
+        "Was können wir zum Zeichnen benutzen?",
+        "Wo sind die Bleistifte?",
+        "Was ist auf dem grünen Stuhl?",
+        "Was gehört nicht zu den Malsachen?",
+        "Wohin gehört der Fußball?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "First point to the paint, then point to the football.",
+        "Tell me two things you could put away."
+      ],
+      "de": [
+        "Zeige zuerst auf die Farbe und dann auf den Fußball.",
+        "Nenne mir zwei Dinge, die du wegräumen könntest."
+      ]
+    }
   },
   "visualAudit": [
     "Auto-batch panel reviewed for the described targets."

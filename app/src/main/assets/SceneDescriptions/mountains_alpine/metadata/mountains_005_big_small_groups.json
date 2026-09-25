@@ -1,54 +1,138 @@
 {
   "sceneId": "scene.mountains.big_small_groups.05",
   "categoryId": "mountains_alpine",
-  "title": "Mountains Scene 5 — Big, Small and Groups",
+  "title": {
+    "en": "Mountains Scene 5 — Big, Small and Groups",
+    "de": "Berge, Szene 5 — Groß, klein und Gruppen"
+  },
   "status": "approved",
-  "purpose": "Mountain-animal features, size, colour and counting.",
+  "purpose": {
+    "en": "Mountain-animal features, size, colour and counting.",
+    "de": "Merkmale von Bergtieren, Größe, Farbe und Zählen."
+  },
   "asset": "canonical/mountains_005_big_small_groups.png",
   "promptFile": "prompts/mountains_005_big_small_groups.md",
   "targetLanguage": {
     "nouns": [
-      "goat",
-      "horns",
-      "sheep",
-      "marmots",
-      "rabbit",
-      "eagle",
-      "flowers"
+      {
+        "en": "goat",
+        "de": "Ziege"
+      },
+      {
+        "en": "horns",
+        "de": "Hörner"
+      },
+      {
+        "en": "sheep",
+        "de": "Schaf"
+      },
+      {
+        "en": "marmots",
+        "de": "Murmeltiere"
+      },
+      {
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      {
+        "en": "eagle",
+        "de": "Adler"
+      },
+      {
+        "en": "flowers",
+        "de": "Blumen"
+      }
     ],
     "verbs": [
-      "standing",
-      "sitting",
-      "perching"
+      {
+        "en": "standing",
+        "de": "stehen"
+      },
+      {
+        "en": "sitting",
+        "de": "sitzen"
+      },
+      {
+        "en": "perching",
+        "de": "sitzen"
+      }
     ],
     "adjectives": [
-      "big",
-      "small",
-      "white",
-      "brown",
-      "fluffy"
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "white",
+        "de": "weiß"
+      },
+      {
+        "en": "brown",
+        "de": "braun"
+      },
+      {
+        "en": "fluffy",
+        "de": "flauschig"
+      }
     ],
     "sentenceModels": [
-      "The goat is big.",
-      "The sheep is fluffy.",
-      "There are three marmots.",
-      "The rabbit is small and white.",
-      "The eagle is on the rock."
+      {
+        "en": "The goat is big.",
+        "de": "Die Ziege ist groß."
+      },
+      {
+        "en": "The sheep is fluffy.",
+        "de": "Das Schaf ist flauschig."
+      },
+      {
+        "en": "There are three marmots.",
+        "de": "Da sind drei Murmeltiere."
+      },
+      {
+        "en": "The rabbit is small and white.",
+        "de": "Das Kaninchen ist klein und weiß."
+      },
+      {
+        "en": "The eagle is on the rock.",
+        "de": "Der Adler ist auf dem Felsen."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Talk about features, big and small animals, and counting in the mountains.",
-    "starterPrompts": [
-      "Who is big?",
-      "Who is fluffy?",
-      "Can you count the marmots?",
-      "What colour is the rabbit?",
-      "Where is the eagle?"
-    ],
-    "expansionPrompts": [
-      "Which animal has horns?",
-      "Which animals are small?"
-    ]
+    "focus": {
+      "en": "Talk about features, big and small animals, and counting in the mountains.",
+      "de": "Über Merkmale sowie große und kleine Tiere sprechen und in den Bergen zählen."
+    },
+    "starterPrompts": {
+      "en": [
+        "Who is big?",
+        "Who is fluffy?",
+        "Can you count the marmots?",
+        "What colour is the rabbit?",
+        "Where is the eagle?"
+      ],
+      "de": [
+        "Wer ist groß?",
+        "Wer ist flauschig?",
+        "Kannst du die Murmeltiere zählen?",
+        "Welche Farbe hat das Kaninchen?",
+        "Wo ist der Adler?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Which animal has horns?",
+        "Which animals are small?"
+      ],
+      "de": [
+        "Welches Tier hat Hörner?",
+        "Welche Tiere sind klein?"
+      ]
+    }
   },
   "visualAudit": [
     "One big mountain goat with horns.",

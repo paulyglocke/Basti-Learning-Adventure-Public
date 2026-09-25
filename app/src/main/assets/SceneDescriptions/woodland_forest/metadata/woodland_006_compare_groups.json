@@ -1,54 +1,138 @@
 {
   "sceneId": "scene.woodland.compare_groups.06",
   "categoryId": "woodland_forest",
-  "title": "Woodland Scene 6 — Compare and Count",
+  "title": {
+    "en": "Woodland Scene 6 — Compare and Count",
+    "de": "Wald, Szene 6 — Vergleichen und zählen"
+  },
   "status": "approved",
-  "purpose": "Adjectives, visible features and counting a small group.",
+  "purpose": {
+    "en": "Adjectives, visible features and counting a small group.",
+    "de": "Eigenschaftswörter, sichtbare Merkmale und eine kleine Gruppe zählen."
+  },
   "asset": "canonical/woodland_006_compare_groups.png",
   "promptFile": "prompts/woodland_006_compare_groups.md",
   "targetLanguage": {
     "nouns": [
-      "deer",
-      "rabbit",
-      "fox",
-      "hedgehog",
-      "owl",
-      "squirrels"
+      {
+        "en": "deer",
+        "de": "Reh"
+      },
+      {
+        "en": "rabbit",
+        "de": "Kaninchen"
+      },
+      {
+        "en": "fox",
+        "de": "Fuchs"
+      },
+      {
+        "en": "hedgehog",
+        "de": "Igel"
+      },
+      {
+        "en": "owl",
+        "de": "Eule"
+      },
+      {
+        "en": "squirrels",
+        "de": "Eichhörnchen"
+      }
     ],
     "verbs": [
-      "standing",
-      "sitting",
-      "perching"
+      {
+        "en": "standing",
+        "de": "stehen"
+      },
+      {
+        "en": "sitting",
+        "de": "sitzen"
+      },
+      {
+        "en": "perching",
+        "de": "sitzen"
+      }
     ],
     "adjectives": [
-      "big",
-      "small",
-      "three",
-      "fluffy tail",
-      "long ears",
-      "big eyes"
+      {
+        "en": "big",
+        "de": "groß"
+      },
+      {
+        "en": "small",
+        "de": "klein"
+      },
+      {
+        "en": "three",
+        "de": "drei"
+      },
+      {
+        "en": "fluffy tail",
+        "de": "flauschiger Schwanz"
+      },
+      {
+        "en": "long ears",
+        "de": "lange Ohren"
+      },
+      {
+        "en": "big eyes",
+        "de": "große Augen"
+      }
     ],
     "sentenceModels": [
-      "The deer is big.",
-      "The rabbit has long ears.",
-      "The fox has a fluffy tail.",
-      "The owl has big eyes.",
-      "There are three squirrels."
+      {
+        "en": "The deer is big.",
+        "de": "Das Reh ist groß."
+      },
+      {
+        "en": "The rabbit has long ears.",
+        "de": "Das Kaninchen hat lange Ohren."
+      },
+      {
+        "en": "The fox has a fluffy tail.",
+        "de": "Der Fuchs hat einen flauschigen Schwanz."
+      },
+      {
+        "en": "The owl has big eyes.",
+        "de": "Die Eule hat große Augen."
+      },
+      {
+        "en": "There are three squirrels.",
+        "de": "Da sind drei Eichhörnchen."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Use the scene for describing features and counting.",
-    "starterPrompts": [
-      "Which animal is the biggest?",
-      "Which animal has long ears?",
-      "Which animal has a fluffy tail?",
-      "How many squirrels can you see?",
-      "Who has big eyes?"
-    ],
-    "expansionPrompts": [
-      "Compare the deer and the rabbit.",
-      "Tell me two things about the fox."
-    ]
+    "focus": {
+      "en": "Use the scene for describing features and counting.",
+      "de": "Die Szene nutzen, um Merkmale zu beschreiben und zu zählen."
+    },
+    "starterPrompts": {
+      "en": [
+        "Which animal is the biggest?",
+        "Which animal has long ears?",
+        "Which animal has a fluffy tail?",
+        "How many squirrels can you see?",
+        "Who has big eyes?"
+      ],
+      "de": [
+        "Welches Tier ist am größten?",
+        "Welches Tier hat lange Ohren?",
+        "Welches Tier hat einen flauschigen Schwanz?",
+        "Wie viele Eichhörnchen siehst du?",
+        "Wer hat große Augen?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Compare the deer and the rabbit.",
+        "Tell me two things about the fox."
+      ],
+      "de": [
+        "Vergleiche das Reh und das Kaninchen.",
+        "Erzähl mir zwei Dinge über den Fuchs."
+      ]
+    }
   },
   "visualAudit": [
     "Large deer in the centre-left.",

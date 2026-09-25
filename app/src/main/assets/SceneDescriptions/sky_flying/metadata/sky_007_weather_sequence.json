@@ -1,52 +1,130 @@
 {
   "sceneId": "scene.sky.weather_sequence.07",
   "categoryId": "sky_flying",
-  "title": "Sky Scene 7 — Weather Changes",
+  "title": {
+    "en": "Sky Scene 7 — Weather Changes",
+    "de": "Himmel, Szene 7 — Das Wetter ändert sich"
+  },
   "status": "approved",
-  "purpose": "Sequencing weather changes and using before/after language.",
+  "purpose": {
+    "en": "Sequencing weather changes and using before/after language.",
+    "de": "Wetterwechsel in eine Reihenfolge bringen und „vorher“ und „nachher“ verwenden."
+  },
   "asset": "canonical/sky_007_weather_sequence.png",
   "promptFile": "prompts/sky_007_weather_sequence.md",
   "targetLanguage": {
     "nouns": [
-      "sun",
-      "cloud",
-      "rain",
-      "rainbow",
-      "airplane",
-      "birds"
+      {
+        "en": "sun",
+        "de": "Sonne"
+      },
+      {
+        "en": "cloud",
+        "de": "Wolke"
+      },
+      {
+        "en": "rain",
+        "de": "Regen"
+      },
+      {
+        "en": "rainbow",
+        "de": "Regenbogen"
+      },
+      {
+        "en": "airplane",
+        "de": "Flugzeug"
+      },
+      {
+        "en": "birds",
+        "de": "Vögel"
+      }
     ],
     "verbs": [
-      "flying",
-      "raining",
-      "changing"
+      {
+        "en": "flying",
+        "de": "fliegen"
+      },
+      {
+        "en": "raining",
+        "de": "regnen"
+      },
+      {
+        "en": "changing",
+        "de": "sich ändern"
+      }
     ],
     "adjectives": [
-      "sunny",
-      "cloudy",
-      "rainy",
-      "bright",
-      "dark"
+      {
+        "en": "sunny",
+        "de": "sonnig"
+      },
+      {
+        "en": "cloudy",
+        "de": "bewölkt"
+      },
+      {
+        "en": "rainy",
+        "de": "regnerisch"
+      },
+      {
+        "en": "bright",
+        "de": "hell"
+      },
+      {
+        "en": "dark",
+        "de": "dunkel"
+      }
     ],
     "sentenceModels": [
-      "First it is sunny.",
-      "Then the clouds come.",
-      "After that it rains.",
-      "The rainbow comes after the rain."
+      {
+        "en": "First it is sunny.",
+        "de": "Zuerst ist es sonnig."
+      },
+      {
+        "en": "Then the clouds come.",
+        "de": "Dann kommen die Wolken."
+      },
+      {
+        "en": "After that it rains.",
+        "de": "Danach regnet es."
+      },
+      {
+        "en": "The rainbow comes after the rain.",
+        "de": "Der Regenbogen kommt nach dem Regen."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Use first, then, after and before to describe the weather from left to right.",
-    "starterPrompts": [
-      "What is the weather like first?",
-      "What comes after the sun?",
-      "Where is the rain?",
-      "What comes after the rain?",
-      "Can you find the airplane?"
-    ],
-    "expansionPrompts": [
-      "Tell me the weather story from first to last.",
-      "What happens before the rainbow appears?"
-    ]
+    "focus": {
+      "en": "Use first, then, after and before to describe the weather from left to right.",
+      "de": "Mit „zuerst“, „dann“, „danach“ und „davor“ das Wetter von links nach rechts beschreiben."
+    },
+    "starterPrompts": {
+      "en": [
+        "What is the weather like first?",
+        "What comes after the sun?",
+        "Where is the rain?",
+        "What comes after the rain?",
+        "Can you find the airplane?"
+      ],
+      "de": [
+        "Wie ist das Wetter zuerst?",
+        "Was kommt nach der Sonne?",
+        "Wo ist der Regen?",
+        "Was kommt nach dem Regen?",
+        "Findest du das Flugzeug?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Tell me the weather story from first to last.",
+        "What happens before the rainbow appears?"
+      ],
+      "de": [
+        "Erzähl mir die Wettergeschichte vom Anfang bis zum Ende.",
+        "Was passiert, bevor der Regenbogen erscheint?"
+      ]
+    }
   },
   "visualAudit": [
     "Reviewed in Wave 3 Batch 2 automatic pass against the visible teaching targets."

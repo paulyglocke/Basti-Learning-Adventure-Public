@@ -1,54 +1,138 @@
 {
   "sceneId": "scene.zoo.feeding_time.05",
   "categoryId": "zoo_wildlife",
-  "title": "Zoo Scene 5 — Feeding Time",
+  "title": {
+    "en": "Zoo Scene 5 — Feeding Time",
+    "de": "Zoo, Szene 5 — Fütterungszeit"
+  },
   "status": "approved",
-  "purpose": "Animal-care language, eating actions and feature comparison.",
+  "purpose": {
+    "en": "Animal-care language, eating actions and feature comparison.",
+    "de": "Sprache zur Tierpflege, Fresshandlungen und Merkmale vergleichen."
+  },
   "asset": "canonical/zoo_005_feeding_time.png",
   "promptFile": "prompts/zoo_005_feeding_time.md",
   "targetLanguage": {
     "nouns": [
-      "giraffe",
-      "elephant",
-      "zebra",
-      "leaves",
-      "trunk",
-      "neck",
-      "stripes"
+      {
+        "en": "giraffe",
+        "de": "Giraffe"
+      },
+      {
+        "en": "elephant",
+        "de": "Elefant"
+      },
+      {
+        "en": "zebra",
+        "de": "Zebra"
+      },
+      {
+        "en": "leaves",
+        "de": "Blätter"
+      },
+      {
+        "en": "trunk",
+        "de": "Rüssel"
+      },
+      {
+        "en": "neck",
+        "de": "Hals"
+      },
+      {
+        "en": "stripes",
+        "de": "Streifen"
+      }
     ],
     "verbs": [
-      "eating",
-      "reaching",
-      "holding",
-      "standing"
+      {
+        "en": "eating",
+        "de": "fressen"
+      },
+      {
+        "en": "reaching",
+        "de": "sich strecken"
+      },
+      {
+        "en": "holding",
+        "de": "halten"
+      },
+      {
+        "en": "standing",
+        "de": "stehen"
+      }
     ],
     "adjectives": [
-      "tall",
-      "grey",
-      "striped",
-      "green"
+      {
+        "en": "tall",
+        "de": "groß"
+      },
+      {
+        "en": "grey",
+        "de": "grau"
+      },
+      {
+        "en": "striped",
+        "de": "gestreift"
+      },
+      {
+        "en": "green",
+        "de": "grün"
+      }
     ],
     "sentenceModels": [
-      "The giraffe is reaching for leaves.",
-      "The elephant is holding leaves with its trunk.",
-      "The zebra is standing in front.",
-      "The giraffe has a long neck.",
-      "The zebra is striped."
+      {
+        "en": "The giraffe is reaching for leaves.",
+        "de": "Die Giraffe streckt sich nach den Blättern."
+      },
+      {
+        "en": "The elephant is holding leaves with its trunk.",
+        "de": "Der Elefant hält Blätter mit seinem Rüssel."
+      },
+      {
+        "en": "The zebra is standing in front.",
+        "de": "Das Zebra steht vorne."
+      },
+      {
+        "en": "The giraffe has a long neck.",
+        "de": "Die Giraffe hat einen langen Hals."
+      },
+      {
+        "en": "The zebra is striped.",
+        "de": "Das Zebra ist gestreift."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Talk about feeding and the body features animals use to reach food.",
-    "starterPrompts": [
-      "Who is eating leaves?",
-      "What is the elephant using?",
-      "Which animal has a long neck?",
-      "Which animal is striped?",
-      "Who is standing in front?"
-    ],
-    "expansionPrompts": [
-      "How can the giraffe reach high food?",
-      "How can the elephant pick up leaves?"
-    ]
+    "focus": {
+      "en": "Talk about feeding and the body features animals use to reach food.",
+      "de": "Über das Fressen und die Körpermerkmale sprechen, mit denen Tiere ihr Futter erreichen."
+    },
+    "starterPrompts": {
+      "en": [
+        "Who is eating leaves?",
+        "What is the elephant using?",
+        "Which animal has a long neck?",
+        "Which animal is striped?",
+        "Who is standing in front?"
+      ],
+      "de": [
+        "Wer frisst Blätter?",
+        "Was benutzt der Elefant?",
+        "Welches Tier hat einen langen Hals?",
+        "Welches Tier ist gestreift?",
+        "Wer steht vorne?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "How can the giraffe reach high food?",
+        "How can the elephant pick up leaves?"
+      ],
+      "de": [
+        "Wie kann die Giraffe Futter weit oben erreichen?",
+        "Wie kann der Elefant Blätter aufheben?"
+      ]
+    }
   },
   "visualAudit": [
     "Auto-batch panel reviewed for the described targets."

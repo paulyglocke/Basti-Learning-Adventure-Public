@@ -1,52 +1,130 @@
 {
   "sceneId": "scene.mountains.journey_story.07",
   "categoryId": "mountains_alpine",
-  "title": "Mountains Scene 7 — Mountain Journey",
+  "title": {
+    "en": "Mountains Scene 7 — Mountain Journey",
+    "de": "Berge, Szene 7 — Eine Bergwanderung"
+  },
   "status": "approved",
-  "purpose": "Journey sequencing, route language and observation.",
+  "purpose": {
+    "en": "Journey sequencing, route language and observation.",
+    "de": "Eine Wanderung in Abschnitten erzählen, Wege beschreiben und genau beobachten."
+  },
   "asset": "canonical/mountains_007_journey_story.png",
   "promptFile": "prompts/mountains_007_journey_story.md",
   "targetLanguage": {
     "nouns": [
-      "path",
-      "mountain",
-      "goat",
-      "rock",
-      "sign",
-      "flowers",
-      "dog"
+      {
+        "en": "path",
+        "de": "Weg"
+      },
+      {
+        "en": "mountain",
+        "de": "Berg"
+      },
+      {
+        "en": "goat",
+        "de": "Ziege"
+      },
+      {
+        "en": "rock",
+        "de": "Fels"
+      },
+      {
+        "en": "sign",
+        "de": "Schild"
+      },
+      {
+        "en": "flowers",
+        "de": "Blumen"
+      },
+      {
+        "en": "dog",
+        "de": "Hund"
+      }
     ],
     "verbs": [
-      "walking",
-      "climbing",
-      "following"
+      {
+        "en": "walking",
+        "de": "gehen"
+      },
+      {
+        "en": "climbing",
+        "de": "klettern"
+      },
+      {
+        "en": "following",
+        "de": "folgen"
+      }
     ],
     "adjectives": [
-      "high",
-      "rocky",
-      "steep",
-      "colourful"
+      {
+        "en": "high",
+        "de": "hoch"
+      },
+      {
+        "en": "rocky",
+        "de": "felsig"
+      },
+      {
+        "en": "steep",
+        "de": "steil"
+      },
+      {
+        "en": "colourful",
+        "de": "bunt"
+      }
     ],
     "sentenceModels": [
-      "They are walking along the mountain path.",
-      "The goat is on the rock.",
-      "The path goes past the flowers.",
-      "They are going up the mountain."
+      {
+        "en": "They are walking along the mountain path.",
+        "de": "Sie gehen den Bergweg entlang."
+      },
+      {
+        "en": "The goat is on the rock.",
+        "de": "Die Ziege ist auf dem Felsen."
+      },
+      {
+        "en": "The path goes past the flowers.",
+        "de": "Der Weg führt an den Blumen vorbei."
+      },
+      {
+        "en": "They are going up the mountain.",
+        "de": "Sie gehen den Berg hinauf."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Describe a journey with first/next and simple route language.",
-    "starterPrompts": [
-      "Where are they walking?",
-      "Where is the goat?",
-      "What is beside the path?",
-      "Are they going up or down?",
-      "What might they see next?"
-    ],
-    "expansionPrompts": [
-      "Tell me the journey from the bottom of the path upward.",
-      "What should they follow to stay on the path?"
-    ]
+    "focus": {
+      "en": "Describe a journey with first/next and simple route language.",
+      "de": "Eine Wanderung mit „zuerst“ und „als Nächstes“ sowie einfachen Wegbeschreibungen erzählen."
+    },
+    "starterPrompts": {
+      "en": [
+        "Where are they walking?",
+        "Where is the goat?",
+        "What is beside the path?",
+        "Are they going up or down?",
+        "What might they see next?"
+      ],
+      "de": [
+        "Wo gehen sie entlang?",
+        "Wo ist die Ziege?",
+        "Was ist neben dem Weg?",
+        "Gehen sie hinauf oder hinunter?",
+        "Was könnten sie als Nächstes sehen?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Tell me the journey from the bottom of the path upward.",
+        "What should they follow to stay on the path?"
+      ],
+      "de": [
+        "Erzähl mir von der Wanderung, vom unteren Ende des Weges nach oben.",
+        "Woran sollten sie sich orientieren, um auf dem Weg zu bleiben?"
+      ]
+    }
   },
   "visualAudit": [
     "Reviewed in Wave 3 Batch 2 automatic pass against the visible teaching targets."

@@ -1,57 +1,150 @@
 {
   "sceneId": "scene.sky.weather_story.04",
   "categoryId": "sky_flying",
-  "title": "Sky Scene 4 — Weather Story in the Sky",
+  "title": {
+    "en": "Sky Scene 4 — Weather Story in the Sky",
+    "de": "Himmel, Szene 4 — Eine Wettergeschichte"
+  },
   "status": "approved",
-  "purpose": "Weather language, movement and linked scene description.",
+  "purpose": {
+    "en": "Weather language, movement and linked scene description.",
+    "de": "Wetterwörter, Bewegung und eine zusammenhängende Bildbeschreibung."
+  },
   "asset": "canonical/sky_004_weather_story.png",
   "promptFile": "prompts/sky_004_weather_story.md",
   "targetLanguage": {
     "nouns": [
-      "sun",
-      "balloon",
-      "airplane",
-      "cloud",
-      "helicopter",
-      "rain",
-      "birds",
-      "rainbow",
-      "kite"
+      {
+        "en": "sun",
+        "de": "Sonne"
+      },
+      {
+        "en": "balloon",
+        "de": "Heißluftballon"
+      },
+      {
+        "en": "airplane",
+        "de": "Flugzeug"
+      },
+      {
+        "en": "cloud",
+        "de": "Wolke"
+      },
+      {
+        "en": "helicopter",
+        "de": "Hubschrauber"
+      },
+      {
+        "en": "rain",
+        "de": "Regen"
+      },
+      {
+        "en": "birds",
+        "de": "Vögel"
+      },
+      {
+        "en": "rainbow",
+        "de": "Regenbogen"
+      },
+      {
+        "en": "kite",
+        "de": "Drachen"
+      }
     ],
     "verbs": [
-      "rising",
-      "flying",
-      "hovering",
-      "raining"
+      {
+        "en": "rising",
+        "de": "aufsteigen"
+      },
+      {
+        "en": "flying",
+        "de": "fliegen"
+      },
+      {
+        "en": "hovering",
+        "de": "schweben"
+      },
+      {
+        "en": "raining",
+        "de": "regnen"
+      }
     ],
     "adjectives": [
-      "sunny",
-      "rainy",
-      "colourful",
-      "bright",
-      "grey"
+      {
+        "en": "sunny",
+        "de": "sonnig"
+      },
+      {
+        "en": "rainy",
+        "de": "regnerisch"
+      },
+      {
+        "en": "colourful",
+        "de": "bunt"
+      },
+      {
+        "en": "bright",
+        "de": "hell"
+      },
+      {
+        "en": "grey",
+        "de": "grau"
+      }
     ],
     "sentenceModels": [
-      "The balloon is rising.",
-      "The airplane is flying.",
-      "The helicopter is near the rain cloud.",
-      "It is raining.",
-      "The kite is under the rainbow."
+      {
+        "en": "The balloon is rising.",
+        "de": "Der Ballon steigt auf."
+      },
+      {
+        "en": "The airplane is flying.",
+        "de": "Das Flugzeug fliegt."
+      },
+      {
+        "en": "The helicopter is near the rain cloud.",
+        "de": "Der Hubschrauber ist in der Nähe der Regenwolke."
+      },
+      {
+        "en": "It is raining.",
+        "de": "Es regnet."
+      },
+      {
+        "en": "The kite is under the rainbow.",
+        "de": "Der Drachen ist unter dem Regenbogen."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Talk about weather words and what is happening in the sky.",
-    "starterPrompts": [
-      "Where is the sun?",
-      "What is the helicopter near?",
-      "Can you see the rain?",
-      "How many birds are there?",
-      "Where is the kite?"
-    ],
-    "expansionPrompts": [
-      "Which part of the picture looks sunny?",
-      "Which part looks rainy?"
-    ]
+    "focus": {
+      "en": "Talk about weather words and what is happening in the sky.",
+      "de": "Über Wetterwörter und das Geschehen am Himmel sprechen."
+    },
+    "starterPrompts": {
+      "en": [
+        "Where is the sun?",
+        "What is the helicopter near?",
+        "Can you see the rain?",
+        "How many birds are there?",
+        "Where is the kite?"
+      ],
+      "de": [
+        "Wo ist die Sonne?",
+        "Was ist in der Nähe des Hubschraubers?",
+        "Siehst du den Regen?",
+        "Wie viele Vögel sind da?",
+        "Wo ist der Drachen?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "Which part of the picture looks sunny?",
+        "Which part looks rainy?"
+      ],
+      "de": [
+        "In welchem Teil des Bildes sieht es sonnig aus?",
+        "Wo sieht es regnerisch aus?"
+      ]
+    }
   },
   "visualAudit": [
     "One hot-air balloon near the sun.",

@@ -1,51 +1,126 @@
 {
   "sceneId": "scene.sky.night_sky_clues.09",
   "categoryId": "sky_flying",
-  "title": "Sky Scene 9 — Night Sky Clues",
+  "title": {
+    "en": "Sky Scene 9 — Night Sky Clues",
+    "de": "Himmel, Szene 9 — Hinweise am Nachthimmel"
+  },
   "status": "approved",
-  "purpose": "Day/night vocabulary, multi-clue identification and simple inference.",
+  "purpose": {
+    "en": "Day/night vocabulary, multi-clue identification and simple inference.",
+    "de": "Wörter zu Tag und Nacht, Dinge anhand mehrerer Hinweise finden und einfache Schlussfolgerungen ziehen."
+  },
   "asset": "canonical/sky_009_night_sky_clues.png",
   "promptFile": "prompts/sky_009_night_sky_clues.md",
   "targetLanguage": {
     "nouns": [
-      "moon",
-      "stars",
-      "rocket",
-      "satellite",
-      "owl",
-      "hang glider"
+      {
+        "en": "moon",
+        "de": "Mond"
+      },
+      {
+        "en": "stars",
+        "de": "Sterne"
+      },
+      {
+        "en": "rocket",
+        "de": "Rakete"
+      },
+      {
+        "en": "satellite",
+        "de": "Satellit"
+      },
+      {
+        "en": "owl",
+        "de": "Eule"
+      },
+      {
+        "en": "hang glider",
+        "de": "Hängegleiter"
+      }
     ],
     "verbs": [
-      "flying",
-      "gliding",
-      "orbiting"
+      {
+        "en": "flying",
+        "de": "fliegen"
+      },
+      {
+        "en": "gliding",
+        "de": "gleiten"
+      },
+      {
+        "en": "orbiting",
+        "de": "umkreisen"
+      }
     ],
     "adjectives": [
-      "dark",
-      "bright",
-      "high",
-      "white"
+      {
+        "en": "dark",
+        "de": "dunkel"
+      },
+      {
+        "en": "bright",
+        "de": "hell"
+      },
+      {
+        "en": "high",
+        "de": "hoch"
+      },
+      {
+        "en": "white",
+        "de": "weiß"
+      }
     ],
     "sentenceModels": [
-      "The moon is bright.",
-      "The rocket is flying up.",
-      "The satellite is high in the sky.",
-      "The owl is flying at night."
+      {
+        "en": "The moon is bright.",
+        "de": "Der Mond ist hell."
+      },
+      {
+        "en": "The rocket is flying up.",
+        "de": "Die Rakete fliegt nach oben."
+      },
+      {
+        "en": "The satellite is high in the sky.",
+        "de": "Der Satellit ist hoch am Himmel."
+      },
+      {
+        "en": "The owl is flying at night.",
+        "de": "Die Eule fliegt in der Nacht."
+      }
     ]
   },
   "adultSupport": {
-    "focus": "Use clues about night, height and object type to find the right subject.",
-    "starterPrompts": [
-      "What tells you it is night?",
-      "Which thing is flying up?",
-      "What is high near the stars?",
-      "Which animal is flying?",
-      "Can you find the moon?"
-    ],
-    "expansionPrompts": [
-      "What would be different in the daytime?",
-      "First point to the owl, then point to the satellite."
-    ]
+    "focus": {
+      "en": "Use clues about night, height and object type to find the right subject.",
+      "de": "Hinweise zu Nacht, Höhe und Art des Gegenstands nutzen, um das Gesuchte zu finden."
+    },
+    "starterPrompts": {
+      "en": [
+        "What tells you it is night?",
+        "Which thing is flying up?",
+        "What is high near the stars?",
+        "Which animal is flying?",
+        "Can you find the moon?"
+      ],
+      "de": [
+        "Woran erkennst du, dass es Nacht ist?",
+        "Was fliegt nach oben?",
+        "Was ist hoch oben bei den Sternen?",
+        "Welches Tier fliegt?",
+        "Findest du den Mond?"
+      ]
+    },
+    "expansionPrompts": {
+      "en": [
+        "What would be different in the daytime?",
+        "First point to the owl, then point to the satellite."
+      ],
+      "de": [
+        "Was wäre am Tag anders?",
+        "Zeige zuerst auf die Eule und dann auf den Satelliten."
+      ]
+    }
   },
   "visualAudit": [
     "Reviewed in Wave 3 Batch 2 automatic pass against the visible teaching targets."

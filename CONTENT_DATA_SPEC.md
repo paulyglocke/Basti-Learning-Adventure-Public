@@ -27,7 +27,7 @@ ContentId grammar is not broadened to accommodate numeric final segments.
 `SceneCategoryId` preserves root category IDs. Semantic image AssetIds derive from
 scene IDs, independently of filenames, and reuse `LocalImageAsset` for local paths.
 
-`BundledSceneDescriptions.repository()` supplies an immutable schema 1/revision 1
+`BundledSceneDescriptions.repository()` supplies an immutable schema 1/revision 2
 snapshot: `categories()` in root-manifest order, `scenes(category)` in category-manifest
 order, `all()`, `find(sceneId)` and `image(sceneId)`. Unknown scene/image IDs return
 null; unknown categories return an empty list. Records include approved status, wave,
@@ -35,13 +35,24 @@ source metadata path, authored title/purpose or learning focus, typed target-lan
 groups, examples and adult-support groups/expansion pairs where present. A source
 review caution preserves the farm chicken-count limitation; it is not a child prompt.
 
-`SceneText` and `SceneLines` explicitly represent unavailable German as null, without
-fallback. Wave 1's 27 records contain bilingual titles/targets/examples/support;
-Waves 2/3's 54 records contain English-only titles/purpose/targets/support. Locale lists
-remain separately authored lists, not forced positional translations. These are
-teaching/reference data, **not** speech-ready ContentText or accepted-answer lists.
-No missing purpose, German wording, object graph or grading rules are fabricated.
-Visible-target graphs and visual audit/prompt/reference material remain authoring-only.
+`SceneText` and `SceneLines` retain explicit unavailable-language handling (null,
+never fallback), but the approved production pack now requires complete EN/DE for
+all present runtime text. The 54 Wave 2/3 records have authored German for titles,
+purpose, target language and adult support; Wave 1's 27 bilingual records remain,
+with its existing Farm review caution now bilingual too. Existing scalar/list fields
+use the already-supported EN/DE forms, not a third metadata schema. Locale lists
+remain separately authored lists, not forced positional translations. Learning-focus
+keys are technical tags and are not translated. No absent examples or objectives are
+invented. Teaching/reference data are **not** speech-ready ContentText or accepted-answer lists.
+
+Content revision 2 records German completion and two verified Park .05 English
+counting corrections (three → four visible yellow buckets); schema remains 1.
+All other existing English runtime text, IDs, asset paths and manifest ordering are
+preserved by a regression fingerprint. See SceneDescriptions/GERMAN_REVIEW.md for
+exact counts, natural-language choices, source ambiguities and limited visual checks.
+Bilingual completeness does not establish visual-semantic correctness or independent
+native-speaker acceptance. Visible-target graphs and visual audit/prompt/reference
+material remain authoring-only; source review cautions are adult reference data.
 
 The standard-library generator `scripts/generate_scene_descriptions.py` follows only
 root/category manifests and approved metadata, validates IDs, schema/wave, canonical
@@ -53,7 +64,7 @@ also rejects duplicate IDs/assets, unresolved categories and invalid record fiel
 No Android/Compose/filesystem dependency enters the domain model. Revisions must be
 bumped when authored meaning/order changes before any future persisted consumer ships.
 
-Tell Me UI, asset decoding, German completion/review, sessions, audio mapping, progress,
+Tell Me UI, asset decoding, independent language/visual acceptance, sessions, audio mapping, progress,
 speech input and automatic answer evaluation are not implemented by this catalogue.
 
 ## Identity and versioning

@@ -61,26 +61,58 @@ class SceneDescriptionContentTest {
         assertNotEquals(first.id.value, first.image.path.substringAfterLast('/').removeSuffix(".png"))
     }
 
-    @Test fun authoredGermanRemainsAvailableOnlyWherePresentWithoutFallback() {
-        val bilingual = repository.all().filter { it.wave == SceneWave.ONE }
-        val englishOnly = repository.all().filter { it.wave != SceneWave.ONE }
-        assertEquals(27, bilingual.size); assertEquals(54, englishOnly.size)
-        bilingual.forEach {
-            assertNotNull(it.title[ContentLanguage.GERMAN])
-            assertNotNull(it.terms(SceneTargetKind.NOUNS, ContentLanguage.GERMAN))
-            assertNotNull(it.examples!![ContentLanguage.GERMAN])
-            assertNull(it.purpose)
-            assertTrue(it.primaryFocus.isNotEmpty())
+    @Test fun everyApprovedSceneHasGermanForEveryAuthoredRuntimeText() {
+        assertEquals(2, repository.version.revision)
+        fun bilingual(text: SceneText) {
+            assertFalse(text[ContentLanguage.ENGLISH].isNullOrBlank())
+            assertFalse(text[ContentLanguage.GERMAN].isNullOrBlank())
         }
-        englishOnly.forEach {
-            assertNull(it.title[ContentLanguage.GERMAN])
-            assertNotNull(it.title[ContentLanguage.ENGLISH])
-            assertNull(it.terms(SceneTargetKind.NOUNS, ContentLanguage.GERMAN))
-            assertNull(it.adultSupport.lines(SceneSupportKind.STARTER_PROMPTS, ContentLanguage.GERMAN))
-            assertNotNull(it.adultSupport.lines(SceneSupportKind.STARTER_PROMPTS, ContentLanguage.ENGLISH))
-            assertNotNull(it.purpose)
-            assertNull(it.examples)
+        fun bilingualLines(lines: SceneLines) {
+            ContentLanguage.entries.forEach { language ->
+                assertFalse(lines[language].isNullOrEmpty())
+                assertTrue(lines[language]!!.all { it.isNotBlank() })
+            }
         }
+        repository.all().forEach { scene ->
+            bilingual(scene.title)
+            scene.purpose?.let(::bilingual)
+            scene.reviewCaution?.let(::bilingual)
+            scene.targets.forEach { group ->
+                group.terms.forEach(::bilingual)
+                assertNotNull(scene.terms(group.kind, ContentLanguage.GERMAN))
+            }
+            scene.examples?.let(::bilingualLines)
+            scene.adultSupport.principle?.let(::bilingual)
+            scene.adultSupport.focus?.let(::bilingual)
+            scene.adultSupport.groups.forEach { bilingualLines(it.lines) }
+            scene.adultSupport.expansions.forEach { bilingual(it.child); bilingual(it.adult) }
+            if (scene.wave == SceneWave.ONE) {
+                assertNull(scene.purpose)
+                assertNotNull(scene.examples)
+                assertTrue(scene.primaryFocus.isNotEmpty()) // technical tags, not localized text
+            } else {
+                assertNotNull(scene.purpose)
+                assertNull(scene.examples) // do not manufacture new examples
+            }
+        }
+    }
+
+    @Test fun germanSpatialAndSequencingPhrasesAreAuthoredNotEnglishFallback() {
+        val ocean = repository.find(SceneId("scene.ocean.find_and_follow.08"))!!
+        assertEquals("Finde die Krabbe unter dem Stein.", ocean.terms(SceneTargetKind.SENTENCE_MODELS, ContentLanguage.GERMAN)!!.first())
+        val sky = repository.find(SceneId("scene.sky.weather_sequence.07"))!!
+        assertEquals(listOf("Zuerst ist es sonnig.", "Dann kommen die Wolken.", "Danach regnet es.", "Der Regenbogen kommt nach dem Regen."),
+            sky.terms(SceneTargetKind.SENTENCE_MODELS, ContentLanguage.GERMAN))
+        // Optional model remains honest outside the complete production pack; no fallback is introduced.
+        assertNull(SceneText("English only")[ContentLanguage.GERMAN])
+    }
+
+    @Test fun parkCountingUsesFourVisibleBucketsInBothLanguages() {
+        val park = repository.find(SceneId("scene.park.big_small_counting.05"))!!
+        assertEquals("There are four yellow buckets.", park.terms(SceneTargetKind.SENTENCE_MODELS, ContentLanguage.ENGLISH)!![3])
+        assertEquals("Da sind vier gelbe Eimer.", park.terms(SceneTargetKind.SENTENCE_MODELS, ContentLanguage.GERMAN)!![3])
+        assertEquals("Kannst du einen Satz mit „vier gelbe Eimer“ sagen?",
+            park.adultSupport.lines(SceneSupportKind.EXPANSION_PROMPTS, ContentLanguage.GERMAN)!![1])
     }
 
     @Test fun separatelyAuthoredLanguageListsAreNotZippedOrExpanded() {
@@ -93,7 +125,7 @@ class SceneDescriptionContentTest {
     @Test fun loggedFarmReviewLimitationIsRetainedAsAdultData() {
         val farm = repository.find(SceneId("scene.farm.tasks.01"))!!
         assertTrue(farm.reviewCaution!!.en.contains("four chickens"))
-        assertNull(farm.reviewCaution.de)
+        assertTrue(farm.reviewCaution.de!!.contains("vier Hühner"))
         assertTrue(farm.adultSupport.groups.isNotEmpty())
     }
 
