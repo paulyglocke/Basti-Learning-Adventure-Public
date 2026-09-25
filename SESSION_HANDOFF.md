@@ -1,6 +1,14 @@
 # Session handoff — 2026-09-25
 
-## Current checkpoint — optional larger support text
+## Current checkpoint — first shared text-answer choice slice
+
+Started clean main `93b0120`, which commits both the four-activity support rollout and larger-support-text setting. Those tasks are complete; older handoff references to uncommitted support work describe their earlier checkpoint. The highest-priority unfinished P1 remains the lightweight visual system. Added NativeTextChoice only for Prepositions and Seasons quiz text answers (recognition/next/before): neutral outlined surface, rounded geometry, 64dp minimum target and naturally wrapping labels. Preserved exact answer labels/order/IDs, callbacks, tags, gates, separate Listen and all learning/support/session behavior. No changes to Wilma, Vocabulary, artwork, completion, audio, browser, signing or distribution.
+
+Four new component cases cover EN/DE, 1.5× portrait/both short landscapes, wrapping, target/semantics, keyboard, disabled activation, independent Listen and immunity to the larger-support-text preference. Existing consumer/regression tests are preserved. Validation evidence is in the latest BUILD_NOTES entry. Physical S24/Fire neutral-choice clarity, touch/focus/TalkBack and large-text/orientation checks remain open. No commit/push or physical S24 access. Next bounded slice: consider Vocabulary What Is It? text-choice adoption only; image choices and Wilma's colour cues require their own concrete contract. Do not jump to a new learning activity while visual-system work remains.
+
+Final validation: affected packages 71/71; strengthened actual-display-rotation component check 4/4; full JVM 265/265 and instrumentation 86/86, zero failures/errors/skips. Debug build passed; lint 0 errors, 3 existing warnings, 2 informational findings; diff/new-file whitespace checks passed. No failed assertions or startup flake. Initial reverse-landscape screenshot was incomplete; explicit rotation wait produced a complete final capture with no production change. Reviewed EN/DE portrait and both German landscapes at 1.5× in the isolated component fixture; full device visual acceptance remains separate.
+
+## Previous checkpoint — optional larger support text
 
 2026-09-25: preserved the uncommitted four-consumer rollout on `952db56`. Added one Options preference: larger existing hints/retry guidance, default Off; On scales NativeSupportMessage font/line height by 25% on top of device font scaling. Shell-owned Boolean persists in the existing transitional preference store; see UX/NATIVE specs for the narrow contract. No support state, content, learning/session/progress/audio change; prompts, answers, completion, individual Listen and Wilma colour/order/follow remain intact. Shared message call signature remains unchanged.
 

@@ -7,6 +7,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import com.bellfamily.bastischool.ui.common.NativeCompletionScreen
+import com.bellfamily.bastischool.ui.common.NativeTextChoice
 import com.bellfamily.bastischool.ui.common.NativeActionButton
 import com.bellfamily.bastischool.ui.common.NativeSupportMessage
 import com.bellfamily.bastischool.ui.common.NativeActionRole
@@ -162,9 +163,9 @@ private fun SeasonAnswers(state:SessionState,language:ContentLanguage,ready:Bool
         state.task.question.choices.forEach { id ->
             val label=SeasonsContent.season(id).text.display[language]
             Row(horizontalArrangement=Arrangement.spacedBy(8.dp)) {
-                Button(onClick={state.nextAttempt?.let {action(SessionAction.Answer(it,id))}},
+                NativeTextChoice(label=label,onClick={state.nextAttempt?.let {action(SessionAction.Answer(it,id))}},
                     enabled=ready && !imageFailed && state.current.answer==AnswerState.UNANSWERED,
-                    modifier=Modifier.weight(1f).heightIn(min=64.dp).testTag("answer-${id.value}")) {Text(label)}
+                    modifier=Modifier.weight(1f).heightIn(min=64.dp).testTag("answer-${id.value}"))
                 OutlinedButton(onClick={option(id)},enabled=ready,
                     modifier=Modifier.heightIn(min=64.dp).testTag("speaker-${id.value}").semantics {
                         contentDescription=if(language==ContentLanguage.GERMAN)"Anhören: $label" else "Listen: $label"

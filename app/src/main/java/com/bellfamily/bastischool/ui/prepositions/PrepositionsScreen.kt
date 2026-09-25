@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
+import com.bellfamily.bastischool.ui.common.NativeTextChoice
 import com.bellfamily.bastischool.ui.common.NativeActionButton
 import com.bellfamily.bastischool.ui.common.NativeSupportMessage
 import com.bellfamily.bastischool.ui.common.NativeActionRole
@@ -97,9 +98,9 @@ private fun Answers(state: SessionState, language: ContentLanguage, ready: Boole
         state.task.question.choices.forEach { choice ->
             val label = PrepositionsContent.repository.find(choice)!!.text.display[language]
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                Button(onClick = { state.nextAttempt?.let { action(SessionAction.Answer(it, choice)) } },
+                NativeTextChoice(label = label, onClick = { state.nextAttempt?.let { action(SessionAction.Answer(it, choice)) } },
                     enabled = ready && state.current.answer == AnswerState.UNANSWERED,
-                    modifier = Modifier.weight(1f).heightIn(min = 64.dp).testTag("answer-${choice.value}")) { Text(label) }
+                    modifier = Modifier.weight(1f).heightIn(min = 64.dp).testTag("answer-${choice.value}"))
                 OutlinedButton(onClick = { option(choice) }, enabled = ready,
                     modifier = Modifier.heightIn(min = 64.dp).widthIn(min = 64.dp).testTag("speaker-${choice.value}")
                         .semantics { contentDescription = if (language == ContentLanguage.GERMAN) "Anhören: $label" else "Listen: $label" }) {
