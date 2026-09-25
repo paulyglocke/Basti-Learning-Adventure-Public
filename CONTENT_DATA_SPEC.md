@@ -27,7 +27,7 @@ ContentId grammar is not broadened to accommodate numeric final segments.
 `SceneCategoryId` preserves root category IDs. Semantic image AssetIds derive from
 scene IDs, independently of filenames, and reuse `LocalImageAsset` for local paths.
 
-`BundledSceneDescriptions.repository()` supplies an immutable schema 1/revision 2
+`BundledSceneDescriptions.repository()` supplies an immutable schema 1/revision 3
 snapshot: `categories()` in root-manifest order, `scenes(category)` in category-manifest
 order, `all()`, `find(sceneId)` and `image(sceneId)`. Unknown scene/image IDs return
 null; unknown categories return an empty list. Records include approved status, wave,
@@ -46,9 +46,11 @@ keys are technical tags and are not translated. No absent examples or objectives
 invented. Teaching/reference data are **not** speech-ready ContentText or accepted-answer lists.
 
 Content revision 2 records German completion and two verified Park .05 English
-counting corrections (three → four visible yellow buckets); schema remains 1.
-All other existing English runtime text, IDs, asset paths and manifest ordering are
-preserved by a regression fingerprint. See SceneDescriptions/GERMAN_REVIEW.md for
+counting corrections (three → four visible yellow buckets). Revision 3 removes
+ambiguous climbing/uphill claims from Park .07 and Mountains .07 in seven paired
+EN/DE values; schema remains 1. All other existing English runtime text, IDs, asset
+paths and manifest ordering are preserved by the original regression fingerprint
+with explicitly asserted, documented wording exceptions. See SceneDescriptions/GERMAN_REVIEW.md for
 exact counts, natural-language choices, source ambiguities and limited visual checks.
 Bilingual completeness does not establish visual-semantic correctness or independent
 native-speaker acceptance. Visible-target graphs and visual audit/prompt/reference

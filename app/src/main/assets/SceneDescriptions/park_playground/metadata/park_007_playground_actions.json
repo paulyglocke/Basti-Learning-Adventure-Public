@@ -53,8 +53,8 @@
         "de": "schaukeln"
       },
       {
-        "en": "climbing",
-        "de": "klettern"
+        "en": "standing",
+        "de": "stehen"
       },
       {
         "en": "playing",
@@ -93,8 +93,8 @@
         "de": "Das Kind schaukelt."
       },
       {
-        "en": "The child is climbing.",
-        "de": "Das Kind klettert."
+        "en": "The child is standing on the rope bridge.",
+        "de": "Das Kind steht auf der Seilbrücke."
       },
       {
         "en": "The child is playing in the sandbox.",
@@ -111,14 +111,14 @@
       "en": [
         "Who is sliding?",
         "Who is swinging?",
-        "Who is climbing?",
+        "Who is on the rope bridge?",
         "What is happening in the sandbox?",
         "Can you find the dog?"
       ],
       "de": [
         "Wer rutscht?",
         "Wer schaukelt?",
-        "Wer klettert?",
+        "Wer ist auf der Seilbrücke?",
         "Was passiert im Sandkasten?",
         "Findest du den Hund?"
       ]

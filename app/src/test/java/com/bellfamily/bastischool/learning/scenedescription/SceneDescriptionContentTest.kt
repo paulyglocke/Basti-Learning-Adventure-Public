@@ -62,7 +62,7 @@ class SceneDescriptionContentTest {
     }
 
     @Test fun everyApprovedSceneHasGermanForEveryAuthoredRuntimeText() {
-        assertEquals(2, repository.version.revision)
+        assertEquals(3, repository.version.revision)
         fun bilingual(text: SceneText) {
             assertFalse(text[ContentLanguage.ENGLISH].isNullOrBlank())
             assertFalse(text[ContentLanguage.GERMAN].isNullOrBlank())
@@ -113,6 +113,36 @@ class SceneDescriptionContentTest {
         assertEquals("Da sind vier gelbe Eimer.", park.terms(SceneTargetKind.SENTENCE_MODELS, ContentLanguage.GERMAN)!![3])
         assertEquals("Kannst du einen Satz mit „vier gelbe Eimer“ sagen?",
             park.adultSupport.lines(SceneSupportKind.EXPANSION_PROMPTS, ContentLanguage.GERMAN)!![1])
+    }
+
+    @Test fun parkBridgeSupportDescribesVisiblePositionWithoutRequiringClimbing() {
+        val scene = repository.find(SceneId("scene.park.playground_actions.07"))!!
+        listOf(ContentLanguage.ENGLISH, ContentLanguage.GERMAN).forEach { language ->
+            val english = language == ContentLanguage.ENGLISH
+            assertEquals(if (english) "standing" else "stehen", scene.terms(SceneTargetKind.VERBS, language)!![2])
+            assertEquals(if (english) "The child is standing on the rope bridge." else "Das Kind steht auf der Seilbrücke.",
+                scene.terms(SceneTargetKind.SENTENCE_MODELS, language)!![2])
+            assertEquals(if (english) "Who is on the rope bridge?" else "Wer ist auf der Seilbrücke?",
+                scene.adultSupport.lines(SceneSupportKind.STARTER_PROMPTS, language)!![2])
+            // The pictured climbing frame remains a valid object, not a required action.
+            assertEquals(if (english) "climbing frame" else "Klettergerüst", scene.terms(SceneTargetKind.NOUNS, language)!![2])
+        }
+    }
+
+    @Test fun mountainJourneySupportDoesNotAssertUphillOrDownhillMovement() {
+        val scene = repository.find(SceneId("scene.mountains.journey_story.07"))!!
+        listOf(ContentLanguage.ENGLISH, ContentLanguage.GERMAN).forEach { language ->
+            val english = language == ContentLanguage.ENGLISH
+            assertEquals(if (english) "hiking" else "wandern", scene.terms(SceneTargetKind.VERBS, language)!![1])
+            assertEquals(if (english) "They are walking together on the path." else "Sie gehen zusammen auf dem Weg.",
+                scene.terms(SceneTargetKind.SENTENCE_MODELS, language)!![3])
+            assertEquals(if (english) "Who is on the path?" else "Wer ist auf dem Weg?",
+                scene.adultSupport.lines(SceneSupportKind.STARTER_PROMPTS, language)!![3])
+            assertEquals(if (english) "Tell me about their journey along the path." else "Erzähl mir von ihrer Wanderung auf dem Weg.",
+                scene.adultSupport.lines(SceneSupportKind.EXPANSION_PROMPTS, language)!![0])
+            assertEquals(if (english) "What might they see next?" else "Was könnten sie als Nächstes sehen?",
+                scene.adultSupport.lines(SceneSupportKind.STARTER_PROMPTS, language)!![4])
+        }
     }
 
     @Test fun separatelyAuthoredLanguageListsAreNotZippedOrExpanded() {

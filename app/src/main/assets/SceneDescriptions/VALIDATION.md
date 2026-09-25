@@ -64,3 +64,15 @@ review caution (1,699 added total). Structural bilingual completeness is distinc
 from visual-semantic acceptance. `GERMAN_REVIEW.md` records the inspected Park 005
 bucket correction, targeted ten-image review, remaining ambiguities and scope limits.
 Historical visual acceptance counts above are not expanded by translation tests.
+
+## Final targeted review — revision 3
+
+Park .07 and Mountains .07 were checked against their committed PNGs again. Seven
+EN/DE teaching values now describe a child standing on the rope bridge and hikers
+on a path, without requiring climbing or asserting uphill/downhill movement.
+`GERMAN_REVIEW.md` lists every old/new phrase. No image changes were needed.
+Schema remains 1; authored-content revision is 3. Structural and bilingual guarantees
+remain 81 scenes / nine categories. The recurring German support-language pass found
+no additional clear correction. This closes these two wording concerns for an
+open-ended consumer, not independent language acceptance or a fresh visual audit of
+all 81 images. Existing Farm count and narrative/cropped-panel caveats remain.

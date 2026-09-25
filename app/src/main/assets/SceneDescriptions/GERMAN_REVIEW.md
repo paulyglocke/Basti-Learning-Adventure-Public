@@ -1,8 +1,8 @@
 # German teaching/support review — SceneDescriptions
 
-Date: 2026-09-25. Baseline: `296d6ef`.
+Date: 2026-09-25. Bilingual-authoring baseline: `296d6ef`; final targeted-review baseline: `8e00cea`.
 
-## Scope and counts
+## Bilingual-authoring scope and counts (revision 2)
 
 - **81 approved scenes / 9 categories / 9 scenes each** structurally reviewed.
 - **54 Wave 2/3 scenes** received authored German for every existing runtime English
@@ -72,7 +72,7 @@ authoring prompts or runtime activities changed.
 - “picking vegetables” → “Gemüse ernten”; “inside the gate” → “im Gatter” in the
   farm enclosure context. “perching” → “sitzen” without inventing an unmentioned perch.
 
-## English preservation and one verified source-error exception
+## Revision 2 English preservation and verified source-error exception
 
 English teaching/support content was **not rewritten for style or translation**.
 A normalized English catalogue fingerprint, captured at `296d6ef`, is checked in
@@ -87,9 +87,11 @@ One source error was verified against the committed PNG and corrected in exactly
    buckets?” → “Can you make a sentence with four yellow buckets?”
 
 The PNG shows one yellow bucket beside the child plus three more in a row: four.
-German says “vier” in both corresponding fields. Tests reverse only these two
+German says “vier” in both corresponding fields. At revision 2, tests reversed only these two
 explicit corrections before matching the original English fingerprint. No other
-English runtime value changed. No asset or manifest changed.
+English runtime value changed in that slice. Revision 3 adds the seven explicitly
+asserted exceptions listed below, preserving the same original fingerprint. No asset
+or manifest changed.
 
 ## Source ambiguities retained and visual spot-check limits
 
@@ -100,9 +102,9 @@ This was a targeted content check, not a fresh visual acceptance sweep of all 81
   counting is not its teaching goal. Existing English caution is unchanged and now
   also available in German. Do not use it for a chicken-count question.
 - **Park .05:** bucket mismatch verified and corrected as documented above.
-- **Park .07:** the child on the rope bridge can read as standing/walking rather
-  than visibly climbing. The authored climbing wording is retained; a later
-  consumer must not insist that “climbing” is the only valid description.
+- **Park .07:** resolved in revision 3 below: runtime support describes the visible
+  position on the rope bridge without requiring climbing. Other plausible child
+  descriptions remain valid; the model is not an answer key.
 - **Park .08/.09:** clean-up/turn-taking themes are supported, but a still cannot
   prove the temporal sequence or who is next. Predictions remain open-ended.
 - **Sky .07:** visible weather panels support a depicted sequence, not a universal
@@ -112,9 +114,9 @@ This was a targeted content check, not a fresh visual acceptance sweep of all 81
   “highest” a less precise prompt. Do not invent a fixed correct answer.
 - **Sky .09:** illustrated night-sky objects are present; the composition is not
   evidence of realistic shared altitude or flight conditions.
-- **Mountains .07:** hikers/path are visible, but uphill versus downhill is not
-  unambiguous in the still. The English “going up” contract is translated faithfully
-  and flagged for owner/content review before this becomes a constrained task.
+- **Mountains .07:** resolved in revision 3 below: hikers/path are visible, but
+  uphill versus downhill is not unambiguous. Runtime wording is direction-neutral;
+  no constrained direction question remains.
 - **Mountains .08:** weather panels are visible; timing is narrative, not measured.
 - **Mountains .09:** marmot is lower in the picture than the high-rock animal, but
   not directly beneath it. German uses “unterhalb”, not a stronger “direkt darunter”.
@@ -131,12 +133,51 @@ No unreviewed visual fact was invented to fill a translation gap. Remaining
 ambiguities need owner/content review; the catalogue is bilingual, but that does
 not turn its example sentences into automatic grading rules.
 
+## Final targeted visual/language review (revision 3)
+
+Reopened the two committed PNGs directly at `8e00cea`; neither needs image changes.
+Park .07 shows the child's feet on the rope bridge, not unambiguous climbing.
+Standing on the bridge is a defensible model; crossing/walking is also a possible
+child description and must not be rejected. The visible climbing frame remains
+`climbing frame / Klettergerüst` in the noun list; an object name does not claim an action.
+Mountains .07 shows hikers on a path, without proving uphill or downhill travel.
+The existing open-ended “What might they see next?” prediction remains unchanged.
+
+Exactly **seven English values and seven aligned German values** changed in two
+metadata files. Indices below are zero-based. No other runtime wording changed.
+
+| Scene / field | English before → after | German before → after |
+| --- | --- | --- |
+| Park .07 `targetLanguage.verbs[2]` | climbing → standing | klettern → stehen |
+| Park .07 `targetLanguage.sentenceModels[2]` | The child is climbing. → The child is standing on the rope bridge. | Das Kind klettert. → Das Kind steht auf der Seilbrücke. |
+| Park .07 `adultSupport.starterPrompts[2]` | Who is climbing? → Who is on the rope bridge? | Wer klettert? → Wer ist auf der Seilbrücke? |
+| Mountains .07 `targetLanguage.verbs[1]` | climbing → hiking | klettern → wandern |
+| Mountains .07 `targetLanguage.sentenceModels[3]` | They are going up the mountain. → They are walking together on the path. | Sie gehen den Berg hinauf. → Sie gehen zusammen auf dem Weg. |
+| Mountains .07 `adultSupport.starterPrompts[3]` | Are they going up or down? → Who is on the path? | Gehen sie hinauf oder hinunter? → Wer ist auf dem Weg? |
+| Mountains .07 `adultSupport.expansionPrompts[0]` | Tell me the journey from the bottom of the path upward. → Tell me about their journey along the path. | Erzähl mir von der Wanderung, vom unteren Ende des Weges nach oben. → Erzähl mir von ihrer Wanderung auf dem Weg. |
+
+Secondary review read the German adult-support groups, sentence starters, models
+and expansion pairs across all nine categories, with a targeted check of recurring
+sequence/spatial/comparison, helping/turn-taking/cleanup, classroom and path wording.
+“zuerst / dann / danach”, “bevor / nachdem”, “als Nächstes”, “neben / hinter / vor”,
+“größer / kleiner”, “sich abwechseln”, “helfen” and “aufräumen / wegräumen” remain
+contextually authored. Why/because language remains open-ended rather than supplying
+an unpictured cause. No further clear material German correction was identified;
+existing natural wording and deliberately incomplete child utterances/starters stay.
+This is not an independent native-speaker acceptance or an all-image visual audit.
+
+Schema stays **1**; content revision increases **2 → 3**, as required for authored
+meaning changes. Both locales remain complete for all 81 scenes. IDs, counts,
+manifest order, paths, PNGs, all other source fields and authoring files are unchanged.
+The generator/model API is unchanged. The library is ready for a bounded open-ended
+Tell Me consumer; existing visual caveats above remain, not fixed-answer rules.
+
 ## Validation
 
 See the current BUILD_NOTES.md entry for exact commands/counts. Automated checks
 cover 81 scenes, assets, IDs/order, bilingual availability for every runtime text,
 missing/blank German rejection in both later waves, English preservation with the
-explicit two-field correction, safe unknown lookups and authoring-only exclusion.
+explicit revision 2 and 3 corrections, safe unknown lookups and authoring-only exclusion.
 Two successive regeneration/check cycles must be byte-identical. No UI/device,
 TTS, speech-input or automatic-grading acceptance is claimed by this content work.
 

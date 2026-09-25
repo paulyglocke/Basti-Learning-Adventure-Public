@@ -44,7 +44,7 @@ These native activities use the shared session/audio/progress architecture rathe
 
 The wider school-readiness curriculum is still in progress. Near-term roadmap work includes richer Seasons sequencing/reasoning, Follow the Instructions, expressive-language activities, Memory Pairs, broader Vocabulary, Maths concepts, School Skills, Focus & Flex, Compare & Discover and larger native games.
 
-A shared native completion celebration is also on the roadmap: gently floating balloons, tap-to-pop interaction, an animal jumping out, and a brief confetti burst, with Continue/Home always immediately usable.
+A shared native completion celebration is implemented across the current native practice activities: five optional floating balloon targets, tap-to-pop animal reveals and brief local confetti, with the completion actions immediately usable. Physical motion/audio/accessibility acceptance remains part of the device QA matrix.
 
 ## Options
 - English / German switch

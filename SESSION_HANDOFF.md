@@ -1,6 +1,34 @@
 # Session handoff — 2026-09-25
 
-## Current checkpoint — all Scene Description runtime text bilingual
+## Current checkpoint — targeted Scene Description review complete
+
+2026-09-25: started clean main `8e00cea`, the committed/pushed bilingual-content
+slice. Direct PNG review resolved Park .07 climbing and Mountains .07 uphill wording:
+seven English/German pairs now describe standing on the rope bridge and a neutral
+journey along the path. See `SceneDescriptions/GERMAN_REVIEW.md` for every old/new
+phrase. Other authored values, IDs, ordering, references and all images are unchanged.
+Recurring German support-language review found no additional clear material correction.
+All 81 scenes retain complete runtime EN/DE. Schema 1, **content revision 3**; generated
+Kotlin refreshed deterministically. No consumer/UI/session/progress/audio work added.
+
+Validation: **22 Python / 14 focused JVM / 279 full JVM passed**, no failures/errors
+or skips. assembleDebug and lintDebug passed; lint **0 errors, 3 existing warnings,
+2 informational findings**. Two regeneration/check cycles were byte-identical;
+all 91 source files compared against HEAD showed only 14 intended scalar edits.
+`git diff --check` passed. Exact commands and the initial sandbox socket denial/
+successful permitted Gradle rerun are recorded in BUILD_NOTES.md. No device runs.
+
+These two wording concerns are closed for open-ended description. Model sentences
+are examples, never an automatic answer key; Farm count and narrative/cropped-panel
+caveats remain. This is not new all-image acceptance or independent native-speaker
+review. No UI/navigation/session/progress/audio/image/signing/browser changes.
+
+This targeted-review work is uncommitted; no push. Next bounded slice: a read-only
+bilingual Tell Me scene browser using this repository and canonical local images,
+with optional adult-support text; no automatic grading, speech input or new learning
+engine. Do not start it automatically. Existing S24/Fire acceptance is unchanged.
+
+## Previous checkpoint — all Scene Description runtime text bilingual
 
 2026-09-25: started clean main `296d6ef`. Added **1,698 German values to all 54 Wave
 2/3 scenes**, plus the existing Farm Wave 1 review caution in German (1,699 total).
@@ -29,7 +57,7 @@ errors or skips. assembleDebug/lintDebug passed; lint **0 errors, 3 existing war
 and new-file whitespace checks passed. No browser/instrumentation/device run because
 there is no UI/platform behavior change. Exact commands/evidence are in BUILD_NOTES.
 
-Work is uncommitted; no push. No Tell Me screen/route/ViewModel/session/progress/TTS
+The bilingual slice was committed and pushed as `8e00cea`. No Tell Me screen/route/ViewModel/session/progress/TTS
 or speech input/evaluation was built. Next bounded slice: owner/native-speaker review
 of the documented wording/visual ambiguities before a separately scoped Tell Me
 consumer. Do not start it automatically. Other S24/Fire acceptance remains unchanged.

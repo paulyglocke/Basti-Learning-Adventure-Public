@@ -74,7 +74,7 @@ class SceneDescriptionBoundaryTest(unittest.TestCase):
                 for v in value: check(v)
         check(self.pack[:2])
 
-    def test_english_identity_references_and_order_preserved_except_reviewed_bucket_fix(self):
+    def test_english_identity_references_and_order_preserved_except_documented_visual_corrections(self):
         # Fingerprint of the normalized English catalogue at 296d6ef. No Git needed at test time.
         def english(value):
             if isinstance(value, dict):
@@ -86,9 +86,29 @@ class SceneDescriptionBoundaryTest(unittest.TestCase):
         park = next(s for s in projection[1] if s['id'] == 'scene.park.big_small_counting.05')
         self.assertEqual('There are four yellow buckets.', park['targets'][3][1][3])
         self.assertEqual('Can you make a sentence with four yellow buckets?', park['groups'][1][1][1])
-        # Reverse ONLY these two documented source-error corrections for the preservation comparison.
+        # Reverse only documented corrections, asserting their replacement wording first.
         park['targets'][3][1][3] = 'There are three yellow buckets.'
         park['groups'][1][1][1] = 'Can you make a sentence with three yellow buckets?'
+        reviewed = {
+            'scene.park.playground_actions.07': [
+                (('targets', 1, 1, 2), 'climbing', 'standing'),
+                (('targets', 3, 1, 2), 'The child is climbing.', 'The child is standing on the rope bridge.'),
+                (('groups', 0, 1, 2), 'Who is climbing?', 'Who is on the rope bridge?'),
+            ],
+            'scene.mountains.journey_story.07': [
+                (('targets', 1, 1, 1), 'climbing', 'hiking'),
+                (('targets', 3, 1, 3), 'They are going up the mountain.', 'They are walking together on the path.'),
+                (('groups', 0, 1, 3), 'Are they going up or down?', 'Who is on the path?'),
+                (('groups', 1, 1, 0), 'Tell me the journey from the bottom of the path upward.', 'Tell me about their journey along the path.'),
+            ],
+        }
+        for scene_id, changes in reviewed.items():
+            scene = next(s for s in projection[1] if s['id'] == scene_id)
+            for keys, original, corrected in changes:
+                container = scene
+                for key in keys[:-1]: container = container[key]
+                self.assertEqual(corrected, container[keys[-1]])
+                container[keys[-1]] = original
         digest = hashlib.sha256(json.dumps(projection, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
         self.assertEqual('ae45295414d87446f053b4cb2e09667bc3dfe4f192734bb6b0315338c33acd05', digest)
 

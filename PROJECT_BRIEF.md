@@ -73,17 +73,14 @@ The app should look polished and cheerful, with a nature/adventure theme. Avoid 
 
 ## 6. Home screen / learning areas
 
-The implemented learning areas remain in the legacy WebView, with native Options alongside them:
+The current source is hybrid Compose + legacy WebView. Home and Options are native. Four substantial learning areas now run natively in Compose:
 
-1. Animal Actions / Tier-Aktionen
-2. Numbers / Zahlen
-3. Easy Maths / Einfache Mathe
-4. Where is it? / Wo ist es? (prepositions)
-5. Letters / Buchstaben
-6. Days & Seasons / Tage & Jahreszeiten
-7. Learn Verbs / Verben lernen (Verb Explorer)
-8. Mixed Adventure / Gemischtes Abenteuer
-9. Options / Optionen
+1. Vocabulary Booster / Wortschatz
+2. Where is it? / Wo ist es? (Prepositions)
+3. Seasons / Jahreszeiten
+4. Wilma’s Week / Wilmas Woche
+
+Legacy bundled routes remain available for Animal Actions, Numbers, Easy Maths, Letters, Learn Verbs / Verb Explorer, Mixed Adventure and remaining calendar content until tested native parity allows retirement.
 
 Mixed Adventure should combine different exercise types so the child cannot simply learn one repetitive answer pattern.
 
@@ -354,7 +351,9 @@ End-of-round feedback should be encouraging and simple.
 
 ## 18. Current technical architecture
 
-The app is hybrid Compose + legacy WebView. Kotlin owns the native home, Options, top bar, shell navigation, SharedPreferences, WebView hosting and Android TTS. The seven quiz modes, 53 Verb Explorer lessons, scoring/completion, tutorials and CSS animations remain in bundled HTML/JavaScript for feature preservation. No shared persistent skill-level Progress Tracker is implemented yet.
+The app is hybrid Compose + legacy WebView. Kotlin owns the native home, Options, top bar, shell navigation, transitional SharedPreferences, retained WebView hosting and Android TTS integration. Native Prepositions, Seasons, Wilma’s Week and Vocabulary Booster use shared typed content, audio, deterministic session/restoration and durable local progress-event foundations. The 81-scene Scene Description catalogue is also implemented as a typed, validated native content boundary for future Tell Me / Erzähl mal work.
+
+Legacy HTML/JavaScript still owns unmigrated quiz modes, the 53 Verb Explorer lessons, tutorials and their legacy scoring/completion/animation behavior. The shared native progress foundation is implemented, but the parent-facing Progress dashboard and broader adaptation/classification experience are not.
 
 Important files include:
 - app/src/main/java/com/bellfamily/bastischool/MainActivity.kt
@@ -386,7 +385,7 @@ Build commands and historical test evidence are in BUILD_NOTES.md; run checks ap
 
 See BACKLOG.md for the P0–P3 queue. Stabilise current correctness, audio, navigation and device layouts before migrating activities incrementally.
 
-School readiness, communication/listening, shared skill-level progress and adaptive selection are long-term product goals defined by MASTER_PRODUCT_LEARNING_ROADMAP.md and PROGRESS_TRACKER_SPEC.md, not claims of current implementation.
+School readiness, communication/listening, progress interpretation/dashboarding and adaptive selection remain broader product goals defined by MASTER_PRODUCT_LEARNING_ROADMAP.md and PROGRESS_TRACKER_SPEC.md. The underlying native progress-event storage already exists; those higher-level product experiences do not yet.
 
 ## 21. Future ideas — not required to block V1
 
