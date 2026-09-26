@@ -20,7 +20,10 @@ import java.io.File
 import java.util.UUID
 import java.util.concurrent.Executors
 
-class SeasonsViewModel(application: Application) : AndroidViewModel(application) {
+class SeasonsViewModel @JvmOverloads constructor(
+    application: Application,
+    engineFactory: () -> SpeechEngine = { AndroidSystemSpeechEngine(application) }
+) : AndroidViewModel(application) {
     var selection by mutableStateOf<SeasonsSelection?>(null); private set
     var state by mutableStateOf<SessionState?>(null); private set
     var ordering by mutableStateOf<SeasonsOrderState?>(null); private set
@@ -40,7 +43,7 @@ class SeasonsViewModel(application: Application) : AndroidViewModel(application)
     private val orderHost = SeasonsOrderHost(storage("seasons-order-session"),progress)
     private val worker = Executors.newSingleThreadExecutor()
     private val main = Handler(Looper.getMainLooper())
-    private val audio = SeasonsAudio(DefaultAudioController(AndroidSystemSpeechEngine(application), AudioMode.OFF)) { audioFailed = it is SpeechResult.Failed }
+    private val audio = SeasonsAudio(DefaultAudioController(engineFactory, AudioMode.OFF)) { audioFailed = it is SpeechResult.Failed }
     private var visible = false
     private var closed = false
     private var epoch = 0L

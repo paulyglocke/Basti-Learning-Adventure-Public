@@ -19,7 +19,10 @@ import java.util.UUID
 import java.util.concurrent.Executors
 
 /** One retained screen owner. Disk work is serialized off main; audio and UI stay on main. */
-class PrepositionsViewModel(application: Application) : AndroidViewModel(application) {
+class PrepositionsViewModel @JvmOverloads constructor(
+    application: Application,
+    engineFactory: () -> SpeechEngine = { AndroidSystemSpeechEngine(application) }
+) : AndroidViewModel(application) {
     var state by mutableStateOf<SessionState?>(null); private set
     var busy by mutableStateOf(false); private set
     var saveFailed by mutableStateOf(false); private set
@@ -30,7 +33,7 @@ class PrepositionsViewModel(application: Application) : AndroidViewModel(applica
         AndroidProgressRepository.create(application))
     private val worker = Executors.newSingleThreadExecutor()
     private val main = Handler(Looper.getMainLooper())
-    private val audio = PrepositionsAudio(DefaultAudioController(AndroidSystemSpeechEngine(application), AudioMode.OFF)) {
+    private val audio = PrepositionsAudio(DefaultAudioController(engineFactory, AudioMode.OFF)) {
         audioFailed = it is SpeechResult.Failed
     }
     private var visible = false

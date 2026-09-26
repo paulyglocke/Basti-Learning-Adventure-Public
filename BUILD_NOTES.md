@@ -1,5 +1,116 @@
 # V1 verification and fixes
 
+## Lazy owner-local native TTS — 2026-09-26
+
+Continued clean-main baseline `d94d581` with the prior audit's four uncommitted docs
+preserved. DefaultAudioController now accepts an engine factory while retaining its
+existing eager-engine constructor. The factory executes once after a current request
+passes policy/priority and has nonempty sanitized speech. Settings/context/readiness
+and unused close cannot create TTS. First speech waits in the existing active slot;
+replacement, OFF, navigation and language cancellation invalidate it as before.
+An initialized engine is reused per owner; close forwards once if created. Failed
+initialization/construction does not loop or allocate a replacement engine.
+
+Prepositions, Seasons, Wilma and Vocabulary ViewModels all supply the same lazy
+factory mechanism. Their Application-only AndroidViewModelFactory constructor is
+preserved via @JvmOverloads; an optional factory permits real-owner instrumentation
+with a counting fake. Existing Activity-scoped ownership is unchanged. Home/OFF has
+zero native clients, but still the one unchanged legacy MainActivity client. No legacy,
+UI, wording/content, voice-selection, QUEUE_FLUSH, navigation/session/progress, artwork,
+signing/distribution or browser changes. First use can now encounter normal cold TTS
+initialization latency; no second Listen is required and no speech-policy change occurs.
+
+New tests: 13 pure LazyAudioController cases plus 8 NativeOwnerLazySpeechTest cases
+(two per actual ViewModel). The latter prove hidden/OFF/settings remain unallocated,
+first eligible Listen is retained, English then German reuse one engine, return stays
+silent, existing factory construction is available, and disposal closes once or never
+constructs. Shared tests cover pending replacement/navigation/language/OFF, late ready,
+empty/suppressed requests, immediate readiness, close during playback/init and failures.
+
+Commands (JDK/SDK environment below; instrumentation uses emulator only):
+
+```sh
+export JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'
+export ANDROID_HOME='/Users/paulbell/Library/Android/sdk'
+export ANDROID_SERIAL=emulator-5554
+./gradlew testDebugUnitTest --tests 'com.bellfamily.bastischool.audio.*' --tests 'com.bellfamily.bastischool.LegacySpeechTest' --tests 'com.bellfamily.bastischool.learning.*.*AudioTest' --console=plain
+./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.bellfamily.bastischool.audio.NativeOwnerLazySpeechTest --console=plain
+./gradlew testDebugUnitTest assembleDebug lintDebug connectedDebugAndroidTest --console=plain
+git diff --check
+```
+
+- Focused speech JVM: **78/78 passed**, zero failures/errors/skips.
+- Focused owner instrumentation: **8/8 passed**, zero failures/errors/skips.
+- Full JVM: **292/292 passed**, zero failures/errors/skips.
+- Full emulator instrumentation: **98/98 passed**, zero failures/errors/skips.
+- Combined Gradle validation: **BUILD SUCCESSFUL** (9m 44s); assembleDebug passed.
+- lintDebug passed: **0 errors, 3 existing warnings, 2 informational findings**
+  (UnusedAttribute ×2, SetJavaScriptEnabled ×1; AutoboxingStateCreation ×2).
+- `git diff --check` and new-test whitespace checks passed. No test retry was needed.
+- Initial sandboxed ADB query could not bind its local socket; approved outside-sandbox
+  query found only emulator-5554. No test was weakened or production workaround added.
+
+No physical S24/Fire use or acceptance. Check first-use EN/DE latency, OFF→On→Listen,
+leave/background/language change during cold initialization, rapid Replay, missing
+voices and actual vendor stop/shutdown behavior. Factory counters prove allocation
+policy, not physical engine-service process counts. Final commit review included the earlier
+audit documentation and both new test files; no code correction or expensive suite rerun
+was needed. The owner subsequently authorized committing and pushing both slices together.
+
+## Native Listen / TTS ownership audit — 2026-09-26
+
+Started clean main `d94d581`. Audit only: **no production or test changes**. Searched
+all app sources for TextToSpeech, speech wrappers/callbacks, speak/stop/shutdown,
+Compose remember/DisposableEffect, language selection and Listen controls. Traced
+MainActivity wiring/lifecycle, four ViewModels/adapters, shared controller/platform
+port, legacy JS/bridge, tutorials and completion Replay. Detailed construction,
+control inventory and risk assessment are in NATIVE_ARCHITECTURE_SPEC.md's observed
+TTS ownership audit; VOICE_AUDIO_SPEC remains policy authority.
+
+Result: four eagerly initialized Activity-scoped native ViewModel TTS clients plus
+one Activity-owned legacy client (**five**, including Home/OFF). Recomposition and
+ordinary navigation add none; route/background cancellation preserves stopped clients
+until ViewModel clearance/Activity destruction. Native app-context ownership, main-thread
+callbacks, epochs and request IDs protect against stale speech/results. No confirmed
+playback/lifecycle defect or leak found. Five-client eager allocation is a demonstrated
+resource concern; potential legacy setVoice/stop error-handling asymmetry is documented,
+not claimed as a reproduced failure. No architecture rewrite or singleton introduced.
+
+Focused validation executed:
+
+```sh
+export JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'
+export ANDROID_HOME='/Users/paulbell/Library/Android/sdk'
+./gradlew testDebugUnitTest --tests 'com.bellfamily.bastischool.audio.*' --tests 'com.bellfamily.bastischool.LegacySpeechTest' --tests 'com.bellfamily.bastischool.learning.prepositions.PrepositionsAudioTest' --tests 'com.bellfamily.bastischool.learning.seasons.SeasonsAudioTest' --tests 'com.bellfamily.bastischool.learning.wilma.WilmaAudioTest' --tests 'com.bellfamily.bastischool.learning.vocabulary.VocabularyAudioTest' --console=plain
+git diff --check
+```
+
+**65/65 JVM tests passed; 0 failures/errors/skips**: AudioController 23,
+SystemSpeechEngine 12, LegacySpeech 7, SpeechSanitizer 3, PrepositionsAudio 4,
+SeasonsAudio 5, WilmaAudio 3, VocabularyAudio 4, CelebrationSound 4.
+Covers ALL/QUESTIONS/OFF, repeated replacement, EN/DE/offline voice selection,
+initialization/pending cancellation, stale/duplicate callbacks, close during init,
+failed stop, adapter lifecycle/restore and independent celebration sound.
+No additional tests duplicate these existing cases; actual Android service lifetime
+and multi-client audible cancellation remain physical/instrumented platform gaps.
+
+Reviewed the unchanged current-main Compose evidence from the preceding slice:
+12 focused / 90 full emulator tests passed, including separate Listen/answer touch
+and keyboard callbacks, disabled answer vs enabled Listen, route/language/recreation.
+These tests do not prove vendor speech output (route tests commonly use OFF).
+The unchanged full JVM baseline is 279/279; assembleDebug/lintDebug passed with
+0 lint errors / 3 existing warnings / 2 informational findings. Those expensive
+suites were **not rerun for this docs-only audit**. No emulator/device/browser run
+was performed in this audit. Final diff check passed; only four documentation files
+changed. No commit/push.
+
+Recommended follow-up: narrowly test lazy creation within existing native engine
+ownership, proving no unused engine at Home/OFF and correct first-use/init/cancel/close
+behavior before extending the app. No new engine/service/global singleton is required
+by this audit. Physically check EN↔DE/offline/missing voices, repeated Listen across
+all four activities, rapid Options/Home/Back, background/recreation and actual resource
+release on S24/Fire. Do not treat earlier learning-flow acceptance as this audio matrix.
+
 ## Vocabulary NAME text-choice adoption — 2026-09-26
 
 Started clean main `98c62fe`. Only Vocabulary NAME / “What Is It?” text answers now

@@ -1,6 +1,56 @@
 # Session handoff — 2026-09-26
 
-## Current checkpoint — Vocabulary NAME shared text choices
+## Current checkpoint — lazy native TTS implemented
+
+Continued from `d94d581`, preserving uncommitted audit docs. All four native ViewModels
+now pass owner-local engine factories to DefaultAudioController. Only the first current,
+policy-eligible, nonempty speech request constructs Android TTS; OFF/Home/settings/
+readiness/unused close do not. The first request waits through initialization without
+another tap. Existing cancellation/epochs, offline EN/DE selection and QUEUE_FLUSH are
+unchanged. Created engines are reused and closed with their ViewModel; no sharing,
+service or singleton. The legacy MainActivity/WebView path remains entirely unchanged.
+
+78 focused JVM and 8 actual-ViewModel instrumentation cases passed; full JVM 292/292.
+Full emulator instrumentation 98/98 passed; assembleDebug and lintDebug passed
+(0 errors, 3 existing warnings, 2 informational findings). Diff/whitespace checks passed;
+BUILD_NOTES records commands/results. No test retry was needed.
+No UI/content/session/progress/artwork/signing/browser changes. No physical S24/Fire
+acceptance; remaining checks are cold-start voice latency, cancellation while initializing,
+OFF/EN/DE/missing voices and actual platform resource release. User-visible wording,
+policy and flow are unchanged, but first speech may now wait for cold initialization.
+
+Audit and lazy-init work are included together in the commit “Audit and lazily initialize native TTS”.
+Final review found no code defect or unrelated changes. Do not start another slice automatically.
+
+## Previous checkpoint — native TTS ownership audit complete
+
+2026-09-26: audited clean `d94d581` without production/test changes. MainActivity
+constructs four native Activity-scoped ViewModels eagerly; each owns its own shared
+controller/system-TTS adapter. The shell also owns LegacySpeech/TTS: **five clients
+per normal shell**, even Home/OFF, not five proven vendor processes. Recomposition
+and route changes add no engines. Navigation/background stops owned speech; native
+engines close on ViewModel clearance, legacy on Activity destruction. Exact control
+inventory, queue/language handling, safe paths and potential legacy error-handling
+gaps are documented in NATIVE_ARCHITECTURE_SPEC's observed audit section.
+
+No confirmed playback/leak defect found. Eager allocation is confirmed unnecessary
+resource use, not proof of overlap. All native Listen controls execute through shared
+policy/engine code via their ViewModel; UI owns callbacks only. The legacy bridge is
+an intentional separate compatibility path. No policy/session/progress changes.
+
+Fresh validation: **65/65 focused JVM audio tests passed**, zero failures/errors/skips;
+`git diff --check` passed. Reused unchanged `d94d581` baseline evidence: 279 JVM,
+90 full emulator (12 focused) green, build/lint passed (0 errors / 3 warnings / 2 info).
+No full-suite rerun, emulator/device use or physical audio acceptance in this audit.
+Four documentation files only; uncommitted, no push.
+
+Actionable next slice, separately scoped: lazy native engine creation within existing
+owners, with first-use/readiness/cancellation/close tests. Do not introduce a singleton
+or service solely for tidiness. Vendor stop/voice behavior and actual resource release
+still need S24/Fire audio/lifecycle checks; preserve the stable physical installations.
+Do not begin this follow-up automatically.
+
+## Previous checkpoint — Vocabulary NAME shared text choices
 
 Started clean main `98c62fe`. Vocabulary NAME / “What Is It?” answers now use the
 existing NativeTextChoice with the same labels, ContentIds/order, callbacks, tags,

@@ -20,7 +20,10 @@ import java.util.UUID
 import java.util.concurrent.Executors
 
 /** Activity-specific owner. Pure reducers do not load assets, write files or speak. */
-class WilmaViewModel(application:Application):AndroidViewModel(application) {
+class WilmaViewModel @JvmOverloads constructor(
+    application: Application,
+    engineFactory: () -> SpeechEngine = { AndroidSystemSpeechEngine(application) }
+) : AndroidViewModel(application) {
     var selection by mutableStateOf<WilmaSelection?>(null);private set
     var quiz by mutableStateOf<SessionState?>(null);private set
     var ordering by mutableStateOf<WilmaOrderState?>(null);private set
@@ -36,7 +39,7 @@ class WilmaViewModel(application:Application):AndroidViewModel(application) {
     private val order=WilmaOrderHost(storage("wilma-order"),progress)
     private val worker=Executors.newSingleThreadExecutor()
     private val main=Handler(Looper.getMainLooper())
-    private val audio=WilmaAudio(DefaultAudioController(AndroidSystemSpeechEngine(application),AudioMode.OFF)){audioFailed=it is SpeechResult.Failed}
+    private val audio=WilmaAudio(DefaultAudioController(engineFactory,AudioMode.OFF)){audioFailed=it is SpeechResult.Failed}
     private var visible=false
     private var closed=false
     private var epoch=0L

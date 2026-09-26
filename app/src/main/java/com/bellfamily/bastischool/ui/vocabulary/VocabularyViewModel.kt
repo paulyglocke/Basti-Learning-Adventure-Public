@@ -17,7 +17,10 @@ import java.util.UUID
 import java.util.concurrent.Executors
 
 /** Activity-specific owner. Pure reducers do not load assets, write files or speak. */
-class VocabularyViewModel(application:Application):AndroidViewModel(application) {
+class VocabularyViewModel @JvmOverloads constructor(
+    application: Application,
+    engineFactory: () -> SpeechEngine = { AndroidSystemSpeechEngine(application) }
+) : AndroidViewModel(application) {
     var selection by mutableStateOf<VocabularySelection?>(null);private set
     var quiz by mutableStateOf<SessionState?>(null);private set
     var busy by mutableStateOf(false);private set
@@ -29,7 +32,7 @@ class VocabularyViewModel(application:Application):AndroidViewModel(application)
     private val quizzes=listOf(VocabularyPhase.FIND,VocabularyPhase.NAME).associateWith {VocabularyContent.host(it,storage("vocabulary-${it.name.lowercase()}"),progress)}
     private val worker=Executors.newSingleThreadExecutor()
     private val main=Handler(Looper.getMainLooper())
-    private val audio=VocabularyAudio(DefaultAudioController(AndroidSystemSpeechEngine(application),AudioMode.OFF)){audioFailed=it is SpeechResult.Failed}
+    private val audio=VocabularyAudio(DefaultAudioController(engineFactory,AudioMode.OFF)){audioFailed=it is SpeechResult.Failed}
     private var visible=false
     private var closed=false
     private var epoch=0L

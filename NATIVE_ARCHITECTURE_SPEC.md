@@ -45,6 +45,126 @@ A shared SettingsRepository owns validated preferences; it may sit beside app wi
 - Use stable semantic IDs from CONTENT_DATA_SPEC.md. Create a session ID once at session start, task-instance IDs within it and attempt-event IDs for submissions. A template ID alone does not identify a repeated question attempt.
 - Handle rapid/repeated events in the reducer/state machine. A solved task cannot score twice; Replay is not an answer attempt; hints and parent help remain observable support.
 
+## Owner-local lazy native TTS (2026-09-26)
+
+The four native ViewModels now pass an engine factory to DefaultAudioController.
+The factory is invoked once, only for a current policy-eligible request with nonempty
+sanitized speech. Construction, readiness reads, context changes, settings changes,
+OFF/suppressed requests and unused disposal do not initialize native Android TTS.
+Before creation, readiness remains INITIALISING; the first request is retained through
+real engine initialization and plays without a second tap. Existing replacement,
+owner/language/policy cancellation and stale-result checks govern that same request.
+
+The engine stays local to its existing Activity-scoped ViewModel and is reused after
+first use; close shuts it down only if created. Initialization/construction failure is
+explicit and does not repeatedly allocate engines. The Application-only ViewModel
+constructor remains available to AndroidViewModelFactory; the optional factory seam
+supports owner-level tests without vendor TTS. No Compose, service, singleton, global
+arbiter or cross-owner sharing is introduced. Legacy MainActivity/WebView speech is
+unchanged: Home still creates its one legacy client, but no native clients. Up to four
+native clients can accumulate normally after eligible use and remain until owner clear.
+Cold first speech may wait for platform initialization; wording/policy/flow are unchanged.
+
+## Observed TTS ownership audit (2026-09-26, `d94d581`)
+
+This records the **pre-lazy baseline** at `d94d581`, not the current allocation behavior
+or a new ownership design. The section above supersedes eager-construction findings.
+Speech policy stays in VOICE_AUDIO_SPEC.md. No production code changed during the audit.
+
+### Construction and lifetime
+
+- `MainActivity.onCreate` eagerly obtains all four AndroidViewModels through
+  `ViewModelProvider(this)`: Prepositions, Seasons, Wilma and Vocabulary. Each field
+  initializer builds its activity-specific audio adapter → `DefaultAudioController`
+  → `AndroidSystemSpeechEngine` → `SystemSpeechEngine` → private `AndroidSystemTtsPort`.
+  The port's `initialise()` constructs `TextToSpeech(applicationContext)` immediately.
+- `MainActivity.onCreate` separately constructs `TextToSpeech(this)` for `LegacySpeech`
+  and the WebView bridge. These are the only two Android construction sites in source.
+- **Five TTS client objects are normally alive per shell/ViewModelStore**, already on
+  Home and even with OFF selected. This is not five separate vendor engine processes.
+  There is no app-wide singleton or process-wide maximum: separate Activity stores
+  can allocate their own set, and platform connection teardown is asynchronous.
+- Native owners are Activity-scoped ViewModels, not destination-scoped Compose owners.
+  Recomposition and ordinary route changes create no new client. Configuration
+  recreation retains the four ViewModels; the old Activity releases its legacy client
+  and the new Activity creates a replacement. Route exit/background cancels speech
+  but deliberately does not close the retained native engines.
+- `MainActivity.changeRoute`, `onPause`, `onResume` drive `setVisible`; Options hides
+  every native activity. ViewModels increment an epoch and audio adapters revoke their
+  owner/context. Return is silent. New tasks/phases/language/settings invalidate old
+  worker/audio results; main-thread delivery checks visibility, epoch and language.
+- Each ViewModel's `onCleared()` calls `audio.close()` → controller/engine/port close →
+  stop + shutdown, clears cached platform voices and removes pending handler callbacks.
+  Only application context is retained by native TTS. `MainActivity.onDestroy` stops
+  legacy speech via WebView disposal, then shuts down/nulls its legacy TTS. Actual
+  Android process termination relies on OS cleanup, not guaranteed onDestroy calls.
+- No Listen composable owns a TTS object through remember/DisposableEffect. The shell's
+  WebView DisposableEffect disposes that WebView and stops legacy speech; it does not
+  own native ViewModel engines. Shared completion decoration owns no TTS either.
+
+### Current user-triggered speech inventory
+
+All native controls below call shell-wired ViewModel methods, then the four small
+activity audio adapters and the same shared controller/system-engine implementation.
+The shared implementation is reused; the engine *instance* is not shared.
+
+| Surface | Controls and execution path |
+| --- | --- |
+| Prepositions | `replay` → action(Replay); `speaker-<id>` → option(id); How to play → introduction(); shared completion Replay → action(Replay). Tutorial success alone marks it heard, with reset/language/revision guards. |
+| Seasons | Explore selection → select → canonical description; `seasons-replay` in Explore, quiz and ordering → replay(); quiz `speaker-<id>` and ordering `order-speaker-<id>` → option(id); shared completion Replay → replay(). |
+| Wilma | Explore day selection → select → day name; `wilma-replay` for Explore/practice/order → replay(); quiz strip `wilma-speaker-<id>` and ordering `order-speaker-<id>` → option(id); shared completion Replay → replay(). |
+| Vocabulary | Explore word selection → select → word; `vocabulary-replay` in Explore/practice → replay(); `vocabulary-example` → example(); FIND/NAME `speaker-<id>` → option(id); shared completion Replay → replay(). |
+| Shared UI | NativeActionButton/NativeCompletionScreen render Replay and invoke callbacks only. NativeTextChoice invokes answer callbacks only; adjacent option speakers are independent. NativeSupportMessage is passive text. Answers may cause authored automatic feedback through reducers, not an option-Listen callback. |
+| Home / Days & Seasons hub / Options | No Listen/audition control. Tutorial reset changes future tutorial eligibility, not immediate speech. Options audio-status text reflects the legacy engine; individual native screens expose their own failure state. |
+| Legacy WebView | `app.js` qHeader Replay and completion Replay → audioGuidance.replay; answer/object speakers → speakOption; Verb Explorer lesson Listen → audioGuidance.say. All go through speak → Android.speak → MainActivity.AppBridge → LegacySpeech. Browser speechSynthesis is only the no-Android-bridge development fallback. |
+
+### Language, queue and stale-result protections
+
+Native and legacy caches prefer installed offline en-GB/de-DE, otherwise another
+installed voice of the requested language; no intentional cross-language/network
+fallback. Native requests select authored speech using typed ContentLanguage and set
+and verify the cached voice before every utterance. Missing/failed selection yields
+explicit failure and no speech. Native platform callbacks are posted to main and
+checked against request/context identity; activity adapters add revision guards.
+Installed voice changes require recreating the engine (an app restart, not merely a
+Compose recomposition or retained-ViewModel configuration recreation).
+
+Each controller/legacy helper retains at most one current/pending request. New Listen
+or Replay replaces it; both Android paths use QUEUE_FLUSH, never QUEUE_ADD. Native
+workers are serialized; busy controls reject extra work, and epoch guards drop stale
+narration after route/task/language changes. Legacy JS cancels its owned 220ms timer,
+checks shell/restore state and request serial, and the bridge checks current WebView,
+WEB route, foreground and OFF. ALL/QUESTIONS semantics live in the shared native
+controller and, separately, legacy JS; the bridge independently enforces OFF.
+There is **no global cross-controller arbiter**; route visibility/cancellation makes
+one destination eligible. Do not treat QUEUE_FLUSH as a global mutex across clients.
+
+### Assessment and limits
+
+- **Safe by inspected control flow and fake-engine tests:** recomposition does not
+  allocate TTS; explicit route/background cancellation, silent restore, repeated
+  activation replacement, native language checks, stale/duplicate callback rejection,
+  terminal/idempotent controller close and native shutdown forwarding.
+- **Confirmed resource characteristic, potential issue:** all five clients initialize
+  eagerly, including unused activities and Sound Off. This is unnecessary allocation,
+  not evidence of an unbounded leak or proven audible overlap. A bounded lazy native
+  engine-creation follow-up could reduce it without a singleton/service redesign.
+- **Potential legacy robustness gaps:** the bridge trusts setVoice's success code
+  without reading back the selected voice, ignores stop's result, and does not check
+  listener/rate setup results. Native code checks voice selection and treats failed
+  stopping as terminal. No vendor failure reproducing wrong-language/overlap was
+  observed; do not claim identical robustness or silently rewrite legacy behavior.
+- **No confirmed playback/lifecycle defect found** in this audit. Retaining a stopped
+  engine until ViewModel clearance is distinct from leaking a destroyed Activity.
+  Native failures do not mutate score/progress; Prepositions tutorial completion is
+  the intentional guarded speech-success side effect.
+- Pure tests simulate ports, not Android service binding, vendor callbacks or real
+  shutdown/resource counts. Existing Compose tests establish UI callback separation,
+  route/recreation behavior and layouts, often with audio OFF; they do not establish
+  audible cancellation. No new test was needed to duplicate these existing contracts.
+  Physical EN↔DE, missing/offline voices, rapid Replay/navigation, background/recreate,
+  actual stop latency and retained-resource behavior remain separate S24/Fire checks.
+
 ## Implemented native choice-session foundation (2026-09-22)
 
 `learning/session` now provides a pure choice-question foundation, separate from the live legacy adapter. It does not migrate a screen or force sequence/placement/open-ended games into a quiz. One app module and ordinary constructor injection remain sufficient.

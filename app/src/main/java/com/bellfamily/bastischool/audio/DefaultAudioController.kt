@@ -7,10 +7,21 @@ import com.bellfamily.bastischool.learning.models.ContentLanguage
  * No timers or lifecycle/platform references. Caller revokes the context on leaving/backgrounding.
  * Return/restoration opens a silent fresh context, then explicit Replay may request speech.
  */
-class DefaultAudioController(private val engine: SpeechEngine, initialMode: AudioMode) : AudioController {
+class DefaultAudioController private constructor(
+    initialMode: AudioMode,
+    private var engine: SpeechEngine?,
+    private var engineFactory: (() -> SpeechEngine)?
+) : AudioController {
+    constructor(engine: SpeechEngine, initialMode: AudioMode) : this(initialMode, engine, null)
+    constructor(engineFactory: () -> SpeechEngine, initialMode: AudioMode) : this(initialMode, null, engineFactory)
     override var mode = initialMode
         private set
-    override val readiness get() = engine.readiness
+    override val readiness get() = when {
+        closed -> EngineReadiness.CLOSED
+        engine != null -> engine!!.readiness
+        engineFactory != null -> EngineReadiness.INITIALISING
+        else -> EngineReadiness.FAILED
+    }
     private var context: SpeechContext? = null
     private var priority = SpeechPriority.INSTRUCTION
     private var sequence = 0L
@@ -24,7 +35,7 @@ class DefaultAudioController(private val engine: SpeechEngine, initialMode: Audi
     private var notifying = false
     private val notifications = ArrayDeque<() -> Unit>()
 
-    init { engine.onReadinessChanged = { mutate { dispatch() } } }
+    init { engine?.onReadinessChanged = { mutate { dispatch() } } }
 
     override fun openContext(owner: SpeechOwner, session: SpeechSessionId, language: ContentLanguage): SpeechContext = mutate {
         check(!closed) { "Audio controller is closed" }
@@ -79,8 +90,9 @@ class DefaultAudioController(private val engine: SpeechEngine, initialMode: Audi
         if (!closed) {
             closed = true
             revoke(SpeechCancellation.CLOSED)
-            engine.onReadinessChanged = null
-            engine.close()
+            engineFactory = null
+            engine?.onReadinessChanged = null
+            engine?.close()
         }
     }
 
@@ -91,6 +103,28 @@ class DefaultAudioController(private val engine: SpeechEngine, initialMode: Audi
 
     private fun dispatch() {
         val item = active ?: return
+        if (engine == null) {
+            // Policy/context already accepted this request. Empty speech must not allocate TTS.
+            if (sanitizeSpeech(item.request.speechText).isBlank()) {
+                complete(item, SpeechResult.Failed(SpeechFailure.EMPTY_TEXT))
+                return
+            }
+            val factory = engineFactory
+            engineFactory = null // One attempt per owner, including construction failure.
+            try {
+                engine = factory?.invoke()
+                engine?.onReadinessChanged = { mutate { dispatch() } }
+            } catch (_: RuntimeException) {
+                complete(item, SpeechResult.Failed(SpeechFailure.ENGINE_UNAVAILABLE))
+                return
+            }
+        }
+        val engine = engine
+        if (engine == null) {
+            complete(item, SpeechResult.Failed(SpeechFailure.ENGINE_UNAVAILABLE))
+            return
+        }
+        if (active !== item) return
         if (engine.readiness == EngineReadiness.INITIALISING) return
         when (engine.readiness) {
             EngineReadiness.FAILED -> complete(item, SpeechResult.Failed(SpeechFailure.ENGINE_UNAVAILABLE))
@@ -131,7 +165,7 @@ class DefaultAudioController(private val engine: SpeechEngine, initialMode: Audi
     private fun cancelActive(reason: SpeechCancellation) {
         val previous = active ?: return
         active = null // Revoke before engine.stop, which may synchronously call back.
-        if (previous.dispatched) engine.stop()
+        if (previous.dispatched) engine?.stop()
         finish(previous, SpeechResult.Cancelled(reason))
     }
 
