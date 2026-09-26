@@ -1,0 +1,625 @@
+{
+  "schema": 1,
+  "art_revision": 3,
+  "scene_count": 52,
+  "relation_count": 13,
+  "canonical_size": [
+    1448,
+    1086
+  ],
+  "relations": {
+    "on": {
+      "reference": "rock"
+    },
+    "under": {
+      "reference": "table"
+    },
+    "behind": {
+      "reference": "rock"
+    },
+    "next_to": {
+      "reference": "rock"
+    },
+    "in": {
+      "reference": "box"
+    },
+    "between": {
+      "reference": "two rocks"
+    },
+    "above": {
+      "reference": "cloud"
+    },
+    "below": {
+      "reference": "cloud"
+    },
+    "inside": {
+      "reference": "cave"
+    },
+    "outside": {
+      "reference": "cave"
+    },
+    "in_front_of": {
+      "reference": "rock"
+    },
+    "near": {
+      "reference": "rock"
+    },
+    "far_from": {
+      "reference": "rock"
+    }
+  },
+  "scenes": [
+    {
+      "scene_id": "scene.prepositions.snake.on",
+      "animal": "snake",
+      "relation": "on",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_snake_on.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "6b0f7e46ec05336b8730c6b7e61324d69c59a7de69f16461e0149eecf39108d7"
+    },
+    {
+      "scene_id": "scene.prepositions.dinosaur.on",
+      "animal": "dinosaur",
+      "relation": "on",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_dinosaur_on.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "d9889338b6b7c303f7ae236b66412f57c0dfe71f67c2de7b4eff59650cb0dd8d"
+    },
+    {
+      "scene_id": "scene.prepositions.dragon.on",
+      "animal": "dragon",
+      "relation": "on",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_dragon_on.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "afa8c25d497d7269cc675552e49c1fbbdea47b8ed5cb7421c62e2b0c8e7cad99"
+    },
+    {
+      "scene_id": "scene.prepositions.crocodile.on",
+      "animal": "crocodile",
+      "relation": "on",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_crocodile_on.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "936e67cb38084d27be361848e3d62880175f94d63792417b68295f9833f3f944"
+    },
+    {
+      "scene_id": "scene.prepositions.snake.under",
+      "animal": "snake",
+      "relation": "under",
+      "reference": "table",
+      "asset_path": "Prepositions/scenes/scene_prepositions_snake_under.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "2fec11a3ee266be9a5e3fbabbc4aa0b36987c44f849f43c0947f4ac0671da48b"
+    },
+    {
+      "scene_id": "scene.prepositions.dinosaur.under",
+      "animal": "dinosaur",
+      "relation": "under",
+      "reference": "table",
+      "asset_path": "Prepositions/scenes/scene_prepositions_dinosaur_under.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "f5a31c469dc65c32d2515842d6b26ed9db9433ef780a805de8b12a9c64b78937"
+    },
+    {
+      "scene_id": "scene.prepositions.dragon.under",
+      "animal": "dragon",
+      "relation": "under",
+      "reference": "table",
+      "asset_path": "Prepositions/scenes/scene_prepositions_dragon_under.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "a2ed002d5717c94ed90217ea85f65fbd54b5577ef69aa7fcc7137e289f7373ef"
+    },
+    {
+      "scene_id": "scene.prepositions.crocodile.under",
+      "animal": "crocodile",
+      "relation": "under",
+      "reference": "table",
+      "asset_path": "Prepositions/scenes/scene_prepositions_crocodile_under.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "f27d29b6e3b0e98375e66d68e369a1e9fe9605f03ec985f759e391e5856def8c"
+    },
+    {
+      "scene_id": "scene.prepositions.snake.behind",
+      "animal": "snake",
+      "relation": "behind",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_snake_behind.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "7b646112695ada8fdb4302dafd9fa2a9040b81935f5e5a202e5234094ae43f58"
+    },
+    {
+      "scene_id": "scene.prepositions.dinosaur.behind",
+      "animal": "dinosaur",
+      "relation": "behind",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_dinosaur_behind.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "606ad6da85a7e21f67ffff9bb9323a699b16c4e3d52b9fc266759d18b9ea2681"
+    },
+    {
+      "scene_id": "scene.prepositions.dragon.behind",
+      "animal": "dragon",
+      "relation": "behind",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_dragon_behind.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "58f24962e8fb5590f6faf39eb9e5404b3ca4302b578acee96d412ad32660a46d"
+    },
+    {
+      "scene_id": "scene.prepositions.crocodile.behind",
+      "animal": "crocodile",
+      "relation": "behind",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_crocodile_behind.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "cf533eeed617a4e095edfc7c9f2ba6c7b03f2050059aa9454f85e2a7a370b3ec"
+    },
+    {
+      "scene_id": "scene.prepositions.snake.next_to",
+      "animal": "snake",
+      "relation": "next_to",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_snake_next_to.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "72addcf37b5538e910ebae51e188afc2babab6a94548ade971dead1a9a910346"
+    },
+    {
+      "scene_id": "scene.prepositions.dinosaur.next_to",
+      "animal": "dinosaur",
+      "relation": "next_to",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_dinosaur_next_to.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "f37621e923ed5a6a1e5b62953e8a03a4ce7be65e0b68be213ee424b077af1503"
+    },
+    {
+      "scene_id": "scene.prepositions.dragon.next_to",
+      "animal": "dragon",
+      "relation": "next_to",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_dragon_next_to.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "035c00678f82c4722f44ca174d096dd5cede5519d3ecabad89b4642e76ba0306"
+    },
+    {
+      "scene_id": "scene.prepositions.crocodile.next_to",
+      "animal": "crocodile",
+      "relation": "next_to",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_crocodile_next_to.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "6344e29654cc468ded95f0f828a839cc1c3873c7e61359271ff7a4a5bd5eb34c"
+    },
+    {
+      "scene_id": "scene.prepositions.snake.in",
+      "animal": "snake",
+      "relation": "in",
+      "reference": "box",
+      "asset_path": "Prepositions/scenes/scene_prepositions_snake_in.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "e62b6d33a28afbba60a2ba72ee6845562a5a60ef523b557225f104d199d3bd70"
+    },
+    {
+      "scene_id": "scene.prepositions.dinosaur.in",
+      "animal": "dinosaur",
+      "relation": "in",
+      "reference": "box",
+      "asset_path": "Prepositions/scenes/scene_prepositions_dinosaur_in.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "113d1594296fcf8c123dc1ee66936543d719c7087d5b8ffbe05b2b9482bb14f8"
+    },
+    {
+      "scene_id": "scene.prepositions.dragon.in",
+      "animal": "dragon",
+      "relation": "in",
+      "reference": "box",
+      "asset_path": "Prepositions/scenes/scene_prepositions_dragon_in.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "b6427f52091db09fe21a7b3d291588f2524f9d75d6e12766be7102b2935a7b5f"
+    },
+    {
+      "scene_id": "scene.prepositions.crocodile.in",
+      "animal": "crocodile",
+      "relation": "in",
+      "reference": "box",
+      "asset_path": "Prepositions/scenes/scene_prepositions_crocodile_in.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "c46922bc7533b16e1d1fb76a4a4a8e4352e0eaf0dd534441949e460d52f7bf9b"
+    },
+    {
+      "scene_id": "scene.prepositions.snake.between",
+      "animal": "snake",
+      "relation": "between",
+      "reference": "two rocks",
+      "asset_path": "Prepositions/scenes/scene_prepositions_snake_between.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "ecdb3e1345cad2d827cd10e8dc6d94fb8f5ade1c32d85981058b952b6236a5f1"
+    },
+    {
+      "scene_id": "scene.prepositions.dinosaur.between",
+      "animal": "dinosaur",
+      "relation": "between",
+      "reference": "two rocks",
+      "asset_path": "Prepositions/scenes/scene_prepositions_dinosaur_between.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "48fda61a3abc41ffe9425d0e4c17d7b7b8f594f2eac4b609f7152f45e9396721"
+    },
+    {
+      "scene_id": "scene.prepositions.dragon.between",
+      "animal": "dragon",
+      "relation": "between",
+      "reference": "two rocks",
+      "asset_path": "Prepositions/scenes/scene_prepositions_dragon_between.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "158e2ba4a1495cc961c197a5570e575f263e6b32975cce89032d9f9cc6e1a415"
+    },
+    {
+      "scene_id": "scene.prepositions.crocodile.between",
+      "animal": "crocodile",
+      "relation": "between",
+      "reference": "two rocks",
+      "asset_path": "Prepositions/scenes/scene_prepositions_crocodile_between.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "9cedc85ad11bf9a22ef903627120bc6597248c010c5239a9c4983351167f114d"
+    },
+    {
+      "scene_id": "scene.prepositions.bird.above",
+      "animal": "bird",
+      "relation": "above",
+      "reference": "cloud",
+      "asset_path": "Prepositions/scenes/scene_prepositions_bird_above.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "b81f81b818eb7b11d43d069afc6176e7247f4b1cce9493d2cf20c351d68af377"
+    },
+    {
+      "scene_id": "scene.prepositions.bee.above",
+      "animal": "bee",
+      "relation": "above",
+      "reference": "cloud",
+      "asset_path": "Prepositions/scenes/scene_prepositions_bee_above.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "87d0e12b8437bc43e58437a7b59725110ca7079fcb415d60eb987f99c461f92c"
+    },
+    {
+      "scene_id": "scene.prepositions.butterfly.above",
+      "animal": "butterfly",
+      "relation": "above",
+      "reference": "cloud",
+      "asset_path": "Prepositions/scenes/scene_prepositions_butterfly_above.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "88f1a28034d105ffc3932486347462e15b3acc6c6c9f6b1a1e69852a78e5b5e0"
+    },
+    {
+      "scene_id": "scene.prepositions.dragon.above",
+      "animal": "dragon",
+      "relation": "above",
+      "reference": "cloud",
+      "asset_path": "Prepositions/scenes/scene_prepositions_dragon_above.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "e7591195949a6a35b753a4d1a2377212ac7d078ea0ac0b9b2e7c13b1588bef15"
+    },
+    {
+      "scene_id": "scene.prepositions.bird.below",
+      "animal": "bird",
+      "relation": "below",
+      "reference": "cloud",
+      "asset_path": "Prepositions/scenes/scene_prepositions_bird_below.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "a7dc86c1045e0a525064c4c4162c52a21ac1fd2691a63a86885850bc8939f997"
+    },
+    {
+      "scene_id": "scene.prepositions.bee.below",
+      "animal": "bee",
+      "relation": "below",
+      "reference": "cloud",
+      "asset_path": "Prepositions/scenes/scene_prepositions_bee_below.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "bea53715fa302a2c878f9e8861cd753c8c79c0bf0ce5fb1c17df4613475b4ea0"
+    },
+    {
+      "scene_id": "scene.prepositions.butterfly.below",
+      "animal": "butterfly",
+      "relation": "below",
+      "reference": "cloud",
+      "asset_path": "Prepositions/scenes/scene_prepositions_butterfly_below.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "857bc34f7407c756c1c64168a27b24c2aced8a1f60df30f9470c611eb9802d87"
+    },
+    {
+      "scene_id": "scene.prepositions.dragon.below",
+      "animal": "dragon",
+      "relation": "below",
+      "reference": "cloud",
+      "asset_path": "Prepositions/scenes/scene_prepositions_dragon_below.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "c6c58d9b37ece0a834252bee671a859f5369d7566304e6300514283978126d9c"
+    },
+    {
+      "scene_id": "scene.prepositions.fish.inside",
+      "animal": "fish",
+      "relation": "inside",
+      "reference": "cave",
+      "asset_path": "Prepositions/scenes/scene_prepositions_fish_inside.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "16c7b935b90fe07dcf46cde965794282aca181544155cbf5301a11155194e3e6"
+    },
+    {
+      "scene_id": "scene.prepositions.turtle.inside",
+      "animal": "turtle",
+      "relation": "inside",
+      "reference": "cave",
+      "asset_path": "Prepositions/scenes/scene_prepositions_turtle_inside.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "cf368f99c36c36a777913860f9f6af59d42c535008a4fd8585d1354c448f4119"
+    },
+    {
+      "scene_id": "scene.prepositions.octopus.inside",
+      "animal": "octopus",
+      "relation": "inside",
+      "reference": "cave",
+      "asset_path": "Prepositions/scenes/scene_prepositions_octopus_inside.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "b10b46c3f41fc3685abd18e99293169b6574505e680a719de77539620b94aaca"
+    },
+    {
+      "scene_id": "scene.prepositions.seahorse.inside",
+      "animal": "seahorse",
+      "relation": "inside",
+      "reference": "cave",
+      "asset_path": "Prepositions/scenes/scene_prepositions_seahorse_inside.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "8ea7b76d6436e6dcb454687297093b34cd349224337a1513bc4762e6d86afe1e"
+    },
+    {
+      "scene_id": "scene.prepositions.fish.outside",
+      "animal": "fish",
+      "relation": "outside",
+      "reference": "cave",
+      "asset_path": "Prepositions/scenes/scene_prepositions_fish_outside.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "49c1d8f08bf8ccf981bcdfdb59c7e3ef18bab85102949a21b1bf1a25ed2b2928"
+    },
+    {
+      "scene_id": "scene.prepositions.turtle.outside",
+      "animal": "turtle",
+      "relation": "outside",
+      "reference": "cave",
+      "asset_path": "Prepositions/scenes/scene_prepositions_turtle_outside.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "f73fb3c04a90a273b50e113250be284064418a424d24050a65a6b0a0d1cf35da"
+    },
+    {
+      "scene_id": "scene.prepositions.octopus.outside",
+      "animal": "octopus",
+      "relation": "outside",
+      "reference": "cave",
+      "asset_path": "Prepositions/scenes/scene_prepositions_octopus_outside.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "12d2938be2b5338dc55757d379b63b48fae06e8592e4df4fe589204f61a52a5e"
+    },
+    {
+      "scene_id": "scene.prepositions.seahorse.outside",
+      "animal": "seahorse",
+      "relation": "outside",
+      "reference": "cave",
+      "asset_path": "Prepositions/scenes/scene_prepositions_seahorse_outside.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "7b953c86aa8a9545f5e23d98e4555eb11d7c7723728dcba864cff6daeafb2598"
+    },
+    {
+      "scene_id": "scene.prepositions.snake.in_front_of",
+      "animal": "snake",
+      "relation": "in_front_of",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_snake_in_front_of.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "56a75d8129a559a864c9bf7acbfc2c71fd1a9c68ca0e4bb4ff3573bc0fb3956b"
+    },
+    {
+      "scene_id": "scene.prepositions.dinosaur.in_front_of",
+      "animal": "dinosaur",
+      "relation": "in_front_of",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_dinosaur_in_front_of.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "add0674be28dd495d6b4d140837d27a211441d927309b614d63e56fd46011088"
+    },
+    {
+      "scene_id": "scene.prepositions.dragon.in_front_of",
+      "animal": "dragon",
+      "relation": "in_front_of",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_dragon_in_front_of.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "f6b4a699f6560571885d20948ee715c35181841e8e44b83013a657a599da5ddd"
+    },
+    {
+      "scene_id": "scene.prepositions.crocodile.in_front_of",
+      "animal": "crocodile",
+      "relation": "in_front_of",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_crocodile_in_front_of.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "078cacffd7cd46b68ef24c8dc9771aed93d5b8c9075f0b8af0edca36b5d036d9"
+    },
+    {
+      "scene_id": "scene.prepositions.snake.near",
+      "animal": "snake",
+      "relation": "near",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_snake_near.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "780abd5021a6e2553172cc308e98b3be3836b32775e4ebf182992231b513b231"
+    },
+    {
+      "scene_id": "scene.prepositions.dinosaur.near",
+      "animal": "dinosaur",
+      "relation": "near",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_dinosaur_near.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "0831b0e14c0d8e348d67d7df9be39aeec3db6d181f6e9a5f48b95232132f7fb2"
+    },
+    {
+      "scene_id": "scene.prepositions.dragon.near",
+      "animal": "dragon",
+      "relation": "near",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_dragon_near.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "c0ba0dfe9b33ee9db5bc639be170cb0bf26bc8996de83a8db8007546db379428"
+    },
+    {
+      "scene_id": "scene.prepositions.crocodile.near",
+      "animal": "crocodile",
+      "relation": "near",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_crocodile_near.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "70161bdb082f0bc0160beb671785c65ab1a0be99274b511c0cfe2d39eefe33d8"
+    },
+    {
+      "scene_id": "scene.prepositions.snake.far_from",
+      "animal": "snake",
+      "relation": "far_from",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_snake_far_from.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "4695a3715f454aee6121a0e74164893de27709f0d43aced6aa536f2423a1d937"
+    },
+    {
+      "scene_id": "scene.prepositions.dinosaur.far_from",
+      "animal": "dinosaur",
+      "relation": "far_from",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_dinosaur_far_from.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "855984cd91ca80dc649119c051460315188c4b114b658f7a223729dc4af7d342"
+    },
+    {
+      "scene_id": "scene.prepositions.dragon.far_from",
+      "animal": "dragon",
+      "relation": "far_from",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_dragon_far_from.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "1e41a214070f7fbc7afeacb8567d6764c203e97422da2a828d78b80c271f2dbe"
+    },
+    {
+      "scene_id": "scene.prepositions.crocodile.far_from",
+      "animal": "crocodile",
+      "relation": "far_from",
+      "reference": "rock",
+      "asset_path": "Prepositions/scenes/scene_prepositions_crocodile_far_from.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "762390b6e10b5c6e45bad66b1b4e0d1ea3370c400755ed286a49f71b82be91b1"
+    }
+  ]
+}
