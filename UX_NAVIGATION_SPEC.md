@@ -51,7 +51,7 @@ Prioritise:
 
 Activities may keep their own visual identity—Seasons should still feel like Seasons and Wilma like Wilma—but controls should behave and read consistently. The system should reduce later retrofit work, not force every learning activity into the same generic quiz appearance.
 
-The first implemented slice is `NativeActionButton(label, role, onClick, modifier, enabled)`, adopted inside `NativeCompletionScreen` and non-answer actions in Seasons, Prepositions, Vocabulary and Wilma. PRIMARY is filled (Play again), SECONDARY tonal (Replay/save retry), NAVIGATION outlined (Home). Roles are presentation only; labels, callbacks, enabled state and semantics remain caller-owned. Material3 supplies theme colors, button semantics, keyboard/focus behavior and restrained press feedback. Shared geometry is a 56dp minimum height that grows for wrapped text, 16dp rounded corners and 16dp horizontal/10dp vertical padding. Labels use the existing labelLarge typography with semibold weight and centered wrapping; no fixed line limit, custom animation or new theme is introduced. Completion actions remain pinned above the optional reward area. Seasons maps Next to PRIMARY, Replay/Help/attempt retry/load-save retry to SECONDARY and Home to NAVIGATION. Existing tags, callbacks and enabled conditions stay unchanged. Answer/season/order cards, per-choice speakers, mode chips and the Days & Seasons hub are excluded. Prepositions also maps How to play to SECONDARY and its legacy fallback link to NAVIGATION; Vocabulary maps sentence Listen to SECONDARY. Wilma day-strip/ordering controls retain their canonical colour cues and existing selection semantics. The shared button fills its allocated width; row widths and surrounding spacing remain caller-owned. No extra role or API extension is required by these five consumers.
+The first implemented slice is `NativeActionButton(label, role, onClick, modifier, enabled)`, adopted inside `NativeCompletionScreen` and non-answer actions in Seasons, Prepositions, Vocabulary and Wilma. PRIMARY is filled (Play again), SECONDARY tonal (Replay/save retry), NAVIGATION outlined (Home). Roles are presentation only; labels, callbacks, enabled state and semantics remain caller-owned. Material3 supplies theme colors, button semantics, keyboard/focus behavior and restrained press feedback. Shared geometry is a 56dp minimum height that grows for wrapped text, 16dp rounded corners and 16dp horizontal/10dp vertical padding. Labels use the existing labelLarge typography with semibold weight and centered wrapping; no fixed line limit, custom animation or new theme is introduced. Completion actions remain pinned above the optional reward area. Seasons maps Next to PRIMARY, Replay/Help/attempt retry/load-save retry to SECONDARY and Home to NAVIGATION. Existing tags, callbacks and enabled conditions stay unchanged. Answer/season/order cards, per-choice speakers, mode chips and the Days & Seasons hub are excluded. Prepositions also maps How to play to SECONDARY and its legacy fallback link to NAVIGATION; Vocabulary maps sentence Listen to SECONDARY. Wilma day-strip/ordering controls retain their canonical colour cues and existing selection semantics. The shared button fills its allocated width; row widths and surrounding spacing remain caller-owned. Tell Me also uses these unchanged roles for Continue/Next/Again, optional Help/grown-up disclosure, and category/Home navigation. No extra role or API extension is required.
 
 ### Shared text-answer choices
 
@@ -61,13 +61,13 @@ This primitive represents text answers, not progression/navigation actions or a 
 
 ### Shared support text presentation
 
-`NativeSupportMessage(text, modifier)` presents existing authored hints and gentle retry guidance in Seasons, Prepositions, Vocabulary and Wilma. These are two existing content uses, not new support levels: the component deliberately has no category enum, state, action slots or escalation logic. Both use a neutral Material3 surfaceVariant/onSurfaceVariant pair, rounded 16dp background and 12dp padding; bodyLarge text wraps at the allocated width with no height or line cap. The authored wording communicates meaning without relying on colour. Prompts, correct feedback, technical errors and completion remain separate.
+`NativeSupportMessage(text, modifier)` presents existing authored hints and gentle retry guidance in Seasons, Prepositions, Vocabulary and Wilma. Tell Me also uses it for explicitly revealed sentence starters and helpful words. These are authored support-text uses, not new support levels: the component deliberately has no category enum, state, action slots or escalation logic. They use a neutral Material3 surfaceVariant/onSurfaceVariant pair, rounded 16dp background and 12dp padding; bodyLarge text wraps at the allocated width with no height or line cap. The authored wording communicates meaning without relying on colour. Prompts, correct feedback, technical errors and completion remain separate.
 
-A single non-interactive Text node preserves caller tags and natural screen-reader reading order, without redundant content descriptions, keyboard focus, live-region announcements or motion. Visibility, exact EN/DE wording, hint retention and retry timing remain activity-owned; NativeActionButton still owns separate Replay/Help/Retry/Next/Home controls. No stronger-help state or parent-help UI is introduced. Existing support/progress and audio contracts are unchanged. Rollout of this text-only slice is complete for current native activities; this does not implement future support levels/settings. Vocabulary hint-revealed answer labels and Wilma day/ordering/placed controls remain activity-specific and are not support-message containers.
+A single non-interactive Text node preserves caller tags and natural screen-reader reading order, without redundant content descriptions, keyboard focus, live-region announcements or motion. Visibility, exact EN/DE wording, hint retention and retry timing remain activity-owned; NativeActionButton still owns separate Replay/Help/Retry/Next/Home controls. The shared component introduces no stronger-help state or parent-help workflow. Existing support/progress and audio contracts are unchanged. Rollout of this text-only slice is complete for current native activities; this does not implement future support levels/settings. Vocabulary hint-revealed answer labels and Wilma day/ordering/placed controls remain activity-specific and are not support-message containers.
 
 ### First support setting: larger support text
 
-Options offers “Larger hints and retry guidance” / “Größere Hinweise und Hilfetexte”, default Off. On scales only NativeSupportMessage body text and line height by 1.25; Android font scaling still applies. Off restores the theme's unchanged bodyLarge style. This applies to already-visible hints/retry guidance in Prepositions, Seasons, Vocabulary and Wilma, including ordering guidance. It neither reveals hints nor changes when/how support is requested or recorded.
+Options offers “Larger hints and retry guidance” / “Größere Hinweise und Hilfetexte”, default Off. On scales only NativeSupportMessage body text and line height by 1.25; Android font scaling still applies. Off restores the theme's unchanged bodyLarge style. This applies to already-visible hints/retry guidance in Prepositions, Seasons, Vocabulary and Wilma, including ordering guidance, and Tell Me’s revealed starter/words cards. It neither reveals hints nor changes when/how support is requested or recorded.
 
 The preference is presentation-only and takes effect on return from Options, including during an active task. It is not session/checkpoint/progress data. Prompts, correct feedback, technical errors, Explore/examples, answer-embedded hint labels, individual Listen controls, completion and Wilma day controls/auto-follow remain unchanged. The labelled switch row is one keyboard/screen-reader control with a minimum 56dp target; text wraps and screens retain scrolling without reducing font size. No diagnosis labels, support levels, automatic announcements or audio effects are introduced.
 
@@ -129,3 +129,29 @@ Design for Samsung S24-class phones and Amazon Fire Max tablets, portrait and la
 Apply system-bar/cutout insets consistently without double padding. In short landscape height, keep Replay, answers and completion actions reachable; allow controlled scrolling or a different arrangement instead of shrinking targets. Parent keyboards must not obscure settings actions. Check both gesture and button navigation where available.
 
 Maintain logical TalkBack/keyboard focus order and distinct labels for selection, speaker, Back and Home. Respect reduced motion without hiding learning meaning. Physical and automated layout/accessibility evidence is required as defined in TESTING_QA_SPEC.md.
+
+
+## Tell Me / Erzähl mal v1
+
+One Home entry opens native category selection; there is no legacy Tell Me route to
+replace. The nine category controls retain repository order and localized names. Each
+category visits its nine pictures in authored order with explicit TALK → MODEL → Next.
+Neither Continue nor completion means an answer was accepted or evaluated. Completion
+shows Again, Choose another adventure and Home, without a score or mastery statement.
+
+TALK shows the generic invitation plus the first localized QUESTIONS line, otherwise
+STARTER_PROMPTS, otherwise EXPANSION_PROMPTS. Optional Help reveals the first sentence
+starter and up to three WORDS_TO_MODEL lines. MODEL shows the first localized example,
+otherwise MODELLING_EXAMPLES. Missing optional fields are omitted, never synthesized or
+borrowed from the other language. Currently all 81 scenes have prompts; only the 27 Wave 1
+scenes have this bounded Help/model material. The other 54 still use explicit MODEL/Next
+without invented examples. The collapsed grown-up section shows principle/focus and at
+most one authored expansion pair. Review cautions and target lists are not child feedback.
+
+The full artwork composition uses Fit. The title supplies a minimal image label because
+there is no authored alt description. Text wraps without fixed text height, actions use
+shared 56dp minimum targets, and the whole scene scrolls in short landscape/large text.
+Support is passive, has no live announcement, and retains the existing larger-support-text
+setting. Language/Options preserve semantic state; the next picture resets expanded
+support. Home ends the in-memory conversation. Process-death persistence and speech are
+not part of v1; physical TalkBack, visual clarity and inset acceptance remain outstanding.

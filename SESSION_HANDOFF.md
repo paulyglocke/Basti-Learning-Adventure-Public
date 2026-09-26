@@ -1,6 +1,32 @@
 # Session handoff — 2026-09-26
 
-## Current checkpoint — Prepositions artwork/content v2
+## Current checkpoint — native Tell Me v1
+
+Started clean `6deabf6` after the committed Prepositions expansion. Native Home now opens
+Tell Me / Erzähl mal category selection. The sole content source is the unchanged bundled
+81-scene repository (content 1.3): nine categories × nine ordered pictures. Dedicated
+in-memory state supports TALK → MODEL → Next, bounded authored Help, collapsed adult
+support and score-free completion/Again/another category. No quiz host, grading, speech,
+microphone, progress events or new persistence. Options/language/configuration retain
+state; Home resets it and a new process starts at category selection.
+
+All scenes have an authored prompt; only 27 have the requested Help/model fields. For the
+other 54 those optional elements are omitted. No wording is manufactured. The worker-loaded
+single-scene sampled image cache preserves the complete composition with Fit; title is the
+minimal image label because no authored alt exists. Source metadata, all canonical images,
+other activities and signing/browser/audio/schema contracts are unchanged.
+
+Validation: focused JVM **27/27**, final focused emulator **7/7**, full JVM **315/315**,
+final full emulator **111/111**, Python **22/22**, generator freshness current. Build/lint
+passed (0 errors, 3 existing warnings, 2 informational findings); tracked/new-file whitespace
+checks passed. BUILD_NOTES.md records exact commands and all initial failures/corrections.
+No S24/Fire physical acceptance. Check EN/DE readability/content selection, real image clarity, both landscape
+orientations, larger support/system text, TalkBack and keyboard order, insets, Options,
+background/configuration return, Home reset and deliberate process-death reset. No need to
+reopen accepted celebration art or unrelated activity behavior. This completed slice is
+ready for the owner-requested commit/push; do not start another slice automatically.
+
+## Previous checkpoint — Prepositions artwork/content v2
 
 Based on clean `57cf7b1`. Native Prepositions now uses the exact 52 reviewed PNG scenes
 and 13 relations through an explicit non-Cartesian typed catalogue. New EN/DE strings

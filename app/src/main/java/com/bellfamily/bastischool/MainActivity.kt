@@ -77,6 +77,7 @@ import com.bellfamily.bastischool.ui.prepositions.PrepositionsScreen
 import com.bellfamily.bastischool.ui.seasons.*
 import com.bellfamily.bastischool.ui.wilma.*
 import com.bellfamily.bastischool.ui.vocabulary.*
+import com.bellfamily.bastischool.ui.tellme.*
 import androidx.compose.runtime.CompositionLocalProvider
 import com.bellfamily.bastischool.ui.common.CelebrationArtViewModel
 import com.bellfamily.bastischool.ui.common.LocalCelebrationArt
@@ -109,6 +110,7 @@ private data class HomeCard(
 )
 
 private val homeCards = listOf(
+    HomeCard("💬", "Tell Me!", "Erzähl mal!", "Talk about an adventure picture.", "Erzähle von einem Abenteuerbild.", mode = "tellme"),
     HomeCard("📚", "Vocabulary Booster", "Wortschatz", "Explore familiar animal words.", "Vertraute Tiernamen entdecken.", mode = "vocabulary"),
     HomeCard("🎬", "Learn Verbs", "Verben lernen", "Watch, hear and learn each action.", "Aktionen anschauen, anhören und lernen.", verbExplorer = true),
     HomeCard("🔤", "Letters", "Buchstaben", "Find words with the same first letter.", "Finde passende Anfangsbuchstaben.", "letters"),
@@ -127,6 +129,7 @@ private val homeCards = listOf(
 
 class MainActivity : ComponentActivity() {
     private val celebrationSound = CelebrationSound(AndroidPopSound())
+    private lateinit var nativeTellMe: TellMeViewModel
     private lateinit var nativeSeasons: SeasonsViewModel
     private lateinit var nativeVocabulary: VocabularyViewModel
     private lateinit var nativeWilma: WilmaViewModel
@@ -160,6 +163,7 @@ class MainActivity : ComponentActivity() {
         nativeSeasons = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[SeasonsViewModel::class.java]
         nativeVocabulary = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[VocabularyViewModel::class.java]
         nativeWilma = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[WilmaViewModel::class.java]
+        nativeTellMe = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[TellMeViewModel::class.java]
         configurePositions()
         restoredSession = savedInstanceState?.getString("legacySession")
         navigation = ShellNavigation.restore(savedInstanceState?.getString("screen"),
@@ -219,6 +223,7 @@ class MainActivity : ComponentActivity() {
                                     ShellScreen.DAYS_SEASONS -> if (language == "de") "Tage & Jahreszeiten" else "Days & Seasons"
                                     ShellScreen.VOCABULARY -> if (language == "de") "Wortschatz" else "Vocabulary Booster"
                                     ShellScreen.WILMA -> if (language == "de") "Wilmas Woche" else "Wilma’s Week"
+                                    ShellScreen.TELL_ME -> if (language == "de") "Erzähl mal!" else "Tell Me!"
                                     ShellScreen.SEASONS -> if (language == "de") "Jahreszeiten" else "Seasons"
                                 },
                                 fontWeight = FontWeight.Black
@@ -243,7 +248,7 @@ class MainActivity : ComponentActivity() {
                         ShellScreen.HOME -> NativeHome(language, padding, navigation.recoveryFailed) { card ->
                             if (!card.play) {
                                 checkpoint = LegacyCheckpoint(); restoredSession = null
-                                changeRoute(if (card.mode == "vocabulary") navigation.openVocabulary() else if (card.mode == "positions") navigation.openPrepositions() else if (card.mode == "time") navigation.openDaysSeasons() else navigation.openActivity(if (card.verbExplorer) "verbExplorer" else card.mode ?: "verbs"))
+                                changeRoute(if (card.mode == "tellme") navigation.openTellMe() else if (card.mode == "vocabulary") navigation.openVocabulary() else if (card.mode == "positions") navigation.openPrepositions() else if (card.mode == "time") navigation.openDaysSeasons() else navigation.openActivity(if (card.verbExplorer) "verbExplorer" else card.mode ?: "verbs"))
                             }
                         }
                         ShellScreen.OPTIONS -> NativeOptions(language, audioMode, round, numberMax, padding, audioStatus,
@@ -262,6 +267,11 @@ class MainActivity : ComponentActivity() {
                                 nativePositions.resetTutorials()
                                 syncSettings()
                             })
+                        ShellScreen.TELL_ME -> TellMeScreen(nativeTellMe.flow, nativeTellMe.state,
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            nativeTellMe.artwork, nativeTellMe.loading, nativeTellMe::start, nativeTellMe::advance,
+                            nativeTellMe::help, nativeTellMe::grownUps, nativeTellMe::again, nativeTellMe::home,
+                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding))
                         ShellScreen.WEB -> Unit
                         ShellScreen.DAYS_SEASONS -> DaysSeasonsHub(
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
@@ -337,6 +347,8 @@ class MainActivity : ComponentActivity() {
         celebrationSound.cancel()
         cancelAudio()
         backGate.invalidate()
+        if (route.screen == ShellScreen.HOME && (navigation.screen == ShellScreen.TELL_ME ||
+                navigation.screen == ShellScreen.OPTIONS && navigation.optionsOrigin == ShellScreen.TELL_ME)) nativeTellMe.home()
         navigation = route
         nativePositions.setVisible(foreground && route.screen == ShellScreen.PREPOSITIONS)
         nativeSeasons.setVisible(foreground && route.screen == ShellScreen.SEASONS)

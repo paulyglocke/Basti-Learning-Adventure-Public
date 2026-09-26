@@ -1,5 +1,99 @@
 # V1 verification and fixes
 
+## Native Tell Me / Erzähl mal v1 — 2026-09-26
+
+Started clean `6deabf6`. Added one native Home destination, with nine category controls
+in bundled manifest order. Dedicated TellMeFlow/State and Activity-scoped TellMeViewModel
+implement nine-picture conversations: TALK → MODEL on the same image → explicit Next;
+Help and grown-up support do not assess or advance anything. Completion is acknowledgement
+only, with Again/another category/Home. No quiz host, answer state, score, progress event,
+speech request, microphone, grading, network or durable conversation checkpoint.
+
+Runtime uses only BundledSceneDescriptions.repository() (unchanged content 1.3). Prompt
+priority is QUESTIONS → STARTER_PROMPTS → EXPANSION_PROMPTS, locally authored in the
+active language. All 81 have a prompt (27 QUESTIONS / 54 STARTER_PROMPTS). Only 27 have
+sentence-starter/words Help and examples/models: absent optional support/model text in
+the other 54 is omitted, not invented. Adult support is limited to principle/focus and
+one expansion pair. Titles are the minimal image semantics: no authored visual-alt field
+exists. No review cautions, targets or arbitrary metadata become child answer rules.
+
+Tell-Me-specific image loading runs on one worker with a one-scene cache, bounds decode
+and power-of-two sampling to at most 1024 pixels per dimension. Compose renders Fit within the available viewport height (at most 420dp);
+request epochs reject obsolete results, streams close, and the worker shuts down with
+its owner. Missing/corrupt artwork displays calm text without advancing. No canonical
+PNG, source metadata, generator or generated catalogue changed. Other native activities,
+legacy browser, speech ownership, signing/distribution and session/progress schemas are
+unchanged. Shared NativeActionButton and NativeSupportMessage were reused unchanged.
+
+State contains category, index 0..8, TALK/MODEL/COMPLETE and Help/grown-up flags. Language
+is a rendering input. Options/background/configuration retain state; Home/back-to-Home
+resets to landing. A new process has no conversation to restore and opens category
+selection. This is intentional, not a durable quiz-session recovery claim.
+
+Validation commands (repository root; emulator only):
+
+```sh
+export JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'
+export ANDROID_HOME='/Users/paulbell/Library/Android/sdk'
+export ANDROID_SERIAL=emulator-5554
+./gradlew testDebugUnitTest --tests '*TellMe*' --tests '*SceneDescription*' --console=plain
+./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.package=com.bellfamily.bastischool.ui.tellme --console=plain
+./gradlew testDebugUnitTest assembleDebug lintDebug --console=plain
+./gradlew connectedDebugAndroidTest --console=plain
+python3 scripts/generate_scene_descriptions.py --check
+python3 -m unittest discover -s scripts -p 'test_scene_descriptions.py'
+git diff --check
+```
+
+Focused JVM: **27/27** (12 Tell Me flow, one navigation, 14 existing Scene Description).
+Focused instrumentation: **7/7** (four EN/DE/portrait/both-landscape cases at 1.5× font,
+including short 240dp height; two loader cases; one real native route/recreation case).
+Tests cover explicit progression/completion/repeat/Home, support visibility and bounded
+selection, missing-language omission, keyboard activation, 56dp actions, text overflow,
+real first/later artwork, missing/corrupt fallback and passive failure state. Route tests
+verify Options EN→DE, Activity recreation, background return, no WebView and Home reset.
+Full JVM: **315/315**. Python: **22/22**; generator `--check` current (9 categories / 81).
+Final viewport-aware focused instrumentation: **7/7**; final full instrumentation:
+**111/111**, zero failed/skipped. Full JVM remains **315/315** on the final production
+source. `assembleDebug` and `lintDebug` passed: **0 errors, 3 existing warnings,
+2 informational findings**. `git diff --check` and all nine new Kotlin files' whitespace
+checks passed. The preceding full rerun also passed 111/111 before the final viewport cap;
+the final rerun confirms that last responsive adjustment. No existing tests were removed
+or weakened. All 81 canonical PNGs, source metadata and generated catalogue have no diff.
+
+Initial checks: sandbox denied the local Gradle/ADB socket, rerun with permission. First
+compile identified missing Tell Me imports in MainActivity; corrected. First focused JVM
+run was 26/27: a new reflection assertion counted Compose's generated static `$stable`
+field; it now checks actual instance fields. No learning behavior or existing test was
+weakened. A focused build also reported multiple Kotlin daemon sessions, with no test
+failure. The first full emulator run finished **110/111**: existing
+NativeActionButtonTest.allRolesExposeButtonSemanticsTargetsAndRespectDisabledState failed
+with “No compose hierarchies found” during startup, not a role/assertion regression.
+Tests were not weakened. Cold-booted Medium_Phone_API_35 without wiping data for rerun.
+During review, replaced a conflicting capped-height/aspect-ratio combination with an
+explicit bounded Fit frame and added a non-overlap assertion. Its first test compile
+used an unavailable DpRect.height property; corrected to bottom minus top. The first cold-boot focused rerun was **3/7**: two portrait cases requested keyboard
+focus while still in Android touch mode, and two landscape cases used a strict dp cap
+without allowing physical-pixel rounding. The new tests now explicitly request keyboard
+mode (as existing shared-button tests do) and allow one physical pixel for the cap;
+focus activation and non-overlap assertions remain. The subsequent final focused run
+passed **7/7**, with no production changes for those test-setup failures. Final source
+JVM/build/lint passed before emulator rerun (0 errors, 3 existing warnings: two
+UnusedAttribute and one SetJavaScriptEnabled; 2 existing AutoboxingStateCreation infos).
+
+Emulator EN Reef Actions and DE zoo captures were inspected: full compositions, readable
+prompts, distinct Help/Continue/adult/Home controls and no visible overlap. The final
+image frame additionally caps height to the available viewport, so short landscape can
+show the whole picture after scrolling to it; focused geometry checks cover both rotations.
+
+No S24/Fire physical acceptance. Remaining owner checks: EN/DE reading/content quality,
+image clarity/full composition, portrait/both landscapes, larger system/support text,
+TalkBack/image-title repetition and keyboard order, touch targets/insets, Options/language,
+background/recreation, intentional Home/new-process reset, offline use and normal signed
+upgrade preservation of existing settings/progress. Detailed authored image alternatives,
+new speech-ready content or durable open-ended participation are separate future decisions.
+
+
 ## Prepositions 52-scene artwork/content expansion — 2026-09-26
 
 Started clean `main` at `57cf7b1`. The native pack now has 13 relation definitions,

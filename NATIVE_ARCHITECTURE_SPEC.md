@@ -12,7 +12,7 @@ These are implementation requirements, not claims that the target already exists
 
 At Documentation Pass 2, [MainActivity.kt](app/src/main/java/com/bellfamily/bastischool/MainActivity.kt) owned Compose home/Options/top bar, enum navigation, remembered screen state, SharedPreferences, WebView hosting and Android TTS, while [app.js](app/src/main/assets/app.js) and [index.html](app/src/main/assets/index.html) owned all learning activities. That paragraph is a historical migration baseline, not current implementation reality.
 
-Current source still uses the same hybrid shell, but shared native content/audio/session/progress foundations are implemented and four substantial learning areas now run end to end in Compose: Prepositions, Seasons, Wilma’s Week and Vocabulary Booster. Shared completion/action/support presentation and deterministic restoration/progress delivery are also implemented. The typed 81-scene Scene Description catalogue is available for the future Tell Me / Erzähl mal consumer. Legacy HTML/JavaScript remains only for unmigrated routes and must stay usable until tested native parity exists. Physical S24/Fire acceptance remains tracked separately in TESTING_QA_SPEC.md.
+Current source still uses the same hybrid shell, but shared native content/audio/session/progress foundations are implemented and four substantial learning areas now run end to end in Compose: Prepositions, Seasons, Wilma’s Week and Vocabulary Booster. Shared completion/action/support presentation and deterministic restoration/progress delivery are also implemented. The typed 81-scene Scene Description catalogue now also drives native Tell Me / Erzähl mal, an open-ended text/artwork conversation outside the quiz framework. Legacy HTML/JavaScript remains only for unmigrated routes and must stay usable until tested native parity exists. Physical S24/Fire acceptance remains tracked separately in TESTING_QA_SPEC.md.
 
 Migrate incrementally from this current baseline. Add or extend shared foundations only for demonstrated consumers, preserve working legacy routes until parity is tested, and avoid broad rewrites. Follow the Instructions remains the first planned new reusable instruction/action **game**; Tell Me / Erzähl mal is a separate P2 expressive-language activity. BACKLOG.md owns execution order.
 
@@ -47,7 +47,7 @@ A shared SettingsRepository owns validated preferences; it may sit beside app wi
 
 ## Owner-local lazy native TTS (2026-09-26)
 
-The four native ViewModels now pass an engine factory to DefaultAudioController.
+The four speech-owning native ViewModels pass an engine factory to DefaultAudioController.
 The factory is invoked once, only for a current policy-eligible request with nonempty
 sanitized speech. Construction, readiness reads, context changes, settings changes,
 OFF/suppressed requests and unused disposal do not initialize native Android TTS.
@@ -324,13 +324,41 @@ Wilma's placed-day strip follows growth with a cancellable 400ms horizontal scro
 
 ## Scene Description content boundary (implemented 2026-09-25)
 
-The future Tell Me consumer has a pure `learning/scenedescription` catalogue;
+Tell Me uses a pure `learning/scenedescription` catalogue;
 see CONTENT_DATA_SPEC.md for identities, language availability and query behavior.
 A standard-library authoring script validates manifest-selected source data and emits
 checked-in Kotlin, matching the existing bundled-content approach without adding a
 runtime JSON dependency. The general ContentRepository and current activities are unchanged.
-Future platform hosts resolve LocalImageAsset paths and decode off the main thread;
-Compose must not parse metadata. No asset loader, ViewModel, route, session, progress,
-speech or grading behavior is introduced. Authoring prompts/references never enter
+Platform hosts resolve LocalImageAsset paths and decode off the main thread;
+Compose must not parse metadata. The content foundation itself owns no platform loader,
+ViewModel, route, session, progress, speech or grading behavior. Authoring prompts/references never enter
 the generated production catalogue. Source paths/hash provide reproducible validation,
 not a new persistence mechanism.
+
+
+## Tell Me open-ended consumer (2026-09-26)
+
+`learning/tellme/TellMeFlow` uses `BundledSceneDescriptions.repository()` directly.
+`TellMeState` holds category, scene index, TALK/MODEL/COMPLETE stage and two support
+expansion flags. It has no answer, attempt, score, skill result or progress event.
+Continue/Next carries the expected scene and stage so obsolete activations cannot skip
+pictures. Selection preserves manifest order; language is a render input, not task identity.
+
+The Activity-scoped `TellMeViewModel` retains conversation state across configuration
+recreation, Options and background return. Home/back-to-Home resets it; category selection
+and Again are explicit. There is deliberately no durable conversation checkpoint: a new
+process starts at category selection, even if the shell restores the Tell Me destination.
+No ChoiceTask, SessionReducer, DurableSessionHost or progress schema is involved.
+
+A Tell-Me-specific single-worker loader resolves typed local image paths, reads bounds,
+and power-of-two samples to at most 1024 pixels per dimension. It caches one current scene
+(including a failed decode), closes streams, and posts results only for the current request
+epoch. Home/replacement/disposal invalidates stale results; owner disposal shuts the worker
+down. Compose receives a bitmap, fits its full composition within the available viewport height
+(at most 420dp), and does no asset or metadata I/O. Missing
+art is passive localized text; it never advances the conversation. The catalogue contains
+no authored visual-alt field, so the localized title is the minimal image semantic label.
+
+Tell Me v1 has no speech contract and creates no speech engine, microphone path or TTS
+request. Authored teaching/display data is not silently treated as speech-ready content.
+Legacy and other native audio/session/progress ownership remains unchanged.
