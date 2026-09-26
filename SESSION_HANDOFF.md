@@ -1,6 +1,26 @@
-# Session handoff — 2026-09-25
+# Session handoff — 2026-09-26
 
-## Current checkpoint — targeted Scene Description review complete
+## Current checkpoint — Vocabulary NAME shared text choices
+
+Started clean main `98c62fe`. Vocabulary NAME / “What Is It?” answers now use the
+existing NativeTextChoice with the same labels, ContentIds/order, callbacks, tags,
+readiness/locking gates, fill width and 72dp minimum. FIND glyph choices, hint labels,
+separate Listen controls and all learning/session/progress/audio behavior are unchanged.
+No new component/API or correctness states; no content/artwork/MainActivity changes.
+
+Focused emulator tests: **12/12 passed**; full JVM **279/279 passed**. Debug build
+and lint passed: **0 errors / 3 existing warnings / 2 informational findings**.
+Full emulator instrumentation: **90/90 passed**, zero failures/errors/skips; no
+flake/retry. Final diff and new-file whitespace checks passed. BUILD_NOTES
+records exact commands and layout/interaction coverage. No physical S24/Fire acceptance
+claimed; no browser source change or browser tests. Work is uncommitted; no push.
+
+This completes the bounded Vocabulary text-choice adoption. Next separately scoped
+cleanup remains the native TTS ownership audit before adding another eager platform
+engine. Do not start it automatically. Image choices and Wilma's colour cues remain
+custom; other visual-system and physical acceptance work remains open.
+
+## Previous checkpoint — targeted Scene Description review complete
 
 2026-09-25: started clean main `8e00cea`, the committed/pushed bilingual-content
 slice. Direct PNG review resolved Park .07 climbing and Mountains .07 uphill wording:

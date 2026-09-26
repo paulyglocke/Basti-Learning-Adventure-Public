@@ -1,5 +1,60 @@
 # V1 verification and fixes
 
+## Vocabulary NAME text-choice adoption — 2026-09-26
+
+Started clean main `98c62fe`. Only Vocabulary NAME / “What Is It?” text answers now
+call the existing `NativeTextChoice`. The localized label, ordered ContentId,
+`SessionAction.Answer(nextAttempt, id)` callback, `canAct && UNANSWERED` gate,
+`answer-<id>` tag, fill width and existing **72dp minimum** are preserved. Shared
+neutral outlined/bodyLarge/semibold/wrapping presentation replaces the filled answer
+button. No component API, correctness styling, animation or extra semantics added.
+
+FIND's filled glyph/picture choices and hint-revealed labels are unchanged. Separate
+`Listen` / `Hören` controls keep their own ContentId callback and remain enabled
+when an answer locks (subject to the same existing readiness gate). Explore, support,
+prompts, feedback, completion, content/generation, reducers, restoration/progress,
+audio and navigation are unchanged. No MainActivity, artwork, browser, dependency,
+signing/versioning/distribution changes.
+
+Added `VocabularyTextChoiceTest`: four EN/DE portrait / German landscape-left/right
+cases at 1.5× font in bounded 280×480dp / 700×240dp viewports. Checks real authored
+labels, shared semibold typography, no text overflow, Button semantics without a
+redundant content description, >=72dp answer height, busy/save-failure gates, exact
+submitted ContentId/AttemptId, wrong-answer lock/retry, Help retention, stable choices,
+keyboard focus/Enter, correct lock, repeated-tap isolation, independent Listen before
+and after locking, and Next/Home scroll reachability. Existing FIND/help/listen,
+10-question German completion and route/restoration tests remain unchanged.
+
+Commands (all Gradle commands use the environment below; instrumentation targets
+only `emulator-5554`, never the data-bearing physical S24):
+
+```sh
+export JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'
+export ANDROID_HOME='/Users/paulbell/Library/Android/sdk'
+export ANDROID_SERIAL=emulator-5554
+./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.bellfamily.bastischool.ui.vocabulary.VocabularyScreenTest,com.bellfamily.bastischool.ui.vocabulary.VocabularyRouteTest,com.bellfamily.bastischool.ui.vocabulary.VocabularyTextChoiceTest,com.bellfamily.bastischool.ui.common.NativeTextChoiceTest --console=plain
+./gradlew testDebugUnitTest assembleDebug lintDebug --console=plain
+./gradlew connectedDebugAndroidTest --console=plain
+git diff --check
+```
+
+- Focused instrumentation: **12/12 passed**, zero failures/skips (8 Vocabulary,
+  4 shared NativeTextChoice cases).
+- Full JVM: **279/279 passed**, zero failures/errors/skips.
+- assembleDebug: **passed**. lintDebug: **passed**, **0 errors / 3 existing warnings /
+  2 informational findings** (UnusedAttribute ×2, SetJavaScriptEnabled ×1;
+  AutoboxingStateCreation ×2 information). No new findings.
+- Full emulator instrumentation: **90/90 passed**, zero failures/errors/skips on
+  Medium_Phone_API_35 / emulator-5554. No startup flake or rerun was needed.
+- Final `git diff --check` and new-test-file whitespace checks: **passed**. A source
+  comparison also confirms the FIND answer/Listen block is byte-identical to HEAD.
+
+No physical acceptance claimed. S24/Fire still need visual comfort, TalkBack and
+real-device large-font/orientation review of the neutral choices and separate Listen.
+No browser tests needed: browser files unchanged. No commit or push. The existing
+text-choice API is sufficient; image-choice presentation and TTS ownership remain
+separate future work.
+
 ## Scene Description targeted visual/content cleanup — 2026-09-25
 
 Started clean main `8e00cea` (bilingual slice committed/pushed). Directly inspected

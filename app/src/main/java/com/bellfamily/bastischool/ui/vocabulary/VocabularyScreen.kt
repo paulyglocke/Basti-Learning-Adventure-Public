@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
+import com.bellfamily.bastischool.ui.common.NativeTextChoice
 import com.bellfamily.bastischool.ui.common.NativeActionButton
 import com.bellfamily.bastischool.ui.common.NativeSupportMessage
 import com.bellfamily.bastischool.ui.common.NativeActionRole
@@ -77,7 +78,12 @@ fun VocabularyScreen(selection:VocabularySelection?,state:SessionState?,language
                     Row(horizontalArrangement=Arrangement.spacedBy(8.dp)) {row.forEach { id ->
                         val item=VocabularyContent.item(id)
                         Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(4.dp)) {
-                            Button({state.nextAttempt?.let {onAction(SessionAction.Answer(it,id))}},
+                            if(selection.phase==VocabularyPhase.NAME) NativeTextChoice(
+                                label=item.text.display[language],
+                                onClick={state.nextAttempt?.let {onAction(SessionAction.Answer(it,id))}},
+                                enabled=canAct && state.current.answer==AnswerState.UNANSWERED,
+                                modifier=Modifier.fillMaxWidth().heightIn(min=72.dp).testTag("answer-${id.value}"),
+                            ) else Button({state.nextAttempt?.let {onAction(SessionAction.Answer(it,id))}},
                                 enabled=canAct && state.current.answer==AnswerState.UNANSWERED,
                                 modifier=Modifier.fillMaxWidth().heightIn(min=72.dp).testTag("answer-${id.value}")) {
                                 if(selection.phase==VocabularyPhase.FIND) Column(horizontalAlignment=Alignment.CenterHorizontally) {
