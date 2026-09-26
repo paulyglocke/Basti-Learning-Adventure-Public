@@ -3,6 +3,7 @@ package com.bellfamily.bastischool.ui.prepositions
 import android.app.Application
 import android.os.Handler
 import android.os.Looper
+import androidx.compose.ui.graphics.ImageBitmap
 import androidx.lifecycle.AndroidViewModel
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -24,6 +25,8 @@ class PrepositionsViewModel @JvmOverloads constructor(
     engineFactory: () -> SpeechEngine = { AndroidSystemSpeechEngine(application) }
 ) : AndroidViewModel(application) {
     var state by mutableStateOf<SessionState?>(null); private set
+    var artwork by mutableStateOf<ImageBitmap?>(null); private set
+    private val images = PrepositionsArtworkLoader { application.assets.open(it) }
     var busy by mutableStateOf(false); private set
     var saveFailed by mutableStateOf(false); private set
     var recoveryFailed by mutableStateOf(false); private set
@@ -103,10 +106,13 @@ class PrepositionsViewModel @JvmOverloads constructor(
             val effects = try { operation() } catch (_: Exception) { failed = true; emptyList() }
             val snapshot = host.state
             val pendingFailure = host.failure
+            val picture = snapshot?.takeIf { it.phase == SessionPhase.ACTIVE }?.let {
+                images.load(PrepositionsContent.scene(it.task).id)
+            }
             main.post {
                 if (!closed) {
                     busy = false
-                    if (!failed) { opened = true; recoveryFailed = false; state = snapshot }
+                    if (!failed) { opened = true; recoveryFailed = false; state = snapshot; artwork = picture }
                     saveFailed = failed || pendingFailure
                     recoveryFailed = failed && state == null
                     if (!failed && visible && token == epoch && snapshot != null && snapshot.language == language) {

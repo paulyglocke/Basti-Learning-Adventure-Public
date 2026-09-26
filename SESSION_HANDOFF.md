@@ -1,6 +1,33 @@
 # Session handoff — 2026-09-26
 
-## Current checkpoint — lazy native TTS implemented
+## Current checkpoint — Prepositions artwork/content v2
+
+Based on clean `57cf7b1`. Native Prepositions now uses the exact 52 reviewed PNG scenes
+and 13 relations through an explicit non-Cartesian typed catalogue. New EN/DE strings
+are the requested authored values; no grammatical substitution was necessary. New
+rounds are activity revision 2/content 1.2, still seeded distinct 5/10 scenes and four
+choices, with spatial contrasts and competing-variant exclusions. All PNG hashes are
+unchanged. Native answer/action/listen/support/completion behavior remains intact.
+
+Compatible v1/1.1 journals restore byte-exact tasks/choices/versions/state against the
+old six-relation/24-scene contract, including pending progress and completed rounds.
+Play Again starts v2. Shared journal/checkpoint schema stays 1; only Prepositions supplies
+a compatible decoder through the host's new optional restorer argument. Bad journals
+remain preserved. No reducer/progress/audio rewrite or history fabrication.
+
+Artwork decodes off main via a one-scene sampled bitmap cache; Compose gets the bitmap
+through one shell binding and displays uncropped 4:3 Fit with the old scene tag/description.
+Calm failure text leaves learning state alone and keeps previous-version access available.
+Focused JVM **29/29**, full JVM **302/302**, and focused emulator **9/9** passed.
+Full emulator **104/104** passed; assembleDebug/lintDebug passed (0 lint errors,
+3 existing warnings, 2 informational findings); diff/new-file whitespace checks passed.
+BUILD_NOTES records exact commands, v1 coverage and the corrected test-bounds assertion.
+
+No S24/Fire acceptance claim. Recheck new artwork/distinctions, EN/DE audio and semantics,
+large-font/orientation usability, lifecycle and real same-key upgrade with a v1 round.
+Work is uncommitted; do not commit/push or start another slice without instruction.
+
+## Previous checkpoint — lazy native TTS implemented
 
 Continued from `d94d581`, preserving uncommitted audit docs. All four native ViewModels
 now pass owner-local engine factories to DefaultAudioController. Only the first current,

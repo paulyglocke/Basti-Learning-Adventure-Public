@@ -1,7 +1,6 @@
 package com.bellfamily.bastischool.ui.prepositions
 
-import android.graphics.Paint
-import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -13,13 +12,11 @@ import com.bellfamily.bastischool.ui.common.NativeSupportMessage
 import com.bellfamily.bastischool.ui.common.NativeActionRole
 import com.bellfamily.bastischool.ui.common.NativeCompletionScreen
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.nativeCanvas
-import androidx.compose.ui.graphics.drawscope.scale
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
@@ -32,7 +29,8 @@ import com.bellfamily.bastischool.learning.session.*
 fun PrepositionsScreen(state: SessionState?, language: ContentLanguage, busy: Boolean, saveFailed: Boolean,
                        audioFailed: Boolean, onAction: (SessionAction) -> Unit, onOption: (ContentId) -> Unit,
                        onRetrySave: () -> Unit, onAgain: () -> Unit, onIntroduction: () -> Unit,
-                       onHome: () -> Unit, onLegacy: () -> Unit, modifier: Modifier = Modifier, onPop: (String) -> Unit = {}) {
+                       onHome: () -> Unit, onLegacy: () -> Unit, modifier: Modifier = Modifier, onPop: (String) -> Unit = {},
+                       artwork: ImageBitmap? = null) {
     val de = language == ContentLanguage.GERMAN
     fun t(en: String, german: String) = if (de) german else en
     if(state?.phase == SessionPhase.COMPLETED) {
@@ -66,10 +64,10 @@ fun PrepositionsScreen(state: SessionState?, language: ContentLanguage, busy: Bo
                 Text(task.question.instruction.display[language], style = MaterialTheme.typography.titleLarge)
                 BoxWithConstraints {
                     if (maxWidth >= 640.dp) Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-                        PositionSceneImage(PrepositionsContent.scene(task), language, Modifier.weight(1f))
+                        PositionSceneImage(PrepositionsContent.scene(task), language, artwork, Modifier.weight(1f))
                         Answers(state, language, ready, onAction, onOption, Modifier.weight(1f))
                     } else Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                        PositionSceneImage(PrepositionsContent.scene(task), language, Modifier.fillMaxWidth())
+                        PositionSceneImage(PrepositionsContent.scene(task), language, artwork, Modifier.fillMaxWidth())
                         Answers(state, language, ready, onAction, onOption, Modifier.fillMaxWidth())
                     }
                 }
@@ -111,33 +109,15 @@ private fun Answers(state: SessionState, language: ContentLanguage, ready: Boole
     }
 }
 
-/** Temporary animal glyphs preserve legacy imagery; relation objects/layers are native drawing. */
+/** Complete 4:3 artwork, never cropped. Failed decoding is presentation-only. */
 @Composable
-private fun PositionSceneImage(scene: PositionScene, language: ContentLanguage, modifier: Modifier) {
-    val geometry = PositionGeometry.forRelation(scene.relation)
-    val paint = remember { Paint(Paint.ANTI_ALIAS_FLAG).apply { textAlign = Paint.Align.CENTER } }
-    Canvas(modifier.aspectRatio(1.6f).testTag("position-scene").semantics { contentDescription = scene.description[language] }) {
-        scale(size.width / 320f, size.height / 200f, pivot = Offset.Zero) {
-            drawRect(Color(0xFFD6F2FF), size = Size(320f, 200f))
-            drawRect(Color(0xFFB7DC8A), Offset(0f, 170f), Size(320f, 30f))
-            fun animal() {
-                val r = geometry.animal
-                paint.textSize = r.height
-                val glyph = when(scene.animal) { PositionAnimal.SNAKE -> "🐍"; PositionAnimal.DINOSAUR -> "🦖"; PositionAnimal.DRAGON -> "🐉"; PositionAnimal.CROCODILE -> "🐊" }
-                drawContext.canvas.nativeCanvas.drawText(glyph, r.x + r.width / 2, r.bottom - paint.fontMetrics.descent, paint)
-            }
-            if (geometry.animalBehind) animal()
-            geometry.objects.forEach { r ->
-                val colour = if (scene.relation.reference == ReferenceObject.ROCK) Color(0xFF788998) else Color(0xFFAD743F)
-                drawRoundRect(colour, Offset(r.x, r.y), Size(r.width, r.height), androidx.compose.ui.geometry.CornerRadius(8f))
-                if (scene.relation.reference == ReferenceObject.TABLE) {
-                    drawRect(colour, Offset(r.x + 4, r.bottom), Size(10f, 72f))
-                    drawRect(colour, Offset(r.right - 14, r.bottom), Size(10f, 72f))
-                }
-                if (scene.relation.reference == ReferenceObject.BOX) drawRect(Color(0xFF604126), Offset(r.x + 6, r.y + 6), Size(r.width - 12, 40f))
-            }
-            if (!geometry.animalBehind) animal()
-            geometry.boxFront?.let { r -> drawRect(Color(0xFFBD8551), Offset(r.x, r.y), Size(r.width, r.height)) }
-        }
+internal fun PositionSceneImage(scene: PositionScene, language: ContentLanguage, artwork: ImageBitmap?, modifier: Modifier) {
+    val frame = modifier.aspectRatio(4f / 3f).testTag("position-scene")
+    if (artwork != null) Image(artwork, scene.description[language], frame, contentScale = ContentScale.Fit)
+    else Box(frame.background(MaterialTheme.colorScheme.surfaceVariant)
+        .semantics { contentDescription = scene.description[language] }, contentAlignment = Alignment.Center) {
+        Text(if (language == ContentLanguage.GERMAN) "Das Bild ist gerade nicht verfügbar. Du kannst zur bisherigen Version wechseln."
+            else "The picture is unavailable right now. You can use the previous version.",
+            modifier = Modifier.padding(16.dp).testTag("position-image-unavailable"))
     }
 }

@@ -56,6 +56,7 @@ Already implemented and not active backlog unless a regression is found:
 - First minimal support setting: Options can enlarge existing NativeSupportMessage hints/retry guidance by 25% (default Off), independently of learning/support accounting and in addition to device font scaling. Validate physical readability/scrolling on S24/Fire. Further settings require a concrete consumer; no diagnosis-labelled modes or speculative support states. The one Boolean remains in the transitional shell preference store pending the planned DataStore migration.
 - Complete/reuse the existing canonical animal-art library; do not recreate accepted art.
 - Replace temporary animal visuals in Vocabulary and review temporary native animal representations elsewhere.
+- Prepositions now uses all 52 reviewed scene PNGs across 13 relations (activity v2/content 1.2), with exact v1/1.1 recovery and existing native controls. Physical S24/Fire artwork clarity, bilingual distinctions, large-text/orientation and same-key upgrade with an old round remain acceptance work; no artwork regeneration is needed for this integration.
 - Reuse the small Wilma/Seasons `OrderedPlacement` helper for future concrete sequencing consumers; extend it only for a demonstrated need.
 - Build **Follow the Instructions MVP** as the reusable instruction/action engine:
   - one-step tap instructions first

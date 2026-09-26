@@ -297,7 +297,7 @@ class MainActivity : ComponentActivity() {
                             onLegacy = {
                                 checkpoint = LegacyCheckpoint(); restoredSession = null
                                 changeRoute(navigation.openActivity("positions"))
-                            }, modifier = Modifier.padding(padding), onPop = ::popCelebration)
+                            }, modifier = Modifier.padding(padding), onPop = ::popCelebration, artwork = nativePositions.artwork)
                     }
                 }
             }

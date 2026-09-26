@@ -1,5 +1,87 @@
 # V1 verification and fixes
 
+## Prepositions 52-scene artwork/content expansion — 2026-09-26
+
+Started clean `main` at `57cf7b1`. The native pack now has 13 relation definitions,
+11 animal subjects and exactly the manifest's 52 authored scenes. The explicit typed
+PrepositionsArtwork catalogue maps semantic scenes to local paths; no unrestricted
+animal × relation generation or runtime JSON. The original six relations' wording
+and IDs are unchanged. All seven supplied new EN/DE labels/phrases fit the existing
+sentence construction without correction. In/inside remain vocabulary variants,
+not an assertion of distinct mastery. Seeded 5/10 rounds select distinct scenes and
+four choices with one preferred spatial contrast. Pairwise exclusion avoids in/inside,
+under/below, on/above and next_to/near appearing together; EN and DE labels are unique.
+
+New sessions use activity revision 2/content 1.2. PrepositionsContent.restore accepts
+only v2/1.2 or v1/1.1 and validates the complete saved authored question. V1 membership
+is frozen to the original four animals/six relations; its choices, task IDs, versions,
+wording, index/score/retry/support/completion remain intact. Play Again uses v2. A tiny
+optional restorer parameter in DurableSessionHost leaves other consumers' strict
+restoration unchanged. Checkpoint/journal schema 1, atomic writes, pending-event
+verification/deduplication and incompatible-journal preservation are unchanged.
+
+The ViewModel worker decodes the current PNG once (sample size 2: 724×543) through a
+one-scene cache. Compose receives the bitmap through one shell argument; no shell
+refactor. PositionSceneImage now uses a 4:3 frame and ContentScale.Fit, preserving
+position-scene and localized scene description. Missing/corrupt art produces calm
+EN/DE fallback text and does not submit an answer or change learning state. The
+previous-version action remains available. Failed loads stay cached until a different
+scene or recreated owner; no decode loop. Original PositionGeometry and its six-relation
+assertions remain historical regression evidence only, not the normal renderer.
+No PNG, metadata manifest, browser, signing/distribution, TTS, session reducer or
+progress schema was changed. NativeTextChoice/Listen/actions and completion stay intact.
+
+Validation commands (emulator only, never the stable physical installation):
+
+```sh
+export JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'
+export ANDROID_HOME='/Users/paulbell/Library/Android/sdk'
+export ANDROID_SERIAL=emulator-5554
+./gradlew testDebugUnitTest --tests 'com.bellfamily.bastischool.learning.prepositions.*' --console=plain
+./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.package=com.bellfamily.bastischool.ui.prepositions --console=plain
+./gradlew testDebugUnitTest assembleDebug lintDebug connectedDebugAndroidTest --console=plain
+git diff --check
+```
+
+- Focused JVM: **29/29 passed**, 0 failures/errors/skips. All 52 manifest paths,
+  unique scene/task identities, RGB PNG dimensions and committed SHA-256 hashes checked;
+  exact non-Cartesian animal sets and EN/DE labels/phrases/subjects/sentences checked.
+  400 deterministic 5/10 rounds cover all 13 relations and choice constraints.
+- V1 restoration tested independently against frozen original authoring/generation:
+  all 24 definitions covered; byte-exact unanswered/retry/support/answered snapshots;
+  pending attempt/completion delivery retains identity and deduplicates; completed
+  restore and Play Again to v2; forged/new references and valid-checksum incompatible
+  journals reject without overwrite. Existing host tests now also exercise v2 recovery.
+- Focused instrumentation: **9/9 passed**, 0 failures/errors/skips. Real land/flying/
+  underwater PNG decode, one-scene cache/eviction, missing/corrupt fallback; EN/DE
+  description, 1.5× text, portrait/both short landscapes, separate Listen/Replay/Help/
+  Retry/Next, unchanged answer locks and fallback state isolation. Existing route test
+  still exercises Options, recreation, both landscape orientations and Home/return.
+- Initial focused UI run: **7/9 passed**, two new ratio assertions measured clipped
+  viewport bounds rather than full layout. Corrected the test to use unclipped bounds;
+  a test-only DpRect accessor compilation issue was then corrected. No production fix
+  or weakening of existing tests. The final 9/9 rerun passed.
+- Full JVM: **302/302 passed**, zero failures/errors/skips.
+- German 1.5× portrait and reverse short-landscape test captures were visually inspected:
+  labels remain readable and separate Listen controls retain their layout; the deliberately
+  short viewport scrolls through the full image/answer area. Full image layout remains 4:3.
+- Art README/sanity integration notes updated; their approved visual review is preserved.
+- Full emulator instrumentation: **104/104 passed**, 0 failures/errors/skips.
+- `assembleDebug` and `lintDebug`: **passed**; combined build successful in 8m 41s.
+  Lint: **0 errors, 3 existing warnings, 2 informational findings** (UnusedAttribute ×2,
+  SetJavaScriptEnabled ×1; AutoboxingStateCreation ×2). Existing MainActivity
+  VIBRATOR_SERVICE deprecation compiler warning remains unrelated to this change.
+- `git diff --check` and whitespace checks for all six new Kotlin files passed.
+  Final tree contains only intended code/tests/docs; no generated or artwork files.
+- Initial sandbox Gradle/ADB socket restrictions required approved outside-sandbox
+  execution; no physical device was addressed. Browser tests omitted: source untouched.
+
+Physical S24/Fire acceptance remains separate: image clarity and all spatial distinctions
+(especially near/next-to and in/inside vocabulary), EN/DE/offline/ALL/QUESTIONS/OFF,
+Replay, Help/Retry, portrait/both landscapes/large text, TalkBack/insets, 5/10 completion,
+Options/background/process recreation and an in-place signed upgrade with a v1 round
+and existing progress. No commit or push; no next task started.
+
 ## Lazy owner-local native TTS — 2026-09-26
 
 Continued clean-main baseline `d94d581` with the prior audit's four uncommitted docs

@@ -7,10 +7,10 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class PrepositionsContentTest {
-    @Test fun canonicalSixRelationsAndTwentyFourScenes() {
-        assertEquals(listOf("on", "under", "behind", "next_to", "in", "between"), PositionRelation.entries.map { it.key })
-        assertEquals(24, PrepositionsContent.scenes.map { it.id }.toSet().size)
-        assertEquals(listOf("auf", "unter", "hinter", "neben", "in", "zwischen"), PositionRelation.entries.map { it.label.de })
+    @Test fun canonicalThirteenRelationsAndFiftyTwoScenes() {
+        assertEquals(listOf("on", "under", "behind", "next_to", "in", "between", "above", "below", "inside", "outside", "in_front_of", "near", "far_from"), PositionRelation.entries.map { it.key })
+        assertEquals(52, PrepositionsContent.scenes.map { it.id }.toSet().size)
+        assertEquals(listOf("auf", "unter", "hinter", "neben", "in", "zwischen", "über", "unterhalb", "drinnen", "draußen", "vor", "in der Nähe", "weit weg"), PositionRelation.entries.map { it.label.de })
         for (scene in PrepositionsContent.scenes) {
             val choices = (listOf(scene.relation) + PositionRelation.entries.filter { it != scene.relation }.take(3)).map { it.id }
             val question = PrepositionsContent.question(scene, choices)
@@ -43,7 +43,7 @@ class PrepositionsContentTest {
         assertThrows(IllegalArgumentException::class.java) { LocalizedText("on", " ") }
     }
     @Test fun nativeGeometryPreservesAllRelationsAndReferenceCounts() {
-        for (relation in PositionRelation.entries) {
+        for (relation in PrepositionsContent.legacyRelations) {
             val g = PositionGeometry.forRelation(relation); val a = g.animal; val o = g.objects.first()
             assertEquals(relation.count,g.objects.size)
             for (r in g.objects + a) { assertTrue(r.x >= 0 && r.y >= 0 && r.right <= 320 && r.bottom <= 200) }
@@ -54,6 +54,7 @@ class PrepositionsContentTest {
                 PositionRelation.NEXT_TO -> assertTrue(a.right < o.x)
                 PositionRelation.IN -> { assertNotNull(g.boxFront); assertTrue(a.x > o.x && a.right < o.right) }
                 PositionRelation.BETWEEN -> { assertTrue(a.x > o.right); assertTrue(a.right < g.objects[1].x) }
+                else -> error("Only historical geometry is under test")
             }
         }
     }

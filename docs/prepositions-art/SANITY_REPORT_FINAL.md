@@ -28,4 +28,4 @@
 `in` and `inside` are near-synonyms in static English scenes. Keeping both is valid if the activity explicitly teaches both words, but they should be treated as vocabulary variants rather than strongly distinct spatial concepts.
 
 ## Integration note
-The artwork set is ready for repository integration. The current Android content model still supports only the original six relations, so adding the seven new relations requires an intentional content-model revision, bilingual EN/DE authoring, validation/checkpoint revision decisions and tests.
+Native integration now maps all 52 reviewed scenes to the 13-relation catalogue (activity revision 2 / content 1.2). Supplied EN/DE labels/phrases are preserved, and supported v1/1.1 rounds restore unchanged. Integration tests verify asset paths, dimensions and hashes without changing the PNGs. See CONTENT_DATA_SPEC.md and BUILD_NOTES.md; this artwork review is not physical-device acceptance of the new activity.

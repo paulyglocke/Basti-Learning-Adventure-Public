@@ -239,6 +239,25 @@ Options, Home and backgrounding cancel native owned audio. Returning/restoring i
 
 The legacy `positions` WebView route, mixed rounds, legacy checkpoints, JavaScript and browser tests are retained unchanged. The native screen offers “Use previous version”; this starts the separate legacy route and does not translate native state into JavaScript. Other activities remain legacy. No shared audio/session reducer rewrite, Room, DI framework, network or broad migration framework is added. Physical S24/Fire parity remains required before removal of the fallback.
 
+### Prepositions artwork and compatible content upgrade (2026-09-26)
+
+New Prepositions rounds use activity revision 2/content 1.2. PrepositionsContent.restore
+accepts only that contract or the original activity revision 1/content 1.1, then checks
+all saved questions against the corresponding authored contract. DurableSessionHost has
+one optional checkpoint-restorer argument; its default preserves strict existing decoding
+for every other consumer. Journal/checkpoint schemas, pending-event verification, atomic
+writes and stale-writer checks are unchanged. Valid old rounds preserve their exact
+snapshot/version through completion; Play Again uses v2. Incompatible data is not deleted.
+
+The ViewModel's existing worker loads the explicit scene PNG through a one-scene bitmap
+cache at half linear resolution (724×543). Compose receives only the bitmap, shows the
+complete 4:3 image with Fit and retains position-scene plus the localized description.
+Language changes and recomposition do not decode again. Missing/corrupt data produces a
+calm bilingual unavailable-picture message with the existing previous-version action;
+it changes no answer, score, progress or audio policy. Failed loads are cached for that
+scene's residence too; reopening the owner or changing scene permits a later attempt.
+No generic image framework, runtime JSON parsing or asset modification is introduced.
+
 ## Second native route: Seasons (2026-09-22)
 
 The Days & Seasons Home card opens a small native chooser: Seasons Learn/Practise or the existing legacy Days & Seasons route. Native Seasons Back returns to that chooser; chooser Back returns Home. Options retains its originating native surface. No Wilma placeholder activity is introduced, and legacy mixed/calendar behavior remains available.

@@ -164,15 +164,43 @@ Automate structural validation and generator invariants under [TESTING_QA_SPEC.m
 
 Human review remains required for age appropriateness, factual credibility, natural German/English, clear phonics and whether artwork actually teaches the intended concept. A valid schema alone does not make learning content correct.
 
-## Native Prepositions slice (2026-09-22)
+## Native Prepositions artwork/content expansion (2026-09-26)
 
-`PrepositionsContent` supplies an activity-local validated `ContentRepository` using the shared `PrepositionDefinition`, `ContentId`, `ContentText` and `ContentVersion` contracts. It does not change the calendar pack. The six canonical choice IDs are `position.in`, `position.on`, `position.under`, `position.behind`, `position.next_to`, `position.between`; skill IDs use the matching `skill.spatial.*` suffixes. Legacy `nextTo` maps semantically to `next_to`, not a second skill.
+`PrepositionsContent` supplies an activity-local `ContentRepository` using the shared
+PrepositionDefinition/ContentId/ContentText contracts. New rounds use **activity revision 2,
+content schema 1 / revision 2 (1.2)**. Thirteen `position.*` choices are on, under, behind,
+next_to, in, between, above, below, inside, outside, in_front_of, near and far_from;
+`skill.spatial.*` uses the same suffixes. Legacy nextTo remains the same next_to concept.
 
-Twenty-four semantic scenes/tasks combine snake, dinosaur, dragon and crocodile with those relations. Scene IDs use `scene.prepositions.<animal>.<relation>`; task definitions use `task.prepositions.<animal>.<relation>`. A context identifies the animal/reference-object pairing, not coordinates. The one authored relation record owns the correct choice, rock/table/box reference and count, bilingual phrase and feedback. German subjects/articles and dative phrases are authored separately. `between` requires two rocks; `under` uses the table, not a rock.
+`PrepositionsArtwork` is an explicit typed catalogue of exactly **52 scenes**, matching
+art manifest revision 3 under `Prepositions/metadata/`. It is not an unrestricted Cartesian
+product: snake/dinosaur/dragon/crocodile serve the six original relations plus in_front_of,
+near/far_from; bird/bee/butterfly/dragon serve above/below; fish/turtle/octopus/seahorse
+serve inside/outside. Stable scene/task IDs retain `scene.prepositions.<animal>.<relation>`
+and `task.prepositions.<animal>.<relation>`. Each scene maps to one local PNG through a
+semantic AssetId and an explicit path, never localized text. All 52 references, manifest
+membership/order, 1448×1086 RGB dimensions and committed hashes are tested.
 
-There are no legacy Prepositions PNGs to migrate. `ReferenceObject` and `PositionGeometry` are native drawing contracts for rock/table/box and their layer order; animal glyphs remain explicit temporary migration placeholders. No season/Wilma image is repurposed. A scene ID is independent of its drawing or future asset path.
+The relation owns its bilingual label/phrase and reference: rock, table, box, two rocks,
+cloud or cave. German subjects/articles and phrases are authored separately; the supplied
+new labels/phrases require no correction. `in` and `inside` remain vocabulary variants
+with distinct authored scenes/IDs, not evidence of radically different mastery concepts.
+The live renderer uses uncropped 4:3 artwork; the original six-relation PositionGeometry
+utility is historical regression evidence only, no longer the runtime renderer.
 
-The finite seeded generator selects five or ten distinct scenes and four distinct choices per task, including the answer, then constructs bilingual instructions enumerating that exact choice order. Task instance IDs come from the frozen session and ordinal. Missing vocabulary/invalid choices reject generation. Restoration validates saved questions against the authored scene and pack revision, without rerunning the seed. This activity pack is schema 1 / revision 1, with activity revision 1; incompatible meaning/geometry changes require a deliberate revision and recovery decision. The wider context/generalisation curriculum remains future work; these 24 familiar scenes do not prove mastery.
+Seeded five/ten-question rounds select distinct scenes, include the correct answer in four
+distinct choices and narrate that exact ordered list. One concrete contrast is preferred
+(e.g. behind/in front of, near/far from). Competing pairs in/inside, under/below, on/above
+and next_to/near are excluded throughout a new question's choices. Both languages' labels
+must be unique. No adaptive difficulty or new answer interpretation is introduced.
+
+Revision-1/content-1.1 checkpoints restore their exact original tasks, choices, wording,
+versions and state against the original six-relation/24-scene contract. They are neither
+regenerated nor expanded mid-round; old pending progress is delivered with its original
+identity/version. Play Again creates v2. Unsupported or malformed journals remain intact.
+Shared checkpoint/journal schemas stay 1; Prepositions supplies an explicit compatible
+restore function to DurableSessionHost, whose other consumers retain strict current-version
+restoration. New pictures do not fabricate prior learning history or demonstrate mastery.
 
 ## Native Wilma weekday presentation (2026-09-22)
 

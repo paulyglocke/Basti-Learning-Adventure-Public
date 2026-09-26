@@ -11,7 +11,10 @@ import java.security.MessageDigest
 open class DurableSessionHost(private val journal: ProgressStorage, private val progress: ProgressRepository,
     private val activity: ActivityId, private val revision: Int, private val content: ContentRepository,
     private val generate: (SessionId, RoundLength, Long) -> GenerationResult,
-    private val validate: (SessionState) -> Unit) {
+    private val validate: (SessionState) -> Unit,
+    private val restoreCheckpoint: (ByteArray) -> SessionRestoreResult = {
+        SessionCheckpoint.restore(it, activity, revision, content)
+    }) {
     var state: SessionState? = null
         private set
     private var pending = emptyList<ProgressEvent>()
@@ -114,8 +117,7 @@ open class DurableSessionHost(private val journal: ProgressStorage, private val 
             require(input.readInt() == 1)
             val checkpointSize = input.readInt().also { require(it in 1..SessionCheckpoint.MAX_BYTES) }
             val checkpoint = ByteArray(checkpointSize).also { input.readFully(it) }
-            val restored = SessionCheckpoint.restore(checkpoint, activity, revision,
-                content) as? SessionRestoreResult.Restored ?: throw IOException("Incompatible checkpoint")
+            val restored = restoreCheckpoint(checkpoint) as? SessionRestoreResult.Restored ?: throw IOException("Incompatible checkpoint")
             validate(restored.state)
             val eventSize = input.readInt().also { require(it in 1..40_000) }
             val events = ProgressCodec.decode(ByteArray(eventSize).also { input.readFully(it) }).map { it.event }
