@@ -30,12 +30,15 @@ class VocabularyRouteTest {
             compose.onNodeWithTag("vocabulary-explore").performScrollTo().performClick();settled()
             compose.onNodeWithTag("word-animal.horse").performScrollTo().performClick();settled()
             compose.onNodeWithTag("vocabulary-word").assertTextEquals("Horse")
+            compose.waitUntil(10_000) { var count=0;scenario.onActivity { count=ViewModelProvider(it)[VocabularyViewModel::class.java].images.size };count==6 }
+            compose.onNodeWithTag("vocabulary-art-animal.horse",useUnmergedTree=true).performScrollTo().assertIsDisplayed()
             scenario.recreate();settled()
             compose.onNodeWithTag("vocabulary-word").assertTextEquals("Horse")
             compose.onNodeWithText("⚙ Options").performClick()
             compose.onNodeWithText("🇩🇪 Deutsch").performClick()
             scenario.onActivity {it.onBackPressedDispatcher.onBackPressed()};settled()
             compose.onNodeWithTag("vocabulary-word").assertTextEquals("Pferd")
+            compose.onNodeWithTag("vocabulary-art-animal.horse",useUnmergedTree=true).performScrollTo().assertIsDisplayed()
             scenario.onActivity {assertEquals(ContentId("animal.horse"),ViewModelProvider(it)[VocabularyViewModel::class.java].selection!!.selected)}
             compose.onNodeWithTag("vocabulary-find").performScrollTo().performClick();settled()
             if(current()!!.phase==SessionPhase.COMPLETED) {compose.onNodeWithTag("vocabulary-again").assertIsDisplayed().performClick();settled()}

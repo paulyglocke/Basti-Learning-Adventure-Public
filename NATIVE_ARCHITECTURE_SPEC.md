@@ -292,6 +292,25 @@ Progress effects are saved with the next checkpoint before publication and deliv
 Shared audio receives authored words, examples, questions and feedback. Language/mode/navigation/background boundaries cancel owned speech. Restore/retry is silent until an explicit Listen/Replay or new task. The system engine's matching offline-language requirement remains unchanged. Vocabulary has no WebView, direct TTS or filesystem work in Compose/reducer; no remote services, new engine or neural speech work.
 
 
+### Vocabulary canonical artwork (2026-09-27)
+
+The native Vocabulary screen now uses an explicit six-item semantic-ID/path mapping in
+`VocabularyArtwork`. On first visibility, its existing owner worker decodes the six
+canonical PNGs once, sampled to at most 384 pixels per dimension. A bounded owner-local
+cache includes failed loads; language, task changes and recomposition do not decode again.
+Home does not start this load. No new worker, global cache or generic image framework is
+introduced. Owner disposal prevents late UI publication and drains/shuts its existing worker.
+
+Compose receives the image map and uses Fit in the existing 100dp choice/160dp prompt
+frames. Images add no duplicate description or interactive target; the existing localized
+animal label and parent answer button keep their semantics. Missing/corrupt images show
+passive bilingual text, never substitute a different animal or submit/advance a task.
+Other images still load when one fails. A fresh owner can retry failed asset reads.
+
+Quiz content/activity versions, checkpoint schema, progress identities and speech are
+unchanged. The legacy-named context remains a compatibility ID, not a claim that new
+pictures demonstrate a new generalisation context. No PNG or authored wording changes.
+
 ## APK identity and upgrade boundary (2026-09-23)
 
 `com.bellfamily.bastischool` is stable across debug and release. Debug uses the ordinary machine-local SDK key and is not the distribution identity. Physical distribution uses the existing release build type with externally supplied persistent signing credentials and an explicit increasing version code; missing credentials/version fail before release packaging. CI allocates bounded run/attempt codes and only exposes private signing to manually requested main-branch distribution after validation. Setup/version-allocation details live in README.md, and install-over-data acceptance lives in TESTING_QA_SPEC.md.

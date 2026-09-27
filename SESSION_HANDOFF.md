@@ -1,6 +1,27 @@
-# Session handoff — 2026-09-26
+# Session handoff — 2026-09-27
 
-## Current checkpoint — native Tell Me v1
+## Current checkpoint — Vocabulary canonical artwork
+
+Started clean `522f671` after Tell Me v1 was committed and pushed. Vocabulary's six
+animals now use their existing canonical PNGs in Explore, FIND picture answers and NAME
+prompt images. A small explicit presentation map resolves semantic IDs; the existing
+ViewModel worker loads/cache-bounds the six images once on first visibility (384px max).
+Compose uses Fit with the existing localized image label, answer tags and separate Listen.
+Missing/corrupt assets display passive EN/DE fallback text, without changing session state.
+
+No authored content, artwork bytes, answer ordering, scoring, support, speech, checkpoints,
+progress or signing/distribution changes. Quiz versions and the historical context ID
+remain stable for exact saved-round compatibility. The old migration glyph model remains
+unused by the live renderer; no generic image-choice framework was introduced.
+
+Validation: focused Vocabulary JVM 36/36; full JVM 317/317; focused emulator 14/14; full
+emulator 117/117 with zero failures/skips. Build/lint passed (0 errors, 3 existing warnings,
+2 informational findings); diff checks passed. No physical acceptance.
+Owner checks remain animal recognition with Basti, portrait/both landscapes, large text,
+TalkBack, image clarity and signed in-place upgrade/resume on S24 and Fire Max.
+Changes are uncommitted; do not commit/push or start another slice automatically.
+
+## Previous checkpoint — native Tell Me v1
 
 Started clean `6deabf6` after the committed Prepositions expansion. Native Home now opens
 Tell Me / Erzähl mal category selection. The sole content source is the unchanged bundled

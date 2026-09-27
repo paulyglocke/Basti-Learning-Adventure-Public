@@ -4,6 +4,7 @@ import android.app.Application
 import android.os.Handler
 import android.os.Looper
 import androidx.compose.runtime.*
+import androidx.compose.ui.graphics.ImageBitmap
 import androidx.lifecycle.AndroidViewModel
 import com.bellfamily.bastischool.audio.*
 import com.bellfamily.bastischool.audio.android.AndroidSystemSpeechEngine
@@ -26,6 +27,9 @@ class VocabularyViewModel @JvmOverloads constructor(
     var busy by mutableStateOf(false);private set
     var saveFailed by mutableStateOf(false);private set
     var audioFailed by mutableStateOf(false);private set
+    var images by mutableStateOf<Map<ContentId, ImageBitmap>>(emptyMap());private set
+    private val artworkLoader = VocabularyArtworkLoader { application.assets.open(it) }
+    private var artworkRequested = false
     private fun storage(name:String)=AtomicProgressStorage(File(getApplication<Application>().noBackupFilesDir,name),AndroidAtomicCommit)
     private val progress=AndroidProgressRepository.create(application)
     private val browse=VocabularySelectionStore(storage("vocabulary-selection"))
@@ -52,6 +56,13 @@ class VocabularyViewModel @JvmOverloads constructor(
     fun setVisible(value:Boolean) {
         if(visible==value)return
         visible=value;epoch++;audio.visible(value)
+        if(value && !closed && !artworkRequested) {
+            artworkRequested = true
+            worker.execute {
+                val loaded = artworkLoader.load()
+                main.post { if(!closed) images = loaded }
+            }
+        }
         if(value && selection==null && !busy)retry()
     }
     private fun syncLanguage() {

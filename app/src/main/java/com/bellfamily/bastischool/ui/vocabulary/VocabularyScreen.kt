@@ -1,6 +1,7 @@
 package com.bellfamily.bastischool.ui.vocabulary
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -14,10 +15,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.*
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.bellfamily.bastischool.learning.models.*
 import com.bellfamily.bastischool.learning.session.*
 import com.bellfamily.bastischool.learning.vocabulary.*
@@ -26,7 +28,8 @@ import com.bellfamily.bastischool.learning.vocabulary.*
 fun VocabularyScreen(selection:VocabularySelection?,state:SessionState?,language:ContentLanguage,
     busy:Boolean,saveFailed:Boolean,audioFailed:Boolean,onSelect:(ContentId)->Unit,onPhase:(VocabularyPhase)->Unit,
     onReplay:()->Unit,onExample:()->Unit,onAction:(SessionAction)->Unit,onOption:(ContentId)->Unit,
-    onAgain:()->Unit,onRetry:()->Unit,onHome:()->Unit,modifier:Modifier=Modifier,onPop:(String)->Unit={}) {
+    onAgain:()->Unit,onRetry:()->Unit,onHome:()->Unit,modifier:Modifier=Modifier,onPop:(String)->Unit={},
+    images:Map<ContentId,ImageBitmap> = emptyMap()) {
     fun t(en:String,de:String)=if(language==ContentLanguage.GERMAN)de else en
     val ready=!busy && !saveFailed && selection!=null
     if(selection != null && selection.phase != VocabularyPhase.EXPLORE && state?.phase == SessionPhase.COMPLETED) {
@@ -61,7 +64,7 @@ fun VocabularyScreen(selection:VocabularySelection?,state:SessionState?,language
                 }}
             }
             Text(selection.item.text.display[language],style=MaterialTheme.typography.headlineMedium,modifier=Modifier.testTag("vocabulary-word"))
-            AnimalPicture(selection.item,language,Modifier.fillMaxWidth())
+            AnimalPicture(selection.item,language,images[selection.selected],Modifier.fillMaxWidth())
             NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY, onClick=onReplay,enabled=ready,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("vocabulary-replay"))
             Text(selection.item.example.display[language],style=MaterialTheme.typography.titleLarge)
             NativeActionButton(t("Listen to the sentence", "Satz anhören"), NativeActionRole.SECONDARY, onClick = onExample,enabled=ready,modifier=Modifier.heightIn(min=56.dp).testTag("vocabulary-example"))
@@ -73,7 +76,7 @@ fun VocabularyScreen(selection:VocabularySelection?,state:SessionState?,language
             NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY, onClick = onReplay,enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("vocabulary-replay"))
             if(state.phase==SessionPhase.ACTIVE) {
                 Text(state.task.question.instruction.display[language],style=MaterialTheme.typography.titleLarge)
-                if(selection.phase==VocabularyPhase.NAME) AnimalPicture(VocabularyContent.item(state.task.question.correct),language,Modifier.fillMaxWidth())
+                if(selection.phase==VocabularyPhase.NAME) AnimalPicture(VocabularyContent.item(state.task.question.correct),language,images[state.task.question.correct],Modifier.fillMaxWidth())
                 state.task.question.choices.chunked(2).forEach { row ->
                     Row(horizontalArrangement=Arrangement.spacedBy(8.dp)) {row.forEach { id ->
                         val item=VocabularyContent.item(id)
@@ -87,7 +90,7 @@ fun VocabularyScreen(selection:VocabularySelection?,state:SessionState?,language
                                 enabled=canAct && state.current.answer==AnswerState.UNANSWERED,
                                 modifier=Modifier.fillMaxWidth().heightIn(min=72.dp).testTag("answer-${id.value}")) {
                                 if(selection.phase==VocabularyPhase.FIND) Column(horizontalAlignment=Alignment.CenterHorizontally) {
-                                    AnimalPicture(item,language,Modifier.fillMaxWidth(),small=true)
+                                    AnimalPicture(item,language,images[id],Modifier.fillMaxWidth(),small=true)
                                     if(state.current.support.hint)Text(item.text.display[language])
                                 }
                                 else Text(item.text.display[language])
@@ -112,10 +115,13 @@ fun VocabularyScreen(selection:VocabularySelection?,state:SessionState?,language
     }
 }
 
-/** Temporary legacy glyph, deliberately isolated from authored speech and replaceable by reviewed art. */
+/** Passive fitted artwork; the existing single animal label is independent of bitmap availability. */
 @Composable
-private fun AnimalPicture(item:VocabularyDefinition,language:ContentLanguage,modifier:Modifier,small:Boolean=false) {
+private fun AnimalPicture(item:VocabularyDefinition,language:ContentLanguage,image:ImageBitmap?,modifier:Modifier,small:Boolean=false) {
     Box(modifier.heightIn(min=if(small)100.dp else 160.dp).semantics {contentDescription=item.text.display[language]},contentAlignment=Alignment.Center) {
-        Text(item.visual.glyph,fontSize=if(small)48.sp else 88.sp,modifier=Modifier.clearAndSetSemantics {})
+        if(image != null) Image(image,contentDescription=null,contentScale=ContentScale.Fit,
+            modifier=Modifier.fillMaxWidth().height(if(small)100.dp else 160.dp).testTag("vocabulary-art-${item.id.value}"))
+        else Text(if(language==ContentLanguage.GERMAN) "Bild gerade nicht verfügbar" else "Picture unavailable right now",
+            modifier=Modifier.testTag("vocabulary-art-unavailable-${item.id.value}").clearAndSetSemantics {})
     }
 }

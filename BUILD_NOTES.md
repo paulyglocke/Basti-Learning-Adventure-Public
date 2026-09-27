@@ -1,5 +1,69 @@
 # V1 verification and fixes
 
+## Vocabulary canonical artwork — 2026-09-27
+
+Started clean `522f671`. Replaced live Vocabulary glyph rendering in Explore, FIND
+answers and NAME prompt images with the existing dinosaur, snake, whale, horse,
+crocodile and fish canonical PNGs. Explicit semantic-ID/path binding is presentation-only;
+no filename is derived from visible text. All six images decode on the existing owner
+worker once at first visibility, use a bounded six-image cache (including failures),
+and are sampled to at most 384px per dimension. No asset I/O in Compose, no Home eager
+loading, no additional executor/global cache/dependency. Late publication is ignored after
+owner clear; its existing worker shutdown remains unchanged.
+
+Fit preserves the whole animal inside the existing 100dp FIND / 160dp Explore/NAME
+frames. Existing animal-label semantics remain on the wrapper; the bitmap has no duplicate
+content description or click target. EN/DE fallback text is passive and cannot submit,
+score, advance or write progress. Missing one animal does not suppress other loaded images;
+a fresh owner retries failed reads. No new selected/correctness styling or image-choice
+abstraction. NAME NativeTextChoice, answer locking, separate Listen, support, completion,
+mode/order and audio remain unchanged.
+
+No content/activity version bump: this binds canonical presentation to unchanged semantic
+quiz records, without changing authored meaning/text, saved fields or generated tasks.
+The historical context.vocabulary.temporary_animal_visual stays stable for saved-round and
+progress compatibility; the artwork upgrade does not claim new generalisation evidence.
+The legacy migration model is retained but its glyph is no longer rendered. All asset bytes,
+browser, signing/distribution and other activities remain unchanged.
+
+Commands (repository root; Android runs target only emulator-5554):
+
+```sh
+export JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'
+export ANDROID_HOME='/Users/paulbell/Library/Android/sdk'
+export ANDROID_SERIAL=emulator-5554
+./gradlew testDebugUnitTest --tests '*Vocabulary*' --console=plain
+./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.package=com.bellfamily.bastischool.ui.vocabulary --console=plain
+./gradlew testDebugUnitTest assembleDebug lintDebug --console=plain
+./gradlew connectedDebugAndroidTest --console=plain
+git diff --check
+```
+
+Focused JVM **36/36**, full JVM **317/317**, focused instrumentation **14/14**, full
+instrumentation **117/117**; no failures or skips in these final runs. Build/lint passed:
+**0 errors, 3 existing warnings**
+(two UnusedAttribute, one SetJavaScriptEnabled), **2 existing informational findings**
+(AutoboxingStateCreation). Full instrumentation result pending.
+
+New coverage checks six exact semantic/path bindings, PNG alpha/header/dimensions and
+agreement with existing celebration bindings; real Android decode/cache/failure isolation;
+all three UI modes in EN/DE, 1.5× font, portrait and both short landscapes; no extra
+interactive image/label, keyboard answer activation, Listen independence, retry/help/locking,
+and image failure/reappearance leaving checkpoint bytes unchanged. Existing route coverage
+also checks real horse artwork before/after recreation and language switching.
+
+Initial infrastructure: sandbox blocked Gradle/ADB sockets; rerun outside sandbox.
+Initial new JVM test compile used desktop ImageIO unavailable to this Android test
+classpath; replaced with PNG-header checks plus Android decode tests. No production fix
+or existing test weakening was needed. First screenshot retrieval occurred after Gradle
+removed the test app, so it yielded no valid capture; no visual acceptance claimed from it.
+
+No physical S24/Fire acceptance. Remaining checks: recognition with Basti, image clarity,
+portrait/both landscapes, larger system/support text, TalkBack/keyboard/focus, touch/insets,
+and normal signed upgrade retaining settings/progress and an existing Vocabulary round.
+Browser tests are not rerun because no browser sources changed.
+
+
 ## Native Tell Me / Erzähl mal v1 — 2026-09-26
 
 Started clean `6deabf6`. Added one native Home destination, with nine category controls

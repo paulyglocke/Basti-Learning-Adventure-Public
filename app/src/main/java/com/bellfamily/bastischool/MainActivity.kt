@@ -284,7 +284,8 @@ class MainActivity : ComponentActivity() {
                             nativeVocabulary.busy, nativeVocabulary.saveFailed, nativeVocabulary.audioFailed,
                             nativeVocabulary::select, { celebrationSound.cancel(); nativeVocabulary.phase(it) }, { celebrationSound.cancel(); nativeVocabulary.replay() }, nativeVocabulary::example,
                             nativeVocabulary::action, nativeVocabulary::option, { celebrationSound.cancel(); nativeVocabulary.again() }, nativeVocabulary::retry,
-                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration)
+                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration,
+                            images = nativeVocabulary.images)
                         ShellScreen.WILMA -> WilmaScreen(nativeWilma.selection, nativeWilma.quiz, nativeWilma.ordering,
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeWilma.images, nativeWilma.busy, nativeWilma.saveFailed, nativeWilma.imageFailed, nativeWilma.audioFailed,
