@@ -47,6 +47,9 @@ sealed interface ContentDefinition {
     val text: ContentText
 }
 
+/** Small semantic object record for native instruction/action scenes. */
+data class SemanticObjectDefinition(override val id: ContentId, override val text: ContentText) : ContentDefinition
+
 /** Semantic colour, not an Android colour value or an artwork filename. */
 data class ColourDefinition(override val id: ContentId, override val text: ContentText) : ContentDefinition {
     init { require(id.value.startsWith("colour.")) { "Colour ID must use colour.: $id" } }

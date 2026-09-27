@@ -58,11 +58,7 @@ Already implemented and not active backlog unless a regression is found:
 - Vocabulary now uses the six existing canonical animal PNGs in Explore/FIND/NAME; temporary glyph rendering is removed. Physical recognition, clarity, landscape/large-text and accessibility review on S24/Fire remain. Review other temporary native representations only in later bounded work.
 - Prepositions now uses all 52 reviewed scene PNGs across 13 relations (activity v2/content 1.2), with exact v1/1.1 recovery and existing native controls. Physical S24/Fire artwork clarity, bilingual distinctions, large-text/orientation and same-key upgrade with an old round remain acceptance work; no artwork regeneration is needed for this integration.
 - Reuse the small Wilma/Seasons `OrderedPlacement` helper for future concrete sequencing consumers; extend it only for a demonstrated need.
-- Build **Follow the Instructions MVP** as the reusable instruction/action engine:
-  - one-step tap instructions first
-  - bilingual Replay
-  - shared audio/progress/session contracts
-  - responsive phone/tablet layouts
+- **Follow the Instructions MVP implemented (2026-09-27):** native one-step bilingual tap instructions for crocodile, dinosaur, snake and fish, using `ChoiceQuestion` semantics for presented objects, `DurableSessionHost`, existing progress/audio/completion contracts, canonical animal artwork and a bounded local loader. Physical S24/Fire acceptance remains open. Future multi-step, attribute, spatial and inhibition variants remain deferred.
 - Extend that engine later rather than creating separate frameworks for School Skills, Remember the Mission, inhibition/rule switching and compatible Move & Learn prompts.
 - Build Memory Pairs on a reusable semantic matching model when that work starts.
 - Extend content/data schemas only for concrete activity needs; avoid speculative framework work.

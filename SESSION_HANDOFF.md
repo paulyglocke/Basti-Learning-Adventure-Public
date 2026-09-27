@@ -537,3 +537,19 @@ The earlier session used `/home/paul/Projects/Basti_Learning_Adventure_V1_For_Co
 - Sandbox DNS blocked GitHub; escalated read-only remote/CI checks succeeded. Do not mistake that for repository failure.
 
 The audit was a review, not a completed fix pass. Do not repeat earlier claims that all animations teach their actions, all audio policies work, or all system-bar/device cases are verified.
+
+## Follow the Instructions MVP (2026-09-27)
+
+The first native instruction/action consumer is implemented at the `follow-instructions`
+route. It presents four canonical animal image targets and authored one-step EN/DE
+instructions in deterministic five- or ten-question rounds. `ChoiceQuestion` is used
+as the semantic session representation (choices are object IDs); the UI deliberately
+uses image taps rather than text-choice controls. Wrong taps use the existing retry
+policy, correct taps require explicit Next, Replay is independent, and completion uses
+the shared native completion flow. `DurableSessionHost`, existing progress recording,
+lazy owner-local audio and silent restoration remain unchanged. A four-image worker
+loader maps semantic IDs to committed Animals artwork and fails passively.
+
+Focused validation currently: JVM `*Follow*` **22/22** and Follow instrumentation
+**2/2** on the emulator. Full regression/build/lint evidence is pending. Physical
+S24/Fire validation remains open; no commit or push was performed for this slice.

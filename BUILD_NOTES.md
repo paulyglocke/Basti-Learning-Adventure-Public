@@ -1615,3 +1615,21 @@ The retained Android Gradle Plugin 8.7.3/Gradle 8.9 combination follows the
 [Android compatibility table](https://developer.android.com/build/releases/agp-8-7-0-release-notes).
 TTS discovery and offline voice filtering follow the
 [Android TTS engine documentation](https://developer.android.com/reference/android/speech/tts/TextToSpeech.Engine).
+# Follow the Instructions MVP (2026-09-27)
+
+Native one-step instruction/action flow is implemented for four canonical animal
+objects (crocodile, dinosaur, snake and fish). It uses `ChoiceQuestion` only as
+the durable semantic/session representation; the UI presents image tap targets.
+`DurableSessionHost`, lazy owner-local native audio, existing progress events and
+the shared completion screen remain the underlying contracts. No speech input,
+grading, or new persistence schema was added.
+
+Validation: focused JVM `*Follow*` **22/22**; focused Follow instrumentation
+**2/2** on `Medium_Phone_API_35`; full JVM **320/320**; `assembleDebug` passed;
+`lintDebug` passed with the repository's existing **0 errors, 3 warnings and 2
+informational findings**. A package-filtered instrumentation run made before
+these tests existed completed **0/0**. The later full emulator run started 119
+tests and reproduced one existing `ActivityActionAdoptionTest` display assertion
+failure at the vocabulary orientation case, then stopped progressing at 59/119;
+no Follow test failed. No production change was made for that unrelated emulator
+failure. No physical S24/Fire acceptance is claimed.

@@ -381,3 +381,14 @@ no authored visual-alt field, so the localized title is the minimal image semant
 Tell Me v1 has no speech contract and creates no speech engine, microphone path or TTS
 request. Authored teaching/display data is not silently treated as speech-ready content.
 Legacy and other native audio/session/progress ownership remains unchanged.
+
+## Follow the Instructions MVP (2026-09-27)
+
+The bounded one-step instruction/action consumer uses `ChoiceQuestion` and
+`DurableSessionHost` without changing their schemas: the four `choices` are semantic
+object IDs and the Compose surface renders canonical image tap targets. It records
+ordinary attempt/progress events with `skill.listening.one_step`, uses the existing
+owner-local lazy audio controller for automatic instruction speech and Replay, and
+uses the shared completion flow. Its Activity-scoped ViewModel owns a four-entry
+worker/cache artwork loader; Compose performs no asset I/O. No speech recognition,
+grading, additional persistence or global instruction engine is introduced.
