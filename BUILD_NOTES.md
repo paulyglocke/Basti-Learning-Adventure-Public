@@ -1615,17 +1615,18 @@ The retained Android Gradle Plugin 8.7.3/Gradle 8.9 combination follows the
 [Android compatibility table](https://developer.android.com/build/releases/agp-8-7-0-release-notes).
 TTS discovery and offline voice filtering follow the
 [Android TTS engine documentation](https://developer.android.com/reference/android/speech/tts/TextToSpeech.Engine).
-# Follow the Instructions MVP (2026-09-27)
+## Follow the Instructions v1.1 (2026-09-27)
 
-Native one-step instruction/action flow is implemented for four canonical animal
-objects (crocodile, dinosaur, snake and fish). It uses `ChoiceQuestion` only as
-the durable semantic/session representation; the UI presents image tap targets.
-`DurableSessionHost`, lazy owner-local native audio, existing progress events and
-the shared completion screen remain the underlying contracts. No speech input,
-grading, or new persistence schema was added.
+The approved Follow object pool is now six animals: the original crocodile,
+dinosaur, snake and fish plus the existing canonical horse and whale artwork and
+Vocabulary wording. Each task still renders exactly four image targets, selected
+from a finite deterministic target/set catalogue. Activity revision is **2** and
+content version is **1.2**. The host accepts revision-1/content-1.1 journals through
+a frozen legacy repository, preserving their exact task choices and progress; new
+rounds use revision 2.
 
-Validation: focused JVM `*Follow*` **22/22**; focused Follow instrumentation
-**2/2** on `Medium_Phone_API_35`; full JVM **320/320**; `assembleDebug` passed;
+Validation: focused JVM `*Follow*` **4/4**; focused Follow instrumentation
+**2/2** on `Medium_Phone_API_35`; full JVM **321/321**; `assembleDebug` passed;
 `lintDebug` passed with the repository's existing **0 errors, 3 warnings and 2
 informational findings**. A package-filtered instrumentation run made before
 these tests existed completed **0/0**. The later full emulator run started 119

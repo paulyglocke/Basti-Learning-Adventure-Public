@@ -8,9 +8,14 @@ import org.junit.Test
 
 class FollowContentTest {
     @Test fun exactObjectsInstructionsAndAssetsAreBilingual() {
-        assertEquals(4, FollowContent.objects.size)
-        assertEquals(4, FollowContent.objects.map { it.id }.toSet().size)
-        assertEquals(setOf("object.follow.crocodile", "object.follow.dinosaur", "object.follow.snake", "object.follow.fish"), FollowContent.objects.map { it.id.value }.toSet())
+        assertEquals(6, FollowContent.objects.size)
+        assertEquals(6, FollowContent.objects.map { it.id }.toSet().size)
+        assertTrue(setOf("object.follow.crocodile", "object.follow.dinosaur", "object.follow.snake", "object.follow.fish")
+            .all { it in FollowContent.objects.map { objectDef -> objectDef.id.value } })
+        assertEquals("the horse", FollowContent.objectFor(ContentId("object.follow.horse")).text.display.en)
+        assertEquals("das Pferd", FollowContent.objectFor(ContentId("object.follow.horse")).text.display.de)
+        assertEquals("the whale", FollowContent.objectFor(ContentId("object.follow.whale")).text.display.en)
+        assertEquals("der Wal", FollowContent.objectFor(ContentId("object.follow.whale")).text.display.de)
         FollowContent.objects.forEach { assertTrue(it.assetPath.startsWith("Animals/canonical/")); assertTrue(FollowContent.instruction(it).display.en.startsWith("Touch ")); assertTrue(FollowContent.instruction(it).display.de.startsWith("Tippe auf ")) }
         assertEquals("skill.listening.one_step", FollowContent.skill.value)
     }
@@ -22,9 +27,19 @@ class FollowContentTest {
             val b = (br as GenerationResult.Generated).plan
             assertEquals(a.tasks.map { it.question.correct }, b.tasks.map { it.question.correct })
             assertEquals(round.count, a.tasks.size)
-            a.tasks.forEach { assertEquals(4, it.question.choices.size); assertTrue(it.question.correct in it.question.choices) }
+            a.tasks.forEach { assertEquals(4, it.question.choices.size); assertEquals(4, it.question.choices.toSet().size); assertTrue(it.question.correct in it.question.choices) }
             assertTrue(a.tasks.zipWithNext().all { it.first.question.correct != it.second.question.correct })
         }
+    }
+    @Test fun allApprovedAnimalsReachTargetsAndVaryDistractorContexts() {
+        val targetSeeds = (0L..100L).map { FollowContent.generate(SessionId("sample"), RoundLength.TEN, it) as GenerationResult.Generated }
+        val targetIds = targetSeeds.flatMap { it.plan.tasks.map { task -> task.question.correct } }.toSet()
+        assertEquals(FollowContent.objects.map { it.id }.toSet(), targetIds)
+        val horseContexts = targetSeeds.flatMap { it.plan.tasks }.filter { it.question.correct.value.endsWith("horse") }
+            .map { it.question.choices.toSet() }.toSet()
+        assertTrue(horseContexts.size > 1)
+        assertEquals(2, FollowContent.REVISION)
+        assertEquals(ContentVersion(1, 2), FollowContent.repository.version)
     }
     @Test fun reducerSupportsWrongRetryCorrectReplayAndLanguageWithoutChangingTask() {
         val plan = (FollowContent.generate(SessionId("flow"), RoundLength.FIVE, 1) as GenerationResult.Generated).plan

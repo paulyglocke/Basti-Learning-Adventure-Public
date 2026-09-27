@@ -550,6 +550,18 @@ the shared native completion flow. `DurableSessionHost`, existing progress recor
 lazy owner-local audio and silent restoration remain unchanged. A four-image worker
 loader maps semantic IDs to committed Animals artwork and fails passively.
 
-Focused validation currently: JVM `*Follow*` **22/22** and Follow instrumentation
-**2/2** on the emulator. Full regression/build/lint evidence is pending. Physical
-S24/Fire validation remains open; no commit or push was performed for this slice.
+## Follow the Instructions v1.1 expansion (2026-09-27)
+
+Follow now has six approved semantic objects: the original crocodile, dinosaur,
+snake and fish plus canonical horse and whale. New revision-2/content-1.2 rounds
+deterministically choose four-object scenes from the finite target/set catalogue,
+while the host restores revision-1/content-1.1 journals against a frozen legacy
+repository without changing their task IDs, object order, target or pending progress.
+Play Again starts the expanded revision. Artwork remains the existing local PNG set;
+no image bytes or shared schemas changed.
+
+Focused validation: Follow JVM **4/4**, Follow instrumentation **2/2**, full JVM
+**321/321**, assembleDebug and lintDebug passed (0 errors, 3 warnings, 2 informational
+findings). The full emulator run was not green: it reproduced the existing Vocabulary
+orientation display assertion and stopped at 59/119; no Follow test failed. Physical
+S24/Fire acceptance remains open.

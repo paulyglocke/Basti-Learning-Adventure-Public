@@ -36,16 +36,16 @@ class FollowScreenTest {
                     { state = SessionReducer.reduce(state, it).state }, {}, {}, {}, {}, Modifier)
             }
         }
-        FollowContent.objects.forEach { objectDef ->
-            compose.onNodeWithTag("follow-object-${objectDef.id.value}").assertIsDisplayed()
+        state.task.question.choices.map(FollowContent::objectFor).forEach { objectDef ->
+            compose.onNodeWithTag("follow-object-${objectDef.id.value}").performScrollTo().assertIsDisplayed()
             compose.onNodeWithTag("follow-tap-${objectDef.id.value}").assertIsDisplayed()
         }
         val target = state.task.question.correct
         val wrong = state.task.question.choices.first { it != target }
-        compose.onNodeWithTag("follow-tap-${wrong.value}").performClick()
+        compose.onNodeWithTag("follow-tap-${wrong.value}").performScrollTo().performClick()
         compose.onNodeWithTag("follow-retry").assertIsDisplayed().performClick()
         assertEquals(AnswerState.UNANSWERED, state.current.answer)
-        compose.onNodeWithTag("follow-tap-${target.value}").performClick()
+        compose.onNodeWithTag("follow-tap-${target.value}").performScrollTo().performClick()
         compose.onNodeWithTag("follow-next").assertIsDisplayed().performClick()
         assertEquals(1, state.index)
     }
@@ -59,11 +59,11 @@ class FollowScreenTest {
             MaterialTheme { FollowScreen(state, ContentLanguage.GERMAN, images, false, false, false,
                 { state = SessionReducer.reduce(state, it).state }, { replay++ }, {}, {}, {}, Modifier) }
         }
-        compose.onNodeWithText("Tippe auf", substring = true).assertIsDisplayed()
+        compose.onNodeWithText("Tippe auf", substring = true).performScrollTo().assertIsDisplayed()
         compose.onNodeWithTag("follow-replay").performClick()
         assertEquals(1, replay)
-        FollowContent.objects.forEach { objectDef ->
-            compose.onNodeWithTag("follow-object-${objectDef.id.value}").assertIsDisplayed()
+        state.task.question.choices.map(FollowContent::objectFor).forEach { objectDef ->
+            compose.onNodeWithTag("follow-object-${objectDef.id.value}").performScrollTo().assertIsDisplayed()
         }
     }
 }
