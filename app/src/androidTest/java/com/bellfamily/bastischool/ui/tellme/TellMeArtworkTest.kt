@@ -8,6 +8,18 @@ import java.io.ByteArrayInputStream
 import java.io.IOException
 
 class TellMeArtworkTest {
+    @Test fun allApprovedScenesIncludingCroppedPanelsDecode() {
+        val assets = InstrumentationRegistry.getInstrumentation().targetContext.assets
+        val loader = TellMeArtworkLoader { assets.open(it) }
+        val scenes = BundledSceneDescriptions.repository().all()
+        assertEquals(81, scenes.size)
+        scenes.forEach { scene ->
+            val image = loader.load(scene)
+            assertNotNull(scene.image.path, image)
+            assertTrue(image!!.width in 1..1024 && image.height in 1..1024)
+        }
+    }
+
     @Test fun firstAndLaterCategoryDecodeSampledWithOneSceneCache() {
         val repo = BundledSceneDescriptions.repository()
         val assets = InstrumentationRegistry.getInstrumentation().targetContext.assets

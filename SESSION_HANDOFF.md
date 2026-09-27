@@ -1,6 +1,30 @@
 # Session handoff — 2026-09-27
 
-## Current checkpoint — Vocabulary canonical artwork
+## Asset hygiene pass — 2026-09-27
+
+Started from clean `856303b` after Follow v1.1. Reviewed 42 edge candidates among
+175 scoped rasters (178 packaged files including 3 excluded authoring references).
+Repaired dog/horse top separator remnants on unchanged RGBA canvases and cropped
+18 Scene Description panels/gutters without resampling. All retained pixels match
+baseline exactly; 155 other scoped assets plus 3 references remain byte-identical.
+No production Kotlin, content wording, manifests, session/audio/navigation or signing changes.
+
+21 Prepositions candidates are deliberately unchanged: their fixed 1448×1086 RGB
+contract prevents crop-only repair, and scenic padding would invent content. Mouse
+remains ambiguous. The conservative validator intentionally still exits 1 for six
+strong deferred Prepositions signatures; this is not a fully clean library claim.
+See [repair report](docs/asset-hygiene/REPAIR_REPORT.md) for exact paths, crops,
+hashes, dimensions, classifications, before/after sheets, commands and deferrals.
+
+Validation: validator tests 6/6; Scene Description Python 22/22; generator current;
+focused JVM 84/84; full JVM 321/321; focused emulator rendering/decode 22/22, no
+failures/skips. assembleDebug passed; lint 0 errors / 3 existing warnings / 2 info.
+Diff/whitespace checks passed. Initial Gradle/ADB sandbox socket errors were resolved
+by approved host execution; no test assertions failed. No physical S24/Fire acceptance.
+Uncommitted; do not commit/push or start another feature. Owner review should cover
+repaired image clarity/Fit on S24/Fire and decide how to handle Prepositions dimensions.
+
+## Previous checkpoint — Vocabulary canonical artwork
 
 Started clean `522f671` after Tell Me v1 was committed and pushed. Vocabulary's six
 animals now use their existing canonical PNGs in Explore, FIND picture answers and NAME

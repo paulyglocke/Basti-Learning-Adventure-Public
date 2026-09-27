@@ -1,0 +1,462 @@
+[
+  {
+    "path": "app/src/main/assets/Animals/canonical/dog.png",
+    "classification": "CONFIRMED_SEPARATOR_SLIVER",
+    "crop": {
+      "top": 16,
+      "bottom": 0,
+      "left": 0,
+      "right": 0
+    },
+    "old_dimensions": [
+      305,
+      332
+    ],
+    "new_dimensions": [
+      305,
+      332
+    ],
+    "old_mode": "RGBA",
+    "new_mode": "RGBA",
+    "old_sha256": "233e88caf8d3218dcdfe703c3da63c825ae829f7b9021af2b19f8d10ffa20e38",
+    "reason": "Top partially transparent separator remnant removed; retained body/ears/feet/tail pixels unchanged; transparent padding on existing RGBA canvas.",
+    "new_sha256": "4520ef83b9fe7408afa92bf8bc9a63e2f693999afe9b7e25df195825069be065"
+  },
+  {
+    "path": "app/src/main/assets/Animals/canonical/horse.png",
+    "classification": "CONFIRMED_SEPARATOR_SLIVER",
+    "crop": {
+      "top": 16,
+      "bottom": 0,
+      "left": 0,
+      "right": 0
+    },
+    "old_dimensions": [
+      345,
+      332
+    ],
+    "new_dimensions": [
+      345,
+      332
+    ],
+    "old_mode": "RGBA",
+    "new_mode": "RGBA",
+    "old_sha256": "b5ee0af5a930df9f13e69a8910fad1859389128f83f8103552f34437104cf835",
+    "reason": "Top partially transparent separator remnant removed; retained body/ears/feet/tail pixels unchanged; transparent padding on existing RGBA canvas.",
+    "new_sha256": "896bbbf870961337b58dc7524fdb4334cf8cfd2f173f30eb9cb780b4460b9049"
+  },
+  {
+    "path": "app/src/main/assets/SceneDescriptions/classroom_school/canonical/classroom_004_objects_places.png",
+    "classification": "CONFIRMED_SEPARATOR_SLIVER",
+    "crop": {
+      "top": 10,
+      "bottom": 86,
+      "left": 0,
+      "right": 18
+    },
+    "old_dimensions": [
+      1448,
+      1086
+    ],
+    "new_dimensions": [
+      1430,
+      990
+    ],
+    "old_mode": "RGB",
+    "new_mode": "RGB",
+    "old_sha256": "a874cc28f619e105ddc8b5051efbdc8fec3cbc480af4dde68ef2d2c5e951243a",
+    "reason": "Bottom adjacent-panel fragment and divider removed; Only outer extraction gutters cropped; intended scene objects/actions retained. No padding, resampling or scenic fill.",
+    "new_sha256": "9ba210b9b9da5dc95ded810f1324a4b859bdda10b6691d3fedb0b322a0799b62"
+  },
+  {
+    "path": "app/src/main/assets/SceneDescriptions/classroom_school/canonical/classroom_005_quiet_corner.png",
+    "classification": "CONFIRMED_SEPARATOR_SLIVER",
+    "crop": {
+      "top": 11,
+      "bottom": 86,
+      "left": 6,
+      "right": 6
+    },
+    "old_dimensions": [
+      1448,
+      1086
+    ],
+    "new_dimensions": [
+      1436,
+      989
+    ],
+    "old_mode": "RGB",
+    "new_mode": "RGB",
+    "old_sha256": "6dff0869d939ab2135609b4311afd01d2f233280449e3943bbca9853222ef9dd",
+    "reason": "Bottom adjacent-panel fragment and divider removed; Only outer extraction gutters cropped; intended scene objects/actions retained. No padding, resampling or scenic fill.",
+    "new_sha256": "c14206c804166bcb8f945f69366f4402fcab604f07f6daf5110cfc2d1294f246"
+  },
+  {
+    "path": "app/src/main/assets/SceneDescriptions/classroom_school/canonical/classroom_006_art_sorting.png",
+    "classification": "CONFIRMED_SEPARATOR_SLIVER",
+    "crop": {
+      "top": 11,
+      "bottom": 86,
+      "left": 18,
+      "right": 0
+    },
+    "old_dimensions": [
+      1448,
+      1086
+    ],
+    "new_dimensions": [
+      1430,
+      989
+    ],
+    "old_mode": "RGB",
+    "new_mode": "RGB",
+    "old_sha256": "acdfb2167ab26b40961651f413f960f272c844d3f6e61831c66abf9346f1e772",
+    "reason": "Bottom adjacent-panel fragment and divider removed; Only outer extraction gutters cropped; intended scene objects/actions retained. No padding, resampling or scenic fill.",
+    "new_sha256": "211ed0a27c9571984a51a4edd51ae021c90c669947c55946c724d53417636133"
+  },
+  {
+    "path": "app/src/main/assets/SceneDescriptions/countryside_farm/canonical/farm_004_animal_actions.png",
+    "classification": "COSMETIC_EDGE_GUTTER",
+    "crop": {
+      "top": 0,
+      "bottom": 13,
+      "left": 0,
+      "right": 17
+    },
+    "old_dimensions": [
+      1448,
+      1086
+    ],
+    "new_dimensions": [
+      1431,
+      1073
+    ],
+    "old_mode": "RGB",
+    "new_mode": "RGB",
+    "old_sha256": "8295612a858afee52971502ac06d0cf18c157b9749bbb92233ab310df1692218",
+    "reason": "Only outer extraction gutters cropped; intended scene objects/actions retained. No padding, resampling or scenic fill.",
+    "new_sha256": "d891cf333e94ed6ee832697e5442327477fef1b80384114c78cf2a3d445f9a00"
+  },
+  {
+    "path": "app/src/main/assets/SceneDescriptions/countryside_farm/canonical/farm_005_transport_and_places.png",
+    "classification": "COSMETIC_EDGE_GUTTER",
+    "crop": {
+      "top": 0,
+      "bottom": 13,
+      "left": 6,
+      "right": 6
+    },
+    "old_dimensions": [
+      1448,
+      1086
+    ],
+    "new_dimensions": [
+      1436,
+      1073
+    ],
+    "old_mode": "RGB",
+    "new_mode": "RGB",
+    "old_sha256": "448552b43463443b6fb72d4acb0c94c77c2aa8ede26fba332c17d153c6e04756",
+    "reason": "Only outer extraction gutters cropped; intended scene objects/actions retained. No padding, resampling or scenic fill.",
+    "new_sha256": "b04cffc6a366bb8f03e1ec14dd2fbcf11dda75af3ffd6ef879222f3a2f401cde"
+  },
+  {
+    "path": "app/src/main/assets/SceneDescriptions/countryside_farm/canonical/farm_006_garden_food.png",
+    "classification": "COSMETIC_EDGE_GUTTER",
+    "crop": {
+      "top": 0,
+      "bottom": 13,
+      "left": 18,
+      "right": 0
+    },
+    "old_dimensions": [
+      1448,
+      1086
+    ],
+    "new_dimensions": [
+      1430,
+      1073
+    ],
+    "old_mode": "RGB",
+    "new_mode": "RGB",
+    "old_sha256": "26bb650985f3e969c0e77c7b8cc9b48f159744a645ecdc38757353a5e10fb31d",
+    "reason": "Only outer extraction gutters cropped; intended scene objects/actions retained. No padding, resampling or scenic fill.",
+    "new_sha256": "60c1e78f649716ea35e101789a19501b13fb4105a5451070aa2622ca59163357"
+  },
+  {
+    "path": "app/src/main/assets/SceneDescriptions/mountains_alpine/canonical/mountains_007_journey_story.png",
+    "classification": "COSMETIC_EDGE_GUTTER",
+    "crop": {
+      "top": 0,
+      "bottom": 0,
+      "left": 0,
+      "right": 12
+    },
+    "old_dimensions": [
+      1448,
+      1086
+    ],
+    "new_dimensions": [
+      1436,
+      1086
+    ],
+    "old_mode": "RGB",
+    "new_mode": "RGB",
+    "old_sha256": "33d58f137877378425000bce3b9018a065c1034b797a87b5196a2344a6f23eaa",
+    "reason": "Only outer extraction gutters cropped; intended scene objects/actions retained. No padding, resampling or scenic fill.",
+    "new_sha256": "dd758b07dcd56cbcaaf5b03bf94ec8a1628fa46010805e2325978dd78540fefe"
+  },
+  {
+    "path": "app/src/main/assets/SceneDescriptions/mountains_alpine/canonical/mountains_008_weather_shelter.png",
+    "classification": "COSMETIC_EDGE_GUTTER",
+    "crop": {
+      "top": 0,
+      "bottom": 0,
+      "left": 7,
+      "right": 6
+    },
+    "old_dimensions": [
+      1448,
+      1086
+    ],
+    "new_dimensions": [
+      1435,
+      1086
+    ],
+    "old_mode": "RGB",
+    "new_mode": "RGB",
+    "old_sha256": "cf7a5473eebfe7ff2891b125ddb8172bdd818bee0b0fcf1ca650e56471616d82",
+    "reason": "Only outer extraction gutters cropped; intended scene objects/actions retained. No padding, resampling or scenic fill.",
+    "new_sha256": "1c226f9d77c969ee476b660740ef3a95aed7750df4fa96ce11b636454993e025"
+  },
+  {
+    "path": "app/src/main/assets/SceneDescriptions/mountains_alpine/canonical/mountains_009_spatial_clues.png",
+    "classification": "COSMETIC_EDGE_GUTTER",
+    "crop": {
+      "top": 0,
+      "bottom": 0,
+      "left": 15,
+      "right": 0
+    },
+    "old_dimensions": [
+      1448,
+      1086
+    ],
+    "new_dimensions": [
+      1433,
+      1086
+    ],
+    "old_mode": "RGB",
+    "new_mode": "RGB",
+    "old_sha256": "c19907de70275410b4857f3860d382cbd0b769cf6ef282565ad14eac2c17f517",
+    "reason": "Only outer extraction gutters cropped; intended scene objects/actions retained. No padding, resampling or scenic fill.",
+    "new_sha256": "b49a47a7e916a4f19f22dffc89a7c271c24527ff0ff9f8fa78857e395a12c17c"
+  },
+  {
+    "path": "app/src/main/assets/SceneDescriptions/park_playground/canonical/park_007_playground_actions.png",
+    "classification": "COSMETIC_EDGE_GUTTER",
+    "crop": {
+      "top": 0,
+      "bottom": 7,
+      "left": 0,
+      "right": 12
+    },
+    "old_dimensions": [
+      1448,
+      1086
+    ],
+    "new_dimensions": [
+      1436,
+      1079
+    ],
+    "old_mode": "RGB",
+    "new_mode": "RGB",
+    "old_sha256": "1b93ed6b599a0ad326163879b1959168da0217e659f5dfb5a5e9aeea758e2811",
+    "reason": "Only outer extraction gutters cropped; intended scene objects/actions retained. No padding, resampling or scenic fill.",
+    "new_sha256": "16047ebf344ad64e603311195966dde02e94482d7bb8edf2754bef0c8a11c493"
+  },
+  {
+    "path": "app/src/main/assets/SceneDescriptions/park_playground/canonical/park_008_helping_clean_up.png",
+    "classification": "COSMETIC_EDGE_GUTTER",
+    "crop": {
+      "top": 0,
+      "bottom": 7,
+      "left": 7,
+      "right": 6
+    },
+    "old_dimensions": [
+      1448,
+      1086
+    ],
+    "new_dimensions": [
+      1435,
+      1079
+    ],
+    "old_mode": "RGB",
+    "new_mode": "RGB",
+    "old_sha256": "ff9a9dbab3602c65da6e691ae9fe474bb62b6c6e393b07bc68c9c29c66b4e67e",
+    "reason": "Only outer extraction gutters cropped; intended scene objects/actions retained. No padding, resampling or scenic fill.",
+    "new_sha256": "bc6994bbd47ca9ca5afdb0d3a347e128e518371835e160711865f036537d5c10"
+  },
+  {
+    "path": "app/src/main/assets/SceneDescriptions/park_playground/canonical/park_009_turn_taking.png",
+    "classification": "COSMETIC_EDGE_GUTTER",
+    "crop": {
+      "top": 0,
+      "bottom": 8,
+      "left": 15,
+      "right": 0
+    },
+    "old_dimensions": [
+      1448,
+      1086
+    ],
+    "new_dimensions": [
+      1433,
+      1078
+    ],
+    "old_mode": "RGB",
+    "new_mode": "RGB",
+    "old_sha256": "7991d436f2e95d137b014f641aedbadd885fedbdfc20fda66ff3d51ed5ffeeb8",
+    "reason": "Only outer extraction gutters cropped; intended scene objects/actions retained. No padding, resampling or scenic fill.",
+    "new_sha256": "451d66e0c580e3080d27edda85db24b25ccba887b7b53e56f9ca350b506914e5"
+  },
+  {
+    "path": "app/src/main/assets/SceneDescriptions/sky_flying/canonical/sky_007_weather_sequence.png",
+    "classification": "CONFIRMED_SEPARATOR_SLIVER",
+    "crop": {
+      "top": 8,
+      "bottom": 40,
+      "left": 0,
+      "right": 12
+    },
+    "old_dimensions": [
+      1448,
+      1086
+    ],
+    "new_dimensions": [
+      1436,
+      1038
+    ],
+    "old_mode": "RGB",
+    "new_mode": "RGB",
+    "old_sha256": "dbb7e81d281dbe373090b3fad5898b5bf5baf4a7173f915a0d57458680bbe0e6",
+    "reason": "Bottom adjacent-panel fragment and divider removed; Only outer extraction gutters cropped; intended scene objects/actions retained. No padding, resampling or scenic fill.",
+    "new_sha256": "663c635d0437442d5fbbcd04f410e68c5888f6d0bcdd3099d9ca773c8b0a1166"
+  },
+  {
+    "path": "app/src/main/assets/SceneDescriptions/sky_flying/canonical/sky_008_flying_directions.png",
+    "classification": "CONFIRMED_SEPARATOR_SLIVER",
+    "crop": {
+      "top": 8,
+      "bottom": 40,
+      "left": 8,
+      "right": 6
+    },
+    "old_dimensions": [
+      1448,
+      1086
+    ],
+    "new_dimensions": [
+      1434,
+      1038
+    ],
+    "old_mode": "RGB",
+    "new_mode": "RGB",
+    "old_sha256": "8cc8843d6a92804c2ee5148a79cec3938f628e1f7574931b6b845c4a9aa3c6c6",
+    "reason": "Bottom adjacent-panel fragment and divider removed; Only outer extraction gutters cropped; intended scene objects/actions retained. No padding, resampling or scenic fill.",
+    "new_sha256": "137a8954bfc500a3fb4a457433b35c936df0664e8ed80907b0c168bd1f0fa183"
+  },
+  {
+    "path": "app/src/main/assets/SceneDescriptions/sky_flying/canonical/sky_009_night_sky_clues.png",
+    "classification": "CONFIRMED_SEPARATOR_SLIVER",
+    "crop": {
+      "top": 9,
+      "bottom": 39,
+      "left": 15,
+      "right": 0
+    },
+    "old_dimensions": [
+      1448,
+      1086
+    ],
+    "new_dimensions": [
+      1433,
+      1038
+    ],
+    "old_mode": "RGB",
+    "new_mode": "RGB",
+    "old_sha256": "848851956bb9074bfdf5d0b70aea1de4292c6e5b3f97f2fc1e3e4e09522f5366",
+    "reason": "Bottom adjacent-panel fragment and divider removed; Only outer extraction gutters cropped; intended scene objects/actions retained. No padding, resampling or scenic fill.",
+    "new_sha256": "8baf3b3a0ebec2fc62be66ce364f917308d6158bf5281c0900f3634255ef251a"
+  },
+  {
+    "path": "app/src/main/assets/SceneDescriptions/zoo_wildlife/canonical/zoo_004_habitats.png",
+    "classification": "COSMETIC_EDGE_GUTTER",
+    "crop": {
+      "top": 0,
+      "bottom": 0,
+      "left": 0,
+      "right": 17
+    },
+    "old_dimensions": [
+      1448,
+      1086
+    ],
+    "new_dimensions": [
+      1431,
+      1086
+    ],
+    "old_mode": "RGB",
+    "new_mode": "RGB",
+    "old_sha256": "07f385a938581351721b8475eec5b76e8c583b9e47cb5606afd74ccd8625d7c1",
+    "reason": "Only outer extraction gutters cropped; intended scene objects/actions retained. No padding, resampling or scenic fill.",
+    "new_sha256": "8d140a2f260da199e555a2a502b569c8386b7bdc563d80697b75669c8985245b"
+  },
+  {
+    "path": "app/src/main/assets/SceneDescriptions/zoo_wildlife/canonical/zoo_005_feeding_time.png",
+    "classification": "COSMETIC_EDGE_GUTTER",
+    "crop": {
+      "top": 0,
+      "bottom": 0,
+      "left": 6,
+      "right": 6
+    },
+    "old_dimensions": [
+      1448,
+      1086
+    ],
+    "new_dimensions": [
+      1436,
+      1086
+    ],
+    "old_mode": "RGB",
+    "new_mode": "RGB",
+    "old_sha256": "cdac1be694e650f10790e46934ca16cfff8b72e7abc19526a9ac8f00c503bde0",
+    "reason": "Only outer extraction gutters cropped; intended scene objects/actions retained. No padding, resampling or scenic fill.",
+    "new_sha256": "e8b363685ffc2d08f5bfa9203783e1170e11aac108cd3bb4c400a873765f6162"
+  },
+  {
+    "path": "app/src/main/assets/SceneDescriptions/zoo_wildlife/canonical/zoo_006_positions_story.png",
+    "classification": "COSMETIC_EDGE_GUTTER",
+    "crop": {
+      "top": 0,
+      "bottom": 0,
+      "left": 18,
+      "right": 0
+    },
+    "old_dimensions": [
+      1448,
+      1086
+    ],
+    "new_dimensions": [
+      1430,
+      1086
+    ],
+    "old_mode": "RGB",
+    "new_mode": "RGB",
+    "old_sha256": "1c3eed033a616221130671ed5d9260b5b9b6a6453c2d724b86a13fff42697470",
+    "reason": "Only outer extraction gutters cropped; intended scene objects/actions retained. No padding, resampling or scenic fill.",
+    "new_sha256": "6e55d4acc0a2849f908547df0ea6a1b495fdc9fa2cee42d9b98fb89785f4277b"
+  }
+]
