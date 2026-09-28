@@ -21,7 +21,7 @@ focused JVM 84/84; full JVM 321/321; focused emulator rendering/decode 22/22, no
 failures/skips. assembleDebug passed; lint 0 errors / 3 existing warnings / 2 info.
 Diff/whitespace checks passed. Initial Gradle/ADB sandbox socket errors were resolved
 by approved host execution; no test assertions failed. No physical S24/Fire acceptance.
-Uncommitted; do not commit/push or start another feature. Owner review should cover
+Owner authorized committing/pushing this pass. No next feature started. Owner review should cover
 repaired image clarity/Fit on S24/Fire and decide how to handle Prepositions dimensions.
 
 ## Vocabulary canonical artwork — 2026-09-27

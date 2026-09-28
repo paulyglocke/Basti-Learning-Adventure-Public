@@ -1,6 +1,6 @@
 # Production asset hygiene — 2026-09-27
 
-Baseline: `856303b` (`feat: generalize Follow instructions scenes`). No commit/push.
+Baseline: `856303b` (`feat: generalize Follow instructions scenes`). Owner subsequently authorized commit/push.
 
 ## Inventory and decisions
 
