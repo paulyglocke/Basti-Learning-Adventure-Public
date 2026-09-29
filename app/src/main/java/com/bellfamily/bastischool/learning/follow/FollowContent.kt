@@ -10,7 +10,7 @@ data class FollowObject(val id: ContentId, val text: ContentText, val assetPath:
 }
 
 object FollowContent {
-    const val REVISION = 2
+    const val REVISION = 3
     private const val LEGACY_REVISION = 1
     private val activity = ActivityId("activity.follow.instructions")
     private val legacyObjects = listOf(
@@ -25,7 +25,8 @@ object FollowContent {
     )
     private val byId = objects.associateBy { it.id }
     private val legacyById = legacyObjects.associateBy { it.id }
-    val repository: ContentRepository = BundledContentRepository(ContentVersion(1, 2), objects.map { it.definition }, emptyList())
+    val repository: ContentRepository = BundledContentRepository(ContentVersion(1, 3), objects.map { it.definition }, emptyList())
+    private val previousRepository: ContentRepository = BundledContentRepository(ContentVersion(1, 2), objects.map { it.definition }, emptyList())
     private val legacyRepository: ContentRepository = BundledContentRepository(ContentVersion(1, 1), legacyObjects.map { it.definition }, emptyList())
     val skill = SkillId("skill.listening.one_step")
     val context = LearningContextId("context.follow.animal_pool")
@@ -51,13 +52,29 @@ object FollowContent {
         val candidates = objects.flatMap { target ->
             objects.filter { it != target }.combinations(3).map { distractors -> question(target, listOf(target) + distractors) }
         }
-        return CandidateTaskGenerator(candidates).generate(
-            GenerationRequest(id, activity, REVISION, SessionPolicy(round), seed, completion), repository)
+        // Shuffle the finite catalogue once; skip the previous target without discarding
+        // any candidate. All six targets have equal representation, with no rejection loop.
+        val random = java.util.Random(seed)
+        val remaining = candidates.sortedBy { it.definition.value }.toMutableList()
+        java.util.Collections.shuffle(remaining, random)
+        var previous: ContentId? = null
+        val tasks = (1..round.count).map { ordinal ->
+            val index = remaining.indexOfFirst { it.correct != previous }
+            check(index >= 0) // 60 candidates / six balanced targets, at most ten tasks.
+            val question = remaining.removeAt(index)
+            previous = question.correct
+            val presented = question.choices.toMutableList()
+            java.util.Collections.shuffle(presented, random)
+            ChoiceTask(TaskInstanceId(id, ordinal), question.reordered(presented))
+        }
+        return GenerationResult.Generated(SessionPlan(id, activity, REVISION, repository.version,
+            SessionPolicy(round), tasks, completion).also { it.validate(repository) })
     }
     fun validate(state: SessionState) {
         require(state.plan.activity == activity)
         if (state.plan.activityRevision == LEGACY_REVISION && state.plan.contentVersion == legacyRepository.version) { validateLegacy(state); return }
-        require(state.plan.activityRevision == REVISION && state.plan.contentVersion == repository.version)
+        require(state.plan.activityRevision == REVISION && state.plan.contentVersion == repository.version ||
+            state.plan.activityRevision == 2 && state.plan.contentVersion == previousRepository.version)
         state.plan.tasks.forEach { task ->
             require(task.question.choices.size == 4 && task.question.choices.toSet().size == 4 && task.question.correct in task.question.choices)
             val expected = question(objectFor(task.question.correct), task.question.choices.map(::objectFor))
@@ -81,7 +98,11 @@ object FollowContent {
         journal, progress, activity, REVISION, repository, { id, round, seed -> generate(id, round, seed) }, ::validate,
         { bytes ->
             val current = SessionCheckpoint.restore(bytes, activity, REVISION, repository)
-            if (current is SessionRestoreResult.Restored) current else SessionCheckpoint.restore(bytes, activity, LEGACY_REVISION, legacyRepository)
+            if (current is SessionRestoreResult.Restored) current else {
+                val previous = SessionCheckpoint.restore(bytes, activity, 2, previousRepository)
+                if (previous is SessionRestoreResult.Restored) previous
+                else SessionCheckpoint.restore(bytes, activity, LEGACY_REVISION, legacyRepository)
+            }
         }
     )
     private fun <T> List<T>.combinations(size: Int): List<List<T>> {

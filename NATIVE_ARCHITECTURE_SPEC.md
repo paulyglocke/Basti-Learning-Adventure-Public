@@ -397,6 +397,22 @@ The bounded one-step instruction/action consumer uses `ChoiceQuestion` and
 object IDs and the Compose surface renders canonical image tap targets. It records
 ordinary attempt/progress events with `skill.listening.one_step`, uses the existing
 owner-local lazy audio controller for automatic instruction speech and Replay, and
-uses the shared completion flow. Its Activity-scoped ViewModel owns a four-entry
+uses the shared completion flow. Its Activity-scoped ViewModel owns a bounded six-entry
 worker/cache artwork loader; Compose performs no asset I/O. No speech recognition,
 grading, additional persistence or global instruction engine is introduced.
+
+### Follow image targets and generation correction (2026-09-29)
+
+Image containers are the labeled tap targets; an opaque Material button must not be
+drawn over the artwork. The fixed 150dp slot bounds the existing four-object row,
+uses Fit, and disables taps for unavailable artwork or locked/busy sessions. Follow
+has no memory/reveal phase. No session or audio phase is added by this presentation fix.
+
+New Follow rounds use activity revision 3/content 1.3. Its local generator shuffles the
+60 target/distractor-set candidates with the session seed, then takes the first remaining
+candidate whose target differs from the previous task. Skipped candidates remain eligible;
+choices are also seeded. No candidate repeats within a 5/10 round, all six targets remain
+reachable, and the shared CandidateTaskGenerator is unchanged. Revision 1/content 1.1
+and revision 2/content 1.2 checkpoints still restore their exact saved plans (including
+old repeated targets), attempts/support and progress. Restore never regenerates; Again
+uses revision 3. Journal/checkpoint schemas remain unchanged.

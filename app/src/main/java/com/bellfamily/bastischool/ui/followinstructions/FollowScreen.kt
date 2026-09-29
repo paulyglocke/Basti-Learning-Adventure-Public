@@ -1,6 +1,7 @@
 package com.bellfamily.bastischool.ui.followinstructions
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -13,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
@@ -40,11 +42,15 @@ fun FollowScreen(state: SessionState?, language: ContentLanguage, images: Map<co
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 state.task.question.choices.forEach { id ->
                     val objectDef = FollowContent.objectFor(id); val image = images[id]
-                    Box(Modifier.weight(1f).heightIn(min = 150.dp).testTag("follow-object-${id.value}").semantics { contentDescription = objectDef.text.display[language] }) {
-                        if (image != null) Image(image, contentDescription = null, modifier = Modifier.fillMaxSize().testTag("follow-art-${id.value}"), contentScale = ContentScale.Fit)
-                        else Text(t("Picture unavailable", "Bild nicht verfügbar"), Modifier.align(Alignment.Center).testTag("follow-unavailable-${id.value}"))
-                        if (ready && state.current.answer == AnswerState.UNANSWERED) {
-                            Button({ state.nextAttempt?.let { onAction(SessionAction.Answer(it, id)) } }, Modifier.matchParentSize().testTag("follow-tap-${id.value}"), contentPadding = PaddingValues(0.dp)) {}
+                    Box(Modifier.weight(1f).height(150.dp).testTag("follow-object-${id.value}")) {
+                        // The image itself is the tap target; never paint an opaque button over it.
+                        Box(Modifier.fillMaxSize().testTag("follow-tap-${id.value}")
+                            .clickable(enabled = image != null && ready && state.current.answer == AnswerState.UNANSWERED,
+                                role = Role.Button) {
+                                state.nextAttempt?.let { onAction(SessionAction.Answer(it, id)) }
+                            }.semantics { contentDescription = objectDef.text.display[language] }) {
+                            if (image != null) Image(image, contentDescription = null, modifier = Modifier.fillMaxSize().testTag("follow-art-${id.value}"), contentScale = ContentScale.Fit)
+                            else Text(t("Picture unavailable", "Bild nicht verfügbar"), Modifier.align(Alignment.Center).testTag("follow-unavailable-${id.value}"))
                         }
                     }
                 }

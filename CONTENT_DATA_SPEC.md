@@ -238,3 +238,12 @@ A finite seeded six-item cycle supplies five/ten tasks and four unique animal ch
 `SeasonIds.next/previous` derive cyclic neighbors from the existing explicit Spring–Summer–Autumn–Winter order, rejecting unknown IDs. `SeasonsCycle` authors NEXT/BEFORE prompts and feedback independently in EN/DE, preserving canonical names, narration and PNG references. Four candidates per direction guarantee every boundary is visited before repetition in a five/ten-question round. Choice order is seeded and frozen. The three distractors are the anchor itself (recognition instead of relation), the reverse neighbor (direction confusion), and the opposite season (skipping a step); no unrelated content substitutes for a season.
 
 Build the Year uses `activity.seasons.order`, `task.seasons.order.<season>`, `skill.seasons.sequence` and `context.seasons.year_order`. Its introduction explicitly chooses Spring as the start of this display of a cycle, and its completion reiterates Winter → Spring. Relation skills are `skill.seasons.next/before` with `context.seasons.year_cycle`. No new weather/holiday stereotypes, missing-season or clue-matching content is added. The consolidated roadmap delegates exact authored narration to canonical content; all eight original spoken descriptions remain locked by an exact regression fixture.
+
+## Follow one-step selection correction (2026-09-29)
+
+Follow's six-object authored catalogue and all wording/IDs/assets are unchanged. New
+rounds use activity revision 3/content 1.3 because seeded generation now excludes the
+immediately previous target during selection from the balanced 60-candidate catalogue.
+Each task still presents four distinct objects in seeded order. Older revision-1/2
+plans restore unchanged; the no-repeat rule applies to newly generated rounds, not
+retrospective mutation of saved tasks. See NATIVE_ARCHITECTURE_SPEC.md.

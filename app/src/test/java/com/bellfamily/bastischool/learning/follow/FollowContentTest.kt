@@ -25,7 +25,8 @@ class FollowContentTest {
             val br = FollowContent.generate(SessionId("a"), round, 42); assertTrue(br.toString(), br is GenerationResult.Generated)
             val a = (ar as GenerationResult.Generated).plan
             val b = (br as GenerationResult.Generated).plan
-            assertEquals(a.tasks.map { it.question.correct }, b.tasks.map { it.question.correct })
+            assertArrayEquals(SessionCheckpoint.encode(SessionReducer.start(a, ContentLanguage.ENGLISH, FollowContent.repository).state),
+                SessionCheckpoint.encode(SessionReducer.start(b, ContentLanguage.ENGLISH, FollowContent.repository).state))
             assertEquals(round.count, a.tasks.size)
             a.tasks.forEach { assertEquals(4, it.question.choices.size); assertEquals(4, it.question.choices.toSet().size); assertTrue(it.question.correct in it.question.choices) }
             assertTrue(a.tasks.zipWithNext().all { it.first.question.correct != it.second.question.correct })
@@ -38,9 +39,20 @@ class FollowContentTest {
         val horseContexts = targetSeeds.flatMap { it.plan.tasks }.filter { it.question.correct.value.endsWith("horse") }
             .map { it.question.choices.toSet() }.toSet()
         assertTrue(horseContexts.size > 1)
-        assertEquals(2, FollowContent.REVISION)
-        assertEquals(ContentVersion(1, 2), FollowContent.repository.version)
+        assertEquals(3, FollowContent.REVISION)
+        assertEquals(ContentVersion(1, 3), FollowContent.repository.version)
     }
+    @Test fun noConsecutiveTargetsAcrossDeterministicSeedSample() {
+        val reached = mutableSetOf<ContentId>()
+        for (seed in -500L..500L) for (round in RoundLength.entries) {
+            val plan = (FollowContent.generate(SessionId("sample"), round, seed) as GenerationResult.Generated).plan
+            assertTrue("seed=$seed round=$round", plan.tasks.zipWithNext().all { it.first.question.correct != it.second.question.correct })
+            assertEquals(plan.tasks.size, plan.tasks.map { it.question.definition }.toSet().size)
+            plan.tasks.forEach { reached += it.question.correct }
+        }
+        assertEquals(FollowContent.objects.map { it.id }.toSet(), reached)
+    }
+
     @Test fun reducerSupportsWrongRetryCorrectReplayAndLanguageWithoutChangingTask() {
         val plan = (FollowContent.generate(SessionId("flow"), RoundLength.FIVE, 1) as GenerationResult.Generated).plan
         var state = SessionReducer.start(plan, ContentLanguage.ENGLISH, FollowContent.repository).state

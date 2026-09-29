@@ -1,5 +1,60 @@
 # Session handoff — 2026-09-27
 
+## Follow physical-acceptance corrections — 2026-09-29
+
+Started clean at 4ccff04. No artwork, wording, shared session/audio/progress, completion
+or navigation changes. No commit/push or physical-device installation.
+
+Confirmed covers were empty opaque Material Buttons painted after the image with
+matchParentSize, only while answers were enabled. There is no memory/reveal exercise:
+the intended task is visible one-step animal recognition/listening. Replaced the overlay
+with one labeled clickable image container and an explicit 150dp slot. Fit/ripple and
+keyboard activation remain; missing art is passive, answered/retry states disable taps.
+
+Confirmed immediate repetition: CandidateTaskGenerator shuffles unique definitions,
+not unique targets; different four-animal contexts can request the same animal. The
+Follow-local seeded finite selector now skips the previous target without discarding
+candidates. New rounds revision 3/content 1.3; v1/v2 saved plans remain exact, including
+old repeats. Retry/Replay and returning to an existing task can still repeat the current
+instruction intentionally. No shared generator or checkpoint schema change.
+
+Tests cover original-generator reproduction, 2,002 new seeded 5/10 rounds with no
+adjacent targets, deterministic complete snapshots, all-target reachability, v1/v2/v3
+restoration with retry/support and Again upgrade, visible image pixels, one labeled
+interactive target, bounded size, missing-art passivity, EN/DE portrait/both landscape
+at 1.5× text and unchanged wrong/retry/correct/Next flow.
+
+Validation: focused `*Follow*` JVM filter **8/8** (7 Follow tests plus one existing
+Seasons method matched by the filter); full JVM **326/326**; focused Follow emulator
+**7/7**, all final runs zero failures/errors/skips. assembleDebug passed; lintDebug
+0 errors / 3 existing warnings / 2 informational findings; git diff --check passed.
+First instrumentation attempt: 3 passed / 4 failed, solely the new fallback-child tag
+lookup in merged semantics. Corrected to useUnmergedTree for that diagnostic child;
+the single labeled interactive target assertions remain intact. Rerun 7/7 passed.
+No production fix or existing assertion was weakened in response. ADB initially needed
+host execution because sandbox sockets were denied. Full app instrumentation was not
+rerun: changes are Follow-local, with its complete focused package and full JVM tested.
+Canonical artwork and every other asset remain unchanged (empty asset diff).
+
+Commands (repository root):
+```sh
+export JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'
+export ANDROID_HOME='/Users/paulbell/Library/Android/sdk'
+export ANDROID_SERIAL=emulator-5554
+./gradlew testDebugUnitTest --tests '*Follow*' --console=plain
+./gradlew testDebugUnitTest assembleDebug lintDebug --console=plain
+./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.package=com.bellfamily.bastischool.ui.followinstructions --console=plain
+git diff --check
+```
+
+S24 checks remain: four animals visible before any tap in EN/DE; portrait/both short
+landscapes and 1.5× text; correct labels/TalkBack/keyboard focus and ripple; wrong→Retry→
+correct→Next; Replay/audio cancellation; resumed old round unchanged; newly started
+5/10 rounds without adjacent targets. Old saved repeats are intentionally preserved,
+and the first target of a separate new round is not constrained by the prior round.
+No commit or push. No new work started.
+
+
 ## Final resumption: owner Park 9 replacement and completed validation
 
 The previously running full emulator suite completed **122/122**, zero failures/errors/skips,
