@@ -64,7 +64,17 @@ class FollowViewModel @JvmOverloads constructor(
             var failed = false; var effects = emptyList<SessionEffect>()
             try { effects = operation() } catch (_: Exception) { failed = true }
             val next = host.state; val pending = host.failure
-            main.post { if (!closed && token == epoch) { busy = false; saveFailed = failed || pending; if (!failed) state = next; if (!failed && next != null && visible && next.language == language) audio.effects(next.plan.id, language, effects) } }
+            main.post {
+                if (!closed) {
+                    busy = false
+                    saveFailed = failed || pending
+                    if (!failed) state = next
+                    if (!failed && !saveFailed && token == epoch && next != null && visible && next.language == language) {
+                        audio.effects(next.plan.id, language, effects)
+                    }
+                    if (!saveFailed) syncLanguage()
+                }
+            }
         }
     }
     override fun onCleared() { closed = true; audio.close(); worker.shutdown(); super.onCleared() }
