@@ -63,6 +63,25 @@ class TellMeRouteTest {
             java.io.File(context.cacheDir, "tellme-de.png").outputStream().use {
                 compose.onRoot().captureToImage().asAndroidBitmap().compress(Bitmap.CompressFormat.PNG, 100, it)
             }
+            // Production shell, Sound Off: only the final MODEL/Next reaches the shared reward.
+            val conversation = vm()
+            scenario.onActivity { repeat(17) {
+                conversation.advance(conversation.flow.scene(conversation.state)!!.id, conversation.state.stage)
+            } }
+            compose.onNodeWithTag("completion-celebration").assertDoesNotExist()
+            click("tellme-continue")
+            compose.onNodeWithTag("balloon-0").performScrollTo().assertIsDisplayed().performClick().assertHasNoClickAction()
+            compose.onNodeWithTag("balloon-1").assertHasClickAction()
+            assertEquals(TellMeStage.COMPLETE, vm().state.stage)
+            val completed = vm().state
+            scenario.recreate()
+            assertEquals(completed, vm().state)
+            compose.onNodeWithTag("completion-celebration").performScrollTo().assertIsDisplayed()
+            java.io.File(context.cacheDir, "tellme-completion-de.png").outputStream().use {
+                compose.onRoot().captureToImage().asAndroidBitmap().compress(Bitmap.CompressFormat.PNG, 100, it)
+            }
+            click("tellme-home")
+            assertNull(vm().state.celebrationId)
             // A newly-created owner has no durable conversation checkpoint to restore.
             val fresh = TellMeViewModel(context.applicationContext as android.app.Application)
             assertEquals(TellMeState(), fresh.state)

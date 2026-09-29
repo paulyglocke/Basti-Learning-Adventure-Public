@@ -12,6 +12,8 @@ data class TellMeState(
     val help: Boolean = false,
     val grownUps: Boolean = false,
 ) {
+    /** Optional celebration ownership only; never an assessment or progress result. */
+    val celebrationId: String? get() = if (stage == TellMeStage.COMPLETE) "tellme.${category!!.value}" else null
     init {
         require(index in 0..8)
         require(stage != TellMeStage.COMPLETE || index == 8)

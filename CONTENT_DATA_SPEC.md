@@ -27,7 +27,7 @@ ContentId grammar is not broadened to accommodate numeric final segments.
 `SceneCategoryId` preserves root category IDs. Semantic image AssetIds derive from
 scene IDs, independently of filenames, and reuse `LocalImageAsset` for local paths.
 
-`BundledSceneDescriptions.repository()` supplies an immutable schema 1/revision 3
+`BundledSceneDescriptions.repository()` supplies an immutable schema 1/revision 4
 snapshot: `categories()` in root-manifest order, `scenes(category)` in category-manifest
 order, `all()`, `find(sceneId)` and `image(sceneId)`. Unknown scene/image IDs return
 null; unknown categories return an empty list. Records include approved status, wave,
@@ -52,6 +52,13 @@ EN/DE values; schema remains 1. All other existing English runtime text, IDs, as
 paths and manifest ordering are preserved by the original regression fingerprint
 with explicitly asserted, documented wording exceptions. See SceneDescriptions/GERMAN_REVIEW.md for
 exact counts, natural-language choices, source ambiguities and limited visual checks.
+Content revision 4 records the physical-acceptance review: 23 scene records receive
+paired EN/DE corrections grounded in the actual PNGs. The complete 81-scene decisions
+and every normalized field change are in `docs/tellme-visual-qa/`. This includes explicit
+purpose corrections where older animal-home metadata described an absent scene.
+Park .09 remains unresolved (malformed seesaw and ambiguous waiting children); its
+source/art are retained for owner replacement review, not newly accepted.
+IDs, asset paths, order and schema remain unchanged; no quiz/session revision is involved. The owner subsequently replaced Park 9 artwork; its desktop review passes pending S24 acceptance (see the current visual audit).
 Bilingual completeness does not establish visual-semantic correctness or independent
 native-speaker acceptance. Visible-target graphs and visual audit/prompt/reference
 material remain authoring-only; source review cautions are adult reference data.
@@ -179,14 +186,18 @@ near/far_from; bird/bee/butterfly/dragon serve above/below; fish/turtle/octopus/
 serve inside/outside. Stable scene/task IDs retain `scene.prepositions.<animal>.<relation>`
 and `task.prepositions.<animal>.<relation>`. Each scene maps to one local PNG through a
 semantic AssetId and an explicit path, never localized text. All 52 references, manifest
-membership/order, 1448×1086 RGB dimensions and committed hashes are tested.
+membership/order, actual manifest dimensions and committed hashes are tested. Reviewed
+scene PNGs must decode as RGB/RGBA, be at least 1280×960, and remain within ±5% of
+4:3 (inclusive). The 2026-09-28 extraction-edge cleanup replaces exact 1448×1086
+validation with this narrow contract; retained pixels are not resampled or padded.
+Image dimensions/hashes are presentation validation only, never task/checkpoint identity.
 
 The relation owns its bilingual label/phrase and reference: rock, table, box, two rocks,
 cloud or cave. German subjects/articles and phrases are authored separately; the supplied
 new labels/phrases require no correction. `in` and `inside` remain vocabulary variants
 with distinct authored scenes/IDs, not evidence of radically different mastery concepts.
-The live renderer uses uncropped 4:3 artwork; the original six-relation PositionGeometry
-utility is historical regression evidence only, no longer the runtime renderer.
+The live renderer fits the complete reviewed image inside a 4:3 frame; the original
+six-relation PositionGeometry utility is historical regression evidence only, no longer the runtime renderer.
 
 Seeded five/ten-question rounds select distinct scenes, include the correct answer in four
 distinct choices and narrate that exact ordered list. One concrete contrast is preferred

@@ -30,8 +30,8 @@
       },
       "relation": {
         "id": "under",
-        "en": "under the rock",
-        "de": "unter dem Stein"
+        "en": "in the cave",
+        "de": "in der Höhle"
       },
       "notes": "One red/orange crab clearly underneath a large arch-shaped rock on the lower-left."
     },
@@ -214,7 +214,7 @@
   },
   "exampleChildDescriptions": {
     "en": [
-      "The crab is under the rock.",
+      "The crab is in the cave.",
       "The starfish is on the sand.",
       "The turtle is above the starfish.",
       "The seahorse is next to the seaweed.",
@@ -222,7 +222,7 @@
       "The two fish are near the coral."
     ],
     "de": [
-      "Die Krabbe ist unter dem Stein.",
+      "Die Krabbe ist in der Höhle.",
       "Der Seestern liegt auf dem Sand.",
       "Die Schildkröte ist über dem Seestern.",
       "Das Seepferdchen ist neben dem Seegras.",
@@ -274,7 +274,7 @@
     "questions": {
       "en": [
         "Where is the crab?",
-        "Which animal is under the rock?",
+        "Which animal is in the cave?",
         "Where is the starfish?",
         "What is above the starfish?",
         "What is next to the seaweed?",
@@ -283,7 +283,7 @@
       ],
       "de": [
         "Wo ist die Krabbe?",
-        "Welches Tier ist unter dem Stein?",
+        "Welches Tier ist in der Höhle?",
         "Wo ist der Seestern?",
         "Was ist über dem Seestern?",
         "Was ist neben dem Seegras?",
@@ -293,7 +293,7 @@
     },
     "sentenceStarters": {
       "en": [
-        "The ___ is under...",
+        "The ___ is in...",
         "The ___ is on...",
         "The ___ is above...",
         "The ___ is next to...",
@@ -301,7 +301,7 @@
         "The ___ are near..."
       ],
       "de": [
-        "Die/Der ___ ist unter...",
+        "Die/Der ___ ist in...",
         "Die/Der ___ ist auf...",
         "Die/Der ___ ist über...",
         "Die/Der ___ ist neben...",
@@ -311,7 +311,7 @@
     },
     "modellingExamples": {
       "en": [
-        "The crab is hiding under the rock.",
+        "The crab is in the cave.",
         "The starfish is on the sand.",
         "The turtle is swimming above the starfish.",
         "The seahorse is next to the seaweed.",
@@ -319,7 +319,7 @@
         "The two little fish are near the coral."
       ],
       "de": [
-        "Die Krabbe versteckt sich unter dem Stein.",
+        "Die Krabbe ist in der Höhle.",
         "Der Seestern liegt auf dem Sand.",
         "Die Schildkröte schwimmt über dem Seestern.",
         "Das Seepferdchen ist neben dem Seegras.",
@@ -330,12 +330,12 @@
     "expansionExamples": [
       {
         "child": {
-          "en": "Crab under.",
-          "de": "Krabbe unter."
+          "en": "Crab in cave.",
+          "de": "Krabbe in Höhle."
         },
         "adult": {
-          "en": "Yes, the crab is under the rock.",
-          "de": "Ja, die Krabbe ist unter dem Stein."
+          "en": "Yes, the crab is in the cave.",
+          "de": "Ja, die Krabbe ist in der Höhle."
         }
       },
       {

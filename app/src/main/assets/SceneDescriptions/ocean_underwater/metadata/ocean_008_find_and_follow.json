@@ -93,8 +93,8 @@
     ],
     "sentenceModels": [
       {
-        "en": "Find the crab under the rock.",
-        "de": "Finde die Krabbe unter dem Stein."
+        "en": "Find the crab in the cave.",
+        "de": "Finde die Krabbe in der Höhle."
       },
       {
         "en": "Point to the octopus behind the coral.",
@@ -121,14 +121,14 @@
     },
     "starterPrompts": {
       "en": [
-        "Can you find the crab under the rock?",
+        "Can you find the crab in the cave?",
         "Where is the octopus?",
         "Show me the starfish on the sand.",
         "Which animal is next to the seaweed?",
         "Where are the yellow fish?"
       ],
       "de": [
-        "Findest du die Krabbe unter dem Stein?",
+        "Findest du die Krabbe in der Höhle?",
         "Wo ist der Oktopus?",
         "Zeig mir den Seestern auf dem Sand.",
         "Welches Tier ist neben dem Seegras?",
@@ -138,11 +138,11 @@
     "expansionPrompts": {
       "en": [
         "First point to the seahorse, then point to the turtle.",
-        "Find the animal behind the coral and then the animal under the rock."
+        "Find the animal behind the coral and then the animal in the cave."
       ],
       "de": [
         "Zeige zuerst auf das Seepferdchen und dann auf die Schildkröte.",
-        "Finde das Tier hinter der Koralle und dann das Tier unter dem Stein."
+        "Finde das Tier hinter der Koralle und dann das Tier in der Höhle."
       ]
     }
   },

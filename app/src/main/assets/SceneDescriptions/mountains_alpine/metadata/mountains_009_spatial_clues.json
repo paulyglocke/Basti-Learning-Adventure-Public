@@ -105,14 +105,14 @@
     },
     "starterPrompts": {
       "en": [
-        "Which animal is highest?",
+        "Which animal is flying above the stream?",
         "Where is the goat?",
         "What is below the goat?",
         "What is over the stream?",
         "Where is the eagle?"
       ],
       "de": [
-        "Welches Tier ist am höchsten?",
+        "Welches Tier fliegt über dem Bach?",
         "Wo ist die Ziege?",
         "Was ist unterhalb der Ziege?",
         "Was ist über dem Bach?",

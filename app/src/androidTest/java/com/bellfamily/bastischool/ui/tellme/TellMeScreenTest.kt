@@ -52,6 +52,7 @@ class TellMeScreenTest(private val german: Boolean, private val orientation: Int
         var state by mutableStateOf(TellMeState())
         var artwork by mutableStateOf<ImageBitmap?>(ImageBitmap(40, 30))
         var home = 0
+        val pops = mutableListOf<String>()
         val language = if (german) ContentLanguage.GERMAN else ContentLanguage.ENGLISH
         lateinit var input: InputModeManager
         compose.setContent {
@@ -63,7 +64,8 @@ class TellMeScreenTest(private val german: Boolean, private val orientation: Int
                         { state = flow.start(it) }, { id, stage -> state = flow.advance(state, id, stage) },
                         { state = flow.help(state) }, { state = flow.grownUps(state) },
                         { state = flow.again(state) }, { state = flow.home() }, { home++; state = flow.home() },
-                        Modifier.size(if (landscape) 700.dp else 280.dp, if (landscape) 240.dp else 480.dp))
+                        Modifier.size(if (landscape) 700.dp else 280.dp, if (landscape) 240.dp else 480.dp),
+                        onPop = { pops += it })
                 }
             }
         }
@@ -72,6 +74,7 @@ class TellMeScreenTest(private val german: Boolean, private val orientation: Int
         flow.categories.forEach { category -> compose.onNodeWithTag("tellme-category-${category.id.value}")
             .performScrollTo().assertTextEquals(category.display[language]).assertHeightIsAtLeast(56.dp) }
         click("tellme-category-${flow.categories.first().id.value}")
+        compose.onNodeWithTag("completion-celebration").assertDoesNotExist()
         val first = flow.scene(state)!!
         val support = flow.support(first, language)
         compose.onNodeWithTag("tellme-artwork").performScrollTo().assertContentDescriptionEquals(first.title[language]!!)
@@ -98,6 +101,8 @@ class TellMeScreenTest(private val german: Boolean, private val orientation: Int
         continueButton.performSemanticsAction(SemanticsActions.RequestFocus) { it() }
         continueButton.assertIsFocused().performKeyInput { pressKey(Key.Enter) }
         compose.onNodeWithTag("tellme-model").performScrollTo().assertTextEquals(support.model!!)
+        compose.onNodeWithText(if (german) "Du könntest sagen:" else "You could say:").assertExists()
+        compose.onNodeWithTag("completion-celebration").assertDoesNotExist()
         compose.runOnIdle { assertEquals(first.id, flow.scene(state)!!.id); assertTrue(state.help); assertTrue(state.grownUps) }
         click("tellme-continue")
         compose.onNodeWithTag("tellme-progress").assertTextEquals(if (german) "2 von 9" else "2 of 9")
@@ -108,13 +113,23 @@ class TellMeScreenTest(private val german: Boolean, private val orientation: Int
         compose.onNodeWithTag("tellme-image-unavailable").performScrollTo().assertIsDisplayed()
         compose.runOnIdle { assertEquals(1, state.index); assertEquals(TellMeStage.TALK, state.stage) }
         repeat(8) {
+            compose.onNodeWithTag("completion-celebration").assertDoesNotExist()
             click("tellme-continue")
+            compose.onNodeWithTag("completion-celebration").assertDoesNotExist()
             if (state.index >= 3) { compose.onNodeWithTag("tellme-model").assertDoesNotExist(); compose.onNodeWithTag("tellme-help").assertDoesNotExist() }
             click("tellme-continue")
         }
         compose.onNodeWithTag("tellme-completion").assertTextEquals(if (german) "Toll erzählt!" else "Great talking!")
         compose.onNodeWithTag("tellme-home").performScrollTo().assertIsDisplayed()
+        click("balloon-0")
+        compose.onNodeWithTag("balloon-0").assertHasNoClickAction()
+        compose.onNodeWithTag("balloon-1").assertHasClickAction()
+        compose.runOnIdle {
+            assertEquals(listOf(state.celebrationId), pops)
+            assertEquals(TellMeStage.COMPLETE, state.stage)
+        }
         click("tellme-again")
+        compose.onNodeWithTag("completion-celebration").assertDoesNotExist()
         compose.runOnIdle { assertEquals(TellMeState(first.categoryId), state) }
         // Reach completion again without manufacturing a success/failure event.
         compose.runOnIdle { repeat(18) { state = flow.advance(state, flow.scene(state)!!.id, state.stage) } }

@@ -23,8 +23,8 @@
         "de": "Schwein"
       },
       {
-        "en": "chickens",
-        "de": "Hühner"
+        "en": "chicken",
+        "de": "Huhn"
       },
       {
         "en": "sheep",
@@ -89,8 +89,8 @@
         "de": "Das Schwein ist im Matsch."
       },
       {
-        "en": "The chickens are pecking the grain.",
-        "de": "Die Hühner picken die Körner."
+        "en": "The chicken is pecking the grain.",
+        "de": "Das Huhn pickt die Körner."
       },
       {
         "en": "The sheep is near the fence.",
@@ -107,14 +107,14 @@
       "en": [
         "What animals can you see?",
         "Where is the pig?",
-        "What are the chickens doing?",
+        "What is the chicken doing?",
         "Which animal is fluffy?",
         "Where is the cow?"
       ],
       "de": [
         "Welche Tiere siehst du?",
         "Wo ist das Schwein?",
-        "Was machen die Hühner?",
+        "Was macht das Huhn?",
         "Welches Tier ist flauschig?",
         "Wo ist die Kuh?"
       ]
@@ -122,11 +122,11 @@
     "expansionPrompts": {
       "en": [
         "Can you make a longer sentence about the pig?",
-        "Why might the chickens be pecking the ground?"
+        "What is the chicken pecking?"
       ],
       "de": [
         "Kannst du einen längeren Satz über das Schwein sagen?",
-        "Warum könnten die Hühner auf dem Boden picken?"
+        "Was pickt das Huhn?"
       ]
     }
   },
@@ -135,5 +135,6 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_3"
+  "batch": "wave_2_batch_3",
+  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text."
 }

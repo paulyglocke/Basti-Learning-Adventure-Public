@@ -1,0 +1,3141 @@
+[
+  {
+    "scene_id": "scene.ocean.hiding_places.03",
+    "metadata": "SceneDescriptions/ocean_underwater/metadata/ocean_003_hiding_places.json",
+    "changes": [
+      {
+        "path": [
+          "examples",
+          "en",
+          0
+        ],
+        "before": "The crab is under the rock.",
+        "after": "The crab is in the cave."
+      },
+      {
+        "path": [
+          "examples",
+          "de",
+          0
+        ],
+        "before": "Die Krabbe ist unter dem Stein.",
+        "after": "Die Krabbe ist in der Höhle."
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "en",
+          1
+        ],
+        "before": "Which animal is under the rock?",
+        "after": "Which animal is in the cave?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "de",
+          1
+        ],
+        "before": "Welches Tier ist unter dem Stein?",
+        "after": "Welches Tier ist in der Höhle?"
+      },
+      {
+        "path": [
+          "groups",
+          2,
+          1,
+          "en",
+          0
+        ],
+        "before": "The ___ is under...",
+        "after": "The ___ is in..."
+      },
+      {
+        "path": [
+          "groups",
+          2,
+          1,
+          "de",
+          0
+        ],
+        "before": "Die/Der ___ ist unter...",
+        "after": "Die/Der ___ ist in..."
+      },
+      {
+        "path": [
+          "groups",
+          3,
+          1,
+          "en",
+          0
+        ],
+        "before": "The crab is hiding under the rock.",
+        "after": "The crab is in the cave."
+      },
+      {
+        "path": [
+          "groups",
+          3,
+          1,
+          "de",
+          0
+        ],
+        "before": "Die Krabbe versteckt sich unter dem Stein.",
+        "after": "Die Krabbe ist in der Höhle."
+      },
+      {
+        "path": [
+          "expansions",
+          0,
+          0,
+          "en"
+        ],
+        "before": "Crab under.",
+        "after": "Crab in cave."
+      },
+      {
+        "path": [
+          "expansions",
+          0,
+          0,
+          "de"
+        ],
+        "before": "Krabbe unter.",
+        "after": "Krabbe in Höhle."
+      },
+      {
+        "path": [
+          "expansions",
+          0,
+          1,
+          "en"
+        ],
+        "before": "Yes, the crab is under the rock.",
+        "after": "Yes, the crab is in the cave."
+      },
+      {
+        "path": [
+          "expansions",
+          0,
+          1,
+          "de"
+        ],
+        "before": "Ja, die Krabbe ist unter dem Stein.",
+        "after": "Ja, die Krabbe ist in der Höhle."
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.ocean.story_actions.04",
+    "metadata": "SceneDescriptions/ocean_underwater/metadata/ocean_004_story_actions.json",
+    "changes": [
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          2,
+          "en"
+        ],
+        "before": "hermit crab",
+        "after": "crab"
+      },
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          2,
+          "de"
+        ],
+        "before": "Einsiedlerkrebs",
+        "after": "Krabbe"
+      },
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          3,
+          "en"
+        ],
+        "before": "shell",
+        "after": "sand"
+      },
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          3,
+          "de"
+        ],
+        "before": "Muschel",
+        "after": "Sand"
+      },
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          4,
+          "en"
+        ],
+        "before": "starfish",
+        "after": "cave"
+      },
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          4,
+          "de"
+        ],
+        "before": "Seestern",
+        "after": "Höhle"
+      },
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          7,
+          "en"
+        ],
+        "before": "treasure chest",
+        "after": "coral"
+      },
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          7,
+          "de"
+        ],
+        "before": "Schatztruhe",
+        "after": "Koralle"
+      },
+      {
+        "path": [
+          "targets",
+          1,
+          1
+        ],
+        "before": [
+          {
+            "en": "eating",
+            "de": "fressen"
+          },
+          {
+            "en": "swimming",
+            "de": "schwimmen"
+          },
+          {
+            "en": "opening",
+            "de": "öffnen"
+          },
+          {
+            "en": "looking",
+            "de": "schauen"
+          },
+          {
+            "en": "choosing",
+            "de": "auswählen"
+          },
+          {
+            "en": "watching",
+            "de": "beobachten"
+          }
+        ],
+        "after": [
+          {
+            "en": "swimming",
+            "de": "schwimmen"
+          },
+          {
+            "en": "digging",
+            "de": "graben"
+          }
+        ]
+      },
+      {
+        "path": [
+          "targets",
+          2,
+          1
+        ],
+        "before": [
+          {
+            "en": "big",
+            "de": "groß"
+          },
+          {
+            "en": "small",
+            "de": "klein"
+          },
+          {
+            "en": "orange",
+            "de": "orange"
+          },
+          {
+            "en": "purple",
+            "de": "lila"
+          },
+          {
+            "en": "green",
+            "de": "grün"
+          },
+          {
+            "en": "open",
+            "de": "offen"
+          }
+        ],
+        "after": [
+          {
+            "en": "big",
+            "de": "groß"
+          },
+          {
+            "en": "small",
+            "de": "klein"
+          },
+          {
+            "en": "orange",
+            "de": "orange"
+          },
+          {
+            "en": "blue",
+            "de": "blau"
+          },
+          {
+            "en": "green",
+            "de": "grün"
+          }
+        ]
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          0,
+          "en"
+        ],
+        "before": "The turtle is eating seaweed.",
+        "after": "The turtle is swimming."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          0,
+          "de"
+        ],
+        "before": "Die Schildkröte frisst Seegras.",
+        "after": "Die Schildkröte schwimmt."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          1,
+          "en"
+        ],
+        "before": "The octopus is opening the treasure chest.",
+        "after": "The octopus is in the cave."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          1,
+          "de"
+        ],
+        "before": "Der Oktopus öffnet die Schatztruhe.",
+        "after": "Der Oktopus ist in der Höhle."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          2,
+          "en"
+        ],
+        "before": "The hermit crab is looking at the shells.",
+        "after": "The crab is digging in the sand."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          2,
+          "de"
+        ],
+        "before": "Der Einsiedlerkrebs schaut sich die Muscheln an.",
+        "after": "Die Krabbe gräbt im Sand."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          3,
+          "en"
+        ],
+        "before": "The starfish is on the rock.",
+        "after": "Three blue fish are swimming together."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          3,
+          "de"
+        ],
+        "before": "Der Seestern ist auf dem Stein.",
+        "after": "Drei blaue Fische schwimmen zusammen."
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          1
+        ],
+        "before": "Who is doing something?",
+        "after": "What is the crab doing?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          2
+        ],
+        "before": "Can you tell me where the starfish is?",
+        "after": "Where is the octopus?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          3
+        ],
+        "before": "Which animal is near the treasure chest?",
+        "after": "Which animal is in the cave?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          1
+        ],
+        "before": "Wer macht etwas?",
+        "after": "Was macht die Krabbe?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          2
+        ],
+        "before": "Kannst du mir sagen, wo der Seestern ist?",
+        "after": "Wo ist der Oktopus?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          3
+        ],
+        "before": "Welches Tier ist in der Nähe der Schatztruhe?",
+        "after": "Welches Tier ist in der Höhle?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "en",
+          2
+        ],
+        "before": "Which shells are big and small?",
+        "after": "How many blue fish can you see?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "en",
+          3
+        ],
+        "before": "What might the hermit crab choose next?",
+        "after": "What might the crab find in the sand?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "de",
+          2
+        ],
+        "before": "Welche Muscheln sind groß und welche klein?",
+        "after": "Wie viele blaue Fische siehst du?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "de",
+          3
+        ],
+        "before": "Was könnte sich der Einsiedlerkrebs als Nächstes aussuchen?",
+        "after": "Was könnte die Krabbe im Sand finden?"
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.ocean.reef_routines.06",
+    "metadata": "SceneDescriptions/ocean_underwater/metadata/ocean_006_reef_routines.json",
+    "changes": [
+      {
+        "path": [
+          "targets",
+          0,
+          1
+        ],
+        "before": [
+          {
+            "en": "turtle",
+            "de": "Schildkröte"
+          },
+          {
+            "en": "crab",
+            "de": "Krabbe"
+          },
+          {
+            "en": "octopus",
+            "de": "Oktopus"
+          },
+          {
+            "en": "cave",
+            "de": "Höhle"
+          },
+          {
+            "en": "seahorse",
+            "de": "Seepferdchen"
+          },
+          {
+            "en": "coral",
+            "de": "Koralle"
+          },
+          {
+            "en": "fish",
+            "de": "Fisch"
+          },
+          {
+            "en": "seaweed",
+            "de": "Seegras"
+          }
+        ],
+        "after": [
+          {
+            "en": "turtle",
+            "de": "Schildkröte"
+          },
+          {
+            "en": "crab",
+            "de": "Krabbe"
+          },
+          {
+            "en": "octopus",
+            "de": "Oktopus"
+          },
+          {
+            "en": "shell",
+            "de": "Muschel"
+          },
+          {
+            "en": "chest",
+            "de": "Truhe"
+          },
+          {
+            "en": "seahorse",
+            "de": "Seepferdchen"
+          },
+          {
+            "en": "coral",
+            "de": "Koralle"
+          },
+          {
+            "en": "fish",
+            "de": "Fisch"
+          },
+          {
+            "en": "seaweed",
+            "de": "Seegras"
+          }
+        ]
+      },
+      {
+        "path": [
+          "targets",
+          1,
+          1
+        ],
+        "before": [
+          {
+            "en": "eating",
+            "de": "fressen"
+          },
+          {
+            "en": "digging",
+            "de": "graben"
+          },
+          {
+            "en": "hiding",
+            "de": "sich verstecken"
+          },
+          {
+            "en": "swimming",
+            "de": "schwimmen"
+          }
+        ],
+        "after": [
+          {
+            "en": "eating",
+            "de": "fressen"
+          },
+          {
+            "en": "swimming",
+            "de": "schwimmen"
+          }
+        ]
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          1,
+          "en"
+        ],
+        "before": "The crab is digging in the sand.",
+        "after": "The crab is beside the shells."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          1,
+          "de"
+        ],
+        "before": "Die Krabbe gräbt im Sand.",
+        "after": "Die Krabbe ist neben den Muscheln."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          2,
+          "en"
+        ],
+        "before": "The octopus is hiding in the cave.",
+        "after": "The octopus is beside the open chest."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          2,
+          "de"
+        ],
+        "before": "Der Oktopus versteckt sich in der Höhle.",
+        "after": "Der Oktopus ist neben der offenen Truhe."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          4,
+          "en"
+        ],
+        "before": "The three fish are swimming together.",
+        "after": "Two fish are swimming above the octopus."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          4,
+          "de"
+        ],
+        "before": "Die drei Fische schwimmen zusammen.",
+        "after": "Zwei Fische schwimmen über dem Oktopus."
+      },
+      {
+        "path": [
+          "focus",
+          "en"
+        ],
+        "before": "Support simple description plus light functional questions like who is hiding or who is working.",
+        "after": "Describe what the animals are doing and where they are."
+      },
+      {
+        "path": [
+          "focus",
+          "de"
+        ],
+        "before": "Einfache Beschreibungen unterstützen und leichte Fragen stellen, etwa wer sich versteckt oder wer arbeitet.",
+        "after": "Beschreiben, was die Tiere machen und wo sie sind."
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          0
+        ],
+        "before": "Who is hiding?",
+        "after": "What is the turtle eating?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          1
+        ],
+        "before": "Who is digging?",
+        "after": "Where is the crab?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          3
+        ],
+        "before": "How many blue fish are there?",
+        "after": "How many fish are above the octopus?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          4
+        ],
+        "before": "What is the turtle eating?",
+        "after": "What is beside the crab?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          0
+        ],
+        "before": "Wer versteckt sich?",
+        "after": "Was frisst die Schildkröte?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          1
+        ],
+        "before": "Wer gräbt?",
+        "after": "Wo ist die Krabbe?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          3
+        ],
+        "before": "Wie viele blaue Fische sind da?",
+        "after": "Wie viele Fische sind über dem Oktopus?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          4
+        ],
+        "before": "Was frisst die Schildkröte?",
+        "after": "Was ist neben der Krabbe?"
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.ocean.helping_story.07",
+    "metadata": "SceneDescriptions/ocean_underwater/metadata/ocean_007_helping_story.json",
+    "changes": [
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          1,
+          "en"
+        ],
+        "before": "The clownfish is waiting by the cave.",
+        "after": "The clownfish is by the cave."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          1,
+          "de"
+        ],
+        "before": "Der Clownfisch wartet bei der Höhle.",
+        "after": "Der Clownfisch ist bei der Höhle."
+      },
+      {
+        "path": [
+          "focus",
+          "en"
+        ],
+        "before": "Talk about what is happening first, what might happen next, and make longer sentences about who is helping at the reef.",
+        "after": "Describe what the animals are carrying and where they are. Talk about what might happen next."
+      },
+      {
+        "path": [
+          "focus",
+          "de"
+        ],
+        "before": "Darüber sprechen, was zuerst passiert und was als Nächstes passieren könnte. Längere Sätze darüber bilden, wer am Riff hilft.",
+        "after": "Beschreiben, was die Tiere tragen und wo sie sind. Darüber sprechen, was als Nächstes passieren könnte."
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          0
+        ],
+        "before": "Who is bringing something?",
+        "after": "What is the turtle carrying?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          1
+        ],
+        "before": "Who is waiting near the cave?",
+        "after": "Which fish is by the cave?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          0
+        ],
+        "before": "Wer bringt etwas?",
+        "after": "Was trägt die Schildkröte?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          1
+        ],
+        "before": "Wer wartet in der Nähe der Höhle?",
+        "after": "Welcher Fisch ist bei der Höhle?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "en",
+          2
+        ],
+        "before": "Who is helping and who is waiting?",
+        "after": "What are the animals near the cave doing?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "de",
+          2
+        ],
+        "before": "Wer hilft und wer wartet?",
+        "after": "Was machen die Tiere bei der Höhle?"
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.ocean.find_and_follow.08",
+    "metadata": "SceneDescriptions/ocean_underwater/metadata/ocean_008_find_and_follow.json",
+    "changes": [
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          0,
+          "en"
+        ],
+        "before": "Find the crab under the rock.",
+        "after": "Find the crab in the cave."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          0,
+          "de"
+        ],
+        "before": "Finde die Krabbe unter dem Stein.",
+        "after": "Finde die Krabbe in der Höhle."
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          0
+        ],
+        "before": "Can you find the crab under the rock?",
+        "after": "Can you find the crab in the cave?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          0
+        ],
+        "before": "Findest du die Krabbe unter dem Stein?",
+        "after": "Findest du die Krabbe in der Höhle?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "en",
+          1
+        ],
+        "before": "Find the animal behind the coral and then the animal under the rock.",
+        "after": "Find the animal behind the coral and then the animal in the cave."
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "de",
+          1
+        ],
+        "before": "Finde das Tier hinter der Koralle und dann das Tier unter dem Stein.",
+        "after": "Finde das Tier hinter der Koralle und dann das Tier in der Höhle."
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.jungle.animal_homes.04",
+    "metadata": "SceneDescriptions/jungle_rainforest/metadata/jungle_004_animal_homes.json",
+    "changes": [
+      {
+        "path": [
+          "purpose",
+          "en"
+        ],
+        "before": "Animal homes, shelter and gentle inference questions.",
+        "after": "Describe where rainforest animals are and what they are doing."
+      },
+      {
+        "path": [
+          "purpose",
+          "de"
+        ],
+        "before": "Tierwohnungen, Schutz und behutsame Fragen zum Weiterdenken.",
+        "after": "Beschreiben, wo die Tiere im Regenwald sind und was sie machen."
+      },
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          3,
+          "en"
+        ],
+        "before": "tree hole",
+        "after": "banana"
+      },
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          3,
+          "de"
+        ],
+        "before": "Baumhöhle",
+        "after": "Banane"
+      },
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          6,
+          "en"
+        ],
+        "before": "toucan",
+        "after": "elephant"
+      },
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          6,
+          "de"
+        ],
+        "before": "Tukan",
+        "after": "Elefant"
+      },
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          7,
+          "en"
+        ],
+        "before": "nest",
+        "after": "river"
+      },
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          7,
+          "de"
+        ],
+        "before": "Nest",
+        "after": "Fluss"
+      },
+      {
+        "path": [
+          "targets",
+          1,
+          1,
+          0,
+          "en"
+        ],
+        "before": "sleeping",
+        "after": "hanging"
+      },
+      {
+        "path": [
+          "targets",
+          1,
+          1,
+          0,
+          "de"
+        ],
+        "before": "schlafen",
+        "after": "hängen"
+      },
+      {
+        "path": [
+          "targets",
+          1,
+          1,
+          1,
+          "en"
+        ],
+        "before": "looking",
+        "after": "holding"
+      },
+      {
+        "path": [
+          "targets",
+          1,
+          1,
+          1,
+          "de"
+        ],
+        "before": "schauen",
+        "after": "halten"
+      },
+      {
+        "path": [
+          "targets",
+          1,
+          1,
+          2,
+          "en"
+        ],
+        "before": "carrying",
+        "after": "flying"
+      },
+      {
+        "path": [
+          "targets",
+          1,
+          1,
+          2,
+          "de"
+        ],
+        "before": "tragen",
+        "after": "fliegen"
+      },
+      {
+        "path": [
+          "targets",
+          1,
+          1,
+          3,
+          "en"
+        ],
+        "before": "drinking",
+        "after": "jumping"
+      },
+      {
+        "path": [
+          "targets",
+          1,
+          1,
+          3,
+          "de"
+        ],
+        "before": "trinken",
+        "after": "springen"
+      },
+      {
+        "path": [
+          "targets",
+          1,
+          1,
+          4,
+          "en"
+        ],
+        "before": "sitting",
+        "after": "walking"
+      },
+      {
+        "path": [
+          "targets",
+          1,
+          1,
+          4,
+          "de"
+        ],
+        "before": "sitzen",
+        "after": "gehen"
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          0,
+          "en"
+        ],
+        "before": "The sloth is sleeping on the branch.",
+        "after": "The sloth is hanging from the branch."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          0,
+          "de"
+        ],
+        "before": "Das Faultier schläft auf dem Ast.",
+        "after": "Das Faultier hängt am Ast."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          1,
+          "en"
+        ],
+        "before": "The monkey is looking into the tree hole.",
+        "after": "The monkey is holding a banana."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          1,
+          "de"
+        ],
+        "before": "Der Affe schaut in die Baumhöhle.",
+        "after": "Der Affe hält eine Banane."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          2,
+          "en"
+        ],
+        "before": "The parrot is carrying a leaf.",
+        "after": "The parrot is flying."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          2,
+          "de"
+        ],
+        "before": "Der Papagei trägt ein Blatt.",
+        "after": "Der Papagei fliegt."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          3,
+          "en"
+        ],
+        "before": "The toucan is next to the nest.",
+        "after": "The frog is jumping over the leaves."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          3,
+          "de"
+        ],
+        "before": "Der Tukan ist neben dem Nest.",
+        "after": "Der Frosch springt über die Blätter."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          4,
+          "en"
+        ],
+        "before": "The tiger is drinking water.",
+        "after": "The tiger is walking through the grass."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          4,
+          "de"
+        ],
+        "before": "Der Tiger trinkt Wasser.",
+        "after": "Der Tiger geht durch das Gras."
+      },
+      {
+        "path": [
+          "focus",
+          "en"
+        ],
+        "before": "Talk about where animals rest, hide, or make homes.",
+        "after": "Describe where the animals are in the rainforest."
+      },
+      {
+        "path": [
+          "focus",
+          "de"
+        ],
+        "before": "Darüber sprechen, wo Tiere sich ausruhen, sich verstecken oder ihr Zuhause einrichten.",
+        "after": "Beschreiben, wo die Tiere im Regenwald sind."
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          0
+        ],
+        "before": "Which animal is sleeping?",
+        "after": "Where is the sloth hanging?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          1
+        ],
+        "before": "Where is the monkey looking?",
+        "after": "What is the monkey holding?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          2
+        ],
+        "before": "Who has a nest nearby?",
+        "after": "Which animal is flying?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          3
+        ],
+        "before": "Who is under the leaf?",
+        "after": "What is the frog doing?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          0
+        ],
+        "before": "Welches Tier schläft?",
+        "after": "Wo hängt das Faultier?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          1
+        ],
+        "before": "Wohin schaut der Affe?",
+        "after": "Was hält der Affe?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          2
+        ],
+        "before": "Bei wem ist ein Nest in der Nähe?",
+        "after": "Welches Tier fliegt?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          3
+        ],
+        "before": "Wer ist unter dem Blatt?",
+        "after": "Was macht der Frosch?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "en",
+          0
+        ],
+        "before": "Which place looks safe and dry?",
+        "after": "Where is the elephant?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "en",
+          1
+        ],
+        "before": "What might the parrot do with the leaf next?",
+        "after": "What might the monkey do with the banana?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "de",
+          0
+        ],
+        "before": "Welcher Platz sieht sicher und trocken aus?",
+        "after": "Wo ist der Elefant?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "de",
+          1
+        ],
+        "before": "Was könnte der Papagei als Nächstes mit dem Blatt machen?",
+        "after": "Was könnte der Affe mit der Banane machen?"
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.jungle.busy_actions.05",
+    "metadata": "SceneDescriptions/jungle_rainforest/metadata/jungle_005_busy_actions.json",
+    "changes": [
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          1,
+          "en"
+        ],
+        "before": "banana",
+        "after": "vine"
+      },
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          1,
+          "de"
+        ],
+        "before": "Banane",
+        "after": "Liane"
+      },
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          5,
+          "en"
+        ],
+        "before": "sloth",
+        "after": "toucan"
+      },
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          5,
+          "de"
+        ],
+        "before": "Faultier",
+        "after": "Tukan"
+      },
+      {
+        "path": [
+          "targets",
+          1,
+          1
+        ],
+        "before": [
+          {
+            "en": "holding",
+            "de": "halten"
+          },
+          {
+            "en": "spraying",
+            "de": "spritzen"
+          },
+          {
+            "en": "jumping",
+            "de": "springen"
+          },
+          {
+            "en": "flying",
+            "de": "fliegen"
+          },
+          {
+            "en": "hanging",
+            "de": "hängen"
+          },
+          {
+            "en": "walking",
+            "de": "gehen"
+          }
+        ],
+        "after": [
+          {
+            "en": "holding",
+            "de": "halten"
+          },
+          {
+            "en": "lifting",
+            "de": "heben"
+          },
+          {
+            "en": "sitting",
+            "de": "sitzen"
+          },
+          {
+            "en": "hanging",
+            "de": "hängen"
+          },
+          {
+            "en": "standing",
+            "de": "stehen"
+          }
+        ]
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          0,
+          "en"
+        ],
+        "before": "The monkey is holding a banana.",
+        "after": "The monkeys are holding the vines."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          0,
+          "de"
+        ],
+        "before": "Der Affe hält eine Banane.",
+        "after": "Die Affen halten sich an den Lianen fest."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          1,
+          "en"
+        ],
+        "before": "The elephant is spraying water.",
+        "after": "The elephant is lifting its trunk."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          1,
+          "de"
+        ],
+        "before": "Der Elefant spritzt Wasser.",
+        "after": "Der Elefant hebt den Rüssel."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          2,
+          "en"
+        ],
+        "before": "The frog is jumping.",
+        "after": "The frog is on the rock."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          2,
+          "de"
+        ],
+        "before": "Der Frosch springt.",
+        "after": "Der Frosch ist auf dem Stein."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          3,
+          "en"
+        ],
+        "before": "The parrot is flying.",
+        "after": "The parrot is on a branch."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          3,
+          "de"
+        ],
+        "before": "Der Papagei fliegt.",
+        "after": "Der Papagei ist auf einem Ast."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          4,
+          "en"
+        ],
+        "before": "The sloth is hanging from the branch.",
+        "after": "The toucan is on a branch."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          4,
+          "de"
+        ],
+        "before": "Das Faultier hängt am Ast.",
+        "after": "Der Tukan ist auf einem Ast."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          5,
+          "en"
+        ],
+        "before": "The tiger is walking.",
+        "after": "The tiger is standing on the path."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          5,
+          "de"
+        ],
+        "before": "Der Tiger geht.",
+        "after": "Der Tiger steht auf dem Weg."
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          0
+        ],
+        "before": "Who is spraying water?",
+        "after": "What is the elephant doing with its trunk?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          1
+        ],
+        "before": "Which animal is flying?",
+        "after": "Where is the parrot?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          2
+        ],
+        "before": "What is the monkey holding?",
+        "after": "What are the monkeys holding?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          3
+        ],
+        "before": "Can you find the jumping animal?",
+        "after": "Where is the frog?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          4
+        ],
+        "before": "Which animal is walking through the grass?",
+        "after": "Which animal is standing on the path?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          0
+        ],
+        "before": "Wer spritzt Wasser?",
+        "after": "Was macht der Elefant mit seinem Rüssel?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          1
+        ],
+        "before": "Welches Tier fliegt?",
+        "after": "Wo ist der Papagei?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          2
+        ],
+        "before": "Was hält der Affe?",
+        "after": "Woran halten sich die Affen fest?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          3
+        ],
+        "before": "Findest du das Tier, das springt?",
+        "after": "Wo ist der Frosch?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          4
+        ],
+        "before": "Welches Tier geht durch das Gras?",
+        "after": "Welches Tier steht auf dem Weg?"
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.jungle.big_small_groups.06",
+    "metadata": "SceneDescriptions/jungle_rainforest/metadata/jungle_006_big_small_groups.json",
+    "changes": [
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          0,
+          "en"
+        ],
+        "before": "elephant",
+        "after": "sloth"
+      },
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          0,
+          "de"
+        ],
+        "before": "Elefant",
+        "after": "Faultier"
+      },
+      {
+        "path": [
+          "targets",
+          2,
+          1,
+          2,
+          "en"
+        ],
+        "before": "grey",
+        "after": "brown"
+      },
+      {
+        "path": [
+          "targets",
+          2,
+          1,
+          2,
+          "de"
+        ],
+        "before": "grau",
+        "after": "braun"
+      },
+      {
+        "path": [
+          "targets",
+          2,
+          1,
+          5,
+          "en"
+        ],
+        "before": "three",
+        "after": "one"
+      },
+      {
+        "path": [
+          "targets",
+          2,
+          1,
+          5,
+          "de"
+        ],
+        "before": "drei",
+        "after": "eins"
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          0,
+          "en"
+        ],
+        "before": "The elephant is big.",
+        "after": "The tiger is big."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          0,
+          "de"
+        ],
+        "before": "Der Elefant ist groß.",
+        "after": "Der Tiger ist groß."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          4,
+          "en"
+        ],
+        "before": "There are three monkeys.",
+        "after": "One monkey is by the tree hollow."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          4,
+          "de"
+        ],
+        "before": "Da sind drei Affen.",
+        "after": "Ein Affe ist bei der Baumhöhle."
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "en",
+          0
+        ],
+        "before": "Compare the elephant and the frog.",
+        "after": "Compare the tiger and the frog."
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "en",
+          1
+        ],
+        "before": "Tell me a sentence with three.",
+        "after": "Tell me a sentence about the monkey."
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "de",
+          0
+        ],
+        "before": "Vergleiche den Elefanten und den Frosch.",
+        "after": "Vergleiche den Tiger und den Frosch."
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "de",
+          1
+        ],
+        "before": "Sag mir einen Satz mit „drei“.",
+        "after": "Sag mir einen Satz über den Affen."
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.jungle.story_actions.07",
+    "metadata": "SceneDescriptions/jungle_rainforest/metadata/jungle_007_story_actions.json",
+    "changes": [
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          0
+        ],
+        "before": "Who is holding something?",
+        "after": "What is the monkey holding?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          0
+        ],
+        "before": "Wer hält etwas?",
+        "after": "Was hält der Affe?"
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.woodland.autumn_prep.04",
+    "metadata": "SceneDescriptions/woodland_forest/metadata/woodland_004_autumn_prep.json",
+    "changes": [
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          0
+        ],
+        "before": "Who is carrying something?",
+        "after": "What is the squirrel carrying?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          0
+        ],
+        "before": "Wer trägt etwas?",
+        "after": "Was trägt das Eichhörnchen?"
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.woodland.animal_homes.05",
+    "metadata": "SceneDescriptions/woodland_forest/metadata/woodland_005_animal_homes.json",
+    "changes": [
+      {
+        "path": [
+          "purpose",
+          "en"
+        ],
+        "before": "Talk about where woodland animals live, rest or store food.",
+        "after": "Describe where woodland animals are and compare visible groups."
+      },
+      {
+        "path": [
+          "purpose",
+          "de"
+        ],
+        "before": "Darüber sprechen, wo Waldtiere wohnen, sich ausruhen oder Futter aufbewahren.",
+        "after": "Beschreiben, wo die Waldtiere sind, und sichtbare Gruppen vergleichen."
+      },
+      {
+        "path": [
+          "targets",
+          0,
+          1
+        ],
+        "before": [
+          {
+            "en": "owl",
+            "de": "Eule"
+          },
+          {
+            "en": "tree hollow",
+            "de": "Baumhöhle"
+          },
+          {
+            "en": "squirrel",
+            "de": "Eichhörnchen"
+          },
+          {
+            "en": "stump",
+            "de": "Baumstumpf"
+          },
+          {
+            "en": "acorns",
+            "de": "Eicheln"
+          },
+          {
+            "en": "rabbit",
+            "de": "Kaninchen"
+          },
+          {
+            "en": "burrow",
+            "de": "Bau"
+          },
+          {
+            "en": "hedgehog",
+            "de": "Igel"
+          },
+          {
+            "en": "leaf pile",
+            "de": "Laubhaufen"
+          },
+          {
+            "en": "fox",
+            "de": "Fuchs"
+          },
+          {
+            "en": "den",
+            "de": "Bau"
+          },
+          {
+            "en": "deer",
+            "de": "Reh"
+          },
+          {
+            "en": "stream",
+            "de": "Bach"
+          }
+        ],
+        "after": [
+          {
+            "en": "owl",
+            "de": "Eule"
+          },
+          {
+            "en": "branch",
+            "de": "Ast"
+          },
+          {
+            "en": "squirrel",
+            "de": "Eichhörnchen"
+          },
+          {
+            "en": "log",
+            "de": "Baumstamm"
+          },
+          {
+            "en": "rabbit",
+            "de": "Kaninchen"
+          },
+          {
+            "en": "hedgehog",
+            "de": "Igel"
+          },
+          {
+            "en": "grass",
+            "de": "Gras"
+          },
+          {
+            "en": "fox",
+            "de": "Fuchs"
+          },
+          {
+            "en": "deer",
+            "de": "Reh"
+          }
+        ]
+      },
+      {
+        "path": [
+          "targets",
+          1,
+          1
+        ],
+        "before": [
+          {
+            "en": "sitting",
+            "de": "sitzen"
+          },
+          {
+            "en": "storing",
+            "de": "aufbewahren"
+          },
+          {
+            "en": "entering",
+            "de": "hineingehen"
+          },
+          {
+            "en": "resting",
+            "de": "sich ausruhen"
+          },
+          {
+            "en": "looking",
+            "de": "schauen"
+          }
+        ],
+        "after": [
+          {
+            "en": "sitting",
+            "de": "sitzen"
+          },
+          {
+            "en": "standing",
+            "de": "stehen"
+          },
+          {
+            "en": "looking",
+            "de": "schauen"
+          }
+        ]
+      },
+      {
+        "path": [
+          "targets",
+          2,
+          1
+        ],
+        "before": [
+          {
+            "en": "inside",
+            "de": "drinnen"
+          },
+          {
+            "en": "next to",
+            "de": "neben"
+          },
+          {
+            "en": "under",
+            "de": "unter"
+          },
+          {
+            "en": "near",
+            "de": "in der Nähe"
+          }
+        ],
+        "after": [
+          {
+            "en": "on",
+            "de": "auf"
+          },
+          {
+            "en": "next to",
+            "de": "neben"
+          },
+          {
+            "en": "near",
+            "de": "nahe bei"
+          }
+        ]
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          0,
+          "en"
+        ],
+        "before": "The owl is in the tree hollow.",
+        "after": "The owl is on the branch."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          0,
+          "de"
+        ],
+        "before": "Die Eule ist in der Baumhöhle.",
+        "after": "Die Eule ist auf dem Ast."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          1,
+          "en"
+        ],
+        "before": "The squirrel is putting an acorn into the stump.",
+        "after": "Three squirrels are on the log."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          1,
+          "de"
+        ],
+        "before": "Das Eichhörnchen legt eine Eichel in den Baumstumpf.",
+        "after": "Drei Eichhörnchen sind auf dem Baumstamm."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          2,
+          "en"
+        ],
+        "before": "The rabbit is going into the burrow.",
+        "after": "The rabbit is beside the deer."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          2,
+          "de"
+        ],
+        "before": "Das Kaninchen geht in den Bau.",
+        "after": "Das Kaninchen ist neben dem Reh."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          3,
+          "en"
+        ],
+        "before": "The fox is resting in the den.",
+        "after": "The fox is sitting on the grass."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          3,
+          "de"
+        ],
+        "before": "Der Fuchs ruht sich im Bau aus.",
+        "after": "Der Fuchs sitzt im Gras."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          4,
+          "en"
+        ],
+        "before": "The hedgehog is near the leaves.",
+        "after": "The hedgehog is near the fox."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          4,
+          "de"
+        ],
+        "before": "Der Igel ist in der Nähe der Blätter.",
+        "after": "Der Igel ist in der Nähe des Fuchses."
+      },
+      {
+        "path": [
+          "focus",
+          "en"
+        ],
+        "before": "Prompt 'where' questions and simple home-related inference.",
+        "after": "Describe where the animals are and compare their places in the picture."
+      },
+      {
+        "path": [
+          "focus",
+          "de"
+        ],
+        "before": "Wo-Fragen stellen und einfache Überlegungen zu Tierwohnungen anregen.",
+        "after": "Beschreiben, wo die Tiere sind, und ihre Plätze im Bild vergleichen."
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          1
+        ],
+        "before": "Where is the rabbit going?",
+        "after": "Where is the rabbit?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          2
+        ],
+        "before": "Which animal is in the den?",
+        "after": "Which animal has a bushy orange tail?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          3
+        ],
+        "before": "What is the squirrel storing?",
+        "after": "How many squirrels are on the log?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          4
+        ],
+        "before": "Which animal is near the leaf pile?",
+        "after": "Which animal is near the fox?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          1
+        ],
+        "before": "Wohin geht das Kaninchen?",
+        "after": "Wo ist das Kaninchen?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          2
+        ],
+        "before": "Welches Tier ist im Bau?",
+        "after": "Welches Tier hat einen buschigen orangefarbenen Schwanz?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          3
+        ],
+        "before": "Was bewahrt das Eichhörnchen auf?",
+        "after": "Wie viele Eichhörnchen sind auf dem Baumstamm?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          4
+        ],
+        "before": "Welches Tier ist in der Nähe des Laubhaufens?",
+        "after": "Welches Tier ist in der Nähe des Fuchses?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "en",
+          0
+        ],
+        "before": "Who lives in a hole in the tree?",
+        "after": "Tell me about the squirrels on the log."
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "en",
+          1
+        ],
+        "before": "Can you tell me which animal is by the water?",
+        "after": "What is the owl sitting on?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "de",
+          0
+        ],
+        "before": "Wer wohnt in einer Baumhöhle?",
+        "after": "Erzähl mir von den Eichhörnchen auf dem Baumstamm."
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "de",
+          1
+        ],
+        "before": "Kannst du mir sagen, welches Tier am Wasser ist?",
+        "after": "Worauf sitzt die Eule?"
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.woodland.compare_groups.06",
+    "metadata": "SceneDescriptions/woodland_forest/metadata/woodland_006_compare_groups.json",
+    "changes": [
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          5,
+          "en"
+        ],
+        "before": "squirrels",
+        "after": "squirrel"
+      },
+      {
+        "path": [
+          "targets",
+          2,
+          1,
+          2,
+          "en"
+        ],
+        "before": "three",
+        "after": "one"
+      },
+      {
+        "path": [
+          "targets",
+          2,
+          1,
+          2,
+          "de"
+        ],
+        "before": "drei",
+        "after": "eins"
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          4,
+          "en"
+        ],
+        "before": "There are three squirrels.",
+        "after": "There is one squirrel."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          4,
+          "de"
+        ],
+        "before": "Da sind drei Eichhörnchen.",
+        "after": "Da ist ein Eichhörnchen."
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.park.tasks.02",
+    "metadata": "SceneDescriptions/park_playground/metadata/park_002_tasks.json",
+    "changes": [
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "en",
+          0
+        ],
+        "before": "What is the girl giving to the boy?",
+        "after": "What is the girl in pink giving to the boy in blue?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "de",
+          0
+        ],
+        "before": "Was gibt das Mädchen dem Jungen?",
+        "after": "Was gibt das Mädchen in Rosa dem Jungen in Blau?"
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.mountains.spatial_clues.09",
+    "metadata": "SceneDescriptions/mountains_alpine/metadata/mountains_009_spatial_clues.json",
+    "changes": [
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          0
+        ],
+        "before": "Which animal is highest?",
+        "after": "Which animal is flying above the stream?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          0
+        ],
+        "before": "Welches Tier ist am höchsten?",
+        "after": "Welches Tier fliegt über dem Bach?"
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.farm.animal_actions.04",
+    "metadata": "SceneDescriptions/countryside_farm/metadata/farm_004_animal_actions.json",
+    "changes": [
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          2,
+          "en"
+        ],
+        "before": "chickens",
+        "after": "chicken"
+      },
+      {
+        "path": [
+          "targets",
+          0,
+          1,
+          2,
+          "de"
+        ],
+        "before": "Hühner",
+        "after": "Huhn"
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          2,
+          "en"
+        ],
+        "before": "The chickens are pecking the grain.",
+        "after": "The chicken is pecking the grain."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          2,
+          "de"
+        ],
+        "before": "Die Hühner picken die Körner.",
+        "after": "Das Huhn pickt die Körner."
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          2
+        ],
+        "before": "What are the chickens doing?",
+        "after": "What is the chicken doing?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          2
+        ],
+        "before": "Was machen die Hühner?",
+        "after": "Was macht das Huhn?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "en",
+          1
+        ],
+        "before": "Why might the chickens be pecking the ground?",
+        "after": "What is the chicken pecking?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "de",
+          1
+        ],
+        "before": "Warum könnten die Hühner auf dem Boden picken?",
+        "after": "Was pickt das Huhn?"
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.farm.farmyard_friends.08",
+    "metadata": "SceneDescriptions/countryside_farm/metadata/farm_008_farmyard_friends.json",
+    "changes": [
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          0
+        ],
+        "before": "Which animal is the biggest?",
+        "after": "Which animal is standing in the stable?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          0
+        ],
+        "before": "Welches Tier ist am größten?",
+        "after": "Welches Tier steht im Stall?"
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.farm.animal_care.09",
+    "metadata": "SceneDescriptions/countryside_farm/metadata/farm_009_animal_care.json",
+    "changes": [
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          0
+        ],
+        "before": "Who needs water?",
+        "after": "Which animal is beside the water trough?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          0
+        ],
+        "before": "Wer braucht Wasser?",
+        "after": "Welches Tier steht neben dem Wassertrog?"
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.classroom.tasks.01",
+    "metadata": "SceneDescriptions/classroom_school/metadata/classroom_001_tasks.json",
+    "changes": [
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "en",
+          0
+        ],
+        "before": "What is the child doing with the book?",
+        "after": "What is the child doing with the open book?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "de",
+          0
+        ],
+        "before": "Was macht das Kind mit dem Buch?",
+        "after": "Was macht das Kind mit dem aufgeschlagenen Buch?"
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.classroom.positions.03",
+    "metadata": "SceneDescriptions/classroom_school/metadata/classroom_003_positions.json",
+    "changes": [
+      {
+        "path": [
+          "examples",
+          "en",
+          0
+        ],
+        "before": "The backpack is under the desk.",
+        "after": "The blue backpack is under the desk."
+      },
+      {
+        "path": [
+          "examples",
+          "en",
+          2
+        ],
+        "before": "The book is in the bag.",
+        "after": "The red book is in the green bag."
+      },
+      {
+        "path": [
+          "examples",
+          "de",
+          0
+        ],
+        "before": "Der Rucksack ist unter dem Tisch.",
+        "after": "Der blaue Rucksack ist unter dem Tisch."
+      },
+      {
+        "path": [
+          "examples",
+          "de",
+          2
+        ],
+        "before": "Das Buch ist in der Tasche.",
+        "after": "Das rote Buch ist in der grünen Tasche."
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "en",
+          0
+        ],
+        "before": "Where is the backpack?",
+        "after": "Where is the blue backpack?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "en",
+          2
+        ],
+        "before": "Where is the book?",
+        "after": "Where is the red book?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "de",
+          0
+        ],
+        "before": "Wo ist der Rucksack?",
+        "after": "Wo ist der blaue Rucksack?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "de",
+          2
+        ],
+        "before": "Wo ist das Buch?",
+        "after": "Wo ist das rote Buch?"
+      },
+      {
+        "path": [
+          "groups",
+          2,
+          1,
+          "en",
+          0
+        ],
+        "before": "Put the backpack under the desk.",
+        "after": "Put the blue backpack under the desk."
+      },
+      {
+        "path": [
+          "expansions",
+          0,
+          1,
+          "en"
+        ],
+        "before": "Yes, the backpack is under the desk.",
+        "after": "Yes, the blue backpack is under the desk."
+      },
+      {
+        "path": [
+          "expansions",
+          0,
+          1,
+          "de"
+        ],
+        "before": "Ja, der Rucksack ist unter dem Tisch.",
+        "after": "Ja, der blaue Rucksack ist unter dem Tisch."
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.classroom.objects_places.04",
+    "metadata": "SceneDescriptions/classroom_school/metadata/classroom_004_objects_places.json",
+    "changes": [
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          0,
+          "en"
+        ],
+        "before": "The pencils are on the table.",
+        "after": "The pencils are in the red cup on the table."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          0,
+          "de"
+        ],
+        "before": "Die Bleistifte liegen auf dem Tisch.",
+        "after": "Die Stifte sind im roten Becher auf dem Tisch."
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          0
+        ],
+        "before": "Where are the pencils?",
+        "after": "Where is the red cup of pencils?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          0
+        ],
+        "before": "Wo sind die Bleistifte?",
+        "after": "Wo steht der rote Becher mit den Stiften?"
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.classroom.end_of_day.09",
+    "metadata": "SceneDescriptions/classroom_school/metadata/classroom_009_end_of_day.json",
+    "changes": [
+      {
+        "path": [
+          "targets",
+          1,
+          1,
+          0,
+          "de"
+        ],
+        "before": "bekommen",
+        "after": "entgegennehmen"
+      },
+      {
+        "path": [
+          "targets",
+          1,
+          1,
+          2,
+          "en"
+        ],
+        "before": "waiting",
+        "after": "standing"
+      },
+      {
+        "path": [
+          "targets",
+          1,
+          1,
+          2,
+          "de"
+        ],
+        "before": "warten",
+        "after": "stehen"
+      },
+      {
+        "path": [
+          "targets",
+          1,
+          1,
+          4,
+          "en"
+        ],
+        "before": "putting away",
+        "after": "holding"
+      },
+      {
+        "path": [
+          "targets",
+          1,
+          1,
+          4,
+          "de"
+        ],
+        "before": "wegräumen",
+        "after": "halten"
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          1,
+          "en"
+        ],
+        "before": "The child is waiting near the teacher.",
+        "after": "The child is standing near the teacher."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          1,
+          "de"
+        ],
+        "before": "Das Kind wartet bei der Lehrkraft.",
+        "after": "Das Kind steht bei der Lehrkraft."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          2,
+          "en"
+        ],
+        "before": "The child is putting the book away.",
+        "after": "The child is holding a picture."
+      },
+      {
+        "path": [
+          "targets",
+          3,
+          1,
+          2,
+          "de"
+        ],
+        "before": "Das Kind räumt das Buch weg.",
+        "after": "Das Kind hält ein Bild."
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          3
+        ],
+        "before": "Where does the book go?",
+        "after": "Who is holding a picture?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          3
+        ],
+        "before": "Wohin kommt das Buch?",
+        "after": "Wer hält ein Bild?"
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "en",
+          1
+        ],
+        "before": "First point to the child packing the backpack, then point to the child putting the book away.",
+        "after": "First point to the child packing the backpack, then point to the child in blue holding a picture."
+      },
+      {
+        "path": [
+          "groups",
+          1,
+          1,
+          "de",
+          1
+        ],
+        "before": "Zeige zuerst auf das Kind, das den Rucksack packt, und dann auf das Kind, das das Buch wegräumt.",
+        "after": "Zeige zuerst auf das Kind, das den Rucksack packt, und dann auf das Kind in Blau, das ein Bild hält."
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.zoo.feeding_time.05",
+    "metadata": "SceneDescriptions/zoo_wildlife/metadata/zoo_005_feeding_time.json",
+    "changes": [
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          0
+        ],
+        "before": "Who is eating leaves?",
+        "after": "What is the giraffe reaching for?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          0
+        ],
+        "before": "Wer frisst Blätter?",
+        "after": "Wonach streckt sich die Giraffe?"
+      }
+    ]
+  },
+  {
+    "scene_id": "scene.zoo.habitats_story.07",
+    "metadata": "SceneDescriptions/zoo_wildlife/metadata/zoo_007_habitats.json",
+    "changes": [
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "en",
+          0
+        ],
+        "before": "Which animal is by the water?",
+        "after": "Which animals are by the water?"
+      },
+      {
+        "path": [
+          "groups",
+          0,
+          1,
+          "de",
+          0
+        ],
+        "before": "Welches Tier ist am Wasser?",
+        "after": "Welche Tiere sind am Wasser?"
+      }
+    ]
+  }
+]

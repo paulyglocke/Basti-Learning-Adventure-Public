@@ -19,8 +19,8 @@
         "de": "Affe"
       },
       {
-        "en": "banana",
-        "de": "Banane"
+        "en": "vine",
+        "de": "Liane"
       },
       {
         "en": "elephant",
@@ -35,8 +35,8 @@
         "de": "Papagei"
       },
       {
-        "en": "sloth",
-        "de": "Faultier"
+        "en": "toucan",
+        "de": "Tukan"
       },
       {
         "en": "tiger",
@@ -53,24 +53,20 @@
         "de": "halten"
       },
       {
-        "en": "spraying",
-        "de": "spritzen"
+        "en": "lifting",
+        "de": "heben"
       },
       {
-        "en": "jumping",
-        "de": "springen"
-      },
-      {
-        "en": "flying",
-        "de": "fliegen"
+        "en": "sitting",
+        "de": "sitzen"
       },
       {
         "en": "hanging",
         "de": "hängen"
       },
       {
-        "en": "walking",
-        "de": "gehen"
+        "en": "standing",
+        "de": "stehen"
       }
     ],
     "adjectives": [
@@ -97,28 +93,28 @@
     ],
     "sentenceModels": [
       {
-        "en": "The monkey is holding a banana.",
-        "de": "Der Affe hält eine Banane."
+        "en": "The monkeys are holding the vines.",
+        "de": "Die Affen halten sich an den Lianen fest."
       },
       {
-        "en": "The elephant is spraying water.",
-        "de": "Der Elefant spritzt Wasser."
+        "en": "The elephant is lifting its trunk.",
+        "de": "Der Elefant hebt den Rüssel."
       },
       {
-        "en": "The frog is jumping.",
-        "de": "Der Frosch springt."
+        "en": "The frog is on the rock.",
+        "de": "Der Frosch ist auf dem Stein."
       },
       {
-        "en": "The parrot is flying.",
-        "de": "Der Papagei fliegt."
+        "en": "The parrot is on a branch.",
+        "de": "Der Papagei ist auf einem Ast."
       },
       {
-        "en": "The sloth is hanging from the branch.",
-        "de": "Das Faultier hängt am Ast."
+        "en": "The toucan is on a branch.",
+        "de": "Der Tukan ist auf einem Ast."
       },
       {
-        "en": "The tiger is walking.",
-        "de": "Der Tiger geht."
+        "en": "The tiger is standing on the path.",
+        "de": "Der Tiger steht auf dem Weg."
       }
     ]
   },
@@ -129,18 +125,18 @@
     },
     "starterPrompts": {
       "en": [
-        "Who is spraying water?",
-        "Which animal is flying?",
-        "What is the monkey holding?",
-        "Can you find the jumping animal?",
-        "Which animal is walking through the grass?"
+        "What is the elephant doing with its trunk?",
+        "Where is the parrot?",
+        "What are the monkeys holding?",
+        "Where is the frog?",
+        "Which animal is standing on the path?"
       ],
       "de": [
-        "Wer spritzt Wasser?",
-        "Welches Tier fliegt?",
-        "Was hält der Affe?",
-        "Findest du das Tier, das springt?",
-        "Welches Tier geht durch das Gras?"
+        "Was macht der Elefant mit seinem Rüssel?",
+        "Wo ist der Papagei?",
+        "Woran halten sich die Affen fest?",
+        "Wo ist der Frosch?",
+        "Welches Tier steht auf dem Weg?"
       ]
     },
     "expansionPrompts": {
@@ -163,5 +159,6 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_1"
+  "batch": "wave_2_batch_1",
+  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text."
 }

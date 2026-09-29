@@ -15,8 +15,8 @@
   "targetLanguage": {
     "nouns": [
       {
-        "en": "elephant",
-        "de": "Elefant"
+        "en": "sloth",
+        "de": "Faultier"
       },
       {
         "en": "tiger",
@@ -63,8 +63,8 @@
         "de": "klein"
       },
       {
-        "en": "grey",
-        "de": "grau"
+        "en": "brown",
+        "de": "braun"
       },
       {
         "en": "orange",
@@ -75,14 +75,14 @@
         "de": "bunt"
       },
       {
-        "en": "three",
-        "de": "drei"
+        "en": "one",
+        "de": "eins"
       }
     ],
     "sentenceModels": [
       {
-        "en": "The elephant is big.",
-        "de": "Der Elefant ist groß."
+        "en": "The tiger is big.",
+        "de": "Der Tiger ist groß."
       },
       {
         "en": "The frog is small.",
@@ -97,8 +97,8 @@
         "de": "Der Papagei ist bunt."
       },
       {
-        "en": "There are three monkeys.",
-        "de": "Da sind drei Affen."
+        "en": "One monkey is by the tree hollow.",
+        "de": "Ein Affe ist bei der Baumhöhle."
       }
     ]
   },
@@ -125,12 +125,12 @@
     },
     "expansionPrompts": {
       "en": [
-        "Compare the elephant and the frog.",
-        "Tell me a sentence with three."
+        "Compare the tiger and the frog.",
+        "Tell me a sentence about the monkey."
       ],
       "de": [
-        "Vergleiche den Elefanten und den Frosch.",
-        "Sag mir einen Satz mit „drei“."
+        "Vergleiche den Tiger und den Frosch.",
+        "Sag mir einen Satz über den Affen."
       ]
     }
   },
@@ -143,5 +143,6 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_1"
+  "batch": "wave_2_batch_1",
+  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text."
 }

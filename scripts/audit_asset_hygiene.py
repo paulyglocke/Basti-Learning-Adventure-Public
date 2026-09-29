@@ -20,6 +20,25 @@ FAMILIES = ('Animals', 'Prepositions', 'SceneDescriptions', 'Seasons', 'Wilma')
 EDGES = ('top', 'bottom', 'left', 'right')
 DEPTH = 100  # Includes confirmed classroom dividers up to 86 px from the edge.
 
+# Authoring contract, not learning/session identity. Largest reviewed edge crop
+# removes 65/1448 = 4.49% of width. Keep at least 640x480 after 2x runtime sampling.
+PREPOSITIONS_IMAGE_CONTRACT = {
+    'format': 'PNG', 'modes': ['RGB', 'RGBA'],
+    'minimum_width': 1280, 'minimum_height': 960,
+    'aspect_ratio': {'width': 4, 'height': 3, 'relative_tolerance': 0.05},
+}
+
+
+def prepositions_image_error(image):
+    if image.format != 'PNG' or image.mode not in ('RGB', 'RGBA'):
+        return 'expected RGB/RGBA PNG'
+    if image.width < 1280 or image.height < 960:
+        return 'expected minimum Prepositions dimensions 1280x960'
+    # Integer bounds avoid floating-point ambiguity at exactly +/-5% of 4:3.
+    if not 19 * image.height <= 15 * image.width <= 21 * image.height:
+        return 'expected Prepositions aspect ratio 4:3 +/-5%'
+    return ''
+
 
 def inventory(root=ASSETS):
     return sorted(p for family in FAMILIES for p in (root / family).rglob('*')
@@ -97,8 +116,8 @@ def scan(paths):
                 row.update(width=image.width, height=image.height, mode=image.mode,
                            alpha_present='A' in image.getbands() or 'transparency' in image.info)
                 row.update(analyse(image))
-                if 'Prepositions/scenes/' in relative and image.size != (1448, 1086):
-                    row['error'] = 'expected Prepositions dimensions 1448x1086'
+                if 'Prepositions/scenes/' in relative:
+                    row['error'] = prepositions_image_error(image)
         except Exception as error:
             row.update(error=str(error), classification='AMBIGUOUS_REVIEW_REQUIRED')
         rows.append(row)

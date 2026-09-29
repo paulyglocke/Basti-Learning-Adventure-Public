@@ -225,14 +225,14 @@
     },
     "questions": {
       "en": [
-        "What is the child doing with the book?",
+        "What is the child doing with the open book?",
         "Who is writing?",
         "What is the child doing with the scissors?",
         "Who is gluing?",
         "What is the child doing at the shelf?"
       ],
       "de": [
-        "Was macht das Kind mit dem Buch?",
+        "Was macht das Kind mit dem aufgeschlagenen Buch?",
         "Wer schreibt?",
         "Was macht das Kind mit der Schere?",
         "Wer klebt?",

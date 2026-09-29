@@ -24,8 +24,13 @@ class PrepositionsExpansionTest {
             val bytes = File(assets,asset.path).readBytes()
             assertArrayEquals(byteArrayOf(-119,80,78,71,13,10,26,10),bytes.copyOfRange(0,8))
             val dimensions = ByteBuffer.wrap(bytes,16,8)
-            assertEquals(1448,dimensions.int); assertEquals(1086,dimensions.int)
-            assertEquals(2,bytes[25].toInt()) // RGB, not indexed or RGBA.
+            val width = dimensions.int; val height = dimensions.int
+            assertTrue(width >= 1280 && height >= 960)
+            assertTrue(15L * width in 19L * height..21L * height) // 4:3 +/-5%.
+            fun number(key: String) = Regex("\"$key\"\\s*:\\s*(\\d+)").find(record)!!.groupValues[1].toInt()
+            assertEquals(number("width"), width); assertEquals(number("height"), height)
+            assertTrue(bytes[25].toInt() in listOf(2, 6)) // RGB or RGBA PNG.
+            assertEquals(if (bytes[25].toInt() == 2) "RGB" else "RGBA", field(record, "mode"))
             assertEquals(field(record,"sha256"), MessageDigest.getInstance("SHA-256").digest(bytes).joinToString("") { "%02x".format(it) })
         }
         assertEquals(records.map { field(it,"asset_path") }.toSet(), File(assets,"Prepositions/scenes").listFiles()!!.map { "Prepositions/scenes/${it.name}" }.toSet())

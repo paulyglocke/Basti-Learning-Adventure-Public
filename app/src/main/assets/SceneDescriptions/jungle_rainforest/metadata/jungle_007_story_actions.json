@@ -129,14 +129,14 @@
     },
     "starterPrompts": {
       "en": [
-        "Who is holding something?",
+        "What is the monkey holding?",
         "What is the parrot carrying?",
         "Which animal is jumping?",
         "Who is drinking?",
         "Where is the sloth?"
       ],
       "de": [
-        "Wer hält etwas?",
+        "Was hält der Affe?",
         "Was trägt der Papagei?",
         "Welches Tier springt?",
         "Wer trinkt?",

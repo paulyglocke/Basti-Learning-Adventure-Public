@@ -51,6 +51,36 @@ class TellMeFlowTest {
         state = next(state); assertEquals(TellMeStage.COMPLETE, state.stage)
         assertEquals(state, next(state))
     }
+    @Test fun celebrationOwnershipExistsOnlyAfterFinalModelAndClearsOnExitOrAgain() {
+        flow.categories.forEach { category ->
+            var state = flow.start(category.id)
+            repeat(18) {
+                assertNull(state.celebrationId)
+                state = next(state)
+            }
+            assertEquals("tellme.${category.id.value}", state.celebrationId)
+            assertEquals(state.celebrationId, next(state).celebrationId)
+            assertNull(flow.again(state).celebrationId)
+            assertNull(flow.home().celebrationId)
+        }
+    }
+    @Test fun physicalAcceptanceCorrectionsReachBothLanguagesWithoutFallback() {
+        val expected = mapOf(
+            "scene.ocean.reef_routines.06" to ("What is the turtle eating?" to "Was frisst die Schildkröte?"),
+            "scene.ocean.find_and_follow.08" to ("Can you find the crab in the cave?" to "Findest du die Krabbe in der Höhle?"),
+            "scene.jungle.animal_homes.04" to ("Where is the sloth hanging?" to "Wo hängt das Faultier?"),
+            "scene.jungle.busy_actions.05" to ("What is the elephant doing with its trunk?" to "Was macht der Elefant mit seinem Rüssel?"),
+            "scene.classroom.positions.03" to ("Where is the blue backpack?" to "Wo ist der blaue Rucksack?"),
+        )
+        expected.forEach { (id, text) ->
+            val scene = requireNotNull(flow.repository.find(SceneId(id)))
+            assertEquals(text.first, flow.support(scene, ContentLanguage.ENGLISH).prompt)
+            assertEquals(text.second, flow.support(scene, ContentLanguage.GERMAN).prompt)
+        }
+        val cave = requireNotNull(flow.repository.find(SceneId("scene.ocean.hiding_places.03")))
+        assertEquals("The crab is in the cave.", flow.support(cave, ContentLanguage.ENGLISH).model)
+        assertEquals("Die Krabbe ist in der Höhle.", flow.support(cave, ContentLanguage.GERMAN).model)
+    }
     @Test fun obsoletePhaseOrSceneCallbacksCannotSkipConversation() {
         val talk = flow.start(category); val id = flow.scene(talk)!!.id
         val model = next(talk)

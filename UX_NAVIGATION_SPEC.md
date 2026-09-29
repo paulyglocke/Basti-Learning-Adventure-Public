@@ -138,11 +138,16 @@ replace. The nine category controls retain repository order and localized names.
 category visits its nine pictures in authored order with explicit TALK → MODEL → Next.
 Neither Continue nor completion means an answer was accepted or evaluated. Completion
 shows Again, Choose another adventure and Home, without a score or mastery statement.
+After those actions it includes the existing optional `NativeCompletionCelebration`;
+only the final picture’s MODEL → Next transition makes it available. Popping is never
+required to leave. The shared shell owns optional pop sound with its existing Sound Off/
+foreground guards. No Tell Me narration is introduced.
 
 TALK shows the generic invitation plus the first localized QUESTIONS line, otherwise
 STARTER_PROMPTS, otherwise EXPANSION_PROMPTS. Optional Help reveals the first sentence
 starter and up to three WORDS_TO_MODEL lines. MODEL shows the first localized example,
-otherwise MODELLING_EXAMPLES. Missing optional fields are omitted, never synthesized or
+otherwise MODELLING_EXAMPLES, under “You could say:” / “Du könntest sagen:”.
+This introduces an optional example, not an expected answer. Missing optional fields are omitted, never synthesized or
 borrowed from the other language. Currently all 81 scenes have prompts; only the 27 Wave 1
 scenes have this bounded Help/model material. The other 54 still use explicit MODEL/Next
 without invented examples. The collapsed grown-up section shows principle/focus and at

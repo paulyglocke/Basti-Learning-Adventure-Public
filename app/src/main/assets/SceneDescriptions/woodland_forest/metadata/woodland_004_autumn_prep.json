@@ -137,14 +137,14 @@
     },
     "starterPrompts": {
       "en": [
-        "Who is carrying something?",
+        "What is the squirrel carrying?",
         "Which animal is hopping?",
         "What is the fox doing?",
         "Who is up in the sky?",
         "What is on the hedgehog's back?"
       ],
       "de": [
-        "Wer trägt etwas?",
+        "Was trägt das Eichhörnchen?",
         "Welches Tier hoppelt?",
         "Was macht der Fuchs?",
         "Wer ist oben am Himmel?",

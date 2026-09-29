@@ -172,17 +172,17 @@
   },
   "exampleChildDescriptions": {
     "en": [
-      "The backpack is under the desk.",
+      "The blue backpack is under the desk.",
       "The pencil case is on the desk.",
-      "The book is in the bag.",
+      "The red book is in the green bag.",
       "The child is next to the teacher.",
       "The chair is behind the desk.",
       "The crayons are between the books."
     ],
     "de": [
-      "Der Rucksack ist unter dem Tisch.",
+      "Der blaue Rucksack ist unter dem Tisch.",
       "Das Federmäppchen ist auf dem Tisch.",
-      "Das Buch ist in der Tasche.",
+      "Das rote Buch ist in der grünen Tasche.",
       "Das Kind ist neben der Lehrerin.",
       "Der Stuhl ist hinter dem Tisch.",
       "Die Buntstifte sind zwischen den Büchern."
@@ -231,17 +231,17 @@
     },
     "questions": {
       "en": [
-        "Where is the backpack?",
+        "Where is the blue backpack?",
         "What is on the desk?",
-        "Where is the book?",
+        "Where is the red book?",
         "Who is next to the teacher?",
         "Where is the chair?",
         "What is between the two books?"
       ],
       "de": [
-        "Wo ist der Rucksack?",
+        "Wo ist der blaue Rucksack?",
         "Was ist auf dem Tisch?",
-        "Wo ist das Buch?",
+        "Wo ist das rote Buch?",
         "Wer ist neben der Lehrerin?",
         "Wo ist der Stuhl?",
         "Was ist zwischen den zwei Büchern?"
@@ -249,7 +249,7 @@
     },
     "instructionExamples": {
       "en": [
-        "Put the backpack under the desk.",
+        "Put the blue backpack under the desk.",
         "Put the pencil case on the desk.",
         "Put the book in the bag.",
         "Stand next to the teacher.",
@@ -308,8 +308,8 @@
           "de": "Rucksack unter."
         },
         "adult": {
-          "en": "Yes, the backpack is under the desk.",
-          "de": "Ja, der Rucksack ist unter dem Tisch."
+          "en": "Yes, the blue backpack is under the desk.",
+          "de": "Ja, der blaue Rucksack ist unter dem Tisch."
         }
       },
       {

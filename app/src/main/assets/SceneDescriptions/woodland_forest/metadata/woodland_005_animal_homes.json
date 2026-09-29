@@ -7,8 +7,8 @@
   },
   "status": "approved",
   "purpose": {
-    "en": "Talk about where woodland animals live, rest or store food.",
-    "de": "Darüber sprechen, wo Waldtiere wohnen, sich ausruhen oder Futter aufbewahren."
+    "en": "Describe where woodland animals are and compare visible groups.",
+    "de": "Beschreiben, wo die Waldtiere sind, und sichtbare Gruppen vergleichen."
   },
   "asset": "canonical/woodland_005_animal_homes.png",
   "promptFile": "prompts/woodland_005_animal_homes.md",
@@ -19,52 +19,36 @@
         "de": "Eule"
       },
       {
-        "en": "tree hollow",
-        "de": "Baumhöhle"
+        "en": "branch",
+        "de": "Ast"
       },
       {
         "en": "squirrel",
         "de": "Eichhörnchen"
       },
       {
-        "en": "stump",
-        "de": "Baumstumpf"
-      },
-      {
-        "en": "acorns",
-        "de": "Eicheln"
+        "en": "log",
+        "de": "Baumstamm"
       },
       {
         "en": "rabbit",
         "de": "Kaninchen"
       },
       {
-        "en": "burrow",
-        "de": "Bau"
-      },
-      {
         "en": "hedgehog",
         "de": "Igel"
       },
       {
-        "en": "leaf pile",
-        "de": "Laubhaufen"
+        "en": "grass",
+        "de": "Gras"
       },
       {
         "en": "fox",
         "de": "Fuchs"
       },
       {
-        "en": "den",
-        "de": "Bau"
-      },
-      {
         "en": "deer",
         "de": "Reh"
-      },
-      {
-        "en": "stream",
-        "de": "Bach"
       }
     ],
     "verbs": [
@@ -73,16 +57,8 @@
         "de": "sitzen"
       },
       {
-        "en": "storing",
-        "de": "aufbewahren"
-      },
-      {
-        "en": "entering",
-        "de": "hineingehen"
-      },
-      {
-        "en": "resting",
-        "de": "sich ausruhen"
+        "en": "standing",
+        "de": "stehen"
       },
       {
         "en": "looking",
@@ -91,74 +67,70 @@
     ],
     "adjectives": [
       {
-        "en": "inside",
-        "de": "drinnen"
+        "en": "on",
+        "de": "auf"
       },
       {
         "en": "next to",
         "de": "neben"
       },
       {
-        "en": "under",
-        "de": "unter"
-      },
-      {
         "en": "near",
-        "de": "in der Nähe"
+        "de": "nahe bei"
       }
     ],
     "sentenceModels": [
       {
-        "en": "The owl is in the tree hollow.",
-        "de": "Die Eule ist in der Baumhöhle."
+        "en": "The owl is on the branch.",
+        "de": "Die Eule ist auf dem Ast."
       },
       {
-        "en": "The squirrel is putting an acorn into the stump.",
-        "de": "Das Eichhörnchen legt eine Eichel in den Baumstumpf."
+        "en": "Three squirrels are on the log.",
+        "de": "Drei Eichhörnchen sind auf dem Baumstamm."
       },
       {
-        "en": "The rabbit is going into the burrow.",
-        "de": "Das Kaninchen geht in den Bau."
+        "en": "The rabbit is beside the deer.",
+        "de": "Das Kaninchen ist neben dem Reh."
       },
       {
-        "en": "The fox is resting in the den.",
-        "de": "Der Fuchs ruht sich im Bau aus."
+        "en": "The fox is sitting on the grass.",
+        "de": "Der Fuchs sitzt im Gras."
       },
       {
-        "en": "The hedgehog is near the leaves.",
-        "de": "Der Igel ist in der Nähe der Blätter."
+        "en": "The hedgehog is near the fox.",
+        "de": "Der Igel ist in der Nähe des Fuchses."
       }
     ]
   },
   "adultSupport": {
     "focus": {
-      "en": "Prompt 'where' questions and simple home-related inference.",
-      "de": "Wo-Fragen stellen und einfache Überlegungen zu Tierwohnungen anregen."
+      "en": "Describe where the animals are and compare their places in the picture.",
+      "de": "Beschreiben, wo die Tiere sind, und ihre Plätze im Bild vergleichen."
     },
     "starterPrompts": {
       "en": [
         "Where is the owl?",
-        "Where is the rabbit going?",
-        "Which animal is in the den?",
-        "What is the squirrel storing?",
-        "Which animal is near the leaf pile?"
+        "Where is the rabbit?",
+        "Which animal has a bushy orange tail?",
+        "How many squirrels are on the log?",
+        "Which animal is near the fox?"
       ],
       "de": [
         "Wo ist die Eule?",
-        "Wohin geht das Kaninchen?",
-        "Welches Tier ist im Bau?",
-        "Was bewahrt das Eichhörnchen auf?",
-        "Welches Tier ist in der Nähe des Laubhaufens?"
+        "Wo ist das Kaninchen?",
+        "Welches Tier hat einen buschigen orangefarbenen Schwanz?",
+        "Wie viele Eichhörnchen sind auf dem Baumstamm?",
+        "Welches Tier ist in der Nähe des Fuchses?"
       ]
     },
     "expansionPrompts": {
       "en": [
-        "Who lives in a hole in the tree?",
-        "Can you tell me which animal is by the water?"
+        "Tell me about the squirrels on the log.",
+        "What is the owl sitting on?"
       ],
       "de": [
-        "Wer wohnt in einer Baumhöhle?",
-        "Kannst du mir sagen, welches Tier am Wasser ist?"
+        "Erzähl mir von den Eichhörnchen auf dem Baumstamm.",
+        "Worauf sitzt die Eule?"
       ]
     }
   },
@@ -171,5 +143,6 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_1"
+  "batch": "wave_2_batch_1",
+  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text."
 }

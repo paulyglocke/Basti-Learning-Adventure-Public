@@ -43,7 +43,7 @@ class PrepositionsArtworkScreenTest(private val language:ContentLanguage,private
         compose.waitUntil(10_000) {compose.activity.resources.configuration.orientation==if(landscape)Configuration.ORIENTATION_LANDSCAPE else Configuration.ORIENTATION_PORTRAIT}
         val rotation=when(orientation) {ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE->Surface.ROTATION_90;ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE->Surface.ROTATION_270;else->Surface.ROTATION_0}
         compose.waitUntil(10_000) {compose.activity.window.decorView.display?.rotation==rotation}
-        val keys=listOf("snake.on","bird.above","fish.inside","dragon.near","crocodile.far_from")
+        val keys=listOf("snake.next_to","crocodile.in_front_of","crocodile.near","bird.above","fish.inside")
         val scenes=keys.map {key->PrepositionsContent.scenes.single {it.id.value=="scene.prepositions.$key"}}
         val id=SessionId("artwork-ui")
         val tasks=scenes.mapIndexed {i,s->
@@ -80,6 +80,14 @@ class PrepositionsArtworkScreenTest(private val language:ContentLanguage,private
                 compose.runOnIdle {failed.value=true}
                 compose.onNodeWithTag("position-image-unavailable").performScrollTo().assertIsDisplayed()
                 compose.runOnIdle {assertArrayEquals(snapshot,SessionCheckpoint.encode(state.value));failed.value=false}
+            }
+            // Saved identity is independent of the decoded artwork dimensions.
+            compose.runOnIdle {
+                val checkpoint = SessionCheckpoint.encode(state.value)
+                val restored = PrepositionsContent.restore(checkpoint) as SessionRestoreResult.Restored
+                assertArrayEquals(checkpoint, SessionCheckpoint.encode(restored.state))
+                assertEquals(scene.id, PrepositionsContent.scene(restored.state.task).id)
+                state.value = restored.state
             }
             val q=state.value.task.question
             q.choices.forEach {choice->compose.onNodeWithTag("answer-${choice.value}").performScrollTo().assertIsDisplayed().assertIsEnabled().assertHeightIsAtLeast(64.dp)}

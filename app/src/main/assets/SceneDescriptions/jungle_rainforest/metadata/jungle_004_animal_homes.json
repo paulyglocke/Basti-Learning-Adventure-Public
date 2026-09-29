@@ -7,8 +7,8 @@
   },
   "status": "approved",
   "purpose": {
-    "en": "Animal homes, shelter and gentle inference questions.",
-    "de": "Tierwohnungen, Schutz und behutsame Fragen zum Weiterdenken."
+    "en": "Describe where rainforest animals are and what they are doing.",
+    "de": "Beschreiben, wo die Tiere im Regenwald sind und was sie machen."
   },
   "asset": "canonical/jungle_004_animal_homes.png",
   "promptFile": "prompts/jungle_004_animal_homes.md",
@@ -27,8 +27,8 @@
         "de": "Affe"
       },
       {
-        "en": "tree hole",
-        "de": "Baumhöhle"
+        "en": "banana",
+        "de": "Banane"
       },
       {
         "en": "parrot",
@@ -39,12 +39,12 @@
         "de": "Blatt"
       },
       {
-        "en": "toucan",
-        "de": "Tukan"
+        "en": "elephant",
+        "de": "Elefant"
       },
       {
-        "en": "nest",
-        "de": "Nest"
+        "en": "river",
+        "de": "Fluss"
       },
       {
         "en": "frog",
@@ -61,24 +61,24 @@
     ],
     "verbs": [
       {
-        "en": "sleeping",
-        "de": "schlafen"
+        "en": "hanging",
+        "de": "hängen"
       },
       {
-        "en": "looking",
-        "de": "schauen"
+        "en": "holding",
+        "de": "halten"
       },
       {
-        "en": "carrying",
-        "de": "tragen"
+        "en": "flying",
+        "de": "fliegen"
       },
       {
-        "en": "drinking",
-        "de": "trinken"
+        "en": "jumping",
+        "de": "springen"
       },
       {
-        "en": "sitting",
-        "de": "sitzen"
+        "en": "walking",
+        "de": "gehen"
       }
     ],
     "adjectives": [
@@ -101,56 +101,56 @@
     ],
     "sentenceModels": [
       {
-        "en": "The sloth is sleeping on the branch.",
-        "de": "Das Faultier schläft auf dem Ast."
+        "en": "The sloth is hanging from the branch.",
+        "de": "Das Faultier hängt am Ast."
       },
       {
-        "en": "The monkey is looking into the tree hole.",
-        "de": "Der Affe schaut in die Baumhöhle."
+        "en": "The monkey is holding a banana.",
+        "de": "Der Affe hält eine Banane."
       },
       {
-        "en": "The parrot is carrying a leaf.",
-        "de": "Der Papagei trägt ein Blatt."
+        "en": "The parrot is flying.",
+        "de": "Der Papagei fliegt."
       },
       {
-        "en": "The toucan is next to the nest.",
-        "de": "Der Tukan ist neben dem Nest."
+        "en": "The frog is jumping over the leaves.",
+        "de": "Der Frosch springt über die Blätter."
       },
       {
-        "en": "The tiger is drinking water.",
-        "de": "Der Tiger trinkt Wasser."
+        "en": "The tiger is walking through the grass.",
+        "de": "Der Tiger geht durch das Gras."
       }
     ]
   },
   "adultSupport": {
     "focus": {
-      "en": "Talk about where animals rest, hide, or make homes.",
-      "de": "Darüber sprechen, wo Tiere sich ausruhen, sich verstecken oder ihr Zuhause einrichten."
+      "en": "Describe where the animals are in the rainforest.",
+      "de": "Beschreiben, wo die Tiere im Regenwald sind."
     },
     "starterPrompts": {
       "en": [
-        "Which animal is sleeping?",
-        "Where is the monkey looking?",
-        "Who has a nest nearby?",
-        "Who is under the leaf?",
+        "Where is the sloth hanging?",
+        "What is the monkey holding?",
+        "Which animal is flying?",
+        "What is the frog doing?",
         "What is the tiger doing?"
       ],
       "de": [
-        "Welches Tier schläft?",
-        "Wohin schaut der Affe?",
-        "Bei wem ist ein Nest in der Nähe?",
-        "Wer ist unter dem Blatt?",
+        "Wo hängt das Faultier?",
+        "Was hält der Affe?",
+        "Welches Tier fliegt?",
+        "Was macht der Frosch?",
         "Was macht der Tiger?"
       ]
     },
     "expansionPrompts": {
       "en": [
-        "Which place looks safe and dry?",
-        "What might the parrot do with the leaf next?"
+        "Where is the elephant?",
+        "What might the monkey do with the banana?"
       ],
       "de": [
-        "Welcher Platz sieht sicher und trocken aus?",
-        "Was könnte der Papagei als Nächstes mit dem Blatt machen?"
+        "Wo ist der Elefant?",
+        "Was könnte der Affe mit der Banane machen?"
       ]
     }
   },
@@ -163,5 +163,6 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_1"
+  "batch": "wave_2_batch_1",
+  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text."
 }

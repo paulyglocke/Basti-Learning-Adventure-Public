@@ -77,8 +77,8 @@
     ],
     "sentenceModels": [
       {
-        "en": "The pencils are on the table.",
-        "de": "Die Bleistifte liegen auf dem Tisch."
+        "en": "The pencils are in the red cup on the table.",
+        "de": "Die Stifte sind im roten Becher auf dem Tisch."
       },
       {
         "en": "The backpack is next to the shelf.",
@@ -101,14 +101,14 @@
     },
     "starterPrompts": {
       "en": [
-        "Where are the pencils?",
+        "Where is the red cup of pencils?",
         "Where is the backpack?",
         "What is on top of the shelf?",
         "What is next to the table?",
         "Where do the boxes belong?"
       ],
       "de": [
-        "Wo sind die Bleistifte?",
+        "Wo steht der rote Becher mit den Stiften?",
         "Wo ist der Rucksack?",
         "Was ist oben auf dem Regal?",
         "Was ist neben dem Tisch?",

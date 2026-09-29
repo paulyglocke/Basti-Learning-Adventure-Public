@@ -35,7 +35,7 @@
         "de": "Eule"
       },
       {
-        "en": "squirrels",
+        "en": "squirrel",
         "de": "Eichhörnchen"
       }
     ],
@@ -63,8 +63,8 @@
         "de": "klein"
       },
       {
-        "en": "three",
-        "de": "drei"
+        "en": "one",
+        "de": "eins"
       },
       {
         "en": "fluffy tail",
@@ -97,8 +97,8 @@
         "de": "Die Eule hat große Augen."
       },
       {
-        "en": "There are three squirrels.",
-        "de": "Da sind drei Eichhörnchen."
+        "en": "There is one squirrel.",
+        "de": "Da ist ein Eichhörnchen."
       }
     ]
   },
@@ -143,5 +143,6 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_1"
+  "batch": "wave_2_batch_1",
+  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text."
 }

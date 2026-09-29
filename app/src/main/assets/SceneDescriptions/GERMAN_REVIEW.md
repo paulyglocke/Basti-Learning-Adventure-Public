@@ -1,5 +1,42 @@
 # German teaching/support review — SceneDescriptions
 
+## Final resumption: owner Park 9 replacement and completed validation
+
+The previously running full emulator suite completed **122/122**, zero failures/errors/skips,
+BUILD SUCCESSFUL in 22m 14s. It was not rerun. This result predates the owner's Park 9
+replacement; focused replacement decode validation is recorded separately below.
+
+The owner supplied the replacement `park_009_turn_taking.png`. It is preserved unchanged:
+PNG RGB, 1448×1086, SHA-256 `e4ec416f5c06ac6e25a4342b3b0430400516061c3f8a247f990ee6eda8915a78`.
+Desktop visual review shows two seated children facing each other, coherent seesaw
+beam/pivot/handles, and one standing pink-clothed waiting child. Existing “Who is waiting?” /
+“Wer wartet?” is retained. Park 9 is now PASS at desktop review, pending S24 acceptance.
+The original BOTH finding and hash remain in AUDIT.json prior_review; original contact
+sheets remain BEFORE evidence. Current classifications: 58 PASS, 23 PROMPT_FIX corrected,
+0 ARTWORK_FIX/BOTH/REVIEW_REQUIRED. This does not replace physical acceptance.
+
+Only this owner-supplied Scene Description PNG changed; the other 80 remain byte-identical.
+Combined with the 21 Prepositions crops, 22 of 178 packaged rasters differ from HEAD;
+156 remain unchanged. No new image was generated or edited by the agent in this resumption.
+The ASCII tellme-completion-de.png extraction is invalid and is NOT visual evidence.
+Completion interaction is covered by the passing focused and full instrumentation tests.
+
+Earlier checkpoint (before owner replacement):
+
+
+## Physical acceptance follow-up — revision 4 (2026-09-29)
+
+The full 81-scene desktop visual/semantic review found 57 scene-specific PASS, 23
+PROMPT_FIX (corrected EN/DE) and one BOTH: Park .09 remains open because waiting
+is ambiguous and the seesaw geometry is malformed. ARTWORK_FIX alone and
+REVIEW_REQUIRED: zero. Shared Tell Me model-heading wording is corrected separately.
+All 81 PNGs remain unchanged. Bilingual/structural completeness is still 81/81 but
+**does not imply visual acceptance**. Older “ready” conclusions below are historical.
+See [complete audit and exact wording ledger](../../../../../docs/tellme-visual-qa/REVIEW.md)
+and its AUDIT.json/CONTENT_CHANGES.json for every scene and field.
+Further S24 testing and a reviewed Park .09 replacement remain required.
+
+
 Date: 2026-09-25. Bilingual-authoring baseline: `296d6ef`; final targeted-review baseline: `8e00cea`.
 
 ## Bilingual-authoring scope and counts (revision 2)

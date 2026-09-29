@@ -117,14 +117,14 @@
     },
     "starterPrompts": {
       "en": [
-        "Which animal is the biggest?",
+        "Which animal is standing in the stable?",
         "Can you count the sheep?",
         "Can you count the ducklings?",
         "What colour is the pig?",
         "Where are the ducklings?"
       ],
       "de": [
-        "Welches Tier ist am größten?",
+        "Welches Tier steht im Stall?",
         "Kannst du die Schafe zählen?",
         "Kannst du die Entenküken zählen?",
         "Welche Farbe hat das Schwein?",

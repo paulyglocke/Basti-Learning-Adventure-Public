@@ -109,8 +109,8 @@
         "de": "Die Schildkröte bringt Seegras."
       },
       {
-        "en": "The clownfish is waiting by the cave.",
-        "de": "Der Clownfisch wartet bei der Höhle."
+        "en": "The clownfish is by the cave.",
+        "de": "Der Clownfisch ist bei der Höhle."
       },
       {
         "en": "The crab is carrying a shell.",
@@ -128,20 +128,20 @@
   },
   "adultSupport": {
     "focus": {
-      "en": "Talk about what is happening first, what might happen next, and make longer sentences about who is helping at the reef.",
-      "de": "Darüber sprechen, was zuerst passiert und was als Nächstes passieren könnte. Längere Sätze darüber bilden, wer am Riff hilft."
+      "en": "Describe what the animals are carrying and where they are. Talk about what might happen next.",
+      "de": "Beschreiben, was die Tiere tragen und wo sie sind. Darüber sprechen, was als Nächstes passieren könnte."
     },
     "starterPrompts": {
       "en": [
-        "Who is bringing something?",
-        "Who is waiting near the cave?",
+        "What is the turtle carrying?",
+        "Which fish is by the cave?",
         "What is the crab carrying?",
         "Which animals are following the turtle?",
         "What is the octopus doing?"
       ],
       "de": [
-        "Wer bringt etwas?",
-        "Wer wartet in der Nähe der Höhle?",
+        "Was trägt die Schildkröte?",
+        "Welcher Fisch ist bei der Höhle?",
         "Was trägt die Krabbe?",
         "Welche Tiere folgen der Schildkröte?",
         "Was macht der Oktopus?"
@@ -151,12 +151,12 @@
       "en": [
         "What might happen next when the turtle reaches the cave?",
         "Can you make a longer sentence about the clownfish?",
-        "Who is helping and who is waiting?"
+        "What are the animals near the cave doing?"
       ],
       "de": [
         "Was könnte als Nächstes passieren, wenn die Schildkröte an der Höhle ankommt?",
         "Kannst du einen längeren Satz über den Clownfisch sagen?",
-        "Wer hilft und wer wartet?"
+        "Was machen die Tiere bei der Höhle?"
       ]
     }
   },

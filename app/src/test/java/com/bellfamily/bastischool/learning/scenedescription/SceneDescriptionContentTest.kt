@@ -62,7 +62,7 @@ class SceneDescriptionContentTest {
     }
 
     @Test fun everyApprovedSceneHasGermanForEveryAuthoredRuntimeText() {
-        assertEquals(3, repository.version.revision)
+        assertEquals(4, repository.version.revision)
         fun bilingual(text: SceneText) {
             assertFalse(text[ContentLanguage.ENGLISH].isNullOrBlank())
             assertFalse(text[ContentLanguage.GERMAN].isNullOrBlank())
@@ -99,7 +99,7 @@ class SceneDescriptionContentTest {
 
     @Test fun germanSpatialAndSequencingPhrasesAreAuthoredNotEnglishFallback() {
         val ocean = repository.find(SceneId("scene.ocean.find_and_follow.08"))!!
-        assertEquals("Finde die Krabbe unter dem Stein.", ocean.terms(SceneTargetKind.SENTENCE_MODELS, ContentLanguage.GERMAN)!!.first())
+        assertEquals("Finde die Krabbe in der Höhle.", ocean.terms(SceneTargetKind.SENTENCE_MODELS, ContentLanguage.GERMAN)!!.first())
         val sky = repository.find(SceneId("scene.sky.weather_sequence.07"))!!
         assertEquals(listOf("Zuerst ist es sonnig.", "Dann kommen die Wolken.", "Danach regnet es.", "Der Regenbogen kommt nach dem Regen."),
             sky.terms(SceneTargetKind.SENTENCE_MODELS, ContentLanguage.GERMAN))

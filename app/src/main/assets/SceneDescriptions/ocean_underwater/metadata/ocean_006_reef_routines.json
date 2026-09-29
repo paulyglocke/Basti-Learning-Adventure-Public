@@ -27,8 +27,12 @@
         "de": "Oktopus"
       },
       {
-        "en": "cave",
-        "de": "Höhle"
+        "en": "shell",
+        "de": "Muschel"
+      },
+      {
+        "en": "chest",
+        "de": "Truhe"
       },
       {
         "en": "seahorse",
@@ -51,14 +55,6 @@
       {
         "en": "eating",
         "de": "fressen"
-      },
-      {
-        "en": "digging",
-        "de": "graben"
-      },
-      {
-        "en": "hiding",
-        "de": "sich verstecken"
       },
       {
         "en": "swimming",
@@ -89,42 +85,42 @@
         "de": "Die Schildkröte frisst Seegras."
       },
       {
-        "en": "The crab is digging in the sand.",
-        "de": "Die Krabbe gräbt im Sand."
+        "en": "The crab is beside the shells.",
+        "de": "Die Krabbe ist neben den Muscheln."
       },
       {
-        "en": "The octopus is hiding in the cave.",
-        "de": "Der Oktopus versteckt sich in der Höhle."
+        "en": "The octopus is beside the open chest.",
+        "de": "Der Oktopus ist neben der offenen Truhe."
       },
       {
         "en": "The seahorse is next to the coral.",
         "de": "Das Seepferdchen ist neben der Koralle."
       },
       {
-        "en": "The three fish are swimming together.",
-        "de": "Die drei Fische schwimmen zusammen."
+        "en": "Two fish are swimming above the octopus.",
+        "de": "Zwei Fische schwimmen über dem Oktopus."
       }
     ]
   },
   "adultSupport": {
     "focus": {
-      "en": "Support simple description plus light functional questions like who is hiding or who is working.",
-      "de": "Einfache Beschreibungen unterstützen und leichte Fragen stellen, etwa wer sich versteckt oder wer arbeitet."
+      "en": "Describe what the animals are doing and where they are.",
+      "de": "Beschreiben, was die Tiere machen und wo sie sind."
     },
     "starterPrompts": {
       "en": [
-        "Who is hiding?",
-        "Who is digging?",
+        "What is the turtle eating?",
+        "Where is the crab?",
         "Where is the octopus?",
-        "How many blue fish are there?",
-        "What is the turtle eating?"
+        "How many fish are above the octopus?",
+        "What is beside the crab?"
       ],
       "de": [
-        "Wer versteckt sich?",
-        "Wer gräbt?",
+        "Was frisst die Schildkröte?",
+        "Wo ist die Krabbe?",
         "Wo ist der Oktopus?",
-        "Wie viele blaue Fische sind da?",
-        "Was frisst die Schildkröte?"
+        "Wie viele Fische sind über dem Oktopus?",
+        "Was ist neben der Krabbe?"
       ]
     },
     "expansionPrompts": {
@@ -147,5 +143,6 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_1"
+  "batch": "wave_2_batch_1",
+  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text."
 }

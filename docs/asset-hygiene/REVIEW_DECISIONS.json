@@ -1,77 +1,203 @@
 {
   "app/src/main/assets/Prepositions/scenes/scene_prepositions_crocodile_far_from.png": {
-    "sha256": "762390b6e10b5c6e45bad66b1b4e0d1ea3370c400755ed286a49f71b82be91b1",
-    "classification": "COSMETIC_EDGE_GUTTER",
-    "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    "sha256": "965cfeb3a5ef469065a0df43a427198c9d3d355c051546b3b385ed0801b6407b",
+    "classification": "CLEAN",
+    "reason": "Individually reviewed straight extraction gutter removed. Intended far_from panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_COSMETIC_GUTTER",
+    "previous_decision": {
+      "sha256": "762390b6e10b5c6e45bad66b1b4e0d1ea3370c400755ed286a49f71b82be91b1",
+      "classification": "COSMETIC_EDGE_GUTTER",
+      "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    }
   },
   "app/src/main/assets/Prepositions/scenes/scene_prepositions_dinosaur_between.png": {
-    "sha256": "48fda61a3abc41ffe9425d0e4c17d7b7b8f594f2eac4b609f7152f45e9396721",
-    "classification": "COSMETIC_EDGE_GUTTER",
-    "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    "sha256": "df1d42e277b68540292f228265abc6c88d456c4cd6bcf87a747ff3fab1e5a8d0",
+    "classification": "CLEAN",
+    "reason": "Individually reviewed straight extraction gutter removed. Intended between panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_COSMETIC_GUTTER",
+    "previous_decision": {
+      "sha256": "48fda61a3abc41ffe9425d0e4c17d7b7b8f594f2eac4b609f7152f45e9396721",
+      "classification": "COSMETIC_EDGE_GUTTER",
+      "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    }
   },
   "app/src/main/assets/Prepositions/scenes/scene_prepositions_dinosaur_far_from.png": {
-    "sha256": "855984cd91ca80dc649119c051460315188c4b114b658f7a223729dc4af7d342",
-    "classification": "COSMETIC_EDGE_GUTTER",
-    "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    "sha256": "5c685110be27bed0773fe67ff39861cb99a8a4ff1863c35d01ffdc5ff17249df",
+    "classification": "CLEAN",
+    "reason": "Individually reviewed straight extraction gutter removed. Intended far_from panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_COSMETIC_GUTTER",
+    "previous_decision": {
+      "sha256": "855984cd91ca80dc649119c051460315188c4b114b658f7a223729dc4af7d342",
+      "classification": "COSMETIC_EDGE_GUTTER",
+      "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    }
   },
   "app/src/main/assets/Prepositions/scenes/scene_prepositions_dinosaur_in_front_of.png": {
-    "sha256": "add0674be28dd495d6b4d140837d27a211441d927309b614d63e56fd46011088",
-    "classification": "COSMETIC_EDGE_GUTTER",
-    "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    "sha256": "6cbc02a4aae9b29877f91096e428ec1bd629de439a826de50880feb62f99df96",
+    "classification": "CLEAN",
+    "reason": "Individually reviewed straight extraction gutter removed. Intended in_front_of panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_COSMETIC_GUTTER",
+    "previous_decision": {
+      "sha256": "add0674be28dd495d6b4d140837d27a211441d927309b614d63e56fd46011088",
+      "classification": "COSMETIC_EDGE_GUTTER",
+      "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    }
   },
   "app/src/main/assets/Prepositions/scenes/scene_prepositions_dragon_in_front_of.png": {
-    "sha256": "f6b4a699f6560571885d20948ee715c35181841e8e44b83013a657a599da5ddd",
-    "classification": "COSMETIC_EDGE_GUTTER",
-    "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    "sha256": "6d14dd4b5a6bec99eaa19fc11c0449c176151e0fec3a6a961505148d6a1d38bd",
+    "classification": "CLEAN",
+    "reason": "Individually reviewed straight extraction gutter removed. Intended in_front_of panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_COSMETIC_GUTTER",
+    "previous_decision": {
+      "sha256": "f6b4a699f6560571885d20948ee715c35181841e8e44b83013a657a599da5ddd",
+      "classification": "COSMETIC_EDGE_GUTTER",
+      "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    }
   },
   "app/src/main/assets/Prepositions/scenes/scene_prepositions_dragon_near.png": {
-    "sha256": "c0ba0dfe9b33ee9db5bc639be170cb0bf26bc8996de83a8db8007546db379428",
-    "classification": "COSMETIC_EDGE_GUTTER",
-    "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    "sha256": "3b9ba321ce3cdb1cecc5cacd4b8ab17b9c7defbec9f6695a51c032643374eb19",
+    "classification": "CLEAN",
+    "reason": "Individually reviewed straight extraction gutter removed. Intended near panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_COSMETIC_GUTTER",
+    "previous_decision": {
+      "sha256": "c0ba0dfe9b33ee9db5bc639be170cb0bf26bc8996de83a8db8007546db379428",
+      "classification": "COSMETIC_EDGE_GUTTER",
+      "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    }
   },
   "app/src/main/assets/Prepositions/scenes/scene_prepositions_fish_inside.png": {
-    "sha256": "16c7b935b90fe07dcf46cde965794282aca181544155cbf5301a11155194e3e6",
-    "classification": "COSMETIC_EDGE_GUTTER",
-    "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    "sha256": "feee11d2c0008a0452548be70cb3b8117c9e3aea06478e95a433d0e7b8fb5baa",
+    "classification": "CLEAN",
+    "reason": "Individually reviewed straight extraction gutter removed. Intended inside panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_COSMETIC_GUTTER",
+    "previous_decision": {
+      "sha256": "16c7b935b90fe07dcf46cde965794282aca181544155cbf5301a11155194e3e6",
+      "classification": "COSMETIC_EDGE_GUTTER",
+      "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    }
   },
   "app/src/main/assets/Prepositions/scenes/scene_prepositions_fish_outside.png": {
-    "sha256": "49c1d8f08bf8ccf981bcdfdb59c7e3ef18bab85102949a21b1bf1a25ed2b2928",
-    "classification": "COSMETIC_EDGE_GUTTER",
-    "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    "sha256": "d428e1c07e09d2bc43faff0c0dce4d38ae862f84c5cd90ae7cfad6c208a237f8",
+    "classification": "CLEAN",
+    "reason": "Individually reviewed straight extraction gutter removed. Intended outside panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_COSMETIC_GUTTER",
+    "previous_decision": {
+      "sha256": "49c1d8f08bf8ccf981bcdfdb59c7e3ef18bab85102949a21b1bf1a25ed2b2928",
+      "classification": "COSMETIC_EDGE_GUTTER",
+      "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    }
   },
   "app/src/main/assets/Prepositions/scenes/scene_prepositions_octopus_inside.png": {
-    "sha256": "b10b46c3f41fc3685abd18e99293169b6574505e680a719de77539620b94aaca",
-    "classification": "COSMETIC_EDGE_GUTTER",
-    "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    "sha256": "9163d3061dc877f9e5128e2e0ec1b580395df2d4ded61e4969892307541330dd",
+    "classification": "CLEAN",
+    "reason": "Individually reviewed straight extraction gutter removed. Intended inside panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_COSMETIC_GUTTER",
+    "previous_decision": {
+      "sha256": "b10b46c3f41fc3685abd18e99293169b6574505e680a719de77539620b94aaca",
+      "classification": "COSMETIC_EDGE_GUTTER",
+      "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    }
   },
   "app/src/main/assets/Prepositions/scenes/scene_prepositions_octopus_outside.png": {
-    "sha256": "12d2938be2b5338dc55757d379b63b48fae06e8592e4df4fe589204f61a52a5e",
-    "classification": "COSMETIC_EDGE_GUTTER",
-    "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    "sha256": "0623d105dfd366ca44af45a93354f2d654fdb687b7776ce99532a3146c38b622",
+    "classification": "CLEAN",
+    "reason": "Individually reviewed straight extraction gutter removed. Intended outside panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_COSMETIC_GUTTER",
+    "previous_decision": {
+      "sha256": "12d2938be2b5338dc55757d379b63b48fae06e8592e4df4fe589204f61a52a5e",
+      "classification": "COSMETIC_EDGE_GUTTER",
+      "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    }
   },
   "app/src/main/assets/Prepositions/scenes/scene_prepositions_seahorse_inside.png": {
-    "sha256": "8ea7b76d6436e6dcb454687297093b34cd349224337a1513bc4762e6d86afe1e",
-    "classification": "COSMETIC_EDGE_GUTTER",
-    "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    "sha256": "12a0f37bcafda9cfa2f84a819756211d7f1f9f89539c97dc5b12fd8045691f4a",
+    "classification": "CLEAN",
+    "reason": "Individually reviewed straight extraction gutter removed. Intended inside panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_COSMETIC_GUTTER",
+    "previous_decision": {
+      "sha256": "8ea7b76d6436e6dcb454687297093b34cd349224337a1513bc4762e6d86afe1e",
+      "classification": "COSMETIC_EDGE_GUTTER",
+      "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    }
   },
   "app/src/main/assets/Prepositions/scenes/scene_prepositions_seahorse_outside.png": {
-    "sha256": "7b953c86aa8a9545f5e23d98e4555eb11d7c7723728dcba864cff6daeafb2598",
-    "classification": "COSMETIC_EDGE_GUTTER",
-    "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    "sha256": "20e35addb1753295ec438466df660a2fb5abace04eeb2116b1ba3557a8b17c87",
+    "classification": "CLEAN",
+    "reason": "Individually reviewed straight extraction gutter removed. Intended outside panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_COSMETIC_GUTTER",
+    "previous_decision": {
+      "sha256": "7b953c86aa8a9545f5e23d98e4555eb11d7c7723728dcba864cff6daeafb2598",
+      "classification": "COSMETIC_EDGE_GUTTER",
+      "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    }
   },
   "app/src/main/assets/Prepositions/scenes/scene_prepositions_snake_between.png": {
-    "sha256": "ecdb3e1345cad2d827cd10e8dc6d94fb8f5ade1c32d85981058b952b6236a5f1",
-    "classification": "COSMETIC_EDGE_GUTTER",
-    "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    "sha256": "2f64d96d9ae9a9b13902fbf4439e43ee37a91132114d0027e455999c6be1c7fb",
+    "classification": "CLEAN",
+    "reason": "Individually reviewed straight extraction gutter removed. Intended between panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_COSMETIC_GUTTER",
+    "previous_decision": {
+      "sha256": "ecdb3e1345cad2d827cd10e8dc6d94fb8f5ade1c32d85981058b952b6236a5f1",
+      "classification": "COSMETIC_EDGE_GUTTER",
+      "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    }
   },
   "app/src/main/assets/Prepositions/scenes/scene_prepositions_snake_far_from.png": {
-    "sha256": "4695a3715f454aee6121a0e74164893de27709f0d43aced6aa536f2423a1d937",
-    "classification": "COSMETIC_EDGE_GUTTER",
-    "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    "sha256": "e1180a5302560de7e5b82b952afb047e1fcbe7b5e645cf9ef7369c1ca31265c8",
+    "classification": "CLEAN",
+    "reason": "Individually reviewed straight extraction gutter removed. Intended far_from panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_COSMETIC_GUTTER",
+    "previous_decision": {
+      "sha256": "4695a3715f454aee6121a0e74164893de27709f0d43aced6aa536f2423a1d937",
+      "classification": "COSMETIC_EDGE_GUTTER",
+      "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    }
   },
   "app/src/main/assets/Prepositions/scenes/scene_prepositions_turtle_outside.png": {
-    "sha256": "f73fb3c04a90a273b50e113250be284064418a424d24050a65a6b0a0d1cf35da",
-    "classification": "COSMETIC_EDGE_GUTTER",
-    "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    "sha256": "cc85db1c003ff1fc55d945b886c49d2f633c07f05d98b85e9422e63483e01626",
+    "classification": "CLEAN",
+    "reason": "Individually reviewed straight extraction gutter removed. Intended outside panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_COSMETIC_GUTTER",
+    "previous_decision": {
+      "sha256": "f73fb3c04a90a273b50e113250be284064418a424d24050a65a6b0a0d1cf35da",
+      "classification": "COSMETIC_EDGE_GUTTER",
+      "reason": "Visually reviewed extraction gutter; repair deferred because fixed RGB dimensions cannot be safely padded."
+    }
+  },
+  "app/src/main/assets/Prepositions/scenes/scene_prepositions_crocodile_in_front_of.png": {
+    "sha256": "0d9723ec81c0a87cbcd4d3b3f1ecab8ee47dd98e4dbc864741f7803142638f41",
+    "classification": "CLEAN",
+    "reason": "Reviewed separator and adjacent-panel sliver removed. Intended in_front_of panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_SEPARATOR_SLIVER"
+  },
+  "app/src/main/assets/Prepositions/scenes/scene_prepositions_crocodile_near.png": {
+    "sha256": "aa51ff1def3a5af94632a77cd817d345bab9c35e8438b576ed7da971cf077997",
+    "classification": "CLEAN",
+    "reason": "Reviewed separator and adjacent-panel sliver removed. Intended near panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_SEPARATOR_SLIVER"
+  },
+  "app/src/main/assets/Prepositions/scenes/scene_prepositions_crocodile_next_to.png": {
+    "sha256": "fac7033cd527e43388b706272703373e52b92c910dd0592923d36ff2d8ad22be",
+    "classification": "CLEAN",
+    "reason": "Reviewed separator and adjacent-panel sliver removed. Intended next_to panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_SEPARATOR_SLIVER"
+  },
+  "app/src/main/assets/Prepositions/scenes/scene_prepositions_dinosaur_next_to.png": {
+    "sha256": "0af85871af1f92deec1b2135d102c2ead314a3f444eef51e6378869f0a0703fa",
+    "classification": "CLEAN",
+    "reason": "Reviewed separator and adjacent-panel sliver removed. Intended next_to panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_SEPARATOR_SLIVER"
+  },
+  "app/src/main/assets/Prepositions/scenes/scene_prepositions_dragon_next_to.png": {
+    "sha256": "e856bafc90695def333fc0e66555d85b7a2915666b98bacc2874e7c5f366f347",
+    "classification": "CLEAN",
+    "reason": "Reviewed separator and adjacent-panel sliver removed. Intended next_to panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_SEPARATOR_SLIVER"
+  },
+  "app/src/main/assets/Prepositions/scenes/scene_prepositions_snake_next_to.png": {
+    "sha256": "d27b5c2219f9f6320440dd1b6c829610db371686f737a822a8f974eff39b688e",
+    "classification": "CLEAN",
+    "reason": "Reviewed separator and adjacent-panel sliver removed. Intended next_to panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.",
+    "review_outcome": "REPAIRED_SEPARATOR_SLIVER"
   }
 }

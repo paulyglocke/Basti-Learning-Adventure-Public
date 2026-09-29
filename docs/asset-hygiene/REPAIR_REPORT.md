@@ -1,4 +1,10 @@
-# Production asset hygiene — 2026-09-27
+# Production asset hygiene
+
+Current status: the 2026-09-28 second pass below closes all 21 deferred Prepositions
+issues. Validator now exits 0; mouse is the sole remaining ambiguous image. The first
+pass and its original BEFORE/contact evidence are retained as historical records.
+
+# First pass — 2026-09-27
 
 Baseline: `856303b` (`feat: generalize Follow instructions scenes`). Owner subsequently authorized commit/push.
 
@@ -337,3 +343,308 @@ or production behavior were changed to bypass infrastructure errors.
 - `docs/asset-hygiene/before/ASSET_AUDIT_BEFORE_07.png`
 - `scripts/audit_asset_hygiene.py`
 - `scripts/test_asset_hygiene.py`
+
+# Second pass — Prepositions cleanup, 2026-09-28
+
+Baseline: `fbc7082558029b22dcfb9305d37d6f3f106a2c87`, clean main matching origin/main.
+GitHub Actions [36378511734](https://github.com/paulyglocke/Basti-Learning-Adventure-Public/actions/runs/36378511734)
+was green before editing. No commit/push in this pass.
+
+## Contract assessment and change
+
+Previous rule: **exact 1448×1086 RGB**. It appeared in the art manifest's canonical_size,
+PrepositionsExpansionTest, the hygiene validator and documented authoring expectations.
+It was not a runtime or learning identity requirement. PrepositionsArtworkLoader simply
+uses BitmapFactory with inSampleSize=2; PositionSceneImage uses ContentScale.Fit inside
+its unchanged 4:3 frame. No runtime pixel-coordinate semantics or fixed-size indexing.
+The historical procedural PositionGeometry is not the artwork renderer.
+
+New rule: **readable PNG, RGB/RGBA, width ≥1280, height ≥960, aspect ratio within ±5%
+of 4:3**, inclusive (19/15 ≤ width/height ≤ 21/15). The largest safe crop removes
+65/1448 = 4.49% of width; 5% is a narrow margin over that measured requirement. The
+minimum retains at least 640×480 after the existing half-resolution decode. Actual
+repaired dimensions range from 1383×1086 to 1448×1083. No resizing or padding.
+Manifest image_contract replaces canonical_size; each record still pins actual dimensions,
+mode and SHA-256. Art revision 3/schema 1 remain the same catalogue; this is an edge
+cleanup, not a new depiction/content revision. Tests freeze the pre-cleanup ordered
+semantic/path projection and validate all 52 records/PNG decodes/contract/hashes.
+
+Dimensions/hashes are not serialized into session/task identity. PrepositionsContent.restore
+and validate compare semantic questions/text/revisions, not bitmap properties. No production
+Kotlin changed. Activity revision 2, content 1.2, accepted legacy activity revision 1/content
+1.1, checkpoint schema 1 and journal schema remain unchanged. Existing v1 recovery tests
+exercise unanswered, retry, pending attempt, completed/pending completion and Play Again.
+Rendering coverage also re-encodes/restores the current repaired semantic scene unchanged.
+
+## Individual review and outcomes
+
+Six confirmed separator/sliver files repaired. All 15 cosmetic candidates individually
+reviewed with full-scene previews and edge strips: **15 REPAIRED_COSMETIC_GUTTER,
+0 INTENTIONAL_EDGE_RETAINED, 0 AMBIGUOUS_DEFERRED** within this Prepositions candidate set.
+Each has a straight extraction band inconsistent with the adjacent forest/water panel;
+none is legitimate pale sky/water. Mouse remains ambiguous outside this task.
+
+All 21 retained crops compare pixel-for-pixel against baseline; mode stays RGB. No
+resampling, stretching, padding, inpainting, recolouring or regenerated content. Relative
+spacing, depth/occlusion, animal/object counts and intended relations remain unchanged.
+No meaningful part of the intended panel was removed. Existing truncation at untouched
+image boundaries (e.g. dinosaur feet, dragon head, crocodile foreground) is unchanged;
+this pass does not claim to reconstruct full bodies missing from original art.
+
+NEXT TO keeps animal/rock spacing, removing only the right separator and adjacent panel.
+IN FRONT OF keeps the foreground animal and background rock; NEAR keeps the inter-object
+gap. FAR FROM retains foreground rock/background animal depth. BETWEEN retains both rocks.
+INSIDE/OUTSIDE retain animal/cave boundaries and spatial placement.
+
+Original BEFORE CSV and first-pass before/after contact sheets remain byte-identical.
+Current AFTER CSV now has **174 CLEAN / 1 AMBIGUOUS / 0 strong signatures / 0 gutters**
+across 175 scoped images. All 52 Prepositions images are detector-clean. The 3 excluded
+Animals authoring references remain unchanged. **21 changed / 157 unchanged among 178
+packaged rasters** relative to this pass's baseline (31/52 Prepositions unchanged).
+Animals, SceneDescriptions/Tell Me, Seasons and Wilma bytes are all unchanged.
+Previous repair records are retained; new entries include pass/baseline identifiers.
+REVIEW_DECISIONS keeps prior deferred decisions nested as history, bound to their old hashes.
+New contact sheets: `after/PREPOSITIONS_2026_09_28_01.png` through `_04.png`.
+
+## Exact second-pass repair evidence
+
+Crop values are top / bottom / left / right in original pixels. Every original is
+1448×1086 RGB; every result is RGB. Full paths and hashes also live in REPAIRS.json.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_crocodile_far_from.png`
+
+- Outcome: REPAIRED_COSMETIC_GUTTER. Crop: 0/0/0/7.
+- Dimensions: 1448×1086 → 1441×1086.
+- Old SHA-256: `762390b6e10b5c6e45bad66b1b4e0d1ea3370c400755ed286a49f71b82be91b1`
+- New SHA-256: `965cfeb3a5ef469065a0df43a427198c9d3d355c051546b3b385ed0801b6407b`
+- Individually reviewed straight extraction gutter removed. Intended far_from panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_crocodile_in_front_of.png`
+
+- Outcome: REPAIRED_SEPARATOR_SLIVER. Crop: 0/0/35/4.
+- Dimensions: 1448×1086 → 1409×1086.
+- Old SHA-256: `078cacffd7cd46b68ef24c8dc9771aed93d5b8c9075f0b8af0edca36b5d036d9`
+- New SHA-256: `0d9723ec81c0a87cbcd4d3b3f1ecab8ee47dd98e4dbc864741f7803142638f41`
+- Reviewed separator and adjacent-panel sliver removed. Intended in_front_of panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_crocodile_near.png`
+
+- Outcome: REPAIRED_SEPARATOR_SLIVER. Crop: 0/0/34/0.
+- Dimensions: 1448×1086 → 1414×1086.
+- Old SHA-256: `70161bdb082f0bc0160beb671785c65ab1a0be99274b511c0cfe2d39eefe33d8`
+- New SHA-256: `aa51ff1def3a5af94632a77cd817d345bab9c35e8438b576ed7da971cf077997`
+- Reviewed separator and adjacent-panel sliver removed. Intended near panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_crocodile_next_to.png`
+
+- Outcome: REPAIRED_SEPARATOR_SLIVER. Crop: 0/0/0/65.
+- Dimensions: 1448×1086 → 1383×1086.
+- Old SHA-256: `6344e29654cc468ded95f0f828a839cc1c3873c7e61359271ff7a4a5bd5eb34c`
+- New SHA-256: `fac7033cd527e43388b706272703373e52b92c910dd0592923d36ff2d8ad22be`
+- Reviewed separator and adjacent-panel sliver removed. Intended next_to panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_dinosaur_between.png`
+
+- Outcome: REPAIRED_COSMETIC_GUTTER. Crop: 0/3/0/0.
+- Dimensions: 1448×1086 → 1448×1083.
+- Old SHA-256: `48fda61a3abc41ffe9425d0e4c17d7b7b8f594f2eac4b609f7152f45e9396721`
+- New SHA-256: `df1d42e277b68540292f228265abc6c88d456c4cd6bcf87a747ff3fab1e5a8d0`
+- Individually reviewed straight extraction gutter removed. Intended between panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_dinosaur_far_from.png`
+
+- Outcome: REPAIRED_COSMETIC_GUTTER. Crop: 0/0/10/0.
+- Dimensions: 1448×1086 → 1438×1086.
+- Old SHA-256: `855984cd91ca80dc649119c051460315188c4b114b658f7a223729dc4af7d342`
+- New SHA-256: `5c685110be27bed0773fe67ff39861cb99a8a4ff1863c35d01ffdc5ff17249df`
+- Individually reviewed straight extraction gutter removed. Intended far_from panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_dinosaur_in_front_of.png`
+
+- Outcome: REPAIRED_COSMETIC_GUTTER. Crop: 0/0/18/0.
+- Dimensions: 1448×1086 → 1430×1086.
+- Old SHA-256: `add0674be28dd495d6b4d140837d27a211441d927309b614d63e56fd46011088`
+- New SHA-256: `6cbc02a4aae9b29877f91096e428ec1bd629de439a826de50880feb62f99df96`
+- Individually reviewed straight extraction gutter removed. Intended in_front_of panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_dinosaur_next_to.png`
+
+- Outcome: REPAIRED_SEPARATOR_SLIVER. Crop: 0/0/0/65.
+- Dimensions: 1448×1086 → 1383×1086.
+- Old SHA-256: `f37621e923ed5a6a1e5b62953e8a03a4ce7be65e0b68be213ee424b077af1503`
+- New SHA-256: `0af85871af1f92deec1b2135d102c2ead314a3f444eef51e6378869f0a0703fa`
+- Reviewed separator and adjacent-panel sliver removed. Intended next_to panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_dragon_in_front_of.png`
+
+- Outcome: REPAIRED_COSMETIC_GUTTER. Crop: 0/0/22/0.
+- Dimensions: 1448×1086 → 1426×1086.
+- Old SHA-256: `f6b4a699f6560571885d20948ee715c35181841e8e44b83013a657a599da5ddd`
+- New SHA-256: `6d14dd4b5a6bec99eaa19fc11c0449c176151e0fec3a6a961505148d6a1d38bd`
+- Individually reviewed straight extraction gutter removed. Intended in_front_of panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_dragon_near.png`
+
+- Outcome: REPAIRED_COSMETIC_GUTTER. Crop: 0/0/22/0.
+- Dimensions: 1448×1086 → 1426×1086.
+- Old SHA-256: `c0ba0dfe9b33ee9db5bc639be170cb0bf26bc8996de83a8db8007546db379428`
+- New SHA-256: `3b9ba321ce3cdb1cecc5cacd4b8ab17b9c7defbec9f6695a51c032643374eb19`
+- Individually reviewed straight extraction gutter removed. Intended near panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_dragon_next_to.png`
+
+- Outcome: REPAIRED_SEPARATOR_SLIVER. Crop: 0/0/0/65.
+- Dimensions: 1448×1086 → 1383×1086.
+- Old SHA-256: `035c00678f82c4722f44ca174d096dd5cede5519d3ecabad89b4642e76ba0306`
+- New SHA-256: `e856bafc90695def333fc0e66555d85b7a2915666b98bacc2874e7c5f366f347`
+- Reviewed separator and adjacent-panel sliver removed. Intended next_to panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_fish_inside.png`
+
+- Outcome: REPAIRED_COSMETIC_GUTTER. Crop: 0/0/4/7.
+- Dimensions: 1448×1086 → 1437×1086.
+- Old SHA-256: `16c7b935b90fe07dcf46cde965794282aca181544155cbf5301a11155194e3e6`
+- New SHA-256: `feee11d2c0008a0452548be70cb3b8117c9e3aea06478e95a433d0e7b8fb5baa`
+- Individually reviewed straight extraction gutter removed. Intended inside panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_fish_outside.png`
+
+- Outcome: REPAIRED_COSMETIC_GUTTER. Crop: 0/0/5/8.
+- Dimensions: 1448×1086 → 1435×1086.
+- Old SHA-256: `49c1d8f08bf8ccf981bcdfdb59c7e3ef18bab85102949a21b1bf1a25ed2b2928`
+- New SHA-256: `d428e1c07e09d2bc43faff0c0dce4d38ae862f84c5cd90ae7cfad6c208a237f8`
+- Individually reviewed straight extraction gutter removed. Intended outside panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_octopus_inside.png`
+
+- Outcome: REPAIRED_COSMETIC_GUTTER. Crop: 0/0/9/0.
+- Dimensions: 1448×1086 → 1439×1086.
+- Old SHA-256: `b10b46c3f41fc3685abd18e99293169b6574505e680a719de77539620b94aaca`
+- New SHA-256: `9163d3061dc877f9e5128e2e0ec1b580395df2d4ded61e4969892307541330dd`
+- Individually reviewed straight extraction gutter removed. Intended inside panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_octopus_outside.png`
+
+- Outcome: REPAIRED_COSMETIC_GUTTER. Crop: 0/0/8/0.
+- Dimensions: 1448×1086 → 1440×1086.
+- Old SHA-256: `12d2938be2b5338dc55757d379b63b48fae06e8592e4df4fe589204f61a52a5e`
+- New SHA-256: `0623d105dfd366ca44af45a93354f2d654fdb687b7776ce99532a3146c38b622`
+- Individually reviewed straight extraction gutter removed. Intended outside panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_seahorse_inside.png`
+
+- Outcome: REPAIRED_COSMETIC_GUTTER. Crop: 0/0/29/11.
+- Dimensions: 1448×1086 → 1408×1086.
+- Old SHA-256: `8ea7b76d6436e6dcb454687297093b34cd349224337a1513bc4762e6d86afe1e`
+- New SHA-256: `12a0f37bcafda9cfa2f84a819756211d7f1f9f89539c97dc5b12fd8045691f4a`
+- Individually reviewed straight extraction gutter removed. Intended inside panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_seahorse_outside.png`
+
+- Outcome: REPAIRED_COSMETIC_GUTTER. Crop: 0/0/33/7.
+- Dimensions: 1448×1086 → 1408×1086.
+- Old SHA-256: `7b953c86aa8a9545f5e23d98e4555eb11d7c7723728dcba864cff6daeafb2598`
+- New SHA-256: `20e35addb1753295ec438466df660a2fb5abace04eeb2116b1ba3557a8b17c87`
+- Individually reviewed straight extraction gutter removed. Intended outside panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_snake_between.png`
+
+- Outcome: REPAIRED_COSMETIC_GUTTER. Crop: 0/3/0/0.
+- Dimensions: 1448×1086 → 1448×1083.
+- Old SHA-256: `ecdb3e1345cad2d827cd10e8dc6d94fb8f5ade1c32d85981058b952b6236a5f1`
+- New SHA-256: `2f64d96d9ae9a9b13902fbf4439e43ee37a91132114d0027e455999c6be1c7fb`
+- Individually reviewed straight extraction gutter removed. Intended between panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_snake_far_from.png`
+
+- Outcome: REPAIRED_COSMETIC_GUTTER. Crop: 0/0/12/0.
+- Dimensions: 1448×1086 → 1436×1086.
+- Old SHA-256: `4695a3715f454aee6121a0e74164893de27709f0d43aced6aa536f2423a1d937`
+- New SHA-256: `e1180a5302560de7e5b82b952afb047e1fcbe7b5e645cf9ef7369c1ca31265c8`
+- Individually reviewed straight extraction gutter removed. Intended far_from panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_snake_next_to.png`
+
+- Outcome: REPAIRED_SEPARATOR_SLIVER. Crop: 0/0/0/65.
+- Dimensions: 1448×1086 → 1383×1086.
+- Old SHA-256: `72addcf37b5538e910ebae51e188afc2babab6a94548ade971dead1a9a910346`
+- New SHA-256: `d27b5c2219f9f6320440dd1b6c829610db371686f737a822a8f974eff39b688e`
+- Reviewed separator and adjacent-panel sliver removed. Intended next_to panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+### `app/src/main/assets/Prepositions/scenes/scene_prepositions_turtle_outside.png`
+
+- Outcome: REPAIRED_COSMETIC_GUTTER. Crop: 0/0/0/4.
+- Dimensions: 1448×1086 → 1444×1086.
+- Old SHA-256: `f73fb3c04a90a273b50e113250be284064418a424d24050a65a6b0a0d1cf35da`
+- New SHA-256: `cc85db1c003ff1fc55d945b886c49d2f633c07f05d98b85e9422e63483e01626`
+- Individually reviewed straight extraction gutter removed. Intended outside panel retained pixel-for-pixel; subject/object count, relative spacing and depth cues unchanged. No padding/resampling. Original truncation at untouched edges is unchanged.
+
+## Second-pass validation
+
+Python 35/35; generator current; focused JVM 30/30; full JVM 321/321; focused emulator
+10/10; full emulator 122/122, zero failures/errors/skips. Build passed; lint 0 errors /
+3 existing warnings / 2 info. Full instrumentation spanned the session interruption and
+reported 8h 15m elapsed; no restart or test weakening. No test failures in this pass.
+Diff and new-text whitespace checks passed. See BUILD_NOTES for commands.
+Physical S24/Fire visual review remains unperformed. No authored wording, answer generation,
+production UI, session/progress/audio/navigation, dependency or CI/signing changes.
+
+## Second-pass changed files
+
+- `BUILD_NOTES.md`
+- `CONTENT_DATA_SPEC.md`
+- `NATIVE_ARCHITECTURE_SPEC.md`
+- `SESSION_HANDOFF.md`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/prepositions/PrepositionsArtworkScreenTest.kt`
+- `app/src/androidTest/java/com/bellfamily/bastischool/ui/prepositions/PrepositionsArtworkTest.kt`
+- `app/src/main/assets/Prepositions/metadata/prepositions_art_manifest.json`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_crocodile_far_from.png`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_crocodile_in_front_of.png`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_crocodile_near.png`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_crocodile_next_to.png`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_dinosaur_between.png`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_dinosaur_far_from.png`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_dinosaur_in_front_of.png`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_dinosaur_next_to.png`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_dragon_in_front_of.png`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_dragon_near.png`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_dragon_next_to.png`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_fish_inside.png`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_fish_outside.png`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_octopus_inside.png`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_octopus_outside.png`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_seahorse_inside.png`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_seahorse_outside.png`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_snake_between.png`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_snake_far_from.png`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_snake_next_to.png`
+- `app/src/main/assets/Prepositions/scenes/scene_prepositions_turtle_outside.png`
+- `app/src/test/java/com/bellfamily/bastischool/learning/prepositions/PrepositionsExpansionTest.kt`
+- `docs/asset-hygiene/ASSET_AUDIT_AFTER.csv`
+- `docs/asset-hygiene/REPAIRS.json`
+- `docs/asset-hygiene/REPAIR_REPORT.md`
+- `docs/asset-hygiene/REVIEW_DECISIONS.json`
+- `docs/asset-hygiene/after/PREPOSITIONS_2026_09_28_01.png`
+- `docs/asset-hygiene/after/PREPOSITIONS_2026_09_28_02.png`
+- `docs/asset-hygiene/after/PREPOSITIONS_2026_09_28_03.png`
+- `docs/asset-hygiene/after/PREPOSITIONS_2026_09_28_04.png`
+- `scripts/audit_asset_hygiene.py`
+- `scripts/test_asset_hygiene.py`
+
+## Physical-acceptance recheck — 2026-09-29
+
+The six strong Prepositions signatures and all 15 individually reviewed gutter repairs
+from the preceding pass were reverified, not cropped again. Raw audit **without review
+overrides** exits 0: 174 CLEAN, one existing ambiguous mouse, zero strong failures
+among 175 scoped images. Retained pixels of all 21 PNGs equal the original crop;
+157 other packaged rasters are byte-identical. No Scene Description PNG changed in
+the separate [Tell Me semantic review](../tellme-visual-qa/REVIEW.md). Original BEFORE
+evidence and first-pass history remain intact. See BUILD_NOTES.md for combined validation.
+
+### Subsequent owner-supplied Park 9 replacement
+
+After the successful full regression run, the owner replaced Park 9 outside the agent
+repair workflow. This is not a crop-only repair and is not added to REPAIRS.json.
+Current ASSET_AUDIT_AFTER.csv reflects that PNG: 1448×1086 RGB, raw audit CLEAN.
+The other 80 Scene Description PNGs remain unchanged. See the current Tell Me audit
+for old/new fingerprints and visual review. Prepositions crop evidence is unaffected.

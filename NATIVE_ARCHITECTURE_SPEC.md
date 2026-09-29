@@ -250,13 +250,16 @@ writes and stale-writer checks are unchanged. Valid old rounds preserve their ex
 snapshot/version through completion; Play Again uses v2. Incompatible data is not deleted.
 
 The ViewModel's existing worker loads the explicit scene PNG through a one-scene bitmap
-cache at half linear resolution (724×543). Compose receives only the bitmap, shows the
-complete 4:3 image with Fit and retains position-scene plus the localized description.
+cache at half linear resolution (dimensions follow the reviewed source PNG). Compose receives
+only the bitmap, shows the complete image in a 4:3 frame with Fit and retains
+position-scene plus the localized description.
 Language changes and recomposition do not decode again. Missing/corrupt data produces a
 calm bilingual unavailable-picture message with the existing previous-version action;
 it changes no answer, score, progress or audio policy. Failed loads are cached for that
 scene's residence too; reopening the owner or changing scene permits a later attempt.
-No generic image framework, runtime JSON parsing or asset modification is introduced.
+No generic image framework or runtime JSON parsing is introduced. Reviewed crop-only edge
+cleanup may change bitmap dimensions within the CONTENT_DATA_SPEC image contract without
+changing semantic paths, learning versions or saved-session identity.
 
 ## Second native route: Seasons (2026-09-22)
 
@@ -380,6 +383,11 @@ no authored visual-alt field, so the localized title is the minimal image semant
 
 Tell Me v1 has no speech contract and creates no speech engine, microphone path or TTS
 request. Authored teaching/display data is not silently treated as speech-ready content.
+COMPLETE now exposes a derived celebration owner ID and renders the existing shared
+balloon component. MainActivity routes explicit pops through its existing CelebrationSound
+owner/mode/foreground checks and cancels on Again/category selection/Home. Optional
+reward state remains non-durable, independent of conversation and progress; no TTS
+engine or new audio policy is introduced.
 Legacy and other native audio/session/progress ownership remains unchanged.
 
 ## Follow the Instructions MVP (2026-09-27)

@@ -1,5 +1,141 @@
 # Session handoff — 2026-09-27
 
+## Final resumption: owner Park 9 replacement and completed validation
+
+The previously running full emulator suite completed **122/122**, zero failures/errors/skips,
+BUILD SUCCESSFUL in 22m 14s. It was not rerun. This result predates the owner's Park 9
+replacement; focused replacement decode validation is recorded separately below.
+
+The owner supplied the replacement `park_009_turn_taking.png`. It is preserved unchanged:
+PNG RGB, 1448×1086, SHA-256 `e4ec416f5c06ac6e25a4342b3b0430400516061c3f8a247f990ee6eda8915a78`.
+Desktop visual review shows two seated children facing each other, coherent seesaw
+beam/pivot/handles, and one standing pink-clothed waiting child. Existing “Who is waiting?” /
+“Wer wartet?” is retained. Park 9 is now PASS at desktop review, pending S24 acceptance.
+The original BOTH finding and hash remain in AUDIT.json prior_review; original contact
+sheets remain BEFORE evidence. Current classifications: 58 PASS, 23 PROMPT_FIX corrected,
+0 ARTWORK_FIX/BOTH/REVIEW_REQUIRED. This does not replace physical acceptance.
+
+Only this owner-supplied Scene Description PNG changed; the other 80 remain byte-identical.
+Combined with the 21 Prepositions crops, 22 of 178 packaged rasters differ from HEAD;
+156 remain unchanged. No new image was generated or edited by the agent in this resumption.
+The ASCII tellme-completion-de.png extraction is invalid and is NOT visual evidence.
+Completion interaction is covered by the passing focused and full instrumentation tests.
+
+### Final replacement validation
+
+After the owner replacement: Python **36/36**, generator freshness passed, raw asset
+hygiene **175 scanned / 174 CLEAN / 1 existing ambiguous mouse / 0 errors or strong
+signatures**. Targeted Android `TellMeArtworkTest#allApprovedScenesIncludingCroppedPanelsDecode`
+**1/1 passed**, decoding all 81 current images; APK packaging succeeded (50s run).
+The owner's Park 9 SHA-256 was rechecked unchanged after validation; other 80 Scene
+Description PNGs match HEAD. No full suite rerun was necessary for this image-only update.
+Earlier completed code validation: focused JVM **69/69**, full JVM **323/323**, focused
+instrumentation **22/22**, full instrumentation **122/122**, all zero failures/errors/skips;
+assembleDebug passed; lint **0 errors, 3 existing warnings, 2 informational findings**.
+The full suite predates the owner image replacement. Final diff/whitespace check passed.
+No valid completion screenshot was recovered; no visual claim relies on the ASCII file.
+No commit, push, checkout, reset, clean, pull or physical-device installation was performed.
+
+Replacement-specific commands (same JAVA_HOME / ANDROID_HOME / emulator-5554 as above):
+
+```sh
+/private/tmp/basti-ci-deps-validation/bin/python -m unittest discover -s scripts -p 'test_*.py'
+/private/tmp/basti-ci-deps-validation/bin/python scripts/generate_scene_descriptions.py --check
+/private/tmp/basti-ci-deps-validation/bin/python scripts/audit_asset_hygiene.py --output docs/asset-hygiene/ASSET_AUDIT_AFTER.csv
+./gradlew connectedDebugAndroidTest '-Pandroid.testInstrumentationRunnerArguments.class=com.bellfamily.bastischool.ui.tellme.TellMeArtworkTest#allApprovedScenesIncludingCroppedPanelsDecode' --console=plain
+git diff --check
+```
+
+Earlier checkpoint (before owner replacement):
+
+
+## Physical acceptance corrections — 2026-09-29
+
+Work remains uncommitted; no push or physical-device installation. This checkpoint
+supersedes the current acceptance claims below without rewriting their history.
+
+Prepositions: preserved and reverified the preceding 21 lossless crops (six strong
+separator/sliver cases plus 15 individually reviewed gutters). Exact crops, dimensions
+and hashes remain in docs/asset-hygiene/REPAIRS.json and REPAIR_REPORT.md. All retained
+pixels match the baseline crop; 157 other packaged rasters remain byte-identical.
+Raw audit without review overrides passes: 175 scoped images, 174 CLEAN, one existing
+ambiguous mouse image, zero strong signatures/errors. All 52 Prepositions are clean.
+The fixed-size rule was validation-only; PNG RGB/RGBA, minimum 1280×960 and 4:3 ±5%
+replace exact 1448×1086. Fit, semantic IDs, paths, revision 2/content 1.2 and v1 restore
+remain unchanged. No Prepositions production Kotlin or learning behavior changed.
+
+Tell Me: reviewed all 81 actual production images against selected EN/DE runtime copy.
+Baseline classifications: 57 PASS, 23 PROMPT_FIX (corrected), one BOTH (Park 9, open),
+zero ARTWORK_FIX-only / REVIEW_REQUIRED. Full evidence, all non-PASS decisions and
+all 245 normalized field replacements are in docs/tellme-visual-qa/REVIEW.md,
+AUDIT.json and CONTENT_CHANGES.json. Contact sheets preserve before copy.
+All 81 PNGs remain unchanged. Repository content revision is now 1.4, schema 1.
+Jungle 4 / Woodland 5 missing-home objectives were explicitly narrowed to visible
+locations/actions/groups, not silently defended using generation intent.
+
+Confirmed fixes: Ocean 6 asks what the turtle is eating; Ocean 8 locates the crab in
+the cave; Jungle 4 asks where the awake sloth hangs; Jungle 5 asks what the elephant
+does with its trunk; Classroom 3 specifies the blue backpack. EN/DE and linked
+support/models are aligned. Shared model heading: “You could say:” / “Du könntest
+sagen:”. Park 9 still needs reviewed replacement artwork with coherent seesaw geometry
+and exactly one waiting child. Its production image/copy are deliberately unchanged;
+a wording patch would not solve the physical defect. Do not call this fully accepted.
+
+Tell Me previously never rendered the shared balloon component. COMPLETE now supplies
+a completion-only owner ID to NativeCompletionCelebration and the existing guarded
+shell pop-sound path. Non-final scenes cannot trigger it. Repeat/category/Home remain
+available without popping; sound/lifecycle cancellation uses existing policy. No quiz,
+score, progress, microphone, TTS ownership or checkpoint changes were introduced.
+
+Validation so far: Python 36/36; focused JVM 69/69; full JVM 323/323; focused emulator
+22/22 (Tell Me, Prepositions, shared celebration), all zero failures/errors/skips.
+assembleDebug passed; lintDebug: 0 errors, 3 existing warnings, 2 informational findings.
+Generator check and two regenerations were byte-identical. Full emulator result will
+be recorded below when complete. Diff whitespace check passes.
+
+Initial attempts: sandbox socket denial required normal host Gradle execution; an
+implicit Compose maxHeight receiver compile error was corrected by capturing the outer
+constraint; one old German test expectation still said “unter dem Stein” and was
+updated narrowly to the corrected “in der Höhle”. Final focused runs passed; no test
+was weakened or unrelated production behavior changed.
+
+Physical checks remain: S24 corrected prompts and relations, blue backpack/cave,
+final shared balloons (including Sound Off), portrait/both landscapes and large font;
+Fire acceptance separately. Desktop visual review and green automation do not prove
+physical acceptance. Stop here; do not start the next feature.
+
+
+## Prepositions asset hygiene closure — 2026-09-28
+
+Started from clean `fbc7082`, matching origin/main with green Actions run 36378511734.
+Reconfirmed exact 1448×1086 was validation-only: the existing sampled loader accepts
+variable dimensions and Compose uses Fit in a 4:3 frame. Replaced the exact-size rule
+with readable RGB/RGBA PNG, minimum 1280×960, aspect ratio 4:3 ±5% inclusive. The
+largest reviewed width crop is 4.49%; manifest entries still pin each image's actual
+size/mode/hash. No production Kotlin, semantic IDs/paths, wording, activity revision 2,
+content 1.2, v1/content-1.1 recovery, checkpoint/journal or progress changes.
+
+Repaired all six confirmed separators and individually reviewed/repaired all 15
+cosmetic gutters. 21 PNGs changed by crop only; retained pixels match baseline exactly.
+31 other Prepositions PNGs and all other asset families remain byte-identical: 157 of
+178 packaged rasters unchanged in this pass. No padding/resampling/generated art.
+All 21 deferred Prepositions hygiene cases are closed; zero cosmetic candidates remain
+retained/deferred. Mouse is still ambiguous, outside this task. Existing original body
+truncations at untouched image edges were neither worsened nor reconstructed.
+
+Evidence and exact crops/dimensions/hashes are in the second-pass section of
+[REPAIR_REPORT](docs/asset-hygiene/REPAIR_REPORT.md), appended REPAIRS.json records and
+new after/PREPOSITIONS_2026_09_28 contact sheets. Original BEFORE and first-pass repair
+history/contact sheets are preserved. Current validator exits 0: 174 clean, one ambiguous,
+zero strong signatures/errors among 175 scoped images; all 52 Prepositions decode cleanly.
+
+Validation: Python 35/35, generator current, focused Prepositions JVM 30/30,
+full JVM 321/321, focused emulator 10/10; build passed; lint 0 errors, 3 existing warnings,
+2 informational findings. Full emulator 122/122 passed, zero failures/errors/skips.
+The full run spanned the session interruption and reported 8h 15m elapsed; it was not
+restarted or weakened. Diff/new-text whitespace checks passed. No failed test runs. No physical S24/Fire acceptance. Owner checks remain image clarity,
+Fit margins and recognition on both devices. No commit or push; no next task started.
+
 ## Asset hygiene pass — 2026-09-27
 
 Started from clean `856303b` after Follow v1.1. Reviewed 42 edge candidates among

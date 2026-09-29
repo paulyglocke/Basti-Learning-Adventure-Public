@@ -82,7 +82,19 @@ class SceneDescriptionBoundaryTest(unittest.TestCase):
                 return {k: english(v) for k, v in value.items()}
             if isinstance(value, (list, tuple)): return [english(v) for v in value]
             return value
-        projection = english(self.pack[:2])
+        restored = json.loads(json.dumps(self.pack[:2]))
+        # Physical acceptance review: assert and reverse the field-level bilingual ledger.
+        # Preserve the original fingerprint rather than replacing it with a new blessing hash.
+        ledger = json.loads((content.REPO / 'docs/tellme-visual-qa/CONTENT_CHANGES.json').read_text())
+        for entry in ledger:
+            scene = next(s for s in restored[1] if s['id'] == entry['scene_id'])
+            for change in entry['changes']:
+                container = scene
+                for key in change['path'][:-1]: container = container[key]
+                key = change['path'][-1]
+                self.assertEqual(change['after'], container[key], (entry['scene_id'], change['path']))
+                container[key] = change['before']
+        projection = english(restored)
         park = next(s for s in projection[1] if s['id'] == 'scene.park.big_small_counting.05')
         self.assertEqual('There are four yellow buckets.', park['targets'][3][1][3])
         self.assertEqual('Can you make a sentence with four yellow buckets?', park['groups'][1][1][1])
@@ -111,6 +123,26 @@ class SceneDescriptionBoundaryTest(unittest.TestCase):
                 container[keys[-1]] = original
         digest = hashlib.sha256(json.dumps(projection, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
         self.assertEqual('ae45295414d87446f053b4cb2e09667bc3dfe4f192734bb6b0315338c33acd05', digest)
+
+    def test_visual_review_covers_all_production_images_without_claiming_automatic_semantic_proof(self):
+        audit = json.loads((content.REPO / 'docs/tellme-visual-qa/AUDIT.json').read_text())
+        scenes = self.pack[1]
+        self.assertEqual([s['id'] for s in scenes], [s['scene_id'] for s in audit['scenes']])
+        for scene, review in zip(scenes, audit['scenes']):
+            self.assertEqual(scene['asset'], review['asset'])
+            path = content.REPO / 'app/src/main/assets' / scene['asset']
+            self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), review['image_sha256'])
+            self.assertTrue(review['visual_evidence'])
+            self.assertEqual(scene['id'] == 'scene.park.turn_taking.09', review['production_artwork_changed'])
+            groups = dict(scene['groups'])
+            for lang in ('en', 'de'):
+                prompt = next(groups[k][lang][0] for k in ('QUESTIONS', 'STARTER_PROMPTS', 'EXPANSION_PROMPTS') if groups.get(k, {}).get(lang))
+                self.assertEqual(prompt, review['after'][lang]['prompt'])
+        park = next(s for s in audit['scenes'] if s['scene_id'] == 'scene.park.turn_taking.09')
+        self.assertEqual('PASS', park['classification'])
+        self.assertEqual('OWNER_REPLACEMENT_VALIDATED_PENDING_S24', park['resolution'])
+        self.assertEqual('BOTH', park['prior_review']['classification'])
+        self.assertFalse(park['production_content_changed'])
 
     def test_wave_two_and_three_missing_or_blank_german_is_rejected(self):
         for wave in (2, 3):

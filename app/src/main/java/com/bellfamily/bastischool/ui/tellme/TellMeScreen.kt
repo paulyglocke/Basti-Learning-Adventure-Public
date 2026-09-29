@@ -38,12 +38,14 @@ fun TellMeScreen(
     onChooseAnother: () -> Unit,
     onHome: () -> Unit,
     modifier: Modifier = Modifier,
+    onPop: (String) -> Unit = {},
 ) {
     val de = language == ContentLanguage.GERMAN
     fun text(en: String, german: String) = if (de) german else en
     BoxWithConstraints(modifier.fillMaxSize()) {
         // A complete image can fit inside even a short viewport after scrolling to it.
         val imageHeightLimit = (maxHeight - 32.dp).coerceIn(96.dp, 420.dp)
+        val rewardHeight = (maxHeight - 32.dp).coerceIn(88.dp, 220.dp)
         // New pictures/phases start at the top; revealing support preserves the current viewport.
         key(state.category, state.index, state.stage) {
             Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp),
@@ -98,7 +100,7 @@ fun TellMeScreen(
                         }
                     }
                     if (state.stage == TellMeStage.MODEL) support.model?.let {
-                        Text(text("Another way to say more", "So kannst du noch mehr sagen"), style = MaterialTheme.typography.titleMedium)
+                        Text(text("You could say:", "Du könntest sagen:"), style = MaterialTheme.typography.titleMedium)
                         Text(it, Modifier.testTag("tellme-model"))
                     }
                     NativeActionButton(if (state.stage == TellMeStage.TALK) text("Continue", "Weiter") else text("Next picture", "Nächstes Bild"),
@@ -121,6 +123,11 @@ fun TellMeScreen(
                 }
                 NativeActionButton(text("Home", "Startseite"), NativeActionRole.NAVIGATION, onHome,
                     Modifier.fillMaxWidth().testTag("tellme-home"))
+                state.celebrationId?.let { completion ->
+                    // Optional reward after the exit actions; no score, narration or progress event.
+                    NativeCompletionCelebration(completion, language, onPop,
+                        Modifier.fillMaxWidth().height(rewardHeight))
+                }
             }
         }
     }

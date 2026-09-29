@@ -274,8 +274,9 @@ class MainActivity : ComponentActivity() {
                         ShellScreen.TELL_ME -> TellMeScreen(nativeTellMe.flow, nativeTellMe.state,
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeTellMe.artwork, nativeTellMe.loading, nativeTellMe::start, nativeTellMe::advance,
-                            nativeTellMe::help, nativeTellMe::grownUps, nativeTellMe::again, nativeTellMe::home,
-                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding))
+                            nativeTellMe::help, nativeTellMe::grownUps,
+                            { celebrationSound.cancel(); nativeTellMe.again() }, { celebrationSound.cancel(); nativeTellMe.home() },
+                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration)
                         ShellScreen.FOLLOW_INSTRUCTIONS -> FollowScreen(nativeFollow.state, if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeFollow.images, nativeFollow.busy, nativeFollow.saveFailed, nativeFollow.audioFailed,
                             nativeFollow::action, nativeFollow::replay, nativeFollow::again, nativeFollow::retrySave,
@@ -327,6 +328,7 @@ class MainActivity : ComponentActivity() {
     private fun popCelebration(completion: String) {
         if(!foreground) return
         val unavailable = when(navigation.screen) {
+            ShellScreen.TELL_ME -> nativeTellMe.state.celebrationId == null
             ShellScreen.PREPOSITIONS -> nativePositions.busy || nativePositions.saveFailed
             ShellScreen.SEASONS -> nativeSeasons.busy || nativeSeasons.saveFailed
             ShellScreen.WILMA -> nativeWilma.busy || nativeWilma.saveFailed
@@ -336,6 +338,7 @@ class MainActivity : ComponentActivity() {
         }
         if(unavailable) return
         val current = when(navigation.screen) {
+            ShellScreen.TELL_ME -> nativeTellMe.state.celebrationId
             ShellScreen.PREPOSITIONS -> nativePositions.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.SEASONS -> if(nativeSeasons.selection?.phase == SeasonsPhase.ORDER) nativeSeasons.ordering?.takeIf {it.completed}?.id?.value
                 else if(nativeSeasons.selection?.phase?.isQuiz == true) nativeSeasons.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value else null

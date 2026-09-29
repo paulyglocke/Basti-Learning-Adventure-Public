@@ -42,23 +42,23 @@
     "verbs": [
       {
         "en": "receiving",
-        "de": "bekommen"
+        "de": "entgegennehmen"
       },
       {
         "en": "packing",
         "de": "packen"
       },
       {
-        "en": "waiting",
-        "de": "warten"
+        "en": "standing",
+        "de": "stehen"
       },
       {
         "en": "working",
         "de": "arbeiten"
       },
       {
-        "en": "putting away",
-        "de": "wegräumen"
+        "en": "holding",
+        "de": "halten"
       }
     ],
     "adjectives": [
@@ -85,12 +85,12 @@
         "de": "Das Kind packt den Rucksack."
       },
       {
-        "en": "The child is waiting near the teacher.",
-        "de": "Das Kind wartet bei der Lehrkraft."
+        "en": "The child is standing near the teacher.",
+        "de": "Das Kind steht bei der Lehrkraft."
       },
       {
-        "en": "The child is putting the book away.",
-        "de": "Das Kind räumt das Buch weg."
+        "en": "The child is holding a picture.",
+        "de": "Das Kind hält ein Bild."
       },
       {
         "en": "The child is working at the desk.",
@@ -108,25 +108,25 @@
         "Who is packing a backpack?",
         "Who is near the teacher?",
         "Who is still working?",
-        "Where does the book go?",
+        "Who is holding a picture?",
         "What is the teacher receiving?"
       ],
       "de": [
         "Wer packt einen Rucksack?",
         "Wer ist bei der Lehrkraft?",
         "Wer arbeitet noch?",
-        "Wohin kommt das Buch?",
+        "Wer hält ein Bild?",
         "Was bekommt die Lehrkraft?"
       ]
     },
     "expansionPrompts": {
       "en": [
         "What usually happens before children go home?",
-        "First point to the child packing the backpack, then point to the child putting the book away."
+        "First point to the child packing the backpack, then point to the child in blue holding a picture."
       ],
       "de": [
         "Was passiert normalerweise, bevor die Kinder nach Hause gehen?",
-        "Zeige zuerst auf das Kind, das den Rucksack packt, und dann auf das Kind, das das Buch wegräumt."
+        "Zeige zuerst auf das Kind, das den Rucksack packt, und dann auf das Kind in Blau, das ein Bild hält."
       ]
     }
   },
@@ -135,5 +135,6 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_3"
+  "batch": "wave_3_batch_3",
+  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text."
 }

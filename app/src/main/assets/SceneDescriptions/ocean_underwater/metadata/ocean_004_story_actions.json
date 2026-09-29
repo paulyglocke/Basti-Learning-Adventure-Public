@@ -23,16 +23,16 @@
         "de": "Oktopus"
       },
       {
-        "en": "hermit crab",
-        "de": "Einsiedlerkrebs"
+        "en": "crab",
+        "de": "Krabbe"
       },
       {
-        "en": "shell",
-        "de": "Muschel"
+        "en": "sand",
+        "de": "Sand"
       },
       {
-        "en": "starfish",
-        "de": "Seestern"
+        "en": "cave",
+        "de": "Höhle"
       },
       {
         "en": "seahorse",
@@ -43,8 +43,8 @@
         "de": "Fisch"
       },
       {
-        "en": "treasure chest",
-        "de": "Schatztruhe"
+        "en": "coral",
+        "de": "Koralle"
       },
       {
         "en": "seaweed",
@@ -57,28 +57,12 @@
     ],
     "verbs": [
       {
-        "en": "eating",
-        "de": "fressen"
-      },
-      {
         "en": "swimming",
         "de": "schwimmen"
       },
       {
-        "en": "opening",
-        "de": "öffnen"
-      },
-      {
-        "en": "looking",
-        "de": "schauen"
-      },
-      {
-        "en": "choosing",
-        "de": "auswählen"
-      },
-      {
-        "en": "watching",
-        "de": "beobachten"
+        "en": "digging",
+        "de": "graben"
       }
     ],
     "adjectives": [
@@ -95,34 +79,30 @@
         "de": "orange"
       },
       {
-        "en": "purple",
-        "de": "lila"
+        "en": "blue",
+        "de": "blau"
       },
       {
         "en": "green",
         "de": "grün"
-      },
-      {
-        "en": "open",
-        "de": "offen"
       }
     ],
     "sentenceModels": [
       {
-        "en": "The turtle is eating seaweed.",
-        "de": "Die Schildkröte frisst Seegras."
+        "en": "The turtle is swimming.",
+        "de": "Die Schildkröte schwimmt."
       },
       {
-        "en": "The octopus is opening the treasure chest.",
-        "de": "Der Oktopus öffnet die Schatztruhe."
+        "en": "The octopus is in the cave.",
+        "de": "Der Oktopus ist in der Höhle."
       },
       {
-        "en": "The hermit crab is looking at the shells.",
-        "de": "Der Einsiedlerkrebs schaut sich die Muscheln an."
+        "en": "The crab is digging in the sand.",
+        "de": "Die Krabbe gräbt im Sand."
       },
       {
-        "en": "The starfish is on the rock.",
-        "de": "Der Seestern ist auf dem Stein."
+        "en": "Three blue fish are swimming together.",
+        "de": "Drei blaue Fische schwimmen zusammen."
       },
       {
         "en": "The seahorse is next to the coral.",
@@ -138,16 +118,16 @@
     "starterPrompts": {
       "en": [
         "What can you see first?",
-        "Who is doing something?",
-        "Can you tell me where the starfish is?",
-        "Which animal is near the treasure chest?",
+        "What is the crab doing?",
+        "Where is the octopus?",
+        "Which animal is in the cave?",
         "Can you make a longer sentence?"
       ],
       "de": [
         "Was siehst du zuerst?",
-        "Wer macht etwas?",
-        "Kannst du mir sagen, wo der Seestern ist?",
-        "Welches Tier ist in der Nähe der Schatztruhe?",
+        "Was macht die Krabbe?",
+        "Wo ist der Oktopus?",
+        "Welches Tier ist in der Höhle?",
         "Kannst du einen längeren Satz sagen?"
       ]
     },
@@ -155,14 +135,14 @@
       "en": [
         "Tell me two things about the turtle.",
         "What is the octopus doing?",
-        "Which shells are big and small?",
-        "What might the hermit crab choose next?"
+        "How many blue fish can you see?",
+        "What might the crab find in the sand?"
       ],
       "de": [
         "Erzähl mir zwei Dinge über die Schildkröte.",
         "Was macht der Oktopus?",
-        "Welche Muscheln sind groß und welche klein?",
-        "Was könnte sich der Einsiedlerkrebs als Nächstes aussuchen?"
+        "Wie viele blaue Fische siehst du?",
+        "Was könnte die Krabbe im Sand finden?"
       ]
     }
   },
@@ -175,5 +155,6 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_1"
+  "batch": "wave_2_batch_1",
+  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text."
 }
