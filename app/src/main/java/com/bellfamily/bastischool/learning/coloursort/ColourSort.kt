@@ -9,10 +9,13 @@ import com.bellfamily.bastischool.audio.SpeechTrigger
 
 enum class ColourSortShape { BALL, BLOCK }
 data class ColourSortObject(val id: ContentId, val category: ContentId, val shape: ColourSortShape, val text: ContentText)
-data class ColourSortTransition(val state: SortState, val events: List<ProgressEvent> = emptyList(), val speech: SessionEffect.Narrate? = null)
-object ColourSort {
+typealias ColourSortTransition = SortTransition
+object ColourSort : SortingContent {
+    override val revision = 1
+    override val journalMagic = 0x43535231
+    override val speakOnStart = true
     const val REVISION = 1
-    val version = ContentVersion(1, 1)
+    override val version = ContentVersion(1, 1)
     val activity = ActivityId("activity.colours.sort")
     val red = ContentId("colour.red")
     val blue = ContentId("colour.blue")
@@ -22,7 +25,7 @@ object ColourSort {
         ColourSortObject(ContentId("object.colours.blue_ball"), blue, ColourSortShape.BALL, ContentText.plain("blue ball", "blauer Ball")),
         ColourSortObject(ContentId("object.colours.red_block"), red, ColourSortShape.BLOCK, ContentText.plain("red block", "roter Baustein")),
         ColourSortObject(ContentId("object.colours.blue_block"), blue, ColourSortShape.BLOCK, ContentText.plain("blue block", "blauer Baustein")))
-    val rule = SortRule(ContentId("rule.sort.colour"), categories, objects.map { SortItem(it.id, it.category) })
+    override val rule = SortRule(ContentId("rule.sort.colour"), categories, objects.map { SortItem(it.id, it.category) })
     private val core = CoreContent.repository()
     fun category(id: ContentId) = requireNotNull(core.find(id)).text
     fun item(id: ContentId) = objects.single { it.id == id }
@@ -37,9 +40,9 @@ object ColourSort {
         blue -> ContentText.plain("Put it with the blue ones.", "Lege es zu den blauen Dingen.")
         else -> instruction
     }
-    fun prompt(s: SortState) = if (s.completed) completion else instruction
-    fun start(id: SessionId, seed: Long, language: ContentLanguage) = Sorting.start(id, rule, seed, language)
-    fun reduce(s: SortState, action: SortAction): ColourSortTransition {
+    override fun prompt(s: SortState) = if (s.completed) completion else instruction
+    override fun start(id: SessionId, seed: Long, language: ContentLanguage) = Sorting.start(id, rule, seed, language)
+    override fun reduce(s: SortState, action: SortAction): ColourSortTransition {
         val n = Sorting.reduce(s, action)
         if (n === s && action != SortAction.Replay) return ColourSortTransition(s)
         val events = if (action is SortAction.Place && n !== s) listOf(attempt(n, n.index(action.item))) +
@@ -58,12 +61,12 @@ object ColourSort {
     private fun evidence(s: SortState, i: Int) = TaskEvidence(TaskInstanceId(s.id, i+1),
         TaskDefinitionId("task.colours.sort.${objects[i].id.value.substringAfterLast('.')}"),
         SkillId("skill.colours.sort"), LearningContextId("context.colours.balls_blocks"), 1)
-    fun attempt(s: SortState, i: Int): AttemptEvent {
+    override fun attempt(s: SortState, i: Int): AttemptEvent {
         val p = s.placements[i]
         return AttemptEvent(origin(s), evidence(s,i), AttemptId(TaskInstanceId(s.id,i+1),p.attempts), s.language,
             p.lastCategory!!, if(p.placed) AttemptOutcome.CORRECT else AttemptOutcome.INCORRECT, p.support)
     }
-    fun completionEvent(s: SortState): CompletionEvent {
+    override fun completionEvent(s: SortState): CompletionEvent {
         require(s.completed)
         return CompletionEvent(origin(s),s.placements.mapIndexed { i,p -> CompletedTask(evidence(s,i), p.lastCategory!!,
             AttemptOutcome.CORRECT,p.attempts,p.attempts-1,p.support) })

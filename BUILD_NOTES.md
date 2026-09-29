@@ -1,5 +1,93 @@
 # V1 verification and fixes
 
+## Animal Groups keyboard-test correction — 2026-09-29
+
+Preserved the existing uncommitted Animal Groups implementation. The owner-reported
+11-test run had 7 passes and 4 Selected=true failures. Each failure's semantics tree
+identified the correct animal Button, with Selected=false and Focused=false. The test
+requested focus without first leaving Android touch input mode. Existing Vocabulary
+artwork and shared-button keyboard tests explicitly request InputMode.Keyboard.
+
+Applied that same setup to AnimalGroupsScreenTest, asserted RequestFocus succeeds and
+assertIsFocused before injecting Enter, retained assertIsSelected, and added state plus
+exactly-one SortAction.Select callback assertions. Wrong→Help→correct, touch-based
+remaining placements and completion assertions are unchanged. No production code,
+semantics, input handler, business logic, artwork, busy/epoch handling or Colour Sort
+behaviour changed; no custom key handler or duplicate selection path was needed.
+
+Validation: focused Animal Groups instrumentation **11/11 passed, 0 failed/errors/skips**
+on emulator-5554 (EN/DE, portrait/both landscapes, 1.5×). This includes owner busy/audio,
+restoration, image fallback and completion coverage. `git diff --check` and changed-test
+whitespace check passed. JVM was not rerun: this correction changes only test setup,
+not production/domain behaviour. No full suites or lint. No commit or push.
+
+Command:
+```sh
+JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home' ANDROID_HOME='/Users/paulbell/Library/Android/sdk' ANDROID_SERIAL=emulator-5554 ./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.package=com.bellfamily.bastischool.ui.animalgroups --console=plain
+```
+
+S24 acceptance still requires real keyboard/D-pad and TalkBack focus/activation,
+selection outline, touch correction/help/completion, EN/DE and large-font orientations.
+Automated keyboard injection is not a physical-keyboard or TalkBack acceptance claim.
+
+## Animal Groups: second sorting consumer — 2026-09-29
+
+Started clean at `31dde95` (Colour Sort committed), with Follow busy-state fix `9c5e406`.
+No commit/push. No artwork or Follow behaviour changes.
+
+Implemented four canonical animals: whale/dolphin → Water, horse/rabbit → Land.
+Shared Sorting.kt is unchanged. Extracted the existing Colour Sort durable journal to
+SortingHost/SortingContent, preserving CSR1 bytes and all existing colour behaviour.
+Animal Groups adds content/evidence mapping, a thin durable host, owner-local image/audio
+owner and native screen/Home route. AGR1 activity revision 1/content 1.1 uses the shared
+progress codec, not a new progress system. Explicit tap selection/category placement,
+optional EN/DE Help, immediate correction, exact partial restoration and shared balloons.
+No drag, new artwork, full curriculum or future activity implementation.
+
+Opening is deliberately silent and creates no TTS engine, even with Sound On. Explicit
+speech actions use the existing lazy controller. Busy releases before any epoch-gated
+speech side effect; tests specifically change visibility/language during pending work.
+Canonical PNGs are sampled on a worker with a four-image owner-local cache and Fit display;
+missing/corrupt images remain passive. Water/Land cues and neutral selection outlines do
+not require colour recognition. Actual child recognition of cues requires physical review.
+
+Validation budget follows the owner's instruction: no full JVM, instrumentation matrix,
+full instrumentation, lint or APK assembly in this session. Focused run selected 22 JVM
+cases: 10 new Animal Groups, 1 frozen Colour Sort compatibility fixture, 6 existing
+Sorting and 5 existing Colour Sort host cases. First compile found test-only missing
+SessionId imports and unsupported JVM ImageIO; corrected imports, left actual decoding
+in the Android test and used path/signature checks in JVM. Next run: 21/22 passed; one
+fixture used an invalid semantic ID before reaching the reducer. Corrected it to a
+well-formed unknown ID and reran only AnimalGroupsTest: **4/4 passed, 0 failures/errors/skips**.
+All 22 selected cases therefore have passing evidence across the focused runs.
+`git diff --check` and new-file whitespace checks passed.
+Production and Android instrumentation test sources compiled successfully; the only
+reported production compile warning was the existing VIBRATOR_SERVICE deprecation.
+Instrumentation tests are written/compiled, NOT executed: 4 EN/DE portrait/landscape
+1.5× keyboard/tap cases, 4 owner/audio cases, 2 artwork/fallback cases and 1 native
+route/recreation/language case. Do not treat these as executed physical/layout acceptance.
+
+Local commands from repository root:
+```sh
+export JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'
+export ANDROID_HOME='/Users/paulbell/Library/Android/sdk'
+export ANDROID_SERIAL=emulator-5554
+./gradlew testDebugUnitTest --tests '*AnimalGroups*' --tests '*ColourSort*' --tests '*Sorting*' --console=plain
+./gradlew testDebugUnitTest --console=plain
+./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.package=com.bellfamily.bastischool.ui.animalgroups --console=plain
+./gradlew connectedDebugAndroidTest --console=plain
+./gradlew assembleDebug --console=plain
+./gradlew lintDebug --console=plain
+git diff --check
+```
+
+S24: verify full animal visibility/Fit, Water/Land cue understanding without reading,
+selected outline/TalkBack/keyboard, wrong→Help→correct, placement and completion balloons,
+portrait/both short landscapes/1.5×, Sound Off/Questions/All in EN/DE, quick Options/Home/
+background during work (never stuck busy), process-restored order/selection/help/placements.
+No physical acceptance claimed. Historical full-suite timeout from Colour Sort remains
+historical evidence, not a validation result for this new slice.
+
 ## Colour Sort: first native sorting consumer — 2026-09-29
 
 Started from clean main `bdd939b`. This work is uncommitted; no push or physical-device

@@ -448,5 +448,35 @@ artwork. Shared actions, support, completion and shell pop-sound guards are reus
 
 Compare & Discover, Maths classification, Practical Life/School Skills and Story Adventures
 could supply different category/item membership and their own presentation/progress adapter.
-None is implemented. Grading, sequencing, multi-attribute/rule switching and a generic
+Animal Groups now supplies the first bounded Compare & Discover consumer (below).
+Other consumers remain deferred. Grading, sequencing, multi-attribute/rule switching and a generic
 gesture/persistence framework are deliberately outside this primitive.
+
+## Animal Groups: second sorting consumer
+
+Animal Groups is the bounded Compare & Discover consumer: four canonical animals,
+Water/Land membership, tap animal → tap group. `Sorting.kt` is unchanged. The proven
+Colour Sort journal/delivery implementation is now `SortingHost`, configured by the
+small `SortingContent` adapter (rule, versions, progress/text mapping and start-speech
+choice). There is still one membership reducer; consumers only map its transitions to
+authored narration and shared progress. `ColourSortHost` retains its API and exact CSR1
+bytes, including revision 1/content 1.1. A frozen pre-extraction checkpoint regression
+protects partial state compatibility. No shared progress/checkpoint schema changed.
+
+Animal Groups has its own AGR1 journal under `noBackupFilesDir/animal-groups-session`,
+activity revision 1/content 1.1, with the same atomic write-ahead, checksum, stale-writer,
+pending-event dedupe and corrupt-data preservation contract. Restores retain actual
+order, placements, selected item, attempts and support rather than generating again.
+Home suspends; Again creates a fresh set after acknowledged completion.
+
+Its Activity-scoped owner serializes journal and sampled four-image loading on a worker.
+The cache is owner-local, failed loads are passive, streams close and late publication
+is ignored after clear. Compose has no asset I/O; canonical images use Fit. The owner
+releases busy on completed work independently of the speech epoch; epoch checks only
+suppress obsolete narration. Language changes synchronize accepted state after work.
+Opening (even Sound On), restore and return are silent. Explicit Replay, selection and
+Help use lazy owner-local speech under existing All/Questions/Off policy; no legacy
+speech changes. Completion and balloons reuse the existing native implementation.
+
+This adds no drag, multi-attribute rules, grading, curriculum hub or future consumers.
+The reusable primitive contains no colour, animal, habitat or visual-coordinate terms.

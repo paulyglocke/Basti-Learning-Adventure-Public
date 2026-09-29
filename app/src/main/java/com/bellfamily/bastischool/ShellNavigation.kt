@@ -2,7 +2,7 @@ package com.bellfamily.bastischool
 
 import java.util.concurrent.atomic.AtomicReference
 
-internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS, WILMA, VOCABULARY, TELL_ME, FOLLOW_INSTRUCTIONS, COLOUR_SORT }
+internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS, WILMA, VOCABULARY, TELL_ME, FOLLOW_INSTRUCTIONS, COLOUR_SORT, ANIMAL_GROUPS }
 internal enum class BackAction { EXIT, CLOSE_OPTIONS, LEGACY, NATIVE_HOME, DAYS_HUB }
 
 /** Options is an overlay on one destination, never another entry in a growing stack. */
@@ -16,7 +16,7 @@ internal data class ShellNavigation(
         ShellScreen.HOME -> BackAction.EXIT
         ShellScreen.OPTIONS -> BackAction.CLOSE_OPTIONS
         ShellScreen.WEB -> BackAction.LEGACY
-        ShellScreen.PREPOSITIONS, ShellScreen.DAYS_SEASONS, ShellScreen.VOCABULARY, ShellScreen.TELL_ME, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.COLOUR_SORT -> BackAction.NATIVE_HOME
+        ShellScreen.PREPOSITIONS, ShellScreen.DAYS_SEASONS, ShellScreen.VOCABULARY, ShellScreen.TELL_ME, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.COLOUR_SORT, ShellScreen.ANIMAL_GROUPS -> BackAction.NATIVE_HOME
         ShellScreen.SEASONS, ShellScreen.WILMA -> BackAction.DAYS_HUB
     }
     val ownsWebSession: Boolean get() = screen == ShellScreen.WEB ||
@@ -25,6 +25,7 @@ internal data class ShellNavigation(
     fun closeOptions() = if (screen == ShellScreen.OPTIONS) copy(screen = optionsOrigin, optionsOrigin = ShellScreen.HOME) else this
     fun openDaysSeasons() = ShellNavigation(ShellScreen.DAYS_SEASONS)
     fun openTellMe() = ShellNavigation(ShellScreen.TELL_ME)
+    fun openAnimalGroups() = ShellNavigation(ShellScreen.ANIMAL_GROUPS)
     fun openColourSort() = ShellNavigation(ShellScreen.COLOUR_SORT)
     fun openFollowInstructions() = ShellNavigation(ShellScreen.FOLLOW_INSTRUCTIONS)
     fun openVocabulary() = ShellNavigation(ShellScreen.VOCABULARY)

@@ -179,3 +179,21 @@ from selectable tokens. Text wraps and the whole scene scrolls in short landscap
 large font. Colour is the explicit learning target here, not an app-wide accessibility
 exception. Sound Off remains respected. Physical colour recognition/ergonomics and
 TalkBack acceptance remain separate from emulator tests.
+
+## Animal Groups v1
+
+One native Home entry “Animal Groups” / “Tiere zuordnen” opens ANIMAL_GROUPS. No discovery
+hub or Home redesign. Four canonical animals are the main visual targets; Water/Land
+use labels plus distinct wave/ground cues, not colour-only meaning. Tap an animal then
+its group; a thicker neutral outline and selected semantics identify the selection.
+Each animal is one interactive target with a localized name; its Fit image is decorative
+inside that target, avoiding duplicate announcements. Missing art is passive, never an
+invisible answer. Optional Help precedes the available animals in reading order.
+
+Wrong placement leaves the same item available for immediate correction. Help remains
+optional. Correct placement removes it from the tray and displays it in its group.
+Groups expose localized labels and placed counts. Scrollable two-column layout and
+wrapping text preserve access at large font/short height. Keyboard activation shares
+the tap operation. Drag is deferred. Opening is silent; Listen again/selection/Help
+request authored speech, respecting Sound Off. Home/back retains the exact puzzle;
+Again and shared completion/balloons follow the sorting contract.

@@ -272,3 +272,23 @@ when tray order differs. Evidence uses `skill.colours.sort` and
 SupportUse. Replay before selection records support for remaining items; after selection
 it records support only for that item. Help records a hint only for the selected item.
 Neither control submits an attempt or emits progress itself. No mastery claim is made.
+
+## Animal Groups starter content
+
+`activity.discover.animal_groups`, revision 1/content 1.1: rule `rule.sort.animal_habitat`,
+category IDs `habitat.water` and `habitat.land`. Exactly `animal.whale` / `animal.dolphin`
+belong to Water; `animal.horse` / `animal.rabbit` belong to Land. The canonical assets
+are explicitly bound to `Animals/canonical/{whale,dolphin,horse,rabbit}.png`; no display
+string determines a path. Whale/Horse names reuse Vocabulary's authored text. Dolphin /
+Delfin and Rabbit / Kaninchen are explicit bilingual additions in this consumer.
+
+Instruction: “Put each animal in the right group.” / “Ordne jedes Tier der richtigen
+Gruppe zu.” Labels: Water/Wasser, Land/Land. Optional Help: “The whale/dolphin lives in
+water.” / “Der Wal/Delfin lebt im Wasser.”; “The horse/rabbit lives on land.” /
+“Das Pferd/Kaninchen lebt an Land.” These four unambiguous examples do not establish a
+universal water/land taxonomy; mixed-habitat animals are intentionally excluded.
+
+Evidence uses `skill.discover.animal_habitat`, `context.discover.water_land` and
+`task.discover.animal_groups.<animal>`. The shared sorting support/attempt contract is
+unchanged: no progress for opening/Replay/Help; placements create evidence; completion
+requires all four. No Vocabulary mastery or real-world generalisation is inferred.
