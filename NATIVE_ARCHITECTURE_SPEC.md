@@ -416,3 +416,37 @@ reachable, and the shared CandidateTaskGenerator is unchanged. Revision 1/conten
 and revision 2/content 1.2 checkpoints still restore their exact saved plans (including
 old repeated targets), attempts/support and progress. Restore never regenerates; Again
 uses revision 3. Journal/checkpoint schemas remain unchanged.
+
+## Native sorting: Colour Sort first consumer (2026-09-29)
+
+`learning/sorting/Sorting.kt` is a pure semantic membership primitive: a rule has stable
+category IDs and unique item IDs with one category each. Immutable state contains actual
+seeded item order, selection, per-item attempts/last category/support and correct placements.
+Select and Place are separate; Place carries session and attempt identity, rejects stale/
+duplicate/unknown operations, and never places an incorrect item. No colour, shape, drag
+coordinate, audio or storage code belongs in this primitive. Completion requires all items.
+
+`learning/coloursort` supplies one concrete four-item/two-colour rule, bilingual content,
+progress conversion and a worker-confined `ColourSortHost`. The small activity-specific
+schema-1 journal follows Seasons ordering's write-ahead/checksum/stale-writer pattern.
+It stores exact order, selection, placements, support, language, completion acknowledgement
+and at most one attempt plus completion pending delivery. Shared ProgressRepository/codec
+deduplicate delivery. Corrupt journals remain untouched with Retry/Home. No shared progress
+or checkpoint schema changed. Activity revision 1/content 1.1 identifies this first pack.
+
+ColourSortViewModel retains configuration state and serializes host work; publication of
+an accepted state follows its durable write. Language/visibility changes revoke pending
+speech but do not abandon accepted writes. Restore, Options return and background return
+are silent. New sets speak once; explicit selection/replay/help request authored guidance
+through the existing DefaultAudioController and lazy owner-local Android engine. Home
+retains the set; Again requires completed acknowledged state and a fresh session identity.
+
+The UI uses tap item → tap category (including keyboard/TalkBack activation); no drag API
+is introduced. The same Place operation can accept a later reviewed drag adapter without
+changing learning semantics. Native circle/rectangle tokens avoid misleading recoloured
+artwork. Shared actions, support, completion and shell pop-sound guards are reused.
+
+Compare & Discover, Maths classification, Practical Life/School Skills and Story Adventures
+could supply different category/item membership and their own presentation/progress adapter.
+None is implemented. Grading, sequencing, multi-attribute/rule switching and a generic
+gesture/persistence framework are deliberately outside this primitive.

@@ -1,5 +1,77 @@
 # Session handoff — 2026-09-27
 
+## Colour Sort: first native sorting consumer — 2026-09-29
+
+Started from clean main `bdd939b`. This work is uncommitted; no push or physical-device
+installation. Follow and canonical artwork are unchanged.
+
+The pure `learning/sorting` primitive owns semantic membership, selection, placement,
+attempt/support state and completion. It knows no colours, shapes, coordinates, audio or
+storage. Colour Sort supplies two clearly distinct categories (red/blue) and four native
+pictorial objects (one ball and one block in each colour). CoreContent colour names are
+reused; no generated or recoloured artwork. This is a fixed four-item set, independent
+of the shell's 5/10 quiz-round preference, not the full Colours curriculum.
+
+Interaction is tap an object, then tap a colour group; keyboard activation uses the same
+placement operation. Drag is intentionally deferred. Selection has an explicit border
+and semantic state; wrong placement retains the selected object for immediate correction.
+Optional Help names its category without placing it. Correct objects move into groups.
+No timers, lives, punitive marks, score display or automatic solving.
+
+The seeded tray order and exact partial state are durably journalled using the existing
+ordering-host pattern: atomic writes, checksum, stale-writer protection, pending shared
+progress events and idempotent delivery. Activity revision 1/content version 1.1 are new
+Colour Sort identities; no shared checkpoint/progress schema changed. Only placements
+produce attempts; Replay/Help record support without progress events. Completion requires
+all four correct placements and uses shared balloons/actions. Home suspends the round;
+re-entry restores it; Again starts a fresh set. Restores and background returns are silent.
+Owner-local speech uses the existing lazy controller, EN/DE and Sound Off policy.
+
+Validation so far: focused sorting/Colour Sort JVM **14/14**, full JVM **340/340**;
+focused Colour Sort emulator **7/7**, all final runs zero failures/errors/skips.
+assembleDebug passed; lintDebug **0 errors, 3 existing warnings, 2 informational findings**.
+Full emulator regression: **104/133 completed: 103 passed, 1 failed, 0 skipped;
+29 not run**. Android aborted with `keyDispatchingTimedOut` during the existing
+TellMeRouteTest after long emulator delays. The same test passed **1/1** when rerun
+independently. This supports an environment/timing issue but is not a full-suite pass;
+a complete healthy-emulator regression remains outstanding. No unrelated test or
+production code was altered to mask the failure. `git diff --check` and new-file
+whitespace checks passed.
+The first instrumentation compile needed the experimental keyboard-test API opt-in.
+The next run was 6/7: the owner test observed a pending main-thread publication; its
+synchronization and journal-fixture cleanup were corrected. Final focused rerun passed
+without changing production behaviour or weakening assertions.
+
+Commands (repository root):
+```sh
+export JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'
+export ANDROID_HOME='/Users/paulbell/Library/Android/sdk'
+export ANDROID_SERIAL=emulator-5554
+./gradlew testDebugUnitTest --tests '*Sorting*' --tests '*ColourSort*' --console=plain
+./gradlew testDebugUnitTest assembleDebug lintDebug --console=plain
+./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.package=com.bellfamily.bastischool.ui.coloursort --console=plain
+./gradlew connectedDebugAndroidTest --console=plain
+git diff --check
+```
+
+Focused emulator coverage includes EN/DE portrait, both German short landscapes at
+1.5× text, keyboard/tap completion, wrong→Help→correct, shared balloons, Home/Again,
+actual shell recreation/language change, Sound Off and cold/lazy speech cancellation.
+JVM coverage includes non-colour membership, stale/duplicate actions, corrupted state,
+partial restore, pending-progress retry/deduplication and independent/supported evidence.
+
+Manual emulator EN portrait inspection found all four objects, both groups and actions
+visible without overlap/clipping (`/private/tmp/basti-sort-review-en.png`, local evidence
+only). German/short-landscape/1.5× reachability is covered by focused instrumentation;
+this is not physical visual acceptance.
+
+S24 acceptance remains required: colour clarity, understandable group destinations and
+selected state, tap/keyboard/TalkBack focus and spoken labels, portrait/both landscapes
+at 1.5×, immediate self-correction, shared balloons, offline EN/DE speech/Sound Off,
+Home/Options/background/recreation and process-restored partial placement. No physical
+acceptance is claimed. Future Compare & Discover, Maths, Practical Life/School Skills
+and Story Adventures can supply semantic categories/items; none is implemented here.
+
 ## Follow physical-acceptance corrections — 2026-09-29
 
 Started clean at 4ccff04. No artwork, wording, shared session/audio/progress, completion

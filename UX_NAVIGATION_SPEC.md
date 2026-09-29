@@ -160,3 +160,22 @@ Support is passive, has no live announcement, and retains the existing larger-su
 setting. Language/Options preserve semantic state; the next picture resets expanded
 support. Home ends the in-memory conversation. Process-death persistence and speech are
 not part of v1; physical TalkBack, visual clarity and inset acceptance remain outstanding.
+
+## Colour Sort v1
+
+One native Home card (“Colour Sort” / “Farben sortieren”) opens COLOUR_SORT. Home/back
+retains the durable set; Options and configuration recreation retain selection and
+placements, updating language in place. The current slice is four native ball/block
+tokens and two colour groups. A selected item gains a strong neutral outline and
+selected semantics; tapping a category places it. Wrong placements retain selection
+for immediate correction, show calm support and leave both destination colours visible.
+Help is optional and never solves the item. Correct items move from the tray into their
+category; all four trigger shared completion with Replay, Again, Home and optional balloons.
+
+Tap/keyboard/TalkBack is the complete interaction. Drag is not implemented in this slice.
+Each actionable item/group is one meaningful semantic target, with natural EN/DE names,
+large bounds and no ID-derived labels. Category containers remain visually distinct
+from selectable tokens. Text wraps and the whole scene scrolls in short landscape at
+large font. Colour is the explicit learning target here, not an app-wide accessibility
+exception. Sound Off remains respected. Physical colour recognition/ergonomics and
+TalkBack acceptance remain separate from emulator tests.

@@ -79,6 +79,7 @@ import com.bellfamily.bastischool.ui.wilma.*
 import com.bellfamily.bastischool.ui.vocabulary.*
 import com.bellfamily.bastischool.ui.tellme.*
 import com.bellfamily.bastischool.ui.followinstructions.*
+import com.bellfamily.bastischool.ui.coloursort.*
 import androidx.compose.runtime.CompositionLocalProvider
 import com.bellfamily.bastischool.ui.common.CelebrationArtViewModel
 import com.bellfamily.bastischool.ui.common.LocalCelebrationArt
@@ -125,12 +126,14 @@ private val homeCards = listOf(
     HomeCard("🦖", "Dinosaur Rescue", "Dinosaurier-Rettung", "A future adventure game.", "Ein zukünftiges Abenteuerspiel.", play = true),
     HomeCard("🧠", "Memory Pairs", "Paare merken", "A future memory game.", "Ein zukünftiges Merkspiel.", play = true),
     HomeCard("🐊", "Crocodile Snap", "Krokodil-Schnapp", "A future reaction game.", "Ein zukünftiges Reaktionsspiel.", play = true),
+    HomeCard("🎨", "Colour Sort", "Farben sortieren", "Put matching colours together.", "Sortiere Dinge nach ihrer Farbe.", mode = "colourSort"),
     HomeCard("👂", "Follow the Instructions", "Anweisungen folgen", "Touch the animal I name.", "Tippe auf das Tier, das ich nenne.", mode = "follow")
 )
 
 class MainActivity : ComponentActivity() {
     private val celebrationSound = CelebrationSound(AndroidPopSound())
     private lateinit var nativeTellMe: TellMeViewModel
+    private lateinit var nativeColourSort: ColourSortViewModel
     private lateinit var nativeFollow: FollowViewModel
     private lateinit var nativeSeasons: SeasonsViewModel
     private lateinit var nativeVocabulary: VocabularyViewModel
@@ -166,6 +169,7 @@ class MainActivity : ComponentActivity() {
         nativeVocabulary = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[VocabularyViewModel::class.java]
         nativeWilma = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[WilmaViewModel::class.java]
         nativeTellMe = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[TellMeViewModel::class.java]
+        nativeColourSort = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[ColourSortViewModel::class.java]
         nativeFollow = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[FollowViewModel::class.java]
         configurePositions()
         restoredSession = savedInstanceState?.getString("legacySession")
@@ -227,6 +231,7 @@ class MainActivity : ComponentActivity() {
                                     ShellScreen.VOCABULARY -> if (language == "de") "Wortschatz" else "Vocabulary Booster"
                                     ShellScreen.WILMA -> if (language == "de") "Wilmas Woche" else "Wilma’s Week"
                                     ShellScreen.TELL_ME -> if (language == "de") "Erzähl mal!" else "Tell Me!"
+                                    ShellScreen.COLOUR_SORT -> if (language == "de") "Farben sortieren" else "Colour Sort"
                                     ShellScreen.FOLLOW_INSTRUCTIONS -> if (language == "de") "Anweisungen folgen" else "Follow the Instructions"
                                     ShellScreen.SEASONS -> if (language == "de") "Jahreszeiten" else "Seasons"
                                 },
@@ -252,7 +257,7 @@ class MainActivity : ComponentActivity() {
                         ShellScreen.HOME -> NativeHome(language, padding, navigation.recoveryFailed) { card ->
                             if (!card.play) {
                                 checkpoint = LegacyCheckpoint(); restoredSession = null
-                                changeRoute(if (card.mode == "tellme") navigation.openTellMe() else if (card.mode == "follow") navigation.openFollowInstructions() else if (card.mode == "vocabulary") navigation.openVocabulary() else if (card.mode == "positions") navigation.openPrepositions() else if (card.mode == "time") navigation.openDaysSeasons() else navigation.openActivity(if (card.verbExplorer) "verbExplorer" else card.mode ?: "verbs"))
+                                changeRoute(if (card.mode == "tellme") navigation.openTellMe() else if (card.mode == "colourSort") navigation.openColourSort() else if (card.mode == "follow") navigation.openFollowInstructions() else if (card.mode == "vocabulary") navigation.openVocabulary() else if (card.mode == "positions") navigation.openPrepositions() else if (card.mode == "time") navigation.openDaysSeasons() else navigation.openActivity(if (card.verbExplorer) "verbExplorer" else card.mode ?: "verbs"))
                             }
                         }
                         ShellScreen.OPTIONS -> NativeOptions(language, audioMode, round, numberMax, padding, audioStatus,
@@ -276,6 +281,11 @@ class MainActivity : ComponentActivity() {
                             nativeTellMe.artwork, nativeTellMe.loading, nativeTellMe::start, nativeTellMe::advance,
                             nativeTellMe::help, nativeTellMe::grownUps,
                             { celebrationSound.cancel(); nativeTellMe.again() }, { celebrationSound.cancel(); nativeTellMe.home() },
+                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration)
+                        ShellScreen.COLOUR_SORT -> ColourSortScreen(nativeColourSort.state,
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            nativeColourSort.busy, nativeColourSort.saveFailed, nativeColourSort.audioFailed,
+                            nativeColourSort::action, { celebrationSound.cancel(); nativeColourSort.again() }, nativeColourSort::retry,
                             onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration)
                         ShellScreen.FOLLOW_INSTRUCTIONS -> FollowScreen(nativeFollow.state, if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeFollow.images, nativeFollow.busy, nativeFollow.saveFailed, nativeFollow.audioFailed,
@@ -333,6 +343,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.SEASONS -> nativeSeasons.busy || nativeSeasons.saveFailed
             ShellScreen.WILMA -> nativeWilma.busy || nativeWilma.saveFailed
             ShellScreen.VOCABULARY -> nativeVocabulary.busy || nativeVocabulary.saveFailed
+            ShellScreen.COLOUR_SORT -> nativeColourSort.busy || nativeColourSort.saveFailed
             ShellScreen.FOLLOW_INSTRUCTIONS -> nativeFollow.busy || nativeFollow.saveFailed
             else -> true
         }
@@ -343,6 +354,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.SEASONS -> if(nativeSeasons.selection?.phase == SeasonsPhase.ORDER) nativeSeasons.ordering?.takeIf {it.completed}?.id?.value
                 else if(nativeSeasons.selection?.phase?.isQuiz == true) nativeSeasons.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value else null
             ShellScreen.VOCABULARY -> if(nativeVocabulary.selection?.phase != VocabularyPhase.EXPLORE) nativeVocabulary.quiz?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value else null
+            ShellScreen.COLOUR_SORT -> nativeColourSort.state?.takeIf {it.completed && it.acknowledged}?.id?.value
             ShellScreen.FOLLOW_INSTRUCTIONS -> nativeFollow.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.WILMA -> when(nativeWilma.selection?.phase) {
                 WilmaPhase.ORDER -> nativeWilma.ordering?.takeIf {it.completed}?.id?.value
@@ -367,6 +379,7 @@ class MainActivity : ComponentActivity() {
         nativePositions.setVisible(foreground && route.screen == ShellScreen.PREPOSITIONS)
         nativeSeasons.setVisible(foreground && route.screen == ShellScreen.SEASONS)
         nativeVocabulary.setVisible(foreground && route.screen == ShellScreen.VOCABULARY)
+        nativeColourSort.setVisible(foreground && route.screen == ShellScreen.COLOUR_SORT)
         nativeFollow.setVisible(foreground && route.screen == ShellScreen.FOLLOW_INSTRUCTIONS)
         nativeWilma.setVisible(foreground && route.screen == ShellScreen.WILMA)
         updateWebActivity()
@@ -421,6 +434,8 @@ class MainActivity : ComponentActivity() {
         nativeWilma.configure(prefs.getString("lang", "en") ?: "en",
             prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
             prefs.getInt("round", 5))
+        nativeColourSort.configure(prefs.getString("lang", "en") ?: "en",
+            prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all")
         nativeFollow.configure(prefs.getString("lang", "en") ?: "en",
             prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
             prefs.getInt("round", 5))
@@ -534,8 +549,8 @@ class MainActivity : ComponentActivity() {
         if (navigation.ownsWebSession) outState.putString("legacySession", checkpoint.read())
         super.onSaveInstanceState(outState)
     }
-    override fun onPause() { celebrationSound.cancel(); foreground = false; nativePositions.setVisible(false); nativeSeasons.setVisible(false); nativeWilma.setVisible(false); nativeVocabulary.setVisible(false); nativeFollow.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
-    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen == ShellScreen.SEASONS); nativeWilma.setVisible(navigation.screen == ShellScreen.WILMA); nativeVocabulary.setVisible(navigation.screen == ShellScreen.VOCABULARY); nativeFollow.setVisible(navigation.screen == ShellScreen.FOLLOW_INSTRUCTIONS); updateWebActivity() }
+    override fun onPause() { celebrationSound.cancel(); foreground = false; nativePositions.setVisible(false); nativeSeasons.setVisible(false); nativeWilma.setVisible(false); nativeVocabulary.setVisible(false); nativeFollow.setVisible(false); nativeColourSort.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
+    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen == ShellScreen.SEASONS); nativeWilma.setVisible(navigation.screen == ShellScreen.WILMA); nativeVocabulary.setVisible(navigation.screen == ShellScreen.VOCABULARY); nativeFollow.setVisible(navigation.screen == ShellScreen.FOLLOW_INSTRUCTIONS); nativeColourSort.setVisible(navigation.screen == ShellScreen.COLOUR_SORT); updateWebActivity() }
     override fun onDestroy() { celebrationSound.close(); disposeWebView(); tts?.shutdown(); tts = null; super.onDestroy() }
 }
 

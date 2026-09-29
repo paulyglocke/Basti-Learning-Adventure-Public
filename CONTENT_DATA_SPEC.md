@@ -247,3 +247,28 @@ immediately previous target during selection from the balanced 60-candidate cata
 Each task still presents four distinct objects in seeded order. Older revision-1/2
 plans restore unchanged; the no-repeat rule applies to newly generated rounds, not
 retrospective mutation of saved tasks. See NATIVE_ARCHITECTURE_SPEC.md.
+
+## Colour Sort starter content (2026-09-29)
+
+`activity.colours.sort`, revision 1/content 1.1, uses `rule.sort.colour`, canonical
+`colour.red` / `colour.blue` from CoreContent, and four explicit items:
+`object.colours.red_ball`, `blue_ball`, `red_block`, `blue_block` (same prefix).
+Each colour has a ball and block, so shape does not identify the correct group. Both
+colours are intentionally highly distinguishable; no existing artwork is recoloured.
+Native primitive tokens are authored representations for this bounded mechanic.
+
+EN: red ball, blue ball, red block, blue block. DE: roter Ball, blauer Ball, roter
+Baustein, blauer Baustein. Instruction: “Sort by colour. Tap an object, then its colour
+group.” / “Sortiere nach Farben. Tippe auf ein Ding und dann auf die passende Farbgruppe.”
+Wrong placement: “Look at its colour. Try another group.” / “Schau dir die Farbe an.
+Probiere eine andere Gruppe.” Optional Help names the selected item's colour group;
+completion: “You sorted all the objects!” / “Du hast alle Dinge sortiert!”
+
+Four items form one complete set (independent of the quiz round-length setting). Only
+tray order is seeded; category order/membership are stable and the saved order is restored
+without generation. Item ordinals in the authored list provide stable attempt IDs even
+when tray order differs. Evidence uses `skill.colours.sort` and
+`context.colours.balls_blocks`, with actual attempted category, attempts/retries and
+SupportUse. Replay before selection records support for remaining items; after selection
+it records support only for that item. Help records a hint only for the selected item.
+Neither control submits an attempt or emits progress itself. No mastery claim is made.

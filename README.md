@@ -21,6 +21,7 @@ Substantial native learning experiences now include:
 - **Wilma's Week / Wilmas Woche** — Explore, Find Day, Before/After and weekday ordering.
 - **Vocabulary Booster** — bilingual vocabulary exploration and picture/word recognition.
 - **Follow the Instructions** — listening and instruction-following activities designed to grow toward richer action, placement and multi-step tasks.
+- **Colour Sort** — a bounded native tap-to-place sorting set with semantic membership, support and durable progress.
 - **Tell Me** — picture-led expressive-language activities encouraging description and conversation without automatic speech scoring.
 
 These activities increasingly share native content, audio, support, deterministic session, restoration, completion and progress foundations rather than implementing separate state systems for every screen.

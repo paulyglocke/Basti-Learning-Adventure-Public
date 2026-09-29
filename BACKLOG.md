@@ -60,6 +60,7 @@ Already implemented and not active backlog unless a regression is found:
 - Reuse the small Wilma/Seasons `OrderedPlacement` helper for future concrete sequencing consumers; extend it only for a demonstrated need.
 - **Follow the Instructions v1.1 implemented (2026-09-27):** native one-step bilingual tap instructions now draw four-object scenes from six approved animals (crocodile, dinosaur, snake, fish, horse and whale), with deterministic target/set variation and revision-1 checkpoint recovery. Physical S24/Fire acceptance remains open. Future multi-step, attribute, spatial and inhibition variants remain deferred.
 - Extend that engine later rather than creating separate frameworks for School Skills, Remember the Mission, inhibition/rule switching and compatible Move & Learn prompts.
+- Colour Sort establishes the first semantic sorting primitive with four red/blue native tokens, tap-to-place, durable restoration and shared progress/completion. Physical S24 acceptance remains pending. Future consumers must bring real content; drag, expanded colours and other curricula are not implemented.
 - Build Memory Pairs on a reusable semantic matching model when that work starts.
 - Extend content/data schemas only for concrete activity needs; avoid speculative framework work.
 - Review German grammar, language-specific phonics, number-zero semantics and native custom-number entry when their relevant activities are touched.
