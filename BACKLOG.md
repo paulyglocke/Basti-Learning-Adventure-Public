@@ -22,6 +22,8 @@ Already implemented and not active backlog unless a regression is found:
 
 - Animal Groups: second shared-sorting consumer implemented (four canonical animals, Water/Land); focused JVM/compile validation only, local instrumentation/full regression and S24 acceptance pending. No full Compare & Discover curriculum.
 
+- Wash Hands: bounded four-step build/check/remove sequencing implemented; reuses existing ordering shuffle, with separate whole-sequence control-of-error. Focused validation only; full local regression and physical acceptance pending. No full Practical Life curriculum.
+
 ## P0 — trusted daily build
 
 - Physically accept the implemented shared native completion celebration: five balloons, one-time pop, canonical animal reveal, brief local confetti, Sound Off-aware SFX, immediate Continue/Home, no progress/session coupling. Cleaned celebration artwork is physically verified on S24 (`a8877b5`); do not repeat transparency cleanup. Remaining motion/audio/accessibility checks and Fire Max acceptance are separate.

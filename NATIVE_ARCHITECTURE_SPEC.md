@@ -480,3 +480,42 @@ speech changes. Completion and balloons reuse the existing native implementation
 
 This adds no drag, multi-attribute rules, grading, curriculum hub or future consumers.
 The reusable primitive contains no colour, animal, habitat or visual-coordinate terms.
+
+## Build-and-check sequencing: Wash Hands first consumer (2026-09-30)
+
+Wilma and Seasons already share `learning/sequencing/OrderedPlacement`: only the correct
+next item enters a permanent prefix, with per-position retry locks. Wash Hands requires
+free construction, removal and whole-sequence Check, so migrating those consumers would
+change their learning contract. Both existing consumers and OrderedPlacement are unchanged.
+
+`SequenceAssembly` in the same sequencing package reuses `OrderedPlacement.scramble`
+(seeded, guaranteed not already canonical). Its pure immutable state retains semantic
+session/target/presentation/constructed IDs, revision, Check count, last checked order,
+support, optional hint position and completion. Available items are derived. Append/Remove
+never judge correctness. Check only evaluates a complete permutation; wrong orders remain
+editable. Session/revision tokens reject stale/duplicate actions. Hint identifies the first
+mismatching position without placing anything. No routine, speech, text or coordinates
+belong in this reducer. The primitive is bounded to 2–10 items like existing ordering;
+a full 12-month consumer would require an explicit bounds/progress-adapter review, not
+an unsupported promise of drop-in twelve-position progress.
+
+`WashHandsHost` follows the existing ordering/sorting atomic journal pattern, without
+modifying Sorting. Its WHS1 snapshot (activity revision 1/content 1.1, maximum 32 KB) lives
+under `noBackupFilesDir/wash-hands-session`. It retains exact state plus a pending batch
+of four position-check events and optional completion. Append/remove/listening are not
+progress evidence. Delivery retries use shared ProgressRepository/ProgressCodec identities;
+partial delivery is deduplicated. Corrupt/stale writes are preserved/rejected. Restore is
+silent, never reshuffles; Home suspends, Again starts a new identity after acknowledgement.
+No existing journal/progress schema changed.
+
+The owner follows the safe worker-publication pattern: accepted state and busy release
+are independent of speech epoch; obsolete narration is suppressed. Owner-local lazy
+DefaultAudioController respects All/Questions/Off and EN/DE cancellation. Opening,
+restoration and return allocate no speech engine. Each available or placed step has a
+separate manual Listen; instruction Replay and Help are explicit. Step Listen is content
+access, not an attempted order or hint. Shared completion/balloons/pop ownership are reused.
+
+Future routine/story/Months subsets can supply semantic target IDs to SequenceAssembly.
+Wilma/Seasons convergence should share further proven data/invariants only where useful;
+replacing their correct-prefix policy is not a mechanical migration. No full curriculum,
+drag, demonstration, sequencing hub or universal persistence framework was introduced.

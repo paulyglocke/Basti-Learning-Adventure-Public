@@ -1,5 +1,66 @@
 # V1 verification and fixes
 
+## Wash Hands: semantic sequence assembly — 2026-09-30
+
+Started clean at `95f2be9`. No commit/push. Existing Sorting, Wilma, Seasons, Follow,
+animal artwork and all authored existing content remain unchanged.
+
+Inspected WilmaOrder and SeasonsOrder: both use OrderedPlacement for correct-next-item
+prefixes and retry locks. That policy cannot support free arrangement/removal before Check.
+Added SequenceAssembly in the existing sequencing package and reused OrderedPlacement's
+seeded scramble. No duplicate correct-prefix engine or risky Wilma migration. Future
+convergence must preserve their existing policies; full twelve-month bounds/progress need
+an explicit later review (current shared domain supports 2–10, this consumer exactly four).
+
+Wash Hands / Hände waschen provides water on → wet hands → soap → rinse. Available cards
+are unnumbered and individually listenable. Tap/keyboard appends; Remove returns a step;
+Check evaluates the full order; wrong orders remain editable. Optional Help names the first
+mismatching position only. No image/drag/animation/new reward system. Shared balloons and
+Again/Home, existing audio policy and lazy owner-local engine. Opening/restore/return are
+silent. Step Listen is normal content access, not hint/attempt evidence. All/Questions/Off
+and busy-release versus stale-speech gating follow the established owner pattern.
+
+Activity revision 1/content 1.1 uses its own WHS1 atomic/checksummed journal with exact
+presentation, construction, Check count, last checked order, support/language/revision and
+pending progress. Each explicit Check records four actual position outcomes; successful
+Check adds existing completion. Partial progress delivery deduplicates after restore.
+No shared checkpoint/progress schema or SortingHost change.
+
+Focused JVM: **14/14 passed, 0 failed/errors/skips** (6 SequenceAssembly, 3 content/progress,
+5 host persistence). Production and instrumentation Kotlin compile passed on the first
+run; only existing MainActivity VIBRATOR_SERVICE deprecation warning. Focused emulator
+**9/9 passed, 0 failed/errors/skips**, first run (4 owner/audio, 1 route/recreation,
+4 EN/DE portrait/both landscape 1.5× UI cases). Keyboard setup uses InputMode.Keyboard,
+asserts focus and exactly one append. Wrong Check→Hint→remove/rebuild→completion passed.
+`git diff --check` and new-file whitespace checks passed. No full JVM, full instrumentation,
+lint or separate APK assembly run under the owner's bounded-validation instruction.
+The debug/test APKs were packaged as part of focused instrumentation. No failed runs.
+
+Commands run:
+```sh
+export JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'
+export ANDROID_HOME='/Users/paulbell/Library/Android/sdk'
+export ANDROID_SERIAL=emulator-5554
+./gradlew testDebugUnitTest --tests '*SequenceAssemblyTest' --tests '*WashHands*' compileDebugAndroidTestKotlin --console=plain
+./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.package=com.bellfamily.bastischool.ui.washhands --console=plain
+git diff --check
+```
+
+Local broad validation still required:
+```sh
+./gradlew testDebugUnitTest --console=plain
+./gradlew connectedDebugAndroidTest --console=plain
+./gradlew assembleDebug --console=plain
+./gradlew lintDebug --console=plain
+```
+
+S24: audition EN/DE instruction and each independent step Listen in All/Questions/Off;
+verify no auto-speech on opening/return, stale cancellation, rapid Options/Home during work,
+keyboard/D-pad/TalkBack labels and exactly-one placement, portrait/both landscapes/1.5×
+scrolling, incorrect Check→Help→remove/rebuild→correct, balloons/Again/Home, and true
+process-restored partial/support state. No physical acceptance claimed. Text-only starter
+requires working audio/adult support for a non-reader; it is not a complete hygiene routine.
+
 ## Animal Groups keyboard-test correction — 2026-09-29
 
 Preserved the existing uncommitted Animal Groups implementation. The owner-reported

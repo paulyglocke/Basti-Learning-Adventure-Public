@@ -197,3 +197,20 @@ wrapping text preserve access at large font/short height. Keyboard activation sh
 the tap operation. Drag is deferred. Opening is silent; Listen again/selection/Help
 request authored speech, respecting Sound Off. Home/back retains the exact puzzle;
 Again and shared completion/balloons follow the sorting contract.
+
+## Wash Hands v1 (2026-09-30)
+
+One native Home entry “Wash Hands” / “Hände waschen” opens WASH_HANDS, without a Practical
+Life hub. Unnumbered available step cards each offer append and a separate localized Listen.
+Tap/keyboard appends to the next open numbered position; constructed positions expose
+Step/Schritt 1–4, Listen and Remove/Zurücklegen. No drag or selected-colour convention.
+Removal compacts the remaining sequence and returns the removed item to its original tray
+ordering. Check is enabled only with all four placed; wrong orders stay visible/editable.
+Help points to one position. Correct Check reaches shared completion/balloons with Again/Home.
+
+The vertical layout scrolls; wrapped button text grows naturally with 56dp minimum targets.
+Listen labels identify their step without an extra content description; they never place
+items. Keyboard tests establish Keyboard input mode, verify focus and exact single append.
+Opening is silent; explicit Listen/Replay/Help use existing speech policy. Sound Off preserves
+visual controls but a non-reader needs spoken/adult support to understand this text-only
+starter. Home/back and Options preserve work; process restoration uses the exact journal.

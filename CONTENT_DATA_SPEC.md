@@ -292,3 +292,30 @@ Evidence uses `skill.discover.animal_habitat`, `context.discover.water_land` and
 `task.discover.animal_groups.<animal>`. The shared sorting support/attempt contract is
 unchanged: no progress for opening/Replay/Help; placements create evidence; completion
 requires all four. No Vocabulary mastery or real-world generalisation is inferred.
+
+## Wash Hands four-step sequence (2026-09-30)
+
+`activity.practical.wash_hands`, revision 1/content 1.1, uses exactly these authored IDs
+under `step.wash_hands` in target order:
+
+| Suffix | EN | DE |
+| --- | --- | --- |
+| water_on | Turn on the water | Wasser anmachen |
+| wet | Wet your hands | Hände nass machen |
+| soap | Wash with soap | Mit Seife waschen |
+| rinse | Rinse your hands | Hände abspülen |
+
+This is a bounded ordering exercise, not a complete hygiene routine/instruction programme.
+No additional steps/artwork are authored. Listen uses the exact selected step's bilingual
+ContentText; no correct-order numbering appears on available cards. The seed only controls
+the stored presentation. Help says “Check step N.” / “Schau dir Schritt N an.” for the first
+mismatching/missing position. It neither supplies the answer nor rearranges the sequence.
+
+Only explicit Check creates evidence: one AttemptEvent for each of the four evaluated
+positions, with actual submitted item, correctness, shared Check attempt count and current
+sequence-level SupportUse. Definition IDs `task.wash_hands.position_1` through `_4`, skill
+`skill.practical.sequence`, context `context.practical.wash_hands`. All-correct Check also
+creates the existing four-task CompletionEvent; earlier supported/incorrect checks remain
+distinguishable. Editing, removal and per-step Listen emit nothing. Instruction Replay
+records replay support; Hint records hint support. Step Listen is normal audio-first content
+access and does not lower independence. No score or mastery claim is displayed.
