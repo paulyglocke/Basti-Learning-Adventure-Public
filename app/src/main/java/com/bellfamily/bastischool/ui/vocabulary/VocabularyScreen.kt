@@ -1,5 +1,6 @@
 package com.bellfamily.bastischool.ui.vocabulary
 
+import com.bellfamily.bastischool.ui.common.NativeActivityTitle
 import com.bellfamily.bastischool.ui.common.NativeQuestionProgress
 
 import androidx.compose.foundation.background
@@ -47,7 +48,7 @@ fun VocabularyScreen(selection:VocabularySelection?,state:SessionState?,language
         return
     }
     Column(modifier.fillMaxSize().background(Color(0xFFEAF7FC)).verticalScroll(rememberScrollState()).padding(16.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
-        Text(t("Vocabulary Booster","Wortschatz"),style=MaterialTheme.typography.headlineMedium)
+        NativeActivityTitle(t("Vocabulary Booster","Wortschatz"))
         VocabularyPhase.entries.forEach { phase ->
             FilterChip(selection?.phase==phase,{onPhase(phase)},enabled=ready,
                 label={Text(when(phase){VocabularyPhase.EXPLORE->t("Learn words","Wörter kennenlernen");VocabularyPhase.FIND->t("Find the word","Finde das Wort");VocabularyPhase.NAME->t("What is it?","Was ist das?")})},

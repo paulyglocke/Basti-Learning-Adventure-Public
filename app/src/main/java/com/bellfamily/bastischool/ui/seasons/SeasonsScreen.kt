@@ -1,5 +1,6 @@
 package com.bellfamily.bastischool.ui.seasons
 
+import com.bellfamily.bastischool.ui.common.NativeActivityTitle
 import com.bellfamily.bastischool.ui.common.NativeQuestionProgress
 
 import androidx.compose.foundation.Image
@@ -67,7 +68,7 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
         return
     }
     Column(modifier.fillMaxSize().background(Color(0xFFEAF7FC)).verticalScroll(rememberScrollState()).padding(16.dp), verticalArrangement=Arrangement.spacedBy(12.dp)) {
-        Text(t("Seasons", "Jahreszeiten"),style=MaterialTheme.typography.headlineMedium)
+        NativeActivityTitle(t("Seasons", "Jahreszeiten"))
         SeasonModes(selection?.phase,language,ready,onPhase)
         if(saveFailed) Text(t("Progress could not be saved or restored. Please try again. Saved records are kept.",
             "Der Fortschritt konnte nicht gespeichert oder wiederhergestellt werden. Bitte versuche es erneut. Gespeicherte Einträge bleiben erhalten."))

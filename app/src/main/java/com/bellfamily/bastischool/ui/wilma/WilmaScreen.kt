@@ -1,5 +1,6 @@
 package com.bellfamily.bastischool.ui.wilma
 
+import com.bellfamily.bastischool.ui.common.NativeActivityTitle
 import com.bellfamily.bastischool.ui.common.NativeQuestionProgress
 
 import androidx.compose.foundation.*
@@ -55,7 +56,7 @@ fun WilmaScreen(selection:WilmaSelection?,quiz:SessionState?,ordering:WilmaOrder
         return
     }
     Column(modifier.fillMaxSize().background(Color(0xFFF1F8E9)).verticalScroll(rememberScrollState()).padding(16.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
-        Text(t("Wilma’s Week","Wilmas Woche"),style=MaterialTheme.typography.headlineMedium)
+        NativeActivityTitle(t("Wilma’s Week","Wilmas Woche"))
         WilmaPhase.entries.chunked(2).forEach {row -> Row(horizontalArrangement=Arrangement.spacedBy(8.dp)) {row.forEach {phase ->
             OutlinedButton(onClick={onPhase(phase)},enabled=ready,modifier=Modifier.weight(1f).heightIn(min=56.dp).testTag("wilma-phase-${phase.name}")) {
                 Text(phase.title.display[language])
