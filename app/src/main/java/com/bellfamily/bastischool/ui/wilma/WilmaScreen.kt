@@ -1,5 +1,7 @@
 package com.bellfamily.bastischool.ui.wilma
 
+import com.bellfamily.bastischool.ui.common.NativeQuestionProgress
+
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectable
@@ -77,7 +79,7 @@ fun WilmaScreen(selection:WilmaSelection?,quiz:SessionState?,ordering:WilmaOrder
                 WilmaPhase.FIND,WilmaPhase.RELATIONS -> if(quiz!=null) {
                     val canAct=ready && quiz.language==language
                     if(quiz.phase==SessionPhase.ACTIVE) {
-                        Text(t("Question ${quiz.index+1} of ${quiz.plan.tasks.size}","Frage ${quiz.index+1} von ${quiz.plan.tasks.size}"))
+                        NativeQuestionProgress(quiz.index+1,quiz.plan.tasks.size,language)
                         Text(quiz.task.question.instruction.display[language],style=MaterialTheme.typography.headlineSmall,modifier=Modifier.testTag("wilma-prompt"))
                         Text(t("Swipe along Wilma to find all seven days.","Wische an Wilma entlang, um alle sieben Tage zu finden."))
                         WilmaStrip(images,language,quiz.task.question.choices,quiz.current.lastChoice,

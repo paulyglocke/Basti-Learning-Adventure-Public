@@ -1,5 +1,7 @@
 package com.bellfamily.bastischool.ui.seasons
 
+import com.bellfamily.bastischool.ui.common.NativeQuestionProgress
+
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -125,9 +127,9 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
         } else if(state!=null) {
             val task=state.task
             val canAct=ready && state.language==language
-            Text(if(state.phase==SessionPhase.COMPLETED)t("Adventure complete!","Abenteuer geschafft!")
-                else t("Question ${state.index+1} of ${state.plan.tasks.size}","Frage ${state.index+1} von ${state.plan.tasks.size}"),
+            if(state.phase==SessionPhase.COMPLETED) Text(t("Adventure complete!","Abenteuer geschafft!"),
                 style=MaterialTheme.typography.headlineSmall,modifier=Modifier.testTag("seasons-progress"))
+            else NativeQuestionProgress(state.index+1,state.plan.tasks.size,language,Modifier.testTag("seasons-progress"))
             NativeActionButton(t("Listen again","Noch einmal hören"), NativeActionRole.SECONDARY, onClick=onReplay,enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-replay"))
             if(state.phase==SessionPhase.ACTIVE) {
                 Text(task.question.instruction.display[language],style=MaterialTheme.typography.titleLarge,modifier=Modifier.testTag("seasons-prompt"))
