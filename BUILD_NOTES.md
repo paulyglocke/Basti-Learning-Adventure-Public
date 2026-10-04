@@ -1,5 +1,46 @@
 # V1 verification and fixes
 
+## P1 visual-system checkpoint — 2026-10-04
+
+Verified clean main at `6e9f3c6` after `2b9f675`. Shared NativeActionButton,
+NativeTextChoice, NativeSupportMessage and native completion presentation are already
+adopted in their established scopes; they are not new unfinished rollout tasks.
+
+NativeQuestionProgress takes one-based current/total, ContentLanguage and Modifier.
+It owns only “Question N of M” / “Frage N von M”, headlineSmall typography and natural
+wrapping. Consumers: Prepositions practice, Seasons recognition/next/before,
+Vocabulary FIND/NAME and Wilma quizzes. Callers retain state derivation and placement;
+`progress` / `seasons-progress` tags and completion wording are preserved. Ordering
+placement counts remain custom. Wilma's quiz counter changed from default Text styling
+to headlineSmall; no progress bars, percentages, animation or automatic announcements.
+
+NativeActivityTitle takes the already-authored title and optional Modifier and uses
+headlineMedium. Seasons/Jahreszeiten, Vocabulary Booster/Wortschatz and
+Wilma’s Week/Wilmas Woche retain their exact wording, placement and spacing. These
+three title sites had no tags. Prepositions has no equivalent activity title and remains
+intentionally excluded. Prompts, Replay and navigation are not combined with titles.
+
+Image-choice sharing was inspected and deliberately deferred: Vocabulary FIND's
+centred fixed-100dp artwork, hint-only label, animal semantics and fallback differ from
+Seasons ordering's 4:3 artwork, always-visible label and missing-art gate. Their filled
+versus outlined interaction containers also remain caller-owned. Sharing Fit alone adds
+little value; a configurable wrapper is not justified yet. No image-choice implementation
+was made. Wilma colour-cued illustrated/day choices, selected borders, ordering and
+auto-follow stay custom; Prepositions scene artwork is passive. Separate Listen controls,
+learning/audio/session behaviour and completion are unchanged by these slices.
+
+Recorded validation before the commits: progress slice — 365/365 JVM and 12/12 focused
+emulator screen tests; title slice — 365/365 JVM and 10/10 focused emulator screen tests.
+Both had zero failures/skips, successful assembleDebug/assembleDebugAndroidTest and
+clean diff checks. Full instrumentation and lint were not run for these slices. This
+2026-10-04 documentation sync runs no tests/builds and adds no new validation claim.
+
+Physical S24/Fire acceptance remains separate and pending for these presentations:
+EN/DE portrait, both short landscapes, 1.5× font, wrapping/scroll reachability,
+TalkBack/keyboard, touch targets and disabled contrast; specifically review Wilma's
+larger quiz counter. Preserve earlier accepted learning-flow results without treating
+them as acceptance of the new presentation. Earlier dated entries below are historical.
+
 ## Wash Hands: semantic sequence assembly — 2026-09-30
 
 Started clean at `95f2be9`. No commit/push. Existing Sorting, Wilma, Seasons, Follow,
