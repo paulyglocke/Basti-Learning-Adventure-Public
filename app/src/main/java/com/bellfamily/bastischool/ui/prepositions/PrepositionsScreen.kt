@@ -96,7 +96,7 @@ private fun Answers(state: SessionState, language: ContentLanguage, ready: Boole
         state.task.question.choices.forEach { choice ->
             val label = PrepositionsContent.repository.find(choice)!!.text.display[language]
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                NativeTextChoice(label = label, onClick = { state.nextAttempt?.let { action(SessionAction.Answer(it, choice)) } },
+                NativeTextChoice(label = answerPhrase(PrepositionsContent.scene(state.task), choice, language), onClick = { state.nextAttempt?.let { action(SessionAction.Answer(it, choice)) } },
                     enabled = ready && state.current.answer == AnswerState.UNANSWERED,
                     modifier = Modifier.weight(1f).heightIn(min = 64.dp).testTag("answer-${choice.value}"))
                 OutlinedButton(onClick = { option(choice) }, enabled = ready,
@@ -112,12 +112,56 @@ private fun Answers(state: SessionState, language: ContentLanguage, ready: Boole
 /** Complete 4:3 artwork, never cropped. Failed decoding is presentation-only. */
 @Composable
 internal fun PositionSceneImage(scene: PositionScene, language: ContentLanguage, artwork: ImageBitmap?, modifier: Modifier) {
-    val frame = modifier.aspectRatio(4f / 3f).testTag("position-scene")
-    if (artwork != null) Image(artwork, scene.description[language], frame, contentScale = ContentScale.Fit)
-    else Box(frame.background(MaterialTheme.colorScheme.surfaceVariant)
-        .semantics { contentDescription = scene.description[language] }, contentAlignment = Alignment.Center) {
-        Text(if (language == ContentLanguage.GERMAN) "Das Bild ist gerade nicht verfügbar. Du kannst zur bisherigen Version wechseln."
-            else "The picture is unavailable right now. You can use the previous version.",
-            modifier = Modifier.padding(16.dp).testTag("position-image-unavailable"))
+    Column(modifier, verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        val frame = Modifier.fillMaxWidth().aspectRatio(4f / 3f).testTag("position-scene")
+        if (artwork != null) Image(artwork, scene.description[language], frame, contentScale = ContentScale.Fit)
+        else Box(frame.background(MaterialTheme.colorScheme.surfaceVariant)
+            .semantics { contentDescription = scene.description[language] }, contentAlignment = Alignment.Center) {
+            Text(if (language == ContentLanguage.GERMAN) "Das Bild ist gerade nicht verfügbar. Du kannst zur bisherigen Version wechseln."
+                else "The picture is unavailable right now. You can use the previous version.",
+                modifier = Modifier.padding(16.dp).testTag("position-image-unavailable"))
+        }
+        val subject = scene.animal.subject[language].replaceFirstChar { it.uppercase() }
+        Text(if (language == ContentLanguage.GERMAN) "$subject ist…" else "$subject is…",
+            style = MaterialTheme.typography.titleLarge)
     }
+}
+
+/** Display only: preserve relation IDs, authored speech and saved question content. */
+private fun answerPhrase(scene: PositionScene, choice: ContentId, language: ContentLanguage): String {
+    val relation = PositionRelation.entries.single { it.id == choice }
+    if (relation == scene.relation) return relation.phrase[language]
+    val plural = scene.relation.count == 2 || relation == PositionRelation.BETWEEN
+    val en = when (scene.relation.reference) {
+        ReferenceObject.ROCK -> if (plural) "the two rocks" else "the rock"
+        ReferenceObject.TABLE -> if (plural) "the two tables" else "the table"
+        ReferenceObject.BOX -> if (plural) "the two boxes" else "the box"
+        ReferenceObject.CLOUD -> if (plural) "the two clouds" else "the cloud"
+        ReferenceObject.CAVE -> if (plural) "the two caves" else "the cave"
+    }
+    if (language == ContentLanguage.ENGLISH) return "${relation.label.en} $en"
+    val genitive = relation in setOf(PositionRelation.BELOW, PositionRelation.OUTSIDE, PositionRelation.NEAR)
+    val noun = when (scene.relation.reference) {
+        ReferenceObject.ROCK -> if (plural) "Steinen" else if (genitive) "des Steins" else "dem Stein"
+        ReferenceObject.TABLE -> if (plural) "Tischen" else if (genitive) "des Tisches" else "dem Tisch"
+        ReferenceObject.BOX -> if (plural) "Kisten" else "der Kiste"
+        ReferenceObject.CLOUD -> if (plural) "Wolken" else "der Wolke"
+        ReferenceObject.CAVE -> if (plural) "Höhlen" else "der Höhle"
+    }
+    val objectPhrase = if (plural) {
+        val pluralNoun = if (genitive) when (scene.relation.reference) {
+            ReferenceObject.ROCK -> "Steine"
+            ReferenceObject.TABLE -> "Tische"
+            else -> noun
+        } else noun
+        "${if (genitive) "der" else "den"} beiden $pluralNoun"
+    } else noun
+    val preposition = when (relation) {
+        PositionRelation.INSIDE -> "in"
+        PositionRelation.OUTSIDE -> "außerhalb"
+        PositionRelation.NEAR -> "in der Nähe"
+        PositionRelation.FAR_FROM -> "weit weg von"
+        else -> relation.label.de
+    }
+    return "$preposition $objectPhrase".replace("von dem ", "vom ")
 }
