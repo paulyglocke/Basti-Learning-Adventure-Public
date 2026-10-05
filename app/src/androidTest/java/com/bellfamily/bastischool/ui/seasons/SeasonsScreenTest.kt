@@ -27,12 +27,13 @@ class SeasonsScreenTest {
     private var listens=0
     private var home=0
     private var again=0
-    private fun show(lang:ContentLanguage,round:RoundLength=RoundLength.FIVE,large:Boolean=false) {
+    private fun show(lang:ContentLanguage,round:RoundLength=RoundLength.FIVE,large:Boolean=false,missing:Boolean=false) {
         val assets=InstrumentationRegistry.getInstrumentation().targetContext.assets
         val pictures=SeasonIds.canonicalOrder.associateWith {id -> assets.open(SeasonsContent.image(id).path).use {BitmapFactory.decodeStream(it).asImageBitmap()} }
-        val plan=(SeasonsContent.generate(SessionId("ui-seasons"),round,42) as GenerationResult.Generated).plan
+        val plan=((if(missing) SeasonsMissing.generate(SessionId("ui-seasons"),round,42)
+            else SeasonsContent.generate(SessionId("ui-seasons"),round,42)) as GenerationResult.Generated).plan
         current=mutableStateOf(SessionReducer.start(plan,lang,SeasonsContent.repository).state)
-        selected=mutableStateOf(SeasonsSelection())
+        selected=mutableStateOf(SeasonsSelection(phase=if(missing) SeasonsPhase.MISSING else SeasonsPhase.EXPLORE))
         compose.setContent {
             val density=LocalDensity.current
             CompositionLocalProvider(LocalDensity provides Density(density.density,if(large)1.5f else 1f)) {
@@ -95,4 +96,38 @@ class SeasonsScreenTest {
         compose.onNodeWithTag("seasons-home").assertIsDisplayed()
         compose.runOnIdle {assertEquals(10,current.value.score);assertEquals(SessionPhase.COMPLETED,current.value.phase)}
     }
+    @Test fun missingSeasonEnglishSequenceAndCompletion() = missingRound(ContentLanguage.ENGLISH, false)
+    @Test fun missingSeasonGermanLargeTextSequenceAndCompletion() = missingRound(ContentLanguage.GERMAN, true)
+
+    private fun missingRound(language: ContentLanguage, large: Boolean) {
+        show(language,large=large,missing=true)
+        val de = language == ContentLanguage.GERMAN
+        val q = current.value.task.question
+        compose.onNodeWithTag("seasons-prompt").performScrollTo().assertIsDisplayed()
+            .assertTextEquals(if(de) "Welche Jahreszeit fehlt?" else "Which season is missing?")
+        compose.onNodeWithTag("season-artwork").assertDoesNotExist()
+        SeasonIds.canonicalOrder.forEachIndexed { i, id ->
+            val name = if(id == q.correct) {
+                if(de) "Fehlende Jahreszeit" else "Missing season"
+            } else SeasonsContent.season(id).text.display[language]
+            compose.onNodeWithTag("seasons-missing-slot-${i+1}").performScrollTo().assertIsDisplayed()
+                .assertContentDescriptionEquals("Position ${i+1}: $name")
+        }
+        compose.onNodeWithTag("speaker-${q.correct.value}").performScrollTo().performClick()
+        compose.onNodeWithTag("seasons-replay").performScrollTo().performClick()
+        compose.runOnIdle { assertEquals(2,listens); assertEquals(0,current.value.current.attempts) }
+        compose.onNodeWithTag("answer-${q.choices.first {it!=q.correct}.value}").performScrollTo().performClick()
+        compose.runOnIdle { assertEquals(AnswerState.RETRY_AVAILABLE,current.value.current.answer) }
+        compose.onNodeWithTag("seasons-retry").performScrollTo().performClick()
+        compose.onNodeWithTag("seasons-hint").performScrollTo().performClick()
+        compose.runOnIdle { assertTrue(current.value.current.support.hint) }
+        repeat(5) {
+            compose.onNodeWithTag("answer-${current.value.task.question.correct.value}").performScrollTo().assertIsDisplayed().performClick()
+            compose.onNodeWithTag("seasons-next").performScrollTo().assertIsDisplayed().performClick()
+        }
+        compose.onNodeWithTag("completion-celebration").assertExists()
+        compose.onNodeWithTag("seasons-again").assertIsDisplayed()
+        compose.onNodeWithTag("seasons-home").assertIsDisplayed()
+    }
+
 }

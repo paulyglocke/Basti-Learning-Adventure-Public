@@ -39,7 +39,8 @@ class SeasonsViewModel @JvmOverloads constructor(
     private val hosts = mapOf(
         SeasonsPhase.PRACTICE to SeasonsContent.host(storage("seasons-session"),progress),
         SeasonsPhase.NEXT to SeasonsCycle.host(SeasonsPhase.NEXT,storage("seasons-next-session"),progress),
-        SeasonsPhase.BEFORE to SeasonsCycle.host(SeasonsPhase.BEFORE,storage("seasons-before-session"),progress))
+        SeasonsPhase.BEFORE to SeasonsCycle.host(SeasonsPhase.BEFORE,storage("seasons-before-session"),progress),
+        SeasonsPhase.MISSING to SeasonsMissing.host(storage("seasons-missing-session"),progress))
     private val orderHost = SeasonsOrderHost(storage("seasons-order-session"),progress)
     private val worker = Executors.newSingleThreadExecutor()
     private val main = Handler(Looper.getMainLooper())
@@ -166,7 +167,7 @@ class SeasonsViewModel @JvmOverloads constructor(
             var orderPictures = emptyMap<ContentId,ImageBitmap>()
             val imageError = try {
                 if(selected.phase == SeasonsPhase.ORDER) orderPictures = SeasonIds.canonicalOrder.associateWith(::image)
-                else {
+                else if(selected.phase != SeasonsPhase.MISSING) {
                     val target = if(snapshot == null) selected.selected else if(selected.phase == SeasonsPhase.PRACTICE) snapshot.task.question.correct
                         else SeasonsCycle.anchor(selected.phase,snapshot.task.question)
                     picture = image(target)

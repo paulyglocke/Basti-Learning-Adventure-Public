@@ -56,8 +56,9 @@ enum class SeasonsPhase(val title: ContentText) {
     PRACTICE(ContentText.plain("Practise", "Üben")),
     NEXT(ContentText.plain("What comes next?", "Was kommt danach?")),
     BEFORE(ContentText.plain("What comes before?", "Was kommt davor?")),
-    ORDER(ContentText.plain("Build the Year", "Ordne die Jahreszeiten"));
-    val isQuiz get() = this == PRACTICE || this == NEXT || this == BEFORE
+    ORDER(ContentText.plain("Build the Year", "Ordne die Jahreszeiten")),
+    MISSING(ContentText.plain("Missing season", "Fehlende Jahreszeit"));
+    val isQuiz get() = this == PRACTICE || this == NEXT || this == BEFORE || this == MISSING
     val tag get() = when(this) { EXPLORE -> "learn"; PRACTICE -> "practice"; else -> "seasons-${name.lowercase()}-mode" }
 }
 /** Browsing is not a learning attempt. Language belongs to settings, never season identity. */

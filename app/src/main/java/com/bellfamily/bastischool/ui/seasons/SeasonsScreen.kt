@@ -20,6 +20,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
@@ -134,15 +135,20 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
             NativeActionButton(t("Listen again","Noch einmal hören"), NativeActionRole.SECONDARY, onClick=onReplay,enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-replay"))
             if(state.phase==SessionPhase.ACTIVE) {
                 Text(task.question.instruction.display[language],style=MaterialTheme.typography.titleLarge,modifier=Modifier.testTag("seasons-prompt"))
-                val pictured=if(selection.phase==SeasonsPhase.PRACTICE) task.question.correct else SeasonsCycle.anchor(selection.phase,task.question)
-                if(selection.phase!=SeasonsPhase.PRACTICE) Text(SeasonsContent.season(pictured).text.display[language],modifier=Modifier.testTag("season-anchor"))
-                BoxWithConstraints {
-                    if(maxWidth>=700.dp) Row(horizontalArrangement=Arrangement.spacedBy(16.dp)) {
-                        SeasonPicture(artwork,SeasonsContent.season(pictured).spokenDescription[language],Modifier.weight(1.4f))
-                        SeasonAnswers(state,language,canAct,onAction,onOption,imageFailed,Modifier.weight(1f))
-                    } else Column(verticalArrangement=Arrangement.spacedBy(12.dp)) {
-                        SeasonPicture(artwork,SeasonsContent.season(pictured).spokenDescription[language],Modifier.fillMaxWidth())
-                        SeasonAnswers(state,language,canAct,onAction,onOption,imageFailed,Modifier.fillMaxWidth())
+                if(selection.phase==SeasonsPhase.MISSING) {
+                    MissingSeasonSequence(task.question.correct,language)
+                    SeasonAnswers(state,language,canAct,onAction,onOption,imageFailed,Modifier.fillMaxWidth())
+                } else {
+                    val pictured=if(selection.phase==SeasonsPhase.PRACTICE) task.question.correct else SeasonsCycle.anchor(selection.phase,task.question)
+                    if(selection.phase!=SeasonsPhase.PRACTICE) Text(SeasonsContent.season(pictured).text.display[language],modifier=Modifier.testTag("season-anchor"))
+                    BoxWithConstraints {
+                        if(maxWidth>=700.dp) Row(horizontalArrangement=Arrangement.spacedBy(16.dp)) {
+                            SeasonPicture(artwork,SeasonsContent.season(pictured).spokenDescription[language],Modifier.weight(1.4f))
+                            SeasonAnswers(state,language,canAct,onAction,onOption,imageFailed,Modifier.weight(1f))
+                        } else Column(verticalArrangement=Arrangement.spacedBy(12.dp)) {
+                            SeasonPicture(artwork,SeasonsContent.season(pictured).spokenDescription[language],Modifier.fillMaxWidth())
+                            SeasonAnswers(state,language,canAct,onAction,onOption,imageFailed,Modifier.fillMaxWidth())
+                        }
                     }
                 }
                 if(state.current.answer==AnswerState.CORRECT) Text(task.question.correctFeedback.display[language])
@@ -206,5 +212,23 @@ private fun PlacedSeasons(state: SeasonsOrderState, images: Map<ContentId,ImageB
                 Text("${state.placed.indexOf(id)+1}. ${SeasonsContent.season(id).text.display[language]}")
             }
         }}
+    }
+}
+
+/** Text supplies season identity; the gap is explicit without a colour cue or answer artwork. */
+@Composable
+private fun MissingSeasonSequence(missing: ContentId, language: ContentLanguage) {
+    Column(Modifier.fillMaxWidth().testTag("seasons-missing-sequence"), verticalArrangement=Arrangement.spacedBy(8.dp)) {
+        SeasonIds.canonicalOrder.forEachIndexed { index, id ->
+            val gap = id == missing
+            val name = SeasonsContent.season(id).text.display[language]
+            Text(if(gap) "${index+1}. ?" else "${index+1}. $name",
+                style=MaterialTheme.typography.titleLarge,
+                modifier=Modifier.fillMaxWidth().testTag("seasons-missing-slot-${index+1}").clearAndSetSemantics {
+                    contentDescription = if(language==ContentLanguage.GERMAN)
+                        "Position ${index+1}: ${if(gap) "Fehlende Jahreszeit" else name}"
+                    else "Position ${index+1}: ${if(gap) "Missing season" else name}"
+                })
+        }
     }
 }
