@@ -9,7 +9,8 @@ enum class WilmaPhase(val title: ContentText) {
     EXPLORE(ContentText.plain("Learn", "Lernen")),
     FIND(ContentText.plain("Find the day", "Finde den Tag")),
     RELATIONS(ContentText.plain("Before and after", "Davor und danach")),
-    ORDER(ContentText.plain("Put the week in order", "Ordne die Woche"))
+    ORDER(ContentText.plain("Put the week in order", "Ordne die Woche")),
+    BILINGUAL(ContentText.plain("German & English weekdays", "Wochentage auf Deutsch & Englisch"))
 }
 enum class DayRelation { FIND, BEFORE, AFTER }
 

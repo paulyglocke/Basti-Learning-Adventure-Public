@@ -330,7 +330,8 @@ class MainActivity : ComponentActivity() {
                             nativeWilma.images, nativeWilma.busy, nativeWilma.saveFailed, nativeWilma.imageFailed, nativeWilma.audioFailed,
                             { celebrationSound.cancel(); nativeWilma.phase(it) }, nativeWilma::select, { celebrationSound.cancel(); nativeWilma.replay() }, nativeWilma::option,
                             nativeWilma::action, nativeWilma::orderAction, { celebrationSound.cancel(); nativeWilma.again() }, nativeWilma::retry,
-                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration)
+                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration,
+                            onBilingualDay = nativeWilma::bilingualDay)
                         ShellScreen.SEASONS -> SeasonsScreen(nativeSeasons.selection, nativeSeasons.state,
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeSeasons.artwork, nativeSeasons.busy, nativeSeasons.saveFailed, nativeSeasons.imageFailed, nativeSeasons.audioFailed,

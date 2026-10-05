@@ -74,7 +74,7 @@ class WilmaViewModel @JvmOverloads constructor(
     private fun boundary(){epoch++;audio.cancel()}
     private fun openPhase(phase:WilmaPhase,count:RoundLength,lang:ContentLanguage):List<SessionEffect> {
         val effects=when(phase) {
-            WilmaPhase.EXPLORE -> emptyList()
+            WilmaPhase.EXPLORE, WilmaPhase.BILINGUAL -> emptyList()
             WilmaPhase.ORDER -> if(order.state==null)listOfNotNull(order.open(id(),System.nanoTime(),lang)) else emptyList()
             else -> quizzes.getValue(phase).let {if(it.state==null)it.open(id(),count,System.nanoTime(),lang) else emptyList()}
         }
@@ -102,12 +102,18 @@ class WilmaViewModel @JvmOverloads constructor(
     fun replay() {
         if(!ready())return
         when(selection!!.phase) {
+            WilmaPhase.BILINGUAL -> Unit // Each bilingual day has its own explicit speech action.
             WilmaPhase.EXPLORE -> {boundary();audio.day(selection!!.selected,language,true)}
             WilmaPhase.ORDER -> ordering?.let {orderAction(WilmaOrderAction.Replay(it.task))}
             else -> quiz?.let {action(SessionAction.Replay(it.task.id))}
         }
     }
     fun option(day:ContentId) {if(ready()){boundary();audio.day(day,language)}}
+    fun bilingualDay(day:ContentId, spokenLanguage:ContentLanguage) {
+        if(!ready() || selection?.phase!=WilmaPhase.BILINGUAL || day !in WilmaContent.days)return
+        boundary()
+        audio.day(day,spokenLanguage)
+    }
     fun action(action:SessionAction) {
         if(!ready() || imageFailed && action is SessionAction.Answer)return
         val host=quizzes[selection!!.phase] ?: return

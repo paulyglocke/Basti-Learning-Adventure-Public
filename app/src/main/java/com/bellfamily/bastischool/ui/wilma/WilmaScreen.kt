@@ -34,7 +34,8 @@ fun WilmaScreen(selection:WilmaSelection?,quiz:SessionState?,ordering:WilmaOrder
     images:Map<String,ImageBitmap>,busy:Boolean,saveFailed:Boolean,imageFailed:Boolean,audioFailed:Boolean,
     onPhase:(WilmaPhase)->Unit,onDay:(ContentId)->Unit,onReplay:()->Unit,onOption:(ContentId)->Unit,
     onAction:(SessionAction)->Unit,onOrder:(WilmaOrderAction)->Unit,onAgain:()->Unit,onRetry:()->Unit,onHome:()->Unit,
-    modifier:Modifier=Modifier,onPop:(String)->Unit={}) {
+    modifier:Modifier=Modifier,onPop:(String)->Unit={},
+    onBilingualDay:(ContentId,ContentLanguage)->Unit={_,_->}) {
     val de=language==ContentLanguage.GERMAN
     fun t(en:String,german:String)=if(de)german else en
     val ready=!busy && !saveFailed && selection!=null
@@ -68,8 +69,10 @@ fun WilmaScreen(selection:WilmaSelection?,quiz:SessionState?,ordering:WilmaOrder
         if(audioFailed) Text(t("Speech is unavailable. Check the installed offline English and German voices in device settings.","Die Sprachausgabe ist nicht verfügbar. Prüfe die installierten Offline-Stimmen für Englisch und Deutsch in den Geräte-Einstellungen."))
         if(selection==null) Text(t("Opening…","Wird geöffnet…")) else {
             Text(selection.phase.title.display[language],style=MaterialTheme.typography.titleLarge)
-            NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY, onClick=onReplay,enabled=ready,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("wilma-replay"))
+            if(selection.phase!=WilmaPhase.BILINGUAL)
+                NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY, onClick=onReplay,enabled=ready,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("wilma-replay"))
             when(selection.phase) {
+                WilmaPhase.BILINGUAL -> WilmaBilingualView(images,language,ready,onBilingualDay)
                 WilmaPhase.EXPLORE -> {
                     Text(t("Tap a day to hear its name. Swipe along Wilma to see the whole week.","Tippe auf einen Tag, um seinen Namen zu hören. Wische an Wilma entlang, um die ganze Woche zu sehen."))
                     // Whole-character overview preserves orientation on narrow displays; not another answer target.

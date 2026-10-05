@@ -1,5 +1,42 @@
 # Session handoff — 2026-09-27
 
+## Wilma bilingual weekday learning (JVM/build validated; device acceptance pending)
+
+Added `WilmaPhase.BILINGUAL`: “German & English weekdays” / “Wochentage auf
+Deutsch & Englisch”. Two vertical Wilmas use existing head, weekday segment
+and tail PNGs with paired rows: Deutsch always left, English always right,
+Monday–Sunday aligned. Shared row heights accommodate wrapped labels at large
+text sizes; the existing screen scroll contains the full page. Day labels and
+colour cues come from canonical Wilma data and `WilmaDayColours`.
+
+Tapping a whole segment/label invokes `WilmaViewModel.bilingualDay(day, language)`
+and the existing `WilmaAudio.day` owner with a manual OPTION request. All and
+Questions allow explicit taps; Off suppresses them. Opening, returning and
+restoring are silent. No quiz session, progress evidence/counter, Help, Retry
+answer flow, Next, whole-page Replay or completion celebration is introduced.
+The existing image/save recovery controls remain available for loading failures.
+Each button announces its weekday and language; decorative artwork and duplicate
+label semantics are excluded. Focus follows German/English pairs down the week.
+
+The existing browsing store persists the new phase name; no journal format or
+quiz/order changes. Older binaries cannot restore the new enum name after a
+downgrade. Existing horizontal strips and ordering auto-follow are untouched.
+
+Added three JVM tests (canonical pairs/colours, alternating-language audio policy,
+browse restoration), three Compose tests (EN narrow 1.5×, DE short landscape 1.5×,
+keyboard activation), and one isolated-owner instrumentation test (tap routing,
+policy, silent restoration and absence of quiz/progress persistence).
+Validation on 2026-10-05: all 21 focused Wilma JVM tests passed (including the
+three new bilingual tests), Android test compilation and `assembleDebug` passed.
+ADB reported no connected devices, so instrumentation was not run. No lint or
+broader JVM suite ran. Emulator and physical TalkBack/D-pad/voice/large-text
+acceptance remain pending.
+
+Artwork inspection found transparent padding around the existing circular segment
+PNGs. They are reused unchanged as vertical segment-and-label stacks, with upright
+heads. Review the visual continuity between segments before deciding whether a
+future tighter vertical artwork treatment is warranted; no new artwork was made.
+
 ## Combined completion pair correction
 
 Confirmed on `9feb0a3`: completion entries reused the final task's selections.
