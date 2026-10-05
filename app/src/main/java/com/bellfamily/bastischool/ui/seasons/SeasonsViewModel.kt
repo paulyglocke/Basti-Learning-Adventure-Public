@@ -47,7 +47,7 @@ class SeasonsViewModel @JvmOverloads constructor(
         SeasonsPhase.CLUES to SeasonsClues.host(storage("seasons-clues-session"),progress))
     private val orderHost = SeasonsOrderHost(storage("seasons-order-session"),progress)
     private val matchHost = SortingHost(storage("seasons-match-session"),progress,SeasonsMatch)
-    private val combinedHost = SeasonsCombined.Host(storage("seasons-combined-session"))
+    private val combinedHost = SeasonsCombined.Host(storage("seasons-combined-session"), progress)
     private val worker = Executors.newSingleThreadExecutor()
     private val main = Handler(Looper.getMainLooper())
     private val audio = SeasonsAudio(DefaultAudioController(engineFactory, AudioMode.OFF)) { audioFailed = it is SpeechResult.Failed }
@@ -122,7 +122,7 @@ class SeasonsViewModel @JvmOverloads constructor(
         when(selection?.phase) {
             SeasonsPhase.EXPLORE -> {epoch++; audio.explore(selection!!,language,replay = true)}
             SeasonsPhase.ORDER -> ordering?.let {orderAction(SeasonsOrderAction.Replay(it.task))}
-            SeasonsPhase.COMBINED -> combinedAction(SeasonsCombined.Action.Help)
+            SeasonsPhase.COMBINED -> combined?.let { epoch++; audio.combined(it, replay = true) }
             else -> state?.let {action(SessionAction.Replay(it.task.id))}
         }
     }
@@ -150,7 +150,7 @@ class SeasonsViewModel @JvmOverloads constructor(
         work {
             if(phase == SeasonsPhase.ORDER) listOfNotNull(orderHost.again(id(),System.nanoTime(),lang))
             else if(phase == SeasonsPhase.MATCH) listOfNotNull(matchHost.again(id(),System.nanoTime(),lang))
-            else if(phase == SeasonsPhase.COMBINED) { combinedHost.open(id().value,count,System.nanoTime(),lang); emptyList() }
+            else if(phase == SeasonsPhase.COMBINED) { combinedHost.newRound(id().value,count,System.nanoTime(),lang); emptyList() }
             else hosts.getValue(phase).newRound(id(),count,System.nanoTime(),lang)
         }
     }

@@ -8,6 +8,8 @@ import com.bellfamily.bastischool.learning.session.ActivityId
 import com.bellfamily.bastischool.learning.session.RoundLength
 import java.util.Random
 import com.bellfamily.bastischool.learning.progress.ProgressStorage
+import com.bellfamily.bastischool.learning.progress.*
+import com.bellfamily.bastischool.learning.session.*
 import java.io.*
 
 /** The bounded two-slot season-cycle quiz.  Slots are deliberately ordered. */
@@ -35,18 +37,47 @@ object SeasonsCombined {
         is Action.Before -> if (s.completed) s else s.copy(before = a.id)
         is Action.After -> if (s.completed) s else s.copy(after = a.id)
         Action.Help -> if (s.help) s else s.copy(help = true)
-        Action.Retry -> s.copy(attempts = s.attempts + 1)
-        Action.Check -> if (s.solved) s else s.copy(attempts = s.attempts + 1)
+        Action.Retry -> s
+        Action.Check -> s.copy(attempts = s.attempts + 1)
         is Action.Language -> s.copy(language = a.value)
         Action.Next -> if (!s.solved) s else if (s.index + 1 >= s.tasks.size) s.copy(completed = true) else s.copy(index = s.index + 1, before = null, after = null, attempts = 0, help = false)
     }
-    class Host(private val storage: ProgressStorage) {
+    class Host(private val storage: ProgressStorage, private val progress: ProgressRepository? = null) {
         var state: State? = null; private set
         fun open(id: String, round: RoundLength, seed: Long, language: ContentLanguage) {
             val bytes = storage.access { it.read() }
             state = if (bytes == null) State(id, generate(round, seed), language = language).also { save(it) } else decode(bytes)
         }
-        fun dispatch(action: Action) { state = reduce(requireNotNull(state), action).also { save(it) } }
+        fun newRound(id: String, round: RoundLength, seed: Long, language: ContentLanguage) {
+            require(state?.completed == true)
+            state = State(id, generate(round, seed), language = language).also { save(it) }
+        }
+        fun dispatch(action: Action) {
+            val before = requireNotNull(state)
+            val next = reduce(before, action)
+            if (next === before) return
+            if (action == Action.Check && before.before != null && before.after != null) {
+                progress?.append(attemptEvent(before))
+            }
+            if (action == Action.Next && before.solved && next.completed) {
+                progress?.append(completionEvent(before))
+            }
+            state = next.also { save(it) }
+        }
+        private fun origin(s: State) = ProgressOrigin(SessionId(s.id), activity, REVISION, SeasonsContent.repository.version)
+        private fun evidence(s: State, ordinal: Int) = TaskEvidence(TaskInstanceId(SessionId(s.id), ordinal),
+            TaskDefinitionId("task.seasons.combined.${s.task.anchor.value.substringAfter('.') }"),
+            SkillId("skill.seasons.combined"), LearningContextId("context.seasons.year_cycle"), 2)
+        /** A semantic content ID keeps both ordered slots inside the existing progress schema. */
+        private fun encoded(s: State) = ContentId("season.combined.${s.before!!.value.substringAfter('.')}.${s.after!!.value.substringAfter('.')}")
+        private fun attemptEvent(s: State) = AttemptEvent(origin(s), evidence(s, s.index + 1),
+            AttemptId(TaskInstanceId(SessionId(s.id), s.index + 1), s.attempts + 1), s.language, encoded(s),
+            if (s.solved) AttemptOutcome.CORRECT else AttemptOutcome.INCORRECT, SupportUse(hint = s.help))
+        private fun completionEvent(s: State) = CompletionEvent(origin(s), s.tasks.mapIndexed { index, task ->
+            CompletedTask(TaskEvidence(TaskInstanceId(SessionId(s.id), index + 1),
+                TaskDefinitionId("task.seasons.combined.${task.anchor.value.substringAfter('.') }"), SkillId("skill.seasons.combined"),
+                LearningContextId("context.seasons.year_cycle"), 2), encoded(s), AttemptOutcome.CORRECT, 1, 0, SupportUse())
+        })
         private fun save(s: State) { val out=ByteArrayOutputStream(); DataOutputStream(out).use { o -> o.writeInt(1);o.writeUTF(s.id);o.writeUTF(s.language.name);o.writeInt(s.index);o.writeInt(s.attempts);o.writeBoolean(s.help);o.writeBoolean(s.completed);o.writeUTF(s.before?.value ?: "");o.writeUTF(s.after?.value ?: "");o.writeInt(s.tasks.size);s.tasks.forEach { t -> o.writeUTF(t.anchor.value);t.choices.forEach { o.writeUTF(it.value) } } }; storage.access { it.replace(out.toByteArray()) } }
         private fun decode(bytes: ByteArray): State = DataInputStream(ByteArrayInputStream(bytes)).use { i -> require(i.readInt()==1);val id=i.readUTF();val lang=ContentLanguage.valueOf(i.readUTF());val index=i.readInt();val attempts=i.readInt();val help=i.readBoolean();val complete=i.readBoolean();val before=i.readUTF().takeIf { it.isNotEmpty() }?.let(::ContentId);val after=i.readUTF().takeIf { it.isNotEmpty() }?.let(::ContentId);val tasks=List(i.readInt()) { task(ContentId(i.readUTF()),List(4){ContentId(i.readUTF())}) };State(id,tasks,index,before,after,attempts,help,lang,complete) }
     }

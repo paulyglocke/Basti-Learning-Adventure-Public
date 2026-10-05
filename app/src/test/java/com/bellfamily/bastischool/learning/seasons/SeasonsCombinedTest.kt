@@ -6,8 +6,16 @@ import com.bellfamily.bastischool.learning.session.RoundLength
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotEquals
 import org.junit.Test
+import org.junit.Rule
+import org.junit.rules.TemporaryFolder
+import com.bellfamily.bastischool.learning.progress.AtomicProgressStorage
+import com.bellfamily.bastischool.learning.progress.JvmAtomicCommit
+import com.bellfamily.bastischool.learning.progress.AttemptEvent
+import com.bellfamily.bastischool.learning.progress.CompletionEvent
+import com.bellfamily.bastischool.learning.progress.ProgressFixtures
 
 class SeasonsCombinedTest {
+    @get:Rule val temp = TemporaryFolder()
     @Test fun everyAnchorUsesCanonicalPreviousAndNextIncludingWrap() {
         SeasonIds.canonicalOrder.forEach { anchor ->
             val task = SeasonsCombined.task(anchor)
@@ -54,5 +62,34 @@ class SeasonsCombinedTest {
         state = SeasonsCombined.reduce(state, SeasonsCombined.Action.After(task.after))
         state = SeasonsCombined.reduce(state, SeasonsCombined.Action.Next)
         assertEquals(true, state.completed)
+    }
+    @Test fun retryDoesNotChangeAttempts() {
+        val task = SeasonsCombined.task(SeasonIds.SUMMER)
+        var state = SeasonsCombined.State("test", listOf(task), before = task.before, after = SeasonIds.WINTER)
+        state = SeasonsCombined.reduce(state, SeasonsCombined.Action.Check)
+        val attempts = state.attempts
+        state = SeasonsCombined.reduce(state, SeasonsCombined.Action.Retry)
+        assertEquals(attempts, state.attempts)
+        assertEquals(task.before, state.before)
+    }
+
+    @Test fun hostRestoresAndWritesOneAttemptPerCheckAndOneCompletion() {
+        val disk = AtomicProgressStorage(temp.newFolder(), JvmAtomicCommit)
+        val progress = ProgressFixtures.repository(temp.newFolder())
+        val host = SeasonsCombined.Host(disk, progress)
+        host.open("combined", RoundLength.FIVE, 7L, ContentLanguage.ENGLISH)
+        repeat(5) {
+            val task = host.state!!.task
+            host.dispatch(SeasonsCombined.Action.Before(task.before))
+            host.dispatch(SeasonsCombined.Action.After(task.after))
+            host.dispatch(SeasonsCombined.Action.Check)
+            host.dispatch(SeasonsCombined.Action.Next)
+        }
+        val records = ProgressFixtures.records(progress).map { it.event }
+        assertEquals(5, records.filterIsInstance<AttemptEvent>().size)
+        assertEquals(1, records.filterIsInstance<CompletionEvent>().size)
+        val restored = SeasonsCombined.Host(disk, progress)
+        restored.open("other", RoundLength.FIVE, 99L, ContentLanguage.GERMAN)
+        assertEquals(true, restored.state!!.completed)
     }
 }

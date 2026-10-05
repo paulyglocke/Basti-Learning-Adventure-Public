@@ -66,7 +66,7 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
     if(completedOrder || completedMatch || completedCombined || selection?.phase?.isQuiz == true && state?.phase == SessionPhase.COMPLETED) {
         NativeCompletionScreen(if(completedOrder) ordering!!.id.value else if(completedMatch) matching!!.id.value else if(completedCombined) combined!!.id else state!!.plan.id.value, language,
             if(completedOrder) SeasonsOrder.completion.display[language] else if(completedMatch) SeasonsMatch.completion.display[language] else if(completedCombined) if(de) "Du hast beide Nachbarn gefunden!" else "You found both neighbours!" else state!!.plan.completionText.display[language],
-            ready && (if(completedOrder) ordering!!.language else if(completedMatch) matching!!.language else state!!.language) == language,
+            ready && (if(completedOrder) ordering!!.language else if(completedMatch) matching!!.language else if(completedCombined) combined!!.language else state!!.language) == language,
             "seasons-", onReplay, onAgain, onHome, onPop, modifier, saveFailed, onRetry, audioFailed) {
             if(completedOrder) PlacedSeasons(ordering!!,orderArtwork,language)
             SeasonModes(selection!!.phase,language,ready,onPhase)

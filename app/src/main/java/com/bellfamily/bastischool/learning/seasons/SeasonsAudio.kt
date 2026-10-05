@@ -34,6 +34,13 @@ class SeasonsAudio(private val controller: AudioController, private val status: 
     fun orderOption(state: SeasonsOrderState,id: ContentId) {
         if(id in state.choices) speak(state.id.value,state.language,SeasonsContent.season(id).text,SpeechKind.OPTION,SpeechTrigger.MANUAL)
     }
+    fun combined(state: SeasonsCombined.State, replay: Boolean = false) {
+        val task = state.task
+        val anchor = SeasonsContent.season(task.anchor).text.display
+        speak(state.id, state.language,
+            ContentText.plain("Which season comes before and after ${anchor.en}?", "Welche Jahreszeit kommt vor und nach dem ${anchor.de}?"),
+            SpeechKind.INSTRUCTION, if (replay) SpeechTrigger.REPLAY else SpeechTrigger.MANUAL)
+    }
     fun effects(state: SessionState, effects: List<SessionEffect>) {
         if (!active) return
         effects.forEach { effect -> when(effect) {

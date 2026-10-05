@@ -11,12 +11,19 @@ four anchors before repetition. EN prompt is “Which season comes before and
 after [Season]?”; German uses explicit “Davor” and “Danach” slot labels with
 “Welche Jahreszeit kommt vor und nach [Season]?” The existing SeasonsAudio
 owner remains the audio boundary; no new TTS controller was introduced.
-Focused JVM coverage now includes wraparound, determinism, coverage, ordered
-partial answers, Help and completion. Focused JVM tests and `assembleDebug`
-passed on 2026-10-05; the Seasons instrumentation task could not start because
-no emulator was connected. Existing Seasons journals and modes were not
-changed. Progress-event deduplication and Compose/instrumentation coverage
-remain review items before broader acceptance.
+Hardening after commit `ea95648`: completion readiness now uses the combined
+language safely; Replay speaks the current combined prompt through
+`SeasonsAudio` with the existing replay policy; Again replaces the completed
+checkpoint with a fresh deterministic round; Retry is a no-op for attempts and
+preserves both selections. Combined Checks now emit bounded `skill.seasons.combined`
+attempt evidence with an ordered `season.combined.<before>.<after>` choice ID, and final
+completion emits the existing deduplicated `CompletionEvent` identity. Focused
+JVM tests, `assembleDebug`, and Android test compilation passed on 2026-10-05.
+`lintDebug` reached lint analysis but failed in the local Android lint service
+with the opaque `25.0.3` failure; no source lint finding was reported.
+Instrumentation was not run because no emulator was connected. Physical-device
+acceptance, TalkBack/D-pad review, and broader progress restoration/deduplication
+coverage remain pending; existing Seasons journals and modes were not changed.
 
 ## P2 Seasons: Match season to clue — 2026-10-05 (committed and pushed)
 
