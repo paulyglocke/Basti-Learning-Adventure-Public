@@ -1,5 +1,15 @@
 # Session handoff — 2026-09-27
 
+## Combined completion pair correction
+
+Confirmed on `9feb0a3`: completion entries reused the final task's selections.
+Each completed task now encodes its own canonical previous/next pair as
+`season.combined.<before>.<after>`. Live attempts, journal format and UI/audio/session
+behaviour are unchanged. The five-question regression assertion checks every pair
+and four distinct pairs rather than five copies of the final pair. Focused
+`SeasonsCombinedTest` JVM tests: all 7 passed; the subsequent validation command
+reused that up-to-date result and `assembleDebug` passed. No broader tests ran.
+
 ## P2 Seasons: combined before/after reasoning — 2026-10-05 (implementation complete; validation pending)
 
 Added the bounded `SeasonsPhase.COMBINED` marker, pure deterministic generator,

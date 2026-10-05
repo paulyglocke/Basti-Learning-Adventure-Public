@@ -88,6 +88,15 @@ class SeasonsCombinedTest {
         val records = ProgressFixtures.records(progress).map { it.event }
         assertEquals(5, records.filterIsInstance<AttemptEvent>().size)
         assertEquals(1, records.filterIsInstance<CompletionEvent>().size)
+        val pairs = records.filterIsInstance<CompletionEvent>().single().tasks.map { it.lastChoice.value }
+        val expectedPairs = host.state!!.tasks.map { task ->
+            val before = SeasonIds.previous(task.anchor).value.substringAfter('.')
+            val after = SeasonIds.next(task.anchor).value.substringAfter('.')
+            "season.combined.$before.$after"
+        }
+        assertEquals(expectedPairs, pairs)
+        assertEquals(4, pairs.toSet().size)
+        assertNotEquals(List(5) { pairs.last() }, pairs)
         val restored = SeasonsCombined.Host(disk, progress)
         restored.open("other", RoundLength.FIVE, 99L, ContentLanguage.GERMAN)
         assertEquals(true, restored.state!!.completed)

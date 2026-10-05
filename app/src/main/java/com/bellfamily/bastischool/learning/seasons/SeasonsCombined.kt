@@ -76,7 +76,9 @@ object SeasonsCombined {
         private fun completionEvent(s: State) = CompletionEvent(origin(s), s.tasks.mapIndexed { index, task ->
             CompletedTask(TaskEvidence(TaskInstanceId(SessionId(s.id), index + 1),
                 TaskDefinitionId("task.seasons.combined.${task.anchor.value.substringAfter('.') }"), SkillId("skill.seasons.combined"),
-                LearningContextId("context.seasons.year_cycle"), 2), encoded(s), AttemptOutcome.CORRECT, 1, 0, SupportUse())
+                LearningContextId("context.seasons.year_cycle"), 2),
+                ContentId("season.combined.${task.before.value.substringAfter('.')}.${task.after.value.substringAfter('.') }"),
+                AttemptOutcome.CORRECT, 1, 0, SupportUse())
         })
         private fun save(s: State) { val out=ByteArrayOutputStream(); DataOutputStream(out).use { o -> o.writeInt(1);o.writeUTF(s.id);o.writeUTF(s.language.name);o.writeInt(s.index);o.writeInt(s.attempts);o.writeBoolean(s.help);o.writeBoolean(s.completed);o.writeUTF(s.before?.value ?: "");o.writeUTF(s.after?.value ?: "");o.writeInt(s.tasks.size);s.tasks.forEach { t -> o.writeUTF(t.anchor.value);t.choices.forEach { o.writeUTF(it.value) } } }; storage.access { it.replace(out.toByteArray()) } }
         private fun decode(bytes: ByteArray): State = DataInputStream(ByteArrayInputStream(bytes)).use { i -> require(i.readInt()==1);val id=i.readUTF();val lang=ContentLanguage.valueOf(i.readUTF());val index=i.readInt();val attempts=i.readInt();val help=i.readBoolean();val complete=i.readBoolean();val before=i.readUTF().takeIf { it.isNotEmpty() }?.let(::ContentId);val after=i.readUTF().takeIf { it.isNotEmpty() }?.let(::ContentId);val tasks=List(i.readInt()) { task(ContentId(i.readUTF()),List(4){ContentId(i.readUTF())}) };State(id,tasks,index,before,after,attempts,help,lang,complete) }
