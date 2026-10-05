@@ -338,7 +338,8 @@ class MainActivity : ComponentActivity() {
                             nativeSeasons::option, { celebrationSound.cancel(); nativeSeasons.again() }, nativeSeasons::retry,
                             onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration,
                             ordering = nativeSeasons.ordering, orderArtwork = nativeSeasons.orderArtwork, onOrder = nativeSeasons::orderAction,
-                            matching = nativeSeasons.matching, onMatch = nativeSeasons::matchAction)
+                            matching = nativeSeasons.matching, onMatch = nativeSeasons::matchAction,
+                            combined = nativeSeasons.combined, onCombined = nativeSeasons::combinedAction)
                         ShellScreen.PREPOSITIONS -> PrepositionsScreen(
                             nativePositions.state, if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativePositions.busy, nativePositions.saveFailed, nativePositions.audioFailed,

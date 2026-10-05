@@ -1,5 +1,23 @@
 # Session handoff — 2026-09-27
 
+## P2 Seasons: combined before/after reasoning — 2026-10-05 (implementation complete; validation pending)
+
+Added the bounded `SeasonsPhase.COMBINED` marker, pure deterministic generator,
+ordered Before/After state model, separate `seasons-combined-session` checkpoint,
+ViewModel routing, native labelled slot UI, silent restore, Help, retryable
+partial answers, and completion flow. Answers derive through
+`SeasonIds.previous()` and `SeasonIds.next()`; five-question rounds cover all
+four anchors before repetition. EN prompt is “Which season comes before and
+after [Season]?”; German uses explicit “Davor” and “Danach” slot labels with
+“Welche Jahreszeit kommt vor und nach [Season]?” The existing SeasonsAudio
+owner remains the audio boundary; no new TTS controller was introduced.
+Focused JVM coverage now includes wraparound, determinism, coverage, ordered
+partial answers, Help and completion. Focused JVM tests and `assembleDebug`
+passed on 2026-10-05; the Seasons instrumentation task could not start because
+no emulator was connected. Existing Seasons journals and modes were not
+changed. Progress-event deduplication and Compose/instrumentation coverage
+remain review items before broader acceptance.
+
 ## P2 Seasons: Match season to clue — 2026-10-05 (committed and pushed)
 
 Added `SeasonsPhase.MATCH` / “Match season to clue” using the existing small

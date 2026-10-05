@@ -55,15 +55,17 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
                   onRetry: () -> Unit, onHome: () -> Unit, modifier: Modifier = Modifier, onPop: (String) -> Unit = {},
                   ordering: SeasonsOrderState? = null, orderArtwork: Map<ContentId,ImageBitmap> = emptyMap(),
                   onOrder: (SeasonsOrderAction) -> Unit = {}, matching: SortState? = null,
-                  onMatch: (SortAction) -> Unit = {}) {
+                  onMatch: (SortAction) -> Unit = {}, combined: SeasonsCombined.State? = null,
+                  onCombined: (SeasonsCombined.Action) -> Unit = {}) {
     val de=language==ContentLanguage.GERMAN
     fun t(en:String,german:String)=if(de)german else en
     val ready=!busy && !saveFailed && selection!=null
     val completedOrder = selection?.phase == SeasonsPhase.ORDER && ordering?.completed == true
     val completedMatch = selection?.phase == SeasonsPhase.MATCH && matching?.completed == true
-    if(completedOrder || completedMatch || selection?.phase?.isQuiz == true && state?.phase == SessionPhase.COMPLETED) {
-        NativeCompletionScreen(if(completedOrder) ordering!!.id.value else if(completedMatch) matching!!.id.value else state!!.plan.id.value, language,
-            if(completedOrder) SeasonsOrder.completion.display[language] else if(completedMatch) SeasonsMatch.completion.display[language] else state!!.plan.completionText.display[language],
+    val completedCombined = selection?.phase == SeasonsPhase.COMBINED && combined?.completed == true
+    if(completedOrder || completedMatch || completedCombined || selection?.phase?.isQuiz == true && state?.phase == SessionPhase.COMPLETED) {
+        NativeCompletionScreen(if(completedOrder) ordering!!.id.value else if(completedMatch) matching!!.id.value else if(completedCombined) combined!!.id else state!!.plan.id.value, language,
+            if(completedOrder) SeasonsOrder.completion.display[language] else if(completedMatch) SeasonsMatch.completion.display[language] else if(completedCombined) if(de) "Du hast beide Nachbarn gefunden!" else "You found both neighbours!" else state!!.plan.completionText.display[language],
             ready && (if(completedOrder) ordering!!.language else if(completedMatch) matching!!.language else state!!.language) == language,
             "seasons-", onReplay, onAgain, onHome, onPop, modifier, saveFailed, onRetry, audioFailed) {
             if(completedOrder) PlacedSeasons(ordering!!,orderArtwork,language)
@@ -101,6 +103,8 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
                     Text(selection.season.spokenDescription[language],modifier=Modifier.testTag("season-description"))
                 }
             }
+        } else if(selection.phase == SeasonsPhase.COMBINED && combined != null) {
+            SeasonsCombinedView(combined, language, ready, onCombined, onOption)
         } else if(selection.phase == SeasonsPhase.MATCH && matching != null) {
             SeasonsMatchView(matching, language, ready, onMatch, onOption, modifier = Modifier.fillMaxWidth())
         } else if(selection.phase == SeasonsPhase.ORDER && ordering != null) {
@@ -205,6 +209,31 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
         NativeSupportMessage(SeasonsMatch.hint(state).display[language])
     NativeActionButton(if(de) "Hilfe" else "Help", NativeActionRole.SECONDARY,
         { onAction(SortAction.Hint) }, Modifier.heightIn(min=56.dp).testTag("seasons-match-hint"), ready && selected != null)
+}
+
+@Composable private fun SeasonsCombinedView(state: SeasonsCombined.State, language: ContentLanguage, ready: Boolean,
+    action: (SeasonsCombined.Action) -> Unit, option: (ContentId) -> Unit) {
+    val de = language == ContentLanguage.GERMAN
+    NativeQuestionProgress(state.index + 1, state.tasks.size, language, Modifier.testTag("seasons-progress"))
+    Text(SeasonsCombined.question(state.task, language), style = MaterialTheme.typography.titleLarge,
+        modifier = Modifier.testTag("seasons-combined-prompt"))
+    Text(SeasonsContent.season(state.task.anchor).text.display[language], style = MaterialTheme.typography.headlineSmall,
+        modifier = Modifier.testTag("seasons-combined-anchor").semantics { contentDescription = if (de) "Jahreszeit: ${SeasonsContent.season(state.task.anchor).text.display[language]}" else "Anchor season: ${SeasonsContent.season(state.task.anchor).text.display[language]}" })
+    @Composable fun slot(label: String, selected: ContentId?, before: Boolean) {
+        Text(label, style = MaterialTheme.typography.titleMedium, modifier = Modifier.testTag(if (before) "seasons-before-label" else "seasons-after-label").semantics { contentDescription = label })
+        Text(selected?.let { SeasonsContent.season(it).text.display[language] } ?: "?", modifier = Modifier.testTag(if (before) "seasons-before-slot" else "seasons-after-slot").semantics { contentDescription = "$label: ${selected?.let { SeasonsContent.season(it).text.display[language] } ?: if(de) "Noch nicht ausgewählt" else "Not selected"}" })
+        state.task.choices.forEach { id ->
+            NativeTextChoice(SeasonsContent.season(id).text.display[language], onClick = { action(if (before) SeasonsCombined.Action.Before(id) else SeasonsCombined.Action.After(id)) }, enabled = ready,
+                modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("combined-${if (before) "before" else "after"}-${id.value}"))
+        }
+    }
+    slot(if (de) "Davor" else "Before", state.before, true)
+    slot(if (de) "Danach" else "After", state.after, false)
+    NativeActionButton(if (de) "Prüfen" else "Check", NativeActionRole.PRIMARY, { action(SeasonsCombined.Action.Check) }, enabled = ready && state.before != null && state.after != null, modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("seasons-combined-check"))
+    if (state.attempts > 0 && !state.solved) NativeSupportMessage(if (de) "Ein Platz stimmt noch nicht. Versuche es noch einmal." else "One place is not right yet. Try again.", Modifier.testTag("seasons-combined-feedback"))
+    if (state.help) NativeSupportMessage(SeasonsCombined.help.display[language], Modifier.testTag("seasons-combined-help"))
+    if (!state.solved) NativeActionButton(if (de) "Hilfe" else "Help", NativeActionRole.SECONDARY, { action(SeasonsCombined.Action.Help) }, enabled = ready, modifier = Modifier.heightIn(min = 56.dp).testTag("seasons-combined-help-button"))
+    if (state.solved) NativeActionButton(if (de) "Weiter" else "Next", NativeActionRole.PRIMARY, { action(SeasonsCombined.Action.Next) }, enabled = ready, modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("seasons-combined-next"))
 }
 
 @Composable
