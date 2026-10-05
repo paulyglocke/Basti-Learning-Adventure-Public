@@ -1,6 +1,6 @@
 # Session handoff — 2026-09-27
 
-## P2 Seasons: Match season to clue — 2026-10-05 (unvalidated)
+## P2 Seasons: Match season to clue — 2026-10-05 (committed and pushed)
 
 Added `SeasonsPhase.MATCH` / “Match season to clue” using the existing small
 `Sorting`/`SortingHost` membership primitive. Seasons are selectable items and the
@@ -19,11 +19,13 @@ The separate journal is `seasons-match-session`, activity `activity.seasons.matc
 revision 1, with shared Sorting progress events and completion deduplication. Existing
 CLUES, Missing Season, other Seasons modes, artwork and clue wording are unchanged.
 Added focused JVM and Compose tests for deterministic four-item membership, wrong/retry/
-Help, exact journal restoration, EN/DE completion, and German narrow layout. **No tests
-or builds run, no commit or push.** Compilation/runtime and bilingual child-use review
-remain outstanding.
+Help, exact journal restoration, EN/DE completion, and German narrow layout. After one
+test-only synchronization adjustment, full JVM tests, debug/APK-test builds, lint and
+the 17-test Seasons emulator suite passed. Commit `11c217f` (`feat: add seasons clue
+matching`) was pushed to `origin/main`; the working tree is clean. Physical device and
+bilingual child-use review remain separate acceptance work.
 
-## P2 Seasons: observable clues — 2026-10-05 (unvalidated)
+## P2 Seasons: observable clues — 2026-10-05 (committed and pushed)
 
 Started clean at `29c0503`, following the committed Missing Season mode. Added
 `SeasonsPhase.CLUES` (Season clues / Jahreszeiten-Rätsel), with eight fixed EN/DE
@@ -59,8 +61,9 @@ or policy changed. Other modes, canonical artwork and Wilma are unchanged in beh
 Added five JVM and two Compose test cases for later execution: catalogue/answers,
 determinism, altered-content rejection, durable retry/help/language/completion and progress,
 audio policy, EN/DE prompt/answer flow and 1.5× German text at narrow width.
-**No tests or builds run, no commit or push**, per owner instruction. Source review only;
-compilation and runtime behavior are unverified. Before acceptance, run focused validation
+Focused JVM, build, lint and emulator validation passed as part of the later Seasons
+validation. The implementation was committed in `b66eeba` and pushed to `origin/main`.
+Before acceptance, run focused validation
 and review wording, new mode-chip wrapping, portrait/landscapes/large text, keyboard/TalkBack,
 real host mode switching/recreation and EN/DE All/Questions/Off on the target devices.
 
