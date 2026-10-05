@@ -1,5 +1,28 @@
 # Session handoff — 2026-09-27
 
+## P2 Seasons: Match season to clue — 2026-10-05 (unvalidated)
+
+Added `SeasonsPhase.MATCH` / “Match season to clue” using the existing small
+`Sorting`/`SortingHost` membership primitive. Seasons are selectable items and the
+four deterministically selected clue identities from the existing eight-entry
+`SeasonsClues` catalogue are categories; `OrderedPlacement` was not used because
+there is no canonical placement order. The round contains all four seasons and one
+clue per season, with a seeded clue-category order and exact selected/placement state.
+
+The native interaction is tap a season, then tap its clue. Correct matches remain
+placed/locked; incorrect matches retain the selected season for retry. Help gives a
+season-oriented prompt without solving the pairing. Existing `NativeActivityTitle`,
+shared actions/support/completion and narrow scroll layout are reused. Each clue has
+an independent Listen action through `SeasonsAudio`; selection/restoration is silent.
+
+The separate journal is `seasons-match-session`, activity `activity.seasons.match`,
+revision 1, with shared Sorting progress events and completion deduplication. Existing
+CLUES, Missing Season, other Seasons modes, artwork and clue wording are unchanged.
+Added focused JVM and Compose tests for deterministic four-item membership, wrong/retry/
+Help, exact journal restoration, EN/DE completion, and German narrow layout. **No tests
+or builds run, no commit or push.** Compilation/runtime and bilingual child-use review
+remain outstanding.
+
 ## P2 Seasons: observable clues — 2026-10-05 (unvalidated)
 
 Started clean at `29c0503`, following the committed Missing Season mode. Added

@@ -28,6 +28,7 @@ import com.bellfamily.bastischool.learning.content.SeasonIds
 import com.bellfamily.bastischool.learning.models.*
 import com.bellfamily.bastischool.learning.seasons.*
 import com.bellfamily.bastischool.learning.session.*
+import com.bellfamily.bastischool.learning.sorting.*
 
 @Composable
 fun DaysSeasonsHub(language: ContentLanguage, onSeasons: () -> Unit, onWilma: () -> Unit, onLegacy: () -> Unit, modifier: Modifier = Modifier) {
@@ -53,15 +54,17 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
                   onAction: (SessionAction) -> Unit, onOption: (ContentId) -> Unit, onAgain: () -> Unit,
                   onRetry: () -> Unit, onHome: () -> Unit, modifier: Modifier = Modifier, onPop: (String) -> Unit = {},
                   ordering: SeasonsOrderState? = null, orderArtwork: Map<ContentId,ImageBitmap> = emptyMap(),
-                  onOrder: (SeasonsOrderAction) -> Unit = {}) {
+                  onOrder: (SeasonsOrderAction) -> Unit = {}, matching: SortState? = null,
+                  onMatch: (SortAction) -> Unit = {}) {
     val de=language==ContentLanguage.GERMAN
     fun t(en:String,german:String)=if(de)german else en
     val ready=!busy && !saveFailed && selection!=null
     val completedOrder = selection?.phase == SeasonsPhase.ORDER && ordering?.completed == true
-    if(completedOrder || selection?.phase?.isQuiz == true && state?.phase == SessionPhase.COMPLETED) {
-        NativeCompletionScreen(if(completedOrder) ordering!!.id.value else state!!.plan.id.value, language,
-            if(completedOrder) SeasonsOrder.completion.display[language] else state!!.plan.completionText.display[language],
-            ready && (if(completedOrder) ordering!!.language else state!!.language) == language,
+    val completedMatch = selection?.phase == SeasonsPhase.MATCH && matching?.completed == true
+    if(completedOrder || completedMatch || selection?.phase?.isQuiz == true && state?.phase == SessionPhase.COMPLETED) {
+        NativeCompletionScreen(if(completedOrder) ordering!!.id.value else if(completedMatch) matching!!.id.value else state!!.plan.id.value, language,
+            if(completedOrder) SeasonsOrder.completion.display[language] else if(completedMatch) SeasonsMatch.completion.display[language] else state!!.plan.completionText.display[language],
+            ready && (if(completedOrder) ordering!!.language else if(completedMatch) matching!!.language else state!!.language) == language,
             "seasons-", onReplay, onAgain, onHome, onPop, modifier, saveFailed, onRetry, audioFailed) {
             if(completedOrder) PlacedSeasons(ordering!!,orderArtwork,language)
             SeasonModes(selection!!.phase,language,ready,onPhase)
@@ -98,6 +101,8 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
                     Text(selection.season.spokenDescription[language],modifier=Modifier.testTag("season-description"))
                 }
             }
+        } else if(selection.phase == SeasonsPhase.MATCH && matching != null) {
+            SeasonsMatchView(matching, language, ready, onMatch, onOption, modifier = Modifier.fillMaxWidth())
         } else if(selection.phase == SeasonsPhase.ORDER && ordering != null) {
             val canAct=ready && ordering.language==language
             NativeActionButton(t("Listen again","Noch einmal hören"), NativeActionRole.SECONDARY, onClick=onReplay,enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-replay"))
@@ -165,6 +170,41 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
         }
         NativeActionButton(t("Back home","Zurück zum Start"), NativeActionRole.NAVIGATION, onClick=onHome,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-home"))
     }
+}
+
+@Composable private fun SeasonsMatchView(state: SortState, language: ContentLanguage, ready: Boolean,
+    onAction: (SortAction) -> Unit, onOption: (ContentId) -> Unit, modifier: Modifier) {
+    val de = language == ContentLanguage.GERMAN
+    NativeActionButton(if(de) "Noch einmal hören" else "Listen again", NativeActionRole.SECONDARY,
+        { onAction(SortAction.Replay) }, modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-replay"), ready)
+    Text(if(de) "Tippe eine Jahreszeit und dann den passenden Hinweis an." else "Tap a season, then its matching clue.",
+        style=MaterialTheme.typography.titleLarge, modifier=Modifier.testTag("seasons-match-prompt"))
+    val selected = state.selected
+    state.order.forEach { season ->
+        val placement = state.placement(season)
+        NativeTextChoice(SeasonsContent.season(season).text.display[language],
+            onClick={onAction(SortAction.Select(season))}, enabled=ready && !placement.placed,
+            modifier=Modifier.fillMaxWidth().heightIn(min=64.dp).testTag("match-season-${season.value}"))
+        if (selected == season && !placement.placed) NativeSupportMessage(
+            if(de) "Wähle jetzt den passenden Hinweis." else "Now choose the matching clue.")
+    }
+    state.rule.categories.forEach { clueId ->
+        val clue = SeasonsMatch.clue(clueId)
+        val matched = state.placements.any { it.placed && it.lastCategory == clueId }
+        OutlinedButton(onClick={selected?.let { onAction(SortAction.Place(state.id, it, clueId, state.placement(it).attempts+1)) }},
+            enabled=ready && selected != null && !matched,
+            modifier=Modifier.fillMaxWidth().heightIn(min=72.dp).testTag("match-clue-${clueId.value}")) {
+            Text(clue.instruction.display[language].substringBefore(if(de) " Welche Jahreszeit" else " Which season"))
+        }
+        OutlinedButton(onClick={onOption(clueId)}, enabled=ready,
+            modifier=Modifier.fillMaxWidth().heightIn(min=48.dp).testTag("match-speaker-${clueId.value}")) {
+            Text(if(de) "Hören" else "Listen")
+        }
+    }
+    if(selected != null && state.selectedPlacement?.support?.hint == true)
+        NativeSupportMessage(SeasonsMatch.hint(state).display[language])
+    NativeActionButton(if(de) "Hilfe" else "Help", NativeActionRole.SECONDARY,
+        { onAction(SortAction.Hint) }, Modifier.heightIn(min=56.dp).testTag("seasons-match-hint"), ready && selected != null)
 }
 
 @Composable

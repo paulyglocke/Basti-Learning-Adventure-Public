@@ -16,6 +16,7 @@ import com.bellfamily.bastischool.learning.progress.AtomicProgressStorage
 import com.bellfamily.bastischool.learning.progress.android.*
 import com.bellfamily.bastischool.learning.seasons.*
 import com.bellfamily.bastischool.learning.session.*
+import com.bellfamily.bastischool.learning.sorting.*
 import java.io.File
 import java.util.UUID
 import java.util.concurrent.Executors
@@ -27,6 +28,7 @@ class SeasonsViewModel @JvmOverloads constructor(
     var selection by mutableStateOf<SeasonsSelection?>(null); private set
     var state by mutableStateOf<SessionState?>(null); private set
     var ordering by mutableStateOf<SeasonsOrderState?>(null); private set
+    var matching by mutableStateOf<SortState?>(null); private set
     var artwork by mutableStateOf<ImageBitmap?>(null); private set
     var orderArtwork by mutableStateOf<Map<ContentId,ImageBitmap>>(emptyMap()); private set
     var busy by mutableStateOf(false); private set
@@ -43,6 +45,7 @@ class SeasonsViewModel @JvmOverloads constructor(
         SeasonsPhase.MISSING to SeasonsMissing.host(storage("seasons-missing-session"),progress),
         SeasonsPhase.CLUES to SeasonsClues.host(storage("seasons-clues-session"),progress))
     private val orderHost = SeasonsOrderHost(storage("seasons-order-session"),progress)
+    private val matchHost = SortingHost(storage("seasons-match-session"),progress,SeasonsMatch)
     private val worker = Executors.newSingleThreadExecutor()
     private val main = Handler(Looper.getMainLooper())
     private val audio = SeasonsAudio(DefaultAudioController(engineFactory, AudioMode.OFF)) { audioFailed = it is SpeechResult.Failed }
@@ -76,6 +79,8 @@ class SeasonsViewModel @JvmOverloads constructor(
         val phase = selection?.phase ?: return
         if(phase == SeasonsPhase.ORDER && ordering != null && ordering!!.language != desired)
             work {listOfNotNull(orderHost.dispatch(SeasonsOrderAction.Language(desired)))}
+        else if(phase == SeasonsPhase.MATCH && matching != null && matching!!.language != desired)
+            work {listOfNotNull(matchHost.dispatch(SortAction.Language(desired)))}
         else if(phase.isQuiz && state != null && state!!.language != desired)
             work {hosts.getValue(phase).dispatch(SessionAction.Language(desired))}
     }
@@ -89,6 +94,7 @@ class SeasonsViewModel @JvmOverloads constructor(
     private fun openPhase(phase: SeasonsPhase,count: RoundLength,lang: ContentLanguage): List<SessionEffect> = when {
         phase.isQuiz -> hosts.getValue(phase).let {if(it.state == null) it.open(id(),count,System.nanoTime(),lang) else emptyList()}
         phase == SeasonsPhase.ORDER -> if(orderHost.state == null) listOfNotNull(orderHost.open(id(),System.nanoTime(),lang)) else emptyList()
+        phase == SeasonsPhase.MATCH -> if(matchHost.state == null) listOfNotNull(matchHost.open(id(),System.nanoTime(),lang)) else emptyList()
         else -> emptyList()
     }
     fun phase(phase: SeasonsPhase) {
@@ -118,6 +124,7 @@ class SeasonsViewModel @JvmOverloads constructor(
         if(!ready()) return
         epoch++
         if(selection?.phase == SeasonsPhase.ORDER) ordering?.let {audio.orderOption(it,id)}
+        else if(selection?.phase == SeasonsPhase.MATCH) matching?.let {audio.clueOption(it,id)}
         else if(selection?.phase?.isQuiz == true) state?.let {audio.option(it,id)}
     }
     fun action(action: SessionAction) {
@@ -132,10 +139,11 @@ class SeasonsViewModel @JvmOverloads constructor(
     fun again() {
         if(!ready()) return
         val phase = selection!!.phase
-        if(phase == SeasonsPhase.ORDER && ordering?.completed != true || phase.isQuiz && state?.phase != SessionPhase.COMPLETED || phase == SeasonsPhase.EXPLORE) return
+        if(phase == SeasonsPhase.ORDER && ordering?.completed != true || phase == SeasonsPhase.MATCH && matching?.completed != true || phase.isQuiz && state?.phase != SessionPhase.COMPLETED || phase == SeasonsPhase.EXPLORE) return
         epoch++; audio.cancel(); val count = round; val lang = language
         work {
             if(phase == SeasonsPhase.ORDER) listOfNotNull(orderHost.again(id(),System.nanoTime(),lang))
+            else if(phase == SeasonsPhase.MATCH) listOfNotNull(matchHost.again(id(),System.nanoTime(),lang))
             else hosts.getValue(phase).newRound(id(),count,System.nanoTime(),lang)
         }
     }
@@ -146,11 +154,16 @@ class SeasonsViewModel @JvmOverloads constructor(
             browsing = selectionStore.read()
             hosts.values.filter {it.state != null}.forEach {it.retryWrites()}
             if(orderHost.state != null) orderHost.retryWrites()
+            if(matchHost.state != null) matchHost.retryWrites()
             openPhase(browsing.phase,count,lang)
             emptyList() // Reload/restoration/delivery retry never narrate.
         }
     }
     private fun ready() = visible && !busy && !saveFailed && selection != null
+    fun matchAction(action: SortAction) {
+        if(!ready() || selection?.phase != SeasonsPhase.MATCH) return
+        epoch++; audio.cancel(); work { listOfNotNull(matchHost.dispatch(action)) }
+    }
     private fun image(id: ContentId): ImageBitmap = images.getOrPut(id) {
         getApplication<Application>().assets.open(SeasonsContent.image(id).path).use {
             requireNotNull(BitmapFactory.decodeStream(it,null,BitmapFactory.Options().apply {inSampleSize = 2})).asImageBitmap()
@@ -162,8 +175,8 @@ class SeasonsViewModel @JvmOverloads constructor(
         worker.execute {
             var failed = false
             val effects = try {operation()} catch(_: Exception) {failed = true; emptyList()}
-            val selected = browsing; val snapshot = hosts[selected.phase]?.state; val ordered = orderHost.state
-            val pendingFailure = hosts.values.any {it.failure} || orderHost.failure
+            val selected = browsing; val snapshot = hosts[selected.phase]?.state; val ordered = orderHost.state; val matched = matchHost.state
+            val pendingFailure = hosts.values.any {it.failure} || orderHost.failure || matchHost.failure
             var picture: ImageBitmap? = null
             var orderPictures = emptyMap<ContentId,ImageBitmap>()
             val imageError = try {
@@ -178,7 +191,7 @@ class SeasonsViewModel @JvmOverloads constructor(
             main.post {
                 if(!closed) {
                     busy = false; saveFailed = failed || pendingFailure; imageFailed = imageError
-                    if(!failed) {selection = selected; state = snapshot; ordering = ordered; artwork = picture; orderArtwork = orderPictures}
+                    if(!failed) {selection = selected; state = snapshot; ordering = ordered; matching = matched; artwork = picture; orderArtwork = orderPictures}
                     if(!failed && !saveFailed && visible && token == epoch) {
                         if(exploreSpeech && selected.phase == SeasonsPhase.EXPLORE) audio.explore(selected,language)
                         else if(selected.phase.isQuiz && snapshot != null && snapshot.language == language) audio.effects(snapshot,effects)

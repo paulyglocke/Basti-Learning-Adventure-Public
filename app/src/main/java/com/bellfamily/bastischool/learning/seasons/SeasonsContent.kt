@@ -58,7 +58,8 @@ enum class SeasonsPhase(val title: ContentText) {
     BEFORE(ContentText.plain("What comes before?", "Was kommt davor?")),
     ORDER(ContentText.plain("Build the Year", "Ordne die Jahreszeiten")),
     MISSING(ContentText.plain("Missing season", "Fehlende Jahreszeit")),
-    CLUES(ContentText.plain("Season clues", "Jahreszeiten-Rätsel"));
+    CLUES(ContentText.plain("Season clues", "Jahreszeiten-Rätsel")),
+    MATCH(ContentText.plain("Match season to clue", "Jahreszeit zu Hinweis"));
     val isQuiz get() = this == PRACTICE || this == NEXT || this == BEFORE || this == MISSING || this == CLUES
     val tag get() = when(this) { EXPLORE -> "learn"; PRACTICE -> "practice"; else -> "seasons-${name.lowercase()}-mode" }
 }

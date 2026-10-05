@@ -3,6 +3,7 @@ package com.bellfamily.bastischool.learning.seasons
 import com.bellfamily.bastischool.audio.*
 import com.bellfamily.bastischool.learning.models.*
 import com.bellfamily.bastischool.learning.session.*
+import com.bellfamily.bastischool.learning.sorting.SortState
 
 /** One owned main-thread speech boundary for Explore and Practice; no state mutations from callbacks. */
 class SeasonsAudio(private val controller: AudioController, private val status: (SpeechResult?) -> Unit = {}) {
@@ -17,6 +18,10 @@ class SeasonsAudio(private val controller: AudioController, private val status: 
             if (replay) SpeechTrigger.REPLAY else SpeechTrigger.MANUAL)
     fun option(state: SessionState, id: ContentId) {
         if (id in state.task.question.choices) speak(state.plan.id.value, state.language, SeasonsContent.season(id).text,
+            SpeechKind.OPTION, SpeechTrigger.MANUAL)
+    }
+    fun clueOption(state: SortState, id: ContentId) {
+        if (id in state.rule.categories) speak(state.id.value, state.language, SeasonsMatch.clue(id).instruction,
             SpeechKind.OPTION, SpeechTrigger.MANUAL)
     }
     fun order(state: SeasonsOrderState, effect: SessionEffect.Narrate?) {

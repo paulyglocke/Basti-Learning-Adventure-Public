@@ -337,7 +337,8 @@ class MainActivity : ComponentActivity() {
                             nativeSeasons::select, { celebrationSound.cancel(); nativeSeasons.phase(it) }, { celebrationSound.cancel(); nativeSeasons.replay() }, nativeSeasons::action,
                             nativeSeasons::option, { celebrationSound.cancel(); nativeSeasons.again() }, nativeSeasons::retry,
                             onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration,
-                            ordering = nativeSeasons.ordering, orderArtwork = nativeSeasons.orderArtwork, onOrder = nativeSeasons::orderAction)
+                            ordering = nativeSeasons.ordering, orderArtwork = nativeSeasons.orderArtwork, onOrder = nativeSeasons::orderAction,
+                            matching = nativeSeasons.matching, onMatch = nativeSeasons::matchAction)
                         ShellScreen.PREPOSITIONS -> PrepositionsScreen(
                             nativePositions.state, if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativePositions.busy, nativePositions.saveFailed, nativePositions.audioFailed,
@@ -374,6 +375,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.TELL_ME -> nativeTellMe.state.celebrationId
             ShellScreen.PREPOSITIONS -> nativePositions.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.SEASONS -> if(nativeSeasons.selection?.phase == SeasonsPhase.ORDER) nativeSeasons.ordering?.takeIf {it.completed}?.id?.value
+                else if(nativeSeasons.selection?.phase == SeasonsPhase.MATCH) nativeSeasons.matching?.takeIf {it.completed}?.id?.value
                 else if(nativeSeasons.selection?.phase?.isQuiz == true) nativeSeasons.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value else null
             ShellScreen.VOCABULARY -> if(nativeVocabulary.selection?.phase != VocabularyPhase.EXPLORE) nativeVocabulary.quiz?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value else null
             ShellScreen.COLOUR_SORT -> nativeColourSort.state?.takeIf {it.completed && it.acknowledged}?.id?.value
