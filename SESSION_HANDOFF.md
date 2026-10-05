@@ -1,5 +1,46 @@
 # Session handoff — 2026-09-27
 
+## P2 Seasons: observable clues — 2026-10-05 (unvalidated)
+
+Started clean at `29c0503`, following the committed Missing Season mode. Added
+`SeasonsPhase.CLUES` (Season clues / Jahreszeiten-Rätsel), with eight fixed EN/DE
+questions, two per canonical season. Short observations use blossoms/new leaves,
+dense foliage, falling leaves, and snow/ice with bare branches. Source review compared
+the clues with canonical narration and all four existing illustrations; independent
+bilingual/child-use review remains pending. No colour-only or temperature-only clue.
+
+`SeasonsClues` uses CandidateTaskGenerator, SessionReducer, DurableSessionHost and
+shared progress. Activity `activity.seasons.clues`, revision 1, separate journal
+`seasons-clues-session`; skill `skill.seasons.clues` and the existing honest
+`context.seasons.lakeside_tree`. Five/ten questions have seeded clue/choice order;
+all eight candidates are visited before repetition in ten-question rounds. Five-question
+rounds take the first clue for each season plus the first remaining clue from that seeded
+eight-clue cycle, preserving relative order and choices and assigning final task ordinals.
+This guarantees all four seasons plus one distinct second clue. Ten-question generation
+is unchanged. The second Spring clue now says “Blossoms are opening on the tree, and new
+green leaves are growing.” German matches: “Am Baum öffnen sich Blüten, und neue grüne
+Blätter wachsen.” These refinements remain part of the unbuilt/unreleased revision 1;
+no journal migration is introduced. Generation changes affect new rounds only; any
+earlier development checkpoint containing the old Spring wording would fail authored
+content validation and must not be silently rewritten. Restore retains exact authored tasks and support,
+silently. Canonical content version and existing journal formats are unchanged.
+Selection stores enum names; old selections remain readable. Downgrading after selecting
+CLUES is not supported by old binaries that do not know that enum name. Future clue-copy
+changes need an explicit activity revision/recovery decision, not silent regeneration.
+
+The full short clue/question is the existing prominent, wrapping instruction and speech
+content. Existing title, progress, text choices, support, actions, separate option Listen
+and completion are reused. No clue-mode artwork is loaded/displayed; no audio mechanism
+or policy changed. Other modes, canonical artwork and Wilma are unchanged in behavior.
+
+Added five JVM and two Compose test cases for later execution: catalogue/answers,
+determinism, altered-content rejection, durable retry/help/language/completion and progress,
+audio policy, EN/DE prompt/answer flow and 1.5× German text at narrow width.
+**No tests or builds run, no commit or push**, per owner instruction. Source review only;
+compilation and runtime behavior are unverified. Before acceptance, run focused validation
+and review wording, new mode-chip wrapping, portrait/landscapes/large text, keyboard/TalkBack,
+real host mode switching/recreation and EN/DE All/Questions/Off on the target devices.
+
 ## P1 visual-system checkpoint — 2026-10-04
 
 Verified clean main at `6e9f3c6` after `2b9f675`. Shared NativeActionButton,

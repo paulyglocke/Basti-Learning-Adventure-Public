@@ -138,6 +138,8 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
                 if(selection.phase==SeasonsPhase.MISSING) {
                     MissingSeasonSequence(task.question.correct,language)
                     SeasonAnswers(state,language,canAct,onAction,onOption,imageFailed,Modifier.fillMaxWidth())
+                } else if(selection.phase==SeasonsPhase.CLUES) {
+                    SeasonAnswers(state,language,canAct,onAction,onOption,imageFailed,Modifier.fillMaxWidth())
                 } else {
                     val pictured=if(selection.phase==SeasonsPhase.PRACTICE) task.question.correct else SeasonsCycle.anchor(selection.phase,task.question)
                     if(selection.phase!=SeasonsPhase.PRACTICE) Text(SeasonsContent.season(pictured).text.display[language],modifier=Modifier.testTag("season-anchor"))
