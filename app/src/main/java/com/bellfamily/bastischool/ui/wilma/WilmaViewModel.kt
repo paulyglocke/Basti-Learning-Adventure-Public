@@ -35,7 +35,7 @@ class WilmaViewModel @JvmOverloads constructor(
     private fun storage(name:String)=AtomicProgressStorage(File(getApplication<Application>().noBackupFilesDir,name),AndroidAtomicCommit)
     private val progress=AndroidProgressRepository.create(application)
     private val browse=WilmaSelectionStore(storage("wilma-selection"))
-    private val quizzes=listOf(WilmaPhase.FIND,WilmaPhase.RELATIONS).associateWith {WilmaContent.host(it,storage("wilma-${it.name.lowercase()}"),progress)}
+    private val quizzes=listOf(WilmaPhase.FIND,WilmaPhase.RELATIONS,WilmaPhase.TODAY).associateWith {WilmaContent.host(it,storage("wilma-${it.name.lowercase()}"),progress)}
     private val order=WilmaOrderHost(storage("wilma-order"),progress)
     private val worker=Executors.newSingleThreadExecutor()
     private val main=Handler(Looper.getMainLooper())

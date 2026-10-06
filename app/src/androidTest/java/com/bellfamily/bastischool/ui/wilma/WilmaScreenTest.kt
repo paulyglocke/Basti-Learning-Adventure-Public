@@ -4,6 +4,11 @@ import android.graphics.BitmapFactory
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.*
+import androidx.compose.ui.input.InputMode
+import androidx.compose.ui.input.InputModeManager
+import androidx.compose.ui.input.key.Key
+import androidx.compose.ui.platform.LocalInputModeManager
+import androidx.compose.ui.semantics.SemanticsActions
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalDensity
@@ -25,6 +30,7 @@ class WilmaScreenTest {
     private lateinit var quiz:MutableState<SessionState>
     private lateinit var ordering:MutableState<WilmaOrderState>
     private lateinit var language:MutableState<ContentLanguage>
+    private lateinit var input:InputModeManager
     private var listens=0
     private var home=0
     private var again=0
@@ -33,11 +39,12 @@ class WilmaScreenTest {
         val paths=WilmaContent.days.map(WilmaContent::image)+listOf(WilmaContent.HEAD,WilmaContent.TAIL,WilmaContent.REFERENCE)
         val pictures=paths.associateWith {path->assets.open(path).use {requireNotNull(BitmapFactory.decodeStream(it,null,BitmapFactory.Options().apply {inSampleSize=2})).asImageBitmap()} }
         selection=mutableStateOf(WilmaSelection(phase=phase));language=mutableStateOf(lang)
-        val quizPhase=if(phase==WilmaPhase.RELATIONS)phase else WilmaPhase.FIND
+        val quizPhase=if(phase==WilmaPhase.RELATIONS || phase==WilmaPhase.TODAY)phase else WilmaPhase.FIND
         val plan=(WilmaContent.generate(quizPhase,SessionId("ui-quiz"),round,42) as GenerationResult.Generated).plan
         quiz=mutableStateOf(SessionReducer.start(plan,lang,WilmaContent.repository).state)
         ordering=mutableStateOf(WilmaOrder.start(SessionId("ui-order"),42,lang))
         compose.setContent {
+            input=LocalInputModeManager.current
             val density=LocalDensity.current
             CompositionLocalProvider(LocalDensity provides Density(density.density,if(large)1.5f else 1f)) {
                 MaterialTheme {WilmaScreen(selection.value,quiz.value,ordering.value,language.value,pictures,false,false,false,false,
@@ -46,6 +53,38 @@ class WilmaScreenTest {
                     onAgain={again++},onRetry={},onHome={home++},modifier=Modifier.width(if(large)320.dp else 700.dp))}
             }
         }
+    }
+    @OptIn(ExperimentalTestApi::class,androidx.compose.ui.ExperimentalComposeUiApi::class)
+    @Test fun todayEnglishHasFourNamedAnswersAndIndependentListenHelpRetry() {
+        show(WilmaPhase.TODAY)
+        val q=quiz.value.task.question
+        compose.onNodeWithTag("wilma-prompt").performScrollTo().assertTextEquals(q.instruction.display.en)
+        val anchor=WilmaToday.definition(q).first
+        compose.onNodeWithTag("wilma-today-anchor").performScrollTo().assertTextEquals("Today: ${WilmaContent.day(anchor).text.display.en}")
+        q.choices.forEach {id -> compose.onNodeWithTag("day-${id.value}").performScrollTo().assertHasClickAction().assertTextEquals(WilmaContent.day(id).text.display.en)}
+        compose.onNodeWithTag("wilma-speaker-${q.correct.value}").performScrollTo().performClick()
+        compose.onNodeWithTag("wilma-replay").performScrollTo().performClick()
+        compose.runOnIdle {assertEquals(2,listens);assertEquals(0,quiz.value.current.attempts)}
+        compose.onNodeWithTag("wilma-help").performScrollTo().performClick()
+        compose.onNodeWithTag("day-${q.choices.first {it!=q.correct}.value}").performScrollTo().performClick()
+        compose.onNodeWithTag("wilma-retry").performScrollTo().performClick()
+        compose.runOnIdle {assertEquals(1,quiz.value.current.attempts);assertTrue(quiz.value.current.support.hint)}
+        compose.runOnIdle {assertTrue(input.requestInputMode(InputMode.Keyboard))}
+        val answer=compose.onNodeWithTag("day-${q.correct.value}").performScrollTo()
+        answer.performSemanticsAction(SemanticsActions.RequestFocus){assertTrue(it())}
+        answer.assertIsFocused().performKeyInput {pressKey(Key.Enter)}
+        compose.runOnIdle {assertEquals(AnswerState.CORRECT,quiz.value.current.answer)}
+    }
+    @Test fun todayGermanLargeTextNarrowRoundCompletes() {
+        show(WilmaPhase.TODAY,ContentLanguage.GERMAN,large=true)
+        repeat(5) {
+            compose.onNodeWithTag("wilma-prompt").performScrollTo().assertTextEquals(quiz.value.task.question.instruction.display.de)
+            compose.onNodeWithTag("day-${quiz.value.task.question.correct.value}").performScrollTo().performClick()
+            compose.onNodeWithTag("wilma-next").performScrollTo().performClick()
+        }
+        compose.onNodeWithTag("wilma-complete").assertExists()
+        compose.onNodeWithTag("wilma-again").assertIsDisplayed().performClick()
+        compose.runOnIdle {assertEquals(1,again)}
     }
     @Test fun sevenDayTargetsSelectBilingualNamesAndHeadIsNotADay() {
         show(WilmaPhase.EXPLORE)

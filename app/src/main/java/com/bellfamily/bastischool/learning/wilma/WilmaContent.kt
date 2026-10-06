@@ -10,7 +10,8 @@ enum class WilmaPhase(val title: ContentText) {
     FIND(ContentText.plain("Find the day", "Finde den Tag")),
     RELATIONS(ContentText.plain("Before and after", "Davor und danach")),
     ORDER(ContentText.plain("Put the week in order", "Ordne die Woche")),
-    BILINGUAL(ContentText.plain("German & English weekdays", "Wochentage auf Deutsch & Englisch"))
+    BILINGUAL(ContentText.plain("German & English weekdays", "Wochentage auf Deutsch & Englisch")),
+    TODAY(ContentText.plain("Today, yesterday and tomorrow", "Heute, gestern und morgen"))
 }
 enum class DayRelation { FIND, BEFORE, AFTER }
 
@@ -54,10 +55,11 @@ object WilmaContent {
             ContentText.plain("Try again. You can ask for help.","Versuche es noch einmal. Du kannst dir helfen lassen."),hint)
     }
     fun activity(phase: WilmaPhase): ActivityId {
-        require(phase==WilmaPhase.FIND || phase==WilmaPhase.RELATIONS)
+        require(phase==WilmaPhase.FIND || phase==WilmaPhase.RELATIONS || phase==WilmaPhase.TODAY)
         return ActivityId("activity.wilma.${phase.name.lowercase()}")
     }
     fun generate(phase: WilmaPhase, id: SessionId, round: RoundLength, seed: Long): GenerationResult {
+        if(phase==WilmaPhase.TODAY)return WilmaToday.generate(id,round,seed)
         val relations = if(phase==WilmaPhase.FIND) listOf(DayRelation.FIND) else listOf(DayRelation.BEFORE,DayRelation.AFTER)
         val generated = CandidateTaskGenerator(days.flatMap { d -> relations.map {question(d,it)} }).generate(
             GenerationRequest(id,activity(phase),REVISION,SessionPolicy(round),seed,roundCompletion),repository)
@@ -74,6 +76,7 @@ object WilmaContent {
     fun validate(phase: WilmaPhase, state: SessionState) {
         require(state.plan.activity==activity(phase) && state.plan.activityRevision==REVISION && state.plan.contentVersion==repository.version)
         require(state.plan.policy.wrongAnswer==WrongAnswerPolicy.RETRY && state.plan.completionText==roundCompletion)
+        if(phase==WilmaPhase.TODAY) {WilmaToday.validate(state);return}
         state.plan.tasks.forEach { task ->
             val q=task.question;val (anchor,relation)=definition(q.definition)
             require((phase==WilmaPhase.FIND)==(relation==DayRelation.FIND))

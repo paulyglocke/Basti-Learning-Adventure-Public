@@ -1,5 +1,42 @@
 # Session handoff — 2026-09-27
 
+## Wilma Today / Yesterday / Tomorrow — 2026-10-06 (JVM/build validated)
+
+Added `WilmaPhase.TODAY`, activity `activity.wilma.today`, journal `wilma-today`.
+`WilmaToday` is bounded content/generation over the existing SessionReducer and
+DurableSessionHost, not a new state framework. It derives yesterday/tomorrow from
+WilmaContent's canonical previous/next helpers; no device date or new weekday data.
+A seeded shuffled seven-anchor cycle alternates relations from a seeded starting
+relation: five distinct anchors with a 3/2 split for five questions; all seven anchors,
+a 5/5 split and no repeated anchor/relation pair for ten. Each task has four unique,
+seeded choices with the correct weekday exactly once.
+
+Prompts: “Today is [day]. What day was yesterday?” / “Today is [day]. What day is
+tomorrow?”; “Heute ist [Tag]. Welcher Tag war gestern?” / “Heute ist [Tag]. Welcher
+Tag ist morgen?”. Canonical names supply both languages. Help explains moving one
+day back/forward. The existing scrollable quiz screen shows an explicit Today/Heute
+anchor, full-width NativeTextChoice buttons and separate named Listen controls;
+shared title/progress/support/actions/completion remain in use. Existing Wilma
+strips, artwork, colours, auto-follow and quiz generators are unchanged.
+
+Existing worker-owned host/checkpoint preserves exact plan/order, language, attempts,
+support and completion; restore/retry remains silent. Existing write-ahead shared
+ProgressRepository delivery records actual answer attempts with weekday IDs and
+`skill.weekdays.yesterday` / `skill.weekdays.tomorrow`, plus deduplicated completion.
+No journal or progress schema change. Existing selection enum names still restore;
+older app versions do not know the new TODAY selection (downgrade unsupported).
+WilmaAudio remains the sole owner with unchanged All/Questions/Off policy.
+
+Added JVM mapping/wrap/wording, 100-seed 5/10-round generation and bilingual audio
+policy tests. Extended durable host cases to TODAY for exact partial/answered restore,
+retry/help/language/completion and failed-write redelivery/deduplication. Added Compose
+EN interaction/semantics/keyboard coverage and DE 1.5× text at 320dp completion coverage.
+Validation: all 24 focused Wilma JVM tests passed (zero failures/errors/skips);
+Android test compilation and assembleDebug passed. The initial Android test compile
+exposed missing experimental keyboard-test opt-ins, now fixed. No device/emulator
+was connected, so instrumentation was not run. TalkBack/D-pad traversal, landscape
+and real offline speech still need device validation; no physical acceptance claimed.
+
 ## Prepositions question/stem and guided Listen — 2026-10-06 (JVM/build validated)
 
 Scene-derived presentation now shows “Where is the snake?” / “Wo ist die Schlange?”

@@ -40,7 +40,7 @@ fun WilmaScreen(selection:WilmaSelection?,quiz:SessionState?,ordering:WilmaOrder
     fun t(en:String,german:String)=if(de)german else en
     val ready=!busy && !saveFailed && selection!=null
     val completedOrder = selection?.phase == WilmaPhase.ORDER && ordering?.completed == true
-    val completedQuiz = selection?.phase in listOf(WilmaPhase.FIND, WilmaPhase.RELATIONS) && quiz?.phase == SessionPhase.COMPLETED
+    val completedQuiz = selection?.phase in listOf(WilmaPhase.FIND, WilmaPhase.RELATIONS, WilmaPhase.TODAY) && quiz?.phase == SessionPhase.COMPLETED
     if(completedOrder || completedQuiz) {
         val id = if(completedOrder) ordering!!.id.value else quiz!!.plan.id.value
         val sameLanguage = (if(completedOrder) ordering!!.language else quiz!!.language) == language
@@ -80,15 +80,32 @@ fun WilmaScreen(selection:WilmaSelection?,quiz:SessionState?,ordering:WilmaOrder
                     WilmaStrip(images,language,WilmaContent.days,selection.selected,if(ready)WilmaContent.days.toSet() else emptySet(),onDay)
                     Text(WilmaContent.day(selection.selected).text.display[language],style=MaterialTheme.typography.headlineSmall,modifier=Modifier.testTag("wilma-selected"))
                 }
-                WilmaPhase.FIND,WilmaPhase.RELATIONS -> if(quiz!=null) {
+                WilmaPhase.FIND,WilmaPhase.RELATIONS,WilmaPhase.TODAY -> if(quiz!=null) {
                     val canAct=ready && quiz.language==language
                     if(quiz.phase==SessionPhase.ACTIVE) {
                         NativeQuestionProgress(quiz.index+1,quiz.plan.tasks.size,language)
                         Text(quiz.task.question.instruction.display[language],style=MaterialTheme.typography.headlineSmall,modifier=Modifier.testTag("wilma-prompt"))
+                        if(selection.phase==WilmaPhase.TODAY) {
+                            val anchor=WilmaToday.definition(quiz.task.question).first
+                            val name=WilmaContent.day(anchor).text.display[language]
+                            Text(t("Today: $name","Heute: $name"),style=MaterialTheme.typography.titleLarge,
+                                modifier=Modifier.testTag("wilma-today-anchor"))
+                            quiz.task.question.choices.forEach {id ->
+                                val label=WilmaContent.day(id).text.display[language]
+                                com.bellfamily.bastischool.ui.common.NativeTextChoice(label,
+                                    onClick={quiz.nextAttempt?.let {onAction(SessionAction.Answer(it,id))}},
+                                    enabled=canAct && !imageFailed && quiz.current.answer==AnswerState.UNANSWERED && quiz.nextAttempt!=null,
+                                    modifier=Modifier.fillMaxWidth().testTag("day-${id.value}"))
+                                NativeActionButton(t("Listen: $label","Anhören: $label"),NativeActionRole.SECONDARY,
+                                    onClick={onOption(id)},enabled=canAct,
+                                    modifier=Modifier.fillMaxWidth().testTag("wilma-speaker-${id.value}"))
+                            }
+                        } else {
                         Text(t("Swipe along Wilma to find all seven days.","Wische an Wilma entlang, um alle sieben Tage zu finden."))
                         WilmaStrip(images,language,quiz.task.question.choices,quiz.current.lastChoice,
                             if(canAct && !imageFailed && quiz.current.answer==AnswerState.UNANSWERED && quiz.nextAttempt!=null)WilmaContent.days.toSet() else emptySet(),
                             {id -> quiz.nextAttempt?.let {onAction(SessionAction.Answer(it,id))}},onOption=onOption,listenEnabled=canAct)
+                        }
                         if(quiz.current.answer==AnswerState.CORRECT)Text(quiz.task.question.correctFeedback.display[language])
                         if(quiz.current.answer==AnswerState.RETRY_AVAILABLE) {
                             NativeSupportMessage(quiz.task.question.wrongFeedback.display[language])

@@ -387,7 +387,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.FOLLOW_INSTRUCTIONS -> nativeFollow.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.WILMA -> when(nativeWilma.selection?.phase) {
                 WilmaPhase.ORDER -> nativeWilma.ordering?.takeIf {it.completed}?.id?.value
-                WilmaPhase.FIND, WilmaPhase.RELATIONS -> nativeWilma.quiz?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
+                WilmaPhase.FIND, WilmaPhase.RELATIONS, WilmaPhase.TODAY -> nativeWilma.quiz?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
                 else -> null
             }
             else -> null

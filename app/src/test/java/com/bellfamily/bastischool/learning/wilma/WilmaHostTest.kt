@@ -13,7 +13,7 @@ class WilmaHostTest {
     @get:Rule val temp=TemporaryFolder()
     private fun storage()=AtomicProgressStorage(temp.newFolder(),JvmAtomicCommit)
     @Test fun findAndRelationAttemptsSupportAndCompletionPersistAcrossSilentRestore() {
-        for(phase in listOf(WilmaPhase.FIND,WilmaPhase.RELATIONS)) for(round in RoundLength.entries) {
+        for(phase in listOf(WilmaPhase.FIND,WilmaPhase.RELATIONS,WilmaPhase.TODAY)) for(round in RoundLength.entries) {
             val disk=storage();val folder=temp.newFolder();val repository=ProgressFixtures.repository(folder)
             fun open()=WilmaContent.host(phase,disk,repository).also {it.open(SessionId("${phase.name}-${round.name}"),round,42,ContentLanguage.ENGLISH)}
             var h=open();val original=SessionCheckpoint.encode(h.state!!)
@@ -24,7 +24,8 @@ class WilmaHostTest {
             assertEquals(0,h.state!!.current.attempts)
             var s=h.state!!
             h.dispatch(SessionAction.Answer(s.nextAttempt!!,s.task.question.choices.first {it!=s.task.question.correct}))
-            h=open();s=h.state!!
+            val partial=SessionCheckpoint.encode(h.state!!)
+            h=open();assertArrayEquals(partial,SessionCheckpoint.encode(h.state!!));s=h.state!!
             h.dispatch(SessionAction.Retry(AttemptId(s.task.id,s.current.attempts)))
             h.dispatch(SessionAction.Language(ContentLanguage.GERMAN))
             repeat(round.count) {
@@ -48,7 +49,7 @@ class WilmaHostTest {
         }
     }
     @Test fun failedQuizEffectRemainsRetryableWithItsOriginalIdentity() {
-        for(phase in listOf(WilmaPhase.FIND,WilmaPhase.RELATIONS)) {
+        for(phase in listOf(WilmaPhase.FIND,WilmaPhase.RELATIONS,WilmaPhase.TODAY)) {
             val disk=storage();val real=ProgressFixtures.repository(temp.newFolder());var fail=true
             val failing=object:ProgressRepository {
                 override fun append(event:ProgressEvent)=if(fail)ProgressWriteResult.Failed(ProgressFailure.IO) else real.append(event)
