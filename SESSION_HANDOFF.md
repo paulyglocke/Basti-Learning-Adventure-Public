@@ -1,5 +1,39 @@
 # Session handoff — 2026-09-27
 
+## Native Maths subitising 1–5 — 2026-10-06 (JVM/build validated)
+
+Added a bounded native `SUBITISING` route with activity `activity.math.subitising`,
+skill `skill.math.subitising.range_1_5`, and journal `subitising-session`. The
+activity reuses `ChoiceQuestion`, `SessionReducer`, `DurableSessionHost`, the shared
+progress repository, native title/progress/support/action/completion components and
+the existing audio controller boundary. No general Maths framework or image assets
+were added.
+
+`SubitisingContent` owns five stable semantic number IDs and fixed die-style dot
+coordinates: centre, diagonal pair, diagonal three, four corners, and four corners
+with centre. The Compose `DotPattern` is one semantic group with bilingual labels
+such as “Three dots” / “Drei Punkte”; individual dots are not exposed as targets.
+Answer choices are four unique number IDs, deterministically shuffled. Five-question
+rounds use each quantity once. Ten-question rounds use each twice and adjust the
+second cycle boundary to avoid an adjacent repeat without rejection sampling.
+
+The prompt is “How many?” / “Wie viele?”. Feedback is “Yes, [n]!” / “Ja, [n]!”,
+“Try again.” / “Versuch es noch einmal.”, and Help is “Look at the whole group. How
+many dots can you see?” / “Schau dir die ganze Gruppe an. Wie viele Punkte siehst
+du?”. Replay uses the existing owner and policy and speaks only the prompt. Restore,
+retry, language changes and completion use the durable session conventions; progress
+events retain the distinct activity and skill IDs and deduplicate through the shared
+recorder.
+
+Added focused JVM tests for patterns, generation, wording, exact restoration, retry,
+Help, completion, progress redelivery/deduplication and audio policy. Added Compose
+tests for semantic dot descriptions, keyboard activation, 1.5x text, narrow layout
+and short landscape reachability. Focused Subitising JVM tests passed: 6 tests, zero
+failures/errors/skips. Android test compilation and `assembleDebug` passed. No
+emulator/device was connected, so instrumentation was not run. TalkBack/D-pad
+traversal, landscape physical acceptance and offline speech remain to be validated;
+no physical-device acceptance is claimed.
+
 ## Wilma Today / Yesterday / Tomorrow — 2026-10-06 (JVM/build validated)
 
 Added `WilmaPhase.TODAY`, activity `activity.wilma.today`, journal `wilma-today`.
