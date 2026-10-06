@@ -1,5 +1,59 @@
 # Session handoff — 2026-09-27
 
+## Native Maths Number Order 1–5 — 2026-10-06 (JVM/build validated)
+
+Added separate native `NUMBER_ORDER` route and ↔️ Home entry “Number Order” /
+“Zahlenfolge”, with “Before, after and missing numbers.” / “Vorher, nachher und
+fehlende Zahlen.”. Activity `activity.math.number_order` uses the separate
+`number-order-session` journal. Existing Maths sources/journals are unchanged.
+Canonical number IDs and content repository are reused from Subitising.
+
+NumberOrderContent has BEFORE/AFTER Neighbour items and MISSING items. BEFORE
+anchors are 2–5; AFTER anchors are 1–4. No wraparound. Missing stores start, length
+(3 or 4), and gap index, with exactly one null tile in an ascending consecutive
+sequence entirely within 1–5. Task definitions use canonical number names, e.g.
+`task.math.number_order.before.four` and
+`task.math.number_order.missing.one.four.three`; these encode complete presentation
+state without adding checkpoint fields. Restore validates the parsed item against
+all saved question content, correct answer, skill and choice identities.
+
+Seeded finite candidate sampling selects 2 BEFORE / 2 AFTER / 1 MISSING for five
+questions, or 3 / 3 / 4 for ten, without duplicate task definitions. A bounded scan
+prefers a different next answer whenever available. Each question has four unique
+numeric choices from 1–5, independently shuffled with the same seeded random source.
+ChoiceQuestion, SessionReducer, DurableSessionHost and SessionProgressRecorder retain
+exact plan/order/type/sequence, language, attempts, support, completion and pending
+progress delivery. Skills are `skill.math.number_order.before`, `.after`, `.missing`
+under `context.math.number_sequence`. Again uses the existing fresh-session path;
+no shared schema changes or new general Maths framework.
+
+Prompts: “What comes before [n]?” / “Was kommt vor der [n]?”, “What comes after [n]?” /
+“Was kommt nach der [n]?”, “Which number is missing?” / “Welche Zahl fehlt?”. Help:
+“Think about the number just before/after [n].” / “Denk an die Zahl direkt vor/nach
+der [n].”, and “Read the numbers in order and find the gap.” / “Lies die Zahlen der
+Reihe nach und finde die Lücke.”. Feedback: “Yes, [n]!” / “Ja, [n]!”, and “Try again.” /
+“Versuch es noch einmal.”. Shared UI surrounds a large anchor numeral or static
+number tiles with an underscore blank. The sequence is one semantic group, e.g.
+“Sequence: 1, 2, blank, 4” / “Zahlenfolge: 1, 2, Lücke, 4”; tiles are not focusable
+or tappable. The quiz scrolls; shared numeric choices and completion are reused.
+
+NumberOrderAudio is an activity owner adapter using the existing native controller
+and Android speech engine/policy. Replay speaks the question, with anchor for BEFORE/
+AFTER and no sequence or answer for MISSING. Opening/restoring/navigation/language
+sync stay silent. There is no independent new TTS system or sequence narration.
+
+Added seven JVM tests for boundaries, all 25 candidate items, sequence invariants,
+seeded balance/choice positions, wording, audio policy/no answer leakage, exact
+restoration, all three progress skills, uncertain-write redelivery/deduplication,
+fresh Again and route separation. Three instrumentation tests cover all item types,
+single sequence semantics, keyboard/D-pad, 1.5x narrow/short layouts, retry/help/
+completion/Again and ViewModel opening/restore/language/navigation silence.
+Validation: all 25 focused Maths JVM tests passed (seven Number Order and six each
+for Compare Quantity, Quantity Match and Subitising; zero failures/errors/skips).
+Android test compilation and assembleDebug passed. No device/emulator was connected,
+so instrumentation was not run. Physical large-text/landscape and TalkBack/D-pad
+review, and installed offline EN/DE speech remain open. No physical acceptance claimed.
+
 ## Native Maths More or Fewer 1–5 — 2026-10-06 (JVM/build validated)
 
 Added native route `COMPARE_QUANTITY`, Home entry ⚖️ “More or Fewer” / “Mehr oder
