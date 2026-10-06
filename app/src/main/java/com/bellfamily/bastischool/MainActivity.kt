@@ -81,6 +81,7 @@ import com.bellfamily.bastischool.ui.tellme.*
 import com.bellfamily.bastischool.ui.followinstructions.*
 import com.bellfamily.bastischool.ui.subitising.*
 import com.bellfamily.bastischool.ui.quantitymatch.*
+import com.bellfamily.bastischool.ui.comparequantity.*
 import com.bellfamily.bastischool.ui.coloursort.*
 import com.bellfamily.bastischool.ui.animalgroups.*
 import com.bellfamily.bastischool.ui.washhands.*
@@ -125,6 +126,7 @@ private val homeCards = listOf(
     HomeCard("🦘", "Animal Actions", "Tier-Aktionen", "Jump, swim, fly and make animal sounds.", "Springen, schwimmen, fliegen und Tiergeräusche.", "verbs"),
     HomeCard("", "How many?", "Wie viele?", "Recognise dot groups from 1 to 5.", "Erkenne Punktgruppen von 1 bis 5.", "subitising"),
     HomeCard("🔗", "Numbers & Groups", "Zahlen & Mengen", "Match numerals and dot groups.", "Ordne Zahlen und Punktgruppen zu.", "quantityMatch"),
+    HomeCard("⚖️", "More or Fewer", "Mehr oder weniger", "Compare two groups.", "Vergleiche zwei Gruppen.", "compareQuantity"),
     HomeCard("➕", "Easy Maths", "Einfache Mathe", "Add and take away within 10.", "Plus und Minus bis 10.", "math"),
     HomeCard("📦", "Prepositions", "Präpositionen", "In, on, under, behind, next to and between.", "In, auf, unter, hinter, neben und zwischen.", "positions"),
     HomeCard("🌟", "Mixed Adventure", "Gemischtes Abenteuer", "A little bit of everything.", "Von allem ein bisschen.", "mixed"),
@@ -146,6 +148,7 @@ class MainActivity : ComponentActivity() {
     private lateinit var nativeColourSort: ColourSortViewModel
     private lateinit var nativeSubitising: SubitisingViewModel
     private lateinit var nativeQuantityMatch: QuantityMatchViewModel
+    private lateinit var nativeCompareQuantity: CompareQuantityViewModel
     private lateinit var nativeFollow: FollowViewModel
     private lateinit var nativeSeasons: SeasonsViewModel
     private lateinit var nativeVocabulary: VocabularyViewModel
@@ -186,6 +189,7 @@ class MainActivity : ComponentActivity() {
         nativeWashHands = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[WashHandsViewModel::class.java]
         nativeSubitising = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[SubitisingViewModel::class.java]
         nativeQuantityMatch = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[QuantityMatchViewModel::class.java]
+        nativeCompareQuantity = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[CompareQuantityViewModel::class.java]
         nativeFollow = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[FollowViewModel::class.java]
         configurePositions()
         restoredSession = savedInstanceState?.getString("legacySession")
@@ -252,6 +256,7 @@ class MainActivity : ComponentActivity() {
                                     ShellScreen.WASH_HANDS -> if (language == "de") "Hände waschen" else "Wash Hands"
                                     ShellScreen.SUBITISING -> if (language == "de") "Wie viele?" else "How many?"
                                     ShellScreen.QUANTITY_MATCH -> if (language == "de") "Zahlen & Mengen" else "Numbers & Groups"
+                                    ShellScreen.COMPARE_QUANTITY -> if (language == "de") "Mehr oder weniger" else "More or Fewer"
                                     ShellScreen.FOLLOW_INSTRUCTIONS -> if (language == "de") "Anweisungen folgen" else "Follow the Instructions"
                                     ShellScreen.SEASONS -> if (language == "de") "Jahreszeiten" else "Seasons"
                                 },
@@ -277,7 +282,7 @@ class MainActivity : ComponentActivity() {
                         ShellScreen.HOME -> NativeHome(language, padding, navigation.recoveryFailed) { card ->
                             if (!card.play) {
                                 checkpoint = LegacyCheckpoint(); restoredSession = null
-                                changeRoute(if (card.mode == "subitising") navigation.openSubitising() else if (card.mode == "quantityMatch") navigation.openQuantityMatch() else if (card.mode == "tellme") navigation.openTellMe() else if (card.mode == "washHands") navigation.openWashHands() else if (card.mode == "animalGroups") navigation.openAnimalGroups() else if (card.mode == "colourSort") navigation.openColourSort() else if (card.mode == "follow") navigation.openFollowInstructions() else if (card.mode == "vocabulary") navigation.openVocabulary() else if (card.mode == "positions") navigation.openPrepositions() else if (card.mode == "time") navigation.openDaysSeasons() else navigation.openActivity(if (card.verbExplorer) "verbExplorer" else card.mode ?: "verbs"))
+                                changeRoute(if (card.mode == "subitising") navigation.openSubitising() else if (card.mode == "compareQuantity") navigation.openCompareQuantity() else if (card.mode == "quantityMatch") navigation.openQuantityMatch() else if (card.mode == "tellme") navigation.openTellMe() else if (card.mode == "washHands") navigation.openWashHands() else if (card.mode == "animalGroups") navigation.openAnimalGroups() else if (card.mode == "colourSort") navigation.openColourSort() else if (card.mode == "follow") navigation.openFollowInstructions() else if (card.mode == "vocabulary") navigation.openVocabulary() else if (card.mode == "positions") navigation.openPrepositions() else if (card.mode == "time") navigation.openDaysSeasons() else navigation.openActivity(if (card.verbExplorer) "verbExplorer" else card.mode ?: "verbs"))
                             }
                         }
                         ShellScreen.OPTIONS -> NativeOptions(language, audioMode, round, numberMax, padding, audioStatus,
@@ -324,6 +329,10 @@ class MainActivity : ComponentActivity() {
                         ShellScreen.QUANTITY_MATCH -> QuantityMatchScreen(nativeQuantityMatch.state, if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeQuantityMatch.busy, nativeQuantityMatch.saveFailed, nativeQuantityMatch.audioFailed,
                             nativeQuantityMatch::action, nativeQuantityMatch::replay, nativeQuantityMatch::again, nativeQuantityMatch::retrySave,
+                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration)
+                        ShellScreen.COMPARE_QUANTITY -> CompareQuantityScreen(nativeCompareQuantity.state, if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            nativeCompareQuantity.busy, nativeCompareQuantity.saveFailed, nativeCompareQuantity.audioFailed,
+                            nativeCompareQuantity::action, nativeCompareQuantity::replay, { celebrationSound.cancel(); nativeCompareQuantity.again() }, nativeCompareQuantity::retrySave,
                             onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration)
                         ShellScreen.FOLLOW_INSTRUCTIONS -> FollowScreen(nativeFollow.state, if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeFollow.images, nativeFollow.busy, nativeFollow.saveFailed, nativeFollow.audioFailed,
@@ -390,6 +399,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.WASH_HANDS -> nativeWashHands.busy || nativeWashHands.saveFailed
             ShellScreen.SUBITISING -> nativeSubitising.busy || nativeSubitising.saveFailed
             ShellScreen.QUANTITY_MATCH -> nativeQuantityMatch.busy || nativeQuantityMatch.saveFailed
+            ShellScreen.COMPARE_QUANTITY -> nativeCompareQuantity.busy || nativeCompareQuantity.saveFailed
             ShellScreen.FOLLOW_INSTRUCTIONS -> nativeFollow.busy || nativeFollow.saveFailed
             else -> true
         }
@@ -406,6 +416,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.WASH_HANDS -> nativeWashHands.state?.takeIf {it.completed && it.acknowledged}?.id?.value
             ShellScreen.SUBITISING -> nativeSubitising.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.QUANTITY_MATCH -> nativeQuantityMatch.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
+            ShellScreen.COMPARE_QUANTITY -> nativeCompareQuantity.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.FOLLOW_INSTRUCTIONS -> nativeFollow.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.WILMA -> when(nativeWilma.selection?.phase) {
                 WilmaPhase.ORDER -> nativeWilma.ordering?.takeIf {it.completed}?.id?.value
@@ -435,6 +446,7 @@ class MainActivity : ComponentActivity() {
         nativeWashHands.setVisible(foreground && route.screen == ShellScreen.WASH_HANDS)
         nativeSubitising.setVisible(foreground && route.screen == ShellScreen.SUBITISING)
         nativeQuantityMatch.setVisible(foreground && route.screen == ShellScreen.QUANTITY_MATCH)
+        nativeCompareQuantity.setVisible(foreground && route.screen == ShellScreen.COMPARE_QUANTITY)
         nativeFollow.setVisible(foreground && route.screen == ShellScreen.FOLLOW_INSTRUCTIONS)
         nativeWilma.setVisible(foreground && route.screen == ShellScreen.WILMA)
         updateWebActivity()
@@ -499,6 +511,9 @@ class MainActivity : ComponentActivity() {
             prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
             prefs.getInt("round", 5))
         nativeQuantityMatch.configure(prefs.getString("lang", "en") ?: "en",
+            prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
+            prefs.getInt("round", 5))
+        nativeCompareQuantity.configure(prefs.getString("lang", "en") ?: "en",
             prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
             prefs.getInt("round", 5))
         nativeFollow.configure(prefs.getString("lang", "en") ?: "en",
@@ -614,8 +629,8 @@ class MainActivity : ComponentActivity() {
         if (navigation.ownsWebSession) outState.putString("legacySession", checkpoint.read())
         super.onSaveInstanceState(outState)
     }
-    override fun onPause() { celebrationSound.cancel(); foreground = false; nativePositions.setVisible(false); nativeSeasons.setVisible(false); nativeWilma.setVisible(false); nativeVocabulary.setVisible(false); nativeSubitising.setVisible(false); nativeQuantityMatch.setVisible(false); nativeFollow.setVisible(false); nativeColourSort.setVisible(false); nativeAnimalGroups.setVisible(false); nativeWashHands.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
-    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen == ShellScreen.SEASONS); nativeWilma.setVisible(navigation.screen == ShellScreen.WILMA); nativeVocabulary.setVisible(navigation.screen == ShellScreen.VOCABULARY); nativeSubitising.setVisible(navigation.screen == ShellScreen.SUBITISING); nativeQuantityMatch.setVisible(navigation.screen == ShellScreen.QUANTITY_MATCH); nativeFollow.setVisible(navigation.screen == ShellScreen.FOLLOW_INSTRUCTIONS); nativeColourSort.setVisible(navigation.screen == ShellScreen.COLOUR_SORT); nativeAnimalGroups.setVisible(navigation.screen == ShellScreen.ANIMAL_GROUPS); nativeWashHands.setVisible(navigation.screen == ShellScreen.WASH_HANDS); updateWebActivity() }
+    override fun onPause() { celebrationSound.cancel(); foreground = false; nativePositions.setVisible(false); nativeSeasons.setVisible(false); nativeWilma.setVisible(false); nativeVocabulary.setVisible(false); nativeSubitising.setVisible(false); nativeQuantityMatch.setVisible(false); nativeCompareQuantity.setVisible(false); nativeFollow.setVisible(false); nativeColourSort.setVisible(false); nativeAnimalGroups.setVisible(false); nativeWashHands.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
+    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen == ShellScreen.SEASONS); nativeWilma.setVisible(navigation.screen == ShellScreen.WILMA); nativeVocabulary.setVisible(navigation.screen == ShellScreen.VOCABULARY); nativeSubitising.setVisible(navigation.screen == ShellScreen.SUBITISING); nativeQuantityMatch.setVisible(navigation.screen == ShellScreen.QUANTITY_MATCH); nativeCompareQuantity.setVisible(navigation.screen == ShellScreen.COMPARE_QUANTITY); nativeFollow.setVisible(navigation.screen == ShellScreen.FOLLOW_INSTRUCTIONS); nativeColourSort.setVisible(navigation.screen == ShellScreen.COLOUR_SORT); nativeAnimalGroups.setVisible(navigation.screen == ShellScreen.ANIMAL_GROUPS); nativeWashHands.setVisible(navigation.screen == ShellScreen.WASH_HANDS); updateWebActivity() }
     override fun onDestroy() { celebrationSound.close(); disposeWebView(); tts?.shutdown(); tts = null; super.onDestroy() }
 }
 

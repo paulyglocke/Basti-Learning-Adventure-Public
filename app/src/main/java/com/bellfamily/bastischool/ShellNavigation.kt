@@ -2,7 +2,7 @@ package com.bellfamily.bastischool
 
 import java.util.concurrent.atomic.AtomicReference
 
-internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS, WILMA, VOCABULARY, TELL_ME, FOLLOW_INSTRUCTIONS, COLOUR_SORT, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH }
+internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS, WILMA, VOCABULARY, TELL_ME, FOLLOW_INSTRUCTIONS, COLOUR_SORT, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH, COMPARE_QUANTITY }
 internal enum class BackAction { EXIT, CLOSE_OPTIONS, LEGACY, NATIVE_HOME, DAYS_HUB }
 
 /** Options is an overlay on one destination, never another entry in a growing stack. */
@@ -16,6 +16,7 @@ internal data class ShellNavigation(
         ShellScreen.HOME -> BackAction.EXIT
         ShellScreen.OPTIONS -> BackAction.CLOSE_OPTIONS
         ShellScreen.WEB -> BackAction.LEGACY
+        ShellScreen.COMPARE_QUANTITY -> BackAction.NATIVE_HOME
         ShellScreen.PREPOSITIONS, ShellScreen.DAYS_SEASONS, ShellScreen.VOCABULARY, ShellScreen.TELL_ME, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.COLOUR_SORT, ShellScreen.ANIMAL_GROUPS, ShellScreen.WASH_HANDS, ShellScreen.SUBITISING, ShellScreen.QUANTITY_MATCH -> BackAction.NATIVE_HOME
         ShellScreen.SEASONS, ShellScreen.WILMA -> BackAction.DAYS_HUB
     }
@@ -30,6 +31,7 @@ internal data class ShellNavigation(
     fun openColourSort() = ShellNavigation(ShellScreen.COLOUR_SORT)
     fun openSubitising() = ShellNavigation(ShellScreen.SUBITISING)
     fun openQuantityMatch() = ShellNavigation(ShellScreen.QUANTITY_MATCH)
+    fun openCompareQuantity() = ShellNavigation(ShellScreen.COMPARE_QUANTITY)
     fun openFollowInstructions() = ShellNavigation(ShellScreen.FOLLOW_INSTRUCTIONS)
     fun openVocabulary() = ShellNavigation(ShellScreen.VOCABULARY)
     fun openWilma() = ShellNavigation(ShellScreen.WILMA)

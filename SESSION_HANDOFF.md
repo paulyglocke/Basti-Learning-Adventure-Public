@@ -1,5 +1,54 @@
 # Session handoff — 2026-09-27
 
+## Native Maths More or Fewer 1–5 — 2026-10-06 (JVM/build validated)
+
+Added native route `COMPARE_QUANTITY`, Home entry ⚖️ “More or Fewer” / “Mehr oder
+weniger” (“Compare two groups.” / “Vergleiche zwei Gruppen.”), activity
+`activity.math.compare_quantity` and separate `compare-quantity-session` journal.
+The bounded activity reuses ChoiceQuestion, SessionReducer, DurableSessionHost and
+the shared progress recorder. It uses one honest comparison skill,
+`skill.math.compare.quantity`, with `context.math.quantity`: the question always asks
+which side has more, rather than claiming separately assessed fewer questions.
+Task IDs encode canonical number names for left/right and LEFT_MORE/RIGHT_MORE/SAME
+(e.g. `task.math.compare_quantity.four.two.left_more`), validated on restore.
+
+Generation samples finite relation-specific lists from all 25 ordered pairs, then
+shuffles the selected tasks from one seed. Five questions have a 2/2/1 left-more /
+right-more / same split; ten have 4/4/2. Pairs never repeat within a round, with no
+rejection loops. Answer order stays Left / Right / Same (Links / Rechts / Gleich).
+The exact plan and answer order, language, attempts, Help/Replay, completion and
+pending progress use the shared journal unchanged. Again uses host.newRound with a
+new session ID. Actual answer attempts and completion are deduplicated through the
+existing progress repository; no existing Maths journal/schema was changed.
+
+The screen calls the existing Subitising DotPattern composable twice, with equal
+square sizes and identical styling, and uses the existing canonical patterns and
+quantity descriptions. No dot renderer or coordinates are duplicated. Visible side
+labels and spacing identify the two groups; each group replaces descendant semantics
+with one side-plus-quantity label. Individual dots are not targets. The whole quiz
+scrolls; shared title/progress/text choices/support/actions/completion are reused.
+
+Prompt: “Which side has more?” / “Welche Seite hat mehr?”. Feedback: “Yes!” / “Ja!”
+and “Try again.” / “Versuch es noch einmal.”. Generic, equality-safe Help: “Look at
+both groups. Compare how many dots each one has.” / “Schau dir beide Gruppen an.
+Vergleiche, wie viele Punkte jede Gruppe hat.”. CompareQuantityAudio is an owner
+adapter over the existing DefaultAudioController/AndroidSystemSpeechEngine, with
+unchanged All/Questions/Off policy and cancellation boundaries. Replay speaks only
+the question, including from completion. Opening/restoring and language sync are
+silent; automated speech never uses the quantity semantics. No second TTS system.
+
+Added six JVM tests covering all pairs, labels/wording, seeded 5/10 balance/identity,
+exact partial/completed restoration, attempts/Help/Replay/language, honest progress,
+uncertain-write redelivery/deduplication, fresh rounds, audio policy and navigation.
+Three instrumentation tests cover both semantic groups, all answer labels/actions,
+keyboard/D-pad, 1.5x narrow portrait, short landscape, retry/help/completion/Again,
+and real ViewModel opening/restore/navigation/language silence with a fake engine.
+Validation: all 18 focused Maths JVM tests passed (six Compare Quantity, six Quantity
+Match and six Subitising; zero failures/errors/skips). Android test compilation and
+assembleDebug passed. No device/emulator was connected, so instrumentation was not
+run. Physical dot legibility, TalkBack/D-pad traversal, landscape and installed
+offline EN/DE voices remain to be validated. No physical acceptance claimed.
+
 ## Native Maths quantity matching 1–5 — 2026-10-06 (JVM/build validated)
 
 Added a separate `QUANTITY_MATCH` native route titled “Numbers & Groups” /
