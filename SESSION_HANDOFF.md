@@ -1,5 +1,51 @@
 # Session handoff — 2026-09-27
 
+## Native Maths quantity matching 1–5 — 2026-10-06 (JVM/build validated)
+
+Added a separate `QUANTITY_MATCH` native route titled “Numbers & Groups” /
+“Zahlen & Mengen”, with activity `activity.math.quantity_match` and journal
+`quantity-match-session`. It reuses `SubitisingContent.numbers`, `pattern()` and
+`description()` directly, so canonical quantity visuals remain single-source and
+Subitising behaviour is unchanged.
+
+`QuantityMatchContent` uses one bounded `ChoiceQuestion` representation with an
+explicit `Direction`: `QUANTITY_TO_NUMERAL` uses skill
+`skill.math.quantity_to_numeral`; `NUMERAL_TO_QUANTITY` uses
+`skill.math.numeral_to_quantity`. Five-question plans cover all five quantities with
+a deterministic 3/2 direction split. Ten-question plans repeat each quantity once
+with its opposite direction, producing exact 5/5 direction balance and unique
+direction/quantity task definitions. Every task has four unique canonical number IDs
+and deterministic answer order.
+
+Quantity-to-numeral shows one semantic dot group and four numeric choices. Numeral-to-
+quantity shows a large numeral and four independently labelled semantic dot-pattern
+choice targets. Prompts are “Which number matches this group?” /
+“Welche Zahl passt zu dieser Gruppe?” and “Which group shows [n]?” /
+“Welche Gruppe zeigt [n]?”. Feedback and direction-specific Help use the requested
+concise EN/DE wording. The existing durable session host, progress recorder,
+retry/help/completion flow and native audio boundary are reused; restoration is
+silent and progress skills distinguish both directions.
+
+Validation exposed invalid numeric task-ID segments and a mismatched definition
+parser; task IDs now use canonical number names and round-trip through the corrected
+parser. Direction generation uses a seeded alternating first cycle and its opposite
+second cycle. Restore validation checks direction balance and target coverage.
+Dot answer buttons contain only the pattern, with one bilingual accessible label;
+the initial visible English text answer labels were removed.
+
+Added focused JVM tests for shared patterns, wording, generation balance,
+determinism, answer uniqueness, audio language/policy and route separation, plus
+exact partial/completed restore, retry/help/language, both skill identities and
+uncertain attempt/completion redelivery. Compose coverage includes both directions,
+single semantic dot targets, keyboard/D-pad activation, 1.5x text, narrow layout,
+short-landscape retry/help and completion.
+
+Validation: all 12 focused Quantity Match/Subitising JVM tests passed (six each,
+zero failures/errors/skips); Android test compilation and assembleDebug passed.
+No emulator/device was connected, so instrumentation was not run. TalkBack/D-pad
+traversal, short-landscape physical review and offline speech remain to be validated.
+No physical-device acceptance is claimed.
+
 ## Native Maths subitising 1–5 — 2026-10-06 (JVM/build validated)
 
 Added a bounded native `SUBITISING` route with activity `activity.math.subitising`,
