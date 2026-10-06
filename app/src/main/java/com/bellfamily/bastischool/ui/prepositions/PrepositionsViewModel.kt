@@ -31,12 +31,14 @@ class PrepositionsViewModel @JvmOverloads constructor(
     var saveFailed by mutableStateOf(false); private set
     var recoveryFailed by mutableStateOf(false); private set
     var audioFailed by mutableStateOf(false); private set
+    var spokenOption by mutableStateOf<ContentId?>(null); private set
     private val prefs = application.getSharedPreferences("basti_shell", 0)
     private val host = PrepositionsHost(AtomicProgressStorage(File(application.noBackupFilesDir, "prepositions-session"), AndroidAtomicCommit),
         AndroidProgressRepository.create(application))
     private val worker = Executors.newSingleThreadExecutor()
     private val main = Handler(Looper.getMainLooper())
-    private val audio = PrepositionsAudio(DefaultAudioController(engineFactory, AudioMode.OFF)) {
+    private val audio = PrepositionsAudio(DefaultAudioController(engineFactory, AudioMode.OFF),
+        spokenOption = { spokenOption = it }) {
         audioFailed = it is SpeechResult.Failed
     }
     private var visible = false
@@ -81,6 +83,7 @@ class PrepositionsViewModel @JvmOverloads constructor(
     fun resetTutorials() { epoch++; audio.cancel() } // Shared epoch in prefs invalidates prior success callbacks.
     fun retrySave() {
         if (busy) return
+        epoch++; audio.cancel()
         if (!opened) open() else work { host.retryWrites(); emptyList() }
     }
     fun again() {

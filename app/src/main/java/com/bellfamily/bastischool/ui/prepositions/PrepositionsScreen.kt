@@ -4,6 +4,8 @@ import com.bellfamily.bastischool.ui.common.NativeQuestionProgress
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -22,6 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.unit.dp
 import com.bellfamily.bastischool.learning.models.*
 import com.bellfamily.bastischool.learning.prepositions.*
@@ -32,7 +35,7 @@ fun PrepositionsScreen(state: SessionState?, language: ContentLanguage, busy: Bo
                        audioFailed: Boolean, onAction: (SessionAction) -> Unit, onOption: (ContentId) -> Unit,
                        onRetrySave: () -> Unit, onAgain: () -> Unit, onIntroduction: () -> Unit,
                        onHome: () -> Unit, onLegacy: () -> Unit, modifier: Modifier = Modifier, onPop: (String) -> Unit = {},
-                       artwork: ImageBitmap? = null) {
+                       artwork: ImageBitmap? = null, spokenOption: ContentId? = null) {
     val de = language == ContentLanguage.GERMAN
     fun t(en: String, german: String) = if (de) german else en
     if(state?.phase == SessionPhase.COMPLETED) {
@@ -63,14 +66,15 @@ fun PrepositionsScreen(state: SessionState?, language: ContentLanguage, busy: Bo
             NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY, onClick = { onAction(SessionAction.Replay(task.id)) }, enabled = ready,
                 modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("replay"))
             if (state.phase == SessionPhase.ACTIVE) {
-                Text(task.question.instruction.display[language], style = MaterialTheme.typography.titleLarge)
+                Text(positionQuestion(PrepositionsContent.scene(task)).display[language],
+                    style = MaterialTheme.typography.titleLarge, modifier = Modifier.testTag("position-question"))
                 BoxWithConstraints {
                     if (maxWidth >= 640.dp) Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
                         PositionSceneImage(PrepositionsContent.scene(task), language, artwork, Modifier.weight(1f))
-                        Answers(state, language, ready, onAction, onOption, Modifier.weight(1f))
+                        Answers(state, language, ready, onAction, onOption, Modifier.weight(1f), spokenOption)
                     } else Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
                         PositionSceneImage(PrepositionsContent.scene(task), language, artwork, Modifier.fillMaxWidth())
-                        Answers(state, language, ready, onAction, onOption, Modifier.fillMaxWidth())
+                        Answers(state, language, ready, onAction, onOption, Modifier.fillMaxWidth(), spokenOption)
                     }
                 }
                 if (current.answer == AnswerState.CORRECT) Text(task.question.correctFeedback.display[language], modifier = Modifier.testTag("feedback"))
@@ -93,14 +97,19 @@ fun PrepositionsScreen(state: SessionState?, language: ContentLanguage, busy: Bo
 
 @Composable
 private fun Answers(state: SessionState, language: ContentLanguage, ready: Boolean,
-                    action: (SessionAction) -> Unit, option: (ContentId) -> Unit, modifier: Modifier) {
+                    action: (SessionAction) -> Unit, option: (ContentId) -> Unit, modifier: Modifier,
+                    spokenOption: ContentId?) {
     Column(modifier, verticalArrangement = Arrangement.spacedBy(8.dp)) {
         state.task.question.choices.forEach { choice ->
             val label = PrepositionsContent.repository.find(choice)!!.text.display[language]
+            val speaking = ready && spokenOption == choice
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 NativeTextChoice(label = answerPhrase(PrepositionsContent.scene(state.task), choice, language), onClick = { state.nextAttempt?.let { action(SessionAction.Answer(it, choice)) } },
                     enabled = ready && state.current.answer == AnswerState.UNANSWERED,
-                    modifier = Modifier.weight(1f).heightIn(min = 64.dp).testTag("answer-${choice.value}"))
+                    modifier = Modifier.weight(1f).heightIn(min = 64.dp).testTag("answer-${choice.value}")
+                        .then(if (speaking) Modifier.border(3.dp,MaterialTheme.colorScheme.primary,RoundedCornerShape(16.dp))
+                            .semantics { stateDescription = if(language==ContentLanguage.GERMAN) "Wird vorgelesen" else "Being read aloud" }
+                        else Modifier))
                 OutlinedButton(onClick = { option(choice) }, enabled = ready,
                     modifier = Modifier.heightIn(min = 64.dp).widthIn(min = 64.dp).testTag("speaker-${choice.value}")
                         .semantics { contentDescription = if (language == ContentLanguage.GERMAN) "Anhören: $label" else "Listen: $label" }) {
@@ -123,47 +132,7 @@ internal fun PositionSceneImage(scene: PositionScene, language: ContentLanguage,
                 else "The picture is unavailable right now. You can use the previous version.",
                 modifier = Modifier.padding(16.dp).testTag("position-image-unavailable"))
         }
-        val subject = scene.animal.subject[language].replaceFirstChar { it.uppercase() }
-        Text(if (language == ContentLanguage.GERMAN) "$subject ist…" else "$subject is…",
-            style = MaterialTheme.typography.titleLarge)
+        Text(positionAnswerStem(scene).display[language],
+            style = MaterialTheme.typography.titleLarge, modifier = Modifier.testTag("position-answer-stem"))
     }
-}
-
-/** Display only: preserve relation IDs, authored speech and saved question content. */
-private fun answerPhrase(scene: PositionScene, choice: ContentId, language: ContentLanguage): String {
-    val relation = PositionRelation.entries.single { it.id == choice }
-    if (relation == scene.relation) return relation.phrase[language]
-    val plural = scene.relation.count == 2 || relation == PositionRelation.BETWEEN
-    val en = when (scene.relation.reference) {
-        ReferenceObject.ROCK -> if (plural) "the two rocks" else "the rock"
-        ReferenceObject.TABLE -> if (plural) "the two tables" else "the table"
-        ReferenceObject.BOX -> if (plural) "the two boxes" else "the box"
-        ReferenceObject.CLOUD -> if (plural) "the two clouds" else "the cloud"
-        ReferenceObject.CAVE -> if (plural) "the two caves" else "the cave"
-    }
-    if (language == ContentLanguage.ENGLISH) return "${relation.label.en} $en"
-    val genitive = relation in setOf(PositionRelation.BELOW, PositionRelation.OUTSIDE, PositionRelation.NEAR)
-    val noun = when (scene.relation.reference) {
-        ReferenceObject.ROCK -> if (plural) "Steinen" else if (genitive) "des Steins" else "dem Stein"
-        ReferenceObject.TABLE -> if (plural) "Tischen" else if (genitive) "des Tisches" else "dem Tisch"
-        ReferenceObject.BOX -> if (plural) "Kisten" else "der Kiste"
-        ReferenceObject.CLOUD -> if (plural) "Wolken" else "der Wolke"
-        ReferenceObject.CAVE -> if (plural) "Höhlen" else "der Höhle"
-    }
-    val objectPhrase = if (plural) {
-        val pluralNoun = if (genitive) when (scene.relation.reference) {
-            ReferenceObject.ROCK -> "Steine"
-            ReferenceObject.TABLE -> "Tische"
-            else -> noun
-        } else noun
-        "${if (genitive) "der" else "den"} beiden $pluralNoun"
-    } else noun
-    val preposition = when (relation) {
-        PositionRelation.INSIDE -> "in"
-        PositionRelation.OUTSIDE -> "außerhalb"
-        PositionRelation.NEAR -> "in der Nähe"
-        PositionRelation.FAR_FROM -> "weit weg von"
-        else -> relation.label.de
-    }
-    return "$preposition $objectPhrase".replace("von dem ", "vom ")
 }

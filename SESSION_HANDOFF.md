@@ -1,5 +1,50 @@
 # Session handoff — 2026-09-27
 
+## Prepositions question/stem and guided Listen — 2026-10-06 (JVM/build validated)
+
+Scene-derived presentation now shows “Where is the snake?” / “Wo ist die Schlange?”
+and “The snake is…” / “Die Schlange ist…”, using each canonical animal subject and
+its existing German nominative article. `PrepositionsWording.kt` separates question,
+stem and answer phrase helpers. The former screen-local answer phrase/case formatter
+was moved verbatim so display and speech share reviewed scene-specific objects and
+German case handling. No scene/artwork/choice/order changes. Persisted question
+payloads, revisions and validation remain unchanged to preserve exact old restores.
+
+Main active-question Replay still passes through the existing SessionReducer/host
+(same replay support accounting). Its instruction effect now drives six separate
+utterances through the existing PrepositionsAudio owner/controller: question, stem,
+then the four displayed phrases in order. Only a Completed callback starts the next
+step; terminal failure/cancellation/suppression stops the sequence. Punctuation and
+utterance boundaries provide speech separation; no guessed timing or fixed-duration
+highlighting. Normal automatic instruction policy remains; no guided sequence starts
+on restore. Existing first-use tutorial policy is retained, with the concise question.
+
+Individual Listen speaks only its full scene-specific answer phrase with a period,
+without submitting. Choice taps still answer immediately. A transient nullable
+spoken-option ID flows from audio callbacks through the retained ViewModel to a
+3dp answer outline and “Being read aloud” / “Wird vorgelesen” state description.
+No Selected/correctness semantics and no checkpoint changes. Existing action,
+language, mode, navigation, retry-load and close boundaries clear highlighting
+and invalidate late callbacks. All/Questions permit explicit Replay/Listen; Off
+suppresses them and leaves no outline.
+
+Framework limitation: the controller exposes terminal results but no start event.
+The outline begins when an answer request is dispatched to a ready engine and ends
+on its terminal callback. Guided answers follow a completed question, so engine
+initialisation has finished. An individual Listen requested while the engine is
+initialising may speak without an outline. No global audio changes or new engine.
+
+Added nine focused JVM tests for wording, unchanged reviewed phrases, ordered speech,
+languages/policy, highlighting, synchronous and stale callbacks, cancellation,
+individual Listen and learning-state invariants; three Compose tests cover EN/DE
+1.5× narrow layout, outline semantics, separate Listen and keyboard answer actions,
+and navigation clearing. Existing retry/help/completion tests remain applicable.
+Validation on 2026-10-06: all 39 focused Prepositions JVM tests passed, including
+the nine new tests; Android test compilation and `assembleDebug` passed. ADB listed
+no connected devices, so instrumentation was not run. No full JVM suite or lint
+ran. Emulator, offline-voice cadence and physical TalkBack/D-pad acceptance remain
+pending.
+
 ## Wilma bilingual weekday learning (JVM/build validated; device acceptance pending)
 
 Added `WilmaPhase.BILINGUAL`: “German & English weekdays” / “Wochentage auf
