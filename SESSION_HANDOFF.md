@@ -1,5 +1,50 @@
 # Session handoff — 2026-09-27
 
+## Native Maths Add Together within 5 — 2026-10-07 (JVM/build validated)
+
+Added separate native `ADD_TOGETHER` route and 🧩 Home entry “Add Together” /
+“Zusammenzählen”, with “Combine two small groups.” / “Verbinde zwei kleine Gruppen.”.
+The legacy Easy Maths ➕ card remains. Activity `activity.math.add_within_5`, skill
+`skill.math.addition.within_5`, context `context.math.addition` and separate
+`addition-session` journal reuse the established choice session/progress framework.
+Existing Maths journals and behaviour are unchanged.
+
+AdditionContent defines the ten ordered nonzero addend pairs with totals 2–5.
+Five questions cover every total, plus a different unordered pair, avoiding mirrored
+facts. Ten questions cover all ten ordered pairs exactly once (total frequencies
+1/2/3/4 for 2/3/4/5, as required by the finite catalogue). Seeded finite shuffling
+and largest-remaining-total selection separate consecutive totals. Four unique
+canonical numeric choices include the correct total once and are shuffled.
+Task IDs encode canonical left/right/total names; restore checks arithmetic,
+wording, choices, skill/context and round invariants.
+
+Reuses Subitising number IDs, repository, descriptions and DotPattern renderer.
+Two equally sized dot groups surround a decorative plus sign, followed by the
+prompt and numeric choices. No equation or new artwork. Each group has one
+First/Second group / Erste/Zweite Gruppe semantic description; individual dots
+and the plus are not separate accessibility targets. Shared title, progress,
+support, actions, completion and scrolling are retained.
+
+Prompt: “How many altogether?” / “Wie viele sind es zusammen?”. Feedback:
+“Yes, [n]!” / “Ja, [n]!”, “Try again.” / “Versuch es noch einmal.”. Help:
+“Put both groups together in your head and count how many there are altogether.” /
+“Stell dir beide Gruppen zusammen vor und zähle, wie viele es insgesamt sind.”.
+AdditionAudio uses the existing controller/engine/policy. Replay speaks only the
+question, without addends or answer. Opening, restore, navigation and language
+sync stay silent. DurableSessionHost preserves exact state and pending progress,
+with existing failed-write redelivery, deduplication and fresh Again behaviour.
+
+Added seven JVM tests covering facts, generation/coverage, wording, audio policy,
+restoration, progress/redelivery/deduplication, Again and navigation. Three
+instrumentation tests cover group semantics, numeric keyboard/D-pad activation,
+1.5x narrow/short layouts, help/retry/completion/Again and audio-owner silence.
+Validation: all 32 focused Maths JVM tests passed (seven Addition, seven Number
+Order and six each for Subitising, Quantity Match and Compare Quantity), with zero
+failures/errors/skips. assembleDebug and compileDebugAndroidTestKotlin passed.
+No device/emulator was connected, so instrumentation was not run. Physical
+layout/dot legibility, TalkBack/D-pad and installed EN/DE voices still need review;
+no physical-device acceptance is claimed.
+
 ## Native Maths Number Order 1–5 — 2026-10-06 (JVM/build validated)
 
 Added separate native `NUMBER_ORDER` route and ↔️ Home entry “Number Order” /
