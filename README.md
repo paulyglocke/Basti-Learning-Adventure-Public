@@ -16,13 +16,21 @@ The app is currently a **hybrid Kotlin/Jetpack Compose + legacy WebView** applic
 
 Substantial native learning experiences now include:
 
-- **Prepositions** — visual spatial-language practice with deterministic rounds, support, restoration and progress evidence.
-- **Seasons** — Explore, recognition, Next/Before reasoning and Build the Year sequencing using canonical seasonal scenes.
-- **Wilma's Week / Wilmas Woche** — Explore, Find Day, Before/After and weekday ordering.
+- **Prepositions** — 52 scenes across 13 relations, activity revision 3/content 1.3, guided Listen and exact v1/v2 saved-round recovery. Six cave replacements are visually resolved; ten unchanged scenes remain borderline. See the [scene audit](PREPOSITIONS_CONTENT_AUDIT.md); source-art review is not physical acceptance.
+- **Seasons** — Explore, recognition, Next/Before, Build the Year, Missing Season (`MISSING`), Season Clues (`CLUES`), Match season to clue (`MATCH`) and combined Before/After (`COMBINED`).
+- **Wilma's Week / Wilmas Woche** — Explore, Find Day, Before/After, weekday ordering, explicitly anchored Today/Yesterday/Tomorrow (`TODAY`) and non-quiz German/English weekday learning (`BILINGUAL`). TODAY uses a hypothetical weekday, not the device date.
 - **Vocabulary Booster** — bilingual vocabulary exploration and picture/word recognition.
 - **Follow the Instructions** — listening and instruction-following activities designed to grow toward richer action, placement and multi-step tasks.
 - **Colour Sort** — a bounded native tap-to-place sorting set with semantic membership, support and durable progress.
 - **Tell Me** — picture-led expressive-language activities encouraging description and conversation without automatic speech scoring.
+- **Animal Groups / Wash Hands** — bounded animal sorting and four-step practical-life sequencing.
+- **How many? / Wie viele?** — subitising stable dot patterns from 1–5.
+- **Numbers & Groups / Zahlen & Mengen** — quantity → numeral and numeral → quantity matching, 1–5.
+- **More or Fewer / Mehr oder weniger** — two groups of 1–5, answering Left/Right/Same to “Which side has more?”; no separate fewer-question mode.
+- **Number Order / Zahlenfolge** — Before, After and Missing number questions within 1–5, without wraparound.
+- **Add Together / Zusammenzählen** — two visible nonempty dot groups, totals 2–5; no zero or subtraction.
+
+These five Maths activities are implemented visual choice activities with shared quantity data, native session/progress/audio and 5/10-question rounds. They do not yet provide object manipulation or quantity construction. Making five, number bonds, decomposition, conservation, subtraction and broader manipulation-first Maths remain future curriculum. Implementation does not imply physical-device acceptance.
 
 These activities increasingly share native content, audio, support, deterministic session, restoration, completion and progress foundations rather than implementing separate state systems for every screen.
 
@@ -317,7 +325,9 @@ Sound Off blocks celebration audio.
 
 ## Quality and physical acceptance
 
-Automated validation covers native JVM tests, Android instrumentation, content generation and validation, asset checks, build/lint and legacy browser coverage where applicable.
+Current [CI](.github/workflows/build-apk.yml) runs native JVM tests, Python content/asset/freshness checks, debug build/lint, release guards and legacy browser tests. It has no explicit Android-test compilation gate and does not execute instrumentation.
+
+Android/Compose tests exist. The 2026-10-08 implementation checkpoint passed local Android-test compilation, but no emulator/device was connected, so instrumentation was not executed. Older emulator results apply to their recorded revisions, not automatically to newer modes. See [TESTING_QA_SPEC.md](TESTING_QA_SPEC.md) for the separate validation layers and [SESSION_HANDOFF.md](SESSION_HANDOFF.md) for dated results.
 
 Physical acceptance remains a separate part of the product definition.
 
@@ -325,7 +335,7 @@ Samsung Galaxy S24 Ultra is the primary phone test target, with Amazon Fire Max 
 
 Physical testing covers learning semantics as well as software correctness: artwork clarity, touch interaction, audio, Sound Off, navigation, lifecycle, restoration, portrait/landscape layouts and larger text.
 
-A broader full-app S24 acceptance/debug sweep is planned against the current native baseline.
+The remaining S24 sweep includes the newest Maths, Wilma, Seasons and Prepositions modes. Preserve the already-confirmed S24 upgrade, specific Seasons flows and Wilma auto-follow evidence in the [QA ledger](TESTING_QA_SPEC.md#current-physical-acceptance-ledger-and-fire-max-checklist--2026-09-24). Fire Max acceptance remains outstanding.
 
 ## Development direction
 
@@ -468,7 +478,7 @@ Prefer CI as the sole distribution version allocator. Ordinary development remai
 
 An installed app can only update with a compatible signing certificate and package ID. A higher version code cannot fix a certificate mismatch. Earlier S24 evidence recorded `INSTALL_FAILED_UPDATE_INCOMPATIBLE`; CI runner debug keys were not retained by the workflow. A private signing key cannot be recovered from the certificate in an APK.
 
-Before migration, compare the installed APK's public certificate against the intended key and look for the original keystore. If the original signing identity cannot be retained, **one final owner-approved uninstall/reinstall may be necessary**, and uninstall erases local data. There is currently no implemented cross-signature progress export/import. Do not do this silently or describe it as a data-preserving upgrade. After moving to one permanent key, subsequent same-key/higher-code installs should preserve data; both target devices still need the procedure in [TESTING_QA_SPEC.md](TESTING_QA_SPEC.md).
+For an installation not yet on the permanent signing stream, compare its public certificate against the intended key and look for the original keystore. If the original signing identity cannot be retained, **one final owner-approved uninstall/reinstall may be necessary**, and uninstall erases local data. There is currently no implemented cross-signature progress export/import. Do not do this silently or describe it as a data-preserving upgrade. The owner already confirmed the S24 same-key in-place upgrade from `1003901 / 1.1.39.1` to `1004501 / 1.1.45.1`; do not reopen that initial migration or replace the signing identity. Fire Max upgrade acceptance and current-mode upgrade regressions remain subject to [TESTING_QA_SPEC.md](TESTING_QA_SPEC.md). UI restoration alone does not prove file-level progress retention/deduplication. Ordinary push CI produces a debug artifact, not a stable-signed distribution or physical upgrade result.
 
 References: [Android app signing](https://developer.android.com/studio/publish/app-signing), [Android versioning](https://developer.android.com/studio/publish/versioning), [GitHub run variables](https://docs.github.com/en/actions/reference/workflows-and-actions/variables), [GitHub secret handling](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets).
 

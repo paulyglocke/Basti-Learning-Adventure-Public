@@ -438,6 +438,16 @@ Useful concepts include:
 - simple charts/data;
 - time.
 
+Implementation checkpoint — 2026-10-08: five bounded native activities already cover
+subitising 1–5 (How many?), both number ↔ quantity directions (Numbers & Groups),
+Left/Right/Same comparisons to “Which side has more?” (More or Fewer), BEFORE/AFTER/
+MISSING without wraparound (Number Order), and combining two visible nonempty groups
+with totals 2–5 (Add Together). All support deterministic 5/10 rounds. These are
+visual choice activities; they do not establish a manipulative quantity framework,
+separate fewer-question assessment, subtraction, or mastery/generalisation.
+Physical acceptance remains separate. The wider concept list above remains the
+curriculum direction, not a claim that every concept is implemented.
+
 ### Manipulative quantity
 
 Maths should increasingly support manipulation.
@@ -491,6 +501,8 @@ Progression:
 - order seven days;
 - today / yesterday / tomorrow with an explicit visual and spoken anchor.
 
+Implementation checkpoint — 2026-10-08: all five Wilma progression stages above are implemented, including `TODAY` with a hypothetical explicit anchor and no device-date inference. `BILINGUAL` adds non-quiz German/English weekday comparison and tap-to-speak. New-mode physical acceptance remains open; preserve the earlier accepted ordering auto-follow evidence.
+
 Colour is a familiar cue, never the sole identifier.
 
 ### Seasons / Jahreszeiten
@@ -510,6 +522,8 @@ Progression:
 7. season ↔ clue matching;
 8. combined before/after;
 9. Months ↔ Seasons.
+
+Implementation checkpoint — 2026-10-08: stages 1–8 are implemented, including `MISSING`, `CLUES`, `MATCH` and `COMBINED`. Months ↔ Seasons and broader generalisation remain future work. Earlier S24 acceptance applies only to the flows named in the QA ledger, not automatically to these later modes.
 
 Teach the conventional display order while making the cyclic relationship explicit.
 
@@ -1523,14 +1537,18 @@ Current priorities:
 
 Already established native areas include:
 
-- Prepositions;
-- Seasons;
-- Wilma’s Week;
+- Prepositions activity revision 3/content 1.3 (exact v1/v2 restoration; six cave fixes source-reviewed as resolved, ten scenes still borderline);
+- Seasons through combined before/after;
+- Wilma’s Week including TODAY/BILINGUAL;
+- five bounded native Maths activities from subitising through addition within 5;
+- Colour Sort, Animal Groups and Wash Hands;
 - Vocabulary Booster;
 - Follow the Instructions;
 - Tell Me;
 - shared completion;
 - shared audio/session/progress foundations.
+
+The [QA ledger](TESTING_QA_SPEC.md) preserves confirmed S24 upgrade/flow evidence and separates remaining S24 checks from outstanding Fire Max acceptance. Source-art review and green CI do not close those hardware gates.
 
 **P0 is ongoing product hygiene rather than a blocker preventing all new curriculum work.**
 
@@ -1569,7 +1587,7 @@ Priority capabilities:
    - establish through a real second consumer such as Memory Pairs.
 
 6. **Sorting**
-   - establish through Colours / Compare & Discover.
+   - already shared by Colour Sort, Animal Groups and Seasons MATCH; extend through concrete future Colours / Compare & Discover consumers.
 
 7. **Grading**
    - establish when Colour grading or size/quantity grading requires it.
@@ -1589,6 +1607,8 @@ Priority capabilities:
 12. **Motion Demonstration**
     - establish through a small instructional-animation proof before broad rollout.
 
+Shared buttons, titles, quiz progress, support messages and completion are already implemented; remaining design work needs a bounded consumer. Native UI regression execution and an explicit Android-test CI gate remain validation work, separate from those presentation components.
+
 Do not build speculative mega-frameworks.
 
 ---
@@ -1599,10 +1619,10 @@ Use shared capabilities to add breadth.
 
 Priority areas include:
 
-- remaining Seasons generalisation;
+- remaining Seasons generalisation and Months ↔ Seasons beyond implemented MISSING/CLUES/MATCH/COMBINED;
 - Months v1;
 - Colours v1;
-- conceptual manipulation-first Maths;
+- conceptual manipulation-first Maths beyond the five implemented visual-choice activities;
 - Practical Life v1;
 - School Skills;
 - broader Vocabulary;
@@ -1611,7 +1631,6 @@ Priority areas include:
 - Memory Pairs / semantic matching;
 - Focus & Flex variants;
 - feelings and self-advocacy;
-- Wilma today/yesterday/tomorrow with explicit anchor;
 - Clock & Time v1;
 - continued Follow the Instructions progression;
 - continued Tell Me / expressive-language progression.

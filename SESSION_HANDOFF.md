@@ -1,5 +1,26 @@
 # Session handoff — 2026-09-27
 
+## Current-status documentation reconciliation — 2026-10-08
+
+Documentation-only follow-up to implementation `ccc6423`. README, BACKLOG, the master
+roadmap and TESTING_QA_SPEC now distinguish implemented bounded Maths, Wilma
+TODAY/BILINGUAL, Seasons MISSING/CLUES/MATCH/COMBINED and Prepositions v3 from future
+curriculum. The six cave fixes remain resolved by source-art review; ten borderline
+scenes and physical acceptance remain open. Expanded the device matrix without
+reopening the specifically accepted S24 upgrade/flows; Fire Max remains outstanding.
+
+The implementation CI run for `ccc6423` completed successfully (build and browser
+jobs); distribution was skipped. Local Android-test compilation is distinct from
+instrumentation execution, which did not run for that pass. Earlier headings such
+as COMBINED “validation pending”, Java-25 lint failure and “full regression not run”
+are dated history: the later 2026-10-08 full JVM/lint evidence supersedes only those
+layers. Their hardware/instrumentation gaps are not silently closed.
+
+No runtime, test, artwork or workflow changes; no tests/builds or device checks were
+run for this documentation task. Documentation checks cover diff whitespace, local
+links/anchors, scope and consistency against current source/CI and recorded evidence.
+Task 2 (native UI execution / CI coverage) remains future work and was not begun.
+
 ## Native Prepositions v3 cave integration — 2026-10-08 (locally validated)
 
 Integrated the six owner-supplied PNGs without resampling or renaming:

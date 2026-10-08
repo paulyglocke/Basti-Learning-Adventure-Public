@@ -6,7 +6,17 @@ This document defines verification and feature completion gates. [NATIVE_ARCHITE
 
 **A feature is not done only because it builds.** Record evidence for its behavior and relevant device risks. A code-complete slice awaiting required hardware checks must be labelled as such, not fully verified or eligible for legacy removal.
 
-Current baseline: CI builds/lints Android and runs legacy Playwright tests. Native foundation/unit tests and Prepositions Compose/navigation instrumentation now exist. Run instrumented tests on an available emulator/device; CI does not yet run that device suite. Browser speech mocks do not prove native audio, Compose behavior, Android navigation or device compatibility. The requirements below guide implementation; they are not a record of passed tests. [BUILD_NOTES.md](BUILD_NOTES.md) holds dated evidence, revisions, commands, artifacts and outstanding checks.
+Current baseline reconciled on 2026-10-08 against `ccc6423`: the [workflow](.github/workflows/build-apk.yml) runs full native JVM tests, Python content/asset/freshness checks, `assembleDebug`, `lintDebug`, release guards and legacy Playwright tests. It has no explicit Android-test compilation/build gate and no instrumentation execution job. Compose/owner/navigation tests exist, including the recent native modes; existence and compilation do not prove execution. Browser speech mocks do not prove native audio, Compose behavior, Android navigation or device compatibility.
+
+| Evidence layer | Current recorded status / boundary |
+| --- | --- |
+| JVM/content/build | The 2026-10-08 implementation pass recorded 438 JVM, 36 Python and 55 browser passes, plus debug build/lint and six release guards. [CI for ccc6423](https://github.com/paulyglocke/Basti-Learning-Adventure-Public/actions/runs/37766428034) passed build/browser jobs. |
+| Android-test compilation | `compileDebugAndroidTestKotlin` passed locally for that implementation pass. This is separate from CI and from execution. |
+| Instrumentation execution | Not run for that pass: no emulator/device connected. Earlier recorded emulator passes apply to their named revisions and suites, not automatically to new Maths, Wilma or Prepositions behavior. Current affected-suite execution remains open. |
+| Physical acceptance | The ledger below records specific owner-reported S24 passes, not blanket acceptance. Preserve other dated evidence within its tested scope. New modes and the remaining S24 matrix are unverified; Fire Max remains outstanding. |
+| Signed distribution / upgrade | Push CI produced a debug artifact; its distribution job was skipped. Stable-signed release packaging requires manual main-branch dispatch. Neither packaging nor release-guard tests prove an in-place physical upgrade. |
+
+These results are carried forward from the dated [SESSION_HANDOFF.md](SESSION_HANDOFF.md), not rerun by this documentation reconciliation. Preserve historical counts, failures and commands there and in [BUILD_NOTES.md](BUILD_NOTES.md); newer full JVM/lint results supersede earlier “not run” gaps only for those layers. Requirements below are not a record of passed tests.
 
 ## Automated coverage
 
@@ -139,5 +149,38 @@ Fire Max remains **not physically accepted**. Record device/Fire OS, installed/c
 - Audio/offline: airplane mode with installed offline EN/DE voices; ALL, QUESTIONS and OFF including Replay/pop silence; no wrong-language fallback or duplicated narration on return. Check unavailable voice behavior where practical without deleting existing voice data merely for testing. No runtime network dependency.
 - Presentation/accessibility: portrait and both landscape orientations where supported, larger text, clear art/cards, safe insets, reachable separated touch targets, device screen reader/TalkBack-equivalent and keyboard/focus where available. Record unavailable assistive paths explicitly.
 - Recovery: background/return, partial and completed ordering, answered/unanswered tasks, process recreation where practical without clearing data; restore silently and avoid duplicate completion. Confirm settings/session/progress after restart and signed upgrade; mark raw-progress inspection blocked if release storage cannot be inspected safely.
+
+## Acceptance matrix additions — 2026-10-08 (unverified unless separately recorded)
+
+Apply these additions on S24 and Fire alongside the checklist above. They expand its
+activity inventory without rewriting the 2026-09-23/24 evidence. The original S24
+upgrade, named Seasons flows and Wilma ordering auto-follow remain accepted; do not
+reopen them without a regression. Record source/APK identity, device/OS, language,
+voice/audio mode, orientation and pass/fail/blocked status. No new physical result
+is asserted by this list.
+
+| Activity / mode | Additional acceptance checks |
+| --- | --- |
+| Maths: How many? / Subitising | Stable 1–5 patterns legible without crowding; one semantic dot group; four numeric choices; Replay says only the prompt. |
+| Maths: Numbers & Groups | Both quantity → numeral and numeral → quantity; independent accessible dot choices, no individual-dot focus targets; correct target/direction restored. |
+| Maths: More or Fewer | Equal-size left/right displays; all Left/Right/Same outcomes; no claim of a separate fewer-question mode; speech does not automatically reveal counts. |
+| Maths: Number Order | BEFORE/AFTER anchors remain within 1–5 without wraparound; MISSING sequence has one clear gap and one semantic group; exact sequence restore. |
+| Maths: Add Together | Two distinguishable nonempty groups and plus sign, totals 2–5; no automatic addend/answer narration; numeric choices reachable in short landscape. |
+| Wilma TODAY | Explicit Today anchor, Yesterday/Tomorrow prompts, Monday/Sunday wrapping, EN/DE question/option speech and exact mode/anchor restoration. No actual-date inference. |
+| Wilma BILINGUAL | German left/English right, aligned seven-day rows, correct-language tap-to-speak, Off silence, readable 1.5× labels and focus order; no quiz/progress counter or completion flow. |
+| Seasons MISSING / CLUES / MATCH | Gap and clue meaning, independent Listen, correct match preservation after mistakes, exact restoration and appropriate completion. MATCH is a four-season matching set, not a 5/10-question quiz. |
+| Seasons COMBINED | Explicit Before/After semantics, both wrap boundaries, correct slot retained through retry, Help independent of Replay, fresh Again and task-specific ordered-pair progress evidence. |
+| Prepositions v3 / content 1.3 | All 13 relations and scene-specific German phrases; BELOW “unter”, INSIDE “in”, OUTSIDE “außerhalb der Höhle”. Review the six resolved cave replacements in-device and adjudicate the ten unchanged BORDERLINE scenes using the [audit](PREPOSITIONS_CONTENT_AUDIT.md); source-art CLEAR is not hardware acceptance. |
+| Prepositions guided Listen / recovery | Question → stem → four phrases in visible order; separate option Listen never answers; highlight clears on cancellation/navigation/language change. Supported v1/v2 saved rounds retain original wording/state after upgrade; Again creates v3. Inspect progress identities independently of restored UI. |
+| Other native consumers | Include Vocabulary, Follow the Instructions, Colour Sort, Animal Groups, Wash Hands and Tell Me in the broad sweep; test their actual interaction/recovery contracts rather than imposing quiz flow on every activity. |
+
+For applicable quizzes, cover both 5/10 rounds, Help/Retry/Replay, partial/completed
+restore, Again/Home and Options/language/return. Across modes, review airplane-mode
+EN/DE and unavailable voices, All/Questions/Off, portrait/both landscapes, 1.5× text,
+insets/touch, TalkBack or device equivalent, keyboard/D-pad, backgrounding and true
+process recreation under the declared recovery policy. BILINGUAL is non-quiz; Tell Me
+is an open-ended conversation with its own reset policy. Do not fabricate progress
+for exploration or infer durable deduplication from UI alone. Preserve all existing
+upgrade safety and blocked-record-inspection rules above.
 
 Instrumentation belongs on the designated emulator (`ANDROID_SERIAL=emulator-5554`), not the stable S24/Fire installation. Do not bypass certificate/version failures by uninstalling, downgrading or clearing data.
