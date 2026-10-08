@@ -70,10 +70,10 @@ fun PrepositionsScreen(state: SessionState?, language: ContentLanguage, busy: Bo
                     style = MaterialTheme.typography.titleLarge, modifier = Modifier.testTag("position-question"))
                 BoxWithConstraints {
                     if (maxWidth >= 640.dp) Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-                        PositionSceneImage(PrepositionsContent.scene(task), language, artwork, Modifier.weight(1f))
+                        PositionSceneImage(PrepositionsContent.scene(task), language, artwork, Modifier.weight(1f), state.plan.activityRevision)
                         Answers(state, language, ready, onAction, onOption, Modifier.weight(1f), spokenOption)
                     } else Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                        PositionSceneImage(PrepositionsContent.scene(task), language, artwork, Modifier.fillMaxWidth())
+                        PositionSceneImage(PrepositionsContent.scene(task), language, artwork, Modifier.fillMaxWidth(), state.plan.activityRevision)
                         Answers(state, language, ready, onAction, onOption, Modifier.fillMaxWidth(), spokenOption)
                     }
                 }
@@ -101,10 +101,10 @@ private fun Answers(state: SessionState, language: ContentLanguage, ready: Boole
                     spokenOption: ContentId?) {
     Column(modifier, verticalArrangement = Arrangement.spacedBy(8.dp)) {
         state.task.question.choices.forEach { choice ->
-            val label = PrepositionsContent.repository.find(choice)!!.text.display[language]
+            val label = answerPhrase(PrepositionsContent.scene(state.task), choice, language, state.plan.activityRevision)
             val speaking = ready && spokenOption == choice
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                NativeTextChoice(label = answerPhrase(PrepositionsContent.scene(state.task), choice, language), onClick = { state.nextAttempt?.let { action(SessionAction.Answer(it, choice)) } },
+                NativeTextChoice(label = label, onClick = { state.nextAttempt?.let { action(SessionAction.Answer(it, choice)) } },
                     enabled = ready && state.current.answer == AnswerState.UNANSWERED,
                     modifier = Modifier.weight(1f).heightIn(min = 64.dp).testTag("answer-${choice.value}")
                         .then(if (speaking) Modifier.border(3.dp,MaterialTheme.colorScheme.primary,RoundedCornerShape(16.dp))
@@ -122,12 +122,13 @@ private fun Answers(state: SessionState, language: ContentLanguage, ready: Boole
 
 /** Complete 4:3 artwork, never cropped. Failed decoding is presentation-only. */
 @Composable
-internal fun PositionSceneImage(scene: PositionScene, language: ContentLanguage, artwork: ImageBitmap?, modifier: Modifier) {
+internal fun PositionSceneImage(scene: PositionScene, language: ContentLanguage, artwork: ImageBitmap?, modifier: Modifier,
+                                revision: Int = PrepositionsContent.REVISION) {
     Column(modifier, verticalArrangement = Arrangement.spacedBy(8.dp)) {
         val frame = Modifier.fillMaxWidth().aspectRatio(4f / 3f).testTag("position-scene")
-        if (artwork != null) Image(artwork, scene.description[language], frame, contentScale = ContentScale.Fit)
+        if (artwork != null) Image(artwork, positionDescription(scene, revision)[language], frame, contentScale = ContentScale.Fit)
         else Box(frame.background(MaterialTheme.colorScheme.surfaceVariant)
-            .semantics { contentDescription = scene.description[language] }, contentAlignment = Alignment.Center) {
+            .semantics { contentDescription = positionDescription(scene, revision)[language] }, contentAlignment = Alignment.Center) {
             Text(if (language == ContentLanguage.GERMAN) "Das Bild ist gerade nicht verfügbar. Du kannst zur bisherigen Version wechseln."
                 else "The picture is unavailable right now. You can use the previous version.",
                 modifier = Modifier.padding(16.dp).testTag("position-image-unavailable"))

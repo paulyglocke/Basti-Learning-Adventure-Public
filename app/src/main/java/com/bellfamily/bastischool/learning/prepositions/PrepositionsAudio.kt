@@ -38,8 +38,8 @@ class PrepositionsAudio(private val controller: AudioController,
     private data class Step(val text: ContentText, val kind: SpeechKind, val choice: ContentId? = null)
     private fun answerStep(state: SessionState, id: ContentId): Step {
         val scene = PrepositionsContent.scene(state.task)
-        return Step(ContentText.plain(answerPhrase(scene,id,ContentLanguage.ENGLISH)+".",
-            answerPhrase(scene,id,ContentLanguage.GERMAN)+"."), SpeechKind.OPTION, id)
+        return Step(ContentText.plain(answerPhrase(scene,id,ContentLanguage.ENGLISH,state.plan.activityRevision)+".",
+            answerPhrase(scene,id,ContentLanguage.GERMAN,state.plan.activityRevision)+"."), SpeechKind.OPTION, id)
     }
     private fun guided(state: SessionState) {
         val scene = PrepositionsContent.scene(state.task)

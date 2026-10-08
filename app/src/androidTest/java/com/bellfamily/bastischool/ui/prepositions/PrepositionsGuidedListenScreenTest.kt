@@ -76,6 +76,8 @@ class PrepositionsGuidedListenScreenTest {
         state.value.task.question.choices.forEach { id ->
             val button=compose.onNodeWithTag("answer-${id.value}").performScrollTo().assertIsDisplayed()
             button.assert(highlighting(language)).assertTextEquals(answerPhrase(scene,id,language))
+            compose.onNodeWithTag("speaker-${id.value}").assertContentDescriptionEquals(
+                "${if (language == ContentLanguage.GERMAN) "Anhören" else "Listen"}: ${answerPhrase(scene,id,language)}")
             button.assert(SemanticsMatcher.keyNotDefined(SemanticsProperties.Selected))
             compose.onAllNodes(highlighting(language)).assertCountEquals(1)
             compose.runOnIdle {engine.finish()}

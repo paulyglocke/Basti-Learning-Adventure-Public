@@ -174,8 +174,9 @@ Human review remains required for age appropriateness, factual credibility, natu
 ## Native Prepositions artwork/content expansion (2026-09-26)
 
 `PrepositionsContent` supplies an activity-local `ContentRepository` using the shared
-PrepositionDefinition/ContentId/ContentText contracts. New rounds use **activity revision 2,
-content schema 1 / revision 2 (1.2)**. Thirteen `position.*` choices are on, under, behind,
+PrepositionDefinition/ContentId/ContentText contracts. Following the 2026-10-07 wording
+review, new rounds use **activity revision 3, content schema 1 / revision 3 (1.3)**.
+Thirteen `position.*` choices are on, under, behind,
 next_to, in, between, above, below, inside, outside, in_front_of, near and far_from;
 `skill.spatial.*` uses the same suffixes. Legacy nextTo remains the same next_to concept.
 
@@ -193,22 +194,32 @@ validation with this narrow contract; retained pixels are not resampled or padde
 Image dimensions/hashes are presentation validation only, never task/checkpoint identity.
 
 The relation owns its bilingual label/phrase and reference: rock, table, box, two rocks,
-cloud or cave. German subjects/articles and phrases are authored separately; the supplied
-new labels/phrases require no correction. `in` and `inside` remain vocabulary variants
-with distinct authored scenes/IDs, not evidence of radically different mastery concepts.
+cloud or cave. German subjects/articles and phrases are authored separately. BELOW now
+uses dative “unter” and INSIDE uses “in”; distinct semantic IDs need not have unique
+German vocabulary globally. IN teaches box/container containment and INSIDE cave/place
+interior. OUTSIDE retains “außerhalb der Höhle” rather than collapse into foreground
+direction. The internal [visual contract and 52-scene audit](PREPOSITIONS_CONTENT_AUDIT.md)
+records the six cave fixes resolved on 2026-10-08 and ten unchanged borderline scenes;
+mapping validity is not visual acceptance.
 The live renderer fits the complete reviewed image inside a 4:3 frame; the original
 six-relation PositionGeometry utility is historical regression evidence only, no longer the runtime renderer.
 
 Seeded five/ten-question rounds select distinct scenes, include the correct answer in four
 distinct choices and narrate that exact ordered list. One concrete contrast is preferred
 (e.g. behind/in front of, near/far from). Competing pairs in/inside, under/below, on/above
-and next_to/near are excluded throughout a new question's choices. Both languages' labels
-must be unique. No adaptive difficulty or new answer interpretation is introduced.
+and next_to/near are excluded throughout a new question's choices. On cave references,
+outside/in_front_of are additionally incompatible. Useful opposites remain available.
+Both languages' labels must be unique within a question. No adaptive difficulty or new
+answer interpretation is introduced. Guided Listen retains question, answer stem and
+four full scene-specific answer phrases in displayed order.
 
 Revision-1/content-1.1 checkpoints restore their exact original tasks, choices, wording,
 versions and state against the original six-relation/24-scene contract. They are neither
 regenerated nor expanded mid-round; old pending progress is delivered with its original
-identity/version. Play Again creates v2. Unsupported or malformed journals remain intact.
+identity/version. Revision-2/content-1.2 active and completed checkpoints likewise retain
+exact saved content and state against their frozen wording (including old BELOW), with
+revision-aware display/audio phrases. Play Again creates v3. New compatibility rules do
+not retrospectively reject old rounds. Unsupported or malformed journals remain intact.
 Shared checkpoint/journal schemas stay 1; Prepositions supplies an explicit compatible
 restore function to DurableSessionHost, whose other consumers retain strict current-version
 restoration. New pictures do not fabricate prior learning history or demonstrate mastery.

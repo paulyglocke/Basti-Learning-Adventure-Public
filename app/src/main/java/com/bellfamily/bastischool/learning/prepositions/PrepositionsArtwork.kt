@@ -2,7 +2,9 @@ package com.bellfamily.bastischool.learning.prepositions
 
 import com.bellfamily.bastischool.learning.models.*
 
-/** Explicit reviewed art-revision-3 catalogue; not an animal × relation product. */
+/** Explicit art-revision-3 catalogue; not an animal × relation product.
+ * Visual distinction contracts and outstanding per-scene issues: PREPOSITIONS_CONTENT_AUDIT.md.
+ * Membership is preserved even where that stricter audit requires a future artwork fix. */
 object PrepositionsArtwork {
     private val entries = listOf(
         PositionScene(PositionAnimal.SNAKE, PositionRelation.ON) to "Prepositions/scenes/scene_prepositions_snake_on.png",

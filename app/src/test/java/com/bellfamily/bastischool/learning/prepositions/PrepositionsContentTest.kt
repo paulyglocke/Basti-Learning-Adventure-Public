@@ -10,9 +10,13 @@ class PrepositionsContentTest {
     @Test fun canonicalThirteenRelationsAndFiftyTwoScenes() {
         assertEquals(listOf("on", "under", "behind", "next_to", "in", "between", "above", "below", "inside", "outside", "in_front_of", "near", "far_from"), PositionRelation.entries.map { it.key })
         assertEquals(52, PrepositionsContent.scenes.map { it.id }.toSet().size)
-        assertEquals(listOf("auf", "unter", "hinter", "neben", "in", "zwischen", "über", "unterhalb", "drinnen", "draußen", "vor", "in der Nähe", "weit weg"), PositionRelation.entries.map { it.label.de })
+        assertEquals(listOf("auf", "unter", "hinter", "neben", "in", "zwischen", "über", "unter", "in", "draußen", "vor", "in der Nähe", "weit weg"), PositionRelation.entries.map { it.label.de })
         for (scene in PrepositionsContent.scenes) {
-            val choices = (listOf(scene.relation) + PositionRelation.entries.filter { it != scene.relation }.take(3)).map { it.id }
+            val relations = mutableListOf(scene.relation)
+            PositionRelation.entries.forEach { candidate ->
+                if (relations.size < 4 && relations.all { PrepositionsContent.compatible(it, candidate, scene.relation.reference) }) relations += candidate
+            }
+            val choices = relations.map { it.id }
             val question = PrepositionsContent.question(scene, choices)
             assertEquals(scene.relation.id, question.correct)
             assertEquals("skill.spatial.${scene.relation.key}", question.skill.value)

@@ -31,7 +31,7 @@ class PrepositionsWordingTest {
         val rock=PositionScene(PositionAnimal.SNAKE,PositionRelation.ON)
         assertEquals("next to the rock",answerPhrase(rock,PositionRelation.NEXT_TO.id,ContentLanguage.ENGLISH))
         assertEquals("über dem Stein",answerPhrase(rock,PositionRelation.ABOVE.id,ContentLanguage.GERMAN))
-        assertEquals("unterhalb des Steins",answerPhrase(rock,PositionRelation.BELOW.id,ContentLanguage.GERMAN))
+        assertEquals("unter dem Stein",answerPhrase(rock,PositionRelation.BELOW.id,ContentLanguage.GERMAN))
         assertEquals("weit weg vom Stein",answerPhrase(rock,PositionRelation.FAR_FROM.id,ContentLanguage.GERMAN))
         assertEquals("zwischen den beiden Steinen",answerPhrase(rock,PositionRelation.BETWEEN.id,ContentLanguage.GERMAN))
         val plural=PositionScene(PositionAnimal.SNAKE,PositionRelation.BETWEEN)

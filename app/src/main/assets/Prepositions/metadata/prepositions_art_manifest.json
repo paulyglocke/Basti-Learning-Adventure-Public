@@ -403,10 +403,10 @@
       "relation": "inside",
       "reference": "cave",
       "asset_path": "Prepositions/scenes/scene_prepositions_fish_inside.png",
-      "width": 1437,
+      "width": 1448,
       "height": 1086,
       "mode": "RGB",
-      "sha256": "feee11d2c0008a0452548be70cb3b8117c9e3aea06478e95a433d0e7b8fb5baa"
+      "sha256": "53be3242c29982eb44d1deb9522153909010b50228552db211f761c35208a6db"
     },
     {
       "scene_id": "scene.prepositions.turtle.inside",
@@ -417,7 +417,7 @@
       "width": 1448,
       "height": 1086,
       "mode": "RGB",
-      "sha256": "cf368f99c36c36a777913860f9f6af59d42c535008a4fd8585d1354c448f4119"
+      "sha256": "084209da6802a35a873a87b5e8f089f95553a4f0f4265ebff2a7c49e05892879"
     },
     {
       "scene_id": "scene.prepositions.octopus.inside",
@@ -425,10 +425,10 @@
       "relation": "inside",
       "reference": "cave",
       "asset_path": "Prepositions/scenes/scene_prepositions_octopus_inside.png",
-      "width": 1439,
+      "width": 1448,
       "height": 1086,
       "mode": "RGB",
-      "sha256": "9163d3061dc877f9e5128e2e0ec1b580395df2d4ded61e4969892307541330dd"
+      "sha256": "4ee07aca31f73084485d4cdcd2052b8c43f581b46a64c9fffab4e01d6872fddc"
     },
     {
       "scene_id": "scene.prepositions.seahorse.inside",
@@ -436,10 +436,10 @@
       "relation": "inside",
       "reference": "cave",
       "asset_path": "Prepositions/scenes/scene_prepositions_seahorse_inside.png",
-      "width": 1408,
+      "width": 1448,
       "height": 1086,
       "mode": "RGB",
-      "sha256": "12a0f37bcafda9cfa2f84a819756211d7f1f9f89539c97dc5b12fd8045691f4a"
+      "sha256": "f8b1dd37d63e30c8d161eca0f61a64cebc8a08b4ddf2a374b0c063c76d91ae08"
     },
     {
       "scene_id": "scene.prepositions.fish.outside",
@@ -458,10 +458,10 @@
       "relation": "outside",
       "reference": "cave",
       "asset_path": "Prepositions/scenes/scene_prepositions_turtle_outside.png",
-      "width": 1444,
+      "width": 1448,
       "height": 1086,
       "mode": "RGB",
-      "sha256": "cc85db1c003ff1fc55d945b886c49d2f633c07f05d98b85e9422e63483e01626"
+      "sha256": "92602e4fbe272391e1a226723f5ef343f0f6e33a01eed43dc916543f74a50410"
     },
     {
       "scene_id": "scene.prepositions.octopus.outside",
@@ -469,10 +469,10 @@
       "relation": "outside",
       "reference": "cave",
       "asset_path": "Prepositions/scenes/scene_prepositions_octopus_outside.png",
-      "width": 1440,
+      "width": 1448,
       "height": 1086,
       "mode": "RGB",
-      "sha256": "0623d105dfd366ca44af45a93354f2d654fdb687b7776ce99532a3146c38b622"
+      "sha256": "d812c3eb2310bab02d29b41ca3c33bd5fe874aa756791a8949e1fcc5d2b8a3b6"
     },
     {
       "scene_id": "scene.prepositions.seahorse.outside",

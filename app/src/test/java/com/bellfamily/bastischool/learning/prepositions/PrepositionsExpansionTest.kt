@@ -62,8 +62,8 @@ class PrepositionsExpansionTest {
             "on|on|auf|on the rock|auf dem Stein", "under|under|unter|under the table|unter dem Tisch",
             "behind|behind|hinter|behind the rock|hinter dem Stein", "next_to|next to|neben|next to the rock|neben dem Stein",
             "in|in|in|in the box|in der Kiste", "between|between|zwischen|between the two rocks|zwischen den beiden Steinen",
-            "above|above|über|above the cloud|über der Wolke", "below|below|unterhalb|below the cloud|unterhalb der Wolke",
-            "inside|inside|drinnen|inside the cave|in der Höhle", "outside|outside|draußen|outside the cave|außerhalb der Höhle",
+            "above|above|über|above the cloud|über der Wolke", "below|below|unter|below the cloud|unter der Wolke",
+            "inside|inside|in|inside the cave|in der Höhle", "outside|outside|draußen|outside the cave|außerhalb der Höhle",
             "in_front_of|in front of|vor|in front of the rock|vor dem Stein", "near|near|in der Nähe|near the rock|in der Nähe des Steins",
             "far_from|far from|weit weg|far from the rock|weit weg vom Stein")
         rows.forEach { val r=it.split('|'); val relation=PositionRelation.entries.single {v->v.key==r[0]}
@@ -71,7 +71,7 @@ class PrepositionsExpansionTest {
         }
         val sentences=listOf(
             "bird.above|The bird is above the cloud.|Der Vogel ist über der Wolke.",
-            "bee.below|The bee is below the cloud.|Die Biene ist unterhalb der Wolke.",
+            "bee.below|The bee is below the cloud.|Die Biene ist unter der Wolke.",
             "fish.inside|The fish is inside the cave.|Der Fisch ist in der Höhle.",
             "turtle.outside|The turtle is outside the cave.|Die Schildkröte ist außerhalb der Höhle.",
             "dinosaur.in_front_of|The dinosaur is in front of the rock.|Der Dinosaurier ist vor dem Stein.",
@@ -84,7 +84,7 @@ class PrepositionsExpansionTest {
         val reached=mutableSetOf<ContentId>()
         for(round in RoundLength.entries) for(seed in 0L..199L) {
             val plan=PrepositionsContentTest.plan(round,seed)
-            assertEquals(2,plan.activityRevision);assertEquals(ContentVersion(1,2),plan.contentVersion)
+            assertEquals(3,plan.activityRevision);assertEquals(ContentVersion(1,3),plan.contentVersion)
             assertEquals(round.count,plan.tasks.map {it.question.definition}.toSet().size)
             val again=PrepositionsContentTest.plan(round,seed)
             assertArrayEquals(SessionCheckpoint.encode(SessionReducer.start(plan,ContentLanguage.ENGLISH,PrepositionsContent.repository).state),
@@ -94,7 +94,7 @@ class PrepositionsExpansionTest {
                 reached+=task.question.correct
                 val relations=ids.map {id->PositionRelation.entries.single {it.id==id}}
                 assertEquals(4,relations.map {it.label.en}.toSet().size);assertEquals(4,relations.map {it.label.de}.toSet().size)
-                relations.forEachIndexed {i,a->relations.drop(i+1).forEach {b->assertTrue(PrepositionsContent.compatible(a,b))}}
+                relations.forEachIndexed {i,a->relations.drop(i+1).forEach {b->assertTrue(PrepositionsContent.compatible(a,b,PrepositionsContent.scene(task).relation.reference))}}
             }
         }
         assertEquals(PositionRelation.entries.map {it.id}.toSet(),reached)

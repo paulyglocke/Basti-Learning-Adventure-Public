@@ -1,5 +1,107 @@
 # Session handoff — 2026-09-27
 
+## Native Prepositions v3 cave integration — 2026-10-08 (locally validated)
+
+Integrated the six owner-supplied PNGs without resampling or renaming:
+`fish_inside`, `turtle_inside`, `octopus_inside`, `seahorse_inside`,
+`turtle_outside`, `octopus_outside` under
+`app/src/main/assets/Prepositions/scenes/scene_prepositions_<name>.png`.
+All decode as 1448 × 1086 RGB (4:3). Updated their actual manifest dimensions and
+SHA-256 hashes; all 52 unique mappings and other artwork remain unchanged.
+The six source images were visually re-reviewed: whole animals are clearly set back
+inside the cave or entirely outside its threshold. The audit preserves their original
+ARTWORK_FIX_REQUIRED observations and now classifies them CLEAR. Current totals:
+42 CLEAR, 10 unchanged BORDERLINE, no remaining ARTWORK_FIX_REQUIRED.
+
+Preserved the complete v3 wording/compatibility pass below: BELOW “unter der Wolke”,
+INSIDE “in der Höhle”, OUTSIDE “außerhalb der Höhle”, scene-specific cases, original
+four excluded pairs plus cave OUTSIDE/IN_FRONT_OF exclusion. New rounds are activity
+revision 3/content 1.3; strict frozen v1/v2 restoration retains old wording/state and
+progress identities. Artwork changes do not revise journals or historical evidence.
+Guided Listen sequencing/highlighting and individual Listen actions are unchanged;
+individual Listen semantics identify the complete phrase. The audit regression test
+now checks the six resolved rows, preserved history, and exact ten borderline IDs.
+
+Validation completed locally:
+- Focused Prepositions JVM: 46 tests passed, including v1/v2 exact restore.
+- Full JVM: 438 tests passed (79 classes), zero failures/errors/skips.
+- Python CI checks: 36 passed, including raster integrity and generated-content freshness.
+- Browser regression: 55 passed.
+- `assembleDebug`, `compileDebugAndroidTestKotlin`, `lintDebug`: passed with Java 17.
+  Lint: zero errors, three warnings and two informational findings.
+- All six distribution signing/version guard checks passed.
+- Exactly six PNG changes match ZIP bytes; all 52 manifest paths/hashes/decode checks pass.
+- `git diff --check`: passed. No unrelated or unexpected untracked files.
+
+Initial lint invocation failed with bundled Java 25 (`25.0.3`); rerunning with CI's
+Java 17 completed successfully without code/assertion changes. No connected emulator
+or device was available: instrumentation was compiled, not executed. Physical-device
+rendering, TalkBack and learner acceptance remain outstanding, as do the ten documented
+borderline scenes. Remote CI status is reported after push; this entry records local
+results only.
+
+## Native Prepositions wording / distinction audit — 2026-10-07 (historical implementation snapshot)
+
+The following records the original unvalidated pass; the 2026-10-08 integration
+entry above supersedes its artwork and validation status.
+
+Reviewed all 13 relations and opened all 52 original scene PNGs. Full visual
+contracts, final EN/DE phrase table, decisions and one classification/reason per
+exact scene ID are in [PREPOSITIONS_CONTENT_AUDIT.md](PREPOSITIONS_CONTENT_AUDIT.md).
+Results: 36 CLEAR, 10 BORDERLINE, 6 ARTWORK_FIX_REQUIRED. This is source-art review,
+not physical-device acceptance. All scene membership, IDs, PNGs and manifest hashes
+remain unchanged; flagged scenes remain in the catalogue for a later artwork pass.
+
+New wording: BELOW label/phrase uses “unter” / “unter der Wolke”, including dative
+reference-object inflection for distractors. INSIDE label uses “in” and its phrase
+remains “in der Höhle”. OUTSIDE retains standalone “draußen” and complete phrase
+“außerhalb der Höhle”: “vor” would replace outside/interior contrast with foreground
+direction and cannot fix ambiguous threshold art. Other reviewed correct phrases
+remain unchanged, including “zwischen den beiden Steinen”, “in der Nähe des Steins”
+and “weit weg vom Stein”. Full phrases drive both answer labels and Listen semantics.
+
+Preserved all four excluded synonym pairs (IN/INSIDE, UNDER/BELOW, ON/ABOVE,
+NEXT_TO/NEAR). Additionally exclude OUTSIDE/IN_FRONT_OF on cave references only,
+including distractor pairs. Preserve useful opposites and BETWEEN/NEXT_TO. Seeded
+shuffle mechanics and answer-order policy are unchanged; cave candidate filtering
+can change subsequent new-round choices for a seed. No saved plan is regenerated.
+
+New activity revision 3 / content 1.3. Existing revision 1/content 1.1 and revision
+2/content 1.2 active/completed/pending journals retain exact authored state, order,
+support, attempts and progress identities. Frozen old wording is used for strict
+validation and revision-aware display/option speech/scene semantics; no silent
+checkpoint rewriting or schema change. Again creates v3. V3 restore additionally
+checks relation compatibility against the scene reference. Guided Listen sequencing,
+highlight lifecycle, answer action and audio policy remain unchanged.
+
+ARTWORK_FIX_REQUIRED exact IDs:
+
+- `scene.prepositions.fish.inside`
+- `scene.prepositions.turtle.inside`
+- `scene.prepositions.octopus.inside`
+- `scene.prepositions.seahorse.inside`
+- `scene.prepositions.turtle.outside`
+- `scene.prepositions.octopus.outside`
+
+The four interiors fill the cave mouth without a clear visible threshold/set-back;
+turtle/octopus outside are too similar to their inside scenes and overlap/crop the
+threshold. Show the whole animal clearly inside/beyond that boundary in the future.
+BORDERLINE: `scene.prepositions.snake.next_to`, `scene.prepositions.dinosaur.next_to`,
+`scene.prepositions.dragon.next_to`, `scene.prepositions.crocodile.next_to` (tight crop
+and foreground overlap); `scene.prepositions.dinosaur.near`,
+`scene.prepositions.crocodile.near` (increase gap); `scene.prepositions.fish.outside`,
+`scene.prepositions.seahorse.outside` (clearer threshold separation);
+`scene.prepositions.dinosaur.far_from`, `scene.prepositions.dragon.far_from` (cropped
+heads and distance framing). Per-image observations are in the audit ledger.
+
+Added focused JVM tests for all-reference phrase/case integration, compatibility,
+useful opposites, complete audit membership, forged v3 compatibility rejection,
+independent frozen v2 fixtures for all 52 scenes, byte-exact active/completed restore,
+pending attempt/completion deduplication, fresh v3 rounds and revision-aware guided
+speech. Updated exact wording/version expectations while retaining frozen v1 tests;
+Compose guided Listen tests now assert complete phrase accessibility labels in EN/DE.
+Tests/builds have NOT been run for this pass. No images edited; no commit or push.
+
 ## Native Maths Add Together within 5 — 2026-10-07 (JVM/build validated)
 
 Added separate native `ADD_TOGETHER` route and 🧩 Home entry “Add Together” /
