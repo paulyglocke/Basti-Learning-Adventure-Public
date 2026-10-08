@@ -16,7 +16,7 @@ The app is currently a **hybrid Kotlin/Jetpack Compose + legacy WebView** applic
 
 Substantial native learning experiences now include:
 
-- **Prepositions** — 52 scenes across 13 relations, activity revision 3/content 1.3, guided Listen and exact v1/v2 saved-round recovery. Six cave replacements are visually resolved; ten unchanged scenes remain borderline. See the [scene audit](PREPOSITIONS_CONTENT_AUDIT.md); source-art review is not physical acceptance.
+- **Prepositions** — 52 scenes across 13 relations, activity revision 3/content 1.3, guided Listen and exact v1/v2 saved-round recovery. Both replacement batches are source-reviewed as resolved: 52 CLEAR, zero BORDERLINE or ARTWORK_FIX_REQUIRED. See the [scene audit](PREPOSITIONS_CONTENT_AUDIT.md); source-art review is not physical acceptance.
 - **Seasons** — Explore, recognition, Next/Before, Build the Year, Missing Season (`MISSING`), Season Clues (`CLUES`), Match season to clue (`MATCH`) and combined Before/After (`COMBINED`).
 - **Wilma's Week / Wilmas Woche** — Explore, Find Day, Before/After, weekday ordering, explicitly anchored Today/Yesterday/Tomorrow (`TODAY`) and non-quiz German/English weekday learning (`BILINGUAL`). TODAY uses a hypothetical weekday, not the device date.
 - **Vocabulary Booster** — bilingual vocabulary exploration and picture/word recognition.

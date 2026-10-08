@@ -199,7 +199,8 @@ uses dative “unter” and INSIDE uses “in”; distinct semantic IDs need not
 German vocabulary globally. IN teaches box/container containment and INSIDE cave/place
 interior. OUTSIDE retains “außerhalb der Höhle” rather than collapse into foreground
 direction. The internal [visual contract and 52-scene audit](PREPOSITIONS_CONTENT_AUDIT.md)
-records the six cave fixes resolved on 2026-10-08 and ten unchanged borderline scenes;
+records the six cave fixes and ten subsequent borderline replacements resolved on
+2026-10-08, with all 52 scenes source-reviewed as CLEAR and original observations retained;
 mapping validity is not visual acceptance.
 The live renderer fits the complete reviewed image inside a 4:3 frame; the original
 six-relation PositionGeometry utility is historical regression evidence only, no longer the runtime renderer.

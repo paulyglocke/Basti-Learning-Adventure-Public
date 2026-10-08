@@ -1,5 +1,46 @@
 # Session handoff — 2026-09-27
 
+## Prepositions remaining artwork cleanup — 2026-10-08 (locally validated)
+
+Replaced exactly ten supplied PNGs under `app/src/main/assets/Prepositions/scenes/`:
+`snake_next_to`, `dinosaur_next_to`, `dragon_next_to`, `crocodile_next_to`,
+`fish_outside`, `seahorse_outside`, `dinosaur_near`, `crocodile_near`,
+`dinosaur_far_from`, `dragon_far_from` (all `scene_prepositions_<name>.png`).
+Bytes match the supplied ZIP; all decode as 1448 × 1086 RGB PNGs, 4:3. Manifest
+metadata/hashes were recalculated for those ten records only. All 52 unique scene
+IDs/paths/mappings remain intact; no other PNG changed.
+
+Source-art review compared the dinosaur distance trio, crocodile NEXT_TO/NEAR,
+and all four OUTSIDE cave scenes together. Narrow side gaps, wider local gaps and
+large open-distance spans are distinct; all replacement silhouettes remain in frame.
+Fish/seahorse are fully outside with empty, visible cave entrances, consistent with
+the unchanged accepted turtle/octopus replacements. Also checked unchanged snake/
+dragon NEAR against the new NEXT_TO scenes. No supplied replacement failed review.
+
+Audit totals are now **52 CLEAR, 0 BORDERLINE, 0 ARTWORK_FIX_REQUIRED**. Original
+observations and both replacement stages remain documented. This supersedes earlier
+entries describing ten outstanding borderline scenes; those entries remain history.
+Current README/backlog/roadmap/content/QA summaries were updated narrowly. The audit
+regression now requires all 52 CLEAR and preserves/checks the exact ten former
+borderline IDs, replacement date and original six required-fix history. Integrity,
+restore and semantic assertions were not relaxed. No production Kotlin changed:
+activity revision 3/content 1.3, wording, v1/v2 recovery, guided audio/highlighting,
+compatibility, progress and journals are unchanged.
+
+Validation with Java 17:
+- All 46 focused Prepositions JVM tests passed, including v1/v2 restore and asset hashes.
+- Full JVM: 438 tests / 79 classes, zero failures/errors/skips.
+- Python CI integrity/freshness suite: 36 tests passed.
+- `compileDebugAndroidTestKotlin`, `assembleDebug`, `lintDebug`: passed.
+- Lint: zero errors, three warnings and two informational findings.
+- Exactly ten PNG changes; all 52 decodes/mappings/hashes verified; `git diff --check` passed.
+
+No emulator/device was connected, so instrumentation was not executed. Physical S24/
+Fire acceptance remains open, including small FAR_FROM subjects at app size, distance/
+threshold interpretation, screen-reader flow and installed EN/DE audio. Source-art
+CLEAR is not physical acceptance or evidence of learner mastery. Remote CI status
+is reported after push; these are local validation results.
+
 ## Current-status documentation reconciliation — 2026-10-08
 
 Documentation-only follow-up to implementation `ccc6423`. README, BACKLOG, the master

@@ -105,7 +105,8 @@ class PrepositionsReviewTest {
         assertTrue(rows.all { it.groupValues[3].isNotBlank() })
         PositionRelation.entries.forEach { assertTrue(audit.contains("| ${it.name} |")) }
         assertTrue(rows.none { it.groupValues[2] == "ARTWORK_FIX_REQUIRED" })
-        assertEquals(42, rows.count { it.groupValues[2] == "CLEAR" })
+        assertEquals(52, rows.count { it.groupValues[2] == "CLEAR" })
+        assertTrue(rows.none { it.groupValues[2] == "BORDERLINE" })
         val resolved = rows.filter { it.groupValues[3].contains("Previously ARTWORK_FIX_REQUIRED:") }
         assertTrue(resolved.all { it.groupValues[2] == "CLEAR" &&
             it.groupValues[3].contains("Replaced and visually re-reviewed 2026-10-08") })
@@ -113,7 +114,9 @@ class PrepositionsReviewTest {
         assertEquals(setOf("snake.next_to", "dinosaur.next_to", "dragon.next_to", "crocodile.next_to",
             "dinosaur.near", "crocodile.near", "fish.outside", "seahorse.outside",
             "dinosaur.far_from", "dragon.far_from").map { "scene.prepositions.$it" }.toSet(),
-            rows.filter { it.groupValues[2] == "BORDERLINE" }.map { it.groupValues[1] }.toSet())
+            rows.filter { it.groupValues[3].contains("Previously BORDERLINE:") }.map { it.groupValues[1] }.toSet())
+        assertTrue(rows.filter { it.groupValues[3].contains("Previously BORDERLINE:") }.all {
+            it.groupValues[3].contains("Replaced and visually re-reviewed 2026-10-08") })
         assertEquals(setOf("fish.inside", "turtle.inside", "octopus.inside", "seahorse.inside",
             "turtle.outside", "octopus.outside").map { "scene.prepositions.$it" }.toSet(), fixes)
     }

@@ -183,10 +183,10 @@
       "relation": "next_to",
       "reference": "rock",
       "asset_path": "Prepositions/scenes/scene_prepositions_snake_next_to.png",
-      "width": 1383,
+      "width": 1448,
       "height": 1086,
       "mode": "RGB",
-      "sha256": "d27b5c2219f9f6320440dd1b6c829610db371686f737a822a8f974eff39b688e"
+      "sha256": "79deb91b217c82d45aedcd59322ec0ab4affd2d1978096b53af51fbb43c2ee05"
     },
     {
       "scene_id": "scene.prepositions.dinosaur.next_to",
@@ -194,10 +194,10 @@
       "relation": "next_to",
       "reference": "rock",
       "asset_path": "Prepositions/scenes/scene_prepositions_dinosaur_next_to.png",
-      "width": 1383,
+      "width": 1448,
       "height": 1086,
       "mode": "RGB",
-      "sha256": "0af85871af1f92deec1b2135d102c2ead314a3f444eef51e6378869f0a0703fa"
+      "sha256": "c914b1beef796b9fc41da2255e02bd59122a24b32d5802d3d59460be2c15db0a"
     },
     {
       "scene_id": "scene.prepositions.dragon.next_to",
@@ -205,10 +205,10 @@
       "relation": "next_to",
       "reference": "rock",
       "asset_path": "Prepositions/scenes/scene_prepositions_dragon_next_to.png",
-      "width": 1383,
+      "width": 1448,
       "height": 1086,
       "mode": "RGB",
-      "sha256": "e856bafc90695def333fc0e66555d85b7a2915666b98bacc2874e7c5f366f347"
+      "sha256": "661a54509116bdd7217dd5bb991752ff6e671974729fde4315cb6eb5247b36bb"
     },
     {
       "scene_id": "scene.prepositions.crocodile.next_to",
@@ -216,10 +216,10 @@
       "relation": "next_to",
       "reference": "rock",
       "asset_path": "Prepositions/scenes/scene_prepositions_crocodile_next_to.png",
-      "width": 1383,
+      "width": 1448,
       "height": 1086,
       "mode": "RGB",
-      "sha256": "fac7033cd527e43388b706272703373e52b92c910dd0592923d36ff2d8ad22be"
+      "sha256": "4ed3fa1b6b7513bed828896c724ed0745a5cff19c80a9b9d6bfc391638305a42"
     },
     {
       "scene_id": "scene.prepositions.snake.in",
@@ -447,10 +447,10 @@
       "relation": "outside",
       "reference": "cave",
       "asset_path": "Prepositions/scenes/scene_prepositions_fish_outside.png",
-      "width": 1435,
+      "width": 1448,
       "height": 1086,
       "mode": "RGB",
-      "sha256": "d428e1c07e09d2bc43faff0c0dce4d38ae862f84c5cd90ae7cfad6c208a237f8"
+      "sha256": "064aea6bfbcb6d7528e3e4e102cc26c31fbf2ddc9984f66cfaa62e79528f51d1"
     },
     {
       "scene_id": "scene.prepositions.turtle.outside",
@@ -480,10 +480,10 @@
       "relation": "outside",
       "reference": "cave",
       "asset_path": "Prepositions/scenes/scene_prepositions_seahorse_outside.png",
-      "width": 1408,
+      "width": 1448,
       "height": 1086,
       "mode": "RGB",
-      "sha256": "20e35addb1753295ec438466df660a2fb5abace04eeb2116b1ba3557a8b17c87"
+      "sha256": "95a6af66b7da5392537b4cd206d1f2446b9e0d7d5f58f2003aec19fe29a5da4e"
     },
     {
       "scene_id": "scene.prepositions.snake.in_front_of",
@@ -549,7 +549,7 @@
       "width": 1448,
       "height": 1086,
       "mode": "RGB",
-      "sha256": "0831b0e14c0d8e348d67d7df9be39aeec3db6d181f6e9a5f48b95232132f7fb2"
+      "sha256": "9b6a17b5dc0328a0f3151f014f444a6ae7c737d56a44e293b443f91d5ecbbd3c"
     },
     {
       "scene_id": "scene.prepositions.dragon.near",
@@ -568,10 +568,10 @@
       "relation": "near",
       "reference": "rock",
       "asset_path": "Prepositions/scenes/scene_prepositions_crocodile_near.png",
-      "width": 1414,
+      "width": 1448,
       "height": 1086,
       "mode": "RGB",
-      "sha256": "aa51ff1def3a5af94632a77cd817d345bab9c35e8438b576ed7da971cf077997"
+      "sha256": "eb2a0c9a062fe618960de602efa5189a6a008421f913bf15e928cc2ade65eb93"
     },
     {
       "scene_id": "scene.prepositions.snake.far_from",
@@ -590,10 +590,10 @@
       "relation": "far_from",
       "reference": "rock",
       "asset_path": "Prepositions/scenes/scene_prepositions_dinosaur_far_from.png",
-      "width": 1438,
+      "width": 1448,
       "height": 1086,
       "mode": "RGB",
-      "sha256": "5c685110be27bed0773fe67ff39861cb99a8a4ff1863c35d01ffdc5ff17249df"
+      "sha256": "821c59f8b3bb64998999e3c061833e8157b612888ad2ac32162abb27d00bd134"
     },
     {
       "scene_id": "scene.prepositions.dragon.far_from",
@@ -604,7 +604,7 @@
       "width": 1448,
       "height": 1086,
       "mode": "RGB",
-      "sha256": "1e41a214070f7fbc7afeacb8567d6764c203e97422da2a828d78b80c271f2dbe"
+      "sha256": "7e2dfcf36be0ae8ca99c9ef8ff64723290cb3d830b3ae194a7a444b2afe9fb82"
     },
     {
       "scene_id": "scene.prepositions.crocodile.far_from",

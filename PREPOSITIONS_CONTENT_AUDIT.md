@@ -3,8 +3,11 @@
 Scope: all 52 original PNGs in art revision 3 were opened and visually inspected,
 with the authored manifest and native mappings. This is a source-art review, not
 physical-device acceptance. The original review left PNGs and metadata unchanged.
-On 2026-10-08 six supplied replacements were integrated and visually re-reviewed;
-only their manifest metadata changed. Membership, paths and semantic IDs remain unchanged. CLEAR means the intended cue is visible; BORDERLINE means plausible but
+On 2026-10-08 six cave replacements, followed by ten remaining borderline
+replacements, were integrated and visually re-reviewed, including comparison sets.
+Those artwork passes changed only the supplied PNG bytes and their manifest metadata,
+plus audit/test expectations. Membership, paths and semantic IDs remain unchanged.
+CLEAR means the intended cue is visible; BORDERLINE means plausible but
 insufficiently robust for the strict teaching contract; ARTWORK_FIX_REQUIRED means
 wording/code cannot establish the required spatial relation. No flagged scene is
 silently removed from rounds. This ledger supersedes earlier blanket “reviewed”
@@ -34,8 +37,8 @@ INSIDE now uses label “in”; BELOW uses “unter”. Shared German words do n
 | FAR_FROM | far from the rock | weit weg vom Stein | Substantial empty ground separates animal and rock; scale/depth reinforce distance. Keep both visible; distinguish instantly from NEAR. |
 
 OUTSIDE decision: retain “außerhalb der Höhle” to express not being inside, rather
-than encode foreground direction as “vor”. The six required cave fixes now have clear
-thresholds; the unchanged fish/seahorse OUTSIDE scenes remain borderline. “Vor der Höhle” is easy German but
+than encode foreground direction as “vor”. All four OUTSIDE scenes now have clear
+threshold separation following both replacement batches. “Vor der Höhle” is easy German but
 would collapse the taught answer into IN_FRONT_OF, and does not describe every
 possible outside position. INSIDE answers always use “in der Höhle”, never
 “drinnen der Höhle”. BELOW now takes dative (unter dem Stein/Tisch, unter der
@@ -72,10 +75,10 @@ Exact IDs below are the manifest IDs. Paths follow the unchanged native mapping.
 | `scene.prepositions.dinosaur.behind` | CLEAR | Rock hides the middle/lower body; visible animal parts emerge behind its silhouette. |
 | `scene.prepositions.dragon.behind` | CLEAR | Rock hides the middle/lower body; visible animal parts emerge behind its silhouette. |
 | `scene.prepositions.crocodile.behind` | CLEAR | Rock hides the middle/lower body; visible animal parts emerge behind its silhouette. |
-| `scene.prepositions.snake.next_to` | BORDERLINE | Very close beside rock, but tight source crop hides ground/body and foreground overlap also suggests IN_FRONT_OF. Reframe with a visible small side gap. |
-| `scene.prepositions.dinosaur.next_to` | BORDERLINE | Very close beside rock, but tight source crop hides ground/body and foreground overlap also suggests IN_FRONT_OF. Reframe with a visible small side gap. |
-| `scene.prepositions.dragon.next_to` | BORDERLINE | Very close beside rock, but tight source crop hides ground/body and foreground overlap also suggests IN_FRONT_OF. Reframe with a visible small side gap. |
-| `scene.prepositions.crocodile.next_to` | BORDERLINE | Very close beside rock, but tight source crop hides ground/body and foreground overlap also suggests IN_FRONT_OF. Reframe with a visible small side gap. |
+| `scene.prepositions.snake.next_to` | CLEAR | Replaced and visually re-reviewed 2026-10-08: Animal and rock sit side-by-side on the same ground plane with a narrow visible gap; neither silhouette overlaps or hides the other. Previously BORDERLINE: Very close beside rock, but tight source crop hides ground/body and foreground overlap also suggests IN_FRONT_OF. Reframe with a visible small side gap. |
+| `scene.prepositions.dinosaur.next_to` | CLEAR | Replaced and visually re-reviewed 2026-10-08: Animal and rock sit side-by-side on the same ground plane with a narrow visible gap; neither silhouette overlaps or hides the other. Previously BORDERLINE: Very close beside rock, but tight source crop hides ground/body and foreground overlap also suggests IN_FRONT_OF. Reframe with a visible small side gap. |
+| `scene.prepositions.dragon.next_to` | CLEAR | Replaced and visually re-reviewed 2026-10-08: Animal and rock sit side-by-side on the same ground plane with a narrow visible gap; neither silhouette overlaps or hides the other. Previously BORDERLINE: Very close beside rock, but tight source crop hides ground/body and foreground overlap also suggests IN_FRONT_OF. Reframe with a visible small side gap. |
+| `scene.prepositions.crocodile.next_to` | CLEAR | Replaced and visually re-reviewed 2026-10-08: Animal and rock sit side-by-side on the same ground plane with a narrow visible gap; neither silhouette overlaps or hides the other. Previously BORDERLINE: Very close beside rock, but tight source crop hides ground/body and foreground overlap also suggests IN_FRONT_OF. Reframe with a visible small side gap. |
 | `scene.prepositions.snake.in` | CLEAR | Box front rim hides lower body and side/back walls enclose it. |
 | `scene.prepositions.dinosaur.in` | CLEAR | Box front rim hides lower body and side/back walls enclose it. |
 | `scene.prepositions.dragon.in` | CLEAR | Box front rim hides lower body and side/back walls enclose it. |
@@ -96,27 +99,46 @@ Exact IDs below are the manifest IDs. Paths follow the unchanged native mapping.
 | `scene.prepositions.turtle.inside` | CLEAR | Replaced and visually re-reviewed 2026-10-08: Whole animal set back within the dark interior, with visible floor before the threshold. Previously ARTWORK_FIX_REQUIRED: Animal fills the cave mouth; bottom/threshold is cropped. Dark backdrop alone cannot prove it is set back inside. Show whole animal beyond a visible threshold/interior floor. |
 | `scene.prepositions.octopus.inside` | CLEAR | Replaced and visually re-reviewed 2026-10-08: Whole animal set back within the dark interior, with visible floor before the threshold. Previously ARTWORK_FIX_REQUIRED: Animal fills the cave mouth; bottom/threshold is cropped. Dark backdrop alone cannot prove it is set back inside. Show whole animal beyond a visible threshold/interior floor. |
 | `scene.prepositions.seahorse.inside` | CLEAR | Replaced and visually re-reviewed 2026-10-08: Whole animal set back within the dark interior, with visible floor before the threshold. Previously ARTWORK_FIX_REQUIRED: Animal fills the cave mouth; bottom/threshold is cropped. Dark backdrop alone cannot prove it is set back inside. Show whole animal beyond a visible threshold/interior floor. |
-| `scene.prepositions.fish.outside` | BORDERLINE | Animal overlaps the cave mouth/rim in foreground, but the threshold separation is not explicit. Show whole silhouette clear of entrance. |
+| `scene.prepositions.fish.outside` | CLEAR | Replaced and visually re-reviewed 2026-10-08: Whole animal is outside with clear space to the threshold; the dark entrance/interior remains empty and unobstructed. Previously BORDERLINE: Animal overlaps the cave mouth/rim in foreground, but the threshold separation is not explicit. Show whole silhouette clear of entrance. |
 | `scene.prepositions.turtle.outside` | CLEAR | Replaced and visually re-reviewed 2026-10-08: Whole animal outside and separated from the entrance; dark interior remains visible and no body part crosses the threshold. Previously ARTWORK_FIX_REQUIRED: Turtle fills and overlaps the entrance, very similar to turtle.inside; threshold/body separation is not unambiguous. Move full animal outside a visible entrance. |
 | `scene.prepositions.octopus.outside` | CLEAR | Replaced and visually re-reviewed 2026-10-08: Whole animal outside and separated from the entrance; dark interior remains visible and no body part crosses the threshold. Previously ARTWORK_FIX_REQUIRED: Lower body and threshold are cropped while animal overlaps the dark mouth; reads as at the entrance, not unmistakably outside. Show whole animal clear of threshold. |
-| `scene.prepositions.seahorse.outside` | BORDERLINE | Animal overlaps the cave mouth/rim in foreground, but the threshold separation is not explicit. Show whole silhouette clear of entrance. |
+| `scene.prepositions.seahorse.outside` | CLEAR | Replaced and visually re-reviewed 2026-10-08: Whole animal is outside with clear space to the threshold; the dark entrance/interior remains empty and unobstructed. Previously BORDERLINE: Animal overlaps the cave mouth/rim in foreground, but the threshold separation is not explicit. Show whole silhouette clear of entrance. |
 | `scene.prepositions.snake.in_front_of` | CLEAR | Animal silhouette clearly covers the broad rock face; depth cue survives the tight lower crop. |
 | `scene.prepositions.dinosaur.in_front_of` | CLEAR | Animal silhouette clearly covers the broad rock face; depth cue survives the tight lower crop. |
 | `scene.prepositions.dragon.in_front_of` | CLEAR | Animal silhouette clearly covers the broad rock face; depth cue survives the tight lower crop. |
 | `scene.prepositions.crocodile.in_front_of` | CLEAR | Animal silhouette clearly covers the broad rock face; depth cue survives the tight lower crop. |
-| `scene.prepositions.snake.near` | CLEAR | Broad visible grass gap separates the animal and rock; unlike the touching/cropped NEXT_TO image. |
-| `scene.prepositions.dinosaur.near` | BORDERLINE | Grass gap is visible but small relative to the body; still plausibly beside the rock. Widen it substantially for the strict NEAR/NEXT_TO contract. |
-| `scene.prepositions.dragon.near` | CLEAR | Broad visible grass gap separates the animal and rock; unlike the touching/cropped NEXT_TO image. |
-| `scene.prepositions.crocodile.near` | BORDERLINE | Snout approaches the rock and grass gap is modest relative to body length; could be read as NEXT_TO. Increase empty separation. |
+| `scene.prepositions.snake.near` | CLEAR | Broad visible grass gap separates the animal and rock, wider than in the replacement NEXT_TO scene. |
+| `scene.prepositions.dinosaur.near` | CLEAR | Replaced and visually re-reviewed 2026-10-08: Prominent animal and rock share a local area with an obvious mid-sized grass gap, substantially wider than the matching NEXT_TO scene. Previously BORDERLINE: Grass gap is visible but small relative to the body; still plausibly beside the rock. Widen it substantially for the strict NEAR/NEXT_TO contract. |
+| `scene.prepositions.dragon.near` | CLEAR | Broad visible grass gap separates the animal and rock, wider than in the replacement NEXT_TO scene. |
+| `scene.prepositions.crocodile.near` | CLEAR | Replaced and visually re-reviewed 2026-10-08: Prominent animal and rock share a local area with an obvious mid-sized grass gap, substantially wider than the matching NEXT_TO scene. Previously BORDERLINE: Snout approaches the rock and grass gap is modest relative to body length; could be read as NEXT_TO. Increase empty separation. |
 | `scene.prepositions.snake.far_from` | CLEAR | Foreground rock and smaller distant animal separated by a broad ground plane. |
-| `scene.prepositions.dinosaur.far_from` | BORDERLINE | Ground depth conveys distance, but top of head is cropped and animal remains large. Reframe whole animal with stronger distance contrast. |
-| `scene.prepositions.dragon.far_from` | BORDERLINE | Ground depth conveys distance, but head/horns are cropped and animal remains large. Reframe whole animal with stronger distance contrast. |
+| `scene.prepositions.dinosaur.far_from` | CLEAR | Replaced and visually re-reviewed 2026-10-08: Full recognisable animal silhouette and rock are widely separated across open ground; head, feet, tail and wings where applicable remain in frame. Previously BORDERLINE: Ground depth conveys distance, but top of head is cropped and animal remains large. Reframe whole animal with stronger distance contrast. |
+| `scene.prepositions.dragon.far_from` | CLEAR | Replaced and visually re-reviewed 2026-10-08: Full recognisable animal silhouette and rock are widely separated across open ground; head, feet, tail and wings where applicable remain in frame. Previously BORDERLINE: Ground depth conveys distance, but head/horns are cropped and animal remains large. Reframe whole animal with stronger distance contrast. |
 | `scene.prepositions.crocodile.far_from` | CLEAR | Foreground rock and smaller distant animal separated by a broad ground plane. |
 
 Original totals: 36 CLEAR, 10 BORDERLINE, 6 ARTWORK_FIX_REQUIRED.
-Current totals after six replacements: 42 CLEAR, 10 BORDERLINE, 0 ARTWORK_FIX_REQUIRED.
-The ten BORDERLINE scenes were not changed or reclassified. Replacements decode as
+Intermediate totals after six cave replacements: 42 CLEAR, 10 BORDERLINE, 0 ARTWORK_FIX_REQUIRED.
+Final totals after ten further replacements: **52 CLEAR, 0 BORDERLINE, 0 ARTWORK_FIX_REQUIRED**.
+All ten former BORDERLINE observations remain in the ledger as history. Both batches decode as
 1448 × 1086 RGB PNGs (4:3); manifest SHA-256 values are calculated from supplied bytes.
+
+## Comparison-set review — 2026-10-08
+
+- Dinosaur NEXT_TO / NEAR / FAR_FROM: a narrow side gap, a broad local grass gap,
+  then a much larger open span across the scene. Reduced subject scale in FAR_FROM
+  reinforces distance; the entire dinosaur and rock remain visible and recognisable.
+- Crocodile NEXT_TO / NEAR: the narrow snout-to-rock gap becomes a substantially wider
+  band of open ground. Neither image uses overlap or occlusion to imply position.
+- Snake and dragon NEXT_TO: clear small gaps on a common ground plane; no support,
+  silhouette overlap or foreground/background hiding. Dragon FAR_FROM shows its full
+  horns, wings, feet and tail, with a broad empty span to the rock.
+- Fish / turtle / octopus / seahorse OUTSIDE: reviewed together using the new fish and
+  seahorse images and unchanged accepted turtle/octopus replacements. All animals
+  are fully outside, with visible empty cave interiors and no threshold crossing.
+
+These are source-art comparison judgments, not pixel-distance thresholds or evidence
+of child mastery. Physical phone/tablet legibility, especially the smaller FAR_FROM
+subjects, and learner interpretation still require the established device review.
 
 ## Durable compatibility and guided speech
 

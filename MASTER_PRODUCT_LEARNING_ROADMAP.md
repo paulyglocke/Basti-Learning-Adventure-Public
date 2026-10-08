@@ -1537,7 +1537,7 @@ Current priorities:
 
 Already established native areas include:
 
-- Prepositions activity revision 3/content 1.3 (exact v1/v2 restoration; six cave fixes source-reviewed as resolved, ten scenes still borderline);
+- Prepositions activity revision 3/content 1.3 (exact v1/v2 restoration; six cave fixes and ten subsequent replacements source-reviewed as resolved; all 52 CLEAR, physical acceptance separate);
 - Seasons through combined before/after;
 - Wilma’s Week including TODAY/BILINGUAL;
 - five bounded native Maths activities from subitising through addition within 5;
