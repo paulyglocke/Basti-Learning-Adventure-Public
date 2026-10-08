@@ -1,5 +1,40 @@
 # Session handoff — 2026-09-27
 
+## Native Clock & Time Explore — 2026-10-08 (locally validated)
+
+New `CLOCK` Home route / `activity.time.clock`, titled Clock & Time / Uhr & Zeit.
+One `ClockTime` drives digital H:MM and both hand angles, with continuous hour-hand
+geometry. Native Canvas needs no artwork. Bidirectional circular movement unwraps
+hour boundaries, rounds to minutes while dragging and snaps to five minutes on
+release. Whole/half hours are emphasised, with “Move the long hand.” /
+“Bewege den langen Zeiger.” support. Central-pivot movement is ignored; keyboard,
+TalkBack actions and visible ±5-minute controls are alternatives to dragging.
+
+Central EN/DE display/Listen wording covers all 24 whole/half-hour teaching points
+(3:30 = Half past three / Halb vier; 12:30 = Halb eins). Explicit Listen reuses the
+existing native controller; no auto-speech, new TTS system, quizzes or progress
+fabrication. Manipulation/navigation/settings revoke speech. A separate bounded
+atomic browsing checkpoint stores exact time/language, with coalesced worker writes,
+flush-on-leave and visible retry. Global Options retains settings authority.
+See NATIVE_ARCHITECTURE_SPEC.md for format, gesture and failure details.
+
+Validation with Java 17:
+- Focused Clock semantic suite: 6 JVM tests passed; additional navigation test passed
+  in the full suite (7 Clock tests total).
+- Full JVM suite: 445 tests, zero failures/errors/skips, including shared audio/session.
+- Android test compilation, assembleDebug and lintDebug passed; lint has zero errors,
+  three warnings and two informational findings.
+- Focused Clock instrumentation: 4 tests passed on API 35 emulator, zero skips/failures.
+  Covers circular dragging, digital/hand agreement, semantics, keyboard, 1.5× narrow
+  portrait/short layouts, EN/DE, cancellation and exact silent owner restoration.
+- git diff --check passed. Remote CI is checked after push and reported separately.
+
+Physical S24/Fire touch, TalkBack focus/voice quality, installed voices and lifecycle
+acceptance remain open. Emulator execution is not physical acceptance. All Clock
+quizzes, digital editing, quarter/five-minute curriculum, face construction, routines
+and dates remain intentionally deferred. Existing activities/journal formats and
+artwork are unchanged. Historical entries below remain intact.
+
 ## Prepositions remaining artwork cleanup — 2026-10-08 (locally validated)
 
 Replaced exactly ten supplied PNGs under `app/src/main/assets/Prepositions/scenes/`:

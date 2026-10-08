@@ -560,6 +560,14 @@ Personal landmarks can later support orientation but should not define a month u
 
 Clock & Time should be strongly manipulation-first.
 
+Implementation checkpoint — 2026-10-08: native Clock & Time / Uhr & Zeit Explore
+is implemented with a shared semantic 12-hour state, bidirectional minute-hand
+dragging, continuous hour-hand movement, synchronised digital time, five-minute
+release snapping/accessible adjustment and explicit bilingual Listen. Whole/half
+hours are the first authored teaching vocabulary. This is not scored assessment;
+physical acceptance and all future modes below remain outstanding. Digital input
+and clock-face construction remain future interactions. See NATIVE_ARCHITECTURE_SPEC.md.
+
 #### Core interaction
 
 Use one semantic `ClockTime` source of truth.

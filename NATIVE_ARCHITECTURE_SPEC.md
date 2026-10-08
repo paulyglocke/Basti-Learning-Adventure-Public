@@ -519,3 +519,48 @@ Future routine/story/Months subsets can supply semantic target IDs to SequenceAs
 Wilma/Seasons convergence should share further proven data/invariants only where useful;
 replacing their correct-prefix policy is not a mechanical migration. No full curriculum,
 drag, demonstration, sequencing hub or universal persistence framework was introduced.
+
+
+## Clock & Time Explore — first native consumer (2026-10-08)
+
+Home route `CLOCK` / `activity.time.clock` provides an unscored Explore surface,
+separate from the legacy Days & Seasons route. `ClockTime(hour, minute)` validates
+1–12 and 0–59. Both the digital H:MM and analogue angles derive from that value:
+minute × 6°; (hour % 12 + minute / 60) × 30°. No wall clock, date, AM/PM, second
+angle state, session reducer or fabricated mastery/progress events are involved.
+
+The native Canvas draws numerals, ticks, a short thick hour hand and a longer thin
+minute hand. Circular dragging uses signed successive angular deltas, allowing both
+directions and 12→1 / 1→12 hour wrap. The pointer accumulator is transient; each
+movement updates semantic time to the nearest minute. Drag release snaps to the
+nearest five minutes (halfway rounds forward). The central 12% radius is ignored to
+avoid unstable angles; re-entry starts from the current time. Successive samples
+must be less than half a turn apart to infer direction. Bold 12/6 and explicit text
+emphasise whole/half hours. Five-minute stepping is an interaction aid, not a quiz.
+
+`ClockWording` centrally supplies display and Listen phrases: all 12 whole hours
+and 12 half hours, including “Ein Uhr”, “Halb vier” for 3:30, and “Halb eins” for
+12:30. Between teaching points, neutral numeric time is used. Explicit Listen uses
+the existing lazy `DefaultAudioController` / Android engine and manual instructional
+policy: All/Questions allow it; Off suppresses it. Dragging, adjustments, language,
+Options/navigation/background and disposal cancel speech. There is no automatic
+opening, restoration or per-minute narration.
+
+`ClockStore` uses the existing atomic storage boundary with its own version-1,
+maximum-64-byte `noBackupFilesDir/clock-explore` checkpoint for exact hour, minute
+and language. The ViewModel serializes disk work, coalesces movement writes over
+120ms, and flushes the latest snapshot on settling/leaving/clearing. Failed writes
+retain current state with explicit retry; invalid input is not silently reset or
+overwritten. Global Options remains authoritative for language/audio settings,
+as for the existing native activities; applying it never changes the saved time.
+Abrupt process death during an unfinished write can retain the previous committed
+snapshot; physical lifecycle acceptance is separate from atomic format tests.
+
+A single focusable face describes time and both hands, offers named TalkBack
+adjustment actions and left/right keyboard steps. Visible minimum-size Back/Forward
+five-minute buttons provide the same alternative. Tick marks/numerals are drawn,
+not separate focus targets. Digital time and authored phrase remain readable;
+a width-bounded clock lives inside a scrolling page for narrow/short/large-text
+layouts. Future quizzes may consume `ClockTime` but are not implemented here:
+Make This Time, What Time Is It, Digital → Analogue, Fix/Match Clocks, clock-face
+construction, quarter/five-minute assessment and routine/time missions remain deferred.

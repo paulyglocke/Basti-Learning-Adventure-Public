@@ -2,7 +2,7 @@ package com.bellfamily.bastischool
 
 import java.util.concurrent.atomic.AtomicReference
 
-internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS, WILMA, VOCABULARY, TELL_ME, FOLLOW_INSTRUCTIONS, COLOUR_SORT, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH, COMPARE_QUANTITY, NUMBER_ORDER, ADD_TOGETHER }
+internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS, WILMA, VOCABULARY, TELL_ME, FOLLOW_INSTRUCTIONS, COLOUR_SORT, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH, COMPARE_QUANTITY, NUMBER_ORDER, ADD_TOGETHER, CLOCK }
 internal enum class BackAction { EXIT, CLOSE_OPTIONS, LEGACY, NATIVE_HOME, DAYS_HUB }
 
 /** Options is an overlay on one destination, never another entry in a growing stack. */
@@ -17,7 +17,7 @@ internal data class ShellNavigation(
         ShellScreen.OPTIONS -> BackAction.CLOSE_OPTIONS
         ShellScreen.WEB -> BackAction.LEGACY
         ShellScreen.NUMBER_ORDER -> BackAction.NATIVE_HOME
-        ShellScreen.ADD_TOGETHER -> BackAction.NATIVE_HOME
+        ShellScreen.ADD_TOGETHER, ShellScreen.CLOCK -> BackAction.NATIVE_HOME
         ShellScreen.COMPARE_QUANTITY -> BackAction.NATIVE_HOME
         ShellScreen.PREPOSITIONS, ShellScreen.DAYS_SEASONS, ShellScreen.VOCABULARY, ShellScreen.TELL_ME, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.COLOUR_SORT, ShellScreen.ANIMAL_GROUPS, ShellScreen.WASH_HANDS, ShellScreen.SUBITISING, ShellScreen.QUANTITY_MATCH -> BackAction.NATIVE_HOME
         ShellScreen.SEASONS, ShellScreen.WILMA -> BackAction.DAYS_HUB
@@ -35,6 +35,7 @@ internal data class ShellNavigation(
     fun openQuantityMatch() = ShellNavigation(ShellScreen.QUANTITY_MATCH)
     fun openCompareQuantity() = ShellNavigation(ShellScreen.COMPARE_QUANTITY)
     fun openNumberOrder() = ShellNavigation(ShellScreen.NUMBER_ORDER)
+    fun openClock() = ShellNavigation(ShellScreen.CLOCK)
     fun openAddTogether() = ShellNavigation(ShellScreen.ADD_TOGETHER)
     fun openFollowInstructions() = ShellNavigation(ShellScreen.FOLLOW_INSTRUCTIONS)
     fun openVocabulary() = ShellNavigation(ShellScreen.VOCABULARY)
