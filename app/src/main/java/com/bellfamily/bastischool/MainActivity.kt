@@ -270,7 +270,7 @@ class MainActivity : ComponentActivity() {
                                     ShellScreen.QUANTITY_MATCH -> if (language == "de") "Zahlen & Mengen" else "Numbers & Groups"
                                     ShellScreen.COMPARE_QUANTITY -> if (language == "de") "Mehr oder weniger" else "More or Fewer"
                                     ShellScreen.NUMBER_ORDER -> if (language == "de") "Zahlenfolge" else "Number Order"
-                                    ShellScreen.CLOCK -> if (language == "de") "Uhr & Zeit" else "Clock & Time"
+                                    ShellScreen.CLOCK, ShellScreen.CLOCK_MAKE -> if (language == "de") "Uhr & Zeit" else "Clock & Time"
                                     ShellScreen.ADD_TOGETHER -> if (language == "de") "Zusammenzählen" else "Add Together"
                                     ShellScreen.FOLLOW_INSTRUCTIONS -> if (language == "de") "Anweisungen folgen" else "Follow the Instructions"
                                     ShellScreen.SEASONS -> if (language == "de") "Jahreszeiten" else "Seasons"
@@ -340,7 +340,12 @@ class MainActivity : ComponentActivity() {
                         ShellScreen.CLOCK -> ClockScreen(nativeClock.state, if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeClock.saveFailed, nativeClock.audioFailed, nativeClock::move, nativeClock::settle,
                             nativeClock::interrupt, nativeClock::adjust, nativeClock::listen, nativeClock::retrySave,
-                            { changeRoute(navigation.home()) })
+                            { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPractice = { changeRoute(navigation.openClockPractice()) })
+                        ShellScreen.CLOCK_MAKE -> ClockPracticeScreen(nativeClock.practice, if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            nativeClock.practiceBusy, nativeClock.practiceFailed, nativeClock.audioFailed,
+                            nativeClock::practiceMove, nativeClock::interrupt, nativeClock::practiceAdjust, nativeClock::practiceCheck,
+                            nativeClock::practiceNext, nativeClock::practiceReplay, nativeClock::practiceAgain, nativeClock::practiceRetrySave,
+                            { changeRoute(navigation.openClock()) }, { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration)
                         ShellScreen.SUBITISING -> SubitisingScreen(nativeSubitising.state, if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeSubitising.busy, nativeSubitising.saveFailed, nativeSubitising.audioFailed,
                             nativeSubitising::action, nativeSubitising::replay, nativeSubitising::again, nativeSubitising::retrySave,
@@ -424,6 +429,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.COLOUR_SORT -> nativeColourSort.busy || nativeColourSort.saveFailed
             ShellScreen.ANIMAL_GROUPS -> nativeAnimalGroups.busy || nativeAnimalGroups.saveFailed
             ShellScreen.WASH_HANDS -> nativeWashHands.busy || nativeWashHands.saveFailed
+            ShellScreen.CLOCK_MAKE -> nativeClock.practiceBusy || nativeClock.practiceFailed
             ShellScreen.SUBITISING -> nativeSubitising.busy || nativeSubitising.saveFailed
             ShellScreen.QUANTITY_MATCH -> nativeQuantityMatch.busy || nativeQuantityMatch.saveFailed
             ShellScreen.COMPARE_QUANTITY -> nativeCompareQuantity.busy || nativeCompareQuantity.saveFailed
@@ -443,6 +449,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.COLOUR_SORT -> nativeColourSort.state?.takeIf {it.completed && it.acknowledged}?.id?.value
             ShellScreen.ANIMAL_GROUPS -> nativeAnimalGroups.state?.takeIf {it.completed && it.acknowledged}?.id?.value
             ShellScreen.WASH_HANDS -> nativeWashHands.state?.takeIf {it.completed && it.acknowledged}?.id?.value
+            ShellScreen.CLOCK_MAKE -> nativeClock.practice?.takeIf { it.completed }?.id?.value
             ShellScreen.SUBITISING -> nativeSubitising.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.QUANTITY_MATCH -> nativeQuantityMatch.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.COMPARE_QUANTITY -> nativeCompareQuantity.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
@@ -475,7 +482,7 @@ class MainActivity : ComponentActivity() {
         nativeColourSort.setVisible(foreground && route.screen == ShellScreen.COLOUR_SORT)
         nativeAnimalGroups.setVisible(foreground && route.screen == ShellScreen.ANIMAL_GROUPS)
         nativeWashHands.setVisible(foreground && route.screen == ShellScreen.WASH_HANDS)
-        nativeClock.setVisible(foreground && route.screen == ShellScreen.CLOCK)
+        nativeClock.setVisible(foreground && route.screen in listOf(ShellScreen.CLOCK, ShellScreen.CLOCK_MAKE), route.screen == ShellScreen.CLOCK_MAKE)
         nativeSubitising.setVisible(foreground && route.screen == ShellScreen.SUBITISING)
         nativeQuantityMatch.setVisible(foreground && route.screen == ShellScreen.QUANTITY_MATCH)
         nativeCompareQuantity.setVisible(foreground && route.screen == ShellScreen.COMPARE_QUANTITY)
@@ -493,6 +500,7 @@ class MainActivity : ComponentActivity() {
 
     private fun navigateBack() {
         when (navigation.backAction) {
+            BackAction.CLOCK_AREA -> changeRoute(navigation.openClock())
             BackAction.DAYS_HUB -> changeRoute(navigation.openDaysSeasons())
             BackAction.NATIVE_HOME -> changeRoute(navigation.home())
             BackAction.EXIT -> Unit // BackHandler is disabled; Android owns exit.
@@ -672,7 +680,7 @@ class MainActivity : ComponentActivity() {
         super.onSaveInstanceState(outState)
     }
     override fun onPause() { celebrationSound.cancel(); foreground = false; nativePositions.setVisible(false); nativeSeasons.setVisible(false); nativeWilma.setVisible(false); nativeVocabulary.setVisible(false); nativeClock.setVisible(false); nativeSubitising.setVisible(false); nativeQuantityMatch.setVisible(false); nativeCompareQuantity.setVisible(false); nativeNumberOrder.setVisible(false); nativeAddition.setVisible(false); nativeFollow.setVisible(false); nativeColourSort.setVisible(false); nativeAnimalGroups.setVisible(false); nativeWashHands.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
-    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen == ShellScreen.SEASONS); nativeWilma.setVisible(navigation.screen == ShellScreen.WILMA); nativeVocabulary.setVisible(navigation.screen == ShellScreen.VOCABULARY); nativeClock.setVisible(navigation.screen == ShellScreen.CLOCK); nativeSubitising.setVisible(navigation.screen == ShellScreen.SUBITISING); nativeQuantityMatch.setVisible(navigation.screen == ShellScreen.QUANTITY_MATCH); nativeCompareQuantity.setVisible(navigation.screen == ShellScreen.COMPARE_QUANTITY); nativeNumberOrder.setVisible(navigation.screen == ShellScreen.NUMBER_ORDER); nativeAddition.setVisible(navigation.screen == ShellScreen.ADD_TOGETHER); nativeFollow.setVisible(navigation.screen == ShellScreen.FOLLOW_INSTRUCTIONS); nativeColourSort.setVisible(navigation.screen == ShellScreen.COLOUR_SORT); nativeAnimalGroups.setVisible(navigation.screen == ShellScreen.ANIMAL_GROUPS); nativeWashHands.setVisible(navigation.screen == ShellScreen.WASH_HANDS); updateWebActivity() }
+    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen == ShellScreen.SEASONS); nativeWilma.setVisible(navigation.screen == ShellScreen.WILMA); nativeVocabulary.setVisible(navigation.screen == ShellScreen.VOCABULARY); nativeClock.setVisible(navigation.screen in listOf(ShellScreen.CLOCK, ShellScreen.CLOCK_MAKE), navigation.screen == ShellScreen.CLOCK_MAKE); nativeSubitising.setVisible(navigation.screen == ShellScreen.SUBITISING); nativeQuantityMatch.setVisible(navigation.screen == ShellScreen.QUANTITY_MATCH); nativeCompareQuantity.setVisible(navigation.screen == ShellScreen.COMPARE_QUANTITY); nativeNumberOrder.setVisible(navigation.screen == ShellScreen.NUMBER_ORDER); nativeAddition.setVisible(navigation.screen == ShellScreen.ADD_TOGETHER); nativeFollow.setVisible(navigation.screen == ShellScreen.FOLLOW_INSTRUCTIONS); nativeColourSort.setVisible(navigation.screen == ShellScreen.COLOUR_SORT); nativeAnimalGroups.setVisible(navigation.screen == ShellScreen.ANIMAL_GROUPS); nativeWashHands.setVisible(navigation.screen == ShellScreen.WASH_HANDS); updateWebActivity() }
     override fun onDestroy() { celebrationSound.close(); disposeWebView(); tts?.shutdown(); tts = null; super.onDestroy() }
 }
 

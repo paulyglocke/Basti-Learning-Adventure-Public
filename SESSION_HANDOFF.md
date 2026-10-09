@@ -1,5 +1,62 @@
 # Session handoff — 2026-09-27
 
+## Clock Make This Time — 2026-10-08 (locally validated)
+
+Clock progression is now **Explore → Make This Time — whole/half hours**.
+The existing Home entry opens Explore; a mode action opens `CLOCK_MAKE`, with Back
+returning to Explore and normal Home/Options behavior. Both Clock surfaces now use
+shell inset padding, correcting the original Explore omission. No artwork changed.
+
+`ClockPractice` / `activity.time.clock.make` revision 1/content 1.1 has eight
+seeded, stored targets: four whole + four half hours drawn without duplicates from
+24 ClockTime values, mixed in seeded whole/half pairs. Start = target minus 90
+minutes. ClockFace, semantic geometry and wording are reused, with configurable
+30-minute practice movement; Explore retains its original five-minute resolution.
+Only explicit Check counts an attempt. Wrong checks preserve clock/target; after
+two wrong checks, a long-hand hint explains 12/6. Correct Check locks the clock;
+Next advances and final Next completes. Eventual success completes each question;
+first-attempt accuracy is derived separately, not shown as a punitive score.
+
+Live digital time is hidden until correct. Target prompt/display/TTS share wording
+(e.g. “Make half past four.” / “Stelle halb fünf ein.”). Current-clock accessibility
+describes the actual hand positions, without a hidden digital/time-answer label.
+TalkBack custom actions, keyboard arrows and visible buttons adjust by 30 minutes.
+Existing shared title/progress/support/action/completion presentation is reused.
+
+The existing Clock audio owner serves both modes. Explicit Listen replays target;
+Next/Again prompts and hints follow All/Questions; automatic generic retry/positive
+feedback/completion follow All. Off suppresses everything. Opening/restoration stay
+silent; manipulation, navigation, language/policy changes revoke pending speech.
+
+A separate strict, digest-checked `clock-make` write-ahead journal preserves target
+order, index, semantic position, all task attempts/wrong/support/checked times,
+language and completion/pending progress. Writes are serial before Check; failure
+blocks checks until retry rereads the journal. Shared progress records submitted
+time IDs and whole/half skills, with stable deduplicated attempt/completion IDs.
+The only shared model/codec change adds eight-task completions to the supported
+sizes; schema-1 layout and old accepted sizes remain intact. Older app builds cannot
+read new eight-task progress (downgrade unsupported). Explore/other journals remain
+unchanged. NATIVE_ARCHITECTURE_SPEC.md and PROGRESS_TRACKER_SPEC.md give details.
+
+Validation with Java 17:
+- Focused Clock/shared audio/session JVM run passed; final full suite: 455 tests,
+  zero failures/errors/skips, including 17 Clock semantic/practice/navigation tests.
+- Android test compilation and assembleDebug passed.
+- lintDebug passed with zero errors, three warnings and two informational findings.
+- API 35 emulator: eight Clock screen/owner tests passed, then the added real-shell
+  route test passed (nine total). Covers EN/DE, hidden digital readout, circular
+  movement, accessibility actions, keyboard, retry/hint, eight-question completion,
+  Again, 1.5× narrow/short layout, silent durable restore, Options/recreation/Back and
+  title clearance below the shell top bar.
+- git diff --check passed. Remote CI is checked after push and reported separately.
+
+Physical S24/Fire acceptance remains open: drag comfort, TalkBack focus, actual
+installed offline voices, 30-minute motor demands, learning effectiveness and
+lifecycle/process recovery. Emulator evidence is not physical acceptance.
+Next bounded Clock task remains **What Time Is It?**; quarter hours, five-minute/
+arbitrary-minute practice, Digital → Analogue, Fix/Match Clocks, clock construction
+and calendar/routine missions remain explicitly deferred. Historical entries follow.
+
 ## Native Clock & Time Explore — 2026-10-08 (locally validated)
 
 New `CLOCK` Home route / `activity.time.clock`, titled Clock & Time / Uhr & Zeit.

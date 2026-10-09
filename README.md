@@ -121,7 +121,7 @@ The long-term progression is:
 
 Months will centre on a Year Wheel, month recognition, Before/Next/Between, Missing Month, progressive Build the Year activities and Months ↔ Seasons relationships.
 
-Clock & Time will introduce a manipulable analogue clock connected bidirectionally to a digital representation through one semantic time model.
+Native Clock & Time now offers Explore and Make This Time (whole/half hours). One semantic time model drives the manipulable analogue clock and derived digital display. Practice mixes eight targets, hides digital time until correct, and uses Check, hints and shared completion. Digital editing and later Clock modes remain future work; physical-device acceptance remains open.
 
 Later My Calendar activities can introduce real month grids, dates, weekdays, Today and meaningful personal landmarks.
 

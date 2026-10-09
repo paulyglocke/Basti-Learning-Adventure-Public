@@ -562,5 +562,70 @@ five-minute buttons provide the same alternative. Tick marks/numerals are drawn,
 not separate focus targets. Digital time and authored phrase remain readable;
 a width-bounded clock lives inside a scrolling page for narrow/short/large-text
 layouts. Future quizzes may consume `ClockTime` but are not implemented here:
-Make This Time, What Time Is It, Digital → Analogue, Fix/Match Clocks, clock-face
-construction, quarter/five-minute assessment and routine/time missions remain deferred.
+At this Explore checkpoint, practice modes were deferred. Make This Time is now
+implemented as described below; other modes remain future work.
+
+
+## Clock Make This Time — whole/half-hour practice (2026-10-08)
+
+Clock progression is Explore → Make This Time. The existing Home card opens Explore;
+its mode action opens `CLOCK_MAKE`; system Back and the Explore action return to
+`CLOCK`. Options restores either route, and Home uses the existing shell. Both Clock
+surfaces now apply the shell's inset padding (missing on the original Explore route).
+One ClockViewModel/ClockAudio owner serves both modes; no second TTS controller.
+
+`ClockPractice` is a bounded manipulation state machine, not a four-choice quiz.
+The existing ChoiceQuestion session only supports 5/10 questions and choice answers,
+so it is not forced onto this task. Activity `activity.time.clock.make`, revision 1,
+content 1.1 uses 8 tasks regardless of the global 5/10 quiz setting. Its finite
+catalogue is 24 semantic ClockTime values; a seeded shuffle picks four whole and
+four half hours without duplicates, mixed as four seeded whole/half pairs. Each
+start is target minus 90 minutes on the 12-hour cycle. Exact target order is stored,
+not regenerated on restore. No date or process-global random source enters generation.
+
+The existing ClockFace and ClockTime geometry are reused. Practice uses 30-minute
+semantic steps during dragging and for keyboard/TalkBack/buttons; Explore retains
+minute movement and five-minute release snapping. Check alone creates an attempt.
+Wrong checks preserve target/position and allow continued manipulation; the second
+wrong check reveals a long-hand-only hint (12 for whole, 6 for half). That newly
+shown hint counts as support for the next attempt, not retroactively for the check
+that triggered it. A correct Check locks the clock; explicit Next advances, and the
+final Next completes. Each eventual success counts toward completion; first-attempt
+accuracy derives from retained attempt counts, without a score display or penalty.
+
+The live digital readout is hidden until correct. Target semantics use the same
+central bilingual prompt as display and TTS; current-clock semantics describe hand
+positions rather than a hidden spoken digital answer. For example 4:30 is “Make half
+past four.” / “Stelle halb fünf ein.” Support and completion use shared components.
+The normal shared completion screen offers Again/Home/Replay and its existing
+celebration. Again creates a fresh ID/plan only after pending progress is acknowledged.
+
+`ClockPracticeHost` follows the established write-ahead pattern: a separate bounded,
+SHA-256-checked `clock-make` journal contains actual targets, index, position, per-task
+checks/wrong counts/last checked time/support, language, completion acknowledgement
+and at most one pending progress event. Strict decode validates targets, balance,
+results, version and pending event equality. Compare-before-replace prevents stale
+writers. State and pending event commit before progress delivery; retry re-reads the
+journal and redelivers the same stable event ID. Failed writes block further checks;
+restore/retry stay silent. Existing Explore and other journals are unchanged.
+
+Progress reuses ProgressRepository/ProgressCodec, with semantic submitted time IDs
+such as `time.clock.h4.half`, whole/half skills and `context.time.analogue_clock`.
+Only Check records attempts; completion records eight truthful per-task outcomes,
+attempt/retry/support totals. The shared completion-size allowlist adds 8; the
+schema-1 byte layout and existing accepted sizes are unchanged. Older app builds
+cannot read new eight-task completion records; downgrade over those records is not
+supported. No mastery system or manipulation-as-attempt evidence is introduced.
+
+Explicit Listen replays the target. New-question/Again prompts and instructional
+hints follow All/Questions; generic retry, positive feedback and completion automatic
+speech follow All only. Off blocks all speech. Opening/restoring is silent; dragging,
+navigation, language/policy changes and disposal cancel audio, and worker callbacks
+cannot revive stale speech. In-flight position writes are serial and ordered before
+Check, without blocking responsive movement. Pending writes finish on the worker;
+physical abrupt-process-death acceptance remains distinct from atomic restore tests.
+
+Still deferred: What Time Is It? (the next bounded Clock task), quarter hours,
+five-minute/arbitrary-minute practice, Digital → Analogue, Fix/Match Clocks,
+face construction and routine/calendar missions. Physical S24/Fire drag comfort,
+TalkBack/D-pad flow, installed EN/DE speech and lifecycle acceptance remain open.

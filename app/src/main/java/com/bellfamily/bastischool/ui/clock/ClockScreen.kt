@@ -31,11 +31,13 @@ import kotlin.math.*
 @Composable
 fun ClockScreen(state: ClockExploreState?, language: ContentLanguage, saveFailed: Boolean, audioFailed: Boolean,
     onMove: (ClockTime) -> Unit, onSettle: () -> Unit, onInterrupt: () -> Unit, onAdjust: (Int) -> Unit,
-    onListen: () -> Unit, onRetry: () -> Unit, onHome: () -> Unit, modifier: Modifier = Modifier) {
+    onListen: () -> Unit, onRetry: () -> Unit, onHome: () -> Unit, modifier: Modifier = Modifier, onPractice: (() -> Unit)? = null) {
     fun t(en: String, de: String) = if (language == ContentLanguage.GERMAN) de else en
     Column(modifier.fillMaxSize().background(Color(0xFFEAF7FC)).verticalScroll(rememberScrollState()).padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(12.dp)) {
         NativeActivityTitle(t("Clock & Time", "Uhr & Zeit"))
+        if (onPractice != null) NativeActionButton(t("Make This Time", "Stelle diese Uhrzeit ein"), NativeActionRole.SECONDARY,
+            onPractice, Modifier.fillMaxWidth().testTag("clock-open-make"))
         NativeSupportMessage(t("Move the long hand.", "Bewege den langen Zeiger."))
         if (state == null) Text(t("Opening…", "Wird geöffnet…")) else {
             ClockFace(state.time, language, !saveFailed, onMove, onSettle, onInterrupt, onAdjust)
@@ -63,31 +65,37 @@ fun ClockScreen(state: ClockExploreState?, language: ContentLanguage, saveFailed
 
 @Composable
 fun ClockFace(time: ClockTime, language: ContentLanguage, enabled: Boolean,
-    onMove: (ClockTime) -> Unit, onSettle: () -> Unit, onInterrupt: () -> Unit, onAdjust: (Int) -> Unit) {
+    onMove: (ClockTime) -> Unit, onSettle: () -> Unit, onInterrupt: () -> Unit, onAdjust: (Int) -> Unit,
+    step: Int = ClockTime.EXPLORE_STEP, practice: Boolean = false) {
     val latestTime by rememberUpdatedState(time)
     val move by rememberUpdatedState(onMove)
     val settle by rememberUpdatedState(onSettle)
     val interrupt by rememberUpdatedState(onInterrupt)
     val german = language == ContentLanguage.GERMAN
-    val label = if (german) "Uhr zeigt ${ClockWording.phrase(time, language)}. Langer Zeiger: Minuten. Kurzer Zeiger: Stunden."
+    val label = if (practice) {
+        val hour = time.hour
+        val minuteMark = if (time.minute == 0) 12 else 6
+        if (german) "Aktuelle Uhr: Langer Zeiger auf $minuteMark. Kurzer Zeiger ${if (time.minute == 0) "auf $hour" else "zwischen $hour und ${hour % 12 + 1}"}."
+        else "Current clock: long hand on $minuteMark. Short hand ${if (time.minute == 0) "on $hour" else "between $hour and ${hour % 12 + 1}"}."
+    } else if (german) "Uhr zeigt ${ClockWording.phrase(time, language)}. Langer Zeiger: Minuten. Kurzer Zeiger: Stunden."
         else "Clock showing ${ClockWording.phrase(time, language)}. Long hand: minutes. Short hand: hours."
     Canvas(Modifier.widthIn(max = 380.dp).fillMaxWidth().aspectRatio(1f).testTag("clock-face")
         .semantics {
             contentDescription = label
-            stateDescription = time.digital
+            if (!practice) stateDescription = time.digital
             if (enabled) customActions = listOf(
-                CustomAccessibilityAction(if (german) "5 Minuten zurück" else "5 minutes back") { onAdjust(-5); true },
-                CustomAccessibilityAction(if (german) "5 Minuten weiter" else "5 minutes forward") { onAdjust(5); true })
+                CustomAccessibilityAction(if (german) "$step Minuten zurück" else "$step minutes back") { onAdjust(-step); true },
+                CustomAccessibilityAction(if (german) "$step Minuten weiter" else "$step minutes forward") { onAdjust(step); true })
         }
         .onKeyEvent {
             if (!enabled || it.type != KeyEventType.KeyDown) false
             else when (it.key) {
-                Key.DirectionLeft -> { onAdjust(-5); true }
-                Key.DirectionRight -> { onAdjust(5); true }
+                Key.DirectionLeft -> { onAdjust(-step); true }
+                Key.DirectionRight -> { onAdjust(step); true }
                 else -> false
             }
         }.focusable(enabled)
-        .pointerInput(enabled, language) {
+        .pointerInput(enabled, language, step) {
             if (!enabled) return@pointerInput
             var drag: ClockDrag? = null
             fun angle(p: Offset): Float = ((atan2(p.x - size.width / 2f, -(p.y - size.height / 2f)) * 180f / PI.toFloat()) + 360f) % 360f
@@ -100,7 +108,10 @@ fun ClockFace(time: ClockTime, language: ContentLanguage, enabled: Boolean,
                     change.consume()
                     if (away(change.position)) {
                         if (drag == null) drag = ClockDrag(latestTime, angle(change.position))
-                        else move(drag!!.move(angle(change.position)))
+                        else {
+                            val next = drag!!.move(angle(change.position))
+                            move(if (practice) next.snap(step) else next)
+                        }
                     } else drag = null
                 })
         }) {

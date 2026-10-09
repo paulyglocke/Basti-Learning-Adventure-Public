@@ -71,4 +71,57 @@ class ClockOwnerTest {
             assertFalse(File(directory,"native-progress").exists())
         } finally {compose.runOnUiThread {owners.clear()}}
     }
+    @Test fun practiceOwnerRestoresPartialClockAndCancelsWithoutTouchAttempts() {
+        val directory=temp.newFolder()
+        val app=IsolatedApplication(ApplicationProvider.getApplicationContext(),directory)
+        val owners=ViewModelStore();val engine=Engine()
+        lateinit var vm:ClockViewModel
+        fun settled() {
+            compose.waitUntil(10_000) {var done=false;compose.runOnUiThread {done=vm.practice!=null && !vm.practiceBusy};done}
+            compose.runOnUiThread {assertFalse(vm.practiceFailed)}
+        }
+        fun open() {
+            compose.runOnUiThread {vm=ClockViewModel(app){engine};owners.put("clock",vm);vm.configure("de","all");vm.setVisible(true,true)}
+            settled()
+        }
+        try {
+            open()
+            compose.runOnUiThread {assertTrue(engine.spoken.isEmpty());vm.practiceReplay()};settled()
+            compose.runOnUiThread {
+                assertEquals(ClockPractice.prompt(vm.practice!!.target).speech.de,engine.spoken.last().text)
+                vm.practiceAdjust(30);vm.practiceAdjust(-30)
+                assertEquals(0,vm.practice!!.current.attempts)
+                vm.practiceCheck()
+            };settled()
+            compose.runOnUiThread {vm.practiceCheck()};settled()
+            lateinit var saved:ClockPractice.State
+            val count=engine.spoken.size
+            compose.runOnUiThread {
+                assertTrue(vm.practice!!.current.support.hint)
+                assertEquals(2,vm.practice!!.current.attempts)
+                saved=vm.practice!!;vm.setVisible(false);owners.clear()
+            }
+            open()
+            compose.runOnUiThread {
+                assertEquals(saved,vm.practice);assertEquals(count,engine.spoken.size)
+                vm.configure("en","questions")
+            };settled()
+            compose.runOnUiThread {
+                vm.practiceMove(vm.practice!!.target);vm.practiceCheck()
+            };settled()
+            compose.runOnUiThread {
+                assertTrue(vm.practice!!.current.solved)
+                assertEquals(count,engine.spoken.size) // Questions suppresses positive feedback
+                vm.practiceNext()
+            };settled()
+            compose.runOnUiThread {
+                assertEquals(1,vm.practice!!.index)
+                assertEquals(ClockPractice.prompt(vm.practice!!.target).speech.en,engine.spoken.last().text)
+                val before=engine.spoken.size
+                vm.configure("en","off");vm.practiceReplay()
+                assertEquals(before,engine.spoken.size)
+            };settled()
+        } finally {compose.runOnUiThread {owners.clear()}}
+    }
+
 }

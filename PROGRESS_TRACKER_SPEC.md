@@ -227,3 +227,20 @@ The ordering host retains both final-placement and completion effects before acc
 ### Seasons cycle/ordering integration (2026-09-23)
 
 Next/Before use the existing session recorder and durable host; Build the Year records existing typed attempt events and one completion with four canonical placement records. The model/codec now permits four completed steps as well as five/seven/ten. Schema-1 layout and dedupe identities are unchanged, and existing records remain readable. Older app builds cannot read the newly allowed four-step completion; downgrading over these records is unsupported. Ordered progress remains distinct from score/mastery; Replay/Help are support, not incorrect attempts. The activity-specific journal retains final placement and completion until durable acknowledgement, preserving the same IDs after restore/retry. Explore does not create correctness events.
+
+
+### Clock Make This Time evidence (2026-10-08)
+
+`activity.time.clock.make` revision 1/content 1.1 records only explicit Check
+submissions, using `skill.time.clock.make.whole` / `.half` and
+`context.time.analogue_clock`. Submitted semantic times retain hour and whole/half
+position; drag/button adjustments are not attempts. The second wrong check reveals
+a minute-hand hint for subsequent checks. Final completion preserves all eight
+target-specific results, attempts, retries and support. First-attempt accuracy can
+be derived separately from eventual success; neither is labelled mastery.
+
+The completion model/codec allowlist adds eight tasks to four/five/seven/ten,
+without changing schema-1 encoding or dedupe IDs. Existing progress remains readable;
+older app builds do not accept new eight-task completions (downgrade unsupported).
+The separate write-ahead Clock journal retains failed delivery for idempotent retry.
+Explore still creates no correctness evidence. See NATIVE_ARCHITECTURE_SPEC.md.

@@ -11,7 +11,10 @@ data class ClockTime(val hour: Int = 12, val minute: Int = 0) {
     val hourAngle: Float get() = (hour % 12 + minute / 60f) * 30f
     val digital: String get() = "$hour:${minute.toString().padStart(2, '0')}"
     fun advance(delta: Int) = fromMinutes(minutes + delta)
-    fun snap() = fromMinutes((minutes / 5.0).roundToInt() * 5)
+    fun snap(interval: Int = EXPLORE_STEP): ClockTime {
+        require(interval in listOf(5, 30))
+        return fromMinutes((minutes.toDouble() / interval).roundToInt() * interval)
+    }
     companion object {
         const val EXPLORE_STEP = 5
         fun fromMinutes(value: Int): ClockTime {

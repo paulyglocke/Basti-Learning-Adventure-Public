@@ -565,7 +565,10 @@ is implemented with a shared semantic 12-hour state, bidirectional minute-hand
 dragging, continuous hour-hand movement, synchronised digital time, five-minute
 release snapping/accessible adjustment and explicit bilingual Listen. Whole/half
 hours are the first authored teaching vocabulary. This is not scored assessment;
-physical acceptance and all future modes below remain outstanding. Digital input
+Make This Time now adds eight whole/half-hour practice targets (4 + 4), explicit
+Check, long-hand hints, exact restoration and shared progress/completion. Current
+progression is **Explore → Make This Time — whole/half hours**. Physical acceptance
+and the remaining future modes below stay outstanding. Digital input
 and clock-face construction remain future interactions. See NATIVE_ARCHITECTURE_SPEC.md.
 
 #### Core interaction
@@ -601,7 +604,6 @@ Before formal telling-time questions:
 
 #### Future modes
 
-- Make This Time;
 - What Time Is It?;
 - Digital → Analogue;
 - Fix the Clock;
@@ -1677,7 +1679,9 @@ Later expansion:
 
 ### Clock & Time v1
 
-Start small:
+Explore and bounded whole/half-hour Make This Time are implemented. The following
+remains the v1 scope; physical-device acceptance is still outstanding:
+
 
 - semantic time model;
 - analogue/digital synchronisation;
