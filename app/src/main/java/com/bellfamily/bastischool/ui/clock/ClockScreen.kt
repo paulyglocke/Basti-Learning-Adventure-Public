@@ -12,6 +12,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.graphics.drawscope.withTransform
+import androidx.compose.ui.res.painterResource
+import com.bellfamily.bastischool.R
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
@@ -67,6 +71,8 @@ fun ClockScreen(state: ClockExploreState?, language: ContentLanguage, saveFailed
 fun ClockFace(time: ClockTime, language: ContentLanguage, enabled: Boolean,
     onMove: (ClockTime) -> Unit, onSettle: () -> Unit, onInterrupt: () -> Unit, onAdjust: (Int) -> Unit,
     step: Int = ClockTime.EXPLORE_STEP, practice: Boolean = false) {
+    val dinosaur = painterResource(R.drawable.hour_hand_dinosaur)
+    val dragon = painterResource(R.drawable.minute_hand_dragon)
     val latestTime by rememberUpdatedState(time)
     val move by rememberUpdatedState(onMove)
     val settle by rememberUpdatedState(onSettle)
@@ -130,8 +136,25 @@ fun ClockFace(time: ClockTime, language: ContentLanguage, enabled: Boolean,
             paint.isFakeBoldText = n == 12 || n == 6
             drawContext.canvas.nativeCanvas.drawText(n.toString(), p.x, p.y - (paint.ascent() + paint.descent()) / 2, paint)
         }
-        drawLine(ink, center, point(time.hourAngle, radius * .48f), 10.dp.toPx(), StrokeCap.Round)
-        drawLine(Color(0xFF176B88), center, point(time.minuteAngle, radius * .83f), 5.dp.toPx(), StrokeCap.Round)
+        val hour = ClockHandDecoration.hour(time)
+        val minute = ClockHandDecoration.minute(time)
+        fun endpoint(hand: ClockHandDecoration) = center + Offset(hand.x, hand.y) * radius
+        drawLine(ink, center, endpoint(hour), 10.dp.toPx(), StrokeCap.Round)
+        drawLine(Color(0xFF176B88), center, endpoint(minute), 5.dp.toPx(), StrokeCap.Round)
+        // Tail overlaps the line endpoint; rotate the entire illustration, not just its position.
+        fun character(hand: ClockHandDecoration, painter: androidx.compose.ui.graphics.painter.Painter) {
+            val end = endpoint(hand)
+            val scale = radius * hand.width / hand.viewportWidth
+            withTransform({
+                translate(end.x, end.y)
+                rotate(hand.rotation, Offset.Zero)
+                translate(-hand.tailX * scale, -hand.tailY * scale)
+            }) {
+                with(painter) { draw(Size(radius * hand.width, radius * hand.height)) }
+            }
+        }
+        character(hour, dinosaur)
+        character(minute, dragon)
         drawCircle(ink, 8.dp.toPx())
     }
 }

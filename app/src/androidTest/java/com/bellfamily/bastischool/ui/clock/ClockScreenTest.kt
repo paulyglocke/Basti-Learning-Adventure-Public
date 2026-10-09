@@ -3,6 +3,10 @@ package com.bellfamily.bastischool.ui.clock
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.*
+import androidx.compose.ui.graphics.asAndroidBitmap
+import androidx.test.platform.app.InstrumentationRegistry
+import android.graphics.Bitmap
+import java.io.File
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.key.Key
 import androidx.compose.ui.platform.LocalDensity
@@ -71,4 +75,19 @@ class ClockScreenTest {
         compose.runOnIdle {assertTrue(state.value.time.minute in 25..35);assertTrue(state.value.time.hourAngle>100f)}
         compose.onNodeWithTag("clock-digital").performScrollTo().assertTextEquals(state.value.time.digital)
     }
+    @Test fun decorativeVectorsKeepOneClockSemanticTargetAndRenderAtRepresentativeTimes() {
+        show()
+        listOf(ClockTime(12), ClockTime(3), ClockTime(3,30), ClockTime(6), ClockTime(9), ClockTime(11,30)).forEach { time ->
+            compose.runOnIdle { state.value = state.value.copy(time = time) }
+            val face = compose.onNodeWithTag("clock-face").performScrollTo()
+            face.onChildren().assertCountEquals(0)
+            face.assertContentDescriptionEquals("Clock showing ${ClockWording.phrase(time, ContentLanguage.ENGLISH)}. Long hand: minutes. Short hand: hours.")
+            val bitmap = face.captureToImage().asAndroidBitmap()
+            val cache = InstrumentationRegistry.getInstrumentation().targetContext.cacheDir
+            File(cache, "clock-hands-${time.hour}-${time.minute}.png").outputStream().use {
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, it)
+            }
+        }
+    }
+
 }
