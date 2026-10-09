@@ -1,9 +1,7 @@
 package com.bellfamily.bastischool.ui.animalgroups
 
-import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -17,6 +15,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.painterResource
+import com.bellfamily.bastischool.R
 import androidx.compose.ui.semantics.*
 import androidx.compose.ui.unit.dp
 import com.bellfamily.bastischool.learning.animalgroups.*
@@ -26,28 +26,14 @@ import com.bellfamily.bastischool.ui.common.*
 
 /** Decorative context cues, never an extra focus/action target. */
 @Composable private fun HabitatCue(category: ContentId) {
-    val ink = MaterialTheme.colorScheme.onSurface
-    Canvas(Modifier.size(64.dp, 36.dp)) {
-        if (category == AnimalGroups.water) {
-            repeat(3) { row ->
-                val y = size.height * (row + 1) / 4
-                repeat(6) { column ->
-                    val x = size.width * column / 6
-                    drawLine(ink, Offset(x, y), Offset(x + size.width / 12, y - 4.dp.toPx()), 2.dp.toPx())
-                    drawLine(ink, Offset(x + size.width / 12, y - 4.dp.toPx()), Offset(x + size.width / 6, y), 2.dp.toPx())
-                }
-            }
-        } else {
-            val y = size.height * .8f
-            drawLine(ink, Offset(0f,y), Offset(size.width,y), 3.dp.toPx())
-            listOf(.2f,.5f,.8f).forEach { x ->
-                val base=Offset(size.width*x,y)
-                drawLine(ink,base,Offset(base.x-5.dp.toPx(),y-14.dp.toPx()),2.dp.toPx())
-                drawLine(ink,base,Offset(base.x+5.dp.toPx(),y-18.dp.toPx()),2.dp.toPx())
-            }
-        }
-    }
+    Image(
+        painter = painterResource(if (category == AnimalGroups.water) R.drawable.habitat_water else R.drawable.habitat_land),
+        contentDescription = null,
+        contentScale = ContentScale.Fit,
+        modifier = Modifier.size(120.dp, 80.dp).testTag("groups-habitat-${category.value}")
+    )
 }
+
 @Composable fun AnimalGroupsScreen(state:SortState?,language:ContentLanguage,busy:Boolean,saveFailed:Boolean,audioFailed:Boolean,
     images:Map<ContentId,ImageBitmap>,
     onAction:(SortAction)->Unit,onAgain:()->Unit,onRetry:()->Unit,onHome:()->Unit,
@@ -91,11 +77,11 @@ import com.bellfamily.bastischool.ui.common.*
                     if(row.size==1)Spacer(Modifier.weight(1f))
                 }
             }
-            Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+            Row(Modifier.fillMaxWidth().height(IntrinsicSize.Min),horizontalArrangement=Arrangement.spacedBy(12.dp)) {
                 state.rule.categories.forEach {category ->
                     val placed=state.rule.items.filter {it.category==category && state.placement(it.id).placed}
                     val name=AnimalGroups.category(category).display[language]
-                    Column(Modifier.weight(1f).heightIn(min=160.dp)
+                    Column(Modifier.weight(1f).fillMaxHeight().heightIn(min=160.dp)
                         .background(MaterialTheme.colorScheme.surfaceVariant,RoundedCornerShape(20.dp))
                         .border(3.dp,MaterialTheme.colorScheme.outline,RoundedCornerShape(20.dp))
                         .clickable(ready && state.selected!=null && images.containsKey(state.selected),role=Role.Button) {

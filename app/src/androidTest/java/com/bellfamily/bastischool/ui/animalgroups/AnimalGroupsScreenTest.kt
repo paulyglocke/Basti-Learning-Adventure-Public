@@ -1,6 +1,12 @@
 package com.bellfamily.bastischool.ui.animalgroups
 
 import android.content.pm.ActivityInfo
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import androidx.compose.ui.graphics.asAndroidBitmap
+import androidx.compose.ui.semantics.SemanticsProperties
+import com.bellfamily.bastischool.R
+import java.io.File
 import android.content.res.Configuration
 import android.view.Surface
 import androidx.activity.ComponentActivity
@@ -33,6 +39,8 @@ class AnimalGroupsScreenTest(private val language:ContentLanguage,private val or
         @JvmStatic @Parameterized.Parameters(name="{0}-{1}")fun cases()=listOf(
             arrayOf<Any>(ContentLanguage.ENGLISH,ActivityInfo.SCREEN_ORIENTATION_PORTRAIT),
             arrayOf<Any>(ContentLanguage.GERMAN,ActivityInfo.SCREEN_ORIENTATION_PORTRAIT),
+            arrayOf<Any>(ContentLanguage.ENGLISH,ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE),
+            arrayOf<Any>(ContentLanguage.ENGLISH,ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE),
             arrayOf<Any>(ContentLanguage.GERMAN,ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE),
             arrayOf<Any>(ContentLanguage.GERMAN,ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE))
     }
@@ -47,6 +55,14 @@ class AnimalGroupsScreenTest(private val language:ContentLanguage,private val or
         val app=androidx.test.core.app.ApplicationProvider.getApplicationContext<android.app.Application>()
         val images=AnimalGroupsArtworkLoader {app.assets.open(it)}.load()
         assertEquals(4,images.size)
+        for (resource in listOf(R.drawable.habitat_water, R.drawable.habitat_land)) {
+            val bitmap=BitmapFactory.decodeResource(app.resources,resource)
+            assertEquals(1536,bitmap.width);assertEquals(1024,bitmap.height)
+            assertTrue(bitmap.hasAlpha())
+            assertEquals(0,android.graphics.Color.alpha(bitmap.getPixel(0,0)))
+            assertEquals(0,android.graphics.Color.alpha(bitmap.getPixel(bitmap.width-1,0)))
+            bitmap.recycle()
+        }
         var home=0;var replay=0
         val selections=mutableListOf<ContentId>()
         lateinit var input: InputModeManager
@@ -62,6 +78,25 @@ class AnimalGroupsScreenTest(private val language:ContentLanguage,private val or
         fun item(id:ContentId)=compose.onNodeWithTag("groups-item-${id.value}")
         fun category(id:ContentId)=compose.onNodeWithTag("groups-category-${id.value}")
         AnimalGroups.categories.forEach {category(it).performScrollTo().assertIsDisplayed().assertHeightIsAtLeast(56.dp).assertWidthIsAtLeast(56.dp)}
+        fun checkHabitatLayout() {
+            val bounds=AnimalGroups.categories.map { id ->
+                val button=category(id).performScrollTo().fetchSemanticsNode().boundsInRoot
+                val picture=compose.onNodeWithTag("groups-habitat-${id.value}",useUnmergedTree=true)
+                picture.assertIsDisplayed().assert(hasNoClickAction())
+                val node=picture.fetchSemanticsNode()
+                assertFalse(node.config.contains(SemanticsProperties.ContentDescription))
+                assertTrue(node.boundsInRoot.left>button.left && node.boundsInRoot.right<button.right)
+                assertTrue(node.boundsInRoot.top>button.top && node.boundsInRoot.bottom<button.bottom)
+                assertEquals(button.center.x,node.boundsInRoot.center.x,1f)
+                button
+            }
+            assertEquals(bounds[0].width,bounds[1].width,1f)
+            assertEquals(bounds[0].height,bounds[1].height,1f)
+        }
+        checkHabitatLayout()
+        compose.onRoot().captureToImage().asAndroidBitmap().let { bitmap ->
+            File(app.cacheDir,"habitats-${language.name}-$orientation.png").outputStream().use { bitmap.compress(Bitmap.CompressFormat.PNG,100,it) }
+        }
         AnimalGroups.objects.forEach {o->
             item(o.id).performScrollTo().assertIsDisplayed().assertHasClickAction().assertHeightIsAtLeast(56.dp)
             compose.onAllNodesWithText(o.text.display[language]).assertCountEquals(1)
@@ -89,6 +124,7 @@ class AnimalGroupsScreenTest(private val language:ContentLanguage,private val or
         item(first.id).assertDoesNotExist()
         compose.onNodeWithTag("groups-placed-${first.id.value}",useUnmergedTree=true).assertExists()
         assertFalse(state.completed)
+        checkHabitatLayout() // Uneven placed-animal counts must not change button equality.
         AnimalGroups.objects.drop(1).forEach {o->item(o.id).performScrollTo().performClick();category(o.category).performScrollTo().performClick()}
         assertTrue(state.completed)
         compose.onNodeWithTag("completion-celebration").assertExists()
