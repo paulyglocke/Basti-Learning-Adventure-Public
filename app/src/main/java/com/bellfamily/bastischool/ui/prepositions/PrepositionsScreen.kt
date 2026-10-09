@@ -127,7 +127,7 @@ internal fun PositionSceneImage(scene: PositionScene, language: ContentLanguage,
     Column(modifier, verticalArrangement = Arrangement.spacedBy(8.dp)) {
         val frame = Modifier.fillMaxWidth().aspectRatio(4f / 3f).testTag("position-scene")
         if (artwork != null) Image(artwork, positionDescription(scene, revision)[language], frame, contentScale = ContentScale.Fit)
-        else Box(frame.background(MaterialTheme.colorScheme.surfaceVariant)
+        else Box(Modifier.fillMaxWidth().testTag("position-scene").background(MaterialTheme.colorScheme.surfaceVariant)
             .semantics { contentDescription = positionDescription(scene, revision)[language] }, contentAlignment = Alignment.Center) {
             Text(if (language == ContentLanguage.GERMAN) "Das Bild ist gerade nicht verfügbar. Du kannst zur bisherigen Version wechseln."
                 else "The picture is unavailable right now. You can use the previous version.",

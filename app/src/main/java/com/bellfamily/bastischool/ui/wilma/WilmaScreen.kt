@@ -1,5 +1,6 @@
 package com.bellfamily.bastischool.ui.wilma
 
+import com.bellfamily.bastischool.ui.common.NativeChoiceRows
 import com.bellfamily.bastischool.ui.common.NativeActivityTitle
 import com.bellfamily.bastischool.ui.common.NativeQuestionProgress
 
@@ -21,6 +22,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.*
 import androidx.compose.ui.text.style.TextAlign
@@ -58,11 +60,11 @@ fun WilmaScreen(selection:WilmaSelection?,quiz:SessionState?,ordering:WilmaOrder
     }
     Column(modifier.fillMaxSize().background(Color(0xFFF1F8E9)).verticalScroll(rememberScrollState()).padding(16.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
         NativeActivityTitle(t("Wilma’s Week","Wilmas Woche"))
-        WilmaPhase.entries.chunked(2).forEach {row -> Row(horizontalArrangement=Arrangement.spacedBy(8.dp)) {row.forEach {phase ->
+        NativeChoiceRows(WilmaPhase.entries) { phase ->
             OutlinedButton(onClick={onPhase(phase)},enabled=ready,modifier=Modifier.weight(1f).heightIn(min=56.dp).testTag("wilma-phase-${phase.name}")) {
                 Text(phase.title.display[language])
             }
-        } } }
+        }
         if(saveFailed) Text(t("Your saved work is kept. Please try saving or opening it again.","Deine gespeicherte Arbeit bleibt erhalten. Versuche erneut, sie zu speichern oder zu öffnen."))
         if(imageFailed) Text(t("Wilma’s pictures could not be opened. Please try again.","Wilmas Bilder konnten nicht geöffnet werden. Bitte versuche es erneut."))
         if(saveFailed || imageFailed) NativeActionButton(t("Try again", "Erneut versuchen"), NativeActionRole.SECONDARY, onClick=onRetry,enabled=!busy,modifier=Modifier.testTag("wilma-retry-save"))
@@ -176,7 +178,7 @@ internal fun WilmaStrip(images:Map<String,ImageBitmap>,language:ContentLanguage,
         }
         days.forEach {id ->
             val label=WilmaContent.day(id).text.display[language]
-            Column(Modifier.width(128.dp),horizontalAlignment=Alignment.CenterHorizontally) {
+            Column(Modifier.width(128.dp * LocalDensity.current.fontScale.coerceAtLeast(1f)),horizontalAlignment=Alignment.CenterHorizontally) {
                 Column(Modifier.fillMaxWidth().selectable(selected==id,enabled=id in enabled,role=Role.Button,onClick={onDay(id)})
                     .border(if(selected==id)3.dp else 1.dp,if(selected==id)Color(0xFF275C2F) else Color.Transparent,RoundedCornerShape(12.dp))
                     .testTag("$prefix-${id.value}"),horizontalAlignment=Alignment.CenterHorizontally) {

@@ -22,6 +22,13 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.BoxWithConstraints
+import androidx.compose.foundation.layout.IntrinsicSize
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.ui.platform.LocalDensity
+import com.bellfamily.bastischool.ui.common.NativeScreenHeader
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -50,10 +57,8 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
@@ -108,7 +113,7 @@ private val PaleBlue = Color(0xFFEAF7FC)
 private val PaleYellow = Color(0xFFFFF5C8)
 
 
-private data class HomeCard(
+internal data class HomeCard(
     val emoji: String,
     val titleEn: String,
     val titleDe: String,
@@ -251,7 +256,7 @@ class MainActivity : ComponentActivity() {
             Scaffold(
                 contentWindowInsets = WindowInsets.safeDrawing,
                 topBar = {
-                    TopAppBar(
+                    NativeScreenHeader(
                         title = {
                             Text(
                                 when (screen) {
@@ -282,7 +287,7 @@ class MainActivity : ComponentActivity() {
                         actions = {
                             OutlinedButton(onClick = { openOptions() }) { Text(if (language == "de") "⚙ Optionen" else "⚙ Options") }
                         },
-                        colors = TopAppBarDefaults.topAppBarColors(containerColor = Gold),
+                        background = Gold,
                         // Landscape button navigation and cutouts also occupy horizontal space.
                         windowInsets = WindowInsets.safeDrawing.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal)
                     )
@@ -685,7 +690,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-private fun NativeHome(language: String, padding: PaddingValues, recoveryFailed: Boolean, onCard: (HomeCard) -> Unit) {
+internal fun NativeHome(language: String, padding: PaddingValues, recoveryFailed: Boolean, onCard: (HomeCard) -> Unit) {
     val learn = homeCards.take(5); val practice = homeCards.slice(5..8); val play = homeCards.drop(9)
     Column(Modifier.fillMaxSize().padding(padding).background(Grass).padding(horizontal = 16.dp).verticalScroll(rememberScrollState())) {
         if (recoveryFailed) Text(if (language == "de") "Das letzte Spiel konnte nicht wiederhergestellt werden. Wähle ein Spiel, um neu zu starten." else "The last activity could not be restored. Choose an activity to start again.", modifier = Modifier.padding(top = 12.dp))
@@ -701,32 +706,37 @@ private fun NativeHome(language: String, padding: PaddingValues, recoveryFailed:
 @Composable
 private fun HomeGroup(title: String, cards: List<HomeCard>, language: String, onCard: (HomeCard) -> Unit) {
     Text(title, modifier = Modifier.padding(start = 6.dp, top = 8.dp, bottom = 5.dp), fontSize = 15.sp, fontWeight = FontWeight.Black, color = Ink)
-    Column(verticalArrangement = Arrangement.spacedBy(10.dp), modifier = Modifier.fillMaxWidth()) {
-        cards.chunked(2).forEach { row ->
-            Row(horizontalArrangement = Arrangement.spacedBy(10.dp), modifier = Modifier.fillMaxWidth()) {
-                row.forEach { card ->
-                    Card(onClick = { onCard(card) }, colors = CardDefaults.cardColors(containerColor = if (card.play) PaleYellow else Color.White), elevation = CardDefaults.cardElevation(defaultElevation = 4.dp), modifier = Modifier.weight(1f).height(142.dp)) {
-                        Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(5.dp)) {
-                            if(card.mode=="subitising") androidx.compose.foundation.Canvas(Modifier.size(40.dp)) {
-                                listOf(.25f,.5f,.75f).forEach {p -> drawCircle(Color(0xFF172B3A),size.minDimension*.08f,androidx.compose.ui.geometry.Offset(size.width*p,size.height*p))}
-                            } else Text(card.emoji, fontSize = 34.sp)
-                            Text(if (language == "de") card.titleDe else card.titleEn, fontSize = 19.sp, fontWeight = FontWeight.Black, color = Ink)
-                            Text(if (language == "de") card.descriptionDe else card.descriptionEn, fontSize = 13.sp, fontWeight = FontWeight.Bold, color = Color(0xFF607788))
+    BoxWithConstraints(Modifier.fillMaxWidth()) {
+        // Reserve room for long words plus existing card padding; do not shrink type.
+        val columns = if (maxWidth >= (190.dp * LocalDensity.current.fontScale + 28.dp) * 2 + 10.dp) 2 else 1
+        Column(verticalArrangement = Arrangement.spacedBy(10.dp), modifier = Modifier.fillMaxWidth()) {
+            cards.chunked(columns).forEach { row ->
+                Row(horizontalArrangement = Arrangement.spacedBy(10.dp), modifier = Modifier.fillMaxWidth().height(IntrinsicSize.Min)) {
+                    row.forEach { card ->
+                        Card(onClick = { onCard(card) }, colors = CardDefaults.cardColors(containerColor = if (card.play) PaleYellow else Color.White), elevation = CardDefaults.cardElevation(defaultElevation = 4.dp), modifier = Modifier.weight(1f).fillMaxHeight()) {
+                            Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(5.dp)) {
+                                if(card.mode=="subitising") androidx.compose.foundation.Canvas(Modifier.size(40.dp)) {
+                                    listOf(.25f,.5f,.75f).forEach {p -> drawCircle(Color(0xFF172B3A),size.minDimension*.08f,androidx.compose.ui.geometry.Offset(size.width*p,size.height*p))}
+                                } else Text(card.emoji, fontSize = 34.sp)
+                                Text(if (language == "de") card.titleDe else card.titleEn, fontSize = 19.sp, fontWeight = FontWeight.Black, color = Ink)
+                                Text(if (language == "de") card.descriptionDe else card.descriptionEn, fontSize = 13.sp, fontWeight = FontWeight.Bold, color = Color(0xFF607788))
+                            }
                         }
                     }
+                    if (row.size < columns) Spacer(Modifier.weight(1f))
                 }
-                if (row.size == 1) Spacer(Modifier.weight(1f))
             }
         }
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun NativeOptions(language: String, audioMode: String, round: Int, numberMax: Int, padding: PaddingValues, audioStatus: String, largerSupportText: Boolean, onLargerSupportText: (Boolean) -> Unit, onLanguage: (String) -> Unit, onAudioMode: (String) -> Unit, onRound: (Int) -> Unit, onNumberMax: (Int) -> Unit, onResetTutorials: () -> Unit) {
+internal fun NativeOptions(language: String, audioMode: String, round: Int, numberMax: Int, padding: PaddingValues, audioStatus: String, largerSupportText: Boolean, onLargerSupportText: (Boolean) -> Unit, onLanguage: (String) -> Unit, onAudioMode: (String) -> Unit, onRound: (Int) -> Unit, onNumberMax: (Int) -> Unit, onResetTutorials: () -> Unit) {
     Column(Modifier.fillMaxSize().padding(padding).padding(16.dp).background(Color(0xFFF9FCFE)).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(14.dp)) {
         Text(if (language == "de") "Optionen" else "Options", fontSize = 30.sp, fontWeight = FontWeight.Black, color = Ink)
         SettingCard(if (language == "de") "Sprache" else "Language") {
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) { FilterChip(selected = language == "en", onClick = { onLanguage("en") }, label = { Text("🇬🇧 English") }); FilterChip(selected = language == "de", onClick = { onLanguage("de") }, label = { Text("🇩🇪 Deutsch") }) }
+            FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) { FilterChip(selected = language == "en", onClick = { onLanguage("en") }, label = { Text("🇬🇧 English") }); FilterChip(selected = language == "de", onClick = { onLanguage("de") }, label = { Text("🇩🇪 Deutsch") }) }
         }
         SettingCard(if (language == "de") "Audio-Hilfe" else "Audio guidance") {
             if (audioStatus != "ready") Text(if (language == "de")
@@ -744,7 +754,7 @@ private fun NativeOptions(language: String, audioMode: String, round: Int, numbe
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) { FilterChip(selected = round == 5, onClick = { onRound(5) }, label = { Text("5") }); FilterChip(selected = round == 10, onClick = { onRound(10) }, label = { Text("10") }) }
         }
         SettingCard(if (language == "de") "Zahlen-Level" else "Number level") {
-            Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) { listOf(10, 20, 50, 100).forEach { max -> FilterChip(selected = numberMax == max, onClick = { onNumberMax(max) }, label = { Text(max.toString()) }) } }
+            FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp)) { listOf(10, 20, 50, 100).forEach { max -> FilterChip(selected = numberMax == max, onClick = { onNumberMax(max) }, label = { Text(max.toString()) }) } }
             Text(if (language == "de") "Aktuelles Maximum: $numberMax" else "Current maximum: $numberMax", modifier = Modifier.padding(top = 8.dp), fontWeight = FontWeight.Bold)
         }
     }

@@ -1,5 +1,6 @@
 package com.bellfamily.bastischool.ui.seasons
 
+import com.bellfamily.bastischool.ui.common.NativeChoiceRows
 import com.bellfamily.bastischool.ui.common.NativeActivityTitle
 import com.bellfamily.bastischool.ui.common.NativeQuestionProgress
 
@@ -264,11 +265,9 @@ private fun SeasonPicture(bitmap:ImageBitmap?,description:String,modifier:Modifi
 
 @Composable
 private fun SeasonModes(selected: SeasonsPhase?, language: ContentLanguage, ready: Boolean, onPhase: (SeasonsPhase)->Unit) {
-    SeasonsPhase.entries.chunked(2).forEach {row ->
-        Row(horizontalArrangement=Arrangement.spacedBy(8.dp)) {row.forEach {phase ->
-            FilterChip(selected=selected==phase,onClick={onPhase(phase)},enabled=ready,
-                label={Text(phase.title.display[language])},modifier=Modifier.weight(1f).heightIn(min=48.dp).testTag(phase.tag))
-        }}
+    NativeChoiceRows(SeasonsPhase.entries) { phase ->
+        FilterChip(selected=selected==phase,onClick={onPhase(phase)},enabled=ready,
+            label={Text(phase.title.display[language])},modifier=Modifier.weight(1f).heightIn(min=48.dp).testTag(phase.tag))
     }
 }
 

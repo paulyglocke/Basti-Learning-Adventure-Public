@@ -1,5 +1,6 @@
 package com.bellfamily.bastischool.ui.vocabulary
 
+import com.bellfamily.bastischool.ui.common.NativeChoiceRows
 import com.bellfamily.bastischool.ui.common.NativeActivityTitle
 import com.bellfamily.bastischool.ui.common.NativeQuestionProgress
 
@@ -61,10 +62,10 @@ fun VocabularyScreen(selection:VocabularySelection?,state:SessionState?,language
         if(audioFailed) Text(t("Speech is unavailable. Please check installed offline English and German voices in device settings.","Die Sprachausgabe ist nicht verfügbar. Bitte prüfe installierte Offline-Stimmen für Englisch und Deutsch in den Geräte-Einstellungen."))
         if(selection==null) Text(t("Opening…","Wird geöffnet…"))
         else if(selection.phase==VocabularyPhase.EXPLORE) {
-            VocabularyContent.items.chunked(2).forEach { row ->
-                Row(horizontalArrangement=Arrangement.spacedBy(8.dp)) {row.forEach { item ->
-                    OutlinedButton({onSelect(item.id)},enabled=ready,modifier=Modifier.weight(1f).heightIn(min=56.dp).testTag("word-${item.id.value}")) {Text(item.text.display[language])}
-                }}
+            NativeChoiceRows(VocabularyContent.items) { item ->
+                OutlinedButton({onSelect(item.id)},enabled=ready,modifier=Modifier.weight(1f).heightIn(min=56.dp).testTag("word-${item.id.value}")) {
+                    Text(item.text.display[language])
+                }
             }
             Text(selection.item.text.display[language],style=MaterialTheme.typography.headlineMedium,modifier=Modifier.testTag("vocabulary-word"))
             AnimalPicture(selection.item,language,images[selection.selected],Modifier.fillMaxWidth())

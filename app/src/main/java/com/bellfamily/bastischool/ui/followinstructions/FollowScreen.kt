@@ -42,9 +42,9 @@ fun FollowScreen(state: SessionState?, language: ContentLanguage, images: Map<co
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 state.task.question.choices.forEach { id ->
                     val objectDef = FollowContent.objectFor(id); val image = images[id]
-                    Box(Modifier.weight(1f).height(150.dp).testTag("follow-object-${id.value}")) {
+                    Box(Modifier.weight(1f).then(if (image != null) Modifier.height(150.dp) else Modifier.heightIn(min = 150.dp)).testTag("follow-object-${id.value}")) {
                         // The image itself is the tap target; never paint an opaque button over it.
-                        Box(Modifier.fillMaxSize().testTag("follow-tap-${id.value}")
+                        Box((if (image != null) Modifier.fillMaxSize() else Modifier.fillMaxWidth().heightIn(min = 150.dp)).testTag("follow-tap-${id.value}")
                             .clickable(enabled = image != null && ready && state.current.answer == AnswerState.UNANSWERED,
                                 role = Role.Button) {
                                 state.nextAttempt?.let { onAction(SessionAction.Answer(it, id)) }

@@ -39,7 +39,8 @@ fun NativeCompletionScreen(completion: String, language: ContentLanguage, summar
     fun t(en: String, de: String) = if(language == ContentLanguage.GERMAN) de else en
     BoxWithConstraints(modifier.fillMaxSize().background(Color(0xFFEAF7FC)).padding(12.dp)) {
         val wide = maxWidth >= 600.dp
-        Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        val compact = maxHeight < 240.dp * androidx.compose.ui.platform.LocalDensity.current.fontScale
+        Column(Modifier.fillMaxSize().then(if (compact) Modifier.verticalScroll(rememberScrollState()) else Modifier), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Text(t("Adventure complete!", "Abenteuer geschafft!"), style = MaterialTheme.typography.titleLarge,
                 modifier = Modifier.testTag("completion-title"))
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -48,9 +49,9 @@ fun NativeCompletionScreen(completion: String, language: ContentLanguage, summar
                 if(wide) NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY, onReplay, Modifier.weight(1f).testTag("${prefix}replay"), enabled = ready)
             }
             if(!wide) NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY, onReplay, Modifier.fillMaxWidth().testTag("${prefix}replay"), enabled = ready)
-            BoxWithConstraints(Modifier.weight(1f)) {
-                val rewardHeight = maxHeight.coerceIn(88.dp, 220.dp)
-                Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            BoxWithConstraints(if (compact) Modifier.fillMaxWidth() else Modifier.weight(1f)) {
+                val rewardHeight = if (compact) 120.dp else maxHeight.coerceIn(88.dp, 220.dp)
+                Column(if (compact) Modifier.fillMaxWidth() else Modifier.fillMaxSize().verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     if(saveFailed) {
                         Text(t("Your saved work is kept. Please try saving again.", "Deine gespeicherte Arbeit bleibt erhalten. Versuche erneut zu speichern."))
                         NativeActionButton(t("Try again", "Erneut versuchen"), NativeActionRole.SECONDARY, onRetry, Modifier.testTag("completion-retry-save"))
