@@ -70,7 +70,7 @@ class TellMeScreenTest(private val german: Boolean, private val orientation: Int
             }
         }
         fun click(tag: String) = compose.onNodeWithTag(tag).performScrollTo().assertIsDisplayed().performClick()
-        compose.onNodeWithTag("tellme-landing").assertTextEquals(if (german) "Erzähl mal!" else "Tell Me!")
+        compose.onNodeWithTag("tellme-landing").assertTextEquals(if (german) "Wähle ein Abenteuer und erzähle, was du sehen kannst." else "Choose an adventure and tell me what you can see.")
         flow.categories.forEach { category -> compose.onNodeWithTag("tellme-category-${category.id.value}")
             .performScrollTo().assertTextEquals(category.display[language]).assertHeightIsAtLeast(56.dp) }
         click("tellme-category-${flow.categories.first().id.value}")

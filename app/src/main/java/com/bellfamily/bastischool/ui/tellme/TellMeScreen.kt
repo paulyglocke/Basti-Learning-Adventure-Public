@@ -51,13 +51,10 @@ fun TellMeScreen(
             Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 if (state.category == null) {
-                    Text(text("Tell Me!", "Erzähl mal!"), style = MaterialTheme.typography.headlineMedium,
-                        modifier = Modifier.testTag("tellme-landing"))
                     Text(text("Choose an adventure and tell me what you can see.",
-                        "Wähle ein Abenteuer und erzähle, was du sehen kannst."))
+                        "Wähle ein Abenteuer und erzähle, was du sehen kannst."), Modifier.testTag("tellme-landing"))
                     flow.categories.forEach { category ->
-                        NativeActionButton(category.display[language], NativeActionRole.NAVIGATION,
-                            { onCategory(category.id) }, Modifier.fillMaxWidth().testTag("tellme-category-${category.id.value}"))
+                        TellMeAdventureBanner(category, language, { onCategory(category.id) })
                     }
                 } else if (state.stage == TellMeStage.COMPLETE) {
                     Text(text("Great talking!", "Toll erzählt!"), style = MaterialTheme.typography.headlineMedium,
