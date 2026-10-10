@@ -169,8 +169,8 @@
   "tellMePrompts": [
     {
       "prompt": {
-        "en": "Give me a clue about the deer so I can find it.",
-        "de": "Gib mir einen Hinweis zum Reh, damit ich es finde."
+        "en": "How could you describe the deer so I can find it?",
+        "de": "Wie könntest du das Reh beschreiben, damit ich es finde?"
       },
       "starter": {
         "en": "Look for the animal with…",
@@ -178,14 +178,14 @@
       },
       "words": {
         "en": [
-          "deer",
           "antlers",
-          "find"
+          "brown",
+          "legs"
         ],
         "de": [
-          "Reh",
           "Geweih",
-          "finden"
+          "braun",
+          "Beine"
         ]
       },
       "model": {
@@ -193,46 +193,46 @@
         "de": "Such das Tier mit dem Geweih."
       },
       "childExample": {
-        "en": "Deer.",
-        "de": "Reh."
+        "en": "Antlers.",
+        "de": "Geweih."
       },
       "guidance": {
-        "en": "Point to the relevant pictured objects first. Accept different possible solutions or clues and help the child say one simple idea.",
-        "de": "Zuerst auf die passenden Dinge im Bild zeigen. Verschiedene mögliche Lösungen oder Hinweise annehmen und beim Aussprechen einer einfachen Idee helfen."
+        "en": "Invite one visible detail about the deer and let the grown-up find it from the clue. A gesture, name or short phrase is accepted first. Offer antlers if support is needed; other accurate details are welcome. Repetition is optional.",
+        "de": "Ein sichtbares Merkmal des Rehs anregen. Die erwachsene Person darf es anhand des Hinweises suchen. Zuerst eine Geste, einen Namen oder einen kurzen Ausdruck annehmen. Bei Bedarf Geweih anbieten; andere passende Merkmale sind willkommen. Nachsprechen ist freiwillig."
       }
     },
     {
       "prompt": {
-        "en": "Which woodland animal here would you like to tell a story about?",
-        "de": "Über welches Waldtier hier würdest du gern eine Geschichte erzählen?"
+        "en": "Imagine the hedgehog goes for a walk. What happens in your story?",
+        "de": "Stell dir vor, der Igel geht spazieren. Was passiert in deiner Geschichte?"
       },
       "starter": {
-        "en": "My story could be about…",
-        "de": "Meine Geschichte könnte von … handeln."
+        "en": "In my story, the hedgehog…",
+        "de": "In meiner Geschichte …"
       },
       "words": {
         "en": [
           "hedgehog",
-          "little",
-          "story"
+          "leaf",
+          "find"
         ],
         "de": [
           "Igel",
-          "klein",
-          "Geschichte"
+          "Blatt",
+          "finden"
         ]
       },
       "model": {
-        "en": "My story could be about the little hedgehog.",
-        "de": "Meine Geschichte könnte von dem kleinen Igel handeln."
+        "en": "In my story, the hedgehog finds a leaf.",
+        "de": "In meiner Geschichte findet der Igel ein Blatt."
       },
       "childExample": {
-        "en": "Hedgehog.",
-        "de": "Igel."
+        "en": "Finds a leaf.",
+        "de": "Findet ein Blatt."
       },
       "guidance": {
-        "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",
-        "de": "Einen Wunsch, ein ausgedachtes Beispiel oder fehlende Erfahrung annehmen. Der Beispielsatz ist nur eine Möglichkeit. Das Kind muss ihn nicht teilen."
+        "en": "Point to the hedgehog and offer the pretend walk as a starting idea. A word, gesture or one event is enough. The leaf is only one possible story; other ideas and choosing another animal are welcome. Do not require a whole story or repetition.",
+        "de": "Auf den Igel zeigen und den ausgedachten Spaziergang als Anfangsidee anbieten. Ein Wort, eine Geste oder ein Ereignis reicht. Das Blatt ist nur eine mögliche Geschichte; andere Ideen und die Wahl eines anderen Tieres sind willkommen. Keine ganze Geschichte und kein Nachsprechen verlangen."
       }
     }
   ]

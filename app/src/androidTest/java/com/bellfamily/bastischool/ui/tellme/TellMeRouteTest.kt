@@ -19,6 +19,51 @@ import org.junit.Test
 
 class TellMeRouteTest {
     @get:Rule val compose = createEmptyComposeRule()
+    @Test fun thirdQuestionSurvivesOptionsLanguageRecreationAndBackgroundThenHomeRotates() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        context.getSharedPreferences("basti_shell", 0).edit().putString("lang", "en").putString("audioMode", "off").commit()
+        ActivityScenario.launch(MainActivity::class.java).use { scenario ->
+            fun vm(): TellMeViewModel {
+                var owner: TellMeViewModel? = null
+                scenario.onActivity { owner = ViewModelProvider(it)[TellMeViewModel::class.java] }
+                return owner!!
+            }
+            fun settled() = compose.waitUntil(10_000) { !vm().loading }
+            fun click(tag: String) = compose.onNodeWithTag(tag).performScrollTo().performClick()
+            compose.onNodeWithText("Tell Me!").performScrollTo().performClick()
+            val category = vm().flow.categories.first().id
+            repeat(3) { visit ->
+                click("tellme-category-${category.value}"); settled()
+                repeat(2) { click("tellme-continue"); settled() }
+                assertEquals(visit, vm().state.questionIndex)
+                if (visit < 2) {
+                    click("tellme-home")
+                    compose.onNodeWithText("Tell Me!").performScrollTo().performClick()
+                }
+            }
+            click("tellme-help"); click("tellme-grownups")
+            val saved = vm().state
+            val owner = vm()
+            scenario.recreate(); settled()
+            assertSame(owner, vm()); assertEquals(saved, vm().state)
+            compose.onNodeWithText("⚙ Options").performClick()
+            compose.onNodeWithText("🇩🇪 Deutsch").performClick()
+            scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }; settled()
+            assertEquals(saved, vm().state)
+            val scene = vm().flow.scene(saved)!!
+            compose.onNodeWithTag("tellme-model").performScrollTo().assertTextEquals(scene.tellMePrompts[2].model[ContentLanguage.GERMAN]!!)
+            scenario.moveToState(androidx.lifecycle.Lifecycle.State.CREATED)
+            scenario.moveToState(androidx.lifecycle.Lifecycle.State.RESUMED)
+            assertEquals(saved, vm().state)
+            click("tellme-home")
+            assertEquals(TellMeState(), vm().state)
+            compose.onNodeWithText("Erzähl mal!").performScrollTo().performClick()
+            click("tellme-category-${category.value}"); settled()
+            repeat(2) { click("tellme-continue"); settled() }
+            assertEquals(0, vm().state.questionIndex)
+        }
+    }
+
     @Test fun nativeConversationRetainsStateAcrossOptionsLanguageAndRecreationButHomeResets() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         context.getSharedPreferences("basti_shell", 0).edit().putString("lang", "en").putString("audioMode", "off").commit()

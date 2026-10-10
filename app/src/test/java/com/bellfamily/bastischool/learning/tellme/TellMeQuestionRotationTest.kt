@@ -110,11 +110,11 @@ class TellMeQuestionRotationTest {
         flow.categories.forEach { category ->
             val cursor = TellMeQuestionRotation()
             var current = TellMeState()
-            repeat(3) { visit ->
+            repeat(6) { visit ->
                 current = cursor.select(current, flow.start(category.id), flow)
                 repeat(9) {
-                    assertEquals(visit % 2, current.questionIndex)
                     val scene = flow.scene(current)!!
+                    assertEquals(visit % scene.tellMePrompts.size, current.questionIndex)
                     val slot = current.questionIndex
                     ContentLanguage.entries.forEach { language ->
                         val selected = flow.support(scene, language, slot)
@@ -140,5 +140,45 @@ class TellMeQuestionRotationTest {
         assertEquals(selected, support(ContentLanguage.ENGLISH))
         visit(0)
         assertEquals(0, state.questionIndex)
+    }
+
+    @Test fun pilotThirdVisitsKeepAllSupportPairedAndRejectStaleNavigation() {
+        val pilots = flow.repository.all().filter { it.tellMePrompts.size == 3 }
+        assertEquals(3, pilots.size)
+        pilots.forEach { scene ->
+            val cursor = TellMeQuestionRotation()
+            var current = TellMeState()
+            val index = flow.scenes(scene.categoryId).indexOf(scene)
+            repeat(4) { visit ->
+                current = cursor.select(current, flow.home(), flow)
+                current = cursor.select(current, flow.start(scene.categoryId), flow)
+                repeat(index) { current = cursor.select(current, flow.advance(current, flow.scene(current)!!.id, current.stage), flow) }
+                assertEquals(visit % 3, current.questionIndex)
+                if (visit == 2) {
+                    val selected = scene.tellMePrompts[2]
+                    current = cursor.select(current, flow.help(current), flow)
+                    current = cursor.select(current, flow.grownUps(current), flow)
+                    current = cursor.select(current, current.copy(), flow)
+                    ContentLanguage.entries.forEach { language ->
+                        val support = flow.support(scene, language, current.questionIndex)
+                        assertEquals(selected.prompt[language], support.prompt)
+                        assertEquals(selected.starter[language], support.starter)
+                        assertEquals(selected.words[language], support.words)
+                        assertEquals(selected.model[language], support.model)
+                        assertEquals(selected.guidance[language], support.principle)
+                        assertEquals(selected.childExample[language]!! to selected.model[language]!!, support.expansion)
+                    }
+                    val before = current
+                    current = cursor.select(current, flow.advance(current, scene.id, TellMeStage.COMPLETE), flow)
+                    assertEquals(before, current)
+                    current = cursor.select(current, flow.advance(current, scene.id, TellMeStage.TALK), flow)
+                    val advanced = current
+                    current = cursor.select(current, flow.advance(current, scene.id, TellMeStage.TALK), flow)
+                    assertEquals(advanced, current)
+                }
+            }
+            val fresh = TellMeQuestionRotation().select(TellMeState(), TellMeState(scene.categoryId, index), flow)
+            assertEquals(0, fresh.questionIndex)
+        }
     }
 }

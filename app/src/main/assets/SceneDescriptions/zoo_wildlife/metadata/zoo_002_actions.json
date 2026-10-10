@@ -302,8 +302,8 @@
         "de": "Der Pinguin schwimmt durch das Wasser."
       },
       "childExample": {
-        "en": "Penguin.",
-        "de": "Pinguin."
+        "en": "Swimming.",
+        "de": "Schwimmt."
       },
       "guidance": {
         "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
@@ -312,36 +312,36 @@
     },
     {
       "prompt": {
-        "en": "Describe the monkey climbing in this zoo picture.",
-        "de": "Beschreibe den kletternden Affen auf diesem Zoobild."
+        "en": "Where might the monkey go next?",
+        "de": "Wohin könnte der Affe als Nächstes gehen?"
       },
       "starter": {
-        "en": "The monkey is…",
-        "de": "Der Affe …"
+        "en": "The monkey might…",
+        "de": "Der Affe könnte …"
       },
       "words": {
         "en": [
           "monkey",
-          "climbing",
-          "frame"
+          "climb down",
+          "ground"
         ],
         "de": [
           "Affe",
-          "klettert",
-          "Gerüst"
+          "herunterklettern",
+          "Boden"
         ]
       },
       "model": {
-        "en": "The monkey is climbing the frame.",
-        "de": "Der Affe klettert am Gerüst."
+        "en": "The monkey might climb down to the ground.",
+        "de": "Der Affe könnte auf den Boden herunterklettern."
       },
       "childExample": {
-        "en": "Monkey.",
-        "de": "Affe."
+        "en": "Down.",
+        "de": "Runter."
       },
       "guidance": {
-        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
-        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        "en": "Point to the monkey and a possible destination if helpful. Accept another next movement, a gesture or a short phrase. The model is one prediction, not a pictured outcome, and repeating it is optional.",
+        "de": "Bei Bedarf auf den Affen und ein mögliches Ziel zeigen. Andere nächste Bewegungen, eine Geste oder einen kurzen Ausdruck annehmen. Der Beispielsatz ist eine Vermutung und zeigt kein tatsächliches Ergebnis im Bild. Nachsprechen ist freiwillig."
       }
     }
   ]

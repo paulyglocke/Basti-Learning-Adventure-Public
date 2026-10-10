@@ -139,8 +139,8 @@
   "tellMePrompts": [
     {
       "prompt": {
-        "en": "What food can you see growing on the tree?",
-        "de": "Welches Essen siehst du am Baum wachsen?"
+        "en": "What fruit is growing on the tree?",
+        "de": "Welches Obst wächst am Baum?"
       },
       "starter": {
         "en": "I can see…",
@@ -167,14 +167,14 @@
         "de": "Äpfel."
       },
       "guidance": {
-        "en": "Pointing or one word is enough. Name the pictured subject together, then offer one short sentence without asking for repetition.",
-        "de": "Zeigen oder ein Wort reicht. Den Bildinhalt gemeinsam benennen und einen kurzen Satz anbieten, ohne Wiederholung zu verlangen."
+        "en": "Pointing or one word is enough. If fruit is unfamiliar, point to the apples and name them together. Offer the short model without asking for repetition.",
+        "de": "Zeigen oder ein Wort reicht. Wenn Obst unbekannt ist, auf die Äpfel zeigen und sie gemeinsam benennen. Den kurzen Beispielsatz anbieten, ohne Nachsprechen zu verlangen."
       }
     },
     {
       "prompt": {
-        "en": "Where do the carrots grow compared with the apples?",
-        "de": "Wo wachsen die Karotten im Vergleich zu den Äpfeln?"
+        "en": "Where do the carrots grow?",
+        "de": "Wo wachsen die Karotten?"
       },
       "starter": {
         "en": "The carrots grow…",
@@ -197,12 +197,12 @@
         "de": "Die Karotten wachsen in der Erde. Die Äpfel wachsen am Baum."
       },
       "childExample": {
-        "en": "Carrots.",
-        "de": "Karotten."
+        "en": "In the ground.",
+        "de": "In der Erde."
       },
       "guidance": {
-        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
-        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+        "en": "Point to the carrots and accept pointing, one word or a short location phrase. Model the first sentence about the ground. The second sentence about apples is an optional comparison, not a required answer. Repetition is optional.",
+        "de": "Auf die Karotten zeigen und Zeigen, ein Wort oder eine kurze Ortsangabe annehmen. Den ersten Satz über die Erde vormachen. Der zweite Satz über die Äpfel ist ein freiwilliger Vergleich und keine verlangte Antwort. Nachsprechen ist freiwillig."
       }
     }
   ]

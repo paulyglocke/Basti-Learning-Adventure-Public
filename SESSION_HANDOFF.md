@@ -1,5 +1,165 @@
 # Session handoff — 2026-09-27
 
+## Tell Me pilot native validation attempt — 2026-10-10
+
+Owner requested native pilot validation next. Attempted focused offline Gradle
+JVM tests; wrapper exited 1 before tests because JAVA_HOME is unset and java is
+absent. No java/kotlinc/adb on PATH, and no JDK/Gradle cache/SDK in checked standard
+locations. No native test, APK or rendered layout review completed. Reviewed
+TellMeScreen support selection and wrapping in source; this is not layout evidence.
+
+docs/tellme-variety/PILOT_VALIDATION.md records the exact failure, source review,
+resume commands and EN/DE C-slot layout/lifecycle acceptance matrix. Revision 11
+and all prior edits remain intact, local and uncommitted. No download, CI dispatch,
+commit or push. Next task remains native execution in a configured environment;
+do not expand the pilot or claim acceptance from source/Python checks.
+
+## Tell Me third-question pilot — 2026-10-10
+
+Owner requested the next task. Added complete bilingual C bundles to Ocean .03
+(imaginary crab event), Classroom .02 (next step after asking for help) and Zoo .08
+(penguin prediction). All three current PNGs were directly inspected. A/B bundles,
+reference metadata, picture bytes and identities/order are preserved. Exact C
+bundles, A/B snapshots and hashes are in THIRD_QUESTION_PILOT.json.
+Content revision 11; 78 scenes still have two slots, three have three (165 total).
+Generated Kotlin, current ledger, review and counts updated. Existing modulo
+rotation already supports the pilot; no runtime/progress/schema change needed.
+
+All 32 focused Python checks, generator --check and git diff --check passed. JVM rotation
+tests now exercise six complete mixed-slot visits, C support pairing, stale
+callbacks and fresh-owner reset. New route instrumentation covers C with Help,
+grown-up disclosure, Options/language, recreation, background/return and Home
+wraparound. These native tests are authored but unrun: no Java/kotlinc or Android
+toolchain available locally. Native-speaker/physical-device acceptance is pending.
+Changes remain local and uncommitted; no push.
+
+Next checkpoint: run focused JVM/Android pilot tests and review bilingual rendered
+support before expanding third questions. Do not claim runtime/device validation
+from the Python content checks.
+
+## Tell Me short-example checkpoint — 2026-10-10
+
+Owner requested the next task. Reviewed all 162 question/example/model pairs and
+replaced 121 short EN/DE child examples across 73 scenes. Examples model the
+requested action, location, feature, feeling, reason, sequence or pretend speech;
+appropriate names/counts and already useful phrases remain. Names and gestures
+are still accepted, and examples are optional. Only childExample changes inside
+bundles; all questions, starters, words, models, guidance, purpose labels,
+reference metadata, picture bytes, IDs/order and rotation are preserved.
+
+Content revision 10 and generated Kotlin are updated. CHILD_EXAMPLE_CORRECTIONS.json
+records every revision-9 bundle across all 81 scenes, exact example replacements
+and identity/reference/image hashes. Historical ledgers are unchanged; tests
+verify complete successor bundles before comparing earlier snapshots. This pass
+derives examples from existing models, with no new visual acceptance claimed.
+Validation: 31/31 focused Python tests, generator --check and git diff --check
+passed. Android/JVM/instrumentation were not run; independent native-speaker and
+physical-device acceptance remain pending. Changes are local and uncommitted.
+
+Next checkpoint: a small picture-reviewed third-question pilot, followed by
+three-slot rotation/support and navigation/lifecycle validation before expansion.
+
+## Tell Me clue/story/language checkpoint — 2026-10-10
+
+Owner requested the next task. Preserved revisions 6–8 and improved 12 complete
+bilingual bundles across 11 scenes: Ocean .04 B/.07 B/.08 B, Jungle .08 A/.09 A,
+Woodland .09 A/B, Zoo .07 A/.08 A, Classroom .02 A, Farm .04 B/.06 A.
+Clues model usable visible details and explain optional partner guessing. Concrete
+imaginary openings/dialogue support one-event stories without a required ending.
+Help need is conditional; farm/jungle wording is simpler. Other slots/reference
+metadata are preserved. All 11 current PNGs were directly inspected. Exact changes,
+unchanged slots, picture evidence and hashes are in CLUE_STORY_CORRECTIONS.json.
+Farm .06 A intentionally succeeds the preserved-A snapshot from revision 8; its
+spatial B is unchanged. Earlier ledgers remain historical and unmodified.
+
+Content revision 9, generated Kotlin, scene tables and aggregate counts are
+updated. Editorial Ocean .08 B changes naming → properties and Woodland .09 B
+personal → story. No runtime objective/progress schema, scoring, rotation,
+navigation, IDs or artwork changed. Validation: 30/30 focused Python tests,
+generator --check and git diff --check passed. Android/JVM/instrumentation were
+not run; independent native-speaker and physical-device acceptance remain pending.
+Changes remain local and uncommitted; no push.
+
+Next checkpoint: remaining name-only child examples and mismatched support,
+then picture-supported third-question bundles with rotation/lifecycle validation.
+
+## Tell Me spatial checkpoint — 2026-10-10
+
+Owner requested the next task. Preserved revisions 6 and 7 and simplified the
+17 audited spatial slots across 14 scenes. Short EN/DE questions remove abstract
+comparison wording and supplied locations. Optional adult guidance retains the
+reference objects and accepts other accurate locations. Mountains .03 clarifies
+flower-group selection; Farm .06 makes its second comparison sentence optional;
+Park .06 German support uses Kegel. Other slots and all reference metadata remain
+unchanged. All 14 current PNGs were directly inspected; exact changes, unchanged
+slots, reference hashes and artwork hashes are in SPATIAL_PROMPT_CORRECTIONS.json.
+
+Content revision 8, generated Kotlin, current ledger, review and summary are
+updated. Objective counts remain unchanged. Validation: 29/29 focused Python
+tests, generator --check and git diff --check passed. No Android/JVM/instrumentation
+run; native-speaker and physical-device acceptance remain pending. IDs, artwork,
+order, two-slot rotation, navigation and progress contracts are unchanged.
+Changes remain local and uncommitted; no push.
+
+Next checkpoint: improve the audited clue/story invitations and remaining awkward
+bilingual wording. Third-question bundles remain a later bounded checkpoint.
+
+## Tell Me seven action/action pairs — 2026-10-10
+
+Owner requested the next task after the two-scene correction checkpoint. Preserved
+all existing revision-6 work and revised only the second-visit bundles for Ocean
+.01, Jungle .01, Woodland .02, Sky .01, Mountains .02, Classroom .01 and Zoo .02.
+New alternatives invite prediction (two), imaginative expression (two), a possible
+reason, visual comparison and a simple sequence. Complete EN/DE starters, words,
+models, short child examples and scene-specific adult guidance stay paired. First
+bundles and reference metadata for these seven scenes are unchanged.
+
+Content revision 7, generated Kotlin, content contract and variety ledger/review/
+counts are updated. QUESTION_VARIETY_CORRECTIONS.json records exact before/after
+bundles, original first bundles, reference metadata hashes, artwork hashes and
+scene-specific picture evidence. All seven current PNGs were directly inspected.
+The original twelve editorial purpose labels remain; story includes sequencing
+and creative expression. No runtime objective/progress schema was introduced.
+
+Validation: all 28 focused Scene Description Python tests passed, including real
+production image hashes, generated-output consistency, the original English
+fingerprint and the new first-bundle/reference preservation checks. Generator
+--check and git diff --check passed. Android/JVM/instrumentation were not run;
+native-speaker and physical-device acceptance remain pending. Images, IDs, manifest
+order, two-slot rotation and navigation are unchanged.
+Changes remain local and uncommitted; no push.
+
+Next checkpoint: simplify the audited spatial prompts and remove supplied spatial
+answers, preserving their reference objects and paired support. Third-question
+bundles and the other editorial audit recommendations remain future work.
+
+
+## Tell Me audit corrections — 2026-10-10
+
+Started from clean main `5acf611da207bd38e3622b190c628768d654b550`, matching remote
+main during the preceding inspection. Owner authorised starting fixes. This first
+checkpoint corrects Woodland .06 B (fox inside its den; no visible tail) and
+Classroom .06 A (pictured painting tools; football already on the chair), with
+complete EN/DE prompt/support bundles. Inaccurate source visual notes, the Woodland
+reference sentence/purpose and Classroom brush vocabulary are corrected too.
+Content revision is now 6; generated Kotlin, variety ledger/counts and content
+contract are updated. EDITORIAL_CORRECTIONS.json records exact reference changes;
+the original regression fingerprint and historical image-review ledger are preserved.
+No artwork, scene IDs/order, rotation, navigation, speech or progress behavior changed.
+
+Validation: all 27 Scene Description Python tests passed, including actual production
+image hashes and original fingerprint; generated output consistency and diff whitespace
+checks passed. Android/JVM/instrumentation were not run for this content checkpoint;
+German native-speaker and physical-device acceptance remain pending.
+
+Changes remain local and uncommitted; no push. The wider audit recommendations,
+seven action/action pair improvements, simpler spatial wording and third-question
+bundles remain future work. Next checkpoint: revise the seven action/action pairs
+with complete picture-supported bilingual bundles, then validate before broadening.
+The publication/build statements in the older revision-5 handoff below are historical;
+revision 5 was already committed on current main when this correction pass began.
+
+
 ## Tell Me complete content-variety draft — 2026-10-10 (build blocked)
 
 Owner authorized improving the remaining 79 scenes before build validation,

@@ -1,0 +1,1917 @@
+{
+  "source_commit": "5acf611da207bd38e3622b190c628768d654b550",
+  "previous_content_revision": 7,
+  "content_revision": 8,
+  "scope": "17 spatial prompts across 14 scenes: simpler bilingual questions without supplied answers; optional picture-specific reference guidance. Other slots and reference metadata preserved.",
+  "scenes": [
+    {
+      "scene_id": "scene.ocean.hiding_places.03",
+      "metadata": "app/src/main/assets/SceneDescriptions/ocean_underwater/metadata/ocean_003_hiding_places.json",
+      "asset": "SceneDescriptions/ocean_underwater/canonical/ocean_003_hiding_places.png",
+      "image_sha256": "bd57c58d9c5deb36b5e6b84e9974bc46172f74f2a9e276948d5e4459c2877a6b",
+      "reference_metadata_sha256": "6cd26f3471e9afee3142a1a7614fb4cfbf33589ef348b1e480ca124b00e1fe61",
+      "unchanged_slots": [
+        {
+          "slot": 0,
+          "bundle": {
+            "prompt": {
+              "en": "Where is the crab hiding in this picture?",
+              "de": "Wo versteckt sich die Krabbe auf diesem Bild?"
+            },
+            "starter": {
+              "en": "The crab is in…",
+              "de": "Die Krabbe ist in …"
+            },
+            "words": {
+              "en": [
+                "crab",
+                "in",
+                "cave"
+              ],
+              "de": [
+                "Krabbe",
+                "in",
+                "Höhle"
+              ]
+            },
+            "model": {
+              "en": "The crab is in the cave.",
+              "de": "Die Krabbe ist in der Höhle."
+            },
+            "childExample": {
+              "en": "Crab.",
+              "de": "Krabbe."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 1,
+          "before": {
+            "prompt": {
+              "en": "Where is the turtle compared with the starfish?",
+              "de": "Wo ist die Schildkröte im Vergleich zum Seestern?"
+            },
+            "starter": {
+              "en": "The turtle is above…",
+              "de": "Die Schildkröte ist über …"
+            },
+            "words": {
+              "en": [
+                "turtle",
+                "above",
+                "starfish"
+              ],
+              "de": [
+                "Schildkröte",
+                "über",
+                "Seestern"
+              ]
+            },
+            "model": {
+              "en": "The turtle is above the starfish.",
+              "de": "Die Schildkröte ist über dem Seestern."
+            },
+            "childExample": {
+              "en": "Turtle.",
+              "de": "Schildkröte."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Where is the turtle?",
+              "de": "Wo ist die Schildkröte?"
+            },
+            "starter": {
+              "en": "The turtle is above…",
+              "de": "Die Schildkröte ist über …"
+            },
+            "words": {
+              "en": [
+                "turtle",
+                "above",
+                "starfish"
+              ],
+              "de": [
+                "Schildkröte",
+                "über",
+                "Seestern"
+              ]
+            },
+            "model": {
+              "en": "The turtle is above the starfish.",
+              "de": "Die Schildkröte ist über dem Seestern."
+            },
+            "childExample": {
+              "en": "Turtle.",
+              "de": "Schildkröte."
+            },
+            "guidance": {
+              "en": "Accept pointing or a short answer first. If needed, point to the starfish as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+              "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf den Seestern als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "Remove abstract comparison wording or a supplied location; retain optional spatial support.",
+          "reference_objects": {
+            "en": "the starfish",
+            "de": "den Seestern"
+          },
+          "picture_evidence": "The turtle is above the starfish."
+        }
+      ],
+      "learning_objective": "Spatial language",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.ocean.reef_routines.06",
+      "metadata": "app/src/main/assets/SceneDescriptions/ocean_underwater/metadata/ocean_006_reef_routines.json",
+      "asset": "SceneDescriptions/ocean_underwater/canonical/ocean_006_reef_routines.png",
+      "image_sha256": "d0ef59d1d45711c531f6a75b3896ce3b6668eec438310a87d7be6d129bad808a",
+      "reference_metadata_sha256": "242c6bb284838ba9dfb944e24f223e67e37924a5f555b285fcb4828bce418d97",
+      "unchanged_slots": [
+        {
+          "slot": 0,
+          "bundle": {
+            "prompt": {
+              "en": "What is the turtle eating?",
+              "de": "Was frisst die Schildkröte?"
+            },
+            "starter": {
+              "en": "The turtle is eating…",
+              "de": "Die Schildkröte frisst …"
+            },
+            "words": {
+              "en": [
+                "turtle",
+                "eating",
+                "seaweed"
+              ],
+              "de": [
+                "Schildkröte",
+                "frisst",
+                "Seegras"
+              ]
+            },
+            "model": {
+              "en": "The turtle is eating seaweed.",
+              "de": "Die Schildkröte frisst Seegras."
+            },
+            "childExample": {
+              "en": "Turtle.",
+              "de": "Schildkröte."
+            },
+            "guidance": {
+              "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+              "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 1,
+          "before": {
+            "prompt": {
+              "en": "Tell me where the octopus is beside the open chest.",
+              "de": "Erzähl mir, wo der Oktopus bei der offenen Truhe ist."
+            },
+            "starter": {
+              "en": "The octopus is beside…",
+              "de": "Der Oktopus ist neben …"
+            },
+            "words": {
+              "en": [
+                "octopus",
+                "beside",
+                "chest"
+              ],
+              "de": [
+                "Oktopus",
+                "neben",
+                "Truhe"
+              ]
+            },
+            "model": {
+              "en": "The octopus is beside the open chest.",
+              "de": "Der Oktopus ist neben der offenen Truhe."
+            },
+            "childExample": {
+              "en": "Octopus.",
+              "de": "Oktopus."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Where is the octopus?",
+              "de": "Wo ist der Oktopus?"
+            },
+            "starter": {
+              "en": "The octopus is beside…",
+              "de": "Der Oktopus ist neben …"
+            },
+            "words": {
+              "en": [
+                "octopus",
+                "beside",
+                "chest"
+              ],
+              "de": [
+                "Oktopus",
+                "neben",
+                "Truhe"
+              ]
+            },
+            "model": {
+              "en": "The octopus is beside the open chest.",
+              "de": "Der Oktopus ist neben der offenen Truhe."
+            },
+            "childExample": {
+              "en": "Octopus.",
+              "de": "Oktopus."
+            },
+            "guidance": {
+              "en": "Accept pointing or a short answer first. If needed, point to the open chest as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+              "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf die offene Truhe als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "Remove abstract comparison wording or a supplied location; retain optional spatial support.",
+          "reference_objects": {
+            "en": "the open chest",
+            "de": "die offene Truhe"
+          },
+          "picture_evidence": "The octopus is beside the open chest."
+        }
+      ],
+      "learning_objective": "Spatial language",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.jungle.positions.03",
+      "metadata": "app/src/main/assets/SceneDescriptions/jungle_rainforest/metadata/jungle_003_positions.json",
+      "asset": "SceneDescriptions/jungle_rainforest/canonical/jungle_003_positions.png",
+      "image_sha256": "4dd15f9b755fea71bd2046b2c736eab12ac8d78d73876204fa83cce6b9a8f0c1",
+      "reference_metadata_sha256": "29ce5731a6ebf3e474cf4d77fc3b56b471bc0cb0ba94d9cac3b2b95b5a005371",
+      "unchanged_slots": [
+        {
+          "slot": 0,
+          "bundle": {
+            "prompt": {
+              "en": "Where is the frog sitting in this picture?",
+              "de": "Wo sitzt der Frosch auf diesem Bild?"
+            },
+            "starter": {
+              "en": "The frog is on…",
+              "de": "Der Frosch ist auf …"
+            },
+            "words": {
+              "en": [
+                "frog",
+                "on",
+                "leaf"
+              ],
+              "de": [
+                "Frosch",
+                "auf",
+                "Blatt"
+              ]
+            },
+            "model": {
+              "en": "The frog is on the leaf.",
+              "de": "Der Frosch ist auf dem Blatt."
+            },
+            "childExample": {
+              "en": "Frog.",
+              "de": "Frosch."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 1,
+          "before": {
+            "prompt": {
+              "en": "Tell me where the tiger is behind the leaves.",
+              "de": "Erzähl mir, wo der Tiger bei den Blättern ist."
+            },
+            "starter": {
+              "en": "The tiger is behind…",
+              "de": "Der Tiger ist hinter …"
+            },
+            "words": {
+              "en": [
+                "tiger",
+                "behind",
+                "leaves"
+              ],
+              "de": [
+                "Tiger",
+                "hinter",
+                "Blätter"
+              ]
+            },
+            "model": {
+              "en": "The tiger is behind the leaves.",
+              "de": "Der Tiger ist hinter den Blättern."
+            },
+            "childExample": {
+              "en": "Tiger.",
+              "de": "Tiger."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Where is the tiger?",
+              "de": "Wo ist der Tiger?"
+            },
+            "starter": {
+              "en": "The tiger is behind…",
+              "de": "Der Tiger ist hinter …"
+            },
+            "words": {
+              "en": [
+                "tiger",
+                "behind",
+                "leaves"
+              ],
+              "de": [
+                "Tiger",
+                "hinter",
+                "Blätter"
+              ]
+            },
+            "model": {
+              "en": "The tiger is behind the leaves.",
+              "de": "Der Tiger ist hinter den Blättern."
+            },
+            "childExample": {
+              "en": "Tiger.",
+              "de": "Tiger."
+            },
+            "guidance": {
+              "en": "Accept pointing or a short answer first. If needed, point to the leaves as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+              "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf die Blätter als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "Remove abstract comparison wording or a supplied location; retain optional spatial support.",
+          "reference_objects": {
+            "en": "the leaves",
+            "de": "die Blätter"
+          },
+          "picture_evidence": "The tiger is behind the leaves."
+        }
+      ],
+      "learning_objective": "Spatial language",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.woodland.positions.03",
+      "metadata": "app/src/main/assets/SceneDescriptions/woodland_forest/metadata/woodland_003_positions.json",
+      "asset": "SceneDescriptions/woodland_forest/canonical/woodland_003_positions.png",
+      "image_sha256": "3618f1cd6a6497d3ce9970e992368839555b12c960dfa7d07bb2a3192f2a0ba2",
+      "reference_metadata_sha256": "f31481d137a237f668210ec78de1d8aae224ca17de88de6c460eeda8d4fb677f",
+      "unchanged_slots": [
+        {
+          "slot": 0,
+          "bundle": {
+            "prompt": {
+              "en": "Tell me where the rabbit is hiding.",
+              "de": "Erzähl mir, wo sich das Kaninchen versteckt."
+            },
+            "starter": {
+              "en": "The rabbit is under…",
+              "de": "Das Kaninchen ist unter …"
+            },
+            "words": {
+              "en": [
+                "rabbit",
+                "under",
+                "log"
+              ],
+              "de": [
+                "Kaninchen",
+                "unter",
+                "Baumstamm"
+              ]
+            },
+            "model": {
+              "en": "The rabbit is under the log.",
+              "de": "Das Kaninchen ist unter dem Baumstamm."
+            },
+            "childExample": {
+              "en": "Rabbit.",
+              "de": "Kaninchen."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 1,
+          "before": {
+            "prompt": {
+              "en": "Describe where the owl is compared with the fox.",
+              "de": "Beschreibe, wo die Eule im Vergleich zum Fuchs ist."
+            },
+            "starter": {
+              "en": "The owl is above…",
+              "de": "Die Eule ist über …"
+            },
+            "words": {
+              "en": [
+                "owl",
+                "above",
+                "fox"
+              ],
+              "de": [
+                "Eule",
+                "über",
+                "Fuchs"
+              ]
+            },
+            "model": {
+              "en": "The owl is above the fox.",
+              "de": "Die Eule ist über dem Fuchs."
+            },
+            "childExample": {
+              "en": "Owl.",
+              "de": "Eule."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Where is the owl?",
+              "de": "Wo ist die Eule?"
+            },
+            "starter": {
+              "en": "The owl is above…",
+              "de": "Die Eule ist über …"
+            },
+            "words": {
+              "en": [
+                "owl",
+                "above",
+                "fox"
+              ],
+              "de": [
+                "Eule",
+                "über",
+                "Fuchs"
+              ]
+            },
+            "model": {
+              "en": "The owl is above the fox.",
+              "de": "Die Eule ist über dem Fuchs."
+            },
+            "childExample": {
+              "en": "Owl.",
+              "de": "Eule."
+            },
+            "guidance": {
+              "en": "Accept pointing or a short answer first. If needed, point to the fox as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+              "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf den Fuchs als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "Remove abstract comparison wording or a supplied location; retain optional spatial support.",
+          "reference_objects": {
+            "en": "the fox",
+            "de": "den Fuchs"
+          },
+          "picture_evidence": "The owl is above the fox."
+        }
+      ],
+      "learning_objective": "Spatial language",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.park.positions.03",
+      "metadata": "app/src/main/assets/SceneDescriptions/park_playground/metadata/park_003_positions.json",
+      "asset": "SceneDescriptions/park_playground/canonical/park_003_positions.png",
+      "image_sha256": "4a56fa883c3e784c1a8c8159558b1cec7bba72c5b15bb1a2ec600f88fb1e3bc3",
+      "reference_metadata_sha256": "592c90d0c137698e63ed0326460086ae86d3a21482f1272ac9afb907b67d3453",
+      "unchanged_slots": [
+        {
+          "slot": 0,
+          "bundle": {
+            "prompt": {
+              "en": "Where is the backpack by the bench?",
+              "de": "Wo ist der Rucksack bei der Bank?"
+            },
+            "starter": {
+              "en": "The backpack is under…",
+              "de": "Der Rucksack ist unter …"
+            },
+            "words": {
+              "en": [
+                "backpack",
+                "under",
+                "bench"
+              ],
+              "de": [
+                "Rucksack",
+                "unter",
+                "Bank"
+              ]
+            },
+            "model": {
+              "en": "The backpack is under the bench.",
+              "de": "Der Rucksack ist unter der Bank."
+            },
+            "childExample": {
+              "en": "Backpack.",
+              "de": "Rucksack."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 1,
+          "before": {
+            "prompt": {
+              "en": "Tell me where the kite is compared with the tree.",
+              "de": "Erzähl mir, wo der Drachen im Vergleich zum Baum ist."
+            },
+            "starter": {
+              "en": "The kite is above…",
+              "de": "Der Drachen ist über …"
+            },
+            "words": {
+              "en": [
+                "kite",
+                "above",
+                "tree"
+              ],
+              "de": [
+                "Drachen",
+                "über",
+                "Baum"
+              ]
+            },
+            "model": {
+              "en": "The kite is above the tree.",
+              "de": "Der Drachen ist über dem Baum."
+            },
+            "childExample": {
+              "en": "Kite.",
+              "de": "Drachen."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Where is the kite?",
+              "de": "Wo ist der Drachen?"
+            },
+            "starter": {
+              "en": "The kite is above…",
+              "de": "Der Drachen ist über …"
+            },
+            "words": {
+              "en": [
+                "kite",
+                "above",
+                "tree"
+              ],
+              "de": [
+                "Drachen",
+                "über",
+                "Baum"
+              ]
+            },
+            "model": {
+              "en": "The kite is above the tree.",
+              "de": "Der Drachen ist über dem Baum."
+            },
+            "childExample": {
+              "en": "Kite.",
+              "de": "Drachen."
+            },
+            "guidance": {
+              "en": "Accept pointing or a short answer first. If needed, point to the tree as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+              "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf den Baum als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "Remove abstract comparison wording or a supplied location; retain optional spatial support.",
+          "reference_objects": {
+            "en": "the tree",
+            "de": "den Baum"
+          },
+          "picture_evidence": "The kite is above the tree."
+        }
+      ],
+      "learning_objective": "Spatial language",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.park.routines_positions.06",
+      "metadata": "app/src/main/assets/SceneDescriptions/park_playground/metadata/park_006_routines_positions.json",
+      "asset": "SceneDescriptions/park_playground/canonical/park_006_routines_positions.png",
+      "image_sha256": "fa2db4b72f4729b9323344c22505e95cab0465d72d8b7bb7dd78331748d3e2bc",
+      "reference_metadata_sha256": "849ddc9daee1eb9355092347321d21a22f8fde3f446087ff1f5d16dedff26399",
+      "unchanged_slots": [
+        {
+          "slot": 0,
+          "bundle": {
+            "prompt": {
+              "en": "Why would you wear a helmet before riding this scooter?",
+              "de": "Warum würdest du vor dem Rollerfahren einen Helm aufsetzen?"
+            },
+            "starter": {
+              "en": "I would put on…",
+              "de": "Ich würde … aufsetzen."
+            },
+            "words": {
+              "en": [
+                "helmet",
+                "head",
+                "protect"
+              ],
+              "de": [
+                "Helm",
+                "Kopf",
+                "schützen"
+              ]
+            },
+            "model": {
+              "en": "I would put on a helmet to protect my head.",
+              "de": "Ich würde einen Helm aufsetzen, um meinen Kopf zu schützen."
+            },
+            "childExample": {
+              "en": "Helmet.",
+              "de": "Helm."
+            },
+            "guidance": {
+              "en": "Start with the visible action or object. Invite a possible reason, accept a short idea, and model one connection without treating it as the only answer.",
+              "de": "Mit der sichtbaren Handlung oder dem Gegenstand beginnen. Eine mögliche Begründung anbieten, eine kurze Idee annehmen und einen Zusammenhang vormachen. Es gibt nicht nur eine Antwort."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 1,
+          "before": {
+            "prompt": {
+              "en": "Where is the ball compared with the two cones?",
+              "de": "Wo ist der Ball im Vergleich zu den beiden Pylonen?"
+            },
+            "starter": {
+              "en": "The ball is between…",
+              "de": "Der Ball ist zwischen …"
+            },
+            "words": {
+              "en": [
+                "ball",
+                "between",
+                "cones"
+              ],
+              "de": [
+                "Ball",
+                "zwischen",
+                "Pylonen"
+              ]
+            },
+            "model": {
+              "en": "The ball is between the cones.",
+              "de": "Der Ball ist zwischen den Pylonen."
+            },
+            "childExample": {
+              "en": "Ball.",
+              "de": "Ball."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Where is the ball?",
+              "de": "Wo ist der Ball?"
+            },
+            "starter": {
+              "en": "The ball is between…",
+              "de": "Der Ball ist zwischen …"
+            },
+            "words": {
+              "en": [
+                "ball",
+                "between",
+                "cones"
+              ],
+              "de": [
+                "Ball",
+                "zwischen",
+                "Kegel"
+              ]
+            },
+            "model": {
+              "en": "The ball is between the cones.",
+              "de": "Der Ball ist zwischen den Kegeln."
+            },
+            "childExample": {
+              "en": "Ball.",
+              "de": "Ball."
+            },
+            "guidance": {
+              "en": "Accept pointing or a short answer first. If needed, point to the two cones as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+              "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf die beiden Kegel als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "Remove abstract comparison wording or a supplied location; retain optional spatial support.",
+          "reference_objects": {
+            "en": "the two cones",
+            "de": "die beiden Kegel"
+          },
+          "picture_evidence": "The ball is between the cones."
+        }
+      ],
+      "learning_objective": "Spatial language",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.sky.positions.03",
+      "metadata": "app/src/main/assets/SceneDescriptions/sky_flying/metadata/sky_003_positions.json",
+      "asset": "SceneDescriptions/sky_flying/canonical/sky_003_positions.png",
+      "image_sha256": "d81300e00edc8b41d14e0e2fc909c91e04ea9a21e946426756eae1d95d68c76f",
+      "reference_metadata_sha256": "98f6894adadcd316a4af1c834312cf62fbe77ab70552a8d4b627f807e6228219",
+      "unchanged_slots": [],
+      "changes": [
+        {
+          "slot": 0,
+          "before": {
+            "prompt": {
+              "en": "Where is the helicopter compared with the two clouds?",
+              "de": "Wo ist der Hubschrauber im Vergleich zu den beiden Wolken?"
+            },
+            "starter": {
+              "en": "The helicopter is between…",
+              "de": "Der Hubschrauber ist zwischen …"
+            },
+            "words": {
+              "en": [
+                "helicopter",
+                "between",
+                "clouds"
+              ],
+              "de": [
+                "Hubschrauber",
+                "zwischen",
+                "Wolken"
+              ]
+            },
+            "model": {
+              "en": "The helicopter is between the clouds.",
+              "de": "Der Hubschrauber ist zwischen den Wolken."
+            },
+            "childExample": {
+              "en": "Helicopter.",
+              "de": "Hubschrauber."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Where is the helicopter?",
+              "de": "Wo ist der Hubschrauber?"
+            },
+            "starter": {
+              "en": "The helicopter is between…",
+              "de": "Der Hubschrauber ist zwischen …"
+            },
+            "words": {
+              "en": [
+                "helicopter",
+                "between",
+                "clouds"
+              ],
+              "de": [
+                "Hubschrauber",
+                "zwischen",
+                "Wolken"
+              ]
+            },
+            "model": {
+              "en": "The helicopter is between the clouds.",
+              "de": "Der Hubschrauber ist zwischen den Wolken."
+            },
+            "childExample": {
+              "en": "Helicopter.",
+              "de": "Hubschrauber."
+            },
+            "guidance": {
+              "en": "Accept pointing or a short answer first. If needed, point to the two clouds as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+              "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf die beiden Wolken als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "Remove abstract comparison wording or a supplied location; retain optional spatial support.",
+          "reference_objects": {
+            "en": "the two clouds",
+            "de": "die beiden Wolken"
+          },
+          "picture_evidence": "The helicopter is between the clouds."
+        },
+        {
+          "slot": 1,
+          "before": {
+            "prompt": {
+              "en": "Tell me where the balloon is compared with the mountain.",
+              "de": "Erzähl mir, wo der Ballon im Vergleich zum Berg ist."
+            },
+            "starter": {
+              "en": "The balloon is above…",
+              "de": "Der Ballon ist über …"
+            },
+            "words": {
+              "en": [
+                "balloon",
+                "above",
+                "mountain"
+              ],
+              "de": [
+                "Ballon",
+                "über",
+                "Berg"
+              ]
+            },
+            "model": {
+              "en": "The balloon is above the mountain.",
+              "de": "Der Ballon ist über dem Berg."
+            },
+            "childExample": {
+              "en": "Balloon.",
+              "de": "Ballon."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Where is the balloon?",
+              "de": "Wo ist der Ballon?"
+            },
+            "starter": {
+              "en": "The balloon is above…",
+              "de": "Der Ballon ist über …"
+            },
+            "words": {
+              "en": [
+                "balloon",
+                "above",
+                "mountain"
+              ],
+              "de": [
+                "Ballon",
+                "über",
+                "Berg"
+              ]
+            },
+            "model": {
+              "en": "The balloon is above the mountain.",
+              "de": "Der Ballon ist über dem Berg."
+            },
+            "childExample": {
+              "en": "Balloon.",
+              "de": "Ballon."
+            },
+            "guidance": {
+              "en": "Accept pointing or a short answer first. If needed, point to the mountain as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+              "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf den Berg als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "Remove abstract comparison wording or a supplied location; retain optional spatial support.",
+          "reference_objects": {
+            "en": "the mountain",
+            "de": "den Berg"
+          },
+          "picture_evidence": "The balloon is above the mountain."
+        }
+      ],
+      "learning_objective": "Spatial language",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.mountains.positions.03",
+      "metadata": "app/src/main/assets/SceneDescriptions/mountains_alpine/metadata/mountains_003_positions.json",
+      "asset": "SceneDescriptions/mountains_alpine/canonical/mountains_003_positions.png",
+      "image_sha256": "baaf16a70c379918c9ac5c79e4f8d07e87d9d6ec6d6d3296b82abc1e3436bc5e",
+      "reference_metadata_sha256": "e408c2cd0f7c1e69611429aa123d860d653e127dd70d695f5b44f534e72a90c7",
+      "unchanged_slots": [],
+      "changes": [
+        {
+          "slot": 0,
+          "before": {
+            "prompt": {
+              "en": "Where is the rabbit compared with the two rocks?",
+              "de": "Wo ist das Kaninchen im Vergleich zu den beiden Felsen?"
+            },
+            "starter": {
+              "en": "The rabbit is between…",
+              "de": "Das Kaninchen ist zwischen …"
+            },
+            "words": {
+              "en": [
+                "rabbit",
+                "between",
+                "rocks"
+              ],
+              "de": [
+                "Kaninchen",
+                "zwischen",
+                "Felsen"
+              ]
+            },
+            "model": {
+              "en": "The rabbit is between the rocks.",
+              "de": "Das Kaninchen ist zwischen den Felsen."
+            },
+            "childExample": {
+              "en": "Rabbit.",
+              "de": "Kaninchen."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Where is the rabbit?",
+              "de": "Wo ist das Kaninchen?"
+            },
+            "starter": {
+              "en": "The rabbit is between…",
+              "de": "Das Kaninchen ist zwischen …"
+            },
+            "words": {
+              "en": [
+                "rabbit",
+                "between",
+                "rocks"
+              ],
+              "de": [
+                "Kaninchen",
+                "zwischen",
+                "Felsen"
+              ]
+            },
+            "model": {
+              "en": "The rabbit is between the rocks.",
+              "de": "Das Kaninchen ist zwischen den Felsen."
+            },
+            "childExample": {
+              "en": "Rabbit.",
+              "de": "Kaninchen."
+            },
+            "guidance": {
+              "en": "Accept pointing or a short answer first. If needed, point to the two rocks as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+              "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf die beiden Felsen als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "Remove abstract comparison wording or a supplied location; retain optional spatial support.",
+          "reference_objects": {
+            "en": "the two rocks",
+            "de": "die beiden Felsen"
+          },
+          "picture_evidence": "The rabbit is between the rocks."
+        },
+        {
+          "slot": 1,
+          "before": {
+            "prompt": {
+              "en": "Describe where the flowers are beside the rock.",
+              "de": "Beschreibe, wo die Blumen beim Felsen sind."
+            },
+            "starter": {
+              "en": "The flowers are next to…",
+              "de": "Die Blumen sind neben …"
+            },
+            "words": {
+              "en": [
+                "flowers",
+                "next to",
+                "rock"
+              ],
+              "de": [
+                "Blumen",
+                "neben",
+                "Felsen"
+              ]
+            },
+            "model": {
+              "en": "The flowers are next to the rock.",
+              "de": "Die Blumen sind neben dem Felsen."
+            },
+            "childExample": {
+              "en": "Flowers.",
+              "de": "Blumen."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Where are the flowers?",
+              "de": "Wo sind die Blumen?"
+            },
+            "starter": {
+              "en": "The flowers are next to…",
+              "de": "Die Blumen sind neben …"
+            },
+            "words": {
+              "en": [
+                "flowers",
+                "next to",
+                "rock"
+              ],
+              "de": [
+                "Blumen",
+                "neben",
+                "Felsen"
+              ]
+            },
+            "model": {
+              "en": "The flowers are next to the rock.",
+              "de": "Die Blumen sind neben dem Felsen."
+            },
+            "childExample": {
+              "en": "Flowers.",
+              "de": "Blumen."
+            },
+            "guidance": {
+              "en": "There are several groups of flowers. Let the child choose and point to a group, then point to a nearby rock if a reference is needed. Accept a gesture, a short answer or any accurate location. The model fits flowers beside a rock; offer it only for that group. Repetition is optional.",
+              "de": "Es gibt mehrere Blumengruppen. Das Kind darf eine Gruppe auswählen und darauf zeigen. Bei Bedarf auf einen Felsen in ihrer Nähe als Bezugspunkt zeigen. Eine Geste, eine kurze Antwort oder jede passende Ortsangabe annehmen. Der Beispielsatz passt zu Blumen neben einem Felsen; ihn nur für diese Gruppe anbieten. Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "Remove abstract comparison wording or a supplied location; retain optional spatial support.",
+          "reference_objects": {
+            "en": "the rock beside the flowers",
+            "de": "den Felsen bei den Blumen"
+          },
+          "picture_evidence": "The flowers are next to the rock."
+        }
+      ],
+      "learning_objective": "Spatial language",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.mountains.spatial_clues.09",
+      "metadata": "app/src/main/assets/SceneDescriptions/mountains_alpine/metadata/mountains_009_spatial_clues.json",
+      "asset": "SceneDescriptions/mountains_alpine/canonical/mountains_009_spatial_clues.png",
+      "image_sha256": "b49a47a7e916a4f19f22dffc89a7c271c24527ff0ff9f8fa78857e395a12c17c",
+      "reference_metadata_sha256": "c226735436f4f407f8296611badf4075dcaf3e7c43163c3d51f35aaf1bee49f1",
+      "unchanged_slots": [
+        {
+          "slot": 0,
+          "bundle": {
+            "prompt": {
+              "en": "How could you cross the stream using something in this picture?",
+              "de": "Wie könntest du mit etwas auf diesem Bild über den Bach kommen?"
+            },
+            "starter": {
+              "en": "I could…",
+              "de": "Ich könnte …"
+            },
+            "words": {
+              "en": [
+                "stream",
+                "bridge",
+                "cross"
+              ],
+              "de": [
+                "Bach",
+                "Brücke",
+                "überqueren"
+              ]
+            },
+            "model": {
+              "en": "I could walk over the bridge.",
+              "de": "Ich könnte über die Brücke gehen."
+            },
+            "childExample": {
+              "en": "Stream.",
+              "de": "Bach."
+            },
+            "guidance": {
+              "en": "Point to the relevant pictured objects first. Accept different possible solutions or clues and help the child say one simple idea.",
+              "de": "Zuerst auf die passenden Dinge im Bild zeigen. Verschiedene mögliche Lösungen oder Hinweise annehmen und beim Aussprechen einer einfachen Idee helfen."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 1,
+          "before": {
+            "prompt": {
+              "en": "Where is the marmot compared with the goat on the high rock?",
+              "de": "Wo ist das Murmeltier im Vergleich zur Ziege auf dem hohen Felsen?"
+            },
+            "starter": {
+              "en": "The marmot is below…",
+              "de": "Das Murmeltier ist unterhalb …"
+            },
+            "words": {
+              "en": [
+                "marmot",
+                "below",
+                "goat"
+              ],
+              "de": [
+                "Murmeltier",
+                "unterhalb",
+                "Ziege"
+              ]
+            },
+            "model": {
+              "en": "The marmot is below the goat.",
+              "de": "Das Murmeltier ist unterhalb der Ziege."
+            },
+            "childExample": {
+              "en": "Marmot.",
+              "de": "Murmeltier."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Where is the marmot?",
+              "de": "Wo ist das Murmeltier?"
+            },
+            "starter": {
+              "en": "The marmot is below…",
+              "de": "Das Murmeltier ist unterhalb …"
+            },
+            "words": {
+              "en": [
+                "marmot",
+                "below",
+                "goat"
+              ],
+              "de": [
+                "Murmeltier",
+                "unterhalb",
+                "Ziege"
+              ]
+            },
+            "model": {
+              "en": "The marmot is below the goat.",
+              "de": "Das Murmeltier ist unterhalb der Ziege."
+            },
+            "childExample": {
+              "en": "Marmot.",
+              "de": "Murmeltier."
+            },
+            "guidance": {
+              "en": "Accept pointing or a short answer first. If needed, point to the goat on the high rock as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+              "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf die Ziege auf dem hohen Felsen als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "Remove abstract comparison wording or a supplied location; retain optional spatial support.",
+          "reference_objects": {
+            "en": "the goat on the high rock",
+            "de": "die Ziege auf dem hohen Felsen"
+          },
+          "picture_evidence": "The marmot is below the goat."
+        }
+      ],
+      "learning_objective": "Spatial language",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.farm.positions.03",
+      "metadata": "app/src/main/assets/SceneDescriptions/countryside_farm/metadata/farm_003_positions.json",
+      "asset": "SceneDescriptions/countryside_farm/canonical/farm_003_positions.png",
+      "image_sha256": "edcfeee3f478ed9df0cb0b96a3e6fcb023e935a8cda6356c12e92913c9554980",
+      "reference_metadata_sha256": "7eebff264e1816fa15946519dc65e1cc07ce3349dee72ac8a4d0facbb73acf4c",
+      "unchanged_slots": [
+        {
+          "slot": 0,
+          "bundle": {
+            "prompt": {
+              "en": "Where is the cat by the hay bale?",
+              "de": "Wo ist die Katze beim Heuballen?"
+            },
+            "starter": {
+              "en": "The cat is on…",
+              "de": "Die Katze ist auf …"
+            },
+            "words": {
+              "en": [
+                "cat",
+                "on",
+                "hay bale"
+              ],
+              "de": [
+                "Katze",
+                "auf",
+                "Heuballen"
+              ]
+            },
+            "model": {
+              "en": "The cat is on the hay bale.",
+              "de": "Die Katze ist auf dem Heuballen."
+            },
+            "childExample": {
+              "en": "Cat.",
+              "de": "Katze."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 1,
+          "before": {
+            "prompt": {
+              "en": "Tell me where the pig is compared with the fence.",
+              "de": "Erzähl mir, wo das Schwein im Vergleich zum Zaun ist."
+            },
+            "starter": {
+              "en": "The pig is behind…",
+              "de": "Das Schwein ist hinter …"
+            },
+            "words": {
+              "en": [
+                "pig",
+                "behind",
+                "fence"
+              ],
+              "de": [
+                "Schwein",
+                "hinter",
+                "Zaun"
+              ]
+            },
+            "model": {
+              "en": "The pig is behind the fence.",
+              "de": "Das Schwein ist hinter dem Zaun."
+            },
+            "childExample": {
+              "en": "Pig.",
+              "de": "Schwein."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Where is the pig?",
+              "de": "Wo ist das Schwein?"
+            },
+            "starter": {
+              "en": "The pig is behind…",
+              "de": "Das Schwein ist hinter …"
+            },
+            "words": {
+              "en": [
+                "pig",
+                "behind",
+                "fence"
+              ],
+              "de": [
+                "Schwein",
+                "hinter",
+                "Zaun"
+              ]
+            },
+            "model": {
+              "en": "The pig is behind the fence.",
+              "de": "Das Schwein ist hinter dem Zaun."
+            },
+            "childExample": {
+              "en": "Pig.",
+              "de": "Schwein."
+            },
+            "guidance": {
+              "en": "Accept pointing or a short answer first. If needed, point to the fence as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+              "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf den Zaun als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "Remove abstract comparison wording or a supplied location; retain optional spatial support.",
+          "reference_objects": {
+            "en": "the fence",
+            "de": "den Zaun"
+          },
+          "picture_evidence": "The pig is behind the fence."
+        }
+      ],
+      "learning_objective": "Spatial language",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.farm.garden_food.06",
+      "metadata": "app/src/main/assets/SceneDescriptions/countryside_farm/metadata/farm_006_garden_food.json",
+      "asset": "SceneDescriptions/countryside_farm/canonical/farm_006_garden_food.png",
+      "image_sha256": "60c1e78f649716ea35e101789a19501b13fb4105a5451070aa2622ca59163357",
+      "reference_metadata_sha256": "765787e80087b25ecf511406097cb815f8b2bb4de9c4321c535de8ecfad7410a",
+      "unchanged_slots": [
+        {
+          "slot": 0,
+          "bundle": {
+            "prompt": {
+              "en": "What food can you see growing on the tree?",
+              "de": "Welches Essen siehst du am Baum wachsen?"
+            },
+            "starter": {
+              "en": "I can see…",
+              "de": "Ich sehe …"
+            },
+            "words": {
+              "en": [
+                "apples",
+                "tree",
+                "growing"
+              ],
+              "de": [
+                "Äpfel",
+                "Baum",
+                "wachsen"
+              ]
+            },
+            "model": {
+              "en": "I can see apples on the tree.",
+              "de": "Ich sehe Äpfel am Baum."
+            },
+            "childExample": {
+              "en": "Apples.",
+              "de": "Äpfel."
+            },
+            "guidance": {
+              "en": "Pointing or one word is enough. Name the pictured subject together, then offer one short sentence without asking for repetition.",
+              "de": "Zeigen oder ein Wort reicht. Den Bildinhalt gemeinsam benennen und einen kurzen Satz anbieten, ohne Wiederholung zu verlangen."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 1,
+          "before": {
+            "prompt": {
+              "en": "Where do the carrots grow compared with the apples?",
+              "de": "Wo wachsen die Karotten im Vergleich zu den Äpfeln?"
+            },
+            "starter": {
+              "en": "The carrots grow…",
+              "de": "Die Karotten wachsen …"
+            },
+            "words": {
+              "en": [
+                "carrots",
+                "ground",
+                "apples"
+              ],
+              "de": [
+                "Karotten",
+                "Erde",
+                "Äpfel"
+              ]
+            },
+            "model": {
+              "en": "The carrots grow in the ground. The apples grow on the tree.",
+              "de": "Die Karotten wachsen in der Erde. Die Äpfel wachsen am Baum."
+            },
+            "childExample": {
+              "en": "Carrots.",
+              "de": "Karotten."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Where do the carrots grow?",
+              "de": "Wo wachsen die Karotten?"
+            },
+            "starter": {
+              "en": "The carrots grow…",
+              "de": "Die Karotten wachsen …"
+            },
+            "words": {
+              "en": [
+                "carrots",
+                "ground",
+                "apples"
+              ],
+              "de": [
+                "Karotten",
+                "Erde",
+                "Äpfel"
+              ]
+            },
+            "model": {
+              "en": "The carrots grow in the ground. The apples grow on the tree.",
+              "de": "Die Karotten wachsen in der Erde. Die Äpfel wachsen am Baum."
+            },
+            "childExample": {
+              "en": "Carrots.",
+              "de": "Karotten."
+            },
+            "guidance": {
+              "en": "Point to the carrots and accept pointing, one word or a short location phrase. Model the first sentence about the ground. The second sentence about apples is an optional comparison, not a required answer. Repetition is optional.",
+              "de": "Auf die Karotten zeigen und Zeigen, ein Wort oder eine kurze Ortsangabe annehmen. Den ersten Satz über die Erde vormachen. Der zweite Satz über die Äpfel ist ein freiwilliger Vergleich und keine verlangte Antwort. Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "Remove abstract comparison wording or a supplied location; retain optional spatial support.",
+          "reference_objects": {
+            "en": "the ground",
+            "de": "die Erde"
+          },
+          "picture_evidence": "The carrots grow in the ground. The apples grow on the tree."
+        }
+      ],
+      "learning_objective": "Spatial language",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.classroom.positions.03",
+      "metadata": "app/src/main/assets/SceneDescriptions/classroom_school/metadata/classroom_003_positions.json",
+      "asset": "SceneDescriptions/classroom_school/canonical/classroom_003_positions.png",
+      "image_sha256": "c464ed95b17dcbd7615f5c5a0b475e915072036019255b2f383dfda5183ffb27",
+      "reference_metadata_sha256": "481354d5a9affe6c8240ae879b48f88bd380ce18956ffd72ed86d485176732c7",
+      "unchanged_slots": [
+        {
+          "slot": 0,
+          "bundle": {
+            "prompt": {
+              "en": "Where is the blue backpack?",
+              "de": "Wo ist der blaue Rucksack?"
+            },
+            "starter": {
+              "en": "The blue backpack is…",
+              "de": "Der blaue Rucksack ist …"
+            },
+            "words": {
+              "en": [
+                "backpack",
+                "blue",
+                "under"
+              ],
+              "de": [
+                "Rucksack",
+                "blau",
+                "unter"
+              ]
+            },
+            "model": {
+              "en": "The blue backpack is under the desk.",
+              "de": "Der blaue Rucksack ist unter dem Tisch."
+            },
+            "childExample": {
+              "en": "Backpack.",
+              "de": "Rucksack."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 1,
+          "before": {
+            "prompt": {
+              "en": "Where is the red book compared with the green bag?",
+              "de": "Wo ist das rote Buch im Vergleich zur grünen Tasche?"
+            },
+            "starter": {
+              "en": "The red book is in…",
+              "de": "Das rote Buch ist in …"
+            },
+            "words": {
+              "en": [
+                "book",
+                "red",
+                "in"
+              ],
+              "de": [
+                "Buch",
+                "rot",
+                "in"
+              ]
+            },
+            "model": {
+              "en": "The red book is in the green bag.",
+              "de": "Das rote Buch ist in der grünen Tasche."
+            },
+            "childExample": {
+              "en": "Book.",
+              "de": "Buch."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Where is the red book?",
+              "de": "Wo ist das rote Buch?"
+            },
+            "starter": {
+              "en": "The red book is in…",
+              "de": "Das rote Buch ist in …"
+            },
+            "words": {
+              "en": [
+                "book",
+                "red",
+                "in"
+              ],
+              "de": [
+                "Buch",
+                "rot",
+                "in"
+              ]
+            },
+            "model": {
+              "en": "The red book is in the green bag.",
+              "de": "Das rote Buch ist in der grünen Tasche."
+            },
+            "childExample": {
+              "en": "Book.",
+              "de": "Buch."
+            },
+            "guidance": {
+              "en": "Accept pointing or a short answer first. If needed, point to the green bag as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+              "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf die grüne Tasche als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "Remove abstract comparison wording or a supplied location; retain optional spatial support.",
+          "reference_objects": {
+            "en": "the green bag",
+            "de": "die grüne Tasche"
+          },
+          "picture_evidence": "The red book is in the green bag."
+        }
+      ],
+      "learning_objective": "Spatial language",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.classroom.objects_places.04",
+      "metadata": "app/src/main/assets/SceneDescriptions/classroom_school/metadata/classroom_004_objects_places.json",
+      "asset": "SceneDescriptions/classroom_school/canonical/classroom_004_objects_places.png",
+      "image_sha256": "9ba210b9b9da5dc95ded810f1324a4b859bdda10b6691d3fedb0b322a0799b62",
+      "reference_metadata_sha256": "d6cd43653ccdac9524058446f43d000b8bb539dec0692ab91c30b6790744f376",
+      "unchanged_slots": [
+        {
+          "slot": 0,
+          "bundle": {
+            "prompt": {
+              "en": "What can you see inside the red cup on the table?",
+              "de": "Was siehst du im roten Becher auf dem Tisch?"
+            },
+            "starter": {
+              "en": "In the red cup…",
+              "de": "Im roten Becher …"
+            },
+            "words": {
+              "en": [
+                "pencils",
+                "red",
+                "cup"
+              ],
+              "de": [
+                "Stifte",
+                "rot",
+                "Becher"
+              ]
+            },
+            "model": {
+              "en": "The pencils are in the red cup.",
+              "de": "Die Stifte sind im roten Becher."
+            },
+            "childExample": {
+              "en": "Pencils.",
+              "de": "Stifte."
+            },
+            "guidance": {
+              "en": "Pointing or one word is enough. Name the pictured subject together, then offer one short sentence without asking for repetition.",
+              "de": "Zeigen oder ein Wort reicht. Den Bildinhalt gemeinsam benennen und einen kurzen Satz anbieten, ohne Wiederholung zu verlangen."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 1,
+          "before": {
+            "prompt": {
+              "en": "Tell me where the teddy bear is on the shelf.",
+              "de": "Erzähl mir, wo der Teddybär am Regal ist."
+            },
+            "starter": {
+              "en": "The teddy bear is…",
+              "de": "Der Teddybär ist …"
+            },
+            "words": {
+              "en": [
+                "teddy bear",
+                "on top",
+                "shelf"
+              ],
+              "de": [
+                "Teddybär",
+                "oben",
+                "Regal"
+              ]
+            },
+            "model": {
+              "en": "The teddy bear is on top of the shelf.",
+              "de": "Der Teddybär ist oben auf dem Regal."
+            },
+            "childExample": {
+              "en": "Teddy bear.",
+              "de": "Teddybär."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Where is the teddy bear?",
+              "de": "Wo ist der Teddybär?"
+            },
+            "starter": {
+              "en": "The teddy bear is…",
+              "de": "Der Teddybär ist …"
+            },
+            "words": {
+              "en": [
+                "teddy bear",
+                "on top",
+                "shelf"
+              ],
+              "de": [
+                "Teddybär",
+                "oben",
+                "Regal"
+              ]
+            },
+            "model": {
+              "en": "The teddy bear is on top of the shelf.",
+              "de": "Der Teddybär ist oben auf dem Regal."
+            },
+            "childExample": {
+              "en": "Teddy bear.",
+              "de": "Teddybär."
+            },
+            "guidance": {
+              "en": "Accept pointing or a short answer first. If needed, point to the shelf as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+              "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf das Regal als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "Remove abstract comparison wording or a supplied location; retain optional spatial support.",
+          "reference_objects": {
+            "en": "the shelf",
+            "de": "das Regal"
+          },
+          "picture_evidence": "The teddy bear is on top of the shelf."
+        }
+      ],
+      "learning_objective": "Spatial language",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.zoo.positions.03",
+      "metadata": "app/src/main/assets/SceneDescriptions/zoo_wildlife/metadata/zoo_003_positions.json",
+      "asset": "SceneDescriptions/zoo_wildlife/canonical/zoo_003_positions.png",
+      "image_sha256": "6949454c3ac53681b2df2263caabbc35b353379557e35939b4a8f059d765b614",
+      "reference_metadata_sha256": "989f462c50f37dfef1a071f832b06ac31d6fbf650c83329da10625bc44107eec",
+      "unchanged_slots": [],
+      "changes": [
+        {
+          "slot": 0,
+          "before": {
+            "prompt": {
+              "en": "Where is the giraffe compared with the tree?",
+              "de": "Wo ist die Giraffe im Vergleich zum Baum?"
+            },
+            "starter": {
+              "en": "The giraffe is behind…",
+              "de": "Die Giraffe ist hinter …"
+            },
+            "words": {
+              "en": [
+                "giraffe",
+                "behind",
+                "tree"
+              ],
+              "de": [
+                "Giraffe",
+                "hinter",
+                "Baum"
+              ]
+            },
+            "model": {
+              "en": "The giraffe is behind the tree.",
+              "de": "Die Giraffe ist hinter dem Baum."
+            },
+            "childExample": {
+              "en": "Giraffe.",
+              "de": "Giraffe."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Where is the giraffe?",
+              "de": "Wo ist die Giraffe?"
+            },
+            "starter": {
+              "en": "The giraffe is behind…",
+              "de": "Die Giraffe ist hinter …"
+            },
+            "words": {
+              "en": [
+                "giraffe",
+                "behind",
+                "tree"
+              ],
+              "de": [
+                "Giraffe",
+                "hinter",
+                "Baum"
+              ]
+            },
+            "model": {
+              "en": "The giraffe is behind the tree.",
+              "de": "Die Giraffe ist hinter dem Baum."
+            },
+            "childExample": {
+              "en": "Giraffe.",
+              "de": "Giraffe."
+            },
+            "guidance": {
+              "en": "Accept pointing or a short answer first. If needed, point to the tree as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+              "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf den Baum als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "Remove abstract comparison wording or a supplied location; retain optional spatial support.",
+          "reference_objects": {
+            "en": "the tree",
+            "de": "den Baum"
+          },
+          "picture_evidence": "The giraffe is behind the tree."
+        },
+        {
+          "slot": 1,
+          "before": {
+            "prompt": {
+              "en": "Describe where the zebra is between the posts.",
+              "de": "Beschreibe, wo das Zebra bei den Pfosten ist."
+            },
+            "starter": {
+              "en": "The zebra is between…",
+              "de": "Das Zebra ist zwischen …"
+            },
+            "words": {
+              "en": [
+                "zebra",
+                "between",
+                "posts"
+              ],
+              "de": [
+                "Zebra",
+                "zwischen",
+                "Pfosten"
+              ]
+            },
+            "model": {
+              "en": "The zebra is between the posts.",
+              "de": "Das Zebra ist zwischen den Pfosten."
+            },
+            "childExample": {
+              "en": "Zebra.",
+              "de": "Zebra."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Where is the zebra?",
+              "de": "Wo ist das Zebra?"
+            },
+            "starter": {
+              "en": "The zebra is between…",
+              "de": "Das Zebra ist zwischen …"
+            },
+            "words": {
+              "en": [
+                "zebra",
+                "between",
+                "posts"
+              ],
+              "de": [
+                "Zebra",
+                "zwischen",
+                "Pfosten"
+              ]
+            },
+            "model": {
+              "en": "The zebra is between the posts.",
+              "de": "Das Zebra ist zwischen den Pfosten."
+            },
+            "childExample": {
+              "en": "Zebra.",
+              "de": "Zebra."
+            },
+            "guidance": {
+              "en": "Accept pointing or a short answer first. If needed, point to the two posts as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+              "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf die beiden Pfosten als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "Remove abstract comparison wording or a supplied location; retain optional spatial support.",
+          "reference_objects": {
+            "en": "the two posts",
+            "de": "die beiden Pfosten"
+          },
+          "picture_evidence": "The zebra is between the posts."
+        }
+      ],
+      "learning_objective": "Spatial language",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    }
+  ]
+}

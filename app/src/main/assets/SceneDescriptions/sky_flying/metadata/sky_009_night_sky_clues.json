@@ -189,8 +189,8 @@
         "de": "Ich habe den Mond am Abend gesehen."
       },
       "childExample": {
-        "en": "Moon.",
-        "de": "Mond."
+        "en": "In the evening.",
+        "de": "Am Abend."
       },
       "guidance": {
         "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",

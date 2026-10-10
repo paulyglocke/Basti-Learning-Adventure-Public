@@ -179,8 +179,8 @@
         "de": "Ich würde gern beim Gießen der Pflanzen helfen."
       },
       "childExample": {
-        "en": "Plants.",
-        "de": "Pflanzen."
+        "en": "Water the plants.",
+        "de": "Die Pflanzen gießen."
       },
       "guidance": {
         "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",
@@ -213,8 +213,8 @@
         "de": "Ich könnte helfen, das Futter für die Hühner zu verteilen."
       },
       "childExample": {
-        "en": "Chickens.",
-        "de": "Hühner."
+        "en": "Scatter the food.",
+        "de": "Das Futter verteilen."
       },
       "guidance": {
         "en": "Invite pretend speech or one helpful action. A short phrase or gesture is enough; model friendly wording without requiring the child to repeat it.",

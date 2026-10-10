@@ -340,8 +340,8 @@
         "de": "Das Eichhörnchen trägt eine Eichel."
       },
       "childExample": {
-        "en": "Squirrel.",
-        "de": "Eichhörnchen."
+        "en": "An acorn.",
+        "de": "Eine Eichel."
       },
       "guidance": {
         "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
@@ -350,36 +350,36 @@
     },
     {
       "prompt": {
-        "en": "Tell me what the deer is doing at the water.",
-        "de": "Erzähl mir, was das Reh am Wasser macht."
+        "en": "Why might the deer come to the water?",
+        "de": "Warum könnte das Reh zum Wasser kommen?"
       },
       "starter": {
-        "en": "The deer is…",
-        "de": "Das Reh …"
+        "en": "The deer might…",
+        "de": "Das Reh könnte …"
       },
       "words": {
         "en": [
           "deer",
-          "drinking",
-          "water"
+          "thirsty",
+          "drink"
         ],
         "de": [
           "Reh",
-          "trinkt",
-          "Wasser"
+          "durstig",
+          "trinken"
         ]
       },
       "model": {
-        "en": "The deer is drinking water.",
-        "de": "Das Reh trinkt Wasser."
+        "en": "The deer might be thirsty and want a drink.",
+        "de": "Das Reh könnte durstig sein und trinken wollen."
       },
       "childExample": {
-        "en": "Deer.",
-        "de": "Reh."
+        "en": "Thirsty.",
+        "de": "Durstig."
       },
       "guidance": {
-        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
-        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        "en": "Point to the deer at the water first. Offer one possible reason if helpful and accept another idea or a short response. We cannot know its intention from the picture; repeating the model is optional.",
+        "de": "Zuerst auf das Reh am Wasser zeigen. Bei Bedarf eine mögliche Begründung anbieten und andere Ideen oder kurze Antworten annehmen. Seine Absicht können wir aus dem Bild nicht sicher erkennen. Nachsprechen ist freiwillig."
       }
     }
   ]

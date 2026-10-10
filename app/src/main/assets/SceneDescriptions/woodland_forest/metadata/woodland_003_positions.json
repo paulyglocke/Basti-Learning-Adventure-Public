@@ -389,8 +389,8 @@
         "de": "Das Kaninchen ist unter dem Baumstamm."
       },
       "childExample": {
-        "en": "Rabbit.",
-        "de": "Kaninchen."
+        "en": "Under the log.",
+        "de": "Unter dem Baumstamm."
       },
       "guidance": {
         "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
@@ -399,8 +399,8 @@
     },
     {
       "prompt": {
-        "en": "Describe where the owl is compared with the fox.",
-        "de": "Beschreibe, wo die Eule im Vergleich zum Fuchs ist."
+        "en": "Where is the owl?",
+        "de": "Wo ist die Eule?"
       },
       "starter": {
         "en": "The owl is above…",
@@ -423,12 +423,12 @@
         "de": "Die Eule ist über dem Fuchs."
       },
       "childExample": {
-        "en": "Owl.",
-        "de": "Eule."
+        "en": "Above the fox.",
+        "de": "Über dem Fuchs."
       },
       "guidance": {
-        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
-        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+        "en": "Accept pointing or a short answer first. If needed, point to the fox as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+        "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf den Fuchs als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
       }
     }
   ]

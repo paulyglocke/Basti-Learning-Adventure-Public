@@ -398,8 +398,8 @@
         "de": "Die Krabbe ist in der Höhle."
       },
       "childExample": {
-        "en": "Crab.",
-        "de": "Krabbe."
+        "en": "In the cave.",
+        "de": "In der Höhle."
       },
       "guidance": {
         "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
@@ -408,8 +408,8 @@
     },
     {
       "prompt": {
-        "en": "Where is the turtle compared with the starfish?",
-        "de": "Wo ist die Schildkröte im Vergleich zum Seestern?"
+        "en": "Where is the turtle?",
+        "de": "Wo ist die Schildkröte?"
       },
       "starter": {
         "en": "The turtle is above…",
@@ -432,12 +432,46 @@
         "de": "Die Schildkröte ist über dem Seestern."
       },
       "childExample": {
-        "en": "Turtle.",
-        "de": "Schildkröte."
+        "en": "Above the starfish.",
+        "de": "Über dem Seestern."
       },
       "guidance": {
-        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
-        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+        "en": "Accept pointing or a short answer first. If needed, point to the starfish as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+        "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf den Seestern als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Imagine the crab comes out of the cave. What might it do?",
+        "de": "Stell dir vor, die Krabbe kommt aus der Höhle. Was könnte sie machen?"
+      },
+      "starter": {
+        "en": "In my story, the crab…",
+        "de": "In meiner Geschichte …"
+      },
+      "words": {
+        "en": [
+          "crab",
+          "starfish",
+          "meet"
+        ],
+        "de": [
+          "Krabbe",
+          "Seestern",
+          "treffen"
+        ]
+      },
+      "model": {
+        "en": "In my story, the crab meets the starfish.",
+        "de": "In meiner Geschichte trifft die Krabbe den Seestern."
+      },
+      "childExample": {
+        "en": "Meet the starfish.",
+        "de": "Den Seestern treffen."
+      },
+      "guidance": {
+        "en": "Point to the crab in the cave and offer coming out as a pretend beginning. One word, a gesture or one imagined event is enough. Meeting the starfish is only an example; other ideas are welcome. A longer story and repetition are optional.",
+        "de": "Auf die Krabbe in der Höhle zeigen und das Herauskommen als ausgedachten Anfang anbieten. Ein Wort, eine Geste oder ein ausgedachtes Ereignis reicht. Den Seestern zu treffen ist nur ein Beispiel; andere Ideen sind willkommen. Eine längere Geschichte und Nachsprechen sind freiwillig."
       }
     }
   ]

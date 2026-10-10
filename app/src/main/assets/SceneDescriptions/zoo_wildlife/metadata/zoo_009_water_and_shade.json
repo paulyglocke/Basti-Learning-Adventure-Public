@@ -167,8 +167,8 @@
         "de": "Der Löwe könnte sich im Schatten ausruhen, um kühl zu bleiben."
       },
       "childExample": {
-        "en": "Lion.",
-        "de": "Löwe."
+        "en": "To keep cool.",
+        "de": "Damit ihm nicht zu warm wird."
       },
       "guidance": {
         "en": "Start with the visible action or object. Invite a possible reason, accept a short idea, and model one connection without treating it as the only answer.",
@@ -201,8 +201,8 @@
         "de": "Ich würde den Schatten wählen, weil ich einen kühlen Platz mag."
       },
       "childExample": {
-        "en": "Shade.",
-        "de": "Schatten."
+        "en": "Shade, because it is cool.",
+        "de": "Schatten, weil es dort kühl ist."
       },
       "guidance": {
         "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",

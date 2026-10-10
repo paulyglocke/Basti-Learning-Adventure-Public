@@ -163,36 +163,36 @@
   "tellMePrompts": [
     {
       "prompt": {
-        "en": "Give me a clue to help me find the animal under the leaf.",
-        "de": "Gib mir einen Hinweis, damit ich das Tier unter dem Blatt finde."
+        "en": "Choose an animal. Tell me a clue so I can guess it.",
+        "de": "Such dir ein Tier aus. Gib mir einen Hinweis, damit ich es erraten kann."
       },
       "starter": {
-        "en": "Look under…",
-        "de": "Schau unter …"
+        "en": "It is…",
+        "de": "Es ist …"
       },
       "words": {
         "en": [
-          "frog",
           "green",
-          "under"
+          "under",
+          "leaf"
         ],
         "de": [
-          "Frosch",
           "grün",
-          "unter"
+          "unter",
+          "Blatt"
         ]
       },
       "model": {
-        "en": "Look under the leaf for the green frog.",
-        "de": "Schau unter das Blatt. Dort ist der grüne Frosch."
+        "en": "It is green and sits under a leaf.",
+        "de": "Es ist grün und sitzt unter einem Blatt."
       },
       "childExample": {
-        "en": "Frog.",
-        "de": "Frosch."
+        "en": "Green.",
+        "de": "Grün."
       },
       "guidance": {
-        "en": "Point to the relevant pictured objects first. Accept different possible solutions or clues and help the child say one simple idea.",
-        "de": "Zuerst auf die passenden Dinge im Bild zeigen. Verschiedene mögliche Lösungen oder Hinweise annehmen und beim Aussprechen einer einfachen Idee helfen."
+        "en": "Let the child choose before the grown-up guesses. A colour, position, gesture or name is enough to begin; hiding the name is optional. The model describes the frog, but other pictured animals and accurate clues are welcome. Do not point out the answer before the guess; repetition is optional.",
+        "de": "Das Kind darf ein Tier auswählen, bevor die erwachsene Person rät. Eine Farbe, eine Ortsangabe, eine Geste oder ein Name reicht für den Anfang. Den Namen zu verbergen ist freiwillig. Der Beispielsatz beschreibt den Frosch; andere Tiere im Bild und passende Hinweise sind willkommen. Vor dem Raten nicht auf die Lösung zeigen. Nachsprechen ist freiwillig."
       }
     },
     {
@@ -221,8 +221,8 @@
         "de": "Das Faultier hält sich an der Liane fest."
       },
       "childExample": {
-        "en": "Sloth.",
-        "de": "Faultier."
+        "en": "Holding the vine.",
+        "de": "Hält sich an der Liane fest."
       },
       "guidance": {
         "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",

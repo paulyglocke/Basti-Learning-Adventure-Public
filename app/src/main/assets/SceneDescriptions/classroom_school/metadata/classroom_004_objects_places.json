@@ -169,8 +169,8 @@
     },
     {
       "prompt": {
-        "en": "Tell me where the teddy bear is on the shelf.",
-        "de": "Erzähl mir, wo der Teddybär am Regal ist."
+        "en": "Where is the teddy bear?",
+        "de": "Wo ist der Teddybär?"
       },
       "starter": {
         "en": "The teddy bear is…",
@@ -193,12 +193,12 @@
         "de": "Der Teddybär ist oben auf dem Regal."
       },
       "childExample": {
-        "en": "Teddy bear.",
-        "de": "Teddybär."
+        "en": "On top of the shelf.",
+        "de": "Oben auf dem Regal."
       },
       "guidance": {
-        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
-        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+        "en": "Accept pointing or a short answer first. If needed, point to the shelf as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+        "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf das Regal als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
       }
     }
   ]

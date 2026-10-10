@@ -1,0 +1,1432 @@
+{
+  "source_commit": "5acf611da207bd38e3622b190c628768d654b550",
+  "previous_content_revision": 8,
+  "content_revision": 9,
+  "scope": "12 clue, story and language bundles across 11 scenes; preserved other slots, reference metadata and artwork.",
+  "scenes": [
+    {
+      "scene_id": "scene.ocean.story_actions.04",
+      "metadata": "app/src/main/assets/SceneDescriptions/ocean_underwater/metadata/ocean_004_story_actions.json",
+      "asset": "SceneDescriptions/ocean_underwater/canonical/ocean_004_story_actions.png",
+      "image_sha256": "461ad078cecc7ef65e47e86937058e427078835e31aab241e83ad5ff58fe81b5",
+      "reference_metadata_sha256": "306abae1e17e1ebb6493b4448d984258c9c694ef3939cd14a53f45256a4ebe46",
+      "unchanged_slots": [
+        {
+          "slot": 0,
+          "bundle": {
+            "prompt": {
+              "en": "What might the crab find as it digs in the sand?",
+              "de": "Was könnte die Krabbe beim Graben im Sand finden?"
+            },
+            "starter": {
+              "en": "The crab might find…",
+              "de": "Die Krabbe könnte … finden."
+            },
+            "words": {
+              "en": [
+                "shell",
+                "find",
+                "sand"
+              ],
+              "de": [
+                "Muschel",
+                "finden",
+                "Sand"
+              ]
+            },
+            "model": {
+              "en": "The crab might find a shell in the sand.",
+              "de": "Die Krabbe könnte eine Muschel im Sand finden."
+            },
+            "childExample": {
+              "en": "Shell.",
+              "de": "Muschel."
+            },
+            "guidance": {
+              "en": "Start with something visible. Invite one possible next event; invented ideas are welcome and are not facts about the picture.",
+              "de": "Mit etwas Sichtbarem beginnen. Ein mögliches nächstes Ereignis anregen. Ausgedachte Ideen sind willkommen und keine Tatsachen über das Bild."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 1,
+          "before": {
+            "prompt": {
+              "en": "Start a little story about the octopus in the cave.",
+              "de": "Fang eine kleine Geschichte über den Oktopus in der Höhle an."
+            },
+            "starter": {
+              "en": "One day, the octopus…",
+              "de": "Eines Tages …"
+            },
+            "words": {
+              "en": [
+                "octopus",
+                "cave",
+                "swim"
+              ],
+              "de": [
+                "Oktopus",
+                "Höhle",
+                "schwimmen"
+              ]
+            },
+            "model": {
+              "en": "One day, the octopus might swim out of the cave.",
+              "de": "Eines Tages könnte der Oktopus aus der Höhle schwimmen."
+            },
+            "childExample": {
+              "en": "Octopus.",
+              "de": "Oktopus."
+            },
+            "guidance": {
+              "en": "A word or one event can start the story. Offer first or next if helpful; do not require a complete story or a fixed ending.",
+              "de": "Ein Wort oder ein Ereignis kann die Geschichte beginnen. Bei Bedarf zuerst oder danach anbieten. Keine vollständige Geschichte und kein festes Ende verlangen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Imagine the octopus leaves the cave. Tell me what happens.",
+              "de": "Stell dir vor, der Oktopus verlässt die Höhle. Erzähl, was passiert."
+            },
+            "starter": {
+              "en": "In my story…",
+              "de": "In meiner Geschichte …"
+            },
+            "words": {
+              "en": [
+                "octopus",
+                "fish",
+                "then"
+              ],
+              "de": [
+                "Oktopus",
+                "Fisch",
+                "danach"
+              ]
+            },
+            "model": {
+              "en": "In my story, the octopus swims out. Then it meets a fish.",
+              "de": "In meiner Geschichte schwimmt der Oktopus heraus. Danach trifft er einen Fisch."
+            },
+            "childExample": {
+              "en": "Meets a fish.",
+              "de": "Trifft einen Fisch."
+            },
+            "guidance": {
+              "en": "Point out the octopus in the cave. The question starts a make-believe event, not something already shown. Accept one word, a gesture or one event. Add then only if helpful; any imagined continuation is welcome and repetition is optional.",
+              "de": "Auf den Oktopus in der Höhle zeigen. Die Frage beginnt mit einem ausgedachten Ereignis, das noch nicht im Bild zu sehen ist. Ein Wort, eine Geste oder ein Ereignis annehmen. Danach nur bei Bedarf ergänzen; jede ausgedachte Fortsetzung ist willkommen. Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "A broad story-start request gives little help choosing an event; the short example only names the subject.",
+          "learning_objective": "Imagination and storytelling",
+          "before_learning_purpose": "story",
+          "after_learning_purpose": "story",
+          "picture_evidence": "Orange octopus in the right-hand cave; three blue fish above the turtle. Leaving and meeting are invented events."
+        }
+      ],
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.ocean.helping_story.07",
+      "metadata": "app/src/main/assets/SceneDescriptions/ocean_underwater/metadata/ocean_007_helping_story.json",
+      "asset": "SceneDescriptions/ocean_underwater/canonical/ocean_007_helping_story.png",
+      "image_sha256": "8cbc1f408b47e069f6e70ec16e0d8eb9907fd79e321cfd05a2022ac12e9f736a",
+      "reference_metadata_sha256": "7cee2eb0b0b94af739f2140ff5265c50979364cbf98155f6f7384d1ebf2ca0b3",
+      "unchanged_slots": [
+        {
+          "slot": 0,
+          "bundle": {
+            "prompt": {
+              "en": "What might the turtle do when it reaches the cave?",
+              "de": "Was könnte die Schildkröte machen, wenn sie an der Höhle ankommt?"
+            },
+            "starter": {
+              "en": "The turtle might…",
+              "de": "Die Schildkröte könnte …"
+            },
+            "words": {
+              "en": [
+                "turtle",
+                "seaweed",
+                "put down"
+              ],
+              "de": [
+                "Schildkröte",
+                "Seegras",
+                "ablegen"
+              ]
+            },
+            "model": {
+              "en": "The turtle might put the seaweed down.",
+              "de": "Die Schildkröte könnte das Seegras ablegen."
+            },
+            "childExample": {
+              "en": "Turtle.",
+              "de": "Schildkröte."
+            },
+            "guidance": {
+              "en": "Start with something visible. Invite one possible next event; invented ideas are welcome and are not facts about the picture.",
+              "de": "Mit etwas Sichtbarem beginnen. Ein mögliches nächstes Ereignis anregen. Ausgedachte Ideen sind willkommen und keine Tatsachen über das Bild."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 1,
+          "before": {
+            "prompt": {
+              "en": "Tell me about the turtle and the fish following it.",
+              "de": "Erzähl mir von der Schildkröte und den Fischen, die ihr folgen."
+            },
+            "starter": {
+              "en": "The turtle is…",
+              "de": "Die Schildkröte …"
+            },
+            "words": {
+              "en": [
+                "turtle",
+                "seaweed",
+                "following"
+              ],
+              "de": [
+                "Schildkröte",
+                "Seegras",
+                "folgen"
+              ]
+            },
+            "model": {
+              "en": "The turtle is bringing seaweed, and two fish are following it.",
+              "de": "Die Schildkröte bringt Seegras. Zwei Fische folgen ihr."
+            },
+            "childExample": {
+              "en": "Turtle.",
+              "de": "Schildkröte."
+            },
+            "guidance": {
+              "en": "A word or one event can start the story. Offer first or next if helpful; do not require a complete story or a fixed ending.",
+              "de": "Ein Wort oder ein Ereignis kann die Geschichte beginnen. Bei Bedarf zuerst oder danach anbieten. Keine vollständige Geschichte und kein festes Ende verlangen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Where could the turtle and the blue fish go together in your story?",
+              "de": "Wohin könnten die Schildkröte und die blauen Fische in deiner Geschichte zusammen schwimmen?"
+            },
+            "starter": {
+              "en": "In my story, they…",
+              "de": "In meiner Geschichte …"
+            },
+            "words": {
+              "en": [
+                "turtle",
+                "fish",
+                "visit"
+              ],
+              "de": [
+                "Schildkröte",
+                "Fische",
+                "besuchen"
+              ]
+            },
+            "model": {
+              "en": "In my story, they visit the octopus. Then they swim home.",
+              "de": "In meiner Geschichte besuchen sie den Oktopus. Danach schwimmen sie nach Hause."
+            },
+            "childExample": {
+              "en": "Visit the octopus.",
+              "de": "Den Oktopus besuchen."
+            },
+            "guidance": {
+              "en": "Start with the pictured turtle and two blue fish. Invite an invented destination or event; their shared plans are not visible facts. One idea is enough. A second event is optional, and the child may choose a different story without repeating the model.",
+              "de": "Mit der Schildkröte und den beiden blauen Fischen im Bild beginnen. Ein ausgedachtes Ziel oder Ereignis anregen; gemeinsame Pläne sind keine sichtbaren Tatsachen. Eine Idee reicht. Ein zweites Ereignis ist freiwillig. Das Kind darf eine andere Geschichte wählen und muss den Beispielsatz nicht nachsprechen."
+            }
+          },
+          "reason": "The former invitation and factual model describe the picture rather than invite a story.",
+          "learning_objective": "Imagination and storytelling",
+          "before_learning_purpose": "story",
+          "after_learning_purpose": "story",
+          "picture_evidence": "Turtle carries seaweed towards the cave; two blue fish are behind it; octopus is in the cave. A shared trip and visit are invented."
+        }
+      ],
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.ocean.find_and_follow.08",
+      "metadata": "app/src/main/assets/SceneDescriptions/ocean_underwater/metadata/ocean_008_find_and_follow.json",
+      "asset": "SceneDescriptions/ocean_underwater/canonical/ocean_008_find_and_follow.png",
+      "image_sha256": "9a560c96f4cd0d74d21ac15bf507f77cbe9ac8441cf7d293544b0aef33ce54d4",
+      "reference_metadata_sha256": "2a36680fba37a1dfaa8679936fa4bf3eb094693a949a923c31166745ff05185f",
+      "unchanged_slots": [
+        {
+          "slot": 0,
+          "bundle": {
+            "prompt": {
+              "en": "Can you find the crab in the cave?",
+              "de": "Findest du die Krabbe in der Höhle?"
+            },
+            "starter": {
+              "en": "The crab is…",
+              "de": "Die Krabbe ist …"
+            },
+            "words": {
+              "en": [
+                "crab",
+                "in",
+                "cave"
+              ],
+              "de": [
+                "Krabbe",
+                "in",
+                "Höhle"
+              ]
+            },
+            "model": {
+              "en": "The crab is in the cave.",
+              "de": "Die Krabbe ist in der Höhle."
+            },
+            "childExample": {
+              "en": "Crab.",
+              "de": "Krabbe."
+            },
+            "guidance": {
+              "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+              "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 1,
+          "before": {
+            "prompt": {
+              "en": "Give me a clue about the starfish so I can find it.",
+              "de": "Gib mir einen Hinweis zum Seestern, damit ich ihn finde."
+            },
+            "starter": {
+              "en": "The starfish is…",
+              "de": "Der Seestern ist …"
+            },
+            "words": {
+              "en": [
+                "starfish",
+                "sand",
+                "on"
+              ],
+              "de": [
+                "Seestern",
+                "Sand",
+                "auf"
+              ]
+            },
+            "model": {
+              "en": "The starfish is on the sand.",
+              "de": "Der Seestern ist auf dem Sand."
+            },
+            "childExample": {
+              "en": "Starfish.",
+              "de": "Seestern."
+            },
+            "guidance": {
+              "en": "Pointing or one word is enough. Name the pictured subject together, then offer one short sentence without asking for repetition.",
+              "de": "Zeigen oder ein Wort reicht. Den Bildinhalt gemeinsam benennen und einen kurzen Satz anbieten, ohne Wiederholung zu verlangen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Tell me what the starfish looks like so I can find it.",
+              "de": "Beschreibe den Seestern, damit ich ihn finden kann."
+            },
+            "starter": {
+              "en": "Look for…",
+              "de": "Such …"
+            },
+            "words": {
+              "en": [
+                "orange",
+                "star",
+                "shape"
+              ],
+              "de": [
+                "orange",
+                "Stern",
+                "Form"
+              ]
+            },
+            "model": {
+              "en": "Look for the orange animal shaped like a star.",
+              "de": "Such das orange Tier, das wie ein Stern aussieht."
+            },
+            "childExample": {
+              "en": "Orange.",
+              "de": "Orange."
+            },
+            "guidance": {
+              "en": "Invite a colour or shape clue, then let the grown-up find the starfish. Accept pointing or its name if a clue is too difficult; gently offer one visible detail. Different accurate clues are welcome. Repetition is optional.",
+              "de": "Ein Farb- oder Formmerkmal als Hinweis anregen. Danach darf die erwachsene Person den Seestern suchen. Zeigen oder den Namen annehmen, wenn ein Hinweis zu schwierig ist, und behutsam ein sichtbares Merkmal anbieten. Verschiedene passende Hinweise sind willkommen. Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "A clue invitation was labelled naming and supported by a name-only child example; use visible identifying features.",
+          "learning_objective": "Describing and comparing",
+          "before_learning_purpose": "naming",
+          "after_learning_purpose": "properties",
+          "picture_evidence": "Single orange starfish with five arms on the foreground sand."
+        }
+      ],
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.jungle.clue_finding.08",
+      "metadata": "app/src/main/assets/SceneDescriptions/jungle_rainforest/metadata/jungle_008_clue_finding.json",
+      "asset": "SceneDescriptions/jungle_rainforest/canonical/jungle_008_clue_finding.png",
+      "image_sha256": "096344d3383ed76235e599a76c1b323e2ce250857157abb11bbeab743c8a7e0c",
+      "reference_metadata_sha256": "713f212d1239d03b504fa68ba97ab9d04aa4e44f1b0e41ed348d8ee93d87f58d",
+      "unchanged_slots": [
+        {
+          "slot": 1,
+          "bundle": {
+            "prompt": {
+              "en": "Describe how the sloth holds on to the vine.",
+              "de": "Beschreibe, wie sich das Faultier an der Liane festhält."
+            },
+            "starter": {
+              "en": "The sloth is holding…",
+              "de": "Das Faultier hält sich … fest."
+            },
+            "words": {
+              "en": [
+                "sloth",
+                "holding",
+                "vine"
+              ],
+              "de": [
+                "Faultier",
+                "festhalten",
+                "Liane"
+              ]
+            },
+            "model": {
+              "en": "The sloth is holding on to the vine.",
+              "de": "Das Faultier hält sich an der Liane fest."
+            },
+            "childExample": {
+              "en": "Sloth.",
+              "de": "Faultier."
+            },
+            "guidance": {
+              "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+              "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 0,
+          "before": {
+            "prompt": {
+              "en": "Give me a clue to help me find the animal under the leaf.",
+              "de": "Gib mir einen Hinweis, damit ich das Tier unter dem Blatt finde."
+            },
+            "starter": {
+              "en": "Look under…",
+              "de": "Schau unter …"
+            },
+            "words": {
+              "en": [
+                "frog",
+                "green",
+                "under"
+              ],
+              "de": [
+                "Frosch",
+                "grün",
+                "unter"
+              ]
+            },
+            "model": {
+              "en": "Look under the leaf for the green frog.",
+              "de": "Schau unter das Blatt. Dort ist der grüne Frosch."
+            },
+            "childExample": {
+              "en": "Frog.",
+              "de": "Frosch."
+            },
+            "guidance": {
+              "en": "Point to the relevant pictured objects first. Accept different possible solutions or clues and help the child say one simple idea.",
+              "de": "Zuerst auf die passenden Dinge im Bild zeigen. Verschiedene mögliche Lösungen oder Hinweise annehmen und beim Aussprechen einer einfachen Idee helfen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Choose an animal. Tell me a clue so I can guess it.",
+              "de": "Such dir ein Tier aus. Gib mir einen Hinweis, damit ich es erraten kann."
+            },
+            "starter": {
+              "en": "It is…",
+              "de": "Es ist …"
+            },
+            "words": {
+              "en": [
+                "green",
+                "under",
+                "leaf"
+              ],
+              "de": [
+                "grün",
+                "unter",
+                "Blatt"
+              ]
+            },
+            "model": {
+              "en": "It is green and sits under a leaf.",
+              "de": "Es ist grün und sitzt unter einem Blatt."
+            },
+            "childExample": {
+              "en": "Green.",
+              "de": "Grün."
+            },
+            "guidance": {
+              "en": "Let the child choose before the grown-up guesses. A colour, position, gesture or name is enough to begin; hiding the name is optional. The model describes the frog, but other pictured animals and accurate clues are welcome. Do not point out the answer before the guess; repetition is optional.",
+              "de": "Das Kind darf ein Tier auswählen, bevor die erwachsene Person rät. Eine Farbe, eine Ortsangabe, eine Geste oder ein Name reicht für den Anfang. Den Namen zu verbergen ist freiwillig. Der Beispielsatz beschreibt den Frosch; andere Tiere im Bild und passende Hinweise sind willkommen. Vor dem Raten nicht auf die Lösung zeigen. Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "The question supplied under-the-leaf and the model named the frog; neither left a meaningful clue for a guessing partner.",
+          "learning_objective": "Describing and comparing",
+          "before_learning_purpose": "problem",
+          "after_learning_purpose": "problem",
+          "picture_evidence": "Green frog under a broad leaf; other animals include a sloth on a vine and tiger behind leaves."
+        }
+      ],
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.jungle.actions_directions.09",
+      "metadata": "app/src/main/assets/SceneDescriptions/jungle_rainforest/metadata/jungle_009_actions_directions.json",
+      "asset": "SceneDescriptions/jungle_rainforest/canonical/jungle_009_actions_directions.png",
+      "image_sha256": "e5f69b83ba9d9e4fefadd99d2ea56ec80cb52dacf72a5064f4aa1c5b1e0917e8",
+      "reference_metadata_sha256": "5ba5fbaa4a3ffd474fd613f000cdc285a30bb20c02f87cd7fdd05e392194dd34",
+      "unchanged_slots": [
+        {
+          "slot": 1,
+          "bundle": {
+            "prompt": {
+              "en": "How might it feel to be splashed by the elephant's water?",
+              "de": "Wie könnte es sich anfühlen, vom Wasser des Elefanten angespritzt zu werden?"
+            },
+            "starter": {
+              "en": "It might feel…",
+              "de": "Es könnte sich … anfühlen."
+            },
+            "words": {
+              "en": [
+                "water",
+                "cool",
+                "surprise"
+              ],
+              "de": [
+                "Wasser",
+                "kühl",
+                "Überraschung"
+              ]
+            },
+            "model": {
+              "en": "It might feel cool and surprising.",
+              "de": "Es könnte sich kühl anfühlen und mich überraschen."
+            },
+            "childExample": {
+              "en": "Water.",
+              "de": "Wasser."
+            },
+            "guidance": {
+              "en": "Offer a feeling word if needed. Different feelings are possible; do not infer one definite feeling from the picture or require an explanation.",
+              "de": "Bei Bedarf ein Wort für ein Gefühl anbieten. Verschiedene Gefühle sind möglich. Aus dem Bild kein bestimmtes Gefühl ableiten und keine Begründung verlangen."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 0,
+          "before": {
+            "prompt": {
+              "en": "Which jungle action in this picture would you like to pretend to do?",
+              "de": "Welche Handlung auf diesem Dschungelbild würdest du gern nachmachen?"
+            },
+            "starter": {
+              "en": "I would like to…",
+              "de": "Ich würde gern …"
+            },
+            "words": {
+              "en": [
+                "tiger",
+                "walk",
+                "pretend"
+              ],
+              "de": [
+                "Tiger",
+                "gehen",
+                "nachmachen"
+              ]
+            },
+            "model": {
+              "en": "I would like to walk like the tiger.",
+              "de": "Ich würde gern wie der Tiger gehen."
+            },
+            "childExample": {
+              "en": "Tiger.",
+              "de": "Tiger."
+            },
+            "guidance": {
+              "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",
+              "de": "Einen Wunsch, ein ausgedachtes Beispiel oder fehlende Erfahrung annehmen. Der Beispielsatz ist nur eine Möglichkeit. Das Kind muss ihn nicht teilen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Which animal would you like to act like?",
+              "de": "Welches Tier würdest du gern nachmachen?"
+            },
+            "starter": {
+              "en": "I would like to…",
+              "de": "Ich würde gern …"
+            },
+            "words": {
+              "en": [
+                "tiger",
+                "walk",
+                "pretend"
+              ],
+              "de": [
+                "Tiger",
+                "gehen",
+                "nachmachen"
+              ]
+            },
+            "model": {
+              "en": "I would like to walk like the tiger.",
+              "de": "Ich würde gern wie der Tiger gehen."
+            },
+            "childExample": {
+              "en": "Walk like the tiger.",
+              "de": "Wie der Tiger gehen."
+            },
+            "guidance": {
+              "en": "Let the child point to an animal, say its name or mime a pictured action. Naming a preference is enough; moving is optional. Offer the tiger example only if useful, and accept a different choice without requiring repetition.",
+              "de": "Das Kind darf auf ein Tier zeigen, seinen Namen sagen oder eine Handlung aus dem Bild nachmachen. Einen Wunsch zu nennen reicht; Bewegung ist freiwillig. Das Tigerbeispiel nur bei Bedarf anbieten. Eine andere Wahl annehmen, ohne Nachsprechen zu verlangen."
+            }
+          },
+          "reason": "Which jungle action/Handlung creates an unnecessary abstract vocabulary demand.",
+          "learning_objective": "Imagination and storytelling",
+          "before_learning_purpose": "personal",
+          "after_learning_purpose": "personal",
+          "picture_evidence": "Tiger steps along a path; elephant sprays water; frog sits on a leaf. Acting like an animal is pretend play."
+        }
+      ],
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.woodland.find_animals.09",
+      "metadata": "app/src/main/assets/SceneDescriptions/woodland_forest/metadata/woodland_009_find_animals.json",
+      "asset": "SceneDescriptions/woodland_forest/canonical/woodland_009_find_animals.png",
+      "image_sha256": "52b93b0724a3a4f961e7e17b7e0b468133bef7ae2c30e8dea8cc809a10ca5eee",
+      "reference_metadata_sha256": "fca94ee8b9f9deb49b19171697aded6c081e5de3980bd948459253553e3699c6",
+      "unchanged_slots": [],
+      "changes": [
+        {
+          "slot": 0,
+          "before": {
+            "prompt": {
+              "en": "Give me a clue about the deer so I can find it.",
+              "de": "Gib mir einen Hinweis zum Reh, damit ich es finde."
+            },
+            "starter": {
+              "en": "Look for the animal with…",
+              "de": "Such das Tier mit …"
+            },
+            "words": {
+              "en": [
+                "deer",
+                "antlers",
+                "find"
+              ],
+              "de": [
+                "Reh",
+                "Geweih",
+                "finden"
+              ]
+            },
+            "model": {
+              "en": "Look for the animal with antlers.",
+              "de": "Such das Tier mit dem Geweih."
+            },
+            "childExample": {
+              "en": "Deer.",
+              "de": "Reh."
+            },
+            "guidance": {
+              "en": "Point to the relevant pictured objects first. Accept different possible solutions or clues and help the child say one simple idea.",
+              "de": "Zuerst auf die passenden Dinge im Bild zeigen. Verschiedene mögliche Lösungen oder Hinweise annehmen und beim Aussprechen einer einfachen Idee helfen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "How could you describe the deer so I can find it?",
+              "de": "Wie könntest du das Reh beschreiben, damit ich es finde?"
+            },
+            "starter": {
+              "en": "Look for the animal with…",
+              "de": "Such das Tier mit …"
+            },
+            "words": {
+              "en": [
+                "antlers",
+                "brown",
+                "legs"
+              ],
+              "de": [
+                "Geweih",
+                "braun",
+                "Beine"
+              ]
+            },
+            "model": {
+              "en": "Look for the animal with antlers.",
+              "de": "Such das Tier mit dem Geweih."
+            },
+            "childExample": {
+              "en": "Antlers.",
+              "de": "Geweih."
+            },
+            "guidance": {
+              "en": "Invite one visible detail about the deer and let the grown-up find it from the clue. A gesture, name or short phrase is accepted first. Offer antlers if support is needed; other accurate details are welcome. Repetition is optional.",
+              "de": "Ein sichtbares Merkmal des Rehs anregen. Die erwachsene Person darf es anhand des Hinweises suchen. Zuerst eine Geste, einen Namen oder einen kurzen Ausdruck annehmen. Bei Bedarf Geweih anbieten; andere passende Merkmale sind willkommen. Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "The short example named the deer rather than give a clue; guidance did not explain the partner guessing exchange.",
+          "learning_objective": "Describing and comparing",
+          "before_learning_purpose": "problem",
+          "after_learning_purpose": "problem",
+          "picture_evidence": "Large deer with visible antlers on left; owl, squirrel, rabbit, hedgehog and fox have different features."
+        },
+        {
+          "slot": 1,
+          "before": {
+            "prompt": {
+              "en": "Which woodland animal here would you like to tell a story about?",
+              "de": "Über welches Waldtier hier würdest du gern eine Geschichte erzählen?"
+            },
+            "starter": {
+              "en": "My story could be about…",
+              "de": "Meine Geschichte könnte von … handeln."
+            },
+            "words": {
+              "en": [
+                "hedgehog",
+                "little",
+                "story"
+              ],
+              "de": [
+                "Igel",
+                "klein",
+                "Geschichte"
+              ]
+            },
+            "model": {
+              "en": "My story could be about the little hedgehog.",
+              "de": "Meine Geschichte könnte von dem kleinen Igel handeln."
+            },
+            "childExample": {
+              "en": "Hedgehog.",
+              "de": "Igel."
+            },
+            "guidance": {
+              "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",
+              "de": "Einen Wunsch, ein ausgedachtes Beispiel oder fehlende Erfahrung annehmen. Der Beispielsatz ist nur eine Möglichkeit. Das Kind muss ihn nicht teilen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Imagine the hedgehog goes for a walk. What happens in your story?",
+              "de": "Stell dir vor, der Igel geht spazieren. Was passiert in deiner Geschichte?"
+            },
+            "starter": {
+              "en": "In my story, the hedgehog…",
+              "de": "In meiner Geschichte …"
+            },
+            "words": {
+              "en": [
+                "hedgehog",
+                "leaf",
+                "find"
+              ],
+              "de": [
+                "Igel",
+                "Blatt",
+                "finden"
+              ]
+            },
+            "model": {
+              "en": "In my story, the hedgehog finds a leaf.",
+              "de": "In meiner Geschichte findet der Igel ein Blatt."
+            },
+            "childExample": {
+              "en": "Finds a leaf.",
+              "de": "Findet ein Blatt."
+            },
+            "guidance": {
+              "en": "Point to the hedgehog and offer the pretend walk as a starting idea. A word, gesture or one event is enough. The leaf is only one possible story; other ideas and choosing another animal are welcome. Do not require a whole story or repetition.",
+              "de": "Auf den Igel zeigen und den ausgedachten Spaziergang als Anfangsidee anbieten. Ein Wort, eine Geste oder ein Ereignis reicht. Das Blatt ist nur eine mögliche Geschichte; andere Ideen und die Wahl eines anderen Tieres sind willkommen. Keine ganze Geschichte und kein Nachsprechen verlangen."
+            }
+          },
+          "reason": "Choosing a story subject alone did not invite a narrative event; provide a concrete optional opening.",
+          "learning_objective": "Imagination and storytelling",
+          "before_learning_purpose": "personal",
+          "after_learning_purpose": "story",
+          "picture_evidence": "Hedgehog in the foreground beside scattered leaves; walking and finding a leaf are invented events."
+        }
+      ],
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.zoo.habitats_story.07",
+      "metadata": "app/src/main/assets/SceneDescriptions/zoo_wildlife/metadata/zoo_007_habitats.json",
+      "asset": "SceneDescriptions/zoo_wildlife/canonical/zoo_007_habitats.png",
+      "image_sha256": "725facd6ab5d7a10847bef5d60f65f0d3c16498cbb58144d7505170416aeb678",
+      "reference_metadata_sha256": "77a76319258d18f6e9f715bb747339139748b3dffab79ed9f09a2b0296599e24",
+      "unchanged_slots": [
+        {
+          "slot": 1,
+          "bundle": {
+            "prompt": {
+              "en": "Which two animals can you find beside the water?",
+              "de": "Welche beiden Tiere findest du beim Wasser?"
+            },
+            "starter": {
+              "en": "I can see…",
+              "de": "Ich sehe …"
+            },
+            "words": {
+              "en": [
+                "elephant",
+                "penguin",
+                "beside"
+              ],
+              "de": [
+                "Elefant",
+                "Pinguin",
+                "bei"
+              ]
+            },
+            "model": {
+              "en": "I can see the elephant and the penguin beside the water.",
+              "de": "Ich sehe den Elefanten und den Pinguin beim Wasser."
+            },
+            "childExample": {
+              "en": "Elephant.",
+              "de": "Elefant."
+            },
+            "guidance": {
+              "en": "Pointing or one word is enough. Name the pictured subject together, then offer one short sentence without asking for repetition.",
+              "de": "Zeigen oder ein Wort reicht. Den Bildinhalt gemeinsam benennen und einen kurzen Satz anbieten, ohne Wiederholung zu verlangen."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 0,
+          "before": {
+            "prompt": {
+              "en": "Begin a little story about the elephant and penguin by the water.",
+              "de": "Fang eine kleine Geschichte über den Elefanten und den Pinguin am Wasser an."
+            },
+            "starter": {
+              "en": "One day…",
+              "de": "Eines Tages …"
+            },
+            "words": {
+              "en": [
+                "elephant",
+                "penguin",
+                "water"
+              ],
+              "de": [
+                "Elefant",
+                "Pinguin",
+                "Wasser"
+              ]
+            },
+            "model": {
+              "en": "One day, the elephant and penguin might meet by the water.",
+              "de": "Eines Tages könnten sich der Elefant und der Pinguin am Wasser treffen."
+            },
+            "childExample": {
+              "en": "Elephant.",
+              "de": "Elefant."
+            },
+            "guidance": {
+              "en": "A word or one event can start the story. Offer first or next if helpful; do not require a complete story or a fixed ending.",
+              "de": "Ein Wort oder ein Ereignis kann die Geschichte beginnen. Bei Bedarf zuerst oder danach anbieten. Keine vollständige Geschichte und kein festes Ende verlangen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Imagine the penguin could talk to the elephant. What might it say?",
+              "de": "Stell dir vor, der Pinguin könnte mit dem Elefanten sprechen. Was könnte er sagen?"
+            },
+            "starter": {
+              "en": "The penguin could say…",
+              "de": "Der Pinguin könnte sagen …"
+            },
+            "words": {
+              "en": [
+                "penguin",
+                "water",
+                "splash"
+              ],
+              "de": [
+                "Pinguin",
+                "Wasser",
+                "spritzen"
+              ]
+            },
+            "model": {
+              "en": "The penguin could say, \"Can I splash too?\"",
+              "de": "Der Pinguin könnte sagen: „Darf ich auch spritzen?“"
+            },
+            "childExample": {
+              "en": "Me too!",
+              "de": "Ich auch!"
+            },
+            "guidance": {
+              "en": "Point to the penguin and elephant by the water. Invite pretend speech, not a claim about their real thoughts. Accept a word, gesture or any imagined line. Continuing the conversation is optional; repetition is optional too.",
+              "de": "Auf den Pinguin und den Elefanten am Wasser zeigen. Ausgedachte Worte anregen, keine Aussage über ihre wirklichen Gedanken. Ein Wort, eine Geste oder beliebige ausgedachte Worte annehmen. Das Gespräch fortzusetzen und nachzusprechen ist freiwillig."
+            }
+          },
+          "reason": "Begin a story is broad; the old model only proposed a meeting. A concrete pretend dialogue gives a manageable entry.",
+          "learning_objective": "Imagination and storytelling",
+          "before_learning_purpose": "story",
+          "after_learning_purpose": "story",
+          "picture_evidence": "Elephant sprays water in the pool; penguin stands at the water in the foreground. Talking is explicitly pretend."
+        }
+      ],
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.zoo.feature_clues.08",
+      "metadata": "app/src/main/assets/SceneDescriptions/zoo_wildlife/metadata/zoo_008_feature_clues.json",
+      "asset": "SceneDescriptions/zoo_wildlife/canonical/zoo_008_feature_clues.png",
+      "image_sha256": "77fd2c6f30949136a8f808266a3ce52a41a61058ffec44152a2748a0d6165738",
+      "reference_metadata_sha256": "500049babb246e6595970c91e11cf9bd7ff5f10882ad12ae531704c7baf53e0f",
+      "unchanged_slots": [
+        {
+          "slot": 1,
+          "bundle": {
+            "prompt": {
+              "en": "Tell me what you notice about the zebra's stripes.",
+              "de": "Erzähl mir, was dir an den Streifen des Zebras auffällt."
+            },
+            "starter": {
+              "en": "The zebra has…",
+              "de": "Das Zebra hat …"
+            },
+            "words": {
+              "en": [
+                "zebra",
+                "black",
+                "stripes"
+              ],
+              "de": [
+                "Zebra",
+                "schwarz",
+                "Streifen"
+              ]
+            },
+            "model": {
+              "en": "The zebra has black and white stripes.",
+              "de": "Das Zebra hat schwarze und weiße Streifen."
+            },
+            "childExample": {
+              "en": "Zebra.",
+              "de": "Zebra."
+            },
+            "guidance": {
+              "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+              "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 0,
+          "before": {
+            "prompt": {
+              "en": "Choose an animal and give me a clue so I can find it.",
+              "de": "Such dir ein Tier aus und gib mir einen Hinweis, damit ich es finde."
+            },
+            "starter": {
+              "en": "Look for the animal with…",
+              "de": "Such das Tier mit …"
+            },
+            "words": {
+              "en": [
+                "mane",
+                "lion",
+                "find"
+              ],
+              "de": [
+                "Mähne",
+                "Löwe",
+                "finden"
+              ]
+            },
+            "model": {
+              "en": "Look for the animal with a mane.",
+              "de": "Such das Tier mit der Mähne."
+            },
+            "childExample": {
+              "en": "Mane.",
+              "de": "Mähne."
+            },
+            "guidance": {
+              "en": "Point to the relevant pictured objects first. Accept different possible solutions or clues and help the child say one simple idea.",
+              "de": "Zuerst auf die passenden Dinge im Bild zeigen. Verschiedene mögliche Lösungen oder Hinweise annehmen und beim Aussprechen einer einfachen Idee helfen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "Give me a clue about an animal here. Can I guess which one?",
+              "de": "Gib mir einen Hinweis zu einem Tier hier. Kann ich erraten, welches du meinst?"
+            },
+            "starter": {
+              "en": "My animal has…",
+              "de": "Mein Tier hat …"
+            },
+            "words": {
+              "en": [
+                "mane",
+                "stripes",
+                "long neck"
+              ],
+              "de": [
+                "Mähne",
+                "Streifen",
+                "langer Hals"
+              ]
+            },
+            "model": {
+              "en": "My animal has a mane.",
+              "de": "Mein Tier hat eine Mähne."
+            },
+            "childExample": {
+              "en": "A mane.",
+              "de": "Eine Mähne."
+            },
+            "guidance": {
+              "en": "Let the child choose an animal before the grown-up guesses. A feature or position can be a clue; the model is for the lion, not a required choice. Accept a name or gesture if needed, then offer a visible feature. Do not reveal the chosen animal before guessing. Repetition is optional.",
+              "de": "Das Kind darf ein Tier auswählen, bevor die erwachsene Person rät. Ein Merkmal oder eine Ortsangabe kann ein Hinweis sein. Der Beispielsatz passt zum Löwen, der nicht gewählt werden muss. Bei Bedarf einen Namen oder eine Geste annehmen und dann ein sichtbares Merkmal anbieten. Das gewählte Tier nicht vor dem Raten verraten. Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "The existing question is useful, but its generic guidance points to targets before guessing and words include the answer name.",
+          "learning_objective": "Describing and comparing",
+          "before_learning_purpose": "problem",
+          "after_learning_purpose": "problem",
+          "picture_evidence": "Lion has mane, zebra has stripes, giraffe has long neck; clues can identify different animals."
+        }
+      ],
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.classroom.routines.02",
+      "metadata": "app/src/main/assets/SceneDescriptions/classroom_school/metadata/classroom_002_routines.json",
+      "asset": "SceneDescriptions/classroom_school/canonical/classroom_002_routines.png",
+      "image_sha256": "1b9d32cf60a9e0d808e6fdba82e1258cd9cef2db0c635355a1cba1d2d72085b8",
+      "reference_metadata_sha256": "c49b27011f88715e435c1eaa0bf05464a05bae9c52a161a9ea86c8a76a4c9db7",
+      "unchanged_slots": [
+        {
+          "slot": 1,
+          "bundle": {
+            "prompt": {
+              "en": "What could you say when you have finished your work?",
+              "de": "Was könntest du sagen, wenn du mit deiner Arbeit fertig bist?"
+            },
+            "starter": {
+              "en": "I could say…",
+              "de": "Ich könnte sagen …"
+            },
+            "words": {
+              "en": [
+                "finished",
+                "work",
+                "say"
+              ],
+              "de": [
+                "fertig",
+                "Arbeit",
+                "sagen"
+              ]
+            },
+            "model": {
+              "en": "I could say, \"I have finished my work.\"",
+              "de": "Ich könnte sagen: „Ich bin mit meiner Arbeit fertig.“"
+            },
+            "childExample": {
+              "en": "Finished.",
+              "de": "Fertig."
+            },
+            "guidance": {
+              "en": "Invite pretend speech or one helpful action. A short phrase or gesture is enough; model friendly wording without requiring the child to repeat it.",
+              "de": "Ein kleines Rollenspiel oder eine hilfreiche Handlung anregen. Ein kurzer Ausdruck oder eine Geste reicht. Freundliche Worte anbieten, ohne Nachsprechen zu verlangen."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 0,
+          "before": {
+            "prompt": {
+              "en": "What could the child raising a hand say to ask for help?",
+              "de": "Was könnte das Kind mit der erhobenen Hand sagen, um Hilfe zu bitten?"
+            },
+            "starter": {
+              "en": "The child could say…",
+              "de": "Das Kind könnte sagen …"
+            },
+            "words": {
+              "en": [
+                "help",
+                "ask",
+                "please"
+              ],
+              "de": [
+                "Hilfe",
+                "fragen",
+                "bitte"
+              ]
+            },
+            "model": {
+              "en": "The child could say, \"Can you help me, please?\"",
+              "de": "Das Kind könnte sagen: „Kannst du mir bitte helfen?“"
+            },
+            "childExample": {
+              "en": "Help.",
+              "de": "Hilfe."
+            },
+            "guidance": {
+              "en": "Invite pretend speech or one helpful action. A short phrase or gesture is enough; model friendly wording without requiring the child to repeat it.",
+              "de": "Ein kleines Rollenspiel oder eine hilfreiche Handlung anregen. Ein kurzer Ausdruck oder eine Geste reicht. Freundliche Worte anbieten, ohne Nachsprechen zu verlangen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "The child has a hand up. What could it say if it needs help?",
+              "de": "Das Kind hebt die Hand. Was könnte es sagen, wenn es Hilfe braucht?"
+            },
+            "starter": {
+              "en": "The child could say…",
+              "de": "Das Kind könnte sagen …"
+            },
+            "words": {
+              "en": [
+                "help",
+                "ask",
+                "please"
+              ],
+              "de": [
+                "Hilfe",
+                "fragen",
+                "bitte"
+              ]
+            },
+            "model": {
+              "en": "The child could say, \"Can you help me, please?\"",
+              "de": "Das Kind könnte sagen: „Kannst du mir bitte helfen?“"
+            },
+            "childExample": {
+              "en": "Help, please.",
+              "de": "Hilfe, bitte."
+            },
+            "guidance": {
+              "en": "Point to the raised hand. Needing help is one imagined reason; the picture does not tell us why the child raised it. Accept a gesture or a short request. Offer friendly help-seeking words without requiring repetition.",
+              "de": "Auf die erhobene Hand zeigen. Hilfe zu brauchen ist ein ausgedachter Grund; das Bild zeigt nicht, warum das Kind die Hand hebt. Eine Geste oder eine kurze Bitte annehmen. Freundliche Worte zum Bitten um Hilfe anbieten, ohne Nachsprechen zu verlangen."
+            }
+          },
+          "reason": "German um Hilfe zu bitten is missing darum/um; make the help need conditional rather than assume the raised hand means help.",
+          "learning_objective": "Social understanding",
+          "before_learning_purpose": "social",
+          "after_learning_purpose": "social",
+          "picture_evidence": "Left child raises a hand. The reason for raising it is not shown; needing help is hypothetical."
+        }
+      ],
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.farm.animal_actions.04",
+      "metadata": "app/src/main/assets/SceneDescriptions/countryside_farm/metadata/farm_004_animal_actions.json",
+      "asset": "SceneDescriptions/countryside_farm/canonical/farm_004_animal_actions.png",
+      "image_sha256": "d891cf333e94ed6ee832697e5442327477fef1b80384114c78cf2a3d445f9a00",
+      "reference_metadata_sha256": "0f16b9033ac01f83726033b2bdd63d295f9528a9d4ff8c4a14ca196f71c7f03c",
+      "unchanged_slots": [
+        {
+          "slot": 0,
+          "bundle": {
+            "prompt": {
+              "en": "How might the pig feel in the mud?",
+              "de": "Wie könnte sich das Schwein im Matsch fühlen?"
+            },
+            "starter": {
+              "en": "The pig might feel…",
+              "de": "Das Schwein könnte sich … fühlen."
+            },
+            "words": {
+              "en": [
+                "pig",
+                "mud",
+                "comfortable"
+              ],
+              "de": [
+                "Schwein",
+                "Matsch",
+                "wohl"
+              ]
+            },
+            "model": {
+              "en": "The pig might feel comfortable in the mud.",
+              "de": "Das Schwein könnte sich im Matsch wohlfühlen."
+            },
+            "childExample": {
+              "en": "Pig.",
+              "de": "Schwein."
+            },
+            "guidance": {
+              "en": "Offer a feeling word if needed. Different feelings are possible; do not infer one definite feeling from the picture or require an explanation.",
+              "de": "Bei Bedarf ein Wort für ein Gefühl anbieten. Verschiedene Gefühle sind möglich. Aus dem Bild kein bestimmtes Gefühl ableiten und keine Begründung verlangen."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 1,
+          "before": {
+            "prompt": {
+              "en": "Describe what the one chicken is doing with the grain.",
+              "de": "Beschreibe, was das eine Huhn mit den Körnern macht."
+            },
+            "starter": {
+              "en": "The chicken is…",
+              "de": "Das Huhn …"
+            },
+            "words": {
+              "en": [
+                "chicken",
+                "pecking",
+                "grain"
+              ],
+              "de": [
+                "Huhn",
+                "pickt",
+                "Körner"
+              ]
+            },
+            "model": {
+              "en": "The chicken is pecking the grain.",
+              "de": "Das Huhn pickt die Körner."
+            },
+            "childExample": {
+              "en": "Chicken.",
+              "de": "Huhn."
+            },
+            "guidance": {
+              "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+              "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "What is the chicken doing?",
+              "de": "Was macht das Huhn?"
+            },
+            "starter": {
+              "en": "The chicken is…",
+              "de": "Das Huhn …"
+            },
+            "words": {
+              "en": [
+                "chicken",
+                "pecking",
+                "grain"
+              ],
+              "de": [
+                "Huhn",
+                "pickt",
+                "Körner"
+              ]
+            },
+            "model": {
+              "en": "The chicken is pecking the grain.",
+              "de": "Das Huhn pickt die Körner."
+            },
+            "childExample": {
+              "en": "Pecking.",
+              "de": "Pickt."
+            },
+            "guidance": {
+              "en": "Point to the chicken and accept a gesture, an action word or its name first. Add what it is pecking only if useful. Offer one short sentence; repetition is optional.",
+              "de": "Auf das Huhn zeigen und zuerst eine Geste, ein Tätigkeitswort oder seinen Namen annehmen. Nur bei Bedarf ergänzen, wonach es pickt. Einen kurzen Satz anbieten; Nachsprechen ist freiwillig."
+            }
+          },
+          "reason": "The one chicken/das eine Huhn unnecessarily carries counting QA language into an action invitation.",
+          "learning_objective": "Actions and verbs",
+          "before_learning_purpose": "actions",
+          "after_learning_purpose": "actions",
+          "picture_evidence": "One chicken visibly pecks yellow grain in front of the barn."
+        }
+      ],
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.farm.garden_food.06",
+      "metadata": "app/src/main/assets/SceneDescriptions/countryside_farm/metadata/farm_006_garden_food.json",
+      "asset": "SceneDescriptions/countryside_farm/canonical/farm_006_garden_food.png",
+      "image_sha256": "60c1e78f649716ea35e101789a19501b13fb4105a5451070aa2622ca59163357",
+      "reference_metadata_sha256": "765787e80087b25ecf511406097cb815f8b2bb4de9c4321c535de8ecfad7410a",
+      "unchanged_slots": [
+        {
+          "slot": 1,
+          "bundle": {
+            "prompt": {
+              "en": "Where do the carrots grow?",
+              "de": "Wo wachsen die Karotten?"
+            },
+            "starter": {
+              "en": "The carrots grow…",
+              "de": "Die Karotten wachsen …"
+            },
+            "words": {
+              "en": [
+                "carrots",
+                "ground",
+                "apples"
+              ],
+              "de": [
+                "Karotten",
+                "Erde",
+                "Äpfel"
+              ]
+            },
+            "model": {
+              "en": "The carrots grow in the ground. The apples grow on the tree.",
+              "de": "Die Karotten wachsen in der Erde. Die Äpfel wachsen am Baum."
+            },
+            "childExample": {
+              "en": "Carrots.",
+              "de": "Karotten."
+            },
+            "guidance": {
+              "en": "Point to the carrots and accept pointing, one word or a short location phrase. Model the first sentence about the ground. The second sentence about apples is an optional comparison, not a required answer. Repetition is optional.",
+              "de": "Auf die Karotten zeigen und Zeigen, ein Wort oder eine kurze Ortsangabe annehmen. Den ersten Satz über die Erde vormachen. Der zweite Satz über die Äpfel ist ein freiwilliger Vergleich und keine verlangte Antwort. Nachsprechen ist freiwillig."
+            }
+          }
+        }
+      ],
+      "changes": [
+        {
+          "slot": 0,
+          "before": {
+            "prompt": {
+              "en": "What food can you see growing on the tree?",
+              "de": "Welches Essen siehst du am Baum wachsen?"
+            },
+            "starter": {
+              "en": "I can see…",
+              "de": "Ich sehe …"
+            },
+            "words": {
+              "en": [
+                "apples",
+                "tree",
+                "growing"
+              ],
+              "de": [
+                "Äpfel",
+                "Baum",
+                "wachsen"
+              ]
+            },
+            "model": {
+              "en": "I can see apples on the tree.",
+              "de": "Ich sehe Äpfel am Baum."
+            },
+            "childExample": {
+              "en": "Apples.",
+              "de": "Äpfel."
+            },
+            "guidance": {
+              "en": "Pointing or one word is enough. Name the pictured subject together, then offer one short sentence without asking for repetition.",
+              "de": "Zeigen oder ein Wort reicht. Den Bildinhalt gemeinsam benennen und einen kurzen Satz anbieten, ohne Wiederholung zu verlangen."
+            }
+          },
+          "after": {
+            "prompt": {
+              "en": "What fruit is growing on the tree?",
+              "de": "Welches Obst wächst am Baum?"
+            },
+            "starter": {
+              "en": "I can see…",
+              "de": "Ich sehe …"
+            },
+            "words": {
+              "en": [
+                "apples",
+                "tree",
+                "growing"
+              ],
+              "de": [
+                "Äpfel",
+                "Baum",
+                "wachsen"
+              ]
+            },
+            "model": {
+              "en": "I can see apples on the tree.",
+              "de": "Ich sehe Äpfel am Baum."
+            },
+            "childExample": {
+              "en": "Apples.",
+              "de": "Äpfel."
+            },
+            "guidance": {
+              "en": "Pointing or one word is enough. If fruit is unfamiliar, point to the apples and name them together. Offer the short model without asking for repetition.",
+              "de": "Zeigen oder ein Wort reicht. Wenn Obst unbekannt ist, auf die Äpfel zeigen und sie gemeinsam benennen. Den kurzen Beispielsatz anbieten, ohne Nachsprechen zu verlangen."
+            }
+          },
+          "reason": "Welches Essen am Baum sounds unnatural; use the concrete fruit category in both languages.",
+          "learning_objective": "Observation and identification",
+          "before_learning_purpose": "naming",
+          "after_learning_purpose": "naming",
+          "picture_evidence": "Red apples visibly grow on the tree on the right."
+        }
+      ],
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    }
+  ]
+}

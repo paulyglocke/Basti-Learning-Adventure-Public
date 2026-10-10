@@ -1,11 +1,14 @@
 {
   "scenes": 81,
   "themes": 9,
-  "slots_per_scene": 2,
-  "bilingual_slots": 162,
+  "slots_per_scene": {
+    "2": 78,
+    "3": 3
+  },
+  "bilingual_slots": 165,
   "distinct_prompts": {
-    "en": 162,
-    "de": 162
+    "en": 165,
+    "de": 165
   },
   "rewritten_first_prompts": {
     "en": 71,
@@ -26,20 +29,22 @@
     "naming": 2
   },
   "all_slot_purposes": {
-    "actions": 23,
-    "properties": 26,
-    "spatial": 27,
-    "prediction": 13,
-    "story": 10,
+    "actions": 16,
+    "prediction": 16,
+    "properties": 27,
+    "spatial": 28,
+    "story": 16,
     "counting": 8,
-    "naming": 5,
-    "personal": 12,
+    "personal": 11,
     "problem": 9,
     "emotions": 9,
+    "cause": 10,
     "social": 11,
-    "cause": 9
+    "naming": 4
   },
   "native_speaker_acceptance": "PENDING",
-  "android_build": "BLOCKED",
-  "real_image_validation": "NOT_RERUN"
+  "android_build": "NOT_RUN_FOR_REVISIONS_6_TO_11",
+  "real_image_validation": "PRODUCTION_HASHES_PASSED; TARGETED_DESKTOP_REVIEW_33_SCENES",
+  "content_revision": 11,
+  "targeted_desktop_review_scenes": 33
 }

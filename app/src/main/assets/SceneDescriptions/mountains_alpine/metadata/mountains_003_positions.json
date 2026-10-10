@@ -333,8 +333,8 @@
   "tellMePrompts": [
     {
       "prompt": {
-        "en": "Where is the rabbit compared with the two rocks?",
-        "de": "Wo ist das Kaninchen im Vergleich zu den beiden Felsen?"
+        "en": "Where is the rabbit?",
+        "de": "Wo ist das Kaninchen?"
       },
       "starter": {
         "en": "The rabbit is between…",
@@ -357,18 +357,18 @@
         "de": "Das Kaninchen ist zwischen den Felsen."
       },
       "childExample": {
-        "en": "Rabbit.",
-        "de": "Kaninchen."
+        "en": "Between the rocks.",
+        "de": "Zwischen den Felsen."
       },
       "guidance": {
-        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
-        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+        "en": "Accept pointing or a short answer first. If needed, point to the two rocks as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+        "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf die beiden Felsen als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
       }
     },
     {
       "prompt": {
-        "en": "Describe where the flowers are beside the rock.",
-        "de": "Beschreibe, wo die Blumen beim Felsen sind."
+        "en": "Where are the flowers?",
+        "de": "Wo sind die Blumen?"
       },
       "starter": {
         "en": "The flowers are next to…",
@@ -391,12 +391,12 @@
         "de": "Die Blumen sind neben dem Felsen."
       },
       "childExample": {
-        "en": "Flowers.",
-        "de": "Blumen."
+        "en": "Next to the rock.",
+        "de": "Neben dem Felsen."
       },
       "guidance": {
-        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
-        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+        "en": "There are several groups of flowers. Let the child choose and point to a group, then point to a nearby rock if a reference is needed. Accept a gesture, a short answer or any accurate location. The model fits flowers beside a rock; offer it only for that group. Repetition is optional.",
+        "de": "Es gibt mehrere Blumengruppen. Das Kind darf eine Gruppe auswählen und darauf zeigen. Bei Bedarf auf einen Felsen in ihrer Nähe als Bezugspunkt zeigen. Eine Geste, eine kurze Antwort oder jede passende Ortsangabe annehmen. Der Beispielsatz passt zu Blumen neben einem Felsen; ihn nur für diese Gruppe anbieten. Nachsprechen ist freiwillig."
       }
     }
   ]

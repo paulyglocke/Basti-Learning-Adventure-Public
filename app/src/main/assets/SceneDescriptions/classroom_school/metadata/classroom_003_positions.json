@@ -367,8 +367,8 @@
         "de": "Der blaue Rucksack ist unter dem Tisch."
       },
       "childExample": {
-        "en": "Backpack.",
-        "de": "Rucksack."
+        "en": "Under the desk.",
+        "de": "Unter dem Tisch."
       },
       "guidance": {
         "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
@@ -377,8 +377,8 @@
     },
     {
       "prompt": {
-        "en": "Where is the red book compared with the green bag?",
-        "de": "Wo ist das rote Buch im Vergleich zur grünen Tasche?"
+        "en": "Where is the red book?",
+        "de": "Wo ist das rote Buch?"
       },
       "starter": {
         "en": "The red book is in…",
@@ -401,12 +401,12 @@
         "de": "Das rote Buch ist in der grünen Tasche."
       },
       "childExample": {
-        "en": "Book.",
-        "de": "Buch."
+        "en": "In the green bag.",
+        "de": "In der grünen Tasche."
       },
       "guidance": {
-        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
-        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+        "en": "Accept pointing or a short answer first. If needed, point to the green bag as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+        "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf die grüne Tasche als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
       }
     }
   ]

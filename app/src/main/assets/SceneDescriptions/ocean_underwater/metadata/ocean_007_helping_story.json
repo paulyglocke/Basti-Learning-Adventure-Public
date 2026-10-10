@@ -197,8 +197,8 @@
         "de": "Die Schildkröte könnte das Seegras ablegen."
       },
       "childExample": {
-        "en": "Turtle.",
-        "de": "Schildkröte."
+        "en": "Put the seaweed down.",
+        "de": "Das Seegras ablegen."
       },
       "guidance": {
         "en": "Start with something visible. Invite one possible next event; invented ideas are welcome and are not facts about the picture.",
@@ -207,36 +207,36 @@
     },
     {
       "prompt": {
-        "en": "Tell me about the turtle and the fish following it.",
-        "de": "Erzähl mir von der Schildkröte und den Fischen, die ihr folgen."
+        "en": "Where could the turtle and the blue fish go together in your story?",
+        "de": "Wohin könnten die Schildkröte und die blauen Fische in deiner Geschichte zusammen schwimmen?"
       },
       "starter": {
-        "en": "The turtle is…",
-        "de": "Die Schildkröte …"
+        "en": "In my story, they…",
+        "de": "In meiner Geschichte …"
       },
       "words": {
         "en": [
           "turtle",
-          "seaweed",
-          "following"
+          "fish",
+          "visit"
         ],
         "de": [
           "Schildkröte",
-          "Seegras",
-          "folgen"
+          "Fische",
+          "besuchen"
         ]
       },
       "model": {
-        "en": "The turtle is bringing seaweed, and two fish are following it.",
-        "de": "Die Schildkröte bringt Seegras. Zwei Fische folgen ihr."
+        "en": "In my story, they visit the octopus. Then they swim home.",
+        "de": "In meiner Geschichte besuchen sie den Oktopus. Danach schwimmen sie nach Hause."
       },
       "childExample": {
-        "en": "Turtle.",
-        "de": "Schildkröte."
+        "en": "Visit the octopus.",
+        "de": "Den Oktopus besuchen."
       },
       "guidance": {
-        "en": "A word or one event can start the story. Offer first or next if helpful; do not require a complete story or a fixed ending.",
-        "de": "Ein Wort oder ein Ereignis kann die Geschichte beginnen. Bei Bedarf zuerst oder danach anbieten. Keine vollständige Geschichte und kein festes Ende verlangen."
+        "en": "Start with the pictured turtle and two blue fish. Invite an invented destination or event; their shared plans are not visible facts. One idea is enough. A second event is optional, and the child may choose a different story without repeating the model.",
+        "de": "Mit der Schildkröte und den beiden blauen Fischen im Bild beginnen. Ein ausgedachtes Ziel oder Ereignis anregen; gemeinsame Pläne sind keine sichtbaren Tatsachen. Eine Idee reicht. Ein zweites Ereignis ist freiwillig. Das Kind darf eine andere Geschichte wählen und muss den Beispielsatz nicht nachsprechen."
       }
     }
   ]

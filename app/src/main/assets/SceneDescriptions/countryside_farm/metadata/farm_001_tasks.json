@@ -369,8 +369,8 @@
         "de": "Das Kind gießt die Pflanzen."
       },
       "childExample": {
-        "en": "Child.",
-        "de": "Kind."
+        "en": "Watering the plants.",
+        "de": "Gießt die Pflanzen."
       },
       "guidance": {
         "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
@@ -403,8 +403,8 @@
         "de": "Die Pflanzen brauchen Wasser zum Wachsen."
       },
       "childExample": {
-        "en": "Plants.",
-        "de": "Pflanzen."
+        "en": "They need water.",
+        "de": "Sie brauchen Wasser."
       },
       "guidance": {
         "en": "Start with the visible action or object. Invite a possible reason, accept a short idea, and model one connection without treating it as the only answer.",

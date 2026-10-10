@@ -344,8 +344,8 @@
   "tellMePrompts": [
     {
       "prompt": {
-        "en": "Where is the giraffe compared with the tree?",
-        "de": "Wo ist die Giraffe im Vergleich zum Baum?"
+        "en": "Where is the giraffe?",
+        "de": "Wo ist die Giraffe?"
       },
       "starter": {
         "en": "The giraffe is behind…",
@@ -368,18 +368,18 @@
         "de": "Die Giraffe ist hinter dem Baum."
       },
       "childExample": {
-        "en": "Giraffe.",
-        "de": "Giraffe."
+        "en": "Behind the tree.",
+        "de": "Hinter dem Baum."
       },
       "guidance": {
-        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
-        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+        "en": "Accept pointing or a short answer first. If needed, point to the tree as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+        "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf den Baum als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
       }
     },
     {
       "prompt": {
-        "en": "Describe where the zebra is between the posts.",
-        "de": "Beschreibe, wo das Zebra bei den Pfosten ist."
+        "en": "Where is the zebra?",
+        "de": "Wo ist das Zebra?"
       },
       "starter": {
         "en": "The zebra is between…",
@@ -402,12 +402,12 @@
         "de": "Das Zebra ist zwischen den Pfosten."
       },
       "childExample": {
-        "en": "Zebra.",
-        "de": "Zebra."
+        "en": "Between the posts.",
+        "de": "Zwischen den Pfosten."
       },
       "guidance": {
-        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
-        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+        "en": "Accept pointing or a short answer first. If needed, point to the two posts as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+        "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf die beiden Pfosten als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
       }
     }
   ]

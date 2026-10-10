@@ -164,8 +164,8 @@
         "de": "Das Schwein könnte sich im Matsch wohlfühlen."
       },
       "childExample": {
-        "en": "Pig.",
-        "de": "Schwein."
+        "en": "Comfortable.",
+        "de": "Fühlt sich wohl."
       },
       "guidance": {
         "en": "Offer a feeling word if needed. Different feelings are possible; do not infer one definite feeling from the picture or require an explanation.",
@@ -174,8 +174,8 @@
     },
     {
       "prompt": {
-        "en": "Describe what the one chicken is doing with the grain.",
-        "de": "Beschreibe, was das eine Huhn mit den Körnern macht."
+        "en": "What is the chicken doing?",
+        "de": "Was macht das Huhn?"
       },
       "starter": {
         "en": "The chicken is…",
@@ -198,12 +198,12 @@
         "de": "Das Huhn pickt die Körner."
       },
       "childExample": {
-        "en": "Chicken.",
-        "de": "Huhn."
+        "en": "Pecking.",
+        "de": "Pickt."
       },
       "guidance": {
-        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
-        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        "en": "Point to the chicken and accept a gesture, an action word or its name first. Add what it is pecking only if useful. Offer one short sentence; repetition is optional.",
+        "de": "Auf das Huhn zeigen und zuerst eine Geste, ein Tätigkeitswort oder seinen Namen annehmen. Nur bei Bedarf ergänzen, wonach es pickt. Einen kurzen Satz anbieten; Nachsprechen ist freiwillig."
       }
     }
   ]

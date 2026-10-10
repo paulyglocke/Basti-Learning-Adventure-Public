@@ -339,8 +339,8 @@
         "de": "Das Kind liest ein Buch."
       },
       "childExample": {
-        "en": "Child.",
-        "de": "Kind."
+        "en": "Reading.",
+        "de": "Liest."
       },
       "guidance": {
         "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
@@ -349,36 +349,36 @@
     },
     {
       "prompt": {
-        "en": "Tell me what the child with the scissors is doing.",
-        "de": "Erzähl mir, was das Kind mit der Schere macht."
+        "en": "What could the child make with the paper?",
+        "de": "Was könnte das Kind aus dem Papier machen?"
       },
       "starter": {
-        "en": "The child is…",
-        "de": "Das Kind …"
+        "en": "The child could make…",
+        "de": "Das Kind könnte … machen."
       },
       "words": {
         "en": [
-          "child",
-          "scissors",
-          "paper"
+          "paper",
+          "star",
+          "cut"
         ],
         "de": [
-          "Kind",
-          "Schere",
-          "Papier"
+          "Papier",
+          "Stern",
+          "schneiden"
         ]
       },
       "model": {
-        "en": "The child is cutting the paper.",
-        "de": "Das Kind schneidet das Papier."
+        "en": "The child could make a paper star.",
+        "de": "Das Kind könnte einen Stern aus Papier machen."
       },
       "childExample": {
-        "en": "Child.",
-        "de": "Kind."
+        "en": "A star.",
+        "de": "Einen Stern."
       },
       "guidance": {
-        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
-        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        "en": "Point to the child with the scissors and paper. Accept any possible or pretend creation, including a gesture or one word. The picture does not tell us what the child intends to make; repeating the model is optional.",
+        "de": "Auf das Kind mit der Schere und dem Papier zeigen. Mögliche oder ausgedachte Bastelideen annehmen, auch eine Geste oder ein Wort. Das Bild zeigt uns nicht, was das Kind machen möchte. Nachsprechen ist freiwillig."
       }
     }
   ]

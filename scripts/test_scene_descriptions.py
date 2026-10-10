@@ -7,6 +7,17 @@ from pathlib import Path
 import generate_scene_descriptions as content
 
 
+REVISION_7_PURPOSES = {
+    'scene.ocean.reef_actions.01': 'prediction',
+    'scene.jungle.actions.01': 'story',
+    'scene.woodland.actions.02': 'cause',
+    'scene.sky.actions.01': 'properties',
+    'scene.mountains.actions.02': 'story',
+    'scene.classroom.tasks.01': 'story',
+    'scene.zoo.actions.02': 'prediction',
+}
+
+
 class SceneDescriptionBoundaryTest(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
@@ -30,6 +41,15 @@ class SceneDescriptionBoundaryTest(unittest.TestCase):
         data = json.loads(file.read_text())
         mutate(data)
         file.write_text(json.dumps(data, ensure_ascii=False))
+
+    def scene_before_example_revision(self, scene):
+        # Historical checkpoints retain their exact bundles. The new regression
+        # below verifies every explicit child-example-only successor first.
+        revision = json.loads((content.REPO / 'docs/tellme-variety/CHILD_EXAMPLE_CORRECTIONS.json').read_text())
+        entry = next(s for s in revision['scenes'] if s['scene_id'] == scene['id'])
+        restored = json.loads(json.dumps(scene))
+        restored['prompts'] = entry['before_prompts']
+        return restored
 
     def rejected(self):
         with self.assertRaises(ValueError):
@@ -89,6 +109,20 @@ class SceneDescriptionBoundaryTest(unittest.TestCase):
         expected = {s['scene_id']: s['prompts'] for s in variety['scenes']}
         for scene in restored[1]:
             self.assertEqual(expected.get(scene['id'], []), scene.pop('prompts'))
+        # Revision 6: assert and reverse only the documented editorial corrections.
+        corrections = json.loads((content.REPO / 'docs/tellme-variety/EDITORIAL_CORRECTIONS.json').read_text())
+        self.assertEqual(6, corrections['content_revision'])
+        self.assertEqual({'scene.woodland.compare_groups.06', 'scene.classroom.art_sorting.06'},
+                         {entry['scene_id'] for entry in corrections['scenes']})
+        for entry in corrections['scenes']:
+            scene = next(s for s in restored[1] if s['id'] == entry['scene_id'])
+            for change in entry['changes']:
+                container = scene
+                for key in change['path'][:-1]:
+                    container = container[key]
+                key = change['path'][-1]
+                self.assertEqual(change['after'], container[key], (entry['scene_id'], change['path']))
+                container[key] = change['before']
         # Physical acceptance review: assert and reverse the field-level bilingual ledger.
         # Preserve the original fingerprint rather than replacing it with a new blessing hash.
         ledger = json.loads((content.REPO / 'docs/tellme-visual-qa/CONTENT_CHANGES.json').read_text())
@@ -229,7 +263,8 @@ class SceneDescriptionBoundaryTest(unittest.TestCase):
         selected = [s for s in self.pack[1] if s['prompts']]
         self.assertEqual(81, len(selected))
         self.assertEqual([s['id'] for s in self.pack[1]], [s['id'] for s in selected])
-        self.assertEqual([2] * 81, [len(s['prompts']) for s in selected])
+        self.assertEqual(78, sum(len(s['prompts']) == 2 for s in selected))
+        self.assertEqual(3, sum(len(s['prompts']) == 3 for s in selected))
         for scene in selected:
             for prompt in scene['prompts']:
                 for lang in ('en', 'de'):
@@ -265,8 +300,181 @@ class SceneDescriptionBoundaryTest(unittest.TestCase):
     def test_all_rotating_prompt_slots_are_distinct_in_each_language(self):
         for lang in ('en', 'de'):
             prompts = [p['prompt'][lang] for s in self.pack[1] for p in s['prompts']]
-            self.assertEqual(162, len(prompts))
-            self.assertEqual(162, len(set(prompts)))
+            self.assertEqual(165, len(prompts))
+            self.assertEqual(165, len(set(prompts)))
+
+    def test_second_visit_revision_preserves_first_bundles_references_and_picture_identity(self):
+        # Editorial intent is reviewed by humans. These checks protect the bounded
+        # scope and original first-visit/reference content through regeneration.
+        revision = json.loads((content.REPO / 'docs/tellme-variety/QUESTION_VARIETY_CORRECTIONS.json').read_text())
+        variety = json.loads((content.REPO / 'docs/tellme-variety/CONTENT_CHANGES.json').read_text())
+        summary = json.loads((content.REPO / 'docs/tellme-variety/SUMMARY.json').read_text())
+        self.assertEqual(7, revision['content_revision'])
+        self.assertEqual(11, variety['content_revision'])
+        self.assertEqual(11, summary['content_revision'])
+        self.assertEqual(7, len(revision['scenes']))
+        self.assertEqual(set(REVISION_7_PURPOSES), {entry['scene_id'] for entry in revision['scenes']})
+        for entry in revision['scenes']:
+            with self.subTest(scene=entry['scene_id']):
+                scene = next(s for s in self.pack[1] if s['id'] == entry['scene_id'])
+                scene = self.scene_before_example_revision(scene)
+                record = next(s for s in variety['scenes'] if s['scene_id'] == scene['id'])
+                self.assertEqual(entry['unchanged_first'], scene['prompts'][0])
+                self.assertEqual(entry['after'], scene['prompts'][1])
+                self.assertNotEqual(entry['before'], entry['after'])
+                self.assertEqual(['actions', REVISION_7_PURPOSES[scene['id']]], record['learning_purposes'])
+                self.assertEqual(REVISION_7_PURPOSES[scene['id']], entry['learning_purpose'])
+                self.assertEqual(scene['asset'], entry['asset'])
+                self.assertEqual('app/src/main/assets/' + scene['metadata'], entry['metadata'])
+                self.assertEqual(record['image_sha256'], entry['image_sha256'])
+                metadata = json.loads((content.REPO / entry['metadata']).read_text())
+                metadata.pop('tellMePrompts')
+                digest = hashlib.sha256(json.dumps(metadata, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+                self.assertEqual(entry['reference_metadata_sha256'], digest)
+        # Keep reported purpose counts tied to all 81 records, not a hand-edited total.
+        from collections import Counter
+        initial = Counter(s['learning_purposes'][0] for s in variety['scenes'])
+        all_slots = Counter(p for s in variety['scenes'] for p in s['learning_purposes'])
+        self.assertEqual(dict(initial), summary['initial_purposes'])
+        self.assertEqual(dict(all_slots), summary['all_slot_purposes'])
+        self.assertEqual(165, sum(all_slots.values()))
+        self.assertEqual(33, summary['targeted_desktop_review_scenes'])
+
+    def test_spatial_revision_preserves_other_slots_references_and_support(self):
+        revision = json.loads((content.REPO / 'docs/tellme-variety/SPATIAL_PROMPT_CORRECTIONS.json').read_text())
+        expected = {
+            'scene.ocean.hiding_places.03': [1], 'scene.ocean.reef_routines.06': [1],
+            'scene.jungle.positions.03': [1], 'scene.woodland.positions.03': [1],
+            'scene.park.positions.03': [1], 'scene.park.routines_positions.06': [1],
+            'scene.sky.positions.03': [0, 1], 'scene.mountains.positions.03': [0, 1],
+            'scene.mountains.spatial_clues.09': [1], 'scene.farm.positions.03': [1],
+            'scene.farm.garden_food.06': [1], 'scene.classroom.positions.03': [1],
+            'scene.classroom.objects_places.04': [1], 'scene.zoo.positions.03': [0, 1],
+        }
+        self.assertEqual(8, revision['content_revision'])
+        self.assertEqual(set(expected), {s['scene_id'] for s in revision['scenes']})
+        self.assertEqual(17, sum(len(s['changes']) for s in revision['scenes']))
+        for entry in revision['scenes']:
+            with self.subTest(scene=entry['scene_id']):
+                scene = next(s for s in self.pack[1] if s['id'] == entry['scene_id'])
+                scene = self.scene_before_example_revision(scene)
+                self.assertEqual(expected[scene['id']], [c['slot'] for c in entry['changes']])
+                self.assertEqual({0, 1}, {c['slot'] for c in entry['changes']} | {s['slot'] for s in entry['unchanged_slots']})
+                for unchanged in entry['unchanged_slots']:
+                    if scene['id'] == 'scene.farm.garden_food.06' and unchanged['slot'] == 0:
+                        # Revision 9 intentionally improves A; preserve the exact
+                        # revision-8 snapshot and verify its explicit successor.
+                        later = json.loads((content.REPO / 'docs/tellme-variety/CLUE_STORY_CORRECTIONS.json').read_text())
+                        change = next(s for s in later['scenes'] if s['scene_id'] == scene['id'])['changes'][0]
+                        self.assertEqual(0, change['slot'])
+                        self.assertEqual(unchanged['bundle'], change['before'])
+                        self.assertEqual(change['after'], scene['prompts'][0])
+                    else:
+                        self.assertEqual(unchanged['bundle'], scene['prompts'][unchanged['slot']])
+                for change in entry['changes']:
+                    self.assertEqual(change['after'], scene['prompts'][change['slot']])
+                    for field in ('starter', 'childExample'):
+                        self.assertEqual(change['before'][field], change['after'][field])
+                    for lang in ('en', 'de'):
+                        self.assertNotEqual(change['before']['prompt'][lang], change['after']['prompt'][lang])
+                        self.assertNotEqual(change['before']['guidance'][lang], change['after']['guidance'][lang])
+                    for field in ('words', 'model'):
+                        if scene['id'] == 'scene.park.routines_positions.06':
+                            self.assertEqual(change['before'][field]['en'], change['after'][field]['en'])
+                        else:
+                            self.assertEqual(change['before'][field], change['after'][field])
+                self.assertEqual(scene['asset'], entry['asset'])
+                self.assertEqual('app/src/main/assets/' + scene['metadata'], entry['metadata'])
+                metadata = json.loads((content.REPO / entry['metadata']).read_text())
+                metadata.pop('tellMePrompts')
+                digest = hashlib.sha256(json.dumps(metadata, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+                self.assertEqual(entry['reference_metadata_sha256'], digest)
+                self.assertEqual(entry['image_sha256'], hashlib.sha256((content.REPO / 'app/src/main/assets' / entry['asset']).read_bytes()).hexdigest())
+
+    def test_clue_story_revision_preserves_other_slots_references_and_picture_identity(self):
+        revision = json.loads((content.REPO / 'docs/tellme-variety/CLUE_STORY_CORRECTIONS.json').read_text())
+        variety = json.loads((content.REPO / 'docs/tellme-variety/CONTENT_CHANGES.json').read_text())
+        expected = {
+            'scene.ocean.story_actions.04': [1], 'scene.ocean.helping_story.07': [1],
+            'scene.ocean.find_and_follow.08': [1], 'scene.jungle.clue_finding.08': [0],
+            'scene.jungle.actions_directions.09': [0], 'scene.woodland.find_animals.09': [0, 1],
+            'scene.zoo.habitats_story.07': [0], 'scene.zoo.feature_clues.08': [0],
+            'scene.classroom.routines.02': [0], 'scene.farm.animal_actions.04': [1],
+            'scene.farm.garden_food.06': [0],
+        }
+        self.assertEqual(8, revision['previous_content_revision'])
+        self.assertEqual(9, revision['content_revision'])
+        self.assertEqual(set(expected), {s['scene_id'] for s in revision['scenes']})
+        self.assertEqual(12, sum(len(s['changes']) for s in revision['scenes']))
+        for entry in revision['scenes']:
+            with self.subTest(scene=entry['scene_id']):
+                scene = next(s for s in self.pack[1] if s['id'] == entry['scene_id'])
+                scene = self.scene_before_example_revision(scene)
+                record = next(s for s in variety['scenes'] if s['scene_id'] == scene['id'])
+                self.assertEqual(expected[scene['id']], [c['slot'] for c in entry['changes']])
+                self.assertEqual({0, 1}, {c['slot'] for c in entry['changes']} | {s['slot'] for s in entry['unchanged_slots']})
+                for unchanged in entry['unchanged_slots']:
+                    self.assertEqual(unchanged['bundle'], scene['prompts'][unchanged['slot']])
+                for change in entry['changes']:
+                    self.assertEqual(change['after'], scene['prompts'][change['slot']])
+                    self.assertNotEqual(change['before'], change['after'])
+                    self.assertEqual(change['after_learning_purpose'], record['learning_purposes'][change['slot']])
+                self.assertEqual(scene['asset'], entry['asset'])
+                self.assertEqual('app/src/main/assets/' + scene['metadata'], entry['metadata'])
+                metadata = json.loads((content.REPO / entry['metadata']).read_text())
+                metadata.pop('tellMePrompts')
+                digest = hashlib.sha256(json.dumps(metadata, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+                self.assertEqual(entry['reference_metadata_sha256'], digest)
+                self.assertEqual(entry['image_sha256'], hashlib.sha256((content.REPO / 'app/src/main/assets' / entry['asset']).read_bytes()).hexdigest())
+
+    def test_short_examples_only_revision_preserves_all_other_content(self):
+        revision = json.loads((content.REPO / 'docs/tellme-variety/CHILD_EXAMPLE_CORRECTIONS.json').read_text())
+        self.assertEqual(9, revision['previous_content_revision'])
+        self.assertEqual(10, revision['content_revision'])
+        self.assertEqual(121, revision['changed_examples'])
+        self.assertEqual(73, revision['changed_scenes'])
+        self.assertEqual([s['id'] for s in self.pack[1]], [s['scene_id'] for s in revision['scenes']])
+        self.assertEqual(121, sum(len(s['changes']) for s in revision['scenes']))
+        self.assertEqual(73, sum(bool(s['changes']) for s in revision['scenes']))
+        for scene, entry in zip(self.pack[1], revision['scenes']):
+            with self.subTest(scene=scene['id']):
+                expected = json.loads(json.dumps(entry['before_prompts']))
+                self.assertEqual(len(entry['changes']), len({c['slot'] for c in entry['changes']}))
+                for change in entry['changes']:
+                    slot = change['slot']
+                    self.assertEqual(change['before'], expected[slot]['childExample'])
+                    for lang in ('en', 'de'):
+                        self.assertNotEqual(change['before'][lang], change['after'][lang])
+                    expected[slot]['childExample'] = change['after']
+                # Compares questions, starters, words, models, guidance and all
+                # unchanged examples across the full 81-scene pack.
+                self.assertEqual(expected, scene['prompts'][:2])
+                self.assertEqual(scene['asset'], entry['asset'])
+                self.assertEqual('app/src/main/assets/' + scene['metadata'], entry['metadata'])
+                metadata = json.loads((content.REPO / entry['metadata']).read_text())
+                metadata.pop('tellMePrompts')
+                digest = hashlib.sha256(json.dumps(metadata, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+                self.assertEqual(entry['reference_metadata_sha256'], digest)
+                self.assertEqual(entry['image_sha256'], hashlib.sha256((content.REPO / 'app/src/main/assets' / entry['asset']).read_bytes()).hexdigest())
+
+    def test_third_question_pilot_preserves_first_two_bundles_and_reference_content(self):
+        pilot = json.loads((content.REPO / 'docs/tellme-variety/THIRD_QUESTION_PILOT.json').read_text())
+        expected = {'scene.ocean.hiding_places.03', 'scene.classroom.routines.02', 'scene.zoo.feature_clues.08'}
+        self.assertEqual(10, pilot['previous_content_revision'])
+        self.assertEqual(11, pilot['content_revision'])
+        self.assertEqual(expected, {s['scene_id'] for s in pilot['scenes']})
+        self.assertEqual(expected, {s['id'] for s in self.pack[1] if len(s['prompts']) == 3})
+        for entry in pilot['scenes']:
+            scene = next(s for s in self.pack[1] if s['id'] == entry['scene_id'])
+            self.assertEqual(entry['unchanged_first_two'], scene['prompts'][:2])
+            self.assertEqual(entry['third'], scene['prompts'][2])
+            self.assertEqual(scene['asset'], entry['asset'])
+            self.assertEqual('app/src/main/assets/' + scene['metadata'], entry['metadata'])
+            metadata = json.loads((content.REPO / entry['metadata']).read_text())
+            metadata.pop('tellMePrompts')
+            digest = hashlib.sha256(json.dumps(metadata, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+            self.assertEqual(entry['reference_metadata_sha256'], digest)
+            self.assertEqual(entry['image_sha256'], hashlib.sha256((content.REPO / 'app/src/main/assets' / entry['asset']).read_bytes()).hexdigest())
 
     def test_variety_ledger_preserves_picture_identity_and_complete_scene_order(self):
         variety = json.loads((content.REPO / 'docs/tellme-variety/CONTENT_CHANGES.json').read_text())
@@ -276,7 +484,13 @@ class SceneDescriptionBoundaryTest(unittest.TestCase):
             self.assertEqual(scene['asset'], change['asset'])
             self.assertEqual(review['image_sha256'], change['image_sha256'])
             self.assertEqual('NATIVE_SPEAKER_REVIEW_PENDING', change['language_acceptance'])
-            self.assertEqual('DRAFT_BASED_ON_PRIOR_AUDIT_NOT_NEW_IMAGE_ACCEPTANCE', change['visual_acceptance'])
+            targeted = {'scene.woodland.compare_groups.06', 'scene.classroom.art_sorting.06'} | set(REVISION_7_PURPOSES)
+            spatial = json.loads((content.REPO / 'docs/tellme-variety/SPATIAL_PROMPT_CORRECTIONS.json').read_text())
+            targeted |= {entry['scene_id'] for entry in spatial['scenes']}
+            clue_story = json.loads((content.REPO / 'docs/tellme-variety/CLUE_STORY_CORRECTIONS.json').read_text())
+            targeted |= {entry['scene_id'] for entry in clue_story['scenes']}
+            expected = 'TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE' if scene['id'] in targeted else 'DRAFT_BASED_ON_PRIOR_AUDIT_NOT_NEW_IMAGE_ACCEPTANCE'
+            self.assertEqual(expected, change['visual_acceptance'])
 
     def test_unsupported_schema(self):
         self.change(self.meta, lambda d: d.update(schemaVersion=2))

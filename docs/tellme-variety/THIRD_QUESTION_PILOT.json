@@ -1,0 +1,355 @@
+{
+  "previous_content_revision": 10,
+  "content_revision": 11,
+  "scope": "Three-scene third-question pilot; A/B bundles and reference metadata preserved.",
+  "scenes": [
+    {
+      "scene_id": "scene.ocean.hiding_places.03",
+      "learning_purpose": "story",
+      "learning_objective": "Imagination and storytelling",
+      "picture_evidence": "Crab inside left cave and starfish on foreground sand. Coming out and meeting are imaginary events, not visible actions.",
+      "third": {
+        "prompt": {
+          "en": "Imagine the crab comes out of the cave. What might it do?",
+          "de": "Stell dir vor, die Krabbe kommt aus der Höhle. Was könnte sie machen?"
+        },
+        "starter": {
+          "en": "In my story, the crab…",
+          "de": "In meiner Geschichte …"
+        },
+        "words": {
+          "en": [
+            "crab",
+            "starfish",
+            "meet"
+          ],
+          "de": [
+            "Krabbe",
+            "Seestern",
+            "treffen"
+          ]
+        },
+        "model": {
+          "en": "In my story, the crab meets the starfish.",
+          "de": "In meiner Geschichte trifft die Krabbe den Seestern."
+        },
+        "childExample": {
+          "en": "Meet the starfish.",
+          "de": "Den Seestern treffen."
+        },
+        "guidance": {
+          "en": "Point to the crab in the cave and offer coming out as a pretend beginning. One word, a gesture or one imagined event is enough. Meeting the starfish is only an example; other ideas are welcome. A longer story and repetition are optional.",
+          "de": "Auf die Krabbe in der Höhle zeigen und das Herauskommen als ausgedachten Anfang anbieten. Ein Wort, eine Geste oder ein ausgedachtes Ereignis reicht. Den Seestern zu treffen ist nur ein Beispiel; andere Ideen sind willkommen. Eine längere Geschichte und Nachsprechen sind freiwillig."
+        }
+      },
+      "metadata": "app/src/main/assets/SceneDescriptions/ocean_underwater/metadata/ocean_003_hiding_places.json",
+      "asset": "SceneDescriptions/ocean_underwater/canonical/ocean_003_hiding_places.png",
+      "image_sha256": "bd57c58d9c5deb36b5e6b84e9974bc46172f74f2a9e276948d5e4459c2877a6b",
+      "unchanged_first_two": [
+        {
+          "prompt": {
+            "en": "Where is the crab hiding in this picture?",
+            "de": "Wo versteckt sich die Krabbe auf diesem Bild?"
+          },
+          "starter": {
+            "en": "The crab is in…",
+            "de": "Die Krabbe ist in …"
+          },
+          "words": {
+            "en": [
+              "crab",
+              "in",
+              "cave"
+            ],
+            "de": [
+              "Krabbe",
+              "in",
+              "Höhle"
+            ]
+          },
+          "model": {
+            "en": "The crab is in the cave.",
+            "de": "Die Krabbe ist in der Höhle."
+          },
+          "childExample": {
+            "en": "In the cave.",
+            "de": "In der Höhle."
+          },
+          "guidance": {
+            "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+            "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+          }
+        },
+        {
+          "prompt": {
+            "en": "Where is the turtle?",
+            "de": "Wo ist die Schildkröte?"
+          },
+          "starter": {
+            "en": "The turtle is above…",
+            "de": "Die Schildkröte ist über …"
+          },
+          "words": {
+            "en": [
+              "turtle",
+              "above",
+              "starfish"
+            ],
+            "de": [
+              "Schildkröte",
+              "über",
+              "Seestern"
+            ]
+          },
+          "model": {
+            "en": "The turtle is above the starfish.",
+            "de": "Die Schildkröte ist über dem Seestern."
+          },
+          "childExample": {
+            "en": "Above the starfish.",
+            "de": "Über dem Seestern."
+          },
+          "guidance": {
+            "en": "Accept pointing or a short answer first. If needed, point to the starfish as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+            "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf den Seestern als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
+          }
+        }
+      ],
+      "reference_metadata_sha256": "6cd26f3471e9afee3142a1a7614fb4cfbf33589ef348b1e480ca124b00e1fe61",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.classroom.routines.02",
+      "learning_purpose": "story",
+      "learning_objective": "Sequencing and reasoning",
+      "picture_evidence": "Child on left raises hand and teacher is central. Asking for help and listening to a reply are hypothetical; no need or response is asserted.",
+      "third": {
+        "prompt": {
+          "en": "What could the child do after asking for help?",
+          "de": "Was könnte das Kind machen, nachdem es um Hilfe gebeten hat?"
+        },
+        "starter": {
+          "en": "After asking, the child could…",
+          "de": "Nach dem Fragen könnte das Kind …"
+        },
+        "words": {
+          "en": [
+            "help",
+            "then",
+            "listen"
+          ],
+          "de": [
+            "Hilfe",
+            "danach",
+            "zuhören"
+          ]
+        },
+        "model": {
+          "en": "After asking, the child could listen to the teacher.",
+          "de": "Nach dem Fragen könnte das Kind der Lehrkraft zuhören."
+        },
+        "childExample": {
+          "en": "Listen.",
+          "de": "Zuhören."
+        },
+        "guidance": {
+          "en": "Use the raised-hand child for an imagined help-seeking sequence. Asking and a reply are not shown. Accept one possible next step, a gesture or a word. Listening is one example, not a required response; no whole sequence or repetition is required.",
+          "de": "Mit dem Kind mit der erhobenen Hand eine ausgedachte Folge zum Bitten um Hilfe beginnen. Die Bitte und eine Antwort sind nicht zu sehen. Einen möglichen nächsten Schritt, eine Geste oder ein Wort annehmen. Zuhören ist ein Beispiel, keine verlangte Antwort. Keine ganze Abfolge und kein Nachsprechen verlangen."
+        }
+      },
+      "metadata": "app/src/main/assets/SceneDescriptions/classroom_school/metadata/classroom_002_routines.json",
+      "asset": "SceneDescriptions/classroom_school/canonical/classroom_002_routines.png",
+      "image_sha256": "1b9d32cf60a9e0d808e6fdba82e1258cd9cef2db0c635355a1cba1d2d72085b8",
+      "unchanged_first_two": [
+        {
+          "prompt": {
+            "en": "The child has a hand up. What could it say if it needs help?",
+            "de": "Das Kind hebt die Hand. Was könnte es sagen, wenn es Hilfe braucht?"
+          },
+          "starter": {
+            "en": "The child could say…",
+            "de": "Das Kind könnte sagen …"
+          },
+          "words": {
+            "en": [
+              "help",
+              "ask",
+              "please"
+            ],
+            "de": [
+              "Hilfe",
+              "fragen",
+              "bitte"
+            ]
+          },
+          "model": {
+            "en": "The child could say, \"Can you help me, please?\"",
+            "de": "Das Kind könnte sagen: „Kannst du mir bitte helfen?“"
+          },
+          "childExample": {
+            "en": "Help, please.",
+            "de": "Hilfe, bitte."
+          },
+          "guidance": {
+            "en": "Point to the raised hand. Needing help is one imagined reason; the picture does not tell us why the child raised it. Accept a gesture or a short request. Offer friendly help-seeking words without requiring repetition.",
+            "de": "Auf die erhobene Hand zeigen. Hilfe zu brauchen ist ein ausgedachter Grund; das Bild zeigt nicht, warum das Kind die Hand hebt. Eine Geste oder eine kurze Bitte annehmen. Freundliche Worte zum Bitten um Hilfe anbieten, ohne Nachsprechen zu verlangen."
+          }
+        },
+        {
+          "prompt": {
+            "en": "What could you say when you have finished your work?",
+            "de": "Was könntest du sagen, wenn du mit deiner Arbeit fertig bist?"
+          },
+          "starter": {
+            "en": "I could say…",
+            "de": "Ich könnte sagen …"
+          },
+          "words": {
+            "en": [
+              "finished",
+              "work",
+              "say"
+            ],
+            "de": [
+              "fertig",
+              "Arbeit",
+              "sagen"
+            ]
+          },
+          "model": {
+            "en": "I could say, \"I have finished my work.\"",
+            "de": "Ich könnte sagen: „Ich bin mit meiner Arbeit fertig.“"
+          },
+          "childExample": {
+            "en": "Finished.",
+            "de": "Fertig."
+          },
+          "guidance": {
+            "en": "Invite pretend speech or one helpful action. A short phrase or gesture is enough; model friendly wording without requiring the child to repeat it.",
+            "de": "Ein kleines Rollenspiel oder eine hilfreiche Handlung anregen. Ein kurzer Ausdruck oder eine Geste reicht. Freundliche Worte anbieten, ohne Nachsprechen zu verlangen."
+          }
+        }
+      ],
+      "reference_metadata_sha256": "c49b27011f88715e435c1eaa0bf05464a05bae9c52a161a9ea86c8a76a4c9db7",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.zoo.feature_clues.08",
+      "learning_purpose": "prediction",
+      "learning_objective": "Predictions",
+      "picture_evidence": "Penguin on rock at edge of pool; water is visible directly below. Swimming next is a possible imagined action.",
+      "third": {
+        "prompt": {
+          "en": "Where might the penguin go next?",
+          "de": "Wohin könnte der Pinguin als Nächstes gehen?"
+        },
+        "starter": {
+          "en": "The penguin might…",
+          "de": "Der Pinguin könnte …"
+        },
+        "words": {
+          "en": [
+            "penguin",
+            "water",
+            "swim"
+          ],
+          "de": [
+            "Pinguin",
+            "Wasser",
+            "schwimmen"
+          ]
+        },
+        "model": {
+          "en": "The penguin might go into the water and swim.",
+          "de": "Der Pinguin könnte ins Wasser gehen und schwimmen."
+        },
+        "childExample": {
+          "en": "Into the water.",
+          "de": "Ins Wasser."
+        },
+        "guidance": {
+          "en": "Point to the penguin by the water. Invite one possible next place or action; the picture does not show what happens next. Accept pointing, a short phrase or another imagined destination. The model and repetition are optional.",
+          "de": "Auf den Pinguin am Wasser zeigen. Einen möglichen nächsten Ort oder eine Handlung anregen; das Bild zeigt nicht, was als Nächstes passiert. Zeigen, einen kurzen Ausdruck oder ein anderes ausgedachtes Ziel annehmen. Der Beispielsatz und Nachsprechen sind freiwillig."
+        }
+      },
+      "metadata": "app/src/main/assets/SceneDescriptions/zoo_wildlife/metadata/zoo_008_feature_clues.json",
+      "asset": "SceneDescriptions/zoo_wildlife/canonical/zoo_008_feature_clues.png",
+      "image_sha256": "77fd2c6f30949136a8f808266a3ce52a41a61058ffec44152a2748a0d6165738",
+      "unchanged_first_two": [
+        {
+          "prompt": {
+            "en": "Give me a clue about an animal here. Can I guess which one?",
+            "de": "Gib mir einen Hinweis zu einem Tier hier. Kann ich erraten, welches du meinst?"
+          },
+          "starter": {
+            "en": "My animal has…",
+            "de": "Mein Tier hat …"
+          },
+          "words": {
+            "en": [
+              "mane",
+              "stripes",
+              "long neck"
+            ],
+            "de": [
+              "Mähne",
+              "Streifen",
+              "langer Hals"
+            ]
+          },
+          "model": {
+            "en": "My animal has a mane.",
+            "de": "Mein Tier hat eine Mähne."
+          },
+          "childExample": {
+            "en": "A mane.",
+            "de": "Eine Mähne."
+          },
+          "guidance": {
+            "en": "Let the child choose an animal before the grown-up guesses. A feature or position can be a clue; the model is for the lion, not a required choice. Accept a name or gesture if needed, then offer a visible feature. Do not reveal the chosen animal before guessing. Repetition is optional.",
+            "de": "Das Kind darf ein Tier auswählen, bevor die erwachsene Person rät. Ein Merkmal oder eine Ortsangabe kann ein Hinweis sein. Der Beispielsatz passt zum Löwen, der nicht gewählt werden muss. Bei Bedarf einen Namen oder eine Geste annehmen und dann ein sichtbares Merkmal anbieten. Das gewählte Tier nicht vor dem Raten verraten. Nachsprechen ist freiwillig."
+          }
+        },
+        {
+          "prompt": {
+            "en": "Tell me what you notice about the zebra's stripes.",
+            "de": "Erzähl mir, was dir an den Streifen des Zebras auffällt."
+          },
+          "starter": {
+            "en": "The zebra has…",
+            "de": "Das Zebra hat …"
+          },
+          "words": {
+            "en": [
+              "zebra",
+              "black",
+              "stripes"
+            ],
+            "de": [
+              "Zebra",
+              "schwarz",
+              "Streifen"
+            ]
+          },
+          "model": {
+            "en": "The zebra has black and white stripes.",
+            "de": "Das Zebra hat schwarze und weiße Streifen."
+          },
+          "childExample": {
+            "en": "Black and white stripes.",
+            "de": "Schwarze und weiße Streifen."
+          },
+          "guidance": {
+            "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+            "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+          }
+        }
+      ],
+      "reference_metadata_sha256": "500049babb246e6595970c91e11cf9bd7ff5f10882ad12ae531704c7baf53e0f",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    }
+  ]
+}

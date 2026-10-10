@@ -356,8 +356,8 @@
         "de": "Der Delfin springt aus dem Wasser."
       },
       "childExample": {
-        "en": "Dolphin.",
-        "de": "Delfin."
+        "en": "Jumping.",
+        "de": "Springt."
       },
       "guidance": {
         "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
@@ -366,36 +366,36 @@
     },
     {
       "prompt": {
-        "en": "Tell me about the crab carrying a shell.",
-        "de": "Erzähl mir von der Krabbe, die eine Muschel trägt."
+        "en": "What might the crab do with the shell next?",
+        "de": "Was könnte die Krabbe als Nächstes mit der Muschel machen?"
       },
       "starter": {
-        "en": "The crab is carrying…",
-        "de": "Die Krabbe trägt …"
+        "en": "The crab might…",
+        "de": "Die Krabbe könnte …"
       },
       "words": {
         "en": [
           "crab",
-          "carrying",
-          "shell"
+          "shell",
+          "put down"
         ],
         "de": [
           "Krabbe",
-          "trägt",
-          "Muschel"
+          "Muschel",
+          "ablegen"
         ]
       },
       "model": {
-        "en": "The crab is carrying a shell.",
-        "de": "Die Krabbe trägt eine Muschel."
+        "en": "The crab might put the shell on the sand.",
+        "de": "Die Krabbe könnte die Muschel auf den Sand legen."
       },
       "childExample": {
-        "en": "Crab.",
-        "de": "Krabbe."
+        "en": "Put it down.",
+        "de": "Ablegen."
       },
       "guidance": {
-        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
-        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        "en": "Point to the crab and shell if helpful. Invite one possible next action; other ideas are welcome. The model is an imagined possibility, not a fact about the picture, and repeating it is optional.",
+        "de": "Bei Bedarf auf die Krabbe und die Muschel zeigen. Eine mögliche nächste Handlung anregen; andere Ideen sind willkommen. Der Beispielsatz ist eine ausgedachte Möglichkeit und keine Tatsache über das Bild. Nachsprechen ist freiwillig."
       }
     }
   ]

@@ -336,8 +336,8 @@
         "de": "Der Ballon steigt in den Himmel."
       },
       "childExample": {
-        "en": "Balloon.",
-        "de": "Ballon."
+        "en": "Going up.",
+        "de": "Steigt nach oben."
       },
       "guidance": {
         "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
@@ -346,36 +346,36 @@
     },
     {
       "prompt": {
-        "en": "Describe how the eagle is moving through the sky.",
-        "de": "Beschreibe, wie sich der Adler am Himmel bewegt."
+        "en": "How does the eagle look different from the airplane?",
+        "de": "Was sieht beim Adler anders aus als beim Flugzeug?"
       },
       "starter": {
-        "en": "The eagle is…",
-        "de": "Der Adler …"
+        "en": "The eagle has…",
+        "de": "Der Adler hat …"
       },
       "words": {
         "en": [
-          "eagle",
-          "gliding",
-          "sky"
+          "feathers",
+          "airplane",
+          "wheels"
         ],
         "de": [
-          "Adler",
-          "gleitet",
-          "Himmel"
+          "Federn",
+          "Flugzeug",
+          "Räder"
         ]
       },
       "model": {
-        "en": "The eagle is gliding through the sky.",
-        "de": "Der Adler gleitet durch den Himmel."
+        "en": "The eagle has feathers. The airplane has wheels.",
+        "de": "Der Adler hat Federn. Das Flugzeug hat Räder."
       },
       "childExample": {
-        "en": "Eagle.",
-        "de": "Adler."
+        "en": "Feathers.",
+        "de": "Federn."
       },
       "guidance": {
-        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
-        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        "en": "Point to the eagle and airplane together. One visible difference is enough; colour or shape ideas are welcome too. Offer a second contrasting phrase only if useful, without requiring both sentences or repetition.",
+        "de": "Gemeinsam auf den Adler und das Flugzeug zeigen. Ein sichtbarer Unterschied reicht; auch Farben oder Formen sind willkommen. Nur bei Bedarf einen zweiten Satz zum Vergleich anbieten. Beide Sätze und Nachsprechen sind freiwillig."
       }
     }
   ]

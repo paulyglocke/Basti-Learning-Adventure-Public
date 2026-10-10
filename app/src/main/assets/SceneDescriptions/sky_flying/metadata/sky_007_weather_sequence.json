@@ -159,8 +159,8 @@
         "de": "Zuerst ist es sonnig. Dann kommen Wolken. Danach regnet es."
       },
       "childExample": {
-        "en": "First.",
-        "de": "Zuerst."
+        "en": "First it is sunny.",
+        "de": "Zuerst ist es sonnig."
       },
       "guidance": {
         "en": "A word or one event can start the story. Offer first or next if helpful; do not require a complete story or a fixed ending.",
@@ -193,8 +193,8 @@
         "de": "Nach dem Regen erscheint in dieser Geschichte ein Regenbogen."
       },
       "childExample": {
-        "en": "Rain.",
-        "de": "Regen."
+        "en": "A rainbow.",
+        "de": "Ein Regenbogen."
       },
       "guidance": {
         "en": "A word or one event can start the story. Offer first or next if helpful; do not require a complete story or a fixed ending.",

@@ -45,6 +45,10 @@
       {
         "en": "shelf",
         "de": "Regal"
+      },
+      {
+        "en": "brush",
+        "de": "Pinsel"
       }
     ],
     "verbs": [
@@ -139,7 +143,9 @@
     }
   },
   "visualAudit": [
-    "Auto-batch panel reviewed for the described targets."
+    "Paint pots, brushes and paper with rainbow paintings are on the table.",
+    "Brushes are in the blue cup and two brushes lie on the table.",
+    "The football is already on the green chair, not on the drawing surface."
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
@@ -147,36 +153,36 @@
   "tellMePrompts": [
     {
       "prompt": {
-        "en": "Where could we put the football so there is room for drawing?",
-        "de": "Wohin könnten wir den Fußball legen, damit Platz zum Malen ist?"
+        "en": "What could you use to paint a picture?",
+        "de": "Womit könntest du ein Bild malen?"
       },
       "starter": {
-        "en": "We could put the football…",
-        "de": "Wir könnten den Fußball … legen."
+        "en": "I could use…",
+        "de": "Ich könnte … benutzen."
       },
       "words": {
         "en": [
-          "football",
-          "chair",
-          "space"
+          "brush",
+          "paint",
+          "paper"
         ],
         "de": [
-          "Fußball",
-          "Stuhl",
-          "Platz"
+          "Pinsel",
+          "Farbe",
+          "Papier"
         ]
       },
       "model": {
-        "en": "We could put the football beside the chair.",
-        "de": "Wir könnten den Fußball neben den Stuhl legen."
+        "en": "I could use a brush and paint.",
+        "de": "Ich könnte einen Pinsel und Farbe benutzen."
       },
       "childExample": {
-        "en": "Football.",
-        "de": "Fußball."
+        "en": "A brush.",
+        "de": "Einen Pinsel."
       },
       "guidance": {
-        "en": "Point to the relevant pictured objects first. Accept different possible solutions or clues and help the child say one simple idea.",
-        "de": "Zuerst auf die passenden Dinge im Bild zeigen. Verschiedene mögliche Lösungen oder Hinweise annehmen und beim Aussprechen einer einfachen Idee helfen."
+        "en": "Point to the pictured art materials if helpful. Accept a gesture, one useful tool or another possible combination; the model is only one example and repeating it is optional.",
+        "de": "Bei Bedarf auf die Malsachen im Bild zeigen. Eine Geste, ein passendes Werkzeug oder eine andere mögliche Kombination annehmen. Der Beispielsatz ist nur eine Möglichkeit; Nachsprechen ist freiwillig."
       }
     },
     {

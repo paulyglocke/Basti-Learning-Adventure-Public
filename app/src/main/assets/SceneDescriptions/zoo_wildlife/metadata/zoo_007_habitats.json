@@ -147,36 +147,36 @@
   "tellMePrompts": [
     {
       "prompt": {
-        "en": "Begin a little story about the elephant and penguin by the water.",
-        "de": "Fang eine kleine Geschichte über den Elefanten und den Pinguin am Wasser an."
+        "en": "Imagine the penguin could talk to the elephant. What might it say?",
+        "de": "Stell dir vor, der Pinguin könnte mit dem Elefanten sprechen. Was könnte er sagen?"
       },
       "starter": {
-        "en": "One day…",
-        "de": "Eines Tages …"
+        "en": "The penguin could say…",
+        "de": "Der Pinguin könnte sagen …"
       },
       "words": {
         "en": [
-          "elephant",
           "penguin",
-          "water"
+          "water",
+          "splash"
         ],
         "de": [
-          "Elefant",
           "Pinguin",
-          "Wasser"
+          "Wasser",
+          "spritzen"
         ]
       },
       "model": {
-        "en": "One day, the elephant and penguin might meet by the water.",
-        "de": "Eines Tages könnten sich der Elefant und der Pinguin am Wasser treffen."
+        "en": "The penguin could say, \"Can I splash too?\"",
+        "de": "Der Pinguin könnte sagen: „Darf ich auch spritzen?“"
       },
       "childExample": {
-        "en": "Elephant.",
-        "de": "Elefant."
+        "en": "Me too!",
+        "de": "Ich auch!"
       },
       "guidance": {
-        "en": "A word or one event can start the story. Offer first or next if helpful; do not require a complete story or a fixed ending.",
-        "de": "Ein Wort oder ein Ereignis kann die Geschichte beginnen. Bei Bedarf zuerst oder danach anbieten. Keine vollständige Geschichte und kein festes Ende verlangen."
+        "en": "Point to the penguin and elephant by the water. Invite pretend speech, not a claim about their real thoughts. Accept a word, gesture or any imagined line. Continuing the conversation is optional; repetition is optional too.",
+        "de": "Auf den Pinguin und den Elefanten am Wasser zeigen. Ausgedachte Worte anregen, keine Aussage über ihre wirklichen Gedanken. Ein Wort, eine Geste oder beliebige ausgedachte Worte annehmen. Das Gespräch fortzusetzen und nachzusprechen ist freiwillig."
       }
     },
     {

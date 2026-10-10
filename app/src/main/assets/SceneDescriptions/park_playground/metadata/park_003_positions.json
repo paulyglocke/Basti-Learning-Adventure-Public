@@ -355,8 +355,8 @@
         "de": "Der Rucksack ist unter der Bank."
       },
       "childExample": {
-        "en": "Backpack.",
-        "de": "Rucksack."
+        "en": "Under the bench.",
+        "de": "Unter der Bank."
       },
       "guidance": {
         "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
@@ -365,8 +365,8 @@
     },
     {
       "prompt": {
-        "en": "Tell me where the kite is compared with the tree.",
-        "de": "Erzähl mir, wo der Drachen im Vergleich zum Baum ist."
+        "en": "Where is the kite?",
+        "de": "Wo ist der Drachen?"
       },
       "starter": {
         "en": "The kite is above…",
@@ -389,12 +389,12 @@
         "de": "Der Drachen ist über dem Baum."
       },
       "childExample": {
-        "en": "Kite.",
-        "de": "Drachen."
+        "en": "Above the tree.",
+        "de": "Über dem Baum."
       },
       "guidance": {
-        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
-        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+        "en": "Accept pointing or a short answer first. If needed, point to the tree as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+        "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf den Baum als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
       }
     }
   ]

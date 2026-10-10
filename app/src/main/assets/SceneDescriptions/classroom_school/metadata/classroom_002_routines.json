@@ -334,8 +334,8 @@
   "tellMePrompts": [
     {
       "prompt": {
-        "en": "What could the child raising a hand say to ask for help?",
-        "de": "Was könnte das Kind mit der erhobenen Hand sagen, um Hilfe zu bitten?"
+        "en": "The child has a hand up. What could it say if it needs help?",
+        "de": "Das Kind hebt die Hand. Was könnte es sagen, wenn es Hilfe braucht?"
       },
       "starter": {
         "en": "The child could say…",
@@ -358,12 +358,12 @@
         "de": "Das Kind könnte sagen: „Kannst du mir bitte helfen?“"
       },
       "childExample": {
-        "en": "Help.",
-        "de": "Hilfe."
+        "en": "Help, please.",
+        "de": "Hilfe, bitte."
       },
       "guidance": {
-        "en": "Invite pretend speech or one helpful action. A short phrase or gesture is enough; model friendly wording without requiring the child to repeat it.",
-        "de": "Ein kleines Rollenspiel oder eine hilfreiche Handlung anregen. Ein kurzer Ausdruck oder eine Geste reicht. Freundliche Worte anbieten, ohne Nachsprechen zu verlangen."
+        "en": "Point to the raised hand. Needing help is one imagined reason; the picture does not tell us why the child raised it. Accept a gesture or a short request. Offer friendly help-seeking words without requiring repetition.",
+        "de": "Auf die erhobene Hand zeigen. Hilfe zu brauchen ist ein ausgedachter Grund; das Bild zeigt nicht, warum das Kind die Hand hebt. Eine Geste oder eine kurze Bitte annehmen. Freundliche Worte zum Bitten um Hilfe anbieten, ohne Nachsprechen zu verlangen."
       }
     },
     {
@@ -398,6 +398,40 @@
       "guidance": {
         "en": "Invite pretend speech or one helpful action. A short phrase or gesture is enough; model friendly wording without requiring the child to repeat it.",
         "de": "Ein kleines Rollenspiel oder eine hilfreiche Handlung anregen. Ein kurzer Ausdruck oder eine Geste reicht. Freundliche Worte anbieten, ohne Nachsprechen zu verlangen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "What could the child do after asking for help?",
+        "de": "Was könnte das Kind machen, nachdem es um Hilfe gebeten hat?"
+      },
+      "starter": {
+        "en": "After asking, the child could…",
+        "de": "Nach dem Fragen könnte das Kind …"
+      },
+      "words": {
+        "en": [
+          "help",
+          "then",
+          "listen"
+        ],
+        "de": [
+          "Hilfe",
+          "danach",
+          "zuhören"
+        ]
+      },
+      "model": {
+        "en": "After asking, the child could listen to the teacher.",
+        "de": "Nach dem Fragen könnte das Kind der Lehrkraft zuhören."
+      },
+      "childExample": {
+        "en": "Listen.",
+        "de": "Zuhören."
+      },
+      "guidance": {
+        "en": "Use the raised-hand child for an imagined help-seeking sequence. Asking and a reply are not shown. Accept one possible next step, a gesture or a word. Listening is one example, not a required response; no whole sequence or repetition is required.",
+        "de": "Mit dem Kind mit der erhobenen Hand eine ausgedachte Folge zum Bitten um Hilfe beginnen. Die Bitte und eine Antwort sind nicht zu sehen. Einen möglichen nächsten Schritt, eine Geste oder ein Wort annehmen. Zuhören ist ein Beispiel, keine verlangte Antwort. Keine ganze Abfolge und kein Nachsprechen verlangen."
       }
     }
   ]

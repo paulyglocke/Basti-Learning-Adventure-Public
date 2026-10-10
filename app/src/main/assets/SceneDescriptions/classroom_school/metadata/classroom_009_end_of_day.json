@@ -164,8 +164,8 @@
         "de": "Bevor ich nach Hause gehe, packe ich meine Tasche."
       },
       "childExample": {
-        "en": "Bag.",
-        "de": "Tasche."
+        "en": "Pack my bag.",
+        "de": "Meine Tasche packen."
       },
       "guidance": {
         "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",
@@ -198,8 +198,8 @@
         "de": "Das Kind könnte sagen: „Möchtest du mein Bild sehen?“"
       },
       "childExample": {
-        "en": "Picture.",
-        "de": "Bild."
+        "en": "Want to see my picture?",
+        "de": "Möchtest du mein Bild sehen?"
       },
       "guidance": {
         "en": "Invite pretend speech or one helpful action. A short phrase or gesture is enough; model friendly wording without requiring the child to repeat it.",

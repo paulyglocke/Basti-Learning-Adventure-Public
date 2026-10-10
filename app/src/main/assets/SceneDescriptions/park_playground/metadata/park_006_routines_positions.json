@@ -175,8 +175,8 @@
         "de": "Ich würde einen Helm aufsetzen, um meinen Kopf zu schützen."
       },
       "childExample": {
-        "en": "Helmet.",
-        "de": "Helm."
+        "en": "To protect my head.",
+        "de": "Damit mein Kopf geschützt ist."
       },
       "guidance": {
         "en": "Start with the visible action or object. Invite a possible reason, accept a short idea, and model one connection without treating it as the only answer.",
@@ -185,8 +185,8 @@
     },
     {
       "prompt": {
-        "en": "Where is the ball compared with the two cones?",
-        "de": "Wo ist der Ball im Vergleich zu den beiden Pylonen?"
+        "en": "Where is the ball?",
+        "de": "Wo ist der Ball?"
       },
       "starter": {
         "en": "The ball is between…",
@@ -201,20 +201,20 @@
         "de": [
           "Ball",
           "zwischen",
-          "Pylonen"
+          "Kegel"
         ]
       },
       "model": {
         "en": "The ball is between the cones.",
-        "de": "Der Ball ist zwischen den Pylonen."
+        "de": "Der Ball ist zwischen den Kegeln."
       },
       "childExample": {
-        "en": "Ball.",
-        "de": "Ball."
+        "en": "Between the cones.",
+        "de": "Zwischen den Kegeln."
       },
       "guidance": {
-        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
-        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+        "en": "Accept pointing or a short answer first. If needed, point to the two cones as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+        "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf die beiden Kegel als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
       }
     }
   ]

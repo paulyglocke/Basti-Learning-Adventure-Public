@@ -194,36 +194,36 @@
     },
     {
       "prompt": {
-        "en": "Start a little story about the octopus in the cave.",
-        "de": "Fang eine kleine Geschichte über den Oktopus in der Höhle an."
+        "en": "Imagine the octopus leaves the cave. Tell me what happens.",
+        "de": "Stell dir vor, der Oktopus verlässt die Höhle. Erzähl, was passiert."
       },
       "starter": {
-        "en": "One day, the octopus…",
-        "de": "Eines Tages …"
+        "en": "In my story…",
+        "de": "In meiner Geschichte …"
       },
       "words": {
         "en": [
           "octopus",
-          "cave",
-          "swim"
+          "fish",
+          "then"
         ],
         "de": [
           "Oktopus",
-          "Höhle",
-          "schwimmen"
+          "Fisch",
+          "danach"
         ]
       },
       "model": {
-        "en": "One day, the octopus might swim out of the cave.",
-        "de": "Eines Tages könnte der Oktopus aus der Höhle schwimmen."
+        "en": "In my story, the octopus swims out. Then it meets a fish.",
+        "de": "In meiner Geschichte schwimmt der Oktopus heraus. Danach trifft er einen Fisch."
       },
       "childExample": {
-        "en": "Octopus.",
-        "de": "Oktopus."
+        "en": "Meets a fish.",
+        "de": "Trifft einen Fisch."
       },
       "guidance": {
-        "en": "A word or one event can start the story. Offer first or next if helpful; do not require a complete story or a fixed ending.",
-        "de": "Ein Wort oder ein Ereignis kann die Geschichte beginnen. Bei Bedarf zuerst oder danach anbieten. Keine vollständige Geschichte und kein festes Ende verlangen."
+        "en": "Point out the octopus in the cave. The question starts a make-believe event, not something already shown. Accept one word, a gesture or one event. Add then only if helpful; any imagined continuation is welcome and repetition is optional.",
+        "de": "Auf den Oktopus in der Höhle zeigen. Die Frage beginnt mit einem ausgedachten Ereignis, das noch nicht im Bild zu sehen ist. Ein Wort, eine Geste oder ein Ereignis annehmen. Danach nur bei Bedarf ergänzen; jede ausgedachte Fortsetzung ist willkommen. Nachsprechen ist freiwillig."
       }
     }
   ]

@@ -139,36 +139,36 @@
   "tellMePrompts": [
     {
       "prompt": {
-        "en": "Choose an animal and give me a clue so I can find it.",
-        "de": "Such dir ein Tier aus und gib mir einen Hinweis, damit ich es finde."
+        "en": "Give me a clue about an animal here. Can I guess which one?",
+        "de": "Gib mir einen Hinweis zu einem Tier hier. Kann ich erraten, welches du meinst?"
       },
       "starter": {
-        "en": "Look for the animal with…",
-        "de": "Such das Tier mit …"
+        "en": "My animal has…",
+        "de": "Mein Tier hat …"
       },
       "words": {
         "en": [
           "mane",
-          "lion",
-          "find"
+          "stripes",
+          "long neck"
         ],
         "de": [
           "Mähne",
-          "Löwe",
-          "finden"
+          "Streifen",
+          "langer Hals"
         ]
       },
       "model": {
-        "en": "Look for the animal with a mane.",
-        "de": "Such das Tier mit der Mähne."
+        "en": "My animal has a mane.",
+        "de": "Mein Tier hat eine Mähne."
       },
       "childExample": {
-        "en": "Mane.",
-        "de": "Mähne."
+        "en": "A mane.",
+        "de": "Eine Mähne."
       },
       "guidance": {
-        "en": "Point to the relevant pictured objects first. Accept different possible solutions or clues and help the child say one simple idea.",
-        "de": "Zuerst auf die passenden Dinge im Bild zeigen. Verschiedene mögliche Lösungen oder Hinweise annehmen und beim Aussprechen einer einfachen Idee helfen."
+        "en": "Let the child choose an animal before the grown-up guesses. A feature or position can be a clue; the model is for the lion, not a required choice. Accept a name or gesture if needed, then offer a visible feature. Do not reveal the chosen animal before guessing. Repetition is optional.",
+        "de": "Das Kind darf ein Tier auswählen, bevor die erwachsene Person rät. Ein Merkmal oder eine Ortsangabe kann ein Hinweis sein. Der Beispielsatz passt zum Löwen, der nicht gewählt werden muss. Bei Bedarf einen Namen oder eine Geste annehmen und dann ein sichtbares Merkmal anbieten. Das gewählte Tier nicht vor dem Raten verraten. Nachsprechen ist freiwillig."
       }
     },
     {
@@ -197,12 +197,46 @@
         "de": "Das Zebra hat schwarze und weiße Streifen."
       },
       "childExample": {
-        "en": "Zebra.",
-        "de": "Zebra."
+        "en": "Black and white stripes.",
+        "de": "Schwarze und weiße Streifen."
       },
       "guidance": {
         "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
         "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Where might the penguin go next?",
+        "de": "Wohin könnte der Pinguin als Nächstes gehen?"
+      },
+      "starter": {
+        "en": "The penguin might…",
+        "de": "Der Pinguin könnte …"
+      },
+      "words": {
+        "en": [
+          "penguin",
+          "water",
+          "swim"
+        ],
+        "de": [
+          "Pinguin",
+          "Wasser",
+          "schwimmen"
+        ]
+      },
+      "model": {
+        "en": "The penguin might go into the water and swim.",
+        "de": "Der Pinguin könnte ins Wasser gehen und schwimmen."
+      },
+      "childExample": {
+        "en": "Into the water.",
+        "de": "Ins Wasser."
+      },
+      "guidance": {
+        "en": "Point to the penguin by the water. Invite one possible next place or action; the picture does not show what happens next. Accept pointing, a short phrase or another imagined destination. The model and repetition are optional.",
+        "de": "Auf den Pinguin am Wasser zeigen. Einen möglichen nächsten Ort oder eine Handlung anregen; das Bild zeigt nicht, was als Nächstes passiert. Zeigen, einen kurzen Ausdruck oder ein anderes ausgedachtes Ziel annehmen. Der Beispielsatz und Nachsprechen sind freiwillig."
       }
     }
   ]

@@ -62,7 +62,7 @@ class SceneDescriptionContentTest {
     }
 
     @Test fun everyApprovedSceneHasGermanForEveryAuthoredRuntimeText() {
-        assertEquals(5, repository.version.revision)
+        assertEquals(11, repository.version.revision)
         fun bilingual(text: SceneText) {
             assertFalse(text[ContentLanguage.ENGLISH].isNullOrBlank())
             assertFalse(text[ContentLanguage.GERMAN].isNullOrBlank())

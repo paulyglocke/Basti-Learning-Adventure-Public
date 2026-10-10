@@ -163,8 +163,8 @@
   "tellMePrompts": [
     {
       "prompt": {
-        "en": "Which jungle action in this picture would you like to pretend to do?",
-        "de": "Welche Handlung auf diesem Dschungelbild würdest du gern nachmachen?"
+        "en": "Which animal would you like to act like?",
+        "de": "Welches Tier würdest du gern nachmachen?"
       },
       "starter": {
         "en": "I would like to…",
@@ -187,12 +187,12 @@
         "de": "Ich würde gern wie der Tiger gehen."
       },
       "childExample": {
-        "en": "Tiger.",
-        "de": "Tiger."
+        "en": "Walk like the tiger.",
+        "de": "Wie der Tiger gehen."
       },
       "guidance": {
-        "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",
-        "de": "Einen Wunsch, ein ausgedachtes Beispiel oder fehlende Erfahrung annehmen. Der Beispielsatz ist nur eine Möglichkeit. Das Kind muss ihn nicht teilen."
+        "en": "Let the child point to an animal, say its name or mime a pictured action. Naming a preference is enough; moving is optional. Offer the tiger example only if useful, and accept a different choice without requiring repetition.",
+        "de": "Das Kind darf auf ein Tier zeigen, seinen Namen sagen oder eine Handlung aus dem Bild nachmachen. Einen Wunsch zu nennen reicht; Bewegung ist freiwillig. Das Tigerbeispiel nur bei Bedarf anbieten. Eine andere Wahl annehmen, ohne Nachsprechen zu verlangen."
       }
     },
     {
@@ -221,8 +221,8 @@
         "de": "Es könnte sich kühl anfühlen und mich überraschen."
       },
       "childExample": {
-        "en": "Water.",
-        "de": "Wasser."
+        "en": "Cool.",
+        "de": "Kühl."
       },
       "guidance": {
         "en": "Offer a feeling word if needed. Different feelings are possible; do not infer one definite feeling from the picture or require an explanation.",

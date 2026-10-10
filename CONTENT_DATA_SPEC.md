@@ -27,7 +27,7 @@ ContentId grammar is not broadened to accommodate numeric final segments.
 `SceneCategoryId` preserves root category IDs. Semantic image AssetIds derive from
 scene IDs, independently of filenames, and reuse `LocalImageAsset` for local paths.
 
-`BundledSceneDescriptions.repository()` supplies an immutable schema 1/revision 5
+`BundledSceneDescriptions.repository()` supplies an immutable schema 1/revision 11
 snapshot: `categories()` in root-manifest order, `scenes(category)` in category-manifest
 order, `all()`, `find(sceneId)` and `image(sceneId)`. Unknown scene/image IDs return
 null; unknown categories return an empty list. Records include approved status, wave,
@@ -74,6 +74,65 @@ reject incomplete, duplicate or oversized bundles. The original English fingerpr
 and physical-review ledger are preserved, with the new bundles separately asserted
 in `docs/tellme-variety/CONTENT_CHANGES.json`. New German copy needs native-speaker
 review; metadata validation is not linguistic or device acceptance.
+
+Content revision 6 corrects two picture contradictions: Woodland .06 B describes the
+fox inside its den rather than an unseen tail; Classroom .06 A asks about pictured
+painting tools rather than moving a football already on a chair. Their complete
+bilingual bundles, Woodland reference model/purpose and source visual notes are
+updated. `docs/tellme-variety/EDITORIAL_CORRECTIONS.json` records the exact reference
+changes so the original regression fingerprint remains protected. IDs, pictures,
+order, two-slot rotation and open-ended participation contracts are unchanged.
+Targeted desktop review does not establish native-speaker or device acceptance.
+
+Content revision 11 adds third-question bundles to Ocean .03, Classroom .02 and
+Zoo .08 as a bounded pilot. The other 78 scenes retain two bundles (165 bilingual
+slots total). A/B bundles and all reference metadata are preserved. C invites an
+imaginary event, sequencing after help-seeking or a prediction, with fully paired
+EN/DE support. See `docs/tellme-variety/THIRD_QUESTION_PILOT.json` for exact bundles
+and desktop picture evidence. Existing modulo rotation uses each scene's bundle
+count: pilot A/B/C/A, others A/B/A. Activity lifetime/reset contracts remain intact;
+no runtime/progress schema changes. Native rotation/route tests were extended;
+Android/JVM/instrumentation and independent linguistic/device acceptance remain
+pending in this environment.
+
+Content revision 10 aligns 121 short child examples across 73 scenes with their
+unchanged questions and existing models. Examples now offer brief actions,
+locations, features, feelings, reasons or pretend speech where appropriate.
+Names and gestures remain accepted participation; examples are not answer keys.
+Only `childExample` changes inside bundles. Questions, starters, words, models,
+guidance, reference metadata, pictures and two-slot rotation are preserved.
+`docs/tellme-variety/CHILD_EXAMPLE_CORRECTIONS.json` records all 81 prior bundles
+and each exact example replacement, with identity/reference/artwork hashes.
+No new visual or native-speaker acceptance is claimed by this model-based pass.
+
+Content revision 9 improves 12 clue/story/language bundles across 11 scenes.
+Clue models describe visible features or positions, with optional partner guessing.
+Concrete imaginary openings and dialogue support short narratives; ideas are not
+treated as pictured facts. Help-seeking stays conditional, and farm/jungle wording
+is simpler in both languages. Ocean .08 B is now labelled properties rather than
+naming; Woodland .09 B invites a story event rather than only a personal choice.
+These are editorial labels, not runtime progress evidence. Exact before/after
+bundles and preservation hashes are in
+`docs/tellme-variety/CLUE_STORY_CORRECTIONS.json`. Other slots, reference metadata,
+artwork, scene IDs and two-slot rotation are preserved.
+
+Content revision 8 simplifies 17 spatial questions across 14 scenes, removing
+abstract comparison wording and locations supplied in the child-facing question.
+Optional adult guidance retains specific pictured references and accepts other
+accurate locations. Park .06 support uses German “Kegel” for the pictured cones.
+Other slots, reference metadata, artwork and rotation remain intact; see
+`docs/tellme-variety/SPATIAL_PROMPT_CORRECTIONS.json` for exact changes.
+
+Content revision 7 revises the second bundle in seven action/action pairs: Ocean .01,
+Jungle .01, Woodland .02, Sky .01, Mountains .02, Classroom .01 and Zoo .02.
+First-visit bundles remain unchanged. Alternatives invite prediction, pretend
+dialogue, a possible reason, visible comparison, sequencing or creative expression,
+with matching EN/DE support and optional child/adult expansions.
+`docs/tellme-variety/QUESTION_VARIETY_CORRECTIONS.json` records exact before/after
+bundles, preserved reference metadata, picture hashes and learning objectives.
+These objectives are authoring judgments, not runtime skill results. Pictures,
+identities, ordering and two-slot rotation remain unchanged; linguistic and device
+acceptance are separate from the targeted desktop review.
 
 The standard-library generator `scripts/generate_scene_descriptions.py` follows only
 root/category manifests and approved metadata, validates IDs, schema/wave, canonical

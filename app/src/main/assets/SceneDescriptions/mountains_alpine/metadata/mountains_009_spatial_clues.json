@@ -163,8 +163,8 @@
         "de": "Ich könnte über die Brücke gehen."
       },
       "childExample": {
-        "en": "Stream.",
-        "de": "Bach."
+        "en": "Use the bridge.",
+        "de": "Über die Brücke gehen."
       },
       "guidance": {
         "en": "Point to the relevant pictured objects first. Accept different possible solutions or clues and help the child say one simple idea.",
@@ -173,8 +173,8 @@
     },
     {
       "prompt": {
-        "en": "Where is the marmot compared with the goat on the high rock?",
-        "de": "Wo ist das Murmeltier im Vergleich zur Ziege auf dem hohen Felsen?"
+        "en": "Where is the marmot?",
+        "de": "Wo ist das Murmeltier?"
       },
       "starter": {
         "en": "The marmot is below…",
@@ -197,12 +197,12 @@
         "de": "Das Murmeltier ist unterhalb der Ziege."
       },
       "childExample": {
-        "en": "Marmot.",
-        "de": "Murmeltier."
+        "en": "Below the goat.",
+        "de": "Unterhalb der Ziege."
       },
       "guidance": {
-        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
-        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+        "en": "Accept pointing or a short answer first. If needed, point to the goat on the high rock as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+        "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf die Ziege auf dem hohen Felsen als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
       }
     }
   ]

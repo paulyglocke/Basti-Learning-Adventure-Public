@@ -1,0 +1,806 @@
+{
+  "source_commit": "5acf611da207bd38e3622b190c628768d654b550",
+  "previous_content_revision": 6,
+  "content_revision": 7,
+  "scope": "Seven second-visit bundles replace action/action pairs with distinct language objectives. First-visit bundles and all other metadata are preserved; no artwork or runtime rotation changes.",
+  "scenes": [
+    {
+      "scene_id": "scene.classroom.tasks.01",
+      "metadata": "app/src/main/assets/SceneDescriptions/classroom_school/metadata/classroom_001_tasks.json",
+      "asset": "SceneDescriptions/classroom_school/canonical/classroom_001_tasks.png",
+      "image_sha256": "3ae81c3c3b78b1c6ae564415df121e2726759c6b9df6fec72faef8845837228d",
+      "reference_metadata_sha256": "e7c79ac6eeb810e5b27739298e271d18d71af33875bfe2874400d05b7a79db26",
+      "unchanged_first": {
+        "prompt": {
+          "en": "What is the child doing with the open book?",
+          "de": "Was macht das Kind mit dem aufgeschlagenen Buch?"
+        },
+        "starter": {
+          "en": "The child is…",
+          "de": "Das Kind …"
+        },
+        "words": {
+          "en": [
+            "child",
+            "reading",
+            "book"
+          ],
+          "de": [
+            "Kind",
+            "liest",
+            "Buch"
+          ]
+        },
+        "model": {
+          "en": "The child is reading a book.",
+          "de": "Das Kind liest ein Buch."
+        },
+        "childExample": {
+          "en": "Child.",
+          "de": "Kind."
+        },
+        "guidance": {
+          "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+          "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        }
+      },
+      "before": {
+        "prompt": {
+          "en": "Tell me what the child with the scissors is doing.",
+          "de": "Erzähl mir, was das Kind mit der Schere macht."
+        },
+        "starter": {
+          "en": "The child is…",
+          "de": "Das Kind …"
+        },
+        "words": {
+          "en": [
+            "child",
+            "scissors",
+            "paper"
+          ],
+          "de": [
+            "Kind",
+            "Schere",
+            "Papier"
+          ]
+        },
+        "model": {
+          "en": "The child is cutting the paper.",
+          "de": "Das Kind schneidet das Papier."
+        },
+        "childExample": {
+          "en": "Child.",
+          "de": "Kind."
+        },
+        "guidance": {
+          "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+          "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        }
+      },
+      "after": {
+        "prompt": {
+          "en": "What could the child make with the paper?",
+          "de": "Was könnte das Kind aus dem Papier machen?"
+        },
+        "starter": {
+          "en": "The child could make…",
+          "de": "Das Kind könnte … machen."
+        },
+        "words": {
+          "en": [
+            "paper",
+            "star",
+            "cut"
+          ],
+          "de": [
+            "Papier",
+            "Stern",
+            "schneiden"
+          ]
+        },
+        "model": {
+          "en": "The child could make a paper star.",
+          "de": "Das Kind könnte einen Stern aus Papier machen."
+        },
+        "childExample": {
+          "en": "A star.",
+          "de": "Einen Stern."
+        },
+        "guidance": {
+          "en": "Point to the child with the scissors and paper. Accept any possible or pretend creation, including a gesture or one word. The picture does not tell us what the child intends to make; repeating the model is optional.",
+          "de": "Auf das Kind mit der Schere und dem Papier zeigen. Mögliche oder ausgedachte Bastelideen annehmen, auch eine Geste oder ein Wort. Das Bild zeigt uns nicht, was das Kind machen möchte. Nachsprechen ist freiwillig."
+        }
+      },
+      "learning_purpose": "story",
+      "learning_objective": "Imagination and storytelling",
+      "picture_evidence": "A child holds scissors and red paper; paper shapes and a neighbouring star craft are visible. A paper star is one possible imagined creation.",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.jungle.actions.01",
+      "metadata": "app/src/main/assets/SceneDescriptions/jungle_rainforest/metadata/jungle_001_actions.json",
+      "asset": "SceneDescriptions/jungle_rainforest/canonical/jungle_001_actions.png",
+      "image_sha256": "80a252c56a4c6c7bbd1e6436312bc27e41868f45c16fd2509f7c0af32d071147",
+      "reference_metadata_sha256": "3ce8a3034280b74cad4a00f1520b8640d0a16ffcffd625855e0ca43cbb8a2baf",
+      "unchanged_first": {
+        "prompt": {
+          "en": "What is the monkey doing on the vine?",
+          "de": "Was macht der Affe an der Liane?"
+        },
+        "starter": {
+          "en": "The monkey is…",
+          "de": "Der Affe …"
+        },
+        "words": {
+          "en": [
+            "monkey",
+            "swinging",
+            "vine"
+          ],
+          "de": [
+            "Affe",
+            "schwingt",
+            "Liane"
+          ]
+        },
+        "model": {
+          "en": "The monkey is swinging on the vine.",
+          "de": "Der Affe schwingt an der Liane."
+        },
+        "childExample": {
+          "en": "Monkey.",
+          "de": "Affe."
+        },
+        "guidance": {
+          "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+          "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        }
+      },
+      "before": {
+        "prompt": {
+          "en": "Describe the elephant spraying water.",
+          "de": "Beschreibe den Elefanten, der Wasser spritzt."
+        },
+        "starter": {
+          "en": "The elephant is…",
+          "de": "Der Elefant …"
+        },
+        "words": {
+          "en": [
+            "elephant",
+            "water",
+            "trunk"
+          ],
+          "de": [
+            "Elefant",
+            "Wasser",
+            "Rüssel"
+          ]
+        },
+        "model": {
+          "en": "The elephant is spraying water with its trunk.",
+          "de": "Der Elefant spritzt mit seinem Rüssel Wasser."
+        },
+        "childExample": {
+          "en": "Elephant.",
+          "de": "Elefant."
+        },
+        "guidance": {
+          "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+          "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        }
+      },
+      "after": {
+        "prompt": {
+          "en": "Imagine the elephant could talk. What might it say?",
+          "de": "Stell dir vor, der Elefant könnte sprechen. Was könnte er sagen?"
+        },
+        "starter": {
+          "en": "The elephant could say…",
+          "de": "Der Elefant könnte sagen …"
+        },
+        "words": {
+          "en": [
+            "elephant",
+            "water",
+            "splash"
+          ],
+          "de": [
+            "Elefant",
+            "Wasser",
+            "spritzen"
+          ]
+        },
+        "model": {
+          "en": "The elephant could say, \"Look at my splash!\"",
+          "de": "Der Elefant könnte sagen: „Schau, wie ich spritze!“"
+        },
+        "childExample": {
+          "en": "Look!",
+          "de": "Schau!"
+        },
+        "guidance": {
+          "en": "Start with the elephant spraying water, then invite pretend speech. One word, a gesture or a short phrase is enough. Different ideas are welcome; the model is pretend dialogue and repeating it is optional.",
+          "de": "Mit dem Elefanten beginnen, der Wasser spritzt, und dann ausgedachte Worte anregen. Ein Wort, eine Geste oder ein kurzer Ausdruck reicht. Andere Ideen sind willkommen. Der Beispielsatz ist ausgedachte Rede; Nachsprechen ist freiwillig."
+        }
+      },
+      "learning_purpose": "story",
+      "learning_objective": "Imagination and storytelling",
+      "picture_evidence": "The elephant visibly sprays water. Its proposed speech is explicitly pretend dialogue.",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.mountains.actions.02",
+      "metadata": "app/src/main/assets/SceneDescriptions/mountains_alpine/metadata/mountains_002_actions.json",
+      "asset": "SceneDescriptions/mountains_alpine/canonical/mountains_002_actions.png",
+      "image_sha256": "b45a04233f75a2512f57262a07312ef61ad4cef100c2073baa6b807af54b7e21",
+      "reference_metadata_sha256": "4496cf70eeac9370c7be8041a1045fbe4cdb9ba079f88832c1a8cc7915a4d4a8",
+      "unchanged_first": {
+        "prompt": {
+          "en": "What is the goat doing on the rocks?",
+          "de": "Was macht die Ziege auf den Felsen?"
+        },
+        "starter": {
+          "en": "The goat is…",
+          "de": "Die Ziege …"
+        },
+        "words": {
+          "en": [
+            "goat",
+            "climbing",
+            "rocks"
+          ],
+          "de": [
+            "Ziege",
+            "klettert",
+            "Felsen"
+          ]
+        },
+        "model": {
+          "en": "The goat is climbing on the rocks.",
+          "de": "Die Ziege klettert auf den Felsen."
+        },
+        "childExample": {
+          "en": "Goat.",
+          "de": "Ziege."
+        },
+        "guidance": {
+          "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+          "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        }
+      },
+      "before": {
+        "prompt": {
+          "en": "Tell me what the marmot is doing at its burrow.",
+          "de": "Erzähl mir, was das Murmeltier an seinem Bau macht."
+        },
+        "starter": {
+          "en": "The marmot is…",
+          "de": "Das Murmeltier …"
+        },
+        "words": {
+          "en": [
+            "marmot",
+            "digging",
+            "burrow"
+          ],
+          "de": [
+            "Murmeltier",
+            "gräbt",
+            "Bau"
+          ]
+        },
+        "model": {
+          "en": "The marmot is digging at its burrow.",
+          "de": "Das Murmeltier gräbt an seinem Bau."
+        },
+        "childExample": {
+          "en": "Marmot.",
+          "de": "Murmeltier."
+        },
+        "guidance": {
+          "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+          "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        }
+      },
+      "after": {
+        "prompt": {
+          "en": "What could the marmot do after digging?",
+          "de": "Was könnte das Murmeltier nach dem Graben machen?"
+        },
+        "starter": {
+          "en": "After digging…",
+          "de": "Nach dem Graben …"
+        },
+        "words": {
+          "en": [
+            "marmot",
+            "after",
+            "rest"
+          ],
+          "de": [
+            "Murmeltier",
+            "danach",
+            "ausruhen"
+          ]
+        },
+        "model": {
+          "en": "After digging, the marmot could rest.",
+          "de": "Nach dem Graben könnte sich das Murmeltier ausruhen."
+        },
+        "childExample": {
+          "en": "Rest.",
+          "de": "Ausruhen."
+        },
+        "guidance": {
+          "en": "Begin with the pictured digging and invite one possible next step. A word or gesture is enough. Offer after or next if helpful; the ending is imagined and need not match the model. Repeating it is optional.",
+          "de": "Mit dem Graben im Bild beginnen und einen möglichen nächsten Schritt anregen. Ein Wort oder eine Geste reicht. Bei Bedarf danach oder als Nächstes anbieten. Das Ende ist ausgedacht und muss nicht dem Beispielsatz entsprechen. Nachsprechen ist freiwillig."
+        }
+      },
+      "learning_purpose": "story",
+      "learning_objective": "Sequencing and reasoning",
+      "picture_evidence": "The marmot is digging beside loose earth. Resting afterwards is a possible next step, not a pictured sequence.",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.ocean.reef_actions.01",
+      "metadata": "app/src/main/assets/SceneDescriptions/ocean_underwater/metadata/ocean_001_reef_actions.json",
+      "asset": "SceneDescriptions/ocean_underwater/canonical/ocean_001_reef_actions.png",
+      "image_sha256": "ba0c2f330328787ff0b3f5119d3ca5daf660a1616f3add6c61393d2c682e1ff9",
+      "reference_metadata_sha256": "8976783e753ded6f71e390bbece10de973f42f0ad4c57b9ee5dfc20adaaddd3d",
+      "unchanged_first": {
+        "prompt": {
+          "en": "What is the dolphin doing?",
+          "de": "Was macht der Delfin?"
+        },
+        "starter": {
+          "en": "The dolphin is…",
+          "de": "Der Delfin …"
+        },
+        "words": {
+          "en": [
+            "dolphin",
+            "jumping",
+            "water"
+          ],
+          "de": [
+            "Delfin",
+            "springt",
+            "Wasser"
+          ]
+        },
+        "model": {
+          "en": "The dolphin is jumping out of the water.",
+          "de": "Der Delfin springt aus dem Wasser."
+        },
+        "childExample": {
+          "en": "Dolphin.",
+          "de": "Delfin."
+        },
+        "guidance": {
+          "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+          "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        }
+      },
+      "before": {
+        "prompt": {
+          "en": "Tell me about the crab carrying a shell.",
+          "de": "Erzähl mir von der Krabbe, die eine Muschel trägt."
+        },
+        "starter": {
+          "en": "The crab is carrying…",
+          "de": "Die Krabbe trägt …"
+        },
+        "words": {
+          "en": [
+            "crab",
+            "carrying",
+            "shell"
+          ],
+          "de": [
+            "Krabbe",
+            "trägt",
+            "Muschel"
+          ]
+        },
+        "model": {
+          "en": "The crab is carrying a shell.",
+          "de": "Die Krabbe trägt eine Muschel."
+        },
+        "childExample": {
+          "en": "Crab.",
+          "de": "Krabbe."
+        },
+        "guidance": {
+          "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+          "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        }
+      },
+      "after": {
+        "prompt": {
+          "en": "What might the crab do with the shell next?",
+          "de": "Was könnte die Krabbe als Nächstes mit der Muschel machen?"
+        },
+        "starter": {
+          "en": "The crab might…",
+          "de": "Die Krabbe könnte …"
+        },
+        "words": {
+          "en": [
+            "crab",
+            "shell",
+            "put down"
+          ],
+          "de": [
+            "Krabbe",
+            "Muschel",
+            "ablegen"
+          ]
+        },
+        "model": {
+          "en": "The crab might put the shell on the sand.",
+          "de": "Die Krabbe könnte die Muschel auf den Sand legen."
+        },
+        "childExample": {
+          "en": "Put it down.",
+          "de": "Ablegen."
+        },
+        "guidance": {
+          "en": "Point to the crab and shell if helpful. Invite one possible next action; other ideas are welcome. The model is an imagined possibility, not a fact about the picture, and repeating it is optional.",
+          "de": "Bei Bedarf auf die Krabbe und die Muschel zeigen. Eine mögliche nächste Handlung anregen; andere Ideen sind willkommen. Der Beispielsatz ist eine ausgedachte Möglichkeit und keine Tatsache über das Bild. Nachsprechen ist freiwillig."
+        }
+      },
+      "learning_purpose": "prediction",
+      "learning_objective": "Predictions",
+      "picture_evidence": "The crab holds a shell above the sand. Putting it down is a possible next event, not a pictured outcome.",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.sky.actions.01",
+      "metadata": "app/src/main/assets/SceneDescriptions/sky_flying/metadata/sky_001_actions.json",
+      "asset": "SceneDescriptions/sky_flying/canonical/sky_001_actions.png",
+      "image_sha256": "8ff8ae47f44025eadc35ca16bf5aa79690e206d62b1653d7db2dcdad6023a2e5",
+      "reference_metadata_sha256": "de515524c17d844189dbadf99c073ed574e7a8daab3692fac836e274a6c596fb",
+      "unchanged_first": {
+        "prompt": {
+          "en": "What is the balloon doing beside the upward arrows?",
+          "de": "Was macht der Ballon neben den Pfeilen nach oben?"
+        },
+        "starter": {
+          "en": "The balloon is…",
+          "de": "Der Ballon …"
+        },
+        "words": {
+          "en": [
+            "balloon",
+            "rising",
+            "up"
+          ],
+          "de": [
+            "Ballon",
+            "steigt",
+            "nach oben"
+          ]
+        },
+        "model": {
+          "en": "The balloon is rising into the sky.",
+          "de": "Der Ballon steigt in den Himmel."
+        },
+        "childExample": {
+          "en": "Balloon.",
+          "de": "Ballon."
+        },
+        "guidance": {
+          "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+          "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        }
+      },
+      "before": {
+        "prompt": {
+          "en": "Describe how the eagle is moving through the sky.",
+          "de": "Beschreibe, wie sich der Adler am Himmel bewegt."
+        },
+        "starter": {
+          "en": "The eagle is…",
+          "de": "Der Adler …"
+        },
+        "words": {
+          "en": [
+            "eagle",
+            "gliding",
+            "sky"
+          ],
+          "de": [
+            "Adler",
+            "gleitet",
+            "Himmel"
+          ]
+        },
+        "model": {
+          "en": "The eagle is gliding through the sky.",
+          "de": "Der Adler gleitet durch den Himmel."
+        },
+        "childExample": {
+          "en": "Eagle.",
+          "de": "Adler."
+        },
+        "guidance": {
+          "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+          "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        }
+      },
+      "after": {
+        "prompt": {
+          "en": "How does the eagle look different from the airplane?",
+          "de": "Was sieht beim Adler anders aus als beim Flugzeug?"
+        },
+        "starter": {
+          "en": "The eagle has…",
+          "de": "Der Adler hat …"
+        },
+        "words": {
+          "en": [
+            "feathers",
+            "airplane",
+            "wheels"
+          ],
+          "de": [
+            "Federn",
+            "Flugzeug",
+            "Räder"
+          ]
+        },
+        "model": {
+          "en": "The eagle has feathers. The airplane has wheels.",
+          "de": "Der Adler hat Federn. Das Flugzeug hat Räder."
+        },
+        "childExample": {
+          "en": "Feathers.",
+          "de": "Federn."
+        },
+        "guidance": {
+          "en": "Point to the eagle and airplane together. One visible difference is enough; colour or shape ideas are welcome too. Offer a second contrasting phrase only if useful, without requiring both sentences or repetition.",
+          "de": "Gemeinsam auf den Adler und das Flugzeug zeigen. Ein sichtbarer Unterschied reicht; auch Farben oder Formen sind willkommen. Nur bei Bedarf einen zweiten Satz zum Vergleich anbieten. Beide Sätze und Nachsprechen sind freiwillig."
+        }
+      },
+      "learning_purpose": "properties",
+      "learning_objective": "Describing and comparing",
+      "picture_evidence": "The eagle has visible feathers and the red airplane has visible wheels. Other visible differences are also valid.",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.woodland.actions.02",
+      "metadata": "app/src/main/assets/SceneDescriptions/woodland_forest/metadata/woodland_002_actions.json",
+      "asset": "SceneDescriptions/woodland_forest/canonical/woodland_002_actions.png",
+      "image_sha256": "b1f05b4b90ec5799023b0c5c772449ba6498229b32158acc2f2f3537869d3925",
+      "reference_metadata_sha256": "e0b0be4e3d054098e4dd4a3690d5ba413e16b9aeb612555c1044d3f4b708be21",
+      "unchanged_first": {
+        "prompt": {
+          "en": "What is the squirrel carrying?",
+          "de": "Was trägt das Eichhörnchen?"
+        },
+        "starter": {
+          "en": "The squirrel is carrying…",
+          "de": "Das Eichhörnchen trägt …"
+        },
+        "words": {
+          "en": [
+            "squirrel",
+            "carrying",
+            "acorn"
+          ],
+          "de": [
+            "Eichhörnchen",
+            "trägt",
+            "Eichel"
+          ]
+        },
+        "model": {
+          "en": "The squirrel is carrying an acorn.",
+          "de": "Das Eichhörnchen trägt eine Eichel."
+        },
+        "childExample": {
+          "en": "Squirrel.",
+          "de": "Eichhörnchen."
+        },
+        "guidance": {
+          "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+          "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        }
+      },
+      "before": {
+        "prompt": {
+          "en": "Tell me what the deer is doing at the water.",
+          "de": "Erzähl mir, was das Reh am Wasser macht."
+        },
+        "starter": {
+          "en": "The deer is…",
+          "de": "Das Reh …"
+        },
+        "words": {
+          "en": [
+            "deer",
+            "drinking",
+            "water"
+          ],
+          "de": [
+            "Reh",
+            "trinkt",
+            "Wasser"
+          ]
+        },
+        "model": {
+          "en": "The deer is drinking water.",
+          "de": "Das Reh trinkt Wasser."
+        },
+        "childExample": {
+          "en": "Deer.",
+          "de": "Reh."
+        },
+        "guidance": {
+          "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+          "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        }
+      },
+      "after": {
+        "prompt": {
+          "en": "Why might the deer come to the water?",
+          "de": "Warum könnte das Reh zum Wasser kommen?"
+        },
+        "starter": {
+          "en": "The deer might…",
+          "de": "Das Reh könnte …"
+        },
+        "words": {
+          "en": [
+            "deer",
+            "thirsty",
+            "drink"
+          ],
+          "de": [
+            "Reh",
+            "durstig",
+            "trinken"
+          ]
+        },
+        "model": {
+          "en": "The deer might be thirsty and want a drink.",
+          "de": "Das Reh könnte durstig sein und trinken wollen."
+        },
+        "childExample": {
+          "en": "Thirsty.",
+          "de": "Durstig."
+        },
+        "guidance": {
+          "en": "Point to the deer at the water first. Offer one possible reason if helpful and accept another idea or a short response. We cannot know its intention from the picture; repeating the model is optional.",
+          "de": "Zuerst auf das Reh am Wasser zeigen. Bei Bedarf eine mögliche Begründung anbieten und andere Ideen oder kurze Antworten annehmen. Seine Absicht können wir aus dem Bild nicht sicher erkennen. Nachsprechen ist freiwillig."
+        }
+      },
+      "learning_purpose": "cause",
+      "learning_objective": "Cause and effect",
+      "picture_evidence": "The deer has its muzzle at the water. Thirst is a possible reason for drinking, not a visible or certain intention.",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    },
+    {
+      "scene_id": "scene.zoo.actions.02",
+      "metadata": "app/src/main/assets/SceneDescriptions/zoo_wildlife/metadata/zoo_002_actions.json",
+      "asset": "SceneDescriptions/zoo_wildlife/canonical/zoo_002_actions.png",
+      "image_sha256": "2d42f649eca7c5171026b32316720d10bb3a6e4559703f4cfab6342ca8551793",
+      "reference_metadata_sha256": "4956d26485e64309dc74834b776be3e6fb53aae8f28e3b8717f71330e26b34ea",
+      "unchanged_first": {
+        "prompt": {
+          "en": "How is the penguin moving through the water?",
+          "de": "Wie bewegt sich der Pinguin durch das Wasser?"
+        },
+        "starter": {
+          "en": "The penguin is…",
+          "de": "Der Pinguin …"
+        },
+        "words": {
+          "en": [
+            "penguin",
+            "swimming",
+            "water"
+          ],
+          "de": [
+            "Pinguin",
+            "schwimmt",
+            "Wasser"
+          ]
+        },
+        "model": {
+          "en": "The penguin is swimming through the water.",
+          "de": "Der Pinguin schwimmt durch das Wasser."
+        },
+        "childExample": {
+          "en": "Penguin.",
+          "de": "Pinguin."
+        },
+        "guidance": {
+          "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+          "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        }
+      },
+      "before": {
+        "prompt": {
+          "en": "Describe the monkey climbing in this zoo picture.",
+          "de": "Beschreibe den kletternden Affen auf diesem Zoobild."
+        },
+        "starter": {
+          "en": "The monkey is…",
+          "de": "Der Affe …"
+        },
+        "words": {
+          "en": [
+            "monkey",
+            "climbing",
+            "frame"
+          ],
+          "de": [
+            "Affe",
+            "klettert",
+            "Gerüst"
+          ]
+        },
+        "model": {
+          "en": "The monkey is climbing the frame.",
+          "de": "Der Affe klettert am Gerüst."
+        },
+        "childExample": {
+          "en": "Monkey.",
+          "de": "Affe."
+        },
+        "guidance": {
+          "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+          "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        }
+      },
+      "after": {
+        "prompt": {
+          "en": "Where might the monkey go next?",
+          "de": "Wohin könnte der Affe als Nächstes gehen?"
+        },
+        "starter": {
+          "en": "The monkey might…",
+          "de": "Der Affe könnte …"
+        },
+        "words": {
+          "en": [
+            "monkey",
+            "climb down",
+            "ground"
+          ],
+          "de": [
+            "Affe",
+            "herunterklettern",
+            "Boden"
+          ]
+        },
+        "model": {
+          "en": "The monkey might climb down to the ground.",
+          "de": "Der Affe könnte auf den Boden herunterklettern."
+        },
+        "childExample": {
+          "en": "Down.",
+          "de": "Runter."
+        },
+        "guidance": {
+          "en": "Point to the monkey and a possible destination if helpful. Accept another next movement, a gesture or a short phrase. The model is one prediction, not a pictured outcome, and repeating it is optional.",
+          "de": "Bei Bedarf auf den Affen und ein mögliches Ziel zeigen. Andere nächste Bewegungen, eine Geste oder einen kurzen Ausdruck annehmen. Der Beispielsatz ist eine Vermutung und zeigt kein tatsächliches Ergebnis im Bild. Nachsprechen ist freiwillig."
+        }
+      },
+      "learning_purpose": "prediction",
+      "learning_objective": "Predictions",
+      "picture_evidence": "The monkey is on the climbing frame and the ground is visible below. Climbing down is a possible next movement.",
+      "visual_acceptance": "TARGETED_DESKTOP_REVIEW_NOT_DEVICE_ACCEPTANCE",
+      "language_acceptance": "NATIVE_SPEAKER_REVIEW_PENDING"
+    }
+  ]
+}

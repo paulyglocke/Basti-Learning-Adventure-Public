@@ -401,8 +401,8 @@
         "de": "Der Frosch ist auf dem Blatt."
       },
       "childExample": {
-        "en": "Frog.",
-        "de": "Frosch."
+        "en": "On the leaf.",
+        "de": "Auf dem Blatt."
       },
       "guidance": {
         "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
@@ -411,8 +411,8 @@
     },
     {
       "prompt": {
-        "en": "Tell me where the tiger is behind the leaves.",
-        "de": "Erzähl mir, wo der Tiger bei den Blättern ist."
+        "en": "Where is the tiger?",
+        "de": "Wo ist der Tiger?"
       },
       "starter": {
         "en": "The tiger is behind…",
@@ -435,12 +435,12 @@
         "de": "Der Tiger ist hinter den Blättern."
       },
       "childExample": {
-        "en": "Tiger.",
-        "de": "Tiger."
+        "en": "Behind the leaves.",
+        "de": "Hinter den Blättern."
       },
       "guidance": {
-        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
-        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+        "en": "Accept pointing or a short answer first. If needed, point to the leaves as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+        "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf die Blätter als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
       }
     }
   ]

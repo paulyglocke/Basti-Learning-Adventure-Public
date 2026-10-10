@@ -325,8 +325,8 @@
         "de": "Der Affe schwingt an der Liane."
       },
       "childExample": {
-        "en": "Monkey.",
-        "de": "Affe."
+        "en": "Swinging.",
+        "de": "Schwingt."
       },
       "guidance": {
         "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
@@ -335,36 +335,36 @@
     },
     {
       "prompt": {
-        "en": "Describe the elephant spraying water.",
-        "de": "Beschreibe den Elefanten, der Wasser spritzt."
+        "en": "Imagine the elephant could talk. What might it say?",
+        "de": "Stell dir vor, der Elefant könnte sprechen. Was könnte er sagen?"
       },
       "starter": {
-        "en": "The elephant is…",
-        "de": "Der Elefant …"
+        "en": "The elephant could say…",
+        "de": "Der Elefant könnte sagen …"
       },
       "words": {
         "en": [
           "elephant",
           "water",
-          "trunk"
+          "splash"
         ],
         "de": [
           "Elefant",
           "Wasser",
-          "Rüssel"
+          "spritzen"
         ]
       },
       "model": {
-        "en": "The elephant is spraying water with its trunk.",
-        "de": "Der Elefant spritzt mit seinem Rüssel Wasser."
+        "en": "The elephant could say, \"Look at my splash!\"",
+        "de": "Der Elefant könnte sagen: „Schau, wie ich spritze!“"
       },
       "childExample": {
-        "en": "Elephant.",
-        "de": "Elefant."
+        "en": "Look!",
+        "de": "Schau!"
       },
       "guidance": {
-        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
-        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        "en": "Start with the elephant spraying water, then invite pretend speech. One word, a gesture or a short phrase is enough. Different ideas are welcome; the model is pretend dialogue and repeating it is optional.",
+        "de": "Mit dem Elefanten beginnen, der Wasser spritzt, und dann ausgedachte Worte anregen. Ein Wort, eine Geste oder ein kurzer Ausdruck reicht. Andere Ideen sind willkommen. Der Beispielsatz ist ausgedachte Rede; Nachsprechen ist freiwillig."
       }
     }
   ]

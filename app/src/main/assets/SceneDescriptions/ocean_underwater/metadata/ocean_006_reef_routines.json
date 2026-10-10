@@ -172,8 +172,8 @@
         "de": "Die Schildkröte frisst Seegras."
       },
       "childExample": {
-        "en": "Turtle.",
-        "de": "Schildkröte."
+        "en": "Seaweed.",
+        "de": "Seegras."
       },
       "guidance": {
         "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
@@ -182,8 +182,8 @@
     },
     {
       "prompt": {
-        "en": "Tell me where the octopus is beside the open chest.",
-        "de": "Erzähl mir, wo der Oktopus bei der offenen Truhe ist."
+        "en": "Where is the octopus?",
+        "de": "Wo ist der Oktopus?"
       },
       "starter": {
         "en": "The octopus is beside…",
@@ -206,12 +206,12 @@
         "de": "Der Oktopus ist neben der offenen Truhe."
       },
       "childExample": {
-        "en": "Octopus.",
-        "de": "Oktopus."
+        "en": "Beside the chest.",
+        "de": "Neben der Truhe."
       },
       "guidance": {
-        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
-        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+        "en": "Accept pointing or a short answer first. If needed, point to the open chest as a reference without supplying the position. Accept other accurate locations in the picture. Offer the model as one example; repetition is optional.",
+        "de": "Zuerst Zeigen oder eine kurze Antwort annehmen. Bei Bedarf auf die offene Truhe als Bezugspunkt zeigen, ohne die Position vorzugeben. Andere passende Ortsangaben zum Bild ebenfalls annehmen. Den Beispielsatz anbieten; Nachsprechen ist freiwillig."
       }
     }
   ]

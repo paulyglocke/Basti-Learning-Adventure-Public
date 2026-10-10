@@ -330,8 +330,8 @@
         "de": "Die Ziege klettert auf den Felsen."
       },
       "childExample": {
-        "en": "Goat.",
-        "de": "Ziege."
+        "en": "Climbing.",
+        "de": "Klettert."
       },
       "guidance": {
         "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
@@ -340,36 +340,36 @@
     },
     {
       "prompt": {
-        "en": "Tell me what the marmot is doing at its burrow.",
-        "de": "Erzähl mir, was das Murmeltier an seinem Bau macht."
+        "en": "What could the marmot do after digging?",
+        "de": "Was könnte das Murmeltier nach dem Graben machen?"
       },
       "starter": {
-        "en": "The marmot is…",
-        "de": "Das Murmeltier …"
+        "en": "After digging…",
+        "de": "Nach dem Graben …"
       },
       "words": {
         "en": [
           "marmot",
-          "digging",
-          "burrow"
+          "after",
+          "rest"
         ],
         "de": [
           "Murmeltier",
-          "gräbt",
-          "Bau"
+          "danach",
+          "ausruhen"
         ]
       },
       "model": {
-        "en": "The marmot is digging at its burrow.",
-        "de": "Das Murmeltier gräbt an seinem Bau."
+        "en": "After digging, the marmot could rest.",
+        "de": "Nach dem Graben könnte sich das Murmeltier ausruhen."
       },
       "childExample": {
-        "en": "Marmot.",
-        "de": "Murmeltier."
+        "en": "Rest.",
+        "de": "Ausruhen."
       },
       "guidance": {
-        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
-        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+        "en": "Begin with the pictured digging and invite one possible next step. A word or gesture is enough. Offer after or next if helpful; the ending is imagined and need not match the model. Repeating it is optional.",
+        "de": "Mit dem Graben im Bild beginnen und einen möglichen nächsten Schritt anregen. Ein Wort oder eine Geste reicht. Bei Bedarf danach oder als Nächstes anbieten. Das Ende ist ausgedacht und muss nicht dem Beispielsatz entsprechen. Nachsprechen ist freiwillig."
       }
     }
   ]

@@ -167,8 +167,8 @@
         "de": "Der Hund könnte sich müde und ruhig fühlen."
       },
       "childExample": {
-        "en": "Dog.",
-        "de": "Hund."
+        "en": "Sleepy.",
+        "de": "Müde."
       },
       "guidance": {
         "en": "Offer a feeling word if needed. Different feelings are possible; do not infer one definite feeling from the picture or require an explanation.",
@@ -201,8 +201,8 @@
         "de": "Ich mag es, eine Weile ruhig zu sitzen."
       },
       "childExample": {
-        "en": "Quiet.",
-        "de": "Ruhe."
+        "en": "Sitting quietly.",
+        "de": "Ruhig sitzen."
       },
       "guidance": {
         "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",

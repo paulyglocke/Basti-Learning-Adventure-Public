@@ -7,8 +7,8 @@
   },
   "status": "approved",
   "purpose": {
-    "en": "Adjectives, visible features and counting a small group.",
-    "de": "Eigenschaftswörter, sichtbare Merkmale und eine kleine Gruppe zählen."
+    "en": "Visible features, animal positions and counting one squirrel.",
+    "de": "Sichtbare Merkmale, die Positionen der Tiere und ein Eichhörnchen zählen."
   },
   "asset": "canonical/woodland_006_compare_groups.png",
   "promptFile": "prompts/woodland_006_compare_groups.md",
@@ -89,8 +89,8 @@
         "de": "Das Kaninchen hat lange Ohren."
       },
       {
-        "en": "The fox has a fluffy tail.",
-        "de": "Der Fuchs hat einen flauschigen Schwanz."
+        "en": "The fox is in the den.",
+        "de": "Der Fuchs ist im Bau."
       },
       {
         "en": "The owl has big eyes.",
@@ -135,11 +135,12 @@
     }
   },
   "visualAudit": [
-    "Large deer in the centre-left.",
-    "Small rabbit with long ears in the lower left.",
-    "Fox with a big fluffy tail on the right.",
-    "Owl with big eyes on a branch.",
-    "Exactly three squirrels grouped together."
+    "One deer drinking at the stream on the right.",
+    "One rabbit beside its burrow in the lower left.",
+    "One fox resting inside the den on the lower right; its tail is not visible.",
+    "One owl in a tree hole on the upper left.",
+    "One squirrel holding an acorn on a stump.",
+    "One hedgehog beside a pile of leaves in the foreground."
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
@@ -172,8 +173,8 @@
         "de": "Die Eule hat große Augen."
       },
       "childExample": {
-        "en": "Owl.",
-        "de": "Eule."
+        "en": "Big eyes.",
+        "de": "Große Augen."
       },
       "guidance": {
         "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
@@ -182,36 +183,36 @@
     },
     {
       "prompt": {
-        "en": "Describe the fox's fluffy tail.",
-        "de": "Beschreibe den flauschigen Schwanz des Fuchses."
+        "en": "Where is the fox resting?",
+        "de": "Wo ruht sich der Fuchs aus?"
       },
       "starter": {
-        "en": "The fox has…",
-        "de": "Der Fuchs hat …"
+        "en": "The fox is…",
+        "de": "Der Fuchs ist …"
       },
       "words": {
         "en": [
           "fox",
-          "fluffy",
-          "tail"
+          "in",
+          "den"
         ],
         "de": [
           "Fuchs",
-          "flauschig",
-          "Schwanz"
+          "in",
+          "Bau"
         ]
       },
       "model": {
-        "en": "The fox has a fluffy tail.",
-        "de": "Der Fuchs hat einen flauschigen Schwanz."
+        "en": "The fox is in the den.",
+        "de": "Der Fuchs ist im Bau."
       },
       "childExample": {
-        "en": "Fox.",
-        "de": "Fuchs."
+        "en": "In the den.",
+        "de": "Im Bau."
       },
       "guidance": {
-        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
-        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+        "en": "Let the child point to the fox first. Add one location phrase using the den; another accurate description is welcome and repeating the model is optional.",
+        "de": "Das Kind darf zuerst auf den Fuchs zeigen. Mit dem Bau eine Ortsangabe ergänzen. Andere passende Beschreibungen sind willkommen; Nachsprechen ist freiwillig."
       }
     }
   ]

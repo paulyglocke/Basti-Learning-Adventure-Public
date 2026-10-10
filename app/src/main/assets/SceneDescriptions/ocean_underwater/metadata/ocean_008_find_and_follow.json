@@ -193,36 +193,36 @@
     },
     {
       "prompt": {
-        "en": "Give me a clue about the starfish so I can find it.",
-        "de": "Gib mir einen Hinweis zum Seestern, damit ich ihn finde."
+        "en": "Tell me what the starfish looks like so I can find it.",
+        "de": "Beschreibe den Seestern, damit ich ihn finden kann."
       },
       "starter": {
-        "en": "The starfish is…",
-        "de": "Der Seestern ist …"
+        "en": "Look for…",
+        "de": "Such …"
       },
       "words": {
         "en": [
-          "starfish",
-          "sand",
-          "on"
+          "orange",
+          "star",
+          "shape"
         ],
         "de": [
-          "Seestern",
-          "Sand",
-          "auf"
+          "orange",
+          "Stern",
+          "Form"
         ]
       },
       "model": {
-        "en": "The starfish is on the sand.",
-        "de": "Der Seestern ist auf dem Sand."
+        "en": "Look for the orange animal shaped like a star.",
+        "de": "Such das orange Tier, das wie ein Stern aussieht."
       },
       "childExample": {
-        "en": "Starfish.",
-        "de": "Seestern."
+        "en": "Orange.",
+        "de": "Orange."
       },
       "guidance": {
-        "en": "Pointing or one word is enough. Name the pictured subject together, then offer one short sentence without asking for repetition.",
-        "de": "Zeigen oder ein Wort reicht. Den Bildinhalt gemeinsam benennen und einen kurzen Satz anbieten, ohne Wiederholung zu verlangen."
+        "en": "Invite a colour or shape clue, then let the grown-up find the starfish. Accept pointing or its name if a clue is too difficult; gently offer one visible detail. Different accurate clues are welcome. Repetition is optional.",
+        "de": "Ein Farb- oder Formmerkmal als Hinweis anregen. Danach darf die erwachsene Person den Seestern suchen. Zeigen oder den Namen annehmen, wenn ein Hinweis zu schwierig ist, und behutsam ein sichtbares Merkmal anbieten. Verschiedene passende Hinweise sind willkommen. Nachsprechen ist freiwillig."
       }
     }
   ]
