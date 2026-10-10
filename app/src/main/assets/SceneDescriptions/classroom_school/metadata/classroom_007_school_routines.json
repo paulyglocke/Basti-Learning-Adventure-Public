@@ -135,5 +135,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_3"
+  "batch": "wave_3_batch_3",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What could the child say when giving the picture to the teacher?",
+        "de": "Was könnte das Kind sagen, wenn es der Lehrkraft das Bild gibt?"
+      },
+      "starter": {
+        "en": "The child could say…",
+        "de": "Das Kind könnte sagen …"
+      },
+      "words": {
+        "en": [
+          "picture",
+          "give",
+          "say"
+        ],
+        "de": [
+          "Bild",
+          "geben",
+          "sagen"
+        ]
+      },
+      "model": {
+        "en": "The child could say, \"Here is my picture.\"",
+        "de": "Das Kind könnte sagen: „Hier ist mein Bild.“"
+      },
+      "childExample": {
+        "en": "Picture.",
+        "de": "Bild."
+      },
+      "guidance": {
+        "en": "Invite pretend speech or one helpful action. A short phrase or gesture is enough; model friendly wording without requiring the child to repeat it.",
+        "de": "Ein kleines Rollenspiel oder eine hilfreiche Handlung anregen. Ein kurzer Ausdruck oder eine Geste reicht. Freundliche Worte anbieten, ohne Nachsprechen zu verlangen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "What could happen after the child packs the bag?",
+        "de": "Was könnte passieren, nachdem das Kind die Tasche gepackt hat?"
+      },
+      "starter": {
+        "en": "Next, the child could…",
+        "de": "Als Nächstes könnte das Kind …"
+      },
+      "words": {
+        "en": [
+          "bag",
+          "next",
+          "home"
+        ],
+        "de": [
+          "Tasche",
+          "als Nächstes",
+          "zu Hause"
+        ]
+      },
+      "model": {
+        "en": "Next, the child could get ready to go home.",
+        "de": "Als Nächstes könnte sich das Kind bereit machen, nach Hause zu gehen."
+      },
+      "childExample": {
+        "en": "Bag.",
+        "de": "Tasche."
+      },
+      "guidance": {
+        "en": "A word or one event can start the story. Offer first or next if helpful; do not require a complete story or a fixed ending.",
+        "de": "Ein Wort oder ein Ereignis kann die Geschichte beginnen. Bei Bedarf zuerst oder danach anbieten. Keine vollständige Geschichte und kein festes Ende verlangen."
+      }
+    }
+  ]
 }

@@ -135,5 +135,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_2"
+  "batch": "wave_3_batch_2",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "How could the children help each other clean up?",
+        "de": "Wie könnten die Kinder einander beim Aufräumen helfen?"
+      },
+      "starter": {
+        "en": "They could…",
+        "de": "Sie könnten …"
+      },
+      "words": {
+        "en": [
+          "bag",
+          "rubbish",
+          "together"
+        ],
+        "de": [
+          "Beutel",
+          "Müll",
+          "zusammen"
+        ]
+      },
+      "model": {
+        "en": "One child could hold the bag while another picks up rubbish.",
+        "de": "Ein Kind könnte den Beutel halten, während ein anderes Müll aufhebt."
+      },
+      "childExample": {
+        "en": "Bag.",
+        "de": "Beutel."
+      },
+      "guidance": {
+        "en": "Invite pretend speech or one helpful action. A short phrase or gesture is enough; model friendly wording without requiring the child to repeat it.",
+        "de": "Ein kleines Rollenspiel oder eine hilfreiche Handlung anregen. Ein kurzer Ausdruck oder eine Geste reicht. Freundliche Worte anbieten, ohne Nachsprechen zu verlangen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "What could happen after a child picks up the bottle?",
+        "de": "Was könnte passieren, nachdem ein Kind die Flasche aufgehoben hat?"
+      },
+      "starter": {
+        "en": "Next, the child could…",
+        "de": "Als Nächstes könnte das Kind …"
+      },
+      "words": {
+        "en": [
+          "bottle",
+          "next",
+          "bin"
+        ],
+        "de": [
+          "Flasche",
+          "als Nächstes",
+          "Mülleimer"
+        ]
+      },
+      "model": {
+        "en": "Next, the child could put the bottle in the bin.",
+        "de": "Als Nächstes könnte das Kind die Flasche in den Mülleimer werfen."
+      },
+      "childExample": {
+        "en": "Bottle.",
+        "de": "Flasche."
+      },
+      "guidance": {
+        "en": "A word or one event can start the story. Offer first or next if helpful; do not require a complete story or a fixed ending.",
+        "de": "Ein Wort oder ein Ereignis kann die Geschichte beginnen. Bei Bedarf zuerst oder danach anbieten. Keine vollständige Geschichte und kein festes Ende verlangen."
+      }
+    }
+  ]
 }

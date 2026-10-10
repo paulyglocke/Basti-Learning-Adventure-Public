@@ -159,5 +159,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_1"
+  "batch": "wave_3_batch_1",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Which jungle action in this picture would you like to pretend to do?",
+        "de": "Welche Handlung auf diesem Dschungelbild würdest du gern nachmachen?"
+      },
+      "starter": {
+        "en": "I would like to…",
+        "de": "Ich würde gern …"
+      },
+      "words": {
+        "en": [
+          "tiger",
+          "walk",
+          "pretend"
+        ],
+        "de": [
+          "Tiger",
+          "gehen",
+          "nachmachen"
+        ]
+      },
+      "model": {
+        "en": "I would like to walk like the tiger.",
+        "de": "Ich würde gern wie der Tiger gehen."
+      },
+      "childExample": {
+        "en": "Tiger.",
+        "de": "Tiger."
+      },
+      "guidance": {
+        "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",
+        "de": "Einen Wunsch, ein ausgedachtes Beispiel oder fehlende Erfahrung annehmen. Der Beispielsatz ist nur eine Möglichkeit. Das Kind muss ihn nicht teilen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "How might it feel to be splashed by the elephant's water?",
+        "de": "Wie könnte es sich anfühlen, vom Wasser des Elefanten angespritzt zu werden?"
+      },
+      "starter": {
+        "en": "It might feel…",
+        "de": "Es könnte sich … anfühlen."
+      },
+      "words": {
+        "en": [
+          "water",
+          "cool",
+          "surprise"
+        ],
+        "de": [
+          "Wasser",
+          "kühl",
+          "Überraschung"
+        ]
+      },
+      "model": {
+        "en": "It might feel cool and surprising.",
+        "de": "Es könnte sich kühl anfühlen und mich überraschen."
+      },
+      "childExample": {
+        "en": "Water.",
+        "de": "Wasser."
+      },
+      "guidance": {
+        "en": "Offer a feeling word if needed. Different feelings are possible; do not infer one definite feeling from the picture or require an explanation.",
+        "de": "Bei Bedarf ein Wort für ein Gefühl anbieten. Verschiedene Gefühle sind möglich. Aus dem Bild kein bestimmtes Gefühl ableiten und keine Begründung verlangen."
+      }
+    }
+  ]
 }

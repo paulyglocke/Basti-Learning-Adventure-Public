@@ -169,5 +169,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_1"
+  "batch": "wave_3_batch_1",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What might the turtle do when it reaches the cave?",
+        "de": "Was könnte die Schildkröte machen, wenn sie an der Höhle ankommt?"
+      },
+      "starter": {
+        "en": "The turtle might…",
+        "de": "Die Schildkröte könnte …"
+      },
+      "words": {
+        "en": [
+          "turtle",
+          "seaweed",
+          "put down"
+        ],
+        "de": [
+          "Schildkröte",
+          "Seegras",
+          "ablegen"
+        ]
+      },
+      "model": {
+        "en": "The turtle might put the seaweed down.",
+        "de": "Die Schildkröte könnte das Seegras ablegen."
+      },
+      "childExample": {
+        "en": "Turtle.",
+        "de": "Schildkröte."
+      },
+      "guidance": {
+        "en": "Start with something visible. Invite one possible next event; invented ideas are welcome and are not facts about the picture.",
+        "de": "Mit etwas Sichtbarem beginnen. Ein mögliches nächstes Ereignis anregen. Ausgedachte Ideen sind willkommen und keine Tatsachen über das Bild."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Tell me about the turtle and the fish following it.",
+        "de": "Erzähl mir von der Schildkröte und den Fischen, die ihr folgen."
+      },
+      "starter": {
+        "en": "The turtle is…",
+        "de": "Die Schildkröte …"
+      },
+      "words": {
+        "en": [
+          "turtle",
+          "seaweed",
+          "following"
+        ],
+        "de": [
+          "Schildkröte",
+          "Seegras",
+          "folgen"
+        ]
+      },
+      "model": {
+        "en": "The turtle is bringing seaweed, and two fish are following it.",
+        "de": "Die Schildkröte bringt Seegras. Zwei Fische folgen ihr."
+      },
+      "childExample": {
+        "en": "Turtle.",
+        "de": "Schildkröte."
+      },
+      "guidance": {
+        "en": "A word or one event can start the story. Offer first or next if helpful; do not require a complete story or a fixed ending.",
+        "de": "Ein Wort oder ein Ereignis kann die Geschichte beginnen. Bei Bedarf zuerst oder danach anbieten. Keine vollständige Geschichte und kein festes Ende verlangen."
+      }
+    }
+  ]
 }

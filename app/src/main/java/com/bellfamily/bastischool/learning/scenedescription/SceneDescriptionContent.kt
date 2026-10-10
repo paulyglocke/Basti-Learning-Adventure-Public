@@ -49,6 +49,13 @@ enum class SceneSupportKind {
 }
 data class SceneSupportGroup(val kind: SceneSupportKind, val lines: SceneLines)
 data class SceneExpansion(val child: SceneText, val adult: SceneText)
+/** One explicitly paired conversation invitation and its matching optional support. */
+class SceneTellMePrompt(val prompt: SceneText, val starter: SceneText, val words: SceneLines, val model: SceneText, val childExample: SceneText, val guidance: SceneText) {
+    init {
+        require(prompt.de != null && starter.de != null && model.de != null && childExample.de != null && guidance.de != null)
+        require(words.en.size <= 3 && words.de != null && words.de.size <= 3)
+    }
+}
 class SceneAdultSupport(
     val principle: SceneText? = null,
     val focus: SceneText? = null,
@@ -80,12 +87,17 @@ class SceneDescription(
     val adultSupport: SceneAdultSupport,
     /** Source review limitation, not child-facing instructions or an automatic answer rule. */
     val reviewCaution: SceneText? = null,
+    tellMePrompts: List<SceneTellMePrompt> = emptyList(),
 ) {
     val status = SceneProductionStatus.APPROVED
     val primaryFocus = frozen(primaryFocus)
     val secondaryFocus = frozen(secondaryFocus)
     val targets = frozen(targets)
+    val tellMePrompts = frozen(tellMePrompts)
     init {
+        require(tellMePrompts.isEmpty() || tellMePrompts.size in 2..3)
+        require(tellMePrompts.map { it.prompt.en }.distinct().size == tellMePrompts.size)
+        require(tellMePrompts.map { it.prompt.de }.distinct().size == tellMePrompts.size)
         val prefix = "SceneDescriptions/${categoryId.value}/"
         require(image.id == id.imageId)
         require(image.path.matches(Regex(Regex.escape(prefix) + "canonical/[a-z0-9_]+\\.png")))
@@ -102,7 +114,7 @@ class SceneDescription(
 
 /** Separate from quiz ContentRepository: open-ended scenes do not require invented bilingual speech. */
 class SceneDescriptionRepository(categories: List<SceneCategory>, scenes: List<SceneDescription>) {
-    val version = ContentVersion(1, 4)
+    val version = ContentVersion(1, 5)
     private val categoryRecords = frozen(categories)
     private val records = frozen(scenes)
     init {

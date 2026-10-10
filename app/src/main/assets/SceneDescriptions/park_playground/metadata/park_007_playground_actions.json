@@ -139,5 +139,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_2"
+  "batch": "wave_3_batch_2",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What might the child on the rope bridge do next?",
+        "de": "Was könnte das Kind auf der Seilbrücke als Nächstes machen?"
+      },
+      "starter": {
+        "en": "The child might…",
+        "de": "Das Kind könnte …"
+      },
+      "words": {
+        "en": [
+          "child",
+          "bridge",
+          "walk"
+        ],
+        "de": [
+          "Kind",
+          "Brücke",
+          "gehen"
+        ]
+      },
+      "model": {
+        "en": "The child might walk across the bridge.",
+        "de": "Das Kind könnte über die Brücke gehen."
+      },
+      "childExample": {
+        "en": "Child.",
+        "de": "Kind."
+      },
+      "guidance": {
+        "en": "Start with something visible. Invite one possible next event; invented ideas are welcome and are not facts about the picture.",
+        "de": "Mit etwas Sichtbarem beginnen. Ein mögliches nächstes Ereignis anregen. Ausgedachte Ideen sind willkommen und keine Tatsachen über das Bild."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Tell me about the child playing in the sandbox.",
+        "de": "Erzähl mir von dem Kind, das im Sandkasten spielt."
+      },
+      "starter": {
+        "en": "The child is…",
+        "de": "Das Kind …"
+      },
+      "words": {
+        "en": [
+          "child",
+          "playing",
+          "sandbox"
+        ],
+        "de": [
+          "Kind",
+          "spielt",
+          "Sandkasten"
+        ]
+      },
+      "model": {
+        "en": "The child is playing in the sandbox.",
+        "de": "Das Kind spielt im Sandkasten."
+      },
+      "childExample": {
+        "en": "Child.",
+        "de": "Kind."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    }
+  ]
 }

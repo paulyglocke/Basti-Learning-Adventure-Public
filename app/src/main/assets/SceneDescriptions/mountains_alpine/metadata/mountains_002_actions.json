@@ -302,5 +302,75 @@
       "noTextOrUI": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What is the goat doing on the rocks?",
+        "de": "Was macht die Ziege auf den Felsen?"
+      },
+      "starter": {
+        "en": "The goat is…",
+        "de": "Die Ziege …"
+      },
+      "words": {
+        "en": [
+          "goat",
+          "climbing",
+          "rocks"
+        ],
+        "de": [
+          "Ziege",
+          "klettert",
+          "Felsen"
+        ]
+      },
+      "model": {
+        "en": "The goat is climbing on the rocks.",
+        "de": "Die Ziege klettert auf den Felsen."
+      },
+      "childExample": {
+        "en": "Goat.",
+        "de": "Ziege."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Tell me what the marmot is doing at its burrow.",
+        "de": "Erzähl mir, was das Murmeltier an seinem Bau macht."
+      },
+      "starter": {
+        "en": "The marmot is…",
+        "de": "Das Murmeltier …"
+      },
+      "words": {
+        "en": [
+          "marmot",
+          "digging",
+          "burrow"
+        ],
+        "de": [
+          "Murmeltier",
+          "gräbt",
+          "Bau"
+        ]
+      },
+      "model": {
+        "en": "The marmot is digging at its burrow.",
+        "de": "Das Murmeltier gräbt an seinem Bau."
+      },
+      "childExample": {
+        "en": "Marmot.",
+        "de": "Murmeltier."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    }
+  ]
 }

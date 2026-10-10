@@ -159,5 +159,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_2"
+  "batch": "wave_2_batch_2",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "How could the two children build the sandcastle together?",
+        "de": "Wie könnten die beiden Kinder zusammen die Sandburg bauen?"
+      },
+      "starter": {
+        "en": "They could…",
+        "de": "Sie könnten …"
+      },
+      "words": {
+        "en": [
+          "sandcastle",
+          "dig",
+          "together"
+        ],
+        "de": [
+          "Sandburg",
+          "graben",
+          "zusammen"
+        ]
+      },
+      "model": {
+        "en": "One child could dig while the other builds.",
+        "de": "Ein Kind könnte graben, während das andere baut."
+      },
+      "childExample": {
+        "en": "Sandcastle.",
+        "de": "Sandburg."
+      },
+      "guidance": {
+        "en": "Invite pretend speech or one helpful action. A short phrase or gesture is enough; model friendly wording without requiring the child to repeat it.",
+        "de": "Ein kleines Rollenspiel oder eine hilfreiche Handlung anregen. Ein kurzer Ausdruck oder eine Geste reicht. Freundliche Worte anbieten, ohne Nachsprechen zu verlangen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "How might the child on the swing feel?",
+        "de": "Wie könnte sich das Kind auf der Schaukel fühlen?"
+      },
+      "starter": {
+        "en": "The child might feel…",
+        "de": "Das Kind könnte sich … fühlen."
+      },
+      "words": {
+        "en": [
+          "child",
+          "swing",
+          "excited"
+        ],
+        "de": [
+          "Kind",
+          "Schaukel",
+          "aufgeregt"
+        ]
+      },
+      "model": {
+        "en": "The child might feel excited on the swing.",
+        "de": "Das Kind könnte auf der Schaukel aufgeregt sein."
+      },
+      "childExample": {
+        "en": "Child.",
+        "de": "Kind."
+      },
+      "guidance": {
+        "en": "Offer a feeling word if needed. Different feelings are possible; do not infer one definite feeling from the picture or require an explanation.",
+        "de": "Bei Bedarf ein Wort für ein Gefühl anbieten. Verschiedene Gefühle sind möglich. Aus dem Bild kein bestimmtes Gefühl ableiten und keine Begründung verlangen."
+      }
+    }
+  ]
 }

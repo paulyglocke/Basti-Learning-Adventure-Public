@@ -159,5 +159,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_1"
+  "batch": "wave_3_batch_1",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Give me a clue to help me find the animal under the leaf.",
+        "de": "Gib mir einen Hinweis, damit ich das Tier unter dem Blatt finde."
+      },
+      "starter": {
+        "en": "Look under…",
+        "de": "Schau unter …"
+      },
+      "words": {
+        "en": [
+          "frog",
+          "green",
+          "under"
+        ],
+        "de": [
+          "Frosch",
+          "grün",
+          "unter"
+        ]
+      },
+      "model": {
+        "en": "Look under the leaf for the green frog.",
+        "de": "Schau unter das Blatt. Dort ist der grüne Frosch."
+      },
+      "childExample": {
+        "en": "Frog.",
+        "de": "Frosch."
+      },
+      "guidance": {
+        "en": "Point to the relevant pictured objects first. Accept different possible solutions or clues and help the child say one simple idea.",
+        "de": "Zuerst auf die passenden Dinge im Bild zeigen. Verschiedene mögliche Lösungen oder Hinweise annehmen und beim Aussprechen einer einfachen Idee helfen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Describe how the sloth holds on to the vine.",
+        "de": "Beschreibe, wie sich das Faultier an der Liane festhält."
+      },
+      "starter": {
+        "en": "The sloth is holding…",
+        "de": "Das Faultier hält sich … fest."
+      },
+      "words": {
+        "en": [
+          "sloth",
+          "holding",
+          "vine"
+        ],
+        "de": [
+          "Faultier",
+          "festhalten",
+          "Liane"
+        ]
+      },
+      "model": {
+        "en": "The sloth is holding on to the vine.",
+        "de": "Das Faultier hält sich an der Liane fest."
+      },
+      "childExample": {
+        "en": "Sloth.",
+        "de": "Faultier."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    }
+  ]
 }

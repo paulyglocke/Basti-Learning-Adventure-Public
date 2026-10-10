@@ -139,5 +139,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_3"
+  "batch": "wave_2_batch_3",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "How does the elephant use its trunk to reach the leaves?",
+        "de": "Wie benutzt der Elefant seinen Rüssel, um die Blätter zu erreichen?"
+      },
+      "starter": {
+        "en": "The elephant uses…",
+        "de": "Der Elefant benutzt …"
+      },
+      "words": {
+        "en": [
+          "elephant",
+          "trunk",
+          "leaves"
+        ],
+        "de": [
+          "Elefant",
+          "Rüssel",
+          "Blätter"
+        ]
+      },
+      "model": {
+        "en": "The elephant uses its trunk to hold the leaves.",
+        "de": "Der Elefant benutzt seinen Rüssel, um die Blätter festzuhalten."
+      },
+      "childExample": {
+        "en": "Elephant.",
+        "de": "Elefant."
+      },
+      "guidance": {
+        "en": "Start with the visible action or object. Invite a possible reason, accept a short idea, and model one connection without treating it as the only answer.",
+        "de": "Mit der sichtbaren Handlung oder dem Gegenstand beginnen. Eine mögliche Begründung anbieten, eine kurze Idee annehmen und einen Zusammenhang vormachen. Es gibt nicht nur eine Antwort."
+      }
+    },
+    {
+      "prompt": {
+        "en": "How does the giraffe's long neck help it reach food?",
+        "de": "Wie hilft der lange Hals der Giraffe, an das Futter zu kommen?"
+      },
+      "starter": {
+        "en": "Its long neck helps…",
+        "de": "Ihr langer Hals hilft …"
+      },
+      "words": {
+        "en": [
+          "neck",
+          "leaves",
+          "reach"
+        ],
+        "de": [
+          "Hals",
+          "Blätter",
+          "erreichen"
+        ]
+      },
+      "model": {
+        "en": "Its long neck helps it reach the leaves.",
+        "de": "Ihr langer Hals hilft ihr, die Blätter zu erreichen."
+      },
+      "childExample": {
+        "en": "Neck.",
+        "de": "Hals."
+      },
+      "guidance": {
+        "en": "Start with the visible action or object. Invite a possible reason, accept a short idea, and model one connection without treating it as the only answer.",
+        "de": "Mit der sichtbaren Handlung oder dem Gegenstand beginnen. Eine mögliche Begründung anbieten, eine kurze Idee annehmen und einen Zusammenhang vormachen. Es gibt nicht nur eine Antwort."
+      }
+    }
+  ]
 }

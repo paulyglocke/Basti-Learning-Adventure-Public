@@ -321,5 +321,75 @@
       "noTextOrUI": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What is the child on the slide doing?",
+        "de": "Was macht das Kind auf der Rutsche?"
+      },
+      "starter": {
+        "en": "The child is…",
+        "de": "Das Kind …"
+      },
+      "words": {
+        "en": [
+          "child",
+          "sliding",
+          "slide"
+        ],
+        "de": [
+          "Kind",
+          "rutscht",
+          "Rutsche"
+        ]
+      },
+      "model": {
+        "en": "The child is sliding down the slide.",
+        "de": "Das Kind rutscht die Rutsche hinunter."
+      },
+      "childExample": {
+        "en": "Child.",
+        "de": "Kind."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Which activity in this playground would you like to try?",
+        "de": "Was würdest du auf diesem Spielplatz gern ausprobieren?"
+      },
+      "starter": {
+        "en": "I would like to…",
+        "de": "Ich würde gern …"
+      },
+      "words": {
+        "en": [
+          "scooter",
+          "ride",
+          "try"
+        ],
+        "de": [
+          "Roller",
+          "fahren",
+          "ausprobieren"
+        ]
+      },
+      "model": {
+        "en": "I would like to ride the scooter.",
+        "de": "Ich würde gern Roller fahren."
+      },
+      "childExample": {
+        "en": "Scooter.",
+        "de": "Roller."
+      },
+      "guidance": {
+        "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",
+        "de": "Einen Wunsch, ein ausgedachtes Beispiel oder fehlende Erfahrung annehmen. Der Beispielsatz ist nur eine Möglichkeit. Das Kind muss ihn nicht teilen."
+      }
+    }
+  ]
 }

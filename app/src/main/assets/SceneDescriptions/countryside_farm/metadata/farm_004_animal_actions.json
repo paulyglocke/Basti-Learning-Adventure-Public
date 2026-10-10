@@ -136,5 +136,75 @@
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
   "batch": "wave_2_batch_3",
-  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text."
+  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text.",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "How might the pig feel in the mud?",
+        "de": "Wie könnte sich das Schwein im Matsch fühlen?"
+      },
+      "starter": {
+        "en": "The pig might feel…",
+        "de": "Das Schwein könnte sich … fühlen."
+      },
+      "words": {
+        "en": [
+          "pig",
+          "mud",
+          "comfortable"
+        ],
+        "de": [
+          "Schwein",
+          "Matsch",
+          "wohl"
+        ]
+      },
+      "model": {
+        "en": "The pig might feel comfortable in the mud.",
+        "de": "Das Schwein könnte sich im Matsch wohlfühlen."
+      },
+      "childExample": {
+        "en": "Pig.",
+        "de": "Schwein."
+      },
+      "guidance": {
+        "en": "Offer a feeling word if needed. Different feelings are possible; do not infer one definite feeling from the picture or require an explanation.",
+        "de": "Bei Bedarf ein Wort für ein Gefühl anbieten. Verschiedene Gefühle sind möglich. Aus dem Bild kein bestimmtes Gefühl ableiten und keine Begründung verlangen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Describe what the one chicken is doing with the grain.",
+        "de": "Beschreibe, was das eine Huhn mit den Körnern macht."
+      },
+      "starter": {
+        "en": "The chicken is…",
+        "de": "Das Huhn …"
+      },
+      "words": {
+        "en": [
+          "chicken",
+          "pecking",
+          "grain"
+        ],
+        "de": [
+          "Huhn",
+          "pickt",
+          "Körner"
+        ]
+      },
+      "model": {
+        "en": "The chicken is pecking the grain.",
+        "de": "Das Huhn pickt die Körner."
+      },
+      "childExample": {
+        "en": "Chicken.",
+        "de": "Huhn."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    }
+  ]
 }

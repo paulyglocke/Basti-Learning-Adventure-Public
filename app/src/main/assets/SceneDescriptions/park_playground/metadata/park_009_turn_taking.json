@@ -119,5 +119,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_2"
+  "batch": "wave_3_batch_2",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What could the child in pink say to ask for a turn?",
+        "de": "Was könnte das Kind in Rosa sagen, wenn es auch mal dran sein möchte?"
+      },
+      "starter": {
+        "en": "The child could say…",
+        "de": "Das Kind könnte sagen …"
+      },
+      "words": {
+        "en": [
+          "turn",
+          "ask",
+          "please"
+        ],
+        "de": [
+          "dran sein",
+          "fragen",
+          "bitte"
+        ]
+      },
+      "model": {
+        "en": "The child could say, \"Can I have a turn?\"",
+        "de": "Das Kind könnte sagen: „Darf ich auch mal?“"
+      },
+      "childExample": {
+        "en": "Turn.",
+        "de": "Dran sein."
+      },
+      "guidance": {
+        "en": "Invite pretend speech or one helpful action. A short phrase or gesture is enough; model friendly wording without requiring the child to repeat it.",
+        "de": "Ein kleines Rollenspiel oder eine hilfreiche Handlung anregen. Ein kurzer Ausdruck oder eine Geste reicht. Freundliche Worte anbieten, ohne Nachsprechen zu verlangen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "How might the child waiting by the seesaw feel?",
+        "de": "Wie könnte sich das Kind fühlen, das neben der Wippe wartet?"
+      },
+      "starter": {
+        "en": "The child might feel…",
+        "de": "Das Kind könnte sich … fühlen."
+      },
+      "words": {
+        "en": [
+          "child",
+          "waiting",
+          "excited"
+        ],
+        "de": [
+          "Kind",
+          "wartet",
+          "Vorfreude"
+        ]
+      },
+      "model": {
+        "en": "The child might feel excited to have a turn.",
+        "de": "Das Kind könnte sich darauf freuen, auch mal dran zu sein."
+      },
+      "childExample": {
+        "en": "Child.",
+        "de": "Kind."
+      },
+      "guidance": {
+        "en": "Offer a feeling word if needed. Different feelings are possible; do not infer one definite feeling from the picture or require an explanation.",
+        "de": "Bei Bedarf ein Wort für ein Gefühl anbieten. Verschiedene Gefühle sind möglich. Aus dem Bild kein bestimmtes Gefühl ableiten und keine Begründung verlangen."
+      }
+    }
+  ]
 }

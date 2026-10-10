@@ -371,5 +371,75 @@
       "noTextOrUI": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "How are the turtle and the little fish different?",
+        "de": "Wie unterscheiden sich die Schildkröte und die kleinen Fische?"
+      },
+      "starter": {
+        "en": "The turtle is…",
+        "de": "Die Schildkröte ist …"
+      },
+      "words": {
+        "en": [
+          "turtle",
+          "fish",
+          "bigger"
+        ],
+        "de": [
+          "Schildkröte",
+          "Fische",
+          "größer"
+        ]
+      },
+      "model": {
+        "en": "The turtle is bigger than the fish.",
+        "de": "Die Schildkröte ist größer als die Fische."
+      },
+      "childExample": {
+        "en": "Turtle.",
+        "de": "Schildkröte."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Describe the colours of the clownfish.",
+        "de": "Beschreibe die Farben des Clownfischs."
+      },
+      "starter": {
+        "en": "The clownfish is…",
+        "de": "Der Clownfisch ist …"
+      },
+      "words": {
+        "en": [
+          "clownfish",
+          "orange",
+          "white"
+        ],
+        "de": [
+          "Clownfisch",
+          "orange",
+          "weiß"
+        ]
+      },
+      "model": {
+        "en": "The clownfish is orange and white.",
+        "de": "Der Clownfisch ist orange und weiß."
+      },
+      "childExample": {
+        "en": "Clownfish.",
+        "de": "Clownfisch."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    }
+  ]
 }

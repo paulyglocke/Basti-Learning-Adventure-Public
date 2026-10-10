@@ -145,5 +145,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_1"
+  "batch": "wave_2_batch_1",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "How many little orange fish are swimming together?",
+        "de": "Wie viele kleine orange Fische schwimmen zusammen?"
+      },
+      "starter": {
+        "en": "There are…",
+        "de": "Da sind …"
+      },
+      "words": {
+        "en": [
+          "four",
+          "fish",
+          "together"
+        ],
+        "de": [
+          "vier",
+          "Fische",
+          "zusammen"
+        ]
+      },
+      "model": {
+        "en": "There are four little orange fish.",
+        "de": "Da sind vier kleine orange Fische."
+      },
+      "childExample": {
+        "en": "Four.",
+        "de": "Vier."
+      },
+      "guidance": {
+        "en": "Count or point together if helpful. Turn the quantity into a short phrase; this is a conversation, not a counting test.",
+        "de": "Bei Bedarf gemeinsam zählen oder zeigen. Die Menge in eine kurze Aussage einbauen. Dies ist ein Gespräch, kein Zähltest."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Tell me how the whale and the turtle compare in size.",
+        "de": "Erzähl mir, wie groß der Wal und die Schildkröte im Vergleich sind."
+      },
+      "starter": {
+        "en": "The whale is…",
+        "de": "Der Wal ist …"
+      },
+      "words": {
+        "en": [
+          "whale",
+          "turtle",
+          "bigger"
+        ],
+        "de": [
+          "Wal",
+          "Schildkröte",
+          "größer"
+        ]
+      },
+      "model": {
+        "en": "The whale is bigger than the turtle.",
+        "de": "Der Wal ist größer als die Schildkröte."
+      },
+      "childExample": {
+        "en": "Whale.",
+        "de": "Wal."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    }
+  ]
 }

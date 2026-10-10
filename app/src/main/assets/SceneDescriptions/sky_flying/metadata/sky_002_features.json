@@ -403,5 +403,75 @@
       "noTextOrUI": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Tell me about the colours on the kite.",
+        "de": "Erzähl mir von den Farben des Drachens."
+      },
+      "starter": {
+        "en": "The kite is…",
+        "de": "Der Drachen ist …"
+      },
+      "words": {
+        "en": [
+          "kite",
+          "colours",
+          "colourful"
+        ],
+        "de": [
+          "Drachen",
+          "Farben",
+          "bunt"
+        ]
+      },
+      "model": {
+        "en": "The kite is colourful.",
+        "de": "Der Drachen ist bunt."
+      },
+      "childExample": {
+        "en": "Kite.",
+        "de": "Drachen."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "How are the long cloud and the round cloud different?",
+        "de": "Wie unterscheiden sich die lange und die runde Wolke?"
+      },
+      "starter": {
+        "en": "One cloud is…",
+        "de": "Eine Wolke ist …"
+      },
+      "words": {
+        "en": [
+          "cloud",
+          "long",
+          "round"
+        ],
+        "de": [
+          "Wolke",
+          "lang",
+          "rund"
+        ]
+      },
+      "model": {
+        "en": "One cloud is long, and the other is small and round.",
+        "de": "Eine Wolke ist lang. Die andere ist klein und rund."
+      },
+      "childExample": {
+        "en": "Cloud.",
+        "de": "Wolke."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    }
+  ]
 }

@@ -156,5 +156,75 @@
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
   "batch": "wave_2_batch_1",
-  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text."
+  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text.",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What might the crab find as it digs in the sand?",
+        "de": "Was könnte die Krabbe beim Graben im Sand finden?"
+      },
+      "starter": {
+        "en": "The crab might find…",
+        "de": "Die Krabbe könnte … finden."
+      },
+      "words": {
+        "en": [
+          "shell",
+          "find",
+          "sand"
+        ],
+        "de": [
+          "Muschel",
+          "finden",
+          "Sand"
+        ]
+      },
+      "model": {
+        "en": "The crab might find a shell in the sand.",
+        "de": "Die Krabbe könnte eine Muschel im Sand finden."
+      },
+      "childExample": {
+        "en": "Shell.",
+        "de": "Muschel."
+      },
+      "guidance": {
+        "en": "Start with something visible. Invite one possible next event; invented ideas are welcome and are not facts about the picture.",
+        "de": "Mit etwas Sichtbarem beginnen. Ein mögliches nächstes Ereignis anregen. Ausgedachte Ideen sind willkommen und keine Tatsachen über das Bild."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Start a little story about the octopus in the cave.",
+        "de": "Fang eine kleine Geschichte über den Oktopus in der Höhle an."
+      },
+      "starter": {
+        "en": "One day, the octopus…",
+        "de": "Eines Tages …"
+      },
+      "words": {
+        "en": [
+          "octopus",
+          "cave",
+          "swim"
+        ],
+        "de": [
+          "Oktopus",
+          "Höhle",
+          "schwimmen"
+        ]
+      },
+      "model": {
+        "en": "One day, the octopus might swim out of the cave.",
+        "de": "Eines Tages könnte der Oktopus aus der Höhle schwimmen."
+      },
+      "childExample": {
+        "en": "Octopus.",
+        "de": "Oktopus."
+      },
+      "guidance": {
+        "en": "A word or one event can start the story. Offer first or next if helpful; do not require a complete story or a fixed ending.",
+        "de": "Ein Wort oder ein Ereignis kann die Geschichte beginnen. Bei Bedarf zuerst oder danach anbieten. Keine vollständige Geschichte und kein festes Ende verlangen."
+      }
+    }
+  ]
 }

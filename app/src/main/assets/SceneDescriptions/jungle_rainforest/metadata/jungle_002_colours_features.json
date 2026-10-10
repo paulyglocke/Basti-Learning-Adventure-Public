@@ -374,5 +374,75 @@
       "noTextOrUI": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What do you notice about the tiger's stripes?",
+        "de": "Was fällt dir an den Streifen des Tigers auf?"
+      },
+      "starter": {
+        "en": "The tiger has…",
+        "de": "Der Tiger hat …"
+      },
+      "words": {
+        "en": [
+          "tiger",
+          "black",
+          "stripes"
+        ],
+        "de": [
+          "Tiger",
+          "schwarz",
+          "Streifen"
+        ]
+      },
+      "model": {
+        "en": "The tiger has black stripes on its orange body.",
+        "de": "Der Tiger hat schwarze Streifen auf seinem orangefarbenen Körper."
+      },
+      "childExample": {
+        "en": "Tiger.",
+        "de": "Tiger."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "How are the elephant and the frog different in size?",
+        "de": "Wie unterscheiden sich der Elefant und der Frosch in der Größe?"
+      },
+      "starter": {
+        "en": "The elephant is…",
+        "de": "Der Elefant ist …"
+      },
+      "words": {
+        "en": [
+          "elephant",
+          "frog",
+          "bigger"
+        ],
+        "de": [
+          "Elefant",
+          "Frosch",
+          "größer"
+        ]
+      },
+      "model": {
+        "en": "The elephant is bigger than the frog.",
+        "de": "Der Elefant ist größer als der Frosch."
+      },
+      "childExample": {
+        "en": "Elephant.",
+        "de": "Elefant."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    }
+  ]
 }

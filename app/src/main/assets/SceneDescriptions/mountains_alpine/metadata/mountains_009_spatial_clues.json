@@ -135,5 +135,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_2"
+  "batch": "wave_3_batch_2",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "How could you cross the stream using something in this picture?",
+        "de": "Wie könntest du mit etwas auf diesem Bild über den Bach kommen?"
+      },
+      "starter": {
+        "en": "I could…",
+        "de": "Ich könnte …"
+      },
+      "words": {
+        "en": [
+          "stream",
+          "bridge",
+          "cross"
+        ],
+        "de": [
+          "Bach",
+          "Brücke",
+          "überqueren"
+        ]
+      },
+      "model": {
+        "en": "I could walk over the bridge.",
+        "de": "Ich könnte über die Brücke gehen."
+      },
+      "childExample": {
+        "en": "Stream.",
+        "de": "Bach."
+      },
+      "guidance": {
+        "en": "Point to the relevant pictured objects first. Accept different possible solutions or clues and help the child say one simple idea.",
+        "de": "Zuerst auf die passenden Dinge im Bild zeigen. Verschiedene mögliche Lösungen oder Hinweise annehmen und beim Aussprechen einer einfachen Idee helfen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Where is the marmot compared with the goat on the high rock?",
+        "de": "Wo ist das Murmeltier im Vergleich zur Ziege auf dem hohen Felsen?"
+      },
+      "starter": {
+        "en": "The marmot is below…",
+        "de": "Das Murmeltier ist unterhalb …"
+      },
+      "words": {
+        "en": [
+          "marmot",
+          "below",
+          "goat"
+        ],
+        "de": [
+          "Murmeltier",
+          "unterhalb",
+          "Ziege"
+        ]
+      },
+      "model": {
+        "en": "The marmot is below the goat.",
+        "de": "Das Murmeltier ist unterhalb der Ziege."
+      },
+      "childExample": {
+        "en": "Marmot.",
+        "de": "Murmeltier."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    }
+  ]
 }

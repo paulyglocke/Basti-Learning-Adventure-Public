@@ -147,5 +147,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_2"
+  "batch": "wave_2_batch_2",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Can you tell me how many yellow buckets there are?",
+        "de": "Kannst du mir erzählen, wie viele gelbe Eimer da sind?"
+      },
+      "starter": {
+        "en": "There are…",
+        "de": "Da sind …"
+      },
+      "words": {
+        "en": [
+          "four",
+          "yellow",
+          "buckets"
+        ],
+        "de": [
+          "vier",
+          "gelb",
+          "Eimer"
+        ]
+      },
+      "model": {
+        "en": "There are four yellow buckets.",
+        "de": "Da sind vier gelbe Eimer."
+      },
+      "childExample": {
+        "en": "Four.",
+        "de": "Vier."
+      },
+      "guidance": {
+        "en": "Count or point together if helpful. Turn the quantity into a short phrase; this is a conversation, not a counting test.",
+        "de": "Bei Bedarf gemeinsam zählen oder zeigen. Die Menge in eine kurze Aussage einbauen. Dies ist ein Gespräch, kein Zähltest."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Describe the tall slide and the long bench.",
+        "de": "Beschreibe die hohe Rutsche und die lange Bank."
+      },
+      "starter": {
+        "en": "The slide is…",
+        "de": "Die Rutsche ist …"
+      },
+      "words": {
+        "en": [
+          "slide",
+          "tall",
+          "long"
+        ],
+        "de": [
+          "Rutsche",
+          "hoch",
+          "lang"
+        ]
+      },
+      "model": {
+        "en": "The slide is tall, and the bench is long.",
+        "de": "Die Rutsche ist hoch. Die Bank ist lang."
+      },
+      "childExample": {
+        "en": "Slide.",
+        "de": "Rutsche."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    }
+  ]
 }

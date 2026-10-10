@@ -147,5 +147,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_3"
+  "batch": "wave_3_batch_3",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "How many little ducklings are together near the pond?",
+        "de": "Wie viele kleine Entenküken sind zusammen beim Teich?"
+      },
+      "starter": {
+        "en": "There are…",
+        "de": "Da sind …"
+      },
+      "words": {
+        "en": [
+          "two",
+          "ducklings",
+          "pond"
+        ],
+        "de": [
+          "zwei",
+          "Entenküken",
+          "Teich"
+        ]
+      },
+      "model": {
+        "en": "There are two little ducklings.",
+        "de": "Da sind zwei kleine Entenküken."
+      },
+      "childExample": {
+        "en": "Two.",
+        "de": "Zwei."
+      },
+      "guidance": {
+        "en": "Count or point together if helpful. Turn the quantity into a short phrase; this is a conversation, not a counting test.",
+        "de": "Bei Bedarf gemeinsam zählen oder zeigen. Die Menge in eine kurze Aussage einbauen. Dies ist ein Gespräch, kein Zähltest."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Tell me which animal you can find in the stable.",
+        "de": "Erzähl mir, welches Tier du im Stall findest."
+      },
+      "starter": {
+        "en": "In the stable…",
+        "de": "Im Stall …"
+      },
+      "words": {
+        "en": [
+          "horse",
+          "brown",
+          "stable"
+        ],
+        "de": [
+          "Pferd",
+          "braun",
+          "Stall"
+        ]
+      },
+      "model": {
+        "en": "The brown horse is in the stable.",
+        "de": "Das braune Pferd ist im Stall."
+      },
+      "childExample": {
+        "en": "Horse.",
+        "de": "Pferd."
+      },
+      "guidance": {
+        "en": "Pointing or one word is enough. Name the pictured subject together, then offer one short sentence without asking for repetition.",
+        "de": "Zeigen oder ein Wort reicht. Den Bildinhalt gemeinsam benennen und einen kurzen Satz anbieten, ohne Wiederholung zu verlangen."
+      }
+    }
+  ]
 }

@@ -361,16 +361,28 @@ not a new persistence mechanism.
 ## Tell Me open-ended consumer (2026-09-26)
 
 `learning/tellme/TellMeFlow` uses `BundledSceneDescriptions.repository()` directly.
-`TellMeState` holds category, scene index, TALK/MODEL/COMPLETE stage and two support
-expansion flags. It has no answer, attempt, score, skill result or progress event.
-Continue/Next carries the expected scene and stage so obsolete activations cannot skip
-pictures. Selection preserves manifest order; language is a render input, not task identity.
+`TellMeState` holds category, scene index, TALK/COMPLETE stage, two support
+expansion flags and the selected authored question index. It has no answer, attempt, score, skill result or progress event.
+One Next picture press advances to the next scene (or completion after picture nine).
+The sentence model is optional Help, with no intermediate MODEL phase.
+Next carries the expected scene and stage so obsolete activations cannot skip pictures. Selection preserves manifest order; language is a render input, not task identity.
 
 The Activity-scoped `TellMeViewModel` retains conversation state across configuration
 recreation, Options and background return. Home/back-to-Home resets it; category selection
 and Again are explicit. There is deliberately no durable conversation checkpoint: a new
 process starts at category selection, even if the shell restores the Tell Me destination.
 No ChoiceTask, SessionReducer, DurableSessionHost or progress schema is involved.
+
+All 81 scenes have two explicit bilingual prompt and support bundles, including
+matching parent guidance and child/model expansions. `TellMeQuestionRotation`, owned by the Activity ViewModel,
+selects a deterministic slot only when an accepted transition enters a curated
+scene. Help/model reveal, disclosure, language, Options and configuration recreation
+retain the slot. Again and Home/category re-entry rotate visited curated scenes;
+unseen scenes are not consumed. Home resets conversation state but retains these
+bounded Activity-lifetime cursors. A fresh process resets both conversation and
+cursors. The bounded cursor map has at most 81 entries. Uncurated reference fixtures
+retain their first-line selection. No persistent history,
+difficulty inference or new audio behavior is introduced.
 
 A Tell-Me-specific single-worker loader resolves typed local image paths, reads bounds,
 and power-of-two samples to at most 1024 pixels per dimension. It caches one current scene
@@ -673,3 +685,17 @@ implementation, shared task-count expansion, progress schema or external depende
 Parent-facing text explains the German meteorological season convention; no weather
 or device-date inference is performed. Find, Before/Next, Missing, Build the Year and
 Months/Seasons quizzes remain deferred; see MONTHS_V1_RESEARCH.md for the approved plan.
+
+## Owner clock presentation feedback — 2026-10-10 (draft, validation pending)
+
+The shared Explore/Make This Time clock face draws minute numbers 0–59 in an outer
+ring, with larger bold five-minute landmarks and an inner green 1–12 hour ring.
+The supplied dinosaur outline green (#284F26) and dragon outline red (#7A1D18) link
+face numbers, corresponding hand lines, digital hour/minute spans and labelled
+short-hour/long-minute legend. Colour is reinforced by words and hand length.
+Minute labels have a white halo where decorative artwork crosses the ring. They
+remain canvas decoration inside the single existing accessible clock target.
+Practice still exposes digital time only after a correct Check. The semantic time,
+drag geometry, snapping, task selection, speech, attempts and persistence are unchanged.
+Narrow-screen label readability and overlap at representative times require rendered
+EN/DE large-text portrait/landscape review before declaring visual acceptance.

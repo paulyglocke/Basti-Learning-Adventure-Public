@@ -21,6 +21,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.nativeCanvas
+import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.input.key.*
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.testTag
@@ -31,6 +36,33 @@ import com.bellfamily.bastischool.learning.clock.*
 import com.bellfamily.bastischool.learning.models.ContentLanguage
 import com.bellfamily.bastischool.ui.common.*
 import kotlin.math.*
+
+// Match the supplied dinosaur/dragon outlines for readable text on the white face.
+internal val ClockHourColor = Color(0xFF284F26)
+internal val ClockMinuteColor = Color(0xFF7A1D18)
+
+@Composable
+internal fun ClockDigitalTime(time: ClockTime, fontSize: TextUnit, modifier: Modifier = Modifier) {
+    Text(buildAnnotatedString {
+        withStyle(SpanStyle(color = ClockHourColor)) { append(time.digital.substringBefore(':')) }
+        append(":")
+        withStyle(SpanStyle(color = ClockMinuteColor)) { append(time.digital.substringAfter(':')) }
+    }, fontSize = fontSize, modifier = modifier)
+}
+
+@Composable
+internal fun ClockHandLegend(language: ContentLanguage) {
+    val de = language == ContentLanguage.GERMAN
+    Text(buildAnnotatedString {
+        withStyle(SpanStyle(color = ClockHourColor)) {
+            append(if (de) "Kurzer Zeiger: Stunden." else "Short hand: hours.")
+        }
+        append(" ")
+        withStyle(SpanStyle(color = ClockMinuteColor)) {
+            append(if (de) "Langer Zeiger: Minuten." else "Long hand: minutes.")
+        }
+    }, modifier = Modifier.testTag("clock-hand-legend"))
+}
 
 @Composable
 fun ClockScreen(state: ClockExploreState?, language: ContentLanguage, saveFailed: Boolean, audioFailed: Boolean,
@@ -45,11 +77,11 @@ fun ClockScreen(state: ClockExploreState?, language: ContentLanguage, saveFailed
         NativeSupportMessage(t("Move the long hand.", "Bewege den langen Zeiger."))
         if (state == null) Text(t("Opening…", "Wird geöffnet…")) else {
             ClockFace(state.time, language, !saveFailed, onMove, onSettle, onInterrupt, onAdjust)
-            Text(state.time.digital, fontSize = 40.sp, modifier = Modifier.testTag("clock-digital").semantics {
+            ClockDigitalTime(state.time, fontSize = 40.sp, modifier = Modifier.testTag("clock-digital").semantics {
                 contentDescription = t("Digital time: ${state.time.digital}", "Digitale Zeit: ${state.time.digital}")
             })
             Text(ClockWording.phrase(state.time, language), fontSize = 24.sp, modifier = Modifier.testTag("clock-phrase"))
-            Text(t("Short hand: hours. Long hand: minutes.", "Kurzer Zeiger: Stunden. Langer Zeiger: Minuten."))
+            ClockHandLegend(language)
             Text(t("Long hand at 12: whole hour. At 6: half past.", "Langer Zeiger auf 12: volle Stunde. Auf 6: halbe Stunde."))
             NativeActionButton(t("5 minutes back", "5 Minuten zurück"), NativeActionRole.SECONDARY,
                 { onAdjust(-ClockTime.EXPLORE_STEP) }, Modifier.fillMaxWidth().testTag("clock-back"), !saveFailed)
@@ -129,18 +161,18 @@ fun ClockFace(time: ClockTime, language: ContentLanguage, enabled: Boolean,
             val radians = Math.toRadians(angle.toDouble())
             return center + Offset(sin(radians).toFloat(), -cos(radians).toFloat()) * length
         }
-        for (n in 0 until 60) drawLine(ink, point(n * 6f, radius * .93f), point(n * 6f, radius * if (n % 5 == 0) .86f else .90f), if (n % 5 == 0) 3.dp.toPx() else 1.dp.toPx())
-        val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = android.graphics.Color.rgb(23, 43, 58); textAlign = Paint.Align.CENTER; textSize = radius * .16f }
+        for (n in 0 until 60) drawLine(ClockMinuteColor, point(n * 6f, radius * .83f), point(n * 6f, radius * if (n % 5 == 0) .77f else .80f), if (n % 5 == 0) 3.dp.toPx() else 1.dp.toPx())
+        val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = ClockHourColor.toArgb(); textAlign = Paint.Align.CENTER; textSize = radius * .16f }
         for (n in 1..12) {
-            val p = point(n * 30f, radius * .72f)
+            val p = point(n * 30f, radius * .60f)
             paint.isFakeBoldText = n == 12 || n == 6
             drawContext.canvas.nativeCanvas.drawText(n.toString(), p.x, p.y - (paint.ascent() + paint.descent()) / 2, paint)
         }
         val hour = ClockHandDecoration.hour(time)
         val minute = ClockHandDecoration.minute(time)
         fun endpoint(hand: ClockHandDecoration) = center + Offset(hand.x, hand.y) * radius
-        drawLine(ink, center, endpoint(hour), 10.dp.toPx(), StrokeCap.Round)
-        drawLine(Color(0xFF176B88), center, endpoint(minute), 5.dp.toPx(), StrokeCap.Round)
+        drawLine(ClockHourColor, center, endpoint(hour), 10.dp.toPx(), StrokeCap.Round)
+        drawLine(ClockMinuteColor, center, endpoint(minute), 5.dp.toPx(), StrokeCap.Round)
         // Tail overlaps the line endpoint; rotate the entire illustration, not just its position.
         fun character(hand: ClockHandDecoration, painter: androidx.compose.ui.graphics.painter.Painter) {
             val end = endpoint(hand)
@@ -155,6 +187,23 @@ fun ClockFace(time: ClockTime, language: ContentLanguage, enabled: Boolean,
         }
         character(hour, dinosaur)
         character(minute, dragon)
+        // One outer minute ring, with larger/bold five-minute landmarks. Zero is at twelve.
+        // Draw after the hand illustrations so their heads cannot obscure the minute labels.
+        paint.color = ClockMinuteColor.toArgb()
+        for (n in 0 until 60) {
+            val landmark = n % 5 == 0
+            paint.textSize = radius * if (landmark) .09f else .055f
+            paint.isFakeBoldText = landmark
+            val p = point(n * 6f, radius * .93f)
+            // White halo preserves readability where a decorative head crosses this ring.
+            paint.style = Paint.Style.STROKE
+            paint.strokeWidth = radius * .018f
+            paint.color = android.graphics.Color.WHITE
+            drawContext.canvas.nativeCanvas.drawText(n.toString(), p.x, p.y - (paint.ascent() + paint.descent()) / 2, paint)
+            paint.style = Paint.Style.FILL
+            paint.color = ClockMinuteColor.toArgb()
+            drawContext.canvas.nativeCanvas.drawText(n.toString(), p.x, p.y - (paint.ascent() + paint.descent()) / 2, paint)
+        }
         drawCircle(ink, 8.dp.toPx())
     }
 }

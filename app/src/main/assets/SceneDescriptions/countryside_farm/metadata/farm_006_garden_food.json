@@ -135,5 +135,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_3"
+  "batch": "wave_2_batch_3",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What food can you see growing on the tree?",
+        "de": "Welches Essen siehst du am Baum wachsen?"
+      },
+      "starter": {
+        "en": "I can see…",
+        "de": "Ich sehe …"
+      },
+      "words": {
+        "en": [
+          "apples",
+          "tree",
+          "growing"
+        ],
+        "de": [
+          "Äpfel",
+          "Baum",
+          "wachsen"
+        ]
+      },
+      "model": {
+        "en": "I can see apples on the tree.",
+        "de": "Ich sehe Äpfel am Baum."
+      },
+      "childExample": {
+        "en": "Apples.",
+        "de": "Äpfel."
+      },
+      "guidance": {
+        "en": "Pointing or one word is enough. Name the pictured subject together, then offer one short sentence without asking for repetition.",
+        "de": "Zeigen oder ein Wort reicht. Den Bildinhalt gemeinsam benennen und einen kurzen Satz anbieten, ohne Wiederholung zu verlangen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Where do the carrots grow compared with the apples?",
+        "de": "Wo wachsen die Karotten im Vergleich zu den Äpfeln?"
+      },
+      "starter": {
+        "en": "The carrots grow…",
+        "de": "Die Karotten wachsen …"
+      },
+      "words": {
+        "en": [
+          "carrots",
+          "ground",
+          "apples"
+        ],
+        "de": [
+          "Karotten",
+          "Erde",
+          "Äpfel"
+        ]
+      },
+      "model": {
+        "en": "The carrots grow in the ground. The apples grow on the tree.",
+        "de": "Die Karotten wachsen in der Erde. Die Äpfel wachsen am Baum."
+      },
+      "childExample": {
+        "en": "Carrots.",
+        "de": "Karotten."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    }
+  ]
 }

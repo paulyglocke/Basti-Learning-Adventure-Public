@@ -341,5 +341,75 @@
       "noTextOrUI": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Where is the cat by the hay bale?",
+        "de": "Wo ist die Katze beim Heuballen?"
+      },
+      "starter": {
+        "en": "The cat is on…",
+        "de": "Die Katze ist auf …"
+      },
+      "words": {
+        "en": [
+          "cat",
+          "on",
+          "hay bale"
+        ],
+        "de": [
+          "Katze",
+          "auf",
+          "Heuballen"
+        ]
+      },
+      "model": {
+        "en": "The cat is on the hay bale.",
+        "de": "Die Katze ist auf dem Heuballen."
+      },
+      "childExample": {
+        "en": "Cat.",
+        "de": "Katze."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Tell me where the pig is compared with the fence.",
+        "de": "Erzähl mir, wo das Schwein im Vergleich zum Zaun ist."
+      },
+      "starter": {
+        "en": "The pig is behind…",
+        "de": "Das Schwein ist hinter …"
+      },
+      "words": {
+        "en": [
+          "pig",
+          "behind",
+          "fence"
+        ],
+        "de": [
+          "Schwein",
+          "hinter",
+          "Zaun"
+        ]
+      },
+      "model": {
+        "en": "The pig is behind the fence.",
+        "de": "Das Schwein ist hinter dem Zaun."
+      },
+      "childExample": {
+        "en": "Pig.",
+        "de": "Schwein."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    }
+  ]
 }

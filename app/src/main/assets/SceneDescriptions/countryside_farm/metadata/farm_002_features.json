@@ -412,5 +412,75 @@
       "noTextOrUI": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Describe the cow's colours.",
+        "de": "Beschreibe die Farben der Kuh."
+      },
+      "starter": {
+        "en": "The cow is…",
+        "de": "Die Kuh ist …"
+      },
+      "words": {
+        "en": [
+          "cow",
+          "black",
+          "white"
+        ],
+        "de": [
+          "Kuh",
+          "schwarz",
+          "weiß"
+        ]
+      },
+      "model": {
+        "en": "The cow is black and white.",
+        "de": "Die Kuh ist schwarz und weiß."
+      },
+      "childExample": {
+        "en": "Cow.",
+        "de": "Kuh."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Are there more sheep or ducklings in this picture?",
+        "de": "Sind auf diesem Bild mehr Schafe oder Entenküken?"
+      },
+      "starter": {
+        "en": "There are more…",
+        "de": "Da sind mehr …"
+      },
+      "words": {
+        "en": [
+          "sheep",
+          "ducklings",
+          "more"
+        ],
+        "de": [
+          "Schafe",
+          "Entenküken",
+          "mehr"
+        ]
+      },
+      "model": {
+        "en": "There are more sheep than ducklings.",
+        "de": "Da sind mehr Schafe als Entenküken."
+      },
+      "childExample": {
+        "en": "Sheep.",
+        "de": "Schafe."
+      },
+      "guidance": {
+        "en": "Count or point together if helpful. Turn the quantity into a short phrase; this is a conversation, not a counting test.",
+        "de": "Bei Bedarf gemeinsam zählen oder zeigen. Die Menge in eine kurze Aussage einbauen. Dies ist ein Gespräch, kein Zähltest."
+      }
+    }
+  ]
 }

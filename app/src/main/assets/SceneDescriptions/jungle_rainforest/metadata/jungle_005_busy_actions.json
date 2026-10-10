@@ -160,5 +160,75 @@
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
   "batch": "wave_2_batch_1",
-  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text."
+  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text.",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What is the elephant doing with its trunk?",
+        "de": "Was macht der Elefant mit seinem Rüssel?"
+      },
+      "starter": {
+        "en": "The elephant is…",
+        "de": "Der Elefant …"
+      },
+      "words": {
+        "en": [
+          "elephant",
+          "lifting",
+          "trunk"
+        ],
+        "de": [
+          "Elefant",
+          "hebt",
+          "Rüssel"
+        ]
+      },
+      "model": {
+        "en": "The elephant is lifting its trunk.",
+        "de": "Der Elefant hebt den Rüssel."
+      },
+      "childExample": {
+        "en": "Elephant.",
+        "de": "Elefant."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "How many monkeys are holding the vines?",
+        "de": "Wie viele Affen halten sich an den Lianen fest?"
+      },
+      "starter": {
+        "en": "There are…",
+        "de": "Da sind …"
+      },
+      "words": {
+        "en": [
+          "three",
+          "monkeys",
+          "vines"
+        ],
+        "de": [
+          "drei",
+          "Affen",
+          "Lianen"
+        ]
+      },
+      "model": {
+        "en": "Three monkeys are holding the vines.",
+        "de": "Drei Affen halten sich an den Lianen fest."
+      },
+      "childExample": {
+        "en": "Three.",
+        "de": "Drei."
+      },
+      "guidance": {
+        "en": "Count or point together if helpful. Turn the quantity into a short phrase; this is a conversation, not a counting test.",
+        "de": "Bei Bedarf gemeinsam zählen oder zeigen. Die Menge in eine kurze Aussage einbauen. Dies ist ein Gespräch, kein Zähltest."
+      }
+    }
+  ]
 }

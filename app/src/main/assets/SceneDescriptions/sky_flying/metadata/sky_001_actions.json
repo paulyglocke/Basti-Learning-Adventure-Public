@@ -308,5 +308,75 @@
       "noTextOrUI": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What is the balloon doing beside the upward arrows?",
+        "de": "Was macht der Ballon neben den Pfeilen nach oben?"
+      },
+      "starter": {
+        "en": "The balloon is…",
+        "de": "Der Ballon …"
+      },
+      "words": {
+        "en": [
+          "balloon",
+          "rising",
+          "up"
+        ],
+        "de": [
+          "Ballon",
+          "steigt",
+          "nach oben"
+        ]
+      },
+      "model": {
+        "en": "The balloon is rising into the sky.",
+        "de": "Der Ballon steigt in den Himmel."
+      },
+      "childExample": {
+        "en": "Balloon.",
+        "de": "Ballon."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Describe how the eagle is moving through the sky.",
+        "de": "Beschreibe, wie sich der Adler am Himmel bewegt."
+      },
+      "starter": {
+        "en": "The eagle is…",
+        "de": "Der Adler …"
+      },
+      "words": {
+        "en": [
+          "eagle",
+          "gliding",
+          "sky"
+        ],
+        "de": [
+          "Adler",
+          "gleitet",
+          "Himmel"
+        ]
+      },
+      "model": {
+        "en": "The eagle is gliding through the sky.",
+        "de": "Der Adler gleitet durch den Himmel."
+      },
+      "childExample": {
+        "en": "Eagle.",
+        "de": "Adler."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    }
+  ]
 }

@@ -340,5 +340,75 @@
       "noReadableSigns": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Where is the giraffe compared with the tree?",
+        "de": "Wo ist die Giraffe im Vergleich zum Baum?"
+      },
+      "starter": {
+        "en": "The giraffe is behind…",
+        "de": "Die Giraffe ist hinter …"
+      },
+      "words": {
+        "en": [
+          "giraffe",
+          "behind",
+          "tree"
+        ],
+        "de": [
+          "Giraffe",
+          "hinter",
+          "Baum"
+        ]
+      },
+      "model": {
+        "en": "The giraffe is behind the tree.",
+        "de": "Die Giraffe ist hinter dem Baum."
+      },
+      "childExample": {
+        "en": "Giraffe.",
+        "de": "Giraffe."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Describe where the zebra is between the posts.",
+        "de": "Beschreibe, wo das Zebra bei den Pfosten ist."
+      },
+      "starter": {
+        "en": "The zebra is between…",
+        "de": "Das Zebra ist zwischen …"
+      },
+      "words": {
+        "en": [
+          "zebra",
+          "between",
+          "posts"
+        ],
+        "de": [
+          "Zebra",
+          "zwischen",
+          "Pfosten"
+        ]
+      },
+      "model": {
+        "en": "The zebra is between the posts.",
+        "de": "Das Zebra ist zwischen den Pfosten."
+      },
+      "childExample": {
+        "en": "Zebra.",
+        "de": "Zebra."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    }
+  ]
 }

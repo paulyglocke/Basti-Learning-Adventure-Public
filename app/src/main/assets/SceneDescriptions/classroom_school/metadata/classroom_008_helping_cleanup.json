@@ -135,5 +135,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_3"
+  "batch": "wave_3_batch_3",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What could the child do after picking up the pencils?",
+        "de": "Was könnte das Kind machen, nachdem es die Stifte aufgehoben hat?"
+      },
+      "starter": {
+        "en": "Next, the child could…",
+        "de": "Als Nächstes könnte das Kind …"
+      },
+      "words": {
+        "en": [
+          "pencils",
+          "next",
+          "put away"
+        ],
+        "de": [
+          "Stifte",
+          "als Nächstes",
+          "wegräumen"
+        ]
+      },
+      "model": {
+        "en": "Next, the child could put the pencils away.",
+        "de": "Als Nächstes könnte das Kind die Stifte wegräumen."
+      },
+      "childExample": {
+        "en": "Pencils.",
+        "de": "Stifte."
+      },
+      "guidance": {
+        "en": "A word or one event can start the story. Offer first or next if helpful; do not require a complete story or a fixed ending.",
+        "de": "Ein Wort oder ein Ereignis kann die Geschichte beginnen. Bei Bedarf zuerst oder danach anbieten. Keine vollständige Geschichte und kein festes Ende verlangen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "How could you help the child picking up the pencils?",
+        "de": "Wie könntest du dem Kind beim Aufheben der Stifte helfen?"
+      },
+      "starter": {
+        "en": "I could help by…",
+        "de": "Ich könnte helfen und …"
+      },
+      "words": {
+        "en": [
+          "pencils",
+          "pick up",
+          "help"
+        ],
+        "de": [
+          "Stifte",
+          "aufheben",
+          "helfen"
+        ]
+      },
+      "model": {
+        "en": "I could help by picking up another pencil.",
+        "de": "Ich könnte helfen und noch einen Stift aufheben."
+      },
+      "childExample": {
+        "en": "Pencils.",
+        "de": "Stifte."
+      },
+      "guidance": {
+        "en": "Invite pretend speech or one helpful action. A short phrase or gesture is enough; model friendly wording without requiring the child to repeat it.",
+        "de": "Ein kleines Rollenspiel oder eine hilfreiche Handlung anregen. Ein kurzer Ausdruck oder eine Geste reicht. Freundliche Worte anbieten, ohne Nachsprechen zu verlangen."
+      }
+    }
+  ]
 }

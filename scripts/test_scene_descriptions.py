@@ -83,6 +83,12 @@ class SceneDescriptionBoundaryTest(unittest.TestCase):
             if isinstance(value, (list, tuple)): return [english(v) for v in value]
             return value
         restored = json.loads(json.dumps(self.pack[:2]))
+        # Assert the opt-in conversation bundles, then remove this new field to preserve
+        # the original English identity/order fingerprint and historical visual ledger.
+        variety = json.loads((content.REPO / 'docs/tellme-variety/CONTENT_CHANGES.json').read_text())
+        expected = {s['scene_id']: s['prompts'] for s in variety['scenes']}
+        for scene in restored[1]:
+            self.assertEqual(expected.get(scene['id'], []), scene.pop('prompts'))
         # Physical acceptance review: assert and reverse the field-level bilingual ledger.
         # Preserve the original fingerprint rather than replacing it with a new blessing hash.
         ledger = json.loads((content.REPO / 'docs/tellme-visual-qa/CONTENT_CHANGES.json').read_text())
@@ -218,6 +224,59 @@ class SceneDescriptionBoundaryTest(unittest.TestCase):
     def test_unknown_teaching_field(self):
         self.change(self.meta, lambda d: d['targetLanguage'].update(unrecognised=['test']))
         self.rejected()
+
+    def test_curated_conversation_bundles_are_bilingual_and_bounded(self):
+        selected = [s for s in self.pack[1] if s['prompts']]
+        self.assertEqual(81, len(selected))
+        self.assertEqual([s['id'] for s in self.pack[1]], [s['id'] for s in selected])
+        self.assertEqual([2] * 81, [len(s['prompts']) for s in selected])
+        for scene in selected:
+            for prompt in scene['prompts']:
+                for lang in ('en', 'de'):
+                    self.assertTrue(prompt['prompt'][lang])
+                    self.assertTrue(prompt['starter'][lang])
+                    self.assertTrue(prompt['model'][lang])
+                    self.assertTrue(prompt['childExample'][lang])
+                    self.assertTrue(prompt['guidance'][lang])
+                    self.assertLessEqual(len(prompt['words'][lang]), 3)
+
+    def test_malformed_curated_bundles_are_rejected(self):
+        source = next(s for s in self.pack[1] if s['prompts'])
+        path = source['metadata'].removeprefix('SceneDescriptions/')
+        original = (self.root / path).read_text()
+        mutations = [
+            lambda d: d.update(tellMePrompts='not a list'),
+            lambda d: d.update(tellMePrompts=d['tellMePrompts'][:1]),
+            lambda d: d['tellMePrompts'][0]['prompt'].pop('de'),
+            lambda d: d['tellMePrompts'][0]['starter'].update(de=''),
+            lambda d: d['tellMePrompts'][0]['childExample'].pop('de'),
+            lambda d: d['tellMePrompts'][0]['guidance'].update(de=''),
+            lambda d: d['tellMePrompts'][0].pop('model'),
+            lambda d: d['tellMePrompts'][0].update(unknown='value'),
+            lambda d: d['tellMePrompts'][0]['words'].update(en=['one', 'two', 'three', 'four']),
+            lambda d: d['tellMePrompts'].__setitem__(1, d['tellMePrompts'][0]),
+        ]
+        for mutate in mutations:
+            with self.subTest(mutation=mutate):
+                (self.root / path).write_text(original)
+                self.change(path, mutate)
+                self.rejected()
+
+    def test_all_rotating_prompt_slots_are_distinct_in_each_language(self):
+        for lang in ('en', 'de'):
+            prompts = [p['prompt'][lang] for s in self.pack[1] for p in s['prompts']]
+            self.assertEqual(162, len(prompts))
+            self.assertEqual(162, len(set(prompts)))
+
+    def test_variety_ledger_preserves_picture_identity_and_complete_scene_order(self):
+        variety = json.loads((content.REPO / 'docs/tellme-variety/CONTENT_CHANGES.json').read_text())
+        historical = json.loads((content.REPO / 'docs/tellme-visual-qa/AUDIT.json').read_text())
+        self.assertEqual([s['id'] for s in self.pack[1]], [s['scene_id'] for s in variety['scenes']])
+        for scene, change, review in zip(self.pack[1], variety['scenes'], historical['scenes']):
+            self.assertEqual(scene['asset'], change['asset'])
+            self.assertEqual(review['image_sha256'], change['image_sha256'])
+            self.assertEqual('NATIVE_SPEAKER_REVIEW_PENDING', change['language_acceptance'])
+            self.assertEqual('DRAFT_BASED_ON_PRIOR_AUDIT_NOT_NEW_IMAGE_ACCEPTANCE', change['visual_acceptance'])
 
     def test_unsupported_schema(self):
         self.change(self.meta, lambda d: d.update(schemaVersion=2))

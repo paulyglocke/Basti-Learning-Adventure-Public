@@ -297,5 +297,75 @@
       "noTextOrUI": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What is the monkey doing on the vine?",
+        "de": "Was macht der Affe an der Liane?"
+      },
+      "starter": {
+        "en": "The monkey is…",
+        "de": "Der Affe …"
+      },
+      "words": {
+        "en": [
+          "monkey",
+          "swinging",
+          "vine"
+        ],
+        "de": [
+          "Affe",
+          "schwingt",
+          "Liane"
+        ]
+      },
+      "model": {
+        "en": "The monkey is swinging on the vine.",
+        "de": "Der Affe schwingt an der Liane."
+      },
+      "childExample": {
+        "en": "Monkey.",
+        "de": "Affe."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Describe the elephant spraying water.",
+        "de": "Beschreibe den Elefanten, der Wasser spritzt."
+      },
+      "starter": {
+        "en": "The elephant is…",
+        "de": "Der Elefant …"
+      },
+      "words": {
+        "en": [
+          "elephant",
+          "water",
+          "trunk"
+        ],
+        "de": [
+          "Elefant",
+          "Wasser",
+          "Rüssel"
+        ]
+      },
+      "model": {
+        "en": "The elephant is spraying water with its trunk.",
+        "de": "Der Elefant spritzt mit seinem Rüssel Wasser."
+      },
+      "childExample": {
+        "en": "Elephant.",
+        "de": "Elefant."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    }
+  ]
 }

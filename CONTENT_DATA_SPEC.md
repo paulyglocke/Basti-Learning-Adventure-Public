@@ -27,7 +27,7 @@ ContentId grammar is not broadened to accommodate numeric final segments.
 `SceneCategoryId` preserves root category IDs. Semantic image AssetIds derive from
 scene IDs, independently of filenames, and reuse `LocalImageAsset` for local paths.
 
-`BundledSceneDescriptions.repository()` supplies an immutable schema 1/revision 4
+`BundledSceneDescriptions.repository()` supplies an immutable schema 1/revision 5
 snapshot: `categories()` in root-manifest order, `scenes(category)` in category-manifest
 order, `all()`, `find(sceneId)` and `image(sceneId)`. Unknown scene/image IDs return
 null; unknown categories return an empty list. Records include approved status, wave,
@@ -62,6 +62,18 @@ IDs, asset paths, order and schema remain unchanged; no quiz/session revision is
 Bilingual completeness does not establish visual-semantic correctness or independent
 native-speaker acceptance. Visible-target graphs and visual audit/prompt/reference
 material remain authoring-only; source review cautions are adult reference data.
+
+Content revision 5 adds `tellMePrompts` bundles to all 81 approved scenes.
+Each bundle explicitly pairs EN/DE prompt, starter, up to three helpful words and
+a matching model, a short child-example utterance and parent guidance. Each current
+scene has two distinct prompts. Their selected child/model pair and parent guidance
+replace unrelated legacy grown-up support while that slot is shown. The typed boundary
+also permits three slots or an uncurated reference fixture; legacy support lists
+remain independently authored, preserved reference material. The generator and typed boundary
+reject incomplete, duplicate or oversized bundles. The original English fingerprint
+and physical-review ledger are preserved, with the new bundles separately asserted
+in `docs/tellme-variety/CONTENT_CHANGES.json`. New German copy needs native-speaker
+review; metadata validation is not linguistic or device acceptance.
 
 The standard-library generator `scripts/generate_scene_descriptions.py` follows only
 root/category manifests and approved metadata, validates IDs, schema/wave, canonical

@@ -62,7 +62,7 @@ class SceneDescriptionContentTest {
     }
 
     @Test fun everyApprovedSceneHasGermanForEveryAuthoredRuntimeText() {
-        assertEquals(4, repository.version.revision)
+        assertEquals(5, repository.version.revision)
         fun bilingual(text: SceneText) {
             assertFalse(text[ContentLanguage.ENGLISH].isNullOrBlank())
             assertFalse(text[ContentLanguage.GERMAN].isNullOrBlank())
@@ -77,6 +77,10 @@ class SceneDescriptionContentTest {
             bilingual(scene.title)
             scene.purpose?.let(::bilingual)
             scene.reviewCaution?.let(::bilingual)
+            scene.tellMePrompts.forEach { prompt ->
+                bilingual(prompt.prompt); bilingual(prompt.starter); bilingual(prompt.model); bilingualLines(prompt.words)
+                bilingual(prompt.childExample); bilingual(prompt.guidance)
+            }
             scene.targets.forEach { group ->
                 group.terms.forEach(::bilingual)
                 assertNotNull(scene.terms(group.kind, ContentLanguage.GERMAN))

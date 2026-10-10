@@ -23,14 +23,11 @@ class TellMeFlowTest {
         val state = flow.start(category)
         assertEquals(TellMeState(category), state)
         assertSame(flow.scenes(category).first(), flow.scene(state))
-        assertEquals(setOf("category", "index", "stage", "help", "grownUps"), TellMeState::class.java.declaredFields.filterNot { java.lang.reflect.Modifier.isStatic(it.modifiers) }.map { it.name }.toSet())
+        assertEquals(setOf("category", "index", "stage", "help", "grownUps", "questionIndex"), TellMeState::class.java.declaredFields.filterNot { java.lang.reflect.Modifier.isStatic(it.modifiers) }.map { it.name }.toSet())
     }
-    @Test fun talkToModelKeepsPictureThenAdvancesOnePicture() {
+    @Test fun oneNextPressAdvancesOnePicture() {
         val talk = flow.start(category)
-        val model = next(talk)
-        assertEquals(TellMeStage.MODEL, model.stage)
-        assertSame(flow.scene(talk), flow.scene(model))
-        val second = next(model)
+        val second = next(talk)
         assertEquals(1, second.index); assertEquals(TellMeStage.TALK, second.stage)
     }
     @Test fun supportAndAdultExpansionDoNotAdvanceAndResetOnlyOnNextPicture() {
@@ -38,23 +35,22 @@ class TellMeFlowTest {
         val helped = flow.grownUps(flow.help(start))
         assertTrue(helped.help); assertTrue(helped.grownUps)
         assertSame(flow.scene(start), flow.scene(helped))
-        val model = next(helped)
-        assertTrue(model.help); assertTrue(model.grownUps)
-        assertFalse(next(model).help); assertFalse(next(model).grownUps)
+        val second = next(helped)
+        assertEquals(1, second.index)
+        assertFalse(second.help); assertFalse(second.grownUps)
         assertEquals(helped.copy(grownUps = false), flow.grownUps(helped))
     }
-    @Test fun ninthSceneCompletesOnlyAfterModelAndCompletionIsIdempotent() {
+    @Test fun ninthNextPressCompletesAndCompletionIsIdempotent() {
         var state = flow.start(category)
-        repeat(8) { state = next(next(state)) }
+        repeat(8) { state = next(state) }
         assertEquals(8, state.index); assertEquals(TellMeStage.TALK, state.stage)
-        state = next(state); assertEquals(TellMeStage.MODEL, state.stage)
         state = next(state); assertEquals(TellMeStage.COMPLETE, state.stage)
         assertEquals(state, next(state))
     }
-    @Test fun celebrationOwnershipExistsOnlyAfterFinalModelAndClearsOnExitOrAgain() {
+    @Test fun celebrationOwnershipExistsOnlyAfterNinthNextAndClearsOnExitOrAgain() {
         flow.categories.forEach { category ->
             var state = flow.start(category.id)
-            repeat(18) {
+            repeat(9) {
                 assertNull(state.celebrationId)
                 state = next(state)
             }
@@ -83,14 +79,13 @@ class TellMeFlowTest {
     }
     @Test fun obsoletePhaseOrSceneCallbacksCannotSkipConversation() {
         val talk = flow.start(category); val id = flow.scene(talk)!!.id
-        val model = next(talk)
-        assertEquals(model, flow.advance(model, id, TellMeStage.TALK))
-        val second = next(model)
-        assertEquals(second, flow.advance(second, id, TellMeStage.MODEL))
+        val second = next(talk)
+        assertEquals(second, flow.advance(second, id, TellMeStage.TALK))
+        assertEquals(second, flow.advance(second, flow.scene(second)!!.id, TellMeStage.COMPLETE))
     }
     @Test fun againRetainsCategoryWhileHomeAndChooseAnotherClearConversation() {
         var state = flow.start(flow.categories.last().id)
-        repeat(18) { state = next(state) }
+        repeat(9) { state = next(state) }
         assertEquals(TellMeState(state.category), flow.again(state))
         assertEquals(TellMeState(), flow.home()); assertNull(flow.scene(flow.home()))
     }
@@ -104,20 +99,20 @@ class TellMeFlowTest {
                     assertNotNull(scene.title[lang]); assertNotNull(flow.support(scene, lang).prompt)
                     assertEquals(before, state)
                 }
-                state = next(next(state))
+                state = next(state)
             }
         }
     }
     @Test fun currentOptionalSupportAvailabilityIsHonestInBothLanguages() {
         ContentLanguage.entries.forEach { lang ->
             val support = flow.repository.all().map { flow.support(it, lang) }
-            assertEquals(27, support.count { it.hasHelp })
-            assertEquals(27, support.count { it.model != null })
+            assertEquals(81, support.count { it.hasHelp })
+            assertEquals(81, support.count { it.model != null })
             assertEquals(81, support.count { it.hasGrownUps })
             assertTrue(support.all { it.words.size <= 3 })
             flow.repository.all().forEach { scene ->
                 val data = flow.support(scene, lang)
-                assertEquals(scene.examples?.get(lang)?.firstOrNull() ?: scene.adultSupport.lines(SceneSupportKind.MODELLING_EXAMPLES, lang)?.firstOrNull(), data.model)
+                assertEquals(scene.tellMePrompts.firstOrNull()?.model?.get(lang) ?: scene.examples?.get(lang)?.firstOrNull() ?: scene.adultSupport.lines(SceneSupportKind.MODELLING_EXAMPLES, lang)?.firstOrNull(), data.model)
             }
         }
     }

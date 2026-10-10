@@ -164,5 +164,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_1"
+  "batch": "wave_3_batch_1",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Where could the rabbit rest in this picture?",
+        "de": "Wo könnte sich das Kaninchen auf diesem Bild ausruhen?"
+      },
+      "starter": {
+        "en": "The rabbit could…",
+        "de": "Das Kaninchen könnte …"
+      },
+      "words": {
+        "en": [
+          "rabbit",
+          "rest",
+          "burrow"
+        ],
+        "de": [
+          "Kaninchen",
+          "ausruhen",
+          "Bau"
+        ]
+      },
+      "model": {
+        "en": "The rabbit could rest in its burrow.",
+        "de": "Das Kaninchen könnte sich in seinem Bau ausruhen."
+      },
+      "childExample": {
+        "en": "Rabbit.",
+        "de": "Kaninchen."
+      },
+      "guidance": {
+        "en": "Point to the relevant pictured objects first. Accept different possible solutions or clues and help the child say one simple idea.",
+        "de": "Zuerst auf die passenden Dinge im Bild zeigen. Verschiedene mögliche Lösungen oder Hinweise annehmen und beim Aussprechen einer einfachen Idee helfen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "How might the hedgehog feel in the pile of leaves?",
+        "de": "Wie könnte sich der Igel im Laubhaufen fühlen?"
+      },
+      "starter": {
+        "en": "The hedgehog might feel…",
+        "de": "Der Igel könnte sich … fühlen."
+      },
+      "words": {
+        "en": [
+          "hedgehog",
+          "leaves",
+          "cosy"
+        ],
+        "de": [
+          "Igel",
+          "Blätter",
+          "gemütlich"
+        ]
+      },
+      "model": {
+        "en": "The hedgehog might feel cosy in the leaves.",
+        "de": "Der Igel könnte sich in den Blättern wohlfühlen."
+      },
+      "childExample": {
+        "en": "Hedgehog.",
+        "de": "Igel."
+      },
+      "guidance": {
+        "en": "Offer a feeling word if needed. Different feelings are possible; do not infer one definite feeling from the picture or require an explanation.",
+        "de": "Bei Bedarf ein Wort für ein Gefühl anbieten. Verschiedene Gefühle sind möglich. Aus dem Bild kein bestimmtes Gefühl ableiten und keine Begründung verlangen."
+      }
+    }
+  ]
 }

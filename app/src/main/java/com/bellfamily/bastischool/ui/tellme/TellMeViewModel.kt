@@ -13,6 +13,7 @@ import java.util.concurrent.Executors
 /** In-memory, Activity-scoped conversation. No quiz host, speech engine, storage or grading. */
 class TellMeViewModel(application: Application): AndroidViewModel(application) {
     val flow by lazy {TellMeFlow()}
+    private val questionRotation = TellMeQuestionRotation()
     var state by mutableStateOf(TellMeState()); private set
     var artwork by mutableStateOf<ImageBitmap?>(null); private set
     var loading by mutableStateOf(false); private set
@@ -31,9 +32,9 @@ class TellMeViewModel(application: Application): AndroidViewModel(application) {
     private fun update(next: TellMeState) {
         if(closed || next == state) return
         val previous = flow.scene(state)?.id
-        state = next
-        val scene = flow.scene(next)?.takeIf {next.stage != TellMeStage.COMPLETE}
-        if(scene?.id == previous && next.stage != TellMeStage.COMPLETE) return
+        state = questionRotation.select(state, next, flow)
+        val scene = flow.scene(state)?.takeIf {state.stage != TellMeStage.COMPLETE}
+        if(scene?.id == previous && state.stage != TellMeStage.COMPLETE) return
         val token = ++epoch
         artwork = null; loading = scene != null
         if(scene != null) worker.execute {

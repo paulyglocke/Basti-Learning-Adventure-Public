@@ -147,5 +147,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_3"
+  "batch": "wave_2_batch_3",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What might happen after the tractor carries the hay away?",
+        "de": "Was könnte passieren, nachdem der Traktor das Heu weggebracht hat?"
+      },
+      "starter": {
+        "en": "Next, someone could…",
+        "de": "Als Nächstes könnte jemand …"
+      },
+      "words": {
+        "en": [
+          "hay",
+          "next",
+          "unload"
+        ],
+        "de": [
+          "Heu",
+          "als Nächstes",
+          "abladen"
+        ]
+      },
+      "model": {
+        "en": "Next, someone could unload the hay.",
+        "de": "Als Nächstes könnte jemand das Heu abladen."
+      },
+      "childExample": {
+        "en": "Hay.",
+        "de": "Heu."
+      },
+      "guidance": {
+        "en": "Start with something visible. Invite one possible next event; invented ideas are welcome and are not facts about the picture.",
+        "de": "Mit etwas Sichtbarem beginnen. Ein mögliches nächstes Ereignis anregen. Ausgedachte Ideen sind willkommen und keine Tatsachen über das Bild."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Tell me what the horse is doing in this farm picture.",
+        "de": "Erzähl mir, was das Pferd auf diesem Bauernhofbild macht."
+      },
+      "starter": {
+        "en": "The horse is…",
+        "de": "Das Pferd …"
+      },
+      "words": {
+        "en": [
+          "horse",
+          "eating",
+          "grass"
+        ],
+        "de": [
+          "Pferd",
+          "frisst",
+          "Gras"
+        ]
+      },
+      "model": {
+        "en": "The horse is eating grass.",
+        "de": "Das Pferd frisst Gras."
+      },
+      "childExample": {
+        "en": "Horse.",
+        "de": "Pferd."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    }
+  ]
 }

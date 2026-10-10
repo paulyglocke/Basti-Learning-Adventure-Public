@@ -139,5 +139,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_3"
+  "batch": "wave_2_batch_3",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "How do you think the dog feels while resting?",
+        "de": "Wie fühlt sich der Hund wohl beim Ausruhen?"
+      },
+      "starter": {
+        "en": "The dog might feel…",
+        "de": "Der Hund könnte sich … fühlen."
+      },
+      "words": {
+        "en": [
+          "dog",
+          "sleepy",
+          "calm"
+        ],
+        "de": [
+          "Hund",
+          "müde",
+          "ruhig"
+        ]
+      },
+      "model": {
+        "en": "The dog might feel sleepy and calm.",
+        "de": "Der Hund könnte sich müde und ruhig fühlen."
+      },
+      "childExample": {
+        "en": "Dog.",
+        "de": "Hund."
+      },
+      "guidance": {
+        "en": "Offer a feeling word if needed. Different feelings are possible; do not infer one definite feeling from the picture or require an explanation.",
+        "de": "Bei Bedarf ein Wort für ein Gefühl anbieten. Verschiedene Gefühle sind möglich. Aus dem Bild kein bestimmtes Gefühl ableiten und keine Begründung verlangen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "What helps you relax when you want some quiet time?",
+        "de": "Was hilft dir, dich zu entspannen, wenn du Ruhe möchtest?"
+      },
+      "starter": {
+        "en": "I like…",
+        "de": "Ich mag …"
+      },
+      "words": {
+        "en": [
+          "quiet",
+          "rest",
+          "sitting"
+        ],
+        "de": [
+          "Ruhe",
+          "ausruhen",
+          "sitzen"
+        ]
+      },
+      "model": {
+        "en": "I like sitting quietly for a little while.",
+        "de": "Ich mag es, eine Weile ruhig zu sitzen."
+      },
+      "childExample": {
+        "en": "Quiet.",
+        "de": "Ruhe."
+      },
+      "guidance": {
+        "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",
+        "de": "Einen Wunsch, ein ausgedachtes Beispiel oder fehlende Erfahrung annehmen. Der Beispielsatz ist nur eine Möglichkeit. Das Kind muss ihn nicht teilen."
+      }
+    }
+  ]
 }

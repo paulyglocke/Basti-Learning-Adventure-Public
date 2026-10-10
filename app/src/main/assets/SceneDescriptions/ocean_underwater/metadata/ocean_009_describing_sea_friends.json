@@ -157,5 +157,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_1"
+  "batch": "wave_3_batch_1",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Tell me about the crab and its blue shell.",
+        "de": "Erzähl mir von der Krabbe und ihrer blauen Muschel."
+      },
+      "starter": {
+        "en": "The crab has…",
+        "de": "Die Krabbe hat …"
+      },
+      "words": {
+        "en": [
+          "crab",
+          "blue",
+          "shell"
+        ],
+        "de": [
+          "Krabbe",
+          "blau",
+          "Muschel"
+        ]
+      },
+      "model": {
+        "en": "The crab is holding a blue shell.",
+        "de": "Die Krabbe hält eine blaue Muschel."
+      },
+      "childExample": {
+        "en": "Crab.",
+        "de": "Krabbe."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Which animal in this picture would you like to meet?",
+        "de": "Welches Tier auf diesem Bild würdest du gern treffen?"
+      },
+      "starter": {
+        "en": "I would like to meet…",
+        "de": "Ich würde gern … treffen."
+      },
+      "words": {
+        "en": [
+          "jellyfish",
+          "purple",
+          "meet"
+        ],
+        "de": [
+          "Qualle",
+          "lila",
+          "treffen"
+        ]
+      },
+      "model": {
+        "en": "I would like to meet the purple jellyfish.",
+        "de": "Ich würde gern die lila Qualle treffen."
+      },
+      "childExample": {
+        "en": "Jellyfish.",
+        "de": "Qualle."
+      },
+      "guidance": {
+        "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",
+        "de": "Einen Wunsch, ein ausgedachtes Beispiel oder fehlende Erfahrung annehmen. Der Beispielsatz ist nur eine Möglichkeit. Das Kind muss ihn nicht teilen."
+      }
+    }
+  ]
 }

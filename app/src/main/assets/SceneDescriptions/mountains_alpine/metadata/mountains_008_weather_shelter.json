@@ -131,5 +131,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_2"
+  "batch": "wave_3_batch_2",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Where could the people go if it starts to snow?",
+        "de": "Wohin könnten die Menschen gehen, wenn es anfängt zu schneien?"
+      },
+      "starter": {
+        "en": "They could go…",
+        "de": "Sie könnten … gehen."
+      },
+      "words": {
+        "en": [
+          "people",
+          "snow",
+          "hut"
+        ],
+        "de": [
+          "Menschen",
+          "Schnee",
+          "Hütte"
+        ]
+      },
+      "model": {
+        "en": "They could go to the hut for shelter.",
+        "de": "Sie könnten in der Hütte Schutz suchen."
+      },
+      "childExample": {
+        "en": "People.",
+        "de": "Menschen."
+      },
+      "guidance": {
+        "en": "Point to the relevant pictured objects first. Accept different possible solutions or clues and help the child say one simple idea.",
+        "de": "Zuerst auf die passenden Dinge im Bild zeigen. Verschiedene mögliche Lösungen oder Hinweise annehmen und beim Aussprechen einer einfachen Idee helfen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "How might someone feel near the snow in this picture?",
+        "de": "Wie könnte sich jemand in der Nähe des Schnees auf diesem Bild fühlen?"
+      },
+      "starter": {
+        "en": "They might feel…",
+        "de": "Die Person könnte sich … fühlen."
+      },
+      "words": {
+        "en": [
+          "snow",
+          "cold",
+          "shelter"
+        ],
+        "de": [
+          "Schnee",
+          "kalt",
+          "Schutz"
+        ]
+      },
+      "model": {
+        "en": "They might feel cold and want some shelter.",
+        "de": "Die Person könnte frieren und Schutz suchen."
+      },
+      "childExample": {
+        "en": "Snow.",
+        "de": "Schnee."
+      },
+      "guidance": {
+        "en": "Offer a feeling word if needed. Different feelings are possible; do not infer one definite feeling from the picture or require an explanation.",
+        "de": "Bei Bedarf ein Wort für ein Gefühl anbieten. Verschiedene Gefühle sind möglich. Aus dem Bild kein bestimmtes Gefühl ableiten und keine Begründung verlangen."
+      }
+    }
+  ]
 }

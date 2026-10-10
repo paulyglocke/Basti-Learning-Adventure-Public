@@ -155,5 +155,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_1"
+  "batch": "wave_3_batch_1",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Can you find the crab in the cave?",
+        "de": "Findest du die Krabbe in der Höhle?"
+      },
+      "starter": {
+        "en": "The crab is…",
+        "de": "Die Krabbe ist …"
+      },
+      "words": {
+        "en": [
+          "crab",
+          "in",
+          "cave"
+        ],
+        "de": [
+          "Krabbe",
+          "in",
+          "Höhle"
+        ]
+      },
+      "model": {
+        "en": "The crab is in the cave.",
+        "de": "Die Krabbe ist in der Höhle."
+      },
+      "childExample": {
+        "en": "Crab.",
+        "de": "Krabbe."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Give me a clue about the starfish so I can find it.",
+        "de": "Gib mir einen Hinweis zum Seestern, damit ich ihn finde."
+      },
+      "starter": {
+        "en": "The starfish is…",
+        "de": "Der Seestern ist …"
+      },
+      "words": {
+        "en": [
+          "starfish",
+          "sand",
+          "on"
+        ],
+        "de": [
+          "Seestern",
+          "Sand",
+          "auf"
+        ]
+      },
+      "model": {
+        "en": "The starfish is on the sand.",
+        "de": "Der Seestern ist auf dem Sand."
+      },
+      "childExample": {
+        "en": "Starfish.",
+        "de": "Seestern."
+      },
+      "guidance": {
+        "en": "Pointing or one word is enough. Name the pictured subject together, then offer one short sentence without asking for repetition.",
+        "de": "Zeigen oder ein Wort reicht. Den Bildinhalt gemeinsam benennen und einen kurzen Satz anbieten, ohne Wiederholung zu verlangen."
+      }
+    }
+  ]
 }

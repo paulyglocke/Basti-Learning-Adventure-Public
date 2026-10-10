@@ -34,8 +34,8 @@ class TellMeRouteTest {
             java.io.File(context.cacheDir, "tellme-en.png").outputStream().use {
                 compose.onRoot().captureToImage().asAndroidBitmap().compress(Bitmap.CompressFormat.PNG, 100, it)
             }
-            click("tellme-continue"); click("tellme-continue"); settled()
-            click("tellme-help"); click("tellme-grownups"); click("tellme-continue")
+            click("tellme-continue"); settled()
+            click("tellme-help"); click("tellme-grownups")
             val saved = vm().state
             val owner = vm()
             scenario.recreate(); settled()
@@ -44,7 +44,7 @@ class TellMeRouteTest {
             compose.onNodeWithText("🇩🇪 Deutsch").performClick()
             scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }; settled()
             assertEquals(saved, vm().state)
-            compose.onNodeWithTag("tellme-model").performScrollTo().assertTextEquals(vm().flow.support(vm().flow.scene(saved)!!, ContentLanguage.GERMAN).model!!)
+            compose.onNodeWithTag("tellme-model").performScrollTo().assertTextEquals(vm().flow.support(vm().flow.scene(saved)!!, ContentLanguage.GERMAN, saved.questionIndex).model!!)
             scenario.moveToState(androidx.lifecycle.Lifecycle.State.CREATED)
             scenario.moveToState(androidx.lifecycle.Lifecycle.State.RESUMED)
             assertEquals(saved, vm().state)
@@ -63,9 +63,9 @@ class TellMeRouteTest {
             java.io.File(context.cacheDir, "tellme-de.png").outputStream().use {
                 compose.onRoot().captureToImage().asAndroidBitmap().compress(Bitmap.CompressFormat.PNG, 100, it)
             }
-            // Production shell, Sound Off: only the final MODEL/Next reaches the shared reward.
+            // Production shell, Sound Off: only the ninth Next picture press reaches the shared reward.
             val conversation = vm()
-            scenario.onActivity { repeat(17) {
+            scenario.onActivity { repeat(8) {
                 conversation.advance(conversation.flow.scene(conversation.state)!!.id, conversation.state.stage)
             } }
             compose.onNodeWithTag("completion-celebration").assertDoesNotExist()

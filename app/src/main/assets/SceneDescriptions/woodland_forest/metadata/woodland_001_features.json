@@ -375,5 +375,75 @@
       "noTextOrUI": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Tell me about the rabbit's ears.",
+        "de": "Erzähl mir von den Ohren des Kaninchens."
+      },
+      "starter": {
+        "en": "The rabbit has…",
+        "de": "Das Kaninchen hat …"
+      },
+      "words": {
+        "en": [
+          "rabbit",
+          "long",
+          "ears"
+        ],
+        "de": [
+          "Kaninchen",
+          "lang",
+          "Ohren"
+        ]
+      },
+      "model": {
+        "en": "The rabbit has long ears.",
+        "de": "Das Kaninchen hat lange Ohren."
+      },
+      "childExample": {
+        "en": "Rabbit.",
+        "de": "Kaninchen."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "How are the deer and the rabbit different in size?",
+        "de": "Wie unterscheiden sich das Reh und das Kaninchen in der Größe?"
+      },
+      "starter": {
+        "en": "The deer is…",
+        "de": "Das Reh ist …"
+      },
+      "words": {
+        "en": [
+          "deer",
+          "rabbit",
+          "bigger"
+        ],
+        "de": [
+          "Reh",
+          "Kaninchen",
+          "größer"
+        ]
+      },
+      "model": {
+        "en": "The deer is bigger than the rabbit.",
+        "de": "Das Reh ist größer als das Kaninchen."
+      },
+      "childExample": {
+        "en": "Deer.",
+        "de": "Reh."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    }
+  ]
 }

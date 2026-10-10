@@ -131,5 +131,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_3"
+  "batch": "wave_2_batch_3",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What can you see inside the red cup on the table?",
+        "de": "Was siehst du im roten Becher auf dem Tisch?"
+      },
+      "starter": {
+        "en": "In the red cup…",
+        "de": "Im roten Becher …"
+      },
+      "words": {
+        "en": [
+          "pencils",
+          "red",
+          "cup"
+        ],
+        "de": [
+          "Stifte",
+          "rot",
+          "Becher"
+        ]
+      },
+      "model": {
+        "en": "The pencils are in the red cup.",
+        "de": "Die Stifte sind im roten Becher."
+      },
+      "childExample": {
+        "en": "Pencils.",
+        "de": "Stifte."
+      },
+      "guidance": {
+        "en": "Pointing or one word is enough. Name the pictured subject together, then offer one short sentence without asking for repetition.",
+        "de": "Zeigen oder ein Wort reicht. Den Bildinhalt gemeinsam benennen und einen kurzen Satz anbieten, ohne Wiederholung zu verlangen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Tell me where the teddy bear is on the shelf.",
+        "de": "Erzähl mir, wo der Teddybär am Regal ist."
+      },
+      "starter": {
+        "en": "The teddy bear is…",
+        "de": "Der Teddybär ist …"
+      },
+      "words": {
+        "en": [
+          "teddy bear",
+          "on top",
+          "shelf"
+        ],
+        "de": [
+          "Teddybär",
+          "oben",
+          "Regal"
+        ]
+      },
+      "model": {
+        "en": "The teddy bear is on top of the shelf.",
+        "de": "Der Teddybär ist oben auf dem Regal."
+      },
+      "childExample": {
+        "en": "Teddy bear.",
+        "de": "Teddybär."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    }
+  ]
 }

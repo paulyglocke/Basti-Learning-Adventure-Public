@@ -147,5 +147,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_3"
+  "batch": "wave_3_batch_3",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "How is the child with the bucket helping the cow?",
+        "de": "Wie hilft das Kind mit dem Eimer der Kuh?"
+      },
+      "starter": {
+        "en": "The child is…",
+        "de": "Das Kind …"
+      },
+      "words": {
+        "en": [
+          "water",
+          "bucket",
+          "cow"
+        ],
+        "de": [
+          "Wasser",
+          "Eimer",
+          "Kuh"
+        ]
+      },
+      "model": {
+        "en": "The child is carrying water to the cow.",
+        "de": "Das Kind trägt Wasser zur Kuh."
+      },
+      "childExample": {
+        "en": "Water.",
+        "de": "Wasser."
+      },
+      "guidance": {
+        "en": "Start with the visible action or object. Invite a possible reason, accept a short idea, and model one connection without treating it as the only answer.",
+        "de": "Mit der sichtbaren Handlung oder dem Gegenstand beginnen. Eine mögliche Begründung anbieten, eine kurze Idee annehmen und einen Zusammenhang vormachen. Es gibt nicht nur eine Antwort."
+      }
+    },
+    {
+      "prompt": {
+        "en": "What could happen after the bucket of water reaches the cow?",
+        "de": "Was könnte passieren, wenn der Eimer mit Wasser bei der Kuh ankommt?"
+      },
+      "starter": {
+        "en": "Next, the child could…",
+        "de": "Als Nächstes könnte das Kind …"
+      },
+      "words": {
+        "en": [
+          "water",
+          "next",
+          "trough"
+        ],
+        "de": [
+          "Wasser",
+          "als Nächstes",
+          "Trog"
+        ]
+      },
+      "model": {
+        "en": "Next, the child could pour the water into the trough.",
+        "de": "Als Nächstes könnte das Kind das Wasser in den Trog gießen."
+      },
+      "childExample": {
+        "en": "Water.",
+        "de": "Wasser."
+      },
+      "guidance": {
+        "en": "A word or one event can start the story. Offer first or next if helpful; do not require a complete story or a fixed ending.",
+        "de": "Ein Wort oder ein Ereignis kann die Geschichte beginnen. Bei Bedarf zuerst oder danach anbieten. Keine vollständige Geschichte und kein festes Ende verlangen."
+      }
+    }
+  ]
 }

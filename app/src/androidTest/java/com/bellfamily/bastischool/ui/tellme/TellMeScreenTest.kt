@@ -40,6 +40,33 @@ class TellMeScreenTest(private val german: Boolean, private val orientation: Int
         )
     }
     @get:Rule val compose = createAndroidComposeRule<ComponentActivity>()
+    @Test fun curatedPromptKeepsItsMatchingHelpAndModelAcrossLanguageChanges() {
+        val flow = TellMeFlow()
+        var state by mutableStateOf(TellMeState(com.bellfamily.bastischool.learning.scenedescription.SceneCategoryId("woodland_forest"), 3, questionIndex = 1))
+        var language by mutableStateOf(if (german) ContentLanguage.GERMAN else ContentLanguage.ENGLISH)
+        compose.setContent {
+            MaterialTheme {
+                TellMeScreen(flow, state, language, ImageBitmap(40, 30), false,
+                    {}, { id, stage -> state = flow.advance(state, id, stage) },
+                    { state = flow.help(state) }, {}, {}, {}, {})
+            }
+        }
+        fun verifyPrompt() {
+            val de = language == ContentLanguage.GERMAN
+            compose.onNodeWithTag("tellme-prompt").performScrollTo().assertTextEquals(if (de) "Was macht der Fuchs?" else "What is the fox doing?")
+        }
+        verifyPrompt()
+        compose.onNodeWithTag("tellme-help").performScrollTo().performClick()
+        compose.runOnIdle { language = if (language == ContentLanguage.GERMAN) ContentLanguage.ENGLISH else ContentLanguage.GERMAN }
+        verifyPrompt()
+        val de = language == ContentLanguage.GERMAN
+        compose.onNodeWithTag("tellme-starter").performScrollTo().assertTextEquals(if (de) "Der Fuchs …" else "The fox is…")
+        compose.onNodeWithTag("tellme-model").performScrollTo().assertTextEquals(if (de) "Der Fuchs schnuppert beim Baumstamm." else "The fox is sniffing near the log.")
+        compose.runOnIdle { assertEquals(1, state.questionIndex); assertEquals(3, state.index) }
+        compose.onNodeWithTag("tellme-continue").performScrollTo().assertTextEquals(if (de) "Nächstes Bild" else "Next picture").performClick()
+        compose.runOnIdle { assertEquals(4, state.index); assertFalse(state.help) }
+        compose.onNodeWithTag("tellme-model").assertDoesNotExist()
+    }
     @OptIn(ExperimentalTestApi::class, androidx.compose.ui.ExperimentalComposeUiApi::class)
     @Test fun conversationRemainsOpenEndedScrollableAndChildControlled() {
         val landscape = orientation != ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
@@ -85,6 +112,7 @@ class TellMeScreenTest(private val german: Boolean, private val orientation: Int
         assertTrue(imageBounds.bottom - imageBounds.top <= (if (landscape) 208.dp else 420.dp) + (1f / compose.activity.resources.displayMetrics.density).dp)
         assertTrue(imageBounds.bottom <= promptBounds.top)
         compose.onNodeWithTag("tellme-starter").assertDoesNotExist()
+        compose.onNodeWithTag("tellme-model").assertDoesNotExist()
         click("tellme-help")
         val starter = compose.onNodeWithTag("tellme-starter").performScrollTo().assertTextEquals(support.starter!!)
             .assert(SemanticsMatcher.keyNotDefined(SemanticsActions.OnClick))
@@ -96,15 +124,16 @@ class TellMeScreenTest(private val german: Boolean, private val orientation: Int
         click("tellme-grownups")
         compose.onNodeWithTag("tellme-adult").performScrollTo().assertExists()
         compose.runOnIdle { assertEquals(0, state.index); assertEquals(TellMeStage.TALK, state.stage) }
-        val continueButton = compose.onNodeWithTag("tellme-continue").performScrollTo().assertHeightIsAtLeast(56.dp)
-        compose.runOnIdle { assertTrue(input.requestInputMode(InputMode.Keyboard)) }
-        continueButton.performSemanticsAction(SemanticsActions.RequestFocus) { it() }
-        continueButton.assertIsFocused().performKeyInput { pressKey(Key.Enter) }
         compose.onNodeWithTag("tellme-model").performScrollTo().assertTextEquals(support.model!!)
         compose.onNodeWithText(if (german) "Du könntest sagen:" else "You could say:").assertExists()
         compose.onNodeWithTag("completion-celebration").assertDoesNotExist()
         compose.runOnIdle { assertEquals(first.id, flow.scene(state)!!.id); assertTrue(state.help); assertTrue(state.grownUps) }
-        click("tellme-continue")
+        val continueButton = compose.onNodeWithTag("tellme-continue").performScrollTo().assertTextEquals(if (german) "Nächstes Bild" else "Next picture").assertHeightIsAtLeast(56.dp)
+        compose.runOnIdle { assertTrue(input.requestInputMode(InputMode.Keyboard)) }
+        continueButton.performSemanticsAction(SemanticsActions.RequestFocus) { it() }
+        continueButton.assertIsFocused().performKeyInput { pressKey(Key.Enter) }
+        compose.runOnIdle { assertEquals(1, state.index); assertFalse(state.help); assertFalse(state.grownUps) }
+        compose.onNodeWithTag("tellme-model").assertDoesNotExist()
         compose.onNodeWithTag("tellme-progress").assertTextEquals(if (german) "2 von 9" else "2 of 9")
         compose.onNodeWithTag("tellme-starter").assertDoesNotExist()
         compose.onNodeWithTag("tellme-adult").assertDoesNotExist()
@@ -114,9 +143,11 @@ class TellMeScreenTest(private val german: Boolean, private val orientation: Int
         compose.runOnIdle { assertEquals(1, state.index); assertEquals(TellMeStage.TALK, state.stage) }
         repeat(8) {
             compose.onNodeWithTag("completion-celebration").assertDoesNotExist()
-            click("tellme-continue")
-            compose.onNodeWithTag("completion-celebration").assertDoesNotExist()
-            if (state.index >= 3) { compose.onNodeWithTag("tellme-model").assertDoesNotExist(); compose.onNodeWithTag("tellme-help").assertDoesNotExist() }
+            compose.onNodeWithTag("tellme-model").assertDoesNotExist()
+            click("tellme-help")
+            val currentSupport = flow.support(flow.scene(state)!!, language, state.questionIndex)
+            compose.onNodeWithTag("tellme-model").performScrollTo().assertTextEquals(currentSupport.model!!)
+            compose.runOnIdle { assertEquals(TellMeStage.TALK, state.stage) }
             click("tellme-continue")
         }
         compose.onNodeWithTag("tellme-completion").assertTextEquals(if (german) "Toll erzählt!" else "Great talking!")
@@ -132,7 +163,7 @@ class TellMeScreenTest(private val german: Boolean, private val orientation: Int
         compose.onNodeWithTag("completion-celebration").assertDoesNotExist()
         compose.runOnIdle { assertEquals(TellMeState(first.categoryId), state) }
         // Reach completion again without manufacturing a success/failure event.
-        compose.runOnIdle { repeat(18) { state = flow.advance(state, flow.scene(state)!!.id, state.stage) } }
+        compose.runOnIdle { repeat(9) { state = flow.advance(state, flow.scene(state)!!.id, state.stage) } }
         click("tellme-categories")
         compose.onNodeWithTag("tellme-landing").assertIsDisplayed()
         click("tellme-category-${flow.categories.last().id.value}")

@@ -381,5 +381,75 @@
       "noTextOrUI": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What could the girl in pink say as she gives the red ball to the boy in blue?",
+        "de": "Was könnte das Mädchen in Rosa sagen, wenn es dem Jungen in Blau den roten Ball gibt?"
+      },
+      "starter": {
+        "en": "She could say…",
+        "de": "Sie könnte sagen …"
+      },
+      "words": {
+        "en": [
+          "ball",
+          "give",
+          "for you"
+        ],
+        "de": [
+          "Ball",
+          "geben",
+          "für dich"
+        ]
+      },
+      "model": {
+        "en": "She could say, \"Here is the ball for you.\"",
+        "de": "Sie könnte sagen: „Hier ist der Ball für dich.“"
+      },
+      "childExample": {
+        "en": "Ball.",
+        "de": "Ball."
+      },
+      "guidance": {
+        "en": "Invite pretend speech or one helpful action. A short phrase or gesture is enough; model friendly wording without requiring the child to repeat it.",
+        "de": "Ein kleines Rollenspiel oder eine hilfreiche Handlung anregen. Ein kurzer Ausdruck oder eine Geste reicht. Freundliche Worte anbieten, ohne Nachsprechen zu verlangen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "How could the children share the bucket and spade?",
+        "de": "Wie könnten die Kinder Eimer und Schaufel teilen?"
+      },
+      "starter": {
+        "en": "They could…",
+        "de": "Sie könnten …"
+      },
+      "words": {
+        "en": [
+          "spade",
+          "share",
+          "turn"
+        ],
+        "de": [
+          "Schaufel",
+          "teilen",
+          "abwechseln"
+        ]
+      },
+      "model": {
+        "en": "They could take turns with the spade.",
+        "de": "Sie könnten sich mit der Schaufel abwechseln."
+      },
+      "childExample": {
+        "en": "Spade.",
+        "de": "Schaufel."
+      },
+      "guidance": {
+        "en": "Invite pretend speech or one helpful action. A short phrase or gesture is enough; model friendly wording without requiring the child to repeat it.",
+        "de": "Ein kleines Rollenspiel oder eine hilfreiche Handlung anregen. Ein kurzer Ausdruck oder eine Geste reicht. Freundliche Worte anbieten, ohne Nachsprechen zu verlangen."
+      }
+    }
+  ]
 }

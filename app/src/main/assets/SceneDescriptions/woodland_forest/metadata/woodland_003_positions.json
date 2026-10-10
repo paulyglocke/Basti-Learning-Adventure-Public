@@ -361,5 +361,75 @@
       "noTextOrUI": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Tell me where the rabbit is hiding.",
+        "de": "Erzähl mir, wo sich das Kaninchen versteckt."
+      },
+      "starter": {
+        "en": "The rabbit is under…",
+        "de": "Das Kaninchen ist unter …"
+      },
+      "words": {
+        "en": [
+          "rabbit",
+          "under",
+          "log"
+        ],
+        "de": [
+          "Kaninchen",
+          "unter",
+          "Baumstamm"
+        ]
+      },
+      "model": {
+        "en": "The rabbit is under the log.",
+        "de": "Das Kaninchen ist unter dem Baumstamm."
+      },
+      "childExample": {
+        "en": "Rabbit.",
+        "de": "Kaninchen."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Describe where the owl is compared with the fox.",
+        "de": "Beschreibe, wo die Eule im Vergleich zum Fuchs ist."
+      },
+      "starter": {
+        "en": "The owl is above…",
+        "de": "Die Eule ist über …"
+      },
+      "words": {
+        "en": [
+          "owl",
+          "above",
+          "fox"
+        ],
+        "de": [
+          "Eule",
+          "über",
+          "Fuchs"
+        ]
+      },
+      "model": {
+        "en": "The owl is above the fox.",
+        "de": "Die Eule ist über dem Fuchs."
+      },
+      "childExample": {
+        "en": "Owl.",
+        "de": "Eule."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    }
+  ]
 }

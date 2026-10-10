@@ -312,5 +312,75 @@
       "noTextOrUI": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What is the squirrel carrying?",
+        "de": "Was trägt das Eichhörnchen?"
+      },
+      "starter": {
+        "en": "The squirrel is carrying…",
+        "de": "Das Eichhörnchen trägt …"
+      },
+      "words": {
+        "en": [
+          "squirrel",
+          "carrying",
+          "acorn"
+        ],
+        "de": [
+          "Eichhörnchen",
+          "trägt",
+          "Eichel"
+        ]
+      },
+      "model": {
+        "en": "The squirrel is carrying an acorn.",
+        "de": "Das Eichhörnchen trägt eine Eichel."
+      },
+      "childExample": {
+        "en": "Squirrel.",
+        "de": "Eichhörnchen."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Tell me what the deer is doing at the water.",
+        "de": "Erzähl mir, was das Reh am Wasser macht."
+      },
+      "starter": {
+        "en": "The deer is…",
+        "de": "Das Reh …"
+      },
+      "words": {
+        "en": [
+          "deer",
+          "drinking",
+          "water"
+        ],
+        "de": [
+          "Reh",
+          "trinkt",
+          "Wasser"
+        ]
+      },
+      "model": {
+        "en": "The deer is drinking water.",
+        "de": "Das Reh trinkt Wasser."
+      },
+      "childExample": {
+        "en": "Deer.",
+        "de": "Reh."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    }
+  ]
 }

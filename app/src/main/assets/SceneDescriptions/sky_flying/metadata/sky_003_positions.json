@@ -349,5 +349,75 @@
       "noTextOrUI": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Where is the helicopter compared with the two clouds?",
+        "de": "Wo ist der Hubschrauber im Vergleich zu den beiden Wolken?"
+      },
+      "starter": {
+        "en": "The helicopter is between…",
+        "de": "Der Hubschrauber ist zwischen …"
+      },
+      "words": {
+        "en": [
+          "helicopter",
+          "between",
+          "clouds"
+        ],
+        "de": [
+          "Hubschrauber",
+          "zwischen",
+          "Wolken"
+        ]
+      },
+      "model": {
+        "en": "The helicopter is between the clouds.",
+        "de": "Der Hubschrauber ist zwischen den Wolken."
+      },
+      "childExample": {
+        "en": "Helicopter.",
+        "de": "Hubschrauber."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Tell me where the balloon is compared with the mountain.",
+        "de": "Erzähl mir, wo der Ballon im Vergleich zum Berg ist."
+      },
+      "starter": {
+        "en": "The balloon is above…",
+        "de": "Der Ballon ist über …"
+      },
+      "words": {
+        "en": [
+          "balloon",
+          "above",
+          "mountain"
+        ],
+        "de": [
+          "Ballon",
+          "über",
+          "Berg"
+        ]
+      },
+      "model": {
+        "en": "The balloon is above the mountain.",
+        "de": "Der Ballon ist über dem Berg."
+      },
+      "childExample": {
+        "en": "Balloon.",
+        "de": "Ballon."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    }
+  ]
 }

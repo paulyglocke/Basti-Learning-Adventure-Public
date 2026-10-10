@@ -143,5 +143,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_2"
+  "batch": "wave_2_batch_2",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Which flying vehicle here would you like to travel in?",
+        "de": "Mit welchem Fluggerät hier würdest du gern reisen?"
+      },
+      "starter": {
+        "en": "I would like to travel in…",
+        "de": "Ich würde gern mit … reisen."
+      },
+      "words": {
+        "en": [
+          "airplane",
+          "travel",
+          "sky"
+        ],
+        "de": [
+          "Flugzeug",
+          "reisen",
+          "Himmel"
+        ]
+      },
+      "model": {
+        "en": "I would like to travel in the airplane.",
+        "de": "Ich würde gern mit dem Flugzeug reisen."
+      },
+      "childExample": {
+        "en": "Airplane.",
+        "de": "Flugzeug."
+      },
+      "guidance": {
+        "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",
+        "de": "Einen Wunsch, ein ausgedachtes Beispiel oder fehlende Erfahrung annehmen. Der Beispielsatz ist nur eine Möglichkeit. Das Kind muss ihn nicht teilen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "What is flying on the right-hand side of this travel scene?",
+        "de": "Was fliegt rechts auf diesem Reisebild?"
+      },
+      "starter": {
+        "en": "On the right…",
+        "de": "Rechts …"
+      },
+      "words": {
+        "en": [
+          "helicopter",
+          "flying",
+          "right"
+        ],
+        "de": [
+          "Hubschrauber",
+          "fliegt",
+          "rechts"
+        ]
+      },
+      "model": {
+        "en": "The helicopter is flying on the right.",
+        "de": "Der Hubschrauber fliegt rechts."
+      },
+      "childExample": {
+        "en": "Helicopter.",
+        "de": "Hubschrauber."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    }
+  ]
 }

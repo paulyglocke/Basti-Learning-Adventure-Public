@@ -165,5 +165,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_1"
+  "batch": "wave_3_batch_1",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Give me a clue about the deer so I can find it.",
+        "de": "Gib mir einen Hinweis zum Reh, damit ich es finde."
+      },
+      "starter": {
+        "en": "Look for the animal with…",
+        "de": "Such das Tier mit …"
+      },
+      "words": {
+        "en": [
+          "deer",
+          "antlers",
+          "find"
+        ],
+        "de": [
+          "Reh",
+          "Geweih",
+          "finden"
+        ]
+      },
+      "model": {
+        "en": "Look for the animal with antlers.",
+        "de": "Such das Tier mit dem Geweih."
+      },
+      "childExample": {
+        "en": "Deer.",
+        "de": "Reh."
+      },
+      "guidance": {
+        "en": "Point to the relevant pictured objects first. Accept different possible solutions or clues and help the child say one simple idea.",
+        "de": "Zuerst auf die passenden Dinge im Bild zeigen. Verschiedene mögliche Lösungen oder Hinweise annehmen und beim Aussprechen einer einfachen Idee helfen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Which woodland animal here would you like to tell a story about?",
+        "de": "Über welches Waldtier hier würdest du gern eine Geschichte erzählen?"
+      },
+      "starter": {
+        "en": "My story could be about…",
+        "de": "Meine Geschichte könnte von … handeln."
+      },
+      "words": {
+        "en": [
+          "hedgehog",
+          "little",
+          "story"
+        ],
+        "de": [
+          "Igel",
+          "klein",
+          "Geschichte"
+        ]
+      },
+      "model": {
+        "en": "My story could be about the little hedgehog.",
+        "de": "Meine Geschichte könnte von dem kleinen Igel handeln."
+      },
+      "childExample": {
+        "en": "Hedgehog.",
+        "de": "Igel."
+      },
+      "guidance": {
+        "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",
+        "de": "Einen Wunsch, ein ausgedachtes Beispiel oder fehlende Erfahrung annehmen. Der Beispielsatz ist nur eine Möglichkeit. Das Kind muss ihn nicht teilen."
+      }
+    }
+  ]
 }

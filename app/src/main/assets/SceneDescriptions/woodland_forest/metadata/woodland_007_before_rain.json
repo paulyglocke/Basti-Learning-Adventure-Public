@@ -169,5 +169,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_1"
+  "batch": "wave_3_batch_1",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What might the rabbit do when it starts to rain?",
+        "de": "Was könnte das Kaninchen machen, wenn es anfängt zu regnen?"
+      },
+      "starter": {
+        "en": "The rabbit might…",
+        "de": "Das Kaninchen könnte …"
+      },
+      "words": {
+        "en": [
+          "rabbit",
+          "rain",
+          "burrow"
+        ],
+        "de": [
+          "Kaninchen",
+          "Regen",
+          "Bau"
+        ]
+      },
+      "model": {
+        "en": "The rabbit might go into its burrow.",
+        "de": "Das Kaninchen könnte in seinen Bau gehen."
+      },
+      "childExample": {
+        "en": "Rabbit.",
+        "de": "Kaninchen."
+      },
+      "guidance": {
+        "en": "Start with something visible. Invite one possible next event; invented ideas are welcome and are not facts about the picture.",
+        "de": "Mit etwas Sichtbarem beginnen. Ein mögliches nächstes Ereignis anregen. Ausgedachte Ideen sind willkommen und keine Tatsachen über das Bild."
+      }
+    },
+    {
+      "prompt": {
+        "en": "What can you see in the sky?",
+        "de": "Was siehst du am Himmel?"
+      },
+      "starter": {
+        "en": "I can see…",
+        "de": "Ich sehe …"
+      },
+      "words": {
+        "en": [
+          "sky",
+          "sun",
+          "clouds"
+        ],
+        "de": [
+          "Himmel",
+          "Sonne",
+          "Wolken"
+        ]
+      },
+      "model": {
+        "en": "I can see the sun and dark clouds.",
+        "de": "Ich sehe die Sonne und dunkle Wolken."
+      },
+      "childExample": {
+        "en": "Sky.",
+        "de": "Himmel."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    }
+  ]
 }

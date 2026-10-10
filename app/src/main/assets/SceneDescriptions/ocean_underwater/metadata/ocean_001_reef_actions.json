@@ -328,5 +328,75 @@
       "noTextOrUI": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What is the dolphin doing?",
+        "de": "Was macht der Delfin?"
+      },
+      "starter": {
+        "en": "The dolphin is…",
+        "de": "Der Delfin …"
+      },
+      "words": {
+        "en": [
+          "dolphin",
+          "jumping",
+          "water"
+        ],
+        "de": [
+          "Delfin",
+          "springt",
+          "Wasser"
+        ]
+      },
+      "model": {
+        "en": "The dolphin is jumping out of the water.",
+        "de": "Der Delfin springt aus dem Wasser."
+      },
+      "childExample": {
+        "en": "Dolphin.",
+        "de": "Delfin."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Tell me about the crab carrying a shell.",
+        "de": "Erzähl mir von der Krabbe, die eine Muschel trägt."
+      },
+      "starter": {
+        "en": "The crab is carrying…",
+        "de": "Die Krabbe trägt …"
+      },
+      "words": {
+        "en": [
+          "crab",
+          "carrying",
+          "shell"
+        ],
+        "de": [
+          "Krabbe",
+          "trägt",
+          "Muschel"
+        ]
+      },
+      "model": {
+        "en": "The crab is carrying a shell.",
+        "de": "Die Krabbe trägt eine Muschel."
+      },
+      "childExample": {
+        "en": "Crab.",
+        "de": "Krabbe."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    }
+  ]
 }

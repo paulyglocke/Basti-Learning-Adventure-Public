@@ -131,5 +131,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_2"
+  "batch": "wave_3_batch_2",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Imagine you are in the balloon. What can you see below?",
+        "de": "Stell dir vor, du bist im Ballon. Was siehst du unten?"
+      },
+      "starter": {
+        "en": "Below, I can see…",
+        "de": "Unten sehe ich …"
+      },
+      "words": {
+        "en": [
+          "balloon",
+          "below",
+          "lake"
+        ],
+        "de": [
+          "Ballon",
+          "unten",
+          "See"
+        ]
+      },
+      "model": {
+        "en": "Below, I can see the lake.",
+        "de": "Unten sehe ich den See."
+      },
+      "childExample": {
+        "en": "Balloon.",
+        "de": "Ballon."
+      },
+      "guidance": {
+        "en": "Start with something visible. Invite one possible next event; invented ideas are welcome and are not facts about the picture.",
+        "de": "Mit etwas Sichtbarem beginnen. Ein mögliches nächstes Ereignis anregen. Ausgedachte Ideen sind willkommen und keine Tatsachen über das Bild."
+      }
+    },
+    {
+      "prompt": {
+        "en": "How might you feel riding high in this balloon?",
+        "de": "Wie könntest du dich fühlen, wenn du hoch oben in diesem Ballon fährst?"
+      },
+      "starter": {
+        "en": "I might feel…",
+        "de": "Ich könnte mich … fühlen."
+      },
+      "words": {
+        "en": [
+          "balloon",
+          "excited",
+          "lake"
+        ],
+        "de": [
+          "Ballon",
+          "Vorfreude",
+          "See"
+        ]
+      },
+      "model": {
+        "en": "I might feel excited to see the lake below.",
+        "de": "Ich könnte mich freuen, den See von oben zu sehen."
+      },
+      "childExample": {
+        "en": "Balloon.",
+        "de": "Ballon."
+      },
+      "guidance": {
+        "en": "Offer a feeling word if needed. Different feelings are possible; do not infer one definite feeling from the picture or require an explanation.",
+        "de": "Bei Bedarf ein Wort für ein Gefühl anbieten. Verschiedene Gefühle sind möglich. Aus dem Bild kein bestimmtes Gefühl ableiten und keine Begründung verlangen."
+      }
+    }
+  ]
 }

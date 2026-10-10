@@ -147,5 +147,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_2"
+  "batch": "wave_2_batch_2",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Why would you wear a helmet before riding this scooter?",
+        "de": "Warum würdest du vor dem Rollerfahren einen Helm aufsetzen?"
+      },
+      "starter": {
+        "en": "I would put on…",
+        "de": "Ich würde … aufsetzen."
+      },
+      "words": {
+        "en": [
+          "helmet",
+          "head",
+          "protect"
+        ],
+        "de": [
+          "Helm",
+          "Kopf",
+          "schützen"
+        ]
+      },
+      "model": {
+        "en": "I would put on a helmet to protect my head.",
+        "de": "Ich würde einen Helm aufsetzen, um meinen Kopf zu schützen."
+      },
+      "childExample": {
+        "en": "Helmet.",
+        "de": "Helm."
+      },
+      "guidance": {
+        "en": "Start with the visible action or object. Invite a possible reason, accept a short idea, and model one connection without treating it as the only answer.",
+        "de": "Mit der sichtbaren Handlung oder dem Gegenstand beginnen. Eine mögliche Begründung anbieten, eine kurze Idee annehmen und einen Zusammenhang vormachen. Es gibt nicht nur eine Antwort."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Where is the ball compared with the two cones?",
+        "de": "Wo ist der Ball im Vergleich zu den beiden Pylonen?"
+      },
+      "starter": {
+        "en": "The ball is between…",
+        "de": "Der Ball ist zwischen …"
+      },
+      "words": {
+        "en": [
+          "ball",
+          "between",
+          "cones"
+        ],
+        "de": [
+          "Ball",
+          "zwischen",
+          "Pylonen"
+        ]
+      },
+      "model": {
+        "en": "The ball is between the cones.",
+        "de": "Der Ball ist zwischen den Pylonen."
+      },
+      "childExample": {
+        "en": "Ball.",
+        "de": "Ball."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    }
+  ]
 }

@@ -144,5 +144,75 @@
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
   "batch": "wave_2_batch_1",
-  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text."
+  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text.",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What do you notice about the owl's eyes?",
+        "de": "Was fällt dir an den Augen der Eule auf?"
+      },
+      "starter": {
+        "en": "The owl has…",
+        "de": "Die Eule hat …"
+      },
+      "words": {
+        "en": [
+          "owl",
+          "big",
+          "eyes"
+        ],
+        "de": [
+          "Eule",
+          "groß",
+          "Augen"
+        ]
+      },
+      "model": {
+        "en": "The owl has big eyes.",
+        "de": "Die Eule hat große Augen."
+      },
+      "childExample": {
+        "en": "Owl.",
+        "de": "Eule."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Describe the fox's fluffy tail.",
+        "de": "Beschreibe den flauschigen Schwanz des Fuchses."
+      },
+      "starter": {
+        "en": "The fox has…",
+        "de": "Der Fuchs hat …"
+      },
+      "words": {
+        "en": [
+          "fox",
+          "fluffy",
+          "tail"
+        ],
+        "de": [
+          "Fuchs",
+          "flauschig",
+          "Schwanz"
+        ]
+      },
+      "model": {
+        "en": "The fox has a fluffy tail.",
+        "de": "Der Fuchs hat einen flauschigen Schwanz."
+      },
+      "childExample": {
+        "en": "Fox.",
+        "de": "Fuchs."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    }
+  ]
 }

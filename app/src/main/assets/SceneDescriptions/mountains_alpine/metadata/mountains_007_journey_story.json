@@ -131,5 +131,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_2"
+  "batch": "wave_3_batch_2",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What might the people and dog do next along the path?",
+        "de": "Was könnten die Menschen und der Hund als Nächstes am Weg machen?"
+      },
+      "starter": {
+        "en": "They might…",
+        "de": "Sie könnten …"
+      },
+      "words": {
+        "en": [
+          "people",
+          "dog",
+          "flowers"
+        ],
+        "de": [
+          "Menschen",
+          "Hund",
+          "Blumen"
+        ]
+      },
+      "model": {
+        "en": "They might stop to look at the flowers.",
+        "de": "Sie könnten anhalten und die Blumen anschauen."
+      },
+      "childExample": {
+        "en": "People.",
+        "de": "Menschen."
+      },
+      "guidance": {
+        "en": "Start with something visible. Invite one possible next event; invented ideas are welcome and are not facts about the picture.",
+        "de": "Mit etwas Sichtbarem beginnen. Ein mögliches nächstes Ereignis anregen. Ausgedachte Ideen sind willkommen und keine Tatsachen über das Bild."
+      }
+    },
+    {
+      "prompt": {
+        "en": "What would you like to look at on this mountain walk?",
+        "de": "Was würdest du dir auf diesem Bergspaziergang gern anschauen?"
+      },
+      "starter": {
+        "en": "I would like to look at…",
+        "de": "Ich würde gern … anschauen."
+      },
+      "words": {
+        "en": [
+          "goat",
+          "rock",
+          "look"
+        ],
+        "de": [
+          "Ziege",
+          "Felsen",
+          "anschauen"
+        ]
+      },
+      "model": {
+        "en": "I would like to look at the goat on the rock.",
+        "de": "Ich würde gern die Ziege auf dem Felsen anschauen."
+      },
+      "childExample": {
+        "en": "Goat.",
+        "de": "Ziege."
+      },
+      "guidance": {
+        "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",
+        "de": "Einen Wunsch, ein ausgedachtes Beispiel oder fehlende Erfahrung annehmen. Der Beispielsatz ist nur eine Möglichkeit. Das Kind muss ihn nicht teilen."
+      }
+    }
+  ]
 }

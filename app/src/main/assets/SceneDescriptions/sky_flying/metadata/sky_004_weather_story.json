@@ -155,5 +155,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_2"
+  "batch": "wave_2_batch_2",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "How is the weather different on the sunny side and the rainy side?",
+        "de": "Wie unterscheidet sich das Wetter auf der sonnigen und der regnerischen Seite?"
+      },
+      "starter": {
+        "en": "On one side…",
+        "de": "Auf einer Seite …"
+      },
+      "words": {
+        "en": [
+          "sun",
+          "rain",
+          "different"
+        ],
+        "de": [
+          "Sonne",
+          "Regen",
+          "anders"
+        ]
+      },
+      "model": {
+        "en": "On one side it is sunny. On the other side it is raining.",
+        "de": "Auf einer Seite scheint die Sonne. Auf der anderen regnet es."
+      },
+      "childExample": {
+        "en": "Sun.",
+        "de": "Sonne."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "What could you do if rain came while you were flying the kite?",
+        "de": "Was könntest du machen, wenn es beim Drachensteigen regnet?"
+      },
+      "starter": {
+        "en": "I could…",
+        "de": "Ich könnte …"
+      },
+      "words": {
+        "en": [
+          "kite",
+          "rain",
+          "stop"
+        ],
+        "de": [
+          "Drachen",
+          "Regen",
+          "aufhören"
+        ]
+      },
+      "model": {
+        "en": "I could stop flying the kite.",
+        "de": "Ich könnte aufhören, den Drachen steigen zu lassen."
+      },
+      "childExample": {
+        "en": "Kite.",
+        "de": "Drachen."
+      },
+      "guidance": {
+        "en": "Point to the relevant pictured objects first. Accept different possible solutions or clues and help the child say one simple idea.",
+        "de": "Zuerst auf die passenden Dinge im Bild zeigen. Verschiedene mögliche Lösungen oder Hinweise annehmen und beim Aussprechen einer einfachen Idee helfen."
+      }
+    }
+  ]
 }

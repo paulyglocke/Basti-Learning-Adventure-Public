@@ -370,5 +370,75 @@
       "spatialExamplesSeparated": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Where is the crab hiding in this picture?",
+        "de": "Wo versteckt sich die Krabbe auf diesem Bild?"
+      },
+      "starter": {
+        "en": "The crab is in…",
+        "de": "Die Krabbe ist in …"
+      },
+      "words": {
+        "en": [
+          "crab",
+          "in",
+          "cave"
+        ],
+        "de": [
+          "Krabbe",
+          "in",
+          "Höhle"
+        ]
+      },
+      "model": {
+        "en": "The crab is in the cave.",
+        "de": "Die Krabbe ist in der Höhle."
+      },
+      "childExample": {
+        "en": "Crab.",
+        "de": "Krabbe."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Where is the turtle compared with the starfish?",
+        "de": "Wo ist die Schildkröte im Vergleich zum Seestern?"
+      },
+      "starter": {
+        "en": "The turtle is above…",
+        "de": "Die Schildkröte ist über …"
+      },
+      "words": {
+        "en": [
+          "turtle",
+          "above",
+          "starfish"
+        ],
+        "de": [
+          "Schildkröte",
+          "über",
+          "Seestern"
+        ]
+      },
+      "model": {
+        "en": "The turtle is above the starfish.",
+        "de": "Die Schildkröte ist über dem Seestern."
+      },
+      "childExample": {
+        "en": "Turtle.",
+        "de": "Schildkröte."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    }
+  ]
 }

@@ -70,6 +70,21 @@ def wave(value):
     return int(value[-1])
 
 
+def tell_me_prompts(value):
+    """Explicit bilingual bundles, never positional translations of independent support lists."""
+    require(isinstance(value, list) and (not value or 2 <= len(value) <= 3), "Expected two or three Tell Me prompts")
+    result = []
+    for item in value:
+        require(isinstance(item, dict) and set(item) == {"prompt", "starter", "words", "model", "childExample", "guidance"}, "Invalid Tell Me prompt bundle")
+        words = lines(item["words"], True)
+        require(all(len(words[lang]) <= 3 for lang in ("en", "de")), "At most three Tell Me support words")
+        result.append(dict(prompt=text(item["prompt"], True), starter=text(item["starter"], True),
+                           words=words, model=text(item["model"], True), childExample=text(item["childExample"], True), guidance=text(item["guidance"], True)))
+    for lang in ("en", "de"):
+        require(len({item["prompt"][lang] for item in result}) == len(result), "Duplicate Tell Me prompt")
+    return result
+
+
 def _load(root=ROOT):
     root = Path(root)
     source_paths = []
@@ -151,7 +166,8 @@ def _load(root=ROOT):
                 targets=targets, examples=lines(data["exampleChildDescriptions"], True) if "exampleChildDescriptions" in data else None,
                 principle=text(adult["principle"], bilingual) if "principle" in adult else None,
                 focus=text(adult["focus"], bilingual) if "focus" in adult else None, groups=groups, expansions=expansions,
-                caution=text(data["strictReview"]["reason"], bilingual) if "strictReview" in data else None))
+                caution=text(data["strictReview"]["reason"], bilingual) if "strictReview" in data else None,
+                prompts=tell_me_prompts(data.get("tellMePrompts", []))))
     return categories, scenes, source_paths, digest.hexdigest()
 
 
@@ -203,7 +219,9 @@ def render(pack):
                 f"            principle = {kt_text(s['principle'])}, focus = {kt_text(s['focus'])},", "            groups = listOf("]
         out += [f"                SceneSupportGroup(SceneSupportKind.{k}, {kt_lines(v)})," for k, v in s['groups']]
         out += ["            ),", "            expansions = " + listing("SceneExpansion(" + kt_text(c) + ", " + kt_text(a) + ")" for c, a in s['expansions']) + ",",
-                "        ),", "        reviewCaution = " + kt_text(s['caution']) + ",", "    )", ""]
+                "        ),", "        reviewCaution = " + kt_text(s['caution']) + ",",
+                "        tellMePrompts = " + listing("SceneTellMePrompt(" + kt_text(p['prompt']) + ", " + kt_text(p['starter']) + ", " + kt_lines(p['words']) + ", " + kt_text(p['model']) + ", " + kt_text(p['childExample']) + ", " + kt_text(p['guidance']) + ")" for p in s['prompts']) + ",",
+                "    )", ""]
     return "\n".join(out + ["}", ""])
 
 

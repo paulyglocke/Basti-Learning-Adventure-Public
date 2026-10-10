@@ -274,5 +274,75 @@
       "noReadableSigns": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "How is the penguin moving through the water?",
+        "de": "Wie bewegt sich der Pinguin durch das Wasser?"
+      },
+      "starter": {
+        "en": "The penguin is…",
+        "de": "Der Pinguin …"
+      },
+      "words": {
+        "en": [
+          "penguin",
+          "swimming",
+          "water"
+        ],
+        "de": [
+          "Pinguin",
+          "schwimmt",
+          "Wasser"
+        ]
+      },
+      "model": {
+        "en": "The penguin is swimming through the water.",
+        "de": "Der Pinguin schwimmt durch das Wasser."
+      },
+      "childExample": {
+        "en": "Penguin.",
+        "de": "Pinguin."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Describe the monkey climbing in this zoo picture.",
+        "de": "Beschreibe den kletternden Affen auf diesem Zoobild."
+      },
+      "starter": {
+        "en": "The monkey is…",
+        "de": "Der Affe …"
+      },
+      "words": {
+        "en": [
+          "monkey",
+          "climbing",
+          "frame"
+        ],
+        "de": [
+          "Affe",
+          "klettert",
+          "Gerüst"
+        ]
+      },
+      "model": {
+        "en": "The monkey is climbing the frame.",
+        "de": "Der Affe klettert am Gerüst."
+      },
+      "childExample": {
+        "en": "Monkey.",
+        "de": "Affe."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    }
+  ]
 }

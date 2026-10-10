@@ -164,5 +164,75 @@
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
   "batch": "wave_2_batch_1",
-  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text."
+  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text.",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Where is the sloth hanging?",
+        "de": "Wo hängt das Faultier?"
+      },
+      "starter": {
+        "en": "The sloth is hanging…",
+        "de": "Das Faultier hängt …"
+      },
+      "words": {
+        "en": [
+          "sloth",
+          "hanging",
+          "branch"
+        ],
+        "de": [
+          "Faultier",
+          "hängt",
+          "Ast"
+        ]
+      },
+      "model": {
+        "en": "The sloth is hanging from the branch.",
+        "de": "Das Faultier hängt am Ast."
+      },
+      "childExample": {
+        "en": "Sloth.",
+        "de": "Faultier."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "What might the monkey do with its banana?",
+        "de": "Was könnte der Affe mit seiner Banane machen?"
+      },
+      "starter": {
+        "en": "The monkey might…",
+        "de": "Der Affe könnte …"
+      },
+      "words": {
+        "en": [
+          "monkey",
+          "banana",
+          "eat"
+        ],
+        "de": [
+          "Affe",
+          "Banane",
+          "essen"
+        ]
+      },
+      "model": {
+        "en": "The monkey might eat the banana.",
+        "de": "Der Affe könnte die Banane essen."
+      },
+      "childExample": {
+        "en": "Monkey.",
+        "de": "Affe."
+      },
+      "guidance": {
+        "en": "Start with something visible. Invite one possible next event; invented ideas are welcome and are not facts about the picture.",
+        "de": "Mit etwas Sichtbarem beginnen. Ein mögliches nächstes Ereignis anregen. Ausgedachte Ideen sind willkommen und keine Tatsachen über das Bild."
+      }
+    }
+  ]
 }

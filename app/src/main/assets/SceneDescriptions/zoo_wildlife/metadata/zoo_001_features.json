@@ -384,5 +384,75 @@
       "noReadableSigns": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Tell me about the giraffe's long neck.",
+        "de": "Erzähl mir vom langen Hals der Giraffe."
+      },
+      "starter": {
+        "en": "The giraffe has…",
+        "de": "Die Giraffe hat …"
+      },
+      "words": {
+        "en": [
+          "giraffe",
+          "long",
+          "neck"
+        ],
+        "de": [
+          "Giraffe",
+          "lang",
+          "Hals"
+        ]
+      },
+      "model": {
+        "en": "The giraffe has a long neck.",
+        "de": "Die Giraffe hat einen langen Hals."
+      },
+      "childExample": {
+        "en": "Giraffe.",
+        "de": "Giraffe."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "How are the elephant and the penguin different in size?",
+        "de": "Wie unterscheiden sich der Elefant und der Pinguin in der Größe?"
+      },
+      "starter": {
+        "en": "The elephant is…",
+        "de": "Der Elefant ist …"
+      },
+      "words": {
+        "en": [
+          "elephant",
+          "penguin",
+          "bigger"
+        ],
+        "de": [
+          "Elefant",
+          "Pinguin",
+          "größer"
+        ]
+      },
+      "model": {
+        "en": "The elephant is bigger than the penguin.",
+        "de": "Der Elefant ist größer als der Pinguin."
+      },
+      "childExample": {
+        "en": "Elephant.",
+        "de": "Elefant."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    }
+  ]
 }

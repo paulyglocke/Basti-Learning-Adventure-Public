@@ -139,5 +139,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_3"
+  "batch": "wave_3_batch_3",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Why might the lion rest in the shade?",
+        "de": "Warum könnte sich der Löwe im Schatten ausruhen?"
+      },
+      "starter": {
+        "en": "The lion might…",
+        "de": "Der Löwe könnte …"
+      },
+      "words": {
+        "en": [
+          "lion",
+          "shade",
+          "cool"
+        ],
+        "de": [
+          "Löwe",
+          "Schatten",
+          "kühl"
+        ]
+      },
+      "model": {
+        "en": "The lion might rest in the shade to keep cool.",
+        "de": "Der Löwe könnte sich im Schatten ausruhen, um kühl zu bleiben."
+      },
+      "childExample": {
+        "en": "Lion.",
+        "de": "Löwe."
+      },
+      "guidance": {
+        "en": "Start with the visible action or object. Invite a possible reason, accept a short idea, and model one connection without treating it as the only answer.",
+        "de": "Mit der sichtbaren Handlung oder dem Gegenstand beginnen. Eine mögliche Begründung anbieten, eine kurze Idee annehmen und einen Zusammenhang vormachen. Es gibt nicht nur eine Antwort."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Which place here would you choose to rest, and why?",
+        "de": "Welchen Platz hier würdest du zum Ausruhen wählen, und warum?"
+      },
+      "starter": {
+        "en": "I would choose…",
+        "de": "Ich würde … wählen."
+      },
+      "words": {
+        "en": [
+          "shade",
+          "rest",
+          "cool"
+        ],
+        "de": [
+          "Schatten",
+          "ausruhen",
+          "kühl"
+        ]
+      },
+      "model": {
+        "en": "I would choose the shade because I like a cool place.",
+        "de": "Ich würde den Schatten wählen, weil ich einen kühlen Platz mag."
+      },
+      "childExample": {
+        "en": "Shade.",
+        "de": "Schatten."
+      },
+      "guidance": {
+        "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",
+        "de": "Einen Wunsch, ein ausgedachtes Beispiel oder fehlende Erfahrung annehmen. Der Beispielsatz ist nur eine Möglichkeit. Das Kind muss ihn nicht teilen."
+      }
+    }
+  ]
 }

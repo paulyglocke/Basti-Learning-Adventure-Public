@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.key.Key
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.semantics.SemanticsActions
+import androidx.compose.ui.semantics.SemanticsProperties
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.unit.Density
@@ -25,6 +26,19 @@ class ClockScreenTest {
     @get:Rule val compose=createComposeRule()
     private lateinit var state:MutableState<ClockExploreState>
     private var listens=0
+    private fun assertHandColourConnections(digital: String, german: Boolean) {
+        val time = compose.onNodeWithTag("clock-digital").performScrollTo().fetchSemanticsNode()
+            .config[SemanticsProperties.Text].single()
+        val legend = compose.onNodeWithTag("clock-hand-legend").performScrollTo().fetchSemanticsNode()
+            .config[SemanticsProperties.Text].single()
+        assertEquals(digital, time.text)
+        assertEquals(if (german) "Kurzer Zeiger: Stunden. Langer Zeiger: Minuten." else "Short hand: hours. Long hand: minutes.", legend.text)
+        val colon = digital.indexOf(':')
+        assertTrue(time.spanStyles.any { it.start == 0 && it.end == colon && it.item.color == ClockHourColor })
+        assertTrue(time.spanStyles.any { it.start == colon + 1 && it.end == digital.length && it.item.color == ClockMinuteColor })
+        assertEquals(listOf(ClockHourColor, ClockMinuteColor), legend.spanStyles.map { it.item.color })
+        assertNotEquals(ClockHourColor, ClockMinuteColor)
+    }
     private fun show(german:Boolean=false,short:Boolean=false) {
         state=mutableStateOf(ClockExploreState(ClockTime(3),if(german)ContentLanguage.GERMAN else ContentLanguage.ENGLISH))
         compose.setContent {
@@ -49,6 +63,7 @@ class ClockScreenTest {
         repeat(5) {compose.onNodeWithTag("clock-forward").performScrollTo().performClick()}
         compose.onNodeWithTag("clock-digital").performScrollTo().assertTextEquals("3:30")
         compose.onNodeWithTag("clock-phrase").assertTextEquals("Half past three")
+        assertHandColourConnections("3:30", false)
         compose.onNodeWithTag("clock-listen").performScrollTo().performClick()
         compose.runOnIdle {assertEquals(1,listens)}
         compose.onNodeWithTag("clock-home").performScrollTo().assertIsDisplayed()
@@ -58,6 +73,7 @@ class ClockScreenTest {
         compose.runOnIdle {state.value=state.value.copy(time=ClockTime(12))}
         compose.onNodeWithTag("clock-back").performScrollTo().performClick()
         compose.onNodeWithTag("clock-digital").performScrollTo().assertTextEquals("11:55")
+        assertHandColourConnections("11:55", true)
         compose.runOnIdle {state.value=state.value.copy(time=ClockTime(3,30))}
         compose.onNodeWithTag("clock-phrase").performScrollTo().assertTextEquals("Halb vier")
         compose.onNodeWithTag("clock-home").performScrollTo().assertIsDisplayed()

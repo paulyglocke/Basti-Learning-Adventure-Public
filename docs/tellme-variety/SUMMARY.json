@@ -1,0 +1,45 @@
+{
+  "scenes": 81,
+  "themes": 9,
+  "slots_per_scene": 2,
+  "bilingual_slots": 162,
+  "distinct_prompts": {
+    "en": 162,
+    "de": 162
+  },
+  "rewritten_first_prompts": {
+    "en": 71,
+    "de": 71
+  },
+  "initial_purposes": {
+    "actions": 11,
+    "properties": 13,
+    "spatial": 11,
+    "prediction": 10,
+    "counting": 6,
+    "problem": 8,
+    "personal": 4,
+    "social": 6,
+    "cause": 5,
+    "story": 3,
+    "emotions": 2,
+    "naming": 2
+  },
+  "all_slot_purposes": {
+    "actions": 23,
+    "properties": 26,
+    "spatial": 27,
+    "prediction": 13,
+    "story": 10,
+    "counting": 8,
+    "naming": 5,
+    "personal": 12,
+    "problem": 9,
+    "emotions": 9,
+    "social": 11,
+    "cause": 9
+  },
+  "native_speaker_acceptance": "PENDING",
+  "android_build": "BLOCKED",
+  "real_image_validation": "NOT_RERUN"
+}

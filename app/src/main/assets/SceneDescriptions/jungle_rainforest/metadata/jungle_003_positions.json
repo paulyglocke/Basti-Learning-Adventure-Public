@@ -373,5 +373,75 @@
       "noTextOrUI": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Where is the frog sitting in this picture?",
+        "de": "Wo sitzt der Frosch auf diesem Bild?"
+      },
+      "starter": {
+        "en": "The frog is on…",
+        "de": "Der Frosch ist auf …"
+      },
+      "words": {
+        "en": [
+          "frog",
+          "on",
+          "leaf"
+        ],
+        "de": [
+          "Frosch",
+          "auf",
+          "Blatt"
+        ]
+      },
+      "model": {
+        "en": "The frog is on the leaf.",
+        "de": "Der Frosch ist auf dem Blatt."
+      },
+      "childExample": {
+        "en": "Frog.",
+        "de": "Frosch."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Tell me where the tiger is behind the leaves.",
+        "de": "Erzähl mir, wo der Tiger bei den Blättern ist."
+      },
+      "starter": {
+        "en": "The tiger is behind…",
+        "de": "Der Tiger ist hinter …"
+      },
+      "words": {
+        "en": [
+          "tiger",
+          "behind",
+          "leaves"
+        ],
+        "de": [
+          "Tiger",
+          "hinter",
+          "Blätter"
+        ]
+      },
+      "model": {
+        "en": "The tiger is behind the leaves.",
+        "de": "Der Tiger ist hinter den Blättern."
+      },
+      "childExample": {
+        "en": "Tiger.",
+        "de": "Tiger."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    }
+  ]
 }

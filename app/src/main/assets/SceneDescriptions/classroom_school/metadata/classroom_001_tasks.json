@@ -311,5 +311,75 @@
       "noReadableText": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What is the child doing with the open book?",
+        "de": "Was macht das Kind mit dem aufgeschlagenen Buch?"
+      },
+      "starter": {
+        "en": "The child is…",
+        "de": "Das Kind …"
+      },
+      "words": {
+        "en": [
+          "child",
+          "reading",
+          "book"
+        ],
+        "de": [
+          "Kind",
+          "liest",
+          "Buch"
+        ]
+      },
+      "model": {
+        "en": "The child is reading a book.",
+        "de": "Das Kind liest ein Buch."
+      },
+      "childExample": {
+        "en": "Child.",
+        "de": "Kind."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Tell me what the child with the scissors is doing.",
+        "de": "Erzähl mir, was das Kind mit der Schere macht."
+      },
+      "starter": {
+        "en": "The child is…",
+        "de": "Das Kind …"
+      },
+      "words": {
+        "en": [
+          "child",
+          "scissors",
+          "paper"
+        ],
+        "de": [
+          "Kind",
+          "Schere",
+          "Papier"
+        ]
+      },
+      "model": {
+        "en": "The child is cutting the paper.",
+        "de": "Das Kind schneidet das Papier."
+      },
+      "childExample": {
+        "en": "Child.",
+        "de": "Kind."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    }
+  ]
 }

@@ -127,5 +127,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_2"
+  "batch": "wave_3_batch_2",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What clues in this picture tell you it is night?",
+        "de": "Welche Hinweise auf diesem Bild zeigen dir, dass es Nacht ist?"
+      },
+      "starter": {
+        "en": "I can see…",
+        "de": "Ich sehe …"
+      },
+      "words": {
+        "en": [
+          "stars",
+          "dark",
+          "night"
+        ],
+        "de": [
+          "Sterne",
+          "dunkel",
+          "Nacht"
+        ]
+      },
+      "model": {
+        "en": "I can see stars and a dark sky.",
+        "de": "Ich sehe Sterne und einen dunklen Himmel."
+      },
+      "childExample": {
+        "en": "Stars.",
+        "de": "Sterne."
+      },
+      "guidance": {
+        "en": "Start with the visible action or object. Invite a possible reason, accept a short idea, and model one connection without treating it as the only answer.",
+        "de": "Mit der sichtbaren Handlung oder dem Gegenstand beginnen. Eine mögliche Begründung anbieten, eine kurze Idee annehmen und einen Zusammenhang vormachen. Es gibt nicht nur eine Antwort."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Have you seen a moon like this? Tell me about it.",
+        "de": "Hast du schon einen Mond wie diesen gesehen? Erzähl mir davon."
+      },
+      "starter": {
+        "en": "I have seen…",
+        "de": "Ich habe … gesehen."
+      },
+      "words": {
+        "en": [
+          "moon",
+          "seen",
+          "evening"
+        ],
+        "de": [
+          "Mond",
+          "gesehen",
+          "Abend"
+        ]
+      },
+      "model": {
+        "en": "I have seen the moon in the evening.",
+        "de": "Ich habe den Mond am Abend gesehen."
+      },
+      "childExample": {
+        "en": "Moon.",
+        "de": "Mond."
+      },
+      "guidance": {
+        "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",
+        "de": "Einen Wunsch, ein ausgedachtes Beispiel oder fehlende Erfahrung annehmen. Der Beispielsatz ist nur eine Möglichkeit. Das Kind muss ihn nicht teilen."
+      }
+    }
+  ]
 }

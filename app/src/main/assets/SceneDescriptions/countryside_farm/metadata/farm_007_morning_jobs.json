@@ -151,5 +151,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_3"
+  "batch": "wave_3_batch_3",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Which farm job here would you like to help with?",
+        "de": "Bei welcher Aufgabe auf diesem Bauernhofbild würdest du gern helfen?"
+      },
+      "starter": {
+        "en": "I would like to help…",
+        "de": "Ich würde gern … helfen."
+      },
+      "words": {
+        "en": [
+          "plants",
+          "watering",
+          "help"
+        ],
+        "de": [
+          "Pflanzen",
+          "gießen",
+          "helfen"
+        ]
+      },
+      "model": {
+        "en": "I would like to help water the plants.",
+        "de": "Ich würde gern beim Gießen der Pflanzen helfen."
+      },
+      "childExample": {
+        "en": "Plants.",
+        "de": "Pflanzen."
+      },
+      "guidance": {
+        "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",
+        "de": "Einen Wunsch, ein ausgedachtes Beispiel oder fehlende Erfahrung annehmen. Der Beispielsatz ist nur eine Möglichkeit. Das Kind muss ihn nicht teilen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "How could you help the child feeding the chickens?",
+        "de": "Wie könntest du dem Kind beim Füttern der Hühner helfen?"
+      },
+      "starter": {
+        "en": "I could…",
+        "de": "Ich könnte …"
+      },
+      "words": {
+        "en": [
+          "chickens",
+          "food",
+          "help"
+        ],
+        "de": [
+          "Hühner",
+          "Futter",
+          "helfen"
+        ]
+      },
+      "model": {
+        "en": "I could help scatter the food for the chickens.",
+        "de": "Ich könnte helfen, das Futter für die Hühner zu verteilen."
+      },
+      "childExample": {
+        "en": "Chickens.",
+        "de": "Hühner."
+      },
+      "guidance": {
+        "en": "Invite pretend speech or one helpful action. A short phrase or gesture is enough; model friendly wording without requiring the child to repeat it.",
+        "de": "Ein kleines Rollenspiel oder eine hilfreiche Handlung anregen. Ein kurzer Ausdruck oder eine Geste reicht. Freundliche Worte anbieten, ohne Nachsprechen zu verlangen."
+      }
+    }
+  ]
 }

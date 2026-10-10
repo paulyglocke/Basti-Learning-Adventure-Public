@@ -67,7 +67,7 @@ fun TellMeScreen(
                         onChooseAnother, Modifier.fillMaxWidth().testTag("tellme-categories"))
                 } else {
                     val scene = requireNotNull(flow.scene(state))
-                    val support = flow.support(scene, language)
+                    val support = flow.support(scene, language, state.questionIndex)
                     Text(text("${state.index + 1} of 9", "${state.index + 1} von 9"), Modifier.testTag("tellme-progress"))
                     scene.title[language]?.let { Text(it, Modifier.testTag("tellme-title"), style = MaterialTheme.typography.titleLarge) }
                     // Fit preserves the entire composition. Adjacent title is the minimal authored image label.
@@ -96,11 +96,11 @@ fun TellMeScreen(
                             NativeSupportMessage(support.words.joinToString("\n"), Modifier.fillMaxWidth().testTag("tellme-words"))
                         }
                     }
-                    if (state.stage == TellMeStage.MODEL) support.model?.let {
+                    if (state.help) support.model?.let {
                         Text(text("You could say:", "Du könntest sagen:"), style = MaterialTheme.typography.titleMedium)
                         Text(it, Modifier.testTag("tellme-model"))
                     }
-                    NativeActionButton(if (state.stage == TellMeStage.TALK) text("Continue", "Weiter") else text("Next picture", "Nächstes Bild"),
+                    NativeActionButton(text("Next picture", "Nächstes Bild"),
                         NativeActionRole.PRIMARY, { onAdvance(scene.id, state.stage) },
                         Modifier.fillMaxWidth().testTag("tellme-continue"))
                     if (support.hasGrownUps) {

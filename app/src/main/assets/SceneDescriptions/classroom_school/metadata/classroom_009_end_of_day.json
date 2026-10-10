@@ -136,5 +136,75 @@
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
   "batch": "wave_3_batch_3",
-  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text."
+  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text.",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Tell me about something you do before going home from school.",
+        "de": "Erzähl mir etwas, das du machst, bevor du von der Schule nach Hause gehst."
+      },
+      "starter": {
+        "en": "Before I go home…",
+        "de": "Bevor ich nach Hause gehe …"
+      },
+      "words": {
+        "en": [
+          "bag",
+          "pack",
+          "home"
+        ],
+        "de": [
+          "Tasche",
+          "packen",
+          "zu Hause"
+        ]
+      },
+      "model": {
+        "en": "Before I go home, I pack my bag.",
+        "de": "Bevor ich nach Hause gehe, packe ich meine Tasche."
+      },
+      "childExample": {
+        "en": "Bag.",
+        "de": "Tasche."
+      },
+      "guidance": {
+        "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",
+        "de": "Einen Wunsch, ein ausgedachtes Beispiel oder fehlende Erfahrung annehmen. Der Beispielsatz ist nur eine Möglichkeit. Das Kind muss ihn nicht teilen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "What could the child in blue say about the picture they are holding?",
+        "de": "Was könnte das Kind in Blau über das Bild sagen, das es hält?"
+      },
+      "starter": {
+        "en": "The child could say…",
+        "de": "Das Kind könnte sagen …"
+      },
+      "words": {
+        "en": [
+          "picture",
+          "show",
+          "say"
+        ],
+        "de": [
+          "Bild",
+          "zeigen",
+          "sagen"
+        ]
+      },
+      "model": {
+        "en": "The child could say, \"Would you like to see my picture?\"",
+        "de": "Das Kind könnte sagen: „Möchtest du mein Bild sehen?“"
+      },
+      "childExample": {
+        "en": "Picture.",
+        "de": "Bild."
+      },
+      "guidance": {
+        "en": "Invite pretend speech or one helpful action. A short phrase or gesture is enough; model friendly wording without requiring the child to repeat it.",
+        "de": "Ein kleines Rollenspiel oder eine hilfreiche Handlung anregen. Ein kurzer Ausdruck oder eine Geste reicht. Freundliche Worte anbieten, ohne Nachsprechen zu verlangen."
+      }
+    }
+  ]
 }

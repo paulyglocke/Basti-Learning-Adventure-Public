@@ -165,5 +165,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_1"
+  "batch": "wave_3_batch_1",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What might the parrot do when it reaches the nest?",
+        "de": "Was könnte der Papagei machen, wenn er am Nest ankommt?"
+      },
+      "starter": {
+        "en": "The parrot might…",
+        "de": "Der Papagei könnte …"
+      },
+      "words": {
+        "en": [
+          "parrot",
+          "leaf",
+          "nest"
+        ],
+        "de": [
+          "Papagei",
+          "Blatt",
+          "Nest"
+        ]
+      },
+      "model": {
+        "en": "The parrot might put the leaf in the nest.",
+        "de": "Der Papagei könnte das Blatt ins Nest legen."
+      },
+      "childExample": {
+        "en": "Parrot.",
+        "de": "Papagei."
+      },
+      "guidance": {
+        "en": "Start with something visible. Invite one possible next event; invented ideas are welcome and are not facts about the picture.",
+        "de": "Mit etwas Sichtbarem beginnen. Ein mögliches nächstes Ereignis anregen. Ausgedachte Ideen sind willkommen und keine Tatsachen über das Bild."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Begin a little story about the jumping frog.",
+        "de": "Fang eine kleine Geschichte über den springenden Frosch an."
+      },
+      "starter": {
+        "en": "First, the frog…",
+        "de": "Zuerst …"
+      },
+      "words": {
+        "en": [
+          "frog",
+          "jumps",
+          "then"
+        ],
+        "de": [
+          "Frosch",
+          "springt",
+          "dann"
+        ]
+      },
+      "model": {
+        "en": "First, the frog jumps. Then it might sit down.",
+        "de": "Zuerst springt der Frosch. Dann könnte er sich hinsetzen."
+      },
+      "childExample": {
+        "en": "Frog.",
+        "de": "Frosch."
+      },
+      "guidance": {
+        "en": "A word or one event can start the story. Offer first or next if helpful; do not require a complete story or a fixed ending.",
+        "de": "Ein Wort oder ein Ereignis kann die Geschichte beginnen. Bei Bedarf zuerst oder danach anbieten. Keine vollständige Geschichte und kein festes Ende verlangen."
+      }
+    }
+  ]
 }

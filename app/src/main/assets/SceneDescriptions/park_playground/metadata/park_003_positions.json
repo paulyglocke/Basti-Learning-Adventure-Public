@@ -327,5 +327,75 @@
       "noTextOrUI": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Where is the backpack by the bench?",
+        "de": "Wo ist der Rucksack bei der Bank?"
+      },
+      "starter": {
+        "en": "The backpack is under…",
+        "de": "Der Rucksack ist unter …"
+      },
+      "words": {
+        "en": [
+          "backpack",
+          "under",
+          "bench"
+        ],
+        "de": [
+          "Rucksack",
+          "unter",
+          "Bank"
+        ]
+      },
+      "model": {
+        "en": "The backpack is under the bench.",
+        "de": "Der Rucksack ist unter der Bank."
+      },
+      "childExample": {
+        "en": "Backpack.",
+        "de": "Rucksack."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Tell me where the kite is compared with the tree.",
+        "de": "Erzähl mir, wo der Drachen im Vergleich zum Baum ist."
+      },
+      "starter": {
+        "en": "The kite is above…",
+        "de": "Der Drachen ist über …"
+      },
+      "words": {
+        "en": [
+          "kite",
+          "above",
+          "tree"
+        ],
+        "de": [
+          "Drachen",
+          "über",
+          "Baum"
+        ]
+      },
+      "model": {
+        "en": "The kite is above the tree.",
+        "de": "Der Drachen ist über dem Baum."
+      },
+      "childExample": {
+        "en": "Kite.",
+        "de": "Drachen."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    }
+  ]
 }

@@ -371,5 +371,75 @@
       "noTextOrUI": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Tell me about the mountain goat's horns.",
+        "de": "Erzähl mir von den Hörnern der Bergziege."
+      },
+      "starter": {
+        "en": "The mountain goat has…",
+        "de": "Die Bergziege hat …"
+      },
+      "words": {
+        "en": [
+          "goat",
+          "horns",
+          "head"
+        ],
+        "de": [
+          "Ziege",
+          "Hörner",
+          "Kopf"
+        ]
+      },
+      "model": {
+        "en": "The mountain goat has horns.",
+        "de": "Die Bergziege hat Hörner."
+      },
+      "childExample": {
+        "en": "Goat.",
+        "de": "Ziege."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "How does the sheep look different from the marmot?",
+        "de": "Wie sieht das Schaf im Vergleich zum Murmeltier aus?"
+      },
+      "starter": {
+        "en": "The sheep is…",
+        "de": "Das Schaf ist …"
+      },
+      "words": {
+        "en": [
+          "sheep",
+          "white",
+          "fluffy"
+        ],
+        "de": [
+          "Schaf",
+          "weiß",
+          "flauschig"
+        ]
+      },
+      "model": {
+        "en": "The sheep is white and fluffy.",
+        "de": "Das Schaf ist weiß und flauschig."
+      },
+      "childExample": {
+        "en": "Sheep.",
+        "de": "Schaf."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    }
+  ]
 }

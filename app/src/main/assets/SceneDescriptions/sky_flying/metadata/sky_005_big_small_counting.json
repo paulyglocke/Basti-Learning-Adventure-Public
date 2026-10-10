@@ -139,5 +139,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_2"
+  "batch": "wave_2_batch_2",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "How many little yellow birds are flying together?",
+        "de": "Wie viele kleine gelbe Vögel fliegen zusammen?"
+      },
+      "starter": {
+        "en": "There are…",
+        "de": "Da sind …"
+      },
+      "words": {
+        "en": [
+          "three",
+          "yellow",
+          "birds"
+        ],
+        "de": [
+          "drei",
+          "gelb",
+          "Vögel"
+        ]
+      },
+      "model": {
+        "en": "Three little yellow birds are flying together.",
+        "de": "Drei kleine gelbe Vögel fliegen zusammen."
+      },
+      "childExample": {
+        "en": "Three.",
+        "de": "Drei."
+      },
+      "guidance": {
+        "en": "Count or point together if helpful. Turn the quantity into a short phrase; this is a conversation, not a counting test.",
+        "de": "Bei Bedarf gemeinsam zählen oder zeigen. Die Menge in eine kurze Aussage einbauen. Dies ist ein Gespräch, kein Zähltest."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Where might the little yellow birds fly next?",
+        "de": "Wohin könnten die kleinen gelben Vögel als Nächstes fliegen?"
+      },
+      "starter": {
+        "en": "The birds might…",
+        "de": "Die Vögel könnten …"
+      },
+      "words": {
+        "en": [
+          "birds",
+          "fly",
+          "balloon"
+        ],
+        "de": [
+          "Vögel",
+          "fliegen",
+          "Ballon"
+        ]
+      },
+      "model": {
+        "en": "The birds might fly past the balloon.",
+        "de": "Die Vögel könnten am Ballon vorbeifliegen."
+      },
+      "childExample": {
+        "en": "Birds.",
+        "de": "Vögel."
+      },
+      "guidance": {
+        "en": "Start with something visible. Invite one possible next event; invented ideas are welcome and are not facts about the picture.",
+        "de": "Mit etwas Sichtbarem beginnen. Ein mögliches nächstes Ereignis anregen. Ausgedachte Ideen sind willkommen und keine Tatsachen über das Bild."
+      }
+    }
+  ]
 }

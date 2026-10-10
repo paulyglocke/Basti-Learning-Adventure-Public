@@ -167,5 +167,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_2"
+  "batch": "wave_2_batch_2",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What might the eagle do with the twig?",
+        "de": "Was könnte der Adler mit dem Zweig machen?"
+      },
+      "starter": {
+        "en": "The eagle might…",
+        "de": "Der Adler könnte …"
+      },
+      "words": {
+        "en": [
+          "eagle",
+          "twig",
+          "nest"
+        ],
+        "de": [
+          "Adler",
+          "Zweig",
+          "Nest"
+        ]
+      },
+      "model": {
+        "en": "The eagle might take the twig to its nest.",
+        "de": "Der Adler könnte den Zweig zu seinem Nest bringen."
+      },
+      "childExample": {
+        "en": "Eagle.",
+        "de": "Adler."
+      },
+      "guidance": {
+        "en": "Start with something visible. Invite one possible next event; invented ideas are welcome and are not facts about the picture.",
+        "de": "Mit etwas Sichtbarem beginnen. Ein mögliches nächstes Ereignis anregen. Ausgedachte Ideen sind willkommen und keine Tatsachen über das Bild."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Why might the marmot be carrying grass?",
+        "de": "Warum könnte das Murmeltier Gras tragen?"
+      },
+      "starter": {
+        "en": "The marmot might…",
+        "de": "Das Murmeltier könnte …"
+      },
+      "words": {
+        "en": [
+          "marmot",
+          "grass",
+          "soft"
+        ],
+        "de": [
+          "Murmeltier",
+          "Gras",
+          "weich"
+        ]
+      },
+      "model": {
+        "en": "The marmot might carry grass to make a soft place to rest.",
+        "de": "Das Murmeltier könnte mit dem Gras einen weichen Platz zum Ausruhen machen."
+      },
+      "childExample": {
+        "en": "Marmot.",
+        "de": "Murmeltier."
+      },
+      "guidance": {
+        "en": "Start with the visible action or object. Invite a possible reason, accept a short idea, and model one connection without treating it as the only answer.",
+        "de": "Mit der sichtbaren Handlung oder dem Gegenstand beginnen. Eine mögliche Begründung anbieten, eine kurze Idee annehmen und einen Zusammenhang vormachen. Es gibt nicht nur eine Antwort."
+      }
+    }
+  ]
 }

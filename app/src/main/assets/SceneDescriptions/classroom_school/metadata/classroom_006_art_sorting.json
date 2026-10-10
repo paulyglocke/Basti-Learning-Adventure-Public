@@ -143,5 +143,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_3"
+  "batch": "wave_2_batch_3",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Where could we put the football so there is room for drawing?",
+        "de": "Wohin könnten wir den Fußball legen, damit Platz zum Malen ist?"
+      },
+      "starter": {
+        "en": "We could put the football…",
+        "de": "Wir könnten den Fußball … legen."
+      },
+      "words": {
+        "en": [
+          "football",
+          "chair",
+          "space"
+        ],
+        "de": [
+          "Fußball",
+          "Stuhl",
+          "Platz"
+        ]
+      },
+      "model": {
+        "en": "We could put the football beside the chair.",
+        "de": "Wir könnten den Fußball neben den Stuhl legen."
+      },
+      "childExample": {
+        "en": "Football.",
+        "de": "Fußball."
+      },
+      "guidance": {
+        "en": "Point to the relevant pictured objects first. Accept different possible solutions or clues and help the child say one simple idea.",
+        "de": "Zuerst auf die passenden Dinge im Bild zeigen. Verschiedene mögliche Lösungen oder Hinweise annehmen und beim Aussprechen einer einfachen Idee helfen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "What would you like to draw with these art materials?",
+        "de": "Was würdest du mit diesen Malsachen gern malen?"
+      },
+      "starter": {
+        "en": "I would like to draw…",
+        "de": "Ich würde gern … malen."
+      },
+      "words": {
+        "en": [
+          "rainbow",
+          "draw",
+          "colours"
+        ],
+        "de": [
+          "Regenbogen",
+          "malen",
+          "Farben"
+        ]
+      },
+      "model": {
+        "en": "I would like to draw a rainbow.",
+        "de": "Ich würde gern einen Regenbogen malen."
+      },
+      "childExample": {
+        "en": "Rainbow.",
+        "de": "Regenbogen."
+      },
+      "guidance": {
+        "en": "Accept a preference, an imagined example or no past experience. The model is only one possibility; the child does not need to share it.",
+        "de": "Einen Wunsch, ein ausgedachtes Beispiel oder fehlende Erfahrung annehmen. Der Beispielsatz ist nur eine Möglichkeit. Das Kind muss ihn nicht teilen."
+      }
+    }
+  ]
 }

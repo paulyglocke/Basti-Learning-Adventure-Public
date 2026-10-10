@@ -1,5 +1,42 @@
 # Session handoff — 2026-09-27
 
+## Tell Me complete content-variety draft — 2026-10-10 (build blocked)
+
+Owner authorized improving the remaining 79 scenes before build validation,
+then explicitly authorized committing/pushing before Android validation and
+requested the existing stable-signed APK action. Publication was attempted, but
+GitHub create-blob and create-tree both returned 403 “Resource not accessible by
+integration”. No remote object, commit, ref update or workflow dispatch succeeded.
+The CLI authentication check also failed. GitHub is installed; usable repository
+write access and Actions dispatch access must be restored before publication.
+The source snapshot and complete patch remain saved. CI validation is the next check.
+All 81 approved pictures now have two literal EN/DE conversation bundles: prompt,
+starter, three helpful words, model, short child example and matched parent guidance.
+The existing nine-category/nine-picture order remains. Owner feedback now makes
+one Next picture press advance immediately; the sentence model is optional Help.
+Activity-lifetime deterministic rotation selects once per entered scene; Help,
+model reveal, language, Options and recreation retain the slot. Home clears conversation
+but retains cursors; a fresh process resets them. No artwork, speech or storage added.
+Content revision 5 supersedes the earlier two-scene draft, not a released revision.
+The old reference lists and English fingerprint remain unchanged; all bundle additions
+are separately asserted in docs/tellme-variety/CONTENT_CHANGES.json.
+
+Validation: 26 isolated metadata/authoring fixture checks passed; one real-image
+hash/review test skipped. Generated output and original English fingerprint pass.
+JVM/Android/lint/instrumentation remain unrun because the local SDK/Gradle/network
+are unavailable. New German, visual semantics and physical acceptance remain review
+items; prior picture evidence is not new image acceptance. Nothing committed or pushed.
+Clock feedback is also drafted: shared Explore/Practice face shows minutes 0–59,
+with larger bold multiples of five. Hour markings, hand line, digital hours and
+legend use the supplied dinosaur green outline; equivalent minute cues use the
+dragon red outline. The darker existing vector outlines preserve text contrast.
+Practice still hides the digital time until solved. Minute labels remain drawn
+inside the one clock semantic target. No clock angles, drag, audio, scoring,
+storage or task generation changed. All rendered clock layouts need visual QA.
+Gradle validation was attempted again using a writable cache and the session proxy;
+the wrapper cannot download Gradle 8.9 (socket creation: Operation not permitted). Nothing committed/pushed.
+See docs/tellme-variety/README.md and REVIEW.md for scope, counts and resume steps.
+
 ## Months v1 Phase 1 — 2026-10-09 (validated Explore implementation)
 
 Days & Seasons now offers Months / Monate. Twelve canonical semantic IDs, full EN/DE

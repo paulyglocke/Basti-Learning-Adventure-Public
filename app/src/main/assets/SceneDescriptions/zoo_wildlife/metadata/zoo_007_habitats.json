@@ -143,5 +143,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_3"
+  "batch": "wave_3_batch_3",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Begin a little story about the elephant and penguin by the water.",
+        "de": "Fang eine kleine Geschichte über den Elefanten und den Pinguin am Wasser an."
+      },
+      "starter": {
+        "en": "One day…",
+        "de": "Eines Tages …"
+      },
+      "words": {
+        "en": [
+          "elephant",
+          "penguin",
+          "water"
+        ],
+        "de": [
+          "Elefant",
+          "Pinguin",
+          "Wasser"
+        ]
+      },
+      "model": {
+        "en": "One day, the elephant and penguin might meet by the water.",
+        "de": "Eines Tages könnten sich der Elefant und der Pinguin am Wasser treffen."
+      },
+      "childExample": {
+        "en": "Elephant.",
+        "de": "Elefant."
+      },
+      "guidance": {
+        "en": "A word or one event can start the story. Offer first or next if helpful; do not require a complete story or a fixed ending.",
+        "de": "Ein Wort oder ein Ereignis kann die Geschichte beginnen. Bei Bedarf zuerst oder danach anbieten. Keine vollständige Geschichte und kein festes Ende verlangen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Which two animals can you find beside the water?",
+        "de": "Welche beiden Tiere findest du beim Wasser?"
+      },
+      "starter": {
+        "en": "I can see…",
+        "de": "Ich sehe …"
+      },
+      "words": {
+        "en": [
+          "elephant",
+          "penguin",
+          "beside"
+        ],
+        "de": [
+          "Elefant",
+          "Pinguin",
+          "bei"
+        ]
+      },
+      "model": {
+        "en": "I can see the elephant and the penguin beside the water.",
+        "de": "Ich sehe den Elefanten und den Pinguin beim Wasser."
+      },
+      "childExample": {
+        "en": "Elephant.",
+        "de": "Elefant."
+      },
+      "guidance": {
+        "en": "Pointing or one word is enough. Name the pictured subject together, then offer one short sentence without asking for repetition.",
+        "de": "Zeigen oder ein Wort reicht. Den Bildinhalt gemeinsam benennen und einen kurzen Satz anbieten, ohne Wiederholung zu verlangen."
+      }
+    }
+  ]
 }

@@ -144,5 +144,75 @@
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
   "batch": "wave_2_batch_1",
-  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text."
+  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text.",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What is the turtle eating?",
+        "de": "Was frisst die Schildkröte?"
+      },
+      "starter": {
+        "en": "The turtle is eating…",
+        "de": "Die Schildkröte frisst …"
+      },
+      "words": {
+        "en": [
+          "turtle",
+          "eating",
+          "seaweed"
+        ],
+        "de": [
+          "Schildkröte",
+          "frisst",
+          "Seegras"
+        ]
+      },
+      "model": {
+        "en": "The turtle is eating seaweed.",
+        "de": "Die Schildkröte frisst Seegras."
+      },
+      "childExample": {
+        "en": "Turtle.",
+        "de": "Schildkröte."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Tell me where the octopus is beside the open chest.",
+        "de": "Erzähl mir, wo der Oktopus bei der offenen Truhe ist."
+      },
+      "starter": {
+        "en": "The octopus is beside…",
+        "de": "Der Oktopus ist neben …"
+      },
+      "words": {
+        "en": [
+          "octopus",
+          "beside",
+          "chest"
+        ],
+        "de": [
+          "Oktopus",
+          "neben",
+          "Truhe"
+        ]
+      },
+      "model": {
+        "en": "The octopus is beside the open chest.",
+        "de": "Der Oktopus ist neben der offenen Truhe."
+      },
+      "childExample": {
+        "en": "Octopus.",
+        "de": "Oktopus."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    }
+  ]
 }

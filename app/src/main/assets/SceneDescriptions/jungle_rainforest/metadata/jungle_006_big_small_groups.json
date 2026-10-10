@@ -144,5 +144,75 @@
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
   "batch": "wave_2_batch_1",
-  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text."
+  "physicalReviewNote": "2026-09-28: Earlier visualAudit/visualStatus describes generation intent and is not acceptance evidence. See docs/tellme-visual-qa/AUDIT.json for production-image review and corrected runtime text.",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Describe the toucan's big beak.",
+        "de": "Beschreibe den großen Schnabel des Tukans."
+      },
+      "starter": {
+        "en": "The toucan has…",
+        "de": "Der Tukan hat …"
+      },
+      "words": {
+        "en": [
+          "toucan",
+          "big",
+          "beak"
+        ],
+        "de": [
+          "Tukan",
+          "groß",
+          "Schnabel"
+        ]
+      },
+      "model": {
+        "en": "The toucan has a big beak.",
+        "de": "Der Tukan hat einen großen Schnabel."
+      },
+      "childExample": {
+        "en": "Toucan.",
+        "de": "Tukan."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Tell me how the tiger and the frog compare.",
+        "de": "Erzähl mir, wie sich der Tiger und der Frosch unterscheiden."
+      },
+      "starter": {
+        "en": "The tiger is…",
+        "de": "Der Tiger ist …"
+      },
+      "words": {
+        "en": [
+          "tiger",
+          "frog",
+          "bigger"
+        ],
+        "de": [
+          "Tiger",
+          "Frosch",
+          "größer"
+        ]
+      },
+      "model": {
+        "en": "The tiger is bigger than the frog.",
+        "de": "Der Tiger ist größer als der Frosch."
+      },
+      "childExample": {
+        "en": "Tiger.",
+        "de": "Tiger."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    }
+  ]
 }

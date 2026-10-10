@@ -135,5 +135,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_3"
+  "batch": "wave_3_batch_3",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Choose an animal and give me a clue so I can find it.",
+        "de": "Such dir ein Tier aus und gib mir einen Hinweis, damit ich es finde."
+      },
+      "starter": {
+        "en": "Look for the animal with…",
+        "de": "Such das Tier mit …"
+      },
+      "words": {
+        "en": [
+          "mane",
+          "lion",
+          "find"
+        ],
+        "de": [
+          "Mähne",
+          "Löwe",
+          "finden"
+        ]
+      },
+      "model": {
+        "en": "Look for the animal with a mane.",
+        "de": "Such das Tier mit der Mähne."
+      },
+      "childExample": {
+        "en": "Mane.",
+        "de": "Mähne."
+      },
+      "guidance": {
+        "en": "Point to the relevant pictured objects first. Accept different possible solutions or clues and help the child say one simple idea.",
+        "de": "Zuerst auf die passenden Dinge im Bild zeigen. Verschiedene mögliche Lösungen oder Hinweise annehmen und beim Aussprechen einer einfachen Idee helfen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Tell me what you notice about the zebra's stripes.",
+        "de": "Erzähl mir, was dir an den Streifen des Zebras auffällt."
+      },
+      "starter": {
+        "en": "The zebra has…",
+        "de": "Das Zebra hat …"
+      },
+      "words": {
+        "en": [
+          "zebra",
+          "black",
+          "stripes"
+        ],
+        "de": [
+          "Zebra",
+          "schwarz",
+          "Streifen"
+        ]
+      },
+      "model": {
+        "en": "The zebra has black and white stripes.",
+        "de": "Das Zebra hat schwarze und weiße Streifen."
+      },
+      "childExample": {
+        "en": "Zebra.",
+        "de": "Zebra."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    }
+  ]
 }

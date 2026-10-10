@@ -171,5 +171,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_1"
+  "batch": "wave_2_batch_1",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What is on the hedgehog's back?",
+        "de": "Was ist auf dem Rücken des Igels?"
+      },
+      "starter": {
+        "en": "The hedgehog has…",
+        "de": "Der Igel hat …"
+      },
+      "words": {
+        "en": [
+          "hedgehog",
+          "leaf",
+          "back"
+        ],
+        "de": [
+          "Igel",
+          "Blatt",
+          "Rücken"
+        ]
+      },
+      "model": {
+        "en": "The hedgehog has a leaf on its back.",
+        "de": "Der Igel hat ein Blatt auf dem Rücken."
+      },
+      "childExample": {
+        "en": "Hedgehog.",
+        "de": "Igel."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "What is the fox doing?",
+        "de": "Was macht der Fuchs?"
+      },
+      "starter": {
+        "en": "The fox is…",
+        "de": "Der Fuchs …"
+      },
+      "words": {
+        "en": [
+          "fox",
+          "sniffing",
+          "log"
+        ],
+        "de": [
+          "Fuchs",
+          "schnuppert",
+          "Baumstamm"
+        ]
+      },
+      "model": {
+        "en": "The fox is sniffing near the log.",
+        "de": "Der Fuchs schnuppert beim Baumstamm."
+      },
+      "childExample": {
+        "en": "Fox.",
+        "de": "Fuchs."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    }
+  ]
 }

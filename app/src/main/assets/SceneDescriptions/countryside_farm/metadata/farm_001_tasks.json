@@ -341,5 +341,75 @@
       "en": "The image contains four chickens instead of the requested three. All five functional tasks are clear, and chicken quantity is not a teaching target in this scene, so this does not block the task.",
       "de": "Das Bild zeigt vier Hühner statt der gewünschten drei. Alle fünf praktischen Aufgaben sind klar erkennbar. Die Anzahl der Hühner ist in dieser Szene kein Lernziel und steht der Aufgabe deshalb nicht im Weg."
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What is the child doing with the watering can?",
+        "de": "Was macht das Kind mit der Gießkanne?"
+      },
+      "starter": {
+        "en": "The child is…",
+        "de": "Das Kind …"
+      },
+      "words": {
+        "en": [
+          "child",
+          "watering",
+          "plants"
+        ],
+        "de": [
+          "Kind",
+          "gießt",
+          "Pflanzen"
+        ]
+      },
+      "model": {
+        "en": "The child is watering the plants.",
+        "de": "Das Kind gießt die Pflanzen."
+      },
+      "childExample": {
+        "en": "Child.",
+        "de": "Kind."
+      },
+      "guidance": {
+        "en": "Accept a gesture or an action word first. Add who is doing it, then offer one short sentence; copying it is optional.",
+        "de": "Zuerst eine Geste oder ein Tätigkeitswort annehmen. Ergänzen, wer etwas macht, und einen kurzen Satz anbieten. Nachsprechen ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Why do you think the child is watering the plants?",
+        "de": "Warum gießt das Kind wohl die Pflanzen?"
+      },
+      "starter": {
+        "en": "The plants need…",
+        "de": "Die Pflanzen brauchen …"
+      },
+      "words": {
+        "en": [
+          "plants",
+          "water",
+          "grow"
+        ],
+        "de": [
+          "Pflanzen",
+          "Wasser",
+          "wachsen"
+        ]
+      },
+      "model": {
+        "en": "The plants need water to grow.",
+        "de": "Die Pflanzen brauchen Wasser zum Wachsen."
+      },
+      "childExample": {
+        "en": "Plants.",
+        "de": "Pflanzen."
+      },
+      "guidance": {
+        "en": "Start with the visible action or object. Invite a possible reason, accept a short idea, and model one connection without treating it as the only answer.",
+        "de": "Mit der sichtbaren Handlung oder dem Gegenstand beginnen. Eine mögliche Begründung anbieten, eine kurze Idee annehmen und einen Zusammenhang vormachen. Es gibt nicht nur eine Antwort."
+      }
+    }
+  ]
 }

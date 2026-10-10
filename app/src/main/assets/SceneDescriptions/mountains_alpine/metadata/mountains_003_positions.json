@@ -329,5 +329,75 @@
       "noTextOrUI": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Where is the rabbit compared with the two rocks?",
+        "de": "Wo ist das Kaninchen im Vergleich zu den beiden Felsen?"
+      },
+      "starter": {
+        "en": "The rabbit is between…",
+        "de": "Das Kaninchen ist zwischen …"
+      },
+      "words": {
+        "en": [
+          "rabbit",
+          "between",
+          "rocks"
+        ],
+        "de": [
+          "Kaninchen",
+          "zwischen",
+          "Felsen"
+        ]
+      },
+      "model": {
+        "en": "The rabbit is between the rocks.",
+        "de": "Das Kaninchen ist zwischen den Felsen."
+      },
+      "childExample": {
+        "en": "Rabbit.",
+        "de": "Kaninchen."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Describe where the flowers are beside the rock.",
+        "de": "Beschreibe, wo die Blumen beim Felsen sind."
+      },
+      "starter": {
+        "en": "The flowers are next to…",
+        "de": "Die Blumen sind neben …"
+      },
+      "words": {
+        "en": [
+          "flowers",
+          "next to",
+          "rock"
+        ],
+        "de": [
+          "Blumen",
+          "neben",
+          "Felsen"
+        ]
+      },
+      "model": {
+        "en": "The flowers are next to the rock.",
+        "de": "Die Blumen sind neben dem Felsen."
+      },
+      "childExample": {
+        "en": "Flowers.",
+        "de": "Blumen."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    }
+  ]
 }

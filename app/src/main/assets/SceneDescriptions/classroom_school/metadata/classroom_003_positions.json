@@ -339,5 +339,75 @@
       "noReadableText": true,
       "phoneReadableComposition": true
     }
-  }
+  },
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Where is the blue backpack?",
+        "de": "Wo ist der blaue Rucksack?"
+      },
+      "starter": {
+        "en": "The blue backpack is…",
+        "de": "Der blaue Rucksack ist …"
+      },
+      "words": {
+        "en": [
+          "backpack",
+          "blue",
+          "under"
+        ],
+        "de": [
+          "Rucksack",
+          "blau",
+          "unter"
+        ]
+      },
+      "model": {
+        "en": "The blue backpack is under the desk.",
+        "de": "Der blaue Rucksack ist unter dem Tisch."
+      },
+      "childExample": {
+        "en": "Backpack.",
+        "de": "Rucksack."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Where is the red book compared with the green bag?",
+        "de": "Wo ist das rote Buch im Vergleich zur grünen Tasche?"
+      },
+      "starter": {
+        "en": "The red book is in…",
+        "de": "Das rote Buch ist in …"
+      },
+      "words": {
+        "en": [
+          "book",
+          "red",
+          "in"
+        ],
+        "de": [
+          "Buch",
+          "rot",
+          "in"
+        ]
+      },
+      "model": {
+        "en": "The red book is in the green bag.",
+        "de": "Das rote Buch ist in der grünen Tasche."
+      },
+      "childExample": {
+        "en": "Book.",
+        "de": "Buch."
+      },
+      "guidance": {
+        "en": "Let the child point first. Add one position word using the pictured objects, then offer a short sentence without testing the answer.",
+        "de": "Das Kind darf zuerst zeigen. Mit den Dingen im Bild ein Ortswort ergänzen und einen kurzen Satz anbieten, ohne die Antwort zu prüfen."
+      }
+    }
+  ]
 }

@@ -123,5 +123,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_3"
+  "batch": "wave_2_batch_3",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "How is the otter's place different from the bear's place?",
+        "de": "Wie unterscheidet sich der Platz des Otters vom Platz des Bären?"
+      },
+      "starter": {
+        "en": "The otter is…",
+        "de": "Der Otter ist …"
+      },
+      "words": {
+        "en": [
+          "otter",
+          "water",
+          "bear"
+        ],
+        "de": [
+          "Otter",
+          "Wasser",
+          "Bär"
+        ]
+      },
+      "model": {
+        "en": "The otter is in the water. The bear is near the cave.",
+        "de": "Der Otter ist im Wasser. Der Bär ist bei der Höhle."
+      },
+      "childExample": {
+        "en": "Otter.",
+        "de": "Otter."
+      },
+      "guidance": {
+        "en": "One noticed detail is enough. Offer a colour, feature or comparison word that fits the picture; a longer description is optional.",
+        "de": "Ein bemerktes Detail reicht. Ein zum Bild passendes Farb-, Merkmals- oder Vergleichswort anbieten. Eine längere Beschreibung ist freiwillig."
+      }
+    },
+    {
+      "prompt": {
+        "en": "What might the kangaroo do next on the ground?",
+        "de": "Was könnte das Känguru als Nächstes auf dem Boden machen?"
+      },
+      "starter": {
+        "en": "The kangaroo might…",
+        "de": "Das Känguru könnte …"
+      },
+      "words": {
+        "en": [
+          "kangaroo",
+          "hop",
+          "ground"
+        ],
+        "de": [
+          "Känguru",
+          "hüpfen",
+          "Boden"
+        ]
+      },
+      "model": {
+        "en": "The kangaroo might hop across the ground.",
+        "de": "Das Känguru könnte über den Boden hüpfen."
+      },
+      "childExample": {
+        "en": "Kangaroo.",
+        "de": "Känguru."
+      },
+      "guidance": {
+        "en": "Start with something visible. Invite one possible next event; invented ideas are welcome and are not facts about the picture.",
+        "de": "Mit etwas Sichtbarem beginnen. Ein mögliches nächstes Ereignis anregen. Ausgedachte Ideen sind willkommen und keine Tatsachen über das Bild."
+      }
+    }
+  ]
 }

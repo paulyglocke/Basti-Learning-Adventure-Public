@@ -131,5 +131,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_3"
+  "batch": "wave_2_batch_3",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "What might the monkey do next on the climbing frame?",
+        "de": "Was könnte der Affe als Nächstes am Klettergerüst machen?"
+      },
+      "starter": {
+        "en": "The monkey might…",
+        "de": "Der Affe könnte …"
+      },
+      "words": {
+        "en": [
+          "monkey",
+          "climb down",
+          "frame"
+        ],
+        "de": [
+          "Affe",
+          "herunterklettern",
+          "Gerüst"
+        ]
+      },
+      "model": {
+        "en": "The monkey might climb down from the frame.",
+        "de": "Der Affe könnte vom Gerüst herunterklettern."
+      },
+      "childExample": {
+        "en": "Monkey.",
+        "de": "Affe."
+      },
+      "guidance": {
+        "en": "Start with something visible. Invite one possible next event; invented ideas are welcome and are not facts about the picture.",
+        "de": "Mit etwas Sichtbarem beginnen. Ein mögliches nächstes Ereignis anregen. Ausgedachte Ideen sind willkommen und keine Tatsachen über das Bild."
+      }
+    },
+    {
+      "prompt": {
+        "en": "How might the lion feel while lying on the rock?",
+        "de": "Wie könnte sich der Löwe fühlen, wenn er auf dem Felsen liegt?"
+      },
+      "starter": {
+        "en": "The lion might feel…",
+        "de": "Der Löwe könnte sich … fühlen."
+      },
+      "words": {
+        "en": [
+          "lion",
+          "resting",
+          "calm"
+        ],
+        "de": [
+          "Löwe",
+          "ausruhen",
+          "ruhig"
+        ]
+      },
+      "model": {
+        "en": "The lion might feel calm while resting.",
+        "de": "Der Löwe könnte sich beim Ausruhen ruhig fühlen."
+      },
+      "childExample": {
+        "en": "Lion.",
+        "de": "Löwe."
+      },
+      "guidance": {
+        "en": "Offer a feeling word if needed. Different feelings are possible; do not infer one definite feeling from the picture or require an explanation.",
+        "de": "Bei Bedarf ein Wort für ein Gefühl anbieten. Verschiedene Gefühle sind möglich. Aus dem Bild kein bestimmtes Gefühl ableiten und keine Begründung verlangen."
+      }
+    }
+  ]
 }

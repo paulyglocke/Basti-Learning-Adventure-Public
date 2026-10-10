@@ -41,8 +41,9 @@ fun ClockPracticeScreen(state: ClockPractice.State?, language: ContentLanguage, 
                 })
             ClockFace(state.position, language, ready && !state.current.solved, onMove, {}, onInterrupt, onAdjust,
                 step = ClockPractice.STEP, practice = true)
+            ClockHandLegend(language)
             if (state.current.solved) {
-                Text(state.position.digital, fontSize = 32.sp, modifier = Modifier.testTag("clock-make-digital"))
+                ClockDigitalTime(state.position, fontSize = 32.sp, modifier = Modifier.testTag("clock-make-digital"))
                 NativeSupportMessage(ClockPractice.correct(state.target).display[language])
                 NativeActionButton(t("Next", "Weiter"), NativeActionRole.PRIMARY, onNext,
                     Modifier.fillMaxWidth().testTag("clock-make-next"), ready)

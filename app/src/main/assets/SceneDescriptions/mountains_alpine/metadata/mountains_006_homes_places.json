@@ -155,5 +155,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_2",
-  "batch": "wave_2_batch_2"
+  "batch": "wave_2_batch_2",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Where could the eagle rest in this picture?",
+        "de": "Wo könnte sich der Adler auf diesem Bild ausruhen?"
+      },
+      "starter": {
+        "en": "The eagle could…",
+        "de": "Der Adler könnte …"
+      },
+      "words": {
+        "en": [
+          "eagle",
+          "rest",
+          "nest"
+        ],
+        "de": [
+          "Adler",
+          "ausruhen",
+          "Nest"
+        ]
+      },
+      "model": {
+        "en": "The eagle could rest in the nest.",
+        "de": "Der Adler könnte sich im Nest ausruhen."
+      },
+      "childExample": {
+        "en": "Eagle.",
+        "de": "Adler."
+      },
+      "guidance": {
+        "en": "Point to the relevant pictured objects first. Accept different possible solutions or clues and help the child say one simple idea.",
+        "de": "Zuerst auf die passenden Dinge im Bild zeigen. Verschiedene mögliche Lösungen oder Hinweise annehmen und beim Aussprechen einer einfachen Idee helfen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "Why might the rabbit choose a place under the bush?",
+        "de": "Warum könnte das Kaninchen einen Platz unter dem Busch wählen?"
+      },
+      "starter": {
+        "en": "The rabbit might…",
+        "de": "Das Kaninchen könnte …"
+      },
+      "words": {
+        "en": [
+          "rabbit",
+          "bush",
+          "shelter"
+        ],
+        "de": [
+          "Kaninchen",
+          "Busch",
+          "Schutz"
+        ]
+      },
+      "model": {
+        "en": "The rabbit might find a sheltered place under the bush.",
+        "de": "Das Kaninchen könnte unter dem Busch einen geschützten Platz finden."
+      },
+      "childExample": {
+        "en": "Rabbit.",
+        "de": "Kaninchen."
+      },
+      "guidance": {
+        "en": "Start with the visible action or object. Invite a possible reason, accept a short idea, and model one connection without treating it as the only answer.",
+        "de": "Mit der sichtbaren Handlung oder dem Gegenstand beginnen. Eine mögliche Begründung anbieten, eine kurze Idee annehmen und einen Zusammenhang vormachen. Es gibt nicht nur eine Antwort."
+      }
+    }
+  ]
 }

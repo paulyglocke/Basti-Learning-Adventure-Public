@@ -131,5 +131,75 @@
   ],
   "visualStatus": "accepted_in_auto_batch",
   "wave": "wave_3",
-  "batch": "wave_3_batch_2"
+  "batch": "wave_3_batch_2",
+  "tellMePrompts": [
+    {
+      "prompt": {
+        "en": "Tell me the weather story from the sun to the rain.",
+        "de": "Erzähl mir die Wettergeschichte von der Sonne bis zum Regen."
+      },
+      "starter": {
+        "en": "First…",
+        "de": "Zuerst …"
+      },
+      "words": {
+        "en": [
+          "first",
+          "clouds",
+          "rain"
+        ],
+        "de": [
+          "zuerst",
+          "Wolken",
+          "Regen"
+        ]
+      },
+      "model": {
+        "en": "First it is sunny. Then clouds come. After that it rains.",
+        "de": "Zuerst ist es sonnig. Dann kommen Wolken. Danach regnet es."
+      },
+      "childExample": {
+        "en": "First.",
+        "de": "Zuerst."
+      },
+      "guidance": {
+        "en": "A word or one event can start the story. Offer first or next if helpful; do not require a complete story or a fixed ending.",
+        "de": "Ein Wort oder ein Ereignis kann die Geschichte beginnen. Bei Bedarf zuerst oder danach anbieten. Keine vollständige Geschichte und kein festes Ende verlangen."
+      }
+    },
+    {
+      "prompt": {
+        "en": "What appears after the rain in this picture story?",
+        "de": "Was erscheint nach dem Regen in dieser Bildergeschichte?"
+      },
+      "starter": {
+        "en": "After the rain…",
+        "de": "Nach dem Regen …"
+      },
+      "words": {
+        "en": [
+          "rain",
+          "after",
+          "rainbow"
+        ],
+        "de": [
+          "Regen",
+          "danach",
+          "Regenbogen"
+        ]
+      },
+      "model": {
+        "en": "After the rain, a rainbow appears in this story.",
+        "de": "Nach dem Regen erscheint in dieser Geschichte ein Regenbogen."
+      },
+      "childExample": {
+        "en": "Rain.",
+        "de": "Regen."
+      },
+      "guidance": {
+        "en": "A word or one event can start the story. Offer first or next if helpful; do not require a complete story or a fixed ending.",
+        "de": "Ein Wort oder ein Ereignis kann die Geschichte beginnen. Bei Bedarf zuerst oder danach anbieten. Keine vollständige Geschichte und kein festes Ende verlangen."
+      }
+    }
+  ]
 }

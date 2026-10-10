@@ -51,7 +51,7 @@ Prioritise:
 
 Activities may keep their own visual identity—Seasons should still feel like Seasons and Wilma like Wilma—but controls should behave and read consistently. The system should reduce later retrofit work, not force every learning activity into the same generic quiz appearance.
 
-The first implemented slice is `NativeActionButton(label, role, onClick, modifier, enabled)`, adopted inside `NativeCompletionScreen` and non-answer actions in Seasons, Prepositions, Vocabulary and Wilma. PRIMARY is filled (Play again), SECONDARY tonal (Replay/save retry), NAVIGATION outlined (Home). Roles are presentation only; labels, callbacks, enabled state and semantics remain caller-owned. Material3 supplies theme colors, button semantics, keyboard/focus behavior and restrained press feedback. Shared geometry is a 56dp minimum height that grows for wrapped text, 16dp rounded corners and 16dp horizontal/10dp vertical padding. Labels use the existing labelLarge typography with semibold weight and centered wrapping; no fixed line limit, custom animation or new theme is introduced. Completion actions remain pinned above the optional reward area. Seasons maps Next to PRIMARY, Replay/Help/attempt retry/load-save retry to SECONDARY and Home to NAVIGATION. Existing tags, callbacks and enabled conditions stay unchanged. Answer/season/order cards, per-choice speakers, mode chips and the Days & Seasons hub are excluded. Prepositions also maps How to play to SECONDARY and its legacy fallback link to NAVIGATION; Vocabulary maps sentence Listen to SECONDARY. Wilma day-strip/ordering controls retain their canonical colour cues and existing selection semantics. The shared button fills its allocated width; row widths and surrounding spacing remain caller-owned. Tell Me also uses these unchanged roles for Continue/Next/Again, optional Help/grown-up disclosure, and category/Home navigation. No extra role or API extension is required.
+The first implemented slice is `NativeActionButton(label, role, onClick, modifier, enabled)`, adopted inside `NativeCompletionScreen` and non-answer actions in Seasons, Prepositions, Vocabulary and Wilma. PRIMARY is filled (Play again), SECONDARY tonal (Replay/save retry), NAVIGATION outlined (Home). Roles are presentation only; labels, callbacks, enabled state and semantics remain caller-owned. Material3 supplies theme colors, button semantics, keyboard/focus behavior and restrained press feedback. Shared geometry is a 56dp minimum height that grows for wrapped text, 16dp rounded corners and 16dp horizontal/10dp vertical padding. Labels use the existing labelLarge typography with semibold weight and centered wrapping; no fixed line limit, custom animation or new theme is introduced. Completion actions remain pinned above the optional reward area. Seasons maps Next to PRIMARY, Replay/Help/attempt retry/load-save retry to SECONDARY and Home to NAVIGATION. Existing tags, callbacks and enabled conditions stay unchanged. Answer/season/order cards, per-choice speakers, mode chips and the Days & Seasons hub are excluded. Prepositions also maps How to play to SECONDARY and its legacy fallback link to NAVIGATION; Vocabulary maps sentence Listen to SECONDARY. Wilma day-strip/ordering controls retain their canonical colour cues and existing selection semantics. The shared button fills its allocated width; row widths and surrounding spacing remain caller-owned. Tell Me also uses these unchanged roles for Next picture/Again, optional Help/grown-up disclosure, and category/Home navigation. No extra role or API extension is required.
 
 ### Shared text-answer choices
 
@@ -135,23 +135,30 @@ Maintain logical TalkBack/keyboard focus order and distinct labels for selection
 
 One Home entry opens native category selection; there is no legacy Tell Me route to
 replace. The nine category controls retain repository order and localized names. Each
-category visits its nine pictures in authored order with explicit TALK → MODEL → Next.
-Neither Continue nor completion means an answer was accepted or evaluated. Completion
+category visits its nine pictures in authored order. One primary “Next picture” /
+“Nächstes Bild” button advances in one press; there is no intermediate model phase.
+Neither Next nor completion means an answer was accepted or evaluated. Completion
 shows Again, Choose another adventure and Home, without a score or mastery statement.
 After those actions it includes the existing optional `NativeCompletionCelebration`;
-only the final picture’s MODEL → Next transition makes it available. Popping is never
+only the ninth Next picture press makes it available. Popping is never
 required to leave. The shared shell owns optional pop sound with its existing Sound Off/
 foreground guards. No Tell Me narration is introduced.
 
-TALK shows the generic invitation plus the first localized QUESTIONS line, otherwise
+For all 81 scenes, TALK shows the generic invitation plus the
+selected bilingual bundle's prompt. Optional Help uses that same bundle's starter,
+words and model. Repeat visits alternate deterministically; the chosen slot does
+not change during a visit. New process starts reset to the first slot.
+The reference fallback for uncurated fixtures shows the first localized QUESTIONS line, otherwise
 STARTER_PROMPTS, otherwise EXPANSION_PROMPTS. Optional Help reveals the first sentence
-starter and up to three WORDS_TO_MODEL lines. MODEL shows the first localized example,
+starter and up to three WORDS_TO_MODEL lines. Help also shows the first localized example,
 otherwise MODELLING_EXAMPLES, under “You could say:” / “Du könntest sagen:”.
 This introduces an optional example, not an expected answer. Missing optional fields are omitted, never synthesized or
-borrowed from the other language. Currently all 81 scenes have prompts; only the 27 Wave 1
-scenes have this bounded Help/model material. The other 54 still use explicit MODEL/Next
-without invented examples. The collapsed grown-up section shows principle/focus and at
-most one authored expansion pair. Review cautions and target lists are not child feedback.
+borrowed from the other language. All 81 scenes now have bounded, explicitly authored
+Help/model material in both slots. The collapsed grown-up section shows the selected
+bundle's parent guidance and its short child example expanded into the matching model.
+The model remains only one possible response. Parent notes accept pointing, single
+words, different feelings/ideas and absent personal experience without requiring repetition.
+Review cautions and target lists are not child feedback.
 
 The full artwork composition uses Fit. The title supplies a minimal image label because
 there is no authored alt description. Text wraps without fixed text height, actions use
@@ -214,3 +221,17 @@ items. Keyboard tests establish Keyboard input mode, verify focus and exact sing
 Opening is silent; explicit Listen/Replay/Help use existing speech policy. Sound Off preserves
 visual controls but a non-reader needs spoken/adult support to understand this text-only
 starter. Home/back and Options preserve work; process restoration uses the exact journal.
+
+## Owner clock presentation feedback — 2026-10-10 (draft, validation pending)
+
+The shared Explore/Make This Time clock face draws minute numbers 0–59 in an outer
+ring, with larger bold five-minute landmarks and an inner green 1–12 hour ring.
+The supplied dinosaur outline green (#284F26) and dragon outline red (#7A1D18) link
+face numbers, corresponding hand lines, digital hour/minute spans and labelled
+short-hour/long-minute legend. Colour is reinforced by words and hand length.
+Minute labels have a white halo where decorative artwork crosses the ring. They
+remain canvas decoration inside the single existing accessible clock target.
+Practice still exposes digital time only after a correct Check. The semantic time,
+drag geometry, snapping, task selection, speech, attempts and persistence are unchanged.
+Narrow-screen label readability and overlap at representative times require rendered
+EN/DE large-text portrait/landscape review before declaring visual acceptance.
