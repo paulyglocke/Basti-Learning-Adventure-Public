@@ -1,5 +1,39 @@
 # Session handoff — 2026-09-27
 
+## Months v1 Phase 1 — 2026-10-09 (validated Explore implementation)
+
+Days & Seasons now offers Months / Monate. Twelve canonical semantic IDs, full EN/DE
+names and existing season IDs drive one selected-month state. The clockwise native
+wheel starts at January, joins December to January, uses four seasonal regions and a
+dark selected outline. Full names appear below the wheel and in chronological,
+responsive accessible buttons; the season/month legend and parent note explain the
+German meteorological convention. No artwork/dependencies were added.
+
+The existing lazy audio controller speaks only the explicitly tapped/listened month.
+All/Questions permit these manual requests; Off stays silent. Opening, restore,
+Options/language sync, background/return do not narrate. Selection persists independently
+through the existing atomic browsing pattern (`months-selection`, schema 1, bounded
+128 bytes). Language/audio stay shell-owned. Failed/corrupt persistence is surfaced and
+retained, with Retry; no progress evidence or shared session/placement/count changes.
+
+Find/Before/Next/Missing/Build/season quizzes remain deferred. MONTHS_V1_RESEARCH.md is
+the previously requested approved plan; its research content was preserved unchanged.
+NATIVE_ARCHITECTURE_SPEC.md records implementation details and persistence limits.
+
+Validation completed: focused Months/shared-audio JVM tests (67) passed; full JVM suite
+465 passed, zero failures/errors/skips. Debug build and Android-test APK compilation
+passed. lintDebug passed: zero errors, five existing warnings and two informational
+findings outside the new Months files. API 35 emulator: two owner persistence/audio
+tests and one shell-routing test passed; the corrected 14-case layout matrix passed
+(17 unique focused instrumentation tests across targeted runs). Matrix covers EN/DE,
+1×/1.5×/2× narrow portrait and short landscape, plus a tablet-sized viewport at 2×.
+Tests check actual text bounds, touch selection, selected semantics, keyboard Enter,
+scrolling and reachable controls. Test harness corrections account for clipped wheel
+bounds during scrolling and explicitly set each orientation; product logic was not
+relaxed. Representative EN/DE wheel captures were visually reviewed, including narrow
+German 2× and short landscape. `git diff --check` passed. No physical S24/Fire acceptance,
+real TalkBack audition or native voice-quality acceptance is claimed.
+
 ## Clock Make This Time — 2026-10-08 (locally validated)
 
 Clock progression is now **Explore → Make This Time — whole/half hours**.

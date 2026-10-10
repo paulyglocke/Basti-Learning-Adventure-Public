@@ -32,7 +32,7 @@ import com.bellfamily.bastischool.learning.session.*
 import com.bellfamily.bastischool.learning.sorting.*
 
 @Composable
-fun DaysSeasonsHub(language: ContentLanguage, onSeasons: () -> Unit, onWilma: () -> Unit, onLegacy: () -> Unit, modifier: Modifier = Modifier) {
+fun DaysSeasonsHub(language: ContentLanguage, onSeasons: () -> Unit, onWilma: () -> Unit, onLegacy: () -> Unit, modifier: Modifier = Modifier, onMonths: (() -> Unit)? = null) {
     val de = language == ContentLanguage.GERMAN
     Column(modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(20.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
         Text(if(de) "Tage & Jahreszeiten" else "Days & Seasons", style = MaterialTheme.typography.headlineMedium)
@@ -42,6 +42,8 @@ fun DaysSeasonsHub(language: ContentLanguage, onSeasons: () -> Unit, onWilma: ()
         Button(onClick=onSeasons, modifier=Modifier.fillMaxWidth().heightIn(min=72.dp).testTag("open-seasons")) {
             Text(if(de) "Jahreszeiten – Lernen und Üben" else "Seasons – Learn and practise")
         }
+        if (onMonths != null) NativeActionButton(if (de) "Monate" else "Months", NativeActionRole.NAVIGATION,
+            onMonths, Modifier.fillMaxWidth().testTag("open-months"))
         OutlinedButton(onClick=onLegacy, modifier=Modifier.fillMaxWidth().heightIn(min=72.dp).testTag("legacy-calendar")) {
             Text(if(de) "Tage & Jahreszeiten – bisherige Version" else "Days & Seasons – previous version")
         }

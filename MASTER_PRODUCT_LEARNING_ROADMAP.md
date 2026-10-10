@@ -531,6 +531,12 @@ Teach the conventional display order while making the cyclic relationship explic
 
 Months should become a proper learning strand rather than a static list.
 
+Implementation checkpoint — 2026-10-09: Phase 1 native Explore is implemented locally:
+canonical EN/DE month names, meteorological season mapping, a clockwise Year Wheel,
+accessible companion selection/listening, and silent browsing restoration. Entry is
+through Days & Seasons. This does not complete the quiz/sequencing progression below;
+physical S24/Fire acceptance remains pending. Validation details are in SESSION_HANDOFF.md.
+
 #### Year Wheel
 
 The central representation should be a **12-segment Year Wheel** with four broad season regions.

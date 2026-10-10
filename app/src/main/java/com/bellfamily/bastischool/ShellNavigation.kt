@@ -2,7 +2,7 @@ package com.bellfamily.bastischool
 
 import java.util.concurrent.atomic.AtomicReference
 
-internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS, WILMA, VOCABULARY, TELL_ME, FOLLOW_INSTRUCTIONS, COLOUR_SORT, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH, COMPARE_QUANTITY, NUMBER_ORDER, ADD_TOGETHER, CLOCK, CLOCK_MAKE }
+internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS, WILMA, VOCABULARY, TELL_ME, FOLLOW_INSTRUCTIONS, COLOUR_SORT, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH, COMPARE_QUANTITY, NUMBER_ORDER, ADD_TOGETHER, CLOCK, CLOCK_MAKE, MONTHS }
 internal enum class BackAction { EXIT, CLOSE_OPTIONS, LEGACY, NATIVE_HOME, DAYS_HUB, CLOCK_AREA }
 
 /** Options is an overlay on one destination, never another entry in a growing stack. */
@@ -21,7 +21,7 @@ internal data class ShellNavigation(
         ShellScreen.ADD_TOGETHER, ShellScreen.CLOCK -> BackAction.NATIVE_HOME
         ShellScreen.COMPARE_QUANTITY -> BackAction.NATIVE_HOME
         ShellScreen.PREPOSITIONS, ShellScreen.DAYS_SEASONS, ShellScreen.VOCABULARY, ShellScreen.TELL_ME, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.COLOUR_SORT, ShellScreen.ANIMAL_GROUPS, ShellScreen.WASH_HANDS, ShellScreen.SUBITISING, ShellScreen.QUANTITY_MATCH -> BackAction.NATIVE_HOME
-        ShellScreen.SEASONS, ShellScreen.WILMA -> BackAction.DAYS_HUB
+        ShellScreen.SEASONS, ShellScreen.WILMA, ShellScreen.MONTHS -> BackAction.DAYS_HUB
     }
     val ownsWebSession: Boolean get() = screen == ShellScreen.WEB ||
         (screen == ShellScreen.OPTIONS && optionsOrigin == ShellScreen.WEB)
@@ -41,6 +41,7 @@ internal data class ShellNavigation(
     fun openAddTogether() = ShellNavigation(ShellScreen.ADD_TOGETHER)
     fun openFollowInstructions() = ShellNavigation(ShellScreen.FOLLOW_INSTRUCTIONS)
     fun openVocabulary() = ShellNavigation(ShellScreen.VOCABULARY)
+    fun openMonths() = ShellNavigation(ShellScreen.MONTHS)
     fun openWilma() = ShellNavigation(ShellScreen.WILMA)
     fun openSeasons() = ShellNavigation(ShellScreen.SEASONS)
     fun openPrepositions() = ShellNavigation(ShellScreen.PREPOSITIONS, mode = "positions")

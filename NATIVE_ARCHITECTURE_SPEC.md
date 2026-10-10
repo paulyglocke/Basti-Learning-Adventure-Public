@@ -629,3 +629,47 @@ Still deferred: What Time Is It? (the next bounded Clock task), quarter hours,
 five-minute/arbitrary-minute practice, Digital → Analogue, Fix/Match Clocks,
 face construction and routine/calendar missions. Physical S24/Fire drag comfort,
 TalkBack/D-pad flow, installed EN/DE speech and lifecycle acceptance remain open.
+
+
+## Months Explore — Phase 1 (2026-10-09)
+
+`MONTHS` is a native destination inside the existing Days & Seasons hub. Back returns
+to that hub, Home uses the existing shell route, and Options/lifecycle visibility use
+the same ownership conventions as Wilma and Seasons. No quiz modes are registered.
+
+`MonthContent` owns twelve immutable January–December `month.*` IDs, full EN/DE
+display/speech names, compact wheel-only labels, and meteorological season references
+to existing `SeasonIds`. Its independent content 1.1 repository does not revise
+CoreContent or existing journals. January is at the top of the fixed clockwise wheel;
+December is adjacent. All geometry and pointer hit-testing derive from canonical order,
+and the highlighted wedge, full-name readout and companion buttons derive from one
+`MonthsSelection.selected` ID. The wheel requires no image assets. Four season fills,
+a labelled season/month legend and a dark selected outline avoid colour-only meaning.
+
+The scrollable surface uses shared title/support/action/text-choice components. Full
+month buttons form chronological responsive rows (one to three columns, based on
+available width and font scale). They expose normal button/selected semantics and
+keyboard activation; the wheel is one descriptive semantic node, not twelve tiny
+required assistive targets. Its compact labels are never used for TTS. Large text and
+short landscape retain scrolling rather than shrinking the wheel to fit the viewport.
+
+`MonthsSelectionStore` writes a schema-1, maximum-128-byte browsing checkpoint through
+AtomicProgressStorage/AndroidAtomicCommit under `noBackupFilesDir/months-selection`.
+The selected semantic ID is saved on each change on a serial worker; no randomisation,
+quiz/session engine or progress event is involved. Pending writes finish on disposal.
+Selection is responsive before disk acknowledgement, matching browsing conventions;
+failed persistence is surfaced and disables new selections until Retry succeeds.
+Invalid snapshots are preserved and reported, never silently overwritten. There is no
+claim of durability for an in-flight selection before its atomic write completes.
+Language and audio mode remain shell-owned settings and never change month identity.
+
+`MonthsAudio` is only an adapter over the existing lazy DefaultAudioController and
+AndroidSystemSpeechEngine. Selecting/reselecting a month or pressing Listen submits
+its full name as manual OPTION speech. All and Questions allow explicit listening;
+Off suppresses it. Opening, restoring, language sync and return remain silent; leaving,
+backgrounding, language and policy changes revoke speech. No new engine/controller
+implementation, shared task-count expansion, progress schema or external dependency.
+
+Parent-facing text explains the German meteorological season convention; no weather
+or device-date inference is performed. Find, Before/Next, Missing, Build the Year and
+Months/Seasons quizzes remain deferred; see MONTHS_V1_RESEARCH.md for the approved plan.
