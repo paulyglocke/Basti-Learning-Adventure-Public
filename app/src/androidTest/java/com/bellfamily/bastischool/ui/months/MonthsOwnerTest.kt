@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelStore
 import androidx.test.core.app.ApplicationProvider
 import com.bellfamily.bastischool.audio.*
 import com.bellfamily.bastischool.learning.models.ContentLanguage
+import com.bellfamily.bastischool.learning.session.*
 import com.bellfamily.bastischool.learning.months.*
 import com.bellfamily.bastischool.learning.progress.AtomicProgressStorage
 import com.bellfamily.bastischool.learning.progress.android.AndroidAtomicCommit
@@ -90,6 +91,67 @@ class MonthsOwnerTest {
             compose.runOnUiThread{vm.retry()}
             compose.waitUntil(10_000){var ready=false;compose.runOnUiThread{ready=vm.selection!=null};ready}
             compose.runOnUiThread{assertEquals(MonthIds.MAY,vm.selection!!.selected);assertFalse(vm.saveFailed);assertEquals(0,engines)}
+        } finally {compose.runOnUiThread{owners.clear()}}
+    }
+    @Test fun quizModeIsolationAssistanceSilentRestoreAndLanguageDuringWork() {
+        val directory=temp.newFolder();val app=App(ApplicationProvider.getApplicationContext(),directory)
+        val owners=ViewModelStore();val engine=Engine();lateinit var vm:MonthsViewModel
+        fun settled() {
+            compose.waitUntil(10_000){var ready=false;compose.runOnUiThread{ready=vm.quiz!=null && !vm.quizBusy};ready}
+            compose.runOnUiThread{assertFalse(vm.quizFailed)}
+        }
+        fun open() {
+            compose.runOnUiThread{vm=MonthsViewModel(app){engine};owners.put("months",vm);vm.configure("en","all",5);vm.setVisible(true,MonthsMode.FIND)}
+            settled()
+        }
+        try {
+            open()
+            compose.runOnUiThread{
+                assertEquals(vm.quiz!!.task.question.instruction.speech.en,engine.spoken.last().text)
+                val before=vm.quiz!!.current
+                vm.option(vm.quiz!!.task.question.choices.last())
+                assertEquals(before,vm.quiz!!.current)
+                assertEquals(MonthContent.month(vm.quiz!!.task.question.choices.last()).text.speech.en,engine.spoken.last().text)
+                vm.replay()
+            };settled()
+            val before=engine.spoken.size
+            lateinit var saved:ByteArray
+            compose.runOnUiThread{
+                assertEquals(1,vm.quiz!!.current.support.replays);assertEquals(0,vm.quiz!!.current.attempts)
+                vm.learn {vm.setVisible(true,MonthsMode.EXPLORE)}
+            }
+            compose.waitUntil(10_000){var ready=false;compose.runOnUiThread{ready=vm.phase==MonthsMode.EXPLORE && vm.selection!=null};ready}
+            compose.runOnUiThread{assertEquals(before,engine.spoken.size);vm.setVisible(true,MonthsMode.FIND)};settled()
+            compose.runOnUiThread{
+                assertTrue(vm.quiz!!.current.support.hint)
+                saved=SessionCheckpoint.encode(vm.quiz!!)
+                vm.setVisible(true,MonthsMode.RELATIONS)
+            };settled()
+            compose.runOnUiThread{
+                assertEquals(MonthsQuestions.activity(MonthsMode.RELATIONS),vm.quiz!!.plan.activity)
+                assertEquals(0,vm.quiz!!.current.support.replays)
+                vm.setVisible(true,MonthsMode.FIND)
+                assertArrayEquals(saved,SessionCheckpoint.encode(vm.quiz!!))
+                val q=vm.quiz!!
+                vm.action(SessionAction.Answer(q.nextAttempt!!,q.task.question.correct))
+                vm.configure("de","questions",10) // New settings cannot change the frozen five-task plan.
+            };settled()
+            compose.runOnUiThread{
+                assertEquals(ContentLanguage.GERMAN,vm.quiz!!.language);assertEquals(5,vm.quiz!!.plan.tasks.size)
+                assertEquals(AnswerState.CORRECT,vm.quiz!!.current.answer)
+                saved=SessionCheckpoint.encode(vm.quiz!!)
+                vm.setVisible(false);owners.clear()
+            }
+            val count=engine.spoken.size
+            // Restore in the same language to verify exact bytes, without opening narration.
+            compose.runOnUiThread{vm=MonthsViewModel(app){engine};owners.put("months",vm);vm.configure("de","all",10);vm.setVisible(true,MonthsMode.FIND)};settled()
+            compose.runOnUiThread{
+                assertArrayEquals(saved,SessionCheckpoint.encode(vm.quiz!!));assertEquals(count,engine.spoken.size)
+                vm.configure("de","off",10);vm.replay()
+            };settled()
+            compose.runOnUiThread{assertEquals(count,engine.spoken.size)}
+            assertTrue(File(directory,"months-find-session/events.bin").isFile)
+            assertTrue(File(directory,"months-relations-session/events.bin").isFile)
         } finally {compose.runOnUiThread{owners.clear()}}
     }
 }
