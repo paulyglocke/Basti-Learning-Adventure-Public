@@ -20,6 +20,14 @@ These results are carried forward from the dated [SESSION_HANDOFF.md](SESSION_HA
 
 ## Automated coverage
 
+Months Between coverage must enumerate all 12 middle-month definitions, explicitly
+check November–December–January and December–January–February, verify unique targets
+and four unique choices in deterministic 5/10 rounds, and exercise retry/replay/hint,
+bilingual prompt/audio, exact restoration, progress identity and independent journal.
+Compose coverage must keep both named endpoints visible and labelled while answering,
+check EN/DE at 1×/1.5×/2× in portrait/short landscape, keyboard activation, target
+size and relationship semantics. Emulator evidence is not physical-device acceptance.
+
 | Layer | Required cases for affected behavior |
 | --- | --- |
 | Unit/state | Reducer/game transitions, correct and wrong answers, retries, scoring, support levels, skipped/interrupted tasks, duplicate/rapid taps and exactly-once completion effects. |

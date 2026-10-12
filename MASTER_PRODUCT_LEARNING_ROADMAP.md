@@ -532,16 +532,15 @@ Teach the conventional display order while making the cyclic relationship explic
 Months should become a proper learning strand rather than a static list.
 
 Implementation checkpoint — 2026-10-12: native Explore/Listen, Find Month,
-Before/Next, Missing Month and the introductory three-month Build the Year level are
-implemented. The Year Wheel uses canonical EN/DE month identities and meteorological
-season mapping. Quiz modes use deterministic 5/10 rounds, shared durable
-session/progress delivery and independent journals; Missing Month covers all 36
-three-month/gap definitions. Build the Year uses cyclic three-month windows, a
-separate durable ordering journal and progress identity. Full JVM (498), Months API
-35 emulator (88), debug build and lint validation pass. Physical S24/Fire Max,
-TalkBack and offline-voice acceptance for the new level are **NOT RUN — deferred by
-owner**. Between, four-/six-/twelve-month sequencing, Months ↔ Seasons, adaptive
-progression and broader generalisation remain deferred; see SESSION_HANDOFF.md.
+Before/Next, Missing Month, Between and the introductory three-month Build the Year
+level are implemented. Between asks for the middle month with both consecutive
+endpoints visible; its deterministic 5/10 rounds cover unique targets and use a
+separate skill, activity and journal. Quiz modes use shared durable session/progress
+delivery and independent journals. Physical S24/Fire Max, TalkBack and offline-voice
+acceptance for Between and Build the Year are **NOT RUN — deferred by owner**; see
+SESSION_HANDOFF.md for revision-specific automated evidence. Four-/six-/twelve-month
+sequencing, Months ↔ Seasons, adaptive progression and broader calendar
+generalisation remain deferred.
 
 #### Year Wheel
 
@@ -557,7 +556,7 @@ Season boundaries are conventional teaching regions rather than claims about exa
 - Find Month;
 - What comes next?;
 - What comes before?;
-- Between;
+- Between (implemented; see the Months v1 checkpoint);
 - Missing Month;
 - Build the Year with 3 months;
 - Build with 4;
@@ -1641,7 +1640,7 @@ Use shared capabilities to add breadth.
 Priority areas include:
 
 - remaining Seasons generalisation and Months ↔ Seasons beyond implemented MISSING/CLUES/MATCH/COMBINED;
-- remaining Months progression (Between; four-/six-/twelve-month Build the Year; Months ↔ Seasons; adaptive progression and generalisation);
+- remaining Months progression (four-/six-/twelve-month Build the Year; Months ↔ Seasons; adaptive progression and generalisation);
 - Colours v1;
 - conceptual manipulation-first Maths beyond the five implemented visual-choice activities;
 - Practical Life v1;
@@ -1658,14 +1657,16 @@ Priority areas include:
 
 ### Months v1
 
-Implemented: Year Wheel, Explore/Listen, Find Month, Next/Before, Missing Month and
-the introductory three-month Build the Year level. The ordering activity uses
+Implemented: Year Wheel, Explore/Listen, Find Month, Next/Before, Between, Missing
+Month and the introductory three-month Build the Year level. Between keeps both
+sequence endpoints visible and offers the Year Wheel as optional assisted learning.
+The ordering activity uses
 canonical cyclic month IDs, accessible tap-to-select/tap-to-place, a December →
 January → February demonstration, revisioned persistence and separate progress
 identity. Automated JVM/API 35 validation is tracked in SESSION_HANDOFF.md; physical
-S24/Fire Max acceptance is **NOT RUN — deferred by owner**. Deferred: Between,
-four-/six-/twelve-month sequencing, Months ↔ Seasons, adaptive progression and
-generalisation from the wheel to broader sequences/cards/calendar.
+S24/Fire Max acceptance is **NOT RUN — deferred by owner**. Deferred: four-/six-/
+twelve-month sequencing, Months ↔ Seasons, adaptive progression and generalisation
+from the wheel to broader sequences/cards/calendar.
 
 ### Colours v1
 

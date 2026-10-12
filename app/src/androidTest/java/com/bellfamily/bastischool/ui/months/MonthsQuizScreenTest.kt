@@ -31,7 +31,7 @@ class MonthsQuizScreenTest(private val mode:MonthsMode,private val de:Boolean,pr
     @get:Rule val compose=createAndroidComposeRule<ComponentActivity>()
     companion object {
         @JvmStatic @Parameterized.Parameters(name="{0},de={1},font={2},orientation={3}") fun cases()=
-            listOf(MonthsMode.FIND,MonthsMode.RELATIONS,MonthsMode.MISSING).flatMap { mode -> listOf(false,true).flatMap {de ->
+            listOf(MonthsMode.FIND,MonthsMode.RELATIONS,MonthsMode.MISSING,MonthsMode.BETWEEN).flatMap { mode -> listOf(false,true).flatMap {de ->
                 listOf(1f,1.5f,2f).flatMap {font -> listOf(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT,
                     ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE,ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE).map {arrayOf<Any>(mode,de,font,it)} }
             } }
@@ -76,9 +76,27 @@ class MonthsQuizScreenTest(private val mode:MonthsMode,private val de:Boolean,pr
             assertEquals(0, node.fetchSemanticsNode().children.size)
             readable(compose.onNodeWithText(sequence.sequence(language), useUnmergedTree=true))
         }
+        if (mode == MonthsMode.BETWEEN) {
+            val definition = MonthsBetween.definition(q)
+            val before = MonthContent.month(definition.before).text.display[language]
+            val after = MonthContent.month(definition.after).text.display[language]
+            val relation = compose.onNodeWithTag("months-between-sequence").performScrollTo().assertIsDisplayed()
+            relation.assertContentDescriptionEquals(if(de) "$before, dann der gesuchte Monat dazwischen, dann $after"
+                else "$before, then the month between, then $after")
+            for ((tag, name) in listOf("months-between-before" to before, "months-between-after" to after)) {
+                val endpoint = compose.onNodeWithTag(tag).performScrollTo().assertTextEquals(name)
+                readable(endpoint)
+                assertTrue(endpoint.fetchSemanticsNode().boundsInRoot.width > 0f)
+            }
+            compose.onNodeWithTag("months-between-gap").assertContentDescriptionEquals(
+                if(de) "Gesuchter Monat dazwischen" else "Month to find between")
+        }
         q.choices.forEach {id ->
             val tag="months-answer-${id.value}";val button=compose.onNodeWithTag(tag).performScrollTo()
             button.assertHasClickAction().assertHeightIsAtLeast(64.dp)
+            if (mode == MonthsMode.BETWEEN) button.assertContentDescriptionEquals(
+                if(de) "Antwort: ${MonthContent.month(id).text.display[language]}"
+                else "Answer choice: ${MonthContent.month(id).text.display[language]}")
             val text=compose.onNode(hasText(MonthContent.month(id).text.display[language]) and hasAnyAncestor(hasTestTag(tag)),useUnmergedTree=true)
             readable(text)
             val b=button.fetchSemanticsNode().boundsInRoot;val t=text.fetchSemanticsNode().boundsInRoot

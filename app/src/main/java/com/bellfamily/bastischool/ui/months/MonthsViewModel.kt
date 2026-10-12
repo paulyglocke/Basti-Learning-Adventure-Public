@@ -45,9 +45,10 @@ class MonthsViewModel @JvmOverloads constructor(application: Application,
     private val failures = mutableStateMapOf<MonthsMode, Boolean>()
     val quiz get() = quizzes[phase]
     val quizFailed get() = failures[phase] == true
-    private val hosts = listOf(MonthsMode.FIND, MonthsMode.RELATIONS, MonthsMode.MISSING).associateWith {
+    private val hosts = listOf(MonthsMode.FIND, MonthsMode.RELATIONS, MonthsMode.MISSING, MonthsMode.BETWEEN).associateWith {
         MonthsQuestions.host(it, AtomicProgressStorage(File(application.noBackupFilesDir,
-            "months-${it.name.lowercase()}-session"), AndroidAtomicCommit), AndroidProgressRepository.create(application))
+            if (it == MonthsMode.BETWEEN) "months-between-session" else "months-${it.name.lowercase()}-session"),
+            AndroidAtomicCommit), AndroidProgressRepository.create(application))
     }
     private val buildHost = MonthsBuildYearHost(
         AtomicProgressStorage(File(application.noBackupFilesDir, "months-build-year-three-session"), AndroidAtomicCommit),

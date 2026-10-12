@@ -101,6 +101,14 @@ the placement action; keyboard activation follows the same state transition. Ret
 Options and recreation preserve the activity-owned durable checkpoint and restore
 silently.
 
+Months Between presents two named consecutive endpoints around an explicit unknown
+middle position; the question and its speech name both endpoints. Endpoints remain
+visible while choosing one of four month answers. Its optional Year Wheel is a
+quiz-linked lesson: visiting it records hint support but no answer, and Back or the
+visible return action restores the exact question, endpoints, language and attempts.
+The Between route owns a separate durable quiz journal and does not change Missing
+Month task, activity, skill or journal identities.
+
 Use a consistent support ladder where applicable: independent attempt → Replay → subtle visual/verbal hint → stronger model/help → optional parent help. Support is useful progress information, not failure.
 
 ## Child-facing progress and scoring

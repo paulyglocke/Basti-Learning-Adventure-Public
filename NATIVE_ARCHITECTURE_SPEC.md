@@ -648,7 +648,15 @@ TalkBack/D-pad flow, installed EN/DE speech and lifecycle acceptance remain open
 `MONTHS` is a native destination inside the existing Days & Seasons hub. Back returns
 to that hub, Home uses the existing shell route, and Options/lifecycle visibility use
 the same ownership conventions as Wilma and Seasons. `MONTHS_FIND`,
-`MONTHS_RELATIONS` and `MONTHS_MISSING` are separate quiz routes.
+`MONTHS_RELATIONS`, `MONTHS_MISSING` and `MONTHS_BETWEEN` are separate quiz routes.
+Between uses `activity.months.between`, `skill.months.between`, the existing
+year-order learning context and an independent `months-between-session` journal.
+Its semantic task identity is the middle month; endpoints derive from canonical
+adjacent month IDs and remain narrated/displayed throughout the question. The
+deterministic 5/10 choice session uses the existing Months quiz host, audio owner,
+retry/support, completion and shared progress delivery. Its Year Wheel is an
+assisted-learning route that preserves exact quiz state and returns to that question;
+it records hint support without an answer attempt.
 
 `MonthContent` owns twelve immutable January–December `month.*` IDs, full EN/DE
 display/speech names, compact wheel-only labels, and meteorological season references
@@ -693,8 +701,8 @@ language, attempts/support, silent restore and deduplicated shared progress even
 The introductory three-placement Build the Year level separately uses
 `activity.months.build_year.three`, `skill.months.sequence` and a revisioned durable
 ordering journal; existing quiz activity revisions, content 1.1 and journals remain
-unchanged. It is automated-test covered; physical S24/Fire acceptance is **NOT RUN —
-deferred by owner**. Between, four-/six-/twelve-month sequencing, Months/Seasons,
+unchanged. Between and Build the Year are automated-test covered; physical S24/Fire
+acceptance is **NOT RUN — deferred by owner**. Four-/six-/twelve-month sequencing, Months/Seasons,
 adaptive progression and broader generalisation remain deferred. See SESSION_HANDOFF.md
 for evidence and limitations.
 

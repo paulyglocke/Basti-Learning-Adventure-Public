@@ -244,6 +244,17 @@ The completion model/codec allowlist now includes three tasks without changing t
 schema-1 field layout or existing deduplication IDs. Older app builds do not accept
 three-task completions; downgrade across this new progress evidence is unsupported.
 
+### Months Between evidence (2026-10-12)
+
+Between uses the shared choice-session event contract with the separate
+`activity.months.between` and `skill.months.between` identities and the existing
+`context.months.year_order`. The semantic target is the month between the two
+visible consecutive endpoints. A Year Wheel visit records hint support, not an
+attempt; replay also remains support rather than an answer. Wrong answers and
+supported correct answers retain their ordinary attempt evidence. Its journal is
+independent of Find, Before/Next, Missing Month and Build the Year. No mastery or
+adaptive progression is inferred by this introductory level.
+
 ### Clock Make This Time evidence (2026-10-08)
 
 `activity.time.clock.make` revision 1/content 1.1 records only explicit Check

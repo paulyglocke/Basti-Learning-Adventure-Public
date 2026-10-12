@@ -1,5 +1,42 @@
 # Session handoff — 2026-10-12
 
+## Months Phase 5 — Between (2026-10-12)
+
+Starting `main` at `f9d3a71d21c34211df5e2018d2e987b42687631e`, matching fetched
+`origin/main`, with a clean worktree. Added a native Between question whose target
+is the middle-month identity and whose persistent display names both adjacent
+endpoints. All 12 targets are defined, including November–December–January and
+December–January–February. Seeded 5/10 rounds use unique targets and four unique
+nearby choices. English/German instructions, hints, feedback and existing Months
+audio policy are used. A separate `activity.months.between` / `skill.months.between`
+identity and `months-between-session` journal preserve the shared session and
+progress contracts; Missing Month and other Months IDs/journals are unchanged.
+
+The Year Wheel is an optional supported-learning route: the hint is durably recorded
+without an answer attempt, and returning restores the same question/endpoints. The
+layout uses responsive row/stack presentation, large month text, relationship and
+answer semantics, keyboard choices, and scrollable EN/DE content. No new artwork,
+framework, curriculum level or runtime dependency was added.
+
+- Full JVM: **504 passed**, zero failures/errors/skips.
+- API 35 `Medium_Phone_API_35` Months instrumentation: **107/107 passed** after
+  correcting an asynchronous wait/state lookup in the new route test. A separate
+  focused large-text bilingual accessibility/semantics test passed **1/1** after
+  the final answer-description refinement. Android instrumentation compilation
+  passed. Emulator evidence is not physical acceptance.
+- `assembleDebug` and `lintDebug`: **PASS**. Lint: 0 errors, 5 existing warnings,
+  2 existing informational findings; none are specific to Between. Kotlin reports
+  the existing deprecated `VIBRATOR_SERVICE` warning in MainActivity.
+- `git diff --check`: PASS. Physical Samsung S24 / Fire Max acceptance, installed
+  offline voice quality, TalkBack and child-use review are **NOT RUN — deferred by
+  owner**.
+- GitHub Actions and final commit/push status are recorded in the task report.
+
+README, roadmap, backlog, content, architecture, progress, QA and navigation
+contracts now list Between as implemented and retain four-/six-/twelve-month Build
+the Year levels, Months ↔ Seasons, adaptive progression and calendar generalisation
+as deferred.
+
 ## Months Phase 4 — Build the Year (2026-10-12)
 
 Started on clean `main` at `454c91f`, matching fetched `origin/main`. The three-month

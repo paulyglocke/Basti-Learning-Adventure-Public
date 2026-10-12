@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.test.core.app.ActivityScenario
 import androidx.test.platform.app.InstrumentationRegistry
 import com.bellfamily.bastischool.MainActivity
+import com.bellfamily.bastischool.learning.models.ContentId
+import com.bellfamily.bastischool.learning.models.ContentLanguage
 import com.bellfamily.bastischool.learning.months.*
 import org.junit.Assert.*
 import org.junit.Rule
@@ -84,5 +86,53 @@ class MonthsRouteTest {
                 compose.onNodeWithTag("months-open-build-year").performScrollTo().assertIsDisplayed()
             }
         } finally { prefs.edit().putString("lang",oldLang).putString("audioMode",oldAudio).commit() }
+    }
+
+    @Test fun betweenKeepsEndpointsAndReturnsFromYearWheelWithSameQuestionAndAssistance() {
+        val prefs=InstrumentationRegistry.getInstrumentation().targetContext.getSharedPreferences("basti_shell",0)
+        val oldLang=prefs.getString("lang",null);val oldAudio=prefs.getString("audioMode",null)
+        prefs.edit().putString("lang","en").putString("audioMode","off").commit()
+        try {
+            ActivityScenario.launch(MainActivity::class.java).use { scenario ->
+                fun ready() = compose.waitUntil(10_000) {
+                    var loaded=false
+                    scenario.onActivity { loaded=ViewModelProvider(it)[MonthsViewModel::class.java].quiz!=null }
+                    loaded
+                }
+                compose.onNodeWithText("Days & Seasons").performScrollTo().performClick()
+                compose.onNodeWithTag("open-months").performScrollTo().performClick()
+                compose.onNodeWithTag("months-open-between").performScrollTo().performClick()
+                ready()
+                var originalSession="";var originalTask="";var firstEndpoint=""
+                scenario.onActivity {
+                    val state=ViewModelProvider(it)[MonthsViewModel::class.java].quiz!!
+                    originalSession=state.plan.id.value;originalTask=state.task.question.definition.value
+                    firstEndpoint=MonthsBetween.definition(state.task.question).before.value
+                }
+                compose.onNodeWithTag("months-between-before").performScrollTo()
+                    .assertTextEquals(MonthContent.month(ContentId(firstEndpoint)).text.display[ContentLanguage.ENGLISH])
+                compose.onNodeWithTag("months-quiz-explore").performScrollTo().performClick()
+                compose.waitUntil(10_000) {
+                    compose.onAllNodesWithTag("months-between-return").fetchSemanticsNodes().isNotEmpty()
+                }
+                compose.onNodeWithTag("months-between-return").performScrollTo().assertIsDisplayed()
+                compose.onNodeWithTag("months-between-return").performClick()
+                ready()
+                scenario.onActivity {
+                    val state=ViewModelProvider(it)[MonthsViewModel::class.java].quiz!!
+                    assertEquals(originalSession,state.plan.id.value)
+                    assertEquals(originalTask,state.task.question.definition.value)
+                    assertTrue(state.current.support.hint)
+                }
+                scenario.recreate();ready()
+                compose.onNodeWithTag("months-between-sequence").performScrollTo().assertIsDisplayed()
+                scenario.onActivity {
+                    val state=ViewModelProvider(it)[MonthsViewModel::class.java].quiz!!
+                    assertEquals(originalSession,state.plan.id.value)
+                    assertEquals(originalTask,state.task.question.definition.value)
+                    assertTrue(state.current.support.hint)
+                }
+            }
+        } finally {prefs.edit().putString("lang",oldLang).putString("audioMode",oldAudio).commit()}
     }
 }

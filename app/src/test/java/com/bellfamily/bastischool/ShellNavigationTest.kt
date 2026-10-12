@@ -99,4 +99,16 @@ class ShellNavigationTest {
         assertEquals(route, route.openOptions().closeOptions())
         assertEquals(ShellScreen.MONTHS, route.openMonths().screen)
     }
+
+    @Test fun monthsBetweenAndItsYearWheelReturnToTheSameQuestionRoute() {
+        val question = ShellNavigation().openMonthsBetween()
+        assertEquals(ShellScreen.MONTHS_BETWEEN, question.screen)
+        assertEquals(BackAction.MONTHS_AREA, question.backAction)
+        val wheel = question.openMonthsBetweenWheel()
+        assertEquals(ShellScreen.MONTHS_BETWEEN_WHEEL, wheel.screen)
+        assertEquals(BackAction.MONTHS_AREA, wheel.backAction)
+        assertEquals(question.screen, ShellNavigation().openMonthsBetween().openMonthsBetweenWheel()
+            .openMonthsBetween().screen)
+        assertEquals(question, question.openOptions().closeOptions())
+    }
 }

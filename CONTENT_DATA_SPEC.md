@@ -107,13 +107,22 @@ plans freeze unique target months, choice order, language and support state; no
 device date or activity-specific progress store is used. The mode owns a distinct
 durable journal, and replay speaks the visible sequence without revealing the gap.
 Activity revision 1/content 1.1 are unchanged from the earlier Months quizzes.
+Between is separately identified as `activity.months.between`,
+`skill.months.between`, `context.months.year_order` and its own
+`months-between-session` journal. Each stable target is a middle-month identity;
+the visible endpoints are its canonical previous/next months, so December and
+January wrap correctly. Deterministic 5/10 rounds sample unique targets from the
+twelve-month catalogue and use four unique nearby month choices with bilingual
+endpoint-specific instruction and hint text. The frozen plan and shared durable
+host retain question order, language, support, attempts and deduplicated progress.
+It does not reuse or revise Missing Month task IDs, wording, journal or skill.
 The introductory Build the Year activity is separately identified as
 `activity.months.build_year.three`, revision 1/content 1.1, using the same canonical
 month repository without duplicating month names. It builds one shuffled three-month
 cyclic window, records ordered placement attempts as `skill.months.sequence` in
 `context.months.year_order`, and persists to its own revisioned write-ahead journal.
 Existing Months quiz activity IDs, progress identities and journals remain unchanged.
-Between, four-/six-/twelve-month sequencing, Months↔Seasons, adaptive progression
+Four-/six-/twelve-month sequencing, Months↔Seasons, adaptive progression
 and broader generalisation remain deferred. Physical S24/Fire, TalkBack and installed
 offline-voice checks for the new activity are **NOT RUN — deferred by owner**.
 

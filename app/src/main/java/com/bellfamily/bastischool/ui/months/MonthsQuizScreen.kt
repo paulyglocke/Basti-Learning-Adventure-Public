@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.layout.*
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
@@ -19,6 +20,25 @@ import com.bellfamily.bastischool.learning.models.*
 import com.bellfamily.bastischool.learning.months.*
 import com.bellfamily.bastischool.learning.session.*
 import com.bellfamily.bastischool.ui.common.*
+
+@Composable
+private fun BetweenEndpoint(month: String, relation: String, tag: String, modifier: Modifier = Modifier) {
+    Text(month, modifier.heightIn(min = 72.dp)
+        .background(Color.White, RoundedCornerShape(16.dp)).padding(horizontal = 8.dp, vertical = 12.dp)
+        .testTag(tag)
+        .semantics { contentDescription = "$relation: $month" },
+        textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+        style = androidx.compose.material3.MaterialTheme.typography.titleMedium)
+}
+
+@Composable
+private fun BetweenQuestionMark(description: String, modifier: Modifier = Modifier) {
+    Box(modifier.heightIn(min = 72.dp).border(2.dp, Color(0xFF496174), RoundedCornerShape(16.dp))
+        .testTag("months-between-gap")
+        .semantics { contentDescription = description }, contentAlignment = androidx.compose.ui.Alignment.Center) {
+        Text("?", style = androidx.compose.material3.MaterialTheme.typography.headlineMedium)
+    }
+}
 
 @Composable
 fun MonthsQuizScreen(mode: MonthsMode, state: SessionState?, language: ContentLanguage, busy: Boolean,
@@ -41,6 +61,37 @@ fun MonthsQuizScreen(mode: MonthsMode, state: SessionState?, language: ContentLa
             val q = state.task.question
             NativeQuestionProgress(state.index+1,state.plan.tasks.size,language,Modifier.testTag("months-quiz-progress"))
             NativeSupportMessage(q.instruction.display[language],Modifier.testTag("months-quiz-prompt"))
+            if (mode == MonthsMode.BETWEEN) {
+                val relationship = MonthsBetween.definition(q)
+                val before = MonthContent.month(relationship.before).text.display[language]
+                val after = MonthContent.month(relationship.after).text.display[language]
+                val betweenDescription = if (language == ContentLanguage.GERMAN)
+                    "$before, dann der gesuchte Monat dazwischen, dann $after" else
+                    "$before, then the month between, then $after"
+                BoxWithConstraints(Modifier.fillMaxWidth().testTag("months-between-sequence")
+                    .semantics { contentDescription = betweenDescription }) {
+                    val compact = maxWidth < 420.dp * LocalDensity.current.fontScale
+                    if (compact) {
+                        Column(Modifier.fillMaxWidth(), horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally,
+                            verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                            BetweenEndpoint(before, if(language == ContentLanguage.GERMAN) "Davor" else "Before", "months-between-before", Modifier.fillMaxWidth())
+                            Text("↓", color = Color(0xFF496174))
+                            BetweenQuestionMark(if(language == ContentLanguage.GERMAN) "Gesuchter Monat dazwischen" else "Month to find between", Modifier.fillMaxWidth())
+                            Text("↓", color = Color(0xFF496174))
+                            BetweenEndpoint(after, if(language == ContentLanguage.GERMAN) "Danach" else "After", "months-between-after", Modifier.fillMaxWidth())
+                        }
+                    } else {
+                        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp),
+                            verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+                            BetweenEndpoint(before, if(language == ContentLanguage.GERMAN) "Davor" else "Before", "months-between-before", Modifier.weight(1f))
+                            Text("→", color = Color(0xFF496174))
+                            BetweenQuestionMark(if(language == ContentLanguage.GERMAN) "Gesuchter Monat dazwischen" else "Month to find between", Modifier.weight(1f))
+                            Text("→", color = Color(0xFF496174))
+                            BetweenEndpoint(after, if(language == ContentLanguage.GERMAN) "Danach" else "After", "months-between-after", Modifier.weight(1f))
+                        }
+                    }
+                }
+            }
             if (mode == MonthsMode.MISSING) {
                 val sequence = MonthsMissing.definition(q)
                 NativeSupportMessage(sequence.sequence(language), Modifier.testTag("months-quiz-sequence")
@@ -51,7 +102,10 @@ fun MonthsQuizScreen(mode: MonthsMode, state: SessionState?, language: ContentLa
             q.choices.forEach { id ->
                 val name = MonthContent.month(id).text.display[language]
                 NativeTextChoice(name,{state.nextAttempt?.let {onAction(SessionAction.Answer(it,id))}},
-                    Modifier.fillMaxWidth().testTag("months-answer-${id.value}").semantics { selected = state.current.lastChoice == id }
+                    Modifier.fillMaxWidth().testTag("months-answer-${id.value}").semantics {
+                        selected = state.current.lastChoice == id
+                        if (mode == MonthsMode.BETWEEN) contentDescription = t("Answer choice: $name", "Antwort: $name")
+                    }
                         .then(if (state.current.lastChoice == id) Modifier.border(2.dp, Color(0xFF23354A), RoundedCornerShape(16.dp)) else Modifier),
                     ready && state.current.answer == AnswerState.UNANSWERED)
                 NativeActionButton(t("Listen: $name", "Anhören: $name"),NativeActionRole.SECONDARY,{onOption(id)},
