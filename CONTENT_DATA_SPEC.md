@@ -122,9 +122,33 @@ month repository without duplicating month names. It builds one shuffled three-m
 cyclic window, records ordered placement attempts as `skill.months.sequence` in
 `context.months.year_order`, and persists to its own revisioned write-ahead journal.
 Existing Months quiz activity IDs, progress identities and journals remain unchanged.
-Four-/six-/twelve-month sequencing, Months↔Seasons, adaptive progression
-and broader generalisation remain deferred. Physical S24/Fire, TalkBack and installed
-offline-voice checks for the new activity are **NOT RUN — deferred by owner**.
+Four-/six-/twelve-month sequencing, advanced Months↔Seasons generalisation, adaptive
+progression and broader calendar generalisation remain deferred. Physical S24/Fire,
+TalkBack and installed offline-voice checks for the new activities are **NOT RUN —
+deferred by owner**.
+
+## Months ↔ Seasons introductory matching (2026-10-12)
+
+Use meteorological seasons for Germany and the Northern Hemisphere, independent of
+device date or weather: Spring / Frühling = March, April, May; Summer / Sommer =
+June, July, August; Autumn / Herbst = September, October, November; Winter / Winter
+= December, January, February. December remains grouped with January and February.
+This is a fixed instructional convention, not an astronomical-season or local-weather
+calculation. Existing `MonthDefinition.season` references and canonical month/season
+IDs remain the source of truth.
+
+The introductory activity is `activity.months.seasons`, revision 1, with
+`skill.months.season`, `context.months.season_mapping` and a dedicated
+`months-seasons-session` durable journal. It samples unique month targets for
+deterministic five- or ten-task sessions with balanced seasonal counts; sessions do
+not repeat a target, and the full set remains reachable across seeds. Each prompt
+retains the month identity while the four existing season IDs are the destinations.
+It reuses the Core season catalogue for those choices and the canonical Months data
+for mapping, without revising existing Months/Seasons activities or their IDs,
+content version, journals or progress. The UI builds visible season groups and offers
+the complete bilingual month map as optional teaching support. Shared session/audio/
+progress delivery records retries and least support; restoration is silent. See
+NATIVE_ARCHITECTURE_SPEC.md and PROGRESS_TRACKER_SPEC.md for state/progress ownership.
 
 Content revision 10 aligns 121 short child examples across 73 scenes with their
 unchanged questions and existing models. Examples now offer brief actions,

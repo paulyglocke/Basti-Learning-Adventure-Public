@@ -2112,3 +2112,175 @@ Focused validation: Follow JVM **4/4**, Follow instrumentation **2/2**, full JVM
 findings). The full emulator run was not green: it reproduced the existing Vocabulary
 orientation display assertion and stopped at 59/119; no Follow test failed. Physical
 S24/Fire acceptance remains open.
+
+## Months Phase 6 — introductory Months ↔ Seasons (2026-10-12)
+
+Starting `main`/HEAD was `9a6fa54beb9d0014f80e358af7d25cf59235e672`; fetch confirmed
+`origin/main` matched and the initial worktree was clean. The Phase 6 implementation
+is present but is **not marked complete** because broad automated validation did not
+finish cleanly. No commit or push was made; final local HEAD remains `9a6fa54` and
+remote HEAD was not changed. Physical S24/Fire/TalkBack/offline-voice acceptance is
+**NOT RUN — deferred by owner**.
+
+The new route assigns a displayed month into one of four accumulating season groups,
+using the four existing Seasons images and canonical `MonthDefinition.season` map.
+The fixed curriculum is meteorological Germany/Northern Hemisphere: March–May spring,
+June–August summer, September–November autumn, December–February winter. The activity
+uses `activity.months.seasons`, `skill.months.season`,
+`context.months.season_mapping`, revision 1 and `months-seasons-session`; existing
+Months and Seasons IDs/journals remain unchanged. Five- and ten-task plans use unique
+month targets and balanced season counts. Replay names the task and all four season
+choices; the optional bilingual full map is recorded as hint support. Wrong placement
+is retryable; correct placements remain visible. Route, Options, language and Activity
+recreation share the durable Months session and restore silently.
+
+Validation evidence for this checkpoint:
+
+- PASS — focused Months ↔ Seasons JVM suite: **4/4**.
+- PASS — full JVM suite: **508/508**.
+- PASS — focused API 35 emulator UI/route suite: **13/13** (EN/DE; 1×/1.5×/2×;
+  portrait/short landscape; keyboard activation, retry, group guide, Options and
+  Activity recreation).
+- PASS — `compileDebugAndroidTestKotlin`.
+- PASS — `assembleDebug` (up-to-date after successful compilation).
+- PASS — `git diff --check` at checkpoint.
+- FAIL/INCOMPLETE — broad emulator instrumentation began **347** tests, reached
+  **140/347**, then was stopped. Six failures had occurred: two
+  `NativeTextVisibilityTest` “No compose hierarchies found” cases and four
+  `SupportPresentationTest` missing/visible authored-text assertions in Prepositions.
+  These are outside the Months ↔ Seasons code, but were not proven pre-existing; the
+  broad suite therefore is not a pass.
+- FAIL/INCOMPLETE — a separate existing Months/Seasons instrumentation selection
+  (`114` planned) terminated at the first Months Build the Year UI case with an
+  instrumentation-process crash and empty failure stack. It did not complete.
+- BLOCKED — `lintDebug` failed inside lint analysis with `25.0.3` and a UAST
+  `AlreadyDisposedException`/`NoClassDefFoundError`; retrying with `--max-workers=1`
+  reproduced the failure. No usable lint warning report was produced. The combined
+  `assembleDebug lintDebug` command had a successful assemble task and failed lint.
+- Compiler emitted the existing `MainActivity.kt` `VIBRATOR_SERVICE` deprecation
+  warning; Gradle/JDK emitted restricted `System::load` warnings. No source fix was
+  made for unrelated warnings.
+
+The first emulator UI attempt identified and fixed a real implementation defect:
+previous group rendering parsed month IDs from the full task-definition suffix
+incorrectly. Rendering now resolves the month from the canonical task definition, and
+the passing focused UI test checks that completed placements appear in their groups.
+
+Files changed: `MonthsSeasonsMatch.kt`, `MonthsSeasonsMatchScreen.kt`,
+`MonthsSeasonsMatchTest.kt`, `MonthsSeasonsMatchScreenTest.kt`,
+`MonthsSeasonsMatchRouteTest.kt`, `MonthsQuestions.kt`, `MonthsViewModel.kt`,
+`MonthsScreen.kt`, `MainActivity.kt`, `ShellNavigation.kt`, `MonthsNavigationTest.kt`,
+README, roadmap, backlog, content/native architecture/progress/navigation/QA specs,
+and this handoff. The roadmap/backlog record Phase 6 as under validation, not complete.
+
+Next: diagnose the six broad shared-UI failures and the emulator test-process exit,
+resolve the Android Lint/UAST environment failure, then rerun full unit, affected and
+full instrumentation, build/lint and diff checks. Do not commit/push or claim CI until
+all required checks pass. Keep physical acceptance deferred by owner.
+
+## Months Phase 6 — validation follow-up (2026-10-12)
+
+Preservation checkpoint: branch `main`; starting `HEAD` and `origin/main` both
+`9a6fa54beb9d0014f80e358af7d25cf59235e672`. The original Phase 6 implementation and
+documentation were present in the worktree; no fetch, reset, rebase, stash, clean,
+commit or push was performed. Existing work was preserved. Local changes below remain
+uncommitted. No GitHub Actions run was triggered. Physical-device acceptance remains
+**NOT RUN — deferred by owner**.
+
+### Reported failures and diagnosis
+
+- `NativeTextVisibilityTest`: the two earlier “No compose hierarchies found” cases
+  passed in an isolated **8/8** class run and all eight cases passed in the full run.
+  The triggering event was not captured and did not reproduce; this is not evidence
+  of a Phase 6 defect or a diagnosed product fix.
+- `SupportPresentationTest`: the four Prepositions failures searched for exact hint
+  phrases globally, although those same phrases are intentionally visible in answer
+  choices. Assertions now check the `feedback` and `hint-text` nodes. Corrected class:
+  **12/12 PASS**; these failures did not recur in the full suite.
+- Earlier Months/Seasons instrumentation crash: not reproduced. Emulator `/data` had
+  4.1 GB available; recent logcat had no fatal app/runtime or low-memory event. The
+  isolated Months Build the Year screen class passed **12/12**, and the full suite
+  completed **347/347** without a runner crash. No contemporaneous crash stack from
+  the earlier run exists, so its initiating cause remains **unknown**.
+- Lint/UAST: the failing runtime reported JDK **25.0.3** (`AlreadyDisposedException`
+  while initializing/disposal of UAST). Project AGP is 8.7.3 and Java compile target
+  is 17. A fresh `--no-daemon lintDebug --stacktrace` under installed JDK **17.0.20.1**
+  passed. Final report: **5 warnings** (2 `UnusedAttribute` in the manifest, 2
+  oversized legacy clock vectors, 1 `SetJavaScriptEnabled` in the legacy WebView) and
+  2 informational `AutoboxingStateCreation` recommendations. The compiler also
+  reports the existing `VIBRATOR_SERVICE` deprecation. No cache invalidation,
+  dependency/toolchain changes or lint suppressions were needed.
+
+### Full-suite results and remaining blocker
+
+Under JDK 17.0.20.1, full JVM tests passed **508/508** (0 failures/errors/skips).
+`assembleDebug`, `lintDebug`, and `compileDebugAndroidTestKotlin` passed. The full API
+35 emulator run completed **347 tests: 341 passed, 6 failed, 0 skipped**. The earlier
+NativeText and SupportPresentation failures were absent. All 12 Months ↔ Seasons
+responsive UI cases passed, as did its route test. The six failures were:
+
+1. Four `PrepositionsArtworkScreenTest` restoration casts: the fixture selected the
+   first three relation distractors without respecting `PrepositionsContent`'s
+   pairwise compatibility rule. The validator correctly returned `Rejected`; the
+   fixture now selects four compatible relations. Isolated result after correction:
+   **4/4 PASS**.
+2. One `SeasonsMatchScreenTest` placement assertion: the test clicked season/clue
+   controls while they were outside the scroll viewport. A diagnostic assertion
+   showed the wrong tap never became attempt 1. The test now scrolls controls into
+   view before clicking and verifies that attempt; isolated result: **1/1 PASS**.
+3. One `PrepositionsArtworkTest` source-art contract assertion: `snake.next_to` was
+   expected to be narrower than `snake.on`, but both committed PNGs are 1448×1086.
+   Their decoded widths therefore match and the crop assertion fails. Neither asset
+   is a Phase 6 change; artwork was not altered. This remains an unresolved existing
+   artwork/content acceptance issue and blocks a green full-suite/release claim.
+
+The original six-failure broad run has therefore been diagnosed: five failures were
+non-reproducible runner symptoms or invalid test expectations/fixtures and are now
+covered by focused passing runs; the remaining art assertion is reproducible from
+the source dimensions. The complete 347-test suite has **not** been rerun after the
+two later test-fixture corrections, so do not infer a revised suite-wide count from
+their isolated passes. Do not commit or push while the artwork failure remains, and
+do not mark Phase 6 validation complete. Physical acceptance remains explicitly
+deferred.
+
+### Final checkpoint state
+
+- PASS: full JVM **508/508**; assemble; lint under JDK 17; Android-test compilation;
+  focused Months ↔ Seasons **13/13**; Months Build the Year **12/12**; NativeText
+  visibility **8/8**; corrected support presentation **12/12**; corrected Prepositions
+  artwork-screen restore **4/4**; corrected Seasons match UI **1/1**.
+- FAIL: last full instrumentation run **341/347**, with the one unresolved
+  Prepositions source-art dimension assertion; the two test-fixture corrections were
+  verified individually but not in another full run.
+- PASS: `git diff --check` is to be rerun after this documentation update.
+- NOT RUN: physical-device acceptance (**deferred by owner**); CI (no push).
+- Release status: **BLOCKED — do not commit or push**. Current source Phase 6 remains
+  implemented, but release readiness and completed full automated validation are not
+  established until the source-art contract is resolved and full instrumentation is
+  rerun successfully.
+
+Next action: review the `snake.next_to`/`snake.on` crop expectation with the art owner
+without replacing or altering artwork implicitly; then rerun the full required suite,
+build/lint, diff check, and only if all pass commit/push and inspect CI.
+
+## Months Phase 6 — final automated validation follow-up (2026-10-12)
+
+The asset review confirmed the existing `snake.next_to` image shows the snake and rock
+fully visible on the same ground plane with a clear gap; `snake.on` shows the snake on
+top of the rock. Both intentionally use the shared 1448×1086 4:3 canvas, so raster
+width was not a valid proxy for the audited visual relationship. Removed only that
+dimension-based assertion from `PrepositionsArtworkTest`; retained the test's
+all-scenes decode and aspect-ratio checks. No artwork or content was changed.
+
+After the already-recorded test-fixture corrections, the full API 35 emulator
+instrumentation suite completed **347/347, 0 failures, 0 skips** (37m19s), including
+the previously unresolved artwork test. Its focused class also passed **3/3**. The
+previously reported full JVM **508/508**, `assembleDebug`, `lintDebug` under JDK
+17.0.20.1, Android-test compilation, and focused Months ↔ Seasons **13/13** remain
+passing evidence; final `git diff --check` is recorded at handoff. Lint warnings remain
+as listed above. Emulator success is not physical-device acceptance.
+
+Automated validation is complete for this checkpoint; Months Phase 6 is implemented.
+Physical-device acceptance remains **NOT RUN — deferred by owner**. No commit, push or
+CI run has occurred yet. Recheck the complete diff and whitespace, then commit/push the
+scoped work and verify remote HEAD and GitHub Actions. Do not claim physical acceptance.

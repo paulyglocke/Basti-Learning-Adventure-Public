@@ -13,7 +13,8 @@ enum class MonthsMode(val title: ContentText) {
     RELATIONS(ContentText.plain("Before and Next", "Davor und danach")),
     BETWEEN(ContentText.plain("Between", "Dazwischen")),
     MISSING(ContentText.plain("Missing Month", "Fehlender Monat")),
-    BUILD_YEAR(ContentText.plain("Build the Year", "Baue das Jahr"))
+    BUILD_YEAR(ContentText.plain("Build the Year", "Baue das Jahr")),
+    SEASONS_MATCH(ContentText.plain("Months and Seasons", "Monate und Jahreszeiten"))
 }
 
 object MonthsQuestions {
@@ -32,9 +33,11 @@ object MonthsQuestions {
     val completion = ContentText.plain("You practised the months. Well done!", "Du hast die Monate geübt. Sehr gut!")
     fun activity(mode: MonthsMode): ActivityId {
         require(mode != MonthsMode.EXPLORE && mode != MonthsMode.BUILD_YEAR)
+        if (mode == MonthsMode.SEASONS_MATCH) return MonthsSeasonsMatch.activity
         return ActivityId("activity.months.${mode.name.lowercase()}")
     }
     fun catalogue(mode: MonthsMode): List<Definition> {
+        require(mode != MonthsMode.SEASONS_MATCH)
         require(mode != MonthsMode.MISSING && mode != MonthsMode.BETWEEN) {
             "Missing Month and Between use their activity-specific catalogues"
         }
@@ -66,6 +69,7 @@ object MonthsQuestions {
             ContentText.plain("Try again. You can listen or ask for help.", "Versuche es noch einmal. Du kannst noch einmal hören oder dir helfen lassen."), hint)
     }
     fun generate(mode: MonthsMode, id: SessionId, round: RoundLength, seed: Long): GenerationResult {
+        if (mode == MonthsMode.SEASONS_MATCH) return MonthsSeasonsMatch.generate(id, round, seed)
         if (mode == MonthsMode.MISSING) return MonthsMissing.generate(id, round, seed)
         if (mode == MonthsMode.BETWEEN) return MonthsBetween.generate(id, round, seed)
         val random = Random(seed)
@@ -83,6 +87,7 @@ object MonthsQuestions {
         return GenerationResult.Generated(plan)
     }
     fun validate(mode: MonthsMode, state: SessionState) {
+        if (mode == MonthsMode.SEASONS_MATCH) return MonthsSeasonsMatch.validate(state)
         if (mode == MonthsMode.MISSING) return MonthsMissing.validate(state)
         if (mode == MonthsMode.BETWEEN) return MonthsBetween.validate(state)
         val plan = state.plan
@@ -99,7 +104,10 @@ object MonthsQuestions {
                 q.correctFeedback == expected.correctFeedback && q.wrongFeedback == expected.wrongFeedback)
         }
     }
-    fun host(mode: MonthsMode, journal: ProgressStorage, progress: ProgressRepository) = DurableSessionHost(
+    fun host(mode: MonthsMode, journal: ProgressStorage, progress: ProgressRepository): DurableSessionHost {
+        if (mode == MonthsMode.SEASONS_MATCH) return MonthsSeasonsMatch.host(journal, progress)
+        return DurableSessionHost(
         journal,progress,activity(mode),REVISION,MonthContent.repository,
         {id,round,seed -> generate(mode,id,round,seed)}, {validate(mode,it)})
+    }
 }

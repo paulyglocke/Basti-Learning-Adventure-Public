@@ -12,7 +12,7 @@ These are implementation requirements, not claims that the target already exists
 
 At Documentation Pass 2, [MainActivity.kt](app/src/main/java/com/bellfamily/bastischool/MainActivity.kt) owned Compose home/Options/top bar, enum navigation, remembered screen state, SharedPreferences, WebView hosting and Android TTS, while [app.js](app/src/main/assets/app.js) and [index.html](app/src/main/assets/index.html) owned all learning activities. That paragraph is a historical migration baseline, not current implementation reality.
 
-Current source still uses the same hybrid shell, but shared native content/audio/session/progress foundations are implemented and native Compose learning areas include Prepositions, Seasons, Wilma’s Week, Vocabulary Booster and Months. Months now spans the Year Wheel, recognition/relations/missing-month quizzes and an introductory three-month ordered Build the Year activity with a separate durable journal. Shared completion/action/support presentation and deterministic restoration/progress delivery are also implemented. The typed 81-scene Scene Description catalogue drives native Tell Me / Erzähl mal, an open-ended text/artwork conversation outside the quiz framework. Legacy HTML/JavaScript remains only for unmigrated routes and must stay usable until tested native parity exists. Physical S24/Fire acceptance remains tracked separately in TESTING_QA_SPEC.md.
+Current source still uses the same hybrid shell, but shared native content/audio/session/progress foundations are implemented and native Compose learning areas include Prepositions, Seasons, Wilma’s Week, Vocabulary Booster and Months. Months spans the Year Wheel, recognition/relations/missing-month quizzes and introductory three-month ordered Build the Year. Phase 6 illustrated Months ↔ Seasons code is also present with a separate session owner; it remains under validation and is not marked complete until the full required checks pass. Shared completion/action/support presentation and deterministic restoration/progress delivery are also implemented. The typed 81-scene Scene Description catalogue drives native Tell Me / Erzähl mal, an open-ended text/artwork conversation outside the quiz framework. Legacy HTML/JavaScript remains only for unmigrated routes and must stay usable until tested native parity exists. Physical S24/Fire acceptance remains tracked separately in TESTING_QA_SPEC.md.
 
 Migrate incrementally from this current baseline. Add or extend shared foundations only for demonstrated consumers, preserve working legacy routes until parity is tested, and avoid broad rewrites. Follow the Instructions remains the first planned new reusable instruction/action **game**; Tell Me / Erzähl mal is a separate P2 expressive-language activity. BACKLOG.md owns execution order.
 
@@ -701,10 +701,35 @@ language, attempts/support, silent restore and deduplicated shared progress even
 The introductory three-placement Build the Year level separately uses
 `activity.months.build_year.three`, `skill.months.sequence` and a revisioned durable
 ordering journal; existing quiz activity revisions, content 1.1 and journals remain
-unchanged. Between and Build the Year are automated-test covered; physical S24/Fire
-acceptance is **NOT RUN — deferred by owner**. Four-/six-/twelve-month sequencing, Months/Seasons,
-adaptive progression and broader generalisation remain deferred. See SESSION_HANDOFF.md
+unchanged. Between, Build the Year and Months ↔ Seasons are automated-test covered;
+physical S24/Fire acceptance is **NOT RUN — deferred by owner**. Four-/six-/twelve-
+month sequencing, advanced Months/Seasons transfer, adaptive progression and broader
+generalisation remain deferred. See SESSION_HANDOFF.md
 for evidence and limitations.
+
+## Months ↔ Seasons matching — Phase 6 (2026-10-12)
+
+`MONTHS_SEASONS` is a separate Months route using the existing session reducer,
+`DurableSessionHost`, `MonthsAudio` policy and shared progress repository. Its stable
+activity/skill/context identities are `activity.months.seasons`,
+`skill.months.season` and `context.months.season_mapping`; it owns
+`months-seasons-session` and revision 1. The four destination IDs and illustrations
+come from the canonical Seasons catalogue; month-to-season facts come from the
+existing MonthContent references. The session plan validates against CoreContent
+because its selectable destinations are canonical season IDs; this does not revise
+the Months content repository or other activity journals.
+
+Each unique month target is assigned into one of four illustrated groups. Prior
+correct placements remain visible; wrong assignments are retried without removing
+earlier work. Sessions deterministically balance seasonal coverage in five-task
+(2/1/1/1) and ten-task (3/3/2/2) rounds. The optional full month-group guide records
+hint support and uses the fixed German meteorological convention. Back/Options,
+language, Activity recreation and shared session recovery retain task, answer,
+attempt, support and completion state; restore is silent. The four existing local
+season illustrations are reused. Physical S24/Fire, TalkBack quality and audible
+offline-voice acceptance are **NOT RUN — deferred by owner**; emulator checks are not
+physical acceptance. Four-/six-/twelve-month sequencing, advanced transfer, adaptive
+progression and full calendar activities remain deferred.
 
 ## Owner clock presentation feedback — 2026-10-10 (draft, validation pending)
 

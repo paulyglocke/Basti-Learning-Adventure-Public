@@ -1,14 +1,18 @@
 package com.bellfamily.bastischool.ui.months
 
 import android.app.Application
+import android.graphics.BitmapFactory
 import android.os.Handler
 import android.os.Looper
 import androidx.compose.runtime.*
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.asImageBitmap
 import androidx.lifecycle.AndroidViewModel
 import com.bellfamily.bastischool.audio.*
 import com.bellfamily.bastischool.audio.android.AndroidSystemSpeechEngine
 import com.bellfamily.bastischool.learning.models.*
 import com.bellfamily.bastischool.learning.months.*
+import com.bellfamily.bastischool.learning.content.SeasonIds
 import com.bellfamily.bastischool.learning.progress.AtomicProgressStorage
 import com.bellfamily.bastischool.learning.progress.android.AndroidAtomicCommit
 import com.bellfamily.bastischool.learning.progress.android.AndroidProgressRepository
@@ -23,6 +27,8 @@ class MonthsViewModel @JvmOverloads constructor(application: Application,
     var selection by mutableStateOf<MonthsSelection?>(null); private set
     var saveFailed by mutableStateOf(false); private set
     var audioFailed by mutableStateOf(false); private set
+    var seasonArtwork by mutableStateOf<Map<ContentId, ImageBitmap>>(emptyMap()); private set
+    var artworkFailed by mutableStateOf(false); private set
     private val main = Handler(Looper.getMainLooper())
     private val worker = Executors.newSingleThreadExecutor()
     private val store = MonthsSelectionStore(AtomicProgressStorage(File(application.noBackupFilesDir, "months-selection"), AndroidAtomicCommit))
@@ -45,9 +51,13 @@ class MonthsViewModel @JvmOverloads constructor(application: Application,
     private val failures = mutableStateMapOf<MonthsMode, Boolean>()
     val quiz get() = quizzes[phase]
     val quizFailed get() = failures[phase] == true
-    private val hosts = listOf(MonthsMode.FIND, MonthsMode.RELATIONS, MonthsMode.MISSING, MonthsMode.BETWEEN).associateWith {
+    private val hosts = listOf(MonthsMode.FIND, MonthsMode.RELATIONS, MonthsMode.MISSING, MonthsMode.BETWEEN, MonthsMode.SEASONS_MATCH).associateWith {
         MonthsQuestions.host(it, AtomicProgressStorage(File(application.noBackupFilesDir,
-            if (it == MonthsMode.BETWEEN) "months-between-session" else "months-${it.name.lowercase()}-session"),
+            when (it) {
+                MonthsMode.BETWEEN -> "months-between-session"
+                MonthsMode.SEASONS_MATCH -> "months-seasons-session"
+                else -> "months-${it.name.lowercase()}-session"
+            }),
             AndroidAtomicCommit), AndroidProgressRepository.create(application))
     }
     private val buildHost = MonthsBuildYearHost(
@@ -206,11 +216,24 @@ class MonthsViewModel @JvmOverloads constructor(application: Application,
             val result = runCatching { operation(host) }
             val state = host.state
             val failed = result.isFailure || host.failure
+            val artResult = if (destination == MonthsMode.SEASONS_MATCH && seasonArtwork.isEmpty()) runCatching {
+                val repository = com.bellfamily.bastischool.learning.content.CoreContent.repository()
+                SeasonIds.canonicalOrder.associateWith { seasonId ->
+                    val season = repository.find(seasonId) as SeasonDefinition
+                    getApplication<Application>().assets.open(requireNotNull(repository.image(season.illustration)).path).use { stream ->
+                        requireNotNull(BitmapFactory.decodeStream(stream, null, BitmapFactory.Options().apply { inSampleSize = 2 })).asImageBitmap()
+                    }
+                }
+            } else null
             main.post {
                 if (!closed) {
                     // Accepted state/busy publication is independent of cancelled speech/navigation.
                     quizBusy = false; failures[destination] = failed
                     if (state != null) quizzes[destination] = state
+                    if (artResult != null) {
+                        seasonArtwork = artResult.getOrNull() ?: emptyMap()
+                        artworkFailed = artResult.isFailure
+                    }
                     if (!failed && state != null && visible && phase == destination && ticket == speechEpoch && state.language == language) {
                         if (speak) audio.effects(state.plan.id, language, result.getOrDefault(emptyList()))
                         after?.invoke()

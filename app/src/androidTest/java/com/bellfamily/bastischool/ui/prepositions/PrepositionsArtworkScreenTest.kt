@@ -47,8 +47,11 @@ class PrepositionsArtworkScreenTest(private val language:ContentLanguage,private
         val scenes=keys.map {key->PrepositionsContent.scenes.single {it.id.value=="scene.prepositions.$key"}}
         val id=SessionId("artwork-ui")
         val tasks=scenes.mapIndexed {i,s->
-            val others=PositionRelation.entries.filter {it!=s.relation}.take(3)
-            ChoiceTask(TaskInstanceId(id,i+1),PrepositionsContent.question(s,(listOf(s.relation)+others).map {it.id}))
+            val relations=mutableListOf(s.relation)
+            PositionRelation.entries.forEach { candidate ->
+                if(relations.size<4 && relations.all {PrepositionsContent.compatible(it,candidate,s.relation.reference)}) relations+=candidate
+            }
+            ChoiceTask(TaskInstanceId(id,i+1),PrepositionsContent.question(s,relations.map {it.id}))
         }
         val plan=SessionPlan(id,PrepositionsContent.activity,PrepositionsContent.REVISION,PrepositionsContent.version,SessionPolicy(RoundLength.FIVE),tasks,PrepositionsContent.completion)
         val state=mutableStateOf(SessionReducer.start(plan,language,PrepositionsContent.repository).state)

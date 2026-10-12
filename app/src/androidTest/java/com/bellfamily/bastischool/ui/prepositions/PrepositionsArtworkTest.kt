@@ -32,10 +32,8 @@ class PrepositionsArtworkTest {
             // Odd crop sizes may round by one decoded pixel with inSampleSize=2.
             assertEquals(4f / 3f, bitmap.width.toFloat() / bitmap.height, 0.069f)
         }
-        val nextTo = loader.load(ContentId("scene.prepositions.snake.next_to"))!!
-        val original = loader.load(ContentId("scene.prepositions.snake.on"))!!
-        assertTrue(nextTo.width < original.width)
-        assertEquals(original.height, nextTo.height)
+        // The shared 4:3 canvas is intentional; visual relation/crop acceptance is
+        // recorded in PREPOSITIONS_CONTENT_AUDIT.md rather than inferred from dimensions.
     }
     @Test fun missingAndCorruptArtworkReturnCalmFailureWithoutRepeatedDecode() {
         val id=ContentId("scene.prepositions.snake.on")

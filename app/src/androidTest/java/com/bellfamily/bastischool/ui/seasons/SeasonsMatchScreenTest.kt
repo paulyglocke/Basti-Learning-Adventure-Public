@@ -22,8 +22,9 @@ class SeasonsMatchScreenTest {
         compose.setContent { MaterialTheme { SeasonsScreen(SeasonsSelection(phase=SeasonsPhase.MATCH),null,ContentLanguage.GERMAN,null,false,false,false,false,{}, {}, {}, {}, {}, {}, {}, {}, modifier=Modifier.width(320.dp), matching=state.value, onMatch={state.value=SeasonsMatch.reduce(state.value,it).state}) } }
         compose.onNodeWithTag("seasons-match-prompt").assertIsDisplayed()
         val first=state.value.order.first();val correct=state.value.rule.items.first {it.id==first}.category;val wrong=state.value.rule.categories.first {it!=correct}
-        compose.onNodeWithTag("match-season-${first.value}").performClick(); compose.waitForIdle()
-        compose.onNodeWithTag("match-clue-${wrong.value}").performClick(); compose.waitForIdle()
+        compose.onNodeWithTag("match-season-${first.value}").performScrollTo().performClick(); compose.waitForIdle()
+        compose.onNodeWithTag("match-clue-${wrong.value}").performScrollTo().performClick(); compose.waitForIdle()
+        assertEquals("Wrong clue tap must be retained as the first attempt", 1, state.value.placement(first).attempts)
         state.value = SeasonsMatch.reduce(state.value, SortAction.Hint).state
         compose.waitForIdle(); assertTrue(state.value.selectedPlacement!!.support.hint)
         state.value = SeasonsMatch.reduce(state.value, SortAction.Place(state.value.id, first, correct, 2)).state

@@ -255,6 +255,17 @@ supported correct answers retain their ordinary attempt evidence. Its journal is
 independent of Find, Before/Next, Missing Month and Build the Year. No mastery or
 adaptive progression is inferred by this introductory level.
 
+### Months ↔ Seasons matching evidence (2026-10-12)
+
+Introductory grouping records through the shared choice-session progress contract as
+`activity.months.seasons` / revision 1, `skill.months.season`, and
+`context.months.season_mapping`. Stable task definitions identify the target month;
+the selected canonical season ID is the recorded choice. Incorrect assignment,
+successful retry, Replay and guide/hint support are preserved in attempt/completion
+evidence. It has a dedicated `months-seasons-session` journal and does not alter
+historical Months or Seasons identities, records or journals. No adaptive mastery or
+cross-context generalisation is inferred.
+
 ### Clock Make This Time evidence (2026-10-08)
 
 `activity.time.clock.make` revision 1/content 1.1 records only explicit Check

@@ -18,6 +18,35 @@ Current baseline reconciled on 2026-10-08 against `ccc6423`: the [workflow](.git
 
 These results are carried forward from the dated [SESSION_HANDOFF.md](SESSION_HANDOFF.md), not rerun by this documentation reconciliation. Preserve historical counts, failures and commands there and in [BUILD_NOTES.md](BUILD_NOTES.md); newer full JVM/lint results supersede earlier “not run” gaps only for those layers. Requirements below are not a record of passed tests.
 
+## Months ↔ Seasons release checkpoint — 2026-10-12
+
+At `9a6fa54` (Phase 6 changes remain uncommitted), the full JVM suite passed
+**508/508**; `assembleDebug`, `lintDebug` and `compileDebugAndroidTestKotlin` passed
+under JDK 17.0.20.1. Focused emulator coverage passed for Months ↔ Seasons **13/13**,
+Months Build the Year **12/12**, NativeTextVisibility **8/8**, corrected
+SupportPresentation **12/12**, corrected Prepositions artwork-screen restoration
+**4/4**, and corrected Seasons matching **1/1**. After those narrow test corrections,
+the full API 35 emulator suite passed **347/347, 0 failures, 0 skips**; the focused
+PrepositionsArtwork class passed **3/3**. The artwork test no longer treats raster
+width as a proxy for visual relation: both Snake scenes use the shared 1448×1086
+canvas, while the visual criterion is recorded in the content audit. No artwork was
+changed. The Lint report lists **5 warnings** (2 `UnusedAttribute`, 2 `VectorRaster`,
+1 legacy `SetJavaScriptEnabled`) and 2 informational `AutoboxingStateCreation`
+recommendations. Automated validation is complete; commit/push and CI verification are
+still pending. Physical acceptance is **NOT RUN — deferred by owner**.
+
+The initial two NativeTextVisibility “No compose hierarchies found” failures did not
+recur in isolation or the full suite; their original trigger was not captured, so do
+not treat the transient runner symptom as a diagnosed product fix. The original four
+SupportPresentation failures came from searching globally for hint wording that is
+also present in answer choices; checks now target the dedicated support-message nodes.
+The earlier Months/Seasons process crash also did not recur (Months Build the Year
+**12/12**, full instrumentation completed; emulator `/data` had 4.1 GB available and
+recent logcat contained no fatal app/runtime or low-memory event). Its original crash
+cause remains unknown. Lint’s UAST `AlreadyDisposedException` occurred with JDK
+25.0.3; a fresh no-daemon `lintDebug` under JDK 17 passed without cache invalidation or
+dependency changes.
+
 ## Automated coverage
 
 Months Between coverage must enumerate all 12 middle-month definitions, explicitly
@@ -27,6 +56,17 @@ bilingual prompt/audio, exact restoration, progress identity and independent jou
 Compose coverage must keep both named endpoints visible and labelled while answering,
 check EN/DE at 1×/1.5×/2× in portrait/short landscape, keyboard activation, target
 size and relationship semantics. Emulator evidence is not physical-device acceptance.
+
+Months ↔ Seasons coverage must assert the fixed meteorological Germany/Northern
+Hemisphere mapping for all twelve months, including December–January–February winter;
+verify EN/DE labels, stable month-task and season-choice identities, deterministic
+balanced unique-target 5/10 rounds across seeds, and reachability of all months.
+Exercise correct/wrong placement, retry, Replay, guide/hint support, accurate progress,
+dedicated-journal isolation, exact silent restore, and route/Options/language/Activity
+recreation. Compose coverage must verify all four illustrated and named destinations,
+accessible group descriptions, keyboard activation, 48dp+ targets, placement retention,
+and EN/DE at 1×/1.5×/2× in portrait and short landscape without horizontal clipping.
+Physical-device acceptance remains **NOT RUN — deferred by owner**.
 
 | Layer | Required cases for affected behavior |
 | --- | --- |
@@ -179,13 +219,14 @@ is asserted by this list.
 | Seasons MISSING / CLUES / MATCH | Gap and clue meaning, independent Listen, correct match preservation after mistakes, exact restoration and appropriate completion. MATCH is a four-season matching set, not a 5/10-question quiz. |
 | Seasons COMBINED | Explicit Before/After semantics, both wrap boundaries, correct slot retained through retry, Help independent of Replay, fresh Again and task-specific ordered-pair progress evidence. |
 | Months Explore / Find / Before-Next / Missing / Build the Year (3) | Canonical Year Wheel and December/January adjacency; bilingual names/prompts/audio/hints; existing quiz modes' deterministic 5/10 rounds; Build the Year's shuffled unique three-month window, December→January→February and other cyclic starts, tap-select/tap-place, example, wrong-placement retry, separate progress identity, exact silent restoration and pending-write retry. Check tile/slot position/action semantics, keyboard activation, EN/DE wrapping, portrait/short landscape and 1×–2× text. Emulator results do not establish physical acceptance. |
+| Months ↔ Seasons | Fixed Germany meteorological mapping for all twelve months, including December–January–February; four existing season illustrations; deterministic balanced unique 5/10 targets; tap assignment into cumulative groups; retry, guide/hint and Replay; bilingual prompt/audio; separate shared progress identity/journal; exact restoration through Options, Back and Activity recreation; TalkBack group labels, keyboard activation, large targets, EN/DE wrapping at 1×/1.5×/2×, portrait/short landscape and no horizontal clipping. Physical acceptance is **NOT RUN — deferred by owner**. |
 | Tell Me revision 11 pilot | Three C bundles only (Ocean .03, Classroom .02, Zoo .08); A/B/C/A versus A/B/A rotation, paired EN/DE support, Options/language/recreation/background/Home behavior and text reachability. Keep conversation open-ended; imagery, German naturalness, TalkBack and physical S24/Fire review remain human acceptance items. |
 
 | Prepositions v3 / content 1.3 | All 13 relations and scene-specific German phrases; BELOW “unter”, INSIDE “in”, OUTSIDE “außerhalb der Höhle”. Review both resolved replacement batches in-device against the [audit](PREPOSITIONS_CONTENT_AUDIT.md), including distance progression, full silhouettes and cave threshold separation. All 52 are now source-art CLEAR; that is not hardware acceptance. |
 | Prepositions guided Listen / recovery | Question → stem → four phrases in visible order; separate option Listen never answers; highlight clears on cancellation/navigation/language change. Supported v1/v2 saved rounds retain original wording/state after upgrade; Again creates v3. Inspect progress identities independently of restored UI. |
 | Other native consumers | Include Vocabulary, Follow the Instructions, Colour Sort, Animal Groups, Wash Hands and Tell Me in the broad sweep; test their actual interaction/recovery contracts rather than imposing quiz flow on every activity. |
 
-Months Build the Year physical-device acceptance is **NOT RUN — deferred by owner**.
+Months Build the Year and Months ↔ Seasons physical-device acceptance is **NOT RUN — deferred by owner**.
 The API 35 emulator matrix is automated evidence only; it does not establish child
 usability, TalkBack quality, offline voice output, S24/Fire touch comfort or device
 lifecycle acceptance.

@@ -27,6 +27,7 @@ fun MonthsScreen(selection: MonthsSelection?, language: ContentLanguage, saveFai
     onSelect: (ContentId) -> Unit, onListen: () -> Unit, onRetry: () -> Unit, onHome: () -> Unit,
     modifier: Modifier = Modifier, onFind: (() -> Unit)? = null, onRelations: (() -> Unit)? = null,
     onMissing: (() -> Unit)? = null, onBuildYear: (() -> Unit)? = null, onBetween: (() -> Unit)? = null,
+    onSeasonsMatch: (() -> Unit)? = null,
     onReturnToQuestion: (() -> Unit)? = null) {
     fun t(en: String, de: String) = if (language == ContentLanguage.GERMAN) de else en
     Column(modifier.testTag("months-content").fillMaxSize().background(Color(0xFFF8F5FC)).verticalScroll(rememberScrollState()).padding(16.dp),
@@ -42,6 +43,8 @@ fun MonthsScreen(selection: MonthsSelection?, language: ContentLanguage, saveFai
             onBuildYear, Modifier.fillMaxWidth().testTag("months-open-build-year"))
         if (onBetween != null) NativeActionButton(MonthsMode.BETWEEN.title.display[language], NativeActionRole.NAVIGATION,
             onBetween, Modifier.fillMaxWidth().testTag("months-open-between"))
+        if (onSeasonsMatch != null) NativeActionButton(MonthsMode.SEASONS_MATCH.title.display[language], NativeActionRole.NAVIGATION,
+            onSeasonsMatch, Modifier.fillMaxWidth().testTag("months-open-seasons-match"))
         if (onReturnToQuestion != null) NativeActionButton(t("Back to the question", "Zurück zur Frage"), NativeActionRole.NAVIGATION,
             onReturnToQuestion, Modifier.fillMaxWidth().testTag("months-between-return"))
         NativeSupportMessage(MonthContent.instruction.display[language])

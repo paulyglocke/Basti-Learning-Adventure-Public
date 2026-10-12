@@ -76,8 +76,10 @@ class SupportPresentationTest(private val surface: String, private val orientati
         }
     }
     private fun action(tag: String) = compose.onNodeWithTag(tag).performScrollTo().assertIsDisplayed().performClick()
-    private fun message(text: String) {
-        val node = compose.onNodeWithText(text).performScrollTo().assertIsDisplayed().assert(hasNoClickAction())
+    private fun message(text: String, supportTag: String? = null) {
+        val node = (supportTag?.let(compose::onNodeWithTag) ?: compose.onNodeWithText(text))
+            .performScrollTo().assertIsDisplayed().assert(hasNoClickAction())
+        if (supportTag != null) node.assertTextEquals(text)
         node.assert(SemanticsMatcher.keyNotDefined(SemanticsProperties.ContentDescription))
             .assert(SemanticsMatcher.keyNotDefined(SemanticsProperties.Focused))
         val layouts = mutableListOf<androidx.compose.ui.text.TextLayoutResult>()
@@ -93,22 +95,24 @@ class SupportPresentationTest(private val surface: String, private val orientati
             else "Try again. The seasons already placed stay here."
         } else q.wrongFeedback.display[language]
         val hintText = if(ordering) SeasonsOrder.help(order.value).display[language] else q.hint!!.display[language]
-        compose.onNodeWithText(wrongText).assertDoesNotExist()
-        compose.onNodeWithText(hintText).assertDoesNotExist()
+        // Authored phrases may already appear in answer-choice labels. Assert
+        // support visibility through its dedicated presentation nodes instead.
+        compose.onNodeWithTag("feedback").assertDoesNotExist()
+        compose.onNodeWithTag("hint-text").assertDoesNotExist()
         action(prefix + "replay")
         compose.runOnIdle {
             val progress = if(ordering) order.value.current else state.value.current
             assertEquals(0, progress.attempts); assertEquals(1, progress.support.replays); assertFalse(progress.support.hint)
         }
         action(hintTag)
-        message(hintText)
-        compose.onNodeWithText(wrongText).assertDoesNotExist()
+        message(hintText, if(pre) "hint-text" else null)
+        compose.onNodeWithTag("feedback").assertDoesNotExist()
         if(pre) compose.onNodeWithTag("hint-text").assertTextEquals(hintText)
         val wrong = if(ordering) order.value.choices.first { it != SeasonIds.canonicalOrder[order.value.index] } else q.choices.first { it != q.correct }
         action((if(ordering) "season-order-" else "answer-") + wrong.value)
-        message(wrongText)
+        message(wrongText, if(pre) "feedback" else null)
         if(pre) compose.onNodeWithTag("feedback").assertTextEquals(wrongText)
-        message(hintText)
+        message(hintText, if(pre) "hint-text" else null)
         val image = compose.onNodeWithTag("support-review").captureToImage().asAndroidBitmap()
         File(compose.activity.cacheDir, "support-$surface-$orientation-$language.png").outputStream().use { image.compress(Bitmap.CompressFormat.PNG, 100, it) }
         compose.runOnIdle {
@@ -116,8 +120,8 @@ class SupportPresentationTest(private val surface: String, private val orientati
             assertEquals(1, progress.attempts); assertTrue(progress.support.hint); assertEquals(0, state.value.score)
         }
         action(prefix + "retry")
-        compose.onNodeWithText(wrongText).assertDoesNotExist()
-        message(hintText)
+        compose.onNodeWithTag("feedback").assertDoesNotExist()
+        message(hintText, if(pre) "hint-text" else null)
         compose.runOnIdle {
             val progress = if(ordering) order.value.current else state.value.current
             assertEquals(1, progress.attempts); assertEquals(1, progress.retries); assertTrue(progress.support.hint)
@@ -132,7 +136,7 @@ class SupportPresentationTest(private val surface: String, private val orientati
             action(prefix + "retry")
             compose.runOnIdle { assertEquals(listOf(correct), order.value.placed) }
         } else {
-            message(hintText) // Existing hint remains visible after supported success.
+            message(hintText, if(pre) "hint-text" else null) // Existing hint remains visible after supported success.
             compose.runOnIdle { assertEquals(1, state.value.score); assertTrue(state.value.current.locked) }
             action(prefix + "next")
             compose.runOnIdle { assertEquals(1, state.value.index); assertEquals(1, state.value.score) }

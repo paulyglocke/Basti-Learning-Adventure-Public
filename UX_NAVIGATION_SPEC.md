@@ -109,6 +109,15 @@ visible return action restores the exact question, endpoints, language and attem
 The Between route owns a separate durable quiz journal and does not change Missing
 Month task, activity, skill or journal identities.
 
+Months ↔ Seasons is a separate Months destination with four illustrated season
+groups. The current named month is assigned with one accessible tap; earlier correct
+placements remain visible in their groups, and the optional full month/season guide
+is opened without leaving the task. Replay, retry, language changes, Options, Back,
+Home and Activity recreation follow the shared Months session owner; restoration is
+silent and does not create an attempt. Season destinations are labelled controls
+with keyboard/switch activation, not drag-only drop targets. Physical navigation,
+TalkBack and touch acceptance remain separate from emulator coverage.
+
 Use a consistent support ladder where applicable: independent attempt → Replay → subtle visual/verbal hint → stronger model/help → optional parent help. Support is useful progress information, not failure.
 
 ## Child-facing progress and scoring

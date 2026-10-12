@@ -14,7 +14,7 @@ class MonthsNavigationTest {
         assertEquals(route,ShellNavigation.restore("OPTIONS","MONTHS","verbs",null).closeOptions())
     }
     @Test fun quizRoutesRestoreOptionsAndReturnToMonths() {
-        for(route in listOf(ShellNavigation().openMonthsFind(),ShellNavigation().openMonthsRelations(),ShellNavigation().openMonthsMissing())) {
+        for(route in listOf(ShellNavigation().openMonthsFind(),ShellNavigation().openMonthsRelations(),ShellNavigation().openMonthsMissing(),ShellNavigation().openMonthsSeasons())) {
             assertEquals(BackAction.MONTHS_AREA,route.backAction)
             assertFalse(route.ownsWebSession)
             assertEquals(route,route.openOptions().closeOptions())
