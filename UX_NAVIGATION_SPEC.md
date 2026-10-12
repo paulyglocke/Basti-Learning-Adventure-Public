@@ -93,6 +93,14 @@ Navigation must not strand the child in loading, missing-content or audio-failur
 
 Changing language updates visible and spoken content together, stops stale narration and preserves task identity where meaning remains valid. If a language-specific task cannot be translated in place (for example an initial-sound question), restart that task explicitly without recording a wrong answer. Configuration/recovery behavior follows NATIVE_ARCHITECTURE_SPEC.md.
 
+Months Build the Year is a three-placement ordering activity rather than a 5/10
+quiz: choose a shuffled month tile, then activate the next numbered empty position.
+This tap-select/tap-place path is the required accessible interaction, not a drag
+fallback. Position semantics identify whether the slot is empty/filled and expose
+the placement action; keyboard activation follows the same state transition. Return,
+Options and recreation preserve the activity-owned durable checkpoint and restore
+silently.
+
 Use a consistent support ladder where applicable: independent attempt → Replay → subtle visual/verbal hint → stronger model/help → optional parent help. Support is useful progress information, not failure.
 
 ## Child-facing progress and scoring

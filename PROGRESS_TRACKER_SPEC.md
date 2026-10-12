@@ -200,7 +200,7 @@ Every future activity should report progress through the same API so longitudina
 The first implementation is `learning/progress`, separate from legacy WebView progress/recovery. It is an unwired foundation for native activities, not a dashboard or adaptation system.
 
 - `AttemptEvent` records typed session/activity/content-version origin, task instance/definition, skill, context, difficulty, canonical chosen content ID, EN/DE language, correct/incorrect outcome, attempt number and Replay/hint/parent-help support. Retry count derives from attempt identity; support is not an incorrect outcome. No display text, personal profile, device identifier or response-time score is stored.
-- `CompletionEvent` records final evidence for the session's five or ten quiz tasks, or four season-/seven weekday-ordering placement steps, including outcomes, attempts/retries and support. Completion is separate from correctness. Final evidence does not invent missing attempt history or assign the final screen language to earlier tasks. Abandonment/interruption is not represented as completion or failure.
+- `CompletionEvent` records final evidence for five- or ten-task quiz rounds, or bounded ordering sequences of three Months, four Seasons, seven weekdays and eight Clock targets, including outcomes, attempts/retries and support. Completion is separate from correctness. Final evidence does not invent missing attempt history or assign the final screen language to earlier tasks. Abandonment/interruption is not represented as completion or failure.
 - Attempt keys derive from session/task ordinal/attempt number; completion keys derive only from session ID, never delivery number. IDs must never be recycled. Identical delivery returns the original record; conflicting payloads or reused sessions with different activity/content versions fail explicitly.
 - `StoredProgressEvent` adds a monotonically increasing acceptance sequence and injected-clock timestamp at first acceptance. Sequence, not wall-clock sorting, defines stable order when the clock changes. These are acceptance times, not precise interaction/reaction times.
 - `ProgressRepository.append/read` returns typed success/failure. `ProgressQuery` supports combined skill/session/activity/event-kind filters, chronological or newest-first order and a bounded limit. Skill filtering includes relevant completion summaries; callers must not count summaries as extra attempts.
@@ -228,6 +228,21 @@ The ordering host retains both final-placement and completion effects before acc
 
 Next/Before use the existing session recorder and durable host; Build the Year records existing typed attempt events and one completion with four canonical placement records. The model/codec now permits four completed steps as well as five/seven/ten. Schema-1 layout and dedupe identities are unchanged, and existing records remain readable. Older app builds cannot read the newly allowed four-step completion; downgrading over these records is unsupported. Ordered progress remains distinct from score/mastery; Replay/Help are support, not incorrect attempts. The activity-specific journal retains final placement and completion until durable acknowledgement, preserving the same IDs after restore/retry. Explore does not create correctness events.
 
+
+### Months Build the Year evidence (2026-10-12)
+
+The introductory three-placement activity is `activity.months.build_year.three`,
+revision 1/content 1.1, using `skill.months.sequence` and
+`context.months.year_order`. Each position has a stable task identity tied to the
+sequence's first month. Incorrect placements are recorded attempts; Replay and Help
+are support, not attempts. Completion retains all three final outcomes, retries and
+support. Existing Months quiz identities and journals remain unchanged. Its separate
+write-ahead journal preserves the exact cyclic sequence, shuffle, partial state and
+pending progress delivery for silent restoration/retry.
+
+The completion model/codec allowlist now includes three tasks without changing the
+schema-1 field layout or existing deduplication IDs. Older app builds do not accept
+three-task completions; downgrade across this new progress evidence is unsupported.
 
 ### Clock Make This Time evidence (2026-10-08)
 

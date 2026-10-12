@@ -37,6 +37,10 @@ class MonthsViewModel @JvmOverloads constructor(application: Application,
     private var round = RoundLength.FIVE
     var phase by mutableStateOf(MonthsMode.EXPLORE); private set
     var quizBusy by mutableStateOf(false); private set
+    var buildBusy by mutableStateOf(false); private set
+    var buildYear by mutableStateOf<MonthsBuildYearState?>(null); private set
+    private var buildFailure = false
+    val buildYearFailed get() = buildFailure
     private val quizzes = mutableStateMapOf<MonthsMode, SessionState>()
     private val failures = mutableStateMapOf<MonthsMode, Boolean>()
     val quiz get() = quizzes[phase]
@@ -45,6 +49,9 @@ class MonthsViewModel @JvmOverloads constructor(application: Application,
         MonthsQuestions.host(it, AtomicProgressStorage(File(application.noBackupFilesDir,
             "months-${it.name.lowercase()}-session"), AndroidAtomicCommit), AndroidProgressRepository.create(application))
     }
+    private val buildHost = MonthsBuildYearHost(
+        AtomicProgressStorage(File(application.noBackupFilesDir, "months-build-year-three-session"), AndroidAtomicCommit),
+        AndroidProgressRepository.create(application))
 
     fun configure(lang: String, sound: String, count: Int = 5) {
         val nextLanguage = if (lang == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH
@@ -53,12 +60,14 @@ class MonthsViewModel @JvmOverloads constructor(application: Application,
         if (nextLanguage != language) { language = nextLanguage; speechEpoch++; audio.cancel() }
         if (nextMode != mode) { mode = nextMode; speechEpoch++; audio.mode(mode) }
         ensureQuiz()
+        ensureBuildYear()
     }
     fun setVisible(value: Boolean, next: MonthsMode = MonthsMode.EXPLORE) {
         if (visible == value && phase == next) return
         visible = value; phase = next; speechEpoch++; audio.visible(value)
         if (value && next == MonthsMode.EXPLORE && selection == null) load()
         ensureQuiz()
+        ensureBuildYear()
     }
     private fun load() {
         if (loading || closed) return
@@ -90,11 +99,67 @@ class MonthsViewModel @JvmOverloads constructor(application: Application,
         }
     }
     private fun ensureQuiz() {
-        if (!visible || phase == MonthsMode.EXPLORE || quizBusy || closed || quizFailed) return
+        if (!visible || phase == MonthsMode.EXPLORE || phase == MonthsMode.BUILD_YEAR || quizBusy || closed || quizFailed) return
         val current = quiz
         val lang = language; val count = round
         if (current == null) quizWork { it.open(SessionId(UUID.randomUUID().toString()), count, System.nanoTime(), lang) }
         else if (current.language != lang) quizWork(speak = false) { it.dispatch(SessionAction.Language(lang)) }
+    }
+    private fun ensureBuildYear() {
+        if (!visible || phase != MonthsMode.BUILD_YEAR || buildBusy || closed || buildFailure) return
+        val current = buildYear
+        val lang = language
+        if (current == null) buildWork { it.open(SessionId(UUID.randomUUID().toString()), System.nanoTime(), lang) }
+        else if (current.language != lang) buildWork(speak = false) { it.dispatch(MonthsBuildYearAction.Language(lang)) }
+    }
+    fun buildAction(action: MonthsBuildYearAction) {
+        if (!buildReady()) return
+        audio.cancel()
+        buildWork { it.dispatch(action) }
+    }
+    fun buildReplay() { buildYear?.let { buildAction(MonthsBuildYearAction.Replay(it.task)) } }
+    fun buildOption(id: ContentId) {
+        val state = buildYear ?: return
+        if (!buildReady() || id !in state.choices || state.completed || state.current.answer != AnswerState.UNANSWERED) return
+        speechEpoch++; audio.month(id, language)
+    }
+    fun buildAgain() {
+        val state = buildYear ?: return
+        if (!buildReady() || !state.completed) return
+        val lang = language
+        audio.cancel()
+        buildWork { it.again(SessionId(UUID.randomUUID().toString()), System.nanoTime(), lang) }
+    }
+    fun retryBuildYear() {
+        if (buildBusy || phase != MonthsMode.BUILD_YEAR) return
+        val lang = language
+        audio.cancel()
+        buildWork(speak = false) {
+            if (it.state == null) it.open(SessionId(UUID.randomUUID().toString()), System.nanoTime(), lang)
+            else it.retryWrites()
+            null
+        }
+    }
+    private fun buildReady() = visible && phase == MonthsMode.BUILD_YEAR && !buildBusy && !buildFailure && buildYear?.language == language
+    private fun buildWork(speak: Boolean = true, operation: (MonthsBuildYearHost) -> SessionEffect.Narrate?) {
+        if (buildBusy || closed || phase != MonthsMode.BUILD_YEAR) return
+        buildBusy = true
+        val ticket = ++speechEpoch
+        worker.execute {
+            val result = runCatching { operation(buildHost) }
+            val state = buildHost.state
+            val failed = result.isFailure || buildHost.failure
+            main.post {
+                if (!closed) {
+                    buildBusy = false; buildFailure = failed
+                    if (state != null) buildYear = state
+                    if (!failed && state != null && visible && phase == MonthsMode.BUILD_YEAR && ticket == speechEpoch && state.language == language && speak) {
+                        audio.effects(state.id, language, listOfNotNull(result.getOrNull()))
+                    }
+                    ensureBuildYear()
+                }
+            }
+        }
     }
     private fun ready() = visible && phase != MonthsMode.EXPLORE && !quizBusy && !quizFailed && quiz?.language == language
     fun action(action: SessionAction) {

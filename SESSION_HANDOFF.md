@@ -1,4 +1,46 @@
-# Session handoff — 2026-09-27
+# Session handoff — 2026-10-12
+
+## Months Phase 4 — Build the Year (2026-10-12)
+
+Started on clean `main` at `454c91f`, matching fetched `origin/main`. The three-month
+native Build the Year level is implemented as `activity.months.build_year.three`
+(revision 1/content 1.1), with its own durable write-ahead checkpoint and progress
+identity. Existing Months activities and journals are unchanged.
+
+- The child sees a December → January → February demonstration, then orders a
+  deterministic shuffled window of three consecutive canonical months. Generation
+  covers all twelve cyclic starts, including the year boundary. The interaction is
+  accessible tap-to-select/tap-to-place: select a large month tile, then activate
+  the next numbered slot. No drag is required. Replay, a bilingual next-month hint,
+  calm correction/retry, item speech and child-controlled completion are included.
+- The session is one ordered three-placement activity, not a 5/10 quiz round; this
+  matches the existing Seasons ordering convention. It uses `skill.months.sequence`
+  and `context.months.year_order`, with separate activity/task IDs. Final three-step
+  progress is now accepted by the schema-1 completion model/codec; old builds do not
+  read this new completion length, so downgrade across it is unsupported.
+- JVM: **498 passed**, zero failures/errors/skips. This includes cyclic generation,
+  December wrapping, retry/support, exact checkpoint restore, write-ahead failure
+  retry, progress event serialization and existing Months regressions.
+- API 35 `Medium_Phone_API_35` instrumentation: **88 passed**, zero failures/skips
+  across the Months package. New Compose coverage spans EN/DE, 1×/1.5×/2× text,
+  portrait/landscape, wrapping bounds, slot semantics, keyboard placement, retries,
+  completion and audio controls. Route coverage verifies Options/language, Activity
+  recreation, background/return, Back and return to the Months hub. The two route
+  tests were rerun after adding explicit background/return coverage: **2/2 passed**.
+  Emulator coverage is not physical acceptance.
+- `assembleDebug` and `lintDebug`: **PASS**; lint reports 0 errors, 5 warnings and 2
+  informational findings, all pre-existing/outside Build the Year. `git diff
+  --check`: PASS. No existing Months progress identity/journal or authored month
+  content was changed.
+- Physical Samsung S24 Ultra / Fire Max child-use, TalkBack, installed offline voice,
+  insets/touch and lifecycle acceptance: **NOT RUN — deferred by owner**.
+- Deferred: Between; four-/six-/twelve-month sequencing; Months ↔ Seasons; adaptive
+  progression; and broader wheel/sequence/calendar generalisation. No curriculum
+  expansion or generic manipulation framework was introduced.
+
+Documentation updated: README, master roadmap, backlog, content/progress/navigation/
+QA specifications and this handoff. Validation completed before commit/push; see
+the final Git/CI result in the task report.
 
 ## P1 Native validation and documentation reconciliation — 2026-10-12
 

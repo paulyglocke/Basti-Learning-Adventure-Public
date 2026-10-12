@@ -91,4 +91,12 @@ class ShellNavigationTest {
         assertFalse(gate.finish(next))
         assertNotNull(gate.begin())
     }
+
+    @Test fun monthsBuildYearHasItsOwnRouteAndReturnsToMonths() {
+        val route = ShellNavigation().openMonthsBuildYear()
+        assertEquals(ShellScreen.MONTHS_BUILD_YEAR, route.screen)
+        assertEquals(BackAction.MONTHS_AREA, route.backAction)
+        assertEquals(route, route.openOptions().closeOptions())
+        assertEquals(ShellScreen.MONTHS, route.openMonths().screen)
+    }
 }

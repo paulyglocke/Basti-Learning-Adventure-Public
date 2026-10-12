@@ -2,6 +2,7 @@ package com.bellfamily.bastischool.ui.months
 
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.test.core.app.ActivityScenario
 import androidx.test.platform.app.InstrumentationRegistry
@@ -37,5 +38,51 @@ class MonthsRouteTest {
                 compose.onNodeWithText("Tage & Jahreszeiten").assertExists()
             }
         } finally {prefs.edit().putString("lang",oldLang).putString("audioMode",oldAudio).commit()}
+    }
+
+    @Test fun buildYearRouteSurvivesOptionsRecreationAndBack() {
+        val prefs=InstrumentationRegistry.getInstrumentation().targetContext.getSharedPreferences("basti_shell",0)
+        val oldLang=prefs.getString("lang",null);val oldAudio=prefs.getString("audioMode",null)
+        prefs.edit().putString("lang","en").putString("audioMode","off").commit()
+        try {
+            ActivityScenario.launch(MainActivity::class.java).use { scenario ->
+                fun ready() = compose.waitUntil(10_000) {
+                    var loaded=false
+                    scenario.onActivity { loaded=ViewModelProvider(it)[MonthsViewModel::class.java].buildYear!=null }
+                    loaded
+                }
+                compose.onNodeWithText("Days & Seasons").performScrollTo().performClick()
+                compose.onNodeWithTag("open-months").performScrollTo().performClick()
+                compose.onNodeWithTag("months-open-build-year").performScrollTo().performClick()
+                ready()
+                compose.onNodeWithTag("months-build-year-prompt").performScrollTo()
+                    .assertTextEquals(MonthsBuildYear.introduction.display[com.bellfamily.bastischool.learning.models.ContentLanguage.ENGLISH])
+                var originalId=""
+                var selectedMonth=""
+                scenario.onActivity {
+                    val state=ViewModelProvider(it)[MonthsViewModel::class.java].buildYear!!
+                    originalId=state.id.value;selectedMonth=state.choices.first().value
+                }
+                compose.onNodeWithTag("months-build-year-choice-$selectedMonth").performScrollTo().performClick()
+                compose.onNodeWithTag("months-build-year-selected").performScrollTo().assertIsDisplayed()
+                scenario.moveToState(Lifecycle.State.CREATED)
+                scenario.moveToState(Lifecycle.State.RESUMED);ready()
+                var returnedId=""
+                scenario.onActivity { returnedId=ViewModelProvider(it)[MonthsViewModel::class.java].buildYear!!.id.value }
+                assertEquals(originalId,returnedId)
+                scenario.recreate();ready()
+                compose.onNodeWithTag("months-build-year-choice-$selectedMonth").performScrollTo().assertIsSelected()
+                var restoredId=""
+                scenario.onActivity { restoredId=ViewModelProvider(it)[MonthsViewModel::class.java].buildYear!!.id.value }
+                assertEquals(originalId,restoredId)
+                compose.onNodeWithText("⚙ Options").performClick()
+                compose.onNodeWithText("🇩🇪 Deutsch").performClick()
+                scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
+                compose.onNodeWithTag("months-build-year-prompt").performScrollTo()
+                    .assertTextEquals(MonthsBuildYear.introduction.display[com.bellfamily.bastischool.learning.models.ContentLanguage.GERMAN])
+                scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
+                compose.onNodeWithTag("months-open-build-year").performScrollTo().assertIsDisplayed()
+            }
+        } finally { prefs.edit().putString("lang",oldLang).putString("audioMode",oldAudio).commit() }
     }
 }

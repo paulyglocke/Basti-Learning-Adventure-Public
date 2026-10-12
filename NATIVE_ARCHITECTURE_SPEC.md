@@ -12,7 +12,7 @@ These are implementation requirements, not claims that the target already exists
 
 At Documentation Pass 2, [MainActivity.kt](app/src/main/java/com/bellfamily/bastischool/MainActivity.kt) owned Compose home/Options/top bar, enum navigation, remembered screen state, SharedPreferences, WebView hosting and Android TTS, while [app.js](app/src/main/assets/app.js) and [index.html](app/src/main/assets/index.html) owned all learning activities. That paragraph is a historical migration baseline, not current implementation reality.
 
-Current source still uses the same hybrid shell, but shared native content/audio/session/progress foundations are implemented and four substantial learning areas now run end to end in Compose: Prepositions, Seasons, Wilma’s Week and Vocabulary Booster. Shared completion/action/support presentation and deterministic restoration/progress delivery are also implemented. The typed 81-scene Scene Description catalogue now also drives native Tell Me / Erzähl mal, an open-ended text/artwork conversation outside the quiz framework. Legacy HTML/JavaScript remains only for unmigrated routes and must stay usable until tested native parity exists. Physical S24/Fire acceptance remains tracked separately in TESTING_QA_SPEC.md.
+Current source still uses the same hybrid shell, but shared native content/audio/session/progress foundations are implemented and native Compose learning areas include Prepositions, Seasons, Wilma’s Week, Vocabulary Booster and Months. Months now spans the Year Wheel, recognition/relations/missing-month quizzes and an introductory three-month ordered Build the Year activity with a separate durable journal. Shared completion/action/support presentation and deterministic restoration/progress delivery are also implemented. The typed 81-scene Scene Description catalogue drives native Tell Me / Erzähl mal, an open-ended text/artwork conversation outside the quiz framework. Legacy HTML/JavaScript remains only for unmigrated routes and must stay usable until tested native parity exists. Physical S24/Fire acceptance remains tracked separately in TESTING_QA_SPEC.md.
 
 Migrate incrementally from this current baseline. Add or extend shared foundations only for demonstrated consumers, preserve working legacy routes until parity is tested, and avoid broad rewrites. Follow the Instructions remains the first planned new reusable instruction/action **game**; Tell Me / Erzähl mal is a separate P2 expressive-language activity. BACKLOG.md owns execution order.
 
@@ -690,9 +690,13 @@ or device-date inference is performed. Find and Before/Next use the shared
 three-month sequence and gap position are encoded in each task definition, with no
 second sequence-state schema. All quiz modes retain exact deterministic 5/10 plans,
 language, attempts/support, silent restore and deduplicated shared progress events.
-Activity revision remains 1 and month content remains 1.1. Focused automated results
-and physical acceptance gaps are recorded in SESSION_HANDOFF.md. Build the Year,
-Between and Months/Seasons remain future work.
+The introductory three-placement Build the Year level separately uses
+`activity.months.build_year.three`, `skill.months.sequence` and a revisioned durable
+ordering journal; existing quiz activity revisions, content 1.1 and journals remain
+unchanged. It is automated-test covered; physical S24/Fire acceptance is **NOT RUN —
+deferred by owner**. Between, four-/six-/twelve-month sequencing, Months/Seasons,
+adaptive progression and broader generalisation remain deferred. See SESSION_HANDOFF.md
+for evidence and limitations.
 
 ## Owner clock presentation feedback — 2026-10-10 (draft, validation pending)
 

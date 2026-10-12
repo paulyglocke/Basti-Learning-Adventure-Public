@@ -11,7 +11,8 @@ enum class MonthsMode(val title: ContentText) {
     EXPLORE(ContentText.plain("Explore", "Entdecken")),
     FIND(ContentText.plain("Find the Month", "Finde den Monat")),
     RELATIONS(ContentText.plain("Before and Next", "Davor und danach")),
-    MISSING(ContentText.plain("Missing Month", "Fehlender Monat"))
+    MISSING(ContentText.plain("Missing Month", "Fehlender Monat")),
+    BUILD_YEAR(ContentText.plain("Build the Year", "Baue das Jahr"))
 }
 
 object MonthsQuestions {
@@ -29,7 +30,7 @@ object MonthsQuestions {
     }
     val completion = ContentText.plain("You practised the months. Well done!", "Du hast die Monate geübt. Sehr gut!")
     fun activity(mode: MonthsMode): ActivityId {
-        require(mode != MonthsMode.EXPLORE)
+        require(mode != MonthsMode.EXPLORE && mode != MonthsMode.BUILD_YEAR)
         return ActivityId("activity.months.${mode.name.lowercase()}")
     }
     fun catalogue(mode: MonthsMode): List<Definition> {

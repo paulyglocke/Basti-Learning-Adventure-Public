@@ -107,9 +107,15 @@ plans freeze unique target months, choice order, language and support state; no
 device date or activity-specific progress store is used. The mode owns a distinct
 durable journal, and replay speaks the visible sequence without revealing the gap.
 Activity revision 1/content 1.1 are unchanged from the earlier Months quizzes.
-Focused JVM/API 35 validation passes at `466315c`; physical S24/Fire, TalkBack and
-installed offline-voice checks remain outstanding. Build the Year, Between,
-Months↔Seasons and broader generalisation are not implemented.
+The introductory Build the Year activity is separately identified as
+`activity.months.build_year.three`, revision 1/content 1.1, using the same canonical
+month repository without duplicating month names. It builds one shuffled three-month
+cyclic window, records ordered placement attempts as `skill.months.sequence` in
+`context.months.year_order`, and persists to its own revisioned write-ahead journal.
+Existing Months quiz activity IDs, progress identities and journals remain unchanged.
+Between, four-/six-/twelve-month sequencing, Months↔Seasons, adaptive progression
+and broader generalisation remain deferred. Physical S24/Fire, TalkBack and installed
+offline-voice checks for the new activity are **NOT RUN — deferred by owner**.
 
 Content revision 10 aligns 121 short child examples across 73 scenes with their
 unchanged questions and existing models. Examples now offer brief actions,

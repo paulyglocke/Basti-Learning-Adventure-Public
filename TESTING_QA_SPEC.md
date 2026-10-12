@@ -170,11 +170,17 @@ is asserted by this list.
 | Wilma BILINGUAL | German left/English right, aligned seven-day rows, correct-language tap-to-speak, Off silence, readable 1.5× labels and focus order; no quiz/progress counter or completion flow. |
 | Seasons MISSING / CLUES / MATCH | Gap and clue meaning, independent Listen, correct match preservation after mistakes, exact restoration and appropriate completion. MATCH is a four-season matching set, not a 5/10-question quiz. |
 | Seasons COMBINED | Explicit Before/After semantics, both wrap boundaries, correct slot retained through retry, Help independent of Replay, fresh Again and task-specific ordered-pair progress evidence. |
-| Months Explore / Find / Before-Next / Missing | Canonical clockwise Year Wheel and December/January adjacency; bilingual names/prompts, All/Questions/Off and Replay; 5/10 deterministic rounds, wraparound, retry/completion, isolated durable journals, silent restoration, selected/sequence semantics, keyboard and responsive large-text layouts. Emulator results do not establish physical acceptance. |
+| Months Explore / Find / Before-Next / Missing / Build the Year (3) | Canonical Year Wheel and December/January adjacency; bilingual names/prompts/audio/hints; existing quiz modes' deterministic 5/10 rounds; Build the Year's shuffled unique three-month window, December→January→February and other cyclic starts, tap-select/tap-place, example, wrong-placement retry, separate progress identity, exact silent restoration and pending-write retry. Check tile/slot position/action semantics, keyboard activation, EN/DE wrapping, portrait/short landscape and 1×–2× text. Emulator results do not establish physical acceptance. |
 | Tell Me revision 11 pilot | Three C bundles only (Ocean .03, Classroom .02, Zoo .08); A/B/C/A versus A/B/A rotation, paired EN/DE support, Options/language/recreation/background/Home behavior and text reachability. Keep conversation open-ended; imagery, German naturalness, TalkBack and physical S24/Fire review remain human acceptance items. |
+
 | Prepositions v3 / content 1.3 | All 13 relations and scene-specific German phrases; BELOW “unter”, INSIDE “in”, OUTSIDE “außerhalb der Höhle”. Review both resolved replacement batches in-device against the [audit](PREPOSITIONS_CONTENT_AUDIT.md), including distance progression, full silhouettes and cave threshold separation. All 52 are now source-art CLEAR; that is not hardware acceptance. |
 | Prepositions guided Listen / recovery | Question → stem → four phrases in visible order; separate option Listen never answers; highlight clears on cancellation/navigation/language change. Supported v1/v2 saved rounds retain original wording/state after upgrade; Again creates v3. Inspect progress identities independently of restored UI. |
 | Other native consumers | Include Vocabulary, Follow the Instructions, Colour Sort, Animal Groups, Wash Hands and Tell Me in the broad sweep; test their actual interaction/recovery contracts rather than imposing quiz flow on every activity. |
+
+Months Build the Year physical-device acceptance is **NOT RUN — deferred by owner**.
+The API 35 emulator matrix is automated evidence only; it does not establish child
+usability, TalkBack quality, offline voice output, S24/Fire touch comfort or device
+lifecycle acceptance.
 
 For applicable quizzes, cover both 5/10 rounds, Help/Retry/Replay, partial/completed
 restore, Again/Home and Options/language/return. Across modes, review airplane-mode

@@ -2,7 +2,7 @@ package com.bellfamily.bastischool
 
 import java.util.concurrent.atomic.AtomicReference
 
-internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS, WILMA, VOCABULARY, TELL_ME, FOLLOW_INSTRUCTIONS, COLOUR_SORT, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH, COMPARE_QUANTITY, NUMBER_ORDER, ADD_TOGETHER, CLOCK, CLOCK_MAKE, MONTHS, MONTHS_FIND, MONTHS_RELATIONS, MONTHS_MISSING }
+internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS, WILMA, VOCABULARY, TELL_ME, FOLLOW_INSTRUCTIONS, COLOUR_SORT, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH, COMPARE_QUANTITY, NUMBER_ORDER, ADD_TOGETHER, CLOCK, CLOCK_MAKE, MONTHS, MONTHS_FIND, MONTHS_RELATIONS, MONTHS_MISSING, MONTHS_BUILD_YEAR }
 internal enum class BackAction { EXIT, CLOSE_OPTIONS, LEGACY, NATIVE_HOME, DAYS_HUB, CLOCK_AREA, MONTHS_AREA }
 
 /** Options is an overlay on one destination, never another entry in a growing stack. */
@@ -16,7 +16,7 @@ internal data class ShellNavigation(
         ShellScreen.HOME -> BackAction.EXIT
         ShellScreen.OPTIONS -> BackAction.CLOSE_OPTIONS
         ShellScreen.WEB -> BackAction.LEGACY
-        ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING -> BackAction.MONTHS_AREA
+        ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BUILD_YEAR -> BackAction.MONTHS_AREA
         ShellScreen.CLOCK_MAKE -> BackAction.CLOCK_AREA
         ShellScreen.NUMBER_ORDER -> BackAction.NATIVE_HOME
         ShellScreen.ADD_TOGETHER, ShellScreen.CLOCK -> BackAction.NATIVE_HOME
@@ -45,6 +45,7 @@ internal data class ShellNavigation(
     fun openMonthsFind() = ShellNavigation(ShellScreen.MONTHS_FIND)
     fun openMonthsMissing() = ShellNavigation(ShellScreen.MONTHS_MISSING)
     fun openMonthsRelations() = ShellNavigation(ShellScreen.MONTHS_RELATIONS)
+    fun openMonthsBuildYear() = ShellNavigation(ShellScreen.MONTHS_BUILD_YEAR)
     fun openMonths() = ShellNavigation(ShellScreen.MONTHS)
     fun openWilma() = ShellNavigation(ShellScreen.WILMA)
     fun openSeasons() = ShellNavigation(ShellScreen.SEASONS)

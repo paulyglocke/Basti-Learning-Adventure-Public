@@ -25,7 +25,8 @@ import com.bellfamily.bastischool.ui.common.*
 @Composable
 fun MonthsScreen(selection: MonthsSelection?, language: ContentLanguage, saveFailed: Boolean, audioFailed: Boolean,
     onSelect: (ContentId) -> Unit, onListen: () -> Unit, onRetry: () -> Unit, onHome: () -> Unit,
-    modifier: Modifier = Modifier, onFind: (() -> Unit)? = null, onRelations: (() -> Unit)? = null, onMissing: (() -> Unit)? = null) {
+    modifier: Modifier = Modifier, onFind: (() -> Unit)? = null, onRelations: (() -> Unit)? = null,
+    onMissing: (() -> Unit)? = null, onBuildYear: (() -> Unit)? = null) {
     fun t(en: String, de: String) = if (language == ContentLanguage.GERMAN) de else en
     Column(modifier.testTag("months-content").fillMaxSize().background(Color(0xFFF8F5FC)).verticalScroll(rememberScrollState()).padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -36,6 +37,8 @@ fun MonthsScreen(selection: MonthsSelection?, language: ContentLanguage, saveFai
             onRelations, Modifier.fillMaxWidth().testTag("months-open-relations"))
         if (onMissing != null) NativeActionButton(MonthsMode.MISSING.title.display[language], NativeActionRole.NAVIGATION,
             onMissing, Modifier.fillMaxWidth().testTag("months-open-missing"))
+        if (onBuildYear != null) NativeActionButton(MonthsMode.BUILD_YEAR.title.display[language], NativeActionRole.NAVIGATION,
+            onBuildYear, Modifier.fillMaxWidth().testTag("months-open-build-year"))
         NativeSupportMessage(MonthContent.instruction.display[language])
         if (selection == null) {
             if (!saveFailed) Text(t("Opening…", "Wird geöffnet…"))

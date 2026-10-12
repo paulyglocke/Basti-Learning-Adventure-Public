@@ -268,7 +268,7 @@ class MainActivity : ComponentActivity() {
                                     ShellScreen.OPTIONS -> if (language == "de") "Optionen" else "Options"
                                     ShellScreen.WEB -> if (language == "de") "Lernen" else "Learning"
                                     ShellScreen.PREPOSITIONS -> if (language == "de") "Wo ist es?" else "Where is it?"
-                                    ShellScreen.MONTHS, ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING -> if (language == "de") "Monate" else "Months"
+                                    ShellScreen.MONTHS, ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BUILD_YEAR -> if (language == "de") "Monate" else "Months"
                                     ShellScreen.DAYS_SEASONS -> if (language == "de") "Tage & Jahreszeiten" else "Days & Seasons"
                                     ShellScreen.VOCABULARY -> if (language == "de") "Wortschatz" else "Vocabulary Booster"
                                     ShellScreen.WILMA -> if (language == "de") "Wilmas Woche" else "Wilma’s Week"
@@ -353,13 +353,21 @@ class MainActivity : ComponentActivity() {
                             nativeMonths::retry, { changeRoute(navigation.home()) }, Modifier.padding(padding),
                             onFind = { changeRoute(navigation.openMonthsFind()) },
                             onRelations = { changeRoute(navigation.openMonthsRelations()) },
-                            onMissing = { changeRoute(navigation.openMonthsMissing()) })
+                            onMissing = { changeRoute(navigation.openMonthsMissing()) },
+                            onBuildYear = { changeRoute(navigation.openMonthsBuildYear()) })
                         ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING -> MonthsQuizScreen(monthsMode(navigation.screen),
                             nativeMonths.quiz, if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeMonths.quizBusy, nativeMonths.quizFailed, nativeMonths.audioFailed,
                             nativeMonths::action, { celebrationSound.cancel(); nativeMonths.replay() }, nativeMonths::option,
                             { celebrationSound.cancel(); nativeMonths.again() }, nativeMonths::retryQuiz,
                             { nativeMonths.learn { changeRoute(navigation.openMonths()) } },
+                            { changeRoute(navigation.home()) }, Modifier.padding(padding), onPop = ::popCelebration)
+                        ShellScreen.MONTHS_BUILD_YEAR -> MonthsBuildYearScreen(nativeMonths.buildYear,
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            nativeMonths.buildBusy, nativeMonths.buildYearFailed, nativeMonths.audioFailed,
+                            nativeMonths::buildAction, nativeMonths::buildOption,
+                            { celebrationSound.cancel(); nativeMonths.buildReplay() },
+                            { celebrationSound.cancel(); nativeMonths.buildAgain() }, nativeMonths::retryBuildYear,
                             { changeRoute(navigation.home()) }, Modifier.padding(padding), onPop = ::popCelebration)
                         ShellScreen.CLOCK -> ClockScreen(nativeClock.state, if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeClock.saveFailed, nativeClock.audioFailed, nativeClock::move, nativeClock::settle,
@@ -443,11 +451,12 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    private val monthScreens = setOf(ShellScreen.MONTHS, ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING)
+    private val monthScreens = setOf(ShellScreen.MONTHS, ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BUILD_YEAR)
     private fun monthsMode(screen: ShellScreen) = when(screen) {
         ShellScreen.MONTHS_FIND -> MonthsMode.FIND
         ShellScreen.MONTHS_RELATIONS -> MonthsMode.RELATIONS
         ShellScreen.MONTHS_MISSING -> MonthsMode.MISSING
+        ShellScreen.MONTHS_BUILD_YEAR -> MonthsMode.BUILD_YEAR
         else -> MonthsMode.EXPLORE
     }
 
@@ -463,6 +472,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.ANIMAL_GROUPS -> nativeAnimalGroups.busy || nativeAnimalGroups.saveFailed
             ShellScreen.WASH_HANDS -> nativeWashHands.busy || nativeWashHands.saveFailed
             ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING -> nativeMonths.quizBusy || nativeMonths.quizFailed
+            ShellScreen.MONTHS_BUILD_YEAR -> nativeMonths.buildBusy || nativeMonths.buildYearFailed
             ShellScreen.CLOCK_MAKE -> nativeClock.practiceBusy || nativeClock.practiceFailed
             ShellScreen.SUBITISING -> nativeSubitising.busy || nativeSubitising.saveFailed
             ShellScreen.QUANTITY_MATCH -> nativeQuantityMatch.busy || nativeQuantityMatch.saveFailed
@@ -484,6 +494,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.ANIMAL_GROUPS -> nativeAnimalGroups.state?.takeIf {it.completed && it.acknowledged}?.id?.value
             ShellScreen.WASH_HANDS -> nativeWashHands.state?.takeIf {it.completed && it.acknowledged}?.id?.value
             ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING -> nativeMonths.quiz?.takeIf { it.phase == SessionPhase.COMPLETED }?.plan?.id?.value
+            ShellScreen.MONTHS_BUILD_YEAR -> nativeMonths.buildYear?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.CLOCK_MAKE -> nativeClock.practice?.takeIf { it.completed }?.id?.value
             ShellScreen.SUBITISING -> nativeSubitising.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.QUANTITY_MATCH -> nativeQuantityMatch.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
@@ -537,7 +548,8 @@ class MainActivity : ComponentActivity() {
     private fun navigateBack() {
         when (navigation.backAction) {
             BackAction.MONTHS_AREA -> {
-                if (nativeMonths.quizFailed || nativeMonths.quiz == null) changeRoute(navigation.openDaysSeasons())
+                if (navigation.screen == ShellScreen.MONTHS_BUILD_YEAR) changeRoute(navigation.openMonths())
+                else if (nativeMonths.quizFailed || nativeMonths.quiz == null) changeRoute(navigation.openDaysSeasons())
                 else nativeMonths.learn { changeRoute(navigation.openMonths()) }
             }
             BackAction.CLOCK_AREA -> changeRoute(navigation.openClock())
