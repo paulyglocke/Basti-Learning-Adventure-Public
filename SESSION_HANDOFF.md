@@ -1,8 +1,36 @@
 # Session handoff — 2026-09-27
 
-## Months Phase 3 — Missing Month — 2026-10-11
+## P1 Native validation and documentation reconciliation — 2026-10-12
 
-Implemented locally on `9317704` (Phase 2 Find / Before and Next); not committed or pushed.
+Starting HEAD `466315c0ba2e463b7c1212e0a71828b4ac355e26` matched fetched
+`origin/main`; worktree was clean. No runtime or authored learning content changed.
+
+- Full JVM suite: **490 passed**, zero failures/errors/skips. Focused Months/Tell Me/
+  Scene Description JVM run also passed (62 tests).
+- Scene Description Python suite: **32 passed**; generator check validated all 9
+  categories / 81 scenes and current generated Kotlin.
+- API 35 `Medium_Phone_API_35` emulator instrumentation: **88 passed**, zero
+  failures/skips. This includes all 54 Months quiz-layout cases across EN/DE, three
+  modes, 1×/1.5×/2× text and portrait/both landscapes; wheel layout cases include a
+  2× tablet configuration. Months owner, completion, route and restoration tests
+  passed. Tell Me coverage includes 2 route tests, 8 layout cases and 3 artwork
+  loader tests.
+- `assembleDebug` and `lintDebug`: **PASS**. Lint: 0 errors, 5 warnings and 2
+  informational findings, all outside Months/Tell Me. APK SHA-256:
+  `d8bbfa7525634d64cf0fae51f0114b7833de80dea0ba1caafbc071a5f6993c3f`.
+- Tell Me revision 11 A/B/C/A pilot rotation, bilingual support pairing, stale
+  callback rejection, Options/language, activity recreation, background/return and
+  Home/fresh-owner behavior passed automated checks. No educational content changed.
+- Physical S24/Fire Max acceptance remains open, including child-use clarity,
+  TalkBack, installed offline voices and touch ergonomics. Tell Me still needs
+  independent German review and manual visual review of the exact C bundles at
+  narrow/short/large-text layouts. Emulator evidence is not physical acceptance.
+- No regression was found. README, roadmap, backlog, project brief, architecture,
+  content/QA specs and Tell Me pilot validation docs now record current status.
+
+## Months Phase 3 — Missing Month — 2026-10-11 (committed in `466315c`)
+
+Implemented on top of `9317704` (Phase 2 Find / Before and Next); committed and pushed as `466315c`.
 Days & Seasons → Months now also offers Missing Month / Fehlender Monat.
 
 - Bounded three-month sequences with one gap. All twelve canonical months and all
@@ -25,29 +53,25 @@ Days & Seasons → Months now also offers Missing Month / Fehlender Monat.
   pending-write retry and deduplication. Activity revision 1/content 1.1; prior
   Months generators, wording and journals are unchanged. No shared schema changes.
 - Validation: focused Months/shared JVM **157 passed**; full JVM **490 passed**; the
-  current focused Months JVM rerun passed **24 tests** with zero failures; Android
-  test compilation, `assembleDebug` and `lintDebug` passed. Focused Months
-  instrumentation completed **75 tests with OK** on the `Medium_Phone_API_35`
-  emulator; the run is recorded in `/private/tmp/months-missing-instrumentation.log`.
+  current focused Months JVM rerun passed **24 tests** with zero failures; the
+  P1 checkpoint above reran the full JVM and broader 88-case emulator suite.
+  Android test compilation, `assembleDebug` and `lintDebug` passed.
 - Physical S24/Fire Max acceptance remains outstanding: child-use clarity of
   wrapping sequences, TalkBack narration, offline voices and real touch ergonomics.
   Build the Year, Months & Seasons, four-position difficulty and adaptive learning
-  remain deferred. Roadmap/backlog files were not changed.
+  remain deferred. Current execution order and status are reflected in the roadmap
+  and backlog.
 
 
-## Tell Me pilot native validation attempt — 2026-10-10
+## Tell Me pilot native validation attempt — 2026-10-10 (historical; superseded)
 
-Owner requested native pilot validation next. Attempted focused offline Gradle
-JVM tests; wrapper exited 1 before tests because JAVA_HOME is unset and java is
-absent. No java/kotlinc/adb on PATH, and no JDK/Gradle cache/SDK in checked standard
-locations. No native test, APK or rendered layout review completed. Reviewed
-TellMeScreen support selection and wrapping in source; this is not layout evidence.
+At that time the focused offline Gradle JVM attempt exited before tests because
+JAVA_HOME was unset and java was absent from PATH. The toolchain later became
+available; current results are in the 2026-10-12 checkpoint above.
 
-docs/tellme-variety/PILOT_VALIDATION.md records the exact failure, source review,
-resume commands and EN/DE C-slot layout/lifecycle acceptance matrix. Revision 11
-and all prior edits remain intact, local and uncommitted. No download, CI dispatch,
-commit or push. Next task remains native execution in a configured environment;
-do not expand the pilot or claim acceptance from source/Python checks.
+The historical attempt and superseding validation evidence are recorded in
+docs/tellme-variety/PILOT_VALIDATION.md. Revision 11 was committed in `dce0bb7`;
+validation here is against source revision `466315c`.
 
 ## Tell Me third-question pilot — 2026-10-10
 
@@ -60,17 +84,12 @@ Content revision 11; 78 scenes still have two slots, three have three (165 total
 Generated Kotlin, current ledger, review and counts updated. Existing modulo
 rotation already supports the pilot; no runtime/progress/schema change needed.
 
-All 32 focused Python checks, generator --check and git diff --check passed. JVM rotation
-tests now exercise six complete mixed-slot visits, C support pairing, stale
-callbacks and fresh-owner reset. New route instrumentation covers C with Help,
-grown-up disclosure, Options/language, recreation, background/return and Home
-wraparound. These native tests are authored but unrun: no Java/kotlinc or Android
-toolchain available locally. Native-speaker/physical-device acceptance is pending.
-Changes remain local and uncommitted; no push.
-
-Next checkpoint: run focused JVM/Android pilot tests and review bilingual rendered
-support before expanding third questions. Do not claim runtime/device validation
-from the Python content checks.
+All 32 focused Python checks and generator validation passed. JVM rotation tests
+exercise six complete mixed-slot visits, C support pairing, stale callbacks and
+fresh-owner reset. API 35 route instrumentation covers C with Help, grown-up
+disclosure, Options/language, recreation, background/return and Home wraparound.
+These native tests now pass at `466315c`; independent German and physical-device
+acceptance remain open. Do not expand the pilot without separate authorization.
 
 ## Tell Me short-example checkpoint — 2026-10-10
 
@@ -248,8 +267,9 @@ through the existing atomic browsing pattern (`months-selection`, schema 1, boun
 128 bytes). Language/audio stay shell-owned. Failed/corrupt persistence is surfaced and
 retained, with Retry; no progress evidence or shared session/placement/count changes.
 
-Find/Before/Next/Missing/Build/season quizzes remain deferred. MONTHS_V1_RESEARCH.md is
-the previously requested approved plan; its research content was preserved unchanged.
+At this Phase 1 checkpoint, Find/Before/Next/Missing/Build/season quizzes were
+deferred. Phases 2 and 3 later added Find, Before/Next and Missing Month; Build and
+Months/Seasons remain future work. MONTHS_V1_RESEARCH.md remains the approved plan.
 NATIVE_ARCHITECTURE_SPEC.md records implementation details and persistence limits.
 
 Validation completed: focused Months/shared-audio JVM tests (67) passed; full JVM suite

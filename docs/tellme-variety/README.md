@@ -1,9 +1,14 @@
 # Tell Me content variety — complete draft
 
-Native validation was attempted after revision 11 and stopped before Gradle/tests:
-Java is unavailable. Rendered bilingual review remains unperformed. See
-[PILOT_VALIDATION.md](PILOT_VALIDATION.md) for execution evidence, exact resume
-commands and the pilot acceptance matrix. Content revision 11 remains unchanged.
+Content revision 11 is validated at source revision `466315c`: full JVM suite
+490/490, 32 Python content tests, generated Kotlin check, and 88 focused API 35
+emulator tests pass. See [PILOT_VALIDATION.md](PILOT_VALIDATION.md) for command
+scope and remaining review gaps. Independent German, exact C-bundle manual layout,
+TalkBack and physical S24/Fire Max acceptance remain open; no content was changed
+during validation.
+
+The revision 10 and earlier notes below are historical checkpoints. Their local,
+uncommitted and unrun status statements describe those dates, not the current tree.
 
 ## Revision 11 third-question pilot — 2026-10-10
 
@@ -14,16 +19,13 @@ records exact C bundles, unchanged A/B bundles, picture evidence and hashes.
 The 78 other scenes retain two bundles: 165 bilingual slots total. Existing
 rotation already uses each scene's bundle count; no runtime change was needed.
 
-All 32 focused Python content checks, generated-output and whitespace checks passed.
-JVM tests now cover six complete visits across mixed two-/three-slot scenes and
-C support pairing/stale callbacks/reset. A route test covers C through Options,
-EN/DE change, Activity recreation, background/return and Home wraparound.
-Those native tests are authored but unrun: Java/kotlinc and Android tooling are
-unavailable locally. Native-speaker and device acceptance remain pending.
-All changes are local and uncommitted; no push.
-
-Next checkpoint: run the focused JVM and Android route tests in a configured
-environment and review pilot wording/layout before expanding C across the pack.
+All 32 focused Python content checks and generated-output check pass. JVM tests
+cover six complete visits across mixed two-/three-slot scenes and C support
+pairing/stale callbacks/reset. API 35 instrumentation covers C through Options,
+EN/DE change, Activity recreation, background/return and Home wraparound, plus
+screen wrapping/scrolling and artwork loading. Independent native-speaker and
+physical-device acceptance remain pending. Do not expand C beyond the pilot without
+separate authorization and acceptance.
 
 The sections below describe previous checkpoints; current counts are 78 two-slot
 scenes and three three-slot scenes, with A/B/C/A rotation in the pilot.

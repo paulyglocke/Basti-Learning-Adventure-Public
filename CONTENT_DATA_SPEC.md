@@ -91,9 +91,25 @@ imaginary event, sequencing after help-seeking or a prediction, with fully paire
 EN/DE support. See `docs/tellme-variety/THIRD_QUESTION_PILOT.json` for exact bundles
 and desktop picture evidence. Existing modulo rotation uses each scene's bundle
 count: pilot A/B/C/A, others A/B/A. Activity lifetime/reset contracts remain intact;
-no runtime/progress schema changes. Native rotation/route tests were extended;
-Android/JVM/instrumentation and independent linguistic/device acceptance remain
-pending in this environment.
+no runtime/progress schema changes. At `466315c`, focused JVM/content and API 35
+emulator route/layout/artwork suites pass. Independent German and physical S24/Fire
+acceptance remain open; emulator evidence does not close those gates.
+
+## Months v1 quizzes (2026-10-12)
+
+Months uses the existing canonical `month.*` IDs and content repository 1.1. Find
+Month and Before/Next are separate revision-1 activities with deterministic 5/10
+rounds and the shared durable session/progress pipeline. Missing Month is
+`activity.months.missing`, `skill.months.missing`, and
+`context.months.year_order`: its 36 task definitions cover every canonical start
+month and each of three gap positions in a cyclic three-month sequence. Question
+plans freeze unique target months, choice order, language and support state; no
+device date or activity-specific progress store is used. The mode owns a distinct
+durable journal, and replay speaks the visible sequence without revealing the gap.
+Activity revision 1/content 1.1 are unchanged from the earlier Months quizzes.
+Focused JVM/API 35 validation passes at `466315c`; physical S24/Fire, TalkBack and
+installed offline-voice checks remain outstanding. Build the Year, Between,
+Months↔Seasons and broader generalisation are not implemented.
 
 Content revision 10 aligns 121 short child examples across 73 scenes with their
 unchanged questions and existing models. Examples now offer brief actions,

@@ -18,11 +18,12 @@ Substantial native learning experiences now include:
 
 - **Prepositions** — 52 scenes across 13 relations, activity revision 3/content 1.3, guided Listen and exact v1/v2 saved-round recovery. Both replacement batches are source-reviewed as resolved: 52 CLEAR, zero BORDERLINE or ARTWORK_FIX_REQUIRED. See the [scene audit](PREPOSITIONS_CONTENT_AUDIT.md); source-art review is not physical acceptance.
 - **Seasons** — Explore, recognition, Next/Before, Build the Year, Missing Season (`MISSING`), Season Clues (`CLUES`), Match season to clue (`MATCH`) and combined Before/After (`COMBINED`).
+- **Months** — native Year Wheel exploration, Find Month, Before/Next, and Missing Month, with bilingual prompts/audio, deterministic 5/10-question sessions and durable shared-session/progress restoration. Emulator and automated validation are recorded in [SESSION_HANDOFF.md](SESSION_HANDOFF.md); S24/Fire Max acceptance remains open.
 - **Wilma's Week / Wilmas Woche** — Explore, Find Day, Before/After, weekday ordering, explicitly anchored Today/Yesterday/Tomorrow (`TODAY`) and non-quiz German/English weekday learning (`BILINGUAL`). TODAY uses a hypothetical weekday, not the device date.
 - **Vocabulary Booster** — bilingual vocabulary exploration and picture/word recognition.
 - **Follow the Instructions** — listening and instruction-following activities designed to grow toward richer action, placement and multi-step tasks.
 - **Colour Sort** — a bounded native tap-to-place sorting set with semantic membership, support and durable progress.
-- **Tell Me** — picture-led expressive-language activities encouraging description and conversation without automatic speech scoring.
+- **Tell Me** — picture-led expressive-language activities encouraging description and conversation without automatic speech scoring. Content revision 11 has A/B/C/A rotation for three pilot scenes and A/B/A for the other 78; pilot JVM and emulator route/layout checks pass, while independent German and physical-device acceptance remain open.
 - **Animal Groups / Wash Hands** — bounded animal sorting and four-step practical-life sequencing.
 - **How many? / Wie viele?** — subitising stable dot patterns from 1–5.
 - **Numbers & Groups / Zahlen & Mengen** — quantity → numeral and numeral → quantity matching, 1–5.
@@ -119,7 +120,7 @@ The long-term progression is:
 
 **Wilma's Week → Months → Seasons ↔ Months → Clock & Time → Calendar & Dates → Combined Time Missions**
 
-Months will centre on a Year Wheel, month recognition, Before/Next/Between, Missing Month, progressive Build the Year activities and Months ↔ Seasons relationships.
+Months currently offers a Year Wheel, month recognition, Before/Next and Missing Month. Between, progressive Build the Year activities and Months ↔ Seasons remain future work. Current implementation, automated validation and physical-device status are tracked separately in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
 Native Clock & Time now offers Explore and Make This Time (whole/half hours). One semantic time model drives the manipulable analogue clock and derived digital display. Practice mixes eight targets, hides digital time until correct, and uses Check, hints and shared completion. Digital editing and later Clock modes remain future work; physical-device acceptance remains open.
 

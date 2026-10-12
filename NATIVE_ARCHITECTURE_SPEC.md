@@ -643,11 +643,12 @@ face construction and routine/calendar missions. Physical S24/Fire drag comfort,
 TalkBack/D-pad flow, installed EN/DE speech and lifecycle acceptance remain open.
 
 
-## Months Explore — Phase 1 (2026-10-09)
+## Months Explore and quizzes — Phases 1–3 (2026-10-09 to 2026-10-11)
 
 `MONTHS` is a native destination inside the existing Days & Seasons hub. Back returns
 to that hub, Home uses the existing shell route, and Options/lifecycle visibility use
-the same ownership conventions as Wilma and Seasons. No quiz modes are registered.
+the same ownership conventions as Wilma and Seasons. `MONTHS_FIND`,
+`MONTHS_RELATIONS` and `MONTHS_MISSING` are separate quiz routes.
 
 `MonthContent` owns twelve immutable January–December `month.*` IDs, full EN/DE
 display/speech names, compact wheel-only labels, and meteorological season references
@@ -676,15 +677,22 @@ claim of durability for an in-flight selection before its atomic write completes
 Language and audio mode remain shell-owned settings and never change month identity.
 
 `MonthsAudio` is only an adapter over the existing lazy DefaultAudioController and
-AndroidSystemSpeechEngine. Selecting/reselecting a month or pressing Listen submits
-its full name as manual OPTION speech. All and Questions allow explicit listening;
-Off suppresses it. Opening, restoring, language sync and return remain silent; leaving,
-backgrounding, language and policy changes revoke speech. No new engine/controller
-implementation, shared task-count expansion, progress schema or external dependency.
+AndroidSystemSpeechEngine. Explore selection and explicit Listen submit full month
+names as manual OPTION speech. Quiz Replay, answer-option speakers, hints, feedback
+and completion use the existing activity owner and All/Questions/Off policy. Opening
+and restoring remain silent; leaving, backgrounding, language and policy changes
+revoke speech. No new speech engine or external dependency was added.
 
 Parent-facing text explains the German meteorological season convention; no weather
-or device-date inference is performed. Find, Before/Next, Missing, Build the Year and
-Months/Seasons quizzes remain deferred; see MONTHS_V1_RESEARCH.md for the approved plan.
+or device-date inference is performed. Find and Before/Next use the shared
+`DurableSessionHost` with separate mode journals. Missing Month uses
+`activity.months.missing`, `skill.months.missing` and a distinct durable journal; its
+three-month sequence and gap position are encoded in each task definition, with no
+second sequence-state schema. All quiz modes retain exact deterministic 5/10 plans,
+language, attempts/support, silent restore and deduplicated shared progress events.
+Activity revision remains 1 and month content remains 1.1. Focused automated results
+and physical acceptance gaps are recorded in SESSION_HANDOFF.md. Build the Year,
+Between and Months/Seasons remain future work.
 
 ## Owner clock presentation feedback — 2026-10-10 (draft, validation pending)
 

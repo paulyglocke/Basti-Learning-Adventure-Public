@@ -531,11 +531,14 @@ Teach the conventional display order while making the cyclic relationship explic
 
 Months should become a proper learning strand rather than a static list.
 
-Implementation checkpoint — 2026-10-09: Phase 1 native Explore is implemented locally:
-canonical EN/DE month names, meteorological season mapping, a clockwise Year Wheel,
-accessible companion selection/listening, and silent browsing restoration. Entry is
-through Days & Seasons. This does not complete the quiz/sequencing progression below;
-physical S24/Fire acceptance remains pending. Validation details are in SESSION_HANDOFF.md.
+Implementation checkpoint — 2026-10-12: native Explore/Listen, Find Month,
+Before/Next, and Missing Month are implemented. The Year Wheel uses canonical EN/DE
+month identities and meteorological season mapping. Quiz modes use deterministic
+5/10 rounds, shared durable session/progress delivery and independent journals;
+Missing Month covers all 36 three-month/gap definitions. Focused JVM and API 35
+emulator suites, debug build and lint pass at `466315c`. S24/Fire Max, TalkBack and
+offline voice acceptance remain open. Build the Year and other progression items
+below remain future work; see SESSION_HANDOFF.md for evidence and limitations.
 
 #### Year Wheel
 
@@ -1636,7 +1639,7 @@ Use shared capabilities to add breadth.
 Priority areas include:
 
 - remaining Seasons generalisation and Months ↔ Seasons beyond implemented MISSING/CLUES/MATCH/COMBINED;
-- Months v1;
+- remaining Months progression (Build the Year, Months ↔ Seasons and generalisation);
 - Colours v1;
 - conceptual manipulation-first Maths beyond the five implemented visual-choice activities;
 - Practical Life v1;
@@ -1653,16 +1656,10 @@ Priority areas include:
 
 ### Months v1
 
-Aim for:
-
-- Year Wheel;
-- Explore/Listen;
-- Find Month;
-- Next/Before;
-- Missing Month;
-- progressive Build the Year;
-- Months ↔ Seasons;
-- EN/DE audio.
+Implemented: Year Wheel, Explore/Listen, Find Month, Next/Before, Missing Month and
+EN/DE audio. Automated JVM/API 35 validation passes; physical S24/Fire Max acceptance
+remains open. Future work: Between, progressive Build the Year, Months ↔ Seasons and
+generalisation from the wheel to sequences/cards/calendar.
 
 ### Colours v1
 

@@ -351,7 +351,7 @@ End-of-round feedback should be encouraging and simple.
 
 ## 18. Current technical architecture
 
-The app is hybrid Compose + legacy WebView. Kotlin owns the native home, Options, top bar, shell navigation, transitional SharedPreferences, retained WebView hosting and Android TTS integration. Native Prepositions, Seasons, Wilma’s Week and Vocabulary Booster use shared typed content, audio, deterministic session/restoration and durable local progress-event foundations. The 81-scene Scene Description catalogue is also implemented as a typed, validated native content boundary for future Tell Me / Erzähl mal work.
+The app is hybrid Compose + legacy WebView. Kotlin owns the native home, Options, top bar, shell navigation, transitional SharedPreferences, retained WebView hosting and Android TTS integration. Native Prepositions, Seasons, Wilma’s Week, Vocabulary Booster and Months use shared typed content, audio, deterministic session/restoration and durable local progress-event foundations. The 81-scene Scene Description catalogue drives the native Tell Me / Erzähl mal open-ended text/artwork activity; content revision 11 includes a three-scene third-question pilot. Current automated validation and physical-acceptance gaps are recorded in SESSION_HANDOFF.md and TESTING_QA_SPEC.md.
 
 Legacy HTML/JavaScript still owns unmigrated quiz modes, the 53 Verb Explorer lessons, tutorials and their legacy scoring/completion/animation behavior. The shared native progress foundation is implemented, but the parent-facing Progress dashboard and broader adaptation/classification experience are not.
 
