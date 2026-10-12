@@ -41,7 +41,7 @@ class MonthsViewModel @JvmOverloads constructor(application: Application,
     private val failures = mutableStateMapOf<MonthsMode, Boolean>()
     val quiz get() = quizzes[phase]
     val quizFailed get() = failures[phase] == true
-    private val hosts = listOf(MonthsMode.FIND, MonthsMode.RELATIONS).associateWith {
+    private val hosts = listOf(MonthsMode.FIND, MonthsMode.RELATIONS, MonthsMode.MISSING).associateWith {
         MonthsQuestions.host(it, AtomicProgressStorage(File(application.noBackupFilesDir,
             "months-${it.name.lowercase()}-session"), AndroidAtomicCommit), AndroidProgressRepository.create(application))
     }

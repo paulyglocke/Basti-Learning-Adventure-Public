@@ -10,7 +10,8 @@ import java.util.Random
 enum class MonthsMode(val title: ContentText) {
     EXPLORE(ContentText.plain("Explore", "Entdecken")),
     FIND(ContentText.plain("Find the Month", "Finde den Monat")),
-    RELATIONS(ContentText.plain("Before and Next", "Davor und danach"))
+    RELATIONS(ContentText.plain("Before and Next", "Davor und danach")),
+    MISSING(ContentText.plain("Missing Month", "Fehlender Monat"))
 }
 
 object MonthsQuestions {
@@ -32,6 +33,7 @@ object MonthsQuestions {
         return ActivityId("activity.months.${mode.name.lowercase()}")
     }
     fun catalogue(mode: MonthsMode): List<Definition> {
+        require(mode != MonthsMode.MISSING) { "Missing sequences use MonthsMissing.catalogue" }
         activity(mode)
         val kinds = if (mode == MonthsMode.FIND) listOf(Kind.FIND) else listOf(Kind.BEFORE, Kind.AFTER)
         return MonthIds.canonicalOrder.flatMap { month -> kinds.map { Definition(month, it) } }
@@ -60,6 +62,7 @@ object MonthsQuestions {
             ContentText.plain("Try again. You can listen or ask for help.", "Versuche es noch einmal. Du kannst noch einmal hören oder dir helfen lassen."), hint)
     }
     fun generate(mode: MonthsMode, id: SessionId, round: RoundLength, seed: Long): GenerationResult {
+        if (mode == MonthsMode.MISSING) return MonthsMissing.generate(id, round, seed)
         val random = Random(seed)
         fun <T> shuffled(items: List<T>) = items.toMutableList().also { Collections.shuffle(it,random) }
         val anchors = shuffled(MonthIds.canonicalOrder).take(round.count)
@@ -75,6 +78,7 @@ object MonthsQuestions {
         return GenerationResult.Generated(plan)
     }
     fun validate(mode: MonthsMode, state: SessionState) {
+        if (mode == MonthsMode.MISSING) return MonthsMissing.validate(state)
         val plan = state.plan
         require(plan.activity == activity(mode) && plan.activityRevision == REVISION && plan.contentVersion == MonthContent.repository.version)
         require(plan.policy == SessionPolicy(plan.policy.round) && plan.completionText == completion)

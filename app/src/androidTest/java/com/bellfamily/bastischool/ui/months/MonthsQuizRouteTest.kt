@@ -39,6 +39,12 @@ class MonthsQuizRouteTest {
             assertEquals(MonthsQuestions.activity(MonthsMode.RELATIONS),state().plan.activity)
             scenario.onActivity{it.onBackPressedDispatcher.onBackPressed()}
             compose.waitUntil(10_000){compose.onAllNodesWithTag("months-open-find").fetchSemanticsNodes().isNotEmpty()}
+            click("months-open-missing");settled()
+            assertEquals(MonthsQuestions.activity(MonthsMode.MISSING),state().plan.activity)
+            val missing=SessionCheckpoint.encode(state())
+            scenario.recreate();settled();assertArrayEquals(missing,SessionCheckpoint.encode(state()))
+            scenario.onActivity{it.onBackPressedDispatcher.onBackPressed()}
+            compose.waitUntil(10_000){compose.onAllNodesWithTag("months-open-find").fetchSemanticsNodes().isNotEmpty()}
             click("months-open-find");settled()
             assertArrayEquals(SessionCheckpoint.encode(find),SessionCheckpoint.encode(state()))
             compose.onNodeWithTag("months-wheel").assertDoesNotExist()

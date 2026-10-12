@@ -93,7 +93,10 @@ class MonthsOwnerTest {
             compose.runOnUiThread{assertEquals(MonthIds.MAY,vm.selection!!.selected);assertFalse(vm.saveFailed);assertEquals(0,engines)}
         } finally {compose.runOnUiThread{owners.clear()}}
     }
-    @Test fun quizModeIsolationAssistanceSilentRestoreAndLanguageDuringWork() {
+    @Test fun quizModeIsolationAssistanceSilentRestoreAndLanguageDuringWork() = quizLifecycle(MonthsMode.FIND)
+    @Test fun missingModeSilentRestoreLanguageAudioAndIndependentJournal() = quizLifecycle(MonthsMode.MISSING)
+
+    private fun quizLifecycle(primary: MonthsMode) {
         val directory=temp.newFolder();val app=App(ApplicationProvider.getApplicationContext(),directory)
         val owners=ViewModelStore();val engine=Engine();lateinit var vm:MonthsViewModel
         fun settled() {
@@ -101,7 +104,7 @@ class MonthsOwnerTest {
             compose.runOnUiThread{assertFalse(vm.quizFailed)}
         }
         fun open() {
-            compose.runOnUiThread{vm=MonthsViewModel(app){engine};owners.put("months",vm);vm.configure("en","all",5);vm.setVisible(true,MonthsMode.FIND)}
+            compose.runOnUiThread{vm=MonthsViewModel(app){engine};owners.put("months",vm);vm.configure("en","all",5);vm.setVisible(true,primary)}
             settled()
         }
         try {
@@ -121,7 +124,7 @@ class MonthsOwnerTest {
                 vm.learn {vm.setVisible(true,MonthsMode.EXPLORE)}
             }
             compose.waitUntil(10_000){var ready=false;compose.runOnUiThread{ready=vm.phase==MonthsMode.EXPLORE && vm.selection!=null};ready}
-            compose.runOnUiThread{assertEquals(before,engine.spoken.size);vm.setVisible(true,MonthsMode.FIND)};settled()
+            compose.runOnUiThread{assertEquals(before,engine.spoken.size);vm.setVisible(true,primary)};settled()
             compose.runOnUiThread{
                 assertTrue(vm.quiz!!.current.support.hint)
                 saved=SessionCheckpoint.encode(vm.quiz!!)
@@ -130,7 +133,7 @@ class MonthsOwnerTest {
             compose.runOnUiThread{
                 assertEquals(MonthsQuestions.activity(MonthsMode.RELATIONS),vm.quiz!!.plan.activity)
                 assertEquals(0,vm.quiz!!.current.support.replays)
-                vm.setVisible(true,MonthsMode.FIND)
+                vm.setVisible(true,primary)
                 assertArrayEquals(saved,SessionCheckpoint.encode(vm.quiz!!))
                 val q=vm.quiz!!
                 vm.action(SessionAction.Answer(q.nextAttempt!!,q.task.question.correct))
@@ -144,13 +147,13 @@ class MonthsOwnerTest {
             }
             val count=engine.spoken.size
             // Restore in the same language to verify exact bytes, without opening narration.
-            compose.runOnUiThread{vm=MonthsViewModel(app){engine};owners.put("months",vm);vm.configure("de","all",10);vm.setVisible(true,MonthsMode.FIND)};settled()
+            compose.runOnUiThread{vm=MonthsViewModel(app){engine};owners.put("months",vm);vm.configure("de","all",10);vm.setVisible(true,primary)};settled()
             compose.runOnUiThread{
                 assertArrayEquals(saved,SessionCheckpoint.encode(vm.quiz!!));assertEquals(count,engine.spoken.size)
                 vm.configure("de","off",10);vm.replay()
             };settled()
             compose.runOnUiThread{assertEquals(count,engine.spoken.size)}
-            assertTrue(File(directory,"months-find-session/events.bin").isFile)
+            assertTrue(File(directory,"months-${primary.name.lowercase()}-session/events.bin").isFile)
             assertTrue(File(directory,"months-relations-session/events.bin").isFile)
         } finally {compose.runOnUiThread{owners.clear()}}
     }

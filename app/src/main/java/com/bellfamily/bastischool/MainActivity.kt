@@ -268,7 +268,7 @@ class MainActivity : ComponentActivity() {
                                     ShellScreen.OPTIONS -> if (language == "de") "Optionen" else "Options"
                                     ShellScreen.WEB -> if (language == "de") "Lernen" else "Learning"
                                     ShellScreen.PREPOSITIONS -> if (language == "de") "Wo ist es?" else "Where is it?"
-                                    ShellScreen.MONTHS, ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS -> if (language == "de") "Monate" else "Months"
+                                    ShellScreen.MONTHS, ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING -> if (language == "de") "Monate" else "Months"
                                     ShellScreen.DAYS_SEASONS -> if (language == "de") "Tage & Jahreszeiten" else "Days & Seasons"
                                     ShellScreen.VOCABULARY -> if (language == "de") "Wortschatz" else "Vocabulary Booster"
                                     ShellScreen.WILMA -> if (language == "de") "Wilmas Woche" else "Wilma’s Week"
@@ -352,8 +352,9 @@ class MainActivity : ComponentActivity() {
                             nativeMonths.saveFailed, nativeMonths.audioFailed, nativeMonths::select, nativeMonths::listen,
                             nativeMonths::retry, { changeRoute(navigation.home()) }, Modifier.padding(padding),
                             onFind = { changeRoute(navigation.openMonthsFind()) },
-                            onRelations = { changeRoute(navigation.openMonthsRelations()) })
-                        ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS -> MonthsQuizScreen(monthsMode(navigation.screen),
+                            onRelations = { changeRoute(navigation.openMonthsRelations()) },
+                            onMissing = { changeRoute(navigation.openMonthsMissing()) })
+                        ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING -> MonthsQuizScreen(monthsMode(navigation.screen),
                             nativeMonths.quiz, if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeMonths.quizBusy, nativeMonths.quizFailed, nativeMonths.audioFailed,
                             nativeMonths::action, { celebrationSound.cancel(); nativeMonths.replay() }, nativeMonths::option,
@@ -442,10 +443,11 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    private val monthScreens = setOf(ShellScreen.MONTHS, ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS)
+    private val monthScreens = setOf(ShellScreen.MONTHS, ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING)
     private fun monthsMode(screen: ShellScreen) = when(screen) {
         ShellScreen.MONTHS_FIND -> MonthsMode.FIND
         ShellScreen.MONTHS_RELATIONS -> MonthsMode.RELATIONS
+        ShellScreen.MONTHS_MISSING -> MonthsMode.MISSING
         else -> MonthsMode.EXPLORE
     }
 
@@ -460,7 +462,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.COLOUR_SORT -> nativeColourSort.busy || nativeColourSort.saveFailed
             ShellScreen.ANIMAL_GROUPS -> nativeAnimalGroups.busy || nativeAnimalGroups.saveFailed
             ShellScreen.WASH_HANDS -> nativeWashHands.busy || nativeWashHands.saveFailed
-            ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS -> nativeMonths.quizBusy || nativeMonths.quizFailed
+            ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING -> nativeMonths.quizBusy || nativeMonths.quizFailed
             ShellScreen.CLOCK_MAKE -> nativeClock.practiceBusy || nativeClock.practiceFailed
             ShellScreen.SUBITISING -> nativeSubitising.busy || nativeSubitising.saveFailed
             ShellScreen.QUANTITY_MATCH -> nativeQuantityMatch.busy || nativeQuantityMatch.saveFailed
@@ -481,7 +483,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.COLOUR_SORT -> nativeColourSort.state?.takeIf {it.completed && it.acknowledged}?.id?.value
             ShellScreen.ANIMAL_GROUPS -> nativeAnimalGroups.state?.takeIf {it.completed && it.acknowledged}?.id?.value
             ShellScreen.WASH_HANDS -> nativeWashHands.state?.takeIf {it.completed && it.acknowledged}?.id?.value
-            ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS -> nativeMonths.quiz?.takeIf { it.phase == SessionPhase.COMPLETED }?.plan?.id?.value
+            ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING -> nativeMonths.quiz?.takeIf { it.phase == SessionPhase.COMPLETED }?.plan?.id?.value
             ShellScreen.CLOCK_MAKE -> nativeClock.practice?.takeIf { it.completed }?.id?.value
             ShellScreen.SUBITISING -> nativeSubitising.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.QUANTITY_MATCH -> nativeQuantityMatch.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value

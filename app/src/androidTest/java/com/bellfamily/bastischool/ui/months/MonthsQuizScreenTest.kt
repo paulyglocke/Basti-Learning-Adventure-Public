@@ -31,7 +31,7 @@ class MonthsQuizScreenTest(private val mode:MonthsMode,private val de:Boolean,pr
     @get:Rule val compose=createAndroidComposeRule<ComponentActivity>()
     companion object {
         @JvmStatic @Parameterized.Parameters(name="{0},de={1},font={2},orientation={3}") fun cases()=
-            listOf(MonthsMode.FIND,MonthsMode.RELATIONS).flatMap { mode -> listOf(false,true).flatMap {de ->
+            listOf(MonthsMode.FIND,MonthsMode.RELATIONS,MonthsMode.MISSING).flatMap { mode -> listOf(false,true).flatMap {de ->
                 listOf(1f,1.5f,2f).flatMap {font -> listOf(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT,
                     ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE,ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE).map {arrayOf<Any>(mode,de,font,it)} }
             } }
@@ -69,6 +69,13 @@ class MonthsQuizScreenTest(private val mode:MonthsMode,private val de:Boolean,pr
         readable(compose.onNodeWithTag("months-quiz-prompt").performScrollTo().assertTextEquals(state.task.question.instruction.display[language]))
         compose.onNodeWithTag("months-quiz-progress").performScrollTo().assertTextEquals(if(de)"Frage 1 von 5" else "Question 1 of 5")
         val q=state.task.question
+        if (mode == MonthsMode.MISSING) {
+            val sequence = MonthsMissing.definition(q)
+            val node = compose.onNodeWithTag("months-quiz-sequence").performScrollTo().assertIsDisplayed()
+            node.assertContentDescriptionEquals(sequence.description(language)).assertHasNoClickAction()
+            assertEquals(0, node.fetchSemanticsNode().children.size)
+            readable(compose.onNodeWithText(sequence.sequence(language), useUnmergedTree=true))
+        }
         q.choices.forEach {id ->
             val tag="months-answer-${id.value}";val button=compose.onNodeWithTag(tag).performScrollTo()
             button.assertHasClickAction().assertHeightIsAtLeast(64.dp)

@@ -21,7 +21,7 @@ class MonthsQuizCompletionTest {
         fun action(a:SessionAction){state=SessionReducer.reduce(state,a).state}
         compose.setContent {MaterialTheme {MonthsQuizScreen(mode,state,language,false,false,false,::action,{}, {},
             {state=start("again")},{},{},{})}}
-        for(m in listOf(MonthsMode.FIND,MonthsMode.RELATIONS))for(lang in ContentLanguage.entries) {
+        for(m in listOf(MonthsMode.FIND,MonthsMode.RELATIONS,MonthsMode.MISSING))for(lang in ContentLanguage.entries) {
             compose.runOnIdle {mode=m;language=lang;state=start("round-${m.name}-${lang.name}")}
             repeat(5) {
                 val correct=state.task.question.correct

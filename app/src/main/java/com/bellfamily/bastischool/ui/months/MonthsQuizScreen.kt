@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
@@ -40,6 +41,11 @@ fun MonthsQuizScreen(mode: MonthsMode, state: SessionState?, language: ContentLa
             val q = state.task.question
             NativeQuestionProgress(state.index+1,state.plan.tasks.size,language,Modifier.testTag("months-quiz-progress"))
             NativeSupportMessage(q.instruction.display[language],Modifier.testTag("months-quiz-prompt"))
+            if (mode == MonthsMode.MISSING) {
+                val sequence = MonthsMissing.definition(q)
+                NativeSupportMessage(sequence.sequence(language), Modifier.testTag("months-quiz-sequence")
+                    .semantics { contentDescription = sequence.description(language) })
+            }
             NativeActionButton(t("Listen again", "Noch einmal hören"),NativeActionRole.SECONDARY,onReplay,
                 Modifier.fillMaxWidth().testTag("months-quiz-replay"),ready)
             q.choices.forEach { id ->

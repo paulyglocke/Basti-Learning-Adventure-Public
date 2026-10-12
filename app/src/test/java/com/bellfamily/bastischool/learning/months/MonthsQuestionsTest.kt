@@ -69,7 +69,7 @@ class MonthsQuestionsTest {
         assertEquals(setOf(0,1,2,3),positions)
     }
     @Test fun wrongRetryReplayHintLanguageAndExactPartialRestore() {
-        for(mode in modes) {
+        for(mode in modes + MonthsMode.MISSING) {
             val disk=disk();val progress=ProgressFixtures.repository(temp.newFolder());val h=open(mode,disk,progress)
             val task=h.state!!.task
             h.dispatch(SessionAction.Replay(task.id));h.dispatch(SessionAction.Hint(task.id))
@@ -88,11 +88,11 @@ class MonthsQuestionsTest {
             val attempts=ProgressFixtures.records(progress).map{it.event}.filterIsInstance<AttemptEvent>()
             assertEquals(2,attempts.size);assertEquals(ContentLanguage.GERMAN,attempts.last().language)
             assertTrue(attempts.last().support.hint);assertEquals(1,attempts.last().support.replays)
-            assertEquals(if(mode==MonthsMode.FIND)"skill.months.recognise" else "skill.months.${MonthsQuestions.definition(mode,task.question).kind.name.lowercase()}",attempts.last().evidence.skill.value)
+            assertEquals(if(mode==MonthsMode.FIND)"skill.months.recognise" else if(mode==MonthsMode.MISSING)"skill.months.missing" else "skill.months.${MonthsQuestions.definition(mode,task.question).kind.name.lowercase()}",attempts.last().evidence.skill.value)
         }
     }
     @Test fun completedRoundsRestoreOnceAndAgainStartsFreshFiveOrTen() {
-        for(mode in modes)for(round in RoundLength.entries) {
+        for(mode in modes + MonthsMode.MISSING)for(round in RoundLength.entries) {
             val disk=disk();val progress=ProgressFixtures.repository(temp.newFolder());var h=open(mode,disk,progress,round)
             repeat(round.count){answer(h);val action=SessionAction.Next(h.state!!.task.id);h.dispatch(action);h.dispatch(action)}
             val completed=SessionCheckpoint.encode(h.state!!)
@@ -109,7 +109,7 @@ class MonthsQuestionsTest {
         }
     }
     @Test fun failedAttemptAndCompletionWritesRedeliverWithStableKeys() {
-        for(mode in modes) {
+        for(mode in modes + MonthsMode.MISSING) {
             val disk=disk();val real=ProgressFixtures.repository(temp.newFolder());var fail=false
             val uncertain=object:ProgressRepository {
                 override fun append(event:ProgressEvent):ProgressWriteResult {
@@ -130,7 +130,7 @@ class MonthsQuestionsTest {
         }
     }
     @Test fun staleWritersAndCorruptJournalsCannotOverwriteAcceptedWork() {
-        for(mode in modes) {
+        for(mode in modes + MonthsMode.MISSING) {
             val disk=disk();val progress=ProgressFixtures.repository(temp.newFolder());val old=open(mode,disk,progress)
             val fresh=open(mode,disk,progress);answer(fresh)
             val saved=disk.access{it.read()!!}

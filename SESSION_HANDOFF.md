@@ -1,5 +1,40 @@
 # Session handoff — 2026-09-27
 
+## Months Phase 3 — Missing Month — 2026-10-11
+
+Implemented locally on `9317704` (Phase 2 Find / Before and Next); not committed or pushed.
+Days & Seasons → Months now also offers Missing Month / Fehlender Monat.
+
+- Bounded three-month sequences with one gap. All twelve canonical months and all
+  three gap positions produce 36 definitions, including December/January crossings.
+  Task IDs encode start month, length (`three`) and gap position. No device dates.
+- Deterministic 5/10-question rounds have distinct target months/task definitions,
+  four unique neighbouring-month choices, and balanced gap positions. The first
+  question has an interior gap; subsequent questions mix gap positions. This is
+  one fixed teaching level, not adaptive progression or a four-month level.
+- Prompt: “Which month is missing?” / “Welcher Monat fehlt?” Replay includes the
+  visible sequence, saying “blank” / “Lücke” without naming the answer. Hint:
+  “Say the months in order and find the gap.” / “Sag die Monate der Reihe nach und
+  finde die Lücke.” Existing Months audio owner and All / Questions / Off apply.
+- Sequence is a wrapping, non-interactive semantic group with a localized gap
+  description; answer and Listen buttons stay separate. Existing Retry, Help,
+  assisted Year Wheel, completion and Again behavior is reused.
+- Separate `activity.months.missing`, `skill.months.missing`,
+  `context.months.year_order` and `months-missing-session` journal. Shared durable
+  host/recorder retain exact plan/order/language/support/attempts and silent restore,
+  pending-write retry and deduplication. Activity revision 1/content 1.1; prior
+  Months generators, wording and journals are unchanged. No shared schema changes.
+- Validation: focused Months/shared JVM **157 passed**; full JVM **490 passed**; the
+  current focused Months JVM rerun passed **24 tests** with zero failures; Android
+  test compilation, `assembleDebug` and `lintDebug` passed. Focused Months
+  instrumentation completed **75 tests with OK** on the `Medium_Phone_API_35`
+  emulator; the run is recorded in `/private/tmp/months-missing-instrumentation.log`.
+- Physical S24/Fire Max acceptance remains outstanding: child-use clarity of
+  wrapping sequences, TalkBack narration, offline voices and real touch ergonomics.
+  Build the Year, Months & Seasons, four-position difficulty and adaptive learning
+  remain deferred. Roadmap/backlog files were not changed.
+
+
 ## Tell Me pilot native validation attempt — 2026-10-10
 
 Owner requested native pilot validation next. Attempted focused offline Gradle
