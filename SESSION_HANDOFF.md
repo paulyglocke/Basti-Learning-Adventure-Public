@@ -2334,5 +2334,11 @@ informational recommendations; Kotlin still reports the existing deprecated
 README, roadmap, backlog, content, architecture, progress, navigation and QA documents
 now describe the independently selectable four-month level and preserve six-/twelve-
 month sequencing, adaptive difficulty, advanced calendar generalisation and physical
-acceptance as deferred. No commit, push or CI run has occurred yet; final diff review
-and release verification remain.
+acceptance as deferred. Release: implementation commit
+`888345d8231730e2a02ff09a6c5dd8f6196bed0c` was pushed to `main`; fetched
+`origin/main` matched and the worktree was clean. GitHub Actions run
+[38558006810](https://github.com/paulyglocke/Basti-Learning-Adventure-Public/actions/runs/38558006810)
+passed both `build` (Android APK and release guards) and `browser-tests`. The
+distribution job was skipped, as expected for this workflow. CI annotations note
+Node 20 action deprecations, `setup-java@v4` deprecation and the upcoming
+`ubuntu-latest` migration; these did not fail the run.
