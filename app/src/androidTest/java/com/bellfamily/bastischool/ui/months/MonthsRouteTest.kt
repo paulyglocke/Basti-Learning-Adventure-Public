@@ -56,6 +56,7 @@ class MonthsRouteTest {
                 compose.onNodeWithText("Days & Seasons").performScrollTo().performClick()
                 compose.onNodeWithTag("open-months").performScrollTo().performClick()
                 compose.onNodeWithTag("months-open-build-year").performScrollTo().performClick()
+                compose.onNodeWithTag("months-build-year-level-1").performScrollTo().assertIsDisplayed().performClick()
                 ready()
                 compose.onNodeWithTag("months-build-year-prompt").performScrollTo()
                     .assertTextEquals(MonthsBuildYear.introduction.display[com.bellfamily.bastischool.learning.models.ContentLanguage.ENGLISH])
@@ -65,7 +66,11 @@ class MonthsRouteTest {
                     val state=ViewModelProvider(it)[MonthsViewModel::class.java].buildYear!!
                     originalId=state.id.value;selectedMonth=state.choices.first().value
                 }
-                compose.onNodeWithTag("months-build-year-choice-$selectedMonth").performScrollTo().performClick()
+                compose.onNodeWithTag("months-build-year-choice-$selectedMonth").performScrollTo()
+                    .assertIsEnabled().performClick()
+                compose.waitUntil(5_000) {
+                    compose.onAllNodesWithTag("months-build-year-selected").fetchSemanticsNodes().isNotEmpty()
+                }
                 compose.onNodeWithTag("months-build-year-selected").performScrollTo().assertIsDisplayed()
                 scenario.moveToState(Lifecycle.State.CREATED)
                 scenario.moveToState(Lifecycle.State.RESUMED);ready()
@@ -83,9 +88,73 @@ class MonthsRouteTest {
                 compose.onNodeWithTag("months-build-year-prompt").performScrollTo()
                     .assertTextEquals(MonthsBuildYear.introduction.display[com.bellfamily.bastischool.learning.models.ContentLanguage.GERMAN])
                 scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
+                compose.onNodeWithTag("months-build-year-level-1").assertIsDisplayed()
+                scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
                 compose.onNodeWithTag("months-open-build-year").performScrollTo().assertIsDisplayed()
             }
         } finally { prefs.edit().putString("lang",oldLang).putString("audioMode",oldAudio).commit() }
+    }
+
+    @Test fun buildYearLevelsKeepIndependentSessionsAcrossOptionsAndRecreation() {
+        val prefs=InstrumentationRegistry.getInstrumentation().targetContext.getSharedPreferences("basti_shell",0)
+        val oldLang=prefs.getString("lang",null);val oldAudio=prefs.getString("audioMode",null);val oldRound=prefs.getInt("round",5)
+        prefs.edit().putString("lang","en").putString("audioMode","off").putInt("round",5).commit()
+        try {
+            ActivityScenario.launch(MainActivity::class.java).use { scenario ->
+                fun fourReady() = compose.waitUntil(10_000) {
+                    var loaded=false
+                    scenario.onActivity { loaded=ViewModelProvider(it)[MonthsViewModel::class.java].buildYearFour!=null }
+                    loaded
+                }
+                compose.onNodeWithText("Days & Seasons").performScrollTo().performClick()
+                compose.onNodeWithTag("open-months").performScrollTo().performClick()
+                compose.onNodeWithTag("months-open-build-year").performScrollTo().performClick()
+                compose.onNodeWithTag("months-build-year-level-1").assertTextEquals("Level 1 — Three Months")
+                compose.onNodeWithTag("months-build-year-level-2").assertTextEquals("Level 2 — Four Months").performClick()
+                fourReady()
+                var originalId="";var firstMonth="";var roundCount=0
+                scenario.onActivity {
+                    val state=ViewModelProvider(it)[MonthsViewModel::class.java].buildYearFour!!
+                    originalId=state.id.value;firstMonth=state.order.first().value;roundCount=state.round.count
+                }
+                assertEquals(5,roundCount)
+                compose.onNodeWithTag("months-build-year-four-choice-$firstMonth").performScrollTo().performClick()
+                compose.onNodeWithTag("months-build-year-four-slot-1").performScrollTo().performClick()
+                compose.waitUntil(10_000) {
+                    var placed=false
+                    scenario.onActivity { placed=ViewModelProvider(it)[MonthsViewModel::class.java].buildYearFour?.placed?.size==1 }
+                    placed
+                }
+                scenario.recreate();fourReady()
+                scenario.onActivity {
+                    val state=ViewModelProvider(it)[MonthsViewModel::class.java].buildYearFour!!
+                    assertEquals(originalId,state.id.value);assertEquals(listOf(ContentId(firstMonth)),state.placed)
+                }
+                compose.onNodeWithText("⚙ Options").performClick()
+                compose.onNodeWithText("🇩🇪 Deutsch").performClick()
+                scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
+                compose.onNodeWithTag("months-build-year-four-progress").performScrollTo().assertTextEquals("Folge 1 von 5")
+                scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
+                compose.onNodeWithTag("months-build-year-level-1").performScrollTo().performClick()
+                compose.waitUntil(10_000) {
+                    var loaded=false
+                    scenario.onActivity { loaded=ViewModelProvider(it)[MonthsViewModel::class.java].buildYear!=null }
+                    loaded
+                }
+                scenario.onActivity {
+                    val three=ViewModelProvider(it)[MonthsViewModel::class.java].buildYear!!
+                    assertEquals(3,three.order.size);assertEquals("activity.months.build_year.three",MonthsBuildYear.activity.value)
+                    assertNotEquals(originalId,three.id.value)
+                }
+                scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
+                compose.onNodeWithTag("months-build-year-level-2").performScrollTo().performClick()
+                fourReady()
+                scenario.onActivity {
+                    val four=ViewModelProvider(it)[MonthsViewModel::class.java].buildYearFour!!
+                    assertEquals(originalId,four.id.value);assertEquals(listOf(ContentId(firstMonth)),four.placed)
+                }
+            }
+        } finally { prefs.edit().putString("lang",oldLang).putString("audioMode",oldAudio).putInt("round",oldRound).commit() }
     }
 
     @Test fun betweenKeepsEndpointsAndReturnsFromYearWheelWithSameQuestionAndAssistance() {

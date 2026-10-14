@@ -532,16 +532,16 @@ Teach the conventional display order while making the cyclic relationship explic
 Months should become a proper learning strand rather than a static list.
 
 Implementation checkpoint — 2026-10-12: native Explore/Listen, Find Month,
-Before/Next, Missing Month, Between and introductory three-month Build the Year are
-implemented. Phase 6 illustrated Months ↔ Seasons grouping is implemented and
+Before/Next, Missing Month, Between and selectable three- and four-month Build the
+Year levels are implemented. Phase 6 illustrated Months ↔ Seasons grouping is implemented and
 automated validation passed. Between asks for the middle
 month with both consecutive endpoints visible; its deterministic 5/10 rounds cover
 unique targets. Months ↔ Seasons groups all twelve months using the fixed Germany
 meteorological convention and four existing season illustrations. Both have separate
 activity/skill/journal contracts and shared progress. Physical S24/Fire Max, TalkBack
 and offline-voice acceptance for the new activities are **NOT RUN — deferred by owner**;
-see SESSION_HANDOFF.md for revision-specific automated evidence. Four-/six-/twelve-
-month sequencing, advanced month/season transfer, adaptive progression and broader
+see SESSION_HANDOFF.md for revision-specific automated evidence. Six-/twelve-month
+sequencing, advanced month/season transfer, adaptive progression and broader
 calendar generalisation remain deferred.
 
 #### Year Wheel
@@ -560,10 +560,10 @@ Season boundaries are conventional teaching regions rather than claims about exa
 - What comes before?;
 - Between (implemented; see the Months v1 checkpoint);
 - Missing Month;
-- Build the Year with 3 months;
-- Build with 4;
-- Build with 6;
-- Build all 12;
+- Build the Year with 3 months (implemented);
+- Build the Year with 4 months (implemented; independently selectable);
+- Build with 6 months (deferred);
+- Build all 12 months (deferred);
 - Months ↔ Seasons introductory grouping (implemented; advanced transfer remains future work);
 - generalise from wheel to horizontal sequence/cards/calendar.
 
@@ -867,7 +867,7 @@ Meaningful distractors are preferred over random unrelated choices where appropr
 
 ### Sequencing
 
-Current consumers include Wilma, Seasons and Months' introductory three-month Build the Year level.
+Current consumers include Wilma, Seasons and Months' three- and four-month Build the Year levels.
 
 Future consumers include:
 
@@ -1642,7 +1642,7 @@ Use shared capabilities to add breadth.
 Priority areas include:
 
 - remaining Seasons generalisation and advanced Months ↔ Seasons transfer beyond the introductory grouping code, pending full validation;
-- remaining Months progression (Phase 6 full validation; four-/six-/twelve-month Build the Year; adaptive progression and calendar generalisation);
+- remaining Months progression (six-/twelve-month Build the Year; adaptive progression and calendar generalisation);
 - Colours v1;
 - conceptual manipulation-first Maths beyond the five implemented visual-choice activities;
 - Practical Life v1;
@@ -1660,14 +1660,14 @@ Priority areas include:
 ### Months v1
 
 Implemented: Year Wheel, Explore/Listen, Find Month, Next/Before, Between, Missing
-Month, and the introductory three-month Build the Year level. Phase 6 illustrated
+Month, and selectable three- and four-month Build the Year levels. Phase 6 illustrated
 Months ↔ Seasons is implemented with automated validation complete. Between keeps both sequence endpoints visible and offers
 the Year Wheel as optional assisted learning. Build the Year uses canonical cyclic
 month IDs, accessible tap-to-select/tap-to-place and revisioned persistence. Months ↔
 Seasons uses the fixed Germany meteorological map, four existing illustrations,
 cumulative accessible season groups, balanced deterministic sessions and a separate
 progress identity. Phase 6 validation evidence is tracked in SESSION_HANDOFF.md; physical
-S24/Fire Max acceptance is **NOT RUN — deferred by owner**. Deferred: four-/six-/
+physical-device acceptance is **NOT RUN — deferred by owner**. Deferred: six-/
 twelve-month sequencing, advanced month/season generalisation, adaptive progression
 and full calendar activities.
 

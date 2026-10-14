@@ -3,6 +3,7 @@ package com.bellfamily.bastischool.ui.common
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.graphics.Bitmap
+import android.view.Surface
 import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
@@ -49,9 +50,15 @@ class RemainingSupportPresentationTest(private val surface: String, private val 
     private val hintTag get() = prefix + "help"
     private fun show() {
         val landscape = orientation != ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        val expectedRotation = when (orientation) {
+            ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE -> Surface.ROTATION_270
+            ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE -> Surface.ROTATION_90
+            else -> Surface.ROTATION_0
+        }
         compose.activity.requestedOrientation = orientation
         compose.waitUntil(10_000) { compose.activity.resources.configuration.orientation ==
-            if(landscape) Configuration.ORIENTATION_LANDSCAPE else Configuration.ORIENTATION_PORTRAIT }
+            (if(landscape) Configuration.ORIENTATION_LANDSCAPE else Configuration.ORIENTATION_PORTRAIT) &&
+            compose.activity.display?.rotation == expectedRotation }
         val id = SessionId("support-presentation")
         val result = (if(vocabulary) VocabularyContent.generate(VocabularyPhase.FIND, id, RoundLength.FIVE, 42)
             else WilmaContent.generate(WilmaPhase.FIND, id, RoundLength.FIVE, 42)) as GenerationResult.Generated

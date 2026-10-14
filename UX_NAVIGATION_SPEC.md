@@ -93,8 +93,12 @@ Navigation must not strand the child in loading, missing-content or audio-failur
 
 Changing language updates visible and spoken content together, stops stale narration and preserves task identity where meaning remains valid. If a language-specific task cannot be translated in place (for example an initial-sound question), restart that task explicitly without recording a wrong answer. Configuration/recovery behavior follows NATIVE_ARCHITECTURE_SPEC.md.
 
-Months Build the Year is a three-placement ordering activity rather than a 5/10
-quiz: choose a shuffled month tile, then activate the next numbered empty position.
+Months Build the Year begins with a level chooser: Level 1 orders three consecutive
+months and Level 2 orders four. Both remain independently selectable; completion of
+Level 1 does not auto-advance. Level 2 uses deterministic 5/10 question rounds with
+unique four-month cyclic windows, including December/January wraparound. It reuses
+the shared ordered-placement mechanic: choose a shuffled month tile, then activate
+the next numbered empty position.
 This tap-select/tap-place path is the required accessible interaction, not a drag
 fallback. Position semantics identify whether the slot is empty/filled and expose
 the placement action; keyboard activation follows the same state transition. Return,

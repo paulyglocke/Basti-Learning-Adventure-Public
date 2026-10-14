@@ -6,6 +6,22 @@ This document defines verification and feature completion gates. [NATIVE_ARCHITE
 
 **A feature is not done only because it builds.** Record evidence for its behavior and relevant device risks. A code-complete slice awaiting required hardware checks must be labelled as such, not fully verified or eligible for legacy removal.
 
+## Months Phase 7 — four-month Build the Year checkpoint (2026-10-14)
+
+Starting at `35fc1299c015ae46966f2ca5556bd3199a0a244c`, the four-month Level 2 and
+scoped test-harness synchronization corrections passed the final JDK 17 validation:
+full JVM **513/513**; API 35 emulator instrumentation **360/360, 0 failures, 0
+skips**; `assembleDebug`, `lintDebug` and `compileDebugAndroidTestKotlin` passed.
+Focused Level 2 Compose, route, recreation and restoration tests also passed. The full
+suite initially encountered an emulator system/package-manager failure; after
+emulator recovery, focused reruns isolated rotation/order synchronization dependencies
+in existing instrumentation fixtures. Those test-only waits/orientation requests were
+corrected without weakening assertions; the complete suite then passed. No production
+regression was identified. Lint reports 5 warnings (2 manifest `UnusedAttribute`, 2
+legacy `VectorRaster`, 1 legacy `SetJavaScriptEnabled`) and 2 informational findings;
+Kotlin reports the existing deprecated `VIBRATOR_SERVICE` warning. Physical-device
+acceptance is **NOT RUN — deferred by owner**.
+
 Current baseline reconciled on 2026-10-08 against `ccc6423`: the [workflow](.github/workflows/build-apk.yml) runs full native JVM tests, Python content/asset/freshness checks, `assembleDebug`, `lintDebug`, release guards and legacy Playwright tests. It has no explicit Android-test compilation/build gate and no instrumentation execution job. Compose/owner/navigation tests exist, including the recent native modes; existence and compilation do not prove execution. Browser speech mocks do not prove native audio, Compose behavior, Android navigation or device compatibility.
 
 | Evidence layer | Current recorded status / boundary |
@@ -219,6 +235,7 @@ is asserted by this list.
 | Seasons MISSING / CLUES / MATCH | Gap and clue meaning, independent Listen, correct match preservation after mistakes, exact restoration and appropriate completion. MATCH is a four-season matching set, not a 5/10-question quiz. |
 | Seasons COMBINED | Explicit Before/After semantics, both wrap boundaries, correct slot retained through retry, Help independent of Replay, fresh Again and task-specific ordered-pair progress evidence. |
 | Months Explore / Find / Before-Next / Missing / Build the Year (3) | Canonical Year Wheel and December/January adjacency; bilingual names/prompts/audio/hints; existing quiz modes' deterministic 5/10 rounds; Build the Year's shuffled unique three-month window, December→January→February and other cyclic starts, tap-select/tap-place, example, wrong-placement retry, separate progress identity, exact silent restoration and pending-write retry. Check tile/slot position/action semantics, keyboard activation, EN/DE wrapping, portrait/short landscape and 1×–2× text. Emulator results do not establish physical acceptance. |
+| Months Build the Year Level 2 (4) | All twelve four-month cyclic starts; December/January wrapping; deterministic unique 5/10 windows; non-solved shuffle; Level 1/2 independent selection and progress; retries, hints, replay, bilingual instructions, exact state restore and separate journal. Exercise tap placement, keyboard and accessibility slot/tile semantics, portrait/short landscape, 1×/1.5×/2× text and scrollable completion controls. |
 | Months ↔ Seasons | Fixed Germany meteorological mapping for all twelve months, including December–January–February; four existing season illustrations; deterministic balanced unique 5/10 targets; tap assignment into cumulative groups; retry, guide/hint and Replay; bilingual prompt/audio; separate shared progress identity/journal; exact restoration through Options, Back and Activity recreation; TalkBack group labels, keyboard activation, large targets, EN/DE wrapping at 1×/1.5×/2×, portrait/short landscape and no horizontal clipping. Physical acceptance is **NOT RUN — deferred by owner**. |
 | Tell Me revision 11 pilot | Three C bundles only (Ocean .03, Classroom .02, Zoo .08); A/B/C/A versus A/B/A rotation, paired EN/DE support, Options/language/recreation/background/Home behavior and text reachability. Keep conversation open-ended; imagery, German naturalness, TalkBack and physical S24/Fire review remain human acceptance items. |
 

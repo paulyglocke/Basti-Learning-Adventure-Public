@@ -244,6 +244,17 @@ The completion model/codec allowlist now includes three tasks without changing t
 schema-1 field layout or existing deduplication IDs. Older app builds do not accept
 three-task completions; downgrade across this new progress evidence is unsupported.
 
+### Four-month Build the Year Level 2 evidence (2026-10-14)
+
+Level 2 records through `activity.months.build_year.four` revision 1,
+`skill.months.sequence.four` and `context.months.year_order`, with a dedicated
+`months-build-year-four-session` journal. Task definitions are stable per cyclic
+window start; each completed task retains its four canonical final placements,
+attempt/retry and support evidence. Its state and pending writes restore independently
+from Level 1. No existing Months or Seasons identity is reinterpreted. The shared
+completion representation already supports four-task completions; this addition does
+not alter its schema or deduplication layout.
+
 ### Months Between evidence (2026-10-12)
 
 Between uses the shared choice-session event contract with the separate

@@ -93,11 +93,17 @@ class ShellNavigationTest {
     }
 
     @Test fun monthsBuildYearHasItsOwnRouteAndReturnsToMonths() {
-        val route = ShellNavigation().openMonthsBuildYear()
-        assertEquals(ShellScreen.MONTHS_BUILD_YEAR, route.screen)
-        assertEquals(BackAction.MONTHS_AREA, route.backAction)
-        assertEquals(route, route.openOptions().closeOptions())
-        assertEquals(ShellScreen.MONTHS, route.openMonths().screen)
+        val levels = ShellNavigation().openMonthsBuildYear()
+        assertEquals(ShellScreen.MONTHS_BUILD_YEAR_LEVELS, levels.screen)
+        assertEquals(BackAction.MONTHS_AREA, levels.backAction)
+        assertEquals(levels, levels.openOptions().closeOptions())
+        val three = levels.openMonthsBuildYearThree()
+        val four = levels.openMonthsBuildYearFour()
+        assertEquals(ShellScreen.MONTHS_BUILD_YEAR, three.screen)
+        assertEquals(ShellScreen.MONTHS_BUILD_YEAR_FOUR, four.screen)
+        assertEquals(BackAction.MONTHS_AREA, three.backAction)
+        assertEquals(BackAction.MONTHS_AREA, four.backAction)
+        assertEquals(ShellScreen.MONTHS, levels.openMonths().screen)
     }
 
     @Test fun monthsBetweenAndItsYearWheelReturnToTheSameQuestionRoute() {

@@ -57,10 +57,11 @@ class NativeTextVisibilityTest(private val de: Boolean, private val scale: Float
         assertTrue("Text clipped horizontally", bounds.width + 1 >= results.first().size.width)
     }
     @Test fun homeSettingsCompletionAndFallbackTextRemainReadable() {
-        if (landscape) {
-            compose.activity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
-            compose.waitUntil(10_000) { compose.activity.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE }
-        }
+        val requestedOrientation = if (landscape) ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+            else ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        compose.activity.requestedOrientation = requestedOrientation
+        compose.waitUntil(10_000) { compose.activity.resources.configuration.orientation ==
+            if (landscape) Configuration.ORIENTATION_LANDSCAPE else Configuration.ORIENTATION_PORTRAIT }
         var page by mutableIntStateOf(0)
         var clicks = 0
         val lang = if (de) "de" else "en"

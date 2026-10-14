@@ -122,10 +122,21 @@ month repository without duplicating month names. It builds one shuffled three-m
 cyclic window, records ordered placement attempts as `skill.months.sequence` in
 `context.months.year_order`, and persists to its own revisioned write-ahead journal.
 Existing Months quiz activity IDs, progress identities and journals remain unchanged.
-Four-/six-/twelve-month sequencing, advanced Months↔Seasons generalisation, adaptive
+Four-month sequencing is implemented as a separately identified Level 2; six-/twelve-month sequencing, advanced Months↔Seasons generalisation, adaptive
 progression and broader calendar generalisation remain deferred. Physical S24/Fire,
 TalkBack and installed offline-voice checks for the new activities are **NOT RUN —
 deferred by owner**.
+
+### Build the Year — four-month Level 2 (2026-10-14)
+
+Level 2 uses `activity.months.build_year.four`, revision 1, and the canonical month
+repository. Each task is a four-month cyclic window identified by its starting month;
+all twelve starts are valid, including October → January wraparound. Five- and ten-task
+rounds use unique starts and deterministic shuffled placements that are not initially
+solved. Its skill (`skill.months.sequence.four`) and `months-build-year-four-session`
+journal are independent of the three-month Level 1 contract. Existing Level 1 IDs,
+saved sessions, journals and progress retain their original interpretation. Six- and
+twelve-month levels remain deferred.
 
 ## Months ↔ Seasons introductory matching (2026-10-12)
 

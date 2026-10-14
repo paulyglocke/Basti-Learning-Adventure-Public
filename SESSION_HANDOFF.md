@@ -2284,3 +2284,55 @@ Automated validation is complete for this checkpoint; Months Phase 6 is implemen
 Physical-device acceptance remains **NOT RUN — deferred by owner**. No commit, push or
 CI run has occurred yet. Recheck the complete diff and whitespace, then commit/push the
 scoped work and verify remote HEAD and GitHub Actions. Do not claim physical acceptance.
+
+## Months Phase 7 — four-month Build the Year (2026-10-14)
+
+Started on clean `main` at `35fc1299c015ae46966f2ca5556bd3199a0a244c`, matching
+`origin/main`. Added an independently selectable four-month level alongside the
+unchanged three-month level. Level 2 sequences four consecutive canonical month IDs
+for all twelve possible starts, including October/November/December/January,
+November/December/January/February and December/January/February/March. Seeded 5/10
+rounds use distinct starts and reproducible shuffled orders that are never initially
+solved. The accessible interaction reuses `OrderedPlacement`, with tap-select/tap-place,
+keyboard activation, hints, replay, calm retry and bilingual instruction/example.
+
+Level 2 has its own `activity.months.build_year.four`,
+`skill.months.sequence.four` and `months-build-year-four-session` persistence contract.
+Level 1 keeps `activity.months.build_year.three`, `skill.months.sequence`, its existing
+journal and saved-session meaning. Shared completion schema/layout is unchanged.
+The selector keeps both levels directly available and does not force advancement.
+
+Validation under isolated Eclipse Temurin JDK **17.0.20.1** and API 35
+`Medium_Phone_API_35` emulator:
+
+- PASS — full JVM suite: **513/513**, zero failures/errors/skips.
+- PASS — full API 35 instrumentation: **360/360**, zero failures/skips (final run).
+- PASS — focused Level 1 Compose regression **12/12**; Months route **4/4**;
+  new Level 2 Compose matrix **12/12**; `SupportPresentationTest` **12/12**;
+  `RemainingSupportPresentationTest` **12/12**; `NativeTextVisibilityTest` **8/8**.
+- PASS — `assembleDebug`, `lintDebug` and `compileDebugAndroidTestKotlin` under JDK 17.
+- PASS — all twelve starting months, cyclic wrap, deterministic unique 5/10 rounds,
+  non-solved shuffles, retry/support, Level 1 identity compatibility, Level 2
+  persistence/restoration and 1×/1.5×/2× EN/DE portrait/landscape UI cases covered.
+- PASS — `git diff --check` after documentation updates.
+- NOT RUN — physical-device acceptance, **deferred by owner**. Emulator evidence does
+  not establish TalkBack quality or physical-device acceptance.
+
+Investigation and corrections: the first full emulator run encountered a system
+failure in which Package Manager and installed test packages became unavailable; an
+emulator reboot restored the service. A subsequent run exposed a Months route test
+asserting selection before asynchronous UI feedback, plus existing support/text tests
+whose waits depended on inherited orientation or did not wait for the requested
+rotation. The test fixtures now wait for the selected state and explicit orientation;
+no assertions were weakened. Isolated reruns passed, followed by the full 360/360 run.
+No production regression was found. JDK 17 avoided the earlier JDK 25 Lint/UAST
+initialization failure. Lint retains five existing warnings (two manifest
+`UnusedAttribute`, two `VectorRaster`, one legacy `SetJavaScriptEnabled`) and two
+informational recommendations; Kotlin still reports the existing deprecated
+`VIBRATOR_SERVICE` warning.
+
+README, roadmap, backlog, content, architecture, progress, navigation and QA documents
+now describe the independently selectable four-month level and preserve six-/twelve-
+month sequencing, adaptive difficulty, advanced calendar generalisation and physical
+acceptance as deferred. No commit, push or CI run has occurred yet; final diff review
+and release verification remain.

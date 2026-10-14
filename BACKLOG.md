@@ -6,7 +6,7 @@ Completed implementation history and validation evidence belong in [BUILD_NOTES.
 
 ## Established baseline
 
-Status reconciled against `9a6fa54` on 2026-10-12 and updated for Months Phase 6. “Implemented” does not mean physically accepted; current validation layers and device gaps are in [TESTING_QA_SPEC.md](TESTING_QA_SPEC.md).
+Status reconciled against `35fc129` on 2026-10-14 and updated for Months Phase 7. “Implemented” does not mean physically accepted; current validation layers and device gaps are in [TESTING_QA_SPEC.md](TESTING_QA_SPEC.md).
 
 Already implemented and not active implementation backlog unless a regression is found:
 
@@ -16,7 +16,7 @@ Already implemented and not active implementation backlog unless a regression is
 - durable deduplicated native progress-event storage
 - native Prepositions activity revision 3/content 1.3, with exact v1/v2 recovery and guided Listen
 - native Seasons Explore/recognition, Next/Before, Build the Year, MISSING, CLUES, MATCH and COMBINED (only the specifically recorded earlier flows are owner-verified on S24; newer modes await acceptance)
-- native Months Year Wheel Explore/Listen, Find Month, Before/Next, Missing Month, Between, introductory three-month Build the Year, and introductory Months ↔ Seasons grouping. Phase 6 automated validation is complete; S24/Fire Max physical acceptance is **NOT RUN — deferred by owner**. Evidence is recorded in SESSION_HANDOFF.md.
+- native Months Year Wheel Explore/Listen, Find Month, Before/Next, Missing Month, Between, selectable three- and four-month Build the Year, and introductory Months ↔ Seasons grouping. Phase 7 automated validation is complete; physical-device acceptance is **NOT RUN — deferred by owner**. Evidence is recorded in SESSION_HANDOFF.md.
 - native Wilma Explore/Find Day/Before-After/Ordering, TODAY with an explicit hypothetical anchor, and non-quiz BILINGUAL learning (ordering auto-follow owner-verified on S24; TODAY/BILINGUAL and Fire acceptance pending)
 - native Maths 1–5: How many? (Subitising), Numbers & Groups (both matching directions), More or Fewer (Left/Right/Same to a more question), Number Order (BEFORE/AFTER/MISSING), and Add Together (nonzero addends, totals 2–5). These are visual choice activities, not quantity-construction/manipulation modes.
 - native Vocabulary starter slice
@@ -81,7 +81,7 @@ Already implemented and not active implementation backlog unless a regression is
 ## P2 — core school-readiness curriculum
 
 - Further Seasons generalisation and advanced Months ↔ Seasons transfer. MISSING/CLUES/MATCH/COMBINED and introductory Months ↔ Seasons grouping are implemented; physical acceptance remains tracked in the QA ledger.
-- Remaining Months progression: four-/six-/twelve-month Build the Year levels; adaptive progression; and wheel-to-sequence/calendar generalisation. Introductory three-month Build the Year and Between are implemented; physical acceptance is **NOT RUN — deferred by owner**.
+- Remaining Months progression: six-/twelve-month Build the Year levels; adaptive progression; and wheel-to-sequence/calendar generalisation. Three- and four-month Build the Year levels and Between are implemented; physical acceptance is **NOT RUN — deferred by owner**.
 - School Skills as an early Follow-the-Instructions content pack: classroom instructions plus help-seeking/self-advocacy.
 - Grow Vocabulary toward roughly 50–80 reviewed words through shared curriculum additions rather than one monolithic vocabulary task.
 - Tell Me! / Erzähl mal v1: **native text/artwork consumer implemented; automated pilot validation passes, physical acceptance pending.** Home → nine authored categories → nine ordered pictures, explicit TALK/Next, optional authored Help and collapsed grown-up support, calm score-free completion. No speech input/TTS/grading/progress fabrication. Options/recreation retain the conversation; Home/new process resets to category selection. Content revision 11 adds C only to Ocean .03, Classroom .02 and Zoo .08; A/B/C/A rotation is validated, and the other 78 scenes retain A/B/A. API 35 route/layout tests and JVM content/rotation tests pass at `466315c`. Independent German and physical S24/Fire Max acceptance remain open; see `docs/tellme-variety/PILOT_VALIDATION.md`.

@@ -268,7 +268,7 @@ class MainActivity : ComponentActivity() {
                                     ShellScreen.OPTIONS -> if (language == "de") "Optionen" else "Options"
                                     ShellScreen.WEB -> if (language == "de") "Lernen" else "Learning"
                                     ShellScreen.PREPOSITIONS -> if (language == "de") "Wo ist es?" else "Where is it?"
-                                    ShellScreen.MONTHS, ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BETWEEN, ShellScreen.MONTHS_BETWEEN_WHEEL, ShellScreen.MONTHS_BUILD_YEAR, ShellScreen.MONTHS_SEASONS -> if (language == "de") "Monate" else "Months"
+                                    ShellScreen.MONTHS, ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BETWEEN, ShellScreen.MONTHS_BETWEEN_WHEEL, ShellScreen.MONTHS_BUILD_YEAR_LEVELS, ShellScreen.MONTHS_BUILD_YEAR, ShellScreen.MONTHS_BUILD_YEAR_FOUR, ShellScreen.MONTHS_SEASONS -> if (language == "de") "Monate" else "Months"
                                     ShellScreen.DAYS_SEASONS -> if (language == "de") "Tage & Jahreszeiten" else "Days & Seasons"
                                     ShellScreen.VOCABULARY -> if (language == "de") "Wortschatz" else "Vocabulary Booster"
                                     ShellScreen.WILMA -> if (language == "de") "Wilmas Woche" else "Wilma’s Week"
@@ -370,12 +370,24 @@ class MainActivity : ComponentActivity() {
                             { nativeMonths.learn { changeRoute(if (navigation.screen == ShellScreen.MONTHS_BETWEEN)
                                 navigation.openMonthsBetweenWheel() else navigation.openMonths()) } },
                             { changeRoute(navigation.home()) }, Modifier.padding(padding), onPop = ::popCelebration)
+                        ShellScreen.MONTHS_BUILD_YEAR_LEVELS -> MonthsBuildYearLevelsScreen(
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            { changeRoute(navigation.openMonthsBuildYearThree()) },
+                            { changeRoute(navigation.openMonthsBuildYearFour()) },
+                            { changeRoute(navigation.home()) }, Modifier.padding(padding))
                         ShellScreen.MONTHS_BUILD_YEAR -> MonthsBuildYearScreen(nativeMonths.buildYear,
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeMonths.buildBusy, nativeMonths.buildYearFailed, nativeMonths.audioFailed,
                             nativeMonths::buildAction, nativeMonths::buildOption,
                             { celebrationSound.cancel(); nativeMonths.buildReplay() },
                             { celebrationSound.cancel(); nativeMonths.buildAgain() }, nativeMonths::retryBuildYear,
+                            { changeRoute(navigation.home()) }, Modifier.padding(padding), onPop = ::popCelebration)
+                        ShellScreen.MONTHS_BUILD_YEAR_FOUR -> MonthsBuildYearFourScreen(nativeMonths.buildYearFour,
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            nativeMonths.buildYearFourBusy, nativeMonths.buildYearFourFailed, nativeMonths.audioFailed,
+                            nativeMonths::buildYearFourAction, nativeMonths::buildYearFourOption,
+                            { celebrationSound.cancel(); nativeMonths.buildYearFourReplay() },
+                            { celebrationSound.cancel(); nativeMonths.buildYearFourAgain() }, nativeMonths::retryBuildYearFour,
                             { changeRoute(navigation.home()) }, Modifier.padding(padding), onPop = ::popCelebration)
                         ShellScreen.MONTHS_SEASONS -> MonthsSeasonsMatchScreen(nativeMonths.quiz, nativeMonths.seasonArtwork,
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
@@ -465,14 +477,16 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    private val monthScreens = setOf(ShellScreen.MONTHS, ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BETWEEN, ShellScreen.MONTHS_BETWEEN_WHEEL, ShellScreen.MONTHS_BUILD_YEAR, ShellScreen.MONTHS_SEASONS)
+    private val monthScreens = setOf(ShellScreen.MONTHS, ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BETWEEN, ShellScreen.MONTHS_BETWEEN_WHEEL, ShellScreen.MONTHS_BUILD_YEAR_LEVELS, ShellScreen.MONTHS_BUILD_YEAR, ShellScreen.MONTHS_BUILD_YEAR_FOUR, ShellScreen.MONTHS_SEASONS)
     private fun monthsMode(screen: ShellScreen) = when(screen) {
         ShellScreen.MONTHS_FIND -> MonthsMode.FIND
         ShellScreen.MONTHS_RELATIONS -> MonthsMode.RELATIONS
         ShellScreen.MONTHS_MISSING -> MonthsMode.MISSING
         ShellScreen.MONTHS_BETWEEN -> MonthsMode.BETWEEN
         ShellScreen.MONTHS_BETWEEN_WHEEL -> MonthsMode.EXPLORE
+        ShellScreen.MONTHS_BUILD_YEAR_LEVELS -> MonthsMode.BUILD_YEAR_LEVELS
         ShellScreen.MONTHS_BUILD_YEAR -> MonthsMode.BUILD_YEAR
+        ShellScreen.MONTHS_BUILD_YEAR_FOUR -> MonthsMode.BUILD_YEAR_FOUR
         ShellScreen.MONTHS_SEASONS -> MonthsMode.SEASONS_MATCH
         else -> MonthsMode.EXPLORE
     }
@@ -491,6 +505,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BETWEEN -> nativeMonths.quizBusy || nativeMonths.quizFailed
             ShellScreen.MONTHS_SEASONS -> nativeMonths.quizBusy || nativeMonths.quizFailed || nativeMonths.artworkFailed
             ShellScreen.MONTHS_BUILD_YEAR -> nativeMonths.buildBusy || nativeMonths.buildYearFailed
+            ShellScreen.MONTHS_BUILD_YEAR_FOUR -> nativeMonths.buildYearFourBusy || nativeMonths.buildYearFourFailed
             ShellScreen.CLOCK_MAKE -> nativeClock.practiceBusy || nativeClock.practiceFailed
             ShellScreen.SUBITISING -> nativeSubitising.busy || nativeSubitising.saveFailed
             ShellScreen.QUANTITY_MATCH -> nativeQuantityMatch.busy || nativeQuantityMatch.saveFailed
@@ -513,6 +528,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.WASH_HANDS -> nativeWashHands.state?.takeIf {it.completed && it.acknowledged}?.id?.value
             ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BETWEEN -> nativeMonths.quiz?.takeIf { it.phase == SessionPhase.COMPLETED }?.plan?.id?.value
             ShellScreen.MONTHS_BUILD_YEAR -> nativeMonths.buildYear?.takeIf { it.completed && it.acknowledged }?.id?.value
+            ShellScreen.MONTHS_BUILD_YEAR_FOUR -> nativeMonths.buildYearFour?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.MONTHS_SEASONS -> nativeMonths.quiz?.takeIf { it.phase == SessionPhase.COMPLETED }?.plan?.id?.value
             ShellScreen.CLOCK_MAKE -> nativeClock.practice?.takeIf { it.completed }?.id?.value
             ShellScreen.SUBITISING -> nativeSubitising.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
@@ -568,7 +584,9 @@ class MainActivity : ComponentActivity() {
         when (navigation.backAction) {
             BackAction.MONTHS_AREA -> {
                 if (navigation.screen == ShellScreen.MONTHS_BETWEEN_WHEEL) changeRoute(navigation.openMonthsBetween())
-                else if (navigation.screen == ShellScreen.MONTHS_BUILD_YEAR) changeRoute(navigation.openMonths())
+                else if (navigation.screen == ShellScreen.MONTHS_BUILD_YEAR || navigation.screen == ShellScreen.MONTHS_BUILD_YEAR_FOUR)
+                    changeRoute(navigation.openMonthsBuildYear())
+                else if (navigation.screen == ShellScreen.MONTHS_BUILD_YEAR_LEVELS) changeRoute(navigation.openMonths())
                 else if (nativeMonths.quizFailed || nativeMonths.quiz == null) changeRoute(navigation.openDaysSeasons())
                 else nativeMonths.learn { changeRoute(navigation.openMonths()) }
             }

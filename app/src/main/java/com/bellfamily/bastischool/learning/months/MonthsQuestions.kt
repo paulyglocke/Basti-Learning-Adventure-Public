@@ -14,6 +14,8 @@ enum class MonthsMode(val title: ContentText) {
     BETWEEN(ContentText.plain("Between", "Dazwischen")),
     MISSING(ContentText.plain("Missing Month", "Fehlender Monat")),
     BUILD_YEAR(ContentText.plain("Build the Year", "Baue das Jahr")),
+    BUILD_YEAR_LEVELS(ContentText.plain("Build the Year", "Baue das Jahr")),
+    BUILD_YEAR_FOUR(ContentText.plain("Build the Year — Four Months", "Baue das Jahr — Vier Monate")),
     SEASONS_MATCH(ContentText.plain("Months and Seasons", "Monate und Jahreszeiten"))
 }
 
