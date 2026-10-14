@@ -26,7 +26,7 @@ import com.bellfamily.bastischool.ui.common.*
 @Composable
 fun FollowScreen(state: SessionState?, language: ContentLanguage, images: Map<com.bellfamily.bastischool.learning.models.ContentId, ImageBitmap>, busy: Boolean, saveFailed: Boolean, audioFailed: Boolean,
     onAction: (SessionAction) -> Unit, onReplay: () -> Unit, onAgain: () -> Unit, onRetry: () -> Unit, onHome: () -> Unit,
-    modifier: Modifier = Modifier, onPop: (String) -> Unit = {}) {
+    modifier: Modifier = Modifier, onPop: (String) -> Unit = {}, onLevels: (() -> Unit)? = null) {
     fun t(en: String, de: String) = if (language == ContentLanguage.GERMAN) de else en
     val ready = !busy && !saveFailed && state != null && state.language == language
     if (state?.phase == SessionPhase.COMPLETED) {
@@ -35,10 +35,14 @@ fun FollowScreen(state: SessionState?, language: ContentLanguage, images: Map<co
     }
     Column(modifier.fillMaxSize().background(Color(0xFFEAF7FC)).verticalScroll(rememberScrollState()).padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
         Text(t("Follow the Instructions", "Anweisungen folgen"), style = MaterialTheme.typography.headlineMedium)
+        NativeSupportMessage(t("Listen, then touch the picture you hear.", "Hör zu und tippe dann auf das genannte Bild."))
         if (state == null) Text(t("Opening…", "Wird geöffnet…")) else {
             Text(t("Question ${state.index + 1} of ${state.plan.tasks.size}", "Frage ${state.index + 1} von ${state.plan.tasks.size}"), Modifier.testTag("follow-progress"))
             Text(state.task.question.instruction.display[language], modifier = Modifier.testTag("follow-instruction"), style = MaterialTheme.typography.titleLarge)
             NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY, onReplay, Modifier.fillMaxWidth().testTag("follow-replay"), ready)
+            if (state.hintAvailable) NativeActionButton(t("Hint", "Tipp"), NativeActionRole.SECONDARY,
+                { onAction(SessionAction.Hint(state.task.id)) }, Modifier.fillMaxWidth().testTag("follow-hint"), ready)
+            if (state.current.support.hint) NativeSupportMessage(state.task.question.hint!!.display[language], Modifier.testTag("follow-hint-message"))
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 state.task.question.choices.forEach { id ->
                     val objectDef = FollowContent.objectFor(id); val image = images[id]
@@ -70,5 +74,7 @@ fun FollowScreen(state: SessionState?, language: ContentLanguage, images: Map<co
         if (saveFailed) NativeActionButton(t("Try again", "Erneut versuchen"), NativeActionRole.SECONDARY, onRetry, Modifier.testTag("follow-save-retry"), !busy)
         if (audioFailed) Text(t("Speech is unavailable. Check installed offline voices.", "Die Sprachausgabe ist nicht verfügbar. Prüfe installierte Offline-Stimmen."))
         NativeActionButton(t("Back home", "Zurück zum Start"), NativeActionRole.NAVIGATION, onHome, Modifier.fillMaxWidth().testTag("follow-home"))
+        if (onLevels != null) NativeActionButton(t("Choose a level", "Stufe wählen"), NativeActionRole.NAVIGATION,
+            onLevels, Modifier.fillMaxWidth().testTag("follow-levels"))
     }
 }

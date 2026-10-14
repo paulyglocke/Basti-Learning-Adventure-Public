@@ -308,6 +308,13 @@ Progression can grow through:
 9. simple inhibition;
 10. mission-style instructions.
 
+The introductory native levels implement stages 1 and 4 with illustrated animal
+selection: one spoken object instruction or one complete two-action instruction
+performed in order. Both are independently selectable. Adjective/colour-object,
+action, three-step, spatial, delayed, inhibition and adaptive variants remain
+deferred; the two-step level is not evidence for those later stages. Physical-device
+acceptance is **NOT RUN — deferred by owner**.
+
 Reuse compatible instruction/action semantics for:
 
 - Follow the Instructions;

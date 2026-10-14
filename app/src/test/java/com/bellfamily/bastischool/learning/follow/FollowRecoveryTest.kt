@@ -20,18 +20,18 @@ class FollowRecoveryTest {
         override fun read(query: ProgressQuery) = ProgressReadResult.Events(emptyList())
     }
     @Test fun oldRepeatedTargetsAndCurrentPlansRestoreExactlyAndAgainUsesNewRevision() {
-        for (revision in 1..3) {
+        for (revision in 1..4) {
             val disk = Memory()
             val pool = if (revision == 1) FollowContent.objects.take(4) else FollowContent.objects
             val repo = BundledContentRepository(ContentVersion(1, revision), pool.map { it.definition }, emptyList())
             val activity = ActivityId("activity.follow.instructions")
             // Explicit old accepted repeated target fixture; never regenerate it on restore.
-            val owner = if (revision == 3) FollowContent.host(disk, progress) else DurableSessionHost(disk, progress, activity, revision, repo,
+            val owner = if (revision == 4) FollowContent.host(disk, progress) else DurableSessionHost(disk, progress, activity, revision, repo,
                 { id, round, _ ->
                     val target = pool.first()
-                    val q = if (revision == 2) FollowContent.question(target, pool.take(4)) else ChoiceQuestion(
+                    val q = if (revision in 2..3) FollowContent.oldQuestion(target, pool.take(4)) else ChoiceQuestion(
                         TaskDefinitionId("task.follow.touch.crocodile"), FollowContent.skill,
-                        LearningContextId("context.follow.four_animals"), 1, FollowContent.instruction(target),
+                        LearningContextId("context.follow.four_animals"), 1, FollowContent.oldInstruction(target),
                         pool.map { it.id }, target.id, FollowContent.correctFeedback, FollowContent.wrongFeedback, FollowContent.hint)
                     GenerationResult.Generated(SessionPlan(id, activity, revision, repo.version, SessionPolicy(round),
                         (1..round.count).map { ChoiceTask(TaskInstanceId(id, it), q) }, FollowContent.completion))
@@ -52,7 +52,7 @@ class FollowRecoveryTest {
                 restored.dispatch(SessionAction.Next(current.task.id))
             }
             restored.newRound(SessionId("again"), RoundLength.TEN, 9, ContentLanguage.ENGLISH)
-            assertEquals(3, restored.state!!.plan.activityRevision)
+            assertEquals(4, restored.state!!.plan.activityRevision)
             assertTrue(restored.state!!.plan.tasks.zipWithNext().all { it.first.question.correct != it.second.question.correct })
         }
     }

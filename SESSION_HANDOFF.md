@@ -1,4 +1,49 @@
-# Session handoff — 2026-10-12
+# Session handoff — 2026-10-14
+
+## Follow Instructions — introductory two-level native activity (2026-10-14)
+
+Started on clean `main` at `e230105236f2ace273c6d7ed265f98e49759ee29`,
+matching fetched `origin/main`. Home now opens a bilingual level chooser. Level 1
+retains the established one-step activity, skill, task and journal identities;
+new rounds use activity revision 4/content 1.4 to correct German accusative object
+phrases, while revision 1–3 checkpoints restore their original prompts unchanged.
+Level 2 is a bounded ordered two-action animal selection: four pictured choices,
+both targets in one spoken instruction, fixed touch/choose templates, calm retry,
+optional hint, whole-instruction replay and child-controlled Next. A pictured and
+spoken example is available. Both levels use the existing six canonical animal PNGs,
+shared offline audio policy, 5/10 rounds and completion presentation.
+
+Level 2 owns `activity.follow.instructions.two`, `skill.listening.two_step`,
+`context.follow.animal_order`, ordered-pair task definitions and the independent
+`follow-instructions-two-session` write-ahead journal (revision 1/content 1.4).
+The frozen plan, partial first step, attempts/support, language, pending event and
+completion acknowledgment survive restoration. No existing Months, Seasons or
+one-step progress identity/schema changed. Stage 2 colour/adjective prompts,
+three-step, spatial, multi-scene, adaptive and advanced listening remain deferred.
+Physical-device acceptance is **NOT RUN — deferred by owner**; emulator coverage
+does not verify audible offline voices or actual TalkBack/child usability.
+
+Automated validation under JDK 17 and the API 35 `Medium_Phone_API_35` emulator
+is complete: focused Follow JVM **15/15**, full JVM **522/522**,
+focused Follow instrumentation **29/29**, and
+full instrumentation **382/382**, all with zero failures/skips. `assembleDebug`,
+`lintDebug`, Android-test compilation and `git diff --check` passed. Lint retains
+0 errors, 5 existing warnings (2 `UnusedAttribute`, 2 `VectorRaster`, 1 legacy
+`SetJavaScriptEnabled`) and 2 informational `AutoboxingStateCreation` findings.
+An initial broader run
+encountered two `No compose hierarchies found` failures in unchanged shared-UI
+fixtures; an isolated run initially suffered instrumented-process termination
+without a Java/native exception, then passed **16/16** after a non-destructive
+emulator reboot (3.5 GB `/data` available). A route assertion was corrected to
+check the exact generated German template; another now waits for the worker's
+recorded Hint state before checking the support message. No production change was
+made for the transient runner failures. The complete fresh-boot rerun passed
+**382/382**. The original runner trigger remains unproven; emulator stability
+should be watched in later test runs, not mislabelled as a product regression.
+The only content correction was German one-step accusative grammar; no other
+educational behavior or artwork was changed. The release commit, push and CI
+outcome are reported separately after the final scoped diff review; do not infer
+physical acceptance from these checks.
 
 ## Months Phase 5 — Between (2026-10-12)
 

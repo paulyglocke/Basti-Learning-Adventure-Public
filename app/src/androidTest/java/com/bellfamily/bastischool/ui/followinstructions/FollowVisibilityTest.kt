@@ -23,13 +23,13 @@ import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 
 @RunWith(Parameterized::class)
-class FollowVisibilityTest(private val language: ContentLanguage, private val orientation: Int) {
+class FollowVisibilityTest(private val language: ContentLanguage, private val fontScale: Float, private val orientation: Int) {
     companion object {
-        @JvmStatic @Parameterized.Parameters(name="{0}-{1}") fun cases() = listOf(
-            arrayOf<Any>(ContentLanguage.ENGLISH, ActivityInfo.SCREEN_ORIENTATION_PORTRAIT),
-            arrayOf<Any>(ContentLanguage.GERMAN, ActivityInfo.SCREEN_ORIENTATION_PORTRAIT),
-            arrayOf<Any>(ContentLanguage.GERMAN, ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE),
-            arrayOf<Any>(ContentLanguage.GERMAN, ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE))
+        @JvmStatic @Parameterized.Parameters(name="{0}-{1}-{2}") fun cases() =
+            ContentLanguage.entries.flatMap { language -> listOf(1f, 1.5f, 2f).flatMap { font ->
+                listOf(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT, ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)
+                    .map { arrayOf<Any>(language, font, it) }
+            } } + listOf(arrayOf<Any>(ContentLanguage.GERMAN, 1.5f, ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE))
     }
     @get:Rule val compose = createAndroidComposeRule<ComponentActivity>()
     @Test fun visiblePixelsSingleLabeledTargetLockRetryAndPassiveFailure() {
@@ -45,7 +45,7 @@ class FollowVisibilityTest(private val language: ContentLanguage, private val or
         var replays = 0
         compose.setContent {
             val density = LocalDensity.current
-            CompositionLocalProvider(LocalDensity provides Density(density.density,1.5f)) {
+            CompositionLocalProvider(LocalDensity provides Density(density.density,fontScale)) {
                 MaterialTheme { FollowScreen(state,language,images,false,false,false,
                     { state = SessionReducer.reduce(state,it).state },{replays++},{},{},{}) }
             }

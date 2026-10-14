@@ -4,6 +4,19 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class ShellNavigationTest {
+    @Test fun followLevelsAndBothSavedRoutesReturnThroughTheChooser() {
+        val levels = ShellNavigation().openFollowInstructions()
+        assertEquals(ShellScreen.FOLLOW_LEVELS, levels.screen)
+        assertEquals(BackAction.NATIVE_HOME, levels.backAction)
+        for (route in listOf(levels.openFollowOne(), levels.openFollowTwo())) {
+            assertEquals(BackAction.FOLLOW_LEVELS, route.backAction)
+            assertEquals(route, route.openOptions().closeOptions())
+            assertEquals(route, ShellNavigation.restore(route.screen.name, "HOME", "verbs", null))
+        }
+        assertEquals(ShellScreen.FOLLOW_INSTRUCTIONS, levels.openFollowOne().screen)
+        assertEquals(ShellScreen.FOLLOW_TWO, levels.openFollowTwo().screen)
+    }
+
     @Test fun homeOptionsReturnsHomeAndBackExitsOnlyAtHome() {
         val home = ShellNavigation()
         val options = home.openOptions()

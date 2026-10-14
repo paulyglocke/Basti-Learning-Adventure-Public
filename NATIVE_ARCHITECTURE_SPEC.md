@@ -429,6 +429,22 @@ and revision 2/content 1.2 checkpoints still restore their exact saved plans (in
 old repeated targets), attempts/support and progress. Restore never regenerates; Again
 uses revision 3. Journal/checkpoint schemas remain unchanged.
 
+### Follow introductory two-level extension (2026-10-14)
+
+The existing one-step activity identity, progress skill and journal remain Level 1;
+new sessions use revision 4/content 1.4 solely to correct German accusative prompts.
+Revision 1–3 checkpoints restore with their original content. Home now opens a
+chooser; the historical one-step route remains valid. Level 2 is a separate
+`FollowTwoState` reducer and `FollowTwoHost`, not a new generic instruction engine.
+It stores the exact seeded ordered-pair plan, per-step attempts/support, partial
+first-step completion, question index, language, acknowledgment and at most one
+pending progress event in `follow-instructions-two-session` with revision and SHA-256
+integrity checks. Writes precede visible transitions; idempotent delivery is
+acknowledged durably. A completed first step is not a completed question. Existing
+shared progress-event and completion schemas are unchanged. The Activity-scoped
+ViewModel retains independent level owners and the existing owner-local audio
+lifecycle; silent restore never automatically speaks or records an attempt.
+
 ## Native sorting: Colour Sort first consumer (2026-09-29)
 
 `learning/sorting/Sorting.kt` is a pure semantic membership primitive: a rule has stable

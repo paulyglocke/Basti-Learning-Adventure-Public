@@ -39,8 +39,11 @@ class FollowContentTest {
         val horseContexts = targetSeeds.flatMap { it.plan.tasks }.filter { it.question.correct.value.endsWith("horse") }
             .map { it.question.choices.toSet() }.toSet()
         assertTrue(horseContexts.size > 1)
-        assertEquals(3, FollowContent.REVISION)
-        assertEquals(ContentVersion(1, 3), FollowContent.repository.version)
+        assertEquals(4, FollowContent.REVISION)
+        assertEquals(ContentVersion(1, 4), FollowContent.repository.version)
+        assertEquals("Tippe auf den Dinosaurier.", FollowContent.instruction(FollowContent.objectFor(ContentId("object.follow.dinosaur"))).display.de)
+        assertEquals("Tippe auf den Fisch.", FollowContent.instruction(FollowContent.objectFor(ContentId("object.follow.fish"))).speech.de)
+        assertEquals("Tippe auf den Wal.", FollowContent.instruction(FollowContent.objectFor(ContentId("object.follow.whale"))).display.de)
     }
     @Test fun noConsecutiveTargetsAcrossDeterministicSeedSample() {
         val reached = mutableSetOf<ContentId>()

@@ -122,6 +122,17 @@ silent and does not create an attempt. Season destinations are labelled controls
 with keyboard/switch activation, not drag-only drop targets. Physical navigation,
 TalkBack and touch acceptance remain separate from emulator coverage.
 
+Follow the Instructions now opens a bilingual two-level chooser from Home. Level 1
+retains the former one-step route; Level 2 is an ordered two-action task. Both are
+directly selectable, and Back returns to the chooser without discarding the active
+level's saved round; Back again returns Home. Options and language changes preserve
+the exact task, including a completed first step. The pictured example and Listen
+control introduce the two-step interaction. Replay repeats the *whole* instruction
+at either step; acknowledging step one must not separately announce the second
+animal. Four large named picture controls support touch, keyboard and screen-reader
+activation. Hint is optional and does not name the target. A correct second action
+reveals Next; advancement is child-controlled. Completion uses the shared flow.
+
 Use a consistent support ladder where applicable: independent attempt → Replay → subtle visual/verbal hint → stronger model/help → optional parent help. Support is useful progress information, not failure.
 
 ## Child-facing progress and scoring

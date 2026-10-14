@@ -657,6 +657,11 @@ After MVP:
 5. three-step
 6. inhibition
 
+The introductory ordered two-step *selection* level is now implemented alongside
+the one-step level. It speaks both targets in one instruction, requires the first
+selection before the second, and keeps Next child-controlled. This does not implement
+attribute/colour recognition, free placement, three-step actions or inhibition.
+
 ---
 
 # 14. Game 2 — Memory Pairs

@@ -217,6 +217,21 @@ Integration is still required: hosts must retain failed attempt effects, perform
 
 Native Prepositions now uses the repository through `SessionProgressRecorder`. Its activity-specific write-ahead journal atomically retains the next exact checkpoint and pending event before publishing an accepted answer/completion. The journal remains until idempotent delivery succeeds and the acknowledgement/removal is itself saved. Retry re-reads disk after an uncertain write. See NATIVE_ARCHITECTURE_SPEC.md for ownership, bounds and failure behavior. This resolves the undelivered-effect gap for accepted transitions in this route only; other future hosts still need a delivery contract. No dashboard, reward records or legacy import is added. Physical process interruption and normal signed-upgrade persistence checks remain required.
 
+### Follow Instructions introductory evidence (2026-10-14)
+
+Level 1 keeps `activity.follow.instructions` and `skill.listening.one_step`, its
+historical journal and stable task IDs. New rounds use revision 4/content 1.4;
+revision 1–3 checkpoints retain their original meaning. Level 2 uses
+`activity.follow.instructions.two` (revision 1), `skill.listening.two_step`,
+`context.follow.animal_order` and its own `follow-instructions-two-session` journal.
+Its task identity encodes the ordered pair. A first correct tap advances only the
+step; the correct event and one completion record are emitted only after the second
+target is selected in order. Incorrect taps create ordinary attempt evidence;
+replay/hint use is retained as support and is not scored as failure. The frozen
+two-step state and pending event restore without changing the one-step journal or
+shared progress schema. No mastery or generalisation claim follows from this
+single animal context.
+
 ## Wilma delivery integration (2026-09-22)
 
 Native Wilma recognition and before/after use the shared durable session host. Ordering emits the existing typed AttemptEvent per placement attempt and CompletionEvent with seven canonical placement records. The only event-model/codec extension accepts seven completed steps in addition to five/ten; schema-1 field layout, stable dedupe keys and existing records remain unchanged. Upgrade reads existing records without rewriting their meaning. Older app versions cannot read the newly permitted seven-step completion and fail closed; downgrade over such data is unsupported.

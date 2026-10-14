@@ -6,6 +6,29 @@ This document defines verification and feature completion gates. [NATIVE_ARCHITE
 
 **A feature is not done only because it builds.** Record evidence for its behavior and relevant device risks. A code-complete slice awaiting required hardware checks must be labelled as such, not fully verified or eligible for legacy removal.
 
+## Follow Instructions introductory checkpoint (2026-10-14)
+
+The two-level native Follow activity requires separate evidence for one-step and
+ordered two-step behavior. JVM coverage checks correct order, retry/hint/replay,
+German accusative wording, canonical image mappings, deterministic 5/10 rounds,
+unique pairs, old one-step checkpoint recovery, separate identities and partial
+two-step restoration. API 35 Compose coverage checks level selection, Options,
+language, Activity recreation, keyboard/semantics, and EN/DE at 1×/1.5×/2× in
+portrait and short landscape. An emulator can verify control semantics and layout,
+but cannot establish audible offline-voice quality, actual TalkBack usability or
+child comprehension. Physical-device acceptance is **NOT RUN — deferred by owner**.
+
+Final JDK 17 validation: focused Follow JVM **15/15**, full JVM **522/522**, focused Follow API 35 emulator
+**29/29**, and full API 35 emulator **382/382** passed with zero failures/skips;
+`assembleDebug`, `lintDebug` and Android-test compilation passed. Lint retains
+0 errors, 5 existing warnings and 2 informational findings. A fresh-boot isolated
+rerun of two unchanged shared-UI classes passed **16/16** after an earlier
+instrumented-process startup failure with no captured Java/native exception;
+the final full suite also passed. The original emulator-runner trigger is not
+proved. See SESSION_HANDOFF.md for the scoped route-test synchronization correction
+and preservation of historical Level 1 checkpoint meaning. This is automated
+validation, not physical-device acceptance.
+
 ## Months Phase 7 — four-month Build the Year checkpoint (2026-10-14)
 
 Starting at `35fc1299c015ae46966f2ca5556bd3199a0a244c`, the four-month Level 2 and

@@ -5,27 +5,28 @@ import com.bellfamily.bastischool.learning.models.*
 import com.bellfamily.bastischool.learning.progress.*
 import com.bellfamily.bastischool.learning.session.*
 
-data class FollowObject(val id: ContentId, val text: ContentText, val assetPath: String) {
+data class FollowObject(val id: ContentId, val text: ContentText, val assetPath: String, val germanObject: String) {
     val definition get() = SemanticObjectDefinition(id, text)
 }
 
 object FollowContent {
-    const val REVISION = 3
+    const val REVISION = 4
     private const val LEGACY_REVISION = 1
     private val activity = ActivityId("activity.follow.instructions")
     private val legacyObjects = listOf(
-        FollowObject(ContentId("object.follow.crocodile"), ContentText.plain("the crocodile", "das Krokodil"), "Animals/canonical/crocodile.png"),
-        FollowObject(ContentId("object.follow.dinosaur"), ContentText.plain("the dinosaur", "der Dinosaurier"), "Animals/canonical/dinosaur.png"),
-        FollowObject(ContentId("object.follow.snake"), ContentText.plain("the snake", "die Schlange"), "Animals/canonical/snake.png"),
-        FollowObject(ContentId("object.follow.fish"), ContentText.plain("the fish", "der Fisch"), "Animals/canonical/fish.png"),
+        FollowObject(ContentId("object.follow.crocodile"), ContentText.plain("the crocodile", "das Krokodil"), "Animals/canonical/crocodile.png", "das Krokodil"),
+        FollowObject(ContentId("object.follow.dinosaur"), ContentText.plain("the dinosaur", "der Dinosaurier"), "Animals/canonical/dinosaur.png", "den Dinosaurier"),
+        FollowObject(ContentId("object.follow.snake"), ContentText.plain("the snake", "die Schlange"), "Animals/canonical/snake.png", "die Schlange"),
+        FollowObject(ContentId("object.follow.fish"), ContentText.plain("the fish", "der Fisch"), "Animals/canonical/fish.png", "den Fisch"),
     )
     val objects = legacyObjects + listOf(
-        FollowObject(ContentId("object.follow.horse"), ContentText.plain("the horse", "das Pferd"), "Animals/canonical/horse.png"),
-        FollowObject(ContentId("object.follow.whale"), ContentText.plain("the whale", "der Wal"), "Animals/canonical/whale.png"),
+        FollowObject(ContentId("object.follow.horse"), ContentText.plain("the horse", "das Pferd"), "Animals/canonical/horse.png", "das Pferd"),
+        FollowObject(ContentId("object.follow.whale"), ContentText.plain("the whale", "der Wal"), "Animals/canonical/whale.png", "den Wal"),
     )
     private val byId = objects.associateBy { it.id }
     private val legacyById = legacyObjects.associateBy { it.id }
-    val repository: ContentRepository = BundledContentRepository(ContentVersion(1, 3), objects.map { it.definition }, emptyList())
+    val repository: ContentRepository = BundledContentRepository(ContentVersion(1, 4), objects.map { it.definition }, emptyList())
+    private val revision3Repository: ContentRepository = BundledContentRepository(ContentVersion(1, 3), objects.map { it.definition }, emptyList())
     private val previousRepository: ContentRepository = BundledContentRepository(ContentVersion(1, 2), objects.map { it.definition }, emptyList())
     private val legacyRepository: ContentRepository = BundledContentRepository(ContentVersion(1, 1), legacyObjects.map { it.definition }, emptyList())
     val skill = SkillId("skill.listening.one_step")
@@ -34,9 +35,10 @@ object FollowContent {
     val completion = ContentText.plain("Great listening!", "Gut zugehört!")
     fun objectFor(id: ContentId) = byId[id] ?: error("Unknown follow object: ${id.value}")
     fun instruction(target: FollowObject) = ContentText(
-        LocalizedText("Touch ${target.text.display.en}.", "Tippe auf ${target.text.display.de}."),
-        LocalizedText("Touch ${target.text.speech.en}.", "Tippe auf ${target.text.speech.de}.")
+        LocalizedText("Touch ${target.text.display.en}.", "Tippe auf ${target.germanObject}."),
+        LocalizedText("Touch ${target.text.speech.en}.", "Tippe auf ${target.germanObject}.")
     )
+    internal fun oldInstruction(target: FollowObject) = ContentText.plain("Touch ${target.text.display.en}.", "Tippe auf ${target.text.display.de}.")
     val correctFeedback = ContentText.plain("Great listening!", "Gut zugehört!")
     val wrongFeedback = ContentText.plain("Try again. Listen carefully.", "Versuch es noch einmal. Hör gut zu.")
     val hint = ContentText.plain("Listen for the animal name.", "Hör auf den Namen des Tieres.")
@@ -44,9 +46,12 @@ object FollowContent {
         TaskDefinitionId("task.follow.touch.${target.id.value.substringAfterLast('.')}.${presented.map { it.id.value.substringAfterLast('.') }.sorted().joinToString("_")}"),
         skill, context, 1, instruction(target), presented.map { it.id }, target.id, correctFeedback, wrongFeedback, hint
     )
+    internal fun oldQuestion(target: FollowObject, presented: List<FollowObject>): ChoiceQuestion = ChoiceQuestion(
+        TaskDefinitionId("task.follow.touch.${target.id.value.substringAfterLast('.')}.${presented.map { it.id.value.substringAfterLast('.') }.sorted().joinToString("_")}"),
+        skill, context, 1, oldInstruction(target), presented.map { it.id }, target.id, correctFeedback, wrongFeedback, hint)
     private fun legacyQuestion(target: FollowObject) = ChoiceQuestion(
         TaskDefinitionId("task.follow.touch.${target.id.value.substringAfterLast('.') }"), skill, legacyContext, 1,
-        instruction(target), legacyObjects.map { it.id }, target.id, correctFeedback, wrongFeedback, hint
+        oldInstruction(target), legacyObjects.map { it.id }, target.id, correctFeedback, wrongFeedback, hint
     )
     fun generate(id: SessionId, round: RoundLength, seed: Long): GenerationResult {
         val candidates = objects.flatMap { target ->
@@ -74,10 +79,12 @@ object FollowContent {
         require(state.plan.activity == activity)
         if (state.plan.activityRevision == LEGACY_REVISION && state.plan.contentVersion == legacyRepository.version) { validateLegacy(state); return }
         require(state.plan.activityRevision == REVISION && state.plan.contentVersion == repository.version ||
+            state.plan.activityRevision == 3 && state.plan.contentVersion == revision3Repository.version ||
             state.plan.activityRevision == 2 && state.plan.contentVersion == previousRepository.version)
         state.plan.tasks.forEach { task ->
             require(task.question.choices.size == 4 && task.question.choices.toSet().size == 4 && task.question.correct in task.question.choices)
-            val expected = question(objectFor(task.question.correct), task.question.choices.map(::objectFor))
+            val expected = if (state.plan.activityRevision == REVISION) question(objectFor(task.question.correct), task.question.choices.map(::objectFor))
+                else oldQuestion(objectFor(task.question.correct), task.question.choices.map(::objectFor))
             require(task.question.definition == expected.definition && task.question.instruction == expected.instruction &&
                 task.question.choices.toSet() == expected.choices.toSet() && task.question.correct == expected.correct &&
                 task.question.skill == expected.skill && task.question.context == expected.context &&
@@ -99,9 +106,12 @@ object FollowContent {
         { bytes ->
             val current = SessionCheckpoint.restore(bytes, activity, REVISION, repository)
             if (current is SessionRestoreResult.Restored) current else {
-                val previous = SessionCheckpoint.restore(bytes, activity, 2, previousRepository)
-                if (previous is SessionRestoreResult.Restored) previous
-                else SessionCheckpoint.restore(bytes, activity, LEGACY_REVISION, legacyRepository)
+                val third = SessionCheckpoint.restore(bytes, activity, 3, revision3Repository)
+                if (third is SessionRestoreResult.Restored) third else {
+                    val previous = SessionCheckpoint.restore(bytes, activity, 2, previousRepository)
+                    if (previous is SessionRestoreResult.Restored) previous
+                    else SessionCheckpoint.restore(bytes, activity, LEGACY_REVISION, legacyRepository)
+                }
             }
         }
     )

@@ -397,6 +397,24 @@ Each task still presents four distinct objects in seeded order. Older revision-1
 plans restore unchanged; the no-repeat rule applies to newly generated rounds, not
 retrospective mutation of saved tasks. See NATIVE_ARCHITECTURE_SPEC.md.
 
+### Introductory Follow levels (2026-10-14)
+
+New Level 1 rounds are activity revision 4/content 1.4. The same six canonical
+animal IDs and PNGs remain; German one-step prompts now use each animal's authored
+accusative object phrase (for example `den Dinosaurier`, `den Fisch`, `den Wal`).
+Revision 1–3 saved plans restore their original prompt and task meaning exactly.
+No colour/adjective prompt is claimed by this starter level.
+
+Level 2 uses a separate revision-1 activity and the same six assets. Each task is
+an ordered pair of **distinct** animal IDs with four distinct pictured choices and
+the stable definition `task.follow.order.<first>.<second>`. The complete EN/DE
+instruction uses the validated animal names and German accusative phrases; both
+targets are spoken together, never issued as separate questions. Two curated
+touch/choose templates vary by first animal without unconstrained grammar. Seeded 5/10
+rounds balance first targets, avoid duplicate ordered pairs and consecutive first
+targets, and exclude the pictured dinosaur→horse demonstration pair. Choices and
+task order are frozen in the checkpoint. No network or device-date content is used.
+
 ## Colour Sort starter content (2026-09-29)
 
 `activity.colours.sort`, revision 1/content 1.1, uses `rule.sort.colour`, canonical
