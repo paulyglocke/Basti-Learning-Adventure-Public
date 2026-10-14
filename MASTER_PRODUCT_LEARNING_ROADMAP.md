@@ -538,7 +538,7 @@ Teach the conventional display order while making the cyclic relationship explic
 
 Months should become a proper learning strand rather than a static list.
 
-Implementation checkpoint — 2026-10-12: native Explore/Listen, Find Month,
+Implementation checkpoint — 2026-10-14: native Explore/Listen, Find Month,
 Before/Next, Missing Month, Between and selectable three- and four-month Build the
 Year levels are implemented. Phase 6 illustrated Months ↔ Seasons grouping is implemented and
 automated validation passed. Between asks for the middle
@@ -550,6 +550,14 @@ and offline-voice acceptance for the new activities are **NOT RUN — deferred b
 see SESSION_HANDOFF.md for revision-specific automated evidence. Six-/twelve-month
 sequencing, advanced month/season transfer, adaptive progression and broader
 calendar generalisation remain deferred.
+
+The optional Interactive Seasons & Months Wheel is now present as a separate
+exploration/matching destination. It uses a stationary season illustration and a
+rotatable month ring, without changing the existing Year Wheel or Months ↔ Seasons
+quiz/progress contracts. Automated JVM/build/lint and API 35 wheel checks pass; the
+solved-state English portrait and German landscape screenshots were inspected. This
+is not a physical-device acceptance claim; physical-device acceptance is **NOT RUN —
+deferred by owner**.
 
 #### Year Wheel
 
@@ -572,6 +580,7 @@ Season boundaries are conventional teaching regions rather than claims about exa
 - Build with 6 months (deferred);
 - Build all 12 months (deferred);
 - Months ↔ Seasons introductory grouping (implemented; advanced transfer remains future work);
+- Interactive Seasons & Months Wheel (implemented; focused automated checks and solved-state screenshot inspection pass; physical-device acceptance deferred);
 - generalise from wheel to horizontal sequence/cards/calendar.
 
 Personal landmarks can later support orientation but should not define a month universally.
@@ -1673,8 +1682,11 @@ the Year Wheel as optional assisted learning. Build the Year uses canonical cycl
 month IDs, accessible tap-to-select/tap-to-place and revisioned persistence. Months ↔
 Seasons uses the fixed Germany meteorological map, four existing illustrations,
 cumulative accessible season groups, balanced deterministic sessions and a separate
-progress identity. Phase 6 validation evidence is tracked in SESSION_HANDOFF.md; physical
-physical-device acceptance is **NOT RUN — deferred by owner**. Deferred: six-/
+progress identity. The separate Interactive Seasons & Months Wheel is also implemented
+with a fixed illustrated centre and rotating 12-month ring; automated checks and
+solved-state screenshot inspection pass. Phase 6 validation evidence and the wheel
+checkpoint are tracked in SESSION_HANDOFF.md; physical-device acceptance remains
+**NOT RUN — deferred by owner**. Deferred: six-/
 twelve-month sequencing, advanced month/season generalisation, adaptive progression
 and full calendar activities.
 

@@ -32,6 +32,11 @@ class MonthsViewModel @JvmOverloads constructor(application: Application,
     private val main = Handler(Looper.getMainLooper())
     private val worker = Executors.newSingleThreadExecutor()
     private val store = MonthsSelectionStore(AtomicProgressStorage(File(application.noBackupFilesDir, "months-selection"), AndroidAtomicCommit))
+    private val wheelStore = MonthsSeasonWheelStore(AtomicProgressStorage(File(application.noBackupFilesDir,
+        "months-seasons-wheel-v1"), AndroidAtomicCommit))
+    var wheel by mutableStateOf<MonthsSeasonWheelState?>(null); private set
+    var wheelFailed by mutableStateOf(false); private set
+    private var wheelLoading = false
     private val audio = MonthsAudio(DefaultAudioController(engineFactory, AudioMode.OFF)) { audioFailed = it }
     private var language = ContentLanguage.ENGLISH
     private var mode = AudioMode.OFF
@@ -85,6 +90,7 @@ class MonthsViewModel @JvmOverloads constructor(application: Application,
         if (visible == value && phase == next) return
         visible = value; phase = next; speechEpoch++; audio.visible(value)
         if (value && next == MonthsMode.EXPLORE && selection == null) load()
+        if (value && next == MonthsMode.SEASONS_WHEEL && wheel == null) loadWheel()
         ensureQuiz()
         ensureBuildYear()
         ensureBuildYearFour()
@@ -109,6 +115,90 @@ class MonthsViewModel @JvmOverloads constructor(application: Application,
         audio.month(id, language) // Re-tapping the selected month explicitly listens again.
     }
     fun listen() { if (visible && phase == MonthsMode.EXPLORE) selection?.let { audio.month(it.selected, language) } }
+    private fun loadWheel() {
+        if (wheelLoading || closed) return
+        wheelLoading = true
+        worker.execute {
+            val result = runCatching {
+                val restored = wheelStore.read()
+                (restored ?: MonthsSeasonWheelState.new(System.nanoTime()).also(wheelStore::write)) to (restored == null)
+            }
+            main.post {
+                if (!closed) {
+                    wheelLoading = false; wheelFailed = result.isFailure
+                    result.getOrNull()?.let { (state, fresh) ->
+                        wheel = state
+                        if (fresh && visible && phase == MonthsMode.SEASONS_WHEEL)
+                            audio.effects(SessionId("months-seasons-wheel"), language, listOf(SessionEffect.Narrate(
+                                ContentText.plain("Turn the months so each group of three matches its season. Then choose Check.",
+                                    "Drehe die Monate, bis jede Dreiergruppe zu ihrer Jahreszeit passt. Tippe dann auf Prüfen."),
+                                NarrationKind.INSTRUCTION)))
+                    } // Restoration is silent.
+                }
+            }
+        }
+    }
+    private fun updateWheel(change: (MonthsSeasonWheelState) -> MonthsSeasonWheelState) {
+        if (!visible || phase != MonthsMode.SEASONS_WHEEL || wheelFailed || closed) return
+        val before = wheel ?: return
+        val next = change(before)
+        if (next == before) return
+        wheel = next
+        worker.execute {
+            val result = runCatching { wheelStore.write(next) }
+            main.post { if (!closed && wheel == next) wheelFailed = result.isFailure }
+        }
+    }
+    fun wheelRotate(steps: Int) = updateWheel { it.rotate(steps) }
+    fun wheelMode(mode: MonthsWheelMode) {
+        audio.cancel()
+        updateWheel { it.copy(mode = mode, feedback = MonthsWheelFeedback.READY) }
+    }
+    fun wheelCheck() {
+        val before = wheel ?: return
+        updateWheel { it.check() }
+        val after = wheel ?: return
+        if (after == before) return
+        val message = if (after.feedback == MonthsWheelFeedback.COMPLETE)
+            ContentText.plain("Yes! Every month is with its season. Well done!", "Ja! Jeder Monat gehört zu seiner Jahreszeit. Sehr gut!")
+        else ContentText.plain("Take another look. You can turn the wheel and try again.",
+            "Schau noch einmal hin. Du kannst das Rad drehen und es erneut versuchen.")
+        audio.effects(SessionId("months-seasons-wheel"), language,
+            listOf(SessionEffect.Narrate(message, if (after.feedback == MonthsWheelFeedback.COMPLETE)
+                NarrationKind.COMPLETION else NarrationKind.FEEDBACK)))
+    }
+    fun wheelReplay() {
+        updateWheel { it.copy(replayCount = it.replayCount + 1) }
+        val text = if (wheel?.mode == MonthsWheelMode.EXPLORE)
+            ContentText.plain("Turn the months. Touch a month to hear its name.", "Drehe die Monate. Tippe auf einen Monat, um seinen Namen zu hören.")
+        else ContentText.plain("Turn the months so each group of three matches its season. Then choose Check.",
+            "Drehe die Monate, bis jede Dreiergruppe zu ihrer Jahreszeit passt. Tippe dann auf Prüfen.")
+        audio.effects(SessionId("months-seasons-wheel"), language,
+            listOf(SessionEffect.Narrate(text, NarrationKind.INSTRUCTION, SpeechTrigger.REPLAY)))
+    }
+    fun wheelHint() {
+        updateWheel { it.copy(hintUsed = true) }
+        audio.effects(SessionId("months-seasons-wheel"), language,
+            listOf(SessionEffect.Narrate(ContentText.plain("Look for December, January and February together in winter.",
+                "Suche Dezember, Januar und Februar zusammen im Winter."), NarrationKind.INSTRUCTION, SpeechTrigger.MANUAL)))
+    }
+    fun wheelMonth(id: ContentId) {
+        if (visible && phase == MonthsMode.SEASONS_WHEEL) audio.month(id, language)
+    }
+    fun wheelShowAlignment() = updateWheel { it.copy(rotation = 0, feedback = MonthsWheelFeedback.READY) }
+    fun wheelAgain() {
+        audio.cancel()
+        updateWheel { MonthsSeasonWheelState.new(System.nanoTime(), it.round + 1) }
+    }
+    fun wheelRetry() {
+        if (wheel == null) loadWheel() else {
+            val snapshot = wheel ?: return
+            worker.execute {
+                val result = runCatching { wheelStore.write(snapshot) }
+                main.post { if (!closed) wheelFailed = result.isFailure }
+            }
+        }
+    }
     fun retry() { if (selection == null) load() else persist(selection!!) }
     private fun persist(snapshot: MonthsSelection) {
         if (closed) return
@@ -119,7 +209,7 @@ class MonthsViewModel @JvmOverloads constructor(application: Application,
         }
     }
     private fun ensureQuiz() {
-        if (!visible || phase in setOf(MonthsMode.EXPLORE, MonthsMode.BUILD_YEAR, MonthsMode.BUILD_YEAR_LEVELS, MonthsMode.BUILD_YEAR_FOUR) || quizBusy || closed || quizFailed) return
+        if (!visible || phase in setOf(MonthsMode.EXPLORE, MonthsMode.SEASONS_WHEEL, MonthsMode.BUILD_YEAR, MonthsMode.BUILD_YEAR_LEVELS, MonthsMode.BUILD_YEAR_FOUR) || quizBusy || closed || quizFailed) return
         val current = quiz
         val lang = language; val count = round
         if (current == null) quizWork { it.open(SessionId(UUID.randomUUID().toString()), count, System.nanoTime(), lang) }

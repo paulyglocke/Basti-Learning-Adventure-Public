@@ -751,6 +751,26 @@ offline-voice acceptance are **NOT RUN — deferred by owner**; emulator checks 
 physical acceptance. Six-/twelve-month sequencing, advanced transfer, adaptive
 progression and full calendar activities remain deferred.
 
+## Interactive Seasons & Months Wheel (implemented, 2026-10-14)
+
+`MONTHS_SEASONS_WHEEL` is a separate Months route; it does not change the existing
+Year Wheel or `MONTHS_SEASONS` quiz/session/progress contracts. A stationary circular
+`seasons_center.png` is composed beneath a native Canvas ring. `MonthsSeasonWheelGeometry`
+uses canonical `MonthIds` and `MonthDefinition.season`: January centre −135° in Canvas
+coordinates, then +30° clockwise per month. The solved boundaries therefore put
+March at the 12 o'clock spring boundary, June at 3 o'clock, September at 6 o'clock
+and December at 9 o'clock. Dragging and previous/next controls snap in 30° steps.
+
+`MonthsSeasonWheelStore` owns a separate `months-seasons-wheel-v1` browsing checkpoint
+with exact snapped rotation, mode, feedback, retry/support and round state. This is
+unscored wheel practice, not a five-/ten-task quiz; it does not write shared progress
+events or reinterpret historical journals. `MonthsAudio` owns its manual month speech,
+instruction, hint and feedback under the existing offline audio policy. First open
+may narrate; restore is silent. The single pointer is fixed 15° clockwise from twelve
+o'clock and points radially inward to a segment centre. Selection is computed using
+the same segment-centre geometry as rendering; at solved rotation it identifies March.
+The pointer and central illustration remain stationary while only the ring rotates.
+
 ## Owner clock presentation feedback — 2026-10-10 (draft, validation pending)
 
 The shared Explore/Make This Time clock face draws minute numbers 0–59 in an outer

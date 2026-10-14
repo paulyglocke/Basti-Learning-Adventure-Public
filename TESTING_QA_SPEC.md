@@ -88,6 +88,16 @@ dependency changes.
 
 ## Automated coverage
 
+Interactive Seasons & Months Wheel coverage must verify all canonical month labels
+and chronological order, exact 30° segments and 90° season boundaries, solved/wrong
+alignment, snapping, retry/success feedback and state restoration. Check EN/DE,
+portrait/landscape and 1×/1.5×/2× font scales; the supplied centre PNG must retain
+aspect ratio and alpha, while its position remains fixed relative to the ring. Test
+keyboard activation, TalkBack semantics, previous/next controls, route/Options and
+recreation. The API 35 emulator is automated evidence only. Solved-state English
+portrait and German landscape screenshots were visually inspected; physical-device
+acceptance is **NOT RUN — deferred by owner**.
+
 Months Between coverage must enumerate all 12 middle-month definitions, explicitly
 check November–December–January and December–January–February, verify unique targets
 and four unique choices in deterministic 5/10 rounds, and exercise retry/replay/hint,

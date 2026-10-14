@@ -50,7 +50,11 @@ class MonthsRouteTest {
             ActivityScenario.launch(MainActivity::class.java).use { scenario ->
                 fun ready() = compose.waitUntil(10_000) {
                     var loaded=false
-                    scenario.onActivity { loaded=ViewModelProvider(it)[MonthsViewModel::class.java].buildYear!=null }
+                    scenario.onActivity {
+                        val owner = ViewModelProvider(it)[MonthsViewModel::class.java]
+                        loaded = owner.buildYear != null && !owner.buildBusy && !owner.buildYearFailed &&
+                            owner.buildYear?.language == ContentLanguage.ENGLISH
+                    }
                     loaded
                 }
                 compose.onNodeWithText("Days & Seasons").performScrollTo().performClick()

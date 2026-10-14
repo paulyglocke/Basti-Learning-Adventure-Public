@@ -122,6 +122,17 @@ silent and does not create an attempt. Season destinations are labelled controls
 with keyboard/switch activation, not drag-only drop targets. Physical navigation,
 TalkBack and touch acceptance remain separate from emulator coverage.
 
+The optional Interactive Seasons & Months Wheel is a separate route from the
+existing Year Wheel and Months ↔ Seasons quiz. Its central season artwork is fixed;
+only the 12-segment month ring rotates. Dragging snaps to 30° steps, with accessible
+previous/next controls and tap-to-speak month labels. Match checks the exact solved
+alignment; Explore allows browsing and an optional solved-alignment demonstration.
+Back returns to the Months activity list, Options/language and recreation preserve
+the independent wheel checkpoint, and restore is silent. The single fixed pointer is
+15° clockwise from twelve o'clock and points inward at a month-segment centre. Its
+selected month uses the same segment-centre geometry as rendering; at solved rotation
+it identifies March. This wheel is unscored and emits no shared progress events.
+
 Follow the Instructions now opens a bilingual two-level chooser from Home. Level 1
 retains the former one-step route; Level 2 is an ordered two-action task. Both are
 directly selectable, and Back returns to the chooser without discarding the active

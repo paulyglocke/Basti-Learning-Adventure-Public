@@ -138,6 +138,16 @@ journal are independent of the three-month Level 1 contract. Existing Level 1 ID
 saved sessions, journals and progress retain their original interpretation. Six- and
 twelve-month levels remain deferred.
 
+## Interactive Seasons & Months Wheel (implemented, 2026-10-14)
+
+The wheel uses the existing twelve `month.*` identities, bilingual month names and
+`MonthDefinition.season` mapping. Its stationary supplied centre has Winter top-left,
+Spring top-right, Summer bottom-right and Autumn bottom-left, following the same
+meteorological Germany convention. The ring is native drawing, not authored raster
+content. The separate `months-seasons-wheel-v1` checkpoint contains browsing/check
+state only; it creates no new curriculum definition or shared progress event. No
+historical Months or Seasons identity or content version changes.
+
 ## Months ↔ Seasons introductory matching (2026-10-12)
 
 Use meteorological seasons for Germany and the Northern Hemisphere, independent of

@@ -1,5 +1,79 @@
 # Session handoff — 2026-10-14
 
+## Seasons Wheel pointer refinement — validated review checkpoint (2026-10-14)
+
+Moved the stationary pointer from the twelve-o'clock seam to `−75°` Canvas angle
+(15° clockwise from the top), derived from half of the existing 30° segment size.
+The pointer is drawn radially inward; selected-month lookup compares this same angle
+to the rendered segment centres. At solved rotation it identifies March/März, and
+the existing ring order, seasonal quadrants and fixed centre illustration are
+unchanged. The UI highlight, selected-month label, speech selection and accessibility
+description continue to share that geometry-derived month.
+
+Validation under JDK 17: focused wheel JVM tests **4/4**; API 35 wheel screen tests
+**13/13** (0 failures/skips), separate route/recreation test **1/1**, Android test
+compilation, `assembleDebug`, `lintDebug` and `git diff --check` passed. The screen
+test directly rerun for capture also passed **12/12**. Inspected solved-state
+screenshots show the pointer at the March/März segment centre and matching selected
+month label: `/private/tmp/months-wheel-pointer-review/files/months-wheel-correct-en-1.0-false.png`
+and `/private/tmp/months-wheel-pointer-review/files/months-wheel-correct-de-1.0-true.png`.
+These are temporary review captures, not repo assets. Physical-device acceptance
+remains **NOT RUN — deferred by owner**.
+
+## Interactive Seasons & Months Wheel — implementation checkpoint (2026-10-14)
+
+Started from clean `main` at `2bb5313ca591750c3e59ee7d5fcd642ff45aa025`, matching
+`origin/main`. Added a separate `MONTHS_SEASONS_WHEEL` route without replacing the
+existing Year Wheel or Months ↔ Seasons matching quiz. The supplied transparent
+four-season artwork is preserved as a 1024×1024 PNG in `drawable-nodpi`; it remains
+stationary under a native Canvas ring with 12 equal 30° month segments. At solved
+rotation zero, January's centre is −135° in Canvas coordinates; the segment starts
+are January −150°, March −90°, June 0°, September 90°, December 180°. Thus winter
+(December–February) fills top-left, spring top-right, summer bottom-right and autumn
+bottom-left exactly. Drag and keyboard-accessible previous/next controls snap at 30°.
+
+The single fixed pointer sits 15° clockwise from twelve o'clock and points radially
+inward at the centre of a month segment. Its selected month is derived by comparing
+the pointer angle with the same segment-centre geometry used to render the ring; at
+the solved alignment it identifies March. The central illustration and pointer stay
+stationary as the outer ring rotates.
+The separate revision-1 `months-seasons-wheel-v1` checkpoint stores rotation, mode,
+feedback, attempts, replay/hint and round without writing shared quiz/progress
+identities or changing existing journals. Match/Explore, offline MonthsAudio, retry,
+celebration and child-controlled Play Again use existing native conventions.
+
+Visual review on API 35 captured incorrect/correct English 1× portrait, incorrect
+German 1× landscape and correct German 2× portrait/landscape, among the full 24-image
+EN/DE × 1×/1.5×/2× × portrait/landscape matrix. Screenshots were inspected. A first
+large-text screenshot showed the pointer clipped at the Canvas edge; the pointer base
+was moved inside the Canvas and the 12-case screen suite passed again. The 2× UI uses
+short ring labels plus a scrollable full month-name list and spatially labelled season
+legend. The solved-state screenshots were inspected for pointer-to-month alignment;
+these emulator captures are not physical-device acceptance (**NOT RUN — deferred by
+owner**).
+
+Validation: full JVM **526/526**, zero failures/errors/skips; `assembleDebug`,
+`lintDebug` and Android-test compilation passed under JDK 17. API 35 wheel screen
+matrix **12/12**, wheel route/options/recreation **1/1**, and the existing Months route
+class **4/4** passed together (**17/17**) after tightening its asynchronous readiness
+wait to require idle worker state and matching language. A preceding broad Months
+package run completed **146/147**: its sole failure was that existing test's stale
+“state non-null” readiness check selecting a disabled Build the Year button; no
+product failure was demonstrated, and the corrected test passed in the 17/17 rerun.
+The full Months package was rerun after that synchronization correction and passed
+**147/147**, zero failures/skips. The final JDK 17 JVM/build/lint pass also succeeded.
+Lint retains
+five existing warnings (two `UnusedAttribute`, two `VectorRaster`, one legacy
+`SetJavaScriptEnabled`) and two informational `AutoboxingStateCreation` findings;
+Kotlin reports the existing deprecated `VIBRATOR_SERVICE` warning. `git diff --check`
+passes. At this earlier validation checkpoint, no commit, push or CI run had been
+performed; physical-device acceptance remains **NOT RUN — deferred by owner**.
+
+Review screenshots are saved under `/private/tmp/months-wheel-review-final/` and are
+not repository assets. Current examples: `months-wheel-wrong-en-1.0-false.png`,
+`months-wheel-correct-en-1.0-false.png`, `months-wheel-correct-de-2.0-false.png`, and
+`months-wheel-wrong-de-1.0-true.png`.
+
 ## Follow Instructions — introductory two-level native activity (2026-10-14)
 
 Started on clean `main` at `e230105236f2ace273c6d7ed265f98e49759ee29`,

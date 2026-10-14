@@ -16,7 +16,8 @@ enum class MonthsMode(val title: ContentText) {
     BUILD_YEAR(ContentText.plain("Build the Year", "Baue das Jahr")),
     BUILD_YEAR_LEVELS(ContentText.plain("Build the Year", "Baue das Jahr")),
     BUILD_YEAR_FOUR(ContentText.plain("Build the Year — Four Months", "Baue das Jahr — Vier Monate")),
-    SEASONS_MATCH(ContentText.plain("Months and Seasons", "Monate und Jahreszeiten"))
+    SEASONS_MATCH(ContentText.plain("Months and Seasons", "Monate und Jahreszeiten")),
+    SEASONS_WHEEL(ContentText.plain("Match the Months to the Seasons", "Ordne die Monate den Jahreszeiten zu"))
 }
 
 object MonthsQuestions {

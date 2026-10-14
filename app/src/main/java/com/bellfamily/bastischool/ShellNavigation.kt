@@ -2,7 +2,7 @@ package com.bellfamily.bastischool
 
 import java.util.concurrent.atomic.AtomicReference
 
-internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS, WILMA, VOCABULARY, TELL_ME, FOLLOW_LEVELS, FOLLOW_INSTRUCTIONS, FOLLOW_TWO, COLOUR_SORT, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH, COMPARE_QUANTITY, NUMBER_ORDER, ADD_TOGETHER, CLOCK, CLOCK_MAKE, MONTHS, MONTHS_FIND, MONTHS_RELATIONS, MONTHS_MISSING, MONTHS_BETWEEN, MONTHS_BETWEEN_WHEEL, MONTHS_BUILD_YEAR_LEVELS, MONTHS_BUILD_YEAR, MONTHS_BUILD_YEAR_FOUR, MONTHS_SEASONS }
+internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS, WILMA, VOCABULARY, TELL_ME, FOLLOW_LEVELS, FOLLOW_INSTRUCTIONS, FOLLOW_TWO, COLOUR_SORT, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH, COMPARE_QUANTITY, NUMBER_ORDER, ADD_TOGETHER, CLOCK, CLOCK_MAKE, MONTHS, MONTHS_FIND, MONTHS_RELATIONS, MONTHS_MISSING, MONTHS_BETWEEN, MONTHS_BETWEEN_WHEEL, MONTHS_BUILD_YEAR_LEVELS, MONTHS_BUILD_YEAR, MONTHS_BUILD_YEAR_FOUR, MONTHS_SEASONS, MONTHS_SEASONS_WHEEL }
 internal enum class BackAction { EXIT, CLOSE_OPTIONS, LEGACY, NATIVE_HOME, DAYS_HUB, CLOCK_AREA, MONTHS_AREA, FOLLOW_LEVELS }
 
 /** Options is an overlay on one destination, never another entry in a growing stack. */
@@ -16,7 +16,7 @@ internal data class ShellNavigation(
         ShellScreen.HOME -> BackAction.EXIT
         ShellScreen.OPTIONS -> BackAction.CLOSE_OPTIONS
         ShellScreen.WEB -> BackAction.LEGACY
-        ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BETWEEN, ShellScreen.MONTHS_BETWEEN_WHEEL, ShellScreen.MONTHS_BUILD_YEAR_LEVELS, ShellScreen.MONTHS_BUILD_YEAR, ShellScreen.MONTHS_BUILD_YEAR_FOUR, ShellScreen.MONTHS_SEASONS -> BackAction.MONTHS_AREA
+        ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BETWEEN, ShellScreen.MONTHS_BETWEEN_WHEEL, ShellScreen.MONTHS_BUILD_YEAR_LEVELS, ShellScreen.MONTHS_BUILD_YEAR, ShellScreen.MONTHS_BUILD_YEAR_FOUR, ShellScreen.MONTHS_SEASONS, ShellScreen.MONTHS_SEASONS_WHEEL -> BackAction.MONTHS_AREA
         ShellScreen.CLOCK_MAKE -> BackAction.CLOCK_AREA
         ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO -> BackAction.FOLLOW_LEVELS
         ShellScreen.NUMBER_ORDER -> BackAction.NATIVE_HOME
@@ -54,6 +54,7 @@ internal data class ShellNavigation(
     fun openMonthsBuildYearThree() = ShellNavigation(ShellScreen.MONTHS_BUILD_YEAR)
     fun openMonthsBuildYearFour() = ShellNavigation(ShellScreen.MONTHS_BUILD_YEAR_FOUR)
     fun openMonthsSeasons() = ShellNavigation(ShellScreen.MONTHS_SEASONS)
+    fun openMonthsSeasonsWheel() = ShellNavigation(ShellScreen.MONTHS_SEASONS_WHEEL)
     fun openMonths() = ShellNavigation(ShellScreen.MONTHS)
     fun openWilma() = ShellNavigation(ShellScreen.WILMA)
     fun openSeasons() = ShellNavigation(ShellScreen.SEASONS)
