@@ -559,6 +559,15 @@ solved-state English portrait and German landscape screenshots were inspected. T
 is not a physical-device acceptance claim; physical-device acceptance is **NOT RUN —
 deferred by owner**.
 
+Seasonal Weather Exploration Phase 2 is implemented and automated validation is
+complete. It extends the existing interactive wheel's
+Explore mode with optional native effects and curated month-specific alternatives.
+English/German guidance teaches that weather varies within each month. Match stays
+unchanged and does not expose the weather aid. Lifecycle-aware/static rendering
+and existing offline speech are reused; this is unscored exploration, not a new
+quiz or progress system. Current validation evidence is in SESSION_HANDOFF.md;
+physical-device acceptance remains **NOT RUN — deferred by owner**.
+
 #### Year Wheel
 
 The central representation should be a **12-segment Year Wheel** with four broad season regions.

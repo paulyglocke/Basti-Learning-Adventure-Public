@@ -132,6 +132,11 @@ the independent wheel checkpoint, and restore is silent. The single fixed pointe
 15° clockwise from twelve o'clock and points inward at a month-segment centre. Its
 selected month uses the same segment-centre geometry as rendering; at solved rotation
 it identifies March. This wheel is unscored and emits no shared progress events.
+Explore also offers Show/Hide Weather, Change Weather and a separate weather Listen
+control. Selection follows the snapped pointer month; changing months resets the
+default weather and cancels prior speech. Weather visibility and the chosen alternative
+restore silently. Match removes weather effects and the month–season/weather aid;
+these controls introduce no additional route.
 
 Follow the Instructions now opens a bilingual two-level chooser from Home. Level 1
 retains the former one-step route; Level 2 is an ordered two-action task. Both are

@@ -98,6 +98,19 @@ recreation. The API 35 emulator is automated evidence only. Solved-state English
 portrait and German landscape screenshots were visually inspected; physical-device
 acceptance is **NOT RUN — deferred by owner**.
 
+Seasonal weather exploration must cover all twelve defaults, curated alternatives,
+EN/DE phrases, arrow-derived selection, rapid changes, and isolation from Match.
+Test old MSW1 and new MSW2 checkpoints, weather visibility/override restoration,
+silent recreation, manual audio policy and cancellation. The weather screen matrix
+covers portrait/landscape × EN/DE × 1×/1.5×/2×, keyboard activation and labelled
+48 dp controls. Pixel comparisons must establish movement for every effect, final
+scene replacement after rapid changes, static frames when lifecycle is not resumed
+or system animator scale is zero, and resumed movement on return. Inspect captures
+of January snow, February frost, April rain, July sun, October wind/leaves, German
+2× landscape and static weather. Screenshots alone are not motion/performance proof;
+Fire-tablet frame rate, battery use, actual TalkBack and offline voice quality need
+physical checks. Current run evidence is recorded in SESSION_HANDOFF.md.
+
 Months Between coverage must enumerate all 12 middle-month definitions, explicitly
 check November–December–January and December–January–February, verify unique targets
 and four unique choices in deterministic 5/10 rounds, and exercise retry/replay/hint,

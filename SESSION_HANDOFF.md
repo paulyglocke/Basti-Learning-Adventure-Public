@@ -1,4 +1,81 @@
-# Session handoff — 2026-10-14
+# Session handoff — 2026-10-15
+
+## Seasonal Weather Exploration — Phase 2 review checkpoint
+
+Started from clean `main` at `6d955c31df62fe22cb6043fbab4788da3e241eb1`, matching
+freshly fetched `origin/main`. No commit or push is authorised for this task.
+
+Explore now has optional seasonal weather, Change Weather and explicit Listen
+controls. A typed bilingual content model supplies twelve defaults and curated
+alternatives (educational Central European examples, never forecasts). Native
+Canvas snow, frost, light/moderate rain, sunshine, wind/autumn leaves, clouds and
+mixed sun/clouds sit in a stationary transparent layer clipped to the canonical
+season quadrant and circular centre. The PNG, chronological ring order, solved
+alignment and fixed −75° pointer are unchanged. Match has no weather aids.
+
+The renderer has at most 24 particles, one draw-only clock and one cancellable fade
+target. Hidden/inactive screens dispose or pause motion; system animator scale zero
+renders a static frame, with labels and speech still available. No new dependencies,
+artwork or audio engine. Existing offline audio settings apply, speech is explicit,
+and month/weather changes cancel obsolete speech. MSW2 adds weather visibility and
+override to the existing checkpoint; MSW1 reads without altering learning state.
+Historical quiz identities, journals and progress are untouched. See architecture
+and content specs for the contract and downgrade limitation.
+
+Review found and corrected two existing interaction edge cases: gesture detectors
+captured the initial rotation, and interrupted snap animations added a whole-step
+delta to a fractional angle. Handlers now refresh with snapped rotation and targets
+are exact 30° multiples; even a short drag returning to the same month settles.
+Regression tests cover current-month tap speech, repeated quarter-turn dragging and
+fractional/negative/multi-turn animation starts. Visual review also moved summer's
+sun overlay onto the painted sun rather than drawing a second sun alongside it.
+
+An initial 25-test emulator run passed 24 and failed the new motion test. Its clock
+was frozen only after composition, by which point Compose's automatic test-clock
+policy had cancelled the infinite animation. Taking clock ownership before
+composition resolved the test without changing production weather motion. The
+isolated motion test passed all eight visual variants, rapid replacement,
+pause/resume and live system-scale-zero assertions. No assertion was weakened.
+
+Final validation on Temurin **17.0.20.1** and the **API 35 Medium_Phone_API_35** emulator:
+
+- **PASS:** full JVM **534/534**, 0 failures/errors/skips, including weather **8/8**
+  and existing wheel geometry/state **4/4**.
+- **PASS:** final affected instrumentation **31/31**, 0 failures/skips: weather
+  layouts **12**, actual-frame motion/lifecycle **1**, existing wheel layouts **12**,
+  route/options/recreation/repeated dragging **1**, Months owner/audio/restoration **5**.
+- **PASS:** `testDebugUnitTest assembleDebug assembleDebugAndroidTest lintDebug`
+  and `git diff --check`. Lint has 0 errors, 5 existing warnings (2 UnusedAttribute,
+  2 VectorRaster, 1 legacy SetJavaScriptEnabled) and 2 informational
+  AutoboxingStateCreation findings. The initial compile also reported the existing
+  deprecated VIBRATOR_SERVICE warning.
+- **PASS:** captured and inspected January snow, February frost, April rain, July
+  sun, October wind/leaves, German 2× landscape (wheel and scrolled text), and
+  static February. Final captures are in `/private/tmp/basti-weather-review-final/`;
+  names start `weather-month.<month>-en-1.0-false.png`,
+  `weather-month.october-de-2.0-true.png`, `weather-label-month.october-de-2.0-true.png`
+  and `weather-static-february.png`. The final static capture confirms exact ring
+  settling, unlike the initial interrupted-snap capture. The supplied PNG is unchanged.
+- **NOT RUN:** entire unrelated instrumentation suite, browser suite, CI and
+  physical-device acceptance. Physical-device acceptance is **NOT RUN — deferred
+  by owner**, including Fire-tablet frame rate/battery, actual TalkBack and offline
+  voices. No frame-rate benchmark or long-duration performance claim has been made.
+
+Emulator log: `/private/tmp/basti-weather-final-instrumentation.log` (31-test direct
+AndroidJUnitRunner run selecting MonthsWeatherMotionTest, MonthsWeatherScreenTest,
+MonthsSeasonWheelScreenTest, MonthsSeasonWheelRouteTest and MonthsOwnerTest).
+Gradle XML results are in `app/build/test-results/testDebugUnitTest/`; logs, screenshots
+and generated outputs are not repository changes. Earlier diagnostic logs are
+`/private/tmp/basti-weather-instrumentation.log` and `/private/tmp/basti-weather-motion.log`.
+
+Files changed: new `MonthsWeather.kt`, `MonthsWeatherOverlay.kt`, `MonthsWeatherTest.kt`,
+`MonthsWeatherScreenTest.kt`, `MonthsWeatherMotionTest.kt`; updated `MonthsSeasonWheel.kt`,
+`MonthsSeasonWheelScreen.kt`, `MonthsViewModel.kt`, `MainActivity.kt`, `MonthsOwnerTest.kt`
+and `MonthsSeasonWheelRouteTest.kt`. Documentation: README, roadmap, backlog,
+architecture, content, navigation, QA and this handoff. No resource/dependency changes.
+
+Phase 2 implementation and required automated validation are complete; owner visual
+review is next. **Uncommitted; no push or CI run.** HEAD remains the starting commit.
 
 ## Seasons Wheel pointer refinement — validated review checkpoint (2026-10-14)
 

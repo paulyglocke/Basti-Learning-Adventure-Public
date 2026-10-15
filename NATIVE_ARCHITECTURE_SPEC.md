@@ -770,6 +770,25 @@ may narrate; restore is silent. The single pointer is fixed 15° clockwise from 
 o'clock and points radially inward to a segment centre. Selection is computed using
 the same segment-centre geometry as rendering; at solved rotation it identifies March.
 The pointer and central illustration remain stationary while only the ring rotates.
+Gesture handlers refresh at each snapped rotation. Interrupted snap animations end
+at a geometry-derived exact multiple of 30°; releasing a short drag also requests a
+snap when the selected month has not changed.
+
+Explore adds an optional `MonthsWeatherOverlay`, separate from the unchanged PNG
+and ring. It clips native Canvas effects to the circular centre and canonical season
+quadrant; Match never composes weather or its month–season labels. One draw-only
+12-second clock drives at most 24 deterministic particles. A cancellable 160/240 ms
+fade replaces one scene rather than stacking effects. Leaving Explore, hiding weather,
+or leaving the screen disposes the clock; non-resumed lifecycle or system animator
+scale zero uses a static frame. System-scale changes are observed while visible.
+Manual weather speech uses `MonthsAudio`; month/condition changes cancel old speech
+and do not auto-narrate intermediate drag positions.
+
+The existing checkpoint directory is retained. Writers now use `MSW2`, appending
+weather visibility and an optional validated condition override; readers accept
+`MSW1` unchanged with visible/default weather. Overrides reset when the selected
+month changes. Language is still owned by shared settings. No quiz/progress schema
+changes; installing an older app over an MSW2 checkpoint is not supported.
 
 ## Owner clock presentation feedback — 2026-10-10 (draft, validation pending)
 

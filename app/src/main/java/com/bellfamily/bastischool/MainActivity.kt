@@ -401,7 +401,10 @@ class MainActivity : ComponentActivity() {
                             nativeMonths.wheelFailed, nativeMonths.audioFailed, nativeMonths::wheelRotate,
                             nativeMonths::wheelMode, nativeMonths::wheelMonth, nativeMonths::wheelCheck,
                             nativeMonths::wheelReplay, nativeMonths::wheelHint, nativeMonths::wheelShowAlignment, nativeMonths::wheelAgain,
-                            nativeMonths::wheelRetry, { changeRoute(navigation.openMonths()) }, Modifier.padding(padding))
+                            nativeMonths::wheelRetry, { changeRoute(navigation.openMonths()) }, Modifier.padding(padding),
+                            onChangeWeather = nativeMonths::wheelChangeWeather,
+                            onWeatherListen = nativeMonths::wheelWeatherListen,
+                            onToggleWeather = nativeMonths::wheelToggleWeather)
                         ShellScreen.CLOCK -> ClockScreen(nativeClock.state, if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeClock.saveFailed, nativeClock.audioFailed, nativeClock::move, nativeClock::settle,
                             nativeClock::interrupt, nativeClock::adjust, nativeClock::listen, nativeClock::retrySave,

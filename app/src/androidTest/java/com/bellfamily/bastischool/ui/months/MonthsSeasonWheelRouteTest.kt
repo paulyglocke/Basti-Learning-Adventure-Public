@@ -47,8 +47,28 @@ class MonthsSeasonWheelRouteTest {
                     scenario.onActivity { changed = ViewModelProvider(it)[MonthsViewModel::class.java].wheel!!.rotation != beforeDrag }
                     changed
                 }
+                scenario.onActivity {
+                    assertEquals(Math.floorMod(beforeDrag + 3, 12), ViewModelProvider(it)[MonthsViewModel::class.java].wheel!!.rotation)
+                }
+                // A second quarter-turn must use the restored/current rotation, not
+                // the state captured by the original pointer-input coroutine.
+                compose.onNodeWithTag("wheel-ring").performTouchInput {
+                    val r = width * .38f
+                    down(center + Offset(r, 0f))
+                    moveTo(center + Offset(r * .85f, r * .5f))
+                    moveTo(center + Offset(r * .5f, r * .85f))
+                    moveTo(center + Offset(0f, r))
+                    up()
+                }
+                compose.waitUntil(5_000) {
+                    var correct = false
+                    scenario.onActivity { correct = ViewModelProvider(it)[MonthsViewModel::class.java].wheel!!.rotation == Math.floorMod(beforeDrag + 6, 12) }
+                    correct
+                }
                 compose.onNodeWithTag("wheel-hint").performScrollTo().performClick()
                 compose.onNodeWithTag("wheel-listen").performScrollTo().performClick()
+                compose.onNodeWithTag("wheel-explore-mode").performScrollTo().performClick()
+                compose.onNodeWithTag("wheel-weather-change").performScrollTo().performClick()
                 var snapshot: MonthsSeasonWheelState? = null
                 scenario.onActivity { snapshot = ViewModelProvider(it)[MonthsViewModel::class.java].wheel }
                 assertTrue(snapshot!!.hintUsed)
@@ -56,7 +76,7 @@ class MonthsSeasonWheelRouteTest {
                 compose.onNodeWithText("⚙ Options").performClick()
                 compose.onNodeWithText("🇩🇪 Deutsch").performClick()
                 scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
-                compose.onNodeWithTag("wheel-check").performScrollTo().assertTextEquals("Prüfen")
+                compose.onNodeWithTag("wheel-weather-change").performScrollTo().assertTextEquals("Wetter ändern")
                 scenario.recreate(); settled()
                 scenario.onActivity { assertEquals(snapshot, ViewModelProvider(it)[MonthsViewModel::class.java].wheel) }
                 scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }

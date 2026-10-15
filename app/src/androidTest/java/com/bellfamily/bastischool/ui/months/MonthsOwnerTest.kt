@@ -96,6 +96,57 @@ class MonthsOwnerTest {
     @Test fun quizModeIsolationAssistanceSilentRestoreAndLanguageDuringWork() = quizLifecycle(MonthsMode.FIND)
     @Test fun missingModeSilentRestoreLanguageAudioAndIndependentJournal() = quizLifecycle(MonthsMode.MISSING)
 
+    @Test fun weatherSpeechPolicyRapidSelectionAndDurableSilentRestoration() {
+        val directory = temp.newFolder()
+        val app = App(ApplicationProvider.getApplicationContext(), directory)
+        val disk = MonthsSeasonWheelStore(AtomicProgressStorage(File(directory, "months-seasons-wheel-v1"), AndroidAtomicCommit))
+        disk.write(MonthsSeasonWheelState(2, MonthsWheelMode.EXPLORE)) // January
+        val owners = ViewModelStore()
+        val engine = Engine()
+        lateinit var vm: MonthsViewModel
+        fun open() {
+            compose.runOnUiThread {
+                vm = MonthsViewModel(app) { engine }; owners.put("months", vm)
+                vm.configure("en", "questions"); vm.setVisible(true, MonthsMode.SEASONS_WHEEL)
+            }
+            compose.waitUntil(10_000) { var ready = false; compose.runOnUiThread { ready = vm.wheel != null }; ready }
+        }
+        try {
+            open()
+            lateinit var snapshot: MonthsSeasonWheelState
+            compose.runOnUiThread {
+                assertTrue(engine.spoken.isEmpty())
+                vm.wheelWeatherListen()
+                assertTrue(engine.spoken.last().text.startsWith("January. Winter. It's snowing!"))
+                val stops = engine.stops
+                repeat(25) { vm.wheelRotate(1) }
+                assertTrue(engine.stops > stops)
+                assertEquals(1, engine.spoken.size) // Never narrate intermediate or snapped selections automatically.
+                vm.configure("de", "questions")
+                vm.wheelWeatherListen()
+                assertEquals(MonthsWeatherContent.narration(vm.wheel!!.selectedMonth, vm.wheel!!.weather).speech.de,
+                    engine.spoken.last().text)
+                vm.wheelChangeWeather(); snapshot = vm.wheel!!
+                vm.configure("de", "off"); vm.wheelWeatherListen()
+                assertEquals(2, engine.spoken.size)
+                vm.setVisible(false); vm.wheelWeatherListen()
+                assertEquals(2, engine.spoken.size)
+            }
+            compose.waitUntil(10_000) { disk.read() == snapshot }
+            compose.runOnUiThread { owners.clear() }
+            open()
+            compose.runOnUiThread {
+                assertEquals(snapshot, vm.wheel)
+                assertEquals(2, engine.spoken.size)
+                vm.wheelMode(MonthsWheelMode.MATCH)
+                vm.wheelWeatherListen(); vm.wheelChangeWeather()
+                assertEquals(snapshot.weather, vm.wheel!!.weather)
+                assertEquals(2, engine.spoken.size)
+            }
+            assertEquals(setOf("months-seasons-wheel-v1"), directory.listFiles()!!.map { it.name }.toSet())
+        } finally { compose.runOnUiThread { owners.clear() } }
+    }
+
     private fun quizLifecycle(primary: MonthsMode) {
         val directory=temp.newFolder();val app=App(ApplicationProvider.getApplicationContext(),directory)
         val owners=ViewModelStore();val engine=Engine();lateinit var vm:MonthsViewModel

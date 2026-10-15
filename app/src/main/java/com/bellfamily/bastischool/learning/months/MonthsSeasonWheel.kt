@@ -29,6 +29,14 @@ object MonthsSeasonWheelGeometry {
         return (dragDegrees / SEGMENT_DEGREES).roundToInt()
     }
 
+    /** Shortest turn to an exact segment centre, even when an earlier snap was interrupted. */
+    fun animationTarget(currentDegrees: Float, rotation: Int): Float {
+        require(rotation in 0..11)
+        val nearest = snappedSteps(currentDegrees)
+        val delta = Math.floorMod(rotation - Math.floorMod(nearest, 12) + 6, 12) - 6
+        return (nearest + delta) * SEGMENT_DEGREES
+    }
+
     fun seasonAt(index: Int, rotation: Int = 0): ContentId {
         val centre = Math.floorMod(centre(index, rotation).toInt(), 360)
         return when (centre) {
@@ -65,15 +73,29 @@ data class MonthsSeasonWheelState(
     val attempts: Int = 0,
     val replayCount: Int = 0,
     val hintUsed: Boolean = false,
-    val round: Int = 1
+    val round: Int = 1,
+    val weatherEnabled: Boolean = true,
+    val weatherOverride: MonthsWeather? = null
 ) {
     init {
         require(rotation in 0..11 && attempts >= 0 && replayCount >= 0 && round > 0)
         require(feedback != MonthsWheelFeedback.COMPLETE || MonthsSeasonWheelGeometry.matches(rotation))
+        require(weatherOverride == null || weatherOverride in MonthsWeatherContent.choices(selectedMonth))
     }
 
+    val selectedMonth get() = MonthsSeasonWheelGeometry.arrowMonth(rotation)
+    val weather get() = weatherOverride ?: MonthsWeatherContent.default(selectedMonth)
+    val showsWeather get() = mode == MonthsWheelMode.EXPLORE && weatherEnabled
+
     fun rotate(steps: Int): MonthsSeasonWheelState = if (feedback == MonthsWheelFeedback.COMPLETE) this else
-        copy(rotation = Math.floorMod(rotation + steps, 12), feedback = MonthsWheelFeedback.READY)
+        copy(rotation = Math.floorMod(rotation + steps, 12), feedback = MonthsWheelFeedback.READY,
+            weatherOverride = if (Math.floorMod(steps, 12) == 0) weatherOverride else null)
+
+    fun changeWeather() = if (!showsWeather) this else
+        copy(weatherOverride = MonthsWeatherContent.next(selectedMonth, weather))
+
+    fun showAlignment() = copy(rotation = 0, feedback = MonthsWheelFeedback.READY,
+        weatherOverride = if (rotation == 0) weatherOverride else null)
 
     fun check(): MonthsSeasonWheelState = if (mode == MonthsWheelMode.EXPLORE || feedback == MonthsWheelFeedback.COMPLETE) this else
         copy(feedback = if (MonthsSeasonWheelGeometry.matches(rotation)) MonthsWheelFeedback.COMPLETE else MonthsWheelFeedback.RETRY,
@@ -88,22 +110,26 @@ data class MonthsSeasonWheelState(
 class MonthsSeasonWheelStore(private val storage: ProgressStorage) {
     fun read(): MonthsSeasonWheelState? = storage.access { transaction ->
         val bytes = transaction.read() ?: return@access null
-        require(bytes.size in 29..80)
+        require(bytes.size in 29..128)
         DataInputStream(ByteArrayInputStream(bytes)).use { input ->
-            require(input.readInt() == 0x4D535731) // MSW1
+            val magic = input.readInt()
+            require(magic == 0x4D535731 || magic == 0x4D535732) // MSW1 / MSW2
             val state = MonthsSeasonWheelState(input.readInt(), MonthsWheelMode.valueOf(input.readUTF()),
                 MonthsWheelFeedback.valueOf(input.readUTF()), input.readInt(), input.readInt(), input.readBoolean(), input.readInt())
+            val restored = if (magic == 0x4D535732) state.copy(weatherEnabled = input.readBoolean(),
+                weatherOverride = input.readUTF().takeIf { it.isNotEmpty() }?.let(MonthsWeather::valueOf)) else state
             require(input.available() == 0)
-            state
+            restored
         }
     }
 
     fun write(state: MonthsSeasonWheelState) {
         val bytes = ByteArrayOutputStream()
         DataOutputStream(bytes).use { out ->
-            out.writeInt(0x4D535731); out.writeInt(state.rotation); out.writeUTF(state.mode.name)
+            out.writeInt(0x4D535732); out.writeInt(state.rotation); out.writeUTF(state.mode.name)
             out.writeUTF(state.feedback.name); out.writeInt(state.attempts); out.writeInt(state.replayCount)
             out.writeBoolean(state.hintUsed); out.writeInt(state.round)
+            out.writeBoolean(state.weatherEnabled); out.writeUTF(state.weatherOverride?.name.orEmpty())
         }
         storage.access { it.replace(bytes.toByteArray()) }
     }

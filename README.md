@@ -122,6 +122,13 @@ The long-term progression is:
 
 Months currently offers a Year Wheel, month recognition, Before/Next, Missing Month, Between, selectable three- and four-month Build the Year levels, introductory Months ↔ Seasons grouping, and the separate Interactive Seasons & Months Wheel. Automated wheel validation and solved-state screenshot inspection are complete. Six-/twelve-month sequencing, advanced month/season generalisation, adaptive progression and calendar generalisation remain deferred. Physical-device acceptance is **NOT RUN — deferred by owner**; implementation and automated evidence are tracked in [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
+The interactive wheel's Explore mode now includes optional seasonal weather: snow,
+frost, light/moderate rain, sunshine, wind/leaves and clouds. Change Weather cycles
+plausible alternatives, and Listen speaks bilingual guidance through existing offline
+audio. Effects stay inside the stationary illustration; Match reveals no weather
+aid. Reduced motion uses a static frame. Weather examples are not forecasts or
+fixed rules about any month. Validation and review status are in the handoff above.
+
 Native Clock & Time now offers Explore and Make This Time (whole/half hours). One semantic time model drives the manipulable analogue clock and derived digital display. Practice mixes eight targets, hides digital time until correct, and uses Check, hints and shared completion. Digital editing and later Clock modes remain future work; physical-device acceptance remains open.
 
 Later My Calendar activities can introduce real month grids, dates, weekdays, Today and meaningful personal landmarks.

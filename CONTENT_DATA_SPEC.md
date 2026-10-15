@@ -148,6 +148,33 @@ content. The separate `months-seasons-wheel-v1` checkpoint contains browsing/che
 state only; it creates no new curriculum definition or shared progress event. No
 historical Months or Seasons identity or content version changes.
 
+### Seasonal weather exploration (Phase 2)
+
+`MonthsWeatherContent` is the single source of plausible Germany/Central Europe
+weather choices. These are educational examples, not forecasts or claims that a
+month always has one weather type. The first choice is the default:
+
+| Month | Default | Alternatives |
+|---|---|---|
+| January | Snow | Frost, clouds, rain |
+| February | Frost | Snow, sunshine, rain |
+| March | Wind | Light rain, clouds, sunshine |
+| April | Rain | Sunshine, clouds, wind, light rain |
+| May | Sunshine | Light rain, clouds, wind |
+| June | Sunshine | Clouds, rain |
+| July | Sunshine | Clouds, rain |
+| August | Sunshine | Rain, clouds |
+| September | Sunshine and clouds | Light rain, wind, clouds |
+| October | Wind (with leaves) | Rain, clouds, sunshine |
+| November | Rain | Clouds, frost, wind |
+| December | Snow | Frost, rain, clouds |
+
+English/German phrases, variability guidance and narration are typed `ContentText`.
+Month and season names come from existing canonical definitions. Explore cycles
+the curated choices; explicit weather Listen includes month, season, condition and
+the reminder that weather can change. No new artwork, external weather service,
+device-date logic or scored skill is introduced. Match exposes none of this aid.
+
 ## Months ↔ Seasons introductory matching (2026-10-12)
 
 Use meteorological seasons for Germany and the Northern Hemisphere, independent of

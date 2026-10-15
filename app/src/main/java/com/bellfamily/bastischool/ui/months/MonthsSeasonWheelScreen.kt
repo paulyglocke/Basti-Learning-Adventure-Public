@@ -52,9 +52,11 @@ fun MonthsSeasonWheelScreen(state: MonthsSeasonWheelState?, language: ContentLan
     audioFailed: Boolean, onRotate: (Int) -> Unit, onMode: (MonthsWheelMode) -> Unit, onMonth: (ContentId) -> Unit,
     onCheck: () -> Unit, onReplay: () -> Unit, onHint: () -> Unit, onShowAlignment: () -> Unit,
     onAgain: () -> Unit, onRetry: () -> Unit,
-    onBack: () -> Unit, modifier: Modifier = Modifier) {
+    onBack: () -> Unit, modifier: Modifier = Modifier,
+    onChangeWeather: () -> Unit = {}, onWeatherListen: () -> Unit = {}, onToggleWeather: () -> Unit = {}) {
     fun t(en: String, de: String) = if (language == ContentLanguage.GERMAN) de else en
     val largeText = LocalDensity.current.fontScale >= 1.5f
+    val weatherMotion = if (state?.showsWeather == true) weatherMotionAllowed() else false
     Column(modifier.fillMaxSize().background(Color(0xFFF8F5FC)).verticalScroll(rememberScrollState())
         .padding(16.dp).testTag("months-season-wheel-content"),
         horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -76,7 +78,7 @@ fun MonthsSeasonWheelScreen(state: MonthsSeasonWheelState?, language: ContentLan
                 t("Turn the wheel. Touch a month to hear its name.", "Drehe das Rad. Tippe auf einen Monat, um seinen Namen zu hören.")
                 else t("Turn the months so each group of three matches its season.",
                     "Drehe die Monate, bis jede Dreiergruppe zu ihrer Jahreszeit passt."))
-            MonthsSeasonWheelArt(state, language, !saveFailed, !largeText, onRotate, onMonth)
+            MonthsSeasonWheelArt(state, language, !saveFailed, !largeText, weatherMotion, onRotate, onMonth)
             if (largeText) {
                 listOf(listOf(SeasonIds.WINTER to t("Top left", "Oben links"), SeasonIds.SPRING to t("Top right", "Oben rechts")),
                     listOf(SeasonIds.AUTUMN to t("Bottom left", "Unten links"), SeasonIds.SUMMER to t("Bottom right", "Unten rechts")))
@@ -94,6 +96,26 @@ fun MonthsSeasonWheelScreen(state: MonthsSeasonWheelState?, language: ContentLan
             Text(t("At the arrow: $arrowName", "Am Pfeil: $arrowName"),
                 style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold,
                 modifier = Modifier.testTag("wheel-selected-month"))
+            if (state.mode == MonthsWheelMode.EXPLORE) {
+                if (state.showsWeather) {
+                    val season = MonthContent.season(MonthContent.month(state.selectedMonth).season)
+                    Text("$arrowName — ${season.text.display[language]}",
+                        style = MaterialTheme.typography.titleMedium, textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth().testTag("wheel-weather-month"))
+                    NativeSupportMessage(state.weather.phrase.display[language], Modifier.testTag("wheel-weather-label"))
+                    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        NativeActionButton(t("Change Weather", "Wetter ändern"), NativeActionRole.SECONDARY,
+                            onChangeWeather, Modifier.weight(1f).testTag("wheel-weather-change"), enabled = !saveFailed)
+                        NativeActionButton(t("Listen to weather", "Wetter anhören"), NativeActionRole.SECONDARY,
+                            onWeatherListen, Modifier.weight(1f).testTag("wheel-weather-listen"))
+                    }
+                    Text(MonthsWeatherContent.variability.display[language],
+                        style = MaterialTheme.typography.bodyMedium, modifier = Modifier.fillMaxWidth())
+                }
+                NativeActionButton(if (state.weatherEnabled) t("Hide weather", "Wetter ausblenden")
+                    else t("Show weather", "Wetter anzeigen"), NativeActionRole.SECONDARY,
+                    onToggleWeather, Modifier.fillMaxWidth().testTag("wheel-weather-toggle"), enabled = !saveFailed)
+            }
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 NativeActionButton(t("↶ Previous month", "↶ Voriger Monat"), NativeActionRole.SECONDARY,
                     { onRotate(-1) }, Modifier.weight(1f).testTag("wheel-previous"), enabled = !saveFailed && state.feedback != MonthsWheelFeedback.COMPLETE)
@@ -153,7 +175,7 @@ fun MonthsSeasonWheelScreen(state: MonthsSeasonWheelState?, language: ContentLan
 
 @Composable
 private fun MonthsSeasonWheelArt(state: MonthsSeasonWheelState, language: ContentLanguage, enabled: Boolean,
-    showOverlayNames: Boolean,
+    showOverlayNames: Boolean, weatherMotion: Boolean,
     onRotate: (Int) -> Unit, onMonth: (ContentId) -> Unit) {
     val configuration = LocalConfiguration.current
     val diameter = minOf(configuration.screenWidthDp.dp - 32.dp,
@@ -163,10 +185,9 @@ private fun MonthsSeasonWheelArt(state: MonthsSeasonWheelState, language: Conten
         tween(durationMillis = 700), label = "wheel-season-colours")
     val angle = remember { Animatable(state.rotation * 30f) }
     var drag by remember { mutableFloatStateOf(0f) }
-    LaunchedEffect(state.rotation) {
-        val currentStep = angle.value / 30f
-        val delta = Math.floorMod(state.rotation - currentStep.roundToInt() + 6, 12) - 6
-        angle.animateTo(angle.value + delta * 30f, tween(durationMillis = 260))
+    var snapRequest by remember { mutableIntStateOf(0) }
+    LaunchedEffect(state.rotation, snapRequest) {
+        angle.animateTo(MonthsSeasonWheelGeometry.animationTarget(angle.value, state.rotation), tween(durationMillis = 260))
     }
     val monthAtArrow = MonthsSeasonWheelGeometry.arrowMonth(state.rotation)
     val selectedName = MonthContent.month(monthAtArrow).text.display[language]
@@ -178,6 +199,8 @@ private fun MonthsSeasonWheelArt(state: MonthsSeasonWheelState, language: Conten
         val centerSize = diameter * .54f
         Image(painterResource(R.drawable.seasons_center), contentDescription = null,
             modifier = Modifier.size(centerSize).testTag("wheel-centre-art"))
+        if (state.showsWeather) MonthsWeatherOverlay(state.selectedMonth, state.weather, weatherMotion,
+            Modifier.size(centerSize))
         if (showOverlayNames) Box(Modifier.size(centerSize), contentAlignment = Alignment.Center) {
             val labels = listOf(Triple(SeasonIds.WINTER, Alignment.TopStart, Pair(.12f, .16f)),
                 Triple(SeasonIds.SPRING, Alignment.TopEnd, Pair(-.12f, .16f)),
@@ -193,7 +216,7 @@ private fun MonthsSeasonWheelArt(state: MonthsSeasonWheelState, language: Conten
             }
         }
         Canvas(Modifier.fillMaxSize().testTag("wheel-ring")
-            .pointerInput(enabled, state.feedback) {
+            .pointerInput(enabled, state.feedback, state.rotation) {
                 if (enabled && state.feedback != MonthsWheelFeedback.COMPLETE) detectDragGestures(
                     onDragEnd = {
                         val visual = angle.value + drag
@@ -202,6 +225,7 @@ private fun MonthsSeasonWheelArt(state: MonthsSeasonWheelState, language: Conten
                             angle.snapTo(visual)
                             drag = 0f
                             onRotate(target - state.rotation)
+                            snapRequest++ // Also settle a short drag that stays on the same month.
                         }
                     },
                     onDrag = { change, _ ->
@@ -218,7 +242,7 @@ private fun MonthsSeasonWheelArt(state: MonthsSeasonWheelState, language: Conten
                         }
                     })
             }
-            .pointerInput(language) {
+            .pointerInput(language, state.rotation) {
                 detectTapGestures { tap ->
                     val x = tap.x - size.width / 2f; val y = tap.y - size.height / 2f
                     val radius = hypot(x, y)

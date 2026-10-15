@@ -149,7 +149,24 @@ class MonthsViewModel @JvmOverloads constructor(application: Application,
             main.post { if (!closed && wheel == next) wheelFailed = result.isFailure }
         }
     }
-    fun wheelRotate(steps: Int) = updateWheel { it.rotate(steps) }
+    fun wheelRotate(steps: Int) {
+        audio.cancel()
+        updateWheel { it.rotate(steps) }
+    }
+    fun wheelChangeWeather() {
+        audio.cancel()
+        updateWheel { it.changeWeather() }
+    }
+    fun wheelToggleWeather() {
+        audio.cancel()
+        updateWheel { if (it.mode == MonthsWheelMode.EXPLORE) it.copy(weatherEnabled = !it.weatherEnabled) else it }
+    }
+    fun wheelWeatherListen() {
+        if (!visible || phase != MonthsMode.SEASONS_WHEEL || closed) return
+        val state = wheel?.takeIf { it.showsWeather } ?: return
+        audio.effects(SessionId("months-seasons-wheel"), language, listOf(SessionEffect.Narrate(
+            MonthsWeatherContent.narration(state.selectedMonth, state.weather), NarrationKind.INSTRUCTION, SpeechTrigger.MANUAL)))
+    }
     fun wheelMode(mode: MonthsWheelMode) {
         audio.cancel()
         updateWheel { it.copy(mode = mode, feedback = MonthsWheelFeedback.READY) }
@@ -185,7 +202,10 @@ class MonthsViewModel @JvmOverloads constructor(application: Application,
     fun wheelMonth(id: ContentId) {
         if (visible && phase == MonthsMode.SEASONS_WHEEL) audio.month(id, language)
     }
-    fun wheelShowAlignment() = updateWheel { it.copy(rotation = 0, feedback = MonthsWheelFeedback.READY) }
+    fun wheelShowAlignment() {
+        audio.cancel()
+        updateWheel { it.showAlignment() }
+    }
     fun wheelAgain() {
         audio.cancel()
         updateWheel { MonthsSeasonWheelState.new(System.nanoTime(), it.round + 1) }
