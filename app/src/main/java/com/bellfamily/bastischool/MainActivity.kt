@@ -153,6 +153,11 @@ private val homeCards = listOf(
     HomeCard("👂", "Follow the Instructions", "Anweisungen folgen", "Listen and follow one or two steps.", "Höre zu und folge einer oder zwei Anweisungen.", mode = "follow")
 )
 
+/** Filter only after the historical group boundaries, preserving live entry order. */
+internal fun homeCardGroups(): List<List<HomeCard>> = listOf(
+    homeCards.take(5), homeCards.slice(5..8), homeCards.drop(9)
+).map { group -> group.filterNot { it.play } }
+
 class MainActivity : ComponentActivity() {
     private val celebrationSound = CelebrationSound(AndroidPopSound())
     private lateinit var nativeTellMe: TellMeViewModel
@@ -293,6 +298,7 @@ class MainActivity : ComponentActivity() {
                             OutlinedButton(onClick = { openOptions() }) { Text(if (language == "de") "⚙ Optionen" else "⚙ Options") }
                         },
                         background = Gold,
+                        reflowTitle = screen == ShellScreen.HOME,
                         // Landscape button navigation and cutouts also occupy horizontal space.
                         windowInsets = WindowInsets.safeDrawing.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal)
                     )
@@ -802,10 +808,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 internal fun NativeHome(language: String, padding: PaddingValues, recoveryFailed: Boolean, onCard: (HomeCard) -> Unit) {
-    val learn = homeCards.take(5); val practice = homeCards.slice(5..8); val play = homeCards.drop(9)
+    val (learn, practice, play) = homeCardGroups()
     Column(Modifier.fillMaxSize().padding(padding).background(Grass).padding(horizontal = 16.dp).verticalScroll(rememberScrollState())) {
         if (recoveryFailed) Text(if (language == "de") "Das letzte Spiel konnte nicht wiederhergestellt werden. Wähle ein Spiel, um neu zu starten." else "The last activity could not be restored. Choose an activity to start again.", modifier = Modifier.padding(top = 12.dp))
-        Text(if (language == "de") "Bereit für ein Abenteuer?" else "Ready for an adventure?", modifier = Modifier.fillMaxWidth().padding(top = 20.dp), textAlign = TextAlign.Center, fontSize = 32.sp, fontWeight = FontWeight.Black, color = Ink)
+        Text(if (language == "de") "Bereit für ein Abenteuer?" else "Ready for an adventure?", modifier = Modifier.fillMaxWidth().padding(top = 20.dp), textAlign = TextAlign.Center, fontSize = 32.sp, lineHeight = 40.sp, fontWeight = FontWeight.Black, color = Ink)
         Text(if (language == "de") "Wähle ein Spiel. Jede Runde ist kurz und einfach." else "Choose a game. Each round is short and simple.", modifier = Modifier.fillMaxWidth().padding(4.dp), textAlign = TextAlign.Center, fontSize = 18.sp, fontWeight = FontWeight.Bold, color = Ink)
         Spacer(Modifier.height(12.dp))
         HomeGroup(if (language == "de") "LERNEN" else "LEARN", learn, language, onCard)

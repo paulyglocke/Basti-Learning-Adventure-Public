@@ -11,20 +11,38 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 
 /** Growing shell title; extreme text sizes can scroll without consuming the entire screen. */
 @Composable
 fun NativeScreenHeader(title: @Composable () -> Unit, navigationIcon: @Composable () -> Unit,
-    actions: @Composable () -> Unit, background: Color, windowInsets: WindowInsets) {
-    Row(Modifier.fillMaxWidth().background(background).windowInsetsPadding(windowInsets)
+    actions: @Composable () -> Unit, background: Color, windowInsets: WindowInsets,
+    reflowTitle: Boolean = false) {
+    BoxWithConstraints(Modifier.fillMaxWidth().background(background).windowInsetsPadding(windowInsets)
         .heightIn(max = LocalConfiguration.current.screenHeightDp.dp * .4f)
-        .verticalScroll(rememberScrollState()).padding(horizontal = 4.dp, vertical = 8.dp),
-        verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-        navigationIcon()
-        Box(Modifier.weight(1f)) {
-            ProvideTextStyle(MaterialTheme.typography.titleLarge) { title() }
+        .verticalScroll(rememberScrollState())) {
+        // Home's long app name needs a full-width line on narrow, enlarged-text windows.
+        // Keep the existing row on other screens and when there is sufficient space.
+        if (reflowTitle && maxWidth < 320.dp * LocalDensity.current.fontScale) {
+            Column(Modifier.padding(horizontal = 4.dp, vertical = 8.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                ProvideTextStyle(MaterialTheme.typography.titleLarge) { title() }
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End,
+                    verticalAlignment = Alignment.CenterVertically) {
+                    navigationIcon()
+                    actions()
+                }
+            }
+        } else {
+            Row(Modifier.fillMaxWidth().padding(horizontal = 4.dp, vertical = 8.dp), verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                navigationIcon()
+                Box(Modifier.weight(1f)) {
+                    ProvideTextStyle(MaterialTheme.typography.titleLarge) { title() }
+                }
+                actions()
+            }
         }
-        actions()
     }
 }

@@ -1,4 +1,98 @@
-# Session handoff — 2026-10-15
+# Session handoff — 2026-10-16
+
+## UX Refresh Phase 0 — Home cleanup and typography (approved finalisation)
+
+Started on clean `main` at `af8579280282b649480f996aaf9b25f0c9f1d803`, matching
+freshly fetched `origin/main` and the UX audit. This supersedes the historical
+weather checkpoint's pre-release Git status below; that weather implementation is
+already in the starting commit. Following owner review, commit and push of these
+eight scoped files are authorised after final validation. No redesign is authorised.
+
+Two independently reviewable presentation corrections:
+
+1. `homeCardGroups()` applies the unavailable-game filter **after** the existing
+   `take(5)`, `slice(5..8)`, `drop(9)` grouping. Home shows 20 functioning entries in
+   their original Learn / Practice / Play groups (5 / 4 / 11). Dragon Treasure Hunt,
+   Dinosaur Rescue, Memory Pairs and Crocodile Snap remain in the catalogue/plans,
+   but are not rendered. Host dispatch and all native/legacy activities are unchanged.
+2. Home's 32sp greeting previously inherited the 24sp body line height, colliding
+   when wrapped. It now explicitly uses 40sp line height without shrinking text.
+   Home alone opts into a full-width header title when width is below 320dp × font
+   scale, preventing the Options button from squeezing long words into tiny
+   fragments. Other headers retain the existing row; wrapping, scrollability,
+   semantics and the existing header-height bound remain.
+
+No learning content, answer logic, audio policy, progress/session identity, assets,
+dependencies or navigation design changed. Approved future direction: Design A's
+illustrated discovery, B's consistent components and C's calm learning surfaces.
+This checkpoint does not implement that redesign.
+
+Final automated validation: Temurin **17.0.20.1**, **API 35 Medium_Phone_API_35**
+ARM64 emulator (2 GB RAM).
+
+- **PASS:** full JVM **537/537**, 0 failures/errors/skips, including focused
+  Home/navigation **29/29** (3 new Home catalogue tests).
+- **PASS:** affected instrumentation **28/28**, 0 failures/skips: Home inventory
+  and touch/keyboard **2**, typography **12**, actual host routes **2**, existing
+  native text visibility **8**, existing compact text visibility **4**. Both
+  languages, portrait/short landscape and 1× / 1.5× / 2× typography are covered.
+  All 20 destinations and Back to Home are exercised in English and German;
+  this verifies dispatch, not full educational parity of legacy activities.
+- **PASS:** `assembleDebug`, `assembleDebugAndroidTest` (including Android-test
+  compilation), `lintDebug`, `git diff --check`. Lint: 0 errors, 5 existing warnings
+  (2 UnusedAttribute, 2 VectorRaster, 1 legacy SetJavaScriptEnabled), 2 informational
+  AutoboxingStateCreation findings. Existing deprecated VIBRATOR_SERVICE warning.
+- **NOT RUN locally:** unrelated full instrumentation suite, browser suite (web
+  dispatch unchanged), physical-device acceptance — **deferred by owner**.
+  Real TalkBack/switch hardware and S24/Fire testing remain pending.
+
+Owner-authorised finalisation reran the full JVM suite (**537/537**) and affected
+emulator suite (**28/28**, 215.043 seconds), both with zero failures/skips, on the
+unchanged reviewed source. Build, Android-test compilation, Lint and diff checks
+also passed. Evidence: `/private/tmp/basti-ux-phase0-release-build.log` and
+`/private/tmp/basti-ux-phase0-review/instrumentation-release.txt`. Only these eight
+scoped files are included; no screenshots, traces, build outputs or environment
+files are included in the commit.
+
+New-test diagnostics: the initial compile's unsupported matcher was replaced with
+existing Compose matchers. Two initial route failures were a test lifecycle error:
+manually calling `ComponentActivity.onSaveInstanceState` while resumed demoted its
+LifecycleRegistry to CREATED and disabled lifecycle-bound Back handling. The test
+now stops before saving and resumes before Back; production navigation is unchanged.
+No assertions were weakened. A later host transport interruption lost streamed
+output; the final complete **28-test** runner result was saved on-device and pulled
+to `/private/tmp/basti-ux-phase0-review/instrumentation-final.txt`.
+
+Separate investigation item **UX-ANR-01 — OPEN (legacy Numbers WebView)**:
+a batch screenshot helper's rapid swipes
+unexpectedly entered legacy Numbers, followed by an input-dispatch ANR (5001 ms).
+The main-thread sample shows WebView attachment through AndroidViewHolder; total
+emulator CPU was 100% with memory pressure. These observations do **not** establish
+a root cause or prove independence from Phase 0. Traces are preserved in
+`/private/tmp/basti-ux-phase0-review/{capture-anr.log,last-anr.txt,anr-trace.txt}`.
+No legacy production code was changed. This manual-capture incident remains an
+unresolved diagnostic finding, separate from the passing automated suite.
+Follow-up: reproduce controlled Home → Numbers entry, retain input/lifecycle,
+WebView and resource-pressure traces, and compare with the starting commit before
+classifying causality. Neither attribution to Phase 0 nor pre-existence is proven.
+Original diagnostic files were verified present and left unchanged at finalisation.
+
+Review evidence and the exact file list are in
+`/private/tmp/basti-ux-phase0-review/REVIEW.md`; temporary screenshots/logs are
+outside Git. Captured and inspected **8 actual-app Home screenshots**: English
+and German at 1× / 1.5× / 2× portrait and 2× landscape. Greeting lines and header
+controls are readable without overlap; narrow enlarged-text titles use the extra
+row, while wide landscape retains the compact row. The gallery also contains
+**24 constrained Compose fixture captures** (top/bottom of the 12 layout cases),
+clearly distinguished from actual-app screenshots. Final isolated Home capture
+completed successfully; emulator language/display settings were restored.
+Gallery: `/private/tmp/basti-ux-phase0-review/index.html`.
+The release commit is identified by Git history; remote verification and the
+corresponding GitHub Actions result are reported after the authorised push.
+
+Next planned slice: a bounded reusable design-token baseline and a separately
+reviewable illustrated Home prototype using Design A; no new categories/routes or
+production redesign should be inferred from the Phase 0 changes.
 
 ## Seasonal Weather Exploration — Phase 2 review checkpoint
 
