@@ -20,6 +20,12 @@ Keep legacy routes usable during migration. An adapter may translate old IDs/set
 
 ## Responsibilities and dependency direction
 
+UX Refresh Phase 1 adds an opt-in Material 3 foundation in `ui/design`, documented
+in [UX_DESIGN_FOUNDATION.md](docs/UX_DESIGN_FOUNDATION.md). Only a `src/debug`
+showcase consumes it; MainActivity and existing learning UI retain their current
+theme and components. Presentation swatches are not navigation/content/progress IDs.
+No new state, audio, persistence or navigation framework is introduced.
+
 | Conceptual area | Responsibility |
 | --- | --- |
 | `app/navigation` | Destination/back stack and route IDs; wire screen owners and dependencies. Activity owns platform/window integration, not quiz rules. |

@@ -1,4 +1,84 @@
-# Session handoff — 2026-10-16
+# Session handoff — 2026-10-17
+
+## UX Refresh Phase 1 — visual foundation (validated; finalisation authorised)
+
+Started on clean `main` at `dac2fbb1ca68fb80691d2e22cb908cfa0b634919`, matching
+fetched `origin/main`. Phase 0 is committed/pushed; its historical checkpoint follows.
+The original task stopped before commit/push. The subsequent Phase 2 task explicitly
+authorises finalising Phase 1 first, with required CI success before prototype work.
+Production Home redesign remains unauthorised.
+
+Added opt-in palette/foregrounds, system-font typography/line heights, spacing/shapes,
+a semantic section heading and illustrated selectable category presentation.
+Existing NativeActionButton and NativeSupportMessage are reused without changes.
+The only consumer is a debug-only developer showcase; production Home, headers,
+learning-specific colours, routes, audio, content, progress and dependencies are
+unchanged. Six sample mascots reuse canonical assets, not final category artwork.
+Details and launch instructions: [UX_DESIGN_FOUNDATION.md](docs/UX_DESIGN_FOUNDATION.md).
+
+Final automated validation used Temurin **17.0.20.1** and the **API 35
+Medium_Phone_API_35 ARM64 emulator** (2 GB RAM); no result is inferred from Phase 0.
+
+- **PASS:** full JVM **541/541**, zero failures/errors/skips (537 existing + 4 new).
+- **PASS:** affected instrumentation **44/44**, zero failures/skips, 312.916 seconds:
+  new design matrix/isolation **13**, Home inventory/typography/routes **16**,
+  shared actions **4**, text choices **4**, support **2**, completion **5**.
+  Covers EN/DE, portrait/short landscape, 1× / 1.5× / 2×, touch/keyboard,
+  Button/selected/disabled semantics, text layout and all 20 existing Home routes.
+- **PASS:** `assembleDebug`, `assembleDebugAndroidTest` (including Android-test
+  compilation), `lintDebug`, `git diff --check`. Lint has zero errors, 5 existing
+  warnings (2 UnusedAttribute, 2 VectorRaster, 1 legacy SetJavaScriptEnabled),
+  and 2 informational AutoboxingStateCreation findings. No new lint warning.
+- **NOT RUN locally:** unrelated full instrumentation/browser suites (no web changes),
+  physical TalkBack/switch/Fire/S24 acceptance. Push CI is checked separately below.
+
+Build evidence: `/private/tmp/basti-ux-phase1-reviewed-build.log`.
+Complete runner evidence: `/private/tmp/basti-ux-phase1-review/instrumentation-final.txt`.
+Screenshot gallery: `/private/tmp/basti-ux-phase1-review/index.html`; captures and
+diagnostics remain outside Git. Automated fixtures produced 60 captures across
+the 12 layout cases; representative fixtures were inspected, not all 60.
+Captured and inspected 7 launched debug-showcase screenshots: EN/DE six-colour
+overviews in an emulated 800×1280dp tablet window, EN phone typography/actions,
+DE 2× portrait typography and DE 2× landscape actions (top/scrolled). No overlap
+or horizontal clipping was observed in these views; large content scrolls.
+The initial manual rotation request stayed portrait; the capture helper was
+corrected to use window-manager rotation and verify landscape PNG dimensions
+before replacing that capture. No production change was needed. Emulator display
+settings were restored. These are component previews, not redesigned Home screens
+or physical-tablet acceptance.
+
+Resolved new-component diagnostics:
+The first new emulator matrix reported 12 failures/13 tests: each layout case
+caught the same missing Button role on the new clickable Surface. The independent
+isolation/disabled test passed. Added explicit `Role.Button` to the card, keeping
+the assertion unchanged. Also corrected the debug showcase's modifier-parameter
+order flagged by Lint. An intermediate build encountered old/new signature mismatch
+while that edit was being completed; only the subsequent fresh build is final evidence.
+The next matrix exposed a TextLayoutResult width mismatch on wrap-content text:
+"Numbers & Maths" had a 421px node/right edge but a 735px paragraph width. Its
+captured glyphs were not clipped. New labels/headings/demo text now fill their
+allocated reading width; fonts and strict no-overflow assertions are unchanged.
+The isolated case then passed. Visual inspection also corrected the debug decoder's
+fixed downsampling: it now samples to the 96dp illustration's pixel size, retaining
+small originals instead of unnecessarily enlarging a downsampled dragon.
+Physical-device acceptance remains **NOT RUN — deferred by owner**.
+UX-ANR-01 remains a separate open investigation; original diagnostics are untouched.
+
+Finalisation review confirmed exactly 11 scoped files and no production consumer of
+the new theme. Freshly fetched origin/main still matched the starting baseline.
+JDK 17 `testDebugUnitTest assembleDebug assembleDebugAndroidTest lintDebug` succeeded
+again in 5 seconds: 75 tasks up-to-date, one executed. The unchanged source/tests and
+Gradle input verification preserve applicability of the recorded 541 JVM / 44 emulator
+passes; this was not a fresh instrumentation execution. Finalisation build log:
+`/private/tmp/basti-ux-phase1-release-build.log`. Diff/whitespace checks pass. Only
+authorisation/handoff wording changed after the reviewed implementation. The release
+commit is identified in Git history; remote equality and actual CI are reported after
+push, not predicted here.
+
+Next: isolated illustrated Home prototype, only after Phase 1 push/required CI pass
+and receipt of the complete Phase 2 brief (currently truncated at “Learning categories
+— Display”). No Phase 2 implementation, design rollout or new category navigation
+has been started.
 
 ## UX Refresh Phase 0 — Home cleanup and typography (approved finalisation)
 
