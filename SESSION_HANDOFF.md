@@ -1,4 +1,189 @@
-# Session handoff — 2026-10-17
+# Session handoff — 2026-10-19
+
+## UX Refresh Phase 2 / 2B — owner-approved finalisation
+
+The owner approved the reviewed isolated prototype for a joint commit and push.
+This supersedes the earlier review-only instructions below, which are historical
+validation records. Production Home integration is still not authorised.
+
+Starting local HEAD, fetched `origin/main` and live remote main all matched
+`c94687d8c5b38d5fcf94d97b091e95ba7992321b`. The complete change inventory matches
+the nine files in [UX_HOME_PROTOTYPE.md](docs/UX_HOME_PROTOTYPE.md). Source review
+confirmed the compact Home/category headers, reduced category introduction height,
+dinosaur counting blocks and dragon speech bubble. All six bilingual categories
+cover 19 existing identities; All Activities retains all 20, including Mixed.
+No production Home, learning route, content, audio, persistence, legacy source,
+artwork, dependency or Phase 1 implementation is changed. Finalisation edits only
+this handoff and the prototype document; application/test source is unchanged from
+the owner-reviewed Phase 2B validation and 19 emulator screenshots.
+
+Final evidence: `/private/tmp/basti-ux-phase2-finalise.UYppOq/`.
+The first Gradle launch could not start because the previous temporary JDK lacked
+`lib/jvm.cfg`; no test/build ran in that attempt (`build.log`). Downloaded the same
+Temurin **17.0.20.1+1** into the new evidence folder, verified its published SHA-256,
+and left the incomplete original and all project dependencies untouched.
+
+- **PASS:** freshly rerun full JVM **550/550**, including focused prototype **9/9**;
+  zero failures/errors/skips. `build-final.log` and `validation.json` retain evidence.
+- **PASS:** `assembleDebug`, `assembleDebugAndroidTest` (including Android-test
+  compilation), `lintDebug`; unchanged build/analysis outputs were up-to-date.
+  Lint retains zero errors, five existing warnings and two informational findings.
+- **PASS:** final relevant API 35 instrumentation **56/56**, zero failures/skips,
+  **446.052s** (`instrumentation-final.txt`): prototype 27, production Home 16,
+  foundation/isolation 13. Covers EN/DE × 1×/1.5×/2× across phone, short landscape
+  and tablet fixtures; all 20 previews and existing production routes; touch,
+  keyboard/focus, semantic labels, text bounds, scroll retention and recreation.
+- **PASS:** nine-file scope and diff/new-file whitespace checks; production diff empty.
+
+Everyday Skills still needs a dedicated single-action illustration; the existing
+routine scene remains temporary. The German 2× preview-settings compound-word break
+remains a copy/layout polish item, without lost text. Both remain documented in
+UX_HOME_PROTOTYPE.md. **UX-ANR-01 stays OPEN and separate**; its three original
+diagnostic files were verified present and left unchanged. No causal attribution
+to this prototype is established. Physical-device acceptance remains
+**NOT RUN — deferred by owner**; actual TalkBack/switch and child acceptance are
+not claimed. The owner-approved emulator screenshots remain historical visual
+evidence for this unchanged implementation, not physical acceptance.
+
+All local finalisation gates passed. Commit/push is authorised for this exact scope;
+the resulting SHA and post-push CI outcome must be verified from Git/GitHub and
+reported separately, not inferred from these local results. Browser/content/release
+guard checks run in push CI; unrelated full instrumentation was not rerun locally.
+Next proposed task: separately authorised, bounded production Home integration
+with all-20-route, Options/Back, legacy fallback and saved-session compatibility
+tests. Do not infer permission to implement it from this finalisation.
+
+## UX Refresh Phase 2B — visual refinement (validated; owner review; do not commit)
+
+HEAD remains `c94687d8c5b38d5fcf94d97b091e95ba7992321b`. Preserved the nine
+uncommitted Phase 2 files. Only six of those are refined: prototype screen/art,
+JVM/instrumentation tests, `docs/UX_HOME_PROTOTYPE.md` and this handoff. No production
+Home, navigation, foundation tokens, artwork files, learning/audio/progress/session
+code or dependencies are changed. Host, manifest and local navigation model are
+unchanged from Phase 2. All six categories, 19 mapped entries plus Mixed Adventure,
+preview settings, All Activities and restoration remain in scope.
+
+Refinements: compact Grown-ups / Erwachsene header action; dragon shares that row at
+large text; compact Back/Home text controls; category artwork/heading combined with
+a smaller preview invitation; Maths dinosaur with one/two/three block groups; Words
+canonical dragon with a separate native speech bubble. Seasons/whale/colour-table
+art is preserved. No appropriate single-action handwashing art was found; existing
+Everyday scene and explicit Wash Hands placeholder remain, with an asset brief in
+the prototype document. No production integration is authorised.
+
+Evidence: `/private/tmp/basti-ux-phase2b-review.Iw6FpN/`. Original Phase 2 gallery is
+preserved; the new `index.html` offers 17 actual emulator before/after pairs plus
+two additional German 2× category/settings captures. All **19** final-code captures
+were visually inspected; display/font overrides were restored after capture.
+Full JVM **550/550**, including focused **9/9**, build and lint pass on JDK 17.
+Final relevant API 35 instrumentation: **56/56**, zero failures/skips, **524.452s**:
+prototype **27** (24 bilingual/font/window cases and three navigation tests),
+production Home **16**, existing foundation/isolation **13**. Header labels retain
+56dp targets, Button semantics, keyboard activation and Back → Home focus order.
+All 20 previews, preview language, scroll retention and recreation are covered.
+Debug and Android-test APKs compile/build successfully; lint has zero errors, five
+unchanged warnings (2 UnusedAttribute, 2 VectorRaster, 1 legacy SetJavaScriptEnabled)
+and two AutoboxingStateCreation informational findings. Diff/new-file whitespace
+checks pass. No production source, dependency or asset changes; exact nine-file
+scope verified in `scope-check.json`. No overlapping or horizontally clipped text
+was observed; large-text and short pages remain scrollable. The first English Home
+capture also shows Material keyboard-focus shading on Grown-ups, not a permanent
+filled button. Minor remaining polish: the preview-only German settings notice
+breaks the long word Vorschau-Einstellungen across lines at 2×; no text is lost.
+Everyday still needs dedicated single-action artwork. Neither is a learning defect.
+
+The initial 56-case run had 31 passes and
+25 failures: 24 compact-label width mismatches (87px Text versus 216px paragraph in
+the isolated EN case), plus a keyboard test requesting focus in touch mode. The
+prototype TextButton now uses intrinsic width with Text filling that allocated width;
+the keyboard test enters keyboard mode via Android Tab before focus assertions.
+Both isolated rechecks pass (2/2), followed by the successful complete rerun. No
+assertions were weakened. Evidence and details are in the new review report.
+Physical-device acceptance is **NOT RUN — deferred by owner**. Actual TalkBack,
+switch and child recognition are NOT RUN. Unrelated full instrumentation/browser
+suites were NOT RUN; web dispatch is unchanged. UX-ANR-01 and its diagnostics remain
+separate and open. No commit/push or new CI run is authorised.
+
+Recommendation: ready for owner approval to commit the isolated Phase 2/2B prototype,
+not to replace production Home. Review the gallery first; approve an Everyday asset
+brief and any remaining preview-copy polish separately before production integration.
+
+## UX Refresh Phase 2 — isolated illustrated Home (owner review; do not commit)
+
+Baseline and unchanged HEAD: `c94687d8c5b38d5fcf94d97b091e95ba7992321b`.
+Phase 1 was finalised before this work; its Android/browser CI passed in
+[run 39068010439](https://github.com/paulyglocke/Basti-Learning-Adventure-Public/actions/runs/39068010439).
+Do not repeat Phase 1 or infer authorization for production Home integration.
+
+Added a debug-only, explicitly launched Compose prototype: canonical dragon welcome,
+six bilingual illustrated categories, all 20 existing activities in All Activities,
+local activity previews and preview-only grown-up language controls. Six categories
+cover 19 original entries; Mixed Adventure remains the twentieth. Back/Home, page
+scroll, language and route restoration are local saved-instance state, not production
+settings or learning journals. No game starts from this prototype.
+
+Production Home, routes, content, progress, sessions, audio, artwork, dependencies
+and Phase 1 Kotlin components are unchanged. The only manifest addition is the debug
+prototype host. Full mapping, asset inventory, launch command and exact nine-file
+change inventory: [UX_HOME_PROTOTYPE.md](docs/UX_HOME_PROTOTYPE.md).
+
+Validation uses JDK **17.0.20.1**, API **35** Medium_Phone ARM64 emulator (2 GB RAM).
+
+- **PASS:** focused prototype JVM **8/8**; full JVM **549/549**, zero failures/errors/skips.
+- **PASS:** `assembleDebug`, `assembleDebugAndroidTest` including Android-test
+  compilation, `lintDebug`. Zero lint errors; five unchanged warnings (2 UnusedAttribute,
+  2 VectorRaster, 1 legacy SetJavaScriptEnabled) and two AutoboxingStateCreation infos.
+- **PASS:** final relevant instrumentation **55/55**, zero failures/skips, 495.679 seconds:
+  prototype **26** (24 EN/DE × 1/1.5/2 × four viewport cases + two navigation/restoration),
+  existing Home **16** (inventory, typography, actual route entry/return), Phase 1
+  foundation/isolation **13**. Includes touch/keyboard, Button/selected semantics,
+  56dp targets, natural text wrapping, all 20 previews, Back/Home, scroll and recreation.
+- **PASS:** `git diff --check`, plus whitespace checks on all new files.
+- **PASS (emulator visual inspection):** all **17** final captures inspected: EN/DE
+  phone Home, DE 2× top/scrolled, EN tablet portrait, DE tablet landscape, all six
+  category pages, All Activities and short-landscape top/scrolled. No horizontal
+  clipping or overlapping text observed. Short landscape now exposes the first
+  category row immediately; enlarged/long pages scroll rather than shrink text.
+  Normal viewport-edge cropping while scrolling is not hidden/truncated text.
+- **NOT RUN:** unrelated full instrumentation/browser suites; no web dispatch changed.
+  Physical-device acceptance remains **NOT RUN — deferred by owner**; actual TalkBack,
+  switch and child usability acceptance are not claimed. No Phase 2 commit/push/CI run.
+
+Evidence outside Git: `/private/tmp/basti-ux-phase2-review.f2r4tO/`.
+Build log: `build.log`; full JVM counts: `jvm-results.json`; lint: `lint-results-debug.xml`.
+Complete final runner output: `instrumentation-final.txt`.
+Review: `index.html` and `REVIEW.md` in that evidence folder. Capture settings were
+restored afterward. No screenshots, logs or generated build outputs are Git changes.
+The HTML gallery and Markdown review are for emulator-rendered Compose, not browser
+mockups. Tablet views are emulator window overrides, not physical tablet acceptance.
+
+Validation findings and corrections:
+
+- Initial screenshot inspection found a tall welcome area obscuring the first category
+  in short landscape. A compact header helped actual screenshots, but the stricter
+  320px-high Compose fixture still caught EN/DE first-label visibility failures
+  (**53 passed / 2 failed / 0 skipped**). Short-height category cards now place fitted
+  artwork beside the unchanged-size label in at most two columns. Normal layouts
+  retain the unchanged Phase 1 card. The assertion remains unchanged. German rows
+  also use equal card heights to accommodate different wrapping.
+- An earlier 55-case attempt failed during setup while emulator user 0 was BOOTING:
+  51 ComponentActivity resolution errors, two prototype host resolution errors,
+  two credential-encrypted SharedPreferences errors. Independent package resolution
+  also failed. A non-wiping emulator reboot restored RUNNING_UNLOCKED and activity
+  resolution; the next run reached the actual UI assertions. No production/test code
+  was changed for this environment failure. Evidence: `failed-locked-user-tests.txt`
+  and `short-label-failure-tests.txt`. The cause of the emulator's interrupted system
+  startup itself is not established.
+
+Remaining design review: the maths dinosaur/dots are explicitly a temporary counting
+sketch; classroom scenes for Words/Colours/Everyday are busier than bespoke subject
+art. Dedicated handwashing art is missing and explicitly labelled in its preview.
+No assets are generated or modified. UX-ANR-01 below remains a separate unresolved
+legacy Numbers investigation; its diagnostics and attribution caveats are unchanged.
+
+Next slice: owner/child review of imagery and navigation, then a bounded prototype
+revision if necessary. Production integration needs separate authorization and
+route/session/Options compatibility tests. Leave all Phase 2 changes uncommitted.
 
 ## UX Refresh Phase 1 — visual foundation (validated; finalisation authorised)
 

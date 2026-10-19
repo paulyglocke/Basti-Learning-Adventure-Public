@@ -2,5 +2,6 @@
     <application>
         <!-- Explicit developer launch only; never a Home/launcher entry or release Activity. -->
         <activity android:name=".ui.design.DesignShowcaseActivity" android:exported="true" />
+        <activity android:name=".ui.homeprototype.HomePrototypeActivity" android:exported="true" />
     </application>
 </manifest>
