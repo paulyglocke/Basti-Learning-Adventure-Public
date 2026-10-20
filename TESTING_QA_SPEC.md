@@ -6,6 +6,47 @@ This document defines verification and feature completion gates. [NATIVE_ARCHITE
 
 **A feature is not done only because it builds.** Record evidence for its behavior and relevant device risks. A code-complete slice awaiting required hardware checks must be labelled as such, not fully verified or eligible for legacy removal.
 
+## UX Refresh Phase 4A — Months chooser and Explore (2026-10-20, uncommitted)
+
+The Months activity chooser now separates activity selection from the existing
+content-first Year Wheel Explore route. Existing quiz, Build Year (three-/four-month),
+Months ↔ Seasons and Seasons Wheel activities remain on their established learning
+owners and saved-progress formats. Back from Explore returns to the chooser; Between's
+contextual Year Wheel still returns to the same question. The Year Wheel artwork,
+rotation geometry, month order and season mapping are unchanged. No six-/twelve-month
+levels, new progress identity or persistence migration was introduced.
+
+- PASS — focused Months JVM tests **57/57** and full JVM suite **555/555**, zero
+  failures/errors/skips. `assembleDebug`, `assembleDebugAndroidTest`, `lintDebug`
+  and `git diff --check` passed.
+- PASS — complete Months package instrumentation on API 35 **185/185**, zero
+  failures/skips. This includes chooser layouts, wheel presentation, quiz and
+  season routes, Between contextual return, Build Year levels and saved-session
+  restoration. The earlier **169/185** attempt had fourteen wheel assertions
+  blocked by the misplaced `months-content` semantics tag and one route assertion
+  expecting the old parent; both corrections are present and the full suite now
+  passes.
+- The remaining earlier four-month failure was a test-thread issue, not an app or
+  emulator failure. Its stack ends at
+  `MonthsBuildYearFourScreenTest.kt:89`: the test called Compose's keyboard input
+  mode manager from the instrumentation thread, leading through Compose focus to
+  Android `ViewRootImpl.requestChildFocus` and
+  `CalledFromWrongThreadException`. Dispatching that request via `runOnUiThread`
+  preserves the keyboard-mode assertion. The next complete API 35 run passed
+  **185/185**. The captured failure is in the connected-test XML/logcat under
+  `app/build/outputs/androidTest-results/connected/debug/`.
+- PASS — actual API 35 MainActivity screenshots are in
+  [the visual gallery](docs/months-phase4a-review/index.html), with a concise
+  [review report](docs/months-phase4a-review/REVIEW.md). The capture script restores
+  emulator display, font, orientation and language settings.
+- `lintDebug` reports the existing five warnings and two informational findings;
+  Kotlin reports the existing deprecated `VIBRATOR_SERVICE` warning. Physical-device,
+  TalkBack, switch-access, child-usability and offline-voice acceptance remain
+  **NOT RUN**. UX-ANR-01 remains independent.
+
+This checkpoint is uncommitted and does not authorize commit or push. See
+[SESSION_HANDOFF.md](SESSION_HANDOFF.md) for the exact working-tree state.
+
 ## UX Refresh Phase 3 — production Home checkpoint (2026-10-20)
 
 At baseline `d0679a8ec227ccae41ba42eed6690fde5fa47784` (uncommitted), fresh

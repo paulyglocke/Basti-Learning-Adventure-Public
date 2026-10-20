@@ -117,6 +117,7 @@ class ShellNavigationTest {
         assertEquals(BackAction.MONTHS_AREA, three.backAction)
         assertEquals(BackAction.MONTHS_AREA, four.backAction)
         assertEquals(ShellScreen.MONTHS, levels.openMonths().screen)
+        assertEquals(ShellScreen.MONTHS_CHOOSER, levels.openMonthsChooser().screen)
     }
 
     @Test fun monthsBetweenAndItsYearWheelReturnToTheSameQuestionRoute() {

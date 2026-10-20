@@ -1,5 +1,70 @@
 # Session handoff — 2026-10-20
 
+## UX Refresh Phase 4A — Months chooser and content-first Explore (uncommitted)
+
+**Current task:** bounded Months navigation/presentation refinement. HEAD remains
+`00fdaac51eb87ac1a3f99b7d25c15332274b9a07` on `main`; all Phase 4A changes are
+uncommitted. Commit and push are **not authorized**. Do not reset, stash, discard,
+commit or push these changes. No activity-generation, difficulty, scoring, audio
+policy, progress identity, journal/checkpoint format or persistence migration changed.
+
+### Implementation
+
+- Days & Seasons now opens the bilingual Months chooser. Its featured Year Wheel
+  Explore choice opens the existing `MONTHS` route directly. That established route
+  still restores as Explore for old saved route state. Explore Back returns to the
+  chooser; chooser Back returns to Days & Seasons. Quiz practice remains directly
+  reachable from the chooser; Build Year levels, Seasons Match and Seasons Wheel
+  retain their existing screens and owners.
+- Explore puts the existing Year Wheel first and keeps the named month list, Listen,
+  season descriptions and Home reachable. Large tablet windows use a wheel/control
+  split; short landscape uses a compact split so the wheel, selected month and Listen
+  fit. The wheel drawing, segment boundaries, order, fixed pointer and rotations are
+  unchanged. The Between contextual wheel retains its explicit return to the exact
+  question.
+- A real API 35 visual pass found and fixed the duplicated Months shell title wrapping
+  at German 2× text and the wheel being clipped on a short landscape phone. No new
+  artwork or dependency was added; the chooser uses season colour cues and approved
+  shared surfaces.
+- The chooser has EN/DE large-text/form-factor UI coverage. Shell restoration tests
+  include chooser/Explore routes, Options and old `MONTHS` restoration. Existing
+  three-/four-month state tests and Between's contextual-question test remain active.
+
+### Validation and review evidence
+
+- PASS — focused Months JVM **57/57** and full JVM **555/555**, zero
+  failures/errors/skips. `assembleDebug`, `assembleDebugAndroidTest`, `lintDebug`
+  and `git diff --check` passed. Gradle emits the existing deprecated
+  `VIBRATOR_SERVICE` Kotlin warning. Lint retains five warnings and two
+  informational findings.
+- PASS — complete API 35 Months-package instrumentation **185/185**, zero failures
+  or skips. This includes chooser layouts, Explore, quizzes, seasons, Between's
+  contextual return, Build Year levels and route/session restoration. The earlier
+  14 wheel failures were caused by the test tag being attached to the wrong node;
+  the corrected tag is on the scroll container. The stale route assertion now
+  expects the chooser parent.
+- The prior four-month exception was reproduced on API 35 and traced to test
+  synchronization: `MonthsBuildYearFourScreenTest.kt:89` called keyboard input-mode
+  change on the instrumentation thread. The stack continued through Compose focus
+  and `ViewRootImpl.requestChildFocus` to `CalledFromWrongThreadException`. Running
+  that request on the UI thread keeps the assertion and fixes the test harness. The
+  subsequent complete run passed **185/185**; no production Months defect or
+  emulator instability was observed.
+- Fourteen actual MainActivity captures are indexed in
+  [the API 35 visual gallery](docs/months-phase4a-review/index.html); the concise
+  [review](docs/months-phase4a-review/REVIEW.md) records hierarchy, landscape and
+  tablet findings. `capture.py` restores the emulator's prior font, display,
+  orientation and app language settings.
+- The short-landscape screenshot was recaptured from the final build and visually
+  confirms the full wheel, selected month and Listen control are visible. Remaining
+  acceptance is **NOT RUN**: physical S24/Fire device, actual TalkBack,
+  switch-access, child usability and offline voice quality. UX-ANR-01 remains
+  independent.
+
+Exact changed paths are listed in the Phase 4A review report. Preserve this work for
+owner review; do not treat documentation or focused emulator results as full hardware
+acceptance.
+
 ## UX Refresh Phase 3 — resumed validation (complete; review only)
 
 The owner requested continuation. Original Phase 3 scope and uncommitted work are

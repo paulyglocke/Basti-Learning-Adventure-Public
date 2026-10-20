@@ -26,7 +26,8 @@ class MonthsRouteTest {
             ActivityScenario.launch(MainActivity::class.java).use {scenario ->
                 fun settled(){compose.waitUntil(10_000){var ready=false;scenario.onActivity{ready=ViewModelProvider(it)[MonthsViewModel::class.java].selection!=null};ready}}
                 compose.openHomeActivity("Days & Seasons")
-                compose.onNodeWithTag("open-months").performScrollTo().performClick();settled()
+                compose.onNodeWithTag("open-months").performScrollTo().performClick()
+                compose.onNodeWithTag("months-open-explore").performScrollTo().performClick();settled()
                 compose.onNodeWithTag(MonthIds.SEPTEMBER.value).performScrollTo().performClick()
                 scenario.recreate();settled()
                 compose.onNodeWithTag("months-selected").performScrollTo().assertTextEquals("September")
@@ -36,7 +37,7 @@ class MonthsRouteTest {
                 compose.onNodeWithTag("months-selected").performScrollTo().assertTextEquals("September")
                 compose.onNodeWithTag(MonthIds.MARCH.value).performScrollTo().assertTextEquals("März")
                 scenario.onActivity{it.onBackPressedDispatcher.onBackPressed()}
-                compose.onNodeWithTag("open-months").performScrollTo().performClick();settled()
+                compose.onNodeWithTag("months-open-explore").performScrollTo().performClick();settled()
                 compose.onNodeWithTag("months-selected").performScrollTo().assertTextEquals("September")
                 compose.onNodeWithTag("months-home").performScrollTo().performClick()
                 compose.onNodeWithTag("home-category-TIME").performScrollTo().performClick()

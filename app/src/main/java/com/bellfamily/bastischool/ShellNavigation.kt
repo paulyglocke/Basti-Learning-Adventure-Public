@@ -3,7 +3,7 @@ package com.bellfamily.bastischool
 import java.util.concurrent.atomic.AtomicReference
 import com.bellfamily.bastischool.ui.home.validHomePage
 
-internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS, WILMA, VOCABULARY, TELL_ME, FOLLOW_LEVELS, FOLLOW_INSTRUCTIONS, FOLLOW_TWO, COLOUR_SORT, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH, COMPARE_QUANTITY, NUMBER_ORDER, ADD_TOGETHER, CLOCK, CLOCK_MAKE, MONTHS, MONTHS_FIND, MONTHS_RELATIONS, MONTHS_MISSING, MONTHS_BETWEEN, MONTHS_BETWEEN_WHEEL, MONTHS_BUILD_YEAR_LEVELS, MONTHS_BUILD_YEAR, MONTHS_BUILD_YEAR_FOUR, MONTHS_SEASONS, MONTHS_SEASONS_WHEEL }
+internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS, WILMA, VOCABULARY, TELL_ME, FOLLOW_LEVELS, FOLLOW_INSTRUCTIONS, FOLLOW_TWO, COLOUR_SORT, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH, COMPARE_QUANTITY, NUMBER_ORDER, ADD_TOGETHER, CLOCK, CLOCK_MAKE, MONTHS_CHOOSER, MONTHS, MONTHS_FIND, MONTHS_RELATIONS, MONTHS_MISSING, MONTHS_BETWEEN, MONTHS_BETWEEN_WHEEL, MONTHS_BUILD_YEAR_LEVELS, MONTHS_BUILD_YEAR, MONTHS_BUILD_YEAR_FOUR, MONTHS_SEASONS, MONTHS_SEASONS_WHEEL }
 internal enum class BackAction { EXIT, HOME_ROOT, CLOSE_OPTIONS, LEGACY, NATIVE_HOME, DAYS_HUB, CLOCK_AREA, MONTHS_AREA, FOLLOW_LEVELS }
 
 /** Options is an overlay on one destination, never another entry in a growing stack. */
@@ -18,14 +18,14 @@ internal data class ShellNavigation(
         ShellScreen.HOME -> if (homePage == "home") BackAction.EXIT else BackAction.HOME_ROOT
         ShellScreen.OPTIONS -> BackAction.CLOSE_OPTIONS
         ShellScreen.WEB -> BackAction.LEGACY
-        ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BETWEEN, ShellScreen.MONTHS_BETWEEN_WHEEL, ShellScreen.MONTHS_BUILD_YEAR_LEVELS, ShellScreen.MONTHS_BUILD_YEAR, ShellScreen.MONTHS_BUILD_YEAR_FOUR, ShellScreen.MONTHS_SEASONS, ShellScreen.MONTHS_SEASONS_WHEEL -> BackAction.MONTHS_AREA
+        ShellScreen.MONTHS, ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BETWEEN, ShellScreen.MONTHS_BETWEEN_WHEEL, ShellScreen.MONTHS_BUILD_YEAR_LEVELS, ShellScreen.MONTHS_BUILD_YEAR, ShellScreen.MONTHS_BUILD_YEAR_FOUR, ShellScreen.MONTHS_SEASONS, ShellScreen.MONTHS_SEASONS_WHEEL -> BackAction.MONTHS_AREA
         ShellScreen.CLOCK_MAKE -> BackAction.CLOCK_AREA
         ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO -> BackAction.FOLLOW_LEVELS
         ShellScreen.NUMBER_ORDER -> BackAction.NATIVE_HOME
         ShellScreen.ADD_TOGETHER, ShellScreen.CLOCK -> BackAction.NATIVE_HOME
         ShellScreen.COMPARE_QUANTITY -> BackAction.NATIVE_HOME
         ShellScreen.PREPOSITIONS, ShellScreen.DAYS_SEASONS, ShellScreen.VOCABULARY, ShellScreen.TELL_ME, ShellScreen.FOLLOW_LEVELS, ShellScreen.COLOUR_SORT, ShellScreen.ANIMAL_GROUPS, ShellScreen.WASH_HANDS, ShellScreen.SUBITISING, ShellScreen.QUANTITY_MATCH -> BackAction.NATIVE_HOME
-        ShellScreen.SEASONS, ShellScreen.WILMA, ShellScreen.MONTHS -> BackAction.DAYS_HUB
+        ShellScreen.SEASONS, ShellScreen.WILMA, ShellScreen.MONTHS_CHOOSER -> BackAction.DAYS_HUB
     }
     val ownsWebSession: Boolean get() = screen == ShellScreen.WEB ||
         (screen == ShellScreen.OPTIONS && optionsOrigin == ShellScreen.WEB)
@@ -58,6 +58,7 @@ internal data class ShellNavigation(
     fun openMonthsSeasons() = ShellNavigation(ShellScreen.MONTHS_SEASONS)
     fun openMonthsSeasonsWheel() = ShellNavigation(ShellScreen.MONTHS_SEASONS_WHEEL)
     fun openMonths() = ShellNavigation(ShellScreen.MONTHS)
+    fun openMonthsChooser() = ShellNavigation(ShellScreen.MONTHS_CHOOSER)
     fun openWilma() = ShellNavigation(ShellScreen.WILMA)
     fun openSeasons() = ShellNavigation(ShellScreen.SEASONS)
     fun openPrepositions() = ShellNavigation(ShellScreen.PREPOSITIONS, mode = "positions")

@@ -36,6 +36,8 @@ class MonthsQuizRouteTest {
             scenario.onActivity{it.onBackPressedDispatcher.onBackPressed()};settled()
             val find=state();assertEquals("GERMAN",find.language.name)
             click("months-quiz-explore")
+            compose.waitUntil(10_000){compose.onAllNodesWithTag("months-wheel").fetchSemanticsNodes().isNotEmpty()}
+            scenario.onActivity{it.onBackPressedDispatcher.onBackPressed()}
             compose.waitUntil(10_000){compose.onAllNodesWithTag("months-open-relations").fetchSemanticsNodes().isNotEmpty()}
             click("months-open-relations");settled()
             assertEquals(MonthsQuestions.activity(MonthsMode.RELATIONS),state().plan.activity)

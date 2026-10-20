@@ -97,6 +97,18 @@ Navigation must not strand the child in loading, missing-content or audio-failur
 
 Changing language updates visible and spoken content together, stops stale narration and preserves task identity where meaning remains valid. If a language-specific task cannot be translated in place (for example an initial-sound question), restart that task explicitly without recording a wrong answer. Configuration/recovery behavior follows NATIVE_ARCHITECTURE_SPEC.md.
 
+Days & Seasons opens a Months activity chooser. Its featured Explore choice opens
+the existing interactive Year Wheel directly; the chooser also keeps every shipped
+Months practice mode reachable without a new curriculum level. Explore is a
+separate presentation route. Back from Explore returns to the chooser, while Back
+from the chooser returns to Days & Seasons. Existing saved `MONTHS` destinations
+continue to restore as Explore. Quiz learning alternatives still open the Year
+Wheel, and Months Between uses its contextual wheel route so its visible return
+action restores the same question. Build Year's level chooser and the Seasons Wheel
+are direct chooser destinations; leaving either returns to the chooser. These
+presentation routes add no progress identity, journal, checkpoint or saved-progress
+format.
+
 Months Build the Year begins with a level chooser: Level 1 orders three consecutive
 months and Level 2 orders four. Both remain independently selectable; completion of
 Level 1 does not auto-advance. Level 2 uses deterministic 5/10 question rounds with

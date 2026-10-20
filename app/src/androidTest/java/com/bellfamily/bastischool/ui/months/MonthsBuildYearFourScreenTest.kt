@@ -86,7 +86,9 @@ class MonthsBuildYearFourScreenTest(private val german: Boolean, private val fon
 
         val wrong=state.choices.first().first { it != state.order.first() }
         click("months-build-year-four-choice-${wrong.value}")
-        assertTrue(input.requestInputMode(InputMode.Keyboard))
+        var keyboardModeRequested = false
+        compose.runOnUiThread { keyboardModeRequested = input.requestInputMode(InputMode.Keyboard) }
+        assertTrue(keyboardModeRequested)
         val slot=compose.onNodeWithTag("months-build-year-four-slot-1")
         slot.performSemanticsAction(SemanticsActions.RequestFocus) { it() }
         slot.performKeyInput { pressKey(androidx.compose.ui.input.key.Key.Enter) }

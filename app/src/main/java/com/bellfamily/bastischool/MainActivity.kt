@@ -271,13 +271,15 @@ class MainActivity : ComponentActivity() {
                 topBar = {
                     if (screen != ShellScreen.HOME) NativeScreenHeader(
                         title = {
-                            Text(
+                            if (screen == ShellScreen.MONTHS_CHOOSER || screen == ShellScreen.MONTHS) {
+                                Spacer(Modifier.width(1.dp))
+                            } else Text(
                                 when (screen) {
                                     ShellScreen.HOME -> if (language == "de") "Bastis Lernabenteuer" else "Basti's Learning Adventure"
                                     ShellScreen.OPTIONS -> if (language == "de") "Optionen" else "Options"
                                     ShellScreen.WEB -> if (language == "de") "Lernen" else "Learning"
                                     ShellScreen.PREPOSITIONS -> if (language == "de") "Wo ist es?" else "Where is it?"
-                                    ShellScreen.MONTHS, ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BETWEEN, ShellScreen.MONTHS_BETWEEN_WHEEL, ShellScreen.MONTHS_BUILD_YEAR_LEVELS, ShellScreen.MONTHS_BUILD_YEAR, ShellScreen.MONTHS_BUILD_YEAR_FOUR, ShellScreen.MONTHS_SEASONS, ShellScreen.MONTHS_SEASONS_WHEEL -> if (language == "de") "Monate" else "Months"
+                                    ShellScreen.MONTHS_CHOOSER, ShellScreen.MONTHS, ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BETWEEN, ShellScreen.MONTHS_BETWEEN_WHEEL, ShellScreen.MONTHS_BUILD_YEAR_LEVELS, ShellScreen.MONTHS_BUILD_YEAR, ShellScreen.MONTHS_BUILD_YEAR_FOUR, ShellScreen.MONTHS_SEASONS, ShellScreen.MONTHS_SEASONS_WHEEL -> if (language == "de") "Monate" else "Months"
                                     ShellScreen.DAYS_SEASONS -> if (language == "de") "Tage & Jahreszeiten" else "Days & Seasons"
                                     ShellScreen.VOCABULARY -> if (language == "de") "Wortschatz" else "Vocabulary Booster"
                                     ShellScreen.WILMA -> if (language == "de") "Wilmas Woche" else "Wilma’s Week"
@@ -355,17 +357,21 @@ class MainActivity : ComponentActivity() {
                             nativeWashHands.busy, nativeWashHands.saveFailed, nativeWashHands.audioFailed,
                             nativeWashHands::action, nativeWashHands::listen, { celebrationSound.cancel(); nativeWashHands.again() }, nativeWashHands::retry,
                             onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration)
-                        ShellScreen.MONTHS -> MonthsScreen(nativeMonths.selection,
+                        ShellScreen.MONTHS_CHOOSER -> MonthsActivityChooserScreen(
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
-                            nativeMonths.saveFailed, nativeMonths.audioFailed, nativeMonths::select, nativeMonths::listen,
-                            nativeMonths::retry, { changeRoute(navigation.home()) }, Modifier.padding(padding),
+                            onExplore = { changeRoute(navigation.openMonths()) },
                             onFind = { changeRoute(navigation.openMonthsFind()) },
                             onRelations = { changeRoute(navigation.openMonthsRelations()) },
                             onMissing = { changeRoute(navigation.openMonthsMissing()) },
-                            onBuildYear = { changeRoute(navigation.openMonthsBuildYear()) },
                             onBetween = { changeRoute(navigation.openMonthsBetween()) },
+                            onBuildYear = { changeRoute(navigation.openMonthsBuildYear()) },
                             onSeasonsMatch = { changeRoute(navigation.openMonthsSeasons()) },
-                            onSeasonsWheel = { changeRoute(navigation.openMonthsSeasonsWheel()) })
+                            onSeasonsWheel = { changeRoute(navigation.openMonthsSeasonsWheel()) },
+                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding))
+                        ShellScreen.MONTHS -> MonthsScreen(nativeMonths.selection,
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            nativeMonths.saveFailed, nativeMonths.audioFailed, nativeMonths::select, nativeMonths::listen,
+                            nativeMonths::retry, { changeRoute(navigation.home()) }, Modifier.padding(padding))
                         ShellScreen.MONTHS_BETWEEN_WHEEL -> MonthsScreen(nativeMonths.selection,
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeMonths.saveFailed, nativeMonths.audioFailed, nativeMonths::select, nativeMonths::listen,
@@ -409,7 +415,7 @@ class MainActivity : ComponentActivity() {
                             nativeMonths.wheelFailed, nativeMonths.audioFailed, nativeMonths::wheelRotate,
                             nativeMonths::wheelMode, nativeMonths::wheelMonth, nativeMonths::wheelCheck,
                             nativeMonths::wheelReplay, nativeMonths::wheelHint, nativeMonths::wheelShowAlignment, nativeMonths::wheelAgain,
-                            nativeMonths::wheelRetry, { changeRoute(navigation.openMonths()) }, Modifier.padding(padding),
+                            nativeMonths::wheelRetry, { changeRoute(navigation.openMonthsChooser()) }, Modifier.padding(padding),
                             onChangeWeather = nativeMonths::wheelChangeWeather,
                             onWeatherListen = nativeMonths::wheelWeatherListen,
                             onToggleWeather = nativeMonths::wheelToggleWeather)
@@ -460,7 +466,7 @@ class MainActivity : ComponentActivity() {
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             onSeasons = { changeRoute(navigation.openSeasons()) },
                             onWilma = { changeRoute(navigation.openWilma()) },
-                            onMonths = { changeRoute(navigation.openMonths()) },
+                            onMonths = { changeRoute(navigation.openMonthsChooser()) },
                             onLegacy = { checkpoint = LegacyCheckpoint(); restoredSession = null; changeRoute(navigation.openActivity("time")) },
                             modifier = Modifier.padding(padding))
                         ShellScreen.VOCABULARY -> VocabularyScreen(nativeVocabulary.selection, nativeVocabulary.quiz,
@@ -627,12 +633,13 @@ class MainActivity : ComponentActivity() {
         when (navigation.backAction) {
             BackAction.MONTHS_AREA -> {
                 if (navigation.screen == ShellScreen.MONTHS_BETWEEN_WHEEL) changeRoute(navigation.openMonthsBetween())
-                else if (navigation.screen == ShellScreen.MONTHS_SEASONS_WHEEL) changeRoute(navigation.openMonths())
+                else if (navigation.screen == ShellScreen.MONTHS || navigation.screen == ShellScreen.MONTHS_SEASONS_WHEEL)
+                    changeRoute(navigation.openMonthsChooser())
                 else if (navigation.screen == ShellScreen.MONTHS_BUILD_YEAR || navigation.screen == ShellScreen.MONTHS_BUILD_YEAR_FOUR)
                     changeRoute(navigation.openMonthsBuildYear())
-                else if (navigation.screen == ShellScreen.MONTHS_BUILD_YEAR_LEVELS) changeRoute(navigation.openMonths())
-                else if (nativeMonths.quizFailed || nativeMonths.quiz == null) changeRoute(navigation.openDaysSeasons())
-                else nativeMonths.learn { changeRoute(navigation.openMonths()) }
+                else if (navigation.screen == ShellScreen.MONTHS_BUILD_YEAR_LEVELS) changeRoute(navigation.openMonthsChooser())
+                else if (nativeMonths.quizFailed || nativeMonths.quiz == null) changeRoute(navigation.openMonthsChooser())
+                else nativeMonths.learn { changeRoute(navigation.openMonthsChooser()) }
             }
             BackAction.CLOCK_AREA -> changeRoute(navigation.openClock())
             BackAction.FOLLOW_LEVELS -> changeRoute(navigation.openFollowInstructions())
