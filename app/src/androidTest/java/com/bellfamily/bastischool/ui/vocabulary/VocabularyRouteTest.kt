@@ -1,5 +1,7 @@
 package com.bellfamily.bastischool.ui.vocabulary
 
+import com.bellfamily.bastischool.openHomeActivity
+
 import android.content.pm.ActivityInfo
 import android.view.View
 import android.view.ViewGroup
@@ -25,7 +27,7 @@ class VocabularyRouteTest {
         ActivityScenario.launch(MainActivity::class.java).use { scenario ->
             fun current():SessionState? {var result:SessionState?=null;scenario.onActivity {result=ViewModelProvider(it)[VocabularyViewModel::class.java].quiz};return result}
             fun settled() {compose.waitUntil(10_000) {var ready=false;scenario.onActivity {val vm=ViewModelProvider(it)[VocabularyViewModel::class.java];ready=vm.selection!=null && !vm.busy && !vm.saveFailed};ready}}
-            compose.onNodeWithText("Vocabulary Booster").performScrollTo().performClick()
+            compose.openHomeActivity("Vocabulary Booster")
             settled()
             compose.onNodeWithTag("vocabulary-explore").performScrollTo().performClick();settled()
             compose.onNodeWithTag("word-animal.horse").performScrollTo().performClick();settled()
@@ -68,7 +70,7 @@ class VocabularyRouteTest {
                 assertFalse(web(activity.window.decorView))
                 activity.onBackPressedDispatcher.onBackPressed()
             }
-            compose.onNodeWithText("Wortschatz").performScrollTo().performClick();settled()
+            compose.openHomeActivity("Wortschatz");settled()
             assertArrayEquals(saved,SessionCheckpoint.encode(current()!!))
             assertEquals(ContentLanguage.GERMAN,current()!!.language)
         }

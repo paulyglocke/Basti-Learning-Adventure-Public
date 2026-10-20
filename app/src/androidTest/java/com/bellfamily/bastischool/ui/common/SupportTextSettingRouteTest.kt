@@ -1,5 +1,7 @@
 package com.bellfamily.bastischool.ui.common
 
+import com.bellfamily.bastischool.openHomeActivity
+
 import androidx.compose.ui.semantics.SemanticsActions
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
@@ -39,7 +41,7 @@ class SupportTextSettingRouteTest {
                         .performSemanticsAction(SemanticsActions.GetTextLayoutResult) { it(layouts) }
                     return layouts.single().layoutInput.style.fontSize.value
                 }
-                compose.onNodeWithText("Prepositions").performScrollTo().performClick(); settled()
+                compose.openHomeActivity("Prepositions"); settled()
                 if (current().phase == SessionPhase.COMPLETED) {
                     compose.onNodeWithTag("again").performClick(); settled()
                 }
@@ -59,7 +61,7 @@ class SupportTextSettingRouteTest {
                 assertEquals(normal * 1.25f, hintSize(), 0.001f)
             }
             ActivityScenario.launch(MainActivity::class.java).use {
-                compose.onNodeWithText("⚙ Options").performClick()
+                compose.onNodeWithTag("home-settings").performScrollTo().performClick()
                 compose.onNodeWithTag("larger-support-text").performScrollTo().assertIsOn().performClick().assertIsOff()
                 assertFalse(prefs.getBoolean("largerSupportText", true))
             }

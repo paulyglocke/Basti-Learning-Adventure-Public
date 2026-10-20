@@ -1,8 +1,10 @@
 package com.bellfamily.bastischool.ui.homeprototype
 
+import com.bellfamily.bastischool.ui.home.*
+
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
-import androidx.activity.ComponentActivity
+import com.bellfamily.bastischool.ui.testing.LayoutTestActivity
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
@@ -24,7 +26,7 @@ import org.junit.runners.Parameterized
 
 @RunWith(Parameterized::class)
 class HomePrototypeLayoutTest(private val german: Boolean, private val scale: Float, private val window: String) {
-    @get:Rule val compose = createAndroidComposeRule<ComponentActivity>()
+    @get:Rule val compose = createAndroidComposeRule<LayoutTestActivity>()
     companion object {
         @JvmStatic @Parameterized.Parameters(name="de={0}-scale={1}-{2}")
         fun cases() = listOf(false, true).flatMap { de -> listOf(1f, 1.5f, 2f).flatMap { scale ->
@@ -70,9 +72,9 @@ class HomePrototypeLayoutTest(private val german: Boolean, private val scale: Fl
         }
         if (window == "short" && scale == 1f) {
             // The first category label must be visible before scrolling past any welcome content.
-            compose.onNodeWithText(PrototypeCategory.MATHS.label(german), useUnmergedTree = true).assertIsDisplayed()
+            compose.onNodeWithText(HomeCategory.MATHS.label(german), useUnmergedTree = true).assertIsDisplayed()
         }
-        val settings = compose.onNodeWithTag("prototype-settings").performScrollTo()
+        val settings = compose.onNodeWithTag("home-settings").performScrollTo()
             .assertIsDisplayed().assertHasClickAction().assertHeightIsAtLeast(56.dp).assertWidthIsAtLeast(56.dp)
             .assert(SemanticsMatcher.expectValue(SemanticsProperties.Role, Role.Button))
         readable(if (german) "Erwachsene" else "Grown-ups")
@@ -82,32 +84,32 @@ class HomePrototypeLayoutTest(private val german: Boolean, private val scale: Fl
         compose.onNodeWithTag("prototype-language-${if (german) "de" else "en"}").assertIsSelected()
         readable(if (german) "Zurück" else "Back", scroll = false)
         readable(if (german) "Startseite" else "Home", scroll = false)
-        compose.onNodeWithTag("prototype-back").assertHeightIsAtLeast(56.dp).performClick()
+        compose.onNodeWithTag("home-back").assertHeightIsAtLeast(56.dp).performClick()
         readable(if (german) "Was wollen wir entdecken?" else "What shall we explore?")
-        PrototypeCategory.entries.forEach { category ->
-            val card = compose.onNodeWithTag("prototype-category-${category.name}").performScrollTo()
+        HomeCategory.entries.forEach { category ->
+            val card = compose.onNodeWithTag("home-category-${category.name}").performScrollTo()
                 .assertIsDisplayed().assertHasClickAction().assertHeightIsAtLeast(56.dp).assertWidthIsAtLeast(56.dp)
                 .assert(SemanticsMatcher.expectValue(SemanticsProperties.Role, Role.Button))
             readable(category.label(german))
-            if (category == PrototypeCategory.MATHS) {
+            if (category == HomeCategory.MATHS) {
                 compose.runOnIdle { assertTrue(keyboard()) }
                 card.performSemanticsAction(SemanticsActions.RequestFocus) { assertTrue(it()) }
                 card.assertIsFocused().performKeyInput { pressKey(Key.Enter) }
             } else card.performTouchInput { click() }
             readable(category.label(german))
             category.activityIds.forEach { id ->
-                val activity = prototypeActivity(id)
+                val activity = homeActivity(id)
                 readable(if (german) activity.titleDe else activity.titleEn)
                 readable(if (german) activity.descriptionDe else activity.descriptionEn)
             }
-            compose.onNodeWithTag("prototype-activity-${category.activityIds.first()}").performScrollTo().performClick()
+            compose.onNodeWithTag("home-activity-${category.activityIds.first()}").performScrollTo().performClick()
             compose.onNodeWithTag("prototype-detail-notice").performScrollTo().assertIsDisplayed()
-            compose.onNodeWithTag("prototype-back").assertIsDisplayed().assertHeightIsAtLeast(56.dp).performClick()
-            compose.onNodeWithTag("prototype-home").assertIsDisplayed().assertHeightIsAtLeast(56.dp).performClick()
+            compose.onNodeWithTag("home-back").assertIsDisplayed().assertHeightIsAtLeast(56.dp).performClick()
+            compose.onNodeWithTag("home-home").assertIsDisplayed().assertHeightIsAtLeast(56.dp).performClick()
         }
-        compose.onNodeWithTag("prototype-all").performScrollTo().performClick()
-        prototypeActivities().forEach { readable(if (german) it.titleDe else it.titleEn) }
-        compose.onNodeWithTag("prototype-activity-mixed").performScrollTo().performClick()
+        compose.onNodeWithTag("home-all").performScrollTo().performClick()
+        homeActivities().forEach { readable(if (german) it.titleDe else it.titleEn) }
+        compose.onNodeWithTag("home-activity-mixed").performScrollTo().performClick()
         compose.onNodeWithTag("prototype-detail-notice").performScrollTo().assertIsDisplayed()
     }
 }
@@ -117,40 +119,40 @@ class HomePrototypeNavigationTest {
 
     @OptIn(ExperimentalTestApi::class)
     @Test fun headerKeyboardOrderIsBackThenHomeAndActivationKeepsHierarchy() {
-        compose.onNodeWithTag("prototype-category-WORDS").performScrollTo().performClick()
+        compose.onNodeWithTag("home-category-WORDS").performScrollTo().performClick()
         // Enter keyboard mode through the Android host, as a real keyboard does after touch.
         InstrumentationRegistry.getInstrumentation().sendKeyDownUpSync(android.view.KeyEvent.KEYCODE_TAB)
-        val back = compose.onNodeWithTag("prototype-back")
+        val back = compose.onNodeWithTag("home-back")
         back.performSemanticsAction(SemanticsActions.RequestFocus) { assertTrue(it()) }
         back.assertIsFocused().performKeyInput { pressKey(Key.Tab) }
-        val home = compose.onNodeWithTag("prototype-home").assertIsFocused()
+        val home = compose.onNodeWithTag("home-home").assertIsFocused()
         home.performKeyInput { pressKey(Key.Enter) }
-        compose.onNodeWithTag("prototype-settings").assertExists()
-        compose.onNodeWithTag("prototype-back").assertDoesNotExist()
+        compose.onNodeWithTag("home-settings").assertExists()
+        compose.onNodeWithTag("home-back").assertDoesNotExist()
     }
 
     @Test fun everyActivityPreviewsAndBackReturnsToAllWithoutProductionLaunch() {
-        compose.onNodeWithTag("prototype-all").performScrollTo().performClick()
-        prototypeActivities().forEach { card ->
-            compose.onNodeWithTag("prototype-activity-${card.prototypeId()}").performScrollTo().performClick()
+        compose.onNodeWithTag("home-all").performScrollTo().performClick()
+        homeActivities().forEach { card ->
+            compose.onNodeWithTag("home-activity-${card.homeId()}").performScrollTo().performClick()
             compose.onNodeWithTag("prototype-detail-notice").performScrollTo().assertIsDisplayed()
-            compose.onNodeWithTag("prototype-back").performClick()
-            compose.onNodeWithTag("prototype-activity-${card.prototypeId()}").assertIsDisplayed()
+            compose.onNodeWithTag("home-back").performClick()
+            compose.onNodeWithTag("home-activity-${card.homeId()}").assertIsDisplayed()
         }
     }
 
     @Test fun languageSelectionAndNestedNavigationSurviveRecreationAndSystemBack() {
-        compose.onNodeWithTag("prototype-settings").performScrollTo().performClick()
+        compose.onNodeWithTag("home-settings").performScrollTo().performClick()
         compose.onNodeWithTag("prototype-language-de").performScrollTo().performClick().assertIsSelected()
-        compose.onNodeWithTag("prototype-home").performClick()
-        compose.onNodeWithTag("prototype-category-TIME").performScrollTo().performClick()
-        compose.onNodeWithTag("prototype-activity-time").performScrollTo().performClick()
+        compose.onNodeWithTag("home-home").performClick()
+        compose.onNodeWithTag("home-category-TIME").performScrollTo().performClick()
+        compose.onNodeWithTag("home-activity-time").performScrollTo().performClick()
         compose.activityRule.scenario.recreate()
         compose.onNodeWithText("Tage & Jahreszeiten").assertExists()
         compose.onNodeWithTag("prototype-detail-notice").performScrollTo().assertIsDisplayed()
         compose.runOnIdle { compose.activity.onBackPressedDispatcher.onBackPressed() }
         compose.onNodeWithText("Zeit & Jahreszeiten").assertExists()
         compose.runOnIdle { compose.activity.onBackPressedDispatcher.onBackPressed() }
-        compose.onNodeWithTag("prototype-category-TIME").assertIsDisplayed()
+        compose.onNodeWithTag("home-category-TIME").assertIsDisplayed()
     }
 }

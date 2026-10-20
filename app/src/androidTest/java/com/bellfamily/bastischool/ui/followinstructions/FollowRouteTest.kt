@@ -1,5 +1,7 @@
 package com.bellfamily.bastischool.ui.followinstructions
 
+import com.bellfamily.bastischool.openHomeActivity
+
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
 import androidx.lifecycle.ViewModelProvider
@@ -31,7 +33,7 @@ class FollowRouteTest {
                     }
                     loaded
                 }
-                compose.onNodeWithText("Follow the Instructions").performScrollTo().performClick()
+                compose.openHomeActivity("Follow the Instructions")
                 compose.onNodeWithTag("follow-level-one").assertTextEquals("Level 1 — One instruction").performClick()
                 ready(false)
                 var oneId = ""
@@ -81,7 +83,8 @@ class FollowRouteTest {
                 ready(false)
                 scenario.onActivity { assertEquals(oneId, ViewModelProvider(it)[FollowViewModel::class.java].state!!.plan.id.value) }
                 compose.onNodeWithTag("follow-home").performScrollTo().performClick()
-                compose.onNodeWithText("Anweisungen folgen").assertExists()
+                compose.onNodeWithTag("home-category-EVERYDAY").performScrollTo().performClick()
+                compose.onNodeWithText("Anweisungen folgen").performScrollTo().assertIsDisplayed()
             }
         } finally {
             prefs.edit().putString("lang", oldLanguage).putString("audioMode", oldAudio).putInt("round", oldRound).commit()

@@ -1,5 +1,7 @@
 package com.bellfamily.bastischool.ui.wilma
 
+import com.bellfamily.bastischool.openHomeActivity
+
 import android.content.pm.ActivityInfo
 import android.view.View
 import android.view.ViewGroup
@@ -27,7 +29,7 @@ class WilmaRouteTest {
             fun settled(){compose.waitUntil(10_000){var ready=false;scenario.onActivity {val vm=ViewModelProvider(it)[WilmaViewModel::class.java];ready=vm.selection!=null && !vm.busy && !vm.saveFailed && !vm.imageFailed};ready}}
             fun quiz():SessionState {var s:SessionState?=null;scenario.onActivity {s=ViewModelProvider(it)[WilmaViewModel::class.java].quiz};return s!!}
             fun order():WilmaOrderState {var s:WilmaOrderState?=null;scenario.onActivity {s=ViewModelProvider(it)[WilmaViewModel::class.java].ordering};return s!!}
-            compose.onNodeWithText("Days & Seasons").performScrollTo().performClick()
+            compose.openHomeActivity("Days & Seasons")
             compose.onNodeWithTag("open-wilma").performClick();settled()
             compose.onNodeWithTag("wilma-phase-EXPLORE").performScrollTo().performClick();settled()
             compose.onNodeWithTag("day-day.sunday").performScrollTo().performClick();settled()

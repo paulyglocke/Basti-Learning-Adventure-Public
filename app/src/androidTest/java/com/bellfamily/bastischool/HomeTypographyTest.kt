@@ -3,10 +3,12 @@ package com.bellfamily.bastischool
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.graphics.Bitmap
-import androidx.activity.ComponentActivity
+import com.bellfamily.bastischool.ui.testing.LayoutTestActivity
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.*
+import com.bellfamily.bastischool.ui.home.HomeBrowseScreen
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asAndroidBitmap
@@ -27,7 +29,7 @@ import java.io.File
 
 @RunWith(Parameterized::class)
 class HomeTypographyTest(private val language: String, private val scale: Float, private val landscape: Boolean) {
-    @get:Rule val compose = createAndroidComposeRule<ComponentActivity>()
+    @get:Rule val compose = createAndroidComposeRule<LayoutTestActivity>()
     companion object {
         @JvmStatic @Parameterized.Parameters(name="{0}-{1}-landscape={2}")
         fun cases() = listOf("en", "de").flatMap { lang -> listOf(1f, 1.5f, 2f).flatMap { scale ->
@@ -35,8 +37,9 @@ class HomeTypographyTest(private val language: String, private val scale: Float,
         } }
     }
 
-    private fun readable(text: String): TextLayoutResult {
-        val node = compose.onNodeWithText(text, useUnmergedTree = true).performScrollTo().assertIsDisplayed()
+    private fun readable(text: String, scroll: Boolean = true): TextLayoutResult {
+        val matcher = compose.onNodeWithText(text, useUnmergedTree = true)
+        val node = (if (scroll) matcher.performScrollTo() else matcher).assertIsDisplayed()
         val results = mutableListOf<TextLayoutResult>()
         node.performSemanticsAction(SemanticsActions.GetTextLayoutResult) { assertTrue(it(results)) }
         val layout = results.single()
@@ -61,19 +64,16 @@ class HomeTypographyTest(private val language: String, private val scale: Float,
             else ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         compose.waitUntil(10_000) { compose.activity.resources.configuration.orientation == orientation }
         val de = language == "de"
-        val title = if (de) "Bastis Lernabenteuer" else "Basti's Learning Adventure"
-        val greeting = if (de) "Bereit für ein Abenteuer?" else "Ready for an adventure?"
-        val options = if (de) "⚙ Optionen" else "⚙ Options"
+        val title = if (de) "Bastis Lernabenteuer" else "Basti’s Learning Adventure"
+        val greeting = if (de) "Was wollen wir entdecken?" else "What shall we explore?"
+        val options = if (de) "Erwachsene" else "Grown-ups"
         var openedOptions = 0
+        var page by mutableStateOf("home")
         compose.setContent {
             CompositionLocalProvider(LocalDensity provides Density(LocalDensity.current.density, scale)) {
                 MaterialTheme {
                     Box(Modifier.size(if (landscape) 640.dp else 320.dp, if (landscape) 320.dp else 640.dp)) {
-                        Scaffold(topBar = {
-                            NativeScreenHeader({ Text(title, fontWeight = FontWeight.Black) }, {},
-                                { OutlinedButton({ openedOptions++ }) { Text(options) } },
-                                Color(0xFFFFD76A), WindowInsets(0), reflowTitle = true)
-                        }) { padding -> NativeHome(language, padding, false, {}) }
+                        HomeBrowseScreen(page, de, { if (it == "settings") openedOptions++ else page = it }, {})
                     }
                 }
             }
@@ -95,12 +95,16 @@ class HomeTypographyTest(private val language: String, private val scale: Float,
         assertEquals(32f, greetingLayout.layoutInput.style.fontSize.value)
         assertEquals(40f, greetingLayout.layoutInput.style.lineHeight.value)
         save("top")
-        readable(if (de) "Wähle ein Spiel. Jede Runde ist kurz und einfach." else "Choose a game. Each round is short and simple.")
+        compose.onNodeWithTag("home-all").performScrollTo().performClick()
         homeCardGroups().flatten().forEach { card ->
             readable(if (de) card.titleDe else card.titleEn)
             readable(if (de) card.descriptionDe else card.descriptionEn)
         }
         save("bottom")
+        page = "category:TIME"
+        readable(if (de) "Zurück" else "Back", scroll = false)
+        readable(options, scroll = false)
+        readable(if (de) "Startseite" else "Home", scroll = false)
     }
 
     private fun save(position: String) {

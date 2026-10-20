@@ -1,5 +1,7 @@
 package com.bellfamily.bastischool.ui.months
 
+import com.bellfamily.bastischool.openHomeActivity
+
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
 import androidx.lifecycle.ViewModelProvider
@@ -22,7 +24,7 @@ class MonthsQuizRouteTest {
             fun settled(){compose.waitUntil(10_000){var done=false;scenario.onActivity{val vm=ViewModelProvider(it)[MonthsViewModel::class.java];done=vm.quiz!=null && !vm.quizBusy};done}}
             fun state():SessionState {var s:SessionState?=null;scenario.onActivity{s=ViewModelProvider(it)[MonthsViewModel::class.java].quiz};return s!!}
             fun click(tag:String)=compose.onNodeWithTag(tag).performScrollTo().performClick()
-            compose.onNodeWithText("Days & Seasons").performScrollTo().performClick();click("open-months")
+            compose.openHomeActivity("Days & Seasons");click("open-months")
             click("months-open-find");settled()
             if(state().phase==SessionPhase.COMPLETED){compose.onNodeWithTag("months-quiz-again").performClick();settled()}
             if(state().current.locked){click("months-quiz-next");settled()}

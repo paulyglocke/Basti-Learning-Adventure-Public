@@ -1,19 +1,21 @@
 package com.bellfamily.bastischool
 
 import java.util.concurrent.atomic.AtomicReference
+import com.bellfamily.bastischool.ui.home.validHomePage
 
 internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS, WILMA, VOCABULARY, TELL_ME, FOLLOW_LEVELS, FOLLOW_INSTRUCTIONS, FOLLOW_TWO, COLOUR_SORT, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH, COMPARE_QUANTITY, NUMBER_ORDER, ADD_TOGETHER, CLOCK, CLOCK_MAKE, MONTHS, MONTHS_FIND, MONTHS_RELATIONS, MONTHS_MISSING, MONTHS_BETWEEN, MONTHS_BETWEEN_WHEEL, MONTHS_BUILD_YEAR_LEVELS, MONTHS_BUILD_YEAR, MONTHS_BUILD_YEAR_FOUR, MONTHS_SEASONS, MONTHS_SEASONS_WHEEL }
-internal enum class BackAction { EXIT, CLOSE_OPTIONS, LEGACY, NATIVE_HOME, DAYS_HUB, CLOCK_AREA, MONTHS_AREA, FOLLOW_LEVELS }
+internal enum class BackAction { EXIT, HOME_ROOT, CLOSE_OPTIONS, LEGACY, NATIVE_HOME, DAYS_HUB, CLOCK_AREA, MONTHS_AREA, FOLLOW_LEVELS }
 
 /** Options is an overlay on one destination, never another entry in a growing stack. */
 internal data class ShellNavigation(
     val screen: ShellScreen = ShellScreen.HOME,
     val optionsOrigin: ShellScreen = ShellScreen.HOME,
     val mode: String = "verbs",
-    val recoveryFailed: Boolean = false
+    val recoveryFailed: Boolean = false,
+    val homePage: String = "home"
 ) {
     val backAction: BackAction get() = when (screen) {
-        ShellScreen.HOME -> BackAction.EXIT
+        ShellScreen.HOME -> if (homePage == "home") BackAction.EXIT else BackAction.HOME_ROOT
         ShellScreen.OPTIONS -> BackAction.CLOSE_OPTIONS
         ShellScreen.WEB -> BackAction.LEGACY
         ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BETWEEN, ShellScreen.MONTHS_BETWEEN_WHEEL, ShellScreen.MONTHS_BUILD_YEAR_LEVELS, ShellScreen.MONTHS_BUILD_YEAR, ShellScreen.MONTHS_BUILD_YEAR_FOUR, ShellScreen.MONTHS_SEASONS, ShellScreen.MONTHS_SEASONS_WHEEL -> BackAction.MONTHS_AREA
@@ -61,16 +63,22 @@ internal data class ShellNavigation(
     fun openPrepositions() = ShellNavigation(ShellScreen.PREPOSITIONS, mode = "positions")
     fun openActivity(mode: String) = ShellNavigation(ShellScreen.WEB, mode = mode)
     fun home(failed: Boolean = false) = ShellNavigation(recoveryFailed = failed)
+    fun browseHome(page: String): ShellNavigation {
+        require(validHomePage(page))
+        return ShellNavigation(homePage = page, recoveryFailed = recoveryFailed)
+    }
 
     companion object {
         val modes = setOf("verbs", "count", "math", "positions", "letters", "time", "mixed", "verbExplorer")
-        fun restore(screen: String?, origin: String?, mode: String?, session: String?): ShellNavigation {
+        fun restore(screen: String?, origin: String?, mode: String?, session: String?, homePage: String? = null): ShellNavigation {
             if (screen == null) return ShellNavigation()
             val destination = ShellScreen.entries.firstOrNull { it.name == screen }
                 ?: return ShellNavigation(recoveryFailed = true)
             val parent = ShellScreen.entries.firstOrNull { it.name == origin && it != ShellScreen.OPTIONS }
                 ?: ShellScreen.HOME
-            val route = ShellNavigation(destination, parent, mode ?: "verbs")
+            val browsing = destination == ShellScreen.HOME || destination == ShellScreen.OPTIONS && parent == ShellScreen.HOME
+            val route = ShellNavigation(destination, parent, mode ?: "verbs",
+                homePage = homePage?.takeIf { browsing && validHomePage(it) } ?: "home")
             if (route.ownsWebSession && (mode !in modes || !LegacyCheckpoint.accepts(session))) return ShellNavigation(recoveryFailed = true)
             return route
         }

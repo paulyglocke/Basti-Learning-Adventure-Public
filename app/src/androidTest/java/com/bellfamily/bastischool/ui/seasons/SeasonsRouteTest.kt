@@ -1,5 +1,7 @@
 package com.bellfamily.bastischool.ui.seasons
 
+import com.bellfamily.bastischool.openHomeActivity
+
 import android.content.pm.ActivityInfo
 import android.view.View
 import android.view.ViewGroup
@@ -25,7 +27,7 @@ class SeasonsRouteTest {
         ActivityScenario.launch(MainActivity::class.java).use { scenario ->
             fun current():SessionState? {var result:SessionState?=null;scenario.onActivity {result=ViewModelProvider(it)[SeasonsViewModel::class.java].state};return result}
             fun settled() {compose.waitUntil(10_000) {var ready=false;scenario.onActivity {val vm=ViewModelProvider(it)[SeasonsViewModel::class.java];ready=vm.selection!=null && !vm.busy && !vm.saveFailed && (vm.artwork!=null || vm.orderArtwork.size==4)};ready}}
-            compose.onNodeWithText("Days & Seasons").performScrollTo().performClick()
+            compose.openHomeActivity("Days & Seasons")
             compose.onNodeWithTag("open-seasons").performScrollTo().performClick();settled()
             compose.onNodeWithTag("learn").performScrollTo().performClick();settled()
             compose.onNodeWithTag("season-season.autumn").performScrollTo().performClick();settled()

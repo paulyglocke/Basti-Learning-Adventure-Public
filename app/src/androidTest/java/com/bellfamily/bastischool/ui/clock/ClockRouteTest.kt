@@ -1,5 +1,7 @@
 package com.bellfamily.bastischool.ui.clock
 
+import com.bellfamily.bastischool.openHomeActivity
+
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
 import androidx.lifecycle.ViewModelProvider
@@ -23,7 +25,7 @@ class ClockRouteTest {
                 ready=vm.practice!=null && !vm.practiceBusy && !vm.practiceFailed
             };ready}}
             fun state():ClockPractice.State {var s:ClockPractice.State?=null;scenario.onActivity {s=ViewModelProvider(it)[ClockViewModel::class.java].practice};return s!!}
-            compose.onNodeWithText("Clock & Time").performScrollTo().performClick()
+            compose.openHomeActivity("Clock & Time")
             compose.onNodeWithTag("clock-open-make").performScrollTo().performClick();settled()
             if(state().completed) {compose.onNodeWithTag("clock-make-again").performClick();settled()}
             if(state().current.solved) {compose.onNodeWithTag("clock-make-next").performScrollTo().performClick();settled()}

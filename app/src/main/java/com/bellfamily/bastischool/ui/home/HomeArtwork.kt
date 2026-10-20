@@ -1,4 +1,4 @@
-package com.bellfamily.bastischool.ui.homeprototype
+package com.bellfamily.bastischool.ui.home
 
 import android.graphics.BitmapFactory
 import androidx.compose.runtime.Composable
@@ -19,16 +19,16 @@ import com.bellfamily.bastischool.R
 import com.bellfamily.bastischool.ui.design.BastiPalette
 
 internal const val DRAGON_ART = "Animals/canonical/dragon.png"
-internal val prototypeAssetPaths = mapOf(
-    PrototypeCategory.MATHS to "Animals/canonical/dinosaur.png",
-    PrototypeCategory.WORDS to DRAGON_ART,
-    PrototypeCategory.ANIMALS to "Animals/canonical/whale.png",
-    PrototypeCategory.COLOURS to "SceneDescriptions/classroom_school/canonical/classroom_006_art_sorting.png",
-    PrototypeCategory.EVERYDAY to "SceneDescriptions/classroom_school/canonical/classroom_007_school_routines.png",
+internal val homeAssetPaths = mapOf(
+    HomeCategory.MATHS to "Animals/canonical/dinosaur.png",
+    HomeCategory.WORDS to DRAGON_ART,
+    HomeCategory.ANIMALS to "Animals/canonical/whale.png",
+    HomeCategory.COLOURS to "SceneDescriptions/classroom_school/canonical/classroom_006_art_sorting.png",
+    HomeCategory.EVERYDAY to "SceneDescriptions/classroom_school/canonical/classroom_007_school_routines.png",
 )
 
 @Composable
-internal fun prototypeAsset(path: String): Painter {
+internal fun homeAsset(path: String): Painter {
     val context = LocalContext.current
     val density = context.resources.displayMetrics.density
     return remember(context, path, density) {
@@ -45,11 +45,11 @@ internal fun prototypeAsset(path: String): Painter {
 }
 
 @Composable
-internal fun prototypeCategoryArt(category: PrototypeCategory): Painter {
-    if (category == PrototypeCategory.TIME) return painterResource(R.drawable.seasons_center)
-    val original = prototypeAsset(prototypeAssetPaths.getValue(category))
-    if (category !in listOf(PrototypeCategory.MATHS, PrototypeCategory.WORDS)) return original
-    // Debug-only decorative composition: unchanged canonical character plus native visual cues.
+internal fun homeCategoryArt(category: HomeCategory): Painter {
+    if (category == HomeCategory.TIME) return painterResource(R.drawable.seasons_center)
+    val original = homeAsset(homeAssetPaths.getValue(category))
+    if (category !in listOf(HomeCategory.MATHS, HomeCategory.WORDS)) return original
+    // Shared decorative composition: unchanged canonical character plus native visual cues.
     // No generated/modified illustration, bitmap export or production asset.
     return remember(original, category) {
         object : Painter() {
@@ -59,7 +59,7 @@ internal fun prototypeCategoryArt(category: PrototypeCategory): Painter {
                     size.height / original.intrinsicSize.height)
                 val artSize = original.intrinsicSize * factor
                 translate(top = (size.height - artSize.height) / 2) { with(original) { draw(artSize) } }
-                if (category == PrototypeCategory.MATHS) {
+                if (category == HomeCategory.MATHS) {
                     // One, two, three blocks: quantity is distinguishable without colour or reading.
                     val block = size.height * .14f
                     repeat(3) { row ->

@@ -3,7 +3,7 @@ package com.bellfamily.bastischool.ui.design
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.graphics.Bitmap
-import androidx.activity.ComponentActivity
+import com.bellfamily.bastischool.ui.testing.LayoutTestActivity
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -30,7 +30,7 @@ import java.io.File
 
 @RunWith(Parameterized::class)
 class BastiDesignFoundationTest(private val german: Boolean, private val scale: Float, private val landscape: Boolean) {
-    @get:Rule val compose = createAndroidComposeRule<ComponentActivity>()
+    @get:Rule val compose = createAndroidComposeRule<LayoutTestActivity>()
     companion object {
         @JvmStatic @Parameterized.Parameters(name="de={0}-scale={1}-landscape={2}")
         fun cases() = listOf(false, true).flatMap { de -> listOf(1f, 1.5f, 2f).flatMap { scale ->
@@ -129,7 +129,7 @@ class BastiDesignFoundationTest(private val german: Boolean, private val scale: 
 }
 
 class BastiDesignIsolationTest {
-    @get:Rule val compose = createAndroidComposeRule<ComponentActivity>()
+    @get:Rule val compose = createAndroidComposeRule<LayoutTestActivity>()
 
     @Test fun optInThemeDoesNotLeakAndDisabledCategoryRetainsLabelWithoutActivation() {
         var calls = 0

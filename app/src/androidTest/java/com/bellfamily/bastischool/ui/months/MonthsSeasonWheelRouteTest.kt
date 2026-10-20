@@ -1,5 +1,7 @@
 package com.bellfamily.bastischool.ui.months
 
+import com.bellfamily.bastischool.openHomeActivity
+
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
 import androidx.compose.ui.geometry.Offset
@@ -27,10 +29,15 @@ class MonthsSeasonWheelRouteTest {
                     scenario.onActivity { ready = ViewModelProvider(it)[MonthsViewModel::class.java].wheel != null }
                     ready
                 }
-                compose.onNodeWithText("Days & Seasons").performScrollTo().performClick()
+                compose.openHomeActivity("Days & Seasons")
                 compose.onNodeWithTag("open-months").performScrollTo().performClick()
                 compose.onNodeWithTag("months-open-seasons-wheel").performScrollTo().performClick()
                 settled()
+                // Previous runs may have left Explore selected. Choose Match through
+                // the UI, preserving the saved rotation, round and support counters.
+                compose.onNodeWithTag("wheel-match-mode").performScrollTo().performClick()
+                var priorReplays = 0
+                scenario.onActivity { priorReplays = ViewModelProvider(it)[MonthsViewModel::class.java].wheel!!.replayCount }
                 compose.onNodeWithTag("wheel-next").performScrollTo().performClick()
                 var beforeDrag = 0
                 scenario.onActivity { beforeDrag = ViewModelProvider(it)[MonthsViewModel::class.java].wheel!!.rotation }
@@ -68,11 +75,14 @@ class MonthsSeasonWheelRouteTest {
                 compose.onNodeWithTag("wheel-hint").performScrollTo().performClick()
                 compose.onNodeWithTag("wheel-listen").performScrollTo().performClick()
                 compose.onNodeWithTag("wheel-explore-mode").performScrollTo().performClick()
+                var weatherEnabled = false
+                scenario.onActivity { weatherEnabled = ViewModelProvider(it)[MonthsViewModel::class.java].wheel!!.weatherEnabled }
+                if (!weatherEnabled) compose.onNodeWithTag("wheel-weather-toggle").performScrollTo().performClick()
                 compose.onNodeWithTag("wheel-weather-change").performScrollTo().performClick()
                 var snapshot: MonthsSeasonWheelState? = null
                 scenario.onActivity { snapshot = ViewModelProvider(it)[MonthsViewModel::class.java].wheel }
                 assertTrue(snapshot!!.hintUsed)
-                assertEquals(1, snapshot!!.replayCount)
+                assertEquals(priorReplays + 1, snapshot!!.replayCount)
                 compose.onNodeWithText("⚙ Options").performClick()
                 compose.onNodeWithText("🇩🇪 Deutsch").performClick()
                 scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }

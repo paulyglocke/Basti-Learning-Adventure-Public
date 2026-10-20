@@ -21,10 +21,20 @@ Keep legacy routes usable during migration. An adapter may translate old IDs/set
 ## Responsibilities and dependency direction
 
 UX Refresh Phase 1 adds an opt-in Material 3 foundation in `ui/design`, documented
-in [UX_DESIGN_FOUNDATION.md](docs/UX_DESIGN_FOUNDATION.md). Only a `src/debug`
-showcase consumes it; MainActivity and existing learning UI retain their current
-theme and components. Presentation swatches are not navigation/content/progress IDs.
+in [UX_DESIGN_FOUNDATION.md](docs/UX_DESIGN_FOUNDATION.md). Phase 3 opts production
+Home browsing into it; Options and existing learning UI retain their current
+theme and components. Presentation swatches are not content/progress IDs.
 No new state, audio, persistence or navigation framework is introduced.
+
+The Phase 2 presentation/artwork/catalogue are promoted into `ui/home` and reused
+by the retained debug prototype. MainActivity supplies real dispatch and native
+Options callbacks. ShellNavigation keeps its existing HOME destination with one
+validated `homePage` value (home, all, or an existing category). This additive
+Android saved-Bundle key defaults to root for older/malformed values and is only
+restored for HOME or Options originating there. Compose saveable state retains
+page scroll positions. There is no journal/schema/activity-ID migration, new
+learning owner, speech behavior or category-parent learning back stack.
+See [UX_HOME_INTEGRATION.md](docs/UX_HOME_INTEGRATION.md).
 
 | Conceptual area | Responsibility |
 | --- | --- |

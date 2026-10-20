@@ -1,5 +1,7 @@
 package com.bellfamily.bastischool.ui.coloursort
 
+import com.bellfamily.bastischool.openHomeActivity
+
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
 import androidx.lifecycle.ViewModelProvider
@@ -23,7 +25,7 @@ class ColourSortRouteTest {
             fun owner():ColourSortViewModel {var vm:ColourSortViewModel?=null;scenario.onActivity{vm=ViewModelProvider(it)[ColourSortViewModel::class.java]};return vm!!}
             fun settle()=compose.waitUntil(10_000){!owner().busy && owner().state!=null}
             fun click(tag:String){compose.onNodeWithTag(tag).performScrollTo().performClick();settle()}
-            compose.onNodeWithText("Colour Sort").performScrollTo().performClick();settle()
+            compose.openHomeActivity("Colour Sort");settle()
             val first=ColourSort.objects.first();click("sort-item-${first.id.value}");click("sort-category-${first.category.value}")
             val second=ColourSort.objects[1];click("sort-item-${second.id.value}")
             val before=owner().state!!;val retained=owner()
@@ -31,7 +33,7 @@ class ColourSortRouteTest {
             compose.onNodeWithText("⚙ Options").performClick();compose.onNodeWithText("🇩🇪 Deutsch").performClick()
             scenario.onActivity{it.onBackPressedDispatcher.onBackPressed()};settle()
             assertEquals(ContentLanguage.GERMAN,owner().state!!.language);assertEquals(before.placements,owner().state!!.placements)
-            click("sort-home");compose.onNodeWithText("Farben sortieren").performScrollTo().performClick();settle()
+            click("sort-home");compose.openHomeActivity("Farben sortieren");settle()
             assertEquals(before.id,owner().state!!.id);assertEquals(before.selected,owner().state!!.selected)
         }
     }

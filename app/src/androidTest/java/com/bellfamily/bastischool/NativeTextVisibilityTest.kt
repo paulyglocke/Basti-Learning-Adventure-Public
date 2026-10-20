@@ -2,7 +2,7 @@ package com.bellfamily.bastischool
 
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
-import androidx.activity.ComponentActivity
+import com.bellfamily.bastischool.ui.testing.LayoutTestActivity
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -25,10 +25,11 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
+import com.bellfamily.bastischool.ui.home.HomeBrowseScreen
 
 @RunWith(Parameterized::class)
 class NativeTextVisibilityTest(private val de: Boolean, private val scale: Float, private val landscape: Boolean) {
-    @get:Rule val compose = createAndroidComposeRule<ComponentActivity>()
+    @get:Rule val compose = createAndroidComposeRule<LayoutTestActivity>()
     companion object {
         @JvmStatic @Parameterized.Parameters(name="de={0},font={1},landscape={2}")
         fun cases() = listOf(false,true).flatMap { de -> listOf(1f,1.5f).flatMap { scale ->
@@ -68,9 +69,9 @@ class NativeTextVisibilityTest(private val de: Boolean, private val scale: Float
         val language = if (de) ContentLanguage.GERMAN else ContentLanguage.ENGLISH
         compose.setContent {
             CompositionLocalProvider(LocalDensity provides Density(LocalDensity.current.density,scale)) {
-                MaterialTheme { Box(Modifier.size(if (landscape) 640.dp else 320.dp,if (landscape) 240.dp else 640.dp)) {
+                MaterialTheme { Box(Modifier.size(if (landscape) 800.dp else 320.dp,if (landscape) 240.dp else 640.dp)) {
                     when(page) {
-                        0 -> NativeHome(lang,PaddingValues(0.dp),false,{clicks++})
+                        0 -> HomeBrowseScreen("all",de,{}, {clicks++})
                         1 -> NativeOptions(lang,"off",5,10,PaddingValues(0.dp),"ready",false,{}, {}, {}, {}, {}, {})
                         2 -> NativeCompletionScreen("text-layout",language,if(de) "Du hast alle Aufgaben geschafft!" else "You completed every task!",true,"visibility-",{},{clicks++},{},{})
                         3 -> Column(Modifier.verticalScroll(rememberScrollState())) {
@@ -94,7 +95,7 @@ class NativeTextVisibilityTest(private val de: Boolean, private val scale: Float
         readable(compose.onNodeWithText(title,useUnmergedTree=true))
         val results=mutableListOf<TextLayoutResult>()
         compose.onNodeWithText(title,useUnmergedTree=true).performSemanticsAction(SemanticsActions.GetTextLayoutResult){it(results)}
-        if(de) assertEquals("Avoid fragmented Home title",1,results.single().lineCount)
+        assertEquals("Keep approved readable answer size",20f,results.single().layoutInput.style.fontSize.value)
         readable(compose.onNodeWithText(if(de) "Bewege den langen Zeiger und entdecke die Uhrzeit." else "Move the long hand and explore time.",useUnmergedTree=true))
         compose.onNodeWithText(if(de) "Uhr & Zeit" else "Clock & Time").performScrollTo().performClick()
         compose.runOnIdle { assertEquals(1,clicks); page=1 }

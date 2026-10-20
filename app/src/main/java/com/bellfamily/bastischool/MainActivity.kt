@@ -2,6 +2,8 @@ package com.bellfamily.bastischool
 
 import com.bellfamily.bastischool.ui.common.LocalLargerSupportText
 import com.bellfamily.bastischool.ui.common.SupportTextSetting
+import com.bellfamily.bastischool.ui.home.*
+import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
@@ -220,7 +222,8 @@ class MainActivity : ComponentActivity() {
         configurePositions()
         restoredSession = savedInstanceState?.getString("legacySession")
         navigation = ShellNavigation.restore(savedInstanceState?.getString("screen"),
-            savedInstanceState?.getString("optionsOrigin"), savedInstanceState?.getString("webMode"), restoredSession)
+            savedInstanceState?.getString("optionsOrigin"), savedInstanceState?.getString("webMode"), restoredSession,
+            savedInstanceState?.getString("homePage"))
         if (!navigation.ownsWebSession) restoredSession = null
         checkpoint = LegacyCheckpoint(restoredSession)
         tts = TextToSpeech(this) { status ->
@@ -258,14 +261,15 @@ class MainActivity : ComponentActivity() {
         var round by remember { mutableStateOf(prefs.getInt("round", 5)) }
         var largerSupportText by remember { mutableStateOf(prefs.getBoolean("largerSupportText", false)) }
         var numberMax by remember { mutableStateOf(prefs.getInt("numberMax", 10)) }
+        val homePresentation = rememberSaveableStateHolder()
 
         CompositionLocalProvider(LocalLargerSupportText provides largerSupportText) {
         MaterialTheme(colorScheme = BastiColors) {
-            BackHandler(enabled = screen != ShellScreen.HOME) { navigateBack() }
+            BackHandler(enabled = navigation.backAction != BackAction.EXIT) { navigateBack() }
             Scaffold(
                 contentWindowInsets = WindowInsets.safeDrawing,
                 topBar = {
-                    NativeScreenHeader(
+                    if (screen != ShellScreen.HOME) NativeScreenHeader(
                         title = {
                             Text(
                                 when (screen) {
@@ -298,7 +302,7 @@ class MainActivity : ComponentActivity() {
                             OutlinedButton(onClick = { openOptions() }) { Text(if (language == "de") "⚙ Optionen" else "⚙ Options") }
                         },
                         background = Gold,
-                        reflowTitle = screen == ShellScreen.HOME,
+                        reflowTitle = screen == ShellScreen.HOME || screen == ShellScreen.OPTIONS,
                         // Landscape button navigation and cutouts also occupy horizontal space.
                         windowInsets = WindowInsets.safeDrawing.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal)
                     )
@@ -310,11 +314,9 @@ class MainActivity : ComponentActivity() {
                         ExistingLearningSurface(navigation.mode, padding, screen == ShellScreen.WEB)
                     }
                     when (screen) {
-                        ShellScreen.HOME -> NativeHome(language, padding, navigation.recoveryFailed) { card ->
-                            if (!card.play) {
-                                checkpoint = LegacyCheckpoint(); restoredSession = null
-                                changeRoute(if (card.mode == "clock") navigation.openClock() else if (card.mode == "subitising") navigation.openSubitising() else if (card.mode == "addTogether") navigation.openAddTogether() else if (card.mode == "numberOrder") navigation.openNumberOrder() else if (card.mode == "compareQuantity") navigation.openCompareQuantity() else if (card.mode == "quantityMatch") navigation.openQuantityMatch() else if (card.mode == "tellme") navigation.openTellMe() else if (card.mode == "washHands") navigation.openWashHands() else if (card.mode == "animalGroups") navigation.openAnimalGroups() else if (card.mode == "colourSort") navigation.openColourSort() else if (card.mode == "follow") navigation.openFollowInstructions() else if (card.mode == "vocabulary") navigation.openVocabulary() else if (card.mode == "positions") navigation.openPrepositions() else if (card.mode == "time") navigation.openDaysSeasons() else navigation.openActivity(if (card.verbExplorer) "verbExplorer" else card.mode ?: "verbs"))
-                            }
+                        ShellScreen.HOME -> homePresentation.SaveableStateProvider("home") {
+                            HomeBrowseScreen(navigation.homePage, language == "de", ::openHomePage,
+                                ::launchHomeActivity, Modifier.padding(padding), navigation.recoveryFailed)
                         }
                         ShellScreen.OPTIONS -> NativeOptions(language, audioMode, round, numberMax, padding, audioStatus,
                             largerSupportText = largerSupportText,
@@ -608,6 +610,19 @@ class MainActivity : ComponentActivity() {
         if (!backGate.isPending) changeRoute(navigation.openOptions())
     }
 
+    private fun launchHomeActivity(card: HomeCard) {
+        checkpoint = LegacyCheckpoint(); restoredSession = null
+        changeRoute(card.homeDestination())
+    }
+
+    private fun openHomePage(page: String) {
+        if (page == "settings") { openOptions(); return }
+        val category = HomeCategory.entries.firstOrNull { page == "category:${it.name}" }
+        // A single activity needs no chooser. This follows catalogue size, not a new activity identity.
+        if (category?.activityIds?.size == 1) launchHomeActivity(homeActivity(category.activityIds.single()))
+        else changeRoute(navigation.browseHome(page))
+    }
+
     private fun navigateBack() {
         when (navigation.backAction) {
             BackAction.MONTHS_AREA -> {
@@ -623,6 +638,7 @@ class MainActivity : ComponentActivity() {
             BackAction.FOLLOW_LEVELS -> changeRoute(navigation.openFollowInstructions())
             BackAction.DAYS_HUB -> changeRoute(navigation.openDaysSeasons())
             BackAction.NATIVE_HOME -> changeRoute(navigation.home())
+            BackAction.HOME_ROOT -> changeRoute(navigation.home())
             BackAction.EXIT -> Unit // BackHandler is disabled; Android owns exit.
             BackAction.CLOSE_OPTIONS -> {
                 syncSettings()
@@ -798,53 +814,13 @@ class MainActivity : ComponentActivity() {
         outState.putString("screen", navigation.screen.name)
         outState.putString("optionsOrigin", navigation.optionsOrigin.name)
         outState.putString("webMode", navigation.mode)
+        outState.putString("homePage", navigation.homePage)
         if (navigation.ownsWebSession) outState.putString("legacySession", checkpoint.read())
         super.onSaveInstanceState(outState)
     }
     override fun onPause() { celebrationSound.cancel(); foreground = false; nativePositions.setVisible(false); nativeSeasons.setVisible(false); nativeWilma.setVisible(false); nativeVocabulary.setVisible(false); nativeMonths.setVisible(false); nativeClock.setVisible(false); nativeSubitising.setVisible(false); nativeQuantityMatch.setVisible(false); nativeCompareQuantity.setVisible(false); nativeNumberOrder.setVisible(false); nativeAddition.setVisible(false); nativeFollow.setVisible(false); nativeColourSort.setVisible(false); nativeAnimalGroups.setVisible(false); nativeWashHands.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
     override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen == ShellScreen.SEASONS); nativeWilma.setVisible(navigation.screen == ShellScreen.WILMA); nativeVocabulary.setVisible(navigation.screen == ShellScreen.VOCABULARY); nativeMonths.setVisible(navigation.screen in monthScreens, monthsMode(navigation.screen)); nativeClock.setVisible(navigation.screen in listOf(ShellScreen.CLOCK, ShellScreen.CLOCK_MAKE), navigation.screen == ShellScreen.CLOCK_MAKE); nativeSubitising.setVisible(navigation.screen == ShellScreen.SUBITISING); nativeQuantityMatch.setVisible(navigation.screen == ShellScreen.QUANTITY_MATCH); nativeCompareQuantity.setVisible(navigation.screen == ShellScreen.COMPARE_QUANTITY); nativeNumberOrder.setVisible(navigation.screen == ShellScreen.NUMBER_ORDER); nativeAddition.setVisible(navigation.screen == ShellScreen.ADD_TOGETHER); nativeFollow.setVisible(navigation.screen in setOf(ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO), when (navigation.screen) { ShellScreen.FOLLOW_INSTRUCTIONS -> FollowLevel.ONE; ShellScreen.FOLLOW_TWO -> FollowLevel.TWO; else -> null }); nativeColourSort.setVisible(navigation.screen == ShellScreen.COLOUR_SORT); nativeAnimalGroups.setVisible(navigation.screen == ShellScreen.ANIMAL_GROUPS); nativeWashHands.setVisible(navigation.screen == ShellScreen.WASH_HANDS); updateWebActivity() }
     override fun onDestroy() { celebrationSound.close(); disposeWebView(); tts?.shutdown(); tts = null; super.onDestroy() }
-}
-
-@Composable
-internal fun NativeHome(language: String, padding: PaddingValues, recoveryFailed: Boolean, onCard: (HomeCard) -> Unit) {
-    val (learn, practice, play) = homeCardGroups()
-    Column(Modifier.fillMaxSize().padding(padding).background(Grass).padding(horizontal = 16.dp).verticalScroll(rememberScrollState())) {
-        if (recoveryFailed) Text(if (language == "de") "Das letzte Spiel konnte nicht wiederhergestellt werden. Wähle ein Spiel, um neu zu starten." else "The last activity could not be restored. Choose an activity to start again.", modifier = Modifier.padding(top = 12.dp))
-        Text(if (language == "de") "Bereit für ein Abenteuer?" else "Ready for an adventure?", modifier = Modifier.fillMaxWidth().padding(top = 20.dp), textAlign = TextAlign.Center, fontSize = 32.sp, lineHeight = 40.sp, fontWeight = FontWeight.Black, color = Ink)
-        Text(if (language == "de") "Wähle ein Spiel. Jede Runde ist kurz und einfach." else "Choose a game. Each round is short and simple.", modifier = Modifier.fillMaxWidth().padding(4.dp), textAlign = TextAlign.Center, fontSize = 18.sp, fontWeight = FontWeight.Bold, color = Ink)
-        Spacer(Modifier.height(12.dp))
-        HomeGroup(if (language == "de") "LERNEN" else "LEARN", learn, language, onCard)
-        HomeGroup(if (language == "de") "ÜBEN" else "PRACTICE", practice, language, onCard)
-        HomeGroup(if (language == "de") "SPIELEN" else "PLAY", play, language, onCard)
-    }
-}
-
-@Composable
-private fun HomeGroup(title: String, cards: List<HomeCard>, language: String, onCard: (HomeCard) -> Unit) {
-    Text(title, modifier = Modifier.padding(start = 6.dp, top = 8.dp, bottom = 5.dp), fontSize = 15.sp, fontWeight = FontWeight.Black, color = Ink)
-    BoxWithConstraints(Modifier.fillMaxWidth()) {
-        // Reserve room for long words plus existing card padding; do not shrink type.
-        val columns = if (maxWidth >= (190.dp * LocalDensity.current.fontScale + 28.dp) * 2 + 10.dp) 2 else 1
-        Column(verticalArrangement = Arrangement.spacedBy(10.dp), modifier = Modifier.fillMaxWidth()) {
-            cards.chunked(columns).forEach { row ->
-                Row(horizontalArrangement = Arrangement.spacedBy(10.dp), modifier = Modifier.fillMaxWidth().height(IntrinsicSize.Min)) {
-                    row.forEach { card ->
-                        Card(onClick = { onCard(card) }, colors = CardDefaults.cardColors(containerColor = if (card.play) PaleYellow else Color.White), elevation = CardDefaults.cardElevation(defaultElevation = 4.dp), modifier = Modifier.weight(1f).fillMaxHeight()) {
-                            Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(5.dp)) {
-                                if(card.mode=="subitising") androidx.compose.foundation.Canvas(Modifier.size(40.dp)) {
-                                    listOf(.25f,.5f,.75f).forEach {p -> drawCircle(Color(0xFF172B3A),size.minDimension*.08f,androidx.compose.ui.geometry.Offset(size.width*p,size.height*p))}
-                                } else Text(card.emoji, fontSize = 34.sp)
-                                Text(if (language == "de") card.titleDe else card.titleEn, fontSize = 19.sp, fontWeight = FontWeight.Black, color = Ink)
-                                Text(if (language == "de") card.descriptionDe else card.descriptionEn, fontSize = 13.sp, fontWeight = FontWeight.Bold, color = Color(0xFF607788))
-                            }
-                        }
-                    }
-                    if (row.size < columns) Spacer(Modifier.weight(1f))
-                }
-            }
-        }
-    }
 }
 
 @OptIn(ExperimentalLayoutApi::class)

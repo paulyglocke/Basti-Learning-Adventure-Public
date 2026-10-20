@@ -1,5 +1,7 @@
 package com.bellfamily.bastischool.ui.months
 
+import com.bellfamily.bastischool.openHomeActivity
+
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
 import androidx.lifecycle.ViewModelProvider
@@ -29,7 +31,7 @@ class MonthsSeasonsMatchRouteTest {
                     }
                     ready
                 }
-                compose.onNodeWithText("Days & Seasons").performScrollTo().performClick()
+                compose.openHomeActivity("Days & Seasons")
                 compose.onNodeWithTag("open-months").performScrollTo().performClick()
                 compose.onNodeWithTag("months-open-seasons-match").performScrollTo().performClick()
                 settled()

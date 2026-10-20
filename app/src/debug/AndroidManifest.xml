@@ -3,5 +3,7 @@
         <!-- Explicit developer launch only; never a Home/launcher entry or release Activity. -->
         <activity android:name=".ui.design.DesignShowcaseActivity" android:exported="true" />
         <activity android:name=".ui.homeprototype.HomePrototypeActivity" android:exported="true" />
+        <activity android:name=".ui.testing.LayoutTestActivity" android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
     </application>
 </manifest>

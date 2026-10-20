@@ -1,5 +1,9 @@
 # UX Refresh Phase 1 — opt-in visual foundation
 
+**Phase 3 update:** production Home browsing now opts into this unchanged
+foundation. Options and learning screens do not. The original Phase 1 boundary
+and validation below remain historical; see [UX_HOME_INTEGRATION.md](UX_HOME_INTEGRATION.md).
+
 Baseline: `dac2fbb1ca68fb80691d2e22cb908cfa0b634919`. The owner authorised Phase 1
 finalisation as the prerequisite to the isolated Phase 2 Home prototype. This
 foundation is not a production Home redesign or curriculum regrouping.
@@ -104,6 +108,12 @@ All paths are relative to the repository; no existing production screen is edite
 | `docs/UX_DESIGN_FOUNDATION.md` | Token/component contract, inspection instructions and file inventory |
 
 ## Recommended next slice
+
+Phase 3 validation uses a debug-only `LayoutTestActivity` for isolated component
+fixtures, including foundation/isolation tests. Its orientation handling matches
+MainActivity and prevents pending rotation from discarding externally installed
+test content. Component assertions and production lifecycle tests are unchanged.
+Current integration evidence belongs in [UX_HOME_INTEGRATION.md](UX_HOME_INTEGRATION.md).
 
 Next slice, after Phase 1 is committed/pushed and required CI passes: an isolated
 illustrated Home prototype using these tokens and the existing 20-entry catalogue.

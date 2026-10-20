@@ -6,6 +6,27 @@ This document defines verification and feature completion gates. [NATIVE_ARCHITE
 
 **A feature is not done only because it builds.** Record evidence for its behavior and relevant device risks. A code-complete slice awaiting required hardware checks must be labelled as such, not fully verified or eligible for legacy removal.
 
+## UX Refresh Phase 3 — production Home checkpoint (2026-10-20)
+
+At baseline `d0679a8ec227ccae41ba42eed6690fde5fa47784` (uncommitted), fresh
+JDK 17 full JVM validation passed **555/555** with zero failures, errors or
+skips. `assembleDebug`, `assembleDebugAndroidTest` and `lintDebug` passed; lint
+reported five warnings and two informational findings. On the API 35 emulator,
+the focused Home matrix passed **86/86**, the production route and saved-session
+matrix passed **24/24**, and the final typography rerun passed **12/12** across
+EN/DE, 1×/1.5×/2× and portrait/landscape. The final capture gallery contains 23
+production screens; visual review found and resolved large-text navigation and
+Options-toolbar wrapping. See [SESSION_HANDOFF.md](SESSION_HANDOFF.md) and
+[docs/UX_HOME_INTEGRATION.md](docs/UX_HOME_INTEGRATION.md) for exact scope and
+evidence location.
+
+These are focused automated results, not a complete instrumentation-suite pass.
+Browser 55/55 is historical for unchanged web sources. Physical-device
+acceptance, actual TalkBack/switch-access usability, child acceptance and
+offline-voice quality remain open; physical acceptance was deferred by the
+owner. The emulator's original network and display settings were restored after
+the offline test run and captures.
+
 ## Follow Instructions introductory checkpoint (2026-10-14)
 
 The two-level native Follow activity requires separate evidence for one-step and

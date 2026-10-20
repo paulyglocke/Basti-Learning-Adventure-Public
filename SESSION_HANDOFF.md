@@ -1,4 +1,170 @@
-# Session handoff — 2026-10-19
+# Session handoff — 2026-10-20
+
+## UX Refresh Phase 3 — resumed validation (complete; review only)
+
+The owner requested continuation. Original Phase 3 scope and uncommitted work are
+preserved; HEAD remains `d0679a8ec227ccae41ba42eed6690fde5fa47784`. Do not commit
+or push. Evidence: `/private/tmp/basti-home-resume-20261019/`. A fresh Temurin
+17.0.20.1+1 JDK was restored there and its published SHA-256 verified. Only
+emulator-5554 was used; its app data was backed up before in-place APK installs.
+No data clear, uninstall or journal deletion occurred.
+
+- PASS: fresh full JVM **555/555**, zero failures/errors/skips; `assembleDebug`,
+  `assembleDebugAndroidTest` and `lintDebug`. Lint has five warnings and two
+  informational findings. The final combined APK build is recorded in
+  `/private/tmp/basti-home-resume-20261019/final-build.log`.
+- PASS: API 35 focused Home matrix **86/86**, including production browse layouts,
+  keyboard/touch navigation, typography, debug prototype navigation/layout and
+  design foundation/isolation coverage. Production host route and saved-session
+  matrix **24/24**, including all 20 routes in EN/DE, exact Numbers question
+  restoration, Options/recreation and preserved sorting/routine sessions.
+- PASS: after screenshot review found toolbar clipping at 2× text, both production
+  headers were made to reflow. The final Home typography matrix passed **12/12**
+  across EN/DE, 1×/1.5×/2× and portrait/landscape, including category navigation
+  bounds. A test-fixture enum typo and a scroll-helper assumption were corrected;
+  those unsuccessful targeted attempts are retained in terminal history, and
+  the corrected full matrix passed.
+- PASS: 23 final production MainActivity screenshots were captured and visually
+  reviewed. Gallery: `/private/tmp/basti-home-resume-20261019/index.html`.
+  It covers EN/DE, category/All, native Colour Sort, legacy Numbers, Options and
+  return, enlarged text, short landscape and tablet windows. Browser 55/55 is
+  historical evidence for unchanged web sources; browser tests were not rerun.
+- The first run exposed two stale test selectors; corrected Months and Support
+  Options assertions retain the learning-state checks. Months fixtures now
+  preserve loaded journal state. No saved progress was cleared. The reproduced
+  generic `ComponentActivity` rotation loss is fixed in a debug-only,
+  non-exported `LayoutTestActivity`; production MainActivity/recreation tests
+  remain real-host tests. No assertions or timeouts were weakened.
+- Emulator network was set offline for automated runs and restored afterward to
+  the saved airplane Off / Wi-Fi On / mobile data On values. Physical display
+  size/density were restored to 1080×2400 / 420. No physical device was touched.
+- Final uncommitted inventory: 36 tracked paths changed (including one promoted
+  artwork deletion) plus 9 new files; exact paths are in
+  `/private/tmp/basti-home-resume-20261019/changed-paths-final.txt`.
+
+The complete instrumentation suite was not run. UX-ANR-01 remains separate and
+OPEN; this fixture lifecycle diagnosis does not establish the cause of every
+historical ANR. Physical S24/Fire acceptance, actual TalkBack/switch-access,
+child usability and offline-voice quality remain unverified; physical acceptance
+was deferred by the owner. See `docs/UX_HOME_INTEGRATION.md` for final routes,
+architecture boundaries and visual-review scope.
+
+## UX Refresh Phase 3 — continuation checkpoint (owner requested save)
+
+**Current task:** production illustrated Home integration. The owner requested
+“save conversation to here” during validation. This is a durable work/context
+checkpoint, not a verbatim transcript. Stop here; resume only when requested.
+This section supersedes the historical Phase 2 restrictions below for Phase 3.
+
+**HEAD:** `d0679a8ec227ccae41ba42eed6690fde5fa47784`, main, unchanged.
+Initial fetch confirmed remote alignment. All Phase 3 work is uncommitted and
+unstaged. **Do not commit, push, reset, stash, discard or overwrite this work.**
+No production learning/audio/progress/content/dependency/artwork changes are
+authorised. Physical-device acceptance is **NOT RUN — deferred by owner**.
+
+### Implementation preserved
+
+- Shared `ui/home/HomeCatalogue.kt`, `HomeArtwork.kt`, `HomeBrowseScreen.kt`
+  promote/reuse the approved prototype presentation. Debug prototype still works
+  with its own demonstration navigation/settings. Deleted debug
+  `HomePrototypeArt.kt` was promoted, not discarded artwork.
+- Production MainActivity renders this Home, with no duplicate shell header or
+  prototype notices. Existing catalogue supplies all labels and identities.
+  Six categories contain 19 activities; All Activities contains exactly 20,
+  including Mixed Adventure. Colours directly launches Colour Sort.
+- Real dispatch is the former Home mapping, extracted to `homeDestination()`.
+  Grown-ups uses existing native Options. Existing learning callbacks, ViewModels,
+  journal/checkpoint formats, audio and legacy sources remain unchanged.
+- ShellNavigation adds validated presentation-only `homePage` Bundle state.
+  Category/All Back returns root; Options restores browsing page and scroll;
+  old/malformed values default root. Activity-root Back intentionally remains
+  **Home**, not category-parent. Nested learning Back remains unchanged.
+- Tests now enter through real All Activities. New Home integration JVM tests,
+  production host/navigation tests, 24-case browse layout matrix and live WebView
+  DOM checks are present. Original learning-state assertions are retained.
+- Documentation updates begun in README, architecture/navigation specs,
+  foundation/prototype documents, and new `docs/UX_HOME_INTEGRATION.md`.
+  They are not a declaration of completed validation.
+
+### Evidence and exact validation state
+
+Evidence folder: `/private/tmp/basti-ux-phase3-review.kAIaus/`.
+Use JDK 17 at
+`/private/tmp/basti-ux-phase2-finalise.UYppOq/jdk-17.0.20.1+1/Contents/Home`.
+The older `basti-jdk17-gofZZZ` tree is incomplete; do not use/delete it.
+SDK: `/Users/paulbell/Library/Android/sdk`; use **emulator-5554 only**, API 35.
+
+- **PASS:** full JVM **555/555**, zero failures/errors/skips (`build-second.log`).
+  Debug APK, Android-test compilation/APK and lint also passed. Lint: zero errors,
+  five existing warnings, two information findings. Later focused Home/navigation
+  JVM **43/43** passed (`focused-jvm.log`); current XML output contains that focused
+  run, not the earlier full count.
+- **PASS:** browser **55/55**, Node 22 (`browser-rerun.log`, 54.7s), unchanged tests
+  and timeouts. First run (`browser.log`, Node 26) had 52 passes/3 timeouts over
+  1.4h. `host-sleep-evidence.txt` confirms sleep/wake interruptions; exact causality
+  for each timeout is not proven. No web source or dependency change was made.
+- Initial real-shell run (`routes-first.log`): **3 passed/2 failed**. Both EN/DE
+  all-20-route tests passed, including actual live WebView rendering, as did exact
+  Numbers question restoration through Options/recreation. New-test failures:
+  missing wait for asynchronous Addition journal load, and requesting scroll on
+  a pinned header. Fixed test synchronization/click helpers, not production code.
+- Initial layout run (`layout-first.log`): **45 passed/1 failed**. German 1× phone
+  fixture reported “No compose hierarchies found” at its first assertion. Host
+  slept during the run; logcat also records a Nexus Launcher ANR, not an app ANR.
+  Preserve logs; do not conclude all failures were caused by sleep.
+- Subsequent combined run (`home-final.log`): **66 passed/2 failed, 68 reported**.
+  All four then-current production host tests, both all-20-route tests, all 24
+  HomeBrowseLayout cases, all 12 typography cases, all 8 NativeTextVisibility
+  cases, 3 debug navigation tests and 12 foundation cases passed. HomeScreen
+  German passed; English lost its Compose hierarchy at the first assertion.
+  The other failure was a command-selector mistake: requested nonexistent
+  `HomePrototypeTest`; actual class is **HomePrototypeLayoutTest** (24 cases).
+  The intended debug layout tests therefore did NOT run in this invocation.
+  Also run **BastiDesignIsolationTest** (one case), separately from the 12-case
+  BastiDesignFoundationTest. Do not report this combined run as green.
+- The hierarchy failure is intermittent and still needs diagnosis. Detailed
+  `home-final-logcat.txt` includes the English HomeScreen failure at 16:54:49.
+  It passed in the initial layout run; HomeBrowseLayout's earlier failed case
+  passed in the subsequent run. Check test-host lifecycle/orientation handoff;
+  no proven production cause yet. No assertions/timeouts were weakened.
+- **NOT RUN after latest edits:** the new fifth HomeProductionNavigation test
+  `existingSortingAndRoutineSessionsSurviveNewHomeWithoutJournalReset`, and latest
+  Follow/Vocabulary route-test changes (German return/re-entry now use category/
+  All Activities). The requested final full build was interrupted before launch;
+  `build-final.log` does not exist. Compile and validate these changes next.
+- Three older ColourSort/AnimalGroups/WashHands route fixtures delete journals;
+  they were NOT run. The new compatibility test preserves existing sessions and
+  checks Options/recreation/Home re-entry without resetting files. Do not clear
+  saved data to make tests pass. Relevant remaining native route tests still need
+  execution (Months modes, Seasons/Wilma, Follow, Clock, Tell Me, Prepositions,
+  Vocabulary, larger-support setting). Inspect fixtures before running.
+- **NOT RUN:** Phase 3 production screenshot gallery and visual acceptance.
+  `capture.cjs` is prepared outside the repo but not executed; it launches actual
+  MainActivity, uses native Options for language and restores display settings.
+  `test-stall.png` is a diagnostic fixture screenshot, NOT production acceptance.
+  No new CI run, commit or push. Existing Phase 2 screenshots are not evidence for
+  this production integration.
+
+### Resume steps
+
+1. Inspect status/diff and preserve every Phase 3 file. Re-read current specs.
+2. Compile the latest test edits with JDK 17; run new no-reset session test and
+   relevant native routing/restoration tests. Diagnose/reproduce the intermittent
+   Compose test-host hierarchy failure; do not suppress it or arbitrarily extend
+   timeouts. Correct the command class names above and obtain explicit final counts.
+3. Capture/inspect the required production screenshots using the prepared script,
+   including native/legacy activity launches, Options/return, EN/DE, phone/tablet,
+   short landscape and DE 2×. Produce HTML gallery and Markdown review outside assets.
+4. Finish QA/integration docs, exact changed-file inventory, full JVM/build/lint/
+   Android-test compilation and diff checks. Browser already passed against
+   unchanged web sources; rerun if relevant code changes.
+5. Stop with an uncommitted reviewable diff and honest PASS/FAIL/NOT RUN results.
+
+Keep **UX-ANR-01 OPEN and separate**, preserving original Phase 0 diagnostics.
+Everyday Skills dedicated single-action artwork remains missing. The German 2×
+debug-preview settings compound-word wrap remains outstanding; native Options
+uses different copy and still needs screenshot review. No actual TalkBack,
+switch-access, physical hardware or child acceptance is claimed.
 
 ## UX Refresh Phase 2 / 2B — owner-approved finalisation
 

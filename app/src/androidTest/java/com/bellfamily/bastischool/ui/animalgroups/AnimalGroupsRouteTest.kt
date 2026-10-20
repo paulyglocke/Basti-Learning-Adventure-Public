@@ -1,5 +1,7 @@
 package com.bellfamily.bastischool.ui.animalgroups
 
+import com.bellfamily.bastischool.openHomeActivity
+
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
 import androidx.lifecycle.ViewModelProvider
@@ -23,7 +25,7 @@ class AnimalGroupsRouteTest {
             fun owner():AnimalGroupsViewModel {var vm:AnimalGroupsViewModel?=null;scenario.onActivity{vm=ViewModelProvider(it)[AnimalGroupsViewModel::class.java]};return vm!!}
             fun settle()=compose.waitUntil(10_000){!owner().busy && owner().state!=null}
             fun click(tag:String){compose.onNodeWithTag(tag).performScrollTo().performClick();settle()}
-            compose.onNodeWithText("Animal Groups").performScrollTo().performClick();settle()
+            compose.openHomeActivity("Animal Groups");settle()
             val first=AnimalGroups.objects.first();click("groups-item-${first.id.value}");click("groups-category-${first.category.value}")
             val second=AnimalGroups.objects[1];click("groups-item-${second.id.value}")
             val before=owner().state!!;val retained=owner()
@@ -31,7 +33,7 @@ class AnimalGroupsRouteTest {
             compose.onNodeWithText("⚙ Options").performClick();compose.onNodeWithText("🇩🇪 Deutsch").performClick()
             scenario.onActivity{it.onBackPressedDispatcher.onBackPressed()};settle()
             assertEquals(ContentLanguage.GERMAN,owner().state!!.language);assertEquals(before.placements,owner().state!!.placements)
-            click("groups-home");compose.onNodeWithText("Tiere zuordnen").performScrollTo().performClick();settle()
+            click("groups-home");compose.openHomeActivity("Tiere zuordnen");settle()
             assertEquals(before.id,owner().state!!.id);assertEquals(before.selected,owner().state!!.selected)
         }
     }

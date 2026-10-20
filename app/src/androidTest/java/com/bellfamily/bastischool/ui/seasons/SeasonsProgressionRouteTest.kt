@@ -1,5 +1,7 @@
 package com.bellfamily.bastischool.ui.seasons
 
+import com.bellfamily.bastischool.openHomeActivity
+
 import android.content.pm.ActivityInfo
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
@@ -23,7 +25,7 @@ class SeasonsProgressionRouteTest {
         ActivityScenario.launch(MainActivity::class.java).use {scenario ->
             fun vm():SeasonsViewModel {lateinit var result:SeasonsViewModel;scenario.onActivity {result=ViewModelProvider(it)[SeasonsViewModel::class.java]};return result}
             fun ready() {compose.waitUntil(10_000){val v=vm();v.selection!=null && !v.busy && !v.saveFailed && !v.imageFailed}}
-            compose.onNodeWithText("Days & Seasons").performScrollTo().performClick()
+            compose.openHomeActivity("Days & Seasons")
             compose.onNodeWithTag("open-seasons").performScrollTo().performClick();ready()
             for(mode in listOf(SeasonsPhase.NEXT,SeasonsPhase.BEFORE)) {
                 compose.onNodeWithTag(mode.tag).performScrollTo().performClick();ready()

@@ -1,5 +1,12 @@
 # UX Refresh Phase 2 / 2B — isolated illustrated Home
 
+**Phase 3 update:** the historical prototype below was committed at `d0679a8`.
+Its presentation, artwork references and catalogue now live in shared `ui/home`
+and also render production Home. The debug host retains demonstration-only
+navigation/settings; production uses real ShellNavigation/native Options.
+The nine-file inventory and isolation statements below describe Phase 2, not
+the subsequent integration. See [UX_HOME_INTEGRATION.md](UX_HOME_INTEGRATION.md).
+
 Baseline: `c94687d8c5b38d5fcf94d97b091e95ba7992321b`. Phase 1 was committed,
 pushed and passed Android/browser CI before this work. The owner approved Phase 2
 and 2B for joint commit/push on 2026-10-19, subject to final validation. This does

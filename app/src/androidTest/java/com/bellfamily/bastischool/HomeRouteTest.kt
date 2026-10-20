@@ -32,8 +32,11 @@ class HomeRouteTest(private val language: String) {
             ActivityScenario.launch(MainActivity::class.java).use { scenario ->
                 homeCardGroups().flatten().forEachIndexed { index, card ->
                     val title = if (language == "de") card.titleDe else card.titleEn
-                    compose.onNodeWithText(title).performScrollTo().performClick()
+                    compose.openHomeActivity(title)
                     compose.waitForIdle()
+                    if (expectedScreens[index] == "WEB") {
+                        compose.renderedLegacy(scenario, if (card.verbExplorer) "verbExplorer" else card.mode!!)
+                    }
                     // Saving demotes ComponentActivity's LifecycleRegistry to CREATED.
                     // Inspect while stopped, then resume normally before exercising Back.
                     scenario.moveToState(Lifecycle.State.CREATED)
@@ -49,7 +52,7 @@ class HomeRouteTest(private val language: String) {
                     compose.waitForIdle()
                     // No answers, scores or completed sessions are needed to check entry dispatch.
                     scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
-                    val greeting = if (language == "de") "Bereit für ein Abenteuer?" else "Ready for an adventure?"
+                    val greeting = if (language == "de") "Was wollen wir entdecken?" else "What shall we explore?"
                     compose.waitUntil(10_000) { compose.onAllNodesWithText(greeting).fetchSemanticsNodes().size == 1 }
                 }
             }

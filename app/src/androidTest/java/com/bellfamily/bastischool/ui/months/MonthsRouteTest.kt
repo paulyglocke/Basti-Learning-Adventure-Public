@@ -1,5 +1,7 @@
 package com.bellfamily.bastischool.ui.months
 
+import com.bellfamily.bastischool.openHomeActivity
+
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
 import androidx.lifecycle.Lifecycle
@@ -23,7 +25,7 @@ class MonthsRouteTest {
         try {
             ActivityScenario.launch(MainActivity::class.java).use {scenario ->
                 fun settled(){compose.waitUntil(10_000){var ready=false;scenario.onActivity{ready=ViewModelProvider(it)[MonthsViewModel::class.java].selection!=null};ready}}
-                compose.onNodeWithText("Days & Seasons").performScrollTo().performClick()
+                compose.openHomeActivity("Days & Seasons")
                 compose.onNodeWithTag("open-months").performScrollTo().performClick();settled()
                 compose.onNodeWithTag(MonthIds.SEPTEMBER.value).performScrollTo().performClick()
                 scenario.recreate();settled()
@@ -37,7 +39,8 @@ class MonthsRouteTest {
                 compose.onNodeWithTag("open-months").performScrollTo().performClick();settled()
                 compose.onNodeWithTag("months-selected").performScrollTo().assertTextEquals("September")
                 compose.onNodeWithTag("months-home").performScrollTo().performClick()
-                compose.onNodeWithText("Tage & Jahreszeiten").assertExists()
+                compose.onNodeWithTag("home-category-TIME").performScrollTo().performClick()
+                compose.onNodeWithText("Tage & Jahreszeiten").performScrollTo().assertIsDisplayed()
             }
         } finally {prefs.edit().putString("lang",oldLang).putString("audioMode",oldAudio).commit()}
     }
@@ -57,7 +60,7 @@ class MonthsRouteTest {
                     }
                     loaded
                 }
-                compose.onNodeWithText("Days & Seasons").performScrollTo().performClick()
+                compose.openHomeActivity("Days & Seasons")
                 compose.onNodeWithTag("open-months").performScrollTo().performClick()
                 compose.onNodeWithTag("months-open-build-year").performScrollTo().performClick()
                 compose.onNodeWithTag("months-build-year-level-1").performScrollTo().assertIsDisplayed().performClick()
@@ -107,37 +110,45 @@ class MonthsRouteTest {
             ActivityScenario.launch(MainActivity::class.java).use { scenario ->
                 fun fourReady() = compose.waitUntil(10_000) {
                     var loaded=false
-                    scenario.onActivity { loaded=ViewModelProvider(it)[MonthsViewModel::class.java].buildYearFour!=null }
+                    scenario.onActivity { val vm=ViewModelProvider(it)[MonthsViewModel::class.java]; loaded=vm.buildYearFour!=null && !vm.buildYearFourBusy && !vm.buildYearFourFailed }
                     loaded
                 }
-                compose.onNodeWithText("Days & Seasons").performScrollTo().performClick()
+                compose.openHomeActivity("Days & Seasons")
                 compose.onNodeWithTag("open-months").performScrollTo().performClick()
                 compose.onNodeWithTag("months-open-build-year").performScrollTo().performClick()
                 compose.onNodeWithTag("months-build-year-level-1").assertTextEquals("Level 1 — Three Months")
                 compose.onNodeWithTag("months-build-year-level-2").assertTextEquals("Level 2 — Four Months").performClick()
                 fourReady()
-                var originalId="";var firstMonth="";var roundCount=0
-                scenario.onActivity {
-                    val state=ViewModelProvider(it)[MonthsViewModel::class.java].buildYearFour!!
-                    originalId=state.id.value;firstMonth=state.order.first().value;roundCount=state.round.count
+                fun state(): MonthsBuildYearFourState {
+                    var value: MonthsBuildYearFourState? = null
+                    scenario.onActivity { value = ViewModelProvider(it)[MonthsViewModel::class.java].buildYearFour }
+                    return value!!
                 }
-                assertEquals(5,roundCount)
-                compose.onNodeWithTag("months-build-year-four-choice-$firstMonth").performScrollTo().performClick()
-                compose.onNodeWithTag("months-build-year-four-slot-1").performScrollTo().performClick()
-                compose.waitUntil(10_000) {
-                    var placed=false
-                    scenario.onActivity { placed=ViewModelProvider(it)[MonthsViewModel::class.java].buildYearFour?.placed?.size==1 }
-                    placed
+                // Preserve any existing partial/completed round. Only a genuinely empty
+                // sequence needs a placement to exercise restoration of child work.
+                if (!state().completed && state().placed.isEmpty() && state().nextAttempt != null) {
+                    val firstMonth = state().order.first().value
+                    compose.onNodeWithTag("months-build-year-four-choice-$firstMonth").performScrollTo().performClick()
+                    compose.onNodeWithTag("months-build-year-four-slot-1").performScrollTo().performClick()
+                    compose.waitUntil(10_000) { state().placed.size == 1 }
+                    fourReady()
                 }
-                scenario.recreate();fourReady()
-                scenario.onActivity {
-                    val state=ViewModelProvider(it)[MonthsViewModel::class.java].buildYearFour!!
-                    assertEquals(originalId,state.id.value);assertEquals(listOf(ContentId(firstMonth)),state.placed)
-                }
+                val original = state()
+                val originalId = original.id.value
+                fun assertRestored(expected: MonthsBuildYearFourState) = assertArrayEquals(
+                    MonthsBuildYearFourHost.encode(expected, emptyList()),
+                    MonthsBuildYearFourHost.encode(state(), emptyList()))
+                scenario.recreate(); fourReady()
+                assertRestored(original)
                 compose.onNodeWithText("⚙ Options").performClick()
                 compose.onNodeWithText("🇩🇪 Deutsch").performClick()
                 scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
-                compose.onNodeWithTag("months-build-year-four-progress").performScrollTo().assertTextEquals("Folge 1 von 5")
+                fourReady()
+                val german = original.changed(language = ContentLanguage.GERMAN)
+                assertRestored(german)
+                if (german.completed) compose.onNodeWithTag("months-build-year-four-again").assertIsDisplayed()
+                else compose.onNodeWithTag("months-build-year-four-progress").performScrollTo()
+                    .assertTextEquals("Folge ${german.questionIndex + 1} von ${german.round.count}")
                 scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
                 compose.onNodeWithTag("months-build-year-level-1").performScrollTo().performClick()
                 compose.waitUntil(10_000) {
@@ -153,10 +164,7 @@ class MonthsRouteTest {
                 scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
                 compose.onNodeWithTag("months-build-year-level-2").performScrollTo().performClick()
                 fourReady()
-                scenario.onActivity {
-                    val four=ViewModelProvider(it)[MonthsViewModel::class.java].buildYearFour!!
-                    assertEquals(originalId,four.id.value);assertEquals(listOf(ContentId(firstMonth)),four.placed)
-                }
+                assertRestored(german)
             }
         } finally { prefs.edit().putString("lang",oldLang).putString("audioMode",oldAudio).putInt("round",oldRound).commit() }
     }
@@ -172,7 +180,7 @@ class MonthsRouteTest {
                     scenario.onActivity { loaded=ViewModelProvider(it)[MonthsViewModel::class.java].quiz!=null }
                     loaded
                 }
-                compose.onNodeWithText("Days & Seasons").performScrollTo().performClick()
+                compose.openHomeActivity("Days & Seasons")
                 compose.onNodeWithTag("open-months").performScrollTo().performClick()
                 compose.onNodeWithTag("months-open-between").performScrollTo().performClick()
                 ready()

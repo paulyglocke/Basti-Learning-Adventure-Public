@@ -1,5 +1,7 @@
 package com.bellfamily.bastischool.ui.prepositions
 
+import com.bellfamily.bastischool.openHomeActivity
+
 import android.content.pm.ActivityInfo
 import android.view.View
 import android.view.ViewGroup
@@ -24,7 +26,7 @@ class PrepositionsRouteTest {
         ActivityScenario.launch(MainActivity::class.java).use { scenario ->
             fun current():SessionState? {var result:SessionState?=null;scenario.onActivity {result=ViewModelProvider(it)[PrepositionsViewModel::class.java].state};return result}
             fun settled() {compose.waitUntil(10_000) { var ready=false;scenario.onActivity {val vm=ViewModelProvider(it)[PrepositionsViewModel::class.java];ready=vm.state!=null && !vm.busy};ready }}
-            compose.onNodeWithText("Prepositions").performScrollTo().performClick();settled()
+            compose.openHomeActivity("Prepositions");settled()
             if(current()!!.phase==SessionPhase.COMPLETED) {compose.onNodeWithTag("again").assertIsDisplayed().performClick();settled()}
             if(!current()!!.current.locked) {
                 if(current()!!.current.answer==AnswerState.RETRY_AVAILABLE) {compose.onNodeWithTag("retry").performScrollTo().performClick();settled()}
@@ -50,7 +52,7 @@ class PrepositionsRouteTest {
                 assertFalse(web(activity.window.decorView))
             }
             compose.onNodeWithTag("home").performScrollTo().performClick()
-            compose.onNodeWithText("Prepositions").performScrollTo().performClick();settled()
+            compose.openHomeActivity("Prepositions");settled()
             assertArrayEquals(saved,SessionCheckpoint.encode(current()!!))
             val task=current()!!.task;val score=current()!!.score
             compose.onNodeWithText("⚙ Options").performClick()

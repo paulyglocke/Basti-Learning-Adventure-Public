@@ -14,6 +14,12 @@ Core learning remains fully offline, without accounts, advertising, Google Play 
 
 The app is currently a **hybrid Kotlin/Jetpack Compose + legacy WebView** application undergoing an incremental native migration.
 
+The illustrated Home groups the existing catalogue into six bilingual categories,
+with all 20 working entries available under All Activities. Colours opens Colour
+Sort directly; Grown-ups opens the existing native Options. Learning destinations,
+audio and saved progress are preserved. This UX integration is awaiting owner
+review; see [implementation and validation notes](docs/UX_HOME_INTEGRATION.md).
+
 Substantial native learning experiences now include:
 
 - **Prepositions** — 52 scenes across 13 relations, activity revision 3/content 1.3, guided Listen and exact v1/v2 saved-round recovery. Both replacement batches are source-reviewed as resolved: 52 CLEAR, zero BORDERLINE or ARTWORK_FIX_REQUIRED. See the [scene audit](PREPOSITIONS_CONTENT_AUDIT.md); source-art review is not physical acceptance.

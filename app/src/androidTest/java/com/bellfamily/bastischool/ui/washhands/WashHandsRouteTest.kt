@@ -1,5 +1,7 @@
 package com.bellfamily.bastischool.ui.washhands
 
+import com.bellfamily.bastischool.openHomeActivity
+
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
 import androidx.lifecycle.ViewModelProvider
@@ -23,7 +25,7 @@ class WashHandsRouteTest {
             fun owner():WashHandsViewModel {var vm:WashHandsViewModel?=null;scenario.onActivity{vm=ViewModelProvider(it)[WashHandsViewModel::class.java]};return vm!!}
             fun settle()=compose.waitUntil(10_000){!owner().busy && owner().state!=null}
             fun click(tag:String){compose.onNodeWithTag(tag).performScrollTo().performClick();settle()}
-            compose.onNodeWithText("Wash Hands").performScrollTo().performClick();settle()
+            compose.openHomeActivity("Wash Hands");settle()
             click("wash-item-${WashHands.order.last().value}");click("wash-help")
             val before=owner().state!!;val retained=owner()
             scenario.recreate();settle();assertSame(retained,owner())
@@ -31,7 +33,7 @@ class WashHandsRouteTest {
             compose.onNodeWithText("⚙ Options").performClick();compose.onNodeWithText("🇩🇪 Deutsch").performClick()
             scenario.onActivity{it.onBackPressedDispatcher.onBackPressed()};settle()
             assertEquals(ContentLanguage.GERMAN,owner().state!!.language);assertEquals(before.constructed,owner().state!!.constructed)
-            click("wash-home");compose.onNodeWithText("Hände waschen").performScrollTo().performClick();settle()
+            click("wash-home");compose.openHomeActivity("Hände waschen");settle()
             assertEquals(before.id,owner().state!!.id);assertEquals(before.hintPosition,owner().state!!.hintPosition)
         }
     }

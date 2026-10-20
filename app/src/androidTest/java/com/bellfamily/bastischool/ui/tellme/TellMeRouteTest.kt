@@ -1,5 +1,7 @@
 package com.bellfamily.bastischool.ui.tellme
 
+import com.bellfamily.bastischool.openHomeActivity
+
 import android.graphics.Bitmap
 import androidx.compose.ui.graphics.asAndroidBitmap
 import android.view.View
@@ -30,7 +32,7 @@ class TellMeRouteTest {
             }
             fun settled() = compose.waitUntil(10_000) { !vm().loading }
             fun click(tag: String) = compose.onNodeWithTag(tag).performScrollTo().performClick()
-            compose.onNodeWithText("Tell Me!").performScrollTo().performClick()
+            compose.openHomeActivity("Tell Me!")
             val category = vm().flow.categories.first().id
             repeat(3) { visit ->
                 click("tellme-category-${category.value}"); settled()
@@ -38,7 +40,7 @@ class TellMeRouteTest {
                 assertEquals(visit, vm().state.questionIndex)
                 if (visit < 2) {
                     click("tellme-home")
-                    compose.onNodeWithText("Tell Me!").performScrollTo().performClick()
+                    compose.openHomeActivity("Tell Me!")
                 }
             }
             click("tellme-help"); click("tellme-grownups")
@@ -57,7 +59,7 @@ class TellMeRouteTest {
             assertEquals(saved, vm().state)
             click("tellme-home")
             assertEquals(TellMeState(), vm().state)
-            compose.onNodeWithText("Erzähl mal!").performScrollTo().performClick()
+            compose.openHomeActivity("Erzähl mal!")
             click("tellme-category-${category.value}"); settled()
             repeat(2) { click("tellme-continue"); settled() }
             assertEquals(0, vm().state.questionIndex)
@@ -71,7 +73,7 @@ class TellMeRouteTest {
             fun vm(): TellMeViewModel { var owner: TellMeViewModel? = null; scenario.onActivity { owner = ViewModelProvider(it)[TellMeViewModel::class.java] }; return owner!! }
             fun settled() = compose.waitUntil(10_000) { !vm().loading }
             fun click(tag: String) = compose.onNodeWithTag(tag).performScrollTo().performClick()
-            compose.onNodeWithText("Tell Me!").performScrollTo().performClick()
+            compose.openHomeActivity("Tell Me!")
             val category = vm().flow.categories.first().id
             click("tellme-category-${category.value}"); settled()
             assertNotNull(vm().artwork)
@@ -99,7 +101,7 @@ class TellMeRouteTest {
             }
             click("tellme-home")
             assertEquals(TellMeState(), vm().state)
-            compose.onNodeWithText("Erzähl mal!").performScrollTo().performClick()
+            compose.openHomeActivity("Erzähl mal!")
             compose.onNodeWithTag("tellme-landing").assertIsDisplayed()
             val later = vm().flow.categories.last().id
             click("tellme-category-${later.value}"); settled()
