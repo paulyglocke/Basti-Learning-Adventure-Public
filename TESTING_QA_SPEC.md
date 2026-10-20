@@ -6,6 +6,43 @@ This document defines verification and feature completion gates. [NATIVE_ARCHITE
 
 **A feature is not done only because it builds.** Record evidence for its behavior and relevant device risks. A code-complete slice awaiting required hardware checks must be labelled as such, not fully verified or eligible for legacy removal.
 
+## UX Refresh Phase 4B — Seasons chooser and content-first Explore (2026-10-20, uncommitted)
+
+The Days & Seasons route now opens a dedicated bilingual Seasons chooser. Its
+Explore action opens the existing Seasons learning route; eight practice modes
+remain directly available from grouped chooser cards. The existing nine phase
+titles, season order, illustrations, answer behavior, feedback, hints and voice
+behavior remain in place. Back from a phase returns to the chooser and chooser
+Back returns to Days & Seasons. Existing Seasons journals/checkpoints and the
+Months-owned Seasons Wheel and Sort Months into Seasons paths are unchanged; no
+progress-format migration or wheel-geometry change was made.
+
+- PASS — focused Seasons JVM **61/61** and full JVM **555/555**, zero
+  failures/errors/skips. `assembleDebug`, `assembleDebugAndroidTest`, `lintDebug`
+  and `git diff --check` passed. Lint reports 0 errors and 5 existing warnings.
+- PASS — complete API 35 Seasons package **42/42**, zero failures/skips, including
+  chooser EN/DE, font scales 1×/1.5×/2× and form-factor coverage, all nine actual
+  phase destinations, keyboard activation, Options/language return, recreation,
+  saved session, and progression restoration. One earlier full run had a single
+  checkpoint byte-length mismatch (6034/6035); the focused test and subsequent
+  complete reruns passed. Treat this as an observed intermittent comparison
+  failure whose cause was not established.
+- PASS — complete Months-package API 35 instrumentation **185/185**, zero
+  failures/skips after the shell-route changes. App-wide instrumentation was not
+  run. The 14-screenshot gallery covers chooser and Explore in EN/DE, German 2×,
+  practice, tablet layouts, Options return and the shared Months/Seasons activity.
+  The short-landscape Explore slot is currently portrait because emulator UI
+  automation restored rotation; it is not valid landscape evidence and remains
+  an outstanding visual-review gap. The landscape Explore layout was exercised
+  by automated UI coverage, but no actual screenshot is claimed.
+- Physical-device, actual TalkBack, switch-access, child-usability and offline
+  voice acceptance remain **NOT RUN — owner-deferred**. UX-ANR-01 remains
+  independent. See [the Phase 4B review](docs/seasons-phase4b-review/REVIEW.md)
+  for the inventory, changed paths and visual evidence.
+
+This checkpoint is uncommitted. Commit and push are not authorized. See
+[SESSION_HANDOFF.md](SESSION_HANDOFF.md) for the working-tree state.
+
 ## UX Refresh Phase 4A — Months chooser and Explore (2026-10-20, uncommitted)
 
 The Months activity chooser now separates activity selection from the existing

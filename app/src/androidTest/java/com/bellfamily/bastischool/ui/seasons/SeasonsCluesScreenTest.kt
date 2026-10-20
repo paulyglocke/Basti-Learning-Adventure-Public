@@ -42,7 +42,7 @@ class SeasonsCluesScreenTest {
                 }
             }
         }
-        compose.onNodeWithTag(SeasonsPhase.CLUES.tag).performScrollTo().assertIsSelected()
+        compose.onNodeWithTag("seasons-prompt").performScrollTo().assertIsDisplayed()
         compose.onNodeWithTag("season-artwork").assertDoesNotExist()
         compose.onNodeWithTag("season-anchor").assertDoesNotExist()
         compose.onNodeWithTag("seasons-missing-sequence").assertDoesNotExist()

@@ -109,6 +109,19 @@ are direct chooser destinations; leaving either returns to the chooser. These
 presentation routes add no progress identity, journal, checkpoint or saved-progress
 format.
 
+Seasons retains its existing activity owner and nine modes: Explore, Practise,
+What comes next?, What comes before?, Missing season, Season clues, Build the
+Year, Match season to clue, and Before and after. Days & Seasons opens a dedicated
+Seasons chooser; its featured Explore choice opens the existing Explore phase in
+one selection, while every practice/ordering/matching phase remains a direct
+chooser destination. Back from an activity returns to the chooser; Back from the
+chooser returns to Days & Seasons. Explicit Home still returns to illustrated
+Home. Options returns to the exact chooser or activity route, and language changes
+retain the active selection. The chooser is a presentation route only: Seasons
+selection, phase owners, journals, checkpoints and saved-progress formats remain
+unchanged. Months-owned Sort Months into Seasons and Seasons & Months Wheel
+routes remain independent and unchanged; no duplicate Seasons activity is added.
+
 Months Build the Year begins with a level chooser: Level 1 orders three consecutive
 months and Level 2 orders four. Both remain independently selectable; completion of
 Level 1 does not auto-advance. Level 2 uses deterministic 5/10 question rounds with

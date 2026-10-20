@@ -102,10 +102,11 @@ class SeasonsViewModel @JvmOverloads constructor(
         phase == SeasonsPhase.COMBINED -> { if (combinedHost.state == null) combinedHost.open(id().value,count,System.nanoTime(),lang); emptyList() }
         else -> emptyList()
     }
-    fun phase(phase: SeasonsPhase) {
-        if(!ready() || selection?.phase == phase) return
+    fun phase(phase: SeasonsPhase, onOpened: (() -> Unit)? = null) {
+        if(!ready()) return
+        if(selection?.phase == phase) { onOpened?.invoke(); return }
         epoch++; audio.cancel(); val count = round; val lang = language
-        work {
+        work(onSettled = { success -> if(success) onOpened?.invoke() }) {
             val effects = openPhase(phase,count,lang)
             if(phase == SeasonsPhase.EXPLORE) {
                 val previous = hosts[browsing.phase]
@@ -178,7 +179,8 @@ class SeasonsViewModel @JvmOverloads constructor(
             requireNotNull(BitmapFactory.decodeStream(it,null,BitmapFactory.Options().apply {inSampleSize = 2})).asImageBitmap()
         }
     }
-    private fun work(exploreSpeech: Boolean = false, operation: () -> List<SessionEffect>) {
+    private fun work(exploreSpeech: Boolean = false, onSettled: ((Boolean) -> Unit)? = null,
+                     operation: () -> List<SessionEffect>) {
         if(busy || closed) return
         busy = true; val token = epoch
         worker.execute {
@@ -207,8 +209,9 @@ class SeasonsViewModel @JvmOverloads constructor(
                         else if(selected.phase == SeasonsPhase.ORDER && ordered != null && ordered.language == language)
                             effects.filterIsInstance<SessionEffect.Narrate>().forEach {audio.order(ordered,it)}
                     }
+                    onSettled?.invoke(!failed && !pendingFailure)
                     syncLanguage()
-                }
+                } else onSettled?.invoke(false)
             }
         }
     }

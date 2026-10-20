@@ -271,7 +271,8 @@ class MainActivity : ComponentActivity() {
                 topBar = {
                     if (screen != ShellScreen.HOME) NativeScreenHeader(
                         title = {
-                            if (screen == ShellScreen.MONTHS_CHOOSER || screen == ShellScreen.MONTHS) {
+                            if (screen in setOf(ShellScreen.MONTHS_CHOOSER, ShellScreen.MONTHS,
+                                    ShellScreen.SEASONS_CHOOSER, ShellScreen.SEASONS)) {
                                 Spacer(Modifier.width(1.dp))
                             } else Text(
                                 when (screen) {
@@ -295,6 +296,7 @@ class MainActivity : ComponentActivity() {
                                     ShellScreen.ADD_TOGETHER -> if (language == "de") "Zusammenzählen" else "Add Together"
                                     ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO -> if (language == "de") "Anweisungen folgen" else "Follow the Instructions"
                                     ShellScreen.SEASONS -> if (language == "de") "Jahreszeiten" else "Seasons"
+                                    ShellScreen.SEASONS_CHOOSER -> if (language == "de") "Jahreszeiten" else "Seasons"
                                 },
                                 fontWeight = FontWeight.Black
                             )
@@ -469,6 +471,26 @@ class MainActivity : ComponentActivity() {
                             onMonths = { changeRoute(navigation.openMonthsChooser()) },
                             onLegacy = { checkpoint = LegacyCheckpoint(); restoredSession = null; changeRoute(navigation.openActivity("time")) },
                             modifier = Modifier.padding(padding))
+                        ShellScreen.SEASONS_CHOOSER -> SeasonsActivityChooserScreen(
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            ready = nativeSeasons.selection != null && !nativeSeasons.busy && !nativeSeasons.saveFailed,
+                            busy = nativeSeasons.busy,
+                            saveFailed = nativeSeasons.saveFailed,
+                            onExplore = {
+                                nativeSeasons.phase(com.bellfamily.bastischool.learning.seasons.SeasonsPhase.EXPLORE) {
+                                    if (navigation.screen == ShellScreen.SEASONS_CHOOSER)
+                                        changeRoute(navigation.openSeasonsActivity())
+                                }
+                            },
+                            onChoosePhase = { phase ->
+                                nativeSeasons.phase(phase) {
+                                    if (navigation.screen == ShellScreen.SEASONS_CHOOSER)
+                                        changeRoute(navigation.openSeasonsActivity())
+                                }
+                            },
+                            onRetry = nativeSeasons::retry,
+                            onHome = { changeRoute(navigation.home()) },
+                            modifier = Modifier.padding(padding))
                         ShellScreen.VOCABULARY -> VocabularyScreen(nativeVocabulary.selection, nativeVocabulary.quiz,
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeVocabulary.busy, nativeVocabulary.saveFailed, nativeVocabulary.audioFailed,
@@ -593,7 +615,7 @@ class MainActivity : ComponentActivity() {
                 navigation.screen == ShellScreen.OPTIONS && navigation.optionsOrigin == ShellScreen.TELL_ME)) nativeTellMe.home()
         navigation = route
         nativePositions.setVisible(foreground && route.screen == ShellScreen.PREPOSITIONS)
-        nativeSeasons.setVisible(foreground && route.screen == ShellScreen.SEASONS)
+        nativeSeasons.setVisible(foreground && route.screen in setOf(ShellScreen.SEASONS, ShellScreen.SEASONS_CHOOSER))
         nativeVocabulary.setVisible(foreground && route.screen == ShellScreen.VOCABULARY)
         nativeColourSort.setVisible(foreground && route.screen == ShellScreen.COLOUR_SORT)
         nativeAnimalGroups.setVisible(foreground && route.screen == ShellScreen.ANIMAL_GROUPS)
@@ -644,6 +666,7 @@ class MainActivity : ComponentActivity() {
             BackAction.CLOCK_AREA -> changeRoute(navigation.openClock())
             BackAction.FOLLOW_LEVELS -> changeRoute(navigation.openFollowInstructions())
             BackAction.DAYS_HUB -> changeRoute(navigation.openDaysSeasons())
+            BackAction.SEASONS_CHOOSER -> changeRoute(navigation.openSeasons())
             BackAction.NATIVE_HOME -> changeRoute(navigation.home())
             BackAction.HOME_ROOT -> changeRoute(navigation.home())
             BackAction.EXIT -> Unit // BackHandler is disabled; Android owns exit.
@@ -826,7 +849,7 @@ class MainActivity : ComponentActivity() {
         super.onSaveInstanceState(outState)
     }
     override fun onPause() { celebrationSound.cancel(); foreground = false; nativePositions.setVisible(false); nativeSeasons.setVisible(false); nativeWilma.setVisible(false); nativeVocabulary.setVisible(false); nativeMonths.setVisible(false); nativeClock.setVisible(false); nativeSubitising.setVisible(false); nativeQuantityMatch.setVisible(false); nativeCompareQuantity.setVisible(false); nativeNumberOrder.setVisible(false); nativeAddition.setVisible(false); nativeFollow.setVisible(false); nativeColourSort.setVisible(false); nativeAnimalGroups.setVisible(false); nativeWashHands.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
-    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen == ShellScreen.SEASONS); nativeWilma.setVisible(navigation.screen == ShellScreen.WILMA); nativeVocabulary.setVisible(navigation.screen == ShellScreen.VOCABULARY); nativeMonths.setVisible(navigation.screen in monthScreens, monthsMode(navigation.screen)); nativeClock.setVisible(navigation.screen in listOf(ShellScreen.CLOCK, ShellScreen.CLOCK_MAKE), navigation.screen == ShellScreen.CLOCK_MAKE); nativeSubitising.setVisible(navigation.screen == ShellScreen.SUBITISING); nativeQuantityMatch.setVisible(navigation.screen == ShellScreen.QUANTITY_MATCH); nativeCompareQuantity.setVisible(navigation.screen == ShellScreen.COMPARE_QUANTITY); nativeNumberOrder.setVisible(navigation.screen == ShellScreen.NUMBER_ORDER); nativeAddition.setVisible(navigation.screen == ShellScreen.ADD_TOGETHER); nativeFollow.setVisible(navigation.screen in setOf(ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO), when (navigation.screen) { ShellScreen.FOLLOW_INSTRUCTIONS -> FollowLevel.ONE; ShellScreen.FOLLOW_TWO -> FollowLevel.TWO; else -> null }); nativeColourSort.setVisible(navigation.screen == ShellScreen.COLOUR_SORT); nativeAnimalGroups.setVisible(navigation.screen == ShellScreen.ANIMAL_GROUPS); nativeWashHands.setVisible(navigation.screen == ShellScreen.WASH_HANDS); updateWebActivity() }
+    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen in setOf(ShellScreen.SEASONS, ShellScreen.SEASONS_CHOOSER)); nativeWilma.setVisible(navigation.screen == ShellScreen.WILMA); nativeVocabulary.setVisible(navigation.screen == ShellScreen.VOCABULARY); nativeMonths.setVisible(navigation.screen in monthScreens, monthsMode(navigation.screen)); nativeClock.setVisible(navigation.screen in listOf(ShellScreen.CLOCK, ShellScreen.CLOCK_MAKE), navigation.screen == ShellScreen.CLOCK_MAKE); nativeSubitising.setVisible(navigation.screen == ShellScreen.SUBITISING); nativeQuantityMatch.setVisible(navigation.screen == ShellScreen.QUANTITY_MATCH); nativeCompareQuantity.setVisible(navigation.screen == ShellScreen.COMPARE_QUANTITY); nativeNumberOrder.setVisible(navigation.screen == ShellScreen.NUMBER_ORDER); nativeAddition.setVisible(navigation.screen == ShellScreen.ADD_TOGETHER); nativeFollow.setVisible(navigation.screen in setOf(ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO), when (navigation.screen) { ShellScreen.FOLLOW_INSTRUCTIONS -> FollowLevel.ONE; ShellScreen.FOLLOW_TWO -> FollowLevel.TWO; else -> null }); nativeColourSort.setVisible(navigation.screen == ShellScreen.COLOUR_SORT); nativeAnimalGroups.setVisible(navigation.screen == ShellScreen.ANIMAL_GROUPS); nativeWashHands.setVisible(navigation.screen == ShellScreen.WASH_HANDS); updateWebActivity() }
     override fun onDestroy() { celebrationSound.close(); disposeWebView(); tts?.shutdown(); tts = null; super.onDestroy() }
 }
 

@@ -25,10 +25,13 @@ class SeasonsProgressionRouteTest {
         ActivityScenario.launch(MainActivity::class.java).use {scenario ->
             fun vm():SeasonsViewModel {lateinit var result:SeasonsViewModel;scenario.onActivity {result=ViewModelProvider(it)[SeasonsViewModel::class.java]};return result}
             fun ready() {compose.waitUntil(10_000){val v=vm();v.selection!=null && !v.busy && !v.saveFailed && !v.imageFailed}}
+            fun choose(phase:SeasonsPhase) {compose.onNodeWithTag("seasons-choose-${phase.name.lowercase()}").performScrollTo().performClick();ready()}
+            fun backToChooser() {scenario.onActivity {it.onBackPressedDispatcher.onBackPressed()};compose.onNodeWithTag("seasons-open-explore").assertExists();ready()}
             compose.openHomeActivity("Days & Seasons")
             compose.onNodeWithTag("open-seasons").performScrollTo().performClick();ready()
-            for(mode in listOf(SeasonsPhase.NEXT,SeasonsPhase.BEFORE)) {
-                compose.onNodeWithTag(mode.tag).performScrollTo().performClick();ready()
+            for((index,mode) in listOf(SeasonsPhase.NEXT,SeasonsPhase.BEFORE).withIndex()) {
+                if(index>0) backToChooser()
+                choose(mode)
                 if(vm().state!!.phase==SessionPhase.COMPLETED){compose.onNodeWithTag("seasons-again").performClick();ready()}
                 val unanswered=SessionCheckpoint.encode(vm().state!!)
                 scenario.recreate();ready();assertArrayEquals(unanswered,SessionCheckpoint.encode(vm().state!!))
@@ -39,7 +42,7 @@ class SeasonsProgressionRouteTest {
                 scenario.onActivity {it.onBackPressedDispatcher.onBackPressed()};ready()
                 assertArrayEquals(answered,SessionCheckpoint.encode(vm().state!!))
             }
-            compose.onNodeWithTag(SeasonsPhase.ORDER.tag).performScrollTo().performClick();ready()
+            backToChooser();choose(SeasonsPhase.ORDER)
             if(vm().ordering!!.completed){compose.onNodeWithTag("seasons-again").performClick();ready()}
             if(vm().ordering!!.current.answer==AnswerState.RETRY_AVAILABLE){compose.onNodeWithTag("seasons-retry").performScrollTo().performClick();ready()}
             while(vm().ordering!!.index<2) {
@@ -67,7 +70,7 @@ class SeasonsProgressionRouteTest {
                 compose.onNodeWithTag("seasons-replay").assertIsDisplayed()
                 compose.onNodeWithTag("completion-celebration").assertExists()
             }
-            compose.onNodeWithTag("learn").performScrollTo().performClick();ready()
+            backToChooser()
             compose.onNodeWithTag("completion-celebration").assertDoesNotExist()
         }
     }

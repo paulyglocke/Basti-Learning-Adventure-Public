@@ -1,6 +1,5 @@
 package com.bellfamily.bastischool.ui.seasons
 
-import com.bellfamily.bastischool.ui.common.NativeChoiceRows
 import com.bellfamily.bastischool.ui.common.NativeActivityTitle
 import com.bellfamily.bastischool.ui.common.NativeQuestionProgress
 
@@ -16,10 +15,12 @@ import com.bellfamily.bastischool.ui.common.NativeActionButton
 import com.bellfamily.bastischool.ui.common.NativeSupportMessage
 import com.bellfamily.bastischool.ui.common.NativeActionRole
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
@@ -51,6 +52,7 @@ fun DaysSeasonsHub(language: ContentLanguage, onSeasons: () -> Unit, onWilma: ()
 }
 
 @Composable
+@Suppress("UNUSED_PARAMETER")
 fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: ContentLanguage, artwork: ImageBitmap?,
                   busy: Boolean, saveFailed: Boolean, imageFailed: Boolean, audioFailed: Boolean,
                   onSelect: (ContentId) -> Unit, onPhase: (SeasonsPhase) -> Unit, onReplay: () -> Unit,
@@ -72,13 +74,11 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
             ready && (if(completedOrder) ordering!!.language else if(completedMatch) matching!!.language else if(completedCombined) combined!!.language else state!!.language) == language,
             "seasons-", onReplay, onAgain, onHome, onPop, modifier, saveFailed, onRetry, audioFailed) {
             if(completedOrder) PlacedSeasons(ordering!!,orderArtwork,language)
-            SeasonModes(selection!!.phase,language,ready,onPhase)
         }
         return
     }
     Column(modifier.fillMaxSize().background(Color(0xFFEAF7FC)).verticalScroll(rememberScrollState()).padding(16.dp), verticalArrangement=Arrangement.spacedBy(12.dp)) {
         NativeActivityTitle(t("Seasons", "Jahreszeiten"))
-        SeasonModes(selection?.phase,language,ready,onPhase)
         if(saveFailed) Text(t("Progress could not be saved or restored. Please try again. Saved records are kept.",
             "Der Fortschritt konnte nicht gespeichert oder wiederhergestellt werden. Bitte versuche es erneut. Gespeicherte Einträge bleiben erhalten."))
         if(imageFailed) Text(t("The picture could not be opened. Please try again.","Das Bild konnte nicht geöffnet werden. Bitte versuche es erneut."))
@@ -87,23 +87,26 @@ fun SeasonsScreen(selection: SeasonsSelection?, state: SessionState?, language: 
             "Die Sprachausgabe ist nicht verfügbar. Bitte prüfe installierte Offline-Stimmen für Englisch und Deutsch in den Geräte-Einstellungen."))
         if(selection==null) Text(t("Opening…","Wird geöffnet…"))
         else if(selection.phase==SeasonsPhase.EXPLORE) {
-            SeasonIds.canonicalOrder.chunked(2).forEach { row ->
-                Row(horizontalArrangement=Arrangement.spacedBy(8.dp)) { row.forEach { id ->
-                    OutlinedButton(onClick={onSelect(id)},enabled=ready,
-                        modifier=Modifier.weight(1f).heightIn(min=56.dp).testTag("season-${id.value}")) {
-                        Text(SeasonsContent.season(id).text.display[language])
-                    }
-                } }
-            }
-            Text(selection.season.text.display[language],style=MaterialTheme.typography.headlineSmall,modifier=Modifier.testTag("season-name"))
-            NativeActionButton(t("Listen again","Noch einmal hören"), NativeActionRole.SECONDARY, onClick=onReplay,enabled=ready,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-replay"))
             BoxWithConstraints {
-                if(maxWidth>=700.dp) Row(horizontalArrangement=Arrangement.spacedBy(16.dp)) {
-                    SeasonPicture(artwork,selection.season.text.display[language],Modifier.weight(1.4f))
-                    Text(selection.season.spokenDescription[language],modifier=Modifier.weight(1f).testTag("season-description"))
-                } else Column(verticalArrangement=Arrangement.spacedBy(12.dp)) {
-                    SeasonPicture(artwork,selection.season.text.display[language],Modifier.fillMaxWidth())
-                    Text(selection.season.spokenDescription[language],modifier=Modifier.testTag("season-description"))
+                val compactLandscape = LocalConfiguration.current.screenHeightDp < 480
+                val wideLayout = maxWidth >= 600.dp || compactLandscape && maxWidth >= 360.dp
+                val pictureMaxWidth = if(compactLandscape || maxWidth < 700.dp) 240.dp else 560.dp
+                if(wideLayout) Row(horizontalArrangement=Arrangement.spacedBy(16.dp), verticalAlignment=Alignment.Top) {
+                    Column(Modifier.weight(1.4f), verticalArrangement=Arrangement.spacedBy(12.dp), horizontalAlignment=Alignment.CenterHorizontally) {
+                        SeasonPicture(artwork,selection.season.text.display[language],Modifier.widthIn(max=pictureMaxWidth).fillMaxWidth())
+                        Text(selection.season.text.display[language],style=MaterialTheme.typography.headlineSmall,modifier=Modifier.testTag("season-name"))
+                    }
+                    Column(Modifier.weight(1f), verticalArrangement=Arrangement.spacedBy(12.dp)) {
+                        NativeActionButton(t("Listen again","Noch einmal hören"), NativeActionRole.SECONDARY, onClick=onReplay,enabled=ready,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-replay"))
+                        Text(selection.season.spokenDescription[language],modifier=Modifier.testTag("season-description"))
+                        SeasonChoices(language,ready,onSelect)
+                    }
+                } else Column(verticalArrangement=Arrangement.spacedBy(12.dp), horizontalAlignment=Alignment.CenterHorizontally) {
+                    SeasonPicture(artwork,selection.season.text.display[language],Modifier.widthIn(max=560.dp).fillMaxWidth())
+                    Text(selection.season.text.display[language],style=MaterialTheme.typography.headlineSmall,modifier=Modifier.testTag("season-name"))
+                    Text(selection.season.spokenDescription[language],modifier=Modifier.fillMaxWidth().testTag("season-description"))
+                    NativeActionButton(t("Listen again","Noch einmal hören"), NativeActionRole.SECONDARY, onClick=onReplay,enabled=ready,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("seasons-replay"))
+                    SeasonChoices(language,ready,onSelect)
                 }
             }
         } else if(selection.phase == SeasonsPhase.COMBINED && combined != null) {
@@ -266,10 +269,14 @@ private fun SeasonPicture(bitmap:ImageBitmap?,description:String,modifier:Modifi
 
 
 @Composable
-private fun SeasonModes(selected: SeasonsPhase?, language: ContentLanguage, ready: Boolean, onPhase: (SeasonsPhase)->Unit) {
-    NativeChoiceRows(SeasonsPhase.entries) { phase ->
-        FilterChip(selected=selected==phase,onClick={onPhase(phase)},enabled=ready,
-            label={Text(phase.title.display[language])},modifier=Modifier.weight(1f).heightIn(min=48.dp).testTag(phase.tag))
+private fun SeasonChoices(language: ContentLanguage, ready: Boolean, onSelect: (ContentId)->Unit) {
+    SeasonIds.canonicalOrder.chunked(2).forEach { row ->
+        Row(Modifier.fillMaxWidth(), horizontalArrangement=Arrangement.spacedBy(8.dp)) { row.forEach { id ->
+            OutlinedButton(onClick={onSelect(id)},enabled=ready,
+                modifier=Modifier.weight(1f).heightIn(min=56.dp).testTag("season-${id.value}")) {
+                Text(SeasonsContent.season(id).text.display[language])
+            }
+        } }
     }
 }
 

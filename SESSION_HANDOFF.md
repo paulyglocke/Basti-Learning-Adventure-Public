@@ -1,5 +1,73 @@
 # Session handoff — 2026-10-20
 
+## UX Refresh Phase 4B — Seasons chooser and content-first Explore (uncommitted)
+
+**Current task:** bounded Seasons selection/navigation redesign. Baseline remains
+`6ea391af4fc2348ae7f59f82f0a17d216571c667` on `main`; Phase 4B is uncommitted.
+Commit and push are **not authorized**. Phase 4A work was preserved. No
+question-generation, scoring, audio policy, progress IDs, journal/checkpoint
+formats, shared Months chooser, or seasonal wheel geometry were changed.
+
+### Existing functionality inventory
+
+The route is Illustrated Home **Time & Seasons / Zeit & Jahreszeiten** →
+**Days & Seasons / Tage & Jahreszeiten** → the prior Seasons entry. The nine
+existing phase labels are: **Learn / Lernen** (Explore), **Practise / Üben**,
+**What comes next? / Was kommt danach?**, **What comes before? / Was kommt
+davor?**, **Missing season / Fehlende Jahreszeit**, **Season clues /
+Jahreszeiten-Rätsel**, **Build the Year / Ordne die Jahreszeiten**, **Match season
+to clue / Jahreszeit zu Hinweis**, and **Before and after / Davor und danach**.
+Explore presents the existing four named seasons, seasonal art and descriptions,
+Listen/replay, and season choices. Each phase remains on the same Seasons route
+and existing `SeasonsViewModel` journal/checkpoint owners. Months separately owns
+Sort Months into Seasons and its Seasons & Months Wheel Explore/Match routes;
+these shared paths were not rerouted or duplicated.
+
+### Implementation and review
+
+- Added a dedicated Seasons chooser. Explore is the featured entry; the eight
+  practice modes remain accessible in two clearly grouped sets, with canonical
+  phase titles/descriptions, warm shared surfaces, existing four-seasons artwork,
+  scroll and natural wrapping. Back returns from a phase to the chooser, then to
+  Days & Seasons. Home remains directly available. Explore removed the competing
+  phase-selector row and gives the existing learning content first position;
+  tablet and compact landscape use a content/control split.
+- Added route, chooser, keyboard/touch, accessibility bounds, locale/scale/layout,
+  Options, language-return, recreation, actual-destination and restoration tests.
+  Existing progression/checkpoint semantics remain covered. UX/navigation spec
+  records the route-parent contract.
+- The API 35 gallery has 14 captures. It shows EN/DE chooser, German 2×,
+  portrait Explore EN/DE, practice, chooser in short landscape, Explore on tablet
+  portrait/landscape, Options return and the Months-owned shared activity. The
+  short-landscape Explore image is **not valid**: emulator UI automation reset
+  rotation and the saved image is portrait. Direct rotation-lock diagnostics
+  confirmed that an actual 2400×1080 frame can be captured, but full route capture
+  without UI automation was not completed. Do not claim landscape screenshot
+  review passed. All other gallery images were visually reviewed for clipping,
+  hierarchy, German wrapping, artwork proportions and touch-target readability;
+  no blocking visual issue found. See [gallery](docs/seasons-phase4b-review/index.html)
+  and [review](docs/seasons-phase4b-review/REVIEW.md).
+
+### Validation and open acceptance
+
+- PASS — focused Seasons JVM **61/61**; full JVM **555/555** with zero
+  failures/errors/skips. Debug APK, Android-test APK compilation and lint passed;
+  lint has 0 errors and 5 existing warnings. `git diff --check` passed before
+  final documentation edits and is to be rerun.
+- PASS — API 35 Seasons instrumentation **42/42** and complete Months package
+  instrumentation **185/185**, zero failures/skips. One earlier Seasons full run
+  had a one-byte checkpoint assertion mismatch (6034/6035). Focused and later
+  complete reruns passed; cause remains undetermined. Complete app-wide
+  instrumentation was not run.
+- Outstanding: actual short-landscape Explore screenshot/review, full app-wide
+  instrumentation, physical-device, actual TalkBack, switch-access, child
+  usability and offline-voice acceptance (**owner-deferred**). UX-ANR-01 remains
+  separate. Emulator display settings were restored to native 1080×2400, 420 dpi,
+  automatic rotation and 1× font scale.
+
+Tracked/untracked file inventory and precise evidence are in the Phase 4B review.
+Leave all work uncommitted for owner review.
+
 ## UX Refresh Phase 4A — Months chooser and content-first Explore (uncommitted)
 
 **Current task:** bounded Months navigation/presentation refinement. HEAD remains

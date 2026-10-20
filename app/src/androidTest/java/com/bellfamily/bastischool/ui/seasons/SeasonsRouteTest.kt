@@ -21,15 +21,15 @@ import org.junit.Test
 
 class SeasonsRouteTest {
     @get:Rule val compose = createEmptyComposeRule()
-    @Test fun nativeExploreAndQuizSurviveOptionsLanguageRecreationAndHubReturn() {
+    @Test fun chooserExploreAndQuizSurviveOptionsLanguageRecreationAndHubReturn() {
         val context=InstrumentationRegistry.getInstrumentation().targetContext
         context.getSharedPreferences("basti_shell",0).edit().putString("lang","en").putString("audioMode","off").putInt("round",5).commit()
         ActivityScenario.launch(MainActivity::class.java).use { scenario ->
             fun current():SessionState? {var result:SessionState?=null;scenario.onActivity {result=ViewModelProvider(it)[SeasonsViewModel::class.java].state};return result}
-            fun settled() {compose.waitUntil(10_000) {var ready=false;scenario.onActivity {val vm=ViewModelProvider(it)[SeasonsViewModel::class.java];ready=vm.selection!=null && !vm.busy && !vm.saveFailed && (vm.artwork!=null || vm.orderArtwork.size==4)};ready}}
+            fun settled() {compose.waitUntil(10_000) {var ready=false;scenario.onActivity {val vm=ViewModelProvider(it)[SeasonsViewModel::class.java];ready=vm.selection!=null && !vm.busy && !vm.saveFailed};ready}}
             compose.openHomeActivity("Days & Seasons")
             compose.onNodeWithTag("open-seasons").performScrollTo().performClick();settled()
-            compose.onNodeWithTag("learn").performScrollTo().performClick();settled()
+            compose.onNodeWithTag("seasons-open-explore").performScrollTo().performClick();settled()
             compose.onNodeWithTag("season-season.autumn").performScrollTo().performClick();settled()
             compose.onNodeWithTag("season-name").assertTextEquals("Autumn")
             scenario.recreate();settled()
@@ -39,7 +39,10 @@ class SeasonsRouteTest {
             scenario.onActivity {it.onBackPressedDispatcher.onBackPressed()};settled()
             compose.onNodeWithTag("season-name").assertTextEquals("Herbst")
             scenario.onActivity {assertEquals(SeasonIds.AUTUMN,ViewModelProvider(it)[SeasonsViewModel::class.java].selection!!.selected)}
-            compose.onNodeWithTag("practice").performScrollTo().performClick();settled()
+            scenario.onActivity {it.onBackPressedDispatcher.onBackPressed()}
+            compose.onNodeWithTag("seasons-choose-practice").performScrollTo().performClick();settled()
+            scenario.onActivity {assertEquals(com.bellfamily.bastischool.learning.seasons.SeasonsPhase.PRACTICE,
+                ViewModelProvider(it)[SeasonsViewModel::class.java].selection!!.phase)}
             if(current()!!.phase==SessionPhase.COMPLETED) {compose.onNodeWithTag("seasons-again").assertIsDisplayed().performClick();settled()}
             val unanswered=SessionCheckpoint.encode(current()!!)
             scenario.recreate();settled();assertArrayEquals(unanswered,SessionCheckpoint.encode(current()!!))
@@ -62,8 +65,11 @@ class SeasonsRouteTest {
                 assertFalse(web(activity.window.decorView))
                 activity.onBackPressedDispatcher.onBackPressed()
             }
+            compose.onNodeWithTag("seasons-open-explore").assertExists()
+            scenario.onActivity {it.onBackPressedDispatcher.onBackPressed()}
             compose.onNodeWithTag("legacy-calendar").assertExists()
             compose.onNodeWithTag("open-seasons").performClick();settled()
+            compose.onNodeWithTag("seasons-choose-practice").performScrollTo().performClick();settled()
             assertArrayEquals(saved,SessionCheckpoint.encode(current()!!))
             assertEquals(ContentLanguage.GERMAN,current()!!.language)
         }

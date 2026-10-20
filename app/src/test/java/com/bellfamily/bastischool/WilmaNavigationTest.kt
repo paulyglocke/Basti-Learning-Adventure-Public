@@ -11,7 +11,7 @@ class WilmaNavigationTest {
         repeat(5){assertEquals(wilma,wilma.openOptions().openOptions().closeOptions())}
         assertEquals(wilma,ShellNavigation.restore("OPTIONS","WILMA","verbs",null).closeOptions())
         assertEquals(hub,wilma.openDaysSeasons());assertEquals(BackAction.NATIVE_HOME,hub.backAction)
-        assertEquals(ShellScreen.SEASONS,hub.openSeasons().screen)
+        assertEquals(ShellScreen.SEASONS_CHOOSER,hub.openSeasons().screen)
         assertEquals(BackAction.LEGACY,hub.openActivity("time").backAction)
     }
 }

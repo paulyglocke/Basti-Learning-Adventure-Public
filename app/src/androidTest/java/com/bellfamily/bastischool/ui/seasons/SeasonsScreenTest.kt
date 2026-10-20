@@ -27,13 +27,14 @@ class SeasonsScreenTest {
     private var listens=0
     private var home=0
     private var again=0
-    private fun show(lang:ContentLanguage,round:RoundLength=RoundLength.FIVE,large:Boolean=false,missing:Boolean=false) {
+    private fun show(lang:ContentLanguage,round:RoundLength=RoundLength.FIVE,large:Boolean=false,missing:Boolean=false,
+                     phase:SeasonsPhase=if(missing) SeasonsPhase.MISSING else SeasonsPhase.EXPLORE) {
         val assets=InstrumentationRegistry.getInstrumentation().targetContext.assets
         val pictures=SeasonIds.canonicalOrder.associateWith {id -> assets.open(SeasonsContent.image(id).path).use {BitmapFactory.decodeStream(it).asImageBitmap()} }
         val plan=((if(missing) SeasonsMissing.generate(SessionId("ui-seasons"),round,42)
             else SeasonsContent.generate(SessionId("ui-seasons"),round,42)) as GenerationResult.Generated).plan
         current=mutableStateOf(SessionReducer.start(plan,lang,SeasonsContent.repository).state)
-        selected=mutableStateOf(SeasonsSelection(phase=if(missing) SeasonsPhase.MISSING else SeasonsPhase.EXPLORE))
+        selected=mutableStateOf(SeasonsSelection(phase=phase))
         compose.setContent {
             val density=LocalDensity.current
             CompositionLocalProvider(LocalDensity provides Density(density.density,if(large)1.5f else 1f)) {
@@ -56,14 +57,15 @@ class SeasonsScreenTest {
             compose.onNodeWithTag("season-name").assertTextEquals(SeasonsContent.season(id).text.display.en)
             compose.onNodeWithTag("season-description").performScrollTo().assertTextEquals(SeasonsContent.season(id).spokenDescription.en)
             val bounds=compose.onNodeWithTag("season-artwork").performScrollTo().fetchSemanticsNode().boundsInRoot
+            val optionBounds=compose.onNodeWithTag("season-${SeasonIds.SPRING.value}").performScrollTo().fetchSemanticsNode().boundsInRoot
             assertEquals(4f/3f,bounds.width/bounds.height,0.02f)
+            assertTrue("Season artwork should precede the season choices",bounds.top<optionBounds.top)
             compose.onNodeWithTag("seasons-replay").performScrollTo().performClick()
         }
         compose.runOnIdle {assertEquals(4,listens);assertEquals(0,current.value.current.attempts)}
     }
     @Test fun englishFiveQuestionRoundSeparatesSpeakersAnswersRetryAndCompletion() {
-        show(ContentLanguage.ENGLISH)
-        compose.onNodeWithTag("practice").performScrollTo().performClick()
+        show(ContentLanguage.ENGLISH,phase=SeasonsPhase.PRACTICE)
         val q=current.value.task.question
         compose.onNodeWithTag("speaker-${q.correct.value}").performScrollTo().performClick()
         compose.onNodeWithTag("seasons-replay").performScrollTo().performClick()
@@ -83,10 +85,7 @@ class SeasonsScreenTest {
         compose.runOnIdle {assertEquals(5,current.value.score);assertEquals(1,again);assertEquals(1,home)}
     }
     @Test fun germanLargeFontTenQuestionCompletionIsReachable() {
-        show(ContentLanguage.GERMAN,RoundLength.TEN,true)
-        compose.onNodeWithTag("season-season.winter").performScrollTo().performClick()
-        compose.onNodeWithTag("season-description").assertTextEquals(SeasonsContent.season(SeasonIds.WINTER).spokenDescription.de)
-        compose.onNodeWithTag("practice").performScrollTo().performClick()
+        show(ContentLanguage.GERMAN,RoundLength.TEN,true,phase=SeasonsPhase.PRACTICE)
         repeat(10) {
             compose.onNodeWithTag("answer-${current.value.task.question.correct.value}").performScrollTo().performClick()
             compose.onNodeWithTag("seasons-next").performScrollTo().performClick()
