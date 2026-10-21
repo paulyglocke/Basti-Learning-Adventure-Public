@@ -4,6 +4,9 @@ import android.os.Bundle
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
 import androidx.compose.ui.input.key.Key
+import androidx.compose.ui.semantics.SemanticsProperties
+import androidx.compose.ui.test.SemanticsMatcher
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.semantics.SemanticsActions
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
@@ -106,6 +109,47 @@ class HomeProductionNavigationTest {
         assertEquals("DAYS_SEASONS",saved(scenario).getString("screen"))
         back(scenario)
         assertEquals("home",saved(scenario).getString("homePage"))
+    }
+
+    @OptIn(ExperimentalTestApi::class)
+    @Test fun sharedLearningHeaderHasNamedTargetsAndNoDuplicateClockHeading() = withApp { scenario ->
+        compose.openHomeActivity("Clock & Time")
+        compose.onAllNodesWithText("Clock & Time").assertCountEquals(1)
+        compose.onNodeWithText("Clock & Time")
+            .assert(SemanticsMatcher.expectValue(SemanticsProperties.Heading, Unit))
+
+        compose.onNodeWithTag("shell-back").assertContentDescriptionEquals("Back")
+            .assertHasClickAction().assertHeightIsAtLeast(56.dp).assertWidthIsAtLeast(56.dp)
+        compose.onNodeWithTag("shell-options").assertHasClickAction()
+            .assertHeightIsAtLeast(56.dp).assertWidthIsAtLeast(56.dp).performClick()
+        compose.onNodeWithText("🇩🇪 Deutsch").performClick()
+        back(scenario)
+
+        compose.onAllNodesWithText("Uhr & Zeit").assertCountEquals(1)
+        val backButton = compose.onNodeWithTag("shell-back").assertContentDescriptionEquals("Zurück")
+            .assertHeightIsAtLeast(56.dp).assertWidthIsAtLeast(56.dp)
+        backButton.performSemanticsAction(SemanticsActions.RequestFocus) { assertTrue(it()) }
+        backButton.assertIsFocused().performKeyInput { pressKey(Key.Enter) }
+        compose.onNodeWithTag("home-all").assertIsDisplayed()
+    }
+
+    @Test fun exactShellAndBodyTitlesAppearOnceAcrossNativeActivityFamilies() = withApp { scenario ->
+        listOf("Add Together", "More or Fewer", "Number Order", "Numbers & Groups", "How many?", "Follow the Instructions")
+            .forEach { title ->
+                compose.openHomeActivity(title)
+                compose.onAllNodesWithText(title).assertCountEquals(1)
+                if (title == "Follow the Instructions") {
+                    compose.onNodeWithText("Level 1 — One instruction").performClick()
+                    compose.waitUntil(10_000) {
+                        compose.onAllNodesWithTag("follow-instruction").fetchSemanticsNodes().isNotEmpty()
+                    }
+                    compose.onAllNodesWithText(title).assertCountEquals(1)
+                    back(scenario)
+                    compose.onAllNodesWithText(title).assertCountEquals(1)
+                }
+                back(scenario)
+                compose.onNodeWithTag("home-all").assertIsDisplayed()
+            }
     }
 
     @Test fun numbersWebContentAndExactQuestionSurviveOptionsAndRecreation() = withApp { scenario ->

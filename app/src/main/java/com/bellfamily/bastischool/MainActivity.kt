@@ -45,6 +45,7 @@ import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.width
@@ -72,6 +73,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -255,6 +259,19 @@ class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
     private fun BastiApp() {
         val screen = navigation.screen
+        // Native learning screens that already show a title in their content do not
+        // need a second copy in the shell. Completion screens retain the shell title
+        // because their content is a summary rather than the active activity heading.
+        val contentOwnsTitle = when (screen) {
+            ShellScreen.CLOCK, ShellScreen.FOLLOW_LEVELS -> true
+            ShellScreen.ADD_TOGETHER -> nativeAddition.state?.phase != SessionPhase.COMPLETED
+            ShellScreen.COMPARE_QUANTITY -> nativeCompareQuantity.state?.phase != SessionPhase.COMPLETED
+            ShellScreen.NUMBER_ORDER -> nativeNumberOrder.state?.phase != SessionPhase.COMPLETED
+            ShellScreen.QUANTITY_MATCH -> nativeQuantityMatch.state?.phase != SessionPhase.COMPLETED
+            ShellScreen.SUBITISING -> nativeSubitising.state?.phase != SessionPhase.COMPLETED
+            ShellScreen.FOLLOW_INSTRUCTIONS -> nativeFollow.state?.phase != SessionPhase.COMPLETED
+            else -> false
+        }
         var language by remember { mutableStateOf(prefs.getString("lang", "en") ?: "en") }
         var sound by remember { mutableStateOf(prefs.getBoolean("sound", true)) }
         var audioMode by remember { mutableStateOf(prefs.getString("audioMode", if (sound) "all" else "off") ?: "all") }
@@ -271,7 +288,7 @@ class MainActivity : ComponentActivity() {
                 topBar = {
                     if (screen != ShellScreen.HOME) NativeScreenHeader(
                         title = {
-                            if (screen in setOf(ShellScreen.MONTHS_CHOOSER, ShellScreen.MONTHS,
+                            if (contentOwnsTitle || screen in setOf(ShellScreen.MONTHS_CHOOSER, ShellScreen.MONTHS,
                                     ShellScreen.SEASONS_CHOOSER, ShellScreen.SEASONS,
                                     ShellScreen.WILMA_CHOOSER, ShellScreen.WILMA,
                                     ShellScreen.VOCABULARY_CHOOSER, ShellScreen.VOCABULARY)) {
@@ -304,9 +321,18 @@ class MainActivity : ComponentActivity() {
                                 fontWeight = FontWeight.Black
                             )
                         },
-                        navigationIcon = { if (screen != ShellScreen.HOME) OutlinedButton(onClick = { navigateBack() }, contentPadding = PaddingValues(horizontal = 12.dp)) { Text("←") } else Unit },
+                        navigationIcon = { if (screen != ShellScreen.HOME) OutlinedButton(
+                            onClick = { navigateBack() },
+                            modifier = Modifier.sizeIn(minWidth = 56.dp, minHeight = 56.dp)
+                                .testTag("shell-back")
+                                .semantics { contentDescription = if (language == "de") "Zurück" else "Back" },
+                            contentPadding = PaddingValues(horizontal = 12.dp)
+                        ) { Text("←") } else Unit },
                         actions = {
-                            OutlinedButton(onClick = { openOptions() }) { Text(if (language == "de") "⚙ Optionen" else "⚙ Options") }
+                            OutlinedButton(onClick = { openOptions() },
+                                modifier = Modifier.sizeIn(minWidth = 56.dp, minHeight = 56.dp).testTag("shell-options")) {
+                                Text(if (language == "de") "⚙ Optionen" else "⚙ Options")
+                            }
                         },
                         background = Gold,
                         reflowTitle = screen == ShellScreen.HOME || screen == ShellScreen.OPTIONS,

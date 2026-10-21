@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phase 4E shared UI review</title>
+<style>
+body { margin: 2rem auto; padding: 0 1rem; max-width: 1200px; color: #203747; background: #fbf8f0; font: 1rem/1.5 system-ui, sans-serif }
+h1, h2 { line-height: 1.2 } section { margin: 2rem 0; padding: 1rem; background: white; border-radius: 1rem }
+.compare, .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 1rem }
+figure { margin: 0 } img { display: block; width: 100%; height: auto; border: 1px solid #65756e; border-radius: .5rem }
+figcaption { margin: .5rem 0 1rem; font-weight: 600 }
+</style>
+<body>
+<h1>Phase 4E — Shared learning screen polish</h1>
+<p>Production Clock Explore captures from API 35. The baseline and revised builds
+use the same route, language, phone display and canonical clock artwork.</p>
+<section><h2>Before / after — English phone</h2><div class="compare">
+<figure><img src="before/clock-en-phone.png" alt="Baseline Clock screen with shell and body title duplicated"><figcaption>Baseline: duplicate title; shell Back target is narrow.</figcaption></figure>
+<figure><img src="after/clock-en-phone.png" alt="Revised Clock screen with one heading and larger shell targets"><figcaption>Phase 4E: one body heading; shell controls meet the 56dp minimum.</figcaption></figure>
+</div></section>
+<section><h2>German phone and large text</h2><div class="grid">
+<figure><img src="after/clock-de-phone.png" alt="German Clock Explore on phone portrait"><figcaption>German — phone portrait, Options returns to the Clock route.</figcaption></figure>
+<figure><img src="after/clock-de-2x.png" alt="German Clock Explore at two times system text"><figcaption>German — 2× system text, phone portrait.</figcaption></figure>
+</div></section>
+<section><h2>Responsive layouts</h2><div class="grid">
+<figure><img src="after/clock-de-short-landscape.png" alt="German Clock screen in short landscape"><figcaption>German — 1280×600 short landscape, 1× text.</figcaption></figure>
+<figure><img src="after/clock-de-2x-short-landscape.png" alt="German Clock screen in short landscape at two times text"><figcaption>German — 1280×600 short landscape, 2× text. Wheel remains scroll-reachable.</figcaption></figure>
+<figure><img src="after/clock-tablet-portrait.png" alt="German Clock Explore on tablet portrait"><figcaption>German — tablet portrait, 1600×2560.</figcaption></figure>
+<figure><img src="after/clock-tablet-landscape.png" alt="German Clock Explore on tablet landscape"><figcaption>German — tablet landscape, 2560×1600.</figcaption></figure>
+</div></section>
+</body>
+</html>
