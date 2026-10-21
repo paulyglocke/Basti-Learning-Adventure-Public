@@ -1,7 +1,8 @@
 # Seasons Phase 4B review
 
-**Status:** implemented and validated with one outstanding visual-evidence gap;
-all changes remain uncommitted on `main`. Baseline: `6ea391af4fc2348ae7f59f82f0a17d216571c667`.
+**Status:** committed and pushed in `b516b0bc80b34900cc04d1507440db0bafaca888`;
+the short-landscape Explore evidence was corrected in the Phase 4C working tree.
+Implementation baseline: `6ea391af4fc2348ae7f59f82f0a17d216571c667`.
 
 ## Existing activity inventory
 
@@ -63,12 +64,12 @@ The [HTML gallery](index.html) contains 14 actual MainActivity captures:
 4–5. Explore in English and German, phone portrait.
 6. German practice activity, phone.
 7. Chooser, short landscape phone.
-8. Intended Explore short-landscape slot; **invalid evidence** because the
-   captured image is portrait. UiAutomator restores the emulator’s prior rotation
-   during its automation lifecycle. Direct rotation lock produced a genuine
-   2400×1080 frame, but the complete route was not recaptured without that
-   automation. The automated landscape layout matrix passes, but the requested
-   visual review of this layout remains incomplete.
+8. Explore, short-landscape phone. The corrected screenshot is **2400×1080** and
+   shows the existing German spring artwork, name, description, replay and first
+   answer row in a real landscape frame. The remaining choices continue below the
+   viewport and are reachable by scrolling. The capture helper now applies
+   `cmd window user-rotation lock 1` after navigation so UiAutomator cannot revert
+   the display rotation before capture.
 9–12. Chooser and Explore on tablet portrait and tablet landscape.
 13. Options language change returning to chooser.
 14. Existing Months-owned Sort Months into Seasons activity.
@@ -92,7 +93,7 @@ offline voice quality.
   failures/skips.
 - `assembleDebug`, `assembleDebugAndroidTest`, and `lintDebug`: passed; lint
   reports **0 errors, 5 existing warnings**.
-- `git diff --check`: passed before final QA/handoff edits; rerun on final diff.
+- `git diff --check`: passed before the Phase 4C evidence correction.
 - Complete app-wide instrumentation was **not run**.
 
 One earlier complete Seasons instrumentation attempt recorded a checkpoint byte
@@ -136,7 +137,7 @@ New files:
 - `docs/seasons-phase4b-review/gallery/05-explore-de-phone.png`
 - `docs/seasons-phase4b-review/gallery/06-practice-de-phone.png`
 - `docs/seasons-phase4b-review/gallery/07-chooser-short-landscape.png`
-- `docs/seasons-phase4b-review/gallery/08-explore-short-landscape.png` (portrait; invalid landscape evidence)
+- `docs/seasons-phase4b-review/gallery/08-explore-short-landscape.png` (corrected 2400×1080 landscape screenshot)
 - `docs/seasons-phase4b-review/gallery/09-chooser-tablet-portrait.png`
 - `docs/seasons-phase4b-review/gallery/10-explore-tablet-portrait.png`
 - `docs/seasons-phase4b-review/gallery/11-chooser-tablet-landscape.png`
@@ -148,8 +149,7 @@ New files:
 
 Physical-device, actual TalkBack, switch-access, child-usability and offline-voice
 acceptance remain owner-deferred and are not claimed as passed. Complete app-wide
-instrumentation and valid short-landscape Explore visual evidence remain open.
-UX-ANR-01 remains independent. Recommended status: **implemented; not yet ready
-for commit review until short-landscape Explore is captured and the final
-documentation diff check is rerun**. No files have been staged, committed or
-pushed.
+instrumentation was not run for the Phase 4B commit; the later Phase 4C tree passed
+567/567 on API 35. UX-ANR-01 remains independent. Phase 4B is committed and
+pushed; its short-landscape image and stale commit-status wording were corrected
+in the Phase 4C working tree. Those evidence-only changes remain uncommitted.

@@ -41,7 +41,7 @@ class WilmaBilingualScreenTest {
                 MaterialTheme {
                     WilmaScreen(WilmaSelection(phase=WilmaPhase.BILINGUAL),null,null,language,images,
                         false,false,false,false,
-                        onPhase={},onDay={error("Unexpected Explore selection")},onReplay={error("Unexpected replay")},
+                        onDay={error("Unexpected Explore selection")},onReplay={error("Unexpected replay")},
                         onOption={error("Unexpected single-language option")},onAction={error("Unexpected quiz")},
                         onOrder={error("Unexpected ordering")},onAgain={error("Unexpected completion")},onRetry={},onHome={},
                         modifier=Modifier.size(if(landscape)640.dp else 320.dp,if(landscape)240.dp else 480.dp),

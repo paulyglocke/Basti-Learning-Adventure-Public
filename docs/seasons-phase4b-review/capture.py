@@ -112,9 +112,9 @@ if "--landscape-only" in sys.argv:
         chooser("de")
         click("Jahreszeiten entdecken")
         shell("settings", "put", "system", "accelerometer_rotation", "0")
-        viewport("2400x1080", density="480")
         shell("settings", "put", "system", "user_rotation", "1")
-        time.sleep(1)
+        shell("cmd", "window", "user-rotation", "lock", "1")
+        time.sleep(2)
         capture("08-explore-short-landscape", "Explore — short landscape phone")
     finally:
         for key in ("size", "density"):

@@ -14,6 +14,7 @@ import com.bellfamily.bastischool.learning.models.*
 import com.bellfamily.bastischool.learning.session.*
 import com.bellfamily.bastischool.learning.prepositions.*
 import com.bellfamily.bastischool.learning.seasons.*
+import com.bellfamily.bastischool.learning.content.SeasonIds
 import com.bellfamily.bastischool.learning.wilma.*
 import com.bellfamily.bastischool.learning.vocabulary.*
 import com.bellfamily.bastischool.ui.prepositions.PrepositionsScreen
@@ -64,17 +65,17 @@ class CompactTextVisibilityTest(private val language: ContentLanguage, private v
         compose.setContent { CompositionLocalProvider(LocalDensity provides Density(LocalDensity.current.density,scale)) {
             MaterialTheme { Box(Modifier.width(320.dp)) { when(page) {
                 0 -> PrepositionsScreen(p,language,false,false,false,{}, {}, {}, {}, {}, {}, {})
-                1 -> SeasonsScreen(SeasonsSelection(phase=SeasonsPhase.PRACTICE),s,language,null,false,false,false,false,{}, {}, {}, {}, {}, {}, {}, {})
-                2 -> WilmaScreen(WilmaSelection(),null,null,language,emptyMap(),false,false,false,false,{}, {}, {}, {}, {}, {}, {}, {}, {})
+                1 -> SeasonsScreen(SeasonsSelection(phase=SeasonsPhase.EXPLORE),s,language,null,false,false,false,false,{}, {}, {}, {}, {}, {}, {}, {})
+                2 -> WilmaScreen(WilmaSelection(),null,null,language,emptyMap(),false,false,false,false,{}, {}, {}, {}, {}, {}, {}, {})
                 3 -> VocabularyScreen(VocabularySelection(),null,language,false,false,false,{}, {}, {}, {}, {}, {}, {}, {}, {})
             } } }
         } }
         p.task.question.choices.forEach { check("answer-${it.value}"); check("speaker-${it.value}") }
         compose.runOnIdle {page=1}
-        SeasonsPhase.entries.forEach {check(it.tag)}
-        s.task.question.choices.forEach {check("answer-${it.value}")}
+        check("season-name")
+        SeasonIds.canonicalOrder.forEach {check("season-${it.value}")}
         compose.runOnIdle {page=2}
-        WilmaPhase.entries.forEach {check("wilma-phase-${it.name}")}
+        check("wilma-selected")
         WilmaContent.days.forEach {check("day-${it.value}")}
         compose.runOnIdle {page=3}
         VocabularyContent.items.forEach {check("word-${it.id.value}")}

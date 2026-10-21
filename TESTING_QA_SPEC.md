@@ -6,7 +6,7 @@ This document defines verification and feature completion gates. [NATIVE_ARCHITE
 
 **A feature is not done only because it builds.** Record evidence for its behavior and relevant device risks. A code-complete slice awaiting required hardware checks must be labelled as such, not fully verified or eligible for legacy removal.
 
-## UX Refresh Phase 4B — Seasons chooser and content-first Explore (2026-10-20, uncommitted)
+## UX Refresh Phase 4B — Seasons chooser and content-first Explore (committed 2026-10-20)
 
 The Days & Seasons route now opens a dedicated bilingual Seasons chooser. Its
 Explore action opens the existing Seasons learning route; eight practice modes
@@ -31,17 +31,63 @@ progress-format migration or wheel-geometry change was made.
   failures/skips after the shell-route changes. App-wide instrumentation was not
   run. The 14-screenshot gallery covers chooser and Explore in EN/DE, German 2×,
   practice, tablet layouts, Options return and the shared Months/Seasons activity.
-  The short-landscape Explore slot is currently portrait because emulator UI
-  automation restored rotation; it is not valid landscape evidence and remains
-  an outstanding visual-review gap. The landscape Explore layout was exercised
-  by automated UI coverage, but no actual screenshot is claimed.
+  The genuine short-landscape Explore screenshot is **2400×1080** and shows the
+  existing artwork, selected season, description, replay and answer controls;
+  lower choices remain scroll-reachable. Rotation is locked only after screen
+  navigation to avoid UiAutomator restoring portrait orientation. The corrected
+  image is in the gallery and has been visually inspected.
 - Physical-device, actual TalkBack, switch-access, child-usability and offline
   voice acceptance remain **NOT RUN — owner-deferred**. UX-ANR-01 remains
   independent. See [the Phase 4B review](docs/seasons-phase4b-review/REVIEW.md)
   for the inventory, changed paths and visual evidence.
 
-This checkpoint is uncommitted. Commit and push are not authorized. See
-[SESSION_HANDOFF.md](SESSION_HANDOFF.md) for the working-tree state.
+Phase 4B implementation commit `b516b0bc80b34900cc04d1507440db0bafaca888` is
+pushed to `main`. The invalid landscape evidence and stale status wording were
+corrected in the Phase 4C working tree and remain uncommitted with Phase 4C.
+See [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+## UX Refresh Phase 4C — Wilma’s Week chooser and Explore (2026-10-21, uncommitted)
+
+The Days & Seasons Wilma entry now opens a bilingual chooser. Explore is the
+prominent first action, with direct cards for the other five existing modes.
+Explore removes the mode catalogue from its learning screen and gives the
+existing Wilma/week artwork, selected day and controls the main space. The
+six canonical modes, weekday order/colours, question generation, feedback,
+completion, audio policy, asset files and persistence identities/formats remain
+unchanged. A narrow wide-screen layout defect found in the tablet screenshot was
+corrected by grouping Explore copy so the artwork and heading render beside it.
+The Phase 4B screenshot/status correction remains separate and uncommitted.
+
+- PASS — focused Wilma chooser instrumentation **24/24** on API 35 across English
+  and German, 1×/1.5×/2×, phone/short landscape/tablet configurations. The
+  Wilma route/restoration test passed **1/1** in the complete run and exercises
+  all six actual mode destinations, Options/language, Home, recreation and saved
+  session preservation.
+- PASS — full JVM **555/555**, with **24 Wilma-related JVM cases**; Android-test
+  Kotlin compilation, debug build, test APK assembly, `lintDebug` and
+  `git diff --check` pass. Lint reports 0 errors, 5 existing warnings and 2
+  informational findings.
+- PASS — complete API 35 app instrumentation **567/567**, zero failures or
+  skips, via the installed AndroidJUnitRunner. This included the Months and
+  Seasons regression suites and all Wilma modes, chooser layout cases, route,
+  restoration and production navigation. The first complete Gradle run exposed
+  five stale test expectations (four removed Seasons `learn` tag checks and one
+  `MONTHS` vs `MONTHS_CHOOSER` route expectation); both test files were corrected
+  to match the already-committed routes/screens. Gradle's later device installer
+  returned `INSTALL_FAILED_INSUFFICIENT_STORAGE` with 1.2 GB data free, so the
+  final complete run used direct APK installation and `adb shell am instrument`.
+- PASS — the 14-image gallery in
+  [the Phase 4C review](docs/wilma-phase4c-review/REVIEW.md) includes portrait,
+  genuine 2400×1080 phone landscape, tablet portrait and tablet landscape
+  captures. Physical-device, actual TalkBack, switch-access, child-usability and
+  offline-voice acceptance remain owner-deferred. UX-ANR-01 remains separate.
+
+After the 567/567 instrumentation run, the temporary guard that suppressed
+speech during a persistence failure was removed to restore the baseline audio
+condition; final source was rebuilt and linted, but the full suite was not rerun
+after that one-line audio restoration. The change does not affect navigation or
+chooser behavior. All Phase 4C implementation and the bounded Phase 4B evidence
+correction remain uncommitted and unpushed for owner visual review.
 
 ## UX Refresh Phase 4A — Months chooser and Explore (2026-10-20, uncommitted)
 

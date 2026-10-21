@@ -1,6 +1,5 @@
 package com.bellfamily.bastischool.ui.wilma
 
-import com.bellfamily.bastischool.ui.common.NativeChoiceRows
 import com.bellfamily.bastischool.ui.common.NativeActivityTitle
 import com.bellfamily.bastischool.ui.common.NativeQuestionProgress
 
@@ -34,10 +33,10 @@ import com.bellfamily.bastischool.learning.wilma.*
 @Composable
 fun WilmaScreen(selection:WilmaSelection?,quiz:SessionState?,ordering:WilmaOrderState?,language:ContentLanguage,
     images:Map<String,ImageBitmap>,busy:Boolean,saveFailed:Boolean,imageFailed:Boolean,audioFailed:Boolean,
-    onPhase:(WilmaPhase)->Unit,onDay:(ContentId)->Unit,onReplay:()->Unit,onOption:(ContentId)->Unit,
+    onDay:(ContentId)->Unit,onReplay:()->Unit,onOption:(ContentId)->Unit,
     onAction:(SessionAction)->Unit,onOrder:(WilmaOrderAction)->Unit,onAgain:()->Unit,onRetry:()->Unit,onHome:()->Unit,
     modifier:Modifier=Modifier,onPop:(String)->Unit={},
-    onBilingualDay:(ContentId,ContentLanguage)->Unit={_,_->}) {
+    onBilingualDay:(ContentId,ContentLanguage)->Unit={_,_->},onChooseActivity:()->Unit={}) {
     val de=language==ContentLanguage.GERMAN
     fun t(en:String,german:String)=if(de)german else en
     val ready=!busy && !saveFailed && selection!=null
@@ -52,35 +51,31 @@ fun WilmaScreen(selection:WilmaSelection?,quiz:SessionState?,ordering:WilmaOrder
                 Text(t("7 of 7 days placed","7 von 7 Tagen eingeordnet"),modifier=Modifier.testTag("wilma-placed-count"))
                 WilmaStrip(images,language,ordering!!.placed,null,emptySet(),{},prefix="placed")
             }
-            WilmaPhase.entries.forEach {phase ->
-                OutlinedButton(onClick = {onPhase(phase)}, enabled = ready, modifier = Modifier.heightIn(min = 56.dp).testTag("wilma-phase-${phase.name}")) {Text(phase.title.display[language])}
-            }
+            NativeActionButton(t("Choose another activity", "Andere Aktivität wählen"), NativeActionRole.NAVIGATION,
+                onChooseActivity, Modifier.fillMaxWidth().testTag("wilma-choose-activity"))
         }
         return
     }
     Column(modifier.fillMaxSize().background(Color(0xFFF1F8E9)).verticalScroll(rememberScrollState()).padding(16.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
         NativeActivityTitle(t("Wilma’s Week","Wilmas Woche"))
-        NativeChoiceRows(WilmaPhase.entries) { phase ->
-            OutlinedButton(onClick={onPhase(phase)},enabled=ready,modifier=Modifier.weight(1f).heightIn(min=56.dp).testTag("wilma-phase-${phase.name}")) {
-                Text(phase.title.display[language])
-            }
-        }
         if(saveFailed) Text(t("Your saved work is kept. Please try saving or opening it again.","Deine gespeicherte Arbeit bleibt erhalten. Versuche erneut, sie zu speichern oder zu öffnen."))
         if(imageFailed) Text(t("Wilma’s pictures could not be opened. Please try again.","Wilmas Bilder konnten nicht geöffnet werden. Bitte versuche es erneut."))
         if(saveFailed || imageFailed) NativeActionButton(t("Try again", "Erneut versuchen"), NativeActionRole.SECONDARY, onClick=onRetry,enabled=!busy,modifier=Modifier.testTag("wilma-retry-save"))
         if(audioFailed) Text(t("Speech is unavailable. Check the installed offline English and German voices in device settings.","Die Sprachausgabe ist nicht verfügbar. Prüfe die installierten Offline-Stimmen für Englisch und Deutsch in den Geräte-Einstellungen."))
         if(selection==null) Text(t("Opening…","Wird geöffnet…")) else {
-            Text(selection.phase.title.display[language],style=MaterialTheme.typography.titleLarge)
-            if(selection.phase!=WilmaPhase.BILINGUAL)
+            Text(selection.phase.title.display[language],style=MaterialTheme.typography.titleLarge,modifier=Modifier.testTag("wilma-mode-title"))
+            if(selection.phase!=WilmaPhase.BILINGUAL && selection.phase!=WilmaPhase.EXPLORE)
                 NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY, onClick=onReplay,enabled=ready,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("wilma-replay"))
             when(selection.phase) {
                 WilmaPhase.BILINGUAL -> WilmaBilingualView(images,language,ready,onBilingualDay)
                 WilmaPhase.EXPLORE -> {
                     Text(t("Tap a day to hear its name. Swipe along Wilma to see the whole week.","Tippe auf einen Tag, um seinen Namen zu hören. Wische an Wilma entlang, um die ganze Woche zu sehen."))
                     // Whole-character overview preserves orientation on narrow displays; not another answer target.
-                    images[WilmaContent.REFERENCE]?.let {Image(it,null,Modifier.fillMaxWidth().heightIn(max=160.dp),contentScale=ContentScale.Fit)}
+                    images[WilmaContent.REFERENCE]?.let {Image(it,null,Modifier.fillMaxWidth().heightIn(max=240.dp),contentScale=ContentScale.Fit)}
                     WilmaStrip(images,language,WilmaContent.days,selection.selected,if(ready)WilmaContent.days.toSet() else emptySet(),onDay)
                     Text(WilmaContent.day(selection.selected).text.display[language],style=MaterialTheme.typography.headlineSmall,modifier=Modifier.testTag("wilma-selected"))
+                    NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY,
+                        onClick=onReplay,enabled=ready,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("wilma-replay"))
                 }
                 WilmaPhase.FIND,WilmaPhase.RELATIONS,WilmaPhase.TODAY -> if(quiz!=null) {
                     val canAct=ready && quiz.language==language
@@ -147,6 +142,8 @@ fun WilmaScreen(selection:WilmaSelection?,quiz:SessionState?,ordering:WilmaOrder
                 }
             }
         }
+        NativeActionButton(t("Choose another activity", "Andere Aktivität wählen"), NativeActionRole.NAVIGATION,
+            onClick=onChooseActivity,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("wilma-choose-activity"))
         NativeActionButton(t("Back home", "Zurück zum Start"), NativeActionRole.NAVIGATION, onClick=onHome,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("wilma-home"))
     }
 }

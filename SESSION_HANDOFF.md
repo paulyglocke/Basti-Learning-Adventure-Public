@@ -1,10 +1,45 @@
-# Session handoff — 2026-10-20
+# Session handoff — 2026-10-21
 
-## UX Refresh Phase 4B — Seasons chooser and content-first Explore (uncommitted)
+## UX Refresh Phase 4C — Wilma’s Week (uncommitted, owner review pending)
 
-**Current task:** bounded Seasons selection/navigation redesign. Baseline remains
-`6ea391af4fc2348ae7f59f82f0a17d216571c667` on `main`; Phase 4B is uncommitted.
-Commit and push are **not authorized**. Phase 4A work was preserved. No
+Work started from the requested baseline
+`b516b0bc80b34900cc04d1507440db0bafaca888` on `main`; Phase 4B screenshot/status
+correction was completed first and remains a separate uncommitted set of files.
+The Wilma chooser is a new `WILMA_CHOOSER` presentation route. The six original
+Wilma modes continue through the existing `WILMA` route, ViewModel, journals,
+checkpoints, assets, weekday order and colours. No learning-state formats or
+audio policy were changed. The tablet screenshot exposed and prompted a bounded
+wide-layout correction grouping the Explore title/instruction next to the
+existing artwork.
+
+The visual gallery has 14 actual API 35 MainActivity captures. Phone portrait is
+1080×2400, phone short landscape 2400×1080, tablet portrait 1600×2560 and tablet
+landscape 2560×1600. All were visually inspected. Full JVM passed 555/555,
+focused Wilma JVM 24/24, chooser instrumentation 24/24, and full API 35
+instrumentation 567/567 via direct AndroidJUnitRunner. Debug build, Android-test
+APK compilation, lint and `git diff --check` passed; lint has five existing
+warnings and two informational findings. The full instrumentation run used the
+previous build containing a temporary extra guard suppressing speech on
+unrelated pending persistence failure; the guard was removed to restore the
+baseline audio behavior, then final source was rebuilt and linted. The rest of
+the final source was covered by the passing run. Gradle’s connected-test APK
+installer returned `INSTALL_FAILED_INSUFFICIENT_STORAGE`; direct APK/test-APK
+installation and runner execution succeeded. The emulator now has limited
+remaining `/data` capacity; do not remove application data without owner request.
+
+Physical-device, TalkBack, switch-access, child-usability and offline-voice
+acceptance are owner-deferred. UX-ANR-01 remains separate. No commit or push is
+authorized. Stop at the uncommitted visual-review state. See
+[`docs/wilma-phase4c-review/REVIEW.md`](docs/wilma-phase4c-review/REVIEW.md) and
+[`docs/wilma-phase4c-review/index.html`](docs/wilma-phase4c-review/index.html).
+
+## UX Refresh Phase 4B — Seasons chooser and content-first Explore (committed)
+
+Phase 4B was implemented from baseline
+`6ea391af4fc2348ae7f59f82f0a17d216571c667` and committed/pushed as
+`b516b0bc80b34900cc04d1507440db0bafaca888`. Its bounded Seasons screenshot and
+status documentation correction are part of the Phase 4C working tree. Phase 4A
+work was preserved. No
 question-generation, scoring, audio policy, progress IDs, journal/checkpoint
 formats, shared Months chooser, or seasonal wheel geometry were changed.
 
@@ -39,11 +74,11 @@ these shared paths were not rerouted or duplicated.
 - The API 35 gallery has 14 captures. It shows EN/DE chooser, German 2×,
   portrait Explore EN/DE, practice, chooser in short landscape, Explore on tablet
   portrait/landscape, Options return and the Months-owned shared activity. The
-  short-landscape Explore image is **not valid**: emulator UI automation reset
-  rotation and the saved image is portrait. Direct rotation-lock diagnostics
-  confirmed that an actual 2400×1080 frame can be captured, but full route capture
-  without UI automation was not completed. Do not claim landscape screenshot
-  review passed. All other gallery images were visually reviewed for clipping,
+  short-landscape Explore image has been corrected to a genuine **2400×1080**
+  frame. It shows the German spring artwork, season name, description, replay and
+  answer controls; lower answers remain reachable by scrolling. Rotation is now
+  locked after navigation, so UiAutomator cannot revert it before capture. The
+  corrected screenshot was visually inspected. All other gallery images were reviewed for clipping,
   hierarchy, German wrapping, artwork proportions and touch-target readability;
   no blocking visual issue found. See [gallery](docs/seasons-phase4b-review/index.html)
   and [review](docs/seasons-phase4b-review/REVIEW.md).
@@ -58,15 +93,15 @@ these shared paths were not rerouted or duplicated.
   instrumentation **185/185**, zero failures/skips. One earlier Seasons full run
   had a one-byte checkpoint assertion mismatch (6034/6035). Focused and later
   complete reruns passed; cause remains undetermined. Complete app-wide
-  instrumentation was not run.
-- Outstanding: actual short-landscape Explore screenshot/review, full app-wide
-  instrumentation, physical-device, actual TalkBack, switch-access, child
+  instrumentation was not run for Phase 4B; the Phase 4C working tree later
+  passed **567/567** on API 35.
+- Outstanding: physical-device, actual TalkBack, switch-access, child
   usability and offline-voice acceptance (**owner-deferred**). UX-ANR-01 remains
   separate. Emulator display settings were restored to native 1080×2400, 420 dpi,
   automatic rotation and 1× font scale.
 
-Tracked/untracked file inventory and precise evidence are in the Phase 4B review.
-Leave all work uncommitted for owner review.
+Phase 4B files are tracked in its commit. This separate evidence correction is
+uncommitted alongside the current Phase 4C work; see the updated Phase 4B review.
 
 ## UX Refresh Phase 4A — Months chooser and content-first Explore (uncommitted)
 

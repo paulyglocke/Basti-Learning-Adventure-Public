@@ -48,7 +48,7 @@ class WilmaScreenTest {
             val density=LocalDensity.current
             CompositionLocalProvider(LocalDensity provides Density(density.density,if(large)1.5f else 1f)) {
                 MaterialTheme {WilmaScreen(selection.value,quiz.value,ordering.value,language.value,pictures,false,false,false,false,
-                    onPhase={selection.value=selection.value.copy(phase=it)},onDay={selection.value=selection.value.copy(selected=it)},onReplay={listens++},onOption={listens++},
+                    onDay={selection.value=selection.value.copy(selected=it)},onReplay={listens++},onOption={listens++},
                     onAction={quiz.value=SessionReducer.reduce(quiz.value,it).state},onOrder={ordering.value=WilmaOrder.reduce(ordering.value,it).state},
                     onAgain={again++},onRetry={},onHome={home++},modifier=Modifier.width(if(large)320.dp else 700.dp))}
             }

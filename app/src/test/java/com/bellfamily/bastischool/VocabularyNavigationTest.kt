@@ -11,7 +11,7 @@ class VocabularyNavigationTest {
         assertEquals(route,ShellNavigation.restore("OPTIONS","VOCABULARY","verbs",null).closeOptions())
         assertFalse(route.ownsWebSession);assertFalse(route.openOptions().ownsWebSession)
         assertEquals(ShellScreen.SEASONS_CHOOSER,route.openSeasons().screen)
-        assertEquals(ShellScreen.WILMA,route.openWilma().screen)
+        assertEquals(ShellScreen.WILMA_CHOOSER,route.openWilma().screen)
         assertEquals(ShellScreen.PREPOSITIONS,route.openPrepositions().screen)
         assertEquals(BackAction.LEGACY,route.openActivity("verbs").backAction)
     }

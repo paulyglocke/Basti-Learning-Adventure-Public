@@ -27,26 +27,49 @@ class WilmaRouteTest {
         context.getSharedPreferences("basti_shell",0).edit().putString("lang","en").putString("audioMode","off").putInt("round",5).commit()
         ActivityScenario.launch(MainActivity::class.java).use {scenario ->
             fun settled(){compose.waitUntil(10_000){var ready=false;scenario.onActivity {val vm=ViewModelProvider(it)[WilmaViewModel::class.java];ready=vm.selection!=null && !vm.busy && !vm.saveFailed && !vm.imageFailed};ready}}
+            fun selection():WilmaSelection {var s:WilmaSelection?=null;scenario.onActivity {s=ViewModelProvider(it)[WilmaViewModel::class.java].selection};return s!!}
             fun quiz():SessionState {var s:SessionState?=null;scenario.onActivity {s=ViewModelProvider(it)[WilmaViewModel::class.java].quiz};return s!!}
             fun order():WilmaOrderState {var s:WilmaOrderState?=null;scenario.onActivity {s=ViewModelProvider(it)[WilmaViewModel::class.java].ordering};return s!!}
-            compose.openHomeActivity("Days & Seasons")
+            compose.onNodeWithTag("home-category-TIME").performScrollTo().performClick()
+            compose.onNodeWithTag("home-activity-time").performScrollTo().performClick()
             compose.onNodeWithTag("open-wilma").performClick();settled()
-            compose.onNodeWithTag("wilma-phase-EXPLORE").performScrollTo().performClick();settled()
+            compose.onNodeWithTag("wilma-open-EXPLORE").assertIsDisplayed()
+            compose.onNodeWithText("⚙ Options").performClick();compose.onNodeWithText("🇩🇪 Deutsch").performClick()
+            scenario.onActivity {it.onBackPressedDispatcher.onBackPressed()};settled()
+            assertEquals("de",context.getSharedPreferences("basti_shell",0).getString("lang",null))
+            WilmaPhase.entries.forEach {phase ->
+                compose.onNodeWithTag("wilma-open-${phase.name}").performScrollTo().performClick();settled()
+                assertEquals(phase,selection().phase)
+                compose.onNodeWithTag("wilma-mode-title").assertTextEquals(phase.title.display[ContentLanguage.GERMAN])
+                scenario.onActivity {it.onBackPressedDispatcher.onBackPressed()};settled()
+                compose.onNodeWithTag("wilma-open-EXPLORE").assertIsDisplayed()
+            }
+            compose.onNodeWithTag("wilma-open-EXPLORE").performScrollTo().performClick();settled()
             compose.onNodeWithTag("day-day.sunday").performScrollTo().performClick();settled()
-            scenario.recreate();settled();compose.onNodeWithTag("wilma-selected").assertTextEquals("Sunday")
+            scenario.recreate();settled();compose.onNodeWithTag("wilma-selected").assertTextEquals("Sonntag")
+            compose.onNodeWithText("⚙ Optionen").performClick();compose.onNodeWithText("🇬🇧 English").performClick()
+            scenario.onActivity {it.onBackPressedDispatcher.onBackPressed()};settled()
+            compose.onNodeWithTag("wilma-selected").assertTextEquals("Sunday")
             compose.onNodeWithText("⚙ Options").performClick();compose.onNodeWithText("🇩🇪 Deutsch").performClick()
             scenario.onActivity {it.onBackPressedDispatcher.onBackPressed()};settled()
             compose.onNodeWithTag("wilma-selected").assertTextEquals("Sonntag")
-            compose.onNodeWithTag("wilma-phase-FIND").performScrollTo().performClick();settled()
+            compose.onNodeWithTag("wilma-choose-activity").performScrollTo().performClick();settled()
+            scenario.recreate();settled();compose.onNodeWithTag("wilma-open-FIND").assertIsDisplayed()
+            compose.onNodeWithTag("wilma-open-FIND").performScrollTo().performClick();settled()
             if(quiz().current.locked && quiz().phase!=SessionPhase.COMPLETED){compose.onNodeWithTag("wilma-next").performScrollTo().performClick();settled()}
             if(quiz().phase==SessionPhase.COMPLETED){compose.onNodeWithTag("wilma-again").assertIsDisplayed().performClick();settled()}
             if(quiz().current.answer==AnswerState.RETRY_AVAILABLE){compose.onNodeWithTag("wilma-retry").performScrollTo().performClick();settled()}
             val unanswered=SessionCheckpoint.encode(quiz());scenario.recreate();settled();assertArrayEquals(unanswered,SessionCheckpoint.encode(quiz()))
             compose.onNodeWithTag("day-${quiz().task.question.correct.value}").performScrollTo().performClick();settled()
             val answered=SessionCheckpoint.encode(quiz())
+            scenario.onActivity {it.onBackPressedDispatcher.onBackPressed()};settled()
+            assertArrayEquals(answered,SessionCheckpoint.encode(quiz()))
+            compose.onNodeWithTag("wilma-open-FIND").performScrollTo().performClick();settled()
+            assertArrayEquals(answered,SessionCheckpoint.encode(quiz()))
             compose.onNodeWithText("⚙ Optionen").performClick();compose.onNodeWithText("←").performClick();settled()
             assertArrayEquals(answered,SessionCheckpoint.encode(quiz()))
-            compose.onNodeWithTag("wilma-phase-ORDER").performScrollTo().performClick();settled()
+            scenario.onActivity {it.onBackPressedDispatcher.onBackPressed()};settled()
+            compose.onNodeWithTag("wilma-open-ORDER").performScrollTo().performClick();settled()
             if(order().completed){compose.onNodeWithTag("wilma-again").assertIsDisplayed().performClick();settled()}
             if(order().current.answer==AnswerState.RETRY_AVAILABLE){compose.onNodeWithTag("wilma-retry").performScrollTo().performClick();settled()}
             while(order().index<3){compose.onNodeWithTag("order-${WilmaContent.days[order().index].value}").performScrollTo().performClick();settled()}
@@ -61,11 +84,20 @@ class WilmaRouteTest {
                 fun web(view:View):Boolean=view is WebView || (view is ViewGroup && (0 until view.childCount).any {web(view.getChildAt(it))})
                 assertFalse(web(activity.window.decorView));activity.onBackPressedDispatcher.onBackPressed()
             }
-            compose.onNodeWithTag("open-wilma").performClick();settled();assertEquals(saved.steps,order().steps)
+            compose.onNodeWithTag("wilma-open-ORDER").performScrollTo().performClick();settled();assertEquals(saved.steps,order().steps)
             scenario.onActivity {it.onBackPressedDispatcher.onBackPressed()}
+            scenario.onActivity {it.onBackPressedDispatcher.onBackPressed()}
+            compose.onNodeWithTag("open-wilma").assertExists()
             compose.onNodeWithTag("legacy-calendar").assertExists()
             compose.onNodeWithTag("open-seasons").performClick()
-            compose.onNodeWithTag("learn").assertExists()
+            compose.onNodeWithTag("seasons-open-explore").assertExists()
+            scenario.onActivity {it.onBackPressedDispatcher.onBackPressed()}
+            compose.onNodeWithTag("open-months").performClick()
+            compose.onNodeWithTag("months-open-explore").assertExists()
+            scenario.onActivity {it.onBackPressedDispatcher.onBackPressed()}
+            compose.onNodeWithTag("open-wilma").performClick()
+            compose.onNodeWithTag("wilma-chooser-home").performScrollTo().performClick()
+            compose.onNodeWithTag("home-all").assertExists()
         }
     }
 }

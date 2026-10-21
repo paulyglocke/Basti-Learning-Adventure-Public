@@ -272,7 +272,8 @@ class MainActivity : ComponentActivity() {
                     if (screen != ShellScreen.HOME) NativeScreenHeader(
                         title = {
                             if (screen in setOf(ShellScreen.MONTHS_CHOOSER, ShellScreen.MONTHS,
-                                    ShellScreen.SEASONS_CHOOSER, ShellScreen.SEASONS)) {
+                                    ShellScreen.SEASONS_CHOOSER, ShellScreen.SEASONS,
+                                    ShellScreen.WILMA_CHOOSER, ShellScreen.WILMA)) {
                                 Spacer(Modifier.width(1.dp))
                             } else Text(
                                 when (screen) {
@@ -284,6 +285,7 @@ class MainActivity : ComponentActivity() {
                                     ShellScreen.DAYS_SEASONS -> if (language == "de") "Tage & Jahreszeiten" else "Days & Seasons"
                                     ShellScreen.VOCABULARY -> if (language == "de") "Wortschatz" else "Vocabulary Booster"
                                     ShellScreen.WILMA -> if (language == "de") "Wilmas Woche" else "Wilma’s Week"
+                                    ShellScreen.WILMA_CHOOSER -> if (language == "de") "Wilmas Woche" else "Wilma’s Week"
                                     ShellScreen.TELL_ME -> if (language == "de") "Erzähl mal!" else "Tell Me!"
                                     ShellScreen.COLOUR_SORT -> if (language == "de") "Farben sortieren" else "Colour Sort"
                                     ShellScreen.ANIMAL_GROUPS -> if (language == "de") "Tiere zuordnen" else "Animal Groups"
@@ -370,6 +372,22 @@ class MainActivity : ComponentActivity() {
                             onSeasonsMatch = { changeRoute(navigation.openMonthsSeasons()) },
                             onSeasonsWheel = { changeRoute(navigation.openMonthsSeasonsWheel()) },
                             onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding))
+                        ShellScreen.WILMA_CHOOSER -> WilmaActivityChooserScreen(
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            nativeWilma.images,
+                            ready = nativeWilma.selection != null && !nativeWilma.busy && !nativeWilma.saveFailed && !nativeWilma.imageFailed,
+                            busy = nativeWilma.busy,
+                            saveFailed = nativeWilma.saveFailed,
+                            imageFailed = nativeWilma.imageFailed,
+                            onChoose = { phase ->
+                                nativeWilma.phase(phase) {
+                                    if (navigation.screen == ShellScreen.WILMA_CHOOSER)
+                                        changeRoute(navigation.openWilmaActivity())
+                                }
+                            },
+                            onRetry = nativeWilma::retry,
+                            onHome = { changeRoute(navigation.home()) },
+                            modifier = Modifier.padding(padding))
                         ShellScreen.MONTHS -> MonthsScreen(nativeMonths.selection,
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeMonths.saveFailed, nativeMonths.audioFailed, nativeMonths::select, nativeMonths::listen,
@@ -501,10 +519,11 @@ class MainActivity : ComponentActivity() {
                         ShellScreen.WILMA -> WilmaScreen(nativeWilma.selection, nativeWilma.quiz, nativeWilma.ordering,
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeWilma.images, nativeWilma.busy, nativeWilma.saveFailed, nativeWilma.imageFailed, nativeWilma.audioFailed,
-                            { celebrationSound.cancel(); nativeWilma.phase(it) }, nativeWilma::select, { celebrationSound.cancel(); nativeWilma.replay() }, nativeWilma::option,
+                            nativeWilma::select, { celebrationSound.cancel(); nativeWilma.replay() }, nativeWilma::option,
                             nativeWilma::action, nativeWilma::orderAction, { celebrationSound.cancel(); nativeWilma.again() }, nativeWilma::retry,
                             onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration,
-                            onBilingualDay = nativeWilma::bilingualDay)
+                            onBilingualDay = nativeWilma::bilingualDay,
+                            onChooseActivity = { nativeWilma.suspendSpeech(); changeRoute(navigation.openWilmaChooser()) })
                         ShellScreen.SEASONS -> SeasonsScreen(nativeSeasons.selection, nativeSeasons.state,
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeSeasons.artwork, nativeSeasons.busy, nativeSeasons.saveFailed, nativeSeasons.imageFailed, nativeSeasons.audioFailed,
@@ -629,7 +648,7 @@ class MainActivity : ComponentActivity() {
         nativeAddition.setVisible(foreground && route.screen == ShellScreen.ADD_TOGETHER)
         nativeFollow.setVisible(foreground && route.screen in setOf(ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO),
             when (route.screen) { ShellScreen.FOLLOW_INSTRUCTIONS -> FollowLevel.ONE; ShellScreen.FOLLOW_TWO -> FollowLevel.TWO; else -> null })
-        nativeWilma.setVisible(foreground && route.screen == ShellScreen.WILMA)
+        nativeWilma.setVisible(foreground && route.screen in setOf(ShellScreen.WILMA_CHOOSER, ShellScreen.WILMA))
         updateWebActivity()
     }
 
@@ -667,6 +686,7 @@ class MainActivity : ComponentActivity() {
             BackAction.FOLLOW_LEVELS -> changeRoute(navigation.openFollowInstructions())
             BackAction.DAYS_HUB -> changeRoute(navigation.openDaysSeasons())
             BackAction.SEASONS_CHOOSER -> changeRoute(navigation.openSeasons())
+            BackAction.WILMA_CHOOSER -> { nativeWilma.suspendSpeech(); changeRoute(navigation.openWilmaChooser()) }
             BackAction.NATIVE_HOME -> changeRoute(navigation.home())
             BackAction.HOME_ROOT -> changeRoute(navigation.home())
             BackAction.EXIT -> Unit // BackHandler is disabled; Android owns exit.
@@ -849,7 +869,7 @@ class MainActivity : ComponentActivity() {
         super.onSaveInstanceState(outState)
     }
     override fun onPause() { celebrationSound.cancel(); foreground = false; nativePositions.setVisible(false); nativeSeasons.setVisible(false); nativeWilma.setVisible(false); nativeVocabulary.setVisible(false); nativeMonths.setVisible(false); nativeClock.setVisible(false); nativeSubitising.setVisible(false); nativeQuantityMatch.setVisible(false); nativeCompareQuantity.setVisible(false); nativeNumberOrder.setVisible(false); nativeAddition.setVisible(false); nativeFollow.setVisible(false); nativeColourSort.setVisible(false); nativeAnimalGroups.setVisible(false); nativeWashHands.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
-    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen in setOf(ShellScreen.SEASONS, ShellScreen.SEASONS_CHOOSER)); nativeWilma.setVisible(navigation.screen == ShellScreen.WILMA); nativeVocabulary.setVisible(navigation.screen == ShellScreen.VOCABULARY); nativeMonths.setVisible(navigation.screen in monthScreens, monthsMode(navigation.screen)); nativeClock.setVisible(navigation.screen in listOf(ShellScreen.CLOCK, ShellScreen.CLOCK_MAKE), navigation.screen == ShellScreen.CLOCK_MAKE); nativeSubitising.setVisible(navigation.screen == ShellScreen.SUBITISING); nativeQuantityMatch.setVisible(navigation.screen == ShellScreen.QUANTITY_MATCH); nativeCompareQuantity.setVisible(navigation.screen == ShellScreen.COMPARE_QUANTITY); nativeNumberOrder.setVisible(navigation.screen == ShellScreen.NUMBER_ORDER); nativeAddition.setVisible(navigation.screen == ShellScreen.ADD_TOGETHER); nativeFollow.setVisible(navigation.screen in setOf(ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO), when (navigation.screen) { ShellScreen.FOLLOW_INSTRUCTIONS -> FollowLevel.ONE; ShellScreen.FOLLOW_TWO -> FollowLevel.TWO; else -> null }); nativeColourSort.setVisible(navigation.screen == ShellScreen.COLOUR_SORT); nativeAnimalGroups.setVisible(navigation.screen == ShellScreen.ANIMAL_GROUPS); nativeWashHands.setVisible(navigation.screen == ShellScreen.WASH_HANDS); updateWebActivity() }
+    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen in setOf(ShellScreen.SEASONS, ShellScreen.SEASONS_CHOOSER)); nativeWilma.setVisible(navigation.screen in setOf(ShellScreen.WILMA_CHOOSER, ShellScreen.WILMA)); nativeVocabulary.setVisible(navigation.screen == ShellScreen.VOCABULARY); nativeMonths.setVisible(navigation.screen in monthScreens, monthsMode(navigation.screen)); nativeClock.setVisible(navigation.screen in listOf(ShellScreen.CLOCK, ShellScreen.CLOCK_MAKE), navigation.screen == ShellScreen.CLOCK_MAKE); nativeSubitising.setVisible(navigation.screen == ShellScreen.SUBITISING); nativeQuantityMatch.setVisible(navigation.screen == ShellScreen.QUANTITY_MATCH); nativeCompareQuantity.setVisible(navigation.screen == ShellScreen.COMPARE_QUANTITY); nativeNumberOrder.setVisible(navigation.screen == ShellScreen.NUMBER_ORDER); nativeAddition.setVisible(navigation.screen == ShellScreen.ADD_TOGETHER); nativeFollow.setVisible(navigation.screen in setOf(ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO), when (navigation.screen) { ShellScreen.FOLLOW_INSTRUCTIONS -> FollowLevel.ONE; ShellScreen.FOLLOW_TWO -> FollowLevel.TWO; else -> null }); nativeColourSort.setVisible(navigation.screen == ShellScreen.COLOUR_SORT); nativeAnimalGroups.setVisible(navigation.screen == ShellScreen.ANIMAL_GROUPS); nativeWashHands.setVisible(navigation.screen == ShellScreen.WASH_HANDS); updateWebActivity() }
     override fun onDestroy() { celebrationSound.close(); disposeWebView(); tts?.shutdown(); tts = null; super.onDestroy() }
 }
 

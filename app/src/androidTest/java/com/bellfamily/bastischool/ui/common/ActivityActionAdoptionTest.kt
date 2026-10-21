@@ -95,7 +95,7 @@ class ActivityActionAdoptionTest(private val surface: String, private val orient
                         vocabulary -> VocabularyScreen(VocabularySelection(phase = if(explore) VocabularyPhase.EXPLORE else VocabularyPhase.FIND),
                             state.value, ContentLanguage.GERMAN, busy, failed, false, {}, {}, {replay++}, {extra++}, action, {}, {}, {reload++}, {home++}, modifier)
                         else -> WilmaScreen(WilmaSelection(phase = if(ordering) WilmaPhase.ORDER else WilmaPhase.FIND), state.value, order.value,
-                            ContentLanguage.GERMAN, emptyMap(), busy, failed, false, false, {}, {}, {replay++}, {}, action,
+                            ContentLanguage.GERMAN, emptyMap(), busy, failed, false, false, {}, {replay++}, {}, action,
                             {order.value = WilmaOrder.reduce(order.value, it).state}, {}, {reload++}, {home++}, modifier)
                     }
                 }

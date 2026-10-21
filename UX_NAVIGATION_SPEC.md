@@ -122,6 +122,17 @@ selection, phase owners, journals, checkpoints and saved-progress formats remain
 unchanged. Months-owned Sort Months into Seasons and Seasons & Months Wheel
 routes remain independent and unchanged; no duplicate Seasons activity is added.
 
+Days & Seasons opens a Wilma activity chooser. Its featured Explore option opens
+the existing Wilma screen directly, while Find the day, Before and after, Put the
+week in order, Today/yesterday/tomorrow, and German & English weekdays remain
+individually reachable. Each phase continues to use the existing Wilma route and
+ViewModel. Back from a phase returns to the chooser; chooser Back returns to Days
+& Seasons, and explicit Home still reaches illustrated Home. Options returns to
+the exact chooser/activity route, and language changes retain the existing
+selection. The chooser is presentation-only: `WilmaSelectionStore`, quiz journals,
+ordering journal, audio owner, day order/colors and saved progress formats are
+unchanged. Old saved `WILMA` routes still restore directly into the activity.
+
 Months Build the Year begins with a level chooser: Level 1 orders three consecutive
 months and Level 2 orders four. Both remain independently selectable; completion of
 Level 1 does not auto-advance. Level 2 uses deterministic 5/10 question rounds with

@@ -72,6 +72,7 @@ class WilmaViewModel @JvmOverloads constructor(
     }
     private fun ready()=visible && !busy && !saveFailed && selection!=null
     private fun boundary(){epoch++;audio.cancel()}
+    fun suspendSpeech(){boundary()}
     private fun openPhase(phase:WilmaPhase,count:RoundLength,lang:ContentLanguage):List<SessionEffect> {
         val effects=when(phase) {
             WilmaPhase.EXPLORE, WilmaPhase.BILINGUAL -> emptyList()
@@ -83,10 +84,11 @@ class WilmaViewModel @JvmOverloads constructor(
         quizzes[phase]?.let {if(it.state?.language!=lang)it.dispatch(SessionAction.Language(lang))}
         return effects
     }
-    fun phase(phase:WilmaPhase) {
-        if(!ready() || phase==selection?.phase)return
+    fun phase(phase:WilmaPhase, onOpened:(()->Unit)?=null) {
+        if(!ready())return
+        if(phase==selection?.phase){onOpened?.invoke();return}
         boundary();val count=round;val lang=language
-        work {
+        work(onSettled={success->if(success)onOpened?.invoke()}) {
             if(phase==WilmaPhase.EXPLORE) {
                 quizzes[selected.phase]?.state?.takeIf {it.hintAvailable}?.let {quizzes.getValue(selected.phase).dispatch(SessionAction.Hint(it.task.id))}
                 if(selected.phase==WilmaPhase.ORDER)order.state?.takeIf {!it.completed}?.let {order.dispatch(WilmaOrderAction.Help(it.task))}
@@ -149,7 +151,7 @@ class WilmaViewModel @JvmOverloads constructor(
         } }
         pictures=loaded;return loaded
     }
-    private fun work(exploreSpeech:Boolean=false,operation:()->List<SessionEffect>) {
+    private fun work(exploreSpeech:Boolean=false,onSettled:((Boolean)->Unit)?=null,operation:()->List<SessionEffect>) {
         if(busy || closed)return
         busy=true;val token=epoch
         worker.execute {
@@ -168,7 +170,9 @@ class WilmaViewModel @JvmOverloads constructor(
                         else if(q?.language==language)audio.effects(q.plan.id,language,effects)
                     }
                     syncLanguage()
+                    onSettled?.invoke(!failed && !pendingFailure)
                 }
+                else onSettled?.invoke(false)
             }
         }
     }

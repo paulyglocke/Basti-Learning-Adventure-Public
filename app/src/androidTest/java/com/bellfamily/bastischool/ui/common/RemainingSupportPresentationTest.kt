@@ -78,7 +78,7 @@ class RemainingSupportPresentationTest(private val surface: String, private val 
                     if(vocabulary) VocabularyScreen(VocabularySelection(phase = VocabularyPhase.FIND), state.value,
                         language, false, false, false, {}, {}, replay, {}, action, {}, {}, {}, {home++}, modifier)
                     else WilmaScreen(WilmaSelection(phase = if(ordering) WilmaPhase.ORDER else WilmaPhase.FIND),
-                        state.value, order.value, language, emptyMap(), false, false, false, false, {}, {}, replay, {}, action,
+                        state.value, order.value, language, emptyMap(), false, false, false, false, {}, replay, {}, action,
                         {order.value = WilmaOrder.reduce(order.value, it).state}, {}, {}, {home++}, modifier)
 
                 }

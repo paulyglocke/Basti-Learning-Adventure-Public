@@ -101,7 +101,7 @@ class WilmaDayColoursScreenTest {
             CompositionLocalProvider(LocalDensity provides Density(d.density,1.5f)) {MaterialTheme {
                 surface=MaterialTheme.colorScheme.surface
                 WilmaScreen(WilmaSelection(phase=WilmaPhase.ORDER),null,state,ContentLanguage.GERMAN,emptyMap(),false,false,false,false,
-                    {},{},{},{},{},{state=WilmaOrder.reduce(state,it).state},{},{},{},
+                    {},{},{},{},{state=WilmaOrder.reduce(state,it).state},{},{},{},
                     Modifier.size(if(landscape)700.dp else 320.dp,if(landscape)240.dp else 480.dp).testTag("colour-review"))
             }}
         }

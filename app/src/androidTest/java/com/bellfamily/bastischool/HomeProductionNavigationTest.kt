@@ -101,7 +101,7 @@ class HomeProductionNavigationTest {
         click("home-category-TIME")
         click("home-activity-time")
         click("open-months")
-        assertEquals("MONTHS",saved(scenario).getString("screen"))
+        assertEquals("MONTHS_CHOOSER",saved(scenario).getString("screen"))
         back(scenario)
         assertEquals("DAYS_SEASONS",saved(scenario).getString("screen"))
         back(scenario)
