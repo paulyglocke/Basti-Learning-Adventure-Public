@@ -43,10 +43,10 @@ progress-format migration or wheel-geometry change was made.
 
 Phase 4B implementation commit `b516b0bc80b34900cc04d1507440db0bafaca888` is
 pushed to `main`. The invalid landscape evidence and stale status wording were
-corrected in the Phase 4C working tree and remain uncommitted with Phase 4C.
+corrected in commit `24de69103af3d79dc1966eb93b3bfd49b8ec2556` with Phase 4C.
 See [SESSION_HANDOFF.md](SESSION_HANDOFF.md).
 
-## UX Refresh Phase 4C — Wilma’s Week chooser and Explore (2026-10-21, uncommitted)
+## UX Refresh Phase 4C — Wilma’s Week chooser and Explore (2026-10-21, committed)
 
 The Days & Seasons Wilma entry now opens a bilingual chooser. Explore is the
 prominent first action, with direct cards for the other five existing modes.
@@ -85,9 +85,10 @@ The Phase 4B screenshot/status correction remains separate and uncommitted.
 After the 567/567 instrumentation run, the temporary guard that suppressed
 speech during a persistence failure was removed to restore the baseline audio
 condition; final source was rebuilt and linted, but the full suite was not rerun
-after that one-line audio restoration. The change does not affect navigation or
-chooser behavior. All Phase 4C implementation and the bounded Phase 4B evidence
-correction remain uncommitted and unpushed for owner visual review.
+after that one-line audio restoration. `WilmaAudioTest` later passed 3/3; it
+does not exercise the view-model persistence-failure branch. See the Phase 4C
+review for that precise limit. Phase 4C and the bounded Phase 4B evidence
+correction are committed and pushed in `24de69103af3d79dc1966eb93b3bfd49b8ec2556`.
 
 ## UX Refresh Phase 4A — Months chooser and Explore (2026-10-20, uncommitted)
 
@@ -449,3 +450,24 @@ for exploration or infer durable deduplication from UI alone. Preserve all exist
 upgrade safety and blocked-record-inspection rules above.
 
 Instrumentation belongs on the designated emulator (`ANDROID_SERIAL=emulator-5554`), not the stable S24/Fire installation. Do not bypass certificate/version failures by uninstalling, downgrading or clearing data.
+
+## Vocabulary UX Refresh Phase 4D (2026-10-21; uncommitted)
+
+The Vocabulary entry opens a chooser; Explore, Find and What Is It? remain the
+three existing modes. The six word identities, translations, canonical image
+mappings, question plans, audio owner/preferences, independent quiz
+journals/checkpoints and Explore selection format are unchanged. Focused JVM
+content/art/audio/navigation tests passed 35/35; the full JVM suite passed
+555/555 with 0 skipped. Focused API 35 chooser/screen/text-choice/artwork/route
+instrumentation passed 14/14. API 35 Home/Months/Seasons/Wilma/Tell Me route
+regressions passed 14/15; one unchanged Seasons order-route test failed to find
+`seasons-order-prompt` after selecting ORDER and failed again when run alone.
+Keep that result visible; do not count it as a Vocabulary pass or suppress it.
+
+The complete app-wide API 35 instrumentation suite was not completed. Gradle's
+connected installation failed earlier with `INSTALL_FAILED_INSUFFICIENT_STORAGE`;
+the final relevant tests ran through direct APK installation and
+`AndroidJUnitRunner`. Debug build, Android-test compilation, lint and
+`git diff --check` passed. Lint reported 0 errors and 5 existing warnings. See
+[`docs/vocabulary-phase4d-review/REVIEW.md`](docs/vocabulary-phase4d-review/REVIEW.md)
+for the detailed results and API 35 visual gallery.

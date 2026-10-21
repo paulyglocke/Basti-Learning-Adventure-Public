@@ -75,13 +75,17 @@ class VocabularyArtworkScreenTest(private val german: Boolean, private val orien
             }
         }
         fun click(tag: String) = compose.onNodeWithTag(tag).performScrollTo().performClick()
+        fun showPhase(phase: VocabularyPhase) = compose.runOnIdle {
+            selection = selection.copy(phase = phase)
+            if (phase != VocabularyPhase.EXPLORE) state = session(phase)
+        }
         VocabularyContent.items.forEach { item ->
             click("word-${item.id.value}")
             compose.onNodeWithTag("vocabulary-art-${item.id.value}", useUnmergedTree = true).performScrollTo().assertIsDisplayed()
             compose.onNodeWithContentDescription(item.text.display[lang]).assertExists()
             compose.onNodeWithText(item.visual.glyph).assertDoesNotExist()
         }
-        click("vocabulary-find")
+        showPhase(VocabularyPhase.FIND)
         val question = state.task.question
         question.choices.forEach { id ->
             val answer = compose.onNodeWithTag("answer-${id.value}").performScrollTo()
@@ -107,7 +111,7 @@ class VocabularyArtworkScreenTest(private val german: Boolean, private val orien
         compose.runOnIdle { assertEquals(1, state.score); assertEquals(2, state.current.attempts) }
         answer.assertIsNotEnabled()
         click("speaker-${question.correct.value}")
-        click("vocabulary-name")
+        showPhase(VocabularyPhase.NAME)
         val id = state.task.question.correct
         compose.onNodeWithTag("vocabulary-art-${id.value}", useUnmergedTree = true).performScrollTo().assertIsDisplayed()
         java.io.File(compose.activity.cacheDir, "vocabulary-art-$german-$orientation.png").outputStream().use {

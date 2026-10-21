@@ -122,6 +122,17 @@ selection, phase owners, journals, checkpoints and saved-progress formats remain
 unchanged. Months-owned Sort Months into Seasons and Seasons & Months Wheel
 routes remain independent and unchanged; no duplicate Seasons activity is added.
 
+The illustrated Words & Talking catalogue opens a bilingual Vocabulary chooser.
+Its primary Explore action and both practice modes open the existing Vocabulary
+activity route in one selection. Back from an activity returns to the chooser;
+chooser Back returns to its Home catalogue, and the chooser's explicit Home
+action returns to illustrated Home. Options retains the exact chooser or activity
+as its origin through language changes and recreation. Older saved `VOCABULARY`
+routes still restore directly into the activity. Exploration selection remains
+in the existing selection store, while Find and What Is It? keep their independent
+journal/checkpoint owners. Visiting the chooser does not create a round, regenerate
+a question, or alter saved progress formats.
+
 Days & Seasons opens a Wilma activity chooser. Its featured Explore option opens
 the existing Wilma screen directly, while Find the day, Before and after, Put the
 week in order, Today/yesterday/tomorrow, and German & English weekdays remain

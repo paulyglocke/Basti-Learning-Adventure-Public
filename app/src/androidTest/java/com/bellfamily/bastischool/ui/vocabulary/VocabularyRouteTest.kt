@@ -29,7 +29,7 @@ class VocabularyRouteTest {
             fun settled() {compose.waitUntil(10_000) {var ready=false;scenario.onActivity {val vm=ViewModelProvider(it)[VocabularyViewModel::class.java];ready=vm.selection!=null && !vm.busy && !vm.saveFailed};ready}}
             compose.openHomeActivity("Vocabulary Booster")
             settled()
-            compose.onNodeWithTag("vocabulary-explore").performScrollTo().performClick();settled()
+            compose.onNodeWithTag("vocabulary-open-EXPLORE").performScrollTo().performClick();settled()
             compose.onNodeWithTag("word-animal.horse").performScrollTo().performClick();settled()
             compose.onNodeWithTag("vocabulary-word").assertTextEquals("Horse")
             compose.waitUntil(10_000) { var count=0;scenario.onActivity { count=ViewModelProvider(it)[VocabularyViewModel::class.java].images.size };count==6 }
@@ -42,7 +42,8 @@ class VocabularyRouteTest {
             compose.onNodeWithTag("vocabulary-word").assertTextEquals("Pferd")
             compose.onNodeWithTag("vocabulary-art-animal.horse",useUnmergedTree=true).performScrollTo().assertIsDisplayed()
             scenario.onActivity {assertEquals(ContentId("animal.horse"),ViewModelProvider(it)[VocabularyViewModel::class.java].selection!!.selected)}
-            compose.onNodeWithTag("vocabulary-find").performScrollTo().performClick();settled()
+            compose.onNodeWithTag("vocabulary-choose-activity").performScrollTo().performClick()
+            compose.onNodeWithTag("vocabulary-open-FIND").performScrollTo().performClick();settled()
             if(current()!!.phase==SessionPhase.COMPLETED) {compose.onNodeWithTag("vocabulary-again").assertIsDisplayed().performClick();settled()}
             val unanswered=SessionCheckpoint.encode(current()!!)
             scenario.recreate();settled();assertArrayEquals(unanswered,SessionCheckpoint.encode(current()!!))
@@ -51,8 +52,10 @@ class VocabularyRouteTest {
                 compose.onNodeWithTag("answer-${current()!!.task.question.correct.value}").performScrollTo().performClick();settled()
             }
             val saved=SessionCheckpoint.encode(current()!!)
-            compose.onNodeWithTag("vocabulary-name").performScrollTo().performClick();settled()
-            compose.onNodeWithTag("vocabulary-find").performScrollTo().performClick();settled()
+            compose.onNodeWithTag("vocabulary-choose-activity").performScrollTo().performClick()
+            compose.onNodeWithTag("vocabulary-open-NAME").performScrollTo().performClick();settled()
+            compose.onNodeWithTag("vocabulary-choose-activity").performScrollTo().performClick()
+            compose.onNodeWithTag("vocabulary-open-FIND").performScrollTo().performClick();settled()
             assertArrayEquals(saved,SessionCheckpoint.encode(current()!!))
             scenario.moveToState(androidx.lifecycle.Lifecycle.State.CREATED)
             scenario.moveToState(androidx.lifecycle.Lifecycle.State.RESUMED);settled()
@@ -70,9 +73,13 @@ class VocabularyRouteTest {
                 assertFalse(web(activity.window.decorView))
                 activity.onBackPressedDispatcher.onBackPressed()
             }
+            compose.onNodeWithTag("vocabulary-open-EXPLORE").assertIsDisplayed()
+            scenario.onActivity {it.onBackPressedDispatcher.onBackPressed()}
             compose.openHomeActivity("Wortschatz");settled()
             assertArrayEquals(saved,SessionCheckpoint.encode(current()!!))
             assertEquals(ContentLanguage.GERMAN,current()!!.language)
+            compose.onNodeWithTag("vocabulary-chooser-home").performScrollTo().performClick()
+            compose.onNodeWithText("Was wollen wir entdecken?").assertIsDisplayed()
         }
     }
 }

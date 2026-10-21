@@ -23,10 +23,11 @@ class VocabularyScreenTest {
     private var listens=0
     private var home=0
     private var again=0
-    private fun show(lang:ContentLanguage,phase:VocabularyPhase=VocabularyPhase.FIND,round:RoundLength=RoundLength.FIVE,large:Boolean=false) {
-        val plan=(VocabularyContent.generate(phase,SessionId("ui-vocabulary"),round,42) as GenerationResult.Generated).plan
+    private fun show(lang:ContentLanguage,phase:VocabularyPhase=VocabularyPhase.EXPLORE,round:RoundLength=RoundLength.FIVE,large:Boolean=false) {
+        val sessionPhase=if(phase==VocabularyPhase.EXPLORE) VocabularyPhase.FIND else phase
+        val plan=(VocabularyContent.generate(sessionPhase,SessionId("ui-vocabulary"),round,42) as GenerationResult.Generated).plan
         current=mutableStateOf(SessionReducer.start(plan,lang,VocabularyContent.repository).state)
-        selected=mutableStateOf(VocabularySelection())
+        selected=mutableStateOf(VocabularySelection(phase=phase))
         compose.setContent {
             val density=LocalDensity.current
             CompositionLocalProvider(LocalDensity provides Density(density.density,if(large)1.5f else 1f)) {
@@ -42,6 +43,9 @@ class VocabularyScreenTest {
     @Test fun allExploreWordsAndSentencesAreReachableWithoutAttempts() {
         show(ContentLanguage.ENGLISH)
         compose.onNodeWithTag("completion-celebration").assertDoesNotExist()
+        compose.onNodeWithTag("vocabulary-art-unavailable-animal.dinosaur").performScrollTo().assertIsDisplayed()
+        compose.onNodeWithContentDescription("Dinosaur").assertExists()
+        compose.onNodeWithTag("vocabulary-word").assertTextEquals("Dinosaur")
         VocabularyContent.items.forEach {item ->
             compose.onNodeWithTag("word-${item.id.value}").performScrollTo().performClick()
             compose.onNodeWithTag("vocabulary-word").assertTextEquals(item.text.display.en)
@@ -50,10 +54,10 @@ class VocabularyScreenTest {
             compose.onNodeWithTag("vocabulary-example").performScrollTo().performClick()
         }
         compose.runOnIdle {assertEquals(12,listens);assertEquals(0,current.value.current.attempts)}
+        compose.onNodeWithTag("vocabulary-choose-activity").performScrollTo().assertIsDisplayed()
     }
     @Test fun englishFindFiveSeparatesPictureAnswerListenRetryHelpAndCompletion() {
-        show(ContentLanguage.ENGLISH)
-        compose.onNodeWithTag("vocabulary-find").performScrollTo().performClick()
+        show(ContentLanguage.ENGLISH,VocabularyPhase.FIND)
         val q=current.value.task.question
         compose.onNodeWithTag("speaker-${q.correct.value}").performScrollTo().performClick()
         compose.onNodeWithTag("vocabulary-replay").performScrollTo().performClick()
@@ -75,9 +79,9 @@ class VocabularyScreenTest {
     }
     @Test fun germanPictureToWordTenLargeFontCompletionIsReachable() {
         show(ContentLanguage.GERMAN,VocabularyPhase.NAME,RoundLength.TEN,true)
-        compose.onNodeWithTag("word-animal.horse").performScrollTo().performClick()
-        compose.onNodeWithTag("vocabulary-word").assertTextEquals("Pferd")
-        compose.onNodeWithTag("vocabulary-name").performScrollTo().performClick()
+        val target = VocabularyContent.item(current.value.task.question.correct)
+        compose.onNodeWithTag("vocabulary-art-unavailable-${target.id.value}").performScrollTo().assertIsDisplayed()
+        compose.onNodeWithContentDescription(target.text.display.de).assertExists()
         repeat(10) {
             val id=current.value.task.question.correct
             compose.onNodeWithTag("answer-${id.value}").performScrollTo().assertTextEquals(VocabularyContent.item(id).text.display.de).performClick()

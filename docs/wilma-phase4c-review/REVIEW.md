@@ -1,7 +1,7 @@
 # Wilma’s Week Phase 4C review
 
-Status: implementation, testing and screenshot review complete; changes remain
-uncommitted for owner visual approval. The dedicated chooser is entered directly from Days &
+Status: committed and pushed in `24de69103af3d79dc1966eb93b3bfd49b8ec2556`.
+The dedicated chooser is entered directly from Days &
 Seasons. It features Explore and preserves direct access to the six existing
 Wilma phases. Explore retains the canonical seven-day artwork, order, colours,
 selection, speech and replay behavior. All phases continue to use the existing
@@ -77,12 +77,14 @@ APKs installed directly and the full suite ran through AndroidJUnitRunner.
 
 Final debug and Android-test APK assembly and `lintDebug` passed after the final
 source edit; lint reports **0 errors, 5 existing warnings and 2 informational
-findings**. `git diff --check` passed. After the 567/567 instrumentation run, one
-temporary guard that suppressed speech during a persistence failure was removed
-to restore the exact pre-task audio condition; the final source was rebuilt and
-linted. That one-line restoration does not affect chooser/navigation logic but
-was not followed by a second complete 567-test run. Do not describe the complete
-run as testing that restored edge condition.
+findings**. `git diff --check` passed. After the 567/567 instrumentation run, a
+temporary `!failed` guard on the post-operation speech condition was restored to
+the pre-task condition; the final source was rebuilt and linted, but the complete
+instrumentation suite was not rerun after that one-line restoration. The focused
+`WilmaAudioTest` passes 3/3 and checks language, replay, navigation cancellation
+and stale callbacks. It does not exercise the view-model persistence-failure
+branch; the guard remains in source as `if (!failed && visible && token == epoch)`.
+Do not claim the 567-test instrumentation run covers that restored edge condition.
 
 ## Exact working-tree inventory
 
@@ -143,5 +145,5 @@ Phase 4C visual review artifacts:
 
 Physical-device acceptance, actual TalkBack, switch access, child usability and
 offline voice quality are owner-deferred and not claimed as passed. UX-ANR-01
-remains independent. All changes remain uncommitted and unpushed for owner visual
-review.
+remains independent. The Phase 4C implementation and evidence are committed and
+pushed; this report describes the reviewed baseline at that commit.

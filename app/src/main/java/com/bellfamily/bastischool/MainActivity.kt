@@ -273,7 +273,8 @@ class MainActivity : ComponentActivity() {
                         title = {
                             if (screen in setOf(ShellScreen.MONTHS_CHOOSER, ShellScreen.MONTHS,
                                     ShellScreen.SEASONS_CHOOSER, ShellScreen.SEASONS,
-                                    ShellScreen.WILMA_CHOOSER, ShellScreen.WILMA)) {
+                                    ShellScreen.WILMA_CHOOSER, ShellScreen.WILMA,
+                                    ShellScreen.VOCABULARY_CHOOSER, ShellScreen.VOCABULARY)) {
                                 Spacer(Modifier.width(1.dp))
                             } else Text(
                                 when (screen) {
@@ -283,7 +284,7 @@ class MainActivity : ComponentActivity() {
                                     ShellScreen.PREPOSITIONS -> if (language == "de") "Wo ist es?" else "Where is it?"
                                     ShellScreen.MONTHS_CHOOSER, ShellScreen.MONTHS, ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BETWEEN, ShellScreen.MONTHS_BETWEEN_WHEEL, ShellScreen.MONTHS_BUILD_YEAR_LEVELS, ShellScreen.MONTHS_BUILD_YEAR, ShellScreen.MONTHS_BUILD_YEAR_FOUR, ShellScreen.MONTHS_SEASONS, ShellScreen.MONTHS_SEASONS_WHEEL -> if (language == "de") "Monate" else "Months"
                                     ShellScreen.DAYS_SEASONS -> if (language == "de") "Tage & Jahreszeiten" else "Days & Seasons"
-                                    ShellScreen.VOCABULARY -> if (language == "de") "Wortschatz" else "Vocabulary Booster"
+                                    ShellScreen.VOCABULARY_CHOOSER, ShellScreen.VOCABULARY -> if (language == "de") "Wortschatz" else "Vocabulary Booster"
                                     ShellScreen.WILMA -> if (language == "de") "Wilmas Woche" else "Wilma’s Week"
                                     ShellScreen.WILMA_CHOOSER -> if (language == "de") "Wilmas Woche" else "Wilma’s Week"
                                     ShellScreen.TELL_ME -> if (language == "de") "Erzähl mal!" else "Tell Me!"
@@ -514,8 +515,24 @@ class MainActivity : ComponentActivity() {
                             nativeVocabulary.busy, nativeVocabulary.saveFailed, nativeVocabulary.audioFailed,
                             nativeVocabulary::select, { celebrationSound.cancel(); nativeVocabulary.phase(it) }, { celebrationSound.cancel(); nativeVocabulary.replay() }, nativeVocabulary::example,
                             nativeVocabulary::action, nativeVocabulary::option, { celebrationSound.cancel(); nativeVocabulary.again() }, nativeVocabulary::retry,
-                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration,
+                            onHome = { changeRoute(navigation.home()) },
+                            onChooseActivity = { changeRoute(navigation.openVocabulary()) },
+                            modifier = Modifier.padding(padding), onPop = ::popCelebration,
                             images = nativeVocabulary.images)
+                        ShellScreen.VOCABULARY_CHOOSER -> VocabularyActivityChooserScreen(
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            nativeVocabulary.images,
+                            ready = nativeVocabulary.selection != null && !nativeVocabulary.busy && !nativeVocabulary.saveFailed,
+                            busy = nativeVocabulary.busy,
+                            saveFailed = nativeVocabulary.saveFailed,
+                            onChoose = { phase ->
+                                celebrationSound.cancel()
+                                nativeVocabulary.phase(phase)
+                                changeRoute(navigation.openVocabularyActivity())
+                            },
+                            onRetry = nativeVocabulary::retry,
+                            onHome = { changeRoute(navigation.home()) },
+                            modifier = Modifier.padding(padding))
                         ShellScreen.WILMA -> WilmaScreen(nativeWilma.selection, nativeWilma.quiz, nativeWilma.ordering,
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeWilma.images, nativeWilma.busy, nativeWilma.saveFailed, nativeWilma.imageFailed, nativeWilma.audioFailed,
@@ -635,7 +652,7 @@ class MainActivity : ComponentActivity() {
         navigation = route
         nativePositions.setVisible(foreground && route.screen == ShellScreen.PREPOSITIONS)
         nativeSeasons.setVisible(foreground && route.screen in setOf(ShellScreen.SEASONS, ShellScreen.SEASONS_CHOOSER))
-        nativeVocabulary.setVisible(foreground && route.screen == ShellScreen.VOCABULARY)
+        nativeVocabulary.setVisible(foreground && route.screen in setOf(ShellScreen.VOCABULARY, ShellScreen.VOCABULARY_CHOOSER))
         nativeColourSort.setVisible(foreground && route.screen == ShellScreen.COLOUR_SORT)
         nativeAnimalGroups.setVisible(foreground && route.screen == ShellScreen.ANIMAL_GROUPS)
         nativeWashHands.setVisible(foreground && route.screen == ShellScreen.WASH_HANDS)
@@ -687,6 +704,7 @@ class MainActivity : ComponentActivity() {
             BackAction.DAYS_HUB -> changeRoute(navigation.openDaysSeasons())
             BackAction.SEASONS_CHOOSER -> changeRoute(navigation.openSeasons())
             BackAction.WILMA_CHOOSER -> { nativeWilma.suspendSpeech(); changeRoute(navigation.openWilmaChooser()) }
+            BackAction.VOCABULARY_CHOOSER -> changeRoute(navigation.openVocabulary())
             BackAction.NATIVE_HOME -> changeRoute(navigation.home())
             BackAction.HOME_ROOT -> changeRoute(navigation.home())
             BackAction.EXIT -> Unit // BackHandler is disabled; Android owns exit.
@@ -869,7 +887,7 @@ class MainActivity : ComponentActivity() {
         super.onSaveInstanceState(outState)
     }
     override fun onPause() { celebrationSound.cancel(); foreground = false; nativePositions.setVisible(false); nativeSeasons.setVisible(false); nativeWilma.setVisible(false); nativeVocabulary.setVisible(false); nativeMonths.setVisible(false); nativeClock.setVisible(false); nativeSubitising.setVisible(false); nativeQuantityMatch.setVisible(false); nativeCompareQuantity.setVisible(false); nativeNumberOrder.setVisible(false); nativeAddition.setVisible(false); nativeFollow.setVisible(false); nativeColourSort.setVisible(false); nativeAnimalGroups.setVisible(false); nativeWashHands.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
-    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen in setOf(ShellScreen.SEASONS, ShellScreen.SEASONS_CHOOSER)); nativeWilma.setVisible(navigation.screen in setOf(ShellScreen.WILMA_CHOOSER, ShellScreen.WILMA)); nativeVocabulary.setVisible(navigation.screen == ShellScreen.VOCABULARY); nativeMonths.setVisible(navigation.screen in monthScreens, monthsMode(navigation.screen)); nativeClock.setVisible(navigation.screen in listOf(ShellScreen.CLOCK, ShellScreen.CLOCK_MAKE), navigation.screen == ShellScreen.CLOCK_MAKE); nativeSubitising.setVisible(navigation.screen == ShellScreen.SUBITISING); nativeQuantityMatch.setVisible(navigation.screen == ShellScreen.QUANTITY_MATCH); nativeCompareQuantity.setVisible(navigation.screen == ShellScreen.COMPARE_QUANTITY); nativeNumberOrder.setVisible(navigation.screen == ShellScreen.NUMBER_ORDER); nativeAddition.setVisible(navigation.screen == ShellScreen.ADD_TOGETHER); nativeFollow.setVisible(navigation.screen in setOf(ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO), when (navigation.screen) { ShellScreen.FOLLOW_INSTRUCTIONS -> FollowLevel.ONE; ShellScreen.FOLLOW_TWO -> FollowLevel.TWO; else -> null }); nativeColourSort.setVisible(navigation.screen == ShellScreen.COLOUR_SORT); nativeAnimalGroups.setVisible(navigation.screen == ShellScreen.ANIMAL_GROUPS); nativeWashHands.setVisible(navigation.screen == ShellScreen.WASH_HANDS); updateWebActivity() }
+    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen in setOf(ShellScreen.SEASONS, ShellScreen.SEASONS_CHOOSER)); nativeWilma.setVisible(navigation.screen in setOf(ShellScreen.WILMA_CHOOSER, ShellScreen.WILMA)); nativeVocabulary.setVisible(navigation.screen in setOf(ShellScreen.VOCABULARY, ShellScreen.VOCABULARY_CHOOSER)); nativeMonths.setVisible(navigation.screen in monthScreens, monthsMode(navigation.screen)); nativeClock.setVisible(navigation.screen in listOf(ShellScreen.CLOCK, ShellScreen.CLOCK_MAKE), navigation.screen == ShellScreen.CLOCK_MAKE); nativeSubitising.setVisible(navigation.screen == ShellScreen.SUBITISING); nativeQuantityMatch.setVisible(navigation.screen == ShellScreen.QUANTITY_MATCH); nativeCompareQuantity.setVisible(navigation.screen == ShellScreen.COMPARE_QUANTITY); nativeNumberOrder.setVisible(navigation.screen == ShellScreen.NUMBER_ORDER); nativeAddition.setVisible(navigation.screen == ShellScreen.ADD_TOGETHER); nativeFollow.setVisible(navigation.screen in setOf(ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO), when (navigation.screen) { ShellScreen.FOLLOW_INSTRUCTIONS -> FollowLevel.ONE; ShellScreen.FOLLOW_TWO -> FollowLevel.TWO; else -> null }); nativeColourSort.setVisible(navigation.screen == ShellScreen.COLOUR_SORT); nativeAnimalGroups.setVisible(navigation.screen == ShellScreen.ANIMAL_GROUPS); nativeWashHands.setVisible(navigation.screen == ShellScreen.WASH_HANDS); updateWebActivity() }
     override fun onDestroy() { celebrationSound.close(); disposeWebView(); tts?.shutdown(); tts = null; super.onDestroy() }
 }
 

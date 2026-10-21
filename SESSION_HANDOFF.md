@@ -1,10 +1,42 @@
 # Session handoff — 2026-10-21
 
-## UX Refresh Phase 4C — Wilma’s Week (uncommitted, owner review pending)
+## UX Refresh Phase 4D — Vocabulary Booster (implemented, uncommitted)
+
+Started at `24de69103af3d79dc1966eb93b3bfd49b8ec2556` on `main`, which matched
+`origin/main`. The native Vocabulary entry now opens a compact bilingual chooser
+with immediate Explore and direct access to the existing Find and What Is It?
+practice modes. Explore presents the existing canonical animal illustration,
+word, replay, spoken example and prompt before the six-word selector. Tablet
+Explore uses a fitted image beside its controls. Old `VOCABULARY` routes continue
+to restore directly; chooser/activity routes, Options return and the independent
+Find/Name journals are covered without changing saved formats or learning data.
+
+The API 35 gallery and concise review are at
+[`docs/vocabulary-phase4d-review/REVIEW.md`](docs/vocabulary-phase4d-review/REVIEW.md)
+and [`docs/vocabulary-phase4d-review/index.html`](docs/vocabulary-phase4d-review/index.html).
+All 14 captures have checked dimensions, including genuine 1920×1080 short
+landscape and 2560×1600 tablet landscape. Full JVM passed 555/555; focused
+Vocabulary JVM tests passed 35/35; focused Vocabulary instrumentation passed
+14/14. Shared Home/Months/Seasons/Wilma/Tell Me instrumentation had 14/15 pass:
+one unchanged Seasons order-route assertion failed both in the combined set and
+in isolation. Complete app-wide API 35 instrumentation was not completed. Debug
+build and Android-test compilation passed; lint passed with 0 errors and 5
+existing warnings; `git diff --check` passed. Review the reproducible Seasons
+failure before treating cross-feature validation as clean.
+
+The gallery notes that 2× German chooser content scrolls naturally and its
+second practice card is below the first viewport. A true baseline screenshot was
+not captured; gallery comparison is descriptive alongside final captures.
+Physical-device, actual TalkBack, switch-access, child-usability and offline-
+voice acceptance remain owner-deferred. The work remains uncommitted and
+unpushed pending owner review.
+
+## UX Refresh Phase 4C — Wilma’s Week (committed and pushed)
 
 Work started from the requested baseline
-`b516b0bc80b34900cc04d1507440db0bafaca888` on `main`; Phase 4B screenshot/status
-correction was completed first and remains a separate uncommitted set of files.
+`b516b0bc80b34900cc04d1507440db0bafaca888` on `main`; the bounded Phase 4B
+screenshot/status correction was included in commit
+`24de69103af3d79dc1966eb93b3bfd49b8ec2556`.
 The Wilma chooser is a new `WILMA_CHOOSER` presentation route. The six original
 Wilma modes continue through the existing `WILMA` route, ViewModel, journals,
 checkpoints, assets, weekday order and colours. No learning-state formats or
@@ -28,8 +60,7 @@ installation and runner execution succeeded. The emulator now has limited
 remaining `/data` capacity; do not remove application data without owner request.
 
 Physical-device, TalkBack, switch-access, child-usability and offline-voice
-acceptance are owner-deferred. UX-ANR-01 remains separate. No commit or push is
-authorized. Stop at the uncommitted visual-review state. See
+acceptance are owner-deferred. UX-ANR-01 remains separate. See
 [`docs/wilma-phase4c-review/REVIEW.md`](docs/wilma-phase4c-review/REVIEW.md) and
 [`docs/wilma-phase4c-review/index.html`](docs/wilma-phase4c-review/index.html).
 
@@ -100,8 +131,9 @@ these shared paths were not rerouted or duplicated.
   separate. Emulator display settings were restored to native 1080×2400, 420 dpi,
   automatic rotation and 1× font scale.
 
-Phase 4B files are tracked in its commit. This separate evidence correction is
-uncommitted alongside the current Phase 4C work; see the updated Phase 4B review.
+Phase 4B files are tracked in its commit. The bounded evidence correction was
+included with Phase 4C in `24de69103af3d79dc1966eb93b3bfd49b8ec2556`; see the
+updated Phase 4B review.
 
 ## UX Refresh Phase 4A — Months chooser and content-first Explore (uncommitted)
 

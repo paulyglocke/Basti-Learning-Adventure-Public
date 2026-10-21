@@ -6,7 +6,7 @@ import org.junit.Test
 
 class HomeIntegrationTest {
     @Test fun allTwentyCardsDispatchToTheirHistoricalDestinations() {
-        val expected = listOf("TELL_ME", "VOCABULARY", "WEB", "WEB", "WEB", "DAYS_SEASONS",
+        val expected = listOf("TELL_ME", "VOCABULARY_CHOOSER", "WEB", "WEB", "WEB", "DAYS_SEASONS",
             "WEB", "SUBITISING", "QUANTITY_MATCH", "COMPARE_QUANTITY", "NUMBER_ORDER", "CLOCK",
             "ADD_TOGETHER", "WEB", "PREPOSITIONS", "WEB", "WASH_HANDS", "ANIMAL_GROUPS", "COLOUR_SORT", "FOLLOW_LEVELS")
         val cards = homeActivities()

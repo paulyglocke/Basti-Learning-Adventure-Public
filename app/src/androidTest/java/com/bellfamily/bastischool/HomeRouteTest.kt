@@ -25,7 +25,7 @@ class HomeRouteTest(private val language: String) {
         val oldLanguage = prefs.getString("lang", null)
         val oldAudio = prefs.getString("audioMode", null)
         prefs.edit().putString("lang", language).putString("audioMode", "off").commit()
-        val expectedScreens = listOf("TELL_ME", "VOCABULARY", "WEB", "WEB", "WEB", "DAYS_SEASONS",
+        val expectedScreens = listOf("TELL_ME", "VOCABULARY_CHOOSER", "WEB", "WEB", "WEB", "DAYS_SEASONS",
             "WEB", "SUBITISING", "QUANTITY_MATCH", "COMPARE_QUANTITY", "NUMBER_ORDER", "CLOCK",
             "ADD_TOGETHER", "WEB", "PREPOSITIONS", "WEB", "WASH_HANDS", "ANIMAL_GROUPS", "COLOUR_SORT", "FOLLOW_LEVELS")
         try {
