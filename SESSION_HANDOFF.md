@@ -3263,3 +3263,27 @@ passed both `build` (Android APK and release guards) and `browser-tests`. The
 distribution job was skipped, as expected for this workflow. CI annotations note
 Node 20 action deprecations, `setup-java@v4` deprecation and the upcoming
 `ubuntu-latest` migration; these did not fail the run.
+
+## Phase 4D.1 — Seasons route-test persisted-state correction (2026-10-21)
+
+At clean baseline `38030a4ab279fd9a5137965da3d098a93bec592b`, the reported
+`seasons-order-prompt` failure reproduced. The route test had restored an already
+completed ORDER session; the app correctly displayed the German completion screen
+and all four placed seasons. The test incorrectly required the active-round prompt.
+Updated only `SeasonsChooserRouteTest` to assert the active prompt or, for a restored
+completed session, the exact completion message, placed count and four localized
+season labels. No app code, saved data, session identity, journal/checkpoint format,
+wheel geometry or learning behavior changed. No data was cleared.
+
+Validation: focused route **1/1 twice**; Seasons package **42/42**; complete API 35
+instrumentation **569/569**, zero failures/skips; full JVM **555/555**, zero
+failures/errors/skips; debug build, Android-test build, lint and `git diff --check`
+passed. Lint has 0 errors and 5 existing warnings. `/data` showed about 819 MB free;
+the debug APK is 369 MB and the test APK 2.9 MB. Test APK install and full direct
+runner execution succeeded. The previous connected-install
+`INSTALL_FAILED_INSUFFICIENT_STORAGE` remains historically recorded; no app APK
+reinstall, emulator wipe or saved-data clearing was attempted. Detailed evidence:
+[`docs/seasons-phase4d1-review/REVIEW.md`](docs/seasons-phase4d1-review/REVIEW.md).
+
+Current work is uncommitted and ready for owner review. Physical-device and
+child-usability acceptance remain owner-managed; UX-ANR-01 remains separate.

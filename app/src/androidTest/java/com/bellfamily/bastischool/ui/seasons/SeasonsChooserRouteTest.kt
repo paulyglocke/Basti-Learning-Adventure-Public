@@ -10,7 +10,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.test.core.app.ActivityScenario
 import androidx.test.platform.app.InstrumentationRegistry
 import com.bellfamily.bastischool.MainActivity
+import com.bellfamily.bastischool.learning.content.SeasonIds
 import com.bellfamily.bastischool.learning.models.ContentLanguage
+import com.bellfamily.bastischool.learning.seasons.SeasonsContent
+import com.bellfamily.bastischool.learning.seasons.SeasonsOrder
 import com.bellfamily.bastischool.learning.seasons.SeasonsPhase
 import org.junit.Assert.assertEquals
 import org.junit.Rule
@@ -69,7 +72,17 @@ class SeasonsChooserRouteTest {
                 compose.onNodeWithTag(chooserTag).performScrollTo().performClick()
                 ready()
                 assertEquals(phase, vm().selection?.phase)
-                compose.onNodeWithTag(destinationTag).performScrollTo().assertExists()
+                if (phase == SeasonsPhase.ORDER && vm().ordering?.completed == true) {
+                    compose.onNodeWithTag("seasons-complete").assertTextEquals(
+                        SeasonsOrder.completion.display[ContentLanguage.GERMAN]
+                    )
+                    compose.onNodeWithTag("seasons-placed-count").assertTextEquals("4 von 4 Jahreszeiten eingeordnet")
+                    SeasonIds.canonicalOrder.forEachIndexed { index, id ->
+                        compose.onNodeWithText("${index + 1}. ${SeasonsContent.season(id).text.display[ContentLanguage.GERMAN]}").assertExists()
+                    }
+                } else {
+                    compose.onNodeWithTag(destinationTag).performScrollTo().assertExists()
+                }
                 backToChooser()
             }
 

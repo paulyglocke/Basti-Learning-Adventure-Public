@@ -451,6 +451,24 @@ upgrade safety and blocked-record-inspection rules above.
 
 Instrumentation belongs on the designated emulator (`ANDROID_SERIAL=emulator-5554`), not the stable S24/Fire installation. Do not bypass certificate/version failures by uninstalling, downgrading or clearing data.
 
+## Seasons persisted-session route regression — 2026-10-21
+
+Phase 4D reported a reproducible failure in
+`SeasonsChooserRouteTest.illustratedHomeChooserEveryModeOptionsBackAndSharedMonthsRoutesRemainAvailable`:
+after ORDER, the test required the active-round `seasons-order-prompt`. The API 35
+diagnostic capture showed `selection.phase=ORDER` with an already-completed saved
+ordering journal and the expected completion screen with all four placed seasons.
+The failure was a test assumption about persisted state, not a route or rendering
+defect. The route assertion now verifies either the active prompt or the exact
+completed-order summary and labels. See the detailed capture and evidence in
+[`docs/seasons-phase4d1-review/REVIEW.md`](docs/seasons-phase4d1-review/REVIEW.md).
+
+The corrected test passed twice on the same saved completed session; complete
+Seasons instrumentation passed 42/42 and full API 35 instrumentation passed
+569/569 with no skips. Full JVM passed 555/555. No saved data was cleared. Emulator
+storage was 819–820 MB free with a 369 MB debug APK; direct runner execution passed,
+while the earlier connected-install insufficient-storage result remains recorded.
+
 ## Vocabulary UX Refresh Phase 4D (2026-10-21; uncommitted)
 
 The Vocabulary entry opens a chooser; Explore, Find and What Is It? remain the
