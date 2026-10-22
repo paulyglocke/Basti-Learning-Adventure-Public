@@ -342,3 +342,12 @@ Practice still exposes digital time only after a correct Check. The semantic tim
 drag geometry, snapping, task selection, speech, attempts and persistence are unchanged.
 Narrow-screen label readability and overlap at representative times require rendered
 EN/DE large-text portrait/landscape review before declaring visual acceptance.
+# Colours chooser routes — Phase 5A.1 (2026-10-22)
+
+The production Home Colours entry opens `COLOURS_CHOOSER`. The new `COLOURS_EXPLORE`
+and `COLOURS_FIND` destinations return to that chooser on Back. Sort launched from
+the chooser uses `COLOUR_SORT_FROM_CHOOSER` so Back returns to the chooser. The
+pre-existing `COLOUR_SORT` route remains a direct Colour Sort destination for saved
+route compatibility. Chooser Back returns to native Home; explicit Home returns to
+illustrated Home. Options remains an overlay that restores its originating route.
+No route identifier or persisted destination format was migrated.

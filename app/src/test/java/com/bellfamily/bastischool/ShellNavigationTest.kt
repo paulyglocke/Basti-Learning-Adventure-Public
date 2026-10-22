@@ -131,4 +131,18 @@ class ShellNavigationTest {
             .openMonthsBetween().screen)
         assertEquals(question, question.openOptions().closeOptions())
     }
+
+    @Test fun coloursChooserHasDistinctExploreFindAndSortRoutesWhileOldSortRouteRestores() {
+        val chooser = ShellNavigation().openColoursChooser()
+        assertEquals(BackAction.NATIVE_HOME, chooser.backAction)
+        for (route in listOf(chooser.openColoursExplore(), chooser.openColoursFind(), chooser.openColourSortFromChooser())) {
+            assertEquals(BackAction.COLOURS_CHOOSER, route.backAction)
+            assertEquals(route, route.openOptions().closeOptions())
+            assertEquals(route.screen, ShellNavigation.restore(route.screen.name, "HOME", "verbs", null).screen)
+        }
+        val old = ShellNavigation.restore("COLOUR_SORT", "HOME", "verbs", null)
+        assertEquals(ShellScreen.COLOUR_SORT, old.screen)
+        assertEquals(BackAction.NATIVE_HOME, old.backAction)
+        assertEquals(BackAction.COLOURS_CHOOSER, ShellNavigation().openColourSortFromChooser().backAction)
+    }
 }

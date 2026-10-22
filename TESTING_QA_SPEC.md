@@ -489,3 +489,14 @@ the final relevant tests ran through direct APK installation and
 `git diff --check` passed. Lint reported 0 errors and 5 existing warnings. See
 [`docs/vocabulary-phase4d-review/REVIEW.md`](docs/vocabulary-phase4d-review/REVIEW.md)
 for the detailed results and API 35 visual gallery.
+# Phase 5A.1 Colours validation record — 2026-10-22
+
+Explore Colours and Find the Colour were validated on API 35 with a focused
+12/12 instrumentation run and the full 563/563 JVM suite (0 failures/errors/skips).
+`assembleDebug`, `assembleDebugAndroidTest`, `lintDebug` and `git diff --check` passed.
+Lint retained five existing warnings and reported no errors. The app-wide
+instrumentation suite and full 18-state screenshot/layout matrix were not run.
+Actual emulator captures and the detailed scope/limitations are in
+[`docs/colours-phase5a1-review/REVIEW.md`](docs/colours-phase5a1-review/REVIEW.md).
+Physical-device, TalkBack, switch-access, offline voice and child-use acceptance
+remain owner-deferred.

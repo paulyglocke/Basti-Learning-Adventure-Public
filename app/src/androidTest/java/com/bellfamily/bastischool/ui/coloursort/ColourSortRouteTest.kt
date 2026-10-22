@@ -25,7 +25,7 @@ class ColourSortRouteTest {
             fun owner():ColourSortViewModel {var vm:ColourSortViewModel?=null;scenario.onActivity{vm=ViewModelProvider(it)[ColourSortViewModel::class.java]};return vm!!}
             fun settle()=compose.waitUntil(10_000){!owner().busy && owner().state!=null}
             fun click(tag:String){compose.onNodeWithTag(tag).performScrollTo().performClick();settle()}
-            compose.openHomeActivity("Colour Sort");settle()
+            compose.openHomeActivity("Colour Sort");compose.onNodeWithTag("colours-open-sort").performScrollTo().performClick();settle()
             val first=ColourSort.objects.first();click("sort-item-${first.id.value}");click("sort-category-${first.category.value}")
             val second=ColourSort.objects[1];click("sort-item-${second.id.value}")
             val before=owner().state!!;val retained=owner()
@@ -33,7 +33,7 @@ class ColourSortRouteTest {
             compose.onNodeWithText("⚙ Options").performClick();compose.onNodeWithText("🇩🇪 Deutsch").performClick()
             scenario.onActivity{it.onBackPressedDispatcher.onBackPressed()};settle()
             assertEquals(ContentLanguage.GERMAN,owner().state!!.language);assertEquals(before.placements,owner().state!!.placements)
-            click("sort-home");compose.openHomeActivity("Farben sortieren");settle()
+            click("sort-home");compose.openHomeActivity("Farben sortieren");compose.onNodeWithTag("colours-open-sort").performScrollTo().performClick();settle()
             assertEquals(before.id,owner().state!!.id);assertEquals(before.selected,owner().state!!.selected)
         }
     }

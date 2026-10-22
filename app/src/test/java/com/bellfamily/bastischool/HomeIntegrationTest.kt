@@ -8,7 +8,7 @@ class HomeIntegrationTest {
     @Test fun allTwentyCardsDispatchToTheirHistoricalDestinations() {
         val expected = listOf("TELL_ME", "VOCABULARY_CHOOSER", "WEB", "WEB", "WEB", "DAYS_SEASONS",
             "WEB", "SUBITISING", "QUANTITY_MATCH", "COMPARE_QUANTITY", "NUMBER_ORDER", "CLOCK",
-            "ADD_TOGETHER", "WEB", "PREPOSITIONS", "WEB", "WASH_HANDS", "ANIMAL_GROUPS", "COLOUR_SORT", "FOLLOW_LEVELS")
+            "ADD_TOGETHER", "WEB", "PREPOSITIONS", "WEB", "WASH_HANDS", "ANIMAL_GROUPS", "COLOURS_CHOOSER", "FOLLOW_LEVELS")
         val cards = homeActivities()
         assertEquals(20, cards.size)
         assertEquals(expected, cards.map { it.homeDestination().screen.name })
@@ -58,6 +58,7 @@ class HomeIntegrationTest {
     @Test fun activityRootAndNestedBackContractsAreNotReinterpretedAsCategoryBack() {
         assertEquals(BackAction.NATIVE_HOME, homeActivity("tellme").homeDestination().backAction)
         assertEquals(BackAction.NATIVE_HOME, homeActivity("colourSort").homeDestination().backAction)
+        assertEquals(ShellScreen.COLOURS_CHOOSER, homeActivity("colourSort").homeDestination().screen)
         assertEquals(BackAction.LEGACY, homeActivity("count").homeDestination().backAction)
         val months = ShellNavigation().openMonthsChooser()
         assertEquals(BackAction.DAYS_HUB,months.backAction)

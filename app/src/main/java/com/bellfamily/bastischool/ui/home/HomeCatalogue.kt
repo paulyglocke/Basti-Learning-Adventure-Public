@@ -49,7 +49,7 @@ internal fun HomeCard.homeDestination(): ShellNavigation {
         "tellme" -> shell.openTellMe()
         "washHands" -> shell.openWashHands()
         "animalGroups" -> shell.openAnimalGroups()
-        "colourSort" -> shell.openColourSort()
+        "colourSort" -> shell.openColoursChooser()
         "follow" -> shell.openFollowInstructions()
         "vocabulary" -> shell.openVocabulary()
         "positions" -> shell.openPrepositions()

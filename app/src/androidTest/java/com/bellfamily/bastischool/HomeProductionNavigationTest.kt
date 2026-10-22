@@ -85,7 +85,7 @@ class HomeProductionNavigationTest {
         compose.onNodeWithTag("home-activity-mixed").assertIsDisplayed()
         back(scenario)
         click("home-category-COLOURS")
-        assertEquals("COLOUR_SORT",saved(scenario).getString("screen"))
+        assertEquals("COLOURS_CHOOSER",saved(scenario).getString("screen"))
         compose.onNodeWithTag("home-activity-colourSort").assertDoesNotExist()
         back(scenario)
         compose.onNodeWithTag("home-category-COLOURS").assertExists()
@@ -184,15 +184,26 @@ class HomeProductionNavigationTest {
                 return snapshot
             }
             fun ready() = compose.waitUntil(10_000) { state() != null }
-            compose.openHomeActivity(title); ready()
+            compose.openHomeActivity(title)
+            if (title == "Colour Sort") {
+                // The production Home route now opens the chooser; retain the exact old sort journal.
+                compose.onNodeWithTag("colours-open-sort").performScrollTo().performClick()
+            }
+            ready()
             val before = state()
             compose.onNodeWithText("⚙ Options").performClick()
             scenario.recreate(); back(scenario); ready()
             assertEquals("$title Options/recreation", before, state())
             back(scenario)
-            compose.openHomeActivity(title); ready()
+            if (title == "Colour Sort") back(scenario)
+            compose.openHomeActivity(title)
+            if (title == "Colour Sort") {
+                compose.onNodeWithTag("colours-open-sort").performScrollTo().performClick()
+            }
+            ready()
             assertEquals("$title Home/re-entry", before, state())
             back(scenario)
+            if (title == "Colour Sort") back(scenario)
         }
     }
 }

@@ -99,6 +99,7 @@ import com.bellfamily.bastischool.ui.comparequantity.*
 import com.bellfamily.bastischool.ui.numberorder.*
 import com.bellfamily.bastischool.ui.addition.*
 import com.bellfamily.bastischool.ui.coloursort.*
+import com.bellfamily.bastischool.ui.colours.*
 import com.bellfamily.bastischool.ui.animalgroups.*
 import com.bellfamily.bastischool.ui.washhands.*
 import androidx.compose.runtime.CompositionLocalProvider
@@ -170,6 +171,7 @@ class MainActivity : ComponentActivity() {
     private lateinit var nativeWashHands: WashHandsViewModel
     private lateinit var nativeAnimalGroups: AnimalGroupsViewModel
     private lateinit var nativeColourSort: ColourSortViewModel
+    private lateinit var nativeColours: ColoursViewModel
     private lateinit var nativeMonths: MonthsViewModel
     private lateinit var nativeClock: ClockViewModel
     private lateinit var nativeSubitising: SubitisingViewModel
@@ -213,6 +215,7 @@ class MainActivity : ComponentActivity() {
         nativeWilma = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[WilmaViewModel::class.java]
         nativeTellMe = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[TellMeViewModel::class.java]
         nativeColourSort = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[ColourSortViewModel::class.java]
+        nativeColours = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[ColoursViewModel::class.java]
         nativeAnimalGroups = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[AnimalGroupsViewModel::class.java]
         nativeWashHands = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[WashHandsViewModel::class.java]
         nativeMonths = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[MonthsViewModel::class.java]
@@ -263,7 +266,8 @@ class MainActivity : ComponentActivity() {
         // need a second copy in the shell. Completion screens retain the shell title
         // because their content is a summary rather than the active activity heading.
         val contentOwnsTitle = when (screen) {
-            ShellScreen.CLOCK, ShellScreen.FOLLOW_LEVELS -> true
+            ShellScreen.CLOCK, ShellScreen.FOLLOW_LEVELS, ShellScreen.COLOURS_CHOOSER,
+            ShellScreen.COLOURS_EXPLORE, ShellScreen.COLOURS_FIND -> true
             ShellScreen.ADD_TOGETHER -> nativeAddition.state?.phase != SessionPhase.COMPLETED
             ShellScreen.COMPARE_QUANTITY -> nativeCompareQuantity.state?.phase != SessionPhase.COMPLETED
             ShellScreen.NUMBER_ORDER -> nativeNumberOrder.state?.phase != SessionPhase.COMPLETED
@@ -306,6 +310,10 @@ class MainActivity : ComponentActivity() {
                                     ShellScreen.WILMA_CHOOSER -> if (language == "de") "Wilmas Woche" else "Wilma’s Week"
                                     ShellScreen.TELL_ME -> if (language == "de") "Erzähl mal!" else "Tell Me!"
                                     ShellScreen.COLOUR_SORT -> if (language == "de") "Farben sortieren" else "Colour Sort"
+                                    ShellScreen.COLOURS_CHOOSER -> if (language == "de") "Farben" else "Colours"
+                                    ShellScreen.COLOURS_EXPLORE -> if (language == "de") "Farben entdecken" else "Explore Colours"
+                                    ShellScreen.COLOURS_FIND -> if (language == "de") "Finde die Farbe" else "Find the Colour"
+                                    ShellScreen.COLOUR_SORT_FROM_CHOOSER -> if (language == "de") "Farben sortieren" else "Colour Sort"
                                     ShellScreen.ANIMAL_GROUPS -> if (language == "de") "Tiere zuordnen" else "Animal Groups"
                                     ShellScreen.WASH_HANDS -> if (language == "de") "Hände waschen" else "Wash Hands"
                                     ShellScreen.SUBITISING -> if (language == "de") "Wie viele?" else "How many?"
@@ -374,6 +382,33 @@ class MainActivity : ComponentActivity() {
                             { celebrationSound.cancel(); nativeTellMe.again() }, { celebrationSound.cancel(); nativeTellMe.home() },
                             onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration)
                         ShellScreen.COLOUR_SORT -> ColourSortScreen(nativeColourSort.state,
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            nativeColourSort.busy, nativeColourSort.saveFailed, nativeColourSort.audioFailed,
+                            nativeColourSort::action, { celebrationSound.cancel(); nativeColourSort.again() }, nativeColourSort::retry,
+                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration)
+                        ShellScreen.COLOURS_CHOOSER -> ColoursActivityChooserScreen(
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            ready = !nativeColours.busy && !nativeColours.saveFailed, busy = nativeColours.busy,
+                            saveFailed = nativeColours.saveFailed,
+                            onExplore = { changeRoute(navigation.openColoursExplore()) },
+                            onFind = { changeRoute(navigation.openColoursFind()) },
+                            onSort = { changeRoute(navigation.openColourSortFromChooser()) },
+                            onRetry = nativeColours::retry,
+                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding))
+                        ShellScreen.COLOURS_EXPLORE -> ExploreColoursScreen(
+                            nativeColours.selected,
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            nativeColours.busy, nativeColours.saveFailed, nativeColours.audioFailed,
+                            nativeColours::select, nativeColours::replay, nativeColours::retry,
+                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding))
+                        ShellScreen.COLOURS_FIND -> FindColourScreen(
+                            nativeColours.quiz,
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            nativeColours.busy, nativeColours.saveFailed, nativeColours.audioFailed,
+                            nativeColours::replay, nativeColours::help, nativeColours::action,
+                            nativeColours::again, nativeColours::retry,
+                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration)
+                        ShellScreen.COLOUR_SORT_FROM_CHOOSER -> ColourSortScreen(nativeColourSort.state,
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeColourSort.busy, nativeColourSort.saveFailed, nativeColourSort.audioFailed,
                             nativeColourSort::action, { celebrationSound.cancel(); nativeColourSort.again() }, nativeColourSort::retry,
@@ -618,6 +653,8 @@ class MainActivity : ComponentActivity() {
             ShellScreen.WILMA -> nativeWilma.busy || nativeWilma.saveFailed
             ShellScreen.VOCABULARY -> nativeVocabulary.busy || nativeVocabulary.saveFailed
             ShellScreen.COLOUR_SORT -> nativeColourSort.busy || nativeColourSort.saveFailed
+            ShellScreen.COLOURS_FIND -> nativeColours.busy || nativeColours.saveFailed
+            ShellScreen.COLOUR_SORT_FROM_CHOOSER -> nativeColourSort.busy || nativeColourSort.saveFailed
             ShellScreen.ANIMAL_GROUPS -> nativeAnimalGroups.busy || nativeAnimalGroups.saveFailed
             ShellScreen.WASH_HANDS -> nativeWashHands.busy || nativeWashHands.saveFailed
             ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BETWEEN -> nativeMonths.quizBusy || nativeMonths.quizFailed
@@ -642,6 +679,8 @@ class MainActivity : ComponentActivity() {
                 else if(nativeSeasons.selection?.phase?.isQuiz == true) nativeSeasons.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value else null
             ShellScreen.VOCABULARY -> if(nativeVocabulary.selection?.phase != VocabularyPhase.EXPLORE) nativeVocabulary.quiz?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value else null
             ShellScreen.COLOUR_SORT -> nativeColourSort.state?.takeIf {it.completed && it.acknowledged}?.id?.value
+            ShellScreen.COLOURS_FIND -> nativeColours.quiz?.takeIf {it.phase == SessionPhase.COMPLETED && it.completion == com.bellfamily.bastischool.learning.session.CompletionState.ACKNOWLEDGED}?.plan?.id?.value
+            ShellScreen.COLOUR_SORT_FROM_CHOOSER -> nativeColourSort.state?.takeIf {it.completed && it.acknowledged}?.id?.value
             ShellScreen.ANIMAL_GROUPS -> nativeAnimalGroups.state?.takeIf {it.completed && it.acknowledged}?.id?.value
             ShellScreen.WASH_HANDS -> nativeWashHands.state?.takeIf {it.completed && it.acknowledged}?.id?.value
             ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BETWEEN -> nativeMonths.quiz?.takeIf { it.phase == SessionPhase.COMPLETED }?.plan?.id?.value
@@ -679,7 +718,9 @@ class MainActivity : ComponentActivity() {
         nativePositions.setVisible(foreground && route.screen == ShellScreen.PREPOSITIONS)
         nativeSeasons.setVisible(foreground && route.screen in setOf(ShellScreen.SEASONS, ShellScreen.SEASONS_CHOOSER))
         nativeVocabulary.setVisible(foreground && route.screen in setOf(ShellScreen.VOCABULARY, ShellScreen.VOCABULARY_CHOOSER))
-        nativeColourSort.setVisible(foreground && route.screen == ShellScreen.COLOUR_SORT)
+        nativeColourSort.setVisible(foreground && route.screen in setOf(ShellScreen.COLOUR_SORT, ShellScreen.COLOUR_SORT_FROM_CHOOSER))
+        nativeColours.setVisible(foreground && route.screen in setOf(ShellScreen.COLOURS_CHOOSER, ShellScreen.COLOURS_EXPLORE, ShellScreen.COLOURS_FIND),
+            route.screen == ShellScreen.COLOURS_FIND)
         nativeAnimalGroups.setVisible(foreground && route.screen == ShellScreen.ANIMAL_GROUPS)
         nativeWashHands.setVisible(foreground && route.screen == ShellScreen.WASH_HANDS)
         nativeMonths.setVisible(foreground && route.screen in monthScreens, monthsMode(route.screen))
@@ -731,6 +772,7 @@ class MainActivity : ComponentActivity() {
             BackAction.SEASONS_CHOOSER -> changeRoute(navigation.openSeasons())
             BackAction.WILMA_CHOOSER -> { nativeWilma.suspendSpeech(); changeRoute(navigation.openWilmaChooser()) }
             BackAction.VOCABULARY_CHOOSER -> changeRoute(navigation.openVocabulary())
+            BackAction.COLOURS_CHOOSER -> changeRoute(navigation.openColoursChooser())
             BackAction.NATIVE_HOME -> changeRoute(navigation.home())
             BackAction.HOME_ROOT -> changeRoute(navigation.home())
             BackAction.EXIT -> Unit // BackHandler is disabled; Android owns exit.
@@ -775,6 +817,9 @@ class MainActivity : ComponentActivity() {
             prefs.getInt("round", 5))
         nativeColourSort.configure(prefs.getString("lang", "en") ?: "en",
             prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all")
+        nativeColours.configure(prefs.getString("lang", "en") ?: "en",
+            prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
+            prefs.getInt("round", 5))
         nativeAnimalGroups.configure(prefs.getString("lang", "en") ?: "en",
             prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all")
         nativeWashHands.configure(prefs.getString("lang", "en") ?: "en",
@@ -912,8 +957,8 @@ class MainActivity : ComponentActivity() {
         if (navigation.ownsWebSession) outState.putString("legacySession", checkpoint.read())
         super.onSaveInstanceState(outState)
     }
-    override fun onPause() { celebrationSound.cancel(); foreground = false; nativePositions.setVisible(false); nativeSeasons.setVisible(false); nativeWilma.setVisible(false); nativeVocabulary.setVisible(false); nativeMonths.setVisible(false); nativeClock.setVisible(false); nativeSubitising.setVisible(false); nativeQuantityMatch.setVisible(false); nativeCompareQuantity.setVisible(false); nativeNumberOrder.setVisible(false); nativeAddition.setVisible(false); nativeFollow.setVisible(false); nativeColourSort.setVisible(false); nativeAnimalGroups.setVisible(false); nativeWashHands.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
-    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen in setOf(ShellScreen.SEASONS, ShellScreen.SEASONS_CHOOSER)); nativeWilma.setVisible(navigation.screen in setOf(ShellScreen.WILMA_CHOOSER, ShellScreen.WILMA)); nativeVocabulary.setVisible(navigation.screen in setOf(ShellScreen.VOCABULARY, ShellScreen.VOCABULARY_CHOOSER)); nativeMonths.setVisible(navigation.screen in monthScreens, monthsMode(navigation.screen)); nativeClock.setVisible(navigation.screen in listOf(ShellScreen.CLOCK, ShellScreen.CLOCK_MAKE), navigation.screen == ShellScreen.CLOCK_MAKE); nativeSubitising.setVisible(navigation.screen == ShellScreen.SUBITISING); nativeQuantityMatch.setVisible(navigation.screen == ShellScreen.QUANTITY_MATCH); nativeCompareQuantity.setVisible(navigation.screen == ShellScreen.COMPARE_QUANTITY); nativeNumberOrder.setVisible(navigation.screen == ShellScreen.NUMBER_ORDER); nativeAddition.setVisible(navigation.screen == ShellScreen.ADD_TOGETHER); nativeFollow.setVisible(navigation.screen in setOf(ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO), when (navigation.screen) { ShellScreen.FOLLOW_INSTRUCTIONS -> FollowLevel.ONE; ShellScreen.FOLLOW_TWO -> FollowLevel.TWO; else -> null }); nativeColourSort.setVisible(navigation.screen == ShellScreen.COLOUR_SORT); nativeAnimalGroups.setVisible(navigation.screen == ShellScreen.ANIMAL_GROUPS); nativeWashHands.setVisible(navigation.screen == ShellScreen.WASH_HANDS); updateWebActivity() }
+    override fun onPause() { celebrationSound.cancel(); foreground = false; nativePositions.setVisible(false); nativeSeasons.setVisible(false); nativeWilma.setVisible(false); nativeVocabulary.setVisible(false); nativeMonths.setVisible(false); nativeClock.setVisible(false); nativeSubitising.setVisible(false); nativeQuantityMatch.setVisible(false); nativeCompareQuantity.setVisible(false); nativeNumberOrder.setVisible(false); nativeAddition.setVisible(false); nativeFollow.setVisible(false); nativeColours.setVisible(false, false); nativeColourSort.setVisible(false); nativeAnimalGroups.setVisible(false); nativeWashHands.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
+    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen in setOf(ShellScreen.SEASONS, ShellScreen.SEASONS_CHOOSER)); nativeWilma.setVisible(navigation.screen in setOf(ShellScreen.WILMA_CHOOSER, ShellScreen.WILMA)); nativeVocabulary.setVisible(navigation.screen in setOf(ShellScreen.VOCABULARY, ShellScreen.VOCABULARY_CHOOSER)); nativeMonths.setVisible(navigation.screen in monthScreens, monthsMode(navigation.screen)); nativeClock.setVisible(navigation.screen in listOf(ShellScreen.CLOCK, ShellScreen.CLOCK_MAKE), navigation.screen == ShellScreen.CLOCK_MAKE); nativeSubitising.setVisible(navigation.screen == ShellScreen.SUBITISING); nativeQuantityMatch.setVisible(navigation.screen == ShellScreen.QUANTITY_MATCH); nativeCompareQuantity.setVisible(navigation.screen == ShellScreen.COMPARE_QUANTITY); nativeNumberOrder.setVisible(navigation.screen == ShellScreen.NUMBER_ORDER); nativeAddition.setVisible(navigation.screen == ShellScreen.ADD_TOGETHER); nativeFollow.setVisible(navigation.screen in setOf(ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO), when (navigation.screen) { ShellScreen.FOLLOW_INSTRUCTIONS -> FollowLevel.ONE; ShellScreen.FOLLOW_TWO -> FollowLevel.TWO; else -> null }); nativeColours.setVisible(navigation.screen in setOf(ShellScreen.COLOURS_CHOOSER, ShellScreen.COLOURS_EXPLORE, ShellScreen.COLOURS_FIND), navigation.screen == ShellScreen.COLOURS_FIND); nativeColourSort.setVisible(navigation.screen in setOf(ShellScreen.COLOUR_SORT, ShellScreen.COLOUR_SORT_FROM_CHOOSER)); nativeAnimalGroups.setVisible(navigation.screen == ShellScreen.ANIMAL_GROUPS); nativeWashHands.setVisible(navigation.screen == ShellScreen.WASH_HANDS); updateWebActivity() }
     override fun onDestroy() { celebrationSound.close(); disposeWebView(); tts?.shutdown(); tts = null; super.onDestroy() }
 }
 

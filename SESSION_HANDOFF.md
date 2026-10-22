@@ -3287,3 +3287,22 @@ reinstall, emulator wipe or saved-data clearing was attempted. Detailed evidence
 
 Current work is uncommitted and ready for owner review. Physical-device and
 child-usability acceptance remain owner-managed; UX-ANR-01 remains separate.
+## Phase 5A.1 — Colours Explore/Find (2026-10-22; uncommitted)
+
+Added a Colours chooser and bilingual Explore Colours / Find the Colour experiences
+for `colour.red`, `colour.blue`, `colour.yellow` and `colour.green`. Explore stores
+only a separate selected-colour checkpoint and emits no assessed progress. Find uses
+`activity.colours.find_colour`, revision 1, its own journal and shared durable
+progress events. The existing Sort learning code, four red/blue objects, activity
+ID/revision/content version and CSR1 journal format remain unchanged. Home now opens
+the chooser; the old direct `COLOUR_SORT` route remains for saved route compatibility.
+
+Validation: full JVM **563/563**; focused API 35 Colours/Home **12/12**; debug build,
+Android-test APK compilation, lint (0 errors, 5 existing warnings) and
+`git diff --check` passed. Full app instrumentation was not run. Only three actual portrait
+screenshots (chooser, Explore red, Find English) are in
+[`docs/colours-phase5a1-review/gallery.html`](docs/colours-phase5a1-review/gallery.html);
+the requested 18-state screenshot matrix remains incomplete. The pre-existing
+`ColourSortRouteTest` fixture deletes its Sort journal on the API 35 test AVD; it was
+run once, so that AVD's previous Sort journal may have been replaced. No physical
+device was used. All work remains uncommitted and unpushed for owner review.
