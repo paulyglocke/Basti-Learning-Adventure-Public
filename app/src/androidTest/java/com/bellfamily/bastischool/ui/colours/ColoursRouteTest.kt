@@ -1,5 +1,8 @@
 package com.bellfamily.bastischool.ui.colours
 
+import android.graphics.Bitmap
+import java.io.File
+import java.io.FileOutputStream
 import com.bellfamily.bastischool.openHomeActivity
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
@@ -21,6 +24,8 @@ class ColoursRouteTest {
 
     @Test fun productionChooserExploreFindOptionsAndOldSortRemainAvailable() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val isolation = RouteTestDataIsolation(context)
+        try {
         context.getSharedPreferences("basti_shell", 0).edit()
             .putString("lang", "en").putString("audioMode", "off").putInt("round", 5).commit()
         ActivityScenario.launch(MainActivity::class.java).use { scenario ->
@@ -50,6 +55,15 @@ class ColoursRouteTest {
             assertEquals(ColoursContent.activity, colours().quiz!!.plan.activity)
             scenario.recreate(); waitColours()
             assertArrayEquals(original, SessionCheckpoint.encode(colours().quiz!!))
+            // Persist an actual device capture of the restored active question for the review gallery.
+            val restoredCapture = File(context.getExternalFilesDir("colours-phase5a1b"), "find-session-restored.png")
+            restoredCapture.parentFile?.mkdirs()
+            val bitmap = InstrumentationRegistry.getInstrumentation().uiAutomation.takeScreenshot()
+            try { FileOutputStream(restoredCapture).use { bitmap.compress(Bitmap.CompressFormat.PNG, 100, it) } }
+            finally { bitmap.recycle() }
+            val copied = InstrumentationRegistry.getInstrumentation().uiAutomation
+                .executeShellCommand("cp ${restoredCapture.absolutePath} /sdcard/Download/find-session-restored-5a1b.png")
+            copied.use { java.io.FileInputStream(it.fileDescriptor).readBytes() }
 
             compose.onNodeWithText("⚙ Options").performClick()
             compose.onNodeWithText("🇩🇪 Deutsch").performClick()
@@ -74,5 +88,43 @@ class ColoursRouteTest {
             scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
             compose.onNodeWithTag("home-all").assertIsDisplayed()
         }
+        } finally {
+            isolation.restore()
+        }
+    }
+}
+
+/** Keeps connected route tests from replacing a real install's language or learning journals. */
+private class RouteTestDataIsolation(private val context: android.content.Context) {
+    private val directories = listOf(
+        "colour-sort-session", "colours-find-session", "colours-explore-selection", "native-progress"
+    )
+    private val backup = File(context.cacheDir, "colours-route-test-${System.nanoTime()}")
+    private val had = directories.associateWith { name -> File(context.noBackupFilesDir, name).exists() }
+    private val prefs = context.getSharedPreferences("basti_shell", 0)
+    private val oldLanguage = prefs.getString("lang", null)
+    private val oldAudioMode = prefs.getString("audioMode", null)
+    private val oldRound = prefs.getInt("round", -1)
+
+    init {
+        backup.mkdirs()
+        directories.forEach { name ->
+            val source = File(context.noBackupFilesDir, name)
+            if (had.getValue(name)) check(source.renameTo(File(backup, name))) { "Could not isolate $name" }
+        }
+    }
+
+    fun restore() {
+        directories.forEach { name ->
+            val target = File(context.noBackupFilesDir, name)
+            target.deleteRecursively()
+            if (had.getValue(name)) check(File(backup, name).renameTo(target)) { "Could not restore $name" }
+        }
+        prefs.edit().apply {
+            if (oldLanguage == null) remove("lang") else putString("lang", oldLanguage)
+            if (oldAudioMode == null) remove("audioMode") else putString("audioMode", oldAudioMode)
+            if (oldRound < 0) remove("round") else putInt("round", oldRound)
+        }.commit()
+        backup.deleteRecursively()
     }
 }

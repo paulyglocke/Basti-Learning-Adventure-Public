@@ -4,15 +4,59 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Phase 5A.1 Colours — Emulator Review</title>
 <style>
-body{font:16px system-ui,sans-serif;background:#faf7ef;color:#203746;margin:2rem;max-width:1100px}
+body{font:16px system-ui,sans-serif;background:#faf7ef;color:#203746;margin:2rem;max-width:1280px}
 h1{margin-bottom:.3rem}p{line-height:1.5}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
-figure{margin:0;background:white;border:1px solid #73827e;border-radius:12px;padding:.8rem}img{display:block;width:100%;height:auto}figcaption{padding:.7rem .2rem .2rem;font-weight:600}
+figure{margin:0;background:white;border:1px solid #73827e;border-radius:12px;padding:.8rem}
+img{display:block;width:100%;height:auto}figcaption{padding:.7rem .2rem .2rem;font-weight:600}
 </style>
-<h1>Phase 5A.1 — Colours emulator review</h1>
-<p>Actual API 35 emulator captures, portrait 1080×2400. Only the three states captured are shown; the requested full orientation and font-scale matrix is not represented here.</p>
+<h1>Phase 5A.1B — Colours emulator review</h1>
+<p>Actual API 35 Android emulator captures. Phone portrait uses 1080×2400; phone landscape 2400×1080; short landscape 1200×600; tablet viewport 1200×1920 portrait and 1920×1200 landscape. Tablet and short-landscape captures are display-size overrides on the disposable API 35 AVD, not separate hardware devices. German 2× is the device font-scale setting. Each caption records exact image dimensions.</p>
+<p>The yellow swatch is the corrected clear-yellow sample. Explore has no score or completion state. The emulator has no installed offline voice, so the Find German capture shows the existing speech-unavailable guidance; this does not assess pronunciation quality.</p>
+
+<h2>Chooser</h2>
 <div class="grid">
-<figure><img src="screenshots/chooser-en.png" alt="Colours chooser in English with Explore Colours prominent and Find and Sort practice choices"><figcaption>Chooser — English</figcaption></figure>
-<figure><img src="screenshots/explore-en-red.png" alt="Explore Colours in English with the red sample selected and four labeled colour choices"><figcaption>Explore — English, red selected</figcaption></figure>
-<figure><img src="screenshots/find-en.png" alt="Find the Colour in English, asking the child to find green, with replay, help and four colour choices"><figcaption>Find — English prompt</figcaption></figure>
+<figure><img src="screenshots/chooser-en-final.png" alt="Colours chooser in English with Explore prominent and two practice options"><figcaption>English phone portrait — 1080×2400</figcaption></figure>
+<figure><img src="screenshots/chooser-de-final.png" alt="German Colours chooser with naturally wrapped activity descriptions"><figcaption>German phone portrait — 1080×2400</figcaption></figure>
+<figure><img src="screenshots/chooser-de-2x-final.png" alt="German Colours chooser at 2× text size"><figcaption>German 2× text — 1080×2400</figcaption></figure>
+<figure><img src="screenshots/chooser-phone-landscape-final.png" alt="Colours chooser in phone landscape; choices continue vertically"><figcaption>Phone landscape — 2400×1080</figcaption></figure>
+<figure><img src="screenshots/chooser-short-landscape-final.png" alt="Colours chooser in a short landscape viewport"><figcaption>Short landscape — 1200×600</figcaption></figure>
+<figure><img src="screenshots/chooser-tablet-portrait.png" alt="Colours chooser in tablet portrait"><figcaption>Tablet portrait viewport — 1200×1920</figcaption></figure>
+<figure><img src="screenshots/chooser-tablet-landscape.png" alt="Colours chooser in tablet landscape; Explore remains prominent and lower cards scroll"><figcaption>Tablet landscape viewport — 1920×1200</figcaption></figure>
+</div>
+
+<h2>Explore Colours</h2>
+<div class="grid">
+<figure><img src="screenshots/explore-en-red-final.png" alt="Explore Colours with red selected"><figcaption>English — red selected, phone portrait — 1080×2400</figcaption></figure>
+<figure><img src="screenshots/explore-en-blue-final.png" alt="Explore Colours with blue selected"><figcaption>English — blue selected, phone portrait — 1080×2400</figcaption></figure>
+<figure><img src="screenshots/explore-en-yellow-final.png" alt="Explore Colours with bright yellow selected and a dark selection check"><figcaption>English — yellow selected, phone portrait — 1080×2400</figcaption></figure>
+<figure><img src="screenshots/explore-en-green-final.png" alt="Explore Colours with green selected"><figcaption>English — green selected, phone portrait — 1080×2400</figcaption></figure>
+<figure><img src="screenshots/explore-de-final.png" alt="German Explore screen with green selected, German colour names and replay"><figcaption>German — 1080×2400</figcaption></figure>
+<figure><img src="screenshots/explore-phone-landscape-final.png" alt="Explore Colours on a landscape phone viewport"><figcaption>Phone landscape — 2400×1080</figcaption></figure>
+<figure><img src="screenshots/explore-short-landscape.png" alt="Explore Colours in short landscape; large sample is visible and more choices scroll below"><figcaption>Short landscape — 1200×600; scroll to choices and replay</figcaption></figure>
+<figure><img src="screenshots/explore-tablet-portrait.png" alt="Explore Colours in tablet portrait with large sample and four choices"><figcaption>Tablet portrait viewport — 1200×1920</figcaption></figure>
+<figure><img src="screenshots/explore-tablet-landscape.png" alt="Explore Colours in tablet landscape with large sample and two-column choices"><figcaption>Tablet landscape viewport — 1920×1200</figcaption></figure>
+</div>
+
+<h2>Find the Colour</h2>
+<div class="grid">
+<figure><img src="screenshots/find-en-active-final.png" alt="English Find the Colour question with four choices, Listen again and Help"><figcaption>English active question — 1080×2400</figcaption></figure>
+<figure><img src="screenshots/find-de-active-final.png" alt="German Find the Colour question with four choices and localized replay/help"><figcaption>German active question — 1080×2400</figcaption></figure>
+<figure><img src="screenshots/find-incorrect-final.png" alt="Incorrect choice selected with supportive retry guidance and Try again"><figcaption>Incorrect response and retry guidance — 1080×2400</figcaption></figure>
+<figure><img src="screenshots/find-correct-final.png" alt="Correct response with feedback and Next action"><figcaption>Correct response and feedback — 1080×2400</figcaption></figure>
+<figure><img src="screenshots/find-session-restored.png" alt="Active Find round restored after activity recreation"><figcaption>Saved Find round after recreation — 1080×2400</figcaption></figure>
+<figure><img src="screenshots/options-return-final.png" alt="German Find screen after returning from Options with the activity state retained"><figcaption>Options return with activity state retained — 1080×2400</figcaption></figure>
+</div>
+
+<h2>Existing Colour Sort</h2>
+<div class="grid">
+<figure><img src="screenshots/colour-sort-from-chooser.png" alt="Existing four-object red and blue Colour Sort reached from the new chooser"><figcaption>Existing Colour Sort from chooser — 1080×2400</figcaption></figure>
+</div>
+
+<h2>Original Phase 5A.1 captures</h2>
+<p>These three original screenshots are retained as historical evidence of the earlier, incomplete review.</p>
+<div class="grid">
+<figure><img src="screenshots/chooser-en.png" alt="Original English chooser capture"><figcaption>Original chooser — English, 1080×2400</figcaption></figure>
+<figure><img src="screenshots/explore-en-red.png" alt="Original Explore capture with red selected"><figcaption>Original Explore — red selected, 1080×2400</figcaption></figure>
+<figure><img src="screenshots/find-en.png" alt="Original English Find question capture"><figcaption>Original Find — English, 1080×2400</figcaption></figure>
 </div>
 </html>

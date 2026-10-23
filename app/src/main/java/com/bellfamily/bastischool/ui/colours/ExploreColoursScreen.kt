@@ -98,7 +98,7 @@ internal fun ColourGrid(selected: ContentId?, language: ContentLanguage, enabled
                         Box(Modifier.fillMaxWidth().heightIn(min = 52.dp, max = 68.dp)
                             .background(ColourSwatches.color(id), RoundedCornerShape(12.dp))
                             .border(2.dp, BastiPalette.ink, RoundedCornerShape(12.dp)), contentAlignment = Alignment.Center) {
-                            if (chosen) Text("✓", color = MaterialTheme.colorScheme.surface,
+                            if (chosen) Text("✓", color = if (id == ColoursContent.yellow) BastiPalette.ink else MaterialTheme.colorScheme.surface,
                                 style = BastiTypography.answer, modifier = Modifier.testTag("$tagPrefix-selected-${id.value}"))
                         }
                         Text(label, style = BastiTypography.answer, color = BastiPalette.ink)

@@ -84,7 +84,8 @@ fun FindColourScreen(
                                 Box(Modifier.fillMaxWidth().heightIn(min = 88.dp, max = 112.dp)
                                     .background(ColourSwatches.color(id), RoundedCornerShape(14.dp))
                                     .border(2.dp, BastiPalette.ink, RoundedCornerShape(14.dp)), contentAlignment = Alignment.Center) {
-                                    if (selected) Text("✓", style = BastiTypography.answer, color = MaterialTheme.colorScheme.surface)
+                                    if (selected) Text("✓", style = BastiTypography.answer,
+                                        color = if (id == ColoursContent.yellow) BastiPalette.ink else MaterialTheme.colorScheme.surface)
                                 }
                             }
                         }

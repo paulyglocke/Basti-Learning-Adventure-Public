@@ -3287,7 +3287,7 @@ reinstall, emulator wipe or saved-data clearing was attempted. Detailed evidence
 
 Current work is uncommitted and ready for owner review. Physical-device and
 child-usability acceptance remain owner-managed; UX-ANR-01 remains separate.
-## Phase 5A.1 — Colours Explore/Find (2026-10-22; uncommitted)
+## Phase 5A.1 — Colours Explore/Find (2026-10-22; committed baseline)
 
 Added a Colours chooser and bilingual Explore Colours / Find the Colour experiences
 for `colour.red`, `colour.blue`, `colour.yellow` and `colour.green`. Explore stores
@@ -3305,4 +3305,42 @@ screenshots (chooser, Explore red, Find English) are in
 the requested 18-state screenshot matrix remains incomplete. The pre-existing
 `ColourSortRouteTest` fixture deletes its Sort journal on the API 35 test AVD; it was
 run once, so that AVD's previous Sort journal may have been replaced. No physical
-device was used. All work remains uncommitted and unpushed for owner review.
+device was used. This implementation is present in the supplied committed baseline; the incomplete
+validation evidence above is historical and is addressed in the follow-up below.
+
+## Phase 5A.1B — Colours validation follow-up (2026-10-23; uncommitted)
+
+Captured the full requested visual review matrix plus a representative Colour
+Sort route. Screens are actual API 35 emulator captures; landscape dimensions
+were checked. German 2× text remains readable. The old amber-like yellow was
+corrected to a clear yellow sample with dark selection marks. Short-landscape
+Explore requires scrolling to reach lower choices and Replay.
+
+Full JVM **565/565**, focused compact-text instrumentation **4/4**, focused final
+Colours route/restoration **1/1**, complete API 35 instrumentation **577/577**
+(0 failures/errors/skips; 1h 24m 8s). `assembleDebug`, `assembleDebugAndroidTest`,
+lint (0 errors, 5 existing warnings) and `git diff --check` passed. The historical
+Sort source remains byte-identical to baseline; an isolated fixed CSR1 revision-1
+partial fixture restored and completed with exactly four attempt events and one
+completion event. See [`docs/colours-phase5a1-review/REVIEW.md`](docs/colours-phase5a1-review/REVIEW.md)
+and [the screenshot gallery](docs/colours-phase5a1-review/gallery.html).
+
+The initial 2 GB disposable API 35 AVD full instrumentation attempt exited at
+1/577 with the instrumentation process killed by signal 9; low-memory system
+process kills were present in logcat. Restarted the same disposable AVD with 4 GB
+without clearing its data. The compact-text parameterized suite passed 4/4 there;
+the full rerun then passed 577/577.
+
+One focused connected command accidentally selected both connected devices before
+the serial pin was added. It did not clear data, but it wrote test language/audio
+preferences and Colours Find/Explore state on the original AVD. The route test is
+now non-destructive: it moves its test-owned Sort/Find/Explore/progress data aside
+and restores it, together with language/audio/round preferences, in `finally`.
+The original preferences/session values were not captured, so they cannot be
+reconstructed by this session. This incident remains an acceptance risk. The
+original Phase 5A.1 validation results above remain historical and are not
+rewritten. Physical-device, actual TalkBack, switch-access, offline-voice and
+child-use acceptance remain owner-deferred; UX-ANR-01 is separate. Changes remain
+Owner authorized commit and push after validation; the final commit SHA is reported
+in the task response. The original AVD values remain unknown and are not claimed
+to have been restored.

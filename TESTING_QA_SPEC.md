@@ -500,3 +500,37 @@ Actual emulator captures and the detailed scope/limitations are in
 [`docs/colours-phase5a1-review/REVIEW.md`](docs/colours-phase5a1-review/REVIEW.md).
 Physical-device, TalkBack, switch-access, offline voice and child-use acceptance
 remain owner-deferred.
+
+# Phase 5A.1B Colours validation follow-up — 2026-10-23
+
+The historical Colour Sort implementation is unchanged; `ColourSort.kt` is
+byte-identical to baseline. A fixed CSR1 revision-1 partial journal fixture is
+restored through the new chooser route and then completed with one completion
+event. The exercised legacy fixture is specific evidence, not a universal
+byte-compatibility claim. The route test now isolates/restores Sort, Find,
+Explore and shared-progress directories plus its language/audio/round
+preferences in `finally`.
+
+Full JVM: **565/565 passed**, zero failures/errors/skips. Focused 4 GB compact-text
+instrumentation: **4/4 passed**. Focused Colours route/restoration test after its
+final screenshot export change: **1/1 passed**. Complete API 35 instrumentation
+on the disposable 4 GB AVD: **577/577 passed**, zero failures/errors/skips, 1h
+24m 8s. `assembleDebug`, `assembleDebugAndroidTest`, lint (0 errors, 5 existing
+warnings) and `git diff --check` passed.
+
+An earlier complete run recorded 574/577 passing: two stale Home route
+expectations and one historical Sort test that assumed an empty journal. Those
+test issues were corrected; the focused route/compatibility tests then passed.
+A later 2 GB AVD attempt stopped at 1/577 when the instrumentation process
+exited by signal 9; logcat also showed low-memory system-process kills. The same
+disposable AVD was restarted with 4 GB without clearing its data before the
+successful full run.
+
+One connected focused invocation was inadvertently run on both attached AVDs.
+It did not clear app data, but it wrote test language/audio preferences and
+Find/Explore state on the original AVD. Previous values were not captured, so
+they cannot be restored or certified as unchanged. Subsequent runs were pinned
+to the disposable emulator. Physical-device, actual TalkBack, switch-access,
+offline-voice and child-use acceptance remain owner-deferred; `UX-ANR-01`
+remains separate. Detailed screenshots, run chronology and visual findings are
+in [`docs/colours-phase5a1-review/REVIEW.md`](docs/colours-phase5a1-review/REVIEW.md).
