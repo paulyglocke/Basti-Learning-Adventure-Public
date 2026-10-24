@@ -31,7 +31,9 @@ fun ColoursActivityChooserScreen(
     onSort: () -> Unit,
     onRetry: () -> Unit,
     onHome: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onMatch: () -> Unit = {},
+    onFourSort: () -> Unit = {}
 ) {
     val german = language == ContentLanguage.GERMAN
     fun t(en: String, de: String) = if (german) de else en
@@ -63,9 +65,15 @@ fun ColoursActivityChooserScreen(
         ColourActivityChoice("colours-open-find", t("Find the Colour", "Finde die Farbe"),
             t("Listen to a colour and find its swatch.", "Höre eine Farbe und finde das passende Farbfeld."),
             ready && !busy && !saveFailed, onFind)
-        ColourActivityChoice("colours-open-sort", t("Colour Sort", "Farben sortieren"),
+        ColourActivityChoice("colours-open-match", t("Match Colours", "Farben zuordnen"),
+            t("Match the same colour in a different shape.", "Ordne dieselbe Farbe in einer anderen Form zu."),
+            ready && !busy && !saveFailed, onMatch)
+        ColourActivityChoice("colours-open-sort", t("Colour Sort — Two Colours", "Farben sortieren — zwei Farben"),
             t("Put the red and blue objects with their colour groups.", "Sortiere die roten und blauen Dinge in die Farbgruppen."),
             ready && !busy && !saveFailed, onSort)
+        ColourActivityChoice("colours-open-sort-four", t("Four-Colour Sort", "Vier Farben sortieren"),
+            t("Sort eight objects into four colour groups.", "Sortiere acht Dinge in vier Farbgruppen."),
+            ready && !busy && !saveFailed, onFourSort)
         if (busy && !ready) Text(t("Opening Colours…", "Farben werden geöffnet …"), Modifier.testTag("colours-chooser-loading"))
         if (saveFailed) {
             NativeSupportMessage(t("Your saved work is safe. Try again.", "Deine gespeicherte Arbeit ist sicher. Versuche es noch einmal."),

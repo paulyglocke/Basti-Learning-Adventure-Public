@@ -3308,7 +3308,7 @@ run once, so that AVD's previous Sort journal may have been replaced. No physica
 device was used. This implementation is present in the supplied committed baseline; the incomplete
 validation evidence above is historical and is addressed in the follow-up below.
 
-## Phase 5A.1B — Colours validation follow-up (2026-10-23; uncommitted)
+## Phase 5A.1B — Colours validation follow-up (2026-10-23; committed baseline)
 
 Captured the full requested visual review matrix plus a representative Colour
 Sort route. Screens are actual API 35 emulator captures; landscape dimensions
@@ -3340,7 +3340,36 @@ The original preferences/session values were not captured, so they cannot be
 reconstructed by this session. This incident remains an acceptance risk. The
 original Phase 5A.1 validation results above remain historical and are not
 rewritten. Physical-device, actual TalkBack, switch-access, offline-voice and
-child-use acceptance remain owner-deferred; UX-ANR-01 is separate. Changes remain
-Owner authorized commit and push after validation; the final commit SHA is reported
-in the task response. The original AVD values remain unknown and are not claimed
-to have been restored.
+child-use acceptance remain owner-deferred; UX-ANR-01 is separate. This follow-up
+is included in the supplied committed baseline,
+`7ca5fd1e8ad94ed864eeefe9a8ac04c44e1450fd`. The original AVD values remain unknown
+and are not claimed to have been restored.
+
+## Phase 5A.2 — Match Colours and Four-Colour Sort (2026-10-23)
+
+Added `activity.colours.match` with visual hue correspondence across different
+shapes and a separate durable session/progress identity. Added
+`activity.colours.sort.four`, an eight-object/four-category level using the existing
+tap-to-place sorting mechanics. Colours chooser now offers Explore, Find, Match,
+two-colour Sort and Four-Colour Sort. Existing `activity.colours.sort`, its
+red/blue four-object CSR1 v1/content 1.1 contract, journal and direct `COLOUR_SORT`
+restoration remain unchanged. Match and Four-Colour Sort use distinct routes and
+journals; no persistence migration or dependency was added.
+
+Validation: full JVM **569/569**; debug and Android-test builds passed; lint passed
+with 0 errors and 5 existing warnings. The first full API 35 run completed 579
+tests with 3 existing Months PixelCopy capture failures. The isolated Months wheel
+matrix passed **12/12**, and the complete rerun passed **579/579** with no failures
+or skips (56m 46s). The first failure run remains recorded in the review. Actual
+emulator captures, dimensions and visual findings are in
+[`docs/colours-phase5a2-review/REVIEW.md`](docs/colours-phase5a2-review/REVIEW.md)
+and [the HTML gallery](docs/colours-phase5a2-review/gallery.html). Emulator tablet
+dimensions were display overrides, not physical tablet validation. Physical-device,
+TalkBack, switch-access, child-use and offline-voice acceptance remain owner-managed;
+`UX-ANR-01` remains separate.
+
+The first English chooser screenshot was found to capture the outgoing Home screen
+during navigation. The route test now asserts the chooser content and waits for
+Compose idle before capturing; the corrected API 35 route test passed 1/1 and the
+gallery image was replaced. This was a test/evidence timing correction; production
+behavior was unchanged.

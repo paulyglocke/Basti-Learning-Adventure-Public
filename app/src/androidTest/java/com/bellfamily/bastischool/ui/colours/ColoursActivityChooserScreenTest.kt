@@ -19,14 +19,17 @@ class ColoursActivityChooserScreenTest {
         compose.setContent {
             MaterialTheme {
                 ColoursActivityChooserScreen(ContentLanguage.ENGLISH, true, false, false,
-                    { opened += "explore" }, { opened += "find" }, { opened += "sort" }, {}, {}, Modifier.testTag("chooser"))
+                    { opened += "explore" }, { opened += "find" }, { opened += "sort" }, {}, {}, Modifier.testTag("chooser"),
+                    { opened += "match" }, { opened += "four-sort" })
             }
         }
         compose.onNodeWithText("Colours").assertIsDisplayed()
         compose.onNodeWithTag("colours-open-explore").assertIsDisplayed().assertHasClickAction().performClick()
         compose.onNodeWithTag("colours-open-find").performScrollTo().assertIsDisplayed().performClick()
         compose.onNodeWithTag("colours-open-sort").performScrollTo().assertIsDisplayed().performClick()
-        compose.runOnIdle { assertEquals(listOf("explore", "find", "sort"), opened) }
+        compose.onNodeWithTag("colours-open-match").performScrollTo().assertIsDisplayed().performClick()
+        compose.onNodeWithTag("colours-open-sort-four").performScrollTo().assertIsDisplayed().performClick()
+        compose.runOnIdle { assertEquals(listOf("explore", "find", "sort", "match", "four-sort"), opened) }
     }
 
     @Test fun germanChooserKeepsHomeAndPracticeControlsAvailable() {
@@ -38,7 +41,8 @@ class ColoursActivityChooserScreenTest {
         compose.onNodeWithText("Farben").assertIsDisplayed()
         compose.onNodeWithText("Farben entdecken").assertIsDisplayed()
         compose.onNodeWithText("Finde die Farbe").performScrollTo().assertIsDisplayed()
-        compose.onNodeWithText("Farben sortieren").performScrollTo().assertIsDisplayed()
+        compose.onNodeWithText("Farben zuordnen").performScrollTo().assertIsDisplayed()
+        compose.onNodeWithText("Vier Farben sortieren").performScrollTo().assertIsDisplayed()
         compose.onNodeWithTag("colours-chooser-home").performScrollTo().assertIsDisplayed()
     }
 }

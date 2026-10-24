@@ -342,6 +342,17 @@ Practice still exposes digital time only after a correct Check. The semantic tim
 drag geometry, snapping, task selection, speech, attempts and persistence are unchanged.
 Narrow-screen label readability and overlap at representative times require rendered
 EN/DE large-text portrait/landscape review before declaring visual acceptance.
+
+# Colours matching and four-colour Sort routes — Phase 5A.2 (2026-10-23)
+
+The production Home Colours entry still opens `COLOURS_CHOOSER`. Explore and Find
+retain `COLOURS_EXPLORE` and `COLOURS_FIND`. Match uses the distinct
+`COLOURS_MATCH` destination; Four-Colour Sort uses `FOUR_COLOUR_SORT`. Sort from
+the chooser continues to use `COLOUR_SORT_FROM_CHOOSER`, while the historical
+`COLOUR_SORT` destination still restores the original two-colour activity directly.
+All five chooser destinations return to the chooser on Back; chooser Back returns
+to native Home, explicit Home returns to illustrated Home, and Options restores the
+originating route. No persisted route identity was renamed or repurposed.
 # Colours chooser routes — Phase 5A.1 (2026-10-22)
 
 The production Home Colours entry opens `COLOURS_CHOOSER`. The new `COLOURS_EXPLORE`

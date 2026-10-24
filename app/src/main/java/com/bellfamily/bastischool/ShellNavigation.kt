@@ -3,7 +3,7 @@ package com.bellfamily.bastischool
 import java.util.concurrent.atomic.AtomicReference
 import com.bellfamily.bastischool.ui.home.validHomePage
 
-internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS_CHOOSER, SEASONS, WILMA_CHOOSER, WILMA, VOCABULARY_CHOOSER, VOCABULARY, TELL_ME, FOLLOW_LEVELS, FOLLOW_INSTRUCTIONS, FOLLOW_TWO, COLOURS_CHOOSER, COLOURS_EXPLORE, COLOURS_FIND, COLOUR_SORT_FROM_CHOOSER, COLOUR_SORT, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH, COMPARE_QUANTITY, NUMBER_ORDER, ADD_TOGETHER, CLOCK, CLOCK_MAKE, MONTHS_CHOOSER, MONTHS, MONTHS_FIND, MONTHS_RELATIONS, MONTHS_MISSING, MONTHS_BETWEEN, MONTHS_BETWEEN_WHEEL, MONTHS_BUILD_YEAR_LEVELS, MONTHS_BUILD_YEAR, MONTHS_BUILD_YEAR_FOUR, MONTHS_SEASONS, MONTHS_SEASONS_WHEEL }
+internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS_CHOOSER, SEASONS, WILMA_CHOOSER, WILMA, VOCABULARY_CHOOSER, VOCABULARY, TELL_ME, FOLLOW_LEVELS, FOLLOW_INSTRUCTIONS, FOLLOW_TWO, COLOURS_CHOOSER, COLOURS_EXPLORE, COLOURS_FIND, COLOURS_MATCH, COLOUR_SORT_FROM_CHOOSER, FOUR_COLOUR_SORT, COLOUR_SORT, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH, COMPARE_QUANTITY, NUMBER_ORDER, ADD_TOGETHER, CLOCK, CLOCK_MAKE, MONTHS_CHOOSER, MONTHS, MONTHS_FIND, MONTHS_RELATIONS, MONTHS_MISSING, MONTHS_BETWEEN, MONTHS_BETWEEN_WHEEL, MONTHS_BUILD_YEAR_LEVELS, MONTHS_BUILD_YEAR, MONTHS_BUILD_YEAR_FOUR, MONTHS_SEASONS, MONTHS_SEASONS_WHEEL }
 internal enum class BackAction { EXIT, HOME_ROOT, CLOSE_OPTIONS, LEGACY, NATIVE_HOME, DAYS_HUB, SEASONS_CHOOSER, WILMA_CHOOSER, VOCABULARY_CHOOSER, COLOURS_CHOOSER, CLOCK_AREA, MONTHS_AREA, FOLLOW_LEVELS }
 
 /** Options is an overlay on one destination, never another entry in a growing stack. */
@@ -25,7 +25,7 @@ internal data class ShellNavigation(
         ShellScreen.ADD_TOGETHER, ShellScreen.CLOCK -> BackAction.NATIVE_HOME
         ShellScreen.COMPARE_QUANTITY -> BackAction.NATIVE_HOME
         ShellScreen.VOCABULARY -> BackAction.VOCABULARY_CHOOSER
-        ShellScreen.COLOURS_EXPLORE, ShellScreen.COLOURS_FIND, ShellScreen.COLOUR_SORT_FROM_CHOOSER -> BackAction.COLOURS_CHOOSER
+        ShellScreen.COLOURS_EXPLORE, ShellScreen.COLOURS_FIND, ShellScreen.COLOURS_MATCH, ShellScreen.COLOUR_SORT_FROM_CHOOSER, ShellScreen.FOUR_COLOUR_SORT -> BackAction.COLOURS_CHOOSER
         ShellScreen.PREPOSITIONS, ShellScreen.DAYS_SEASONS, ShellScreen.VOCABULARY_CHOOSER, ShellScreen.TELL_ME, ShellScreen.FOLLOW_LEVELS, ShellScreen.COLOUR_SORT, ShellScreen.ANIMAL_GROUPS, ShellScreen.WASH_HANDS, ShellScreen.SUBITISING, ShellScreen.QUANTITY_MATCH -> BackAction.NATIVE_HOME
         ShellScreen.SEASONS -> BackAction.SEASONS_CHOOSER
         ShellScreen.WILMA -> BackAction.WILMA_CHOOSER
@@ -44,8 +44,10 @@ internal data class ShellNavigation(
     fun openColoursChooser() = ShellNavigation(ShellScreen.COLOURS_CHOOSER)
     fun openColoursExplore() = ShellNavigation(ShellScreen.COLOURS_EXPLORE)
     fun openColoursFind() = ShellNavigation(ShellScreen.COLOURS_FIND)
+    fun openColoursMatch() = ShellNavigation(ShellScreen.COLOURS_MATCH)
     /** Separate shell route preserves the pre-chooser COLOUR_SORT restoration contract. */
     fun openColourSortFromChooser() = ShellNavigation(ShellScreen.COLOUR_SORT_FROM_CHOOSER)
+    fun openFourColourSort() = ShellNavigation(ShellScreen.FOUR_COLOUR_SORT)
     fun openSubitising() = ShellNavigation(ShellScreen.SUBITISING)
     fun openQuantityMatch() = ShellNavigation(ShellScreen.QUANTITY_MATCH)
     fun openCompareQuantity() = ShellNavigation(ShellScreen.COMPARE_QUANTITY)

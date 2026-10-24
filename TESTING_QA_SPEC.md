@@ -534,3 +534,20 @@ to the disposable emulator. Physical-device, actual TalkBack, switch-access,
 offline-voice and child-use acceptance remain owner-deferred; `UX-ANR-01`
 remains separate. Detailed screenshots, run chronology and visual findings are
 in [`docs/colours-phase5a1-review/REVIEW.md`](docs/colours-phase5a1-review/REVIEW.md).
+
+# Phase 5A.2 Colours validation — 2026-10-23
+
+Match Colours and Four-Colour Sort validation: full JVM **569/569 passed**
+(0 failures/errors/skips); `assembleDebug`, `assembleDebugAndroidTest`, and
+`lintDebug` passed (0 lint errors, 5 existing warnings). The complete API 35 suite
+first completed **579 tests with 3 failures, 0 skips**. All three were PixelCopy
+capture failures in the existing `MonthsSeasonWheelScreenTest`; no Colours test
+failed. The Months wheel parameterized class then passed **12/12** on the same
+disposable API 35 AVD. A second complete run passed **579/579**, 0 failures and
+0 skips, in 56m 46s. No source/test change was made between the full runs. The first
+run's failures remain historical evidence, not silently erased. See
+[`docs/colours-phase5a2-review/REVIEW.md`](docs/colours-phase5a2-review/REVIEW.md)
+for per-run detail and emulator screenshots. After visual inspection identified a
+stale English chooser capture during the navigation transition, the route test was
+updated to wait for the chooser node and Compose idle before capture; Android-test
+compilation and the corrected route test passed (1/1).
