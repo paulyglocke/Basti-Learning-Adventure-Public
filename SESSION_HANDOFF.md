@@ -3443,8 +3443,9 @@ emulator owner data was cleared.
 
 ### Resume in the next terminal
 
-Start from commit `6d71b578d66cc2a92d13ecbec7a348457cd55c93` on `main`. Phase
-5B-R2 is complete and READY FOR R3; do not repeat its implementation. The next
+Start from the current `main` head. The Phase 5B-R2 implementation commit is
+`6d71b578d66cc2a92d13ecbec7a348457cd55c93`; the handoff update is on top of it.
+Phase 5B-R2 is complete and READY FOR R3; do not repeat its implementation. The next
 task is Phase 5B-R3 validation: run the complete API 35 instrumentation suite on
 the disposable emulator, record exact pass/fail/error/skip totals, and investigate
 any failures. Preserve the current 579/579 JVM result and focused API 35 results
