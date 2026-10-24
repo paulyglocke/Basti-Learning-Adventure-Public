@@ -94,6 +94,17 @@ class ColoursViewModel @JvmOverloads constructor(
         else { epoch++; audio.word(selected, language, replay = true) }
     }
 
+    fun speakRainbow(index: Int) {
+        if (!ready() || !visible || index !in RainbowContent.order.indices) return
+        val id = RainbowContent.order[index]
+        audio.say("rainbow-explore", language, RainbowContent.definition(id).text)
+    }
+
+    fun speakRainbowOrder(help: Boolean = false) {
+        if (!ready() || !visible) return
+        audio.say("rainbow-order", language, if (help) RainbowContent.orderHelp else RainbowContent.orderInstruction)
+    }
+
     fun help() { quiz?.let { if (ready() && findActive) action(SessionAction.Hint(it.task.id)) } }
 
     fun action(action: SessionAction) {

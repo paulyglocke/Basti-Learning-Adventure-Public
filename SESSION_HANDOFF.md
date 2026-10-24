@@ -3373,3 +3373,68 @@ during navigation. The route test now asserts the chooser content and waits for
 Compose idle before capturing; the corrected API 35 route test passed 1/1 and the
 gallery image was replaced. This was a test/evidence timing correction; production
 behavior was unchanged.
+
+## Phase 5B-R — Rainbow continuation (2026-10-24, checkpoint before R2)
+
+Resumed the seven-file Rainbow draft at baseline `483f81071b62a8b3174a842e336675cfaf172b64`.
+Rainbow Explore/Order routes, chooser entries, seven bilingual colour IDs/names, revised
+curved-band geometry, two-column accessible label alternatives, and Replay/Help speech
+callbacks are present. Added two Rainbow content JVM tests and two Compose UI tests.
+Starter order uses the supported subset Red, Yellow, Blue, Violet, with the complete model
+visible; Full order uses all seven. Existing five Colours activities and Animal Groups
+sources were not changed.
+
+Focused verification: four `ColourScreensTest` instrumentation cases passed on the
+disposable API 35 AVD (`emulator-5554`, `Colours_Phase5A1B_API35`). The first run had two
+failures (lowercase German label expectation and a reversed starter test selection); both
+were corrected, and the rerun passed 4/4 in 5m 57s. Focused JVM tests passed 20/20
+(Rainbow 2, Colours 6, ShellNavigation 12); `assembleDebug` and `git diff --check` passed.
+
+At that checkpoint, Rainbow Order remained Compose-local/saveable state, without a durable
+journal, stable session/task identities, shared Progress Tracker events, idempotent delivery,
+or verified crash/process restoration. Help reveals the model but support use is not recorded;
+wrong/complete attempts are not recorded. Route/back/options/language integration and the
+responsive screenshot matrix were not instrumented. No screenshot gallery or visual report
+was created. Do not mark Phase 5B-R ready or commit this work until those gaps are closed.
+The original Colour Sort, Find, Match, Four-Colour Sort and Animal Groups persisted contracts
+remain unchanged. The follow-up below records the subsequent R2 work without rewriting
+this earlier incomplete validation state.
+
+## Phase 5B-R2 — Rainbow Order durability (2026-10-24, uncommitted)
+
+Rainbow Order's production route now uses an activity-owned `RainbowOrderHost` and
+`RainbowOrderViewModel`, backed by two independent journals: Starter uses four
+positions (Red, Yellow, Blue, Violet) with the full rainbow visible as its model;
+Full uses all seven conventional bands. Both share new activity identity
+`activity.colours.rainbow_order` revision 1/content 1.1 but use separate task
+definitions, contexts, and session files. `rainbow-order-active-level` durably
+selects which level a fresh ViewModel restores. RBO1 checkpoints persist the exact
+seeded choice order, progress steps, support/replay state, language, completion,
+acknowledgement and pending progress events. No existing Colours activity
+identity or journal format was altered.
+
+Correct and incorrect placements use the shared Progress Repository event IDs.
+The journal stores pending events before delivery; recovery and event retries are
+idempotent. Starter placements are conservatively marked `SupportUse.hint=true`
+because its complete example is always visible. This avoids unsupported mastery
+claims with the existing support schema. Explore remains unscored. A production
+route test found that changing language in Options while the ViewModel was hidden
+left the session in English; visibility restoration now synchronizes the stored
+language without changing semantic challenge state.
+
+Final evidence (API 35 disposable AVD `emulator-5554`): focused Rainbow JVM
+**10/10**; Rainbow owner-restoration instrumentation **1/1**; Rainbow chooser/
+Options/language/Back route **1/1**; historical Colour Sort CSR1 fixture **1/1**;
+existing Colours chooser regression **1/1**. Full JVM suite **579/579** with no
+failures/errors/skips. `assembleDebug`, `assembleDebugAndroidTest`, lint (0 errors,
+5 existing warnings) and `git diff --check` passed. The full app-wide API 35
+instrumentation suite was not run and remains an explicit R3 follow-up; the
+previous 579/579 instrumentation count is only the pre-Rainbow baseline. Initial failed test runs
+and their causes are preserved in
+[`docs/rainbow-phase5br2-review/REVIEW.md`](docs/rainbow-phase5br2-review/REVIEW.md).
+
+The Android restoration test creates fresh ViewModels against isolated durable
+storage; it does not simulate OS process termination or power loss. Physical
+device, actual TalkBack, switch-access, child-use and offline-voice acceptance
+remain owner-deferred. `UX-ANR-01` remains separate. All changes remain
+uncommitted and unpushed; no emulator owner data was cleared.

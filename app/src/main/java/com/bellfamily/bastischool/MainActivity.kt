@@ -100,6 +100,7 @@ import com.bellfamily.bastischool.ui.numberorder.*
 import com.bellfamily.bastischool.ui.addition.*
 import com.bellfamily.bastischool.ui.coloursort.*
 import com.bellfamily.bastischool.ui.colours.*
+import com.bellfamily.bastischool.learning.colours.RainbowOrderAction
 import com.bellfamily.bastischool.ui.animalgroups.*
 import com.bellfamily.bastischool.ui.washhands.*
 import androidx.compose.runtime.CompositionLocalProvider
@@ -174,6 +175,7 @@ class MainActivity : ComponentActivity() {
     private lateinit var nativeColours: ColoursViewModel
     private lateinit var nativeColourMatch: MatchColoursViewModel
     private lateinit var nativeFourColourSort: FourColourSortViewModel
+    private lateinit var nativeRainbowOrder: RainbowOrderViewModel
     private lateinit var nativeMonths: MonthsViewModel
     private lateinit var nativeClock: ClockViewModel
     private lateinit var nativeSubitising: SubitisingViewModel
@@ -220,6 +222,7 @@ class MainActivity : ComponentActivity() {
         nativeColours = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[ColoursViewModel::class.java]
         nativeColourMatch = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[MatchColoursViewModel::class.java]
         nativeFourColourSort = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[FourColourSortViewModel::class.java]
+        nativeRainbowOrder = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[RainbowOrderViewModel::class.java]
         nativeAnimalGroups = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[AnimalGroupsViewModel::class.java]
         nativeWashHands = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[WashHandsViewModel::class.java]
         nativeMonths = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[MonthsViewModel::class.java]
@@ -271,7 +274,8 @@ class MainActivity : ComponentActivity() {
         // because their content is a summary rather than the active activity heading.
         val contentOwnsTitle = when (screen) {
             ShellScreen.CLOCK, ShellScreen.FOLLOW_LEVELS, ShellScreen.COLOURS_CHOOSER,
-            ShellScreen.COLOURS_EXPLORE, ShellScreen.COLOURS_FIND, ShellScreen.COLOURS_MATCH, ShellScreen.FOUR_COLOUR_SORT -> true
+            ShellScreen.COLOURS_EXPLORE, ShellScreen.COLOURS_FIND, ShellScreen.COLOURS_MATCH, ShellScreen.FOUR_COLOUR_SORT,
+            ShellScreen.RAINBOW_EXPLORE, ShellScreen.RAINBOW_ORDER -> true
             ShellScreen.ADD_TOGETHER -> nativeAddition.state?.phase != SessionPhase.COMPLETED
             ShellScreen.COMPARE_QUANTITY -> nativeCompareQuantity.state?.phase != SessionPhase.COMPLETED
             ShellScreen.NUMBER_ORDER -> nativeNumberOrder.state?.phase != SessionPhase.COMPLETED
@@ -320,6 +324,8 @@ class MainActivity : ComponentActivity() {
                                     ShellScreen.COLOUR_SORT_FROM_CHOOSER -> if (language == "de") "Farben sortieren" else "Colour Sort"
                                     ShellScreen.COLOURS_MATCH -> if (language == "de") "Farben zuordnen" else "Match Colours"
                                     ShellScreen.FOUR_COLOUR_SORT -> if (language == "de") "Vier Farben sortieren" else "Four-Colour Sort"
+                                    ShellScreen.RAINBOW_EXPLORE -> if (language == "de") "Der Regenbogen" else "The Rainbow"
+                                    ShellScreen.RAINBOW_ORDER -> if (language == "de") "Regenbogen ordnen" else "Rainbow Order"
                                     ShellScreen.ANIMAL_GROUPS -> if (language == "de") "Tiere zuordnen" else "Animal Groups"
                                     ShellScreen.WASH_HANDS -> if (language == "de") "Hände waschen" else "Wash Hands"
                                     ShellScreen.SUBITISING -> if (language == "de") "Wie viele?" else "How many?"
@@ -400,6 +406,8 @@ class MainActivity : ComponentActivity() {
                             onFind = { changeRoute(navigation.openColoursFind()) },
                             onMatch = { changeRoute(navigation.openColoursMatch()) },
                             onFourSort = { changeRoute(navigation.openFourColourSort()) },
+                            onRainbowExplore = { changeRoute(navigation.openRainbowExplore()) },
+                            onRainbowOrder = { changeRoute(navigation.openRainbowOrder()) },
                             onSort = { changeRoute(navigation.openColourSortFromChooser()) },
                             onRetry = nativeColours::retry,
                             onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding))
@@ -423,6 +431,20 @@ class MainActivity : ComponentActivity() {
                             nativeColourMatch::replay, nativeColourMatch::help, nativeColourMatch::action,
                             { celebrationSound.cancel(); nativeColourMatch.again() }, nativeColourMatch::retry,
                             onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration)
+                        ShellScreen.RAINBOW_EXPLORE -> RainbowExploreScreen(
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            { raw -> raw.toIntOrNull()?.let(nativeColours::speakRainbow) },
+                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding))
+                        ShellScreen.RAINBOW_ORDER -> RainbowOrderSessionScreen(
+                            nativeRainbowOrder.state,
+                            nativeRainbowOrder.level,
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            nativeRainbowOrder.busy, nativeRainbowOrder.saveFailed,
+                            nativeRainbowOrder::activate, nativeRainbowOrder::dispatch,
+                            nativeRainbowOrder::again, nativeRainbowOrder::retry,
+                            { nativeRainbowOrder.dispatch(RainbowOrderAction.Replay(nativeRainbowOrder.state?.task ?: return@RainbowOrderSessionScreen)) },
+                            { nativeRainbowOrder.dispatch(RainbowOrderAction.Help(nativeRainbowOrder.state?.task ?: return@RainbowOrderSessionScreen)) },
+                            onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding))
                         ShellScreen.COLOUR_SORT_FROM_CHOOSER -> ColourSortScreen(nativeColourSort.state,
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeColourSort.busy, nativeColourSort.saveFailed, nativeColourSort.audioFailed,
@@ -743,8 +765,9 @@ class MainActivity : ComponentActivity() {
         nativeSeasons.setVisible(foreground && route.screen in setOf(ShellScreen.SEASONS, ShellScreen.SEASONS_CHOOSER))
         nativeVocabulary.setVisible(foreground && route.screen in setOf(ShellScreen.VOCABULARY, ShellScreen.VOCABULARY_CHOOSER))
         nativeColourSort.setVisible(foreground && route.screen in setOf(ShellScreen.COLOUR_SORT, ShellScreen.COLOUR_SORT_FROM_CHOOSER))
-        nativeColours.setVisible(foreground && route.screen in setOf(ShellScreen.COLOURS_CHOOSER, ShellScreen.COLOURS_EXPLORE, ShellScreen.COLOURS_FIND),
+        nativeColours.setVisible(foreground && route.screen in setOf(ShellScreen.COLOURS_CHOOSER, ShellScreen.COLOURS_EXPLORE, ShellScreen.COLOURS_FIND, ShellScreen.RAINBOW_EXPLORE),
             route.screen == ShellScreen.COLOURS_FIND)
+        nativeRainbowOrder.setVisible(foreground && route.screen == ShellScreen.RAINBOW_ORDER)
         nativeColourMatch.setVisible(foreground && route.screen == ShellScreen.COLOURS_MATCH)
         nativeFourColourSort.setVisible(foreground && route.screen == ShellScreen.FOUR_COLOUR_SORT)
         nativeAnimalGroups.setVisible(foreground && route.screen == ShellScreen.ANIMAL_GROUPS)
@@ -846,6 +869,8 @@ class MainActivity : ComponentActivity() {
         nativeColours.configure(prefs.getString("lang", "en") ?: "en",
             prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
             prefs.getInt("round", 5))
+        nativeRainbowOrder.configure(prefs.getString("lang", "en") ?: "en")
+        nativeRainbowOrder.configureAudio(prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all")
         nativeColourMatch.configure(prefs.getString("lang", "en") ?: "en",
             prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "off", prefs.getInt("round", 5))
         nativeFourColourSort.configure(prefs.getString("lang", "en") ?: "en",
@@ -987,8 +1012,8 @@ class MainActivity : ComponentActivity() {
         if (navigation.ownsWebSession) outState.putString("legacySession", checkpoint.read())
         super.onSaveInstanceState(outState)
     }
-    override fun onPause() { celebrationSound.cancel(); foreground = false; nativePositions.setVisible(false); nativeSeasons.setVisible(false); nativeWilma.setVisible(false); nativeVocabulary.setVisible(false); nativeMonths.setVisible(false); nativeClock.setVisible(false); nativeSubitising.setVisible(false); nativeQuantityMatch.setVisible(false); nativeCompareQuantity.setVisible(false); nativeNumberOrder.setVisible(false); nativeAddition.setVisible(false); nativeFollow.setVisible(false); nativeColours.setVisible(false, false); nativeColourMatch.setVisible(false); nativeFourColourSort.setVisible(false); nativeColourSort.setVisible(false); nativeAnimalGroups.setVisible(false); nativeWashHands.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
-    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen in setOf(ShellScreen.SEASONS, ShellScreen.SEASONS_CHOOSER)); nativeWilma.setVisible(navigation.screen in setOf(ShellScreen.WILMA_CHOOSER, ShellScreen.WILMA)); nativeVocabulary.setVisible(navigation.screen in setOf(ShellScreen.VOCABULARY, ShellScreen.VOCABULARY_CHOOSER)); nativeMonths.setVisible(navigation.screen in monthScreens, monthsMode(navigation.screen)); nativeClock.setVisible(navigation.screen in listOf(ShellScreen.CLOCK, ShellScreen.CLOCK_MAKE), navigation.screen == ShellScreen.CLOCK_MAKE); nativeSubitising.setVisible(navigation.screen == ShellScreen.SUBITISING); nativeQuantityMatch.setVisible(navigation.screen == ShellScreen.QUANTITY_MATCH); nativeCompareQuantity.setVisible(navigation.screen == ShellScreen.COMPARE_QUANTITY); nativeNumberOrder.setVisible(navigation.screen == ShellScreen.NUMBER_ORDER); nativeAddition.setVisible(navigation.screen == ShellScreen.ADD_TOGETHER); nativeFollow.setVisible(navigation.screen in setOf(ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO), when (navigation.screen) { ShellScreen.FOLLOW_INSTRUCTIONS -> FollowLevel.ONE; ShellScreen.FOLLOW_TWO -> FollowLevel.TWO; else -> null }); nativeColours.setVisible(navigation.screen in setOf(ShellScreen.COLOURS_CHOOSER, ShellScreen.COLOURS_EXPLORE, ShellScreen.COLOURS_FIND), navigation.screen == ShellScreen.COLOURS_FIND); nativeColourMatch.setVisible(navigation.screen == ShellScreen.COLOURS_MATCH); nativeFourColourSort.setVisible(navigation.screen == ShellScreen.FOUR_COLOUR_SORT); nativeColourSort.setVisible(navigation.screen in setOf(ShellScreen.COLOUR_SORT, ShellScreen.COLOUR_SORT_FROM_CHOOSER)); nativeAnimalGroups.setVisible(navigation.screen == ShellScreen.ANIMAL_GROUPS); nativeWashHands.setVisible(navigation.screen == ShellScreen.WASH_HANDS); updateWebActivity() }
+    override fun onPause() { celebrationSound.cancel(); foreground = false; nativePositions.setVisible(false); nativeSeasons.setVisible(false); nativeWilma.setVisible(false); nativeVocabulary.setVisible(false); nativeMonths.setVisible(false); nativeClock.setVisible(false); nativeSubitising.setVisible(false); nativeQuantityMatch.setVisible(false); nativeCompareQuantity.setVisible(false); nativeNumberOrder.setVisible(false); nativeAddition.setVisible(false); nativeFollow.setVisible(false); nativeColours.setVisible(false, false); nativeRainbowOrder.setVisible(false); nativeColourMatch.setVisible(false); nativeFourColourSort.setVisible(false); nativeColourSort.setVisible(false); nativeAnimalGroups.setVisible(false); nativeWashHands.setVisible(false); cancelAudio(); updateWebActivity(); super.onPause() }
+    override fun onResume() { super.onResume(); foreground = true; nativePositions.setVisible(navigation.screen == ShellScreen.PREPOSITIONS); nativeSeasons.setVisible(navigation.screen in setOf(ShellScreen.SEASONS, ShellScreen.SEASONS_CHOOSER)); nativeWilma.setVisible(navigation.screen in setOf(ShellScreen.WILMA_CHOOSER, ShellScreen.WILMA)); nativeVocabulary.setVisible(navigation.screen in setOf(ShellScreen.VOCABULARY, ShellScreen.VOCABULARY_CHOOSER)); nativeMonths.setVisible(navigation.screen in monthScreens, monthsMode(navigation.screen)); nativeClock.setVisible(navigation.screen in listOf(ShellScreen.CLOCK, ShellScreen.CLOCK_MAKE), navigation.screen == ShellScreen.CLOCK_MAKE); nativeSubitising.setVisible(navigation.screen == ShellScreen.SUBITISING); nativeQuantityMatch.setVisible(navigation.screen == ShellScreen.QUANTITY_MATCH); nativeCompareQuantity.setVisible(navigation.screen == ShellScreen.COMPARE_QUANTITY); nativeNumberOrder.setVisible(navigation.screen == ShellScreen.NUMBER_ORDER); nativeAddition.setVisible(navigation.screen == ShellScreen.ADD_TOGETHER); nativeFollow.setVisible(navigation.screen in setOf(ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO), when (navigation.screen) { ShellScreen.FOLLOW_INSTRUCTIONS -> FollowLevel.ONE; ShellScreen.FOLLOW_TWO -> FollowLevel.TWO; else -> null }); nativeColours.setVisible(navigation.screen in setOf(ShellScreen.COLOURS_CHOOSER, ShellScreen.COLOURS_EXPLORE, ShellScreen.COLOURS_FIND, ShellScreen.RAINBOW_EXPLORE), navigation.screen == ShellScreen.COLOURS_FIND); nativeRainbowOrder.setVisible(navigation.screen == ShellScreen.RAINBOW_ORDER); nativeColourMatch.setVisible(navigation.screen == ShellScreen.COLOURS_MATCH); nativeFourColourSort.setVisible(navigation.screen == ShellScreen.FOUR_COLOUR_SORT); nativeColourSort.setVisible(navigation.screen in setOf(ShellScreen.COLOUR_SORT, ShellScreen.COLOUR_SORT_FROM_CHOOSER)); nativeAnimalGroups.setVisible(navigation.screen == ShellScreen.ANIMAL_GROUPS); nativeWashHands.setVisible(navigation.screen == ShellScreen.WASH_HANDS); updateWebActivity() }
     override fun onDestroy() { celebrationSound.close(); disposeWebView(); tts?.shutdown(); tts = null; super.onDestroy() }
 }
 

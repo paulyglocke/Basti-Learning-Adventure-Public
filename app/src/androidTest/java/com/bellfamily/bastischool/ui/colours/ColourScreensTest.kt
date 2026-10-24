@@ -67,4 +67,46 @@ class ColourScreensTest {
         compose.onNodeWithTag("colour-find-next").performScrollTo().assertIsDisplayed().performClick()
         assertEquals(1, state.index)
     }
+
+    @Test fun rainbowExploreSelectsEveryBandAndReplayUsesSelectedBand() {
+        var spoken = -1
+        compose.setContent { MaterialTheme {
+            RainbowExploreScreen(ContentLanguage.GERMAN, { spoken = it.toInt() }, {}, Modifier)
+        } }
+        for (index in 0..6) {
+            compose.onNodeWithTag("rainbow-band-$index").performScrollTo().assertIsDisplayed().performClick()
+            compose.onNodeWithTag("rainbow-selected-name").assertTextEquals(
+                listOf("Rot", "Orange", "Gelb", "Grün", "Blau", "Indigo", "Violett")[index])
+            compose.runOnIdle { assertEquals(index, spoken) }
+        }
+        compose.onNodeWithTag("rainbow-replay").performScrollTo().performClick()
+        compose.runOnIdle { assertEquals(6, spoken) }
+    }
+
+    @Test fun rainbowOrderStarterAndFullChallengesBuildTheCanonicalOrder() {
+        var replay = 0
+        var help = 0
+        compose.setContent { MaterialTheme {
+            RainbowOrderScreen(ContentLanguage.ENGLISH, { replay++ }, { help++ }, {}, Modifier)
+        } }
+        compose.onNodeWithTag("rainbow-order-model").assertIsDisplayed()
+        compose.onNodeWithTag("rainbow-order-choice-0").performClick()
+        compose.onNodeWithTag("rainbow-order-choice-2").performClick()
+        compose.onNodeWithTag("rainbow-order-choice-4").performClick()
+        compose.onNodeWithTag("rainbow-order-choice-6").performClick()
+        compose.onNodeWithTag("rainbow-order-feedback").assertTextEquals("That is the rainbow order!")
+        compose.onNodeWithTag("rainbow-order-replay").performScrollTo().performClick()
+        compose.onNodeWithTag("rainbow-order-help").performScrollTo().performClick()
+        compose.onNodeWithText("All seven").performScrollTo().performClick()
+        compose.onNodeWithTag("rainbow-order-model").assertDoesNotExist()
+        compose.onNodeWithTag("rainbow-order-choice-0").performClick()
+        compose.onNodeWithTag("rainbow-order-choice-1").performClick()
+        compose.onNodeWithTag("rainbow-order-choice-2").performClick()
+        compose.onNodeWithTag("rainbow-order-choice-3").performClick()
+        compose.onNodeWithTag("rainbow-order-choice-4").performClick()
+        compose.onNodeWithTag("rainbow-order-choice-5").performClick()
+        compose.onNodeWithTag("rainbow-order-choice-6").performClick()
+        compose.onNodeWithTag("rainbow-order-feedback").assertTextEquals("That is the rainbow order!")
+        compose.runOnIdle { assertEquals(1, replay); assertEquals(1, help) }
+    }
 }

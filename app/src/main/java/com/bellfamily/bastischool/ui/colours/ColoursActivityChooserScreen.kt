@@ -33,7 +33,9 @@ fun ColoursActivityChooserScreen(
     onHome: () -> Unit,
     modifier: Modifier = Modifier,
     onMatch: () -> Unit = {},
-    onFourSort: () -> Unit = {}
+    onFourSort: () -> Unit = {},
+    onRainbowExplore: () -> Unit = {},
+    onRainbowOrder: () -> Unit = {}
 ) {
     val german = language == ContentLanguage.GERMAN
     fun t(en: String, de: String) = if (german) de else en
@@ -74,6 +76,14 @@ fun ColoursActivityChooserScreen(
         ColourActivityChoice("colours-open-sort-four", t("Four-Colour Sort", "Vier Farben sortieren"),
             t("Sort eight objects into four colour groups.", "Sortiere acht Dinge in vier Farbgruppen."),
             ready && !busy && !saveFailed, onFourSort)
+        Text(t("Discover the rainbow", "Den Regenbogen entdecken"), Modifier.fillMaxWidth().semantics { heading() },
+            style = BastiTypography.answer, color = BastiPalette.ink)
+        ColourActivityChoice("colours-open-rainbow-explore", t("The Rainbow", "Der Regenbogen"),
+            t("Explore seven colours in their traditional order.", "Entdecke sieben Farben in ihrer traditionellen Reihenfolge."),
+            ready && !busy && !saveFailed, onRainbowExplore)
+        ColourActivityChoice("colours-open-rainbow-order", t("Rainbow Order", "Regenbogen ordnen"),
+            t("Use an example to place rainbow colours in order.", "Ordne die Regenbogenfarben mithilfe eines Beispiels."),
+            ready && !busy && !saveFailed, onRainbowOrder)
         if (busy && !ready) Text(t("Opening Colours…", "Farben werden geöffnet …"), Modifier.testTag("colours-chooser-loading"))
         if (saveFailed) {
             NativeSupportMessage(t("Your saved work is safe. Try again.", "Deine gespeicherte Arbeit ist sicher. Versuche es noch einmal."),

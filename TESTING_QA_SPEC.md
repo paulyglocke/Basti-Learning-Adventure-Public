@@ -551,3 +551,22 @@ for per-run detail and emulator screenshots. After visual inspection identified 
 stale English chooser capture during the navigation transition, the route test was
 updated to wait for the chooser node and Compose idle before capture; Android-test
 compilation and the corrected route test passed (1/1).
+
+## Phase 5B-R2 Rainbow Order persistence — 2026-10-24
+
+Rainbow Order uses two durable level journals plus a checksummed active-level
+pointer. Focused JVM coverage exercises exact partial/completed restore, Starter
+support evidence, Full mistakes/retry/help/replay/language, deterministic
+identity, failed checkpoint writes, failed progress delivery, interrupted
+acknowledgement and event deduplication. API 35 tests use isolated test storage
+on the disposable `emulator-5554`; they must not clear or use original-device
+data. The focused owner test reconstructs fresh ViewModels and checks Starter
+and Full restoration. This does not simulate OS process termination.
+
+Final results and the R3 follow-up are recorded in
+[`docs/rainbow-phase5br2-review/REVIEW.md`](docs/rainbow-phase5br2-review/REVIEW.md).
+The full app-wide instrumentation suite was not run in R2; the earlier 579/579
+count is the pre-Rainbow baseline only. R3 must run a complete API 35 suite and
+report exact pass/failure/error/skip totals. Physical-device, actual TalkBack,
+switch-access, child-use and offline-voice acceptance remain owner-managed;
+`UX-ANR-01` remains separate.

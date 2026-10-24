@@ -4,8 +4,8 @@ import com.bellfamily.bastischool.audio.*
 import com.bellfamily.bastischool.learning.models.*
 import com.bellfamily.bastischool.learning.session.*
 
-class ColoursAudio(private val controller: AudioController, private val status: (SpeechResult?) -> Unit = {}) {
-    private val owner = SpeechOwner("native-colours")
+class ColoursAudio(private val controller: AudioController, ownerName: String = "native-colours", private val status: (SpeechResult?) -> Unit = {}) {
+    private val owner = SpeechOwner(ownerName)
     private var active = false
     private var revision = 0L
 
@@ -16,6 +16,10 @@ class ColoursAudio(private val controller: AudioController, private val status: 
     fun word(id: ContentId, language: ContentLanguage, replay: Boolean = false) = speak(
         "colours-explore", language, ColoursContent.definition(id).text, SpeechKind.OPTION,
         if (replay) SpeechTrigger.REPLAY else SpeechTrigger.MANUAL
+    )
+
+    fun say(id: String, language: ContentLanguage, text: ContentText, replay: Boolean = false) = speak(
+        id, language, text, SpeechKind.OPTION, if (replay) SpeechTrigger.REPLAY else SpeechTrigger.MANUAL
     )
 
     fun effects(id: SessionId, language: ContentLanguage, effects: List<SessionEffect>) {

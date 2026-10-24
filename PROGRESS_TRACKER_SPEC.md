@@ -307,3 +307,24 @@ without changing schema-1 encoding or dedupe IDs. Existing progress remains read
 older app builds do not accept new eight-task completions (downgrade unsupported).
 The separate write-ahead Clock journal retains failed delivery for idempotent retry.
 Explore still creates no correctness evidence. See NATIVE_ARCHITECTURE_SPEC.md.
+
+### Rainbow Order evidence (2026-10-24)
+
+Rainbow Order uses `activity.colours.rainbow_order` revision 1/content 1.1,
+`skill.colours.rainbow_sequence`, and distinct Starter/Full task definitions and
+contexts. Starter contains four positions (Red, Yellow, Blue, Violet) with the
+complete seven-band model visible; Full contains all seven conventional
+positions. Because the shared support schema has no “model visible” field,
+Starter attempt and completion evidence uses `SupportUse.hint=true` for each
+assessed position. This conservative existing representation prevents Starter
+from being recorded as unsupported independent seven-colour mastery. Full only
+records hint support when Help is requested. Replay is persisted support metadata
+but does not create an attempt.
+
+Each accepted placement produces an attempt event. Completion contains exactly
+the four or seven assessed tasks, preserving actual attempts, retries and support.
+The activity-owned RBO1 write-ahead journal persists pending events until the
+Progress Repository accepts them; stable attempt/session event IDs make recovery
+idempotent. Starter and Full journals are independent and do not reuse or migrate
+any existing Colours journal. Rainbow Explore remains unscored. No shared progress
+schema or deduplication format changed.
