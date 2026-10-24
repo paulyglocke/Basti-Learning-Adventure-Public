@@ -3400,7 +3400,7 @@ The original Colour Sort, Find, Match, Four-Colour Sort and Animal Groups persis
 remain unchanged. The follow-up below records the subsequent R2 work without rewriting
 this earlier incomplete validation state.
 
-## Phase 5B-R2 — Rainbow Order durability (2026-10-24, uncommitted)
+## Phase 5B-R2 — Rainbow Order durability (2026-10-24, committed and pushed)
 
 Rainbow Order's production route now uses an activity-owned `RainbowOrderHost` and
 `RainbowOrderViewModel`, backed by two independent journals: Starter uses four
@@ -3436,5 +3436,19 @@ and their causes are preserved in
 The Android restoration test creates fresh ViewModels against isolated durable
 storage; it does not simulate OS process termination or power loss. Physical
 device, actual TalkBack, switch-access, child-use and offline-voice acceptance
-remain owner-deferred. `UX-ANR-01` remains separate. All changes remain
-uncommitted and unpushed; no emulator owner data was cleared.
+remain owner-deferred. `UX-ANR-01` remains separate. R2 changes are committed
+and pushed in `6d71b578d66cc2a92d13ecbec7a348457cd55c93`; local
+`main` and `origin/main` match, and the working tree was clean at handoff. No
+emulator owner data was cleared.
+
+### Resume in the next terminal
+
+Start from commit `6d71b578d66cc2a92d13ecbec7a348457cd55c93` on `main`. Phase
+5B-R2 is complete and READY FOR R3; do not repeat its implementation. The next
+task is Phase 5B-R3 validation: run the complete API 35 instrumentation suite on
+the disposable emulator, record exact pass/fail/error/skip totals, and investigate
+any failures. Preserve the current 579/579 JVM result and focused API 35 results
+as R2 evidence; they are not substitutes for the full instrumentation run.
+Continue to keep `UX-ANR-01`, physical-device, TalkBack, switch-access, child-use
+and offline-voice acceptance separate. Commit/push authorization for any R3 work
+must be confirmed by the owner.
