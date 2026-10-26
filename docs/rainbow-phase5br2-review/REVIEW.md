@@ -113,9 +113,9 @@ it completed successfully.
 
 ## Remaining limitations and R3 work
 
-- The complete app-wide API 35 instrumentation suite was not run. The prior
-  baseline was 579/579 before the uncommitted Rainbow work; do not treat that as
-  current validation.
+- At the R2 checkpoint, the complete app-wide API 35 instrumentation suite was
+  incomplete. The prior 579/579 baseline was before the Rainbow changes; the
+  later R3 complete run is recorded below.
 - Android restoration coverage reconstructs a fresh ViewModel against isolated
   durable storage. It does not simulate OS process termination or device power
   loss.
@@ -149,3 +149,79 @@ it completed successfully.
 
 No application data, historical Colour Sort journal or emulator owner data was
 cleared. Instrumentation used only `emulator-5554` (`Colours_Phase5A1B_API35`).
+
+## Phase 5B-R3 full-suite attempt — 2026-10-26
+
+Repository verification before the attempt: branch `main`, HEAD and
+`origin/main` both `527730ec63754a477c25852d052f4d95b59b9905`, clean working tree.
+The API 35 disposable AVD `emulator-5554` was booted and had 3.8 GB free in
+`/data`; owner emulator `emulator-5556` was not used. No application data was
+cleared by us.
+
+The first full `connectedDebugAndroidTest` invocation installed the APKs but
+reported **0 tests**, with UTP `INSTRUMENTATION_FAILED: Process crashed`. Its XML
+has `tests=0`; the captured runner log contains only `shortMsg=Process crashed`,
+with no assertion or app exception that identifies a product defect. This is a
+runner-startup failure, not a test pass.
+
+A diagnostic retry used the same serial and reported **583 total tests**. It
+completed the English 1× `CompactTextVisibilityTest`, then the English 1.5× case
+ended the run with `Input dispatching timed out` (the app's
+`ComponentActivity` did not respond to a focus-loss event within 6 seconds).
+The XML reported 2 tests, 1 failure, 0 errors, 0 skips. A separate broad live
+logcat reader was running at the same time and produced excessive output; it may
+have contributed to emulator load. The timeout is therefore recorded, not
+reclassified as an application regression or dismissed as infrastructure.
+
+A clean retry was run without a concurrent logcat reader. It announced 583
+tests and completed **8 tests, 0 failures, 0 errors and 0 skips** before being
+stopped because of the observed runtime. The 8 completed tests were four
+`CompactTextVisibilityTest` cases (English/German at 1×/1.5×, 291.779 seconds
+total) and four English 1× `HomeBrowseLayoutTest` cases (phone, short landscape,
+tablet portrait and tablet landscape, 768.718 seconds total). The XML shows a
+ninth test started but incomplete; it is not counted as completed. The clean
+run had elapsed 1,106.532 seconds (18m 26.5s) when stopped; the eight completed
+testcase durations sum to 1,060.497 seconds. This is not a full-suite result,
+and the 575 remaining cases have no result from this run.
+
+The clean retry had no reported test failures among its 8 completed cases.
+It did not finish, so that attempt alone was incomplete. R3 was still open at
+this point; the earlier 1/0 timeout and 0/0 startup failure remain part of the
+validation history.
+
+## Phase 5B-R3 complete full-suite rerun — 2026-10-26
+
+The same disposable API 35 AVD was shut down cleanly and relaunched from its
+existing user data with `-cores 4 -memory 6144 -no-snapshot-load -no-window
+-no-audio`. The owner emulator `emulator-5556` remained untouched. Runtime
+checks confirmed API 35, four guest CPUs and `sys.boot_completed=1`. The full,
+unfiltered command was:
+
+```sh
+ANDROID_SERIAL=emulator-5554 ./gradlew connectedDebugAndroidTest --console=plain
+```
+
+Gradle discovered 583 tests and finished **583/583**, with 0 failures, 0 errors
+and 0 skips. `BUILD SUCCESSFUL` completed in 48m 25s. The XML report records
+`tests="583" failures="0" errors="0" skipped="0"` and 2888.64 seconds:
+`app/build/outputs/androidTest-results/connected/debug/TEST-Medium_Phone_API_35(AVD) - 15-_app-.xml`.
+This completes R3's remaining full API 35 validation item. The earlier startup
+failure, diagnostic timeout, and interrupted 8/583 retry remain accurately
+recorded above; none are presented as successful full-suite runs.
+
+The R3 documentation-only changes remain uncommitted pending owner review.
+
+R3 documentation-only changes are limited to `TESTING_QA_SPEC.md`,
+`SESSION_HANDOFF.md` and this review. They are uncommitted pending owner review.
+
+## Phase 5B-R3B visual acceptance follow-up — 2026-10-26
+
+The next visual and interaction review is in
+[`../rainbow-phase5br3b-review/REVIEW.md`](../rainbow-phase5br3b-review/REVIEW.md)
+with a genuine API 35 emulator screenshot gallery. It records bounded fixes to
+the Explore canvas/hit map and Rainbow Order responsive layout and destination
+semantics. The R3 583/583 result predates these production UI changes and does
+not validate them; R3B passed fresh complete API 35 instrumentation **586/586**,
+with 0 failures/errors/skips. Its final XML is preserved in the R3B review
+directory. The earlier failed/partial attempts above remain historical. No session/persistence model,
+Progress Tracker schema or Colour Sort journal changed in R3B.

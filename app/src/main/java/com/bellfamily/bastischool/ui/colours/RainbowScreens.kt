@@ -17,6 +17,8 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
@@ -33,13 +35,22 @@ fun RainbowExploreScreen(language: ContentLanguage, onSpeak: (String) -> Unit, o
     val german = language == ContentLanguage.GERMAN
     val names = RainbowContent.order.map { RainbowContent.definition(it).text.display[language].replaceFirstChar { ch -> ch.uppercase() } }
     val colors = RainbowContent.swatches.map { Color(it) }
+    val screenHeight = LocalConfiguration.current.screenHeightDp
+    val fontScale = LocalDensity.current.fontScale
+    val graphicHeight = when {
+        screenHeight < 350 -> 128.dp
+        fontScale >= 1.8f -> 180.dp
+        screenHeight < 470 -> 168.dp
+        screenHeight < 700 -> 220.dp
+        else -> 260.dp
+    }
     Column(modifier.fillMaxSize().background(BastiPalette.background).verticalScroll(rememberScrollState())
         .padding(BastiSpacing.medium), verticalArrangement = Arrangement.spacedBy(BastiSpacing.medium),
         horizontalAlignment = Alignment.CenterHorizontally) {
         NativeActivityTitle(if (german) "Der Regenbogen" else "The Rainbow")
         Text(names[selected], style = BastiTypography.question, color = BastiPalette.ink,
             modifier = Modifier.testTag("rainbow-selected-name"))
-        RainbowGraphic(colors, selected, names, Modifier.fillMaxWidth().heightIn(min = 180.dp, max = 360.dp)
+        RainbowGraphic(colors, selected, names, Modifier.fillMaxWidth().height(graphicHeight)
             .testTag("rainbow-graphic")) { index -> selected = index; onSpeak(index.toString()) }
         Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(6.dp)) {
             names.chunked(2).forEachIndexed { row, rowNames ->
@@ -79,14 +90,15 @@ private fun RainbowGraphic(colors: List<Color>, selected: Int, names: List<Strin
             val cx = width / 2f; val cy = height * .92f
             val outerRadius = minOf(width * .48f, height * .8f); val bandWidth = outerRadius / 7f
             val distance = kotlin.math.hypot(position.x - cx, position.y - cy)
-            val band = ((outerRadius - distance) / bandWidth).toInt()
-            if (position.y < cy && band in 0..6) onSelect(band)
+            val band = kotlin.math.floor((outerRadius - distance) / bandWidth + .5f).toInt()
+            if (position.y <= cy && band in 0..6) onSelect(band)
         } }) {
         val outer = minOf(size.width * .48f, size.height * .8f)
         val thickness = outer / 7f
         val center = Offset(size.width / 2f, size.height * .92f)
         colors.indices.reversed().forEach { i ->
             val radius = outer - i * thickness
+            // Positive sweep crosses the upper half in Compose's screen coordinate system.
             drawArc(colors[i], 180f, 180f, false,
                 topLeft = Offset(center.x - radius, center.y - radius),
                 size = androidx.compose.ui.geometry.Size(radius * 2, radius * 2),

@@ -1,0 +1,58 @@
+[
+  {
+    "file": "screenshots/order-starter-en-initial-phone.png",
+    "screen": "Rainbow Order — Starter",
+    "language": "English",
+    "state": "initial",
+    "viewport": "phone portrait emulator viewport, 1080×2400px, 411×914dp at 420dpi",
+    "fontScale": 1.0,
+    "width": 1080,
+    "height": 2400,
+    "densityDpi": 420,
+    "widthDp": 411,
+    "heightDp": 914,
+    "caption": "Rainbow Order — Starter; English initial state. Viewport: phone portrait emulator viewport, 1080×2400px, 411×914dp at 420dpi; font scale 1×."
+  },
+  {
+    "file": "screenshots/starter-en-completed.png",
+    "screen": "Rainbow Order — Starter",
+    "language": "English",
+    "state": "completed",
+    "viewport": "phone portrait emulator viewport, 1080×2400px, 411×914dp at 420dpi",
+    "fontScale": 1.0,
+    "width": 1080,
+    "height": 2400,
+    "densityDpi": 420,
+    "widthDp": 411,
+    "heightDp": 914,
+    "caption": "Rainbow Order — Starter; English; completed state, phone portrait emulator viewport, 1080×2400px, 411×914dp at 420dpi, 1× font scale."
+  },
+  {
+    "file": "screenshots/starter-en-initial.png",
+    "screen": "Rainbow Order — Starter",
+    "language": "English",
+    "state": "initial",
+    "viewport": "phone portrait emulator viewport, 1080×2400px, 411×914dp at 420dpi",
+    "fontScale": 1.0,
+    "width": 1080,
+    "height": 2400,
+    "densityDpi": 420,
+    "widthDp": 411,
+    "heightDp": 914,
+    "caption": "Rainbow Order — Starter; English; initial state, phone portrait emulator viewport, 1080×2400px, 411×914dp at 420dpi, 1× font scale."
+  },
+  {
+    "file": "screenshots/starter-en-partial.png",
+    "screen": "Rainbow Order — Starter",
+    "language": "English",
+    "state": "partial",
+    "viewport": "phone portrait emulator viewport, 1080×2400px, 411×914dp at 420dpi",
+    "fontScale": 1.0,
+    "width": 1080,
+    "height": 2400,
+    "densityDpi": 420,
+    "widthDp": 411,
+    "heightDp": 914,
+    "caption": "Rainbow Order — Starter; English; partial state, phone portrait emulator viewport, 1080×2400px, 411×914dp at 420dpi, 1× font scale."
+  }
+]

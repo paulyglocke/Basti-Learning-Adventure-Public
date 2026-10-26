@@ -1,5 +1,33 @@
 # Session handoff — 2026-10-21
 
+## Phase 5B-R3B — Rainbow visual acceptance (2026-10-26, uncommitted)
+
+Resumed from `527730ec63754a477c25852d052f4d95b59b9905` on `main`, matching
+`origin/main`. Preserved the existing uncommitted R3 documentation changes.
+Rainbow visual review is at
+[`docs/rainbow-phase5br3b-review/REVIEW.md`](docs/rainbow-phase5br3b-review/REVIEW.md)
+with 49 genuine API 35 emulator screenshots in
+[`gallery.html`](docs/rainbow-phase5br3b-review/gallery.html). The review found
+and corrected the absent Explore canvas height, arc/hit-region alignment,
+overly narrow Full choice columns, clipped short-landscape prompt, and missing
+placed-colour destination semantics. Before/after short-landscape captures are
+included. No learning sequence, persistence format or historical Colour Sort
+journal was changed.
+
+Final-source validation passed: fresh full JVM **579/579**; focused Rainbow,
+Colours and historical Colour Sort instrumentation **11/11**; full API 35
+instrumentation **586/586**, 0 failures/errors/skips, `BUILD SUCCESSFUL` in
+48m56s. The run’s XML testcase total is 2921.992 seconds and a copy is preserved
+at `docs/rainbow-phase5br3b-review/api35-full-android-test.xml`. Debug and test
+APK assembly and lint passed; lint has 0 errors and 5 existing warnings.
+`git diff --check` is to be rerun after final documentation edits. The earlier
+R3 result 583/583 predates R3B production changes and is historical only. Do not
+commit or push. `emulator-5554` was the disposable API 35 review AVD;
+`emulator-5556` and physical devices remain untouched. Physical device, actual
+TalkBack, switch-access, child-use, audible/offline voice and OS-managed
+process-death acceptance remain owner-managed/unverified. `UX-ANR-01` remains
+separate.
+
 ## UX Refresh Phase 4D — Vocabulary Booster (implemented, uncommitted)
 
 Started at `24de69103af3d79dc1966eb93b3bfd49b8ec2556` on `main`, which matched
@@ -3443,13 +3471,17 @@ emulator owner data was cleared.
 
 ### Resume in the next terminal
 
-Start from the current `main` head. The Phase 5B-R2 implementation commit is
-`6d71b578d66cc2a92d13ecbec7a348457cd55c93`; the handoff update is on top of it.
-Phase 5B-R2 is complete and READY FOR R3; do not repeat its implementation. The next
-task is Phase 5B-R3 validation: run the complete API 35 instrumentation suite on
-the disposable emulator, record exact pass/fail/error/skip totals, and investigate
-any failures. Preserve the current 579/579 JVM result and focused API 35 results
-as R2 evidence; they are not substitutes for the full instrumentation run.
-Continue to keep `UX-ANR-01`, physical-device, TalkBack, switch-access, child-use
-and offline-voice acceptance separate. Commit/push authorization for any R3 work
-must be confirmed by the owner.
+Start from current `main` plus the uncommitted R3 documentation notes. The
+Phase 5B-R2 implementation commit is
+`6d71b578d66cc2a92d13ecbec7a348457cd55c93`; the committed handoff baseline was
+`527730ec63754a477c25852d052f4d95b59b9905`. R2 implementation remains complete;
+do not repeat it. R3's complete API 35 instrumentation run has now passed
+583/583 on disposable `emulator-5554` (4 virtual CPUs, 6 GB RAM), with 0
+failures, errors or skips in 48m 25s. The earlier 0/0 startup, diagnostic
+timeout and interrupted 8/583 runs remain documented as failed/partial attempts;
+the final full run supersedes them for completion evidence. See
+`docs/rainbow-phase5br2-review/REVIEW.md` for exact evidence and report location.
+The full API 35 suite now satisfies the remaining R3 validation item. Keep
+`UX-ANR-01`, physical-device, actual TalkBack, switch-access, child-use and
+offline-voice acceptance separate. The R3 documentation notes remain
+uncommitted; no commit/push authorization has been given.

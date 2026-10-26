@@ -10,6 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
@@ -29,9 +31,13 @@ fun RainbowOrderSessionScreen(state: RainbowOrderState?, level: RainbowOrderLeve
     onReplay: () -> Unit, onHelp: () -> Unit, onHome: () -> Unit, modifier: Modifier = Modifier) {
     val de = language == ContentLanguage.GERMAN
     val enabled = !busy && !saveFailed
+    val compactHeight = LocalConfiguration.current.screenHeightDp < 350
     Column(modifier.fillMaxSize().background(BastiPalette.background).verticalScroll(rememberScrollState())
-        .padding(BastiSpacing.medium), verticalArrangement = Arrangement.spacedBy(BastiSpacing.medium)) {
-        NativeActivityTitle(if (de) "Regenbogen ordnen" else "Rainbow Order")
+        .padding(if (compactHeight) BastiSpacing.small else BastiSpacing.medium),
+        verticalArrangement = Arrangement.spacedBy(if (compactHeight) BastiSpacing.small else BastiSpacing.medium)) {
+        if (compactHeight) Text(if (de) "Regenbogen ordnen" else "Rainbow Order",
+            style = BastiTypography.answer, modifier = Modifier.semantics { heading() })
+        else NativeActivityTitle(if (de) "Regenbogen ordnen" else "Rainbow Order")
         Row(horizontalArrangement = Arrangement.spacedBy(BastiSpacing.small)) {
             FilterChip(level == RainbowOrderLevel.STARTER, { onLevel(RainbowOrderLevel.STARTER) }, enabled = enabled,
                 label = { Text(if (de) "Mit Beispiel" else "With example") })
@@ -39,7 +45,8 @@ fun RainbowOrderSessionScreen(state: RainbowOrderState?, level: RainbowOrderLeve
                 label = { Text(if (de) "Alle sieben" else "All seven") })
         }
         if (state != null) {
-            Text(RainbowOrderContent.prompt(state).display[language], style = BastiTypography.answer,
+            Text(RainbowOrderContent.prompt(state).display[language],
+                style = if (compactHeight) BastiTypography.parentInformation else BastiTypography.answer,
                 color = BastiPalette.ink, modifier = Modifier.testTag("rainbow-order-prompt"))
             if (state.level == RainbowOrderLevel.STARTER || state.current.support.hint) {
                 Text(if (de) "Beispiel" else "Example", style = BastiTypography.parentInformation,
@@ -49,9 +56,18 @@ fun RainbowOrderSessionScreen(state: RainbowOrderState?, level: RainbowOrderLeve
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(4.dp)) {
                 state.target.forEachIndexed { i, id ->
                     val done = i < state.index
+                    val placedName = state.placed.getOrNull(i)?.let { placedId ->
+                        RainbowContent.definition(placedId).text.display[language].replaceFirstChar { it.uppercase() }
+                    }
                     val color = Color(RainbowContent.swatches[RainbowContent.order.indexOf(id)])
                     Box(Modifier.weight(1f).heightIn(min = 56.dp).background(if (done) color else BastiPalette.surface,
-                        BastiShapes.control).testTag("rainbow-order-slot-${i}"), contentAlignment = Alignment.Center) {
+                        BastiShapes.control).testTag("rainbow-order-slot-${i}").semantics {
+                        contentDescription = if (done) {
+                            if (de) "Platz ${i + 1}: $placedName, eingesetzt" else "Position ${i + 1}: $placedName, placed"
+                        } else {
+                            if (de) "Platz ${i + 1}, leer" else "Position ${i + 1}, empty"
+                        }
+                    }, contentAlignment = Alignment.Center) {
                         Text(if (done) "✓" else "${i + 1}", color = if (done) Color.White else BastiPalette.ink)
                     }
                 }
@@ -93,18 +109,30 @@ fun RainbowOrderSessionScreen(state: RainbowOrderState?, level: RainbowOrderLeve
 @Composable
 private fun ColourBandRow(colours: List<com.bellfamily.bastischool.learning.models.ContentId>, language: ContentLanguage,
     modifier: Modifier, onClick: ((com.bellfamily.bastischool.learning.models.ContentId) -> Unit)? = null) {
-    Row(modifier, horizontalArrangement = Arrangement.spacedBy(5.dp)) {
-        colours.forEach { id ->
-            val index = RainbowContent.order.indexOf(id)
-            val label = RainbowContent.definition(id).text.display[language].replaceFirstChar { it.uppercase() }
-            Surface(onClick = { onClick?.invoke(id) }, enabled = onClick != null,
-                modifier = Modifier.weight(1f).heightIn(min = BastiSpacing.minimumTarget)
-                    .testTag("rainbow-order-colour-${id.value.substringAfterLast('.')}").semantics { contentDescription = label },
-                shape = RoundedCornerShape(16.dp), color = Color(RainbowContent.swatches[index]),
-                border = androidx.compose.foundation.BorderStroke(1.dp, BastiPalette.outline)) {
-                Box(Modifier.fillMaxWidth().padding(4.dp), contentAlignment = Alignment.Center) {
-                    Text(label, color = if (index == 2) Color.Black else Color.White, style = BastiTypography.parentInformation)
+    val width = LocalConfiguration.current.screenWidthDp
+    val fontScale = LocalDensity.current.fontScale
+    val columns = when {
+        fontScale >= 1.8f -> 3
+        width >= 600 -> 7
+        else -> 4
+    }
+    Column(modifier, verticalArrangement = Arrangement.spacedBy(BastiSpacing.small)) {
+        colours.chunked(columns).forEach { rowColours ->
+            Row(horizontalArrangement = Arrangement.spacedBy(5.dp)) {
+                rowColours.forEach { id ->
+                    val index = RainbowContent.order.indexOf(id)
+                    val label = RainbowContent.definition(id).text.display[language].replaceFirstChar { it.uppercase() }
+                    Surface(onClick = { onClick?.invoke(id) }, enabled = onClick != null,
+                        modifier = Modifier.weight(1f).heightIn(min = BastiSpacing.minimumTarget)
+                            .testTag("rainbow-order-colour-${id.value.substringAfterLast('.')}").semantics { contentDescription = label },
+                        shape = RoundedCornerShape(16.dp), color = Color(RainbowContent.swatches[index]),
+                        border = androidx.compose.foundation.BorderStroke(1.dp, BastiPalette.outline)) {
+                        Box(Modifier.fillMaxWidth().padding(4.dp), contentAlignment = Alignment.Center) {
+                            Text(label, color = if (index == 2) Color.Black else Color.White, style = BastiTypography.parentInformation)
+                        }
+                    }
                 }
+                repeat(columns - rowColours.size) { Spacer(Modifier.weight(1f)) }
             }
         }
     }

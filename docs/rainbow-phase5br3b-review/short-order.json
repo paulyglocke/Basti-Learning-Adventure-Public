@@ -1,0 +1,30 @@
+[
+  {
+    "file": "screenshots/order-short-landscape-before-compact-fix.png",
+    "screen": "Rainbow Order — Full",
+    "language": "English",
+    "state": "landscape",
+    "viewport": "short landscape emulator viewport, 1280×720px, 488×274dp at 420dpi",
+    "fontScale": 1.0,
+    "width": 1280,
+    "height": 720,
+    "densityDpi": 420,
+    "widthDp": 488,
+    "heightDp": 274,
+    "caption": "Rainbow Order — Full; English; before the compact-height fix, instruction clipped at the bottom of the first viewport. Viewport: short landscape emulator viewport, 1280×720px, 488×274dp at 420dpi; font scale 1×."
+  },
+  {
+    "file": "screenshots/order-short-landscape.png",
+    "screen": "Rainbow Order — Full",
+    "language": "English",
+    "state": "landscape",
+    "viewport": "short landscape emulator viewport, 1280×720px, 488×274dp at 420dpi",
+    "fontScale": 1.0,
+    "width": 1280,
+    "height": 720,
+    "densityDpi": 420,
+    "widthDp": 488,
+    "heightDp": 274,
+    "caption": "Rainbow Order — Full; English; fresh initial state after the compact-height fix, with the complete instruction and both level choices in the first viewport. Viewport: short landscape emulator viewport, 1280×720px, 488×274dp at 420dpi; font scale 1×."
+  }
+]

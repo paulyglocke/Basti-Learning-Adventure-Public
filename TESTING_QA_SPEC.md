@@ -570,3 +570,54 @@ count is the pre-Rainbow baseline only. R3 must run a complete API 35 suite and
 report exact pass/failure/error/skip totals. Physical-device, actual TalkBack,
 switch-access, child-use and offline-voice acceptance remain owner-managed;
 `UX-ANR-01` remains separate.
+
+### Phase 5B-R3 attempt — 2026-10-26
+
+On disposable API 35 `emulator-5554`, the first full-suite attempt failed before
+tests started (UTP process crashed, 0/0). A diagnostic retry discovered 583
+tests, then failed during `CompactTextVisibilityTest` at English 1.5× with an
+Android input-dispatch timeout; 1 passed, 1 failed, 0 errors, 0 skips. A clean
+retry without a concurrent logcat reader completed 8 tests (0 failures/errors/
+skips) in 18m 26.5s, with a ninth test started but incomplete when the run was
+stopped due to the observed runtime. These are partial attempts, not a complete
+suite result. At that point R3 remained open; the later complete rerun is
+recorded below. Detailed chronology and artifact locations are in
+[`docs/rainbow-phase5br2-review/REVIEW.md`](docs/rainbow-phase5br2-review/REVIEW.md).
+
+### Phase 5B-R3 complete API 35 run — 2026-10-26
+
+The complete, unfiltered `connectedDebugAndroidTest` suite subsequently passed
+**583/583** on the same disposable API 35 AVD, relaunched with four virtual CPUs
+and 6 GB RAM while preserving its data. Result: 0 failures, 0 errors, 0 skips;
+Gradle `BUILD SUCCESSFUL` in 48m 25s. Exact XML report:
+`app/build/outputs/androidTest-results/connected/debug/TEST-Medium_Phone_API_35(AVD) - 15-_app-.xml`.
+The earlier startup, timeout and interrupted attempts above remain recorded as
+partial/failing attempts and are not overwritten.
+
+### Phase 5B-R3B visual/interaction acceptance — 2026-10-26
+
+R3B adds only demonstrated UI corrections and regression coverage: a bounded
+Rainbow Explore canvas with tested rendered bands and hit mapping; responsive
+Rainbow Order choice columns; compact short-landscape title/instruction layout;
+and bilingual semantics naming each placed destination colour. The review
+gallery contains genuine screenshots captured from `emulator-5554`; see
+[`docs/rainbow-phase5br3b-review/REVIEW.md`](docs/rainbow-phase5br3b-review/REVIEW.md)
+and its [`gallery.html`](docs/rainbow-phase5br3b-review/gallery.html). Tablet
+views are emulator display overrides, not physical tablet testing. Restoration
+screens use app force-stop/relaunch and fresh route/ViewModel construction
+without clearing app data; this is not OS-managed process-death testing.
+
+The earlier 583/583 R3 result predates R3B production UI changes and is
+historical evidence only. Final R3B validation on the production source passed
+**586/586** complete API 35 instrumentation, with 0 failures, 0 errors and
+0 skips in 48m56s on disposable `Rainbow_R3B_API35` (`emulator-5554`, four
+virtual CPUs / 6 GB RAM). The final XML is preserved at
+[`docs/rainbow-phase5br3b-review/api35-full-android-test.xml`](docs/rainbow-phase5br3b-review/api35-full-android-test.xml);
+its testcase total is 2921.992 seconds. Focused Rainbow/Colours/Colour Sort
+instrumentation passed **11/11**; the fresh full JVM suite passed **579/579**;
+`assembleDebug`, `assembleDebugAndroidTest` and `lintDebug` passed (lint: 0
+errors, 5 existing warnings). The historical R3 XML path above was replaced by
+subsequent Gradle outputs; the R3B artifact is the available supporting record.
+Physical-device, TalkBack, switch-access, child-use and offline-voice acceptance
+remain owner-managed and are not automated development gates. `UX-ANR-01`
+remains separate.
