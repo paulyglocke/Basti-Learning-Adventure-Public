@@ -1,5 +1,21 @@
 # Session handoff — 2026-10-21
 
+## Deferred roadmap proposal — Living Year Wheel (2026-10-26)
+
+Added **Living Year Wheel — Interactive Seasonal Landscape** to the Months
+roadmap as a future UX/curriculum enhancement: one shared landscape would change
+continuously in both directions as the child turns through the months. It is
+proposed, not started, implemented or validated, and is scheduled after the
+prioritised Animals & Habitats work and other committed curriculum milestones.
+The proposal records bilingual/offline, accessibility, reduced-motion,
+responsive-layout, compatibility and future acceptance requirements. It also
+preserves the distinction between the tap-to-select primary Year Wheel and the
+separate rotating Seasons & Months Wheel; deciding how continuous feedback fits
+those existing contracts is a future architecture/UX dependency. This update is
+documentation only; no code, assets, routes or saved data changed. See the
+[master roadmap](MASTER_PRODUCT_LEARNING_ROADMAP.md) and
+[Months Phase 4A review](docs/months-phase4a-review/REVIEW.md).
+
 ## Phase 5B-R3B — Rainbow visual acceptance (2026-10-26, uncommitted)
 
 Resumed from `527730ec63754a477c25852d052f4d95b59b9905` on `main`, matching

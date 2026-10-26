@@ -568,6 +568,91 @@ and existing offline speech are reused; this is unscored exploration, not a new
 quiz or progress system. Current validation evidence is in SESSION_HANDOFF.md;
 physical-device acceptance remains **NOT RUN — deferred by owner**.
 
+#### Proposed future UX and curriculum enhancement — Living Year Wheel — Interactive Seasonal Landscape
+
+**Priority:** Medium–High educational value; future implementation after the
+currently prioritised Animals & Habitats work and other committed curriculum
+milestones. **Status:** Proposed; not started, not implemented and not validated.
+This is a Months Explore enhancement, not a new quiz or a replacement for the
+Months curriculum.
+
+The child turns through the twelve months and watches **one continuous,
+recognisable landscape** change with the wheel's position. The year remains
+cyclic: changes progress smoothly in either direction and return coherently across
+December ↔ January. The scene should communicate the twelve-month order, repeating
+year, month/season relationship, plant life cycles, before/after and gradual
+cause and effect through observation rather than reading or scoring.
+
+Use a representative central European seasonal pattern without suggesting that
+specific weather occurs every year in a particular month. From December through
+February, a deciduous tree is bare, plants are dormant and frost or occasional
+snow may appear; a frozen pond is optional. March through May gradually introduces
+buds, leaves, flowers, greener grass and more wildlife. June through August shows
+a full green canopy, lush grass, flowers, bright daylight and an active pond.
+September through November gradually shifts foliage through yellow, orange and
+brown, moves leaves in the wind and leaves the tree progressively bare. One shared
+scene may include a large tree, grass/flowers, pond, distant land, sky/clouds and
+optional birds or animals. Leaf quantity and colour, flowers, grass, snow, daylight
+and cloud cover are candidate interpolated properties.
+
+The key principle is that the illustration responds to wheel position, not only
+the snapped month. Investigate continuous feedback during the existing rotating
+Seasons & Months Wheel gesture while retaining its snap-to-month behavior, and
+decide whether/how that presentation belongs in the primary Months Explore route,
+whose existing Year Wheel is tap-to-select. Do not change either gesture contract
+as part of this proposal. The exact integration remains an architecture and UX
+decision; preserve current routes and entry points until a later approved design.
+
+Future interaction requirements: clockwise and anticlockwise touch rotation;
+continuous landscape feedback followed by month snapping; optional Previous/Next
+controls; a large readable month label; child-controlled bilingual English/German
+month and seasonal audio, without lengthy automatic speech during rapid turns;
+offline operation; reduced-motion support; accessible month-selection alternatives;
+and responsive phone/tablet layouts. Motion should be gentle and purposeful.
+Retain existing Months Explore, month order, selection and bilingual labels,
+activities, journals, progress history, Back/Home/Options navigation and
+accessibility semantics. Keep the scene exploratory, unscored and understandable
+without reading. Do not assume a saved-session migration is required before a
+later implementation audit.
+
+**Proposed technical direction, not an architecture decision:** use one shared
+landscape composition with reusable illustrated layers and parameter-driven
+seasonal states interpolated between adjacent months. Assess native Compose/Canvas
+rendering where suitable, reuse of canonical seasonal artwork and content, and a
+vector, prepared transparent-artwork or hybrid layer strategy. Keep assets local
+with no runtime network requirement and match the illustrated Home/Months visual
+language. The existing four canonical lakeside/tree season illustrations in
+`ART_DIRECTION.md` may guide composition and seasonal states; do not make twelve
+disconnected month backgrounds the primary implementation, since their visual
+discontinuity weakens the continuous-cycle learning goal.
+
+**Dependencies before implementation:** review the primary Year Wheel and separate
+rotating Seasons & Months Wheel architecture and gesture contracts; inventory
+canonical seasonal artwork/layers and reuse rights; design the continuous
+wheel-position-to-seasonal-parameter mapping, including wraparound; define
+accessibility alternatives and reduced-motion behavior; then plan bilingual audio,
+responsive layouts and emulator plus physical-device visual acceptance. Schedule
+this only after current Animals & Habitats priority and committed curriculum
+milestones. It does not assign a new phase number or change those priorities.
+
+**Future acceptance criteria — all remain open:**
+
+1. One recognisable landscape persists across all twelve months.
+2. Wheel rotation updates the scene continuously.
+3. Seasonal changes work forwards and backwards.
+4. Existing month snapping remains correct.
+5. January ↔ December transitions are coherent across the year boundary.
+6. Seasonal change is understandable without reading.
+7. Existing Months sessions and progress remain compatible.
+8. English/German month labels and audio work.
+9. Reduced-motion mode provides an accessible alternative.
+10. Phone/tablet responsive layouts and physical-child usability are reviewed.
+11. Automated gesture, regression and visual tests pass.
+
+See the deferred proposal cross-reference in
+`docs/months-phase4a-review/REVIEW.md`. These criteria are **not completed or
+validated** by the current roadmap update.
+
 #### Year Wheel
 
 The central representation should be a **12-segment Year Wheel** with four broad season regions.

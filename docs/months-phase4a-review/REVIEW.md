@@ -117,3 +117,12 @@ Gallery images:
 No commit or push was made. Remaining acceptance is owner-led physical-device,
 TalkBack, switch-access, child-usability and offline-voice review. UX-ANR-01 remains
 independent. The Year Wheel geometry and saved-progress formats were not changed.
+
+## Deferred roadmap proposal
+
+The master roadmap now records **Living Year Wheel — Interactive Seasonal
+Landscape** as a proposed, not-started Months Explore enhancement, scheduled after
+the current Animals & Habitats priority and committed curriculum milestones. It
+explores one landscape changing continuously with wheel position across the year.
+No implementation or acceptance criteria are completed by this cross-reference;
+see [the roadmap proposal](../../MASTER_PRODUCT_LEARNING_ROADMAP.md).
