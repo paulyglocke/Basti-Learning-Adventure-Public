@@ -38,7 +38,7 @@ class HomeScreenTest(private val language: String) {
         val cards = groups.flatten()
         val titles = cards.map { if (language == "de") it.titleDe else it.titleEn }
         compose.onAllNodes(hasTestTag("home-back") or hasTestTag("home-settings") or hasTestTag("home-home")).assertCountEquals(3)
-        compose.onAllNodes(hasClickAction()).assertCountEquals(23)
+        compose.onAllNodes(hasClickAction()).assertCountEquals(cards.size + 3)
         listOf("Dragon Treasure Hunt", "Dinosaur Rescue", "Memory Pairs", "Crocodile Snap",
             "Drachenschatz", "Dinosaurier-Rettung", "Paare merken", "Krokodil-Schnapp").forEach {
             compose.onNodeWithText(it).assertDoesNotExist()

@@ -1,16 +1,17 @@
 package com.bellfamily.bastischool
 
 import com.bellfamily.bastischool.ui.home.*
+import com.bellfamily.bastischool.learning.animalgroups.AnimalGroups
 import org.junit.Assert.*
 import org.junit.Test
 
 class HomeIntegrationTest {
-    @Test fun allTwentyCardsDispatchToTheirHistoricalDestinations() {
+    @Test fun liveCardsDispatchToTheirExistingOrNewDestinations() {
         val expected = listOf("TELL_ME", "VOCABULARY_CHOOSER", "WEB", "WEB", "WEB", "DAYS_SEASONS",
             "WEB", "SUBITISING", "QUANTITY_MATCH", "COMPARE_QUANTITY", "NUMBER_ORDER", "CLOCK",
-            "ADD_TOGETHER", "WEB", "PREPOSITIONS", "WEB", "WASH_HANDS", "ANIMAL_GROUPS", "COLOURS_CHOOSER", "FOLLOW_LEVELS")
+            "ADD_TOGETHER", "WEB", "PREPOSITIONS", "WEB", "WASH_HANDS", "HABITATS_CHOOSER", "ANIMAL_GROUPS", "COLOURS_CHOOSER", "FOLLOW_LEVELS")
         val cards = homeActivities()
-        assertEquals(20, cards.size)
+        assertEquals(21, cards.size)
         assertEquals(expected, cards.map { it.homeDestination().screen.name })
         cards.filter { it.homeDestination().screen == ShellScreen.WEB }.forEach {
             assertEquals(it.homeId(), it.homeDestination().mode)
@@ -19,10 +20,10 @@ class HomeIntegrationTest {
         assertTrue(cards.none { it.play })
     }
 
-    @Test fun sixBilingualCategoriesCoverNineteenAndMixedRemainsTwentieth() {
-        assertEquals(listOf(7,5,2,2,1,2), HomeCategory.entries.map { it.activityIds.size })
+    @Test fun sixBilingualCategoriesCoverTwentyAndMixedRemainsTwentyFirst() {
+        assertEquals(listOf(7,5,2,3,1,2), HomeCategory.entries.map { it.activityIds.size })
         val ids = HomeCategory.entries.flatMap { it.activityIds }
-        assertEquals(19, ids.distinct().size)
+        assertEquals(20, ids.distinct().size)
         assertEquals(homeActivities().map { it.homeId() }.toSet(), ids.toSet() + "mixed")
         assertEquals(listOf("Numbers & Maths","Words & Talking","Time & Seasons","Animals & Nature","Colours","Everyday Skills"), HomeCategory.entries.map { it.en })
         assertEquals(listOf("Zahlen & Rechnen","Wörter & Erzählen","Zeit & Jahreszeiten","Tiere & Natur","Farben","Alltag"), HomeCategory.entries.map { it.de })
@@ -66,5 +67,36 @@ class HomeIntegrationTest {
         assertEquals(BackAction.MONTHS_AREA,months.openMonthsBetweenWheel().backAction)
         assertEquals(BackAction.MONTHS_AREA,months.openMonthsBuildYearFour().backAction)
         assertEquals(BackAction.FOLLOW_LEVELS,ShellNavigation().openFollowTwo().backAction)
+    }
+
+    @Test fun habitatExploreUsesItsOwnChooserAndKeepsTheAnimalsHomePageAsItsParent() {
+        val chooser = homeActivity("exploreHabitats").homeDestination()
+        assertEquals(ShellScreen.HABITATS_CHOOSER, chooser.screen)
+        assertEquals(BackAction.ANIMALS_CATEGORY, chooser.backAction)
+        val ocean = chooser.openOceanExplore()
+        assertEquals(ShellScreen.OCEAN_EXPLORE, ocean.screen)
+        assertEquals(BackAction.HABITATS_CHOOSER, ocean.backAction)
+        assertEquals(chooser, ocean.openHabitatsChooser())
+        assertEquals(ocean, ocean.openOptions().closeOptions())
+        for (route in listOf(chooser, ocean, ocean.openOptions())) {
+            val restored = ShellNavigation.restore(route.screen.name, route.optionsOrigin.name, route.mode, null, route.homePage)
+            assertEquals(route.screen, restored.screen)
+            assertEquals("category:ANIMALS", restored.homePage)
+            assertFalse(restored.ownsWebSession)
+        }
+        assertEquals(BackAction.NATIVE_HOME, homeActivity("animalGroups").homeDestination().backAction)
+    }
+
+    @Test fun originalAnimalGroupsIdentityPoolAndWaterLandContractRemainUntouched() {
+        assertEquals("activity.discover.animal_groups", AnimalGroups.activity.value)
+        assertEquals(1, AnimalGroups.revision)
+        assertEquals(1, AnimalGroups.version.schema)
+        assertEquals(1, AnimalGroups.version.revision)
+        assertEquals(0x41475231, AnimalGroups.journalMagic)
+        assertEquals(listOf("animal.whale", "animal.dolphin", "animal.horse", "animal.rabbit"),
+            AnimalGroups.objects.map { it.id.value })
+        assertEquals(listOf("habitat.water", "habitat.water", "habitat.land", "habitat.land"),
+            AnimalGroups.objects.map { it.category.value })
+        assertEquals("rule.sort.animal_habitat", AnimalGroups.rule.id.value)
     }
 }

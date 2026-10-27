@@ -27,7 +27,7 @@ class HomeRouteTest(private val language: String) {
         prefs.edit().putString("lang", language).putString("audioMode", "off").commit()
         val expectedScreens = listOf("TELL_ME", "VOCABULARY_CHOOSER", "WEB", "WEB", "WEB", "DAYS_SEASONS",
             "WEB", "SUBITISING", "QUANTITY_MATCH", "COMPARE_QUANTITY", "NUMBER_ORDER", "CLOCK",
-            "ADD_TOGETHER", "WEB", "PREPOSITIONS", "WEB", "WASH_HANDS", "ANIMAL_GROUPS", "COLOURS_CHOOSER", "FOLLOW_LEVELS")
+            "ADD_TOGETHER", "WEB", "PREPOSITIONS", "WEB", "WASH_HANDS", "HABITATS_CHOOSER", "ANIMAL_GROUPS", "COLOURS_CHOOSER", "FOLLOW_LEVELS")
         try {
             ActivityScenario.launch(MainActivity::class.java).use { scenario ->
                 homeCardGroups().flatten().forEachIndexed { index, card ->
@@ -52,8 +52,15 @@ class HomeRouteTest(private val language: String) {
                     compose.waitForIdle()
                     // No answers, scores or completed sessions are needed to check entry dispatch.
                     scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
-                    val greeting = if (language == "de") "Was wollen wir entdecken?" else "What shall we explore?"
-                    compose.waitUntil(10_000) { compose.onAllNodesWithText(greeting).fetchSemanticsNodes().size == 1 }
+                    if (expectedScreens[index] == "HABITATS_CHOOSER") {
+                        // Explore Habitats is nested; Back restores the browse page that launched it.
+                        compose.onNodeWithText(if (language == "de") "Alle Aktivitäten" else "All Activities")
+                            .performScrollTo().assertIsDisplayed()
+                        scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
+                    } else {
+                        val greeting = if (language == "de") "Was wollen wir entdecken?" else "What shall we explore?"
+                        compose.waitUntil(10_000) { compose.onAllNodesWithText(greeting).fetchSemanticsNodes().size == 1 }
+                    }
                 }
             }
         } finally {

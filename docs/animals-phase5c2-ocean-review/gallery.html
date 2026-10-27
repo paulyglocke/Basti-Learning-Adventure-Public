@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phase 5C.2 — Ocean Explore visual review</title>
+  <style>
+    :root { color-scheme: light; font: 16px/1.5 system-ui, sans-serif; color: #203747; background: #faf8f0; }
+    body { max-width: 1100px; margin: auto; padding: 1.25rem; }
+    h1, h2 { color: #205d4d; }
+    section { margin: 2rem 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 1rem; }
+    figure { margin: 0; padding: .8rem; border: 1px solid #81938b; border-radius: 1rem; background: white; }
+    img { display: block; width: 100%; height: auto; border-radius: .5rem; }
+    figcaption { margin-top: .6rem; }
+  </style>
+</head>
+<body>
+  <h1>Ocean Explore — Phase 5C.2</h1>
+  <p>Genuine Android UiAutomation screenshots captured from disposable API 35 emulator serial <code>emulator-5554</code>. Tablet sizes are emulator viewport overrides, not physical tablet testing. Source files and exact pixel sizes are listed in each caption.</p>
+
+  <section><h2>Animals &amp; Nature navigation</h2><div class="grid">
+    <figure><a href="screenshots/animals-phase5c2/01-animals-category-en.png"><img src="screenshots/animals-phase5c2/01-animals-category-en.png" alt="Animals and Nature category with Explore Habitats entry"></a><figcaption><strong>Animals &amp; Nature category</strong> · English · chooser entry visible between Animal Actions and Animal Groups · phone portrait 1080×2400 · 1×. Existing animal activities remain alongside the new route.</figcaption></figure>
+    <figure><a href="screenshots/animals-phase5c2/02-habitat-chooser-en.png"><img src="screenshots/animals-phase5c2/02-habitat-chooser-en.png" alt="Explore Habitats chooser with Ocean as its only active choice"></a><figcaption><strong>Explore Habitats chooser</strong> · English · initial · phone portrait 1080×2400 · 1×. Ocean is the only offered habitat; no unfinished routes are shown.</figcaption></figure>
+    <figure><a href="screenshots/animals-phase5c2/12-back-to-animals-category-de.png"><img src="screenshots/animals-phase5c2/12-back-to-animals-category-de.png" alt="German Animals and Nature category after returning from the habitat chooser"></a><figcaption><strong>Category return</strong> · German · Back from chooser to Animals &amp; Nature · phone portrait 1080×2400 · 1×. The category retains Animal Actions and Animal Groups.</figcaption></figure>
+  </div></section>
+
+  <section><h2>Ocean Explore</h2><div class="grid">
+    <figure><a href="screenshots/animals-phase5c2/03-ocean-initial-en.png"><img src="screenshots/animals-phase5c2/03-ocean-initial-en.png" alt="Ocean Explore initial screen showing the scene and Dolphin control"></a><figcaption><strong>Ocean initial</strong> · English · unselected · phone portrait 1080×2400 · 1×. The fitted 4:3 composite keeps the dolphin large; the prompt and named control explain the interaction.</figcaption></figure>
+    <figure><a href="screenshots/animals-phase5c2/04-dolphin-selected-en.png"><img src="screenshots/animals-phase5c2/04-dolphin-selected-en.png" alt="Selected dolphin with English name, fact and replay"></a><figcaption><strong>Dolphin selected</strong> · English · selected fact and replay · phone portrait 1080×2400 · 1×. A dark outline plus a separate fact card indicate selection without relying on colour.</figcaption></figure>
+  </div></section>
+
+  <section><h2>Bilingual comparison</h2><div class="grid">
+    <figure><a href="screenshots/animals-phase5c2/04-dolphin-selected-en.png"><img src="screenshots/animals-phase5c2/04-dolphin-selected-en.png" alt="English selected Dolphin name and fact"></a><figcaption><strong>English selection</strong> · selected · phone portrait 1080×2400 · 1×. “Dolphin” and “Dolphins live in the sea.”</figcaption></figure>
+    <figure><a href="screenshots/animals-phase5c2/06-options-return-selected-de.png"><img src="screenshots/animals-phase5c2/06-options-return-selected-de.png" alt="German selected Dolphin name and fact after Options return"></a><figcaption><strong>German selection / Options return</strong> · selected · phone portrait 1080×2400 · 1×. “Delfin” and “Delfine leben im Meer.” Selection is retained and the screen does not speak automatically on return.</figcaption></figure>
+  </div></section>
+
+  <section><h2>Enlarged text</h2><div class="grid">
+    <figure><a href="screenshots/animals-phase5c2/07-dolphin-selected-german-2x.png"><img src="screenshots/animals-phase5c2/07-dolphin-selected-german-2x.png" alt="German Ocean Explore at twice the system font scale"></a><figcaption><strong>German at 2× font scale</strong> · selected dolphin · phone portrait 1080×2400 · 2×. Runtime configuration asserted 2.0; prompt and fact remain readable and content scrolls to lower controls.</figcaption></figure>
+    <figure><a href="screenshots/animals-phase5c2/13-dolphin-selected-german-1-5x.png"><img src="screenshots/animals-phase5c2/13-dolphin-selected-german-1-5x.png" alt="German Ocean Explore at one and a half times the system font scale"></a><figcaption><strong>German at 1.5× font scale</strong> · selected dolphin · phone portrait 1080×2400 · 1.5×. The runtime scale is asserted; prompt, fact and replay remain available through scrolling.</figcaption></figure>
+  </div></section>
+
+  <section><h2>Responsive layouts</h2><div class="grid">
+    <figure><a href="screenshots/animals-phase5c2/08-phone-landscape.png"><img src="screenshots/animals-phase5c2/08-phone-landscape.png" alt="Ocean Explore in phone landscape viewport, scrolled to the scene and Dolphin name control"></a><figcaption><strong>Phone landscape</strong> · German · selected, scrolled to scene/name control · emulator viewport 2400×1080 · 1×. The fixed Back/Options bar remains available; the title and task prompt are above this scrolled view. The 4:3 scene is larger than the short viewport and requires vertical scrolling.</figcaption></figure>
+    <figure><a href="screenshots/animals-phase5c2/09-short-landscape.png"><img src="screenshots/animals-phase5c2/09-short-landscape.png" alt="Ocean Explore in short landscape viewport"></a><figcaption><strong>Short landscape</strong> · German · initial viewport · emulator viewport 1280×720 · 1×. The first viewport contains the task instruction and beginning of the scene; further content and controls require scrolling.</figcaption></figure>
+    <figure><a href="screenshots/animals-phase5c2/10-tablet-portrait-emulator-viewport.png"><img src="screenshots/animals-phase5c2/10-tablet-portrait-emulator-viewport.png" alt="Ocean Explore in tablet portrait emulator viewport"></a><figcaption><strong>Tablet portrait</strong> · German · selected · emulator viewport override 1600×2560 · 1×. Scene scales to available width; lower content is scrollable. This is not physical-device testing.</figcaption></figure>
+    <figure><a href="screenshots/animals-phase5c2/11-tablet-landscape-emulator-viewport.png"><img src="screenshots/animals-phase5c2/11-tablet-landscape-emulator-viewport.png" alt="Ocean Explore in tablet landscape emulator viewport, scrolled into the scene"></a><figcaption><strong>Tablet landscape</strong> · German · selected, scrolled into scene · emulator viewport override 2560×1600 · 1×. The title and prompt are above this view and the name/replay controls below it; vertical scrolling reaches them. This is not physical-device testing.</figcaption></figure>
+  </div></section>
+
+  <section><h2>Restoration and Options return</h2><div class="grid">
+    <figure><a href="screenshots/animals-phase5c2/05-selection-restored-after-activity-recreation.png"><img src="screenshots/animals-phase5c2/05-selection-restored-after-activity-recreation.png" alt="Selected dolphin restored after Activity recreation"></a><figcaption><strong>Selection restoration</strong> · English · selected state after Activity recreation · phone portrait 1080×2400 · 1×. Same Activity ViewModel; this does not represent OS process-death recovery.</figcaption></figure>
+    <figure><a href="screenshots/animals-phase5c2/06-options-return-selected-de.png"><img src="screenshots/animals-phase5c2/06-options-return-selected-de.png" alt="Dolphin remains selected after Options language change to German"></a><figcaption><strong>Options return</strong> · German · selected state retained after language change · phone portrait 1080×2400 · 1×. Fact and replay label update to German, with no automatic speech on return.</figcaption></figure>
+  </div></section>
+</body>
+</html>

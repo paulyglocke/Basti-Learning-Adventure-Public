@@ -1,5 +1,7 @@
 # Animals & Habitats — proposed curriculum and content review
 
+**Detailed current-state follow-up:** see the [Phase 5C.1 Foundation Audit](../animals-phase5c1-audit/SUMMARY.md), including the canonical-art inventory, reviewed bilingual habitat facts, scene plans, art gaps, Explore/Match interaction contract and provisional implementation sequence. This newer audit adds a Freshwater/Underground assessment and source-scoped relationship guidance; it does not replace the compatibility rule below or mark its proposed activities implemented.
+
 ## Current implementation
 
 **Animal Groups / Tiere zuordnen** is a native fixed-set tap-to-place sort. It contains four animals and exactly two exclusive categories: Water and Land. Whale and dolphin map to Water; horse and rabbit map to Land. Each object has one accepted category, an EN/DE label and a short habitat hint. Four individual canonical PNGs and two separate habitat cue illustrations are available. Selection, category taps, Help, Listen/replay, correction, durable restore and shared progress are implemented.

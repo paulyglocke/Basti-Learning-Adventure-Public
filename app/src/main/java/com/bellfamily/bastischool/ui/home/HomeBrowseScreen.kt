@@ -68,7 +68,7 @@ internal fun HomeBrowseScreen(page: String, german: Boolean, onOpen: (String) ->
                                 page == "home" -> HomeWelcomeCards(german, onOpen, compactHeight)
                                 page == "all" -> {
                                     BastiSectionHeading(t("All Activities", "Alle Aktivitäten"))
-                                    Text(t("20 activities to explore", "20 Aktivitäten zum Entdecken"),
+                                    Text(t("${homeActivities().size} activities to explore", "${homeActivities().size} Aktivitäten zum Entdecken"),
                                         Modifier.fillMaxWidth(), style = BastiTypography.instruction)
                                     HomeActivityGrid(homeActivities(), german) { onActivity(homeActivity(it.substringAfter(':'))) }
                                 }

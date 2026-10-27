@@ -621,3 +621,29 @@ subsequent Gradle outputs; the R3B artifact is the available supporting record.
 Physical-device, TalkBack, switch-access, child-use and offline-voice acceptance
 remain owner-managed and are not automated development gates. `UX-ANR-01`
 remains separate.
+
+## Phase 5C.2 — Ocean Explore Foundation (2026-10-27)
+
+The new route is unscored, offline and owned by an ephemeral ViewModel; no
+attempt/completion evidence, durable session journal or Progress Tracker identity
+is emitted. Focused API 35 coverage exercises Animals & Nature → Explore Habitats
+→ Ocean, Dolphin hotspot/name selection, replay visibility, Activity recreation,
+Options/language return, Sound Off, navigation and emulator viewport overrides.
+Regression coverage preserves the original Animal Groups route, revision, four
+canonical animals and journal identity. The genuine screenshot review is at
+[`docs/animals-phase5c2-ocean-review/REVIEW.md`](docs/animals-phase5c2-ocean-review/REVIEW.md).
+
+PASS — fresh full JVM suite **584/584**, 0 failures/errors/skips. Focused Ocean
+API 35 instrumentation passed **5/5**; the final route/layout recapture passed
+**1/1**, including German 1.5× and 2× runtime font-scale checks. Animals &
+Nature route regression passed **2/2**; Home touch/keyboard regression passed
+**2/2**. The complete API 35 suite passed **591/591**, 0 failures/errors/skips,
+in 38m36s on disposable `emulator-5554`; testcase time totals 2302.094 seconds.
+JUnit XML is preserved at
+[`docs/animals-phase5c2-ocean-review/api35-full-android-test.xml`](docs/animals-phase5c2-ocean-review/api35-full-android-test.xml).
+No production source changed after that full run; the later change was test-only
+capture setup, and its focused route run passed. `assembleDebug`,
+`assembleDebugAndroidTest` and `lintDebug` passed; lint reports 0 errors, 5
+warnings and 2 informational findings (none on changed files). Emulator
+viewport overrides are not physical tablet acceptance. Actual TalkBack, switch
+access, child use and audible voice quality remain owner-managed checks.

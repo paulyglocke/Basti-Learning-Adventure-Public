@@ -1,5 +1,46 @@
 # Session handoff — 2026-10-21
 
+## Phase 5C.1 — Animals & Habitats foundation audit (2026-10-26; docs only)
+
+Verified clean `main` at `745e14c6b9e7c102a67ca977e0291d06904fe173`, matching
+`origin/main`. Completed the evidence-based content, animal ID, route, persistence,
+artwork and relationship audit in
+[`docs/animals-phase5c1-audit/SUMMARY.md`](docs/animals-phase5c1-audit/SUMMARY.md).
+Recommended next: a bounded, unscored Ocean Explore foundation using an existing
+approved scene and Dolphin as the first pictured fact target. Woodland scene art
+also exists; no dedicated Freshwater illustration or Underground cutaway exists.
+Underground has one standalone Mole cutout only and requires a new cross-section
+art brief plus fact approval. Keep all animal/habitat associations many-to-many
+and typed by habitat/shelter/feeding/movement. Preserve the historical Animal
+Groups revision-1 four-object Water/Land content, AGR1 journal and progress.
+Future Animals & Habitats work uses Phase 5C numbering; historical 5B priority
+references are preserved. The audit itself was documentation only; no production
+code/resources/tests changed in that phase, and no commit/push occurred.
+
+## Phase 5C.2 — Ocean Explore Foundation (2026-10-27, uncommitted)
+
+Implemented native Animals & Nature → Explore Habitats → Ocean, with Ocean as
+the only active habitat. The approved `ocean_001_reef_actions.png` composite is
+fitted 4:3 art; its upper-left dolphin is the only selectable pictured target,
+with a large labeled button alternative. Bilingual name and the reviewed fact
+“Dolphins live in the sea.” / “Delfine leben im Meer.” use canonical
+`animal.dolphin` and habitat `habitat.ocean`. Shared offline audio supports
+explicit selection/replay and Sound Off. The activity is unscored, uses no
+journal/progress identity and retains the selection through Activity recreation
+in its Activity ViewModel. Original Animal Groups identity/content/journal remain
+unchanged. The 12 genuine API 35 screenshots and visual gallery are at
+[`docs/animals-phase5c2-ocean-review/REVIEW.md`](docs/animals-phase5c2-ocean-review/REVIEW.md)
+and `gallery.html` with 13 genuine screenshots, including German 1.5× and 2×.
+Phone/short landscape and tablet-size emulator viewports were inspected; the
+wide phone/tablet captures are explicitly captioned as scrolled views, and
+tablet dimensions are emulator overrides. Final validation passed: full JVM
+584/584, focused Ocean API 35 5/5 plus final capture route 1/1, Animals & Nature
+route 2/2, Home touch/keyboard 2/2, and complete API 35 591/591 with zero
+failures/errors/skips. Debug/app-test builds and lint passed (0 errors, 5
+warnings, 2 informational findings). See the review for the full test history,
+screenshots, restoration limits and owner-managed accessibility status.
+The Phase 5C.1 audit edits remain uncommitted and preserved. No commit/push.
+
 ## Deferred roadmap proposal — Living Year Wheel (2026-10-26)
 
 Added **Living Year Wheel — Interactive Seasonal Landscape** to the Months

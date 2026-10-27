@@ -362,3 +362,17 @@ pre-existing `COLOUR_SORT` route remains a direct Colour Sort destination for sa
 route compatibility. Chooser Back returns to native Home; explicit Home returns to
 illustrated Home. Options remains an overlay that restores its originating route.
 No route identifier or persisted destination format was migrated.
+
+# Animals & Nature — Phase 5C.2 Ocean Explore
+
+The illustrated Home’s Animals & Nature category includes **Explore Habitats**
+alongside the existing Animal Actions and Animal Groups activities. Explore
+Habitats opens a chooser with Ocean as its only available habitat. Ocean opens a
+native, unscored scene with the canonical `animal.dolphin` target. Back returns
+to the habitat chooser, then to the originating Animals & Nature category;
+explicit Home returns to illustrated Home. Options overlays and language changes
+restore the current chooser or Ocean route without clearing the active selection.
+Sound Off is respected by the shared offline audio controller. The Dolphin name
+button is a labeled alternative to the composite-scene hotspot. This route has no
+Animal Groups journal, attempts, completion or progress identity; Animal Groups’
+historical direct route and saved-session contract remain unchanged.
