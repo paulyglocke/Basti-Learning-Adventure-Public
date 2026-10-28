@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phase 5C.3 — Woodland Explore visual review</title>
+  <style>
+    :root { color-scheme: light; font: 16px/1.5 system-ui, sans-serif; color: #173447; background: #faf7ef; }
+    body { margin: 0 auto; max-width: 1280px; padding: 1.5rem; }
+    h1, h2 { color: #17212b; line-height: 1.2; }
+    section { margin: 2.5rem 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 1rem; }
+    figure { margin: 0; padding: .75rem; border: 1px solid #9aa9a2; border-radius: 1rem; background: white; }
+    img { display: block; width: 100%; height: auto; border-radius: .6rem; }
+    figcaption { padding: .75rem .25rem .15rem; }
+    figcaption strong { display: block; }
+    .meta { color: #405462; font-size: .92rem; }
+  </style>
+</head>
+<body>
+  <h1>Woodland Explore — Phase 5C.3</h1>
+  <p>Genuine rendered screenshots captured from the API 35 disposable emulator <code>emulator-5554</code>. The 1600×2560 and 2560×1600 displays are emulator viewport overrides, not physical tablet tests.</p>
+
+  <section>
+    <h2>Habitat chooser</h2>
+    <div class="grid">
+      <figure><img src="screenshots/animals-phase5c3/01-habitat-chooser-en.png" alt="Explore Habitats chooser with Ocean and Woodland cards"><figcaption><strong>Chooser · English · both habitats</strong><span class="meta">Phone portrait · 1080×2400 px · 1×. Both active choices are visible in the scrollable chooser; the category return is below the fold.</span></figcaption></figure>
+      <figure><img src="screenshots/animals-phase5c3/15-options-return-rabbit-selected-de.png" alt="Woodland screen after Options return, in German"><figcaption><strong>Options return · German · selected Rabbit retained</strong><span class="meta">Phone portrait · 1080×2400 px · 1×. The active animal and its fact remain selected after returning from Options.</span></figcaption></figure>
+      <figure><img src="screenshots/animals-phase5c3/16-back-to-habitat-chooser-de.png" alt="German habitat chooser showing Ocean and Woodland"><figcaption><strong>Back to chooser · German</strong><span class="meta">Phone portrait · 1080×2400 px · 1×. German habitat titles and descriptions wrap without clipping.</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Woodland Explore</h2>
+    <div class="grid">
+      <figure><img src="screenshots/animals-phase5c3/02-woodland-initial-en.png" alt="Initial Woodland Explore screen in English"><figcaption><strong>Initial scene · English · no selection</strong><span class="meta">Phone portrait · 1080×2400 px · 1×. Instructions appear before the scene and named alternatives.</span></figcaption></figure>
+      <figure><img src="screenshots/animals-phase5c3/03-woodland-initial-de-options-return.png" alt="Initial Woodland Explore screen in German"><figcaption><strong>Initial scene · German · no selection</strong><span class="meta">Phone portrait · 1080×2400 px · 1×. German prompt and animal names remain readable; entering the scene does not narrate automatically.</span></figcaption></figure>
+      <figure><img src="screenshots/animals-phase5c3/07-rabbit-selected-en-switch-from-fox.png" alt="Rabbit selected in the English woodland scene"><figcaption><strong>Rabbit selected · English · switched from Fox</strong><span class="meta">Phone portrait · 1080×2400 px · 1×. A dark outline identifies the selected image region; the Rabbit fact replaces the Fox fact.</span></figcaption></figure>
+      <figure><img src="screenshots/animals-phase5c3/04-rabbit-selected-de.png" alt="Rabbit selected in the German woodland scene"><figcaption><strong>Rabbit selected · German</strong><span class="meta">Phone portrait · 1080×2400 px · 1×. The selection outline is non-colour-only and the reviewed German shelter fact is shown.</span></figcaption></figure>
+      <figure><img src="screenshots/animals-phase5c3/05-fox-selected-de-switch-from-rabbit.png" alt="Fox selected after Rabbit in the German woodland scene"><figcaption><strong>Fox selected · German · switched from Rabbit</strong><span class="meta">Phone portrait · 1080×2400 px · 1×. Selection and fact both move to Fox; Replay speaks the current selection.</span></figcaption></figure>
+      <figure><img src="screenshots/animals-phase5c3/06-options-return-fox-selected-en.png" alt="Fox selection after switching to English in Options"><figcaption><strong>Options language return · English · Fox retained</strong><span class="meta">Phone portrait · 1080×2400 px · 1×. Language changes preserve the canonical selected-animal ID and update the displayed fact.</span></figcaption></figure>
+      <figure><img src="screenshots/animals-phase5c3/08-rabbit-selection-restored-after-activity-recreation.png" alt="Rabbit selection restored after Activity recreation"><figcaption><strong>Selection restored · English · Rabbit after Activity recreation</strong><span class="meta">Phone portrait · 1080×2400 px · 1×. Activity recreation retains the current animal and fact; this is not an OS process-death test.</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Responsive layouts and text scale</h2>
+    <div class="grid">
+      <figure><img src="screenshots/animals-phase5c3/09-phone-landscape-de.png" alt="Woodland Explore scene scrolled into view on a phone landscape viewport"><figcaption><strong>Phone landscape · German · scrolled scene view</strong><span class="meta">2400×1080 px · 1×. The capture is scrolled to the illustration, so title and prompt are above the viewport; controls remain reachable by scrolling.</span></figcaption></figure>
+      <figure><img src="screenshots/animals-phase5c3/10-short-landscape-de.png" alt="Woodland Explore on a short landscape viewport"><figcaption><strong>Short landscape · German</strong><span class="meta">1280×720 px · 1×. Task instruction is visible in the first viewport; scene and lower controls are reachable by scrolling.</span></figcaption></figure>
+      <figure><img src="screenshots/animals-phase5c3/11-tablet-portrait-emulator-viewport-de.png" alt="Woodland Explore on a tablet-size portrait emulator viewport"><figcaption><strong>Tablet-size portrait emulator viewport · German</strong><span class="meta">1600×2560 px · 1×. Scene, choice controls, selected fact and Replay use a single scroll column.</span></figcaption></figure>
+      <figure><img src="screenshots/animals-phase5c3/12-tablet-landscape-emulator-viewport-de.png" alt="Woodland Explore on a tablet-size landscape emulator viewport"><figcaption><strong>Tablet-size landscape emulator viewport · German · scrolled scene view</strong><span class="meta">2560×1600 px · 1×. Large scene targets remain aligned to the source image; the page scrolls to the lower controls.</span></figcaption></figure>
+      <figure><img src="screenshots/animals-phase5c3/13-woodland-german-1.5x.png" alt="Woodland Explore at 1.5 times German text size"><figcaption><strong>Selected Rabbit · German · 1.5× text</strong><span class="meta">Phone portrait · 1080×2400 px · 1.5×. Prompt, scene and alternatives remain legible; the fact/replay card is below the fold.</span></figcaption></figure>
+      <figure><img src="screenshots/animals-phase5c3/14-woodland-german-2x.png" alt="Woodland Explore at twice German text size"><figcaption><strong>Selected Rabbit · German · 2× text</strong><span class="meta">Phone portrait · 1080×2400 px · 2×. The test scrolls to the title before capture; text is large and the selected fact/replay can be reached by scrolling.</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Hotspot refinement — before and after</h2>
+    <p>The original wide bounds included nearby mushrooms, den and ground. The final image-relative bounds are narrower and recentered on Rabbit and Fox. Both captures are genuine emulator output at 1080×2400 px.</p>
+    <div class="grid">
+      <figure><img src="screenshots/before-hotspot-refinement/04-rabbit-selected-de-before.png" alt="Rabbit selected before hotspot refinement"><figcaption><strong>Before · Rabbit selected · German</strong><span class="meta">Phone portrait · 1080×2400 px · 1×. The original wide outline extends into nearby mushrooms and ground.</span></figcaption></figure>
+      <figure><img src="screenshots/animals-phase5c3/04-rabbit-selected-de.png" alt="Rabbit selected after hotspot refinement"><figcaption><strong>After · Rabbit selected · German</strong><span class="meta">Phone portrait · 1080×2400 px · 1×. The narrower outline follows Rabbit more closely; mushrooms are outside the target.</span></figcaption></figure>
+      <figure><img src="screenshots/before-hotspot-refinement/05-fox-selected-de-before.png" alt="Fox selected before hotspot refinement"><figcaption><strong>Before · Fox selected · German</strong><span class="meta">Phone portrait · 1080×2400 px · 1×. The original wide outline included much of the den and surrounding ground.</span></figcaption></figure>
+      <figure><img src="screenshots/animals-phase5c3/05-fox-selected-de-switch-from-rabbit.png" alt="Fox selected after hotspot refinement"><figcaption><strong>After · Fox selected · German</strong><span class="meta">Phone portrait · 1080×2400 px · 1×. The final outline frames the main Fox body; a small tail tip remains outside.</span></figcaption></figure>
+    </div>
+  </section>
+
+</body>
+</html>

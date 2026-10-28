@@ -17,7 +17,7 @@ Future Animals & Habitats work uses Phase 5C numbering; historical 5B priority
 references are preserved. The audit itself was documentation only; no production
 code/resources/tests changed in that phase, and no commit/push occurred.
 
-## Phase 5C.2 — Ocean Explore Foundation (2026-10-27, uncommitted)
+## Phase 5C.2 — Ocean Explore Foundation (2026-10-27, committed baseline)
 
 Implemented native Animals & Nature → Explore Habitats → Ocean, with Ocean as
 the only active habitat. The approved `ocean_001_reef_actions.png` composite is
@@ -39,7 +39,29 @@ route 2/2, Home touch/keyboard 2/2, and complete API 35 591/591 with zero
 failures/errors/skips. Debug/app-test builds and lint passed (0 errors, 5
 warnings, 2 informational findings). See the review for the full test history,
 screenshots, restoration limits and owner-managed accessibility status.
-The Phase 5C.1 audit edits remain uncommitted and preserved. No commit/push.
+The Phase 5C.1 audit and Phase 5C.2 implementation are part of this task's
+committed starting baseline (`2cbaec64eabe165a06852a3799cf397e47c8b350`).
+
+## Phase 5C.3 — Woodland Explore (2026-10-27, uncommitted)
+
+Added Woodland as the second active Explore Habitats choice, using the approved
+`woodland_008_homes_choices.png` scene and two reviewed targets: canonical
+`animal.rabbit` and `animal.fox`. Rabbit and Fox facts preserve the audit's
+shelter distinction and exact English/German wording. Image-relative targets,
+large labeled alternatives, visible selected outlines, replay and language-aware
+offline speech are implemented without scoring, journal or progress events.
+Activity recreation retains the selected animal through its ViewModel; OS
+process-death recovery is not claimed. Ocean and original Animal Groups contracts
+remain covered by regression tests. Final validation: full JVM **588/588**;
+full API 35 instrumentation **595/595**, zero failures/errors/skips in 59m 2s;
+`assembleDebug`, `assembleDebugAndroidTest`, `lintDebug` and `git diff --check`
+passed. The full-suite XML and 16-state screenshot gallery are preserved in the
+review directory. A route test verifies image-relative Compose hotspot bounds.
+Genuine before/after hotspot captures are included in the gallery. See
+[`docs/animals-phase5c3-woodland-review/REVIEW.md`](docs/animals-phase5c3-woodland-review/REVIEW.md)
+and [`gallery.html`](docs/animals-phase5c3-woodland-review/gallery.html) for the visual record. Tablet-size captures are emulator
+viewport overrides. Physical devices, real TalkBack/switch access, child use and
+audible offline voice quality remain owner-managed. No commit/push.
 
 ## Deferred roadmap proposal — Living Year Wheel (2026-10-26)
 

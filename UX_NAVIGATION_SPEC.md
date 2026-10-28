@@ -363,16 +363,18 @@ route compatibility. Chooser Back returns to native Home; explicit Home returns 
 illustrated Home. Options remains an overlay that restores its originating route.
 No route identifier or persisted destination format was migrated.
 
-# Animals & Nature — Phase 5C.2 Ocean Explore
+# Animals & Nature — Phase 5C.2–5C.3 Explore Habitats
 
 The illustrated Home’s Animals & Nature category includes **Explore Habitats**
 alongside the existing Animal Actions and Animal Groups activities. Explore
-Habitats opens a chooser with Ocean as its only available habitat. Ocean opens a
-native, unscored scene with the canonical `animal.dolphin` target. Back returns
-to the habitat chooser, then to the originating Animals & Nature category;
-explicit Home returns to illustrated Home. Options overlays and language changes
-restore the current chooser or Ocean route without clearing the active selection.
-Sound Off is respected by the shared offline audio controller. The Dolphin name
-button is a labeled alternative to the composite-scene hotspot. This route has no
-Animal Groups journal, attempts, completion or progress identity; Animal Groups’
-historical direct route and saved-session contract remain unchanged.
+Habitats offers Ocean and Woodland as active choices. Ocean opens a native,
+unscored scene with the canonical `animal.dolphin` target. Woodland opens the
+approved `woodland_008_homes_choices.png` scene with canonical `animal.rabbit`
+and stable `animal.fox` targets. Both scenes provide image-relative hit regions,
+large labeled alternatives, selected outlines, bilingual names/facts, replay,
+Back to habitat chooser and Home. Options overlays and language changes restore
+the current route and selected identity. Sound Off is respected by the shared
+offline audio controller. Neither Explore route emits attempts, completion,
+journals or Progress Tracker identities. Original Animal Groups routing and its
+historical saved-session contract remain unchanged. Freshwater and Underground
+are not offered as active routes.

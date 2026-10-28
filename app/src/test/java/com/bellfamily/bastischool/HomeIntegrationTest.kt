@@ -78,7 +78,12 @@ class HomeIntegrationTest {
         assertEquals(BackAction.HABITATS_CHOOSER, ocean.backAction)
         assertEquals(chooser, ocean.openHabitatsChooser())
         assertEquals(ocean, ocean.openOptions().closeOptions())
-        for (route in listOf(chooser, ocean, ocean.openOptions())) {
+        val woodland = chooser.openWoodlandExplore()
+        assertEquals(ShellScreen.WOODLAND_EXPLORE, woodland.screen)
+        assertEquals(BackAction.HABITATS_CHOOSER, woodland.backAction)
+        assertEquals(chooser, woodland.openHabitatsChooser())
+        assertEquals(woodland, woodland.openOptions().closeOptions())
+        for (route in listOf(chooser, ocean, ocean.openOptions(), woodland, woodland.openOptions())) {
             val restored = ShellNavigation.restore(route.screen.name, route.optionsOrigin.name, route.mode, null, route.homePage)
             assertEquals(route.screen, restored.screen)
             assertEquals("category:ANIMALS", restored.homePage)

@@ -951,16 +951,18 @@ Precise factual claims belong in shared canonical data rather than hardcoded que
 ### Animals & Habitats — Phase 5C (2026-10-27)
 
 Phase 5C.1 audited the existing animal IDs, activity ownership, bundled
-Ocean/Woodland scenes and habitat relationships. Phase 5C.2 now implements the
-first unscored native Explore slice: an Ocean-only habitat chooser and a bilingual
-Dolphin interaction using the approved `ocean_001_reef_actions.png` composite.
-The 5C.2 review records its actual emulator screenshots, focused tests, layout
+Ocean/Woodland scenes and habitat relationships. Phases 5C.2 and 5C.3 now provide
+unscored native Ocean and Woodland Explore scenes. The chooser offers both
+habitats; Ocean uses the approved `ocean_001_reef_actions.png` composite and
+Woodland uses the approved `woodland_008_homes_choices.png` composite with Fox
+and Rabbit interactions. Their reviews record screenshots, focused tests, layout
 inspection and remaining acceptance limits. Preserve Animal Groups revision 1,
 its exact Whale/Dolphin/Horse/Rabbit Water/Land pool, `animal-groups-session`
-AGR1 journal and existing progress identities. Woodland can follow from existing
-scene art; Freshwater still lacks a dedicated scene/species asset, and Underground
-needs approved cutaway art plus scoped facts. See the [Phase 5C.1 audit](docs/animals-phase5c1-audit/SUMMARY.md)
-and [Phase 5C.2 Ocean review](docs/animals-phase5c2-ocean-review/REVIEW.md).
+AGR1 journal and existing progress identities. Freshwater still lacks dedicated
+species-backed artwork, and Underground needs approved cutaway art plus scoped
+facts. See the [Phase 5C.1 audit](docs/animals-phase5c1-audit/SUMMARY.md),
+[Phase 5C.2 Ocean review](docs/animals-phase5c2-ocean-review/REVIEW.md) and
+[Phase 5C.3 Woodland review](docs/animals-phase5c3-woodland-review/REVIEW.md).
 The historical 5B label in older curriculum planning remains unchanged.
 
 ---

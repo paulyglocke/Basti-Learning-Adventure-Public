@@ -105,16 +105,24 @@ class OceanExploreRouteTest {
                 assertEquals(HabitatExploreContent.dolphin.value, "animal.dolphin")
 
                 display("settings put system font_scale 2.0")
+                Thread.sleep(500)
                 scenario.recreate()
+                compose.waitUntil(5_000) {
+                    var currentScale = 1.0f
+                    scenario.onActivity { currentScale = it.resources.configuration.fontScale }
+                    currentScale == 2.0f
+                }
                 scenario.onActivity { assertEquals(2.0f, it.resources.configuration.fontScale) }
                 compose.onNodeWithText("Delfine leben im Meer.").performScrollTo().assertIsDisplayed()
                 capture("07-dolphin-selected-german-2x")
                 display("settings put system font_scale 1.5")
+                Thread.sleep(500)
                 scenario.recreate()
                 scenario.onActivity { assertEquals(1.5f, it.resources.configuration.fontScale) }
                 compose.onNodeWithText("Delfine leben im Meer.").performScrollTo().assertIsDisplayed()
                 capture("13-dolphin-selected-german-1-5x")
                 display("settings put system font_scale 1.0")
+                Thread.sleep(500)
 
                 scenario.recreate()
                 scenario.onActivity { assertEquals(1.0f, it.resources.configuration.fontScale) }

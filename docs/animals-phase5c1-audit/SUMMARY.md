@@ -56,6 +56,17 @@ Critical gates before Underground work: approve a custom cutaway artwork brief, 
 - `docs/animals-phase5c1-audit/INTERACTION_PLAN.md`
 - `docs/animals-phase5c1-audit/IMPLEMENTATION_PLAN.md`
 
-## Recommended status
+## Recommended status at audit completion (2026-10-26)
 
-**READY FOR PHASE 5C.2**, as an Ocean-only foundation slice. This is readiness to begin a bounded implementation plan, not a claim that any feature is built, validated, child-tested or ready for production. Woodland, Freshwater and Underground remain future work; the latter two have material asset/content gaps.
+**READY FOR PHASE 5C.2**, as an Ocean-only foundation slice. This was readiness
+to begin a bounded implementation plan, not a claim that any feature was built,
+validated, child-tested or ready for production at that audit checkpoint.
+
+## Subsequent phase status — 2026-10-27
+
+Phase 5C.2 delivered Ocean Explore and Phase 5C.3 delivered Woodland Explore.
+Woodland's reviewed scene, two supported animal interactions and validation are
+documented in the [Phase 5C.3 review](../animals-phase5c3-woodland-review/REVIEW.md).
+The audit findings below remain the source for canonical identities and facts;
+Phase 5C.4 is now the Underground cutaway, and Freshwater remains deferred until
+dedicated species-backed artwork is available.

@@ -647,3 +647,22 @@ capture setup, and its focused route run passed. `assembleDebug`,
 warnings and 2 informational findings (none on changed files). Emulator
 viewport overrides are not physical tablet acceptance. Actual TalkBack, switch
 access, child use and audible voice quality remain owner-managed checks.
+
+## Phase 5C.3 — Woodland Explore (2026-10-27)
+
+The active Explore Habitats chooser contains Ocean and Woodland. Woodland uses
+the approved 1448×1086 `woodland_008_homes_choices.png` composite, decoded at
+half size, with image-normalized Rabbit and Fox targets and labeled alternatives.
+Focused API 35 tests cover selection replacement, bilingual facts, replay,
+Sound Off, Options return, Activity recreation, navigation, and phone/short
+landscape plus tablet-size emulator viewports at 1×, 1.5× and 2× German text.
+Tablet dimensions are emulator overrides. These checks do not establish physical
+device, child-use, TalkBack or switch-access acceptance. Fresh full JVM suite:
+**588/588 passed**. The full API 35 suite passed **595/595** with 0 failures,
+errors or skips in 59m 2s on disposable four-vCPU/6-GB `emulator-5554`; its XML
+is preserved in the review directory. Focused final route test **1/1** also
+checks normalized hotspot bounds against the rendered scene. `assembleDebug`,
+`assembleDebugAndroidTest`, `lintDebug` and `git diff --check` passed. A prior
+full run stopped at 185/595 when its emulator disconnected; the completed rerun
+supersedes it. Genuine before/after hotspot captures are included in the gallery.
+Full results and the screenshot gallery are recorded in the [Phase 5C.3 review](docs/animals-phase5c3-woodland-review/REVIEW.md).
