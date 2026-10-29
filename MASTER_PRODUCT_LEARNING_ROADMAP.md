@@ -965,6 +965,25 @@ facts. See the [Phase 5C.1 audit](docs/animals-phase5c1-audit/SUMMARY.md),
 [Phase 5C.3 Woodland review](docs/animals-phase5c3-woodland-review/REVIEW.md).
 The historical 5B label in older curriculum planning remains unchanged.
 
+#### Phase 5C.4 — Underground cutaway Explore
+
+**Status:** implementation and app-wide automated development acceptance
+complete; owner art approval and physical/accessibility acceptance remain open.
+The work remains uncommitted for owner review. The 5C.4A design checkpoint recommended a
+4:3 hybrid composition: one continuous surface/soil cutaway with independently
+selectable Mole, Wild Rabbit and Earthworm layers. A generated background and
+transparent Earthworm layer now exist under the app assets; the existing Mole
+and Rabbit cutouts are reused. The implementation adds the third active habitat
+with reviewed bilingual facts, image-relative selection, labeled alternatives,
+offline replay and no scored progress. See the [5C.4A design package](docs/animals-phase5c4-underground-design/SUMMARY.md)
+and the [5C.4 implementation review](docs/animals-phase5c4-underground-review/REVIEW.md)
+for the visual and test record. Final validation passed **591/591 JVM** and
+**599/599 complete API 35 instrumentation** tests, with zero failures/errors/
+skips; debug and android-test assemblies and lint passed. The generated artwork
+provenance is documented, but owner approval of its use remains open. Freshwater
+and habitat matching remain future work. Preserve Ocean, Woodland and original
+Animal Groups behavior.
+
 ---
 
 ## Reusable learning mechanics

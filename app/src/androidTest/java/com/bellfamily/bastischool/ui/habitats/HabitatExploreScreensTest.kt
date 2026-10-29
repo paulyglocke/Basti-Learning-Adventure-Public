@@ -15,6 +15,7 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTouchInput
+import com.bellfamily.bastischool.learning.animals.HabitatExploreContent
 import com.bellfamily.bastischool.learning.models.ContentLanguage
 import com.bellfamily.bastischool.learning.models.ContentId
 import org.junit.Assert.assertEquals
@@ -60,9 +61,11 @@ class HabitatExploreScreensTest {
     @Test fun habitatChooserOffersWorkingOceanAndWoodlandAndProvidesParentAndHomeControls() {
         var opened by mutableStateOf(false)
         var woodlandOpened by mutableStateOf(false)
+        var undergroundOpened by mutableStateOf(false)
         compose.setContent {
-            HabitatExploreChooserScreen(ContentLanguage.ENGLISH, art, false, art, false,
+            HabitatExploreChooserScreen(ContentLanguage.ENGLISH, art, false, art, false, art, false,
                 onOcean = { opened = true }, onWoodland = { woodlandOpened = true },
+                onUnderground = { undergroundOpened = true },
                 onAnimals = {}, onHome = {})
         }
         compose.onNodeWithTag("habitat-ocean-choice").assertIsDisplayed().performClick()
@@ -71,8 +74,10 @@ class HabitatExploreScreensTest {
         compose.onNodeWithTag("habitats-home").assertIsDisplayed()
         compose.onNodeWithTag("habitat-woodland-choice").assertIsDisplayed().performClick()
         compose.runOnIdle { assertEquals(true, woodlandOpened) }
+        compose.onNodeWithTag("habitat-underground-choice").assertIsDisplayed().performClick()
+        compose.runOnIdle { assertEquals(true, undergroundOpened) }
         compose.onNodeWithText("Freshwater").assertDoesNotExist()
-        compose.onNodeWithText("Underground").assertDoesNotExist()
+        compose.onNodeWithText("Underground").assertIsDisplayed()
     }
 
     @Test fun woodlandImageRelativeTargetsSelectRabbitAndFoxAndReplaceCurrentFact() {
@@ -122,5 +127,53 @@ class HabitatExploreScreensTest {
         compose.onNodeWithTag("woodland-hotspot-rabbit").assertIsSelected()
         compose.onNodeWithTag("woodland-habitats-back").assertIsDisplayed()
         compose.onNodeWithTag("woodland-home").assertIsDisplayed()
+    }
+
+    @Test fun undergroundImageTargetsAndLabeledAlternativesSelectThreeAnimalsWithoutColourOnlyFeedback() {
+        var selected by mutableStateOf<ContentId?>(null)
+        var replays = 0
+        val animals = HabitatExploreContent.undergroundAnimals.associate { it.id to art }
+        compose.setContent {
+            UndergroundExploreScreen(ContentLanguage.ENGLISH, art, animals, false, selected, false,
+                onAnimal = { selected = it }, onReplay = { replays++ }, onHabitats = {}, onHome = {})
+        }
+        compose.onNodeWithTag("underground-prompt").assertIsDisplayed()
+        compose.onNodeWithTag("underground-fact-text").assertDoesNotExist()
+        compose.onNodeWithTag("underground-scene").performTouchInput {
+            click(Offset(width * .24f, height * .76f))
+        }
+        compose.onNodeWithTag("underground-hotspot-mole").assertIsSelected()
+        compose.onNodeWithText("A mole lives mostly underground and digs tunnels.").assertIsDisplayed()
+        compose.onNodeWithTag("underground-scene").performTouchInput {
+            click(Offset(width * .54f, height * .47f))
+        }
+        compose.onNodeWithTag("underground-hotspot-earthworm").assertIsSelected()
+        compose.onNodeWithTag("underground-hotspot-mole").assertIsNotSelected()
+        compose.onNodeWithText("Earthworms move through soil.").assertIsDisplayed()
+        compose.onNodeWithTag("underground-choice-rabbit").assertIsDisplayed().performClick()
+        compose.onNodeWithTag("underground-hotspot-rabbit").assertIsSelected()
+        compose.onNodeWithText("Wild rabbits can use underground warrens for shelter.").assertIsDisplayed()
+        compose.onNodeWithTag("underground-replay").performClick()
+        compose.runOnIdle { assertEquals(1, replays) }
+        compose.onNodeWithTag("underground-habitats-back").assertIsDisplayed()
+        compose.onNodeWithTag("underground-home").assertIsDisplayed()
+    }
+
+    @Test fun undergroundGermanLabelsAndFactsStayReachableAndSelectionIsLocalized() {
+        var selected by mutableStateOf<ContentId?>(null)
+        val animals = HabitatExploreContent.undergroundAnimals.associate { it.id to art }
+        compose.setContent {
+            UndergroundExploreScreen(ContentLanguage.GERMAN, art, animals, false, selected, false,
+                onAnimal = { selected = it }, onReplay = {}, onHabitats = {}, onHome = {})
+        }
+        compose.onNodeWithTag("underground-choice-mole").performClick()
+        compose.onNodeWithText("Ein Maulwurf lebt überwiegend unter der Erde und gräbt Gänge.").assertIsDisplayed()
+        compose.onNodeWithTag("underground-choice-earthworm").performClick()
+        compose.onNodeWithText("Regenwürmer bewegen sich durch den Boden.").assertIsDisplayed()
+        compose.onNodeWithTag("underground-choice-rabbit").assertIsNotSelected()
+        compose.onNodeWithTag("underground-choice-rabbit").performClick()
+        compose.onNodeWithText("Wildkaninchen können unterirdische Baue als Schutz nutzen.").assertIsDisplayed()
+        compose.onNodeWithTag("underground-choice-rabbit").assertIsSelected()
+        compose.onNodeWithTag("underground-hotspot-rabbit").assertIsSelected()
     }
 }

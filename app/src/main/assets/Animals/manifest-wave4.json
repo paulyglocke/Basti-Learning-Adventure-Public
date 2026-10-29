@@ -1,0 +1,12 @@
+[
+  {
+    "file": "earthworm.png",
+    "size": [1774, 887],
+    "mode": "RGBA",
+    "has_transparency": true,
+    "content_id": "animal.earthworm",
+    "usage": "Underground Explore foreground illustration",
+    "source": "OpenAI imagegen, generated for this repository task on 2026-10-29",
+    "rights_status": "Owner review required; no licensing grant asserted"
+  }
+]

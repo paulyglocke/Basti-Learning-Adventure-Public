@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Underground Explore — Phase 5C.4B final acceptance</title>
+  <style>
+    :root { color-scheme: light; --ink:#243443; --green:#2f7056; --paper:#faf8f1; --card:#e1f0e7; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.5 system-ui,sans-serif; }
+    header { padding:2rem max(1rem,calc((100vw - 1100px)/2)); background:#ffda78; }
+    main { max-width:1100px; margin:auto; padding:1.25rem; }
+    h1,h2 { line-height:1.2; } nav { display:flex; flex-wrap:wrap; gap:.6rem; }
+    nav a { color:var(--green); } section { margin:2rem 0; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:1rem; }
+    figure { margin:0; padding:.8rem; background:var(--card); border:1px solid #a4b6ab; border-radius:1rem; }
+    img { display:block; width:100%; height:auto; border-radius:.6rem; background:#eee; }
+    figcaption { padding:.65rem .2rem .1rem; }
+    .meta { font-size:.9rem; color:#425665; }
+    @media (min-width:900px) { .phone { max-width:420px; } }
+  </style>
+</head>
+<body>
+<header><h1>Underground / Unter der Erde</h1><p>Fourteen final-source API 35 emulator captures from the complete route test. The earlier 14 genuine screenshots remain archived in the review folder. Tablet dimensions are emulator viewport overrides, not physical tablet tests.</p></header>
+<main>
+  <nav aria-label="Gallery sections">
+    <a href="#chooser">Chooser</a><a href="#scene">Scene and selection</a>
+    <a href="#language">Bilingual and Options</a><a href="#responsive">Responsive</a>
+    <a href="#restoration">Restoration and return</a>
+  </nav>
+  <section id="chooser"><h2>Habitat chooser</h2><div class="grid">
+    <figure><a href="screenshots/phase5c4b/01-habitat-chooser-en-final-suite.png"><img class="phone" src="screenshots/phase5c4b/01-habitat-chooser-en-final-suite.png" alt="English Explore Habitats chooser with Ocean, Woodland and Underground cards"></a><figcaption>Explore Habitats — English, initial chooser. Phone portrait 1080×2400, font scale 1×. All three implemented environments are listed; the lower chooser content continues by scrolling.</figcaption></figure>
+    <figure><a href="screenshots/phase5c4b/14-back-to-habitat-chooser-de-final-suite.png"><img class="phone" src="screenshots/phase5c4b/14-back-to-habitat-chooser-de-final-suite.png" alt="German Explore Habitats chooser after returning from Underground"></a><figcaption>Explore Habitats — German, return state. Phone portrait 1080×2400, font scale 1×. The Ocean and Woodland cards remain available and Underground returns to the chooser.</figcaption></figure>
+  </div></section>
+  <section id="scene"><h2>Underground scene and selection</h2><div class="grid">
+    <figure><a href="screenshots/phase5c4b/02-underground-initial-en-final-suite.png"><img class="phone" src="screenshots/phase5c4b/02-underground-initial-en-final-suite.png" alt="Initial Underground scene in English"></a><figcaption>Underground — English, initial. Phone portrait 1080×2400, font scale 1×. One continuous surface-to-soil cutaway; selection is empty and the scene does not narrate on entry.</figcaption></figure>
+    <figure><a href="screenshots/phase5c4b/03-mole-selected-en-final-suite.png"><img class="phone" src="screenshots/phase5c4b/03-mole-selected-en-final-suite.png" alt="Selected mole with outline and English fact"></a><figcaption>Underground — Mole selected by image tap. Phone portrait 1080×2400, font scale 1×. Dark outline and fact card identify selection without relying on colour.</figcaption></figure>
+    <figure><a href="screenshots/phase5c4b/04-earthworm-selected-en-final-suite.png"><img class="phone" src="screenshots/phase5c4b/04-earthworm-selected-en-final-suite.png" alt="Selected earthworm with outline and English fact"></a><figcaption>Underground — Earthworm selected by image tap. Phone portrait 1080×2400, font scale 1×. The enlarged image-relative target frames the worm; English fact matches the displayed animal.</figcaption></figure>
+    <figure><a href="screenshots/phase5c4b/05-rabbit-selected-en-final-suite.png"><img class="phone" src="screenshots/phase5c4b/05-rabbit-selected-en-final-suite.png" alt="Selected wild rabbit with outline and English fact"></a><figcaption>Underground — Wild Rabbit selected by image tap. Phone portrait 1080×2400, font scale 1×. Fact describes shelter use rather than claiming rabbits live only underground.</figcaption></figure>
+  </div></section>
+  <section id="language"><h2>Bilingual interaction and Options return</h2><div class="grid">
+    <figure><a href="screenshots/phase5c4b/06-rabbit-selected-de-options-return-final-suite.png"><img class="phone" src="screenshots/phase5c4b/06-rabbit-selected-de-options-return-final-suite.png" alt="Rabbit selection after changing language to German in Options"></a><figcaption>Underground — German Wild Rabbit after Options return. Phone portrait 1080×2400, font scale 1×. Selection identity persists while the name, fact and Replay label change language.</figcaption></figure>
+    <figure><a href="screenshots/phase5c4b/12-german-1-5x-final-suite.png"><img class="phone" src="screenshots/phase5c4b/12-german-1-5x-final-suite.png" alt="German Underground scene at 1.5 times text scale"></a><figcaption>Underground — German, selected rabbit. Phone portrait 1080×2400, font scale 1.5×. Text wraps and controls remain available by scrolling.</figcaption></figure>
+    <figure><a href="screenshots/phase5c4b/13-german-2x-final-suite.png"><img class="phone" src="screenshots/phase5c4b/13-german-2x-final-suite.png" alt="German Underground selected fact at twice normal text scale"></a><figcaption>Underground — German Wild Rabbit fact at 2×. Phone portrait 1080×2400, font scale 2×. Enlarged wording and Replay remain legible/reachable; this is a scrolled view.</figcaption></figure>
+  </div></section>
+  <section id="responsive"><h2>Responsive layouts</h2><div class="grid">
+    <figure><a href="screenshots/phase5c4b/08-phone-landscape-de-final-suite.png"><img src="screenshots/phase5c4b/08-phone-landscape-de-final-suite.png" alt="Underground in German on a landscape phone viewport"></a><figcaption>Underground — German, selected rabbit. Phone landscape emulator viewport 2400×1080, font scale 1×. The fitted cutaway and targets stay proportional; the lower fact/replay area continues below the first viewport.</figcaption></figure>
+    <figure><a href="screenshots/phase5c4b/09-short-landscape-de-final-suite.png"><img src="screenshots/phase5c4b/09-short-landscape-de-final-suite.png" alt="Underground in a short landscape emulator viewport"></a><figcaption>Underground — German, selected rabbit. Short landscape emulator viewport 1280×720, font scale 1×. Title and task instruction remain visible; only the top of the scene appears before scrolling, so animal targets and labels require scrolling.</figcaption></figure>
+    <figure><a href="screenshots/phase5c4b/10-tablet-portrait-emulator-final-suite.png"><img src="screenshots/phase5c4b/10-tablet-portrait-emulator-final-suite.png" alt="Underground on a tablet portrait emulator viewport"></a><figcaption>Underground — German, selected rabbit. Tablet portrait emulator viewport override 1600×2560, font scale 1×. The scene remains centered at its 4:3 ratio with generous side margins.</figcaption></figure>
+    <figure><a href="screenshots/phase5c4b/11-tablet-landscape-emulator-final-suite.png"><img src="screenshots/phase5c4b/11-tablet-landscape-emulator-final-suite.png" alt="Underground on a tablet landscape emulator viewport"></a><figcaption>Underground — German, selected rabbit. Tablet landscape emulator viewport override 2560×1600, font scale 1×. The scene stays centered and uncropped; selection and labels remain in document flow.</figcaption></figure>
+  </div></section>
+  <section id="restoration"><h2>Restoration and navigation</h2><div class="grid">
+    <figure><a href="screenshots/phase5c4b/07-rabbit-restored-after-recreation-de-final-suite.png"><img class="phone" src="screenshots/phase5c4b/07-rabbit-restored-after-recreation-de-final-suite.png" alt="Rabbit selection restored after Activity recreation"></a><figcaption>Underground — after `ActivityScenario.recreate()`. Phone portrait 1080×2400, German, font scale 1×. Selected canonical Rabbit and its bilingual content render again from the retained Activity ViewModel.</figcaption></figure>
+  </div><p>Every image opens its original PNG asset. Captures were taken from the running application on API 35 emulator-5554; no screenshots were composed or fabricated.</p></section>
+</main>
+</body>
+</html>

@@ -666,3 +666,31 @@ checks normalized hotspot bounds against the rendered scene. `assembleDebug`,
 full run stopped at 185/595 when its emulator disconnected; the completed rerun
 supersedes it. Genuine before/after hotspot captures are included in the gallery.
 Full results and the screenshot gallery are recorded in the [Phase 5C.3 review](docs/animals-phase5c3-woodland-review/REVIEW.md).
+
+## Phase 5C.4 — Underground cutaway Explore (2026-10-29)
+
+Underground is the third active unscored Explore Habitats choice. The 4:3
+cutaway uses a generated opaque background, existing Mole/Rabbit cutouts and a
+new transparent Earthworm layer. API 35 tests check each image hotspot against
+its normalized source-scene bounds, selected semantics, named alternatives,
+bilingual facts, replay/Sound Off behavior, Options return, Activity recreation,
+navigation and portrait/landscape/tablet emulator viewport overrides. The
+Earthworm target was enlarged after visual review. The review retains 14
+earlier genuine screenshots and 14 current-source captures from the complete
+API 35 route test. The HTML gallery displays the current-source set at
+1080×2400, 2400×1080, 1280×720, 1600×2560 and 2560×1600 (tablet dimensions are
+emulator overrides), plus German 1.5× and 2×. Earlier captures and raw test
+copies are preserved; the gallery links to the current-source captures.
+
+Fresh full JVM suite: **591/591 passed**, 0 failures/errors/skips. The complete
+unfiltered API 35 suite passed **599/599**, 0 failures/errors/skips, on disposable
+`emulator-5554` (4 virtual CPUs, 6 GB RAM) in 46m 51s. This includes Underground,
+Ocean/Woodland routes, Animal Groups compatibility, Home navigation and the
+existing app instrumentation regressions. The complete XML and UTP textproto
+are retained in the review package. A forced `testDebugUnitTest --rerun-tasks`
+passed **591/591**. Fresh `assembleDebug assembleDebugAndroidTest lintDebug
+--rerun-tasks` passed; lint reports 0 errors and 5 existing warnings.
+`git diff --check` passed. The historical 595/595 is superseded for this
+implementation. Physical devices, child use, actual TalkBack and switch access,
+audible offline voice, and owner approval of generated-art provenance/use remain
+owner-managed acceptance.

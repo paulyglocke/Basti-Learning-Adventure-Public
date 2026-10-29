@@ -96,4 +96,66 @@ class HabitatExploreContentTest {
             WoodlandExploreReducer.reduce(fox, WoodlandExploreAction.Select(HabitatExploreContent.dolphin))
         }
     }
+
+    @Test fun undergroundHasStableHabitatAndAnimalIdsWithBilingualReviewedContent() {
+        assertEquals("habitat.underground", HabitatExploreContent.underground.value)
+        assertEquals("animal.mole", HabitatExploreContent.mole.value)
+        assertEquals("animal.rabbit", HabitatExploreContent.rabbit.value)
+        assertEquals("animal.earthworm", HabitatExploreContent.earthworm.value)
+        assertEquals("Underground", HabitatExploreContent.undergroundTitle.display[ContentLanguage.ENGLISH])
+        assertEquals("Unter der Erde", HabitatExploreContent.undergroundTitle.display[ContentLanguage.GERMAN])
+        assertEquals("A mole lives mostly underground and digs tunnels.",
+            HabitatExploreContent.moleFact.display[ContentLanguage.ENGLISH])
+        assertEquals("Ein Maulwurf lebt überwiegend unter der Erde und gräbt Gänge.",
+            HabitatExploreContent.moleFact.display[ContentLanguage.GERMAN])
+        assertEquals("Wild rabbits can use underground warrens for shelter.",
+            HabitatExploreContent.wildRabbitFact.display[ContentLanguage.ENGLISH])
+        assertEquals("Wildkaninchen können unterirdische Baue als Schutz nutzen.",
+            HabitatExploreContent.wildRabbitFact.display[ContentLanguage.GERMAN])
+        assertEquals("Earthworms move through soil.",
+            HabitatExploreContent.earthwormFact.display[ContentLanguage.ENGLISH])
+        assertEquals("Regenwürmer bewegen sich durch den Boden.",
+            HabitatExploreContent.earthwormFact.display[ContentLanguage.GERMAN])
+    }
+
+    @Test fun undergroundAnimalContentUsesOfflineAssetsAndDisjointImageRelativeFrames() {
+        assertEquals("SceneDescriptions/underground/canonical/underground_001_cutaway.png",
+            HabitatExploreContent.undergroundScene)
+        assertEquals(listOf(HabitatExploreContent.mole, HabitatExploreContent.rabbit, HabitatExploreContent.earthworm),
+            HabitatExploreContent.undergroundAnimals.map { it.id })
+        assertEquals("Animals/canonical/mole.png", HabitatExploreContent.undergroundAnimal(HabitatExploreContent.mole)?.artworkPath)
+        assertEquals("Animals/canonical/rabbit.png", HabitatExploreContent.undergroundAnimal(HabitatExploreContent.rabbit)?.artworkPath)
+        assertEquals("Animals/canonical/earthworm.png", HabitatExploreContent.undergroundAnimal(HabitatExploreContent.earthworm)?.artworkPath)
+        val animals = HabitatExploreContent.undergroundAnimals
+        animals.forEach { animal ->
+            assertTrue(animal.target.left >= 0f && animal.target.top >= 0f)
+            assertTrue(animal.target.right <= 1f && animal.target.bottom <= 1f)
+        }
+        for (i in animals.indices) for (j in i + 1 until animals.size) {
+            val a = animals[i].target
+            val b = animals[j].target
+            assertFalse("Underground image-relative targets must not overlap",
+                a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom)
+        }
+        assertEquals("Mole. A mole lives mostly underground and digs tunnels.",
+            HabitatExploreContent.undergroundAnimal(HabitatExploreContent.mole)?.utterance?.display?.get(ContentLanguage.ENGLISH))
+        assertEquals("Regenwurm. Regenwürmer bewegen sich durch den Boden.",
+            HabitatExploreContent.undergroundAnimal(HabitatExploreContent.earthworm)?.utterance?.display?.get(ContentLanguage.GERMAN))
+    }
+
+    @Test fun undergroundSelectionIsLanguageIndependentUnscoredAndRejectsUnknownAnimals() {
+        val initial = UndergroundExploreState()
+        assertNull(initial.selectedAnimal)
+        val mole = UndergroundExploreReducer.reduce(initial, UndergroundExploreAction.Select(HabitatExploreContent.mole))
+        val worm = UndergroundExploreReducer.reduce(mole, UndergroundExploreAction.Select(HabitatExploreContent.earthworm))
+        assertEquals(HabitatExploreContent.mole, mole.selectedAnimal)
+        assertEquals(HabitatExploreContent.earthworm, worm.selectedAnimal)
+        assertEquals(HabitatExploreContent.earthworm, worm.selectedAnimal)
+        assertThrows(IllegalArgumentException::class.java) {
+            UndergroundExploreReducer.reduce(worm, UndergroundExploreAction.Select(ContentId("animal.badger")))
+        }
+        assertThrows(IllegalArgumentException::class.java) {
+            UndergroundExploreReducer.reduce(worm, UndergroundExploreAction.Select(HabitatExploreContent.dolphin))
+        }
+    }
 }

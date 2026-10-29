@@ -42,7 +42,7 @@ screenshots, restoration limits and owner-managed accessibility status.
 The Phase 5C.1 audit and Phase 5C.2 implementation are part of this task's
 committed starting baseline (`2cbaec64eabe165a06852a3799cf397e47c8b350`).
 
-## Phase 5C.3 — Woodland Explore (2026-10-27, uncommitted)
+## Phase 5C.3 — Woodland Explore (committed baseline)
 
 Added Woodland as the second active Explore Habitats choice, using the approved
 `woodland_008_homes_choices.png` scene and two reviewed targets: canonical
@@ -61,7 +61,46 @@ Genuine before/after hotspot captures are included in the gallery. See
 [`docs/animals-phase5c3-woodland-review/REVIEW.md`](docs/animals-phase5c3-woodland-review/REVIEW.md)
 and [`gallery.html`](docs/animals-phase5c3-woodland-review/gallery.html) for the visual record. Tablet-size captures are emulator
 viewport overrides. Physical devices, real TalkBack/switch access, child use and
-audible offline voice quality remain owner-managed. No commit/push.
+audible offline voice quality remain owner-managed. Committed and pushed as
+`f07c3959e93bbbc6c21017100c4090e1c82bf72d`.
+
+## Phase 5C.4A — Underground artwork and scene design (design checkpoint)
+
+Starting at clean `main` HEAD `f07c3959e93bbbc6c21017100c4090e1c82bf72d`,
+matching `origin/main`. The design checkpoint confirms only the transparent
+Mole (`1254×1254`, Wave 3) and Rabbit (`282×327`, Wave 1) are reusable standalone
+targets in the proposed first roster; no underground background, soil/roots,
+tunnel or chamber artwork exists, and Earthworm/Badger/Ant/Fox have no suitable
+standalone cutouts. Recommendation: ready with new approved artwork, using a
+single 4:3 hybrid cutaway plus Mole, Wild Rabbit and a new Earthworm layer.
+Exact scoped bilingual facts, source links, layout geometry, artwork rights
+requirements and acceptance criteria are in
+[`docs/animals-phase5c4-underground-design/SUMMARY.md`](docs/animals-phase5c4-underground-design/SUMMARY.md).
+That checkpoint itself changed documentation only. Its follow-on implementation
+and artwork are tracked separately below.
+
+## Phase 5C.4 — Underground cutaway Explore (development acceptance complete)
+
+Built an original 4:3 surface-to-soil background and transparent Earthworm
+foreground art for the approved hybrid composition. The screen reuses canonical
+Mole and Rabbit PNGs. Underground is now the third functional Explore Habitats
+choice. Its language-independent `animal.mole`, `animal.rabbit` and
+`animal.earthworm` selections show reviewed bilingual names/facts, aligned
+image-relative hotspots, large labeled alternatives, selected outlines and
+manual offline replay. It creates no score, journal or Progress Tracker event;
+the selection is held by an Activity ViewModel and survives Activity recreation,
+not OS process death. Generated-art provenance is recorded next to the assets.
+Focused implementation, route, responsive captures and validation are in
+[`docs/animals-phase5c4-underground-review/REVIEW.md`](docs/animals-phase5c4-underground-review/REVIEW.md)
+and its screenshot gallery. Final validation on 2026-10-29 passed the complete
+API 35 app suite **599/599**, zero failures/errors/skips (46m 51s), plus a forced
+fresh full JVM rerun **591/591**. `assembleDebug`, `assembleDebugAndroidTest`,
+`lintDebug` and `git diff --check` passed; lint reports 0 errors and 5 existing
+warnings. The complete XML and UTP textproto are retained in the review package.
+The emulator was restored to 1080×2400, 420 dpi, 1×. The work remains
+uncommitted. Owner approval of the generated artwork's provenance/use, physical
+device and child-use acceptance, spoken German quality, actual TalkBack and
+switch access remain open. Freshwater and matching remain deferred.
 
 ## Deferred roadmap proposal — Living Year Wheel (2026-10-26)
 

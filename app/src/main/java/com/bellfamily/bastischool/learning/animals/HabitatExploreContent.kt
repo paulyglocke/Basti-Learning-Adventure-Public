@@ -7,15 +7,20 @@ import com.bellfamily.bastischool.learning.models.ContentText
 object HabitatExploreContent {
     val ocean = ContentId("habitat.ocean")
     val woodland = ContentId("habitat.woodland")
+    val underground = ContentId("habitat.underground")
     val dolphin = ContentId("animal.dolphin")
     val rabbit = ContentId("animal.rabbit")
+    val mole = ContentId("animal.mole")
+    val earthworm = ContentId("animal.earthworm")
     /** Stable scene identity; the app has no shared canonical animal registry yet. */
     val fox = ContentId("animal.fox")
     const val oceanScene = "SceneDescriptions/ocean_underwater/canonical/ocean_001_reef_actions.png"
     const val woodlandScene = "SceneDescriptions/woodland_forest/canonical/woodland_008_homes_choices.png"
+    const val undergroundScene = "SceneDescriptions/underground/canonical/underground_001_cutaway.png"
 
     val oceanTitle = ContentText.plain("Ocean", "Meer")
     val woodlandTitle = ContentText.plain("Woodland", "Wald")
+    val undergroundTitle = ContentText.plain("Underground", "Unter der Erde")
     val choosePrompt = ContentText.plain("Choose a place to explore.", "Wähle einen Ort zum Entdecken.")
     val scenePrompt = ContentText.plain("Tap the dolphin or its name to learn about it.",
         "Tippe auf den Delfin oder seinen Namen, um mehr über ihn zu erfahren.")
@@ -60,6 +65,43 @@ object HabitatExploreContent {
     )
 
     fun woodlandAnimal(id: ContentId) = woodlandAnimals.firstOrNull { it.id == id }
+
+    val moleName = ContentText.plain("Mole", "Maulwurf")
+    val moleFact = ContentText.plain(
+        "A mole lives mostly underground and digs tunnels.",
+        "Ein Maulwurf lebt überwiegend unter der Erde und gräbt Gänge.")
+    val moleUtterance = ContentText.plain(
+        "Mole. A mole lives mostly underground and digs tunnels.",
+        "Maulwurf. Ein Maulwurf lebt überwiegend unter der Erde und gräbt Gänge.")
+
+    val wildRabbitName = ContentText.plain("Wild Rabbit", "Wildkaninchen")
+    val wildRabbitFact = ContentText.plain(
+        "Wild rabbits can use underground warrens for shelter.",
+        "Wildkaninchen können unterirdische Baue als Schutz nutzen.")
+    val wildRabbitUtterance = ContentText.plain(
+        "Wild rabbit. Wild rabbits can use underground warrens for shelter.",
+        "Wildkaninchen. Wildkaninchen können unterirdische Baue als Schutz nutzen.")
+
+    val earthwormName = ContentText.plain("Earthworm", "Regenwurm")
+    val earthwormFact = ContentText.plain(
+        "Earthworms move through soil.",
+        "Regenwürmer bewegen sich durch den Boden.")
+    val earthwormUtterance = ContentText.plain(
+        "Earthworm. Earthworms move through soil.",
+        "Regenwurm. Regenwürmer bewegen sich durch den Boden.")
+
+    val undergroundAnimals = listOf(
+        UndergroundAnimalContent(mole, moleName, moleFact, moleUtterance,
+            NormalizedSceneTarget(0.10f, 0.58f, 0.39f, 0.96f), "Animals/canonical/mole.png"),
+        UndergroundAnimalContent(rabbit, wildRabbitName, wildRabbitFact, wildRabbitUtterance,
+            NormalizedSceneTarget(0.70f, 0.54f, 0.93f, 0.84f), "Animals/canonical/rabbit.png"),
+        UndergroundAnimalContent(earthworm, earthwormName, earthwormFact, earthwormUtterance,
+            // Taller than the worm artwork itself for practical direct tapping;
+            // it remains isolated horizontally from the Mole and Rabbit regions.
+            NormalizedSceneTarget(0.41f, 0.35f, 0.68f, 0.60f), "Animals/canonical/earthworm.png")
+    )
+
+    fun undergroundAnimal(id: ContentId) = undergroundAnimals.firstOrNull { it.id == id }
 }
 
 data class NormalizedSceneTarget(val left: Float, val top: Float, val right: Float, val bottom: Float) {
@@ -74,6 +116,34 @@ data class WoodlandAnimalContent(
     /** Fractional coordinates on the 4:3 source image, not screen coordinates. */
     val target: NormalizedSceneTarget
 )
+
+data class UndergroundAnimalContent(
+    val id: ContentId,
+    val name: ContentText,
+    val fact: ContentText,
+    val utterance: ContentText,
+    /** Normalized visible-image frame on the 4:3 source scene. */
+    val target: NormalizedSceneTarget,
+    val artworkPath: String
+)
+
+data class UndergroundExploreState(val selectedAnimal: ContentId? = null)
+
+sealed interface UndergroundExploreAction {
+    data class Select(val animal: ContentId) : UndergroundExploreAction
+}
+
+/** Unscored, language-independent exploration selection. */
+object UndergroundExploreReducer {
+    private val availableAnimals = HabitatExploreContent.undergroundAnimals.map { it.id }.toSet()
+
+    fun reduce(state: UndergroundExploreState, action: UndergroundExploreAction): UndergroundExploreState = when (action) {
+        is UndergroundExploreAction.Select -> {
+            require(action.animal in availableAnimals) { "Unknown Underground Explore animal" }
+            state.copy(selectedAnimal = action.animal)
+        }
+    }
+}
 
 data class WoodlandExploreState(val selectedAnimal: ContentId? = null)
 

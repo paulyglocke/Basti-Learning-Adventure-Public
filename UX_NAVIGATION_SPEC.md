@@ -363,18 +363,19 @@ route compatibility. Chooser Back returns to native Home; explicit Home returns 
 illustrated Home. Options remains an overlay that restores its originating route.
 No route identifier or persisted destination format was migrated.
 
-# Animals & Nature — Phase 5C.2–5C.3 Explore Habitats
+# Animals & Nature — Phase 5C.2–5C.4 Explore Habitats
 
 The illustrated Home’s Animals & Nature category includes **Explore Habitats**
 alongside the existing Animal Actions and Animal Groups activities. Explore
-Habitats offers Ocean and Woodland as active choices. Ocean opens a native,
-unscored scene with the canonical `animal.dolphin` target. Woodland opens the
-approved `woodland_008_homes_choices.png` scene with canonical `animal.rabbit`
-and stable `animal.fox` targets. Both scenes provide image-relative hit regions,
-large labeled alternatives, selected outlines, bilingual names/facts, replay,
-Back to habitat chooser and Home. Options overlays and language changes restore
-the current route and selected identity. Sound Off is respected by the shared
-offline audio controller. Neither Explore route emits attempts, completion,
-journals or Progress Tracker identities. Original Animal Groups routing and its
-historical saved-session contract remain unchanged. Freshwater and Underground
-are not offered as active routes.
+Habitats offers Ocean, Woodland and Underground as active choices. Ocean opens a
+native, unscored scene with the canonical `animal.dolphin` target. Woodland opens
+`woodland_008_homes_choices.png` with canonical `animal.rabbit` and stable
+`animal.fox` targets. Underground uses a fitted 4:3 cutaway with separately
+layered `animal.mole`, `animal.rabbit` and `animal.earthworm`. All scenes provide
+image-relative hit regions, large labeled alternatives, selected outlines,
+bilingual names/facts, replay, Back to habitat chooser and Home. Options overlays
+and language changes restore the current route and selected identity. Sound Off
+is respected by the shared offline audio controller. Explore routes emit no
+attempts, completion, journals or Progress Tracker identities. Original Animal
+Groups routing and its historical saved-session contract remain unchanged.
+Freshwater and habitat matching are not offered as active routes.

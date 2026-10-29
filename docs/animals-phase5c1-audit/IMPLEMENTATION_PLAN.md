@@ -2,7 +2,7 @@
 
 Phase numbering is resolved for future work: **Phase 5C — Animals & Habitats**, beginning with 5C.1 audit and 5C.2 Ocean Explore. Older `docs/curriculum-phase5-audit/PRIORITIES.md` references to 5B describe historical planning and are preserved. Each stage should be independently testable and stop if required art/facts are not ready. This audit itself implemented no stage.
 
-**Status update (2026-10-27):** Phase 5C.2 implemented Ocean Explore and Phase 5C.3 implemented Woodland Explore. Delivered scope, validation and remaining acceptance are recorded in the [Ocean review](../animals-phase5c2-ocean-review/REVIEW.md) and [Woodland review](../animals-phase5c3-woodland-review/REVIEW.md). The original proposal's sequencing is adjusted below: Underground is now Phase 5C.4; Freshwater and other additional habitats are Phase 5C.5; matching and final regression follow.
+**Status update (2026-10-29):** Phase 5C.2 implemented Ocean Explore and Phase 5C.3 implemented Woodland Explore. Phase 5C.4A completed the Underground design checkpoint; its approved-for-implementation asset package and current feature validation are recorded in the [design package](../animals-phase5c4-underground-design/SUMMARY.md) and [5C.4 review](../animals-phase5c4-underground-review/REVIEW.md). The original proposal's sequencing is adjusted below: Underground is Phase 5C.4; Freshwater and other additional habitats are Phase 5C.5; matching and final regression follow.
 
 ## Phase 5C.2 — Explore Habitats Foundation (delivered)
 
@@ -25,9 +25,9 @@ alternatives, selected outlines, bilingual reviewed facts and replay.
 
 ## Phase 5C.4 — Underground cutaway scene
 
-**Scope:** after artwork and fact approval, build one shared cutaway with surface, soil, roots, broad tunnel and visible entrance. Start with Mole, roots and soil/tunnel parts. Add Rabbit as a shelter relation only if the transparent cutout style and art fit are accepted. Keep selection non-scored, bilingual, accessible and visually explainable without reading.
+**Scope:** build the shared cutaway with surface, soil, roots, broad tunnels and visible entrance. The current scene uses Mole, Wild Rabbit and Earthworm layers. Keep selection non-scored, bilingual, accessible and visually explainable without reading.
 
-**Dependencies/gate:** original layered art brief approved; high-contrast ground boundary; portrait and landscape composition; independent hotspots at large target sizes; source-scoped facts; German review; image license/provenance recorded. Do not include Earthworm, Ant, Badger or Fox until their exact art and content are ready.
+**Dependencies/gate:** visual review the generated layered artwork, confirm rights/provenance, and complete native-speaker German review before release. Verify high-contrast boundary, portrait/landscape fit and independent hotspots at large target sizes. Earthworm is now represented by a dedicated generated asset; do not include Ant, Badger or Fox until exact artwork and content are ready.
 
 **Focused tests:** rendered layer/asset mappings and visual screenshot review; each semantic target and selected state; above/below/inside/next-to/between relations; reachability, font scaling, reduced-motion/static behavior; offline replay/Sound Off; all Animals & Nature route regressions; no change to Prepositions contracts.
 
