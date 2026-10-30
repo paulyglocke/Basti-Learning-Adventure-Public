@@ -984,6 +984,37 @@ provenance is documented, but owner approval of its use remains open. Freshwater
 and habitat matching remain future work. Preserve Ocean, Woodland and original
 Animal Groups behavior.
 
+#### Phase 5C.5A — Freshwater design and artwork readiness
+
+**Status:** design audit complete; Freshwater is not implemented and is not in
+the active chooser. The repository has four 1448×1086 seasonal lakeside PNGs
+owned by Seasons, but no dedicated pond scene, frog or duck cutout. The only
+generic `animal.fish` illustration is visibly a clownfish and is not evidence
+for a freshwater fish. The recommended first scene is a new approved 4:3
+European pond composition with separate Frog and Duck cutouts; defer fish until
+a named freshwater species and suitable art are reviewed. Use existing
+source-backed, cautious bilingual facts, fit the artwork without stretching,
+and keep the experience unscored. The next bounded task is Phase 5C.5B after
+artwork provenance/owner approval and native-speaker review. See the
+[Freshwater design package](docs/animals-phase5c5-freshwater-design/SUMMARY.md)
+for verified assets, facts, scene brief and implementation/test plan.
+
+#### Phase 5C.5B — Freshwater Explore implementation
+
+**Status:** the Freshwater Explore route is implemented as the fourth active,
+unscored habitat, with a generated pond background and separate Frog/Duck
+layers. The original design checkpoint above remains as historical evidence;
+its “not implemented” state was true at that checkpoint. The production
+experience reuses the reviewed bilingual facts, has source-relative touch
+targets, labeled alternatives, offline replay and Options restoration. No Fish,
+scoring, journal or progress identity was added. See the
+[Freshwater implementation review](docs/animals-phase5c5-freshwater-review/REVIEW.md)
+for final validation and art provenance. Final validation passed **595/595
+JVM** and **602/602 complete API 35 instrumentation** tests, zero failures,
+errors or skips; `assembleDebug`, `assembleDebugAndroidTest`, and lint passed.
+Owner art-release approval and physical/child accessibility review remain
+separate.
+
 ---
 
 ## Reusable learning mechanics

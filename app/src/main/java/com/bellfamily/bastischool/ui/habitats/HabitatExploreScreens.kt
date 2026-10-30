@@ -49,9 +49,12 @@ fun HabitatExploreChooserScreen(
     woodlandArtworkFailed: Boolean,
     undergroundImage: ImageBitmap?,
     undergroundArtworkFailed: Boolean,
+    freshwaterImage: ImageBitmap?,
+    freshwaterArtworkFailed: Boolean,
     onOcean: () -> Unit,
     onWoodland: () -> Unit,
     onUnderground: () -> Unit,
+    onFreshwater: () -> Unit,
     onAnimals: () -> Unit,
     onHome: () -> Unit,
     modifier: Modifier = Modifier
@@ -123,6 +126,27 @@ fun HabitatExploreChooserScreen(
                         Modifier.testTag("habitat-underground-loading"))
             }
         }
+        Surface(onClick = onFreshwater, enabled = freshwaterImage != null,
+            modifier = Modifier.fillMaxWidth().testTag("habitat-freshwater-choice")
+                .semantics { role = Role.Button },
+            shape = BastiShapes.card, color = BastiPalette.secondaryContainer,
+            contentColor = BastiPalette.ink, border = BorderStroke(1.dp, BastiPalette.outline)) {
+            Column(Modifier.padding(BastiSpacing.medium), verticalArrangement = Arrangement.spacedBy(BastiSpacing.small)) {
+                freshwaterImage?.let {
+                    Image(it, contentDescription = null, modifier = Modifier.fillMaxWidth()
+                        .heightIn(min = 120.dp, max = 260.dp).clip(RoundedCornerShape(18.dp))
+                        .testTag("habitat-freshwater-preview"), contentScale = ContentScale.Fit)
+                }
+                Text(HabitatExploreContent.freshwaterTitle.display[language],
+                    Modifier.fillMaxWidth().semantics { heading() }, style = BastiTypography.answer)
+                Text(t("Explore a pond and meet a frog and a duck.",
+                    "Entdecke einen Teich und lerne einen Frosch und eine Ente kennen."),
+                    Modifier.fillMaxWidth(), style = BastiTypography.parentInformation)
+                if (freshwaterImage == null && !freshwaterArtworkFailed)
+                    Text(t("Opening the freshwater pond…", "Der Süßwasserteich wird geöffnet …"),
+                        Modifier.testTag("habitat-freshwater-loading"))
+            }
+        }
         if (artworkFailed) NativeSupportMessage(t(
             "The ocean picture could not be opened. Try again or return to Animals & Nature.",
             "Das Meeresbild konnte nicht geöffnet werden. Versuche es erneut oder gehe zu Tiere & Natur zurück."))
@@ -132,10 +156,129 @@ fun HabitatExploreChooserScreen(
         if (undergroundArtworkFailed) NativeSupportMessage(t(
             "Some underground pictures could not be opened. You can still choose an animal by name.",
             "Einige Bilder unter der Erde konnten nicht geöffnet werden. Du kannst ein Tier trotzdem über seinen Namen auswählen."))
+        if (freshwaterArtworkFailed) NativeSupportMessage(t(
+            "The pond pictures could not be opened. Try again or return to Animals & Nature.",
+            "Die Teichbilder konnten nicht geöffnet werden. Versuche es erneut oder gehe zu Tiere & Natur zurück."))
         NativeActionButton(t("Animals & Nature", "Tiere & Natur"), NativeActionRole.SECONDARY,
             onAnimals, Modifier.fillMaxWidth().testTag("habitats-animals-back"))
         NativeActionButton(t("Home", "Startseite"), NativeActionRole.NAVIGATION,
             onHome, Modifier.fillMaxWidth().testTag("habitats-home"))
+    }
+}
+
+@Composable
+fun FreshwaterExploreScreen(
+    language: ContentLanguage,
+    scene: ImageBitmap?,
+    animalImages: Map<ContentId, ImageBitmap>,
+    artworkFailed: Boolean,
+    selectedAnimal: ContentId?,
+    audioFailed: Boolean,
+    onAnimal: (ContentId) -> Unit,
+    onReplay: () -> Unit,
+    onHabitats: () -> Unit,
+    onHome: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val german = language == ContentLanguage.GERMAN
+    fun t(en: String, de: String) = if (german) de else en
+    val selected = selectedAnimal?.let(HabitatExploreContent::freshwaterAnimal)
+    Column(modifier.fillMaxSize().background(BastiPalette.background).verticalScroll(rememberScrollState())
+        .padding(horizontal = BastiSpacing.medium, vertical = BastiSpacing.small),
+        verticalArrangement = Arrangement.spacedBy(BastiSpacing.small)) {
+        NativeActivityTitle(HabitatExploreContent.freshwaterTitle.display[language],
+            Modifier.semantics { heading() }.testTag("freshwater-title"))
+        Text(HabitatExploreContent.freshwaterPrompt.display[language], Modifier.fillMaxWidth()
+            .testTag("freshwater-prompt"), style = BastiTypography.instruction, color = BastiPalette.ink)
+        if (scene != null) FreshwaterScene(scene, animalImages, selectedAnimal, language, onAnimal)
+        else if (artworkFailed) NativeSupportMessage(t(
+            "The pond picture could not be opened. Choose an animal by name below.",
+            "Das Teichbild konnte nicht geöffnet werden. Wähle unten ein Tier über seinen Namen aus."))
+        else Text(t("Opening the pond…", "Der Teich wird geöffnet …"), Modifier.testTag("freshwater-loading"))
+
+        HabitatExploreContent.freshwaterAnimals.forEach { animal ->
+            val isSelected = selectedAnimal == animal.id
+            val stateLabel = if (german) {
+                if (isSelected) "Ausgewählt" else "Nicht ausgewählt"
+            } else if (isSelected) "Selected" else "Not selected"
+            NativeActionButton(animal.name.display[language], NativeActionRole.SECONDARY,
+                { onAnimal(animal.id) }, Modifier.fillMaxWidth()
+                    .testTag("freshwater-choice-${animal.id.value.substringAfterLast('.')}")
+                    .semantics { this.selected = isSelected; stateDescription = stateLabel })
+        }
+        if (selected != null) {
+            val name = selected.name.display[language]
+            Surface(modifier = Modifier.fillMaxWidth()
+                .testTag("freshwater-fact-${selected.id.value.substringAfterLast('.') }"),
+                shape = BastiShapes.card, color = BastiPalette.secondaryContainer,
+                border = BorderStroke(2.dp, BastiPalette.primary)) {
+                Column(Modifier.padding(BastiSpacing.medium), verticalArrangement = Arrangement.spacedBy(BastiSpacing.small)) {
+                    Text(name, Modifier.fillMaxWidth().semantics { heading() }, style = BastiTypography.answer,
+                        color = BastiPalette.ink)
+                    Text(selected.fact.display[language], Modifier.fillMaxWidth().testTag("freshwater-fact-text"),
+                        style = BastiTypography.instruction, color = BastiPalette.ink)
+                    NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY,
+                        onReplay, Modifier.fillMaxWidth().testTag("freshwater-replay"))
+                }
+            }
+        }
+        if (audioFailed) Text(t("Speech is unavailable. Check installed offline voices in Options.",
+            "Die Sprachausgabe ist nicht verfügbar. Prüfe die Offline-Stimmen in den Optionen."),
+            Modifier.fillMaxWidth().testTag("freshwater-audio-error"), color = BastiPalette.ink)
+        NativeActionButton(t("Back to habitats", "Zurück zu den Lebensräumen"), NativeActionRole.SECONDARY,
+            onHabitats, Modifier.fillMaxWidth().testTag("freshwater-habitats-back"))
+        NativeActionButton(t("Home", "Startseite"), NativeActionRole.NAVIGATION,
+            onHome, Modifier.fillMaxWidth().testTag("freshwater-home"))
+    }
+}
+
+@Composable
+private fun FreshwaterScene(
+    image: ImageBitmap,
+    animalImages: Map<ContentId, ImageBitmap>,
+    selectedAnimal: ContentId?,
+    language: ContentLanguage,
+    onAnimal: (ContentId) -> Unit
+) {
+    BoxWithConstraints(Modifier.fillMaxWidth()) {
+        val viewportHeight = LocalConfiguration.current.screenHeightDp.dp
+        val maxSceneHeight = minOf(430.dp, viewportHeight * .62f)
+        val sceneWidth = minOf(maxWidth, maxSceneHeight * (4f / 3f))
+        val sceneHeight = sceneWidth * (3f / 4f)
+        BoxWithConstraints(Modifier.align(Alignment.TopCenter).width(sceneWidth).height(sceneHeight)
+            .clip(RoundedCornerShape(20.dp)).background(BastiPalette.surface)
+            .border(2.dp, BastiPalette.outline, RoundedCornerShape(20.dp)).testTag("freshwater-scene")) {
+            Image(image, contentDescription = null, modifier = Modifier.fillMaxSize()
+                .testTag("freshwater-scene-art"), contentScale = ContentScale.Fit)
+            HabitatExploreContent.freshwaterAnimals.forEach { animal ->
+                val bitmap = animalImages[animal.id] ?: return@forEach
+                val target = animal.target
+                val selected = selectedAnimal == animal.id
+                val name = animal.name.display[language]
+                val stateLabel = if (language == ContentLanguage.GERMAN) {
+                    if (selected) "Ausgewählt" else "Nicht ausgewählt"
+                } else if (selected) "Selected" else "Not selected"
+                val description = if (language == ContentLanguage.GERMAN) {
+                    "$name, $stateLabel. Tippe, um den Namen und eine Information zu hören."
+                } else "$name, $stateLabel. Tap to hear the name and a fact."
+                Box(Modifier.align(Alignment.TopStart)
+                    .offset(x = maxWidth * target.left, y = maxHeight * target.top)
+                    .fillMaxWidth(target.right - target.left)
+                    .fillMaxHeight(target.bottom - target.top)
+                    .then(if (selected) Modifier.border(4.dp, BastiPalette.ink, RoundedCornerShape(24.dp)) else Modifier)
+                    .clickable { onAnimal(animal.id) }
+                    .testTag("freshwater-hotspot-${animal.id.value.substringAfterLast('.')}")
+                    .semantics(mergeDescendants = true) {
+                        role = Role.Button
+                        contentDescription = description
+                        this.selected = selected
+                        stateDescription = stateLabel
+                    }) {
+                    Image(bitmap, contentDescription = null, modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Fit)
+                }
+            }
+        }
     }
 }
 

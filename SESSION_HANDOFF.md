@@ -102,6 +102,42 @@ uncommitted. Owner approval of the generated artwork's provenance/use, physical
 device and child-use acceptance, spoken German quality, actual TalkBack and
 switch access remain open. Freshwater and matching remain deferred.
 
+## Phase 5C.5A — Freshwater design and artwork readiness (2026-10-29)
+
+At clean `main` HEAD `3c6c8e6a2fcf57525fad0909a1c205323c41448c`, completed a
+documentation-only Freshwater design audit. No route, production screen,
+asset, test, progress record, commit or push was added. Existing Seasons has
+four matching 1448×1086 lakeside landscapes, but no dedicated pond scene or
+canonical Frog/Duck illustration. Generic `animal.fish` art is a clownfish, so
+it is excluded from a freshwater animal roster. Recommended next step is
+Phase 5C.5B after creating/reviewing an approved pond scene and separate
+transparent Frog/Duck cutouts, documenting provenance and obtaining owner art
+approval. The first scene can use the reviewed bilingual Frog and Duck facts
+and remain unscored. Details and sources are in
+[`docs/animals-phase5c5-freshwater-design/SUMMARY.md`](docs/animals-phase5c5-freshwater-design/SUMMARY.md).
+This was the next-step instruction at the end of 5C.5A; Phase 5C.5B below
+supersedes it after implementation and acceptance.
+
+## Phase 5C.5B — Freshwater Explore implementation (2026-10-30)
+
+Freshwater has now been added as the fourth active Explore Habitats scene.
+The unscored screen uses new task-generated 4:3 pond art plus independent
+canonical `animal.frog` and `animal.duck` cutouts. It retains the 5C.5A
+reviewed bilingual facts; generic Fish art is still excluded. Source-relative
+hotspots, selected outlines, labeled alternatives, offline replay, Sound Off,
+Options return and selection across Activity recreation follow the existing
+habitat architecture. No journal or Progress Tracker identity was introduced.
+
+The genuine screenshot gallery and artwork/provenance assessment are in
+[`docs/animals-phase5c5-freshwater-review/`](docs/animals-phase5c5-freshwater-review/).
+Focused API 35 passed 10/10. The complete unfiltered API 35 suite passed
+**602/602** on disposable `emulator-5554` (45m 53s); full JVM passed **595/595**.
+`assembleDebug`, `assembleDebugAndroidTest` and lint passed, with 0 lint errors
+and 5 existing warnings; `git diff --check` passed. Preserve all Phase 5C.5A
+documentation edits.
+Generated-art owner approval, physical-device and child-use acceptance, actual
+TalkBack/switch access and offline voice quality remain owner-managed checks.
+
 ## Deferred roadmap proposal — Living Year Wheel (2026-10-26)
 
 Added **Living Year Wheel — Interactive Seasonal Landscape** to the Months

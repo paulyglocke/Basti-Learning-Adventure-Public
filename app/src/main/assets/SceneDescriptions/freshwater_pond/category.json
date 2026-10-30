@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "freshwater_pond",
+  "display": {
+    "en": "Freshwater pond",
+    "de": "Süßwasserteich"
+  },
+  "status": "single_explore_scene",
+  "approvedSceneCount": 1,
+  "note": "One Explore background scene; this does not constitute a general pond SceneDescriptions pack."
+}

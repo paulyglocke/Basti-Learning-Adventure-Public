@@ -14,6 +14,7 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performScrollTo
 import androidx.compose.ui.test.performTouchInput
 import com.bellfamily.bastischool.learning.animals.HabitatExploreContent
 import com.bellfamily.bastischool.learning.models.ContentLanguage
@@ -58,26 +59,55 @@ class HabitatExploreScreensTest {
         compose.onNodeWithTag("ocean-home").assertIsDisplayed()
     }
 
-    @Test fun habitatChooserOffersWorkingOceanAndWoodlandAndProvidesParentAndHomeControls() {
+    @Test fun habitatChooserOffersAllFourWorkingHabitatEntriesAndParentAndHomeControls() {
         var opened by mutableStateOf(false)
         var woodlandOpened by mutableStateOf(false)
         var undergroundOpened by mutableStateOf(false)
+        var freshwaterOpened by mutableStateOf(false)
         compose.setContent {
-            HabitatExploreChooserScreen(ContentLanguage.ENGLISH, art, false, art, false, art, false,
+            HabitatExploreChooserScreen(ContentLanguage.ENGLISH, art, false, art, false, art, false, art, false,
                 onOcean = { opened = true }, onWoodland = { woodlandOpened = true },
                 onUnderground = { undergroundOpened = true },
+                onFreshwater = { freshwaterOpened = true },
                 onAnimals = {}, onHome = {})
         }
         compose.onNodeWithTag("habitat-ocean-choice").assertIsDisplayed().performClick()
         compose.runOnIdle { assertEquals(true, opened) }
-        compose.onNodeWithTag("habitats-animals-back").assertIsDisplayed()
-        compose.onNodeWithTag("habitats-home").assertIsDisplayed()
-        compose.onNodeWithTag("habitat-woodland-choice").assertIsDisplayed().performClick()
+        compose.onNodeWithTag("habitats-animals-back").performScrollTo().assertIsDisplayed()
+        compose.onNodeWithTag("habitats-home").performScrollTo().assertIsDisplayed()
+        compose.onNodeWithTag("habitat-woodland-choice").performScrollTo().performClick()
         compose.runOnIdle { assertEquals(true, woodlandOpened) }
-        compose.onNodeWithTag("habitat-underground-choice").assertIsDisplayed().performClick()
+        compose.onNodeWithTag("habitat-underground-choice").performScrollTo().performClick()
         compose.runOnIdle { assertEquals(true, undergroundOpened) }
-        compose.onNodeWithText("Freshwater").assertDoesNotExist()
+        compose.onNodeWithTag("habitat-freshwater-choice").performScrollTo().performClick()
+        compose.runOnIdle { assertEquals(true, freshwaterOpened) }
         compose.onNodeWithText("Underground").assertIsDisplayed()
+        compose.onNodeWithText("Freshwater").assertIsDisplayed()
+    }
+
+    @Test fun freshwaterScreenHasUnselectedInitialSceneAndUpdatesFactsOnImageAndLabelSelection() {
+        var selected by mutableStateOf<ContentId?>(null)
+        var replays = 0
+        compose.setContent {
+            FreshwaterExploreScreen(ContentLanguage.ENGLISH, art,
+                mapOf(HabitatExploreContent.frog to art, HabitatExploreContent.duck to art), false,
+                selected, false, onAnimal = { selected = it }, onReplay = { replays++ }, onHabitats = {}, onHome = {})
+        }
+        compose.onNodeWithTag("freshwater-title").assertIsDisplayed()
+        compose.onNodeWithTag("freshwater-scene-art").assertIsDisplayed()
+        compose.onNodeWithTag("freshwater-fact-text").assertDoesNotExist()
+        compose.onNodeWithTag("freshwater-scene").performTouchInput {
+            click(Offset(width * .20f, height * .58f))
+        }
+        compose.onNodeWithText("Many frogs lay eggs in water and also use damp places on land.").assertIsDisplayed()
+        compose.onNodeWithTag("freshwater-hotspot-frog").assertIsSelected()
+        compose.onNodeWithTag("freshwater-choice-duck").performScrollTo().performClick()
+        compose.onNodeWithText("Many ducks swim on ponds and lakes.").performScrollTo().assertIsDisplayed()
+        compose.onNodeWithText("Many frogs lay eggs in water and also use damp places on land.").assertDoesNotExist()
+        compose.onNodeWithTag("freshwater-hotspot-frog").assertIsNotSelected()
+        compose.onNodeWithTag("freshwater-hotspot-duck").assertIsSelected()
+        compose.onNodeWithTag("freshwater-replay").performScrollTo().performClick()
+        compose.runOnIdle { assertEquals(1, replays) }
     }
 
     @Test fun woodlandImageRelativeTargetsSelectRabbitAndFoxAndReplaceCurrentFact() {

@@ -8,19 +8,24 @@ object HabitatExploreContent {
     val ocean = ContentId("habitat.ocean")
     val woodland = ContentId("habitat.woodland")
     val underground = ContentId("habitat.underground")
+    val freshwater = ContentId("habitat.freshwater")
     val dolphin = ContentId("animal.dolphin")
     val rabbit = ContentId("animal.rabbit")
     val mole = ContentId("animal.mole")
     val earthworm = ContentId("animal.earthworm")
+    val frog = ContentId("animal.frog")
+    val duck = ContentId("animal.duck")
     /** Stable scene identity; the app has no shared canonical animal registry yet. */
     val fox = ContentId("animal.fox")
     const val oceanScene = "SceneDescriptions/ocean_underwater/canonical/ocean_001_reef_actions.png"
     const val woodlandScene = "SceneDescriptions/woodland_forest/canonical/woodland_008_homes_choices.png"
     const val undergroundScene = "SceneDescriptions/underground/canonical/underground_001_cutaway.png"
+    const val freshwaterScene = "SceneDescriptions/freshwater_pond/canonical/freshwater_001_pond.png"
 
     val oceanTitle = ContentText.plain("Ocean", "Meer")
     val woodlandTitle = ContentText.plain("Woodland", "Wald")
     val undergroundTitle = ContentText.plain("Underground", "Unter der Erde")
+    val freshwaterTitle = ContentText.plain("Freshwater", "Süßwasser")
     val choosePrompt = ContentText.plain("Choose a place to explore.", "Wähle einen Ort zum Entdecken.")
     val scenePrompt = ContentText.plain("Tap the dolphin or its name to learn about it.",
         "Tippe auf den Delfin oder seinen Namen, um mehr über ihn zu erfahren.")
@@ -102,6 +107,32 @@ object HabitatExploreContent {
     )
 
     fun undergroundAnimal(id: ContentId) = undergroundAnimals.firstOrNull { it.id == id }
+
+    val freshwaterPrompt = ContentText.plain(
+        "Tap the frog or duck, or choose an animal's name below.",
+        "Tippe auf den Frosch oder die Ente oder wähle unten den Namen eines Tieres.")
+    val frogName = ContentText.plain("Frog", "Frosch")
+    val frogFact = ContentText.plain(
+        "Many frogs lay eggs in water and also use damp places on land.",
+        "Viele Frösche legen ihre Eier im Wasser ab und nutzen auch feuchte Plätze an Land.")
+    val frogUtterance = ContentText.plain(
+        "Frog. Many frogs lay eggs in water and also use damp places on land.",
+        "Frosch. Viele Frösche legen ihre Eier im Wasser ab und nutzen auch feuchte Plätze an Land.")
+    val duckName = ContentText.plain("Duck", "Ente")
+    val duckFact = ContentText.plain(
+        "Many ducks swim on ponds and lakes.",
+        "Viele Enten schwimmen auf Teichen und Seen.")
+    val duckUtterance = ContentText.plain(
+        "Duck. Many ducks swim on ponds and lakes.",
+        "Ente. Viele Enten schwimmen auf Teichen und Seen.")
+    val freshwaterAnimals = listOf(
+        FreshwaterAnimalContent(frog, frogName, frogFact, frogUtterance,
+            NormalizedSceneTarget(0.07f, 0.43f, 0.33f, 0.75f), "Animals/canonical/frog.png"),
+        FreshwaterAnimalContent(duck, duckName, duckFact, duckUtterance,
+            NormalizedSceneTarget(0.60f, 0.34f, 0.93f, 0.74f), "Animals/canonical/duck.png")
+    )
+
+    fun freshwaterAnimal(id: ContentId) = freshwaterAnimals.firstOrNull { it.id == id }
 }
 
 data class NormalizedSceneTarget(val left: Float, val top: Float, val right: Float, val bottom: Float) {
@@ -123,6 +154,16 @@ data class UndergroundAnimalContent(
     val fact: ContentText,
     val utterance: ContentText,
     /** Normalized visible-image frame on the 4:3 source scene. */
+    val target: NormalizedSceneTarget,
+    val artworkPath: String
+)
+
+data class FreshwaterAnimalContent(
+    val id: ContentId,
+    val name: ContentText,
+    val fact: ContentText,
+    val utterance: ContentText,
+    /** Normalized target and layer box on the fitted 4:3 background. */
     val target: NormalizedSceneTarget,
     val artworkPath: String
 )
@@ -157,6 +198,24 @@ object WoodlandExploreReducer {
     fun reduce(state: WoodlandExploreState, action: WoodlandExploreAction): WoodlandExploreState = when (action) {
         is WoodlandExploreAction.Select -> {
             require(action.animal in availableAnimals) { "Unknown Woodland Explore animal" }
+            state.copy(selectedAnimal = action.animal)
+        }
+    }
+}
+
+data class FreshwaterExploreState(val selectedAnimal: ContentId? = null)
+
+sealed interface FreshwaterExploreAction {
+    data class Select(val animal: ContentId) : FreshwaterExploreAction
+}
+
+/** Language-independent unscored selection with no assessment/progress actions. */
+object FreshwaterExploreReducer {
+    private val availableAnimals = HabitatExploreContent.freshwaterAnimals.map { it.id }.toSet()
+
+    fun reduce(state: FreshwaterExploreState, action: FreshwaterExploreAction): FreshwaterExploreState = when (action) {
+        is FreshwaterExploreAction.Select -> {
+            require(action.animal in availableAnimals) { "Unknown Freshwater Explore animal" }
             state.copy(selectedAnimal = action.animal)
         }
     }

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "categoryId": "freshwater_pond",
+  "approvedScenes": [
+    {
+      "sceneId": "scene.freshwater.explore.01",
+      "slug": "freshwater_001_pond",
+      "asset": "canonical/freshwater_001_pond.png",
+      "dimensions": [1448, 1086],
+      "mode": "RGB",
+      "wave": "Phase 5C.5B"
+    }
+  ],
+  "note": "Generated, unlabelled 4:3 freshwater background; independent animal layers are referenced by canonical animal content."
+}

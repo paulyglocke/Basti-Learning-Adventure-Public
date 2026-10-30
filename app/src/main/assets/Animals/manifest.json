@@ -54,6 +54,28 @@
     "has_alpha": true
   },
   {
+    "file": "frog.png",
+    "size": [
+      1312,
+      1199
+    ],
+    "mode": "RGBA",
+    "has_alpha": true,
+    "canonicalId": "animal.frog",
+    "addedFor": "Phase 5C.5B Freshwater Explore"
+  },
+  {
+    "file": "duck.png",
+    "size": [
+      1312,
+      1199
+    ],
+    "mode": "RGBA",
+    "has_alpha": true,
+    "canonicalId": "animal.duck",
+    "addedFor": "Phase 5C.5B Freshwater Explore"
+  },
+  {
     "file": "horse.png",
     "size": [
       345,

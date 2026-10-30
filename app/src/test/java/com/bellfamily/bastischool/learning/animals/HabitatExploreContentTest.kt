@@ -97,6 +97,60 @@ class HabitatExploreContentTest {
         }
     }
 
+    @Test fun freshwaterUsesStableFrogAndDuckIdentitiesApprovedFactsAndOfflineAssetMapping() {
+        assertEquals("habitat.freshwater", HabitatExploreContent.freshwater.value)
+        assertEquals("animal.frog", HabitatExploreContent.frog.value)
+        assertEquals("animal.duck", HabitatExploreContent.duck.value)
+        assertEquals("Freshwater", HabitatExploreContent.freshwaterTitle.display[ContentLanguage.ENGLISH])
+        assertEquals("Süßwasser", HabitatExploreContent.freshwaterTitle.display[ContentLanguage.GERMAN])
+        assertEquals("Frog", HabitatExploreContent.frogName.display[ContentLanguage.ENGLISH])
+        assertEquals("Frosch", HabitatExploreContent.frogName.display[ContentLanguage.GERMAN])
+        assertEquals("Many frogs lay eggs in water and also use damp places on land.",
+            HabitatExploreContent.frogFact.display[ContentLanguage.ENGLISH])
+        assertEquals("Viele Frösche legen ihre Eier im Wasser ab und nutzen auch feuchte Plätze an Land.",
+            HabitatExploreContent.frogFact.display[ContentLanguage.GERMAN])
+        assertEquals("Duck", HabitatExploreContent.duckName.display[ContentLanguage.ENGLISH])
+        assertEquals("Ente", HabitatExploreContent.duckName.display[ContentLanguage.GERMAN])
+        assertEquals("Many ducks swim on ponds and lakes.",
+            HabitatExploreContent.duckFact.display[ContentLanguage.ENGLISH])
+        assertEquals("Viele Enten schwimmen auf Teichen und Seen.",
+            HabitatExploreContent.duckFact.display[ContentLanguage.GERMAN])
+        assertEquals("Animals/canonical/frog.png", HabitatExploreContent.freshwaterAnimal(HabitatExploreContent.frog)?.artworkPath)
+        assertEquals("Animals/canonical/duck.png", HabitatExploreContent.freshwaterAnimal(HabitatExploreContent.duck)?.artworkPath)
+        assertEquals("SceneDescriptions/freshwater_pond/canonical/freshwater_001_pond.png",
+            HabitatExploreContent.freshwaterScene)
+    }
+
+    @Test fun freshwaterSelectionIsLanguageIndependentUnscoredAndReplayUsesCurrentAnimal() {
+        val initial = FreshwaterExploreState()
+        assertNull(initial.selectedAnimal)
+        val frog = FreshwaterExploreReducer.reduce(initial, FreshwaterExploreAction.Select(HabitatExploreContent.frog))
+        val duck = FreshwaterExploreReducer.reduce(frog, FreshwaterExploreAction.Select(HabitatExploreContent.duck))
+        assertEquals(HabitatExploreContent.frog, frog.selectedAnimal)
+        assertEquals(HabitatExploreContent.duck, duck.selectedAnimal)
+        assertEquals("Frog. Many frogs lay eggs in water and also use damp places on land.",
+            HabitatExploreContent.freshwaterAnimal(frog.selectedAnimal!!)?.utterance?.display?.get(ContentLanguage.ENGLISH))
+        assertEquals("Ente. Viele Enten schwimmen auf Teichen und Seen.",
+            HabitatExploreContent.freshwaterAnimal(duck.selectedAnimal!!)?.utterance?.display?.get(ContentLanguage.GERMAN))
+        assertThrows(IllegalArgumentException::class.java) {
+            FreshwaterExploreReducer.reduce(duck, FreshwaterExploreAction.Select(HabitatExploreContent.dolphin))
+        }
+        assertThrows(IllegalArgumentException::class.java) {
+            FreshwaterExploreReducer.reduce(duck, FreshwaterExploreAction.Select(ContentId("animal.fish")))
+        }
+    }
+
+    @Test fun freshwaterAnimalTargetsAreDistinctSourceRelativeAndMatchTheLayerAspectRatio() {
+        val frog = HabitatExploreContent.freshwaterAnimals.first { it.id == HabitatExploreContent.frog }.target
+        val duck = HabitatExploreContent.freshwaterAnimals.first { it.id == HabitatExploreContent.duck }.target
+        assertTrue(frog.right < duck.left)
+        listOf(frog, duck).forEach { target ->
+            assertTrue(target.left >= 0f && target.top >= 0f && target.right <= 1f && target.bottom <= 1f)
+            val targetAspect = (4f / 3f) * (target.right - target.left) / (target.bottom - target.top)
+            assertEquals("Hotspot box should preserve 1312x1199 art ratio", 1312f / 1199f, targetAspect, .02f)
+        }
+    }
+
     @Test fun undergroundHasStableHabitatAndAnimalIdsWithBilingualReviewedContent() {
         assertEquals("habitat.underground", HabitatExploreContent.underground.value)
         assertEquals("animal.mole", HabitatExploreContent.mole.value)

@@ -694,3 +694,22 @@ passed **591/591**. Fresh `assembleDebug assembleDebugAndroidTest lintDebug
 implementation. Physical devices, child use, actual TalkBack and switch access,
 audible offline voice, and owner approval of generated-art provenance/use remain
 owner-managed acceptance.
+
+## Phase 5C.5B — Freshwater Explore (2026-10-30)
+
+Freshwater adds a fourth functional habitat with a 4:3 pond background and
+independent Frog and Duck layers. It remains unscored and offline, with
+language-independent selected identity, labeled controls and replay. Focused
+API 35 testing passed **10/10**, with 0 failures/errors/skips on disposable
+`emulator-5554`. The route test captured English/German selection, Options
+return, Activity recreation, phone portrait/landscape, short landscape,
+tablet-size emulator viewports, and German 1.5×/2×. Tablet dimensions are
+emulator overrides. The fresh full JVM suite passed **595/595** and the
+complete unfiltered API 35 suite passed **602/602**, each with 0
+failures/errors/skips. The API run used disposable `emulator-5554` and took
+45m 53s. `assembleDebug`, `assembleDebugAndroidTest` and `lintDebug` passed;
+lint reports 0 errors and 5 existing warnings. `git diff --check` passed.
+The complete API test XML is retained in the
+[Freshwater implementation review](docs/animals-phase5c5-freshwater-review/REVIEW.md).
+Generated-art owner approval, physical-device/child-use review, TalkBack,
+switch-access and audible offline voice quality remain owner-managed.

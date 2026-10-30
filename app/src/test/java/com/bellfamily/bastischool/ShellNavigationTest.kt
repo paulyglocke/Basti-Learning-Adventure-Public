@@ -71,6 +71,21 @@ class ShellNavigationTest {
         assertFalse(restored.recoveryFailed)
     }
 
+    @Test fun freshwaterExplorePreservesAnimalsCategoryAcrossChooserAndOptions() {
+        val chooser = ShellNavigation().openHabitatsChooser("category:ANIMALS")
+        val freshwater = chooser.openFreshwaterExplore()
+        assertEquals(ShellScreen.FRESHWATER_EXPLORE, freshwater.screen)
+        assertEquals(BackAction.HABITATS_CHOOSER, freshwater.backAction)
+        assertEquals(freshwater, freshwater.openOptions().closeOptions())
+        val restored = ShellNavigation.restore("FRESHWATER_EXPLORE", "HOME", "verbs", null, "category:ANIMALS")
+        assertEquals(ShellScreen.FRESHWATER_EXPLORE, restored.screen)
+        assertEquals("category:ANIMALS", restored.homePage)
+        assertEquals(BackAction.HABITATS_CHOOSER, restored.backAction)
+        val options = ShellNavigation.restore("OPTIONS", "FRESHWATER_EXPLORE", "verbs", null, "category:ANIMALS")
+        assertEquals(ShellScreen.FRESHWATER_EXPLORE, options.closeOptions().screen)
+        assertEquals("category:ANIMALS", options.closeOptions().homePage)
+    }
+
     @Test fun missingOversizedOrUnknownRecoveryReturnsHomeWithNotice() {
         for (snapshot in listOf(null, "", "x".repeat(LegacyCheckpoint.MAX_CHARS + 1))) {
             val restored = ShellNavigation.restore("OPTIONS", "WEB", "count", snapshot)

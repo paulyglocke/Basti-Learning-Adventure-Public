@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Freshwater Explore — visual review</title>
+  <style>
+    body { margin: 0; padding: 1.5rem; background: #f7f4ec; color: #203646; font: 16px/1.45 system-ui, sans-serif; }
+    main { max-width: 1100px; margin: auto; }
+    h1, h2 { color: #23394b; }
+    section { margin: 2.5rem 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 1rem; }
+    figure { margin: 0; padding: .8rem; border: 1px solid #c8c3b5; border-radius: 12px; background: white; }
+    img { display: block; width: 100%; height: auto; border-radius: 7px; }
+    figcaption { padding-top: .65rem; }
+    code { overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Freshwater Explore — emulator visual review</h1>
+  <p>Genuine application screenshots from the dedicated API 35 AVD <code>Rainbow_R3B_API35</code>, serial <code>emulator-5554</code>. Tablet dimensions are emulator viewport overrides, not physical tablet tests. Captures use the original PNG pixels and are not composed mockups.</p>
+
+  <section><h2>Habitat chooser</h2><div class="grid">
+    <figure><img src="screenshots/animals-phase5c5/01-chooser-en.png" alt="Explore Habitats chooser"><figcaption>Chooser · English · four active habitats, top viewport · phone portrait, 1×. Freshwater is below the initial viewport and remains reachable by scrolling.</figcaption></figure>
+    <figure><img src="screenshots/animals-phase5c5/18-back-to-chooser.png" alt="Chooser after returning from Freshwater"><figcaption>Return to chooser · German · Freshwater route exit · phone portrait, 1×.</figcaption></figure>
+  </div></section>
+
+  <section><h2>Freshwater Explore</h2><div class="grid">
+    <figure><img src="screenshots/animals-phase5c5/02-freshwater-initial-en.png" alt="Freshwater initial English"><figcaption>Freshwater · English · initial, no animal selected · phone portrait, 1×.</figcaption></figure>
+    <figure><img src="screenshots/animals-phase5c5/03-freshwater-initial-de.png" alt="Freshwater initial German"><figcaption>Süßwasser · German · initial, no animal selected · phone portrait, 1×.</figcaption></figure>
+    <figure><img src="screenshots/animals-phase5c5/04-frog-selected-en.png" alt="Selected Frog in English"><figcaption>Freshwater · English · Frog selected with aligned outline, reviewed fact and Replay · phone portrait, 1×.</figcaption></figure>
+    <figure><img src="screenshots/animals-phase5c5/05-frog-selected-de.png" alt="Selected frog in German"><figcaption>Süßwasser · German · Frosch selected, bilingual content · phone portrait, 1×.</figcaption></figure>
+    <figure><img src="screenshots/animals-phase5c5/06-duck-selected-en.png" alt="Selected Duck in English"><figcaption>Freshwater · English · Duck selected; outline encloses the floating illustration · phone portrait, 1×.</figcaption></figure>
+    <figure><img src="screenshots/animals-phase5c5/07-duck-selected-de.png" alt="Selected duck in German"><figcaption>Süßwasser · German · Ente selected · phone portrait, 1×.</figcaption></figure>
+    <figure><img src="screenshots/animals-phase5c5/08-frog-to-duck-switch.png" alt="Switching from Frog to Duck"><figcaption>Freshwater · English · Frog-to-Duck selection replacement · phone portrait, 1×.</figcaption></figure>
+  </div></section>
+
+  <section><h2>Bilingual, enlarged text, restoration and Options</h2><div class="grid">
+    <figure><img src="screenshots/animals-phase5c5/09-selection-restored-recreation.png" alt="Selection after recreation"><figcaption>Freshwater · English · selected animal restored after normal Activity recreation · phone portrait, 1×.</figcaption></figure>
+    <figure><img src="screenshots/animals-phase5c5/10-options-language-return-de.png" alt="German after returning from Options"><figcaption>Süßwasser · German · Duck selection retained after changing language in Options · phone portrait, 1×.</figcaption></figure>
+    <figure><img src="screenshots/animals-phase5c5/16-german-1_5x.png" alt="German at 1.5x font scale"><figcaption>Süßwasser · German · selected Ente and Replay · phone portrait, 1.5× font. Text wraps naturally and remains legible.</figcaption></figure>
+    <figure><img src="screenshots/animals-phase5c5/17-german-2x.png" alt="German at 2x font scale"><figcaption>Süßwasser · German · selected Ente, enlarged text · phone portrait, 2× font. Scroll position is lower in the content; the fact and Replay remain reachable by scrolling.</figcaption></figure>
+  </div></section>
+
+  <section><h2>Responsive emulator viewports</h2><div class="grid">
+    <figure><img src="screenshots/animals-phase5c5/12-phone-landscape.png" alt="Phone landscape"><figcaption>Freshwater · German · selected Ente · phone landscape, 2400×1080, 1×. Fitted scene retains its 4:3 ratio; content scrolls vertically.</figcaption></figure>
+    <figure><img src="screenshots/animals-phase5c5/13-short-landscape.png" alt="Short landscape"><figcaption>Süßwasser · German · selected Ente · short landscape, 1280×720, 1×. Instruction/control content requires vertical scrolling; Replay was scrolled into view for this capture.</figcaption></figure>
+    <figure><img src="screenshots/animals-phase5c5/14-tablet-portrait-emulator.png" alt="Tablet portrait emulator viewport"><figcaption>Süßwasser · German · selected Ente · tablet portrait emulator override, 1600×2560, 1×. Scene and controls use available vertical space without distortion.</figcaption></figure>
+    <figure><img src="screenshots/animals-phase5c5/15-tablet-landscape-emulator.png" alt="Tablet landscape emulator viewport"><figcaption>Süßwasser · German · selected Ente · tablet landscape emulator override, 2560×1600, 1×. Fitted scene remains centered and correctly proportioned; page can scroll.</figcaption></figure>
+  </div></section>
+</main>
+</body>
+</html>
