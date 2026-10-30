@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.animals.HabitatExploreContentTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:11:48" hostname="192.168.1.10" time="0.005">
+  <properties/>
+  <testcase name="freshwaterAnimalTargetsAreDistinctSourceRelativeAndMatchTheLayerAspectRatio" classname="com.bellfamily.bastischool.learning.animals.HabitatExploreContentTest" time="0.001"/>
+  <testcase name="woodlandNormalizedImageTargetsAreValidSeparatedAndScaleFromSourceCoordinates" classname="com.bellfamily.bastischool.learning.animals.HabitatExploreContentTest" time="0.0"/>
+  <testcase name="woodlandReducerChangesAnimalWithoutLanguageOrScoringStateAndRejectsUnknownTargets" classname="com.bellfamily.bastischool.learning.animals.HabitatExploreContentTest" time="0.001"/>
+  <testcase name="freshwaterUsesStableFrogAndDuckIdentitiesApprovedFactsAndOfflineAssetMapping" classname="com.bellfamily.bastischool.learning.animals.HabitatExploreContentTest" time="0.0"/>
+  <testcase name="undergroundAnimalContentUsesOfflineAssetsAndDisjointImageRelativeFrames" classname="com.bellfamily.bastischool.learning.animals.HabitatExploreContentTest" time="0.0"/>
+  <testcase name="semanticSelectionIsLanguageIndependentAndHasNoAssessedAnswerState" classname="com.bellfamily.bastischool.learning.animals.HabitatExploreContentTest" time="0.0"/>
+  <testcase name="freshwaterSelectionIsLanguageIndependentUnscoredAndReplayUsesCurrentAnimal" classname="com.bellfamily.bastischool.learning.animals.HabitatExploreContentTest" time="0.001"/>
+  <testcase name="oceanNameAndReviewedFactAreBilingualAndIndependentOfSelectionState" classname="com.bellfamily.bastischool.learning.animals.HabitatExploreContentTest" time="0.0"/>
+  <testcase name="woodlandAnimalNamesFactsAndUtterancesMatchTheReviewedBilingualCatalogue" classname="com.bellfamily.bastischool.learning.animals.HabitatExploreContentTest" time="0.0"/>
+  <testcase name="oceanAndDolphinKeepStableCanonicalSemanticIdentities" classname="com.bellfamily.bastischool.learning.animals.HabitatExploreContentTest" time="0.001"/>
+  <testcase name="undergroundSelectionIsLanguageIndependentUnscoredAndRejectsUnknownAnimals" classname="com.bellfamily.bastischool.learning.animals.HabitatExploreContentTest" time="0.001"/>
+  <testcase name="woodlandUsesApprovedSceneAndStableRabbitAndFoxIdentities" classname="com.bellfamily.bastischool.learning.animals.HabitatExploreContentTest" time="0.0"/>
+  <testcase name="undergroundHasStableHabitatAndAnimalIdsWithBilingualReviewedContent" classname="com.bellfamily.bastischool.learning.animals.HabitatExploreContentTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

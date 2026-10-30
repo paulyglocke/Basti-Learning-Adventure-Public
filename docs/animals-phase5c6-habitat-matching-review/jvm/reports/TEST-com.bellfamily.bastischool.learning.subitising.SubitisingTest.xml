@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.subitising.SubitisingTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:11" hostname="192.168.1.10" time="1.186">
+  <properties/>
+  <testcase name="patternsAreStableDistinctDiePositionsAndBilingualDescriptions" classname="com.bellfamily.bastischool.learning.subitising.SubitisingTest" time="0.0"/>
+  <testcase name="audioReplayOnlyPromptBothLanguagesPolicyAndNavigationSilence" classname="com.bellfamily.bastischool.learning.subitising.SubitisingTest" time="0.002"/>
+  <testcase name="pendingAttemptAndCompletionRedeliveryDeduplicateAfterRestore" classname="com.bellfamily.bastischool.learning.subitising.SubitisingTest" time="0.222"/>
+  <testcase name="deterministicRoundsCoverEachQuantityAndFourUniqueChoicesWithoutAdjacentRepeats" classname="com.bellfamily.bastischool.learning.subitising.SubitisingTest" time="0.054"/>
+  <testcase name="exactRestoreRetryHelpLanguageCompletionAndNewRoundUseSharedProgress" classname="com.bellfamily.bastischool.learning.subitising.SubitisingTest" time="0.908"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

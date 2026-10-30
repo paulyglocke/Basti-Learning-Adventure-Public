@@ -15,7 +15,7 @@ internal enum class HomeCategory(
         listOf("tellme", "vocabulary", "verbExplorer", "letters", "positions")),
     TIME("Time & Seasons", "Zeit & Jahreszeiten", BastiCategoryTreatment.TIME, listOf("time", "clock")),
     ANIMALS("Animals & Nature", "Tiere & Natur", BastiCategoryTreatment.ANIMALS,
-        listOf("verbs", "exploreHabitats", "animalGroups")),
+        listOf("verbs", "exploreHabitats", "animalGroups", "matchHabitats")),
     COLOURS("Colours", "Farben", BastiCategoryTreatment.COLOURS, listOf("colourSort")),
     EVERYDAY("Everyday Skills", "Alltag", BastiCategoryTreatment.EVERYDAY, listOf("washHands", "follow"));
 
@@ -50,6 +50,7 @@ internal fun HomeCard.homeDestination(): ShellNavigation {
         "tellme" -> shell.openTellMe()
         "washHands" -> shell.openWashHands()
         "animalGroups" -> shell.openAnimalGroups()
+        "matchHabitats" -> shell.openHabitatMatching()
         "exploreHabitats" -> shell.openHabitatsChooser()
         "colourSort" -> shell.openColoursChooser()
         "follow" -> shell.openFollowInstructions()

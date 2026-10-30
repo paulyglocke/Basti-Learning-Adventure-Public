@@ -1,0 +1,824 @@
+10-30 15:55:23.740 13260 13274 I TestRunner: started: chooserExploreQuizOrderingAndSeasonsSurviveNativeNavigationAndRecreation(com.bellfamily.bastischool.ui.wilma.WilmaRouteTest)
+10-30 15:55:23.743 13293 13293 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@746167b
+10-30 15:55:23.744   550  1591 W InputManager-JNI: Input channel object '41711c0 com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+10-30 15:55:23.747   550  1584 W InputManager-JNI: Input channel object '7fedc9a Splash Screen com.bellfamily.bastischool.test (client)' was disposed without first being removed with the input manager!
+10-30 15:55:23.749   550   662 I ImeTracker: com.google.android.apps.nexuslauncher:d6824f13: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-30 15:55:23.749   550   662 I ImeTracker: com.google.android.apps.nexuslauncher:d6824f13: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-30 15:55:23.750  1282  1282 D SearchTargetUtil: queryLength=0 size=0
+10-30 15:55:23.757   780   929 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@d371144
+10-30 15:55:23.758  5889  5889 I SubtypeOperator: SubtypeOperator$1.onUnbindInput():44
+10-30 15:55:23.765 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@9cc2788]
+10-30 15:55:23.778  5889  5889 I SubtypeOperator: SubtypeOperator$1.onBindInput():33
+10-30 15:55:23.778  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2404
+10-30 15:55:23.807  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.google.android.apps.nexuslauncher, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-30 15:55:23.807  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:55:23.808 13260 13274 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+10-30 15:55:23.828  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 0, locked = false
+10-30 15:55:23.829  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5275
+10-30 15:55:23.829  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5275
+10-30 15:55:23.830  1282  1514 D EGL_emulation: app_time_stats: avg=277.69ms min=89.86ms max=710.35ms count=4
+10-30 15:55:23.831  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:55:23.833   550  1512 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@496c9b38 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-30 15:55:23.881  1282  1282 W SplitSelectStateCtor: Missing session instanceIds
+10-30 15:55:23.881  1282  1282 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+10-30 15:55:23.885  1282  1282 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=5276, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.bellfamily.bastischool/.MainActivity }
+10-30 15:55:23.889 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@ff46015 in: PRE_ON_CREATE
+10-30 15:55:23.889 13260 13260 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+10-30 15:55:23.914 13260 13260 I TextToSpeech: Sucessfully bound to com.google.android.tts
+10-30 15:55:23.916 13260 13271 I TextToSpeech: Connected to TTS engine
+10-30 15:55:23.922   402   402 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-30 15:55:23.925 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@ff46015 in: CREATED
+10-30 15:55:23.925 13260 13260 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@ff46015
+10-30 15:55:23.925 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@ff46015 in: STARTED
+10-30 15:55:23.925 13260 13260 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@ff46015
+10-30 15:55:23.926 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@ff46015 in: RESUMED
+10-30 15:55:23.926 13260 13260 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@ff46015
+10-30 15:55:23.943 13588 13694 I GoogleTTSServiceImpl: currentLocale = en-US
+10-30 15:55:23.944 13588 13694 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+10-30 15:55:23.944 13260 14845 I TextToSpeech: Setting up the connection to TTS engine...
+10-30 15:55:23.994 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:24.249  1282  1282 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-30 15:55:24.252  1282  1282 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+10-30 15:55:24.469   550   570 W ziparchive: Unable to open '/data/app/~~RtTiwXVxZ-RGLXj5SJeA9A==/com.bellfamily.bastischool-PFzM8kzDJ7ysJU1km3uSCw==/base.dm': No such file or directory
+10-30 15:55:24.491   780   929 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@8d59bd4
+10-30 15:55:24.492   550   570 I ActivityTaskManager: Displayed com.bellfamily.bastischool/.MainActivity for user 0: +624ms
+10-30 15:55:24.493   550  1584 W InputManager-JNI: Input channel object '1e411bd Splash Screen com.bellfamily.bastischool (client)' was disposed without first being removed with the input manager!
+10-30 15:55:24.495  1282  1282 D BaseDepthController: setSurface:
+10-30 15:55:24.495  1282  1282 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-30 15:55:24.495  1282  1282 D BaseDepthController: 	mSurface: null
+10-30 15:55:24.495  1282  1282 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+10-30 15:55:24.496  1282  1282 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+10-30 15:55:24.496  1282  1282 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:4)
+10-30 15:55:24.496  1282  1282 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:1)
+10-30 15:55:24.496  1282  1282 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:34)
+10-30 15:55:24.496  1282  1282 D StatsLog: LAUNCHER_ONSTOP
+10-30 15:55:24.497  1282  1613 D OneSearchSuggestProvider: Shut down the binder channel
+10-30 15:55:24.498  1282  1282 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+10-30 15:55:24.500  1282  8242 I IPCThreadState: oneway function results for code 2 on binder at 0xb400007b9ed1fb20 will be dropped but finished with status UNKNOWN_TRANSACTION
+10-30 15:55:24.561   550   561 I system_server: NativeAlloc concurrent mark compact GC freed 9088KB AllocSpace bytes, 7(140KB) LOS objects, 41% free, 34MB/58MB, paused 498us,1.640ms total 258.433ms
+10-30 15:55:24.569   550   563 W System  : A resource failed to call HardwareBuffer.close.
+10-30 15:55:24.570   550   563 W System  : A resource failed to call HardwareBuffer.close.
+10-30 15:55:24.570   550   563 W System  : A resource failed to call release.
+10-30 15:55:24.570   550   563 W System  : A resource failed to call release.
+10-30 15:55:24.571   550   563 W System  : A resource failed to call HardwareBuffer.close.
+10-30 15:55:24.571   550   563 W System  : A resource failed to call release.
+10-30 15:55:24.571   550   563 W System  : A resource failed to call release.
+10-30 15:55:24.571   550   563 W System  : A resource failed to call HardwareBuffer.close.
+10-30 15:55:24.571   550   563 W System  : A resource failed to call release.
+10-30 15:55:24.571   550   563 W System  : A resource failed to call release.
+10-30 15:55:24.571   550   563 W System  : A resource failed to call HardwareBuffer.close.
+10-30 15:55:24.571   550   563 W System  : A resource failed to call release.
+10-30 15:55:24.571   550   563 W System  : A resource failed to call release.
+10-30 15:55:24.597   550   662 I ImeTracker: com.bellfamily.bastischool:dec74913: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-30 15:55:24.598   550   662 I ImeTracker: com.bellfamily.bastischool:dec74913: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-30 15:55:24.599  5889  5889 I SubtypeOperator: SubtypeOperator$1.onUnbindInput():44
+10-30 15:55:24.599  5889  5889 I SubtypeOperator: SubtypeOperator$1.onBindInput():33
+10-30 15:55:24.601  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2404
+10-30 15:55:24.603  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.bellfamily.bastischool, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-30 15:55:24.603  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:55:24.605 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:24.605  5889 13286 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 0, locked = false
+10-30 15:55:24.607  5889 13286 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:55:24.709 13260 13260 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+10-30 15:55:24.709 13260 13260 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-30 15:55:24.770 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:24.774 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:24.868 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:24.877 13260 13267 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lEaFJrB456qROgjQtZ5g1w==/com.google.android.tts-DOLAV-WP50c7Fn_xn3q39g==/base.apk' with 1 weak references
+10-30 15:55:24.877 13260 13267 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lEaFJrB456qROgjQtZ5g1w==/com.google.android.tts-DOLAV-WP50c7Fn_xn3q39g==/split_config.arm64_v8a.apk' with 1 weak references
+10-30 15:55:24.877 13260 13267 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lEaFJrB456qROgjQtZ5g1w==/com.google.android.tts-DOLAV-WP50c7Fn_xn3q39g==/split_config.en.apk' with 1 weak references
+10-30 15:55:24.878 13260 13267 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lEaFJrB456qROgjQtZ5g1w==/com.google.android.tts-DOLAV-WP50c7Fn_xn3q39g==/split_config.xxhdpi.apk' with 1 weak references
+10-30 15:55:25.059 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:25.103 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:25.211 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:25.212 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:25.337 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:25.337 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:25.339 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:25.372 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:25.373 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:25.469 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:25.520 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:25.522 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:25.654 13260 13276 D EGL_emulation: app_time_stats: avg=43.11ms min=4.20ms max=182.10ms count=26
+10-30 15:55:25.752 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:25.883 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:25.956 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:25.958 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:26.017 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:26.130 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:26.195 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:26.293 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:26.342 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:26.414 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:26.633 13260 13260 I ActivityThread: Schedule relaunch activity: com.bellfamily.bastischool.MainActivity
+10-30 15:55:26.637 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@ff46015 in: PAUSED
+10-30 15:55:26.637 13260 13260 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@ff46015
+10-30 15:55:26.637 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@ff46015 in: STOPPED
+10-30 15:55:26.637 13260 13260 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@ff46015
+10-30 15:55:26.641 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@ff46015 in: DESTROYED
+10-30 15:55:26.641 13260 13260 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+10-30 15:55:26.643   550   550 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+10-30 15:55:26.651 13260 13260 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@c89afb7
+10-30 15:55:26.652 13260 13271 I TextToSpeech: Disconnected from TTS engine
+10-30 15:55:26.652 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@8f05ba0 in: PRE_ON_CREATE
+10-30 15:55:26.652 13260 13260 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was DESTROYED
+10-30 15:55:26.664 13260 13260 I TextToSpeech: Sucessfully bound to com.google.android.tts
+10-30 15:55:26.665 13260 15438 I TextToSpeech: Connected to TTS engine
+10-30 15:55:26.671 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@8f05ba0 in: CREATED
+10-30 15:55:26.671 13260 13260 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@8f05ba0
+10-30 15:55:26.671 13588 13694 I GoogleTTSServiceImpl: currentLocale = en-US
+10-30 15:55:26.671 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@8f05ba0 in: STARTED
+10-30 15:55:26.671 13260 13260 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@8f05ba0
+10-30 15:55:26.671 13588 13694 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+10-30 15:55:26.672 13260 14845 I TextToSpeech: Setting up the connection to TTS engine...
+10-30 15:55:26.672 13260 13260 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+10-30 15:55:26.672 13260 13260 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-30 15:55:26.673 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@8f05ba0 in: RESUMED
+10-30 15:55:26.673 13260 13260 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@8f05ba0
+10-30 15:55:26.678 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:26.684 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:26.692 13260 13276 D EGL_emulation: app_time_stats: avg=35.29ms min=5.28ms max=103.40ms count=27
+10-30 15:55:26.693 13260 13260 I ImeTracker: com.bellfamily.bastischool:9483a555: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_CLOSE_CURRENT_SESSION fromUser false
+10-30 15:55:26.696   550   662 I ImeTracker: com.bellfamily.bastischool:9483a555: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-30 15:55:26.735 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:26.771 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:26.898 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:26.986 13260 13265 I ily.bastischool: Background concurrent mark compact GC freed 14MB AllocSpace bytes, 10(288KB) LOS objects, 49% free, 15MB/31MB, paused 226us,8.635ms total 72.313ms
+10-30 15:55:26.988 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:27.000 13260 13267 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lEaFJrB456qROgjQtZ5g1w==/com.google.android.tts-DOLAV-WP50c7Fn_xn3q39g==/base.apk' with 1 weak references
+10-30 15:55:27.000 13260 13267 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lEaFJrB456qROgjQtZ5g1w==/com.google.android.tts-DOLAV-WP50c7Fn_xn3q39g==/split_config.arm64_v8a.apk' with 1 weak references
+10-30 15:55:27.000 13260 13267 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lEaFJrB456qROgjQtZ5g1w==/com.google.android.tts-DOLAV-WP50c7Fn_xn3q39g==/split_config.en.apk' with 1 weak references
+10-30 15:55:27.001 13260 13267 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lEaFJrB456qROgjQtZ5g1w==/com.google.android.tts-DOLAV-WP50c7Fn_xn3q39g==/split_config.xxhdpi.apk' with 1 weak references
+10-30 15:55:27.107 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:27.108 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:27.303 13260 13260 I ActivityThread: Schedule relaunch activity: com.bellfamily.bastischool.MainActivity
+10-30 15:55:27.305 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@8f05ba0 in: PAUSED
+10-30 15:55:27.305 13260 13260 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@8f05ba0
+10-30 15:55:27.307 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@8f05ba0 in: STOPPED
+10-30 15:55:27.307 13260 13260 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@8f05ba0
+10-30 15:55:27.312 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@8f05ba0 in: DESTROYED
+10-30 15:55:27.312 13260 13260 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+10-30 15:55:27.312   550   550 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+10-30 15:55:27.312 13260 13271 I TextToSpeech: Disconnected from TTS engine
+10-30 15:55:27.315 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@51e720 in: PRE_ON_CREATE
+10-30 15:55:27.315 13260 13260 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was DESTROYED
+10-30 15:55:27.319 13260 13260 I TextToSpeech: Sucessfully bound to com.google.android.tts
+10-30 15:55:27.320 13260 13271 I TextToSpeech: Connected to TTS engine
+10-30 15:55:27.323 13588 13694 I GoogleTTSServiceImpl: currentLocale = en-US
+10-30 15:55:27.324 13588 13694 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+10-30 15:55:27.324 13260 14845 I TextToSpeech: Setting up the connection to TTS engine...
+10-30 15:55:27.324 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@51e720 in: CREATED
+10-30 15:55:27.324 13260 13260 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@51e720
+10-30 15:55:27.325 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@51e720 in: STARTED
+10-30 15:55:27.325 13260 13260 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@51e720
+10-30 15:55:27.325 13260 13260 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+10-30 15:55:27.325 13260 13260 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-30 15:55:27.327 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@51e720 in: RESUMED
+10-30 15:55:27.327 13260 13260 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@51e720
+10-30 15:55:27.332 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:27.334 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:27.349 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:27.467 13260 13260 I ActivityThread: Schedule relaunch activity: com.bellfamily.bastischool.MainActivity
+10-30 15:55:27.470 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@51e720 in: PAUSED
+10-30 15:55:27.470 13260 13260 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@51e720
+10-30 15:55:27.472 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@51e720 in: STOPPED
+10-30 15:55:27.472 13260 13260 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@51e720
+10-30 15:55:27.483 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@51e720 in: DESTROYED
+10-30 15:55:27.483 13260 13260 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+10-30 15:55:27.483 13260 15438 I TextToSpeech: Disconnected from TTS engine
+10-30 15:55:27.484   550   550 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+10-30 15:55:27.485 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@2fc732a in: PRE_ON_CREATE
+10-30 15:55:27.486 13260 13260 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was DESTROYED
+10-30 15:55:27.488 13260 13260 I TextToSpeech: Sucessfully bound to com.google.android.tts
+10-30 15:55:27.490 13260 15438 I TextToSpeech: Connected to TTS engine
+10-30 15:55:27.492 13588 13694 I GoogleTTSServiceImpl: currentLocale = en-US
+10-30 15:55:27.493 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@2fc732a in: CREATED
+10-30 15:55:27.493 13588 13694 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+10-30 15:55:27.493 13260 13260 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@2fc732a
+10-30 15:55:27.493 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@2fc732a in: STARTED
+10-30 15:55:27.493 13260 13260 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@2fc732a
+10-30 15:55:27.494 13260 13260 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+10-30 15:55:27.494 13260 13260 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-30 15:55:27.494 13260 14845 I TextToSpeech: Setting up the connection to TTS engine...
+10-30 15:55:27.495 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@2fc732a in: RESUMED
+10-30 15:55:27.495 13260 13260 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@2fc732a
+10-30 15:55:27.499 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:27.508 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:27.509 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:27.552 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:27.643 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:27.700 13260 13276 D EGL_emulation: app_time_stats: avg=33.18ms min=3.82ms max=79.71ms count=27
+10-30 15:55:27.734 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:27.831 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:27.836 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:27.888 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:27.996 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:28.177 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:28.293 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:28.436 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:28.551 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:28.562 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:28.599 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:28.697 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:28.715 13260 13276 D EGL_emulation: app_time_stats: avg=26.24ms min=1.81ms max=42.94ms count=34
+10-30 15:55:28.780 13260 13260 I ActivityThread: Schedule relaunch activity: com.bellfamily.bastischool.MainActivity
+10-30 15:55:28.783 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@2fc732a in: PAUSED
+10-30 15:55:28.783 13260 13260 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@2fc732a
+10-30 15:55:28.783 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@2fc732a in: STOPPED
+10-30 15:55:28.783 13260 13260 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@2fc732a
+10-30 15:55:28.791 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@2fc732a in: DESTROYED
+10-30 15:55:28.791 13260 13260 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+10-30 15:55:28.803 13260 15438 I TextToSpeech: Disconnected from TTS engine
+10-30 15:55:28.803   550   550 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+10-30 15:55:28.806 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@e23e836 in: PRE_ON_CREATE
+10-30 15:55:28.807 13260 13260 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was DESTROYED
+10-30 15:55:28.810 13260 13260 I TextToSpeech: Sucessfully bound to com.google.android.tts
+10-30 15:55:28.811 13260 15438 I TextToSpeech: Connected to TTS engine
+10-30 15:55:28.815 13588 14725 I GoogleTTSServiceImpl: currentLocale = en-US
+10-30 15:55:28.816 13588 14725 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+10-30 15:55:28.816 13260 14845 I TextToSpeech: Setting up the connection to TTS engine...
+10-30 15:55:28.816 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@e23e836 in: CREATED
+10-30 15:55:28.817 13260 13260 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@e23e836
+10-30 15:55:28.817 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@e23e836 in: STARTED
+10-30 15:55:28.817 13260 13260 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@e23e836
+10-30 15:55:28.817 13260 13260 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+10-30 15:55:28.817 13260 13260 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-30 15:55:28.819 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@e23e836 in: RESUMED
+10-30 15:55:28.819 13260 13260 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@e23e836
+10-30 15:55:28.832 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:28.845 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:28.902   550  1584 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@4b2173d7 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-30 15:55:28.910 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@e23e836 in: PAUSED
+10-30 15:55:28.910 13260 13260 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@e23e836
+10-30 15:55:28.911  1282  1282 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=5277, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }
+10-30 15:55:28.937   402   402 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-30 15:55:28.966 13260 13267 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lEaFJrB456qROgjQtZ5g1w==/com.google.android.tts-DOLAV-WP50c7Fn_xn3q39g==/base.apk' with 1 weak references
+10-30 15:55:28.974 13260 13267 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lEaFJrB456qROgjQtZ5g1w==/com.google.android.tts-DOLAV-WP50c7Fn_xn3q39g==/split_config.arm64_v8a.apk' with 1 weak references
+10-30 15:55:28.974 13260 13267 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lEaFJrB456qROgjQtZ5g1w==/com.google.android.tts-DOLAV-WP50c7Fn_xn3q39g==/split_config.en.apk' with 1 weak references
+10-30 15:55:28.974 13260 13267 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lEaFJrB456qROgjQtZ5g1w==/com.google.android.tts-DOLAV-WP50c7Fn_xn3q39g==/split_config.xxhdpi.apk' with 1 weak references
+10-30 15:55:29.023 13293 13306 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-30 15:55:29.024 13293 13306 I EGL_emulation: Opening libGLESv2_emulation.so
+10-30 15:55:29.055 13293 13306 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+10-30 15:55:29.056 13293 13306 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-30 15:55:29.175   550   570 W ziparchive: Unable to open '/data/app/~~Gu500pmAw2vV8V0dyUkO-Q==/com.bellfamily.bastischool.test-xHguCJ6EMUUa19nqwSDj6Q==/base.dm': No such file or directory
+10-30 15:55:29.177   550   570 I ActivityTaskManager: Displayed com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity for user 0: +254ms
+10-30 15:55:29.211   780   929 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@ea135cc
+10-30 15:55:29.213   550  1584 W InputManager-JNI: Input channel object '3239c96 Splash Screen com.bellfamily.bastischool.test (client)' was disposed without first being removed with the input manager!
+10-30 15:55:29.249   550   662 I ImeTracker: com.bellfamily.bastischool.test:e45eb45a: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-30 15:55:29.249   550   662 I ImeTracker: com.bellfamily.bastischool.test:e45eb45a: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-30 15:55:29.259  5889  5889 I SubtypeOperator: SubtypeOperator$1.onUnbindInput():44
+10-30 15:55:29.259  5889  5889 I SubtypeOperator: SubtypeOperator$1.onBindInput():33
+10-30 15:55:29.260  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2404
+10-30 15:55:29.260  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.bellfamily.bastischool.test, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-30 15:55:29.261  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:55:29.270  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 0, locked = false
+10-30 15:55:29.282  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:55:29.428   780   975 D EGL_emulation: app_time_stats: avg=1425.03ms min=28.03ms max=5278.51ms count=4
+10-30 15:55:29.583 13260 13260 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-30 15:55:29.616 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@e23e836 in: STOPPED
+10-30 15:55:29.618 13260 13260 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@e23e836
+10-30 15:55:29.641  1282  1282 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=5276, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.bellfamily.bastischool/.MainActivity }
+10-30 15:55:29.649 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@e23e836 in: RESTARTED
+10-30 15:55:29.649 13260 13260 V ActivityScenario: Update currentActivityStage to RESTARTED, currentActivity=com.bellfamily.bastischool.MainActivity@e23e836
+10-30 15:55:29.649 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@e23e836 in: STARTED
+10-30 15:55:29.650 13260 13260 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@e23e836
+10-30 15:55:29.654   402   402 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-30 15:55:29.666 13260 13260 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+10-30 15:55:29.666 13260 13260 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-30 15:55:29.669 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@e23e836 in: RESUMED
+10-30 15:55:29.669 13260 13260 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@e23e836
+10-30 15:55:29.823   550  2637 W ImageReader_JNI: Unable to acquire a buffer item, very likely client tried to acquire more than maxImages buffers
+10-30 15:55:29.873   550   550 W WindowTokenClientController: Can't find attached WindowTokenClient for android.window.WindowTokenClient@8b2cc21
+10-30 15:55:29.879  5889  5889 I AppBase : AppBase.onConfigurationChanged():283 onConfigurationChanged() : NewConfig = {1.0 310mcc260mnc [en_US] ldltr sw411dp w914dp h411dp 420dpi nrml long land finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 2400, 1080) mAppBounds=Rect(0, 0 - 2400, 1080) mMaxBounds=Rect(0, 0 - 2400, 1080) mDisplayRotation=ROTATION_90 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_90} s.65158 fontWeightAdjustment=0}
+10-30 15:55:29.881  1282  1282 D b/254119092: TaskbarManager#mComponentCallbacks.onConfigurationChanged: {1.0 310mcc260mnc [en_US] ldltr sw411dp w914dp h411dp 420dpi nrml long land finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 2400, 1080) mAppBounds=Rect(0, 0 - 2400, 1080) mMaxBounds=Rect(0, 0 - 2400, 1080) mDisplayRotation=ROTATION_90 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_90} s.65140 fontWeightAdjustment=0}
+10-30 15:55:29.881  1282  1282 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+10-30 15:55:29.882  1282  1282 D b/254119092: ComponentCallbacks#onConfigurationChanged() configDiff={}
+10-30 15:55:29.882  1282  1282 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+10-30 15:55:29.882  1282  1282 D b/254119092: destroyExistingTaskbar: com.android.launcher3.taskbar.TaskbarActivityContext@5e13685
+10-30 15:55:29.882  1282  1282 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+10-30 15:55:29.882   550   573 I InputManager-JNI: Viewport [0] to add: local:4619827259835644672, isActive: true
+10-30 15:55:29.884  1282  1282 D b/254119092: recreateTaskbar: isTaskbarEnabled=true [dp != null (i.e. mUserUnlocked)]=true FLAG_HIDE_NAVBAR_WINDOW=true dp.isTaskbarPresent=false
+10-30 15:55:29.884  1282  1282 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+10-30 15:55:29.904   550   655 I InputReader: Reconfiguring input devices, changes=DISPLAY_INFO
+10-30 15:55:29.904   550   655 I InputReader: Touch device 'virtio_input_multi_touch_2' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-30 15:55:29.905   550   655 I InputReader: Touch device 'virtio_input_multi_touch_4' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-30 15:55:29.905   550   655 I InputReader: Touch device 'virtio_input_multi_touch_5' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-30 15:55:29.906   550   655 I InputReader: Touch device 'virtio_input_multi_touch_6' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-30 15:55:29.906   550   655 I InputReader: Touch device 'virtio_input_multi_touch_7' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-30 15:55:29.906   550   655 I InputReader: Touch device 'virtio_input_multi_touch_8' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-30 15:55:29.906   550   655 I InputReader: Touch device 'virtio_input_multi_touch_10' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-30 15:55:29.906   550   655 I InputReader: Touch device 'virtio_input_multi_touch_11' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-30 15:55:29.906   550   655 I InputReader: Touch device 'virtio_input_multi_touch_9' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-30 15:55:29.906   550   655 I InputReader: Touch device 'virtio_input_multi_touch_3' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-30 15:55:29.924   550   662 I ImeTracker: com.bellfamily.bastischool:1b34e66d: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-30 15:55:29.925   550   662 I ImeTracker: com.bellfamily.bastischool:1b34e66d: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-30 15:55:29.936  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onConfigurationChanged():1207 onConfigurationChanged() : NewConfig = {1.0 310mcc260mnc [en_US] ldltr sw411dp w914dp h411dp 420dpi nrml long land finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 2400, 1080) mAppBounds=Rect(0, 0 - 2400, 1080) mMaxBounds=Rect(0, 0 - 2400, 1080) mDisplayRotation=ROTATION_90 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_90} s.65140 fontWeightAdjustment=0}
+10-30 15:55:29.938   402   649 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-30 15:55:29.939  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onConfigurationChanged():1208 device real metrics: DisplayMetrics{density=2.625, width=2400, height=1080, scaledDensity=2.625, xdpi=420.0, ydpi=420.0}
+10-30 15:55:29.939  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onConfigurationChanged():1232 Maybe update OEM conditional config because of configuration change
+10-30 15:55:29.939  5889  5889 I InputMethodEntryManager: InputMethodEntryManager.notifyCurrentInputMethodEntryOnContextChanged():607 notifyCurrentInputMethodEntryOnContextChanged()
+10-30 15:55:29.939  5889  5889 I InputMethodEntryManager: InputMethodEntryManager.notifyCurrentInputMethodEntryOnContextChanged():624 Notify current input method entry changed on context change
+10-30 15:55:29.940  5889  5889 I KeyboardContextProvider: KeyboardContextProvider$KeyboardContextCache.createKeyboardContext():173 createKeyboardContext(): en-US, nwi@5de8dad(com.android.inputmethod.latin.LatinIME@395785f), {1.0 310mcc260mnc [en_US] ldltr sw411dp w914dp h411dp 420dpi nrml long land finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 2400, 1080) mAppBounds=Rect(0, 0 - 2400, 1080) mMaxBounds=Rect(0, 0 - 2400, 1080) mDisplayRotation=ROTATION_90 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_90} s.65140 fontWeightAdjustment=0}
+10-30 15:55:29.940  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onCurrentInputMethodEntryChanged():2671 onCurrentInputMethodEntryChanged(): imeDefsChanged=false, entryLanguageVariantChanged=false, keyboardContextChanged=true
+10-30 15:55:29.941  5889  5889 I SystemSubtypesReportModule: SystemSubtypesReportModule$2.onCurrentInputMethodEntryChanged():165 entry: en-US, source: UNSPECIFIED
+10-30 15:55:29.941  5889  5889 I KeyboardContextProvider: KeyboardContextProvider.setBaseContextAndInvalidKeyboardContextCache():88 setBaseContextAndInvalidKeyboardContextCache(): com.android.inputmethod.latin.LatinIME@395785f
+10-30 15:55:29.941  5889  5889 I DeviceModeModule: DeviceModeModule.calculateAndNotify():242 Device mode 'phone' from display metrics 'DisplayMetrics{density=0.0, width=1080, height=2400, scaledDensity=0.0, xdpi=420.0, ydpi=420.0}' or smallestScreenWidthDp: 411
+10-30 15:55:29.942  5889  5889 I InputMethodEntryManager: InputMethodEntryManager.resetLanguages():2905 resetLanguages() debounced: languages=null, conditionName=orientation
+10-30 15:55:29.942  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onConfigurationChanged():1250 changedMask : 20000480
+10-30 15:55:29.942  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.clearInputMethodServiceData():1193 clearInputMethodServiceData for configurationChange
+10-30 15:55:29.943  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.discardAllKeyboardViewAndInputView():1467 discardAllKeyboardViewAndInputView()
+10-30 15:55:29.943  5889  5889 I AbstractOpenableExtension: AbstractOpenableExtension.maybeDestroyExistingKeyboardGroupManager():552 Destroy existing keyboard group manager in jha
+10-30 15:55:29.944  5889  5889 I AbstractOpenableExtension: AbstractOpenableExtension$3.onSuccess():572 KeyboardGroupManager destroyed in jha.
+10-30 15:55:29.944  5889  5889 I AbstractOpenableExtension: AbstractOpenableExtension.createKeyboardGroupManagerListenableFuture():122 Create keyboard group manager listenable future in jha
+10-30 15:55:29.948  5889  5889 I AbstractOpenableExtension: AbstractOpenableExtension.maybeDestroyExistingKeyboardGroupManager():552 Destroy existing keyboard group manager in gnr
+10-30 15:55:29.948  5889  5889 I AbstractOpenableExtension: AbstractOpenableExtension$3.onSuccess():572 KeyboardGroupManager destroyed in gnr.
+10-30 15:55:29.948  5889  5889 I AbstractOpenableExtension: AbstractOpenableExtension.createKeyboardGroupManagerListenableFuture():122 Create keyboard group manager listenable future in gnr
+10-30 15:55:29.948  5889  5889 I AbstractOpenableExtension: AbstractOpenableExtension.maybeDestroyExistingKeyboardGroupManager():552 Destroy existing keyboard group manager in jkw
+10-30 15:55:29.948  5889  5889 I AbstractOpenableExtension: AbstractOpenableExtension$3.onSuccess():572 KeyboardGroupManager destroyed in jkw.
+10-30 15:55:29.948  5889  5889 I AbstractOpenableExtension: AbstractOpenableExtension.createKeyboardGroupManagerListenableFuture():122 Create keyboard group manager listenable future in jkw
+10-30 15:55:29.948  5889 13286 I KeyboardGroupDefParser: KeyboardGroupDefParser.parseKeyboardGroupDef():72 parseKeyboardGroupDef() 2132213830 -> 0_resource_name_obfuscated : WaitTime = 4 ms : RunTime = 0 ms
+10-30 15:55:29.954   780   780 I NoBackGesture: Config changed: newConfig={1.0 310mcc260mnc [en_US] ldltr sw411dp w914dp h411dp 420dpi nrml long land finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 2400, 1080) mAppBounds=Rect(0, 0 - 2400, 1080) mMaxBounds=Rect(0, 0 - 2400, 1080) mDisplayRotation=ROTATION_90 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_90} s.65171 fontWeightAdjustment=0} lastReportedConfig={1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.65136 fontWeightAdjustment=0}
+10-30 15:55:29.960   780   780 I NoBackGesture: NavbarController: newConfig={1.0 310mcc260mnc [en_US] ldltr sw411dp w914dp h411dp 420dpi nrml long land finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 2400, 1080) mAppBounds=Rect(0, 0 - 2400, 1080) mMaxBounds=Rect(0, 0 - 2400, 1080) mDisplayRotation=ROTATION_90 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_90} s.65171 fontWeightAdjustment=0} mTaskbarDelegate initialized=true willApplyConfigToNavbars=false navBarCount=0
+10-30 15:55:29.963  5889  5889 I DeviceModeModule: DeviceModeModule.calculateAndNotify():242 Device mode 'phone' from display metrics 'DisplayMetrics{density=0.0, width=2400, height=1080, scaledDensity=0.0, xdpi=420.0, ydpi=420.0}' or smallestScreenWidthDp: 411
+10-30 15:55:29.963  5889 13289 I KeyboardGroupDefParser: KeyboardGroupDefParser.parseKeyboardGroupDef():72 parseKeyboardGroupDef() 2132213833 -> 0_resource_name_obfuscated : WaitTime = 2 ms : RunTime = 0 ms
+10-30 15:55:29.964  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.964  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.964  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.964  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.964  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.964  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.964  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.964  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.964  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.964  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.964  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.964  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.964  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.964  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.964  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.964  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.965  5889  5889 I GoogleInputMethodService: GoogleInputMethodService$8.onWindowMetricsChanged():859 windowMetrics: bounds() = Rect(0, 63 - 2400, 1080), insets() = Rect(0, 0 - 0, 0)
+10-30 15:55:29.965  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:55:29.966  5889  5889 I WindowMetricsNotification: WindowMetricsNotification.notify():169 tmv[bounds=Rect(0, 63 - 2400, 1080), insets=Rect(0, 0 - 0, 0), decorBounds=Rect(0, 0 - 2400, 1080), densityDpi=420, smallestScreenWidthDp=411, displayWidth=2400, displayHeight=1080, xdpi=420.0, ydpi=420.0, isTrustable=true, displayId=0]; DisplayMetrics{density=2.625, width=2400, height=1080, scaledDensity=2.625, xdpi=420.0, ydpi=420.0}
+10-30 15:55:29.966  5889  5889 I WindowMetricsHelper: WindowMetricsHelper.predictAndNotify():148 Window metrics predicted.
+10-30 15:55:29.966  5889 13286 I KeyboardGroupDefParser: KeyboardGroupDefParser.parseKeyboardGroupDef():72 parseKeyboardGroupDef() 2132213834 -> 0_resource_name_obfuscated : WaitTime = 14 ms : RunTime = 1 ms
+10-30 15:55:29.967  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.initializeInputMethodServiceData():914 initializeInputMethodServiceData for pfe{languageTag=en-US, variant=qwerty, hasLocalizedResources=true, conditionCacheKey=_android_software_xr_api_spatial=false_device=phone_device_size=default_enable_free_cursor_by_long_press_space=true_enable_number_row=false_enable_number_row_in_password=true_enable_pk_simulator=false_enable_pk_simulator_setting=false_enable_scrub_move=true_enable_secondary_digits=true_enable_secondary_symbols=false_enable_simplified_expression_keyboard=false_expressions=normal_four_or_more_letter_rows=false_free_cursor=false_free_cursor_del_swipe_delete=false_free_cursor_in_split_keyboard_gap=false_keyboard_font_size_setting=_keyboard_mode=normal_language=en-US_layout_9key_split=false_orientation=portrait_physical_keyboard=qwerty_pk_simulator_vk_ready=false_pref_enable_flick_symbols=false_rtl_layout=false_show_comma_key=true_show_period_key=true_show_secondary_digits=true_show_suggestion_strip=true_show_suggestions=true_split_with_duplicate_keys=true_true=true_variant=qwerty_writing_helper_enable_by_word_revert=false, imeDef.stringId=ime_english_united_states, imeDef.className=com.google.android.apps.inputmethod.libs.latin5.LatinIme, imeDef.languageTag=en-US}
+10-30 15:55:29.968  5889  5889 I ThemeUtil: ThemeUtil.isDynamicColorHigherContrastMode():340 Detected higher contrast mode: 80.074051
+10-30 15:55:29.970  5889  5889 I KeyboardThemeProvider: KeyboardThemeProvider.applyKeyboardTheme():27 Apply keyboard theme: theme,!gsf,!pgsans,!pgsf,!use_system_font,BORDER,FLAVOR_DPI=XXHDPI,IS_LIGHT,KEYBOARD_MODE=1,KEYBOARD_WIDTH_CATEGORY=NORMAL,KEY_BORDER_SHAPE=1,LANDSCAPE,LIGHT_THEME=true,ORIENTATION=2,PHYSICAL_DIAGONAL=6.2061567,POPUP,SCREEN_SHORTEST_WIDTH=411,SCREEN_SHORTEST_WIDTH_NO_SCALE=411,SW400DP,XXHDPI,density_2.625,enable_popup_on_keypress=true,font_scale_1.0,gsans,noshadow,overlay_builtin_dynamic_color_light_base.binarypb:gm3-light-fffaf8ff-ff495d92-dd932801c7764dc17cd06f315d9c155d,silkpopup
+10-30 15:55:29.970  5889  5889 I InputMethodEntryManager: InputMethodEntryManager.getAdditionalImeDefs():2571 getAdditionalImeDefs() called, flag enabled: false, isUserUnlocked: true
+10-30 15:55:29.972  5889  5889 I InputMethodEntryManager: InputMethodEntryManager.getAdditionalImeDefs():2579 OptimizeAdditionalImeDefLoadingFlag disabled, retrieving additional ImeDefs synchronously for entry: pfe{languageTag=en-US, variant=qwerty, hasLocalizedResources=true, conditionCacheKey=_android_software_xr_api_spatial=false_device=phone_device_size=default_enable_free_cursor_by_long_press_space=true_enable_number_row=false_enable_number_row_in_password=true_enable_pk_simulator=false_enable_pk_simulator_setting=false_enable_scrub_move=true_enable_secondary_digits=true_enable_secondary_symbols=false_enable_simplified_expression_keyboard=false_expressions=normal_four_or_more_letter_rows=false_free_cursor=false_free_cursor_del_swipe_delete=false_free_cursor_in_split_keyboard_gap=false_keyboard_font_size_setting=_keyboard_mode=normal_language=en-US_layout_9key_split=false_orientation=portrait_physical_keyboard=qwerty_pk_simulator_vk_ready=false_pref_enable_flick_symbols=false_rtl_layout=false_show_comma_key=true_show_period_key=true_show_secondary_digits=true_show_suggestion_strip=true_show_suggestions=true_split_with_duplicate_keys=true_true=true_variant=qwerty_writing_helper_enable_by_word_revert=false, imeDef.stringId=ime_english_united_states, imeDef.className=com.google.android.apps.inputmethod.libs.latin5.LatinIme, imeDef.languageTag=en-US}
+10-30 15:55:29.972  5889  5889 I InputBundle: InputBundle.prefetchKeyboard():679 prefetchKeyboard: prime
+10-30 15:55:29.972  5889  5889 I KeyboardDefManager: KeyboardDefManager.requestKeyboardDef():143 requestKeyboardDef(): type=prime, info=qca{defIds=[#0x7f170555, #0x7f1707eb], defIdsCacheKey=2132215125,2132215787}
+10-30 15:55:29.972  5889  5889 I KeyboardDefManager: KeyboardDefManager.requestKeyboardDef():232 requestKeyboardDef(): getOrCreate from cache, info=qca{defIds=[#0x7f170555, #0x7f1707eb], defIdsCacheKey=2132215125,2132215787}
+10-30 15:55:29.973  5889  5889 I KeyboardDefManager: KeyboardDefManager$Companion$addFutureCallbackForKeyboardDefReceiver$<anonymous>.onSuccess():524 requestKeyboardDef onSuccess(): info=qca{defIds=[#0x7f170555, #0x7f1707eb], defIdsCacheKey=2132215125,2132215787}
+10-30 15:55:29.973  5889  5889 I KeyboardInterfacePrivate: IKeyboard.createKeyboard():71 Keyboard created from HiltKeyboardFactory: com.google.android.apps.inputmethod.latin.keyboard.LatinPrimeKeyboard
+10-30 15:55:29.973  5889  5889 I InputBundleManager: InputBundleManager.loadActiveInputBundleId():552 loadActiveInputBundleId: und-Latn-x-password, password
+10-30 15:55:29.973  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.973  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.973  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.974  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.974  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.974  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.974  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.974  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.974  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.974  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.974  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.974  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.974  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.974  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.974  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.974  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.974  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.974  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.974  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.974  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.974  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:29.975  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.bellfamily.bastischool.test, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, true)
+10-30 15:55:29.975  5889  5889 W SessionManager: SessionManager.beginSession():73 Try to begin an already begun session [INPUT_SESSION], end it first
+10-30 15:55:29.975  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: No service published for: ethernet
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: 	at android.os.ServiceManager.getServiceOrThrow(ServiceManager.java:203)
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry$145.createService(SystemServiceRegistry.java:2120)
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry$CachedServiceFetcher.getService(SystemServiceRegistry.java:2231)
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry.getSystemService(SystemServiceRegistry.java:1812)
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: 	at android.app.ContextImpl.getSystemService(ContextImpl.java:2241)
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: 	at android.content.ContextWrapper.getSystemService(ContextWrapper.java:936)
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.isEthernetSupported(Tethering.java:1579)
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.makeSupportedDownstreams(Tethering.java:2562)
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.updateSupportedDownstreams(Tethering.java:2536)
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.updateConfiguration(Tethering.java:549)
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.-$$Nest$mupdateConfiguration(Tethering.java:0)
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering$StateReceiver.onReceive(Tethering.java:1186)
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: 	at android.app.LoadedApk$ReceiverDispatcher$Args.lambda$getRunnable$0(LoadedApk.java:1814)
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: 	at android.app.LoadedApk$ReceiverDispatcher$Args.$r8$lambda$mcNAAl1SQ4MyJPyDg8TJ2x2h0Rk(Unknown Source:0)
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: 	at android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: 	at android.os.Handler.handleCallback(Handler.java:959)
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: 	at android.os.Looper.loopOnce(Looper.java:232)
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: 	at android.os.Looper.loop(Looper.java:317)
+10-30 15:55:29.975   830   939 E SystemServiceRegistry: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+10-30 15:55:29.976  5889  5889 W PrimesLoggerHolder: FrameMetricServiceImpl.start():172 measurement already started: MeasurementKey{rawStringEventName=null, noPiiEventName=OnConfigurationChanged, isActivity=false}
+10-30 15:55:29.976  5889  5889 I SubtypeOperator: SubtypeOperator$1.onUnbindInput():44
+10-30 15:55:29.976  5889  5889 I SubtypeOperator: SubtypeOperator$1.onBindInput():33
+10-30 15:55:29.976  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2404
+10-30 15:55:29.976  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.bellfamily.bastischool, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-30 15:55:29.976  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:55:29.976  5889  5889 I ImeDefCache: ImeDefCache.clearCacheForLanguages():340 clearCacheForLanguages: languagesToClear=null, conditionName=orientation
+10-30 15:55:29.976  5889  5889 I AdditionalImeDefCache: AdditionalImeDefCache.clearAdditionalImeDefsForCondition():303 clearAdditionalImeDefsForCondition() clear additional ImeDefs: []
+10-30 15:55:29.976  5889  5889 I InputMethodEntryManager: InputMethodEntryManager.startLoadingInputMethodEntrySettings():814 Start loading input method entry settings: [LanguageTagVariantTuple{languageTag=en-US, variant=qwerty}]
+10-30 15:55:29.977  5889  5889 I InputMethodEntryManager: InputMethodEntryManager.updateInputMethodEntrySettingsLoadingTask():944 update loading task with resetImplicitlyEnabledEntries is false
+10-30 15:55:29.977  5889  5889 I InputMethodEntryManager: InputMethodEntryManager$4.onSuccess():966 Success load entries: [LanguageTagVariantTuple{languageTag=en-US, variant=qwerty}], resetImplicitlyEnabledEntries=false, initialized=true
+10-30 15:55:29.977  5889  5889 I InputMethodEntryManager: InputMethodEntryManager.changeCurrentInputMethodEntry():3177 Set current input method entry: source=UNSPECIFIED, entryChanged=false, enablePersist=true, pfe{languageTag=en-US, variant=qwerty, hasLocalizedResources=true, conditionCacheKey=_android_software_xr_api_spatial=false_device=phone_device_size=default_enable_free_cursor_by_long_press_space=true_enable_number_row=false_enable_number_row_in_password=true_enable_pk_simulator=false_enable_pk_simulator_setting=false_enable_scrub_move=true_enable_secondary_digits=true_enable_secondary_symbols=false_enable_simplified_expression_keyboard=false_expressions=normal_four_or_more_letter_rows=false_free_cursor=false_free_cursor_del_swipe_delete=false_free_cursor_in_split_keyboard_gap=false_keyboard_font_size_setting=_keyboard_mode=normal_language=en-US_layout_9key_split=false_orientation=landscape_physical_keyboard=qwerty_pk_simulator_vk_ready=false_pref_enable_flick_symbols=false_rtl_layout=false_show_comma_key=true_show_period_key=true_show_secondary_digits=true_show_suggestion_strip=true_show_suggestions=true_split_with_duplicate_keys=true_true=true_variant=qwerty_writing_helper_enable_by_word_revert=false, imeDef.stringId=ime_english_united_states, imeDef.className=com.google.android.apps.inputmethod.libs.latin5.LatinIme, imeDef.languageTag=en-US}
+10-30 15:55:29.977  5889  5889 I InputMethodEntryManager: InputMethodEntryManager.loadAdditionalImeDefsForCurrentEntry():3210 loadAdditionalImeDefsForCurrentEntry(): pfe{languageTag=en-US, variant=qwerty, hasLocalizedResources=true, conditionCacheKey=_android_software_xr_api_spatial=false_device=phone_device_size=default_enable_free_cursor_by_long_press_space=true_enable_number_row=false_enable_number_row_in_password=true_enable_pk_simulator=false_enable_pk_simulator_setting=false_enable_scrub_move=true_enable_secondary_digits=true_enable_secondary_symbols=false_enable_simplified_expression_keyboard=false_expressions=normal_four_or_more_letter_rows=false_free_cursor=false_free_cursor_del_swipe_delete=false_free_cursor_in_split_keyboard_gap=false_keyboard_font_size_setting=_keyboard_mode=normal_language=en-US_layout_9key_split=false_orientation=landscape_physical_keyboard=qwerty_pk_simulator_vk_ready=false_pref_enable_flick_symbols=false_rtl_layout=false_show_comma_key=true_show_period_key=true_show_secondary_digits=true_show_suggestion_strip=true_show_suggestions=true_split_with_duplicate_keys=true_true=true_variant=qwerty_writing_helper_enable_by_word_revert=false, imeDef.stringId=ime_english_united_states, imeDef.className=com.google.android.apps.inputmethod.libs.latin5.LatinIme, imeDef.languageTag=en-US}
+10-30 15:55:29.978  5889  5889 I InputMethodEntryManager: InputMethodEntryManager$6.onSuccess():3257 Success load additional ImeDefs, entryChanged=false, additionalImeDefsChanged=false, [ImeDef{stringId=password, language=und-Latn-x-password, languageTag=und-Latn-x-password, processedConditions={language=en-US, variant=qwerty, enable_number_row=true, device=phone, enable_pk_simulator=false, true=true, writing_helper_enable_by_word_revert=false, enable_number_row_in_password=true}, className=com.google.android.libraries.inputmethod.ime.password.PasswordIme, label=2132019313, keyEventInterpreter=null, inlineComposing=true, autoCapital=true, announceAutoSelectedCandidate=true, statusIcon=0, indicatorIcon=0, indicatorLabel=null, displayAppCompletions=false, extraValues=qap{}, processors=com.google.android.libraries.inputmethod.metadata.ProcessorsDef@e016210, unacceptableMetaKeys=4098, languageSpecificSettings=0, asciiCapable=false, alwaysShowSuggestions=false, useAsciiPasswordKeyboard=false, keyboardGroupDef=KeyboardGroupDef(variant=qwerty, variantLabel=0, pkLanguageTag=, pkLayoutType=, dynamicLayout=null, layoutSpecificSettings=[], layoutSpecificTheme=2132083602, order=0, supportsSplitMode=true, supportsOneHandedMode=true, isVariantNameMandatory=false, keyboardDefInfos={prime=KeyboardDefInfo(kbType=prime, initialStates=0, keyboardSources=[Xml(resId=2132215125), Xml(resId=2132215787), Xml(resId=2132215317)], extraValues=qap{}), digit=KeyboardDefInfo(kbType=digit, initialStates=0, keyboardSources=[Xml(resId=2132215748)], extraValues=qap{}), symbol=KeyboardDefInfo(kbType=symbol, initialStates=0, keyboardSources=[Xml(resId=2132215928)], extraValues=qap{})}, overrideKeyboardXmlConditions=com.google.android.libraries.inputmethod.metadata.OverrideKeyboardXmlConditionsDef@22e58d1), phenotypeFlagId=0, localizationLanguageTag=null, supportsInlineSuggestion=false}, ImeDef{stringId=number, language=und-Latn-x-number, languageTag=und-Latn-x-number, processedConditions={}, className=com.google.android.libraries.inputmethod.ime.DummyIme, label=2132019275, keyEventInterpreter=null, inlineComposing=true, autoCapital=false, announceAutoSelectedCandidate=false, statusIcon=0, indicatorIcon=0, indicatorLabel=null, displayAppCompletions=false, extraValues=qap{}, processors=com.google.android.libraries.inputmethod.metadata.ProcessorsDef@e016210, unacceptableMetaKeys=4098, languageSpecificSettings=0, asciiCapable=false, alwaysShowSuggestions=false, useAsciiPasswordKeyboard=false, keyboardGroupDef=KeyboardGroupDef(variant=, variantLabel=0, pkLanguageTag=, pkLayoutType=, dynamicLayout=null, layoutSpecificSettings=[], layoutSpecificTheme=0, order=0, supportsSplitMode=false, supportsOneHandedMode=true, isVariantNameMandatory=false, keyboardDefInfos={prime=KeyboardDefInfo(kbType=prime, initialStates=0, keyboardSources=[Xml(resId=2132215753)], extraValues=qap{})}, overrideKeyboardXmlConditions=com.google.android.libraries.inputmethod.metadata.OverrideKeyboardXmlConditionsDef@1), phenotypeFlagId=0, localizationLanguageTag=null, supportsInlineSuggestion=false}, ImeDef{stringId=number_password, language=und-Latn-x-number-password, languageTag=und-Latn-x-number-password, processedConditions={}, className=com.google.android.libraries.inputmethod.ime.DummyIme, label=2132019276, keyEventInterpreter=null, inlineComposing=true, autoCapital=false, announceAutoSelectedCandidate=false, statusIcon=0, indicatorIcon=0, indicatorLabel=null, displayAppCompletions=false, extraValues=qap{}, processors=com.google.android.libraries.inputmethod.metadata.ProcessorsDef@e016210, unacceptableMetaKeys=4098, languageSpecificSettings=0, asciiCapable=false, alwaysShowSuggestions=false, useAsciiPasswordKeyboard=false, keyboardGroupDef=KeyboardGroupDef(variant=, variantLabel=0, pkLanguageTag=, pkLayoutType=, dynamicLayout=null, layoutSpecificSettings=[], layoutSpecificTheme=0, order=0, supportsSplitMode=false, supportsOneHandedMode=true, isVariantNameMandatory=false, keyboardDefInfos={prime=KeyboardDefInfo(kbType=prime, initialStates=0, keyboardSources=[Xml(
+10-30 15:55:29.978  5889  5889 I InputMethodEntryManager: resId=2132215754)], extraValues=qap{})}, overrideKeyboardXmlConditions=com.google.android.libraries.inputmethod.metadata.OverrideKeyboardXmlConditionsDef@1), phenotypeFlagId=0, localizationLanguageTag=null, supportsInlineSuggestion=false}, ImeDef{stringId=phone_number, language=und-Latn-x-phone-number, languageTag=und-Latn-x-phone-number, processedConditions={}, className=com.google.android.libraries.inputmethod.ime.DummyIme, label=2132019344, keyEventInterpreter=null, inlineComposing=true, autoCapital=false, announceAutoSelectedCandidate=false, statusIcon=0, indicatorIcon=0, indicatorLabel=null, displayAppCompletions=false, extraValues=qap{}, processors=com.google.android.libraries.inputmethod.metadata.ProcessorsDef@e016210, unacceptableMetaKeys=4098, languageSpecificSettings=0, asciiCapable=false, alwaysShowSuggestions=false, useAsciiPasswordKeyboard=false, keyboardGroupDef=KeyboardGroupDef(variant=, variantLabel=0, pkLanguageTag=, pkLayoutType=, dynamicLayout=null, layoutSpecificSettings=[], layoutSpecificTheme=0, order=0, supportsSplitMode=false, supportsOneHandedMode=true, isVariantNameMandatory=false, keyboardDefInfos={prime=KeyboardDefInfo(kbType=prime, initialStates=0, keyboardSources=[Xml(resId=2132215779)], extraValues=qap{})}, overrideKeyboardXmlConditions=com.google.android.libraries.inputmethod.metadata.OverrideKeyboardXmlConditionsDef@1), phenotypeFlagId=0, localizationLanguageTag=null, supportsInlineSuggestion=false}, ImeDef{stringId=date_time, language=und-Latn-x-date-time, languageTag=und-Latn-x-date-time, processedConditions={}, className=com.google.android.libraries.inputmethod.ime.DummyIme, label=2132017782, keyEventInterpreter=null, inlineComposing=true, autoCapital=false, announceAutoSelectedCandidate=false, statusIcon=0, indicatorIcon=0, indicatorLabel=null, displayAppCompletions=false, extraValues=qap{}, processors=com.google.android.libraries.inputmethod.metadata.ProcessorsDef@e016210, unacceptableMetaKeys=4098, languageSpecificSettings=0, asciiCapable=false, alwaysShowSuggestions=false, useAsciiPasswordKeyboard=false, keyboardGroupDef=KeyboardGroupDef(variant=, variantLabel=0, pkLanguageTag=, pkLayoutType=, dynamicLayout=null, layoutSpecificSettings=[], layoutSpecificTheme=0, order=0, supportsSplitMode=false, supportsOneHandedMode=true, isVariantNameMandatory=false, keyboardDefInfos={prime=KeyboardDefInfo(kbType=prime, initialStates=0, keyboardSources=[Xml(resId=2132215619)], extraValues=qap{})}, overrideKeyboardXmlConditions=com.google.android.libraries.inputmethod.metadata.OverrideKeyboardXmlConditionsDef@1), phenotypeFlagId=0, localizationLanguageTag=null, supportsInlineSuggestion=false}]
+10-30 15:55:29.978  5889  5889 I InputMethodEntryManager: InputMethodEntryManager.onSuccessLoadingAdditionalImeDefs():3333 Additional ImeDefs have been loaded, maybe notify entry change: false
+10-30 15:55:29.978  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onCurrentInputMethodEntryChanged():2671 onCurrentInputMethodEntryChanged(): imeDefsChanged=false, entryLanguageVariantChanged=false, keyboardContextChanged=false
+10-30 15:55:29.978  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onCurrentInputMethodEntryChanged():2698 Skip the entry change as the input method entry is consider as not changed.
+10-30 15:55:29.978  5889  5889 I SystemSubtypesReportModule: SystemSubtypesReportModule$2.onCurrentInputMethodEntryChanged():165 entry: en-US, source: UNSPECIFIED
+10-30 15:55:29.979  5889  5920 W ModuleManager: ModuleManager.loadModule():641 Module see is not available
+10-30 15:55:29.986  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:55:29.988  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 0, locked = false
+10-30 15:55:29.988  5889 13290 I PerLanguageDataDownloader: PerLanguageDataDownloader.downloadDataInternal():168 downloading Data for en
+10-30 15:55:29.988  5889 13290 I ManifestedDataDownloader: ManifestedDataDownloader.download():67 downloading manifest https://www.gstatic.com/android/keyboard/modelpack/proactiveek/embedding_gemma/2025120304/en_manifest.json
+10-30 15:55:29.989  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:55:29.990  5889 13289 I DeviceStatusMonitor: DeviceStatusMonitor.onDisplayChanged():442 Display 0 rotation changed: 0 -> 1
+10-30 15:55:29.990  5889 13289 I DeviceStatusMonitor: DeviceStatusMonitor.onDisplayChanged():442 Display 0 rotation changed: 0 -> 1
+10-30 15:55:29.991  5889  5922 I SP      : Registering emoticon_content_description.2022081613, url: https://www.gstatic.com/android/keyboard/emoticon_content_desc/202208161305/superpacks_manifest.json, constraints: W:*:*:*, flags: bg, requested: 2022081613, current: 2022081613
+10-30 15:55:29.995  5889  5932 I DownloadManager: DownloadManager.completeDownload():501 Download for __PEKB_manifest_pek_blocklist__en scheduled with params pyq[allowMetered=true, requireCharging=false, foreground=false, immediately=true, priority=0]
+10-30 15:55:30.017  5889  5922 I SuperpacksManagerImpl: SuperpacksManagerImpl$3$1.onSuccess():552 emoticon_content_description.registerManifest() succeeded
+10-30 15:55:30.019  5889  5932 I DownloadManager: DownloadManager.startDownload():585 start download of __PEKB_manifest_pek_blocklist__en
+10-30 15:55:30.020  5889  5932 I DownloadManager: DownloadManager$4.onSuccess():654 download for __PEKB_manifest_pek_blocklist__en is finished with files # tqt@4c0b4c68
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: DynamicLanguageSetterModule.getApplicationLocales():671 Failed to get the application locales
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: java.lang.SecurityException: getApplicationLocales: Neither user 10149 nor current process has android.permission.READ_APP_SPECIFIC_LOCALES.
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3242)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at android.os.Parcel.createException(Parcel.java:3226)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at android.os.Parcel.readException(Parcel.java:3209)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at android.os.Parcel.readException(Parcel.java:3151)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at android.app.ILocaleManager$Stub$Proxy.getApplicationLocales(ILocaleManager.java:233)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at android.app.LocaleManager.getApplicationLocales(LocaleManager.java:149)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at t$$ExternalSyntheticApiModelOutline0.m(D8$$SyntheticClass:23)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at obc.a(PG:23)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at oat.call(PG:5)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at xrj.a(PG:3)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at xqn.run(PG:18)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at xrk.run(PG:5)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:487)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:307)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at java.lang.Thread.run(Thread.java:1012)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at nol.run(PG:8)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: Caused by: android.os.RemoteException: Remote stack trace:
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at android.app.ContextImpl.enforce(ContextImpl.java:2389)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at android.app.ContextImpl.enforceCallingOrSelfPermission(ContextImpl.java:2417)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at com.android.server.locales.LocaleManagerService.enforceReadAppSpecificLocalesPermission(LocaleManagerService.java:504)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at com.android.server.locales.LocaleManagerService.getApplicationLocales(LocaleManagerService.java:432)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule: 	at com.android.server.locales.LocaleManagerService$LocaleManagerBinderService.getApplicationLocales(LocaleManagerService.java:196)
+10-30 15:55:30.020  5889  5921 W DynamicLanguageSetterModule:
+10-30 15:55:30.026  5889  5920 W LatinCommonMetricsProcessor: LatinCommonMetricsProcessor.processInputMethodEntryChanged():2680 The new entry is equal to the old entry
+10-30 15:55:30.034  1282  1282 D StatsLog: LAUNCHER_TRANSIENT_TASKBAR_HIDE
+10-30 15:55:30.041  1282  1282 D b/254119092: DisplayController#onConfigurationChanged: {1.0 310mcc260mnc [en_US] ldltr sw411dp w914dp h411dp 420dpi nrml long land finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 2400, 1080) mAppBounds=Rect(0, 0 - 2400, 1080) mMaxBounds=Rect(0, 0 - 2400, 1080) mDisplayRotation=ROTATION_90 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_90} s.65140 fontWeightAdjustment=0}
+10-30 15:55:30.057  5889  5922 I SP      : Syncing emoticon_content_description (2022081613) with slices: [7a635888cb828dfa2fc744b7b9b50f04], metadata: false
+10-30 15:55:30.059  5889 13287 I ManifestedDataDownloader: ManifestedDataDownloader.checkVersionAndDownload():98 filegroup __PEKB_pek_blocklist__en with version 2025120304 is already downloaded
+10-30 15:55:30.060  5889 13287 I PerLanguageDataDownloader: PerLanguageDataDownloader$2.onSuccess():188 Data en downloaded with version 2025120304
+10-30 15:55:30.093 13293 13293 D VRI[InstrumentationActivityInvoker$EmptyActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-30 15:55:30.153   383   525 I RanchuHwc: logCompositionFallbackIfChanged: layer 23764 CompositionType fallback from 3 to 1
+10-30 15:55:30.186   780   780 D DefaultDeviceEntrySection: isUdfpsSupported=false
+10-30 15:55:30.198  5889  5922 I SP      : Sync for emoticon_content_description succeeded in 178 ms: no changes
+10-30 15:55:30.199  5889  5922 I SP      : GC for 'emoticon_content_description' (10) with ttl of 0 ms took 1 ms (0/1/0)
+10-30 15:55:30.199  5889  5922 I SuperpacksManagerImpl: SuperpacksManagerImpl$19.onSyncSuccess():947 emoticon_content_description.sync() succeeded
+10-30 15:55:30.222 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:30.261   780   791 I ndroid.systemui: NativeAlloc concurrent mark compact GC freed 14MB AllocSpace bytes, 2(40KB) LOS objects, 49% free, 22MB/45MB, paused 458us,2.680ms total 376.967ms
+10-30 15:55:30.275   550   662 I ImeTracker: com.bellfamily.bastischool:a31d8e3b: onRequestHide at ORIGIN_SERVER reason HIDE_SAME_WINDOW_FOCUSED_WITHOUT_EDITOR fromUser false
+10-30 15:55:30.275   550   662 I ImeTracker: com.bellfamily.bastischool:a31d8e3b: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-30 15:55:30.276  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2404
+10-30 15:55:30.279  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.bellfamily.bastischool, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-30 15:55:30.279  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:55:30.281  5889 13286 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 0, locked = false
+10-30 15:55:30.284  5889 13286 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:55:30.339   780   793 W ndroid.systemui: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Gu500pmAw2vV8V0dyUkO-Q==/com.bellfamily.bastischool.test-xHguCJ6EMUUa19nqwSDj6Q==/base.apk' with 2 weak references
+10-30 15:55:30.340   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.340   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.346   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.347   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.347   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.347   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.347   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.347   780   793 W ndroid.systemui: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~RtTiwXVxZ-RGLXj5SJeA9A==/com.bellfamily.bastischool-PFzM8kzDJ7ysJU1km3uSCw==/base.apk' with 2 weak references
+10-30 15:55:30.348   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.348   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.348   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.348   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.348   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.349   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.349   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.349   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.349   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.350   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.350   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.350   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.353   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.354   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.354   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.354   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.354   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.354   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.354   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.354   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.354   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.354   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.355   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.358   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.358   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.358   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.358   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.358   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.358   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.365   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.365   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.365   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.365   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.365   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.365   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.365   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.365   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.365   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.365   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.365   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.365   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.365   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.367   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.367   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.367   780   793 W System  : A resource failed to call release.
+10-30 15:55:30.438   402   402 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-30 15:55:30.492   550   573 W ImageReader_JNI: Unable to acquire a buffer item, very likely client tried to acquire more than maxImages buffers
+10-30 15:55:30.531   550   550 W WindowTokenClientController: Can't find attached WindowTokenClient for android.window.WindowTokenClient@8b2cc21
+10-30 15:55:30.535   550   573 I InputManager-JNI: Viewport [0] to add: local:4619827259835644672, isActive: true
+10-30 15:55:30.536   550   655 I InputReader: Reconfiguring input devices, changes=DISPLAY_INFO
+10-30 15:55:30.536   550   655 I InputReader: Touch device 'virtio_input_multi_touch_2' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-30 15:55:30.536   550   655 I InputReader: Touch device 'virtio_input_multi_touch_4' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-30 15:55:30.536   550   655 I InputReader: Touch device 'virtio_input_multi_touch_5' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-30 15:55:30.536   550   655 I InputReader: Touch device 'virtio_input_multi_touch_6' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-30 15:55:30.536   550   655 I InputReader: Touch device 'virtio_input_multi_touch_7' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-30 15:55:30.536   550   655 I InputReader: Touch device 'virtio_input_multi_touch_8' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-30 15:55:30.536   550   655 I InputReader: Touch device 'virtio_input_multi_touch_10' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-30 15:55:30.536   550   655 I InputReader: Touch device 'virtio_input_multi_touch_11' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-30 15:55:30.536   550   655 I InputReader: Touch device 'virtio_input_multi_touch_9' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-30 15:55:30.536   550   655 I InputReader: Touch device 'virtio_input_multi_touch_3' could not query the properties of its associated display.  The device will be inoperable until the display size becomes available.
+10-30 15:55:30.537  1282  1282 D b/254119092: TaskbarManager#mComponentCallbacks.onConfigurationChanged: {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.65176 fontWeightAdjustment=0}
+10-30 15:55:30.537  1282  1282 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+10-30 15:55:30.537  1282  1282 D b/254119092: ComponentCallbacks#onConfigurationChanged() configDiff={}
+10-30 15:55:30.537  1282  1282 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+10-30 15:55:30.537  1282  1282 D b/254119092: destroyExistingTaskbar: com.android.launcher3.taskbar.TaskbarActivityContext@95c55e
+10-30 15:55:30.537  1282  1282 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+10-30 15:55:30.553  5889  5889 I AppBase : AppBase.onConfigurationChanged():283 onConfigurationChanged() : NewConfig = {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.65194 fontWeightAdjustment=0}
+10-30 15:55:30.553  1282  1282 D b/254119092: recreateTaskbar: isTaskbarEnabled=true [dp != null (i.e. mUserUnlocked)]=true FLAG_HIDE_NAVBAR_WINDOW=true dp.isTaskbarPresent=false
+10-30 15:55:30.553  1282  1282 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+10-30 15:55:30.556  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onConfigurationChanged():1207 onConfigurationChanged() : NewConfig = {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.65176 fontWeightAdjustment=0}
+10-30 15:55:30.557  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onConfigurationChanged():1208 device real metrics: DisplayMetrics{density=2.625, width=1080, height=2400, scaledDensity=2.625, xdpi=420.0, ydpi=420.0}
+10-30 15:55:30.557  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onConfigurationChanged():1232 Maybe update OEM conditional config because of configuration change
+10-30 15:55:30.557  5889  5889 I InputMethodEntryManager: InputMethodEntryManager.notifyCurrentInputMethodEntryOnContextChanged():607 notifyCurrentInputMethodEntryOnContextChanged()
+10-30 15:55:30.557  5889  5889 I InputMethodEntryManager: InputMethodEntryManager.notifyCurrentInputMethodEntryOnContextChanged():624 Notify current input method entry changed on context change
+10-30 15:55:30.557  5889  5889 I KeyboardContextProvider: KeyboardContextProvider$KeyboardContextCache.createKeyboardContext():173 createKeyboardContext(): en-US, nwi@4dfae8e(com.android.inputmethod.latin.LatinIME@395785f), {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.21 fontWeightAdjustment=0}
+10-30 15:55:30.557  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onCurrentInputMethodEntryChanged():2671 onCurrentInputMethodEntryChanged(): imeDefsChanged=false, entryLanguageVariantChanged=false, keyboardContextChanged=true
+10-30 15:55:30.557  5889  5889 I SystemSubtypesReportModule: SystemSubtypesReportModule$2.onCurrentInputMethodEntryChanged():165 entry: en-US, source: UNSPECIFIED
+10-30 15:55:30.557  5889  5889 I KeyboardContextProvider: KeyboardContextProvider.setBaseContextAndInvalidKeyboardContextCache():88 setBaseContextAndInvalidKeyboardContextCache(): com.android.inputmethod.latin.LatinIME@395785f
+10-30 15:55:30.557  5889  5889 I DeviceModeModule: DeviceModeModule.calculateAndNotify():242 Device mode 'phone' from display metrics 'DisplayMetrics{density=0.0, width=2400, height=1080, scaledDensity=0.0, xdpi=420.0, ydpi=420.0}' or smallestScreenWidthDp: 411
+10-30 15:55:30.558  5889  5889 I InputMethodEntryManager: InputMethodEntryManager.resetLanguages():2905 resetLanguages() debounced: languages=null, conditionName=orientation
+10-30 15:55:30.558  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onConfigurationChanged():1250 changedMask : 20000480
+10-30 15:55:30.558  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.clearInputMethodServiceData():1193 clearInputMethodServiceData for configurationChange
+10-30 15:55:30.558  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.discardAllKeyboardViewAndInputView():1467 discardAllKeyboardViewAndInputView()
+10-30 15:55:30.558  5889  5889 I AbstractOpenableExtension: AbstractOpenableExtension.maybeDestroyExistingKeyboardGroupManager():552 Destroy existing keyboard group manager in jha
+10-30 15:55:30.558  5889  5889 I AbstractOpenableExtension: AbstractOpenableExtension$3.onSuccess():572 KeyboardGroupManager destroyed in jha.
+10-30 15:55:30.558  5889  5889 I AbstractOpenableExtension: AbstractOpenableExtension.createKeyboardGroupManagerListenableFuture():122 Create keyboard group manager listenable future in jha
+10-30 15:55:30.558  5889  5889 I AbstractOpenableExtension: AbstractOpenableExtension.maybeDestroyExistingKeyboardGroupManager():552 Destroy existing keyboard group manager in gnr
+10-30 15:55:30.558  5889  5889 I AbstractOpenableExtension: AbstractOpenableExtension$3.onSuccess():572 KeyboardGroupManager destroyed in gnr.
+10-30 15:55:30.558  5889  5889 I AbstractOpenableExtension: AbstractOpenableExtension.createKeyboardGroupManagerListenableFuture():122 Create keyboard group manager listenable future in gnr
+10-30 15:55:30.558  5889  5889 I AbstractOpenableExtension: AbstractOpenableExtension.maybeDestroyExistingKeyboardGroupManager():552 Destroy existing keyboard group manager in jkw
+10-30 15:55:30.558  5889  5889 I AbstractOpenableExtension: AbstractOpenableExtension$3.onSuccess():572 KeyboardGroupManager destroyed in jkw.
+10-30 15:55:30.558  5889  5889 I AbstractOpenableExtension: AbstractOpenableExtension.createKeyboardGroupManagerListenableFuture():122 Create keyboard group manager listenable future in jkw
+10-30 15:55:30.558  5889  5889 I DeviceModeModule: DeviceModeModule.calculateAndNotify():242 Device mode 'phone' from display metrics 'DisplayMetrics{density=0.0, width=1080, height=2400, scaledDensity=0.0, xdpi=420.0, ydpi=420.0}' or smallestScreenWidthDp: 411
+10-30 15:55:30.558  5889  5889 I GoogleInputMethodService: GoogleInputMethodService$8.onWindowMetricsChanged():859 windowMetrics: bounds() = Rect(0, 63 - 1080, 2400), insets() = Rect(0, 0 - 0, 0)
+10-30 15:55:30.558  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:55:30.558  5889  5889 I WindowMetricsNotification: WindowMetricsNotification.notify():169 tmv[bounds=Rect(0, 63 - 1080, 2400), insets=Rect(0, 0 - 0, 0), decorBounds=Rect(0, 0 - 1080, 2400), densityDpi=420, smallestScreenWidthDp=411, displayWidth=1080, displayHeight=2400, xdpi=420.0, ydpi=420.0, isTrustable=true, displayId=0]; DisplayMetrics{density=2.625, width=1080, height=2400, scaledDensity=2.625, xdpi=420.0, ydpi=420.0}
+10-30 15:55:30.558  5889  5889 I WindowMetricsHelper: WindowMetricsHelper.predictAndNotify():148 Window metrics predicted.
+10-30 15:55:30.558  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.initializeInputMethodServiceData():914 initializeInputMethodServiceData for pfe{languageTag=en-US, variant=qwerty, hasLocalizedResources=true, conditionCacheKey=_android_software_xr_api_spatial=false_device=phone_device_size=default_enable_free_cursor_by_long_press_space=true_enable_number_row=false_enable_number_row_in_password=true_enable_pk_simulator=false_enable_pk_simulator_setting=false_enable_scrub_move=true_enable_secondary_digits=true_enable_secondary_symbols=false_enable_simplified_expression_keyboard=false_expressions=normal_four_or_more_letter_rows=false_free_cursor=false_free_cursor_del_swipe_delete=false_free_cursor_in_split_keyboard_gap=false_keyboard_font_size_setting=_keyboard_mode=normal_language=en-US_layout_9key_split=false_orientation=landscape_physical_keyboard=qwerty_pk_simulator_vk_ready=false_pref_enable_flick_symbols=false_rtl_layout=false_show_comma_key=true_show_period_key=true_show_secondary_digits=true_show_suggestion_strip=true_show_suggestions=true_split_with_duplicate_keys=true_true=true_variant=qwerty_writing_helper_enable_by_word_revert=false, imeDef.stringId=ime_english_united_states, imeDef.className=com.google.android.apps.inputmethod.libs.latin5.LatinIme, imeDef.languageTag=en-US}
+10-30 15:55:30.558  5889 13289 I KeyboardGroupDefParser: KeyboardGroupDefParser.parseKeyboardGroupDef():72 parseKeyboardGroupDef() 2132213833 -> 0_resource_name_obfuscated : WaitTime = 0 ms : RunTime = 0 ms
+10-30 15:55:30.559  5889 13289 I KeyboardGroupDefParser: KeyboardGroupDefParser.parseKeyboardGroupDef():72 parseKeyboardGroupDef() 2132213834 -> 0_resource_name_obfuscated : WaitTime = 0 ms : RunTime = 0 ms
+10-30 15:55:30.559  5889  5889 I ThemeUtil: ThemeUtil.isDynamicColorHigherContrastMode():340 Detected higher contrast mode: 80.074051
+10-30 15:55:30.559  5889 13286 I KeyboardGroupDefParser: KeyboardGroupDefParser.parseKeyboardGroupDef():72 parseKeyboardGroupDef() 2132213830 -> 0_resource_name_obfuscated : WaitTime = 1 ms : RunTime = 0 ms
+10-30 15:55:30.567  5889  5889 I KeyboardThemeProvider: KeyboardThemeProvider.applyKeyboardTheme():27 Apply keyboard theme: theme,!gsf,!pgsans,!pgsf,!use_system_font,BORDER,FLAVOR_DPI=XXHDPI,IS_LIGHT,KEYBOARD_WIDTH_CATEGORY=NORMAL,KEY_BORDER_SHAPE=1,LIGHT_THEME=true,PHYSICAL_DIAGONAL=6.1297245,POPUP,SCREEN_SHORTEST_WIDTH=411,SCREEN_SHORTEST_WIDTH_NO_SCALE=411,SW400DP,XXHDPI,bottom4dp,density_2.625,enable_popup_on_keypress=true,font_scale_1.0,gsans,noshadow,overlay_builtin_dynamic_color_light_base.binarypb:gm3-light-fffaf8ff-ff495d92-dd932801c7764dc17cd06f315d9c155d,silkpopup
+10-30 15:55:30.567  5889  5889 I InputMethodEntryManager: InputMethodEntryManager.getAdditionalImeDefs():2571 getAdditionalImeDefs() called, flag enabled: false, isUserUnlocked: true
+10-30 15:55:30.567  5889  5889 I InputMethodEntryManager: InputMethodEntryManager.getAdditionalImeDefs():2579 OptimizeAdditionalImeDefLoadingFlag disabled, retrieving additional ImeDefs synchronously for entry: pfe{languageTag=en-US, variant=qwerty, hasLocalizedResources=true, conditionCacheKey=_android_software_xr_api_spatial=false_device=phone_device_size=default_enable_free_cursor_by_long_press_space=true_enable_number_row=false_enable_number_row_in_password=true_enable_pk_simulator=false_enable_pk_simulator_setting=false_enable_scrub_move=true_enable_secondary_digits=true_enable_secondary_symbols=false_enable_simplified_expression_keyboard=false_expressions=normal_four_or_more_letter_rows=false_free_cursor=false_free_cursor_del_swipe_delete=false_free_cursor_in_split_keyboard_gap=false_keyboard_font_size_setting=_keyboard_mode=normal_language=en-US_layout_9key_split=false_orientation=landscape_physical_keyboard=qwerty_pk_simulator_vk_ready=false_pref_enable_flick_symbols=false_rtl_layout=false_show_comma_key=true_show_period_key=true_show_secondary_digits=true_show_suggestion_strip=true_show_suggestions=true_split_with_duplicate_keys=true_true=true_variant=qwerty_writing_helper_enable_by_word_revert=false, imeDef.stringId=ime_english_united_states, imeDef.className=com.google.android.apps.inputmethod.libs.latin5.LatinIme, imeDef.languageTag=en-US}
+10-30 15:55:30.567  5889  5889 I InputBundle: InputBundle.prefetchKeyboard():679 prefetchKeyboard: prime
+10-30 15:55:30.568  5889  5889 I KeyboardDefManager: KeyboardDefManager.requestKeyboardDef():143 requestKeyboardDef(): type=prime, info=qca{defIds=[#0x7f170555, #0x7f1707eb], defIdsCacheKey=2132215125,2132215787}
+10-30 15:55:30.568  5889  5889 I KeyboardDefManager: KeyboardDefManager.requestKeyboardDef():232 requestKeyboardDef(): getOrCreate from cache, info=qca{defIds=[#0x7f170555, #0x7f1707eb], defIdsCacheKey=2132215125,2132215787}
+10-30 15:55:30.568  5889  5889 I KeyboardDefManager: KeyboardDefManager$Companion$addFutureCallbackForKeyboardDefReceiver$<anonymous>.onSuccess():524 requestKeyboardDef onSuccess(): info=qca{defIds=[#0x7f170555, #0x7f1707eb], defIdsCacheKey=2132215125,2132215787}
+10-30 15:55:30.568  5889  5889 I KeyboardInterfacePrivate: IKeyboard.createKeyboard():71 Keyboard created from HiltKeyboardFactory: com.google.android.apps.inputmethod.latin.keyboard.LatinPrimeKeyboard
+10-30 15:55:30.568  5889  5889 I InputBundleManager: InputBundleManager.loadActiveInputBundleId():552 loadActiveInputBundleId: und-Latn-x-password, password
+10-30 15:55:30.568  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:30.568  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:30.568  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:30.568  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:30.568  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:30.568  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:30.568  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:30.568  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:30.568  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:30.568  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:30.568  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:30.568  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:30.568  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:30.568  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:30.568  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:30.568  5889  5889 I ThemeUtil: ThemeUtil.applyThemeStyle():149 Theme style FocusRingsOverride is applied dynamically
+10-30 15:55:30.569  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.bellfamily.bastischool, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, true)
+10-30 15:55:30.569  5889  5889 W SessionManager: SessionManager.beginSession():73 Try to begin an already begun session [INPUT_SESSION], end it first
+10-30 15:55:30.569  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:55:30.569  5889  5889 W PrimesLoggerHolder: FrameMetricServiceImpl.start():172 measurement already started: MeasurementKey{rawStringEventName=null, noPiiEventName=OnConfigurationChanged, isActivity=false}
+10-30 15:55:30.569  5889  5889 I ImeDefCache: ImeDefCache.clearCacheForLanguages():340 clearCacheForLanguages: languagesToClear=null, conditionName=orientation
+10-30 15:55:30.569  5889  5889 I AdditionalImeDefCache: AdditionalImeDefCache.clearAdditionalImeDefsForCondition():303 clearAdditionalImeDefsForCondition() clear additional ImeDefs: []
+10-30 15:55:30.569  5889  5889 I InputMethodEntryManager: InputMethodEntryManager.startLoadingInputMethodEntrySettings():814 Start loading input method entry settings: [LanguageTagVariantTuple{languageTag=en-US, variant=qwerty}]
+10-30 15:55:30.570  5889  5889 I InputMethodEntryManager: InputMethodEntryManager.updateInputMethodEntrySettingsLoadingTask():944 update loading task with resetImplicitlyEnabledEntries is false
+10-30 15:55:30.570  5889  5889 I InputMethodEntryManager: InputMethodEntryManager$4.onSuccess():966 Success load entries: [LanguageTagVariantTuple{languageTag=en-US, variant=qwerty}], resetImplicitlyEnabledEntries=false, initialized=true
+10-30 15:55:30.570  5889  5889 I InputMethodEntryManager: InputMethodEntryManager.changeCurrentInputMethodEntry():3177 Set current input method entry: source=UNSPECIFIED, entryChanged=false, enablePersist=true, pfe{languageTag=en-US, variant=qwerty, hasLocalizedResources=true, conditionCacheKey=_android_software_xr_api_spatial=false_device=phone_device_size=default_enable_free_cursor_by_long_press_space=true_enable_number_row=false_enable_number_row_in_password=true_enable_pk_simulator=false_enable_pk_simulator_setting=false_enable_scrub_move=true_enable_secondary_digits=true_enable_secondary_symbols=false_enable_simplified_expression_keyboard=false_expressions=normal_four_or_more_letter_rows=false_free_cursor=false_free_cursor_del_swipe_delete=false_free_cursor_in_split_keyboard_gap=false_keyboard_font_size_setting=_keyboard_mode=normal_language=en-US_layout_9key_split=false_orientation=portrait_physical_keyboard=qwerty_pk_simulator_vk_ready=false_pref_enable_flick_symbols=false_rtl_layout=false_show_comma_key=true_show_period_key=true_show_secondary_digits=true_show_suggestion_strip=true_show_suggestions=true_split_with_duplicate_keys=true_true=true_variant=qwerty_writing_helper_enable_by_word_revert=false, imeDef.stringId=ime_english_united_states, imeDef.className=com.google.android.apps.inputmethod.libs.latin5.LatinIme, imeDef.languageTag=en-US}
+10-30 15:55:30.570  5889  5889 I InputMethodEntryManager: InputMethodEntryManager.loadAdditionalImeDefsForCurrentEntry():3210 loadAdditionalImeDefsForCurrentEntry(): pfe{languageTag=en-US, variant=qwerty, hasLocalizedResources=true, conditionCacheKey=_android_software_xr_api_spatial=false_device=phone_device_size=default_enable_free_cursor_by_long_press_space=true_enable_number_row=false_enable_number_row_in_password=true_enable_pk_simulator=false_enable_pk_simulator_setting=false_enable_scrub_move=true_enable_secondary_digits=true_enable_secondary_symbols=false_enable_simplified_expression_keyboard=false_expressions=normal_four_or_more_letter_rows=false_free_cursor=false_free_cursor_del_swipe_delete=false_free_cursor_in_split_keyboard_gap=false_keyboard_font_size_setting=_keyboard_mode=normal_language=en-US_layout_9key_split=false_orientation=portrait_physical_keyboard=qwerty_pk_simulator_vk_ready=false_pref_enable_flick_symbols=false_rtl_layout=false_show_comma_key=true_show_period_key=true_show_secondary_digits=true_show_suggestion_strip=true_show_suggestions=true_split_with_duplicate_keys=true_true=true_variant=qwerty_writing_helper_enable_by_word_revert=false, imeDef.stringId=ime_english_united_states, imeDef.className=com.google.android.apps.inputmethod.libs.latin5.LatinIme, imeDef.languageTag=en-US}
+10-30 15:55:30.570  5889  5889 I InputMethodEntryManager: InputMethodEntryManager$6.onSuccess():3257 Success load additional ImeDefs, entryChanged=false, additionalImeDefsChanged=false, [ImeDef{stringId=password, language=und-Latn-x-password, languageTag=und-Latn-x-password, processedConditions={language=en-US, variant=qwerty, enable_number_row=true, device=phone, enable_pk_simulator=false, true=true, writing_helper_enable_by_word_revert=false, enable_number_row_in_password=true}, className=com.google.android.libraries.inputmethod.ime.password.PasswordIme, label=2132019313, keyEventInterpreter=null, inlineComposing=true, autoCapital=true, announceAutoSelectedCandidate=true, statusIcon=0, indicatorIcon=0, indicatorLabel=null, displayAppCompletions=false, extraValues=qap{}, processors=com.google.android.libraries.inputmethod.metadata.ProcessorsDef@e016210, unacceptableMetaKeys=4098, languageSpecificSettings=0, asciiCapable=false, alwaysShowSuggestions=false, useAsciiPasswordKeyboard=false, keyboardGroupDef=KeyboardGroupDef(variant=qwerty, variantLabel=0, pkLanguageTag=, pkLayoutType=, dynamicLayout=null, layoutSpecificSettings=[], layoutSpecificTheme=2132083602, order=0, supportsSplitMode=true, supportsOneHandedMode=true, isVariantNameMandatory=false, keyboardDefInfos={prime=KeyboardDefInfo(kbType=prime, initialStates=0, keyboardSources=[Xml(resId=2132215125), Xml(resId=2132215787), Xml(resId=2132215317)], extraValues=qap{}), digit=KeyboardDefInfo(kbType=digit, initialStates=0, keyboardSources=[Xml(resId=2132215748)], extraValues=qap{}), symbol=KeyboardDefInfo(kbType=symbol, initialStates=0, keyboardSources=[Xml(resId=2132215928)], extraValues=qap{})}, overrideKeyboardXmlConditions=com.google.android.libraries.inputmethod.metadata.OverrideKeyboardXmlConditionsDef@22e58d1), phenotypeFlagId=0, localizationLanguageTag=null, supportsInlineSuggestion=false}, ImeDef{stringId=number, language=und-Latn-x-number, languageTag=und-Latn-x-number, processedConditions={}, className=com.google.android.libraries.inputmethod.ime.DummyIme, label=2132019275, keyEventInterpreter=null, inlineComposing=true, autoCapital=false, announceAutoSelectedCandidate=false, statusIcon=0, indicatorIcon=0, indicatorLabel=null, displayAppCompletions=false, extraValues=qap{}, processors=com.google.android.libraries.inputmethod.metadata.ProcessorsDef@e016210, unacceptableMetaKeys=4098, languageSpecificSettings=0, asciiCapable=false, alwaysShowSuggestions=false, useAsciiPasswordKeyboard=false, keyboardGroupDef=KeyboardGroupDef(variant=, variantLabel=0, pkLanguageTag=, pkLayoutType=, dynamicLayout=null, layoutSpecificSettings=[], layoutSpecificTheme=0, order=0, supportsSplitMode=false, supportsOneHandedMode=true, isVariantNameMandatory=false, keyboardDefInfos={prime=KeyboardDefInfo(kbType=prime, initialStates=0, keyboardSources=[Xml(resId=2132215753)], extraValues=qap{})}, overrideKeyboardXmlConditions=com.google.android.libraries.inputmethod.metadata.OverrideKeyboardXmlConditionsDef@1), phenotypeFlagId=0, localizationLanguageTag=null, supportsInlineSuggestion=false}, ImeDef{stringId=number_password, language=und-Latn-x-number-password, languageTag=und-Latn-x-number-password, processedConditions={}, className=com.google.android.libraries.inputmethod.ime.DummyIme, label=2132019276, keyEventInterpreter=null, inlineComposing=true, autoCapital=false, announceAutoSelectedCandidate=false, statusIcon=0, indicatorIcon=0, indicatorLabel=null, displayAppCompletions=false, extraValues=qap{}, processors=com.google.android.libraries.inputmethod.metadata.ProcessorsDef@e016210, unacceptableMetaKeys=4098, languageSpecificSettings=0, asciiCapable=false, alwaysShowSuggestions=false, useAsciiPasswordKeyboard=false, keyboardGroupDef=KeyboardGroupDef(variant=, variantLabel=0, pkLanguageTag=, pkLayoutType=, dynamicLayout=null, layoutSpecificSettings=[], layoutSpecificTheme=0, order=0, supportsSplitMode=false, supportsOneHandedMode=true, isVariantNameMandatory=false, keyboardDefInfos={prime=KeyboardDefInfo(kbType=prime, initialStates=0, keyboardSources=[Xml(
+10-30 15:55:30.570  5889  5889 I InputMethodEntryManager: resId=2132215754)], extraValues=qap{})}, overrideKeyboardXmlConditions=com.google.android.libraries.inputmethod.metadata.OverrideKeyboardXmlConditionsDef@1), phenotypeFlagId=0, localizationLanguageTag=null, supportsInlineSuggestion=false}, ImeDef{stringId=phone_number, language=und-Latn-x-phone-number, languageTag=und-Latn-x-phone-number, processedConditions={}, className=com.google.android.libraries.inputmethod.ime.DummyIme, label=2132019344, keyEventInterpreter=null, inlineComposing=true, autoCapital=false, announceAutoSelectedCandidate=false, statusIcon=0, indicatorIcon=0, indicatorLabel=null, displayAppCompletions=false, extraValues=qap{}, processors=com.google.android.libraries.inputmethod.metadata.ProcessorsDef@e016210, unacceptableMetaKeys=4098, languageSpecificSettings=0, asciiCapable=false, alwaysShowSuggestions=false, useAsciiPasswordKeyboard=false, keyboardGroupDef=KeyboardGroupDef(variant=, variantLabel=0, pkLanguageTag=, pkLayoutType=, dynamicLayout=null, layoutSpecificSettings=[], layoutSpecificTheme=0, order=0, supportsSplitMode=false, supportsOneHandedMode=true, isVariantNameMandatory=false, keyboardDefInfos={prime=KeyboardDefInfo(kbType=prime, initialStates=0, keyboardSources=[Xml(resId=2132215779)], extraValues=qap{})}, overrideKeyboardXmlConditions=com.google.android.libraries.inputmethod.metadata.OverrideKeyboardXmlConditionsDef@1), phenotypeFlagId=0, localizationLanguageTag=null, supportsInlineSuggestion=false}, ImeDef{stringId=date_time, language=und-Latn-x-date-time, languageTag=und-Latn-x-date-time, processedConditions={}, className=com.google.android.libraries.inputmethod.ime.DummyIme, label=2132017782, keyEventInterpreter=null, inlineComposing=true, autoCapital=false, announceAutoSelectedCandidate=false, statusIcon=0, indicatorIcon=0, indicatorLabel=null, displayAppCompletions=false, extraValues=qap{}, processors=com.google.android.libraries.inputmethod.metadata.ProcessorsDef@e016210, unacceptableMetaKeys=4098, languageSpecificSettings=0, asciiCapable=false, alwaysShowSuggestions=false, useAsciiPasswordKeyboard=false, keyboardGroupDef=KeyboardGroupDef(variant=, variantLabel=0, pkLanguageTag=, pkLayoutType=, dynamicLayout=null, layoutSpecificSettings=[], layoutSpecificTheme=0, order=0, supportsSplitMode=false, supportsOneHandedMode=true, isVariantNameMandatory=false, keyboardDefInfos={prime=KeyboardDefInfo(kbType=prime, initialStates=0, keyboardSources=[Xml(resId=2132215619)], extraValues=qap{})}, overrideKeyboardXmlConditions=com.google.android.libraries.inputmethod.metadata.OverrideKeyboardXmlConditionsDef@1), phenotypeFlagId=0, localizationLanguageTag=null, supportsInlineSuggestion=false}]
+10-30 15:55:30.570  5889  5889 I InputMethodEntryManager: InputMethodEntryManager.onSuccessLoadingAdditionalImeDefs():3333 Additional ImeDefs have been loaded, maybe notify entry change: false
+10-30 15:55:30.570  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onCurrentInputMethodEntryChanged():2671 onCurrentInputMethodEntryChanged(): imeDefsChanged=false, entryLanguageVariantChanged=false, keyboardContextChanged=false
+10-30 15:55:30.570  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onCurrentInputMethodEntryChanged():2698 Skip the entry change as the input method entry is consider as not changed.
+10-30 15:55:30.570  5889  5889 I SystemSubtypesReportModule: SystemSubtypesReportModule$2.onCurrentInputMethodEntryChanged():165 entry: en-US, source: UNSPECIFIED
+10-30 15:55:30.571  5889  5920 W ModuleManager: ModuleManager.loadModule():641 Module see is not available
+10-30 15:55:30.574  5889 13290 I PerLanguageDataDownloader: PerLanguageDataDownloader.downloadDataInternal():168 downloading Data for en
+10-30 15:55:30.574  5889 13290 I ManifestedDataDownloader: ManifestedDataDownloader.download():67 downloading manifest https://www.gstatic.com/android/keyboard/modelpack/proactiveek/embedding_gemma/2025120304/en_manifest.json
+10-30 15:55:30.583  5889  5920 W LatinCommonMetricsProcessor: LatinCommonMetricsProcessor.processInputMethodEntryChanged():2680 The new entry is equal to the old entry
+10-30 15:55:30.585  5889  5932 I DownloadManager: DownloadManager.completeDownload():501 Download for __PEKB_manifest_pek_blocklist__en scheduled with params pyq[allowMetered=true, requireCharging=false, foreground=false, immediately=true, priority=0]
+10-30 15:55:30.585  5889  5932 I DownloadManager: DownloadManager.startDownload():585 start download of __PEKB_manifest_pek_blocklist__en
+10-30 15:55:30.585  5889  5932 I DownloadManager: DownloadManager$4.onSuccess():654 download for __PEKB_manifest_pek_blocklist__en is finished with files # tqt@4c0b4c68
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: No service published for: ethernet
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: 	at android.os.ServiceManager.getServiceOrThrow(ServiceManager.java:203)
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry$145.createService(SystemServiceRegistry.java:2120)
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry$CachedServiceFetcher.getService(SystemServiceRegistry.java:2231)
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry.getSystemService(SystemServiceRegistry.java:1812)
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: 	at android.app.ContextImpl.getSystemService(ContextImpl.java:2241)
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: 	at android.content.ContextWrapper.getSystemService(ContextWrapper.java:936)
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.isEthernetSupported(Tethering.java:1579)
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.makeSupportedDownstreams(Tethering.java:2562)
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.updateSupportedDownstreams(Tethering.java:2536)
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.updateConfiguration(Tethering.java:549)
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.-$$Nest$mupdateConfiguration(Tethering.java:0)
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering$StateReceiver.onReceive(Tethering.java:1186)
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: 	at android.app.LoadedApk$ReceiverDispatcher$Args.lambda$getRunnable$0(LoadedApk.java:1814)
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: 	at android.app.LoadedApk$ReceiverDispatcher$Args.$r8$lambda$mcNAAl1SQ4MyJPyDg8TJ2x2h0Rk(Unknown Source:0)
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: 	at android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: 	at android.os.Handler.handleCallback(Handler.java:959)
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: 	at android.os.Looper.loopOnce(Looper.java:232)
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: 	at android.os.Looper.loop(Looper.java:317)
+10-30 15:55:30.598   830   939 E SystemServiceRegistry: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+10-30 15:55:30.613 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:30.614  5889 13286 I DeviceStatusMonitor: DeviceStatusMonitor.onDisplayChanged():442 Display 0 rotation changed: 1 -> 0
+10-30 15:55:30.614  5889 13286 I DeviceStatusMonitor: DeviceStatusMonitor.onDisplayChanged():442 Display 0 rotation changed: 1 -> 0
+10-30 15:55:30.614  5889 13287 I ManifestedDataDownloader: ManifestedDataDownloader.checkVersionAndDownload():98 filegroup __PEKB_pek_blocklist__en with version 2025120304 is already downloaded
+10-30 15:55:30.614  5889 13287 I PerLanguageDataDownloader: PerLanguageDataDownloader$2.onSuccess():188 Data en downloaded with version 2025120304
+10-30 15:55:30.615  5889  5922 I SP      : Registering emoticon_content_description.2022081613, url: https://www.gstatic.com/android/keyboard/emoticon_content_desc/202208161305/superpacks_manifest.json, constraints: W:*:*:*, flags: bg, requested: 2022081613, current: 2022081613
+10-30 15:55:30.615  5889  5922 I SuperpacksManagerImpl: SuperpacksManagerImpl$3$1.onSuccess():552 emoticon_content_description.registerManifest() succeeded
+10-30 15:55:30.615  5889  5922 I SP      : Syncing emoticon_content_description (2022081613) with slices: [7a635888cb828dfa2fc744b7b9b50f04], metadata: false
+10-30 15:55:30.620  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:55:30.621  1282  1282 D StatsLog: LAUNCHER_TRANSIENT_TASKBAR_HIDE
+10-30 15:55:30.622  1282  1282 D b/254119092: DisplayController#onConfigurationChanged: {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.65176 fontWeightAdjustment=0}
+10-30 15:55:30.629   780   780 I NoBackGesture: Config changed: newConfig={1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.65207 fontWeightAdjustment=0} lastReportedConfig={1.0 310mcc260mnc [en_US] ldltr sw411dp w914dp h411dp 420dpi nrml long land finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 2400, 1080) mAppBounds=Rect(0, 0 - 2400, 1080) mMaxBounds=Rect(0, 0 - 2400, 1080) mDisplayRotation=ROTATION_90 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_90} s.65171 fontWeightAdjustment=0}
+10-30 15:55:30.629   780   780 I NoBackGesture: NavbarController: newConfig={1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.65207 fontWeightAdjustment=0} mTaskbarDelegate initialized=true willApplyConfigToNavbars=false navBarCount=0
+10-30 15:55:30.630   402   502 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-30 15:55:30.637   908   915 I m.android.phone: Background concurrent mark compact GC freed 3632KB AllocSpace bytes, 0(0B) LOS objects, 49% free, 3758KB/7516KB, paused 250us,29.226ms total 217.966ms
+10-30 15:55:30.732 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:30.750  5889  5922 I SP      : Sync for emoticon_content_description succeeded in 135 ms: no changes
+10-30 15:55:30.750   780   780 D DefaultDeviceEntrySection: isUdfpsSupported=false
+10-30 15:55:30.750  5889  5922 I SP      : GC for 'emoticon_content_description' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-30 15:55:30.751  5889  5922 I SuperpacksManagerImpl: SuperpacksManagerImpl$19.onSyncSuccess():947 emoticon_content_description.sync() succeeded
+10-30 15:55:30.752   383   525 I RanchuHwc: logCompositionFallbackIfChanged: layer 23769 CompositionType fallback from 3 to 1
+10-30 15:55:30.859 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:30.948   550   662 I ImeTracker: com.bellfamily.bastischool:d4e609fe: onRequestHide at ORIGIN_SERVER reason HIDE_SAME_WINDOW_FOCUSED_WITHOUT_EDITOR fromUser false
+10-30 15:55:30.948   550   662 I ImeTracker: com.bellfamily.bastischool:d4e609fe: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-30 15:55:30.961  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2404
+10-30 15:55:30.980  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.bellfamily.bastischool, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-30 15:55:30.980  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:55:30.992  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 0, locked = false
+10-30 15:55:31.019  5889 13286 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:55:31.021 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:31.057 13293 13293 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@9e70c47
+10-30 15:55:31.071   550  1591 W InputManager-JNI: Input channel object 'cd0579c com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+10-30 15:55:31.078  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5277
+10-30 15:55:31.078  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5277
+10-30 15:55:31.129 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:31.193 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:31.254 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:31.339 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:55:31.481   550  1591 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@4b2173d7 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-30 15:55:31.496  1282  1282 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=5278, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }
+10-30 15:55:31.500 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@e23e836 in: PAUSED
+10-30 15:55:31.500 13260 13260 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@e23e836
+10-30 15:55:31.502   402   402 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-30 15:55:31.603 13293 13306 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-30 15:55:31.604 13293 13306 I EGL_emulation: Opening libGLESv2_emulation.so
+10-30 15:55:31.634 13293 13306 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+10-30 15:55:31.635 13293 13306 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-30 15:55:31.685   550   570 W ziparchive: Unable to open '/data/app/~~Gu500pmAw2vV8V0dyUkO-Q==/com.bellfamily.bastischool.test-xHguCJ6EMUUa19nqwSDj6Q==/base.dm': No such file or directory
+10-30 15:55:31.692   550   570 I ActivityTaskManager: Displayed com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity for user 0: +204ms
+10-30 15:55:31.694  1282  1282 D StatsLog: LAUNCHER_ONRESUME
+10-30 15:55:31.698   550  1457 W AppSearchIcing: icing-search-engine.cc:321: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+10-30 15:55:31.699  1282  1356 D QuickstepModelDelegate: notifyAppTargetEvent action=1 launchLocation=workspace/0/[-1,-1]/[1,1]
+10-30 15:55:31.702  1282  1282 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=6}
+10-30 15:55:31.721  1282  1613 D OneSearchSuggestProvider: AppSearch 0-state cache not available, fallback to AGA
+10-30 15:55:31.721  1282  1613 D OneSearchSuggestProvider: java.util.concurrent.CompletionException: java.util.NoSuchElementException: No value present
+10-30 15:55:31.721  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:308)
+10-30 15:55:31.721  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:323)
+10-30 15:55:31.721  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:684)
+10-30 15:55:31.721  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:486)
+10-30 15:55:31.721  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2138)
+10-30 15:55:31.721  1282  1613 D OneSearchSuggestProvider: 	at com.google.android.apps.nexuslauncher.allapps.E0.onResult(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:67)
+10-30 15:55:31.721  1282  1613 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1.lambda$onResult$0(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:144)
+10-30 15:55:31.721  1282  1613 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1.$r8$lambda$CEk3q8sDAQVhU3rQwVueB8FAj_M(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:1)
+10-30 15:55:31.721  1282  1613 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1$$ExternalSyntheticLambda0.run(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:22)
+10-30 15:55:31.721  1282  1613 D OneSearchSuggestProvider: 	at android.os.Handler.handleCallback(Handler.java:959)
+10-30 15:55:31.721  1282  1613 D OneSearchSuggestProvider: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+10-30 15:55:31.721  1282  1613 D OneSearchSuggestProvider: 	at android.os.Looper.loopOnce(Looper.java:232)
+10-30 15:55:31.721  1282  1613 D OneSearchSuggestProvider: 	at android.os.Looper.loop(Looper.java:317)
+10-30 15:55:31.721  1282  1613 D OneSearchSuggestProvider: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+10-30 15:55:31.721  1282  1613 D OneSearchSuggestProvider: Caused by: java.util.NoSuchElementException: No value present
+10-30 15:55:31.721  1282  1613 D OneSearchSuggestProvider: 	at java.util.Optional.get(Optional.java:143)
+10-30 15:55:31.721  1282  1613 D OneSearchSuggestProvider: 	at com.google.android.apps.nexuslauncher.allapps.E0.onResult(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:28)
+10-30 15:55:31.721  1282  1613 D OneSearchSuggestProvider: 	... 8 more
+10-30 15:55:31.774  1282  1282 D BaseDepthController: setSurface:
+10-30 15:55:31.774  1282  1282 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-30 15:55:31.774  1282  1282 D BaseDepthController: 	mSurface: Surface(name=com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity)/@0x26209d7
+10-30 15:55:31.820  1282  1613 D OneSearchSuggestProvider: Created the binder channel successfully for end point service =com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService , mChannel=i1{delegate=f{logId=9613, target=directaddress:///AndroidComponentAddress%5BIntent%20%7B%20act=grpc.io.action.BIND%20cmp=com.google.android.googlequicksearchbox/com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService%20%7D%5D}} , mOneSearchConnection=l2.Z@2381bb5
+10-30 15:55:31.892 10652 10652 I A       : (REDACTED) Created gRPC endpoint for service %s
+10-30 15:55:31.893  1413  1664 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+10-30 15:55:31.893  1413  1664 I AiAiEcho: EchoTargets:
+10-30 15:55:31.893  1413  1664 I AiAiEcho: Filtered by AiAi flag check:
+10-30 15:55:31.893  1413  1664 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+10-30 15:55:31.895  1413  1664 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+10-30 15:55:31.895  1413  1664 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+10-30 15:55:31.896  1413  1664 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-30 15:55:31.897  1282  1282 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=406, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10000100 cmp=com.google.android.apps.nexuslauncher/.NexusLauncherActivity }
+10-30 15:55:31.907  1282  1282 D SsBaseTemplateCard: No text view can be set up
+10-30 15:55:31.907  1282  1282 D SsBaseTemplateCard: Passed-in item info is null
+10-30 15:55:31.908  1282  1282 D SsBaseTemplateCard: Passed-in item info is null
+10-30 15:55:31.908  1282  1282 D SsBaseTemplateCard: Passed-in item info is null
+10-30 15:55:31.908  1282  1282 I SsBaseTemplateCard: Secondary card pane is null
+10-30 15:55:32.036 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@e23e836 in: STOPPED
+10-30 15:55:32.036 13260 13260 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@e23e836
+10-30 15:55:32.065 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@e23e836 in: DESTROYED
+10-30 15:55:32.065 13260 13260 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+10-30 15:55:32.066   550   550 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+10-30 15:55:32.066 13260 15438 I TextToSpeech: Disconnected from TTS engine
+10-30 15:55:32.073  1282  1282 D StateManager: createAtomicAnimation - fromState: Background, toState: Normal, partial trace:
+10-30 15:55:32.073  1282  1282 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.prepareToAnimate(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:22)
+10-30 15:55:32.073  1282  1282 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.<init>(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:11)
+10-30 15:55:32.073  1282  1282 D StateManager: 	at com.android.launcher3.QuickstepTransitionManager.createWallpaperOpenAnimations(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:735)
+10-30 15:55:32.074  1282  1282 D SearchTargetUtil: queryLength=0 size=0
+10-30 15:55:32.086   550   662 I ImeTracker: com.google.android.apps.nexuslauncher:e177736e: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-30 15:55:32.086   550   662 I ImeTracker: com.google.android.apps.nexuslauncher:e177736e: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-30 15:55:32.088 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@9cc2788]
+10-30 15:55:32.092  5889  5889 I SubtypeOperator: SubtypeOperator$1.onUnbindInput():44
+10-30 15:55:32.093  5889  5889 I SubtypeOperator: SubtypeOperator$1.onBindInput():33
+10-30 15:55:32.094  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2404
+10-30 15:55:32.107  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.google.android.apps.nexuslauncher, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-30 15:55:32.107  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:55:32.110   550  1584 W InputManager-JNI: Input channel object '450fb44 com.bellfamily.bastischool/com.bellfamily.bastischool.MainActivity (client)' was disposed without first being removed with the input manager!
+10-30 15:55:32.112  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 0, locked = false
+10-30 15:55:32.113   780   975 D EGL_emulation: app_time_stats: avg=675.60ms min=65.77ms max=1285.44ms count=2
+10-30 15:55:32.116 13293 13293 D VRI[InstrumentationActivityInvoker$EmptyActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-30 15:55:32.125 13260 13274 I TestRunner: finished: chooserExploreQuizOrderingAndSeasonsSurviveNativeNavigationAndRecreation(com.bellfamily.bastischool.ui.wilma.WilmaRouteTest)

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.animalgroups.AnimalGroupsTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:11:47" hostname="192.168.1.10" time="0.003">
+  <properties/>
+  <testcase name="incorrectPlacementImmediateCorrectionSupportAndFinalCompletion" classname="com.bellfamily.bastischool.learning.animalgroups.AnimalGroupsTest" time="0.0"/>
+  <testcase name="exactMembershipBilingualNamesHelpAndCanonicalPngs" classname="com.bellfamily.bastischool.learning.animalgroups.AnimalGroupsTest" time="0.002"/>
+  <testcase name="deterministicOrderAndLanguageNeverChangeMembership" classname="com.bellfamily.bastischool.learning.animalgroups.AnimalGroupsTest" time="0.001"/>
+  <testcase name="staleUnknownDuplicateAndCorruptStateAreRejected" classname="com.bellfamily.bastischool.learning.animalgroups.AnimalGroupsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

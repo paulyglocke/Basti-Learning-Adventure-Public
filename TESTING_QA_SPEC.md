@@ -713,3 +713,27 @@ The complete API test XML is retained in the
 [Freshwater implementation review](docs/animals-phase5c5-freshwater-review/REVIEW.md).
 Generated-art owner approval, physical-device/child-use review, TalkBack,
 switch-access and audible offline voice quality remain owner-managed.
+## Phase 5C.6 — Match Animals to Habitats
+
+This assessed activity uses a distinct activity/revision and its own durable
+session namespace. It is a fixed seven-question pack with question-specific
+accepted habitat IDs; do not validate it against a universal one-animal/one-
+habitat map. The Rabbit scene question intentionally accepts Woodland and
+Underground. A wrong choice records an attempt and offers retry; Continue after
+a correct answer is explicit and must be idempotent. Checkpoint schema v2
+persists accepted-answer sets while v1 choice checkpoints restore as a singleton
+accepted answer. Regression coverage must protect the original Animal Groups
+AGR1 journal, activity identity, content revision and four-animal Water/Land
+pool.
+
+Focused coverage includes the bilingual question bank, answer-set evaluation,
+v1/v2 checkpoint restore, language-independent identity, attempt/completion
+idempotency, Activity recreation, Options return, navigation and visual review.
+Phase 5C.6 final evidence: focused JVM **47/47**, full JVM **607/607**, and
+**603/603 complete unfiltered API 35 instrumentation** tests passed, zero
+failures/errors/skips; focused matching instrumentation **1/1** passed.
+`assembleDebug`, `assembleDebugAndroidTest`,
+`lintDebug` (0 errors, 5 warnings) and `git diff --check` passed. The API run
+used only disposable `emulator-5554` and took 42m 23s. Full XML, UTP and runner
+diagnostics are retained in the Phase 5C.6 review package. Keep emulator
+viewport overrides distinct from physical-device acceptance.

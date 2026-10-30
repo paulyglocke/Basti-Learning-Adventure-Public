@@ -1,0 +1,4 @@
+10-30 15:53:36.557 13260 13274 I TestRunner: started: openingWithSoundOnStaysSilentAndUnusedOwnerNeverAllocatesEngine(com.bellfamily.bastischool.ui.washhands.WashHandsOwnerTest)
+10-30 15:53:36.559 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@a7c2161]
+10-30 15:53:36.595 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@a7c2161]
+10-30 15:53:36.596 13260 13274 I TestRunner: finished: openingWithSoundOnStaysSilentAndUnusedOwnerNeverAllocatesEngine(com.bellfamily.bastischool.ui.washhands.WashHandsOwnerTest)

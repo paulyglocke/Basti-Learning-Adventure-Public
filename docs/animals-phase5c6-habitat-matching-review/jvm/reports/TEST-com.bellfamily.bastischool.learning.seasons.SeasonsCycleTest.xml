@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.seasons.SeasonsCycleTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:04" hostname="192.168.1.10" time="1.988">
+  <properties/>
+  <testcase name="fiveAndTenRoundsAreStableAndCoverEveryBoundaryBeforeRepeating" classname="com.bellfamily.bastischool.learning.seasons.SeasonsCycleTest" time="0.044"/>
+  <testcase name="everyNewPhaseSelectionRestoresWithoutChangingSelectedExploreSeason" classname="com.bellfamily.bastischool.learning.seasons.SeasonsCycleTest" time="0.073"/>
+  <testcase name="rejectsWrongModeAndInvalidCandidateReferences" classname="com.bellfamily.bastischool.learning.seasons.SeasonsCycleTest" time="0.001"/>
+  <testcase name="bilingualQuestionsUseCycleAndNeverWeatherStereotypes" classname="com.bellfamily.bastischool.learning.seasons.SeasonsCycleTest" time="0.001"/>
+  <testcase name="realJournalsRestoreAnsweredSupportScoreAndCompletedRoundsSilently" classname="com.bellfamily.bastischool.learning.seasons.SeasonsCycleTest" time="1.868"/>
+  <testcase name="allCyclicRelationshipsAndWrapBoundariesAreSemantic" classname="com.bellfamily.bastischool.learning.seasons.SeasonsCycleTest" time="0.001"/>
+  <testcase name="distractorsRepresentSameSeasonReversedDirectionAndSkippingASeason" classname="com.bellfamily.bastischool.learning.seasons.SeasonsCycleTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

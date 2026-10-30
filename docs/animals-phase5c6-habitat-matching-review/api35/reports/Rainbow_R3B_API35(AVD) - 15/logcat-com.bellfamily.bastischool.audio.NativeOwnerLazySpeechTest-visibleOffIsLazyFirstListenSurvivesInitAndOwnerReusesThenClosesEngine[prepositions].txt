@@ -1,0 +1,98 @@
+10-30 15:20:30.221 13260 13274 I TestRunner: started: visibleOffIsLazyFirstListenSurvivesInitAndOwnerReusesThenClosesEngine[prepositions](com.bellfamily.bastischool.audio.NativeOwnerLazySpeechTest)
+10-30 15:20:30.266   780   780 D DefaultDeviceEntrySection: isUdfpsSupported=false
+10-30 15:20:30.268  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4280
+10-30 15:20:30.268  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4280
+10-30 15:20:30.269  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4281
+10-30 15:20:30.269  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4281
+10-30 15:20:30.272 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@b2736d7]
+10-30 15:20:30.608 13260 13265 I ily.bastischool: Background concurrent mark compact GC freed 11MB AllocSpace bytes, 9(192KB) LOS objects, 49% free, 10MB/20MB, paused 99us,10.019ms total 117.900ms
+10-30 15:20:30.630   780   791 I ndroid.systemui: NativeAlloc concurrent mark compact GC freed 15MB AllocSpace bytes, 1(20KB) LOS objects, 50% free, 22MB/45MB, paused 683us,2.756ms total 822.879ms
+10-30 15:20:30.670   780   793 W ndroid.systemui: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Gu500pmAw2vV8V0dyUkO-Q==/com.bellfamily.bastischool.test-xHguCJ6EMUUa19nqwSDj6Q==/base.apk' with 1 weak references
+10-30 15:20:30.673   780   793 W ndroid.systemui: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~RtTiwXVxZ-RGLXj5SJeA9A==/com.bellfamily.bastischool-PFzM8kzDJ7ysJU1km3uSCw==/base.apk' with 2 weak references
+10-30 15:20:30.673   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.673   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.673   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.673   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.673   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.673   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.673   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.673   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.673   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.674   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.674   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.674   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.674   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.674   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.675   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.675   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.675   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.675   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.675   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.675   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.675   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.675   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.675   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.675   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.675   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.675   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.675   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.675   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.675   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.675   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.675   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.675   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.675   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.676   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.677   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.677   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.677   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.677   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.677   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.677   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.677   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.677   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.677   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.677   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.677   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.677   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.677   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.677   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.677   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.677   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.677   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.677   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.677   780   793 W System  : A resource failed to call release.
+10-30 15:20:30.844 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@b2736d7]
+10-30 15:20:30.845 13260 13274 I TestRunner: finished: visibleOffIsLazyFirstListenSurvivesInitAndOwnerReusesThenClosesEngine[prepositions](com.bellfamily.bastischool.audio.NativeOwnerLazySpeechTest)

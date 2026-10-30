@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.ui.homeprototype.HomePrototypeModelTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:22" hostname="192.168.1.10" time="0.007">
+  <properties/>
+  <testcase name="categoryLabelsAreBilingualAndDoNotPromiseShapes" classname="com.bellfamily.bastischool.ui.homeprototype.HomePrototypeModelTest" time="0.0"/>
+  <testcase name="localBackAndHomeKeepOriginWithoutLaunchingAnything" classname="com.bellfamily.bastischool.ui.homeprototype.HomePrototypeModelTest" time="0.001"/>
+  <testcase name="everyCategoryAndActivityRouteRoundTrips" classname="com.bellfamily.bastischool.ui.homeprototype.HomePrototypeModelTest" time="0.0"/>
+  <testcase name="columnsAdaptToAvailableWidthAndTextWithoutUnboundedTabletCards" classname="com.bellfamily.bastischool.ui.homeprototype.HomePrototypeModelTest" time="0.0"/>
+  <testcase name="invalidRestorationReturnsToHomeWelcomeCards" classname="com.bellfamily.bastischool.ui.homeprototype.HomePrototypeModelTest" time="0.001"/>
+  <testcase name="artReferencesExistAndPrototypeHasNoProductionSessionDependencies" classname="com.bellfamily.bastischool.ui.homeprototype.HomePrototypeModelTest" time="0.005"/>
+  <testcase name="refinedArtworkKeepsCanonicalCharactersAndApprovedScenes" classname="com.bellfamily.bastischool.ui.homeprototype.HomePrototypeModelTest" time="0.0"/>
+  <testcase name="allActivitiesPreservesTwentyTwoCurrentCardsWithoutFutureGames" classname="com.bellfamily.bastischool.ui.homeprototype.HomePrototypeModelTest" time="0.0"/>
+  <testcase name="sixCategoriesCoverTwentyOneDistinctExistingIdentities" classname="com.bellfamily.bastischool.ui.homeprototype.HomePrototypeModelTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

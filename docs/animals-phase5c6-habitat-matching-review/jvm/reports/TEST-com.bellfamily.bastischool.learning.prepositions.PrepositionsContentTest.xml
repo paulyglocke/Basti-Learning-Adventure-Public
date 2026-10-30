@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.prepositions.PrepositionsContentTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:11:57" hostname="192.168.1.10" time="0.031">
+  <properties/>
+  <testcase name="canonicalThirteenRelationsAndFiftyTwoScenes" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsContentTest" time="0.002"/>
+  <testcase name="fiveAndTenAreDeterministicWithoutRepeatingScenes" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsContentTest" time="0.027"/>
+  <testcase name="incompleteVocabularyAndInvalidChoicesAreRejected" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsContentTest" time="0.001"/>
+  <testcase name="nativeGeometryPreservesAllRelationsAndReferenceCounts" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsContentTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

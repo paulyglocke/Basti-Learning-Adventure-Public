@@ -1,0 +1,10 @@
+10-30 15:36:03.493 13260 13274 I TestRunner: started: weatherSpeechPolicyRapidSelectionAndDurableSilentRestoration(com.bellfamily.bastischool.ui.months.MonthsOwnerTest)
+10-30 15:36:03.494 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@fd81321]
+10-30 15:36:03.806   830   830 W DnsResolver: resNetworkResult:android.system.ErrnoException: resNetworkResult failed: ETIMEDOUT (Connection timed out)
+10-30 15:36:03.806   830   830 W DnsResolver: resNetworkResult:android.system.ErrnoException: resNetworkResult failed: ETIMEDOUT (Connection timed out)
+10-30 15:36:03.806   830   830 W DnsResolver: resNetworkResult:android.system.ErrnoException: resNetworkResult failed: ETIMEDOUT (Connection timed out)
+10-30 15:36:03.807   830 18161 D NetworkMonitor/114: PROBE_DNS connectivitycheck.gstatic.com 10144ms FAIL in type ADDRCONFIG android.net.DnsResolver$DnsException: android.system.ErrnoException: resNetworkResult failed: ETIMEDOUT (Connection timed out)
+10-30 15:36:03.811   830   830 W DnsResolver: resNetworkResult:android.system.ErrnoException: resNetworkResult failed: ETIMEDOUT (Connection timed out)
+10-30 15:36:03.811   830 18160 D NetworkMonitor/114: PROBE_DNS www.google.com 10149ms FAIL in type ADDRCONFIG android.net.DnsResolver$DnsException: android.system.ErrnoException: resNetworkResult failed: ETIMEDOUT (Connection timed out)
+10-30 15:36:03.833 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@fd81321]
+10-30 15:36:03.834 13260 13274 I TestRunner: finished: weatherSpeechPolicyRapidSelectionAndDurableSilentRestoration(com.bellfamily.bastischool.ui.months.MonthsOwnerTest)

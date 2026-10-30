@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.progress.ProgressRepositoryTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:01" hostname="192.168.1.10" time="0.595">
+  <properties/>
+  <testcase name="malformedExistingStoreIsNotSilentlyResetOrOverwritten" classname="com.bellfamily.bastischool.learning.progress.ProgressRepositoryTest" time="0.019"/>
+  <testcase name="multipleEventsKeepAcceptanceOrderDespiteClockRollbackAndTies" classname="com.bellfamily.bastischool.learning.progress.ProgressRepositoryTest" time="0.03"/>
+  <testcase name="sameIdentityWithDifferentOutcomeIsConflictAndPreservesOriginal" classname="com.bellfamily.bastischool.learning.progress.ProgressRepositoryTest" time="0.041"/>
+  <testcase name="abandonedTemporaryFileIsNotTreatedAsCommittedProgress" classname="com.bellfamily.bastischool.learning.progress.ProgressRepositoryTest" time="0.021"/>
+  <testcase name="failureBeforeRenameKeepsOldStoreAndRetrySucceeds" classname="com.bellfamily.bastischool.learning.progress.ProgressRepositoryTest" time="0.026"/>
+  <testcase name="duplicateDeliveryAcrossRestartKeepsFirstTimestampAndSequence" classname="com.bellfamily.bastischool.learning.progress.ProgressRepositoryTest" time="0.032"/>
+  <testcase name="reusedSessionIdentityCannotChangeActivityOrContentVersion" classname="com.bellfamily.bastischool.learning.progress.ProgressRepositoryTest" time="0.03"/>
+  <testcase name="supportAttemptLanguageOutcomeAndVersionRemainSeparateAfterPersistence" classname="com.bellfamily.bastischool.learning.progress.ProgressRepositoryTest" time="0.044"/>
+  <testcase name="directorySyncFailureAfterRenameIsExplicitAndSafelyRetryable" classname="com.bellfamily.bastischool.learning.progress.ProgressRepositoryTest" time="0.019"/>
+  <testcase name="emptyStoreAndRepositoryRecreationReadDurableEventExactly" classname="com.bellfamily.bastischool.learning.progress.ProgressRepositoryTest" time="0.019"/>
+  <testcase name="filtersBySkillSessionActivityAndKindCanBeCombined" classname="com.bellfamily.bastischool.learning.progress.ProgressRepositoryTest" time="0.078"/>
+  <testcase name="uncertainFailureAfterRenameRetriesWithSameIdWithoutDuplicating" classname="com.bellfamily.bastischool.learning.progress.ProgressRepositoryTest" time="0.038"/>
+  <testcase name="invalidStorageLocationAndClockReportFailures" classname="com.bellfamily.bastischool.learning.progress.ProgressRepositoryTest" time="0.02"/>
+  <testcase name="twoRepositoryInstancesSerializeConcurrentWritesAndDuplicateDeliveries" classname="com.bellfamily.bastischool.learning.progress.ProgressRepositoryTest" time="0.152"/>
+  <testcase name="queryResultsCannotBeMutatedByCallers" classname="com.bellfamily.bastischool.learning.progress.ProgressRepositoryTest" time="0.026"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

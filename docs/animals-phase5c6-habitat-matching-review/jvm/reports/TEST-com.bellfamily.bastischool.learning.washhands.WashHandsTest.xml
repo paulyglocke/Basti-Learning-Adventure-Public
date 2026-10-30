@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.washhands.WashHandsTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:16" hostname="192.168.1.10" time="0.001">
+  <properties/>
+  <testcase name="exactFourBilingualStepsAndIndependentAudio" classname="com.bellfamily.bastischool.learning.washhands.WashHandsTest" time="0.001"/>
+  <testcase name="onlyCheckProducesEvidenceAndCompletionAndLanguageRetainsIdentity" classname="com.bellfamily.bastischool.learning.washhands.WashHandsTest" time="0.0"/>
+  <testcase name="replayAndHintNeverRecordAttemptsAndWrongCheckRecordsActualPositions" classname="com.bellfamily.bastischool.learning.washhands.WashHandsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

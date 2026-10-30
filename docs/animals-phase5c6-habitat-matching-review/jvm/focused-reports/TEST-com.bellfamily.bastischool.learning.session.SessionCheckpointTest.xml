@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.session.SessionCheckpointTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:59:48" hostname="192.168.1.10" time="0.036">
+  <properties/>
+  <testcase name="unansweredTaskRestoresExactlyInBothLanguages" classname="com.bellfamily.bastischool.learning.session.SessionCheckpointTest" time="0.006"/>
+  <testcase name="hintsReplayParentHelpAndPendingRetrySurviveRestore" classname="com.bellfamily.bastischool.learning.session.SessionCheckpointTest" time="0.001"/>
+  <testcase name="invalidEnumsReferencesAndBlankBilingualTextAreRejected" classname="com.bellfamily.bastischool.learning.session.SessionCheckpointTest" time="0.004"/>
+  <testcase name="completedPendingAcknowledgedAndFailedSessionsDoNotCompleteAgainOnRestore" classname="com.bellfamily.bastischool.learning.session.SessionCheckpointTest" time="0.003"/>
+  <testcase name="schemaActivityAndContentVersionMismatchAreExplicitlyIncompatible" classname="com.bellfamily.bastischool.learning.session.SessionCheckpointTest" time="0.001"/>
+  <testcase name="restoredPlanIsSnapshotNotRegenerationFromChangedSeedOrCandidates" classname="com.bellfamily.bastischool.learning.session.SessionCheckpointTest" time="0.001"/>
+  <testcase name="invalidIndexAndContradictoryScoreAreRejected" classname="com.bellfamily.bastischool.learning.session.SessionCheckpointTest" time="0.001"/>
+  <testcase name="versionOneCheckpointStillRestoresAsSingleAnswerQuestions" classname="com.bellfamily.bastischool.learning.session.SessionCheckpointTest" time="0.001"/>
+  <testcase name="encoderRejectsImpossiblePhaseProgressAndCompletionCombinations" classname="com.bellfamily.bastischool.learning.session.SessionCheckpointTest" time="0.0"/>
+  <testcase name="truncatedRandomOversizedAndTrailingDataRejectSafely" classname="com.bellfamily.bastischool.learning.session.SessionCheckpointTest" time="0.015"/>
+  <testcase name="unboundedCountsAndImpossibleAttemptCountersAreRejected" classname="com.bellfamily.bastischool.learning.session.SessionCheckpointTest" time="0.002"/>
+  <testcase name="answeredTaskRestoresAnswerLockAndRejectsDuplicateScoring" classname="com.bellfamily.bastischool.learning.session.SessionCheckpointTest" time="0.001"/>
+  <testcase name="currentIndexScoreAndAllEarlierResultsSurviveRestore" classname="com.bellfamily.bastischool.learning.session.SessionCheckpointTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

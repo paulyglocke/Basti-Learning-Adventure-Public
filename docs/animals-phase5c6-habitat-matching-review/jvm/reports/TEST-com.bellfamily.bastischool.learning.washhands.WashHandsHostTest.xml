@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.washhands.WashHandsHostTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:16" hostname="192.168.1.10" time="0.009">
+  <properties/>
+  <testcase name="exactPartialRestoreRetainsScrambleRemovalHelpAndLanguage" classname="com.bellfamily.bastischool.learning.washhands.WashHandsHostTest" time="0.006"/>
+  <testcase name="pendingPartialDeliveryRestoresDeduplicatesAndAgainStartsFresh" classname="com.bellfamily.bastischool.learning.washhands.WashHandsHostTest" time="0.002"/>
+  <testcase name="staleWriterCannotOverwriteNewerPuzzle" classname="com.bellfamily.bastischool.learning.washhands.WashHandsHostTest" time="0.0"/>
+  <testcase name="wrongCompleteSequenceRestoresEditableWithAttemptEvidence" classname="com.bellfamily.bastischool.learning.washhands.WashHandsHostTest" time="0.001"/>
+  <testcase name="corruptAndFailedWritesNeverReplaceAcceptedEvidence" classname="com.bellfamily.bastischool.learning.washhands.WashHandsHostTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

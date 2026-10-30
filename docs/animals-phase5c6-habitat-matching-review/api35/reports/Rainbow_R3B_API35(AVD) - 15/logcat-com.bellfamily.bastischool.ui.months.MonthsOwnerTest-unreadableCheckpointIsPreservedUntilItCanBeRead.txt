@@ -1,0 +1,15 @@
+10-30 15:36:03.189 13260 13274 I TestRunner: started: unreadableCheckpointIsPreservedUntilItCanBeRead(com.bellfamily.bastischool.ui.months.MonthsOwnerTest)
+10-30 15:36:03.210 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@b376135]
+10-30 15:36:03.220  1282  1282 D TFOManager: No activity in overlay, closing
+10-30 15:36:03.222  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4734
+10-30 15:36:03.222  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4734
+10-30 15:36:03.386 13293 13293 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@17196b8
+10-30 15:36:03.390  5889  5922 I SP      : Sync for emoticon_content_description succeeded in 235 ms: no changes
+10-30 15:36:03.390   550  2331 W InputManager-JNI: Input channel object '54a6afd com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+10-30 15:36:03.391  5889  5922 I SP      : GC for 'emoticon_content_description' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-30 15:36:03.391  5889  5922 I SuperpacksManagerImpl: SuperpacksManagerImpl$19.onSyncSuccess():947 emoticon_content_description.sync() succeeded
+10-30 15:36:03.394  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4735
+10-30 15:36:03.395  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4735
+10-30 15:36:03.465   780   780 D DefaultDeviceEntrySection: isUdfpsSupported=false
+10-30 15:36:03.488 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@b376135]
+10-30 15:36:03.488 13260 13274 I TestRunner: finished: unreadableCheckpointIsPreservedUntilItCanBeRead(com.bellfamily.bastischool.ui.months.MonthsOwnerTest)

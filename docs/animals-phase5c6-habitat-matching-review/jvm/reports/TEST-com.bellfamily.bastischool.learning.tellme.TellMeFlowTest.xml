@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.tellme.TellMeFlowTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:12" hostname="192.168.1.10" time="0.041">
+  <properties/>
+  <testcase name="supportAndAdultExpansionDoNotAdvanceAndResetOnlyOnNextPicture" classname="com.bellfamily.bastischool.learning.tellme.TellMeFlowTest" time="0.005"/>
+  <testcase name="ninthNextPressCompletesAndCompletionIsIdempotent" classname="com.bellfamily.bastischool.learning.tellme.TellMeFlowTest" time="0.003"/>
+  <testcase name="obsoletePhaseOrSceneCallbacksCannotSkipConversation" classname="com.bellfamily.bastischool.learning.tellme.TellMeFlowTest" time="0.002"/>
+  <testcase name="soleBundledCataloguePreservesAllManifestOrdering" classname="com.bellfamily.bastischool.learning.tellme.TellMeFlowTest" time="0.006"/>
+  <testcase name="oneNextPressAdvancesOnePicture" classname="com.bellfamily.bastischool.learning.tellme.TellMeFlowTest" time="0.002"/>
+  <testcase name="languageLocalPromptPriorityAndModelFallbackNeverBorrowEnglish" classname="com.bellfamily.bastischool.learning.tellme.TellMeFlowTest" time="0.003"/>
+  <testcase name="invalidCategoryAndImpossibleStateFailBeforeDisplay" classname="com.bellfamily.bastischool.learning.tellme.TellMeFlowTest" time="0.003"/>
+  <testcase name="celebrationOwnershipExistsOnlyAfterNinthNextAndClearsOnExitOrAgain" classname="com.bellfamily.bastischool.learning.tellme.TellMeFlowTest" time="0.003"/>
+  <testcase name="currentOptionalSupportAvailabilityIsHonestInBothLanguages" classname="com.bellfamily.bastischool.learning.tellme.TellMeFlowTest" time="0.003"/>
+  <testcase name="againRetainsCategoryWhileHomeAndChooseAnotherClearConversation" classname="com.bellfamily.bastischool.learning.tellme.TellMeFlowTest" time="0.002"/>
+  <testcase name="languageSelectionNeverMutatesSemanticStateAndAll81HaveAuthoredPrompts" classname="com.bellfamily.bastischool.learning.tellme.TellMeFlowTest" time="0.003"/>
+  <testcase name="categoryStartsAtFirstSceneWithoutAnswerOrScoreState" classname="com.bellfamily.bastischool.learning.tellme.TellMeFlowTest" time="0.002"/>
+  <testcase name="physicalAcceptanceCorrectionsReachBothLanguagesWithoutFallback" classname="com.bellfamily.bastischool.learning.tellme.TellMeFlowTest" time="0.002"/>
+  <testcase name="missingLanguageOmitsOptionalContentAndExpansionPromptIsLastFallback" classname="com.bellfamily.bastischool.learning.tellme.TellMeFlowTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.clock.ClockTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:11:49" hostname="192.168.1.10" time="0.047">
+  <properties/>
+  <testcase name="continuousGeometry" classname="com.bellfamily.bastischool.learning.clock.ClockTest" time="0.001"/>
+  <testcase name="allAuthoredWholeAndHalfHours" classname="com.bellfamily.bastischool.learning.clock.ClockTest" time="0.0"/>
+  <testcase name="exactRestoreAndMalformedCheckpointRejected" classname="com.bellfamily.bastischool.learning.clock.ClockTest" time="0.042"/>
+  <testcase name="dragFullRevolutionAndBackPreservesHourAndSnaps" classname="com.bellfamily.bastischool.learning.clock.ClockTest" time="0.001"/>
+  <testcase name="manualAudioPolicySilentOpeningAndReplacement" classname="com.bellfamily.bastischool.learning.clock.ClockTest" time="0.001"/>
+  <testcase name="rangesWrapAndDigitalAreOneState" classname="com.bellfamily.bastischool.learning.clock.ClockTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

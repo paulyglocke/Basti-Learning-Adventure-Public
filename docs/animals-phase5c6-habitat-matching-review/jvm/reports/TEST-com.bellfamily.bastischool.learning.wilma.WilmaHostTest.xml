@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.wilma.WilmaHostTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:16" hostname="192.168.1.10" time="4.744">
+  <properties/>
+  <testcase name="failedQuizEffectRemainsRetryableWithItsOriginalIdentity" classname="com.bellfamily.bastischool.learning.wilma.WilmaHostTest" time="0.118"/>
+  <testcase name="findAndRelationAttemptsSupportAndCompletionPersistAcrossSilentRestore" classname="com.bellfamily.bastischool.learning.wilma.WilmaHostTest" time="3.874"/>
+  <testcase name="orderingPendingFinalPlacementAndCompletionSurviveRecreation" classname="com.bellfamily.bastischool.learning.wilma.WilmaHostTest" time="0.562"/>
+  <testcase name="staleOrderingHostCannotOverwriteAndCorruptionIsPreserved" classname="com.bellfamily.bastischool.learning.wilma.WilmaHostTest" time="0.121"/>
+  <testcase name="uncertainOrderingJournalWriteReloadsBeforeRetryWithoutLosingEvent" classname="com.bellfamily.bastischool.learning.wilma.WilmaHostTest" time="0.068"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

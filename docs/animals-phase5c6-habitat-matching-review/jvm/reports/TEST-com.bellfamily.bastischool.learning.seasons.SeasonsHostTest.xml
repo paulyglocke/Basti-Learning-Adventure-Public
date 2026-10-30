@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.seasons.SeasonsHostTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:06" hostname="192.168.1.10" time="1.761">
+  <properties/>
+  <testcase name="fiveAndTenCompleteOnceAndResumeAtSameIndexScore" classname="com.bellfamily.bastischool.learning.seasons.SeasonsHostTest" time="0.752"/>
+  <testcase name="corruptJournalIsNotOverwrittenAndNewRoundHasNewIdentity" classname="com.bellfamily.bastischool.learning.seasons.SeasonsHostTest" time="0.215"/>
+  <testcase name="correctScoresOnceAndRestoresExactAnsweredQuestion" classname="com.bellfamily.bastischool.learning.seasons.SeasonsHostTest" time="0.052"/>
+  <testcase name="failedCompletionSurvivesRestartWithSameDedupeKey" classname="com.bellfamily.bastischool.learning.seasons.SeasonsHostTest" time="0.214"/>
+  <testcase name="realProgressRepositoryAndJournalSurviveRecreationTogether" classname="com.bellfamily.bastischool.learning.seasons.SeasonsHostTest" time="0.167"/>
+  <testcase name="failureBeforeJournalCommitDoesNotAcceptOrPersistAnswer" classname="com.bellfamily.bastischool.learning.seasons.SeasonsHostTest" time="0.053"/>
+  <testcase name="unansweredRestoreIsSilentAndDoesNotRegenerate" classname="com.bellfamily.bastischool.learning.seasons.SeasonsHostTest" time="0.039"/>
+  <testcase name="uncertainJournalWriteRequiresReloadAndCannotLoseAcceptedEffect" classname="com.bellfamily.bastischool.learning.seasons.SeasonsHostTest" time="0.061"/>
+  <testcase name="wrongReplayHintRetryAndLanguageMetadataSurvive" classname="com.bellfamily.bastischool.learning.seasons.SeasonsHostTest" time="0.109"/>
+  <testcase name="failedAttemptDeliveryIsDurableBeforePublicationAndRetriedAfterRestart" classname="com.bellfamily.bastischool.learning.seasons.SeasonsHostTest" time="0.037"/>
+  <testcase name="staleHostCannotOverwriteANewerDurableQuestion" classname="com.bellfamily.bastischool.learning.seasons.SeasonsHostTest" time="0.061"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,2 @@
+10-30 15:52:52.753 13260 13274 I TestRunner: started: allSixImagesDecodeOnceAtBoundedSizeAndReuseTheSameCache(com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest)
+10-30 15:52:52.854 13260 13274 I TestRunner: finished: allSixImagesDecodeOnceAtBoundedSizeAndReuseTheSameCache(com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest)

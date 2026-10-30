@@ -1,0 +1,214 @@
+10-30 15:28:02.991 13260 13274 I TestRunner: started: woodlandGermanFactsAndLabeledAnimalAlternativesUpdateTogether(com.bellfamily.bastischool.ui.habitats.HabitatExploreScreensTest)
+10-30 15:28:03.007  1282  1356 W PackageManager: Failure retrieving resources for com.android.systemui: Drawable com.android.systemui:drawable/ic_bubbles_shortcut_widget with resource ID #0x7f080709
+10-30 15:28:03.009  1282  1356 W PackageManager: Failure retrieving resources for com.android.systemui: Drawable com.android.systemui:drawable/android15_patch_adaptive with resource ID #0x7f080609
+10-30 15:28:03.012 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@a54308c]
+10-30 15:28:03.013 13260 13274 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+10-30 15:28:03.016   550   568 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@496c9b38 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-30 15:28:03.056  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4559
+10-30 15:28:03.056  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4559
+10-30 15:28:03.056  1282  1282 D SsBaseTemplateCard: No text view can be set up
+10-30 15:28:03.056  1282  1282 D SsBaseTemplateCard: Passed-in item info is null
+10-30 15:28:03.056  1282  1282 D SsBaseTemplateCard: Passed-in item info is null
+10-30 15:28:03.056  1282  1282 D SsBaseTemplateCard: Passed-in item info is null
+10-30 15:28:03.056  1282  1282 I SsBaseTemplateCard: Secondary card pane is null
+10-30 15:28:03.073   402   402 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-30 15:28:03.135  1282  1282 W SplitSelectStateCtor: Missing session instanceIds
+10-30 15:28:03.135  1282  1282 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+10-30 15:28:03.147  1282  1282 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=4560, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.bellfamily.bastischool/androidx.activity.ComponentActivity }
+10-30 15:28:03.156 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@8c84f90 in: PRE_ON_CREATE
+10-30 15:28:03.156 13260 13260 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+10-30 15:28:03.158 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@8c84f90 in: CREATED
+10-30 15:28:03.158 13260 13260 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=androidx.activity.ComponentActivity@8c84f90
+10-30 15:28:03.159 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@8c84f90 in: STARTED
+10-30 15:28:03.159 13260 13260 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=androidx.activity.ComponentActivity@8c84f90
+10-30 15:28:03.171 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@8c84f90 in: RESUMED
+10-30 15:28:03.171 13260 13260 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=androidx.activity.ComponentActivity@8c84f90
+10-30 15:28:03.458   550   570 W ziparchive: Unable to open '/data/app/~~RtTiwXVxZ-RGLXj5SJeA9A==/com.bellfamily.bastischool-PFzM8kzDJ7ysJU1km3uSCw==/base.dm': No such file or directory
+10-30 15:28:03.502   550   662 I ImeTracker: com.bellfamily.bastischool:b19aad63: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-30 15:28:03.504   550   662 I ImeTracker: com.bellfamily.bastischool:b19aad63: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-30 15:28:03.516  5889  5889 I SubtypeOperator: SubtypeOperator$1.onUnbindInput():44
+10-30 15:28:03.516  5889  5889 I SubtypeOperator: SubtypeOperator$1.onBindInput():33
+10-30 15:28:03.527  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2404
+10-30 15:28:03.527  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.bellfamily.bastischool, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-30 15:28:03.528  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:28:03.528  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 0, locked = false
+10-30 15:28:03.530  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:28:03.671  1282  1514 D EGL_emulation: app_time_stats: avg=123.94ms min=20.37ms max=252.76ms count=8
+10-30 15:28:03.741   780   929 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@d663c7f
+10-30 15:28:03.751   550  1513 W InputManager-JNI: Input channel object 'eaa0fc2 Splash Screen com.bellfamily.bastischool (client)' was disposed without first being removed with the input manager!
+10-30 15:28:03.753   550   570 I ActivityTaskManager: Displayed com.bellfamily.bastischool/androidx.activity.ComponentActivity for user 0: +433ms
+10-30 15:28:03.767  1282  1282 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-30 15:28:03.770  5889 13290 I SystemSettings: SystemSettings.updateFlagValue():376 Update flag: system_setting_system_font_scale = 1.0
+10-30 15:28:03.771  5889 13287 I SystemSettings: SystemSettings.updateFlagValue():376 Update flag: system_setting_system_font_scale = 1.0
+10-30 15:28:03.804  1282  1282 D BaseDepthController: setSurface:
+10-30 15:28:03.804  1282  1282 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-30 15:28:03.804  1282  1282 D BaseDepthController: 	mSurface: null
+10-30 15:28:03.804  1282  1282 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+10-30 15:28:03.805  1282  1282 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+10-30 15:28:03.805  1282  1282 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:4)
+10-30 15:28:03.805  1282  1282 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:1)
+10-30 15:28:03.805  1282  1282 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:34)
+10-30 15:28:03.806  1282  1282 D StatsLog: LAUNCHER_ONSTOP
+10-30 15:28:03.808  1282  1613 D OneSearchSuggestProvider: Shut down the binder channel
+10-30 15:28:03.808  1282  1613 E i3.i1   : *~*~*~ Previous channel {0} was not shutdown properly!!! ~*~*~*
+10-30 15:28:03.808  1282  1613 E i3.i1   :     Make sure to call shutdown()/shutdownNow() and wait until awaitTermination() returns true.
+10-30 15:28:03.808  1282  1613 E i3.i1   : java.lang.RuntimeException: ManagedChannel allocation site
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at i3.h1.<init>(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:21)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at i3.i1.<init>(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:10)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at g3.d.a(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:258)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at com.google.android.apps.nexuslauncher.allapps.H0.d(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:93)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at com.google.android.apps.nexuslauncher.allapps.H0.c(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:1)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at com.google.android.apps.nexuslauncher.allapps.v0.run(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:14)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at com.android.launcher3.util.LooperExecutor.execute(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:13)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at com.google.android.apps.nexuslauncher.allapps.u0.apply(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:83)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at java.util.concurrent.CompletableFuture.uniExceptionally(CompletableFuture.java:966)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at java.util.concurrent.CompletableFuture$UniExceptionally.tryFire(CompletableFuture.java:950)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:486)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2138)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at com.google.android.apps.nexuslauncher.allapps.E0.onResult(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:67)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at android.app.appsearch.SearchSessionUtil$1.lambda$onResult$0(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:144)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at android.app.appsearch.SearchSessionUtil$1.$r8$lambda$CEk3q8sDAQVhU3rQwVueB8FAj_M(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:1)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at android.app.appsearch.SearchSessionUtil$1$$ExternalSyntheticLambda0.run(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:22)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at android.os.Handler.handleCallback(Handler.java:959)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at android.os.Handler.dispatchMessage(Handler.java:100)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at android.os.Looper.loopOnce(Looper.java:232)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at android.os.Looper.loop(Looper.java:317)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at android.os.HandlerThread.run(HandlerThread.java:85)
+10-30 15:28:03.808  1282  1613 E i3.i1   : *~*~*~ Previous channel {0} was not shutdown properly!!! ~*~*~*
+10-30 15:28:03.808  1282  1613 E i3.i1   :     Make sure to call shutdown()/shutdownNow() and wait until awaitTermination() returns true.
+10-30 15:28:03.808  1282  1613 E i3.i1   : java.lang.RuntimeException: ManagedChannel allocation site
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at i3.h1.<init>(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:21)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at i3.i1.<init>(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:10)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at g3.d.a(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:258)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at com.google.android.apps.nexuslauncher.allapps.H0.d(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:93)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at com.google.android.apps.nexuslauncher.allapps.H0.c(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:1)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at com.google.android.apps.nexuslauncher.allapps.v0.run(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:14)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at com.android.launcher3.util.LooperExecutor.execute(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:13)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at com.google.android.apps.nexuslauncher.allapps.u0.apply(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:83)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at java.util.concurrent.CompletableFuture.uniExceptionally(CompletableFuture.java:966)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at java.util.concurrent.CompletableFuture$UniExceptionally.tryFire(CompletableFuture.java:950)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:486)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2138)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at com.google.android.apps.nexuslauncher.allapps.E0.onResult(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:67)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at android.app.appsearch.SearchSessionUtil$1.lambda$onResult$0(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:144)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at android.app.appsearch.SearchSessionUtil$1.$r8$lambda$CEk3q8sDAQVhU3rQwVueB8FAj_M(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:1)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at android.app.appsearch.SearchSessionUtil$1$$ExternalSyntheticLambda0.run(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:22)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at android.os.Handler.handleCallback(Handler.java:959)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at android.os.Handler.dispatchMessage(Handler.java:100)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at android.os.Looper.loopOnce(Looper.java:232)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at android.os.Looper.loop(Looper.java:317)
+10-30 15:28:03.808  1282  1613 E i3.i1   : 	at android.os.HandlerThread.run(HandlerThread.java:85)
+10-30 15:28:03.808  1282  1282 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+10-30 15:28:03.808  1282  1282 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+10-30 15:28:03.825  1282  6373 I IPCThreadState: oneway function results for code 2 on binder at 0xb400007b9ed4c490 will be dropped but finished with status UNKNOWN_TRANSACTION
+10-30 15:28:03.827  1282  1282 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+10-30 15:28:04.175   550  2967 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@4b2173d7 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-30 15:28:04.202  1282  1282 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=4561, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }
+10-30 15:28:04.204 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@8c84f90 in: PAUSED
+10-30 15:28:04.204 13260 13260 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=androidx.activity.ComponentActivity@8c84f90
+10-30 15:28:04.235   402   402 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-30 15:28:04.290 13293 13306 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-30 15:28:04.291 13293 13306 I EGL_emulation: Opening libGLESv2_emulation.so
+10-30 15:28:04.317 13293 13306 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+10-30 15:28:04.318 13293 13306 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-30 15:28:04.425  1282  1282 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=406, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10000100 cmp=com.google.android.apps.nexuslauncher/.NexusLauncherActivity }
+10-30 15:28:04.454  1282  1282 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=6}
+10-30 15:28:04.457  1282  1292 I s.nexuslauncher: NativeAlloc concurrent mark compact GC freed 2577KB AllocSpace bytes, 56(5424KB) LOS objects, 49% free, 11MB/23MB, paused 182us,1.779ms total 112.089ms
+10-30 15:28:04.461  1282  1282 D BaseDepthController: setSurface:
+10-30 15:28:04.461  1282  1282 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-30 15:28:04.461  1282  1282 D BaseDepthController: 	mSurface: Surface(name=com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity)/@0xd3c8de6
+10-30 15:28:04.468  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~WudAbaQOaiwAPgor7JgovQ==/com.google.android.contacts-0BgGWREMZSGVCF7C4t056A==/base.apk' with 1 weak references
+10-30 15:28:04.468  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~WudAbaQOaiwAPgor7JgovQ==/com.google.android.contacts-0BgGWREMZSGVCF7C4t056A==/split_config.arm64_v8a.apk' with 1 weak references
+10-30 15:28:04.468  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~WudAbaQOaiwAPgor7JgovQ==/com.google.android.contacts-0BgGWREMZSGVCF7C4t056A==/split_config.en.apk' with 1 weak references
+10-30 15:28:04.469  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~WudAbaQOaiwAPgor7JgovQ==/com.google.android.contacts-0BgGWREMZSGVCF7C4t056A==/split_config.xxhdpi.apk' with 1 weak references
+10-30 15:28:04.469  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~UTT0nWaXQuAwJH-S4wvKMA==/com.google.android.youtube-d55koCACwIazB9OSPDynuA==/base.apk' with 1 weak references
+10-30 15:28:04.469  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~UTT0nWaXQuAwJH-S4wvKMA==/com.google.android.youtube-d55koCACwIazB9OSPDynuA==/split_config.arm64_v8a.apk' with 1 weak references
+10-30 15:28:04.469  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~UTT0nWaXQuAwJH-S4wvKMA==/com.google.android.youtube-d55koCACwIazB9OSPDynuA==/split_config.en.apk' with 1 weak references
+10-30 15:28:04.469  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~UTT0nWaXQuAwJH-S4wvKMA==/com.google.android.youtube-d55koCACwIazB9OSPDynuA==/split_config.xxhdpi.apk' with 1 weak references
+10-30 15:28:04.470  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/Camera2/Camera2.apk' with 1 weak references
+10-30 15:28:04.470  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Ll9Dc0cNTz-VOE_JU93AkQ==/com.google.android.gm-EWIPle1eHPs5aP2cUzSDrg==/base.apk' with 1 weak references
+10-30 15:28:04.471  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Ll9Dc0cNTz-VOE_JU93AkQ==/com.google.android.gm-EWIPle1eHPs5aP2cUzSDrg==/split_config.arm64_v8a.apk' with 1 weak references
+10-30 15:28:04.471  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Ll9Dc0cNTz-VOE_JU93AkQ==/com.google.android.gm-EWIPle1eHPs5aP2cUzSDrg==/split_config.en.apk' with 1 weak references
+10-30 15:28:04.471  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Ll9Dc0cNTz-VOE_JU93AkQ==/com.google.android.gm-EWIPle1eHPs5aP2cUzSDrg==/split_config.xxhdpi.apk' with 1 weak references
+10-30 15:28:04.472  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~pTResp-Ld4ALoiew5KRuRg==/com.google.android.dialer-5FI-T5CYpcNpKuH96zLaTg==/base.apk' with 1 weak references
+10-30 15:28:04.473  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /product/priv-app/PrebuiltBugle/PrebuiltBugle.apk' with 1 weak references
+10-30 15:28:04.473  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~x7ChG7oM8IHJzdTKu4XOHg==/com.android.chrome-QqT2C5pMgnzfYf4fMUEdYA==/base.apk' with 1 weak references
+10-30 15:28:04.473  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~x7ChG7oM8IHJzdTKu4XOHg==/com.android.chrome-QqT2C5pMgnzfYf4fMUEdYA==/split_chrome.apk' with 1 weak references
+10-30 15:28:04.473  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~x7ChG7oM8IHJzdTKu4XOHg==/com.android.chrome-QqT2C5pMgnzfYf4fMUEdYA==/split_config.en.apk' with 1 weak references
+10-30 15:28:04.473  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~x7ChG7oM8IHJzdTKu4XOHg==/com.android.chrome-QqT2C5pMgnzfYf4fMUEdYA==/split_dev_ui.apk' with 1 weak references
+10-30 15:28:04.473  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~x7ChG7oM8IHJzdTKu4XOHg==/com.android.chrome-QqT2C5pMgnzfYf4fMUEdYA==/split_on_demand.apk' with 1 weak references
+10-30 15:28:04.473  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~x7ChG7oM8IHJzdTKu4XOHg==/com.android.chrome-QqT2C5pMgnzfYf4fMUEdYA==/split_stack_unwinder.apk' with 1 weak references
+10-30 15:28:04.475  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~RtTiwXVxZ-RGLXj5SJeA9A==/com.bellfamily.bastischool-PFzM8kzDJ7ysJU1km3uSCw==/base.apk' with 1 weak references
+10-30 15:28:04.475  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~9Q3yUOFD8wl9XUkfoy1S0A==/com.google.android.deskclock-CFkHMpAYy6wjIpe3Bep6jQ==/base.apk' with 1 weak references
+10-30 15:28:04.475  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~9Q3yUOFD8wl9XUkfoy1S0A==/com.google.android.deskclock-CFkHMpAYy6wjIpe3Bep6jQ==/split_config.xxhdpi.apk' with 1 weak references
+10-30 15:28:04.475  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~T-HSLWON4Upy9uh-LqsMyw==/com.google.android.apps.docs-qhuDMNPsZpDKJZw__fd7hQ==/base.apk' with 1 weak references
+10-30 15:28:04.476  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~T-HSLWON4Upy9uh-LqsMyw==/com.google.android.apps.docs-qhuDMNPsZpDKJZw__fd7hQ==/split_config.arm64_v8a.apk' with 1 weak references
+10-30 15:28:04.476  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~T-HSLWON4Upy9uh-LqsMyw==/com.google.android.apps.docs-qhuDMNPsZpDKJZw__fd7hQ==/split_config.en.apk' with 1 weak references
+10-30 15:28:04.476  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~T-HSLWON4Upy9uh-LqsMyw==/com.google.android.apps.docs-qhuDMNPsZpDKJZw__fd7hQ==/split_config.xxhdpi.apk' with 1 weak references
+10-30 15:28:04.476  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /system/priv-app/DocumentsUIGoogle/DocumentsUIGoogle.apk' with 1 weak references
+10-30 15:28:04.476  1282  1294 W System  : A resource failed to call release.
+10-30 15:28:04.476  1282  1294 W System  : A resource failed to call release.
+10-30 15:28:04.476  1282  1294 W System  : A resource failed to call release.
+10-30 15:28:04.477  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /system_ext/priv-app/SystemUIGoogle/SystemUIGoogle.apk' with 1 weak references
+10-30 15:28:04.477  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '/vendor/overlay/SystemUIGoogle__sdk_gphone64_arm64__auto_generated_rro_vendor.apk' with 1 weak references
+10-30 15:28:04.477  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '/product/overlay/SystemUIGoogle__sdk_gphone64_arm64__auto_generated_rro_product.apk' with 1 weak references
+10-30 15:28:04.478  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /system/app/Stk/Stk.apk' with 1 weak references
+10-30 15:28:04.482  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~8rlY6Kc6JpN6I24VS-sIpA==/com.android.vending-jLGi7XKkfq4xcOpm0d8qtg==/base.apk' with 1 weak references
+10-30 15:28:04.482  1282  1282 D StatsLog: LAUNCHER_ONRESUME
+10-30 15:28:04.488  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~8rlY6Kc6JpN6I24VS-sIpA==/com.android.vending-jLGi7XKkfq4xcOpm0d8qtg==/split_config.arm64_v8a.apk' with 1 weak references
+10-30 15:28:04.488  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~8rlY6Kc6JpN6I24VS-sIpA==/com.android.vending-jLGi7XKkfq4xcOpm0d8qtg==/split_config.en.apk' with 1 weak references
+10-30 15:28:04.488  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~8rlY6Kc6JpN6I24VS-sIpA==/com.android.vending-jLGi7XKkfq4xcOpm0d8qtg==/split_phonesky_data_loader.apk' with 1 weak references
+10-30 15:28:04.488  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~8rlY6Kc6JpN6I24VS-sIpA==/com.android.vending-jLGi7XKkfq4xcOpm0d8qtg==/split_phonesky_data_loader.config.arm64_v8a.apk' with 1 weak references
+10-30 15:28:04.488  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~8rlY6Kc6JpN6I24VS-sIpA==/com.android.vending-jLGi7XKkfq4xcOpm0d8qtg==/split_phonesky_webrtc_native_lib.apk' with 1 weak references
+10-30 15:28:04.488  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~8rlY6Kc6JpN6I24VS-sIpA==/com.android.vending-jLGi7XKkfq4xcOpm0d8qtg==/split_phonesky_webrtc_native_lib.config.arm64_v8a.apk' with 1 weak references
+10-30 15:28:04.489  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /system_ext/priv-app/SettingsGoogle/SettingsGoogle.apk' with 1 weak references
+10-30 15:28:04.489  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '/product/overlay/SettingsGoogle__sdk_gphone64_arm64__auto_generated_rro_product.apk' with 1 weak references
+10-30 15:28:04.489  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~vQlFXAAqTR3XvFcrneYfBg==/com.google.android.apps.maps-kZNN25kIy8wufEcS1sf5og==/base.apk' with 1 weak references
+10-30 15:28:04.500  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~vQlFXAAqTR3XvFcrneYfBg==/com.google.android.apps.maps-kZNN25kIy8wufEcS1sf5og==/split_config.arm64_v8a.apk' with 1 weak references
+10-30 15:28:04.500  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~vQlFXAAqTR3XvFcrneYfBg==/com.google.android.apps.maps-kZNN25kIy8wufEcS1sf5og==/split_config.en.apk' with 1 weak references
+10-30 15:28:04.500  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~vQlFXAAqTR3XvFcrneYfBg==/com.google.android.apps.maps-kZNN25kIy8wufEcS1sf5og==/split_config.xxhdpi.apk' with 1 weak references
+10-30 15:28:04.508   550  1457 W AppSearchIcing: icing-search-engine.cc:321: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+10-30 15:28:04.529  1282  1613 D OneSearchSuggestProvider: AppSearch 0-state cache not available, fallback to AGA
+10-30 15:28:04.529  1282  1613 D OneSearchSuggestProvider: java.util.concurrent.CompletionException: java.util.NoSuchElementException: No value present
+10-30 15:28:04.529  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:308)
+10-30 15:28:04.529  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:323)
+10-30 15:28:04.529  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:684)
+10-30 15:28:04.529  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:486)
+10-30 15:28:04.529  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2138)
+10-30 15:28:04.529  1282  1613 D OneSearchSuggestProvider: 	at com.google.android.apps.nexuslauncher.allapps.E0.onResult(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:67)
+10-30 15:28:04.529  1282  1613 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1.lambda$onResult$0(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:144)
+10-30 15:28:04.529  1282  1613 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1.$r8$lambda$CEk3q8sDAQVhU3rQwVueB8FAj_M(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:1)
+10-30 15:28:04.529  1282  1613 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1$$ExternalSyntheticLambda0.run(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:22)
+10-30 15:28:04.529  1282  1613 D OneSearchSuggestProvider: 	at android.os.Handler.handleCallback(Handler.java:959)
+10-30 15:28:04.529  1282  1613 D OneSearchSuggestProvider: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+10-30 15:28:04.529  1282  1613 D OneSearchSuggestProvider: 	at android.os.Looper.loopOnce(Looper.java:232)
+10-30 15:28:04.529  1282  1613 D OneSearchSuggestProvider: 	at android.os.Looper.loop(Looper.java:317)
+10-30 15:28:04.529  1282  1613 D OneSearchSuggestProvider: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+10-30 15:28:04.529  1282  1613 D OneSearchSuggestProvider: Caused by: java.util.NoSuchElementException: No value present
+10-30 15:28:04.529  1282  1613 D OneSearchSuggestProvider: 	at java.util.Optional.get(Optional.java:143)
+10-30 15:28:04.529  1282  1613 D OneSearchSuggestProvider: 	at com.google.android.apps.nexuslauncher.allapps.E0.onResult(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:28)
+10-30 15:28:04.529  1282  1613 D OneSearchSuggestProvider: 	... 8 more
+10-30 15:28:04.531   402   650 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-30 15:28:04.532  1282  1613 D OneSearchSuggestProvider: Created the binder channel successfully for end point service =com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService , mChannel=i1{delegate=f{logId=8145, target=directaddress:///AndroidComponentAddress%5BIntent%20%7B%20act=grpc.io.action.BIND%20cmp=com.google.android.googlequicksearchbox/com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService%20%7D%5D}} , mOneSearchConnection=l2.Z@aa3f03f
+10-30 15:28:04.548 13260 13260 D VRI[ComponentActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-30 15:28:04.621 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@8c84f90 in: STOPPED
+10-30 15:28:04.622 13260 13260 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=androidx.activity.ComponentActivity@8c84f90
+10-30 15:28:04.623  1282  1282 D StateManager: createAtomicAnimation - fromState: Background, toState: Normal, partial trace:
+10-30 15:28:04.623  1282  1282 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.prepareToAnimate(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:22)
+10-30 15:28:04.623  1282  1282 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.<init>(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:11)
+10-30 15:28:04.623  1282  1282 D StateManager: 	at com.android.launcher3.QuickstepTransitionManager.createWallpaperOpenAnimations(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:735)
+10-30 15:28:04.626   550   662 I ImeTracker: com.google.android.apps.nexuslauncher:233b44ee: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-30 15:28:04.626   550   662 I ImeTracker: com.google.android.apps.nexuslauncher:233b44ee: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-30 15:28:04.627 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@8c84f90 in: DESTROYED
+10-30 15:28:04.627 13260 13260 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+10-30 15:28:04.629  5889  5889 I SubtypeOperator: SubtypeOperator$1.onUnbindInput():44
+10-30 15:28:04.630 13260 13260 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@9eff54
+10-30 15:28:04.636  5889  5889 I SubtypeOperator: SubtypeOperator$1.onBindInput():33
+10-30 15:28:04.651  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2404
+10-30 15:28:04.652  5889 13286 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 0, locked = false
+10-30 15:28:04.653  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.google.android.apps.nexuslauncher, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-30 15:28:04.653  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:28:04.653  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:28:04.680   550  3818 W InputManager-JNI: Input channel object 'd3dd51a com.bellfamily.bastischool/androidx.activity.ComponentActivity (client)' was disposed without first being removed with the input manager!
+10-30 15:28:04.684 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@a54308c]
+10-30 15:28:04.690 13260 13274 I TestRunner: finished: woodlandGermanFactsAndLabeledAnimalAlternativesUpdateTogether(com.bellfamily.bastischool.ui.habitats.HabitatExploreScreensTest)

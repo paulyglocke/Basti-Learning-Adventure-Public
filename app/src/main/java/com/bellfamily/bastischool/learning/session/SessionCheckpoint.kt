@@ -16,7 +16,7 @@ enum class CheckpointRejection { MALFORMED, INCOMPATIBLE, TOO_LARGE }
 
 /** Platform-free binary snapshot. No Java object serialization, seed regeneration or side effects. */
 object SessionCheckpoint {
-    const val VERSION = 1
+    const val VERSION = 2
     const val MAX_BYTES = 100_000
     private const val MAGIC = 0x42415354
 
@@ -40,6 +40,7 @@ object SessionCheckpoint {
                 out.writeInt(q.choices.size); q.choices.forEach { out.writeUTF(it.value) }
                 out.writeUTF(q.correct.value); out.text(q.correctFeedback); out.text(q.wrongFeedback)
                 out.writeBoolean(q.hint != null); q.hint?.let { out.text(it) }
+                out.writeInt(q.acceptedAnswers.size); q.acceptedAnswers.sortedBy { it.value }.forEach { out.writeUTF(it.value) }
             }
             out.writeUTF(state.language.name); out.writeInt(state.index); out.writeInt(state.score)
             out.writeUTF(state.phase.name); out.writeUTF(state.completion.name); out.writeInt(state.completionDelivery)
@@ -58,7 +59,8 @@ object SessionCheckpoint {
         return try {
             DataInputStream(ByteArrayInputStream(bytes)).use { input ->
                 require(input.readInt() == MAGIC)
-                if (input.readInt() != VERSION) return SessionRestoreResult.Rejected(CheckpointRejection.INCOMPATIBLE)
+                val checkpointVersion = input.readInt()
+                if (checkpointVersion !in 1..VERSION) return SessionRestoreResult.Rejected(CheckpointRejection.INCOMPATIBLE)
                 val savedActivity = ActivityId(input.string())
                 val savedRevision = input.readInt()
                 val version = ContentVersion(input.readInt(), input.readInt())
@@ -68,7 +70,7 @@ object SessionCheckpoint {
                 val policy = SessionPolicy(enumValueOf(input.string()), enumValueOf(input.string()))
                 val summary = input.text()
                 val count = input.readInt()
-                require(count == policy.round.count)
+                require(count in 3..10 && (checkpointVersion >= 2 || count == policy.round.count))
                 val tasks = List(count) {
                     val taskId = TaskInstanceId(id, input.readInt())
                     val definition = TaskDefinitionId(input.string())
@@ -82,10 +84,14 @@ object SessionCheckpoint {
                     val rightFeedback = input.text()
                     val wrongFeedback = input.text()
                     val hint = if (input.boolean()) input.text() else null
+                    val accepted = if (checkpointVersion >= 2) {
+                        val acceptedCount = input.readInt().also { require(it in 1..optionCount) }
+                        List(acceptedCount) { ContentId(input.string()) }.toSet()
+                    } else setOf(correct)
                     ChoiceTask(taskId, ChoiceQuestion(definition, skill, context, difficulty, instruction,
-                        choices, correct, rightFeedback, wrongFeedback, hint))
+                        choices, correct, rightFeedback, wrongFeedback, hint, accepted))
                 }
-                val plan = SessionPlan(id, savedActivity, savedRevision, version, policy, tasks, summary)
+                val plan = SessionPlan(id, savedActivity, savedRevision, version, policy, tasks, summary, count)
                 plan.validate(content)
                 val language = enumValueOf<ContentLanguage>(input.string())
                 val index = input.readInt()
@@ -130,12 +136,12 @@ object SessionCheckpoint {
                 require(p.lastChoice in q.choices)
                 when (p.answer) {
                     AnswerState.UNANSWERED -> require(state.plan.policy.wrongAnswer == WrongAnswerPolicy.RETRY &&
-                        p.retries == p.attempts && p.lastChoice != q.correct)
+                        p.retries == p.attempts && p.lastChoice !in q.acceptedAnswers)
                     AnswerState.RETRY_AVAILABLE -> require(state.plan.policy.wrongAnswer == WrongAnswerPolicy.RETRY &&
-                        p.retries == p.attempts - 1 && p.lastChoice != q.correct)
-                    AnswerState.CORRECT -> require(p.retries == p.attempts - 1 && p.lastChoice == q.correct)
+                        p.retries == p.attempts - 1 && p.lastChoice !in q.acceptedAnswers)
+                    AnswerState.CORRECT -> require(p.retries == p.attempts - 1 && p.lastChoice in q.acceptedAnswers)
                     AnswerState.INCORRECT -> require(state.plan.policy.wrongAnswer == WrongAnswerPolicy.LOCK &&
-                        p.attempts == 1 && p.retries == 0 && p.lastChoice != q.correct)
+                        p.attempts == 1 && p.retries == 0 && p.lastChoice !in q.acceptedAnswers)
                 }
                 if (state.plan.policy.wrongAnswer == WrongAnswerPolicy.LOCK) require(p.attempts == 1)
             }

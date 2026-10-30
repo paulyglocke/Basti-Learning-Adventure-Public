@@ -1,0 +1,7 @@
+10-30 15:53:36.283 13260 13274 I TestRunner: started: stepSpeechSurvivesColdInitializationAndDoesNotPlaceOrAddSupport(com.bellfamily.bastischool.ui.washhands.WashHandsOwnerTest)
+10-30 15:53:36.285  1282  1282 D StatsLog: LAUNCHER_TRANSIENT_TASKBAR_HIDE
+10-30 15:53:36.311  1282  1282 D b/254119092: DisplayController#onConfigurationChanged: {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.64724 fontWeightAdjustment=0}
+10-30 15:53:36.314 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@1604cb9]
+10-30 15:53:36.322  1282  1282 D TFOManager: No activity in overlay, closing
+10-30 15:53:36.333 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@1604cb9]
+10-30 15:53:36.334 13260 13274 I TestRunner: finished: stepSpeechSurvivesColdInitializationAndDoesNotPlaceOrAddSupport(com.bellfamily.bastischool.ui.washhands.WashHandsOwnerTest)

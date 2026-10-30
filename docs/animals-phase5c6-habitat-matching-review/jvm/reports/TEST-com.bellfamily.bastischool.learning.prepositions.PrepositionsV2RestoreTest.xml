@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.prepositions.PrepositionsV2RestoreTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:00" hostname="192.168.1.10" time="0.031">
+  <properties/>
+  <testcase name="all52V2DefinitionsRestoreByteExactlyAndRejectChangedAuthoredText" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsV2RestoreTest" time="0.022"/>
+  <testcase name="oldActiveCompletedAndPendingJournalsRetainStateAndAgainStartsReviewedV3" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsV2RestoreTest" time="0.007"/>
+  <testcase name="restoredOldGuidedListenUsesOldPhrasesAndCurrentRoundsUseNewPhrases" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsV2RestoreTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

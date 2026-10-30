@@ -1,0 +1,19 @@
+10-30 15:21:13.442 13260 13274 I TestRunner: started: practiceOwnerRestoresPartialClockAndCancelsWithoutTouchAttempts(com.bellfamily.bastischool.ui.clock.ClockOwnerTest)
+10-30 15:21:13.442  5889 13322 I ManifestedDataDownloader: ManifestedDataDownloader.checkVersionAndDownload():98 filegroup __PEKB_pek_blocklist__en with version 2025120304 is already downloaded
+10-30 15:21:13.443  5889 13322 I PerLanguageDataDownloader: PerLanguageDataDownloader$2.onSuccess():188 Data en downloaded with version 2025120304
+10-30 15:21:13.448  1282  1282 D StatsLog: LAUNCHER_TRANSIENT_TASKBAR_HIDE
+10-30 15:21:13.449 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@3d7127b]
+10-30 15:21:13.456  1282  1282 D b/254119092: DisplayController#onConfigurationChanged: {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.50824 fontWeightAdjustment=0}
+10-30 15:21:13.457  1282  1282 D TFOManager: No activity in overlay, closing
+10-30 15:21:13.523   780   780 D DefaultDeviceEntrySection: isUdfpsSupported=false
+10-30 15:21:13.555  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4302
+10-30 15:21:13.555  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4302
+10-30 15:21:13.620 13293 13293 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@d4b55a9
+10-30 15:21:13.622   550  3109 W InputManager-JNI: Input channel object '981e137 com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+10-30 15:21:13.628  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4303
+10-30 15:21:13.628  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4303
+10-30 15:21:13.629  5889  5922 I SP      : Sync for emoticon_content_description succeeded in 191 ms: no changes
+10-30 15:21:13.630  5889  5922 I SP      : GC for 'emoticon_content_description' (10) with ttl of 0 ms took 1 ms (0/1/0)
+10-30 15:21:13.630  5889  5922 I SuperpacksManagerImpl: SuperpacksManagerImpl$19.onSyncSuccess():947 emoticon_content_description.sync() succeeded
+10-30 15:21:14.018 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@3d7127b]
+10-30 15:21:14.019 13260 13274 I TestRunner: finished: practiceOwnerRestoresPartialClockAndCancelsWithoutTouchAttempts(com.bellfamily.bastischool.ui.clock.ClockOwnerTest)

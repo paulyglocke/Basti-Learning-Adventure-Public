@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.ShellNavigationTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:59:47" hostname="192.168.1.10" time="0.008">
+  <properties/>
+  <testcase name="backCoalescesAndOptionsOrDisposalInvalidatesLateCallbacks" classname="com.bellfamily.bastischool.ShellNavigationTest" time="0.001"/>
+  <testcase name="missingOversizedOrUnknownRecoveryReturnsHomeWithNotice" classname="com.bellfamily.bastischool.ShellNavigationTest" time="0.003"/>
+  <testcase name="homeOptionsReturnsHomeAndBackExitsOnlyAtHome" classname="com.bellfamily.bastischool.ShellNavigationTest" time="0.0"/>
+  <testcase name="homeOptionsRestoresWithoutAWebSession" classname="com.bellfamily.bastischool.ShellNavigationTest" time="0.0"/>
+  <testcase name="checkpointPublicationDoesNotDependOnUiThreadAndOldOwnersCannotReplaceNew" classname="com.bellfamily.bastischool.ShellNavigationTest" time="0.002"/>
+  <testcase name="monthsBetweenAndItsYearWheelReturnToTheSameQuestionRoute" classname="com.bellfamily.bastischool.ShellNavigationTest" time="0.0"/>
+  <testcase name="followLevelsAndBothSavedRoutesReturnThroughTheChooser" classname="com.bellfamily.bastischool.ShellNavigationTest" time="0.0"/>
+  <testcase name="coloursChooserHasDistinctExploreFindAndSortRoutesWhileOldSortRouteRestores" classname="com.bellfamily.bastischool.ShellNavigationTest" time="0.0"/>
+  <testcase name="monthsBuildYearHasItsOwnRouteAndReturnsToMonths" classname="com.bellfamily.bastischool.ShellNavigationTest" time="0.0"/>
+  <testcase name="habitatMatchingReturnsToAnimalsCategoryAndRestoresOptionsRoute" classname="com.bellfamily.bastischool.ShellNavigationTest" time="0.0"/>
+  <testcase name="savedRouteRestoresOptionsOriginAndExactCheckpoint" classname="com.bellfamily.bastischool.ShellNavigationTest" time="0.001"/>
+  <testcase name="freshwaterExplorePreservesAnimalsCategoryAcrossChooserAndOptions" classname="com.bellfamily.bastischool.ShellNavigationTest" time="0.0"/>
+  <testcase name="repeatedOptionsDoesNotReplaceOriginOrCreateALoop" classname="com.bellfamily.bastischool.ShellNavigationTest" time="0.0"/>
+  <testcase name="everyLearningRouteKeepsOneSessionBehindOptions" classname="com.bellfamily.bastischool.ShellNavigationTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

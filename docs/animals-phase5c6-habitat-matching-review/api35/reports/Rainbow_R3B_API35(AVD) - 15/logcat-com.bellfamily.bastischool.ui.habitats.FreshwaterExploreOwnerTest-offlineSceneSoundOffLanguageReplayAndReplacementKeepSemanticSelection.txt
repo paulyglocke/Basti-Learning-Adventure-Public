@@ -1,0 +1,40 @@
+10-30 15:27:40.352 13260 13274 I TestRunner: started: offlineSceneSoundOffLanguageReplayAndReplacementKeepSemanticSelection(com.bellfamily.bastischool.ui.habitats.FreshwaterExploreOwnerTest)
+10-30 15:27:40.399  1282  1282 D StatsLog: LAUNCHER_TRANSIENT_TASKBAR_HIDE
+10-30 15:27:40.396 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@5e1f60d]
+10-30 15:27:40.407  1282  1282 D b/254119092: DisplayController#onConfigurationChanged: {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.54828 fontWeightAdjustment=0}
+10-30 15:27:40.410  1282  1282 D TFOManager: No activity in overlay, closing
+10-30 15:27:40.477  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4556
+10-30 15:27:40.478  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4556
+10-30 15:27:40.488  5889  5922 I SP      : Sync for emoticon_content_description succeeded in 179 ms: no changes
+10-30 15:27:40.488  5889  5922 I SP      : GC for 'emoticon_content_description' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-30 15:27:40.488  5889  5922 I SuperpacksManagerImpl: SuperpacksManagerImpl$19.onSyncSuccess():947 emoticon_content_description.sync() succeeded
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: No service published for: ethernet
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: 	at android.os.ServiceManager.getServiceOrThrow(ServiceManager.java:203)
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry$145.createService(SystemServiceRegistry.java:2120)
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry$CachedServiceFetcher.getService(SystemServiceRegistry.java:2231)
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry.getSystemService(SystemServiceRegistry.java:1812)
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: 	at android.app.ContextImpl.getSystemService(ContextImpl.java:2241)
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: 	at android.content.ContextWrapper.getSystemService(ContextWrapper.java:936)
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.isEthernetSupported(Tethering.java:1579)
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.makeSupportedDownstreams(Tethering.java:2562)
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.updateSupportedDownstreams(Tethering.java:2536)
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.updateConfiguration(Tethering.java:549)
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.-$$Nest$mupdateConfiguration(Tethering.java:0)
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering$StateReceiver.onReceive(Tethering.java:1186)
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: 	at android.app.LoadedApk$ReceiverDispatcher$Args.lambda$getRunnable$0(LoadedApk.java:1814)
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: 	at android.app.LoadedApk$ReceiverDispatcher$Args.$r8$lambda$mcNAAl1SQ4MyJPyDg8TJ2x2h0Rk(Unknown Source:0)
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: 	at android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: 	at android.os.Handler.handleCallback(Handler.java:959)
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: 	at android.os.Looper.loopOnce(Looper.java:232)
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: 	at android.os.Looper.loop(Looper.java:317)
+10-30 15:27:40.553   830   939 E SystemServiceRegistry: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+10-30 15:27:40.580 13293 13293 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@2bb4380
+10-30 15:27:40.652   550  2967 W InputManager-JNI: Input channel object 'ad3bfe com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+10-30 15:27:40.658  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4557
+10-30 15:27:40.659  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4557
+10-30 15:27:40.672   780   780 D DefaultDeviceEntrySection: isUdfpsSupported=false
+10-30 15:27:40.870 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@5e1f60d]
+10-30 15:27:40.873   550   561 I system_server: NativeAlloc concurrent mark compact GC freed 8839KB AllocSpace bytes, 3(60KB) LOS objects, 41% free, 33MB/57MB, paused 648us,1.592ms total 439.044ms
+10-30 15:27:40.885 13260 13274 I TestRunner: finished: offlineSceneSoundOffLanguageReplayAndReplacementKeepSemanticSelection(com.bellfamily.bastischool.ui.habitats.FreshwaterExploreOwnerTest)

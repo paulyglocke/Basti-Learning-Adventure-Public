@@ -1,0 +1,275 @@
+10-30 15:13:48.542 13260 13274 I TestRunner: started: compactActivityControlsShowCompleteReadableWords[ENGLISH-1](com.bellfamily.bastischool.CompactTextVisibilityTest)
+10-30 15:13:48.568 13260 13274 W FileTestStorage: Output properties is not supported.
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: enableTracing failed. You may need to upgrade your androidx.tracing:tracing version
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: java.lang.NoSuchMethodError: No static method forceEnableAppTracing()V in class Landroidx/tracing/Trace; or its super classes (declaration of 'androidx.tracing.Trace' appears in /data/app/~~RtTiwXVxZ-RGLXj5SJeA9A==/com.bellfamily.bastischool-PFzM8kzDJ7ysJU1km3uSCw==/base.apk!classes18.dex)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at androidx.test.platform.tracing.AndroidXTracer.enableTracing(AndroidXTracer.java:57)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at androidx.test.platform.tracing.Tracing.<init>(Tracing.java:53)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at androidx.test.platform.tracing.Tracing.<clinit>(Tracing.java:49)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at androidx.test.espresso.base.BaseLayerModule.providesTracing(BaseLayerModule.java:1)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at androidx.test.espresso.base.BaseLayerModule_ProvidesTracingFactory.providesTracing(BaseLayerModule_ProvidesTracingFactory.java:1)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at androidx.test.espresso.base.BaseLayerModule_ProvidesTracingFactory.get(BaseLayerModule_ProvidesTracingFactory.java:1)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at androidx.test.espresso.base.BaseLayerModule_ProvidesTracingFactory.get(BaseLayerModule_ProvidesTracingFactory.java:2)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at androidx.test.espresso.core.internal.deps.dagger.internal.DoubleCheck.get(DoubleCheck.java:6)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at androidx.test.espresso.base.IdlingResourceRegistry_Factory.get(IdlingResourceRegistry_Factory.java:1)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at androidx.test.espresso.base.IdlingResourceRegistry_Factory.get(IdlingResourceRegistry_Factory.java:2)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at androidx.test.espresso.core.internal.deps.dagger.internal.DoubleCheck.get(DoubleCheck.java:6)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at androidx.test.espresso.DaggerBaseLayerComponent$BaseLayerComponentImpl.idlingResourceRegistry(DaggerBaseLayerComponent.java:1)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at androidx.test.espresso.Espresso.<clinit>(Espresso.java:3)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at androidx.compose.ui.test.EspressoLink_androidKt.runEspressoOnIdle(EspressoLink.android.kt:92)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at androidx.compose.ui.test.EspressoLink.runUntilIdle(EspressoLink.android.kt:79)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.runTest(ComposeUiTest.android.kt:326)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1.evaluate(AndroidComposeTestRule.android.kt:271)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.Suite.runChild(Suite.java:128)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.Suite.runChild(Suite.java:27)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.Suite.runChild(Suite.java:128)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.Suite.runChild(Suite.java:27)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+10-30 15:13:48.571 13260 13274 E AndroidXTracer: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
+10-30 15:13:48.572 13260 13274 I Tracing : Tracer added: class androidx.test.platform.tracing.AndroidXTracer
+10-30 15:13:48.580 13260 13260 D EventInjectionStrategy: Creating injection strategy with input manager.
+10-30 15:13:48.580 13260 13260 W ily.bastischool: Accessing hidden method Landroid/hardware/input/InputManager;->getInstance()Landroid/hardware/input/InputManager; (unsupported, reflection, allowed)
+10-30 15:13:48.585 13260 13260 W ily.bastischool: Accessing hidden method Landroid/hardware/input/InputManager;->injectInputEvent(Landroid/view/InputEvent;I)Z (unsupported, reflection, allowed)
+10-30 15:13:48.585 13260 13260 W ily.bastischool: Accessing hidden field Landroid/hardware/input/InputManager;->INJECT_INPUT_EVENT_MODE_WAIT_FOR_FINISH:I (unsupported, reflection, allowed)
+10-30 15:13:48.591 13260 13260 W ily.bastischool: Accessing hidden method Landroid/os/MessageQueue;->next()Landroid/os/Message; (unsupported, reflection, allowed)
+10-30 15:13:48.591 13260 13260 W ily.bastischool: Accessing hidden field Landroid/os/MessageQueue;->mMessages:Landroid/os/Message; (unsupported, reflection, allowed)
+10-30 15:13:48.591 13260 13260 W ily.bastischool: Accessing hidden method Landroid/os/Message;->recycleUnchecked()V (unsupported, reflection, allowed)
+10-30 15:13:48.593 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@8228d2c]
+10-30 15:13:48.607 13260 13274 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+10-30 15:13:48.635   550  3009 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@496c9b38 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-30 15:13:48.686  1282  1282 W SplitSelectStateCtor: Missing session instanceIds
+10-30 15:13:48.686  1282  1282 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+10-30 15:13:48.737   402   402 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-30 15:13:48.752  1282  1282 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=4112, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.bellfamily.bastischool/androidx.activity.ComponentActivity }
+10-30 15:13:48.837 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@c8925eb in: PRE_ON_CREATE
+10-30 15:13:48.837 13260 13260 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+10-30 15:13:48.917 13260 13260 D CompatChangeReporter: Compat change id reported: 309578419; UID 10265; state: ENABLED
+10-30 15:13:48.938  1282  1514 D EGL_emulation: app_time_stats: avg=2302.32ms min=2302.32ms max=2302.32ms count=1
+10-30 15:13:48.981 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@c8925eb in: CREATED
+10-30 15:13:48.982 13260 13260 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=androidx.activity.ComponentActivity@c8925eb
+10-30 15:13:48.982 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@c8925eb in: STARTED
+10-30 15:13:48.982 13260 13260 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=androidx.activity.ComponentActivity@c8925eb
+10-30 15:13:48.983 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@c8925eb in: RESUMED
+10-30 15:13:48.983 13260 13260 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=androidx.activity.ComponentActivity@c8925eb
+10-30 15:13:48.996 13260 13260 W HWUI    : Unknown dataspace 0
+10-30 15:13:49.065   402   649 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10265 pid=0
+10-30 15:13:49.065   402   649 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10265 => denied (728 us)
+10-30 15:13:49.066   402   972 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10265 pid=13260
+10-30 15:13:49.066   402   972 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10265 => denied (447 us)
+10-30 15:13:49.067   402   649 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10265 pid=0
+10-30 15:13:49.067   402   649 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10265 => denied (1342 us)
+10-30 15:13:49.067   402   972 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10265 pid=13260
+10-30 15:13:49.067   402   972 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10265 => denied (1450 us)
+10-30 15:13:49.067   402   972 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10265 pid=13260
+10-30 15:13:49.067   402   972 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10265 => denied (259 us)
+10-30 15:13:49.069   402   649 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10265 pid=0
+10-30 15:13:49.069   402   649 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10265 => denied (2897 us)
+10-30 15:13:49.097 13260 13276 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-30 15:13:49.101 13260 13276 I EGL_emulation: Opening libGLESv2_emulation.so
+10-30 15:13:49.167 13260 13276 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+10-30 15:13:49.169 13260 13276 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-30 15:13:49.249   780   975 D EGL_emulation: app_time_stats: avg=38368.69ms min=38368.69ms max=38368.69ms count=1
+10-30 15:13:49.295  1282  1282 W FrameTracker: Missed App frame:UNKNOWN: 10, 4423297, 183805377, CUJ=J<TASKBAR_COLLAPSE::Home to App>
+10-30 15:13:49.295  1282  1282 W FrameTracker: Missed SF frame:UNKNOWN: 10, 4423297, 183805377, CUJ=J<TASKBAR_COLLAPSE::Home to App>
+10-30 15:13:49.336  1282  1282 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-30 15:13:49.352  1282  1282 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+10-30 15:13:49.446   156   156 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-30 15:13:49.446 13260 13276 I Gralloc4: mapper 4.x is not supported
+10-30 15:13:49.545   550  4746 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10265 pid=0
+10-30 15:13:49.545   550  4746 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10265 => denied (202 us)
+10-30 15:13:49.545   550  4746 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10265 pid=0
+10-30 15:13:49.545   550  4746 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10265 => denied (42 us)
+10-30 15:13:49.545   550  4746 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10265 pid=0
+10-30 15:13:49.545   550  4746 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10265 => denied (21 us)
+10-30 15:13:49.580   550   570 W ziparchive: Unable to open '/data/app/~~RtTiwXVxZ-RGLXj5SJeA9A==/com.bellfamily.bastischool-PFzM8kzDJ7ysJU1km3uSCw==/base.dm': No such file or directory
+10-30 15:13:49.582   550   570 I ActivityTaskManager: Displayed com.bellfamily.bastischool/androidx.activity.ComponentActivity for user 0: +927ms
+10-30 15:13:49.585 13260 13264 I ily.bastischool: Compiler allocated 5250KB to compile void android.view.ViewRootImpl.performTraversals()
+10-30 15:13:49.592  1282  1282 D BaseDepthController: setSurface:
+10-30 15:13:49.592  1282  1282 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-30 15:13:49.592  1282  1282 D BaseDepthController: 	mSurface: null
+10-30 15:13:49.592  1282  1282 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+10-30 15:13:49.596   780   929 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@51bd1b7
+10-30 15:13:49.599   550   568 W InputManager-JNI: Input channel object '10bf60d Splash Screen com.bellfamily.bastischool (client)' was disposed without first being removed with the input manager!
+10-30 15:13:49.627  1282  1282 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+10-30 15:13:49.627  1282  1282 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:4)
+10-30 15:13:49.627  1282  1282 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:1)
+10-30 15:13:49.627  1282  1282 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:34)
+10-30 15:13:49.629  1282  1282 D StatsLog: LAUNCHER_ONSTOP
+10-30 15:13:49.642  1282  1282 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+10-30 15:13:49.673  1282  1613 D OneSearchSuggestProvider: Shut down the binder channel
+10-30 15:13:49.794  3828  3874 I FontLog : (REDACTED) Received query %s, URI %s
+10-30 15:13:49.794  3828  3874 I FontLog : (REDACTED) Query [%s] resolved to %s
+10-30 15:13:49.848   550   662 I ImeTracker: com.bellfamily.bastischool:88d749ac: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-30 15:13:49.848   550   662 I ImeTracker: com.bellfamily.bastischool:88d749ac: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-30 15:13:49.849  1282  1613 E i3.i1   : *~*~*~ Previous channel {0} was not shutdown properly!!! ~*~*~*
+10-30 15:13:49.849  1282  1613 E i3.i1   :     Make sure to call shutdown()/shutdownNow() and wait until awaitTermination() returns true.
+10-30 15:13:49.849  1282  1613 E i3.i1   : java.lang.RuntimeException: ManagedChannel allocation site
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at i3.h1.<init>(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:21)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at i3.i1.<init>(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:10)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at g3.d.a(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:258)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at com.google.android.apps.nexuslauncher.allapps.H0.d(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:93)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at com.google.android.apps.nexuslauncher.allapps.H0.c(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:1)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at com.google.android.apps.nexuslauncher.allapps.v0.run(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:14)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at com.android.launcher3.util.LooperExecutor.execute(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:13)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at com.google.android.apps.nexuslauncher.allapps.u0.apply(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:83)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at java.util.concurrent.CompletableFuture.uniExceptionally(CompletableFuture.java:966)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at java.util.concurrent.CompletableFuture$UniExceptionally.tryFire(CompletableFuture.java:950)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:486)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2138)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at com.google.android.apps.nexuslauncher.allapps.E0.onResult(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:67)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at android.app.appsearch.SearchSessionUtil$1.lambda$onResult$0(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:144)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at android.app.appsearch.SearchSessionUtil$1.$r8$lambda$CEk3q8sDAQVhU3rQwVueB8FAj_M(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:1)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at android.app.appsearch.SearchSessionUtil$1$$ExternalSyntheticLambda0.run(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:22)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at android.os.Handler.handleCallback(Handler.java:959)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at android.os.Handler.dispatchMessage(Handler.java:100)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at android.os.Looper.loopOnce(Looper.java:232)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at android.os.Looper.loop(Looper.java:317)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at android.os.HandlerThread.run(HandlerThread.java:85)
+10-30 15:13:49.849  1282  1613 E i3.i1   : *~*~*~ Previous channel {0} was not shutdown properly!!! ~*~*~*
+10-30 15:13:49.849  1282  1613 E i3.i1   :     Make sure to call shutdown()/shutdownNow() and wait until awaitTermination() returns true.
+10-30 15:13:49.849  1282  1613 E i3.i1   : java.lang.RuntimeException: ManagedChannel allocation site
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at i3.h1.<init>(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:21)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at i3.i1.<init>(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:10)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at g3.d.a(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:258)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at com.google.android.apps.nexuslauncher.allapps.H0.d(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:93)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at com.google.android.apps.nexuslauncher.allapps.H0.c(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:1)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at com.google.android.apps.nexuslauncher.allapps.v0.run(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:14)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at com.android.launcher3.util.LooperExecutor.execute(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:13)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at com.google.android.apps.nexuslauncher.allapps.u0.apply(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:83)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at java.util.concurrent.CompletableFuture.uniExceptionally(CompletableFuture.java:966)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at java.util.concurrent.CompletableFuture$UniExceptionally.tryFire(CompletableFuture.java:950)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:486)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2138)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at com.google.android.apps.nexuslauncher.allapps.E0.onResult(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:67)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at android.app.appsearch.SearchSessionUtil$1.lambda$onResult$0(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:144)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at android.app.appsearch.SearchSessionUtil$1.$r8$lambda$CEk3q8sDAQVhU3rQwVueB8FAj_M(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:1)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at android.app.appsearch.SearchSessionUtil$1$$ExternalSyntheticLambda0.run(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:22)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at android.os.Handler.handleCallback(Handler.java:959)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at android.os.Handler.dispatchMessage(Handler.java:100)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at android.os.Looper.loopOnce(Looper.java:232)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at android.os.Looper.loop(Looper.java:317)
+10-30 15:13:49.849  1282  1613 E i3.i1   : 	at android.os.HandlerThread.run(HandlerThread.java:85)
+10-30 15:13:49.952  3828  3874 I FontLog : (REDACTED) Fetch %s end status %s
+10-30 15:13:49.974  3828  3874 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+10-30 15:13:49.991  5889  5889 I SubtypeOperator: SubtypeOperator$1.onUnbindInput():44
+10-30 15:13:50.000  3828  3874 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+10-30 15:13:50.011  5889  5889 I SubtypeOperator: SubtypeOperator$1.onBindInput():33
+10-30 15:13:50.014  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2404
+10-30 15:13:50.102  5889 13286 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 0, locked = false
+10-30 15:13:50.106  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.bellfamily.bastischool, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-30 15:13:50.116  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:13:50.207  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:13:50.211 13260 13260 W ily.bastischool: Method boolean androidx.compose.runtime.snapshots.SnapshotStateList.conditionalUpdate(boolean, kotlin.jvm.functions.Function1) failed lock verification and will run slower.
+10-30 15:13:50.211 13260 13260 W ily.bastischool: Common causes for lock verification issues are non-optimized dex code
+10-30 15:13:50.211 13260 13260 W ily.bastischool: and incorrect proguard optimizations.
+10-30 15:13:50.212 13260 13260 W ily.bastischool: Method boolean androidx.compose.runtime.snapshots.SnapshotStateList.conditionalUpdate$default(androidx.compose.runtime.snapshots.SnapshotStateList, boolean, kotlin.jvm.functions.Function1, int, java.lang.Object) failed lock verification and will run slower.
+10-30 15:13:50.212 13260 13260 W ily.bastischool: Method java.lang.Object androidx.compose.runtime.snapshots.SnapshotStateList.mutate(kotlin.jvm.functions.Function1) failed lock verification and will run slower.
+10-30 15:13:50.212 13260 13260 W ily.bastischool: Method void androidx.compose.runtime.snapshots.SnapshotStateList.update(boolean, kotlin.jvm.functions.Function1) failed lock verification and will run slower.
+10-30 15:13:50.212 13260 13260 W ily.bastischool: Method void androidx.compose.runtime.snapshots.SnapshotStateList.update$default(androidx.compose.runtime.snapshots.SnapshotStateList, boolean, kotlin.jvm.functions.Function1, int, java.lang.Object) failed lock verification and will run slower.
+10-30 15:13:50.743  3828  3828 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.potokens.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsApiService }
+10-30 15:13:50.813 13260 13285 I HWUI    : Davey! duration=790ms; Flags=0, FrameTimelineVsyncId=4423710, IntendedVsync=160633133053789, Vsync=160633449720443, InputEventId=0, HandleInputStart=160633456964829, AnimationStart=160633457029371, PerformTraversalsStart=160633457324288, DrawStart=160633673759788, FrameDeadline=160633149720455, FrameInterval=160633456722329, FrameStartTime=16666666, SyncQueued=160633697503204, SyncStart=160633697645288, IssueDrawCommandsStart=160633697723996, SwapBuffers=160633843640663, FrameCompleted=160633923856788, DequeueBufferDuration=6667, QueueBufferDuration=187250, GpuCompleted=160633923856788, SwapBuffersCompleted=160633857985788, DisplayPresentTime=144115222452437076, CommandSubmissionCompleted=160633843640663,
+10-30 15:13:50.978 13260 13264 I ily.bastischool: Compiler allocated 8161KB to compile void com.bellfamily.bastischool.ui.seasons.SeasonsScreenKt.SeasonsScreen(com.bellfamily.bastischool.learning.seasons.SeasonsSelection, com.bellfamily.bastischool.learning.session.SessionState, com.bellfamily.bastischool.learning.models.ContentLanguage, androidx.compose.ui.graphics.ImageBitmap, boolean, boolean, boolean, boolean, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function0, androidx.compose.ui.Modifier, kotlin.jvm.functions.Function1, com.bellfamily.bastischool.learning.seasons.SeasonsOrderState, java.util.Map, kotlin.jvm.functions.Function1, com.bellfamily.bastischool.learning.sorting.SortState, kotlin.jvm.functions.Function1, com.bellfamily.bastischool.learning.seasons.SeasonsCombined$State, kotlin.jvm.functions.Function1, androidx.compose.runtime.Composer, int, int, int, int)
+10-30 15:13:50.981  5037  5072 I BugleRcsEngine: Connected state: [1], networkType: [WIFI] [CONTEXT thread_id=64 ]
+10-30 15:13:50.985  5037  5108 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[3cfff64d-36cb]>Handler" thread_id=70 ]
+10-30 15:13:51.015  5037  5108 I BugleRcsEngine: No RCS Configuration was found in Bugle for simID: redacted-pii:sim_id[chars:20,last3:897] [CONTEXT log_prefix="ProvisioningEngineDataRetriever" thread_id=70 ]
+10-30 15:13:51.016   550   696 D ConnectivityService: NetReassign [no changes] [c 0] [a 1] [i 1]
+10-30 15:13:51.016  3828  3867 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+10-30 15:13:51.016  3828  3867 W gle.android.gms: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+10-30 15:13:51.018  3828  2181 I NearbyMediums: Wifi changed new SSID: "AndroidWifi"
+10-30 15:13:51.018  3828  2181 I NearbyMediums: WifiLanConnectivityInfo is not changed, skip notify.
+10-30 15:13:51.129   780   975 D EGL_emulation: app_time_stats: avg=932.40ms min=39.29ms max=1825.50ms count=2
+10-30 15:13:51.131 13260 13264 I ily.bastischool: Compiler allocated 9173KB to compile void com.bellfamily.bastischool.ui.wilma.WilmaScreenKt.WilmaScreen(com.bellfamily.bastischool.learning.wilma.WilmaSelection, com.bellfamily.bastischool.learning.session.SessionState, com.bellfamily.bastischool.learning.wilma.WilmaOrderState, com.bellfamily.bastischool.learning.models.ContentLanguage, java.util.Map, boolean, boolean, boolean, boolean, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function0, androidx.compose.ui.Modifier, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function2, kotlin.jvm.functions.Function0, androidx.compose.runtime.Composer, int, int, int, int)
+10-30 15:13:51.164 13260 13264 I ily.bastischool: Compiler allocated 4197KB to compile void com.bellfamily.bastischool.ui.wilma.WilmaScreenKt.WilmaStrip(java.util.Map, com.bellfamily.bastischool.learning.models.ContentLanguage, java.util.List, com.bellfamily.bastischool.learning.models.ContentId, java.util.Set, kotlin.jvm.functions.Function1, java.lang.String, boolean, kotlin.jvm.functions.Function1, boolean, androidx.compose.runtime.Composer, int, int)
+10-30 15:13:51.523  3828  2181 I NearbySharing: Network state changed: NetworkState(isRestricted=false, isOnline=false, isCongested=false, isMetered=false, isWifiConnected=true)
+10-30 15:13:51.705 13260 13276 D EGL_emulation: app_time_stats: avg=235.70ms min=41.89ms max=1147.05ms count=9
+10-30 15:13:51.846 13260 13264 I ily.bastischool: Compiler allocated 6041KB to compile void com.bellfamily.bastischool.ui.vocabulary.VocabularyScreenKt.VocabularyScreen(com.bellfamily.bastischool.learning.vocabulary.VocabularySelection, com.bellfamily.bastischool.learning.session.SessionState, com.bellfamily.bastischool.learning.models.ContentLanguage, boolean, boolean, boolean, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function0, kotlin.jvm.functions.Function0, androidx.compose.ui.Modifier, kotlin.jvm.functions.Function1, java.util.Map, kotlin.jvm.functions.Function0, androidx.compose.runtime.Composer, int, int, int)
+10-30 15:13:51.938   550  3009 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@4b2173d7 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-30 15:13:51.974  1282  1282 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=4113, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }
+10-30 15:13:51.975   550   573 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@4b2173d7 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-30 15:13:51.981 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@c8925eb in: PAUSED
+10-30 15:13:51.981 13260 13260 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=androidx.activity.ComponentActivity@c8925eb
+10-30 15:13:51.986   402   402 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-30 15:13:52.089   360   360 D Zygote  : Forked child process 13293
+10-30 15:13:52.142 13293 13293 I astischool.test: Late-enabling -Xcheck:jni
+10-30 15:13:52.261 13293 13293 I astischool.test: Using CollectorTypeCMC GC.
+10-30 15:13:52.276   405   472 I adbd    : jdwp connection from 13293
+10-30 15:13:52.310 13293 13293 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-30 15:13:52.384 13293 13293 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+10-30 15:13:52.385 13293 13293 D nativeloader: Configuring clns-7 for other apk /system/framework/android.test.mock.jar. target_sdk_version=35, uses_libraries=ALL, library_path=/data/app/~~Gu500pmAw2vV8V0dyUkO-Q==/com.bellfamily.bastischool.test-xHguCJ6EMUUa19nqwSDj6Q==/lib/arm64, permitted_path=/data:/mnt/expand:/data/user/0/com.bellfamily.bastischool.test
+10-30 15:13:52.386 13293 13293 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+10-30 15:13:52.388 13293 13293 D nativeloader: Configuring clns-8 for other apk /system/framework/android.test.runner.jar. target_sdk_version=35, uses_libraries=ALL, library_path=/data/app/~~Gu500pmAw2vV8V0dyUkO-Q==/com.bellfamily.bastischool.test-xHguCJ6EMUUa19nqwSDj6Q==/lib/arm64, permitted_path=/data:/mnt/expand:/data/user/0/com.bellfamily.bastischool.test
+10-30 15:13:52.388 13293 13293 W ziparchive: Unable to open '/data/app/~~Gu500pmAw2vV8V0dyUkO-Q==/com.bellfamily.bastischool.test-xHguCJ6EMUUa19nqwSDj6Q==/base.dm': No such file or directory
+10-30 15:13:52.388 13293 13293 W ziparchive: Unable to open '/data/app/~~Gu500pmAw2vV8V0dyUkO-Q==/com.bellfamily.bastischool.test-xHguCJ6EMUUa19nqwSDj6Q==/base.dm': No such file or directory
+10-30 15:13:52.560 13293 13293 D nativeloader: Configuring clns-9 for other apk /data/app/~~Gu500pmAw2vV8V0dyUkO-Q==/com.bellfamily.bastischool.test-xHguCJ6EMUUa19nqwSDj6Q==/base.apk. target_sdk_version=35, uses_libraries=, library_path=/data/app/~~Gu500pmAw2vV8V0dyUkO-Q==/com.bellfamily.bastischool.test-xHguCJ6EMUUa19nqwSDj6Q==/lib/arm64, permitted_path=/data:/mnt/expand:/data/user/0/com.bellfamily.bastischool.test
+10-30 15:13:52.562 13293 13293 D CompatChangeReporter: Compat change id reported: 202956589; UID 10266; state: ENABLED
+10-30 15:13:52.592 13293 13293 V GraphicsEnvironment: Currently set values for:
+10-30 15:13:52.592 13293 13293 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-30 15:13:52.592 13293 13293 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-30 15:13:52.592 13293 13293 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+10-30 15:13:52.592 13293 13293 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-30 15:13:52.695 13260 13260 D VRI[ComponentActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-30 15:13:52.732 13293 13293 D CompatChangeReporter: Compat change id reported: 279646685; UID 10266; state: ENABLED
+10-30 15:13:52.736 13293 13293 D CompatChangeReporter: Compat change id reported: 309578419; UID 10266; state: ENABLED
+10-30 15:13:52.834 13293 13293 W HWUI    : Unknown dataspace 0
+10-30 15:13:52.840 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@c8925eb in: STOPPED
+10-30 15:13:52.840 13260 13260 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=androidx.activity.ComponentActivity@c8925eb
+10-30 15:13:52.846  1282  1282 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=406, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10000100 cmp=com.google.android.apps.nexuslauncher/.NexusLauncherActivity }
+10-30 15:13:52.851   402   402 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-30 15:13:52.854 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@c8925eb in: DESTROYED
+10-30 15:13:52.854 13260 13260 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+10-30 15:13:52.861 13260 13260 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@53f45ec
+10-30 15:13:52.876   550  3008 W InputManager-JNI: Input channel object '84f68be com.bellfamily.bastischool/androidx.activity.ComponentActivity (client)' was disposed without first being removed with the input manager!
+10-30 15:13:52.880   402   972 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10266 pid=0
+10-30 15:13:52.880   402   972 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10266 => denied (144 us)
+10-30 15:13:52.880   402   972 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10266 pid=0
+10-30 15:13:52.880   402   972 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10266 => denied (32 us)
+10-30 15:13:52.880   402   972 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10266 pid=0
+10-30 15:13:52.880   402   972 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10266 => denied (13 us)
+10-30 15:13:52.880 13293 13306 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-30 15:13:52.883 13293 13306 I EGL_emulation: Opening libGLESv2_emulation.so
+10-30 15:13:52.893  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4112
+10-30 15:13:52.893  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4112
+10-30 15:13:52.917 13293 13306 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+10-30 15:13:52.917 13293 13306 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-30 15:13:52.948   156   156 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-30 15:13:52.949 13293 13306 I Gralloc4: mapper 4.x is not supported
+10-30 15:13:52.995   550  3008 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10266 pid=0
+10-30 15:13:52.995   550  3008 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10266 => denied (145 us)
+10-30 15:13:52.995   550  3008 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10266 pid=0
+10-30 15:13:52.995   550  3008 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10266 => denied (21 us)
+10-30 15:13:52.995   550  3008 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10266 pid=0
+10-30 15:13:52.995   550  3008 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10266 => denied (5 us)
+10-30 15:13:53.019  1282  1282 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=6}
+10-30 15:13:53.032  1282  1282 D BaseDepthController: setSurface:
+10-30 15:13:53.032  1282  1282 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-30 15:13:53.032  1282  1282 D BaseDepthController: 	mSurface: Surface(name=com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity)/@0x5cf14d6
+10-30 15:13:53.141 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@8228d2c]
+10-30 15:13:53.143 13260 13274 I TestRunner: finished: compactActivityControlsShowCompleteReadableWords[ENGLISH-1](com.bellfamily.bastischool.CompactTextVisibilityTest)

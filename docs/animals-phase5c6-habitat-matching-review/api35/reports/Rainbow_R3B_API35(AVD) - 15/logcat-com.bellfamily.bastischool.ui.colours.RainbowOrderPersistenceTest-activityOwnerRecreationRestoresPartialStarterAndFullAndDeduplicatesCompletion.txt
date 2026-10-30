@@ -1,0 +1,11 @@
+10-30 15:22:09.002 13260 13274 I TestRunner: started: activityOwnerRecreationRestoresPartialStarterAndFullAndDeduplicatesCompletion(com.bellfamily.bastischool.ui.colours.RainbowOrderPersistenceTest)
+10-30 15:22:09.007 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@f5fdfdb]
+10-30 15:22:09.065  1282  1292 I s.nexuslauncher: NativeAlloc concurrent mark compact GC freed 11MB AllocSpace bytes, 14(728KB) LOS objects, 49% free, 12MB/25MB, paused 259us,14.507ms total 283.343ms
+10-30 15:22:09.079  1282  1294 W System  : A resource failed to call release.
+10-30 15:22:09.079  1282  1294 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /product/priv-app/Velvet/Velvet.apk' with 1 weak references
+10-30 15:22:09.100  1282  1294 W System  : A resource failed to call release.
+10-30 15:22:09.100  1282  1294 W System  : A resource failed to call release.
+10-30 15:22:09.100  1282  1294 W System  : A resource failed to call release.
+10-30 15:22:09.100  1282  1294 W System  : A resource failed to call release.
+10-30 15:22:09.340 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@f5fdfdb]
+10-30 15:22:09.341 13260 13274 I TestRunner: finished: activityOwnerRecreationRestoresPartialStarterAndFullAndDeduplicatesCompletion(com.bellfamily.bastischool.ui.colours.RainbowOrderPersistenceTest)

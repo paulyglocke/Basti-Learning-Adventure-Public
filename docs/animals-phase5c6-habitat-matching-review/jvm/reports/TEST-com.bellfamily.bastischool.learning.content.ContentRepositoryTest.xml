@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.content.ContentRepositoryTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:11:51" hostname="192.168.1.10" time="0.006">
+  <properties/>
+  <testcase name="lookupIsDeterministicAndDoesNotDependOnInsertionOrder" classname="com.bellfamily.bastischool.learning.content.ContentRepositoryTest" time="0.002"/>
+  <testcase name="nonCalendarCatalogDoesNotRequireOrInventWeekdays" classname="com.bellfamily.bastischool.learning.content.ContentRepositoryTest" time="0.0"/>
+  <testcase name="decoratedDisplayAndSpeechAreIndependentAuthoredValues" classname="com.bellfamily.bastischool.learning.content.ContentRepositoryTest" time="0.0"/>
+  <testcase name="bilingualFieldsAreRequiredWithoutFallback" classname="com.bellfamily.bastischool.learning.content.ContentRepositoryTest" time="0.001"/>
+  <testcase name="metadataChangesCannotChangeDayIdentityOrSequence" classname="com.bellfamily.bastischool.learning.content.ContentRepositoryTest" time="0.0"/>
+  <testcase name="semanticIdentityAndVersionRejectInvalidValues" classname="com.bellfamily.bastischool.learning.content.ContentRepositoryTest" time="0.001"/>
+  <testcase name="allSevenDaysHaveCyclicPreviousAndNextFromCanonicalData" classname="com.bellfamily.bastischool.learning.content.ContentRepositoryTest" time="0.0"/>
+  <testcase name="repositorySnapshotCannotBeChangedThroughInputOrReturnedCollections" classname="com.bellfamily.bastischool.learning.content.ContentRepositoryTest" time="0.0"/>
+  <testcase name="weekdaysHaveStableIdsAuthoredLabelsAndIndependentColourCues" classname="com.bellfamily.bastischool.learning.content.ContentRepositoryTest" time="0.0"/>
+  <testcase name="missingOrWrongTypeColourReferencesAreRejectedWithOwnerAndTarget" classname="com.bellfamily.bastischool.learning.content.ContentRepositoryTest" time="0.001"/>
+  <testcase name="missingUnknownDuplicateAndReorderedWeekdaysAreRejected" classname="com.bellfamily.bastischool.learning.content.ContentRepositoryTest" time="0.0"/>
+  <testcase name="duplicateIdsAreRejectedInsteadOfSilentlyOverwritten" classname="com.bellfamily.bastischool.learning.content.ContentRepositoryTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,4 @@
+10-30 15:36:04.103 13260 13274 I TestRunner: started: exactSilentRestoreLanguageRapidSelectionsAndNoProgress(com.bellfamily.bastischool.ui.months.MonthsOwnerTest)
+10-30 15:36:04.105 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@672708]
+10-30 15:36:04.211 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@672708]
+10-30 15:36:04.211 13260 13274 I TestRunner: finished: exactSilentRestoreLanguageRapidSelectionsAndNoProgress(com.bellfamily.bastischool.ui.months.MonthsOwnerTest)

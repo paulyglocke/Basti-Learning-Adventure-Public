@@ -1,0 +1,4 @@
+10-30 15:36:03.854 13260 13274 I TestRunner: started: quizModeIsolationAssistanceSilentRestoreAndLanguageDuringWork(com.bellfamily.bastischool.ui.months.MonthsOwnerTest)
+10-30 15:36:03.858 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@da1a48c]
+10-30 15:36:04.101 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@da1a48c]
+10-30 15:36:04.101 13260 13274 I TestRunner: finished: quizModeIsolationAssistanceSilentRestoreAndLanguageDuringWork(com.bellfamily.bastischool.ui.months.MonthsOwnerTest)

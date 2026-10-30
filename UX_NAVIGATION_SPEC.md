@@ -381,3 +381,17 @@ respected by the shared offline audio controller. Explore routes emit no
 attempts, completion, journals or Progress Tracker identities. Original Animal
 Groups routing and its historical saved-session contract remain unchanged.
 Habitat matching is not an active route.
+
+## Phase 5C.6 — Match Animals to Habitats
+
+Animals & Nature also offers the assessed **Match Animals to Habitats** activity.
+Its seven-question starter uses one prompt, a recognizable canonical animal,
+and large illustrated habitat buttons. Question-specific accepted-answer sets
+preserve multiple valid taught contexts; the Rabbit scene prompt accepts both
+Woodland and Underground, while shelter wording is explicit in the warren item.
+Prompts recall the app's explorations or a named relationship rather than
+claiming each animal belongs exclusively to one environment. Incorrect choices
+give neutral retry feedback. A correct choice exposes an explicit Continue.
+Options returns to the activity and language switching preserves the current
+question identity and assessment state. Back returns to the Animals & Nature
+category; Home returns to illustrated Home.

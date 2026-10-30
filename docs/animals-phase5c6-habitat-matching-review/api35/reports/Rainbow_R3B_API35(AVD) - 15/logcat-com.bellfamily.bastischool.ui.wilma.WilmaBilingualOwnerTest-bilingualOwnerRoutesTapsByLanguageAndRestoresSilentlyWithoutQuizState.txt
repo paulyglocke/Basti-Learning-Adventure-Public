@@ -1,0 +1,7 @@
+10-30 15:54:57.153 13260 13274 I TestRunner: started: bilingualOwnerRoutesTapsByLanguageAndRestoresSilentlyWithoutQuizState(com.bellfamily.bastischool.ui.wilma.WilmaBilingualOwnerTest)
+10-30 15:54:57.177 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@97d81a8]
+10-30 15:54:57.209  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5257
+10-30 15:54:57.209  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5257
+10-30 15:54:57.211   780   929 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@e4c77e8
+10-30 15:54:57.643 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@97d81a8]
+10-30 15:54:57.644 13260 13274 I TestRunner: finished: bilingualOwnerRoutesTapsByLanguageAndRestoresSilentlyWithoutQuizState(com.bellfamily.bastischool.ui.wilma.WilmaBilingualOwnerTest)

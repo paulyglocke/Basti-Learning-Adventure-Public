@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.seasons.SeasonsMatchTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:08" hostname="192.168.1.10" time="0.06">
+  <properties/>
+  <testcase name="deterministicRoundHasFourSeasonsAndOneSelectedCluePerSeason" classname="com.bellfamily.bastischool.learning.seasons.SeasonsMatchTest" time="0.003"/>
+  <testcase name="languageAndCompletionRemainSupported" classname="com.bellfamily.bastischool.learning.seasons.SeasonsMatchTest" time="0.001"/>
+  <testcase name="incorrectMatchRetainsSelectionAndCorrectMatchLocksIt" classname="com.bellfamily.bastischool.learning.seasons.SeasonsMatchTest" time="0.001"/>
+  <testcase name="exactPartialStateRestoresThroughSortingJournal" classname="com.bellfamily.bastischool.learning.seasons.SeasonsMatchTest" time="0.055"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

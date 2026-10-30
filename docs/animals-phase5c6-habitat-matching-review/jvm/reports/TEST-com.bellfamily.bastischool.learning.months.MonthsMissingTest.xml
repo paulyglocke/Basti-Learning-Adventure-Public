@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.months.MonthsMissingTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:11:53" hostname="192.168.1.10" time="0.126">
+  <properties/>
+  <testcase name="catalogueHasEveryMonthAndGapAndUnambiguousCyclicSequences" classname="com.bellfamily.bastischool.learning.months.MonthsMissingTest" time="0.004"/>
+  <testcase name="alteredSequenceWordsIdentityOrCorrectAnswerAreRejected" classname="com.bellfamily.bastischool.learning.months.MonthsMissingTest" time="0.002"/>
+  <testcase name="replayReadsSequenceInCorrectLanguageWithPolicyAndNoAttempts" classname="com.bellfamily.bastischool.learning.months.MonthsMissingTest" time="0.001"/>
+  <testcase name="bilingualPromptSequenceAndHintDoNotLeakMissingMonth" classname="com.bellfamily.bastischool.learning.months.MonthsMissingTest" time="0.001"/>
+  <testcase name="roundsAreDeterministicUniqueBalancedAndRestoreExactSequence" classname="com.bellfamily.bastischool.learning.months.MonthsMissingTest" time="0.118"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

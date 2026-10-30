@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.months.MonthsWeatherTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:11:56" hostname="192.168.1.10" time="0.03">
+  <properties/>
+  <testcase name="newCheckpointRestoresWeatherAndOldCheckpointRestoresExactLearningState" classname="com.bellfamily.bastischool.learning.months.MonthsWeatherTest" time="0.024"/>
+  <testcase name="allTwelveDefaultsAndPlausibleAlternativesAreComplete" classname="com.bellfamily.bastischool.learning.months.MonthsWeatherTest" time="0.001"/>
+  <testcase name="bilingualPhrasesAndNarrationUseCanonicalMonthAndSeason" classname="com.bellfamily.bastischool.learning.months.MonthsWeatherTest" time="0.001"/>
+  <testcase name="interruptedSnapsAndShortDragsAlwaysEndOnExactGeometry" classname="com.bellfamily.bastischool.learning.months.MonthsWeatherTest" time="0.001"/>
+  <testcase name="matchAndHiddenWeatherDoNotCycleOrChangeChallengeRules" classname="com.bellfamily.bastischool.learning.months.MonthsWeatherTest" time="0.0"/>
+  <testcase name="arrowSelectionDrivesDefaultsAndRapidRotationDropsObsoleteAlternatives" classname="com.bellfamily.bastischool.learning.months.MonthsWeatherTest" time="0.001"/>
+  <testcase name="invalidSavedWeatherCannotBeReinterpretedForAnotherMonth" classname="com.bellfamily.bastischool.learning.months.MonthsWeatherTest" time="0.001"/>
+  <testcase name="showAlignmentResetsWeatherForTheNewSelectedMonth" classname="com.bellfamily.bastischool.learning.months.MonthsWeatherTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

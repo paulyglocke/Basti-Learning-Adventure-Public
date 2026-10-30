@@ -1,0 +1,3 @@
+10-30 15:50:54.198 13260 13274 I TestRunner: started: missingAndCorruptAssetsFailCalmlyAndFailedLoadIsCached(com.bellfamily.bastischool.ui.tellme.TellMeArtworkTest)
+10-30 15:50:54.225 13260 13274 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+10-30 15:50:54.225 13260 13274 I TestRunner: finished: missingAndCorruptAssetsFailCalmlyAndFailedLoadIsCached(com.bellfamily.bastischool.ui.tellme.TellMeArtworkTest)

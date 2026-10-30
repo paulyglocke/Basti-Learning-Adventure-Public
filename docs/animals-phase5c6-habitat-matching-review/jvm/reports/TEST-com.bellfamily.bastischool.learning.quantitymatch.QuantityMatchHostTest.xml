@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.quantitymatch.QuantityMatchHostTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:01" hostname="192.168.1.10" time="1.362">
+  <properties/>
+  <testcase name="partialAndCompletedRestoreRetainBothSkillsAndDeduplicatedEvidence" classname="com.bellfamily.bastischool.learning.quantitymatch.QuantityMatchHostTest" time="1.078"/>
+  <testcase name="uncertainAttemptAndCompletionDeliveryDeduplicatesAfterRestore" classname="com.bellfamily.bastischool.learning.quantitymatch.QuantityMatchHostTest" time="0.284"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

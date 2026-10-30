@@ -981,7 +981,8 @@ for the visual and test record. Final validation passed **591/591 JVM** and
 **599/599 complete API 35 instrumentation** tests, with zero failures/errors/
 skips; debug and android-test assemblies and lint passed. The generated artwork
 provenance is documented, but owner approval of its use remains open. Freshwater
-and habitat matching remain future work. Preserve Ocean, Woodland and original
+was subsequently implemented in Phase 5C.5B. Habitat matching is the next
+assessed curriculum slice in Phase 5C.6. Preserve Ocean, Woodland and original
 Animal Groups behavior.
 
 #### Phase 5C.5A — Freshwater design and artwork readiness
@@ -1014,6 +1015,30 @@ JVM** and **602/602 complete API 35 instrumentation** tests, zero failures,
 errors or skips; `assembleDebug`, `assembleDebugAndroidTest`, and lint passed.
 Owner art-release approval and physical/child accessibility review remain
 separate.
+
+#### Phase 5C.6 — Match Animals to Habitats
+
+**Status:** a seven-question bilingual starter is implemented as a distinct
+assessed activity. It uses question-specific accepted habitat sets, including
+both Woodland and Underground for the Rabbit scene-recall question, and a
+separate explicit underground-shelter question. Prompts distinguish the app's
+exploration scenes from exclusive biological classification. The activity has
+its own revision-1 identity and durable checkpoint namespace, reuses the four
+approved habitat scenes and six canonical animal cutouts, and records attempts
+and completion through the existing Progress Tracker. The new checkpoint schema
+stores accepted-answer sets and restores legacy single-answer v1 checkpoints.
+See the [question bank](docs/animals-phase5c6-habitat-matching-review/QUESTION_BANK.md)
+and [implementation review](docs/animals-phase5c6-habitat-matching-review/REVIEW.md).
+Final readiness depends on the complete final-code JVM and API 35 regressions
+recorded in the review; this activity does not alter Animal Groups' AGR1
+contract. Final validation passed **607/607 JVM** and **603/603 complete,
+unfiltered API 35 instrumentation** tests, with zero failures/errors/skips.
+The API run took 42m 23s on disposable `emulator-5554`. `assembleDebug`,
+`assembleDebugAndroidTest`, `lintDebug` (0 errors; 5 warnings) and
+`git diff --check` passed. Focused API 35 route coverage passed **1/1**. The
+visual review includes 15 genuine screenshots and emulator viewport checks;
+physical-device, child-use, TalkBack, switch-access and offline voice-quality
+acceptance remain owner-managed.
 
 ---
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.session.SessionReducerTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:11" hostname="192.168.1.10" time="0.002">
+  <properties/>
+  <testcase name="languageSwitchPreservesAnsweredIdentityOrderAttemptsAndScore" classname="com.bellfamily.bastischool.learning.session.SessionReducerTest" time="0.0"/>
+  <testcase name="unrelatedChoicesSessionsAndPrematureCompletionAreIgnored" classname="com.bellfamily.bastischool.learning.session.SessionReducerTest" time="0.0"/>
+  <testcase name="startKeepsFrozenTaskIdentityAndOrderAcrossReadsAndSupportActions" classname="com.bellfamily.bastischool.learning.session.SessionReducerTest" time="0.001"/>
+  <testcase name="completionAcknowledgementAndExplicitRetryUseStableLogicalSessionId" classname="com.bellfamily.bastischool.learning.session.SessionReducerTest" time="0.0"/>
+  <testcase name="lockPolicyFinishesWrongTaskWithoutNegativeScoreOrRetry" classname="com.bellfamily.bastischool.learning.session.SessionReducerTest" time="0.0"/>
+  <testcase name="activeRoundIsUnaffectedByFutureSettingsAndNewPlans" classname="com.bellfamily.bastischool.learning.session.SessionReducerTest" time="0.0"/>
+  <testcase name="staleAnswerAndRetryActionsCannotCountAnotherAttempt" classname="com.bellfamily.bastischool.learning.session.SessionReducerTest" time="0.0"/>
+  <testcase name="correctAnswerEmitsOneAttemptAndScoresOnlyOnce" classname="com.bellfamily.bastischool.learning.session.SessionReducerTest" time="0.0"/>
+  <testcase name="hintsReplayAndParentHelpAreSupportNotAnswerAttempts" classname="com.bellfamily.bastischool.learning.session.SessionReducerTest" time="0.0"/>
+  <testcase name="nextIsGuardedAndStartsPristineTaskExactlyOnce" classname="com.bellfamily.bastischool.learning.session.SessionReducerTest" time="0.0"/>
+  <testcase name="wrongAnswerWaitsForExplicitRetryAndRetainsTask" classname="com.bellfamily.bastischool.learning.session.SessionReducerTest" time="0.0"/>
+  <testcase name="fiveQuestionsCompleteExactlyOnce" classname="com.bellfamily.bastischool.learning.session.SessionReducerTest" time="0.001"/>
+  <testcase name="tenQuestionsCompleteExactlyOnce" classname="com.bellfamily.bastischool.learning.session.SessionReducerTest" time="0.0"/>
+  <testcase name="replayAfterCorrectAnswerDoesNotRewriteIndependenceOrScore" classname="com.bellfamily.bastischool.learning.session.SessionReducerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

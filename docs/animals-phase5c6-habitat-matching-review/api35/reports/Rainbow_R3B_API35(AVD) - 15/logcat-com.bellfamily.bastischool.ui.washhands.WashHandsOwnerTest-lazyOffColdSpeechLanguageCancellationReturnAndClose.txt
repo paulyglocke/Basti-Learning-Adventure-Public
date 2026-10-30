@@ -1,0 +1,4 @@
+10-30 15:53:36.599 13260 13274 I TestRunner: started: lazyOffColdSpeechLanguageCancellationReturnAndClose(com.bellfamily.bastischool.ui.washhands.WashHandsOwnerTest)
+10-30 15:53:36.602 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@5570e5e]
+10-30 15:53:36.868 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@5570e5e]
+10-30 15:53:36.871 13260 13274 I TestRunner: finished: lazyOffColdSpeechLanguageCancellationReturnAndClose(com.bellfamily.bastischool.ui.washhands.WashHandsOwnerTest)

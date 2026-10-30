@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Match Animals to Habitats — Emulator Review</title>
+  <style>
+    :root { color-scheme: light; font: 16px/1.5 system-ui, sans-serif; }
+    body { max-width: 1120px; margin: 0 auto; padding: 24px; background: #f8f6ef; color: #233b4b; }
+    h1, h2 { line-height: 1.2; }
+    section { margin: 2.5rem 0; }
+    figure { margin: 1.25rem 0 2rem; padding: 16px; background: white; border: 1px solid #a5aaa4; border-radius: 16px; }
+    img { display: block; width: 100%; height: auto; border-radius: 8px; background: #eee; }
+    figcaption { margin-top: 12px; }
+    strong { display: block; }
+    @media (min-width: 800px) { .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; } }
+  </style>
+</head>
+<body>
+  <h1>Match Animals to Habitats</h1>
+  <p>Genuine Android emulator captures from the API 35 route test. Phone viewport: 1080×2400 pixels; phone landscape: 2400×1080; short landscape: 1280×720. Tablet-sized layouts use emulator display overrides, not physical tablet hardware.</p>
+
+  <section>
+    <h2>Animals &amp; Nature navigation</h2>
+    <figure><img src="screenshots/01-animals-category-en.png" alt="Animals and Nature activity category"><figcaption><strong>Animals &amp; Nature category · English · activity choices · 1080×2400 · 1×</strong>The new matching card appears beside the existing habitat and animal activities.</figcaption></figure>
+  </section>
+
+  <section>
+    <h2>Question and feedback states</h2>
+    <div class="pair">
+      <figure><img src="screenshots/02-first-question-en.png" alt="First matching question in English"><figcaption><strong>Question · English · active · 1080×2400 · 1×</strong>Large prompt and animal illustration precede two image-led habitat choices.</figcaption></figure>
+      <figure><img src="screenshots/03-first-question-de.png" alt="First matching question in German"><figcaption><strong>Question · German · active · 1080×2400 · 1×</strong>German prompt and labels retain the same question and canonical answer identities.</figcaption></figure>
+    </div>
+    <div class="pair">
+      <figure><img src="screenshots/04-wrong-retry-feedback-de.png" alt="Incorrect selection and gentle retry feedback"><figcaption><strong>Feedback · German · incorrect answer and retry · 1080×2400 · 1×</strong>The selected option has a thick outline; neutral feedback and an explicit retry action are visible.</figcaption></figure>
+      <figure><img src="screenshots/05-correct-feedback-de.png" alt="Correct answer feedback in German"><figcaption><strong>Feedback · German · correct answer · 1080×2400 · 1×</strong>Correctness is conveyed by text, a selected outline, and a clear Continue button, not colour alone.</figcaption></figure>
+    </div>
+    <figure><img src="screenshots/06-continue-2-of-7-de.png" alt="Second question after continuing"><figcaption><strong>Progress · German · second question · 1080×2400 · 1×</strong>Continue advances predictably and the progress indicator reads “2 von 7”.</figcaption></figure>
+  </section>
+
+  <section>
+    <h2>Restoration and completion</h2>
+    <figure><img src="screenshots/07-activity-recreated-session-resumed.png" alt="Restored matching session after Activity recreation"><figcaption><strong>Restoration · German · Activity recreated · 1080×2400 · 1×</strong>The same question and progress position are rendered after Activity recreation.</figcaption></figure>
+    <figure><img src="screenshots/10-completion-and-progress-result.png" alt="Completed matching session"><figcaption><strong>Completion · German · seven questions complete · 1080×2400 · 1×</strong>The completion treatment is separate from the question screen; the instrumentation verifies one completion result and its seven task records.</figcaption></figure>
+    <figure><img src="screenshots/11-options-language-return-en.png" alt="English question after returning from Options"><figcaption><strong>Options return · English · new session question · 1080×2400 · 1×</strong>Returning from Options updates language while preserving the current session state.</figcaption></figure>
+  </section>
+
+  <section>
+    <h2>Responsive layouts</h2>
+    <div class="pair">
+      <figure><img src="screenshots/12-phone-landscape.png" alt="Phone landscape question"><figcaption><strong>Phone landscape · English · initial question viewport · 2400×1080 · 1×</strong>The task prompt is visible on entry; the choices and Replay remain reachable by scrolling.</figcaption></figure>
+      <figure><img src="screenshots/13-short-landscape.png" alt="Short landscape question"><figcaption><strong>Short landscape · English · initial question viewport · 1280×720 · 1×</strong>The instruction is visible before scrolling; the animal choices and Replay are reachable below.</figcaption></figure>
+    </div>
+    <figure><img src="screenshots/14-tablet-portrait-emulator-viewport.png" alt="Tablet portrait emulator viewport"><figcaption><strong>Tablet portrait · English · question · 1600×2560 emulator viewport override · 1×</strong>Wide cards use available space while keeping the animal, question, and options in a clear vertical order.</figcaption></figure>
+    <figure><img src="screenshots/15-tablet-landscape-emulator-viewport.png" alt="Tablet landscape emulator viewport"><figcaption><strong>Tablet landscape · English · question · 2560×1600 emulator viewport override · 1×</strong>The choices sit side by side with large image previews; this is an emulator viewport simulation, not physical tablet testing.</figcaption></figure>
+  </section>
+
+  <section>
+    <h2>German enlarged text</h2>
+    <figure><img src="screenshots/08-german-1_5x.png" alt="German question at one and a half times text scale"><figcaption><strong>Question · German · 1.5× font scale · 1080×2400</strong>Prompt, animal, choices, Replay, Help, and Home remain usable with scrolling.</figcaption></figure>
+    <figure><img src="screenshots/09-german-2x.png" alt="German question at double text scale"><figcaption><strong>Question · German · 2× font scale · 1080×2400</strong>Habitat choices switch to one column to preserve full-width labels. The screen is long but scrollable; Replay was separately verified reachable.</figcaption></figure>
+  </section>
+</body>
+</html>

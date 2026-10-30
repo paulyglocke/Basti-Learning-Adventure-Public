@@ -1,0 +1,4 @@
+10-30 15:21:14.030 13260 13274 I TestRunner: started: silentDurableRestoreSettingsAndNoFabricatedProgress(com.bellfamily.bastischool.ui.clock.ClockOwnerTest)
+10-30 15:21:14.036 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@4cfa0ca]
+10-30 15:21:14.120 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@4cfa0ca]
+10-30 15:21:14.121 13260 13274 I TestRunner: finished: silentDurableRestoreSettingsAndNoFabricatedProgress(com.bellfamily.bastischool.ui.clock.ClockOwnerTest)

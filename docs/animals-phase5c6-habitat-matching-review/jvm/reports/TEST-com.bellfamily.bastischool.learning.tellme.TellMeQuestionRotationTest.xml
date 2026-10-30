@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.tellme.TellMeQuestionRotationTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:12" hostname="192.168.1.10" time="0.023">
+  <properties/>
+  <testcase name="duplicateCategoryActivationCannotResetOrConsumeTheCurrentSlot" classname="com.bellfamily.bastischool.learning.tellme.TellMeQuestionRotationTest" time="0.002"/>
+  <testcase name="allAuthoredSlotsHaveMatchingSupportAndUncuratedScenesKeepTheirLegacySelection" classname="com.bellfamily.bastischool.learning.tellme.TellMeQuestionRotationTest" time="0.003"/>
+  <testcase name="earlyExitDoesNotConsumeUnseenScenesAndAgainRotatesEnteredScenes" classname="com.bellfamily.bastischool.learning.tellme.TellMeQuestionRotationTest" time="0.002"/>
+  <testcase name="staleCallbacksAndRepeatedSelectionDoNotConsumeAnotherVisit" classname="com.bellfamily.bastischool.learning.tellme.TellMeQuestionRotationTest" time="0.002"/>
+  <testcase name="repeatedVisitsAlternateOnlyExplicitPairedBundlesAndReturnToFirst" classname="com.bellfamily.bastischool.learning.tellme.TellMeQuestionRotationTest" time="0.002"/>
+  <testcase name="helpModelAdultDisclosureAndLanguageRenderingKeepTheSelectedBundle" classname="com.bellfamily.bastischool.learning.tellme.TellMeQuestionRotationTest" time="0.002"/>
+  <testcase name="allNineAdventuresRotateEveryEnteredSceneAcrossCompleteRepeatVisits" classname="com.bellfamily.bastischool.learning.tellme.TellMeQuestionRotationTest" time="0.007"/>
+  <testcase name="pilotThirdVisitsKeepAllSupportPairedAndRejectStaleNavigation" classname="com.bellfamily.bastischool.learning.tellme.TellMeQuestionRotationTest" time="0.001"/>
+  <testcase name="aNewActivityLifetimeStartsAtCanonicalPromptWithoutPersistentHistory" classname="com.bellfamily.bastischool.learning.tellme.TellMeQuestionRotationTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

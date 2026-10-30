@@ -1,0 +1,154 @@
+10-30 15:48:45.189 13260 13274 I TestRunner: started: disabledAndFailureRulesStayDistinctAcrossExploreQuizAndOrder(com.bellfamily.bastischool.ui.seasons.SeasonsActionButtonTest)
+10-30 15:48:45.209  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5031
+10-30 15:48:45.209  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5031
+10-30 15:48:45.216 13293 13293 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@37f1f6d
+10-30 15:48:45.230 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@57a9a8e]
+10-30 15:48:45.243  5889  5920 W LatinCommonMetricsProcessor: LatinCommonMetricsProcessor.processInputMethodEntryChanged():2680 The new entry is equal to the old entry
+10-30 15:48:45.247   550  2637 W InputManager-JNI: Input channel object 'f516355 com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+10-30 15:48:45.248  1282  1282 D SearchTargetUtil: queryLength=0 size=0
+10-30 15:48:45.251 13260 13274 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+10-30 15:48:45.301  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5032
+10-30 15:48:45.321  5889  5896 I putmethod.latin: Background concurrent mark compact GC freed 10MB AllocSpace bytes, 10(376KB) LOS objects, 49% free, 10MB/20MB, paused 224us,1.737ms total 247.607ms
+10-30 15:48:45.323  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5032
+10-30 15:48:45.329   550   619 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@496c9b38 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-30 15:48:45.376  1282  1282 W SplitSelectStateCtor: Missing session instanceIds
+10-30 15:48:45.376  1282  1282 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+10-30 15:48:45.379  1282  1282 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=5033, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.bellfamily.bastischool/androidx.activity.ComponentActivity }
+10-30 15:48:45.399  5889  5922 I SP      : Sync for emoticon_content_description succeeded in 306 ms: no changes
+10-30 15:48:45.399  5889  5922 I SP      : GC for 'emoticon_content_description' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-30 15:48:45.399  5889  5922 I SuperpacksManagerImpl: SuperpacksManagerImpl$19.onSyncSuccess():947 emoticon_content_description.sync() succeeded
+10-30 15:48:45.415 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@5065843 in: PRE_ON_CREATE
+10-30 15:48:45.416 13260 13260 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+10-30 15:48:45.419   402   402 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-30 15:48:45.440 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@5065843 in: CREATED
+10-30 15:48:45.441 13260 13260 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=androidx.activity.ComponentActivity@5065843
+10-30 15:48:45.444 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@5065843 in: STARTED
+10-30 15:48:45.444 13260 13260 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=androidx.activity.ComponentActivity@5065843
+10-30 15:48:45.445 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@5065843 in: RESUMED
+10-30 15:48:45.445 13260 13260 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=androidx.activity.ComponentActivity@5065843
+10-30 15:48:45.471   780   780 D DefaultDeviceEntrySection: isUdfpsSupported=false
+10-30 15:48:45.615   550   570 W ziparchive: Unable to open '/data/app/~~RtTiwXVxZ-RGLXj5SJeA9A==/com.bellfamily.bastischool-PFzM8kzDJ7ysJU1km3uSCw==/base.dm': No such file or directory
+10-30 15:48:45.639   550   570 I ActivityTaskManager: Displayed com.bellfamily.bastischool/androidx.activity.ComponentActivity for user 0: +289ms
+10-30 15:48:45.689   780   929 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@73be156
+10-30 15:48:45.689   550   565 W InputManager-JNI: Input channel object '2f2638a Splash Screen com.bellfamily.bastischool (client)' was disposed without first being removed with the input manager!
+10-30 15:48:45.694   550   662 I ImeTracker: com.bellfamily.bastischool:153c215b: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-30 15:48:45.694   550   662 I ImeTracker: com.bellfamily.bastischool:153c215b: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-30 15:48:45.727  5889  5889 I SubtypeOperator: SubtypeOperator$1.onUnbindInput():44
+10-30 15:48:45.727  5889  5889 I SubtypeOperator: SubtypeOperator$1.onBindInput():33
+10-30 15:48:45.727  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2404
+10-30 15:48:45.728  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.bellfamily.bastischool, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-30 15:48:45.728  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:48:45.730  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 0, locked = false
+10-30 15:48:45.731  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:48:45.948  1282  1282 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-30 15:48:45.953  1282  1282 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+10-30 15:48:45.983  1282  1282 D BaseDepthController: setSurface:
+10-30 15:48:45.983  1282  1282 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-30 15:48:45.983  1282  1282 D BaseDepthController: 	mSurface: null
+10-30 15:48:45.984  1282  1282 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+10-30 15:48:45.985  1282  1282 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+10-30 15:48:45.985  1282  1282 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:4)
+10-30 15:48:45.985  1282  1282 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:1)
+10-30 15:48:45.985  1282  1282 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:34)
+10-30 15:48:45.985  1282  1282 D StatsLog: LAUNCHER_ONSTOP
+10-30 15:48:45.994  1282  1282 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+10-30 15:48:45.995  1282  1613 D OneSearchSuggestProvider: Shut down the binder channel
+10-30 15:48:45.999  1282  6442 I IPCThreadState: oneway function results for code 2 on binder at 0xb400007b9ed4faf0 will be dropped but finished with status UNKNOWN_TRANSACTION
+10-30 15:48:47.153 13260 13276 D EGL_emulation: app_time_stats: avg=45.26ms min=2.99ms max=492.02ms count=31
+10-30 15:48:47.491   550  2637 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@4b2173d7 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-30 15:48:47.496 13260 13265 I ily.bastischool: Background concurrent mark compact GC freed 15MB AllocSpace bytes, 0(0B) LOS objects, 49% free, 15MB/31MB, paused 176us,13.818ms total 105.780ms
+10-30 15:48:47.497 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@5065843 in: PAUSED
+10-30 15:48:47.498 13260 13260 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=androidx.activity.ComponentActivity@5065843
+10-30 15:48:47.514  1282  1282 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=5034, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }
+10-30 15:48:47.535   402   402 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-30 15:48:47.617 13293 13306 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-30 15:48:47.619 13293 13306 I EGL_emulation: Opening libGLESv2_emulation.so
+10-30 15:48:47.652 13293 13306 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+10-30 15:48:47.654 13293 13306 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-30 15:48:47.687  1282  1294 W System  : A resource failed to call release.
+10-30 15:48:47.687  1282  1294 W System  : A resource failed to call release.
+10-30 15:48:47.687  1282  1294 W System  : A resource failed to call release.
+10-30 15:48:47.687  1282  1294 W System  : A resource failed to call release.
+10-30 15:48:47.687  1282  1294 W System  : A resource failed to call release.
+10-30 15:48:47.687  1282  1294 W System  : A resource failed to call release.
+10-30 15:48:47.707  1282  1294 W System  : A resource failed to call release.
+10-30 15:48:47.707  1282  1294 W System  : A resource failed to call release.
+10-30 15:48:47.707  1282  1294 W System  : A resource failed to call release.
+10-30 15:48:47.708  1282  1294 W System  : A resource failed to call release.
+10-30 15:48:47.708  1282  1294 W System  : A resource failed to call release.
+10-30 15:48:47.708  1282  1294 W System  : A resource failed to call release.
+10-30 15:48:47.794   550   570 W ziparchive: Unable to open '/data/app/~~Gu500pmAw2vV8V0dyUkO-Q==/com.bellfamily.bastischool.test-xHguCJ6EMUUa19nqwSDj6Q==/base.dm': No such file or directory
+10-30 15:48:47.794  1282  1282 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=406, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10000100 cmp=com.google.android.apps.nexuslauncher/.NexusLauncherActivity }
+10-30 15:48:47.807   550   570 I ActivityTaskManager: Displayed com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity for user 0: +287ms
+10-30 15:48:47.813  1282  1282 D StatsLog: LAUNCHER_ONRESUME
+10-30 15:48:47.815   550  1457 W AppSearchIcing: icing-search-engine.cc:321: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: AppSearch 0-state cache not available, fallback to AGA
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: java.util.concurrent.CompletionException: java.util.NoSuchElementException: No value present
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:308)
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:323)
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:684)
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:486)
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2138)
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: 	at com.google.android.apps.nexuslauncher.allapps.E0.onResult(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:67)
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1.lambda$onResult$0(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:144)
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1.$r8$lambda$CEk3q8sDAQVhU3rQwVueB8FAj_M(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:1)
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1$$ExternalSyntheticLambda0.run(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:22)
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: 	at android.os.Handler.handleCallback(Handler.java:959)
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: 	at android.os.Looper.loopOnce(Looper.java:232)
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: 	at android.os.Looper.loop(Looper.java:317)
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: Caused by: java.util.NoSuchElementException: No value present
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: 	at java.util.Optional.get(Optional.java:143)
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: 	at com.google.android.apps.nexuslauncher.allapps.E0.onResult(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:28)
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: 	... 8 more
+10-30 15:48:47.817  1282  1613 D OneSearchSuggestProvider: Created the binder channel successfully for end point service =com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService , mChannel=i1{delegate=f{logId=9137, target=directaddress:///AndroidComponentAddress%5BIntent%20%7B%20act=grpc.io.action.BIND%20cmp=com.google.android.googlequicksearchbox/com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService%20%7D%5D}} , mOneSearchConnection=l2.Z@bded978
+10-30 15:48:47.824  1282  1356 D QuickstepModelDelegate: notifyAppTargetEvent action=1 launchLocation=workspace/0/[-1,-1]/[1,1]
+10-30 15:48:47.824  1282  1282 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=6}
+10-30 15:48:47.833 10652 10652 I A       : (REDACTED) Created gRPC endpoint for service %s
+10-30 15:48:47.839  1413  1664 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+10-30 15:48:47.839  1413  1664 I AiAiEcho: EchoTargets:
+10-30 15:48:47.839  1413  1664 I AiAiEcho: Filtered by AiAi flag check:
+10-30 15:48:47.839  1413  1664 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+10-30 15:48:47.839  1413  1664 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+10-30 15:48:47.839  1413  1664 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+10-30 15:48:47.840  1413  1664 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-30 15:48:47.840  1282  1282 D BaseDepthController: setSurface:
+10-30 15:48:47.840  1282  1282 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-30 15:48:47.840  1282  1282 D BaseDepthController: 	mSurface: Surface(name=com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity)/@0x26209d7
+10-30 15:48:47.861  1282  1282 D SsBaseTemplateCard: No text view can be set up
+10-30 15:48:47.862  1282  1282 D SsBaseTemplateCard: Passed-in item info is null
+10-30 15:48:47.862  1282  1282 D SsBaseTemplateCard: Passed-in item info is null
+10-30 15:48:47.862  1282  1282 D SsBaseTemplateCard: Passed-in item info is null
+10-30 15:48:47.862  1282  1282 I SsBaseTemplateCard: Secondary card pane is null
+10-30 15:48:47.939  1282  1514 D EGL_emulation: app_time_stats: avg=572.63ms min=51.01ms max=2001.64ms count=5
+10-30 15:48:47.952 13260 13260 D VRI[ComponentActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-30 15:48:47.959  1282  1282 D SearchTargetUtil: queryLength=0 size=0
+10-30 15:48:47.963  1282  1282 D StateManager: createAtomicAnimation - fromState: Background, toState: Normal, partial trace:
+10-30 15:48:47.963  1282  1282 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.prepareToAnimate(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:22)
+10-30 15:48:47.963  1282  1282 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.<init>(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:11)
+10-30 15:48:47.963  1282  1282 D StateManager: 	at com.android.launcher3.QuickstepTransitionManager.createWallpaperOpenAnimations(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:735)
+10-30 15:48:48.075 13293 13293 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@cb35ad9
+10-30 15:48:48.115   550  2637 W InputManager-JNI: Input channel object '7c2e943 com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+10-30 15:48:48.119   550   662 I ImeTracker: com.google.android.apps.nexuslauncher:b2ccf9e3: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-30 15:48:48.119   550   662 I ImeTracker: com.google.android.apps.nexuslauncher:b2ccf9e3: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-30 15:48:48.121   550  1591 W InputManager-JNI: Input channel object '7357f45 Splash Screen com.bellfamily.bastischool.test (client)' was disposed without first being removed with the input manager!
+10-30 15:48:48.123   780   975 D EGL_emulation: app_time_stats: avg=690.94ms min=28.48ms max=2446.25ms count=4
+10-30 15:48:48.127  5889  5889 I SubtypeOperator: SubtypeOperator$1.onUnbindInput():44
+10-30 15:48:48.127  5889  5889 I SubtypeOperator: SubtypeOperator$1.onBindInput():33
+10-30 15:48:48.127  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2404
+10-30 15:48:48.136  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.google.android.apps.nexuslauncher, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-30 15:48:48.136  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:48:48.138  5889 13286 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 0, locked = false
+10-30 15:48:48.141  5889 13286 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:48:48.143 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@5065843 in: STOPPED
+10-30 15:48:48.143 13260 13260 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=androidx.activity.ComponentActivity@5065843
+10-30 15:48:48.174 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@5065843 in: DESTROYED
+10-30 15:48:48.174 13260 13260 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+10-30 15:48:48.175   780   929 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@1602c53
+10-30 15:48:48.175 13260 13260 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@dc93997
+10-30 15:48:48.182  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5034
+10-30 15:48:48.182  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5034
+10-30 15:48:48.230   550  2637 W InputManager-JNI: Input channel object 'c0db2df com.bellfamily.bastischool/androidx.activity.ComponentActivity (client)' was disposed without first being removed with the input manager!
+10-30 15:48:48.235 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@57a9a8e]
+10-30 15:48:48.236 13260 13274 I TestRunner: finished: disabledAndFailureRulesStayDistinctAcrossExploreQuizAndOrder(com.bellfamily.bastischool.ui.seasons.SeasonsActionButtonTest)

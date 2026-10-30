@@ -1,0 +1,2 @@
+10-30 15:48:17.572 13260 13274 I TestRunner: started: originalFlyingAndUnderwaterPngsDecodeAndCacheOnlyCurrentScene(com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkTest)
+10-30 15:48:17.693 13260 13274 I TestRunner: finished: originalFlyingAndUnderwaterPngsDecodeAndCacheOnlyCurrentScene(com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkTest)

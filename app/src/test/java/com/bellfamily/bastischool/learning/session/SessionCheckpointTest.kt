@@ -31,6 +31,14 @@ class SessionCheckpointTest {
             assertEquals(original.task.question.instruction, restored.task.question.instruction)
         }
     }
+    @Test fun versionOneCheckpointStillRestoresAsSingleAnswerQuestions() {
+        val original = F.answer(F.start()).state
+        val restored = restore(encodeV1(original)) as SessionRestoreResult.Restored
+        assertEquals(original.plan.id, restored.state.plan.id)
+        assertEquals(original.current.lastChoice, restored.state.current.lastChoice)
+        assertEquals(original.current.answer, restored.state.current.answer)
+        assertEquals(setOf(restored.state.task.question.correct), restored.state.task.question.acceptedAnswers)
+    }
     @Test fun answeredTaskRestoresAnswerLockAndRejectsDuplicateScoring() {
         val restored = roundTrip(F.answer(F.start()).state)
         assertEquals(AnswerState.CORRECT, restored.current.answer)
@@ -162,4 +170,35 @@ class SessionCheckpointTest {
         val offset = find(bytes, pattern)
         return bytes.copyOfRange(0, offset) + utf(after) + bytes.copyOfRange(offset + pattern.size, bytes.size)
     }
+
+    private fun encodeV1(state: SessionState): ByteArray = ByteArrayOutputStream().also { bytes ->
+        DataOutputStream(bytes).use { out ->
+            val plan = state.plan
+            out.writeInt(0x42415354); out.writeInt(1)
+            out.writeUTF(plan.activity.value); out.writeInt(plan.activityRevision)
+            out.writeInt(plan.contentVersion.schema); out.writeInt(plan.contentVersion.revision)
+            out.writeUTF(plan.id.value); out.writeUTF(plan.policy.round.name); out.writeUTF(plan.policy.wrongAnswer.name)
+            fun text(value: ContentText) {
+                out.writeUTF(value.display.en); out.writeUTF(value.display.de)
+                out.writeUTF(value.speech.en); out.writeUTF(value.speech.de)
+            }
+            text(plan.completionText); out.writeInt(plan.tasks.size)
+            plan.tasks.forEach { task ->
+                out.writeInt(task.id.ordinal)
+                val q = task.question
+                out.writeUTF(q.definition.value); out.writeUTF(q.skill.value); out.writeUTF(q.context.value)
+                out.writeInt(q.difficulty); text(q.instruction)
+                out.writeInt(q.choices.size); q.choices.forEach { out.writeUTF(it.value) }
+                out.writeUTF(q.correct.value); text(q.correctFeedback); text(q.wrongFeedback)
+                out.writeBoolean(q.hint != null); q.hint?.let(::text)
+            }
+            out.writeUTF(state.language.name); out.writeInt(state.index); out.writeInt(state.score)
+            out.writeUTF(state.phase.name); out.writeUTF(state.completion.name); out.writeInt(state.completionDelivery)
+            state.progress.forEach {
+                out.writeUTF(it.answer.name); out.writeInt(it.attempts); out.writeInt(it.retries)
+                out.writeInt(it.support.replays); out.writeBoolean(it.support.hint); out.writeBoolean(it.support.parentHelp)
+                out.writeBoolean(it.lastChoice != null); it.lastChoice?.let { choice -> out.writeUTF(choice.value) }
+            }
+        }
+    }.toByteArray()
 }

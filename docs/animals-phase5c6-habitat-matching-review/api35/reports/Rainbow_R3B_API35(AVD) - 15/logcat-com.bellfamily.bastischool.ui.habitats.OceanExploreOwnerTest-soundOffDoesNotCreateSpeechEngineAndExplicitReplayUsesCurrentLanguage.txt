@@ -1,0 +1,23 @@
+10-30 15:28:32.795 13260 13274 I TestRunner: started: soundOffDoesNotCreateSpeechEngineAndExplicitReplayUsesCurrentLanguage(com.bellfamily.bastischool.ui.habitats.OceanExploreOwnerTest)
+10-30 15:28:32.797   550  1584 W ParceledListSlice: Element #27 is 20968 bytes.
+10-30 15:28:32.797   550  1584 W ParceledListSlice: Element #28 is 21080 bytes.
+10-30 15:28:32.803  1282  1356 W PackageManager: Failure retrieving text 0x7f130786 in package com.android.systemui
+10-30 15:28:32.803  1282  1356 W PackageManager: android.content.res.Resources$NotFoundException: String resource ID #0x7f130786
+10-30 15:28:32.803  1282  1356 W PackageManager: 	at android.content.res.Resources.getText(Resources.java:466)
+10-30 15:28:32.803  1282  1356 W PackageManager: 	at android.app.ApplicationPackageManager.getText(ApplicationPackageManager.java:2405)
+10-30 15:28:32.803  1282  1356 W PackageManager: 	at android.appwidget.AppWidgetProviderInfo.loadDescription(AppWidgetProviderInfo.java:484)
+10-30 15:28:32.803  1282  1356 W PackageManager: 	at com.android.launcher3.model.WidgetItem.<init>(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:4)
+10-30 15:28:32.803  1282  1356 W PackageManager: 	at com.android.launcher3.model.WidgetsModel.update(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:72)
+10-30 15:28:32.803  1282  1356 W PackageManager: 	at com.android.launcher3.model.LoaderTask.run(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:390)
+10-30 15:28:32.803  1282  1356 W PackageManager: 	at android.os.Handler.handleCallback(Handler.java:959)
+10-30 15:28:32.803  1282  1356 W PackageManager: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+10-30 15:28:32.803  1282  1356 W PackageManager: 	at android.os.Looper.loopOnce(Looper.java:232)
+10-30 15:28:32.803  1282  1356 W PackageManager: 	at android.os.Looper.loop(Looper.java:317)
+10-30 15:28:32.803  1282  1356 W PackageManager: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+10-30 15:28:32.823 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@dc4dde7]
+10-30 15:28:32.827 13293 13293 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@279aa25
+10-30 15:28:32.863   550  1584 W InputManager-JNI: Input channel object 'e878590 com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+10-30 15:28:32.883  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4577
+10-30 15:28:32.883  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4577
+10-30 15:28:32.935 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@dc4dde7]
+10-30 15:28:32.935 13260 13274 I TestRunner: finished: soundOffDoesNotCreateSpeechEngineAndExplicitReplayUsesCurrentLanguage(com.bellfamily.bastischool.ui.habitats.OceanExploreOwnerTest)

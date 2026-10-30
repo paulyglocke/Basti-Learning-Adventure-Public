@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.audio.SystemSpeechEngineTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:11:46" hostname="192.168.1.10" time="0.004">
+  <properties/>
+  <testcase name="initFailureAndEnumerationFailureNeverDispatchAndExposeFailure" classname="com.bellfamily.bastischool.audio.SystemSpeechEngineTest" time="0.002"/>
+  <testcase name="voiceSelectionFailureNeverCallsSpeakWithPreviousVoice" classname="com.bellfamily.bastischool.audio.SystemSpeechEngineTest" time="0.001"/>
+  <testcase name="platformStaleCallbacksAndDuplicateCallbacksAreIgnored" classname="com.bellfamily.bastischool.audio.SystemSpeechEngineTest" time="0.0"/>
+  <testcase name="initializationDispatchesLatestOwnedPendingRequestOnce" classname="com.bellfamily.bastischool.audio.SystemSpeechEngineTest" time="0.0"/>
+  <testcase name="preferredOfflineLocalesAreDeterministicAndCachedAcrossLanguageSwitches" classname="com.bellfamily.bastischool.audio.SystemSpeechEngineTest" time="0.0"/>
+  <testcase name="missingEnglishAfterGermanCannotReusePreviousVoice" classname="com.bellfamily.bastischool.audio.SystemSpeechEngineTest" time="0.0"/>
+  <testcase name="missingGermanAfterEnglishCannotReusePreviousVoiceOrNetworkVoice" classname="com.bellfamily.bastischool.audio.SystemSpeechEngineTest" time="0.001"/>
+  <testcase name="failedStopDisablesEngineInsteadOfStartingOverlappingSpeech" classname="com.bellfamily.bastischool.audio.SystemSpeechEngineTest" time="0.0"/>
+  <testcase name="closeDuringInitializationNeverResurrectsEngineOrPlaysPendingSpeech" classname="com.bellfamily.bastischool.audio.SystemSpeechEngineTest" time="0.0"/>
+  <testcase name="emptyOfflineVoiceInventoryIsReadyButLanguageRequestExplicitlyFails" classname="com.bellfamily.bastischool.audio.SystemSpeechEngineTest" time="0.0"/>
+  <testcase name="otherCountryFallbackStaysWithinRequestedLanguage" classname="com.bellfamily.bastischool.audio.SystemSpeechEngineTest" time="0.0"/>
+  <testcase name="rejectedThrownAndAsynchronousPlaybackFailuresAreExplicit" classname="com.bellfamily.bastischool.audio.SystemSpeechEngineTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

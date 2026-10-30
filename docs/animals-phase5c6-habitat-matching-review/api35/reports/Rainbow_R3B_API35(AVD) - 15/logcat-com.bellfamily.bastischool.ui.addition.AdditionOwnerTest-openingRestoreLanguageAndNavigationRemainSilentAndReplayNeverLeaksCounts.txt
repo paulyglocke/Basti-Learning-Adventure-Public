@@ -1,0 +1,4 @@
+10-30 15:20:31.277 13260 13274 I TestRunner: started: openingRestoreLanguageAndNavigationRemainSilentAndReplayNeverLeaksCounts(com.bellfamily.bastischool.ui.addition.AdditionOwnerTest)
+10-30 15:20:31.279 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@6154bd6]
+10-30 15:20:31.364 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@6154bd6]
+10-30 15:20:31.365 13260 13274 I TestRunner: finished: openingRestoreLanguageAndNavigationRemainSilentAndReplayNeverLeaksCounts(com.bellfamily.bastischool.ui.addition.AdditionOwnerTest)

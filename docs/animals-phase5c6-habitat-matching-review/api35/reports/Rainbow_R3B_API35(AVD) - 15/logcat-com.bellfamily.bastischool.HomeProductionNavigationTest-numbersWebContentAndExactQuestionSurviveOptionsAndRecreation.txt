@@ -1,0 +1,1066 @@
+10-30 15:17:45.444 13260 13274 I TestRunner: started: numbersWebContentAndExactQuestionSurviveOptionsAndRecreation(com.bellfamily.bastischool.HomeProductionNavigationTest)
+10-30 15:17:45.451  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4186
+10-30 15:17:45.451  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4186
+10-30 15:17:45.469 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@24046d1]
+10-30 15:17:45.482  5889 13286 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 0, locked = false
+10-30 15:17:45.483  5889 13286 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:17:45.484   780   975 D EGL_emulation: app_time_stats: avg=633.15ms min=48.60ms max=2158.95ms count=4
+10-30 15:17:45.547 13260 13274 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+10-30 15:17:45.550   550  1591 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@496c9b38 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-30 15:17:45.563  1282  1282 W SplitSelectStateCtor: Missing session instanceIds
+10-30 15:17:45.563  1282  1282 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+10-30 15:17:45.578  1282  1282 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=4188, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.bellfamily.bastischool/.MainActivity }
+10-30 15:17:45.591   402   402 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-30 15:17:45.615 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@281e41a in: PRE_ON_CREATE
+10-30 15:17:45.615 13260 13260 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+10-30 15:17:45.631 13260 13260 I TextToSpeech: Sucessfully bound to com.google.android.tts
+10-30 15:17:45.651 13588 13588 I GoogleTtsServicePeer: Creating Google TTS service, version googletts.google-speech-apk_20260928.02_p0.989914902
+10-30 15:17:45.651 13588 13588 I VoiceDataManager: checkData: Refreshing list of all available voices...
+10-30 15:17:45.655 13588 13617 I VoiceDataDownloader: getAvailableVoicesInfo en-us
+10-30 15:17:45.655 13588 13617 I VoiceGenerator: Cache cleared
+10-30 15:17:45.655 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:45.655 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:45.655 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:45.655 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:45.655 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:45.655 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:45.655 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:45.655 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:45.655 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:45.655 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:45.655 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:45.655 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:45.655 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:45.657 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@281e41a in: CREATED
+10-30 15:17:45.657 13260 13260 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@281e41a
+10-30 15:17:45.658 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@281e41a in: STARTED
+10-30 15:17:45.658 13260 13260 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@281e41a
+10-30 15:17:45.658 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@281e41a in: RESUMED
+10-30 15:17:45.658 13260 13260 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@281e41a
+10-30 15:17:45.660 13260 13270 I TextToSpeech: Connected to TTS engine
+10-30 15:17:45.763 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:17:45.817 13588 13611 I LocalSynthesizer: Attempting to load synthesizer for voice: en-us-x-iog-seanet-embedded
+10-30 15:17:45.817 13588 13611 I ExoPlayerImpl: Init 20c52bf [AndroidXMedia3/1.11.1] [emu64a, sdk_gphone64_arm64, Google, 35] [Canary:ON]
+10-30 15:17:45.831 13588 13611 I ExoPlayerImpl: Init f2f9d8c [AndroidXMedia3/1.11.1] [emu64a, sdk_gphone64_arm64, Google, 35] [Canary:ON]
+10-30 15:17:45.838 13588 13611 I LocalSynthesizer: Voice en-us-x-iog-seanet-embedded is not supported by any existing synthesizers.
+10-30 15:17:45.838 13588 13611 I ComposerWrapperImpl: Initializing new monolithic pipeline. New voice: en-us-x-iog-seanet-embedded
+10-30 15:17:45.838 13588 13611 I PipelineReaderImpl: Initializing monolithic pipeline from disk: /data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/pipeline.pb
+10-30 15:17:45.839 13588 13611 I native  : I0000 00:00:1793369865.839855   13611 android_resource_loader.cc:109] Loading resources for en_us_x_embedded_havoc/15515763831801904967
+10-30 15:17:45.840 13588 13611 I native  : I0000 00:00:1793369865.840071   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/burdock_frame_config.pb" (as: FILE) ...
+10-30 15:17:45.840 13588 13611 I native  : I0000 00:00:1793369865.840122   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/burdock_frame_config.pb" of size 68
+10-30 15:17:45.840 13588 13611 I native  : I0000 00:00:1793369865.840235   13611 android_resource_loader.cc:100] Built resource acoustic_frame_config
+10-30 15:17:45.840 13588 13611 I native  : I0000 00:00:1793369865.840249   13611 android_resource_loader.cc:116] Loaded resource:acoustic_frame_config
+10-30 15:17:45.840 13588 13611 I native  : I0000 00:00:1793369865.840277   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/affixes_en_us_android.far" (as: FILE) ...
+10-30 15:17:45.840 13588 13611 I native  : I0000 00:00:1793369865.840296   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/affixes_en_us_android.far" of size 36782
+10-30 15:17:45.840 13588 13611 I native  : I0000 00:00:1793369865.840834   13611 android_resource_loader.cc:100] Built resource affix_word_splitter_grm
+10-30 15:17:45.840 13588 13611 I native  : I0000 00:00:1793369865.840884   13611 android_resource_loader.cc:116] Loaded resource:affix_word_splitter_grm
+10-30 15:17:45.840 13588 13611 I native  : I0000 00:00:1793369865.840898   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/affixes_params_en_us.pb" (as: FILE) ...
+10-30 15:17:45.840 13588 13611 I native  : I0000 00:00:1793369865.840913   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/affixes_params_en_us.pb" of size 420
+10-30 15:17:45.840 13588 13611 I native  : I0000 00:00:1793369865.840980   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling ['s] -- their grammars should disambiguate them.
+10-30 15:17:45.840 13588 13611 I native  : I0000 00:00:1793369865.840988   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling ['s] -- their grammars should disambiguate them.
+10-30 15:17:45.840 13588 13611 I native  : I0000 00:00:1793369865.840990   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling ['s] -- their grammars should disambiguate them.
+10-30 15:17:45.840 13588 13611 I native  : I0000 00:00:1793369865.840993   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling [s] -- their grammars should disambiguate them.
+10-30 15:17:45.840 13588 13611 I native  : I0000 00:00:1793369865.840996   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling [s] -- their grammars should disambiguate them.
+10-30 15:17:45.840 13588 13611 I native  : I0000 00:00:1793369865.840998   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling [s] -- their grammars should disambiguate them.
+10-30 15:17:45.841 13588 13611 I native  : I0000 00:00:1793369865.841002   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling [ed] -- their grammars should disambiguate them.
+10-30 15:17:45.841 13588 13611 I native  : I0000 00:00:1793369865.841005   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling [ed] -- their grammars should disambiguate them.
+10-30 15:17:45.841 13588 13611 I native  : I0000 00:00:1793369865.841014   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling [ed] -- their grammars should disambiguate them.
+10-30 15:17:45.841 13588 13611 I native  : I0000 00:00:1793369865.841022   13611 affix_word_splitter_data.cc:89] Loaded affixes in [/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/affixes_params_en_us.pb].
+10-30 15:17:45.841 13588 13611 I native  : I0000 00:00:1793369865.841036   13611 android_resource_loader.cc:100] Built resource affix_word_splitter
+10-30 15:17:45.841 13588 13611 I native  : I0000 00:00:1793369865.841041   13611 android_resource_loader.cc:116] Loaded resource:affix_word_splitter
+10-30 15:17:45.841 13588 13611 I native  : I0000 00:00:1793369865.841050   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/roman_numeral_android.far" (as: FILE) ...
+10-30 15:17:45.841 13588 13611 I native  : I0000 00:00:1793369865.841061   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/roman_numeral_android.far" of size 5112
+10-30 15:17:45.841 13588 13611 I native  : I0000 00:00:1793369865.841209   13611 android_resource_loader.cc:100] Built resource classify_roman_numerals_grm_fst
+10-30 15:17:45.841 13588 13611 I native  : I0000 00:00:1793369865.841237   13611 android_resource_loader.cc:116] Loaded resource:classify_roman_numerals_grm_fst
+10-30 15:17:45.841 13588 13611 I native  : I0000 00:00:1793369865.841242   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_us_pronounce.far" (as: FILE) ...
+10-30 15:17:45.841 13588 13611 I native  : I0000 00:00:1793369865.841265   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_us_pronounce.far" of size 5040
+10-30 15:17:45.841 13588 13611 I native  : I0000 00:00:1793369865.841337   13611 android_resource_loader.cc:100] Built resource compound_pronounce_grm_fst
+10-30 15:17:45.841 13588 13611 I native  : I0000 00:00:1793369865.841343   13611 android_resource_loader.cc:116] Loaded resource:compound_pronounce_grm_fst
+10-30 15:17:45.841 13588 13611 I native  : I0000 00:00:1793369865.841357   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/disambiguation_rules_en_us.pb" (as: FILE) ...
+10-30 15:17:45.841 13588 13611 I native  : I0000 00:00:1793369865.841376   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/disambiguation_rules_en_us.pb" of size 317746
+10-30 15:17:45.967 13588 13611 I native  : I0000 00:00:1793369865.967368   13611 android_resource_loader.cc:100] Built resource disambiguation_rules
+10-30 15:17:45.967 13588 13611 I native  : I0000 00:00:1793369865.967481   13611 android_resource_loader.cc:116] Loaded resource:disambiguation_rules
+10-30 15:17:45.967 13588 13611 I native  : I0000 00:00:1793369865.967526   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/en_us_x_embedded_havoc_backend_engine_config.pb" (as: FILE) ...
+10-30 15:17:45.967 13588 13611 I native  : I0000 00:00:1793369865.967659   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/en_us_x_embedded_havoc_backend_engine_config.pb" of size 54
+10-30 15:17:45.967 13588 13611 I native  : I0000 00:00:1793369865.967746   13611 android_resource_loader.cc:100] Built resource engine_config
+10-30 15:17:45.967 13588 13611 I native  : I0000 00:00:1793369865.967775   13611 android_resource_loader.cc:116] Loaded resource:engine_config
+10-30 15:17:45.967 13588 13611 I native  : I0000 00:00:1793369865.967805   13611 android_resource_loader.cc:100] Built resource guided_synthesis
+10-30 15:17:45.967 13588 13611 I native  : I0000 00:00:1793369865.967819   13611 android_resource_loader.cc:116] Loaded resource:guided_synthesis
+10-30 15:17:45.967 13588 13611 I native  : I0000 00:00:1793369865.967836   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/mapping_grammar_en.far" (as: FILE) ...
+10-30 15:17:45.967 13588 13611 I native  : I0000 00:00:1793369865.967856   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/mapping_grammar_en.far" of size 863
+10-30 15:17:45.967 13588 13611 I native  : I0000 00:00:1793369865.967956   13611 android_resource_loader.cc:100] Built resource homograph_mapping_grammar
+10-30 15:17:45.967 13588 13611 I native  : I0000 00:00:1793369865.967981   13611 android_resource_loader.cc:116] Loaded resource:homograph_mapping_grammar
+10-30 15:17:45.968 13588 13611 I native  : I0000 00:00:1793369865.968003   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/lettuce_model.fb" (as: MEMORY) ...
+10-30 15:17:45.968 13588 13611 I native  : I0000 00:00:1793369865.968250   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/lettuce_model.fb" of size 2040880
+10-30 15:17:45.968 13588 13611 I native  : I0000 00:00:1793369865.968666   13611 android_resource_loader.cc:100] Built resource lettuce_model_resource
+10-30 15:17:45.968 13588 13611 I native  : I0000 00:00:1793369865.968700   13611 android_resource_loader.cc:116] Loaded resource:lettuce_model_resource
+10-30 15:17:45.968 13588 13611 I native  : I0000 00:00:1793369865.968725   13611 android_resource_loader.cc:100] Built resource lettuce_model_scorer
+10-30 15:17:45.968 13588 13611 I native  : I0000 00:00:1793369865.968749   13611 android_resource_loader.cc:116] Loaded resource:lettuce_model_scorer
+10-30 15:17:45.968 13588 13611 I native  : I0000 00:00:1793369865.968769   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/lettuce_classify_embedded_us_generated_android.far" (as: FILE) ...
+10-30 15:17:45.968 13588 13611 I native  : I0000 00:00:1793369865.968818   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/lettuce_classify_embedded_us_generated_android.far" of size 4621001
+10-30 15:17:46.010 13588 13611 I native  : I0000 00:00:1793369866.010728   13611 android_resource_loader.cc:100] Built resource lettuce_node_generator_grm
+10-30 15:17:46.010 13588 13611 I native  : I0000 00:00:1793369866.010876   13611 android_resource_loader.cc:116] Loaded resource:lettuce_node_generator_grm
+10-30 15:17:46.010 13588 13611 I native  : I0000 00:00:1793369866.010893   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/lucid_collection_android.far" (as: FILE) ...
+10-30 15:17:46.010 13588 13611 I native  : I0000 00:00:1793369866.010942   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/lucid_collection_android.far" of size 307960
+10-30 15:17:46.011 13588 13611 I native  : I0000 00:00:1793369866.011946   13611 android_resource_loader.cc:100] Built resource lucid_parser_grm_fst
+10-30 15:17:46.012 13588 13611 I native  : I0000 00:00:1793369866.011999   13611 android_resource_loader.cc:116] Loaded resource:lucid_parser_grm_fst
+10-30 15:17:46.012 13588 13611 I native  : I0000 00:00:1793369866.012017   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/markup_triggers.pb" (as: FILE) ...
+10-30 15:17:46.012 13588 13611 I native  : I0000 00:00:1793369866.012053   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/markup_triggers.pb" of size 930
+10-30 15:17:46.012 13588 13611 I native  : I0000 00:00:1793369866.012129   13611 android_resource_loader.cc:100] Built resource markup_triggers
+10-30 15:17:46.012 13588 13611 I native  : I0000 00:00:1793369866.012135   13611 android_resource_loader.cc:116] Loaded resource:markup_triggers
+10-30 15:17:46.012 13588 13611 I native  : I0000 00:00:1793369866.012148   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/morphosyntactic_mapping.pb" (as: FILE) ...
+10-30 15:17:46.012 13588 13611 I native  : I0000 00:00:1793369866.012165   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/morphosyntactic_mapping.pb" of size 6
+10-30 15:17:46.012 13588 13611 I native  : I0000 00:00:1793369866.012197   13611 android_resource_loader.cc:100] Built resource morph_analyzer_attribute_map
+10-30 15:17:46.012 13588 13611 I native  : I0000 00:00:1793369866.012204   13611 android_resource_loader.cc:116] Loaded resource:morph_analyzer_attribute_map
+10-30 15:17:46.012 13588 13611 I native  : I0000 00:00:1793369866.012237   13611 android_resource_loader.cc:100] Built resource multilingual_capabilities
+10-30 15:17:46.012 13588 13611 I native  : I0000 00:00:1793369866.012245   13611 android_resource_loader.cc:116] Loaded resource:multilingual_capabilities
+10-30 15:17:46.012 13588 13611 I native  : I0000 00:00:1793369866.012256   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_us_phonology.pb" (as: FILE) ...
+10-30 15:17:46.012 13588 13611 I native  : I0000 00:00:1793369866.012276   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_us_phonology.pb" of size 2214
+10-30 15:17:46.012 13588 13611 W native  : W0000 00:00:1793369866.012536   13611 phonology.cc:80] Phonemes @, @` have non-distinctive features. See b/111971558.
+10-30 15:17:46.012 13588 13611 W native  : W0000 00:00:1793369866.012560   13611 phonology.cc:80] Phonemes l, r\ have non-distinctive features. See b/111971558.
+10-30 15:17:46.012 13588 13611 I native  : I0000 00:00:1793369866.012778   13611 android_resource_loader.cc:100] Built resource phonology
+10-30 15:17:46.012 13588 13611 I native  : I0000 00:00:1793369866.012812   13611 android_resource_loader.cc:116] Loaded resource:phonology
+10-30 15:17:46.012 13588 13611 I native  : I0000 00:00:1793369866.012850   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_morphology" (as: FILE) ...
+10-30 15:17:46.012 13588 13611 I native  : I0000 00:00:1793369866.012886   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_morphology" of size 2753822
+10-30 15:17:46.017 13588 13611 I native  : I0000 00:00:1793369866.017822   13611 model-api.cc:46] Registered model under key morphology
+10-30 15:17:46.030 13588 13611 I native  : I0000 00:00:1793369866.030370   13611 android_resource_loader.cc:100] Built resource analyze_morphology_saft_portable_algo
+10-30 15:17:46.030 13588 13611 I native  : I0000 00:00:1793369866.030504   13611 android_resource_loader.cc:116] Loaded resource:analyze_morphology_saft_portable_algo
+10-30 15:17:46.030 13588 13611 I native  : I0000 00:00:1793369866.030690   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/ipa_to_tts_to-en_us.far" (as: FILE) ...
+10-30 15:17:46.030 13588 13611 I native  : I0000 00:00:1793369866.030838   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/ipa_to_tts_to-en_us.far" of size 511570
+10-30 15:17:46.065 13588 13611 I native  : I0000 00:00:1793369866.065555   13611 android_resource_loader.cc:100] Built resource ipa_to_tts_phoneme_mapper
+10-30 15:17:46.065 13588 13611 I native  : I0000 00:00:1793369866.065806   13611 android_resource_loader.cc:116] Loaded resource:ipa_to_tts_phoneme_mapper
+10-30 15:17:46.065 13588 13611 I native  : I0000 00:00:1793369866.065853   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_us.hlex.bin" (as: MEMORY) ...
+10-30 15:17:46.065 13588 13611 I native  : I0000 00:00:1793369866.065935   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_us.hlex.bin" of size 5118800
+10-30 15:17:46.066 13588 13611 I native  : I0000 00:00:1793369866.066540   13611 android_resource_loader.cc:100] Built resource lexicon
+10-30 15:17:46.066 13588 13611 I native  : I0000 00:00:1793369866.066573   13611 android_resource_loader.cc:116] Loaded resource:lexicon
+10-30 15:17:46.066 13588 13611 I native  : I0000 00:00:1793369866.066612   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/homographs_model_en_us_embedded.bin" (as: MEMORY) ...
+10-30 15:17:46.066 13588 13611 I native  : I0000 00:00:1793369866.066656   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/homographs_model_en_us_embedded.bin" of size 398840
+10-30 15:17:46.092  1282  1282 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-30 15:17:46.095 13588 13611 I native  : I0000 00:00:1793369866.095196   13611 android_resource_loader.cc:100] Built resource homograph_classifier_model_resource
+10-30 15:17:46.095 13588 13611 I native  : I0000 00:00:1793369866.095371   13611 android_resource_loader.cc:116] Loaded resource:homograph_classifier_model_resource
+10-30 15:17:46.095 13588 13611 I native  : I0000 00:00:1793369866.095444   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/lettuce_node_generator_params_embedded_us_runtime.pb" (as: FILE) ...
+10-30 15:17:46.095 13588 13611 I native  : I0000 00:00:1793369866.095521   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/lettuce_node_generator_params_embedded_us_runtime.pb" of size 2697
+10-30 15:17:46.097   550   561 I system_server: NativeAlloc concurrent mark compact GC freed 5958KB AllocSpace bytes, 5(100KB) LOS objects, 41% free, 33MB/57MB, paused 570us,1.874ms total 565.783ms
+10-30 15:17:46.100   550   563 W System  : A resource failed to call HardwareBuffer.close.
+10-30 15:17:46.121   550   563 W System  : A resource failed to call HardwareBuffer.close.
+10-30 15:17:46.122  1282  1282 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+10-30 15:17:46.122   550   563 W System  : A resource failed to call HardwareBuffer.close.
+10-30 15:17:46.122   550   563 W System  : A resource failed to call release.
+10-30 15:17:46.122   550   563 W System  : A resource failed to call HardwareBuffer.close.
+10-30 15:17:46.123   550   563 W System  : A resource failed to call release.
+10-30 15:17:46.123   550   563 W System  : A resource failed to call HardwareBuffer.close.
+10-30 15:17:46.123   550   563 W System  : A resource failed to call release.
+10-30 15:17:46.123   550   563 W System  : A resource failed to call HardwareBuffer.close.
+10-30 15:17:46.123   550   563 W System  : A resource failed to call release.
+10-30 15:17:46.123   550   563 W System  : A resource failed to call release.
+10-30 15:17:46.123   550   563 W System  : A resource failed to call release.
+10-30 15:17:46.228 13260 13260 I Choreographer: Skipped 32 frames!  The application may be doing too much work on its main thread.
+10-30 15:17:46.232   550   570 W ziparchive: Unable to open '/data/app/~~RtTiwXVxZ-RGLXj5SJeA9A==/com.bellfamily.bastischool-PFzM8kzDJ7ysJU1km3uSCw==/base.dm': No such file or directory
+10-30 15:17:46.233   550   570 I ActivityTaskManager: Displayed com.bellfamily.bastischool/.MainActivity for user 0: +679ms
+10-30 15:17:46.242  1282  1282 D BaseDepthController: setSurface:
+10-30 15:17:46.242  1282  1282 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-30 15:17:46.242  1282  1282 D BaseDepthController: 	mSurface: null
+10-30 15:17:46.242  1282  1282 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+10-30 15:17:46.243  1282  1282 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+10-30 15:17:46.243  1282  1282 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:4)
+10-30 15:17:46.243  1282  1282 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:1)
+10-30 15:17:46.243  1282  1282 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:34)
+10-30 15:17:46.243  1282  1282 D StatsLog: LAUNCHER_ONSTOP
+10-30 15:17:46.244  1282  1282 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+10-30 15:17:46.255  1282  1613 D OneSearchSuggestProvider: Shut down the binder channel
+10-30 15:17:46.256  1282  8242 I IPCThreadState: oneway function results for code 2 on binder at 0xb400007b9ed29c60 will be dropped but finished with status UNKNOWN_TRANSACTION
+10-30 15:17:46.259   780   929 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@b79af1
+10-30 15:17:46.260   550  1591 W InputManager-JNI: Input channel object '553c0b3 Splash Screen com.bellfamily.bastischool (client)' was disposed without first being removed with the input manager!
+10-30 15:17:46.302   550   662 I ImeTracker: com.bellfamily.bastischool:2a64ed35: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-30 15:17:46.302   550   662 I ImeTracker: com.bellfamily.bastischool:2a64ed35: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-30 15:17:46.306  5889  5889 I SubtypeOperator: SubtypeOperator$1.onUnbindInput():44
+10-30 15:17:46.307  5889  5889 I SubtypeOperator: SubtypeOperator$1.onBindInput():33
+10-30 15:17:46.309  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2404
+10-30 15:17:46.310 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:17:46.311  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.bellfamily.bastischool, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-30 15:17:46.312  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:17:46.315  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 0, locked = false
+10-30 15:17:46.316  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:17:46.511 13588 13611 I native  : I0000 00:00:1793369866.511015   13611 exl_node_generator.cc:58] Setting legal word grammar as macro_only: true
+10-30 15:17:46.511 13588 13611 I native  : I0000 00:00:1793369866.511295   13611 android_resource_loader.cc:100] Built resource lettuce_node_generator
+10-30 15:17:46.511 13588 13611 I native  : I0000 00:00:1793369866.511303   13611 android_resource_loader.cc:116] Loaded resource:lettuce_node_generator
+10-30 15:17:46.511 13588 13611 I native  : I0000 00:00:1793369866.511323   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/burdock_model.params.pb" (as: FILE) ...
+10-30 15:17:46.511 13588 13611 I native  : I0000 00:00:1793369866.511357   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/burdock_model.params.pb" of size 8875
+10-30 15:17:46.511 13588 13611 I native  : I0000 00:00:1793369866.511772   13611 android_resource_loader.cc:100] Built resource lstm_add_specification_resource
+10-30 15:17:46.511 13588 13611 I native  : I0000 00:00:1793369866.511795   13611 android_resource_loader.cc:116] Loaded resource:lstm_add_specification_resource
+10-30 15:17:46.511 13588 13611 I native  : I0000 00:00:1793369866.511838   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/chive_model_fused.pb" (as: FILE) ...
+10-30 15:17:46.511 13588 13611 I native  : I0000 00:00:1793369866.511868   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/chive_model_fused.pb" of size 1281
+10-30 15:17:46.511 13588 13611 I native  : I0000 00:00:1793369866.511909   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/burdock_valerian_model.tflite" (as: MEMORY) ...
+10-30 15:17:46.511 13588 13611 I native  : I0000 00:00:1793369866.511957   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/burdock_valerian_model.tflite" of size 1790608
+10-30 15:17:46.512 13588 13611 E tflite  : third_party/tensorflow/lite/core/subgraph.cc:1092 tensor.data.raw != nullptr was not true.
+10-30 15:17:46.512 13588 13611 I native  : I0000 00:00:1793369866.512520   13611 chive_inference_resource.cc:233] Creating new CHiVE model [model graph]:
+10-30 15:17:46.512 13588 13611 I native  : I0000 00:00:1793369866.512530   13611 chive_model.cc:179] Creating a single pass CHiVE model
+10-30 15:17:46.512 13588 13611 I native  : I0000 00:00:1793369866.512933   13611 android_resource_loader.cc:100] Built resource chive_inference_config
+10-30 15:17:46.512 13588 13611 I native  : I0000 00:00:1793369866.512968   13611 android_resource_loader.cc:116] Loaded resource:chive_inference_config
+10-30 15:17:46.512 13588 13611 I native  : I0000 00:00:1793369866.512983   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/converter_en_us_android.far" (as: FILE) ...
+10-30 15:17:46.513 13588 13611 I native  : I0000 00:00:1793369866.513051   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/converter_en_us_android.far" of size 1521
+10-30 15:17:46.513 13588 13611 I native  : I0000 00:00:1793369866.513172   13611 android_resource_loader.cc:100] Built resource pron_buffet_to_tts_converter
+10-30 15:17:46.513 13588 13611 I native  : I0000 00:00:1793369866.513176   13611 android_resource_loader.cc:116] Loaded resource:pron_buffet_to_tts_converter
+10-30 15:17:46.513 13588 13611 I native  : I0000 00:00:1793369866.513185   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/regexp_rewrite_embedded.pb" (as: FILE) ...
+10-30 15:17:46.513 13588 13611 I native  : I0000 00:00:1793369866.513197   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/regexp_rewrite_embedded.pb" of size 6111
+10-30 15:17:46.513 13588 13611 I native  : I0000 00:00:1793369866.513310   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/punctuation.pb" (as: FILE) ...
+10-30 15:17:46.513 13588 13611 I native  : I0000 00:00:1793369866.513327   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/punctuation.pb" of size 452
+10-30 15:17:46.540 13588 13611 E native  : E0000 00:00:1793369866.540753   13611 re2.cc:275] Error parsing '^|[^\p{Letter}\\]': invalid character class range: \p{Letter}
+10-30 15:17:46.540 13588 13611 E native  : E0000 00:00:1793369866.540871   13611 replacement_rule.cc:35] INVALID_ARGUMENT: Invalid left_context regexp: invalid character class range: \p{Letter}
+10-30 15:17:46.540 13588 13611 E native  : === Source Location Trace: ===
+10-30 15:17:46.540 13588 13611 E native  : speech/tts/libs/unicode/re2_tracked_rewrite.cc:51
+10-30 15:17:46.540 13588 13611 E native  : speech/tts/libs/unicode/re2_tracked_rewrite.cc:71
+10-30 15:17:46.540 13588 13611 E native  : E0000 00:00:1793369866.540916   13611 regexp_rewriter.cc:33] Error creating rule MessageLite at 0xb400007b3ece7fb0.
+10-30 15:17:46.541 13588 13611 I native  : I0000 00:00:1793369866.541243   13611 android_resource_loader.cc:100] Built resource rewrite_algo
+10-30 15:17:46.541 13588 13611 I native  : I0000 00:00:1793369866.541371   13611 android_resource_loader.cc:116] Loaded resource:rewrite_algo
+10-30 15:17:46.541 13588 13611 I native  : I0000 00:00:1793369866.541387   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/roman_numeral_contexts.pb" (as: FILE) ...
+10-30 15:17:46.541 13588 13611 I native  : I0000 00:00:1793369866.541414   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/roman_numeral_contexts.pb" of size 9114
+10-30 15:17:46.541 13588 13611 I native  : I0000 00:00:1793369866.541525   13611 android_resource_loader.cc:100] Built resource roman_numeral_context_words
+10-30 15:17:46.541 13588 13611 I native  : I0000 00:00:1793369866.541532   13611 android_resource_loader.cc:116] Loaded resource:roman_numeral_context_words
+10-30 15:17:46.541 13588 13611 I native  : I0000 00:00:1793369866.541757   13611 android_resource_loader.cc:100] Built resource classify_roman_numerals_grm_algo
+10-30 15:17:46.541 13588 13611 I native  : I0000 00:00:1793369866.541766   13611 android_resource_loader.cc:116] Loaded resource:classify_roman_numerals_grm_algo
+10-30 15:17:46.541 13588 13611 I native  : I0000 00:00:1793369866.541783   13611 android_resource_loader.cc:100] Built resource runtime_override
+10-30 15:17:46.541 13588 13611 I native  : I0000 00:00:1793369866.541789   13611 android_resource_loader.cc:116] Loaded resource:runtime_override
+10-30 15:17:46.541 13588 13611 I native  : I0000 00:00:1793369866.541800   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/seanet_model_options.pb" (as: FILE) ...
+10-30 15:17:46.541 13588 13611 I native  : I0000 00:00:1793369866.541818   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/seanet_model_options.pb" of size 32
+10-30 15:17:46.541 13588 13611 I native  : I0000 00:00:1793369866.541858   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/seanet_model.tflite" (as: FILE) ...
+10-30 15:17:46.541 13588 13611 I native  : I0000 00:00:1793369866.541879   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/seanet_model.tflite" of size 2786320
+10-30 15:17:46.548 13588 13611 I native  : I0000 00:00:1793369866.548864   13611 android_resource_loader.cc:100] Built resource seanet_enhancer
+10-30 15:17:46.548 13588 13611 I native  : I0000 00:00:1793369866.548907   13611 android_resource_loader.cc:116] Loaded resource:seanet_enhancer
+10-30 15:17:46.548 13588 13611 I native  : I0000 00:00:1793369866.548918   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/sb_model.bin" (as: MEMORY) ...
+10-30 15:17:46.548 13588 13611 I native  : I0000 00:00:1793369866.548962   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/sb_model.bin" of size 48432
+10-30 15:17:46.549 13588 13611 I native  : I0000 00:00:1793369866.549013   13611 android_resource_loader.cc:100] Built resource sentence_boundary_model_resource
+10-30 15:17:46.549 13588 13611 I native  : I0000 00:00:1793369866.549020   13611 android_resource_loader.cc:116] Loaded resource:sentence_boundary_model_resource
+10-30 15:17:46.549 13588 13611 I native  : I0000 00:00:1793369866.549030   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_verbalize_spec.pb" (as: FILE) ...
+10-30 15:17:46.549 13588 13611 I native  : I0000 00:00:1793369866.549038   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_verbalize_spec.pb" of size 3984
+10-30 15:17:46.549 13588 13611 I native  : I0000 00:00:1793369866.549102   13611 android_resource_loader.cc:100] Built resource serialization_spec
+10-30 15:17:46.549 13588 13611 I native  : I0000 00:00:1793369866.549120   13611 android_resource_loader.cc:116] Loaded resource:serialization_spec
+10-30 15:17:46.549 13588 13611 I native  : I0000 00:00:1793369866.549129   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/textnorm_params_embedded_en_us.pb" (as: FILE) ...
+10-30 15:17:46.549 13588 13611 I native  : I0000 00:00:1793369866.549145   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/textnorm_params_embedded_en_us.pb" of size 321
+10-30 15:17:46.549 13588 13611 I native  : I0000 00:00:1793369866.549218   13611 android_resource_loader.cc:100] Built resource textnorm_params
+10-30 15:17:46.549 13588 13611 I native  : I0000 00:00:1793369866.549227   13611 android_resource_loader.cc:116] Loaded resource:textnorm_params
+10-30 15:17:46.550 13588 13611 I native  : I0000 00:00:1793369866.550032   13611 android_resource_loader.cc:100] Built resource icu_transliterator_to_latin
+10-30 15:17:46.550 13588 13611 I native  : I0000 00:00:1793369866.550158   13611 android_resource_loader.cc:116] Loaded resource:icu_transliterator_to_latin
+10-30 15:17:46.550 13588 13611 I native  : I0000 00:00:1793369866.550173   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/g2p_m3_syls0_stress0_en-US.fst" (as: FILE) ...
+10-30 15:17:46.550 13588 13611 I native  : I0000 00:00:1793369866.550187   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/g2p_m3_syls0_stress0_en-US.fst" of size 700928
+10-30 15:17:46.550 13588 13611 I native  : I0000 00:00:1793369866.550397   13611 compact_fst.cc:20] Loading FST from "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/g2p_m3_syls0_stress0_en-US.fst" ...
+10-30 15:17:46.590 13588 13611 I native  : I0000 00:00:1793369866.590881   13611 decoder.cc:51] G2P FST loaded (61 graphemes and 41 phonemes).
+10-30 15:17:46.595 13588 13611 I native  : I0000 00:00:1793369866.595300   13611 android_resource_loader.cc:100] Built resource learned_fst_g2p_mapper
+10-30 15:17:46.595 13588 13611 I native  : I0000 00:00:1793369866.595361   13611 android_resource_loader.cc:116] Loaded resource:learned_fst_g2p_mapper
+10-30 15:17:46.595 13588 13611 I native  : I0000 00:00:1793369866.595423   13611 android_resource_loader.cc:100] Built resource spelling_normalizer
+10-30 15:17:46.595 13588 13611 I native  : I0000 00:00:1793369866.595433   13611 android_resource_loader.cc:116] Loaded resource:spelling_normalizer
+10-30 15:17:46.595 13588 13611 I native  : I0000 00:00:1793369866.595440   13611 android_resource_loader.cc:100] Built resource utf8_utils
+10-30 15:17:46.595 13588 13611 I native  : I0000 00:00:1793369866.595442   13611 android_resource_loader.cc:116] Loaded resource:utf8_utils
+10-30 15:17:46.595 13588 13611 I native  : I0000 00:00:1793369866.595463   13611 android_resource_loader.cc:100] Built resource lexical_classifier
+10-30 15:17:46.595 13588 13611 I native  : I0000 00:00:1793369866.595469   13611 android_resource_loader.cc:116] Loaded resource:lexical_classifier
+10-30 15:17:46.595 13588 13611 I native  : I0000 00:00:1793369866.595481   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/universal_carrier_pigeon_config.binarypb" (as: FILE) ...
+10-30 15:17:46.595 13588 13611 I native  : I0000 00:00:1793369866.595563   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/universal_carrier_pigeon_config.binarypb" of size 52
+10-30 15:17:46.595 13588 13611 I native  : I0000 00:00:1793369866.595754   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/universal_carrier_pigeon_model.tflite" (as: FILE) ...
+10-30 15:17:46.595 13588 13611 I native  : I0000 00:00:1793369866.595790   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/universal_carrier_pigeon_model.tflite" of size 638952
+10-30 15:17:46.601 13588 13611 I native  : I0000 00:00:1793369866.601158   13611 android_resource_loader.cc:100] Built resource carrier_pigeon_algo
+10-30 15:17:46.601 13588 13611 I native  : I0000 00:00:1793369866.601231   13611 android_resource_loader.cc:116] Loaded resource:carrier_pigeon_algo
+10-30 15:17:46.601 13588 13611 I native  : I0000 00:00:1793369866.601264   13611 android_resource_loader.cc:100] Built resource icu_transliterator
+10-30 15:17:46.601 13588 13611 I native  : I0000 00:00:1793369866.601279   13611 android_resource_loader.cc:116] Loaded resource:icu_transliterator
+10-30 15:17:46.608 13588 13611 I native  : I0000 00:00:1793369866.608493   13611 android_resource_loader.cc:100] Built resource token_resolver_algo
+10-30 15:17:46.608 13588 13611 I native  : I0000 00:00:1793369866.608563   13611 android_resource_loader.cc:116] Loaded resource:token_resolver_algo
+10-30 15:17:46.608 13588 13611 I native  : I0000 00:00:1793369866.608582   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/variant_overrides_en_us.pb" (as: FILE) ...
+10-30 15:17:46.608 13588 13611 I native  : I0000 00:00:1793369866.608620   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/variant_overrides_en_us.pb" of size 1525
+10-30 15:17:46.608 13588 13611 I native  : I0000 00:00:1793369866.608752   13611 android_resource_loader.cc:100] Built resource variant_overrides
+10-30 15:17:46.608 13588 13611 I native  : I0000 00:00:1793369866.608761   13611 android_resource_loader.cc:116] Loaded resource:variant_overrides
+10-30 15:17:46.608 13588 13611 I native  : I0000 00:00:1793369866.608766   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/variant_selection_model_en_us_embedded.bin" (as: MEMORY) ...
+10-30 15:17:46.608 13588 13611 I native  : I0000 00:00:1793369866.608793   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/variant_selection_model_en_us_embedded.bin" of size 221608
+10-30 15:17:46.608 13588 13611 I native  : I0000 00:00:1793369866.608805   13611 android_resource_loader.cc:100] Built resource variant_selection_model_data_resource
+10-30 15:17:46.608 13588 13611 I native  : I0000 00:00:1793369866.608808   13611 android_resource_loader.cc:116] Loaded resource:variant_selection_model_data_resource
+10-30 15:17:46.611 13588 13611 I native  : I0000 00:00:1793369866.611244   13611 select_variants.cc:128] Word with override has only one variant: her
+10-30 15:17:46.611 13588 13611 I native  : I0000 00:00:1793369866.611671   13611 android_resource_loader.cc:100] Built resource select_variants_algo
+10-30 15:17:46.611 13588 13611 I native  : I0000 00:00:1793369866.611692   13611 android_resource_loader.cc:116] Loaded resource:select_variants_algo
+10-30 15:17:46.611 13588 13611 I native  : I0000 00:00:1793369866.611702   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/us_verbalization_capabilities.pb" (as: FILE) ...
+10-30 15:17:46.611 13588 13611 I native  : I0000 00:00:1793369866.611735   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/us_verbalization_capabilities.pb" of size 5224
+10-30 15:17:46.611 13588 13611 I native  : I0000 00:00:1793369866.611908   13611 android_resource_loader.cc:100] Built resource verbalization_capabilities
+10-30 15:17:46.612 13588 13611 I native  : I0000 00:00:1793369866.611990   13611 android_resource_loader.cc:116] Loaded resource:verbalization_capabilities
+10-30 15:17:46.612 13588 13611 I native  : I0000 00:00:1793369866.612017   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/verbalize_embedded_android.far" (as: FILE) ...
+10-30 15:17:46.612 13588 13611 I native  : I0000 00:00:1793369866.612045   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/verbalize_embedded_android.far" of size 2373311
+10-30 15:17:46.616 13588 13611 I native  : I0000 00:00:1793369866.616025   13611 android_resource_loader.cc:100] Built resource verbalize_grm_fst
+10-30 15:17:46.616 13588 13611 I native  : I0000 00:00:1793369866.616133   13611 android_resource_loader.cc:116] Loaded resource:verbalize_grm_fst
+10-30 15:17:46.616 13588 13611 I native  : I0000 00:00:1793369866.616186   13611 android_resource_loader.cc:100] Built resource speller_algo
+10-30 15:17:46.616 13588 13611 I native  : I0000 00:00:1793369866.616195   13611 android_resource_loader.cc:116] Loaded resource:speller_algo
+10-30 15:17:46.617 13588 13611 I native  : I0000 00:00:1793369866.617274   13611 android_resource_loader.cc:100] Built resource verbalize_grm_algo
+10-30 15:17:46.617 13588 13611 I native  : I0000 00:00:1793369866.617319   13611 android_resource_loader.cc:116] Loaded resource:verbalize_grm_algo
+10-30 15:17:46.617 13588 13611 I native  : I0000 00:00:1793369866.617342   13611 voice_params_resource.cc:31] Voice information: MessageLite at 0xb400007c8f13da90
+10-30 15:17:46.617 13588 13611 I native  : I0000 00:00:1793369866.617348   13611 android_resource_loader.cc:100] Built resource voice_params
+10-30 15:17:46.617 13588 13611 I native  : I0000 00:00:1793369866.617350   13611 android_resource_loader.cc:116] Loaded resource:voice_params
+10-30 15:17:46.623 13588 13611 I native  : I0000 00:00:1793369866.623358   13611 android_resource_loader.cc:100] Built resource word_resolver_algo
+10-30 15:17:46.623 13588 13611 I native  : I0000 00:00:1793369866.623429   13611 android_resource_loader.cc:116] Loaded resource:word_resolver_algo
+10-30 15:17:46.623 13588 13611 I native  : I0000 00:00:1793369866.623458   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/xsampa_to_tts_to-en_us.far" (as: FILE) ...
+10-30 15:17:46.623 13588 13611 I native  : I0000 00:00:1793369866.623493   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/xsampa_to_tts_to-en_us.far" of size 27780
+10-30 15:17:46.623 13588 13611 I native  : I0000 00:00:1793369866.623696   13611 android_resource_loader.cc:100] Built resource xsampa_to_tts_phoneme_mapper
+10-30 15:17:46.623 13588 13611 I native  : I0000 00:00:1793369866.623760   13611 android_resource_loader.cc:116] Loaded resource:xsampa_to_tts_phoneme_mapper
+10-30 15:17:46.623 13588 13611 I native  : I0000 00:00:1793369866.623768   13611 local_pipeline_runner.cc:49] Done loading all resources from: {/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84}
+10-30 15:17:46.627 13588 13611 I ComposerWrapperImpl: Done initializing en-us-x-iog-seanet-embedded
+10-30 15:17:46.664 13588 13597 I GoogleTTSServiceImpl: currentLocale = en-US
+10-30 15:17:46.703 13588 13597 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+10-30 15:17:46.703 13260 13801 I TextToSpeech: Setting up the connection to TTS engine...
+10-30 15:17:46.756 13260 13260 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+10-30 15:17:46.756 13260 13260 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-30 15:17:46.869 13260 13267 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lEaFJrB456qROgjQtZ5g1w==/com.google.android.tts-DOLAV-WP50c7Fn_xn3q39g==/base.apk' with 1 weak references
+10-30 15:17:46.869 13260 13267 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lEaFJrB456qROgjQtZ5g1w==/com.google.android.tts-DOLAV-WP50c7Fn_xn3q39g==/split_config.arm64_v8a.apk' with 1 weak references
+10-30 15:17:46.869 13260 13267 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lEaFJrB456qROgjQtZ5g1w==/com.google.android.tts-DOLAV-WP50c7Fn_xn3q39g==/split_config.en.apk' with 1 weak references
+10-30 15:17:46.869 13260 13267 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lEaFJrB456qROgjQtZ5g1w==/com.google.android.tts-DOLAV-WP50c7Fn_xn3q39g==/split_config.xxhdpi.apk' with 1 weak references
+10-30 15:17:46.893 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:17:46.947 13260 13260 I WebViewFactory: Loading com.google.android.webview version 124.0.6367.219 (code 636771932)
+10-30 15:17:46.959 13260 13260 W ziparchive: Unable to open '/data/app/~~lTDflyRtuyY3HRFwN8WO6w==/com.google.android.trichromelibrary_636771932-0ODzZ2mflc8Re2EjY3_oZA==/TrichromeLibrary.dm': No such file or directory
+10-30 15:17:46.959 13260 13260 W ziparchive: Unable to open '/data/app/~~lTDflyRtuyY3HRFwN8WO6w==/com.google.android.trichromelibrary_636771932-0ODzZ2mflc8Re2EjY3_oZA==/TrichromeLibrary.dm': No such file or directory
+10-30 15:17:46.960 13260 13260 W ily.bastischool: Entry not found
+10-30 15:17:46.965 13260 13260 D nativeloader: Configuring clns-10 for other apk /data/app/~~lTDflyRtuyY3HRFwN8WO6w==/com.google.android.trichromelibrary_636771932-0ODzZ2mflc8Re2EjY3_oZA==/TrichromeLibrary.apk. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~9vkBXuITJZ-hb8EDGs7ROQ==/com.google.android.webview--vGizv4tkD1uvXWEdu_GLQ==/lib/arm64:/data/app/~~9vkBXuITJZ-hb8EDGs7ROQ==/com.google.android.webview--vGizv4tkD1uvXWEdu_GLQ==/WebViewGoogle.apk!/lib/arm64-v8a:/data/app/~~lTDflyRtuyY3HRFwN8WO6w==/com.google.android.trichromelibrary_636771932-0ODzZ2mflc8Re2EjY3_oZA==/TrichromeLibrary.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand
+10-30 15:17:46.966 13260 13260 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+10-30 15:17:46.967 13260 13260 W ziparchive: Unable to open '/data/app/~~9vkBXuITJZ-hb8EDGs7ROQ==/com.google.android.webview--vGizv4tkD1uvXWEdu_GLQ==/WebViewGoogle.dm': No such file or directory
+10-30 15:17:46.967 13260 13260 W ziparchive: Unable to open '/data/app/~~9vkBXuITJZ-hb8EDGs7ROQ==/com.google.android.webview--vGizv4tkD1uvXWEdu_GLQ==/WebViewGoogle.dm': No such file or directory
+10-30 15:17:46.986 13260 13260 D nativeloader: Configuring clns-11 for other apk /data/app/~~9vkBXuITJZ-hb8EDGs7ROQ==/com.google.android.webview--vGizv4tkD1uvXWEdu_GLQ==/WebViewGoogle.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~9vkBXuITJZ-hb8EDGs7ROQ==/com.google.android.webview--vGizv4tkD1uvXWEdu_GLQ==/lib/arm64:/data/app/~~9vkBXuITJZ-hb8EDGs7ROQ==/com.google.android.webview--vGizv4tkD1uvXWEdu_GLQ==/WebViewGoogle.apk!/lib/arm64-v8a:/data/app/~~lTDflyRtuyY3HRFwN8WO6w==/com.google.android.trichromelibrary_636771932-0ODzZ2mflc8Re2EjY3_oZA==/TrichromeLibrary.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand
+10-30 15:17:47.048 13260 13260 I cr_WVCFactoryProvider: Loaded version=124.0.6367.219 minSdkVersion=29 isBundle=false multiprocess=true packageId=2
+10-30 15:17:47.055 13260 13260 D nativeloader: Load /data/app/~~lTDflyRtuyY3HRFwN8WO6w==/com.google.android.trichromelibrary_636771932-0ODzZ2mflc8Re2EjY3_oZA==/TrichromeLibrary.apk!/lib/arm64-v8a/libmonochrome_64.so using ns clns-11 from class loader (caller=/data/app/~~9vkBXuITJZ-hb8EDGs7ROQ==/com.google.android.webview--vGizv4tkD1uvXWEdu_GLQ==/WebViewGoogle.apk): ok
+10-30 15:17:47.079 13260 13260 D nativeloader: Load /system/lib64/libwebviewchromium_plat_support.so using ns clns-11 from class loader (caller=/data/app/~~9vkBXuITJZ-hb8EDGs7ROQ==/com.google.android.webview--vGizv4tkD1uvXWEdu_GLQ==/WebViewGoogle.apk): ok
+10-30 15:17:47.115 13260 13824 I chromium: [1030/151747.099310:INFO:variations_seed_loader.cc(66)] Failed to open file for reading.: No such file or directory (2)
+10-30 15:17:47.119 13260 13824 I chromium: [1030/151747.118607:INFO:variations_seed_loader.cc(66)] Failed to open file for reading.: No such file or directory (2)
+10-30 15:17:47.125   550  4746 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@8c02ae47 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-30 15:17:47.148 13260 13260 I cr_LibraryLoader: Successfully loaded native library
+10-30 15:17:47.153   360   360 D Zygote  : Forked child process 13826
+10-30 15:17:47.160 13260 13260 I cr_CachingUmaRecorder: Flushed 6 samples from 6 histograms, 0 samples were dropped.
+10-30 15:17:47.180 13260 13260 I cr_CombinedPProvider: #registerProvider() provider:WV.V7@5154a0f isPolicyCacheEnabled:false policyProvidersSize:0
+10-30 15:17:47.181 13260 13260 I cr_PolicyProvider: #setManagerAndSource() 0
+10-30 15:17:47.198   550  4746 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@32bc33b9 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-30 15:17:47.206 13826 13826 I webview_service: Using CollectorTypeCMC GC.
+10-30 15:17:47.217 13826 13826 E webview_service: Not starting debugger since process cannot load the jdwp agent.
+10-30 15:17:47.222 13826 13826 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-30 15:17:47.224  3828  3828 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+10-30 15:17:47.224  3828  3828 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+10-30 15:17:47.226   848   848 D Zygote  : Forked child process 13839
+10-30 15:17:47.239 13839 13839 E libc    : SetHeapTaggingLevel: re-enabling tagging after it was disabled is not supported
+10-30 15:17:47.241 13839 13839 I ocessService0:0: Using CollectorTypeCMC GC.
+10-30 15:17:47.243 13826 13826 D CompatChangeReporter: Compat change id reported: 242716250; UID 10154; state: ENABLED
+10-30 15:17:47.246 13839 13839 E ocessService0:0: Not starting debugger since process cannot load the jdwp agent.
+10-30 15:17:47.249 13839 13839 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-30 15:17:47.257 13826 13826 W ziparchive: Unable to open '/data/app/~~lTDflyRtuyY3HRFwN8WO6w==/com.google.android.trichromelibrary_636771932-0ODzZ2mflc8Re2EjY3_oZA==/TrichromeLibrary.dm': No such file or directory
+10-30 15:17:47.257 13826 13826 W ziparchive: Unable to open '/data/app/~~lTDflyRtuyY3HRFwN8WO6w==/com.google.android.trichromelibrary_636771932-0ODzZ2mflc8Re2EjY3_oZA==/TrichromeLibrary.dm': No such file or directory
+10-30 15:17:47.257 13826 13826 W webview_service: Entry not found
+10-30 15:17:47.257 13826 13826 D nativeloader: Configuring clns-7 for other apk /data/app/~~lTDflyRtuyY3HRFwN8WO6w==/com.google.android.trichromelibrary_636771932-0ODzZ2mflc8Re2EjY3_oZA==/TrichromeLibrary.apk. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~9vkBXuITJZ-hb8EDGs7ROQ==/com.google.android.webview--vGizv4tkD1uvXWEdu_GLQ==/lib/arm64:/data/app/~~9vkBXuITJZ-hb8EDGs7ROQ==/com.google.android.webview--vGizv4tkD1uvXWEdu_GLQ==/WebViewGoogle.apk!/lib/arm64-v8a:/data/app/~~lTDflyRtuyY3HRFwN8WO6w==/com.google.android.trichromelibrary_636771932-0ODzZ2mflc8Re2EjY3_oZA==/TrichromeLibrary.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.webview
+10-30 15:17:47.257 13839 13839 D CompatChangeReporter: Compat change id reported: 242716250; UID 99064; state: ENABLED
+10-30 15:17:47.258 13826 13826 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+10-30 15:17:47.258 13826 13826 W ziparchive: Unable to open '/data/app/~~9vkBXuITJZ-hb8EDGs7ROQ==/com.google.android.webview--vGizv4tkD1uvXWEdu_GLQ==/WebViewGoogle.dm': No such file or directory
+10-30 15:17:47.258 13826 13826 W ziparchive: Unable to open '/data/app/~~9vkBXuITJZ-hb8EDGs7ROQ==/com.google.android.webview--vGizv4tkD1uvXWEdu_GLQ==/WebViewGoogle.dm': No such file or directory
+10-30 15:17:47.264 13826 13826 D nativeloader: Configuring clns-8 for other apk /data/app/~~9vkBXuITJZ-hb8EDGs7ROQ==/com.google.android.webview--vGizv4tkD1uvXWEdu_GLQ==/WebViewGoogle.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~9vkBXuITJZ-hb8EDGs7ROQ==/com.google.android.webview--vGizv4tkD1uvXWEdu_GLQ==/lib/arm64:/data/app/~~9vkBXuITJZ-hb8EDGs7ROQ==/com.google.android.webview--vGizv4tkD1uvXWEdu_GLQ==/WebViewGoogle.apk!/lib/arm64-v8a:/data/app/~~lTDflyRtuyY3HRFwN8WO6w==/com.google.android.trichromelibrary_636771932-0ODzZ2mflc8Re2EjY3_oZA==/TrichromeLibrary.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.webview
+10-30 15:17:47.264 13839 13839 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+10-30 15:17:47.274 13839 13839 I LoadedApk: No resource references to update in package com.google.android.trichromelibrary
+10-30 15:17:47.278 13839 13839 I cr_WebViewApkApp: Launched version=124.0.6367.219 minSdkVersion=29 isBundle=false processName=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0
+10-30 15:17:47.282 13826 13826 V GraphicsEnvironment: Currently set values for:
+10-30 15:17:47.282 13826 13826 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-30 15:17:47.282 13826 13826 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-30 15:17:47.282 13826 13826 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+10-30 15:17:47.282 13826 13826 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-30 15:17:47.283 13839 13839 I cr_ChildProcessService: Creating new ChildProcessService pid=13839
+10-30 15:17:47.287 13826 13826 I LoadedApk: No resource references to update in package com.google.android.trichromelibrary
+10-30 15:17:47.291 13826 13826 I cr_WebViewApkApp: Launched version=124.0.6367.219 minSdkVersion=29 isBundle=false processName=com.google.android.webview:webview_service
+10-30 15:17:47.308 13260 13260 I cr_CombinedPProvider: #linkNativeInternal() 1
+10-30 15:17:47.313 13260 13260 I cr_AppResProvider: #getApplicationRestrictionsFromUserManager() Bundle[EMPTY_PARCEL]
+10-30 15:17:47.313 13260 13260 I cr_PolicyProvider: #notifySettingsAvailable() 0
+10-30 15:17:47.313 13260 13260 I cr_CombinedPProvider: #onSettingsAvailable() 0
+10-30 15:17:47.313 13260 13260 I cr_CombinedPProvider: #flushPolicies()
+10-30 15:17:47.425 13260 13856 W chromium: [WARNING:dns_config_service_android.cc(81)] Failed to read DnsConfig.
+10-30 15:17:47.682 13260 13862 W cr_media: BLUETOOTH_CONNECT permission is missing.
+10-30 15:17:47.684 13260 13862 W cr_media: registerBluetoothIntentsIfNeeded: Requires BLUETOOTH permission
+10-30 15:17:47.716 13839 13853 I cr_LibraryLoader: Successfully loaded native library
+10-30 15:17:47.716 13839 13853 I cr_CachingUmaRecorder: Flushed 2 samples from 2 histograms, 0 samples were dropped.
+10-30 15:17:47.723 13839 13853 W SystemServiceRegistry: No service published for: uimode
+10-30 15:17:47.754 13839 13853 W chromium: [WARNING:runtime_features.cc(694)] SharedStorage for M118+ cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI,SharedStorageAPIM118 in addition.
+10-30 15:17:47.754 13839 13853 W chromium: [WARNING:runtime_features.cc(730)] AttributionReportingCrossAppWeb cannot be enabled in this configuration. Use --enable-features=ConversionMeasurement,AttributionReportingCrossAppWeb in addition.
+10-30 15:17:47.777 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:17:47.807  3828  3867 I FontLog : (REDACTED) Received query %s, URI %s
+10-30 15:17:47.812  3828  3867 I FontLog : (REDACTED) Query [%s] resolved to %s
+10-30 15:17:47.839  3828  3867 I FontLog : (REDACTED) Font PFD returned from cache for %s
+10-30 15:17:47.843  3828  3867 I FontLog : (REDACTED) Fetch %s end status %s
+10-30 15:17:47.865  3828  3867 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+10-30 15:17:47.873 13260 13276 D EGL_emulation: app_time_stats: avg=272.71ms min=38.15ms max=953.31ms count=6
+10-30 15:17:47.908  3828  3867 I FontLog : (REDACTED) Received query %s, URI %s
+10-30 15:17:47.908  3828  3867 I FontLog : (REDACTED) Query [%s] resolved to %s
+10-30 15:17:47.916  3828  3867 I FontLog : (REDACTED) Fetch %s end status %s
+10-30 15:17:47.932  3828  3867 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+10-30 15:17:47.935  3828  3867 I FontLog : (REDACTED) Received query %s, URI %s
+10-30 15:17:47.935  3828  3867 I FontLog : (REDACTED) Query [%s] resolved to %s
+10-30 15:17:47.936  3828  3867 I FontLog : (REDACTED) Font PFD returned from cache for %s
+10-30 15:17:47.936  3828  3867 I FontLog : (REDACTED) Fetch %s end status %s
+10-30 15:17:47.940  3828  3867 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+10-30 15:17:47.944  3828  3867 I FontLog : (REDACTED) Received query %s, URI %s
+10-30 15:17:47.944  3828  3867 I FontLog : (REDACTED) Query [%s] resolved to %s
+10-30 15:17:47.946  3828  3867 I FontLog : (REDACTED) Font PFD returned from cache for %s
+10-30 15:17:47.946  3828  3867 I FontLog : (REDACTED) Fetch %s end status %s
+10-30 15:17:47.949  3828  4194 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+10-30 15:17:47.999 13839 13853 I chromium: [INFO:viewport_data.cc(133)] E2E_Used ViewportFitCover
+10-30 15:17:48.033 13839 13853 I chromium: [INFO:document_style_environment_variables.cc(104)] E2E_Used SafeAreaInsetBottom
+10-30 15:17:48.160 13260 13260 I ActivityThread: Schedule relaunch activity: com.bellfamily.bastischool.MainActivity
+10-30 15:17:48.163 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@281e41a in: PAUSED
+10-30 15:17:48.164 13260 13260 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@281e41a
+10-30 15:17:48.164 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@281e41a in: STOPPED
+10-30 15:17:48.164 13260 13260 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@281e41a
+10-30 15:17:48.186 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@281e41a in: DESTROYED
+10-30 15:17:48.186 13260 13260 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+10-30 15:17:48.188 13588 13588 I GoogleTtsServicePeer: onUnbind() called for Google TTS service.
+10-30 15:17:48.188 13260 13260 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@994e87e
+10-30 15:17:48.188 13588 13588 I ComposerWrapperImpl: Deleting composer, current voice = en-us-x-iog-seanet-embedded
+10-30 15:17:48.189 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c3172e0 in: PRE_ON_CREATE
+10-30 15:17:48.189 13260 13260 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was DESTROYED
+10-30 15:17:48.190   550   550 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+10-30 15:17:48.191 13260 13271 I TextToSpeech: Disconnected from TTS engine
+10-30 15:17:48.201 13260 13260 I TextToSpeech: Sucessfully bound to com.google.android.tts
+10-30 15:17:48.210 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c3172e0 in: CREATED
+10-30 15:17:48.210 13260 13260 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@c3172e0
+10-30 15:17:48.210 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c3172e0 in: STARTED
+10-30 15:17:48.210 13260 13260 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@c3172e0
+10-30 15:17:48.211 13260 13260 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+10-30 15:17:48.211 13260 13260 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-30 15:17:48.211 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c3172e0 in: RESUMED
+10-30 15:17:48.211 13260 13260 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@c3172e0
+10-30 15:17:48.214 13260 13260 I ImeTracker: com.bellfamily.bastischool:6d6935df: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_CLOSE_CURRENT_SESSION fromUser false
+10-30 15:17:48.215   550   662 I ImeTracker: com.bellfamily.bastischool:6d6935df: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-30 15:17:48.217 13260 13260 E chromium: [ERROR:aw_browser_terminator.cc(154)] Renderer process (13839) crash detected (code -1).
+10-30 15:17:48.234   550   583 I libprocessgroup: Removed cgroup /sys/fs/cgroup/uid_99064/pid_13839
+10-30 15:17:48.234   848   848 I Zygote  : Process 13839 exited cleanly (0)
+10-30 15:17:48.235 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:17:48.255 13588 13588 I GoogleTtsServicePeer: Creating Google TTS service, version googletts.google-speech-apk_20260928.02_p0.989914902
+10-30 15:17:48.255 13588 13588 I VoiceDataManager: checkData: Refreshing list of all available voices...
+10-30 15:17:48.258 13260 13271 I TextToSpeech: Connected to TTS engine
+10-30 15:17:48.268 13588 13617 I VoiceDataDownloader: getAvailableVoicesInfo en-us
+10-30 15:17:48.268 13588 13617 I VoiceGenerator: Cache cleared
+10-30 15:17:48.268 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:48.268 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:48.268 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:48.268 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:48.268 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:48.268 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:48.268 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:48.268 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:48.268 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:48.268 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:48.268 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:48.268 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:48.268 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:48.268 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:48.277   550  2331 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@34710c58 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-30 15:17:48.296   848   848 D Zygote  : Forked child process 13896
+10-30 15:17:48.301 13896 13896 E libc    : SetHeapTaggingLevel: re-enabling tagging after it was disabled is not supported
+10-30 15:17:48.304 13896 13896 I ocessService0:1: Using CollectorTypeCMC GC.
+10-30 15:17:48.308 13896 13896 E ocessService0:1: Not starting debugger since process cannot load the jdwp agent.
+10-30 15:17:48.311 13896 13896 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-30 15:17:48.312 13588 13611 I LocalSynthesizer: Attempting to load synthesizer for voice: en-us-x-iog-seanet-embedded
+10-30 15:17:48.312 13588 13611 I ExoPlayerImpl: Init 59b81bc [AndroidXMedia3/1.11.1] [emu64a, sdk_gphone64_arm64, Google, 35] [Canary:ON]
+10-30 15:17:48.317 13588 13611 I ExoPlayerImpl: Init 825b545 [AndroidXMedia3/1.11.1] [emu64a, sdk_gphone64_arm64, Google, 35] [Canary:ON]
+10-30 15:17:48.320 13588 13611 I LocalSynthesizer: Voice en-us-x-iog-seanet-embedded is not supported by any existing synthesizers.
+10-30 15:17:48.321 13588 13611 I ComposerWrapperImpl: Initializing new monolithic pipeline. New voice: en-us-x-iog-seanet-embedded
+10-30 15:17:48.321 13588 13611 I PipelineReaderImpl: Initializing monolithic pipeline from disk: /data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/pipeline.pb
+10-30 15:17:48.329 13896 13896 D CompatChangeReporter: Compat change id reported: 242716250; UID 99065; state: ENABLED
+10-30 15:17:48.333 13896 13896 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+10-30 15:17:48.336 13896 13896 I LoadedApk: No resource references to update in package com.google.android.trichromelibrary
+10-30 15:17:48.338 13896 13896 I cr_WebViewApkApp: Launched version=124.0.6367.219 minSdkVersion=29 isBundle=false processName=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:1
+10-30 15:17:48.340 13896 13896 I cr_ChildProcessService: Creating new ChildProcessService pid=13896
+10-30 15:17:48.361 13588 13611 I native  : I0000 00:00:1793369868.361374   13611 android_resource_loader.cc:109] Loading resources for en_us_x_embedded_havoc/17644247863403113381
+10-30 15:17:48.361 13588 13611 I native  : I0000 00:00:1793369868.361483   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/burdock_frame_config.pb" (as: FILE) ...
+10-30 15:17:48.364 13588 13611 I native  : I0000 00:00:1793369868.364381   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/burdock_frame_config.pb" of size 68
+10-30 15:17:48.364 13588 13611 I native  : I0000 00:00:1793369868.364949   13611 android_resource_loader.cc:100] Built resource acoustic_frame_config
+10-30 15:17:48.365 13588 13611 I native  : I0000 00:00:1793369868.364999   13611 android_resource_loader.cc:116] Loaded resource:acoustic_frame_config
+10-30 15:17:48.365 13588 13611 I native  : I0000 00:00:1793369868.365013   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/affixes_en_us_android.far" (as: FILE) ...
+10-30 15:17:48.365 13588 13611 I native  : I0000 00:00:1793369868.365252   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/affixes_en_us_android.far" of size 36782
+10-30 15:17:48.366 13588 13593 I gle.android.tts: Background concurrent mark compact GC freed 5400KB AllocSpace bytes, 4(168KB) LOS objects, 49% free, 5152KB/10MB, paused 119us,567us total 105.965ms
+10-30 15:17:48.367 13588 13611 I native  : I0000 00:00:1793369868.367680   13611 android_resource_loader.cc:100] Built resource affix_word_splitter_grm
+10-30 15:17:48.367 13588 13611 I native  : I0000 00:00:1793369868.367707   13611 android_resource_loader.cc:116] Loaded resource:affix_word_splitter_grm
+10-30 15:17:48.367 13588 13611 I native  : I0000 00:00:1793369868.367731   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/affixes_params_en_us.pb" (as: FILE) ...
+10-30 15:17:48.368 13588 13611 I native  : I0000 00:00:1793369868.368670   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/affixes_params_en_us.pb" of size 420
+10-30 15:17:48.369 13588 13611 I native  : I0000 00:00:1793369868.369196   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling ['s] -- their grammars should disambiguate them.
+10-30 15:17:48.369 13588 13611 I native  : I0000 00:00:1793369868.369213   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling ['s] -- their grammars should disambiguate them.
+10-30 15:17:48.369 13588 13611 I native  : I0000 00:00:1793369868.369215   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling ['s] -- their grammars should disambiguate them.
+10-30 15:17:48.369 13588 13611 I native  : I0000 00:00:1793369868.369219   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling [s] -- their grammars should disambiguate them.
+10-30 15:17:48.369 13588 13611 I native  : I0000 00:00:1793369868.369221   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling [s] -- their grammars should disambiguate them.
+10-30 15:17:48.369 13588 13611 I native  : I0000 00:00:1793369868.369223   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling [s] -- their grammars should disambiguate them.
+10-30 15:17:48.369 13588 13611 I native  : I0000 00:00:1793369868.369228   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling [ed] -- their grammars should disambiguate them.
+10-30 15:17:48.369 13588 13611 I native  : I0000 00:00:1793369868.369231   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling [ed] -- their grammars should disambiguate them.
+10-30 15:17:48.369 13588 13611 I native  : I0000 00:00:1793369868.369233   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling [ed] -- their grammars should disambiguate them.
+10-30 15:17:48.369 13588 13611 I native  : I0000 00:00:1793369868.369238   13611 affix_word_splitter_data.cc:89] Loaded affixes in [/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/affixes_params_en_us.pb].
+10-30 15:17:48.369 13588 13611 I native  : I0000 00:00:1793369868.369253   13611 android_resource_loader.cc:100] Built resource affix_word_splitter
+10-30 15:17:48.369 13588 13611 I native  : I0000 00:00:1793369868.369258   13611 android_resource_loader.cc:116] Loaded resource:affix_word_splitter
+10-30 15:17:48.369 13588 13611 I native  : I0000 00:00:1793369868.369265   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/roman_numeral_android.far" (as: FILE) ...
+10-30 15:17:48.369 13588 13611 I native  : I0000 00:00:1793369868.369278   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/roman_numeral_android.far" of size 5112
+10-30 15:17:48.369 13588 13611 I native  : I0000 00:00:1793369868.369973   13611 android_resource_loader.cc:100] Built resource classify_roman_numerals_grm_fst
+10-30 15:17:48.369 13588 13611 I native  : I0000 00:00:1793369868.369994   13611 android_resource_loader.cc:116] Loaded resource:classify_roman_numerals_grm_fst
+10-30 15:17:48.370 13588 13611 I native  : I0000 00:00:1793369868.370001   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_us_pronounce.far" (as: FILE) ...
+10-30 15:17:48.370 13588 13611 I native  : I0000 00:00:1793369868.370013   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_us_pronounce.far" of size 5040
+10-30 15:17:48.370 13588 13611 I native  : I0000 00:00:1793369868.370653   13611 android_resource_loader.cc:100] Built resource compound_pronounce_grm_fst
+10-30 15:17:48.370 13588 13611 I native  : I0000 00:00:1793369868.370669   13611 android_resource_loader.cc:116] Loaded resource:compound_pronounce_grm_fst
+10-30 15:17:48.370 13588 13611 I native  : I0000 00:00:1793369868.370682   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/disambiguation_rules_en_us.pb" (as: FILE) ...
+10-30 15:17:48.370 13588 13611 I native  : I0000 00:00:1793369868.370698   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/disambiguation_rules_en_us.pb" of size 317746
+10-30 15:17:48.377 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:17:48.384 13896 13907 I cr_LibraryLoader: Successfully loaded native library
+10-30 15:17:48.384 13896 13907 I cr_CachingUmaRecorder: Flushed 2 samples from 2 histograms, 0 samples were dropped.
+10-30 15:17:48.388 13588 13611 I native  : I0000 00:00:1793369868.388062   13611 android_resource_loader.cc:100] Built resource disambiguation_rules
+10-30 15:17:48.388 13588 13611 I native  : I0000 00:00:1793369868.388131   13611 android_resource_loader.cc:116] Loaded resource:disambiguation_rules
+10-30 15:17:48.388 13588 13611 I native  : I0000 00:00:1793369868.388155   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/en_us_x_embedded_havoc_backend_engine_config.pb" (as: FILE) ...
+10-30 15:17:48.388 13896 13907 W SystemServiceRegistry: No service published for: uimode
+10-30 15:17:48.388 13588 13611 I native  : I0000 00:00:1793369868.388728   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/en_us_x_embedded_havoc_backend_engine_config.pb" of size 54
+10-30 15:17:48.389 13588 13611 I native  : I0000 00:00:1793369868.389248   13611 android_resource_loader.cc:100] Built resource engine_config
+10-30 15:17:48.389 13588 13611 I native  : I0000 00:00:1793369868.389634   13611 android_resource_loader.cc:116] Loaded resource:engine_config
+10-30 15:17:48.389 13588 13611 I native  : I0000 00:00:1793369868.389655   13611 android_resource_loader.cc:100] Built resource guided_synthesis
+10-30 15:17:48.389 13588 13611 I native  : I0000 00:00:1793369868.389657   13611 android_resource_loader.cc:116] Loaded resource:guided_synthesis
+10-30 15:17:48.389 13588 13611 I native  : I0000 00:00:1793369868.389664   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/mapping_grammar_en.far" (as: FILE) ...
+10-30 15:17:48.389 13588 13611 I native  : I0000 00:00:1793369868.389797   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/mapping_grammar_en.far" of size 863
+10-30 15:17:48.390 13588 13611 I native  : I0000 00:00:1793369868.390115   13611 android_resource_loader.cc:100] Built resource homograph_mapping_grammar
+10-30 15:17:48.390 13588 13611 I native  : I0000 00:00:1793369868.390122   13611 android_resource_loader.cc:116] Loaded resource:homograph_mapping_grammar
+10-30 15:17:48.390 13588 13611 I native  : I0000 00:00:1793369868.390138   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/lettuce_model.fb" (as: MEMORY) ...
+10-30 15:17:48.390 13588 13611 I native  : I0000 00:00:1793369868.390165   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/lettuce_model.fb" of size 2040880
+10-30 15:17:48.390 13588 13611 I native  : I0000 00:00:1793369868.390396   13611 android_resource_loader.cc:100] Built resource lettuce_model_resource
+10-30 15:17:48.390 13588 13611 I native  : I0000 00:00:1793369868.390404   13611 android_resource_loader.cc:116] Loaded resource:lettuce_model_resource
+10-30 15:17:48.390 13588 13611 I native  : I0000 00:00:1793369868.390410   13611 android_resource_loader.cc:100] Built resource lettuce_model_scorer
+10-30 15:17:48.390 13588 13611 I native  : I0000 00:00:1793369868.390413   13611 android_resource_loader.cc:116] Loaded resource:lettuce_model_scorer
+10-30 15:17:48.390 13588 13611 I native  : I0000 00:00:1793369868.390417   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/lettuce_classify_embedded_us_generated_android.far" (as: FILE) ...
+10-30 15:17:48.390 13588 13611 I native  : I0000 00:00:1793369868.390431   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/lettuce_classify_embedded_us_generated_android.far" of size 4621001
+10-30 15:17:48.391 13896 13907 W chromium: [WARNING:runtime_features.cc(694)] SharedStorage for M118+ cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI,SharedStorageAPIM118 in addition.
+10-30 15:17:48.391 13896 13907 W chromium: [WARNING:runtime_features.cc(730)] AttributionReportingCrossAppWeb cannot be enabled in this configuration. Use --enable-features=ConversionMeasurement,AttributionReportingCrossAppWeb in addition.
+10-30 15:17:48.412 13588 13611 I native  : I0000 00:00:1793369868.412495   13611 android_resource_loader.cc:100] Built resource lettuce_node_generator_grm
+10-30 15:17:48.412 13588 13611 I native  : I0000 00:00:1793369868.412596   13611 android_resource_loader.cc:116] Loaded resource:lettuce_node_generator_grm
+10-30 15:17:48.412 13588 13611 I native  : I0000 00:00:1793369868.412620   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/lucid_collection_android.far" (as: FILE) ...
+10-30 15:17:48.412 13588 13611 I native  : I0000 00:00:1793369868.412656   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/lucid_collection_android.far" of size 307960
+10-30 15:17:48.416 13588 13611 I native  : I0000 00:00:1793369868.416736   13611 android_resource_loader.cc:100] Built resource lucid_parser_grm_fst
+10-30 15:17:48.416 13588 13611 I native  : I0000 00:00:1793369868.416856   13611 android_resource_loader.cc:116] Loaded resource:lucid_parser_grm_fst
+10-30 15:17:48.416 13588 13611 I native  : I0000 00:00:1793369868.416910   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/markup_triggers.pb" (as: FILE) ...
+10-30 15:17:48.416 13588 13611 I native  : I0000 00:00:1793369868.416972   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/markup_triggers.pb" of size 930
+10-30 15:17:48.417 13588 13611 I native  : I0000 00:00:1793369868.417655   13611 android_resource_loader.cc:100] Built resource markup_triggers
+10-30 15:17:48.417 13588 13611 I native  : I0000 00:00:1793369868.417678   13611 android_resource_loader.cc:116] Loaded resource:markup_triggers
+10-30 15:17:48.417 13588 13611 I native  : I0000 00:00:1793369868.417692   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/morphosyntactic_mapping.pb" (as: FILE) ...
+10-30 15:17:48.417 13588 13611 I native  : I0000 00:00:1793369868.417738   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/morphosyntactic_mapping.pb" of size 6
+10-30 15:17:48.418 13588 13611 I native  : I0000 00:00:1793369868.418523   13611 android_resource_loader.cc:100] Built resource morph_analyzer_attribute_map
+10-30 15:17:48.418 13588 13611 I native  : I0000 00:00:1793369868.418547   13611 android_resource_loader.cc:116] Loaded resource:morph_analyzer_attribute_map
+10-30 15:17:48.418 13588 13611 I native  : I0000 00:00:1793369868.418579   13611 android_resource_loader.cc:100] Built resource multilingual_capabilities
+10-30 15:17:48.418 13588 13611 I native  : I0000 00:00:1793369868.418592   13611 android_resource_loader.cc:116] Loaded resource:multilingual_capabilities
+10-30 15:17:48.418 13588 13611 I native  : I0000 00:00:1793369868.418606   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_us_phonology.pb" (as: FILE) ...
+10-30 15:17:48.418 13588 13611 I native  : I0000 00:00:1793369868.418661   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_us_phonology.pb" of size 2214
+10-30 15:17:48.419 13588 13611 W native  : W0000 00:00:1793369868.419705   13611 phonology.cc:80] Phonemes @, @` have non-distinctive features. See b/111971558.
+10-30 15:17:48.419 13588 13611 W native  : W0000 00:00:1793369868.419748   13611 phonology.cc:80] Phonemes l, r\ have non-distinctive features. See b/111971558.
+10-30 15:17:48.420 13588 13611 I native  : I0000 00:00:1793369868.420007   13611 android_resource_loader.cc:100] Built resource phonology
+10-30 15:17:48.420 13588 13611 I native  : I0000 00:00:1793369868.420061   13611 android_resource_loader.cc:116] Loaded resource:phonology
+10-30 15:17:48.420 13588 13611 I native  : I0000 00:00:1793369868.420081   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_morphology" (as: FILE) ...
+10-30 15:17:48.420 13588 13611 I native  : I0000 00:00:1793369868.420103   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_morphology" of size 2753822
+10-30 15:17:48.443 13588 13611 I native  : I0000 00:00:1793369868.442974   13611 model-api.cc:46] Registered model under key morphology
+10-30 15:17:48.449 13588 13611 I native  : I0000 00:00:1793369868.449735   13611 android_resource_loader.cc:100] Built resource analyze_morphology_saft_portable_algo
+10-30 15:17:48.449 13588 13611 I native  : I0000 00:00:1793369868.449861   13611 android_resource_loader.cc:116] Loaded resource:analyze_morphology_saft_portable_algo
+10-30 15:17:48.449 13588 13611 I native  : I0000 00:00:1793369868.449967   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/ipa_to_tts_to-en_us.far" (as: FILE) ...
+10-30 15:17:48.450 13588 13611 I native  : I0000 00:00:1793369868.450105   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/ipa_to_tts_to-en_us.far" of size 511570
+10-30 15:17:48.455 13588 13611 I native  : I0000 00:00:1793369868.455223   13611 android_resource_loader.cc:100] Built resource ipa_to_tts_phoneme_mapper
+10-30 15:17:48.455 13588 13611 I native  : I0000 00:00:1793369868.455264   13611 android_resource_loader.cc:116] Loaded resource:ipa_to_tts_phoneme_mapper
+10-30 15:17:48.455 13588 13611 I native  : I0000 00:00:1793369868.455275   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_us.hlex.bin" (as: MEMORY) ...
+10-30 15:17:48.455 13588 13611 I native  : I0000 00:00:1793369868.455298   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_us.hlex.bin" of size 5118800
+10-30 15:17:48.455 13588 13611 I native  : I0000 00:00:1793369868.455453   13611 android_resource_loader.cc:100] Built resource lexicon
+10-30 15:17:48.455 13588 13611 I native  : I0000 00:00:1793369868.455490   13611 android_resource_loader.cc:116] Loaded resource:lexicon
+10-30 15:17:48.455 13588 13611 I native  : I0000 00:00:1793369868.455505   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/homographs_model_en_us_embedded.bin" (as: MEMORY) ...
+10-30 15:17:48.455 13588 13611 I native  : I0000 00:00:1793369868.455527   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/homographs_model_en_us_embedded.bin" of size 398840
+10-30 15:17:48.459 13588 13611 I native  : I0000 00:00:1793369868.459149   13611 android_resource_loader.cc:100] Built resource homograph_classifier_model_resource
+10-30 15:17:48.459 13588 13611 I native  : I0000 00:00:1793369868.459201   13611 android_resource_loader.cc:116] Loaded resource:homograph_classifier_model_resource
+10-30 15:17:48.459 13588 13611 I native  : I0000 00:00:1793369868.459215   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/lettuce_node_generator_params_embedded_us_runtime.pb" (as: FILE) ...
+10-30 15:17:48.459 13588 13611 I native  : I0000 00:00:1793369868.459286   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/lettuce_node_generator_params_embedded_us_runtime.pb" of size 2697
+10-30 15:17:48.697 13588 13611 I native  : I0000 00:00:1793369868.697056   13611 exl_node_generator.cc:58] Setting legal word grammar as macro_only: true
+10-30 15:17:48.697 13588 13611 I native  : I0000 00:00:1793369868.697545   13611 android_resource_loader.cc:100] Built resource lettuce_node_generator
+10-30 15:17:48.697 13588 13611 I native  : I0000 00:00:1793369868.697598   13611 android_resource_loader.cc:116] Loaded resource:lettuce_node_generator
+10-30 15:17:48.697 13588 13611 I native  : I0000 00:00:1793369868.697640   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/burdock_model.params.pb" (as: FILE) ...
+10-30 15:17:48.697 13588 13611 I native  : I0000 00:00:1793369868.697729   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/burdock_model.params.pb" of size 8875
+10-30 15:17:48.699 13588 13611 I native  : I0000 00:00:1793369868.699221   13611 android_resource_loader.cc:100] Built resource lstm_add_specification_resource
+10-30 15:17:48.699 13588 13611 I native  : I0000 00:00:1793369868.699276   13611 android_resource_loader.cc:116] Loaded resource:lstm_add_specification_resource
+10-30 15:17:48.699 13588 13611 I native  : I0000 00:00:1793369868.699296   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/chive_model_fused.pb" (as: FILE) ...
+10-30 15:17:48.699 13588 13611 I native  : I0000 00:00:1793369868.699387   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/chive_model_fused.pb" of size 1281
+10-30 15:17:48.700 13588 13611 I native  : I0000 00:00:1793369868.700675   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/burdock_valerian_model.tflite" (as: MEMORY) ...
+10-30 15:17:48.700 13588 13611 I native  : I0000 00:00:1793369868.700770   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/burdock_valerian_model.tflite" of size 1790608
+10-30 15:17:48.701 13588 13611 E tflite  : third_party/tensorflow/lite/core/subgraph.cc:1092 tensor.data.raw != nullptr was not true.
+10-30 15:17:48.701 13588 13611 I native  : I0000 00:00:1793369868.701304   13611 chive_inference_resource.cc:233] Creating new CHiVE model [model graph]:
+10-30 15:17:48.701 13588 13611 I native  : I0000 00:00:1793369868.701323   13611 chive_model.cc:179] Creating a single pass CHiVE model
+10-30 15:17:48.701 13588 13611 I native  : I0000 00:00:1793369868.701768   13611 android_resource_loader.cc:100] Built resource chive_inference_config
+10-30 15:17:48.701 13588 13611 I native  : I0000 00:00:1793369868.701783   13611 android_resource_loader.cc:116] Loaded resource:chive_inference_config
+10-30 15:17:48.701 13588 13611 I native  : I0000 00:00:1793369868.701814   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/converter_en_us_android.far" (as: FILE) ...
+10-30 15:17:48.701 13588 13611 I native  : I0000 00:00:1793369868.701895   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/converter_en_us_android.far" of size 1521
+10-30 15:17:48.703 13588 13611 I native  : I0000 00:00:1793369868.703215   13611 android_resource_loader.cc:100] Built resource pron_buffet_to_tts_converter
+10-30 15:17:48.703 13588 13611 I native  : I0000 00:00:1793369868.703394   13611 android_resource_loader.cc:116] Loaded resource:pron_buffet_to_tts_converter
+10-30 15:17:48.703 13588 13611 I native  : I0000 00:00:1793369868.703444   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/regexp_rewrite_embedded.pb" (as: FILE) ...
+10-30 15:17:48.703 13588 13611 I native  : I0000 00:00:1793369868.703494   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/regexp_rewrite_embedded.pb" of size 6111
+10-30 15:17:48.704 13588 13611 I native  : I0000 00:00:1793369868.704615   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/punctuation.pb" (as: FILE) ...
+10-30 15:17:48.704 13588 13611 I native  : I0000 00:00:1793369868.704719   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/punctuation.pb" of size 452
+10-30 15:17:48.735 13588 13611 E native  : E0000 00:00:1793369868.735711   13611 re2.cc:275] Error parsing '^|[^\p{Letter}\\]': invalid character class range: \p{Letter}
+10-30 15:17:48.735 13588 13611 E native  : E0000 00:00:1793369868.735816   13611 replacement_rule.cc:35] INVALID_ARGUMENT: Invalid left_context regexp: invalid character class range: \p{Letter}
+10-30 15:17:48.735 13588 13611 E native  : === Source Location Trace: ===
+10-30 15:17:48.735 13588 13611 E native  : speech/tts/libs/unicode/re2_tracked_rewrite.cc:51
+10-30 15:17:48.735 13588 13611 E native  : speech/tts/libs/unicode/re2_tracked_rewrite.cc:71
+10-30 15:17:48.735 13588 13611 E native  : E0000 00:00:1793369868.735824   13611 regexp_rewriter.cc:33] Error creating rule MessageLite at 0xb400007b3ed04090.
+10-30 15:17:48.736 13588 13611 I native  : I0000 00:00:1793369868.736072   13611 android_resource_loader.cc:100] Built resource rewrite_algo
+10-30 15:17:48.736 13588 13611 I native  : I0000 00:00:1793369868.736110   13611 android_resource_loader.cc:116] Loaded resource:rewrite_algo
+10-30 15:17:48.736 13588 13611 I native  : I0000 00:00:1793369868.736137   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/roman_numeral_contexts.pb" (as: FILE) ...
+10-30 15:17:48.736 13588 13611 I native  : I0000 00:00:1793369868.736185   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/roman_numeral_contexts.pb" of size 9114
+10-30 15:17:48.737 13588 13611 I native  : I0000 00:00:1793369868.737733   13611 android_resource_loader.cc:100] Built resource roman_numeral_context_words
+10-30 15:17:48.737 13588 13611 I native  : I0000 00:00:1793369868.737788   13611 android_resource_loader.cc:116] Loaded resource:roman_numeral_context_words
+10-30 15:17:48.738 13588 13611 I native  : I0000 00:00:1793369868.738052   13611 android_resource_loader.cc:100] Built resource classify_roman_numerals_grm_algo
+10-30 15:17:48.738 13588 13611 I native  : I0000 00:00:1793369868.738375   13611 android_resource_loader.cc:116] Loaded resource:classify_roman_numerals_grm_algo
+10-30 15:17:48.738 13588 13611 I native  : I0000 00:00:1793369868.738424   13611 android_resource_loader.cc:100] Built resource runtime_override
+10-30 15:17:48.738 13588 13611 I native  : I0000 00:00:1793369868.738434   13611 android_resource_loader.cc:116] Loaded resource:runtime_override
+10-30 15:17:48.738 13588 13611 I native  : I0000 00:00:1793369868.738458   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/seanet_model_options.pb" (as: FILE) ...
+10-30 15:17:48.738 13588 13611 I native  : I0000 00:00:1793369868.738599   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/seanet_model_options.pb" of size 32
+10-30 15:17:48.739 13588 13611 I native  : I0000 00:00:1793369868.739278   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/seanet_model.tflite" (as: FILE) ...
+10-30 15:17:48.739 13588 13611 I native  : I0000 00:00:1793369868.739356   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/seanet_model.tflite" of size 2786320
+10-30 15:17:48.754 13588 13611 I native  : I0000 00:00:1793369868.753975   13611 android_resource_loader.cc:100] Built resource seanet_enhancer
+10-30 15:17:48.754 13588 13611 I native  : I0000 00:00:1793369868.754052   13611 android_resource_loader.cc:116] Loaded resource:seanet_enhancer
+10-30 15:17:48.754 13588 13611 I native  : I0000 00:00:1793369868.754081   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/sb_model.bin" (as: MEMORY) ...
+10-30 15:17:48.754 13588 13611 I native  : I0000 00:00:1793369868.754383   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/sb_model.bin" of size 48432
+10-30 15:17:48.754 13588 13611 I native  : I0000 00:00:1793369868.754579   13611 android_resource_loader.cc:100] Built resource sentence_boundary_model_resource
+10-30 15:17:48.754 13588 13611 I native  : I0000 00:00:1793369868.754591   13611 android_resource_loader.cc:116] Loaded resource:sentence_boundary_model_resource
+10-30 15:17:48.754 13588 13611 I native  : I0000 00:00:1793369868.754604   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_verbalize_spec.pb" (as: FILE) ...
+10-30 15:17:48.754 13588 13611 I native  : I0000 00:00:1793369868.754684   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_verbalize_spec.pb" of size 3984
+10-30 15:17:48.756 13588 13611 I native  : I0000 00:00:1793369868.756026   13611 android_resource_loader.cc:100] Built resource serialization_spec
+10-30 15:17:48.756 13588 13611 I native  : I0000 00:00:1793369868.756073   13611 android_resource_loader.cc:116] Loaded resource:serialization_spec
+10-30 15:17:48.756 13588 13611 I native  : I0000 00:00:1793369868.756090   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/textnorm_params_embedded_en_us.pb" (as: FILE) ...
+10-30 15:17:48.756 13588 13611 I native  : I0000 00:00:1793369868.756145   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/textnorm_params_embedded_en_us.pb" of size 321
+10-30 15:17:48.757 13588 13611 I native  : I0000 00:00:1793369868.757353   13611 android_resource_loader.cc:100] Built resource textnorm_params
+10-30 15:17:48.757 13588 13611 I native  : I0000 00:00:1793369868.757396   13611 android_resource_loader.cc:116] Loaded resource:textnorm_params
+10-30 15:17:48.757 13588 13611 I native  : I0000 00:00:1793369868.757724   13611 android_resource_loader.cc:100] Built resource icu_transliterator_to_latin
+10-30 15:17:48.757 13588 13611 I native  : I0000 00:00:1793369868.757769   13611 android_resource_loader.cc:116] Loaded resource:icu_transliterator_to_latin
+10-30 15:17:48.757 13588 13611 I native  : I0000 00:00:1793369868.757787   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/g2p_m3_syls0_stress0_en-US.fst" (as: FILE) ...
+10-30 15:17:48.757 13588 13611 I native  : I0000 00:00:1793369868.757812   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/g2p_m3_syls0_stress0_en-US.fst" of size 700928
+10-30 15:17:48.757 13588 13611 I native  : I0000 00:00:1793369868.757823   13611 compact_fst.cc:20] Loading FST from "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/g2p_m3_syls0_stress0_en-US.fst" ...
+10-30 15:17:48.810 13588 13611 I native  : I0000 00:00:1793369868.810917   13611 decoder.cc:51] G2P FST loaded (61 graphemes and 41 phonemes).
+10-30 15:17:48.814 13588 13611 I native  : I0000 00:00:1793369868.814426   13611 android_resource_loader.cc:100] Built resource learned_fst_g2p_mapper
+10-30 15:17:48.814 13588 13611 I native  : I0000 00:00:1793369868.814511   13611 android_resource_loader.cc:116] Loaded resource:learned_fst_g2p_mapper
+10-30 15:17:48.814 13588 13611 I native  : I0000 00:00:1793369868.814556   13611 android_resource_loader.cc:100] Built resource spelling_normalizer
+10-30 15:17:48.814 13588 13611 I native  : I0000 00:00:1793369868.814563   13611 android_resource_loader.cc:116] Loaded resource:spelling_normalizer
+10-30 15:17:48.814 13588 13611 I native  : I0000 00:00:1793369868.814570   13611 android_resource_loader.cc:100] Built resource utf8_utils
+10-30 15:17:48.814 13588 13611 I native  : I0000 00:00:1793369868.814572   13611 android_resource_loader.cc:116] Loaded resource:utf8_utils
+10-30 15:17:48.814 13588 13611 I native  : I0000 00:00:1793369868.814775   13611 android_resource_loader.cc:100] Built resource lexical_classifier
+10-30 15:17:48.814 13588 13611 I native  : I0000 00:00:1793369868.814788   13611 android_resource_loader.cc:116] Loaded resource:lexical_classifier
+10-30 15:17:48.814 13588 13611 I native  : I0000 00:00:1793369868.814798   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/universal_carrier_pigeon_config.binarypb" (as: FILE) ...
+10-30 15:17:48.814 13588 13611 I native  : I0000 00:00:1793369868.814879   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/universal_carrier_pigeon_config.binarypb" of size 52
+10-30 15:17:48.816 13588 13611 I native  : I0000 00:00:1793369868.816109   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/universal_carrier_pigeon_model.tflite" (as: FILE) ...
+10-30 15:17:48.816 13588 13611 I native  : I0000 00:00:1793369868.816225   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/universal_carrier_pigeon_model.tflite" of size 638952
+10-30 15:17:48.822 13588 13611 I native  : I0000 00:00:1793369868.822949   13611 android_resource_loader.cc:100] Built resource carrier_pigeon_algo
+10-30 15:17:48.823 13588 13611 I native  : I0000 00:00:1793369868.823014   13611 android_resource_loader.cc:116] Loaded resource:carrier_pigeon_algo
+10-30 15:17:48.823 13588 13611 I native  : I0000 00:00:1793369868.823039   13611 android_resource_loader.cc:100] Built resource icu_transliterator
+10-30 15:17:48.823 13588 13611 I native  : I0000 00:00:1793369868.823045   13611 android_resource_loader.cc:116] Loaded resource:icu_transliterator
+10-30 15:17:48.829 13588 13611 I native  : I0000 00:00:1793369868.829560   13611 android_resource_loader.cc:100] Built resource token_resolver_algo
+10-30 15:17:48.829 13588 13611 I native  : I0000 00:00:1793369868.829654   13611 android_resource_loader.cc:116] Loaded resource:token_resolver_algo
+10-30 15:17:48.829 13588 13611 I native  : I0000 00:00:1793369868.829677   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/variant_overrides_en_us.pb" (as: FILE) ...
+10-30 15:17:48.829 13588 13611 I native  : I0000 00:00:1793369868.829803   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/variant_overrides_en_us.pb" of size 1525
+10-30 15:17:48.830 13588 13611 I native  : I0000 00:00:1793369868.830817   13611 android_resource_loader.cc:100] Built resource variant_overrides
+10-30 15:17:48.830 13588 13611 I native  : I0000 00:00:1793369868.830868   13611 android_resource_loader.cc:116] Loaded resource:variant_overrides
+10-30 15:17:48.830 13588 13611 I native  : I0000 00:00:1793369868.830882   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/variant_selection_model_en_us_embedded.bin" (as: MEMORY) ...
+10-30 15:17:48.830 13588 13611 I native  : I0000 00:00:1793369868.830917   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/variant_selection_model_en_us_embedded.bin" of size 221608
+10-30 15:17:48.830 13588 13611 I native  : I0000 00:00:1793369868.830933   13611 android_resource_loader.cc:100] Built resource variant_selection_model_data_resource
+10-30 15:17:48.830 13588 13611 I native  : I0000 00:00:1793369868.830936   13611 android_resource_loader.cc:116] Loaded resource:variant_selection_model_data_resource
+10-30 15:17:48.832 13588 13611 I native  : I0000 00:00:1793369868.832498   13611 select_variants.cc:128] Word with override has only one variant: her
+10-30 15:17:48.832 13588 13611 I native  : I0000 00:00:1793369868.832852   13611 android_resource_loader.cc:100] Built resource select_variants_algo
+10-30 15:17:48.832 13588 13611 I native  : I0000 00:00:1793369868.832902   13611 android_resource_loader.cc:116] Loaded resource:select_variants_algo
+10-30 15:17:48.832 13588 13611 I native  : I0000 00:00:1793369868.832926   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/us_verbalization_capabilities.pb" (as: FILE) ...
+10-30 15:17:48.832 13588 13611 I native  : I0000 00:00:1793369868.832968   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/us_verbalization_capabilities.pb" of size 5224
+10-30 15:17:48.834 13588 13611 I native  : I0000 00:00:1793369868.834941   13611 android_resource_loader.cc:100] Built resource verbalization_capabilities
+10-30 15:17:48.835 13588 13611 I native  : I0000 00:00:1793369868.835007   13611 android_resource_loader.cc:116] Loaded resource:verbalization_capabilities
+10-30 15:17:48.835 13588 13611 I native  : I0000 00:00:1793369868.835022   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/verbalize_embedded_android.far" (as: FILE) ...
+10-30 15:17:48.835 13588 13611 I native  : I0000 00:00:1793369868.835053   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/verbalize_embedded_android.far" of size 2373311
+10-30 15:17:48.846 13588 13611 I native  : I0000 00:00:1793369868.846972   13611 android_resource_loader.cc:100] Built resource verbalize_grm_fst
+10-30 15:17:48.847 13588 13611 I native  : I0000 00:00:1793369868.847027   13611 android_resource_loader.cc:116] Loaded resource:verbalize_grm_fst
+10-30 15:17:48.847 13588 13611 I native  : I0000 00:00:1793369868.847061   13611 android_resource_loader.cc:100] Built resource speller_algo
+10-30 15:17:48.847 13588 13611 I native  : I0000 00:00:1793369868.847067   13611 android_resource_loader.cc:116] Loaded resource:speller_algo
+10-30 15:17:48.847 13588 13611 I native  : I0000 00:00:1793369868.847970   13611 android_resource_loader.cc:100] Built resource verbalize_grm_algo
+10-30 15:17:48.848 13588 13611 I native  : I0000 00:00:1793369868.847999   13611 android_resource_loader.cc:116] Loaded resource:verbalize_grm_algo
+10-30 15:17:48.848 13588 13611 I native  : I0000 00:00:1793369868.848017   13611 voice_params_resource.cc:31] Voice information: MessageLite at 0xb400007c8f13dfa0
+10-30 15:17:48.848 13588 13611 I native  : I0000 00:00:1793369868.848021   13611 android_resource_loader.cc:100] Built resource voice_params
+10-30 15:17:48.848 13588 13611 I native  : I0000 00:00:1793369868.848023   13611 android_resource_loader.cc:116] Loaded resource:voice_params
+10-30 15:17:48.853 13588 13611 I native  : I0000 00:00:1793369868.853328   13611 android_resource_loader.cc:100] Built resource word_resolver_algo
+10-30 15:17:48.853 13588 13611 I native  : I0000 00:00:1793369868.853419   13611 android_resource_loader.cc:116] Loaded resource:word_resolver_algo
+10-30 15:17:48.853 13588 13611 I native  : I0000 00:00:1793369868.853448   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/xsampa_to_tts_to-en_us.far" (as: FILE) ...
+10-30 15:17:48.853 13588 13611 I native  : I0000 00:00:1793369868.853501   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/xsampa_to_tts_to-en_us.far" of size 27780
+10-30 15:17:48.857 13588 13611 I native  : I0000 00:00:1793369868.857124   13611 android_resource_loader.cc:100] Built resource xsampa_to_tts_phoneme_mapper
+10-30 15:17:48.857 13588 13611 I native  : I0000 00:00:1793369868.857203   13611 android_resource_loader.cc:116] Loaded resource:xsampa_to_tts_phoneme_mapper
+10-30 15:17:48.857 13588 13611 I native  : I0000 00:00:1793369868.857211   13611 local_pipeline_runner.cc:49] Done loading all resources from: {/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84}
+10-30 15:17:48.865 13588 13611 I ComposerWrapperImpl: Done initializing en-us-x-iog-seanet-embedded
+10-30 15:17:48.909 13588 13598 I GoogleTTSServiceImpl: currentLocale = en-US
+10-30 15:17:48.944 13588 13598 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+10-30 15:17:48.945 13260 13765 I TextToSpeech: Setting up the connection to TTS engine...
+10-30 15:17:48.946 13260 13260 W TextToSpeech: stop failed: TTS engine connection not fully set up
+10-30 15:17:48.958 13260 13260 I Choreographer: Skipped 34 frames!  The application may be doing too much work on its main thread.
+10-30 15:17:48.962 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:17:48.986 13896 13907 I chromium: [INFO:viewport_data.cc(133)] E2E_Used ViewportFitCover
+10-30 15:17:49.011 13260 13260 I chromium: [INFO:CONSOLE(1)] "Uncaught ReferenceError: suspendAudio is not defined", source: file:///android_asset/index.html (1)
+10-30 15:17:49.015 13896 13907 I chromium: [INFO:document_style_environment_variables.cc(104)] E2E_Used SafeAreaInsetBottom
+10-30 15:17:49.027  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2404
+10-30 15:17:49.029  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.bellfamily.bastischool, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=12000000, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-30 15:17:49.029  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:17:49.033 13260 13276 D EGL_emulation: app_time_stats: avg=231.22ms min=28.20ms max=713.67ms count=5
+10-30 15:17:49.040  5889 13286 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 0, locked = false
+10-30 15:17:49.041  5889 13286 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:17:49.317 13260 13260 I ActivityThread: Schedule relaunch activity: com.bellfamily.bastischool.MainActivity
+10-30 15:17:49.339 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c3172e0 in: PAUSED
+10-30 15:17:49.339 13260 13260 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@c3172e0
+10-30 15:17:49.340 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c3172e0 in: STOPPED
+10-30 15:17:49.340 13260 13260 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@c3172e0
+10-30 15:17:49.352 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c3172e0 in: DESTROYED
+10-30 15:17:49.352 13260 13260 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+10-30 15:17:49.354 13588 13588 I GoogleTtsServicePeer: onUnbind() called for Google TTS service.
+10-30 15:17:49.355 13588 13588 I ComposerWrapperImpl: Deleting composer, current voice = en-us-x-iog-seanet-embedded
+10-30 15:17:49.356   550   550 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+10-30 15:17:49.362 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c438318 in: PRE_ON_CREATE
+10-30 15:17:49.362 13260 13260 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was DESTROYED
+10-30 15:17:49.363 13260 13271 I TextToSpeech: Disconnected from TTS engine
+10-30 15:17:49.366 13260 13260 I TextToSpeech: Sucessfully bound to com.google.android.tts
+10-30 15:17:49.379 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c438318 in: CREATED
+10-30 15:17:49.379 13260 13260 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@c438318
+10-30 15:17:49.380 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c438318 in: STARTED
+10-30 15:17:49.380 13260 13260 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@c438318
+10-30 15:17:49.380 13260 13260 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+10-30 15:17:49.380 13260 13260 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-30 15:17:49.386 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c438318 in: RESUMED
+10-30 15:17:49.386 13260 13260 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@c438318
+10-30 15:17:49.390 13260 13260 I ImeTracker: com.bellfamily.bastischool:71adce64: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_CLOSE_CURRENT_SESSION fromUser false
+10-30 15:17:49.391   550   662 I ImeTracker: com.bellfamily.bastischool:71adce64: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-30 15:17:49.391 13260 13260 E chromium: [ERROR:aw_browser_terminator.cc(154)] Renderer process (13896) crash detected (code -1).
+10-30 15:17:49.393 13588 13588 I GoogleTtsServicePeer: Creating Google TTS service, version googletts.google-speech-apk_20260928.02_p0.989914902
+10-30 15:17:49.394 13588 13588 I VoiceDataManager: checkData: Refreshing list of all available voices...
+10-30 15:17:49.398 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:17:49.411 13260 13271 I TextToSpeech: Connected to TTS engine
+10-30 15:17:49.412   550   583 I libprocessgroup: Removed cgroup /sys/fs/cgroup/uid_99065/pid_13896
+10-30 15:17:49.413   848   848 I Zygote  : Process 13896 exited due to signal 9 (Killed)
+10-30 15:17:49.414 13588 13617 I VoiceDataDownloader: getAvailableVoicesInfo en-us
+10-30 15:17:49.415 13588 13617 I VoiceGenerator: Cache cleared
+10-30 15:17:49.415 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:49.415 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:49.415 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:49.415 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:49.415 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:49.415 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:49.415 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:49.415 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:49.415 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:49.415 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:49.415 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:49.415 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:49.415 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:49.415 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:49.415 13588 13617 I VoiceDataManager: Calling onVoicesDataChange: updated voices
+10-30 15:17:49.446   550  4746 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@3625e4f7 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-30 15:17:49.453   848   848 D Zygote  : Forked child process 13920
+10-30 15:17:49.454 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:17:49.455 13920 13920 E libc    : SetHeapTaggingLevel: re-enabling tagging after it was disabled is not supported
+10-30 15:17:49.456 13920 13920 I ocessService0:2: Using CollectorTypeCMC GC.
+10-30 15:17:49.461 13920 13920 E ocessService0:2: Not starting debugger since process cannot load the jdwp agent.
+10-30 15:17:49.462 13920 13920 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-30 15:17:49.467 13588 13611 I LocalSynthesizer: Attempting to load synthesizer for voice: en-us-x-iog-seanet-embedded
+10-30 15:17:49.468 13588 13611 I ExoPlayerImpl: Init dbd0097 [AndroidXMedia3/1.11.1] [emu64a, sdk_gphone64_arm64, Google, 35] [Canary:ON]
+10-30 15:17:49.469 13588 13611 I ExoPlayerImpl: Init b717284 [AndroidXMedia3/1.11.1] [emu64a, sdk_gphone64_arm64, Google, 35] [Canary:ON]
+10-30 15:17:49.474 13920 13920 D CompatChangeReporter: Compat change id reported: 242716250; UID 99066; state: ENABLED
+10-30 15:17:49.477 13920 13920 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+10-30 15:17:49.486 13920 13920 I LoadedApk: No resource references to update in package com.google.android.trichromelibrary
+10-30 15:17:49.487 13588 13611 I LocalSynthesizer: Voice en-us-x-iog-seanet-embedded is not supported by any existing synthesizers.
+10-30 15:17:49.487 13588 13611 I ComposerWrapperImpl: Initializing new monolithic pipeline. New voice: en-us-x-iog-seanet-embedded
+10-30 15:17:49.488 13588 13611 I PipelineReaderImpl: Initializing monolithic pipeline from disk: /data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/pipeline.pb
+10-30 15:17:49.488 13920 13920 I cr_WebViewApkApp: Launched version=124.0.6367.219 minSdkVersion=29 isBundle=false processName=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:2
+10-30 15:17:49.489 13588 13611 I native  : I0000 00:00:1793369869.488925   13611 android_resource_loader.cc:109] Loading resources for en_us_x_embedded_havoc/10408294662452753487
+10-30 15:17:49.489 13588 13611 I native  : I0000 00:00:1793369869.489094   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/burdock_frame_config.pb" (as: FILE) ...
+10-30 15:17:49.489 13588 13611 I native  : I0000 00:00:1793369869.489142   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/burdock_frame_config.pb" of size 68
+10-30 15:17:49.489 13588 13611 I native  : I0000 00:00:1793369869.489241   13611 android_resource_loader.cc:100] Built resource acoustic_frame_config
+10-30 15:17:49.489 13588 13611 I native  : I0000 00:00:1793369869.489267   13611 android_resource_loader.cc:116] Loaded resource:acoustic_frame_config
+10-30 15:17:49.489 13588 13611 I native  : I0000 00:00:1793369869.489315   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/affixes_en_us_android.far" (as: FILE) ...
+10-30 15:17:49.490 13588 13611 I native  : I0000 00:00:1793369869.489345   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/affixes_en_us_android.far" of size 36782
+10-30 15:17:49.491 13588 13611 I native  : I0000 00:00:1793369869.491212   13611 android_resource_loader.cc:100] Built resource affix_word_splitter_grm
+10-30 15:17:49.491 13588 13611 I native  : I0000 00:00:1793369869.491395   13611 android_resource_loader.cc:116] Loaded resource:affix_word_splitter_grm
+10-30 15:17:49.491 13588 13611 I native  : I0000 00:00:1793369869.491433   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/affixes_params_en_us.pb" (as: FILE) ...
+10-30 15:17:49.491 13588 13611 I native  : I0000 00:00:1793369869.491465   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/affixes_params_en_us.pb" of size 420
+10-30 15:17:49.491 13588 13611 I native  : I0000 00:00:1793369869.491528   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling ['s] -- their grammars should disambiguate them.
+10-30 15:17:49.491 13588 13611 I native  : I0000 00:00:1793369869.491594   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling ['s] -- their grammars should disambiguate them.
+10-30 15:17:49.491 13588 13611 I native  : I0000 00:00:1793369869.491623   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling ['s] -- their grammars should disambiguate them.
+10-30 15:17:49.491 13588 13611 I native  : I0000 00:00:1793369869.491651   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling [s] -- their grammars should disambiguate them.
+10-30 15:17:49.491 13588 13611 I native  : I0000 00:00:1793369869.491677   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling [s] -- their grammars should disambiguate them.
+10-30 15:17:49.491 13588 13611 I native  : I0000 00:00:1793369869.491701   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling [s] -- their grammars should disambiguate them.
+10-30 15:17:49.491 13588 13611 I native  : I0000 00:00:1793369869.491725   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling [ed] -- their grammars should disambiguate them.
+10-30 15:17:49.491 13588 13611 I native  : I0000 00:00:1793369869.491741   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling [ed] -- their grammars should disambiguate them.
+10-30 15:17:49.491 13588 13611 I native  : I0000 00:00:1793369869.491761   13611 affix_word_splitter_data.cc:33] Ambiguous affix entries for spelling [ed] -- their grammars should disambiguate them.
+10-30 15:17:49.491 13588 13611 I native  : I0000 00:00:1793369869.491781   13611 affix_word_splitter_data.cc:89] Loaded affixes in [/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/affixes_params_en_us.pb].
+10-30 15:17:49.491 13588 13611 I native  : I0000 00:00:1793369869.491841   13611 android_resource_loader.cc:100] Built resource affix_word_splitter
+10-30 15:17:49.491 13588 13611 I native  : I0000 00:00:1793369869.491878   13611 android_resource_loader.cc:116] Loaded resource:affix_word_splitter
+10-30 15:17:49.491 13588 13611 I native  : I0000 00:00:1793369869.491909   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/roman_numeral_android.far" (as: FILE) ...
+10-30 15:17:49.491 13588 13611 I native  : I0000 00:00:1793369869.491938   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/roman_numeral_android.far" of size 5112
+10-30 15:17:49.492 13588 13611 I native  : I0000 00:00:1793369869.492140   13611 android_resource_loader.cc:100] Built resource classify_roman_numerals_grm_fst
+10-30 15:17:49.492 13588 13611 I native  : I0000 00:00:1793369869.492229   13611 android_resource_loader.cc:116] Loaded resource:classify_roman_numerals_grm_fst
+10-30 15:17:49.492 13588 13611 I native  : I0000 00:00:1793369869.492258   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_us_pronounce.far" (as: FILE) ...
+10-30 15:17:49.492 13588 13611 I native  : I0000 00:00:1793369869.492293   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_us_pronounce.far" of size 5040
+10-30 15:17:49.492 13588 13611 I native  : I0000 00:00:1793369869.492363   13611 android_resource_loader.cc:100] Built resource compound_pronounce_grm_fst
+10-30 15:17:49.492 13588 13611 I native  : I0000 00:00:1793369869.492427   13611 android_resource_loader.cc:116] Loaded resource:compound_pronounce_grm_fst
+10-30 15:17:49.492 13588 13611 I native  : I0000 00:00:1793369869.492473   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/disambiguation_rules_en_us.pb" (as: FILE) ...
+10-30 15:17:49.492 13588 13611 I native  : I0000 00:00:1793369869.492720   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/disambiguation_rules_en_us.pb" of size 317746
+10-30 15:17:49.503 13920 13920 I cr_ChildProcessService: Creating new ChildProcessService pid=13920
+10-30 15:17:49.507 13588 13611 I native  : I0000 00:00:1793369869.507050   13611 android_resource_loader.cc:100] Built resource disambiguation_rules
+10-30 15:17:49.507 13588 13611 I native  : I0000 00:00:1793369869.507116   13611 android_resource_loader.cc:116] Loaded resource:disambiguation_rules
+10-30 15:17:49.507 13588 13611 I native  : I0000 00:00:1793369869.507178   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/en_us_x_embedded_havoc_backend_engine_config.pb" (as: FILE) ...
+10-30 15:17:49.507 13588 13611 I native  : I0000 00:00:1793369869.507492   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/en_us_x_embedded_havoc_backend_engine_config.pb" of size 54
+10-30 15:17:49.507 13588 13611 I native  : I0000 00:00:1793369869.507555   13611 android_resource_loader.cc:100] Built resource engine_config
+10-30 15:17:49.507 13588 13611 I native  : I0000 00:00:1793369869.507579   13611 android_resource_loader.cc:116] Loaded resource:engine_config
+10-30 15:17:49.507 13588 13611 I native  : I0000 00:00:1793369869.507604   13611 android_resource_loader.cc:100] Built resource guided_synthesis
+10-30 15:17:49.507 13588 13611 I native  : I0000 00:00:1793369869.507627   13611 android_resource_loader.cc:116] Loaded resource:guided_synthesis
+10-30 15:17:49.507 13588 13611 I native  : I0000 00:00:1793369869.507653   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/mapping_grammar_en.far" (as: FILE) ...
+10-30 15:17:49.507 13588 13611 I native  : I0000 00:00:1793369869.507687   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/mapping_grammar_en.far" of size 863
+10-30 15:17:49.507 13588 13611 I native  : I0000 00:00:1793369869.507767   13611 android_resource_loader.cc:100] Built resource homograph_mapping_grammar
+10-30 15:17:49.507 13588 13611 I native  : I0000 00:00:1793369869.507782   13611 android_resource_loader.cc:116] Loaded resource:homograph_mapping_grammar
+10-30 15:17:49.507 13588 13611 I native  : I0000 00:00:1793369869.507811   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/lettuce_model.fb" (as: MEMORY) ...
+10-30 15:17:49.507 13588 13611 I native  : I0000 00:00:1793369869.507852   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/lettuce_model.fb" of size 2040880
+10-30 15:17:49.508 13588 13611 I native  : I0000 00:00:1793369869.508034   13611 android_resource_loader.cc:100] Built resource lettuce_model_resource
+10-30 15:17:49.508 13588 13611 I native  : I0000 00:00:1793369869.508060   13611 android_resource_loader.cc:116] Loaded resource:lettuce_model_resource
+10-30 15:17:49.508 13588 13611 I native  : I0000 00:00:1793369869.508076   13611 android_resource_loader.cc:100] Built resource lettuce_model_scorer
+10-30 15:17:49.508 13588 13611 I native  : I0000 00:00:1793369869.508092   13611 android_resource_loader.cc:116] Loaded resource:lettuce_model_scorer
+10-30 15:17:49.508 13588 13611 I native  : I0000 00:00:1793369869.508106   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/lettuce_classify_embedded_us_generated_android.far" (as: FILE) ...
+10-30 15:17:49.508 13588 13611 I native  : I0000 00:00:1793369869.508124   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/lettuce_classify_embedded_us_generated_android.far" of size 4621001
+10-30 15:17:49.511 13920 13932 I cr_LibraryLoader: Successfully loaded native library
+10-30 15:17:49.511 13920 13932 I cr_CachingUmaRecorder: Flushed 2 samples from 2 histograms, 0 samples were dropped.
+10-30 15:17:49.513 13920 13932 W SystemServiceRegistry: No service published for: uimode
+10-30 15:17:49.517 13920 13932 W chromium: [WARNING:runtime_features.cc(694)] SharedStorage for M118+ cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI,SharedStorageAPIM118 in addition.
+10-30 15:17:49.517 13920 13932 W chromium: [WARNING:runtime_features.cc(730)] AttributionReportingCrossAppWeb cannot be enabled in this configuration. Use --enable-features=ConversionMeasurement,AttributionReportingCrossAppWeb in addition.
+10-30 15:17:49.531 13588 13611 I native  : I0000 00:00:1793369869.531036   13611 android_resource_loader.cc:100] Built resource lettuce_node_generator_grm
+10-30 15:17:49.531 13588 13611 I native  : I0000 00:00:1793369869.531089   13611 android_resource_loader.cc:116] Loaded resource:lettuce_node_generator_grm
+10-30 15:17:49.531 13588 13611 I native  : I0000 00:00:1793369869.531101   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/lucid_collection_android.far" (as: FILE) ...
+10-30 15:17:49.531 13588 13611 I native  : I0000 00:00:1793369869.531117   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/lucid_collection_android.far" of size 307960
+10-30 15:17:49.531 13588 13611 I native  : I0000 00:00:1793369869.531778   13611 android_resource_loader.cc:100] Built resource lucid_parser_grm_fst
+10-30 15:17:49.531 13588 13611 I native  : I0000 00:00:1793369869.531811   13611 android_resource_loader.cc:116] Loaded resource:lucid_parser_grm_fst
+10-30 15:17:49.531 13588 13611 I native  : I0000 00:00:1793369869.531823   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/markup_triggers.pb" (as: FILE) ...
+10-30 15:17:49.531 13588 13611 I native  : I0000 00:00:1793369869.531835   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/markup_triggers.pb" of size 930
+10-30 15:17:49.531 13588 13611 I native  : I0000 00:00:1793369869.531885   13611 android_resource_loader.cc:100] Built resource markup_triggers
+10-30 15:17:49.531 13588 13611 I native  : I0000 00:00:1793369869.531891   13611 android_resource_loader.cc:116] Loaded resource:markup_triggers
+10-30 15:17:49.531 13588 13611 I native  : I0000 00:00:1793369869.531897   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/morphosyntactic_mapping.pb" (as: FILE) ...
+10-30 15:17:49.531 13588 13611 I native  : I0000 00:00:1793369869.531903   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/morphosyntactic_mapping.pb" of size 6
+10-30 15:17:49.531 13588 13611 I native  : I0000 00:00:1793369869.531928   13611 android_resource_loader.cc:100] Built resource morph_analyzer_attribute_map
+10-30 15:17:49.531 13588 13611 I native  : I0000 00:00:1793369869.531991   13611 android_resource_loader.cc:116] Loaded resource:morph_analyzer_attribute_map
+10-30 15:17:49.532 13588 13611 I native  : I0000 00:00:1793369869.532021   13611 android_resource_loader.cc:100] Built resource multilingual_capabilities
+10-30 15:17:49.532 13588 13611 I native  : I0000 00:00:1793369869.532035   13611 android_resource_loader.cc:116] Loaded resource:multilingual_capabilities
+10-30 15:17:49.532 13588 13611 I native  : I0000 00:00:1793369869.532056   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_us_phonology.pb" (as: FILE) ...
+10-30 15:17:49.532 13588 13611 I native  : I0000 00:00:1793369869.532074   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_us_phonology.pb" of size 2214
+10-30 15:17:49.532 13588 13611 W native  : W0000 00:00:1793369869.532267   13611 phonology.cc:80] Phonemes @, @` have non-distinctive features. See b/111971558.
+10-30 15:17:49.532 13588 13611 W native  : W0000 00:00:1793369869.532296   13611 phonology.cc:80] Phonemes l, r\ have non-distinctive features. See b/111971558.
+10-30 15:17:49.532 13588 13611 I native  : I0000 00:00:1793369869.532467   13611 android_resource_loader.cc:100] Built resource phonology
+10-30 15:17:49.532 13588 13611 I native  : I0000 00:00:1793369869.532482   13611 android_resource_loader.cc:116] Loaded resource:phonology
+10-30 15:17:49.532 13588 13611 I native  : I0000 00:00:1793369869.532505   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_morphology" (as: FILE) ...
+10-30 15:17:49.532 13588 13611 I native  : I0000 00:00:1793369869.532528   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_morphology" of size 2753822
+10-30 15:17:49.534 13588 13611 I native  : I0000 00:00:1793369869.534487   13611 model-api.cc:46] Registered model under key morphology
+10-30 15:17:49.535 13588 13611 I native  : I0000 00:00:1793369869.535989   13611 android_resource_loader.cc:100] Built resource analyze_morphology_saft_portable_algo
+10-30 15:17:49.536 13588 13611 I native  : I0000 00:00:1793369869.536038   13611 android_resource_loader.cc:116] Loaded resource:analyze_morphology_saft_portable_algo
+10-30 15:17:49.536 13588 13611 I native  : I0000 00:00:1793369869.536068   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/ipa_to_tts_to-en_us.far" (as: FILE) ...
+10-30 15:17:49.536 13588 13611 I native  : I0000 00:00:1793369869.536091   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/ipa_to_tts_to-en_us.far" of size 511570
+10-30 15:17:49.536 13588 13611 I native  : I0000 00:00:1793369869.536636   13611 android_resource_loader.cc:100] Built resource ipa_to_tts_phoneme_mapper
+10-30 15:17:49.536 13588 13611 I native  : I0000 00:00:1793369869.536731   13611 android_resource_loader.cc:116] Loaded resource:ipa_to_tts_phoneme_mapper
+10-30 15:17:49.536 13588 13611 I native  : I0000 00:00:1793369869.536762   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_us.hlex.bin" (as: MEMORY) ...
+10-30 15:17:49.536 13588 13611 I native  : I0000 00:00:1793369869.536784   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_us.hlex.bin" of size 5118800
+10-30 15:17:49.536 13588 13611 I native  : I0000 00:00:1793369869.536967   13611 android_resource_loader.cc:100] Built resource lexicon
+10-30 15:17:49.536 13588 13611 I native  : I0000 00:00:1793369869.536974   13611 android_resource_loader.cc:116] Loaded resource:lexicon
+10-30 15:17:49.536 13588 13611 I native  : I0000 00:00:1793369869.536993   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/homographs_model_en_us_embedded.bin" (as: MEMORY) ...
+10-30 15:17:49.537 13588 13611 I native  : I0000 00:00:1793369869.537009   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/homographs_model_en_us_embedded.bin" of size 398840
+10-30 15:17:49.539 13588 13611 I native  : I0000 00:00:1793369869.539719   13611 android_resource_loader.cc:100] Built resource homograph_classifier_model_resource
+10-30 15:17:49.539 13588 13611 I native  : I0000 00:00:1793369869.539765   13611 android_resource_loader.cc:116] Loaded resource:homograph_classifier_model_resource
+10-30 15:17:49.539 13588 13611 I native  : I0000 00:00:1793369869.539788   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/lettuce_node_generator_params_embedded_us_runtime.pb" (as: FILE) ...
+10-30 15:17:49.539 13588 13611 I native  : I0000 00:00:1793369869.539815   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/lettuce_node_generator_params_embedded_us_runtime.pb" of size 2697
+10-30 15:17:49.550 13920 13932 I chromium: [INFO:viewport_data.cc(133)] E2E_Used ViewportFitCover
+10-30 15:17:49.561 13920 13932 I chromium: [INFO:document_style_environment_variables.cc(104)] E2E_Used SafeAreaInsetBottom
+10-30 15:17:49.753 13588 13611 I native  : I0000 00:00:1793369869.752977   13611 exl_node_generator.cc:58] Setting legal word grammar as macro_only: true
+10-30 15:17:49.753 13588 13611 I native  : I0000 00:00:1793369869.753168   13611 android_resource_loader.cc:100] Built resource lettuce_node_generator
+10-30 15:17:49.753 13588 13611 I native  : I0000 00:00:1793369869.753200   13611 android_resource_loader.cc:116] Loaded resource:lettuce_node_generator
+10-30 15:17:49.753 13588 13611 I native  : I0000 00:00:1793369869.753214   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/burdock_model.params.pb" (as: FILE) ...
+10-30 15:17:49.753 13588 13611 I native  : I0000 00:00:1793369869.753239   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/burdock_model.params.pb" of size 8875
+10-30 15:17:49.753 13588 13611 I native  : I0000 00:00:1793369869.753516   13611 android_resource_loader.cc:100] Built resource lstm_add_specification_resource
+10-30 15:17:49.753 13588 13611 I native  : I0000 00:00:1793369869.753551   13611 android_resource_loader.cc:116] Loaded resource:lstm_add_specification_resource
+10-30 15:17:49.753 13588 13611 I native  : I0000 00:00:1793369869.753566   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/chive_model_fused.pb" (as: FILE) ...
+10-30 15:17:49.753 13588 13611 I native  : I0000 00:00:1793369869.753577   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/chive_model_fused.pb" of size 1281
+10-30 15:17:49.753 13588 13611 I native  : I0000 00:00:1793369869.753605   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/burdock_valerian_model.tflite" (as: MEMORY) ...
+10-30 15:17:49.753 13588 13611 I native  : I0000 00:00:1793369869.753622   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/burdock_valerian_model.tflite" of size 1790608
+10-30 15:17:49.753 13588 13611 E tflite  : third_party/tensorflow/lite/core/subgraph.cc:1092 tensor.data.raw != nullptr was not true.
+10-30 15:17:49.754 13588 13611 I native  : I0000 00:00:1793369869.754041   13611 chive_inference_resource.cc:233] Creating new CHiVE model [model graph]:
+10-30 15:17:49.754 13588 13611 I native  : I0000 00:00:1793369869.754061   13611 chive_model.cc:179] Creating a single pass CHiVE model
+10-30 15:17:49.754 13588 13611 I native  : I0000 00:00:1793369869.754815   13611 android_resource_loader.cc:100] Built resource chive_inference_config
+10-30 15:17:49.754 13588 13611 I native  : I0000 00:00:1793369869.754858   13611 android_resource_loader.cc:116] Loaded resource:chive_inference_config
+10-30 15:17:49.754 13588 13611 I native  : I0000 00:00:1793369869.754870   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/converter_en_us_android.far" (as: FILE) ...
+10-30 15:17:49.754 13588 13611 I native  : I0000 00:00:1793369869.754901   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/converter_en_us_android.far" of size 1521
+10-30 15:17:49.755 13588 13611 I native  : I0000 00:00:1793369869.754999   13611 android_resource_loader.cc:100] Built resource pron_buffet_to_tts_converter
+10-30 15:17:49.755 13588 13611 I native  : I0000 00:00:1793369869.755002   13611 android_resource_loader.cc:116] Loaded resource:pron_buffet_to_tts_converter
+10-30 15:17:49.755 13588 13611 I native  : I0000 00:00:1793369869.755013   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/regexp_rewrite_embedded.pb" (as: FILE) ...
+10-30 15:17:49.755 13588 13611 I native  : I0000 00:00:1793369869.755024   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/regexp_rewrite_embedded.pb" of size 6111
+10-30 15:17:49.755 13588 13611 I native  : I0000 00:00:1793369869.755096   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/punctuation.pb" (as: FILE) ...
+10-30 15:17:49.755 13588 13611 I native  : I0000 00:00:1793369869.755120   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/punctuation.pb" of size 452
+10-30 15:17:49.781 13588 13611 E native  : E0000 00:00:1793369869.781658   13611 re2.cc:275] Error parsing '^|[^\p{Letter}\\]': invalid character class range: \p{Letter}
+10-30 15:17:49.781 13588 13611 E native  : E0000 00:00:1793369869.781720   13611 replacement_rule.cc:35] INVALID_ARGUMENT: Invalid left_context regexp: invalid character class range: \p{Letter}
+10-30 15:17:49.781 13588 13611 E native  : === Source Location Trace: ===
+10-30 15:17:49.781 13588 13611 E native  : speech/tts/libs/unicode/re2_tracked_rewrite.cc:51
+10-30 15:17:49.781 13588 13611 E native  : speech/tts/libs/unicode/re2_tracked_rewrite.cc:71
+10-30 15:17:49.781 13588 13611 E native  : E0000 00:00:1793369869.781742   13611 regexp_rewriter.cc:33] Error creating rule MessageLite at 0xb400007b3ece72f0.
+10-30 15:17:49.781 13588 13611 I native  : I0000 00:00:1793369869.781964   13611 android_resource_loader.cc:100] Built resource rewrite_algo
+10-30 15:17:49.782 13588 13611 I native  : I0000 00:00:1793369869.782004   13611 android_resource_loader.cc:116] Loaded resource:rewrite_algo
+10-30 15:17:49.782 13588 13611 I native  : I0000 00:00:1793369869.782020   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/roman_numeral_contexts.pb" (as: FILE) ...
+10-30 15:17:49.782 13588 13611 I native  : I0000 00:00:1793369869.782049   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/roman_numeral_contexts.pb" of size 9114
+10-30 15:17:49.782 13588 13611 I native  : I0000 00:00:1793369869.782142   13611 android_resource_loader.cc:100] Built resource roman_numeral_context_words
+10-30 15:17:49.782 13588 13611 I native  : I0000 00:00:1793369869.782148   13611 android_resource_loader.cc:116] Loaded resource:roman_numeral_context_words
+10-30 15:17:49.782 13588 13611 I native  : I0000 00:00:1793369869.782387   13611 android_resource_loader.cc:100] Built resource classify_roman_numerals_grm_algo
+10-30 15:17:49.782 13588 13611 I native  : I0000 00:00:1793369869.782449   13611 android_resource_loader.cc:116] Loaded resource:classify_roman_numerals_grm_algo
+10-30 15:17:49.782 13588 13611 I native  : I0000 00:00:1793369869.782461   13611 android_resource_loader.cc:100] Built resource runtime_override
+10-30 15:17:49.782 13588 13611 I native  : I0000 00:00:1793369869.782464   13611 android_resource_loader.cc:116] Loaded resource:runtime_override
+10-30 15:17:49.782 13588 13611 I native  : I0000 00:00:1793369869.782474   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/seanet_model_options.pb" (as: FILE) ...
+10-30 15:17:49.782 13588 13611 I native  : I0000 00:00:1793369869.782489   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/seanet_model_options.pb" of size 32
+10-30 15:17:49.782 13588 13611 I native  : I0000 00:00:1793369869.782509   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/seanet_model.tflite" (as: FILE) ...
+10-30 15:17:49.782 13588 13611 I native  : I0000 00:00:1793369869.782523   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/seanet_model.tflite" of size 2786320
+10-30 15:17:49.784 13588 13611 I native  : I0000 00:00:1793369869.784889   13611 android_resource_loader.cc:100] Built resource seanet_enhancer
+10-30 15:17:49.784 13588 13611 I native  : I0000 00:00:1793369869.784919   13611 android_resource_loader.cc:116] Loaded resource:seanet_enhancer
+10-30 15:17:49.784 13588 13611 I native  : I0000 00:00:1793369869.784928   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/sb_model.bin" (as: MEMORY) ...
+10-30 15:17:49.784 13588 13611 I native  : I0000 00:00:1793369869.784950   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/sb_model.bin" of size 48432
+10-30 15:17:49.784 13588 13611 I native  : I0000 00:00:1793369869.784989   13611 android_resource_loader.cc:100] Built resource sentence_boundary_model_resource
+10-30 15:17:49.784 13588 13611 I native  : I0000 00:00:1793369869.784996   13611 android_resource_loader.cc:116] Loaded resource:sentence_boundary_model_resource
+10-30 15:17:49.785 13588 13611 I native  : I0000 00:00:1793369869.785002   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_verbalize_spec.pb" (as: FILE) ...
+10-30 15:17:49.785 13588 13611 I native  : I0000 00:00:1793369869.785043   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/en_verbalize_spec.pb" of size 3984
+10-30 15:17:49.785 13588 13611 I native  : I0000 00:00:1793369869.785101   13611 android_resource_loader.cc:100] Built resource serialization_spec
+10-30 15:17:49.785 13588 13611 I native  : I0000 00:00:1793369869.785105   13611 android_resource_loader.cc:116] Loaded resource:serialization_spec
+10-30 15:17:49.785 13588 13611 I native  : I0000 00:00:1793369869.785111   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/textnorm_params_embedded_en_us.pb" (as: FILE) ...
+10-30 15:17:49.785 13588 13611 I native  : I0000 00:00:1793369869.785118   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/textnorm_params_embedded_en_us.pb" of size 321
+10-30 15:17:49.785 13588 13611 I native  : I0000 00:00:1793369869.785140   13611 android_resource_loader.cc:100] Built resource textnorm_params
+10-30 15:17:49.785 13588 13611 I native  : I0000 00:00:1793369869.785146   13611 android_resource_loader.cc:116] Loaded resource:textnorm_params
+10-30 15:17:49.785 13588 13611 I native  : I0000 00:00:1793369869.785605   13611 android_resource_loader.cc:100] Built resource icu_transliterator_to_latin
+10-30 15:17:49.785 13588 13611 I native  : I0000 00:00:1793369869.785665   13611 android_resource_loader.cc:116] Loaded resource:icu_transliterator_to_latin
+10-30 15:17:49.785 13588 13611 I native  : I0000 00:00:1793369869.785680   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/g2p_m3_syls0_stress0_en-US.fst" (as: FILE) ...
+10-30 15:17:49.785 13588 13611 I native  : I0000 00:00:1793369869.785694   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/g2p_m3_syls0_stress0_en-US.fst" of size 700928
+10-30 15:17:49.785 13588 13611 I native  : I0000 00:00:1793369869.785710   13611 compact_fst.cc:20] Loading FST from "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/g2p_m3_syls0_stress0_en-US.fst" ...
+10-30 15:17:49.817 13588 13611 I native  : I0000 00:00:1793369869.817639   13611 decoder.cc:51] G2P FST loaded (61 graphemes and 41 phonemes).
+10-30 15:17:49.820 13588 13611 I native  : I0000 00:00:1793369869.820374   13611 android_resource_loader.cc:100] Built resource learned_fst_g2p_mapper
+10-30 15:17:49.820 13588 13611 I native  : I0000 00:00:1793369869.820406   13611 android_resource_loader.cc:116] Loaded resource:learned_fst_g2p_mapper
+10-30 15:17:49.820 13588 13611 I native  : I0000 00:00:1793369869.820437   13611 android_resource_loader.cc:100] Built resource spelling_normalizer
+10-30 15:17:49.820 13588 13611 I native  : I0000 00:00:1793369869.820442   13611 android_resource_loader.cc:116] Loaded resource:spelling_normalizer
+10-30 15:17:49.820 13588 13611 I native  : I0000 00:00:1793369869.820447   13611 android_resource_loader.cc:100] Built resource utf8_utils
+10-30 15:17:49.820 13588 13611 I native  : I0000 00:00:1793369869.820449   13611 android_resource_loader.cc:116] Loaded resource:utf8_utils
+10-30 15:17:49.820 13588 13611 I native  : I0000 00:00:1793369869.820459   13611 android_resource_loader.cc:100] Built resource lexical_classifier
+10-30 15:17:49.820 13588 13611 I native  : I0000 00:00:1793369869.820461   13611 android_resource_loader.cc:116] Loaded resource:lexical_classifier
+10-30 15:17:49.820 13588 13611 I native  : I0000 00:00:1793369869.820474   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/universal_carrier_pigeon_config.binarypb" (as: FILE) ...
+10-30 15:17:49.820 13588 13611 I native  : I0000 00:00:1793369869.820497   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/universal_carrier_pigeon_config.binarypb" of size 52
+10-30 15:17:49.820 13588 13611 I native  : I0000 00:00:1793369869.820653   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/universal_carrier_pigeon_model.tflite" (as: FILE) ...
+10-30 15:17:49.820 13588 13611 I native  : I0000 00:00:1793369869.820690   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/universal_carrier_pigeon_model.tflite" of size 638952
+10-30 15:17:49.821 13588 13611 I native  : I0000 00:00:1793369869.821380   13611 android_resource_loader.cc:100] Built resource carrier_pigeon_algo
+10-30 15:17:49.821 13588 13611 I native  : I0000 00:00:1793369869.821450   13611 android_resource_loader.cc:116] Loaded resource:carrier_pigeon_algo
+10-30 15:17:49.821 13588 13611 I native  : I0000 00:00:1793369869.821483   13611 android_resource_loader.cc:100] Built resource icu_transliterator
+10-30 15:17:49.821 13588 13611 I native  : I0000 00:00:1793369869.821487   13611 android_resource_loader.cc:116] Loaded resource:icu_transliterator
+10-30 15:17:49.826 13588 13611 I native  : I0000 00:00:1793369869.826043   13611 android_resource_loader.cc:100] Built resource token_resolver_algo
+10-30 15:17:49.826 13588 13611 I native  : I0000 00:00:1793369869.826093   13611 android_resource_loader.cc:116] Loaded resource:token_resolver_algo
+10-30 15:17:49.826 13588 13611 I native  : I0000 00:00:1793369869.826104   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/variant_overrides_en_us.pb" (as: FILE) ...
+10-30 15:17:49.826 13588 13611 I native  : I0000 00:00:1793369869.826125   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/variant_overrides_en_us.pb" of size 1525
+10-30 15:17:49.826 13588 13611 I native  : I0000 00:00:1793369869.826305   13611 android_resource_loader.cc:100] Built resource variant_overrides
+10-30 15:17:49.826 13588 13611 I native  : I0000 00:00:1793369869.826313   13611 android_resource_loader.cc:116] Loaded resource:variant_overrides
+10-30 15:17:49.826 13588 13611 I native  : I0000 00:00:1793369869.826318   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/variant_selection_model_en_us_embedded.bin" (as: MEMORY) ...
+10-30 15:17:49.826 13588 13611 I native  : I0000 00:00:1793369869.826339   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/variant_selection_model_en_us_embedded.bin" of size 221608
+10-30 15:17:49.826 13588 13611 I native  : I0000 00:00:1793369869.826348   13611 android_resource_loader.cc:100] Built resource variant_selection_model_data_resource
+10-30 15:17:49.826 13588 13611 I native  : I0000 00:00:1793369869.826350   13611 android_resource_loader.cc:116] Loaded resource:variant_selection_model_data_resource
+10-30 15:17:49.827 13588 13611 I native  : I0000 00:00:1793369869.827888   13611 select_variants.cc:128] Word with override has only one variant: her
+10-30 15:17:49.827 13588 13611 I native  : I0000 00:00:1793369869.827974   13611 android_resource_loader.cc:100] Built resource select_variants_algo
+10-30 15:17:49.827 13588 13611 I native  : I0000 00:00:1793369869.827978   13611 android_resource_loader.cc:116] Loaded resource:select_variants_algo
+10-30 15:17:49.827 13588 13611 I native  : I0000 00:00:1793369869.827988   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/us_verbalization_capabilities.pb" (as: FILE) ...
+10-30 15:17:49.828 13588 13611 I native  : I0000 00:00:1793369869.828015   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/us_verbalization_capabilities.pb" of size 5224
+10-30 15:17:49.828 13588 13611 I native  : I0000 00:00:1793369869.828129   13611 android_resource_loader.cc:100] Built resource verbalization_capabilities
+10-30 15:17:49.828 13588 13611 I native  : I0000 00:00:1793369869.828179   13611 android_resource_loader.cc:116] Loaded resource:verbalization_capabilities
+10-30 15:17:49.828 13588 13611 I native  : I0000 00:00:1793369869.828192   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/verbalize_embedded_android.far" (as: FILE) ...
+10-30 15:17:49.828 13588 13611 I native  : I0000 00:00:1793369869.828200   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/verbalize_embedded_android.far" of size 2373311
+10-30 15:17:49.830 13588 13611 I native  : I0000 00:00:1793369869.830054   13611 android_resource_loader.cc:100] Built resource verbalize_grm_fst
+10-30 15:17:49.830 13588 13611 I native  : I0000 00:00:1793369869.830083   13611 android_resource_loader.cc:116] Loaded resource:verbalize_grm_fst
+10-30 15:17:49.830 13588 13611 I native  : I0000 00:00:1793369869.830096   13611 android_resource_loader.cc:100] Built resource speller_algo
+10-30 15:17:49.830 13588 13611 I native  : I0000 00:00:1793369869.830099   13611 android_resource_loader.cc:116] Loaded resource:speller_algo
+10-30 15:17:49.831 13588 13611 I native  : I0000 00:00:1793369869.831090   13611 android_resource_loader.cc:100] Built resource verbalize_grm_algo
+10-30 15:17:49.831 13588 13611 I native  : I0000 00:00:1793369869.831118   13611 android_resource_loader.cc:116] Loaded resource:verbalize_grm_algo
+10-30 15:17:49.831 13588 13611 I native  : I0000 00:00:1793369869.831136   13611 voice_params_resource.cc:31] Voice information: MessageLite at 0xb400007c8f135c90
+10-30 15:17:49.831 13588 13611 I native  : I0000 00:00:1793369869.831141   13611 android_resource_loader.cc:100] Built resource voice_params
+10-30 15:17:49.831 13588 13611 I native  : I0000 00:00:1793369869.831143   13611 android_resource_loader.cc:116] Loaded resource:voice_params
+10-30 15:17:49.835 13588 13611 I native  : I0000 00:00:1793369869.835195   13611 android_resource_loader.cc:100] Built resource word_resolver_algo
+10-30 15:17:49.835 13588 13611 I native  : I0000 00:00:1793369869.835242   13611 android_resource_loader.cc:116] Loaded resource:word_resolver_algo
+10-30 15:17:49.835 13588 13611 I native  : I0000 00:00:1793369869.835264   13611 data_source.cc:95] Opening data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/xsampa_to_tts_to-en_us.far" (as: FILE) ...
+10-30 15:17:49.835 13588 13611 I native  : I0000 00:00:1793369869.835290   13611 data_source.cc:99] ... Opened data source "/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84/../en-us-x-multi-r84/xsampa_to_tts_to-en_us.far" of size 27780
+10-30 15:17:49.835 13588 13611 I native  : I0000 00:00:1793369869.835452   13611 android_resource_loader.cc:100] Built resource xsampa_to_tts_phoneme_mapper
+10-30 15:17:49.835 13588 13611 I native  : I0000 00:00:1793369869.835458   13611 android_resource_loader.cc:116] Loaded resource:xsampa_to_tts_phoneme_mapper
+10-30 15:17:49.835 13588 13611 I native  : I0000 00:00:1793369869.835461   13611 local_pipeline_runner.cc:49] Done loading all resources from: {/data/user_de/0/com.google.android.tts/files/superpacks/en-us/en-us-x-multi-seanet-r84}
+10-30 15:17:49.837 13588 13611 I ComposerWrapperImpl: Done initializing en-us-x-iog-seanet-embedded
+10-30 15:17:49.874 13588 13598 I GoogleTTSServiceImpl: currentLocale = en-US
+10-30 15:17:49.912 13588 13598 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+10-30 15:17:49.913 13260 13765 I TextToSpeech: Setting up the connection to TTS engine...
+10-30 15:17:49.913 13260 13260 W TextToSpeech: stop failed: TTS engine connection not fully set up
+10-30 15:17:50.121 13260 13276 D EGL_emulation: app_time_stats: avg=171.23ms min=14.52ms max=617.18ms count=6
+10-30 15:17:50.216 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:17:50.264 13260 13264 I ily.bastischool: Method exceeds compiler instruction limit: 24142 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+10-30 15:17:50.568 13260 13260 E chromium: [ERROR:aw_browser_terminator.cc(154)] Renderer process (13920) crash detected (code -1).
+10-30 15:17:50.608   550  4746 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@4b2173d7 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-30 15:17:50.609   550   583 I libprocessgroup: Removed cgroup /sys/fs/cgroup/uid_99066/pid_13920
+10-30 15:17:50.612   848   848 I Zygote  : Process 13920 exited cleanly (0)
+10-30 15:17:50.683  1282  1282 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=4189, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }
+10-30 15:17:50.693 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c438318 in: PAUSED
+10-30 15:17:50.694 13260 13260 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@c438318
+10-30 15:17:50.718   402   402 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-30 15:17:51.027 13293 13306 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-30 15:17:51.028 13293 13306 I EGL_emulation: Opening libGLESv2_emulation.so
+10-30 15:17:51.044 13293 13306 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+10-30 15:17:51.044 13293 13306 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-30 15:17:51.173  1282  1282 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=406, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10000100 cmp=com.google.android.apps.nexuslauncher/.NexusLauncherActivity }
+10-30 15:17:51.216  1282  1282 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=6}
+10-30 15:17:51.223  1282  1282 D BaseDepthController: setSurface:
+10-30 15:17:51.223  1282  1282 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-30 15:17:51.223  1282  1282 D BaseDepthController: 	mSurface: Surface(name=com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity)/@0x5cf14d6
+10-30 15:17:51.360  1282  1282 D StatsLog: LAUNCHER_ONRESUME
+10-30 15:17:51.381   550  1457 W AppSearchIcing: icing-search-engine.cc:321: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+10-30 15:17:51.387  1282  1613 D OneSearchSuggestProvider: AppSearch 0-state cache not available, fallback to AGA
+10-30 15:17:51.387  1282  1613 D OneSearchSuggestProvider: java.util.concurrent.CompletionException: java.util.NoSuchElementException: No value present
+10-30 15:17:51.387  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:308)
+10-30 15:17:51.387  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:323)
+10-30 15:17:51.387  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:684)
+10-30 15:17:51.387  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:486)
+10-30 15:17:51.387  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2138)
+10-30 15:17:51.387  1282  1613 D OneSearchSuggestProvider: 	at com.google.android.apps.nexuslauncher.allapps.E0.onResult(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:67)
+10-30 15:17:51.387  1282  1613 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1.lambda$onResult$0(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:144)
+10-30 15:17:51.387  1282  1613 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1.$r8$lambda$CEk3q8sDAQVhU3rQwVueB8FAj_M(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:1)
+10-30 15:17:51.387  1282  1613 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1$$ExternalSyntheticLambda0.run(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:22)
+10-30 15:17:51.387  1282  1613 D OneSearchSuggestProvider: 	at android.os.Handler.handleCallback(Handler.java:959)
+10-30 15:17:51.387  1282  1613 D OneSearchSuggestProvider: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+10-30 15:17:51.387  1282  1613 D OneSearchSuggestProvider: 	at android.os.Looper.loopOnce(Looper.java:232)
+10-30 15:17:51.387  1282  1613 D OneSearchSuggestProvider: 	at android.os.Looper.loop(Looper.java:317)
+10-30 15:17:51.387  1282  1613 D OneSearchSuggestProvider: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+10-30 15:17:51.387  1282  1613 D OneSearchSuggestProvider: Caused by: java.util.NoSuchElementException: No value present
+10-30 15:17:51.387  1282  1613 D OneSearchSuggestProvider: 	at java.util.Optional.get(Optional.java:143)
+10-30 15:17:51.387  1282  1613 D OneSearchSuggestProvider: 	at com.google.android.apps.nexuslauncher.allapps.E0.onResult(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:28)
+10-30 15:17:51.387  1282  1613 D OneSearchSuggestProvider: 	... 8 more
+10-30 15:17:51.391  1282  1613 D OneSearchSuggestProvider: Created the binder channel successfully for end point service =com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService , mChannel=i1{delegate=f{logId=7469, target=directaddress:///AndroidComponentAddress%5BIntent%20%7B%20act=grpc.io.action.BIND%20cmp=com.google.android.googlequicksearchbox/com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService%20%7D%5D}} , mOneSearchConnection=l2.Z@86e4a80
+10-30 15:17:51.392  1413  1664 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+10-30 15:17:51.392  1413  1664 I AiAiEcho: EchoTargets:
+10-30 15:17:51.392  1413  1664 I AiAiEcho: Filtered by AiAi flag check:
+10-30 15:17:51.392  1413  1664 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+10-30 15:17:51.392  1413  1664 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+10-30 15:17:51.392  1413  1664 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+10-30 15:17:51.398  1413  1664 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-30 15:17:51.400  1282  1356 D QuickstepModelDelegate: notifyAppTargetEvent action=1 launchLocation=workspace/0/[-1,-1]/[1,1]
+10-30 15:17:51.444 13260 13260 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-30 15:17:51.456  1282  1514 D EGL_emulation: app_time_stats: avg=1536.88ms min=96.62ms max=5435.68ms count=4
+10-30 15:17:51.459 10652 10652 I A       : (REDACTED) Created gRPC endpoint for service %s
+10-30 15:17:51.460  1282  1282 D SsBaseTemplateCard: No text view can be set up
+10-30 15:17:51.460  1282  1282 D SsBaseTemplateCard: Passed-in item info is null
+10-30 15:17:51.461  1282  1282 D SsBaseTemplateCard: Passed-in item info is null
+10-30 15:17:51.461  1282  1282 D SsBaseTemplateCard: Passed-in item info is null
+10-30 15:17:51.461  1282  1282 I SsBaseTemplateCard: Secondary card pane is null
+10-30 15:17:51.530 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c438318 in: STOPPED
+10-30 15:17:51.530 13260 13260 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@c438318
+10-30 15:17:51.547  1282  1282 D StateManager: createAtomicAnimation - fromState: Background, toState: Normal, partial trace:
+10-30 15:17:51.547  1282  1282 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.prepareToAnimate(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:22)
+10-30 15:17:51.547  1282  1282 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.<init>(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:11)
+10-30 15:17:51.547  1282  1282 D StateManager: 	at com.android.launcher3.QuickstepTransitionManager.createWallpaperOpenAnimations(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:735)
+10-30 15:17:51.569 13260 13260 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c438318 in: DESTROYED
+10-30 15:17:51.569 13260 13260 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+10-30 15:17:51.581   550   550 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+10-30 15:17:51.581   550   662 I ImeTracker: com.google.android.apps.nexuslauncher:b587a876: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-30 15:17:51.582 13588 13588 I GoogleTtsServicePeer: onUnbind() called for Google TTS service.
+10-30 15:17:51.582   550   662 I ImeTracker: com.google.android.apps.nexuslauncher:b587a876: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-30 15:17:51.583 13260 13271 I TextToSpeech: Disconnected from TTS engine
+10-30 15:17:51.583 13588 13588 I ComposerWrapperImpl: Deleting composer, current voice = en-us-x-iog-seanet-embedded
+10-30 15:17:51.589 13293 13293 D VRI[InstrumentationActivityInvoker$EmptyActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-30 15:17:51.597  5889  5889 I SubtypeOperator: SubtypeOperator$1.onUnbindInput():44
+10-30 15:17:51.600  5889  5889 I SubtypeOperator: SubtypeOperator$1.onBindInput():33
+10-30 15:17:51.601  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2404
+10-30 15:17:51.602  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.google.android.apps.nexuslauncher, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-30 15:17:51.602  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:17:51.627  1282  1282 D SearchTargetUtil: queryLength=0 size=0
+10-30 15:17:51.654 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@24046d1]
+10-30 15:17:51.662  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 0, locked = false
+10-30 15:17:51.664  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:17:51.667   550  2331 W InputManager-JNI: Input channel object 'c025121 com.bellfamily.bastischool/com.bellfamily.bastischool.MainActivity (client)' was disposed without first being removed with the input manager!
+10-30 15:17:51.689 13260 13274 I TestRunner: finished: numbersWebContentAndExactQuestionSurviveOptionsAndRecreation(com.bellfamily.bastischool.HomeProductionNavigationTest)

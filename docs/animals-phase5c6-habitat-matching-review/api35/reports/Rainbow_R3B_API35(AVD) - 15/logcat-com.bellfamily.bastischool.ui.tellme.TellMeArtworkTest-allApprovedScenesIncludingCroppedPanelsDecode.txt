@@ -1,0 +1,19 @@
+10-30 15:50:50.629 13260 13274 I TestRunner: started: allApprovedScenesIncludingCroppedPanelsDecode(com.bellfamily.bastischool.ui.tellme.TellMeArtworkTest)
+10-30 15:50:50.667  5889  5889 I SubtypeOperator: SubtypeOperator$1.onUnbindInput():44
+10-30 15:50:50.667   780   975 D EGL_emulation: app_time_stats: avg=559.51ms min=4.12ms max=2008.63ms count=4
+10-30 15:50:50.668  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5115
+10-30 15:50:50.687  5889  5889 I SubtypeOperator: SubtypeOperator$1.onBindInput():33
+10-30 15:50:50.688  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2404
+10-30 15:50:50.688  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.google.android.apps.nexuslauncher, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-30 15:50:50.688  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:50:50.694  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5115
+10-30 15:50:50.720   780   929 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@38a0db9
+10-30 15:50:50.722   550  1951 W InputManager-JNI: Input channel object '7c06e00 Splash Screen com.bellfamily.bastischool.test (client)' was disposed without first being removed with the input manager!
+10-30 15:50:50.769  5889 13286 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 0, locked = false
+10-30 15:50:50.789 13293 13293 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@317217
+10-30 15:50:50.792   550   619 W InputManager-JNI: Input channel object '421d2c4 com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+10-30 15:50:50.795  5889 13286 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:50:50.796  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5116
+10-30 15:50:50.796  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5116
+10-30 15:50:51.371 13260 13265 I ily.bastischool: NativeAlloc concurrent mark compact GC freed 11MB AllocSpace bytes, 1(24KB) LOS objects, 50% free, 14MB/29MB, paused 236us,2.850ms total 118.491ms
+10-30 15:50:54.056 13260 13274 I TestRunner: finished: allApprovedScenesIncludingCroppedPanelsDecode(com.bellfamily.bastischool.ui.tellme.TellMeArtworkTest)

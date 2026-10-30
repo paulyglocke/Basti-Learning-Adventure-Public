@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.wilma.WilmaOrderTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:21" hostname="192.168.1.10" time="0.005">
+  <properties/>
+  <testcase name="wrongPlacementPreservesSequenceAndReplayHelpAreNotAttempts" classname="com.bellfamily.bastischool.learning.wilma.WilmaOrderTest" time="0.002"/>
+  <testcase name="partialOrderingCheckpointPreservesActualScrambleAndRejectsCorruption" classname="com.bellfamily.bastischool.learning.wilma.WilmaOrderTest" time="0.001"/>
+  <testcase name="placementLocksEachStepAndCompletesOnceWithSevenEvidenceRecords" classname="com.bellfamily.bastischool.learning.wilma.WilmaOrderTest" time="0.0"/>
+  <testcase name="sevenUniqueDaysScrambleDeterministicallyWithoutHeadOrTail" classname="com.bellfamily.bastischool.learning.wilma.WilmaOrderTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

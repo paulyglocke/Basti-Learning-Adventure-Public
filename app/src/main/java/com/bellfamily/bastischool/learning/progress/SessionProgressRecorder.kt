@@ -35,7 +35,7 @@ class SessionProgressRecorder(private val plan: SessionPlan, private val reposit
         val task = plan.tasks.getOrNull(result.id.task.ordinal - 1) ?: throw IllegalArgumentException("Unknown task")
         val q = task.question
         require(result.skill == q.skill && result.context == q.context && result.difficulty == q.difficulty)
-        require(result.choice in q.choices && result.correct == (result.choice == q.correct))
+        require(result.choice in q.choices && result.correct == (result.choice in q.acceptedAnswers))
         require(!result.support.hint || q.hint != null)
         require(plan.policy.wrongAnswer == WrongAnswerPolicy.RETRY || result.id.number == 1)
         return AttemptEvent(origin, evidence(task), result.id, result.language, result.choice,
@@ -49,7 +49,7 @@ class SessionProgressRecorder(private val plan: SessionPlan, private val reposit
             val expected = plan.tasks[index]
             require(evidence(task) == evidence(expected))
             require(progress.locked && progress.lastChoice in expected.question.choices)
-            require((progress.answer == AnswerState.CORRECT) == (progress.lastChoice == expected.question.correct))
+            require((progress.answer == AnswerState.CORRECT) == (progress.lastChoice in expected.question.acceptedAnswers))
             require(!progress.support.hint || expected.question.hint != null)
             require(plan.policy.wrongAnswer == WrongAnswerPolicy.RETRY || progress.attempts == 1)
             require(progress.answer != AnswerState.INCORRECT || plan.policy.wrongAnswer == WrongAnswerPolicy.LOCK)

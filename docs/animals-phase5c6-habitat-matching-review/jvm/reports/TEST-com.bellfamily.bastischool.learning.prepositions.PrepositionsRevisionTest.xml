@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.prepositions.PrepositionsRevisionTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:00" hostname="192.168.1.10" time="0.052">
+  <properties/>
+  <testcase name="oldPendingCompletionDeduplicatesThenPlayAgainStartsV3" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsRevisionTest" time="0.006"/>
+  <testcase name="originalV1UnansweredAndRetrySnapshotsRestoreByteExactly" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsRevisionTest" time="0.004"/>
+  <testcase name="allOriginalSceneDefinitionsRestoreAgainstFrozenV1Authoring" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsRevisionTest" time="0.036"/>
+  <testcase name="v1DoesNotAcceptNewRelationsOrModifiedAuthoredTextAndBadJournalIsUntouched" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsRevisionTest" time="0.004"/>
+  <testcase name="validChecksummedButIncompatibleJournalIsNeverOverwritten" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsRevisionTest" time="0.001"/>
+  <testcase name="oldAnsweredStateAndPendingAttemptRetainVersionIdentityAndDeliverOnce" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsRevisionTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

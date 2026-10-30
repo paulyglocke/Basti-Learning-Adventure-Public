@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.months.MonthsBetweenTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:11:52" hostname="192.168.1.10" time="0.312">
+  <properties/>
+  <testcase name="fiveAndTenRoundsAreReproducibleUniqueAndUseFourPlausibleChoices" classname="com.bellfamily.bastischool.learning.months.MonthsBetweenTest" time="0.058"/>
+  <testcase name="retryReplayHintLanguageAndProgressUseIsolatedBetweenIdentity" classname="com.bellfamily.bastischool.learning.months.MonthsBetweenTest" time="0.251"/>
+  <testcase name="replayUsesExistingMonthsAudioLanguageAndPolicy" classname="com.bellfamily.bastischool.learning.months.MonthsBetweenTest" time="0.002"/>
+  <testcase name="catalogueCoversEveryMiddleMonthAndBothYearBoundaries" classname="com.bellfamily.bastischool.learning.months.MonthsBetweenTest" time="0.0"/>
+  <testcase name="bilingualPromptHintAndFeedbackNameTheRelationshipWithoutLeakingAnswer" classname="com.bellfamily.bastischool.learning.months.MonthsBetweenTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

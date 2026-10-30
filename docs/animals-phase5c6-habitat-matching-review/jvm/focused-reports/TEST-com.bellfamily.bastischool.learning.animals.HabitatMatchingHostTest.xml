@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.animals.HabitatMatchingHostTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:59:47" hostname="192.168.1.10" time="0.692">
+  <properties/>
+  <testcase name="sevenTaskCompletionIsUniqueAndNewSessionPreservesPriorResults" classname="com.bellfamily.bastischool.learning.animals.HabitatMatchingHostTest" time="0.432"/>
+  <testcase name="wrongAnswerRetryRestoreLanguageAndAcceptedAlternativeAreDurable" classname="com.bellfamily.bastischool.learning.animals.HabitatMatchingHostTest" time="0.26"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

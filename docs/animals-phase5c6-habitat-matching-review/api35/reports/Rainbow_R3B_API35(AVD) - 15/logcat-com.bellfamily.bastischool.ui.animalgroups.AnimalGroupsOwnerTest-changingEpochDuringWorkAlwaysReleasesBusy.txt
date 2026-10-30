@@ -1,0 +1,10 @@
+10-30 15:20:39.216 13260 13274 I TestRunner: started: changingEpochDuringWorkAlwaysReleasesBusy(com.bellfamily.bastischool.ui.animalgroups.AnimalGroupsOwnerTest)
+10-30 15:20:39.240   780   929 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@ddd4d6a
+10-30 15:20:39.240   550  5079 W InputManager-JNI: Input channel object '62903a Splash Screen com.bellfamily.bastischool.test (client)' was disposed without first being removed with the input manager!
+10-30 15:20:39.243 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@d94a9f5]
+10-30 15:20:39.255 13293 13293 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@8495dd6
+10-30 15:20:39.255   550  3109 W InputManager-JNI: Input channel object 'd86ec92 com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+10-30 15:20:39.282  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4289
+10-30 15:20:39.282  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4289
+10-30 15:20:39.360 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@d94a9f5]
+10-30 15:20:39.361 13260 13274 I TestRunner: finished: changingEpochDuringWorkAlwaysReleasesBusy(com.bellfamily.bastischool.ui.animalgroups.AnimalGroupsOwnerTest)

@@ -1,0 +1,364 @@
+10-30 15:41:10.891 13260 13274 I TestRunner: started: readableChoicesSeparateListeningRetryHintAndKeyboard[MISSING,de=true,font=1.5,orientation=1](com.bellfamily.bastischool.ui.months.MonthsQuizScreenTest)
+10-30 15:41:10.894 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@ea8f6ba]
+10-30 15:41:10.898 13260 13274 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: No service published for: ethernet
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: 	at android.os.ServiceManager.getServiceOrThrow(ServiceManager.java:203)
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry$145.createService(SystemServiceRegistry.java:2120)
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry$CachedServiceFetcher.getService(SystemServiceRegistry.java:2231)
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry.getSystemService(SystemServiceRegistry.java:1812)
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: 	at android.app.ContextImpl.getSystemService(ContextImpl.java:2241)
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: 	at android.content.ContextWrapper.getSystemService(ContextWrapper.java:936)
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.isEthernetSupported(Tethering.java:1579)
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.makeSupportedDownstreams(Tethering.java:2562)
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.updateSupportedDownstreams(Tethering.java:2536)
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.updateConfiguration(Tethering.java:549)
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.-$$Nest$mupdateConfiguration(Tethering.java:0)
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering$StateReceiver.onReceive(Tethering.java:1186)
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: 	at android.app.LoadedApk$ReceiverDispatcher$Args.lambda$getRunnable$0(LoadedApk.java:1814)
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: 	at android.app.LoadedApk$ReceiverDispatcher$Args.$r8$lambda$mcNAAl1SQ4MyJPyDg8TJ2x2h0Rk(Unknown Source:0)
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: 	at android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: 	at android.os.Handler.handleCallback(Handler.java:959)
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: 	at android.os.Looper.loopOnce(Looper.java:232)
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: 	at android.os.Looper.loop(Looper.java:317)
+10-30 15:41:10.900   830   939 E SystemServiceRegistry: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+10-30 15:41:10.904   550   828 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@496c9b38 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-30 15:41:10.942  1282  1282 D StatsLog: LAUNCHER_TRANSIENT_TASKBAR_HIDE
+10-30 15:41:10.967  1282  1282 D b/254119092: DisplayController#onConfigurationChanged: {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.60640 fontWeightAdjustment=0}
+10-30 15:41:10.994  1282  1282 D TFOManager: No activity in overlay, closing
+10-30 15:41:11.005   908   915 I m.android.phone: Background concurrent mark compact GC freed 3565KB AllocSpace bytes, 0(0B) LOS objects, 49% free, 3690KB/7380KB, paused 187us,1.145ms total 108.164ms
+10-30 15:41:11.024  5889  5922 I SP      : Sync for emoticon_content_description succeeded in 158 ms: no changes
+10-30 15:41:11.024  5889  5922 I SP      : GC for 'emoticon_content_description' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-30 15:41:11.024  5889  5922 I SuperpacksManagerImpl: SuperpacksManagerImpl$19.onSyncSuccess():947 emoticon_content_description.sync() succeeded
+10-30 15:41:11.091  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4834
+10-30 15:41:11.091  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4834
+10-30 15:41:11.091  1282  1282 W SplitSelectStateCtor: Missing session instanceIds
+10-30 15:41:11.091  1282  1282 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+10-30 15:41:11.098  1282  1282 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=4836, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.bellfamily.bastischool/androidx.activity.ComponentActivity }
+10-30 15:41:11.113 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@397823f in: PRE_ON_CREATE
+10-30 15:41:11.113 13260 13260 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+10-30 15:41:11.124 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@397823f in: CREATED
+10-30 15:41:11.125 13260 13260 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=androidx.activity.ComponentActivity@397823f
+10-30 15:41:11.126 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@397823f in: STARTED
+10-30 15:41:11.126 13260 13260 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=androidx.activity.ComponentActivity@397823f
+10-30 15:41:11.127 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@397823f in: RESUMED
+10-30 15:41:11.127 13260 13260 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=androidx.activity.ComponentActivity@397823f
+10-30 15:41:11.160 10652 10652 I SavesShareReceiver: (REDACTED) #device eligible for sharesheet: %s
+10-30 15:41:11.160 10652 10652 I SavesShareReceiver: (REDACTED) #sharesheet enabled: %s #sharesheet with image type enabled: %s
+10-30 15:41:11.160   780   780 D DefaultDeviceEntrySection: isUdfpsSupported=false
+10-30 15:41:11.161 10652 10652 I SavesShareReceiver: (REDACTED) AvailabilityUtils.updateAvailability() component:%s enabled:%s
+10-30 15:41:11.164 10652 10652 I SavesShareReceiver: (REDACTED) Update complete. %s enabled: %s
+10-30 15:41:11.164 10652 10652 I SavesShareReceiver: (REDACTED) AvailabilityUtils.updateAvailability() component:%s enabled:%s
+10-30 15:41:11.165 10652 10652 I SavesShareReceiver: (REDACTED) Update complete. %s enabled: %s
+10-30 15:41:11.165 10652 10652 I SavesShareReceiver: #synclet interval set for every : 12 hours
+10-30 15:41:11.260 10652 10652 I A       : WeatherWidgetSynclet is disabled, at least Android S and any Pixel is required.
+10-30 15:41:11.263 10652 10655 I earchbox:search: Compiler allocated 4411KB to compile java.lang.Object com.google.android.apps.gsa.binaries.satin.app.awf.m()
+10-30 15:41:11.264 10652 10652 I A       : #sync(). Running Synclets and scheduling next sync.
+10-30 15:41:11.265 10652 10652 I A       : (REDACTED) Created gRPC endpoint for service %s
+10-30 15:41:11.334 10652 10691 I ContentCaptureHelper: Setting logging level to OFF
+10-30 15:41:11.372 10652 18769 W TimedProcessReaper: Scheduling killing of process to refresh configuration
+10-30 15:41:11.402   550   561 I system_server: NativeAlloc concurrent mark compact GC freed 11MB AllocSpace bytes, 4(80KB) LOS objects, 41% free, 33MB/57MB, paused 1.303ms,1.541ms total 485.186ms
+10-30 15:41:11.407 10652 10681 D CompatChangeReporter: Compat change id reported: 289878283; UID 10137; state: ENABLED
+10-30 15:41:11.416 10652 10655 I earchbox:search: JIT allocated 61KB for compiled code of java.lang.Object com.google.android.apps.gsa.binaries.satin.app.awf.g()
+10-30 15:41:11.418 10652 10655 I earchbox:search: Compiler allocated 5914KB to compile java.lang.Object com.google.android.apps.gsa.binaries.satin.app.awf.g()
+10-30 15:41:11.436 10652 10681 W ProductIdClientStreamz: (REDACTED) Product id propagation is missing (traffic tag: %s).
+10-30 15:41:11.440   550   563 W System  : A resource failed to call HardwareBuffer.close.
+10-30 15:41:11.440   550   563 W System  : A resource failed to call release.
+10-30 15:41:11.440   550   563 W system_server: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Gu500pmAw2vV8V0dyUkO-Q==/com.bellfamily.bastischool.test-xHguCJ6EMUUa19nqwSDj6Q==/base.apk' with 1 weak references
+10-30 15:41:11.440   550   563 W System  : A resource failed to call HardwareBuffer.close.
+10-30 15:41:11.440   550   563 W System  : A resource failed to call release.
+10-30 15:41:11.440   550   563 W System  : A resource failed to call release.
+10-30 15:41:11.441   550   563 W System  : A resource failed to call HardwareBuffer.close.
+10-30 15:41:11.441   550   563 W System  : A resource failed to call release.
+10-30 15:41:11.441   550   563 W System  : A resource failed to call HardwareBuffer.close.
+10-30 15:41:11.441   550   563 W System  : A resource failed to call release.
+10-30 15:41:11.441   550   563 W System  : A resource failed to call HardwareBuffer.close.
+10-30 15:41:11.441   550   563 W System  : A resource failed to call release.
+10-30 15:41:11.441   550   563 W System  : A resource failed to call release.
+10-30 15:41:11.442   550   563 W System  : A resource failed to call release.
+10-30 15:41:11.457 10652 10681 W A       : Failed to fetch enrollment status from OnePlatform
+10-30 15:41:11.457 10652 10681 W A       : io.grpc.fl: UNKNOWN
+10-30 15:41:11.457 10652 10681 W A       : 	at io.grpc.i.m.a(PG:42)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.apps.tiktok.o.x.a(PG:4)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ah.run(PG:86)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.apps.tiktok.tracing.fk.run(PG:24)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.s.run(PG:3)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.dl.run(PG:3)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.dm.run(PG:76)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.bf.execute(PG:1)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ac.execute(PG:3)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.dn.execute(PG:36)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.l.execute(PG:10)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.d.i(PG:1)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.d.l(PG:95)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.d.p(PG:29)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.h.f(PG:3)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.j.run(PG:48)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.android.libraries.k.x.run(PG:3)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.n.c.c.run(PG:50)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.android.libraries.k.e.run(PG:8)
+10-30 15:41:11.457 10652 10681 W A       : 	at java.lang.Thread.run(Thread.java:1012)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.android.libraries.k.d.b.run(PG:74)
+10-30 15:41:11.457 10652 10681 W A       : Caused by: java.lang.IllegalStateException: Used non-google account without enabling API Key fallback
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.base.bc.p(PG:8)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.a.c.b(PG:159)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ae.k(PG:42)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.p.run(PG:5)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.apps.tiktok.tracing.fk.run(PG:24)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.s.run(PG:3)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.dl.run(PG:3)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.dm.run(PG:76)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.bf.execute(PG:1)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ac.execute(PG:3)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.dn.execute(PG:36)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.l.execute(PG:10)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ae.a(PG:37)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.an.a(PG:66)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ae.q(PG:104)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ae.k(PG:97)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.p.run(PG:5)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.apps.tiktok.tracing.fk.run(PG:24)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.s.run(PG:3)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.dl.run(PG:3)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.dm.run(PG:76)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.bf.execute(PG:1)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ac.execute(PG:3)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.dn.execute(PG:36)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.l.execute(PG:10)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ae.a(PG:37)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.an.a(PG:66)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.f.h.a(PG:31)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ae.q(PG:104)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ae.k(PG:97)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.p.run(PG:5)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.apps.tiktok.tracing.fk.run(PG:24)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.s.run(PG:3)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.dl.run(PG:3)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.dm.run(PG:76)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.bf.execute(PG:1)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ac.execute(PG:3)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.dn.execute(PG:36)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.l.execute(PG:10)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ae.a(PG:37)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.an.a(PG:66)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ae.q(PG:104)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ae.k(PG:97)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.p.run(PG:5)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.apps.tiktok.tracing.fk.run(PG:24)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.s.run(PG:3)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.dl.run(PG:3)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.dm.run(PG:76)
+10-30 15:41:11.457 10652 10681 W A       : 	at com.google.common.util.concurrent.bf.execute(PG:1)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ac.execute(PG:3)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.common.util.concurrent.dn.execute(PG:36)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.l.execute(PG:10)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ae.a(PG:37)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.an.a(PG:66)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ae.q(PG:104)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ae.g(PG:109)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.u.run(PG:5)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.apps.tiktok.tracing.fk.run(PG:24)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.s.run(PG:3)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.common.util.concurrent.dm.run(PG:76)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.common.util.concurrent.bf.execute(PG:1)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ac.execute(PG:3)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.common.util.concurrent.dn.execute(PG:36)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.l.execute(PG:10)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.ae.a(PG:37)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.frameworks.client.data.android.g.an.a(PG:66)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.apps.tiktok.o.v.run(PG:33)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.apps.tiktok.tracing.fc.run(PG:13)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.apps.tiktok.o.w.a(PG:12)
+10-30 15:41:11.458 10652 10681 W A       : 	at io.grpc.i.n.i(PG:6)
+10-30 15:41:11.458 10652 10681 W A       : 	at io.grpc.i.n.h(PG:1)
+10-30 15:41:11.458 10652 10681 W A       : 	at io.grpc.i.n.a(PG:11)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.android.apps.search.googleapp.labs.e.d.b(PG:146)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.android.apps.search.googleapp.labs.e.c.jc(PG:12)
+10-30 15:41:11.458 10652 10681 W A       : 	at p.c.b.a.a.q(PG:12)
+10-30 15:41:11.458 10652 10681 W A       : 	at kotlinx.coroutines.dy.x(PG:56)
+10-30 15:41:11.458 10652 10681 W A       : 	at kotlinx.coroutines.a.q(PG:14)
+10-30 15:41:11.458 10652 10681 W A       : 	at p.c.b.a.a.q(PG:36)
+10-30 15:41:11.458 10652 10681 W A       : 	at kotlinx.coroutines.bh.run(PG:112)
+10-30 15:41:11.458 10652 10681 W A       : 	at com.google.apps.tiktok.f.y.run(PG:3)
+10-30 15:41:11.458 10652 10681 W A       : 	... 5 more
+10-30 15:41:11.468 10652 10681 I A       : (REDACTED) Starting synclet: %s
+10-30 15:41:11.468 10652 10692 I A       : (REDACTED) Starting synclet: %s
+10-30 15:41:11.469 10652 10655 I earchbox:search: Method exceeds compiler instruction limit: 18562 in java.lang.Object com.google.android.apps.gsa.binaries.satin.app.aus.b()
+10-30 15:41:11.470 10652 10692 I A       : (REDACTED) Starting synclet: %s
+10-30 15:41:11.482  3828  2088 W PhBaseOp: Phenotype API error. Event: # jpus@92e52c5b, EventCode: COMMIT_CONFIG [CONTEXT service_id=51 ]
+10-30 15:41:11.482  3828  2088 W PhBaseOp: fvmh: 29547: Stale snapshot for clienttracing.android#com.google.android.googlequicksearchbox(new configuration available)
+10-30 15:41:11.482  3828  2088 W PhBaseOp: 	at fvok.d(:com.google.android.gms@264131035@26.41.31 (260400-1002748488):436)
+10-30 15:41:11.482  3828  2088 W PhBaseOp: 	at fvok.b(:com.google.android.gms@264131035@26.41.31 (260400-1002748488):42)
+10-30 15:41:11.482  3828  2088 W PhBaseOp: 	at fvoj.i(:com.google.android.gms@264131035@26.41.31 (260400-1002748488):3)
+10-30 15:41:11.482  3828  2088 W PhBaseOp: 	at fvof.h(:com.google.android.gms@264131035@26.41.31 (260400-1002748488):38)
+10-30 15:41:11.482  3828  2088 W PhBaseOp: 	at fvof.f(:com.google.android.gms@264131035@26.41.31 (260400-1002748488):20)
+10-30 15:41:11.482  3828  2088 W PhBaseOp: 	at dnpa.fE(:com.google.android.gms@264131035@26.41.31 (260400-1002748488):1)
+10-30 15:41:11.482  3828  2088 W PhBaseOp: 	at dnpl.run(:com.google.android.gms@264131035@26.41.31 (260400-1002748488):136)
+10-30 15:41:11.482  3828  2088 W PhBaseOp: 	at hzbn.run(:com.google.android.gms@264131035@26.41.31 (260400-1002748488):23)
+10-30 15:41:11.482  3828  2088 W PhBaseOp: 	at bsca.c(:com.google.android.gms@264131035@26.41.31 (260400-1002748488):50)
+10-30 15:41:11.482  3828  2088 W PhBaseOp: 	at bsca.run(:com.google.android.gms@264131035@26.41.31 (260400-1002748488):65)
+10-30 15:41:11.482  3828  2088 W PhBaseOp: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-30 15:41:11.482  3828  2088 W PhBaseOp: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-30 15:41:11.482  3828  2088 W PhBaseOp: 	at bsie.run(:com.google.android.gms@264131035@26.41.31 (260400-1002748488):8)
+10-30 15:41:11.482  3828  2088 W PhBaseOp: 	at java.lang.Thread.run(Thread.java:1012)
+10-30 15:41:11.483  3828  2088 W AsyncOperation: operation=CommitToConfigurationOperationCall, opStatusCode=29547 [CONTEXT service_id=51 ]
+10-30 15:41:11.483  3828  2088 W AsyncOperation: OperationException[Status{statusCode=Stale snapshot for clienttracing.android#com.google.android.googlequicksearchbox(new configuration available), resolution=null}]
+10-30 15:41:11.483  3828  2088 W AsyncOperation: 	at fvof.h(:com.google.android.gms@264131035@26.41.31 (260400-1002748488):68)
+10-30 15:41:11.483  3828  2088 W AsyncOperation: 	at fvof.f(:com.google.android.gms@264131035@26.41.31 (260400-1002748488):20)
+10-30 15:41:11.483  3828  2088 W AsyncOperation: 	at dnpa.fE(:com.google.android.gms@264131035@26.41.31 (260400-1002748488):1)
+10-30 15:41:11.483  3828  2088 W AsyncOperation: 	at dnpl.run(:com.google.android.gms@264131035@26.41.31 (260400-1002748488):136)
+10-30 15:41:11.483  3828  2088 W AsyncOperation: 	at hzbn.run(:com.google.android.gms@264131035@26.41.31 (260400-1002748488):23)
+10-30 15:41:11.483  3828  2088 W AsyncOperation: 	at bsca.c(:com.google.android.gms@264131035@26.41.31 (260400-1002748488):50)
+10-30 15:41:11.483  3828  2088 W AsyncOperation: 	at bsca.run(:com.google.android.gms@264131035@26.41.31 (260400-1002748488):65)
+10-30 15:41:11.483  3828  2088 W AsyncOperation: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-30 15:41:11.483  3828  2088 W AsyncOperation: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-30 15:41:11.483  3828  2088 W AsyncOperation: 	at bsie.run(:com.google.android.gms@264131035@26.41.31 (260400-1002748488):8)
+10-30 15:41:11.483  3828  2088 W AsyncOperation: 	at java.lang.Thread.run(Thread.java:1012)
+10-30 15:41:11.487 10652 18769 W MobStoreFlagStore: Failed to commit due to stale snapshot for clienttracing.android#com.google.android.googlequicksearchbox. Experiments may be delayed til next app start. Error code: 29501
+10-30 15:41:11.514 10652 10681 I A       : Mobalt: enqueue sending logs to the Cobalt Server
+10-30 15:41:11.514 10652 10681 I A       : Mobalt: start sending logs to the Cobalt Server
+10-30 15:41:11.520 10652 10679 I A       : #sync() complete
+10-30 15:41:11.521 10652 10679 I A       : Completed sync. Scheduling next wakeup
+10-30 15:41:11.522 10652 10679 I A       : Scheduling next onetime WorkManager workers
+10-30 15:41:11.524 10652 10686 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=89f44504-96ef-470a-a195-367ffbfc43e3, tags={ com.google.apps.tiktok.contrib.work.TikTokListenableWorker,com.google.apps.tiktok.sync.impl.workmanager.SyncWorker,TikTokWorker#com.google.apps.tiktok.sync.impl.workmanager.SyncWorker } ]
+10-30 15:41:11.541 10652 18769 I A       : Mobalt: start observation generation
+10-30 15:41:11.543 10652 18769 I A       : (REDACTED) Mobalt: generating observations for day index %s for metric: %s-%s-%s
+10-30 15:41:11.544 10652 18769 I A       : (REDACTED) Mobalt: generating observations for day index %s for metric: %s-%s-%s
+10-30 15:41:11.549 10652 10679 D CompatChangeReporter: Compat change id reported: 253665015; UID 10137; state: ENABLED
+10-30 15:41:11.549 10652 18769 I A       : (REDACTED) Mobalt: successfully generated observations for %s reports
+10-30 15:41:11.554 10652 18769 I A       : (REDACTED) Mobalt: uploading logs to the Cobalt Server, got %s observations
+10-30 15:41:11.554 10652 18769 I A       : Mobalt: finish sending logs to the Cobalt Server successfully
+10-30 15:41:11.569 10652 10655 I earchbox:search: JIT allocated 74KB for compiled code of java.lang.Object com.google.android.apps.gsa.binaries.satin.app.awf.o()
+10-30 15:41:11.569 10652 10655 I earchbox:search: Compiler allocated 6421KB to compile java.lang.Object com.google.android.apps.gsa.binaries.satin.app.awf.o()
+10-30 15:41:11.589 10652 10679 I A       : Successfully scheduled next onetime workers
+10-30 15:41:11.595   550   565 D ConnectivityService: requestNetwork for uid/pid:10137/10652 activeRequest: null callbackRequest: 5517 [NetworkRequest [ REQUEST id=5518, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10137 RequestorUid: 10137 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647 isUidTracked: false
+10-30 15:41:11.596 10652 10691 W WM-Processor: Didn't find WorkSpec for id WorkGenerationalId(workSpecId=4f8858d9-5870-4e97-ae18-8891a32ce171, generation=0)
+10-30 15:41:11.597   550   689 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=5518, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10137 RequestorUid: 10137 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ]
+10-30 15:41:11.598   550   696 D ConnectivityService: NetReassign [5518 : null → 116] [c 0] [a 1] [i 1]
+10-30 15:41:11.598   550   689 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=5518, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10137 RequestorUid: 10137 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ]
+10-30 15:41:11.598   550   689 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=5518, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10137 RequestorUid: 10137 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ]
+10-30 15:41:11.602   550   689 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=5518, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10137 RequestorUid: 10137 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ]
+10-30 15:41:12.130  1282  1826 E SurfaceSyncGroup: Failed to receive transaction ready in 1000ms. Marking SurfaceSyncGroup(wmsSync-VRI[NexusLauncherActivity]#99) as ready
+10-30 15:41:12.131  1282  1826 E SurfaceSyncGroup: Failed to receive transaction ready in 1000ms. Marking SurfaceSyncGroup(VRI[NexusLauncherActivity]#0) as ready
+10-30 15:41:12.708   550   570 W ziparchive: Unable to open '/data/app/~~RtTiwXVxZ-RGLXj5SJeA9A==/com.bellfamily.bastischool-PFzM8kzDJ7ysJU1km3uSCw==/base.dm': No such file or directory
+10-30 15:41:12.710   550   570 I ActivityTaskManager: Displayed com.bellfamily.bastischool/androidx.activity.ComponentActivity for user 0: +373ms
+10-30 15:41:12.748  1282  1514 D EGL_emulation: app_time_stats: avg=855.20ms min=70.60ms max=1639.81ms count=2
+10-30 15:41:12.749   780   929 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@daa03b3
+10-30 15:41:12.752   550  3008 W InputManager-JNI: Input channel object '524ebe5 Splash Screen com.bellfamily.bastischool (client)' was disposed without first being removed with the input manager!
+10-30 15:41:12.761  1282  1297 I HWUI    : Davey! duration=1717ms; Flags=0, FrameTimelineVsyncId=5131655, IntendedVsync=162274216321479, Vsync=162274266321477, InputEventId=0, HandleInputStart=162274280608987, AnimationStart=162274280609570, PerformTraversalsStart=162274280632695, DrawStart=162274299211195, FrameDeadline=162274332988141, FrameInterval=162274280605445, FrameStartTime=16666666, SyncQueued=162274299220028, SyncStart=162274299423070, IssueDrawCommandsStart=162274300814903, SwapBuffers=162274301814737, FrameCompleted=162275933808071, DequeueBufferDuration=1602248501, QueueBufferDuration=17959, GpuCompleted=162275933808071, SwapBuffersCompleted=162275905034613, DisplayPresentTime=0, CommandSubmissionCompleted=162274301814737,
+10-30 15:41:12.764  1282  1514 D EGL_emulation: app_time_stats: avg=77.27ms min=2.56ms max=332.88ms count=8
+10-30 15:41:12.778   550   662 I ImeTracker: com.bellfamily.bastischool:6b68f0e3: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-30 15:41:12.779   550   662 I ImeTracker: com.bellfamily.bastischool:6b68f0e3: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-30 15:41:12.808  5889  5889 I SubtypeOperator: SubtypeOperator$1.onUnbindInput():44
+10-30 15:41:12.809  1282  1282 D SearchTargetUtil: queryLength=0 size=0
+10-30 15:41:12.810   780   975 D EGL_emulation: app_time_stats: avg=846.11ms min=39.96ms max=1652.25ms count=2
+10-30 15:41:12.821  5889  5889 I SubtypeOperator: SubtypeOperator$1.onBindInput():33
+10-30 15:41:12.821  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2404
+10-30 15:41:12.838  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.bellfamily.bastischool, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-30 15:41:12.838  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:41:12.873  5889 13286 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 0, locked = false
+10-30 15:41:12.876  5889 13286 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:41:13.018  1282  1282 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-30 15:41:13.035  1282  1282 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+10-30 15:41:13.035 13260 13274 W SurfaceComposerClient: Sync transaction timed out waiting for commit callback.
+10-30 15:41:13.036 13293 13293 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@1e27730
+10-30 15:41:13.052  1282  1282 D BaseDepthController: setSurface:
+10-30 15:41:13.052  1282  1282 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-30 15:41:13.052  1282  1282 D BaseDepthController: 	mSurface: null
+10-30 15:41:13.052  1282  1282 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+10-30 15:41:13.053  1282  1282 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+10-30 15:41:13.053  1282  1282 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:4)
+10-30 15:41:13.053  1282  1282 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:1)
+10-30 15:41:13.053  1282  1282 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:34)
+10-30 15:41:13.060  1282  1282 D StatsLog: LAUNCHER_ONSTOP
+10-30 15:41:13.060  1282  1282 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+10-30 15:41:13.061  1282  1613 D OneSearchSuggestProvider: Shut down the binder channel
+10-30 15:41:13.062  1282  1297 I IPCThreadState: oneway function results for code 2 on binder at 0xb400007b9ed16490 will be dropped but finished with status UNKNOWN_TRANSACTION
+10-30 15:41:13.065   550   565 W InputManager-JNI: Input channel object 'bd451b5 com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+10-30 15:41:13.074  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4835
+10-30 15:41:13.074  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4835
+10-30 15:41:13.180 10652 13158 V ClearcutMetricXmitter: Transmission is done.
+10-30 15:41:16.171 13260 13276 D EGL_emulation: app_time_stats: avg=124.53ms min=4.90ms max=3887.06ms count=38
+10-30 15:41:16.311  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2404
+10-30 15:41:16.318  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.bellfamily.bastischool, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-30 15:41:16.318  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:41:16.323  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 0, locked = false
+10-30 15:41:16.323  5889 13289 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:41:16.666 13260 13265 I ily.bastischool: Background concurrent mark compact GC freed 14MB AllocSpace bytes, 2(48KB) LOS objects, 50% free, 15MB/30MB, paused 159us,3.339ms total 122.843ms
+10-30 15:41:16.888   550   565 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@4b2173d7 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-30 15:41:16.903 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@397823f in: PAUSED
+10-30 15:41:16.903 13260 13260 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=androidx.activity.ComponentActivity@397823f
+10-30 15:41:16.903  1282  1282 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=4837, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }
+10-30 15:41:16.918   402   402 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-30 15:41:17.023 13293 13306 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-30 15:41:17.025 13293 13306 I EGL_emulation: Opening libGLESv2_emulation.so
+10-30 15:41:17.046 13293 13306 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+10-30 15:41:17.047 13293 13306 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-30 15:41:17.214  1282  1282 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=406, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10000100 cmp=com.google.android.apps.nexuslauncher/.NexusLauncherActivity }
+10-30 15:41:17.240  1282  1282 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=6}
+10-30 15:41:17.247  1282  1282 D BaseDepthController: setSurface:
+10-30 15:41:17.247  1282  1282 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-30 15:41:17.247  1282  1282 D BaseDepthController: 	mSurface: Surface(name=com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity)/@0x26209d7
+10-30 15:41:17.402  1282  1282 D StatsLog: LAUNCHER_ONRESUME
+10-30 15:41:17.418   550  1457 W AppSearchIcing: icing-search-engine.cc:321: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+10-30 15:41:17.435  1282  1613 D OneSearchSuggestProvider: AppSearch 0-state cache not available, fallback to AGA
+10-30 15:41:17.435  1282  1613 D OneSearchSuggestProvider: java.util.concurrent.CompletionException: java.util.NoSuchElementException: No value present
+10-30 15:41:17.435  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:308)
+10-30 15:41:17.435  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:323)
+10-30 15:41:17.435  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:684)
+10-30 15:41:17.435  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:486)
+10-30 15:41:17.435  1282  1613 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2138)
+10-30 15:41:17.435  1282  1613 D OneSearchSuggestProvider: 	at com.google.android.apps.nexuslauncher.allapps.E0.onResult(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:67)
+10-30 15:41:17.435  1282  1613 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1.lambda$onResult$0(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:144)
+10-30 15:41:17.435  1282  1613 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1.$r8$lambda$CEk3q8sDAQVhU3rQwVueB8FAj_M(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:1)
+10-30 15:41:17.435  1282  1613 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1$$ExternalSyntheticLambda0.run(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:22)
+10-30 15:41:17.435  1282  1613 D OneSearchSuggestProvider: 	at android.os.Handler.handleCallback(Handler.java:959)
+10-30 15:41:17.435  1282  1613 D OneSearchSuggestProvider: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+10-30 15:41:17.435  1282  1613 D OneSearchSuggestProvider: 	at android.os.Looper.loopOnce(Looper.java:232)
+10-30 15:41:17.435  1282  1613 D OneSearchSuggestProvider: 	at android.os.Looper.loop(Looper.java:317)
+10-30 15:41:17.435  1282  1613 D OneSearchSuggestProvider: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+10-30 15:41:17.435  1282  1613 D OneSearchSuggestProvider: Caused by: java.util.NoSuchElementException: No value present
+10-30 15:41:17.435  1282  1613 D OneSearchSuggestProvider: 	at java.util.Optional.get(Optional.java:143)
+10-30 15:41:17.435  1282  1613 D OneSearchSuggestProvider: 	at com.google.android.apps.nexuslauncher.allapps.E0.onResult(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:28)
+10-30 15:41:17.435  1282  1613 D OneSearchSuggestProvider: 	... 8 more
+10-30 15:41:17.444  1282  1356 D QuickstepModelDelegate: notifyAppTargetEvent action=1 launchLocation=workspace/0/[-1,-1]/[1,1]
+10-30 15:41:17.469  1282  1613 D OneSearchSuggestProvider: Created the binder channel successfully for end point service =com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService , mChannel=i1{delegate=f{logId=8745, target=directaddress:///AndroidComponentAddress%5BIntent%20%7B%20act=grpc.io.action.BIND%20cmp=com.google.android.googlequicksearchbox/com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService%20%7D%5D}} , mOneSearchConnection=l2.Z@8efe116
+10-30 15:41:17.484 13260 13260 D VRI[ComponentActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-30 15:41:17.497  1282  1514 D EGL_emulation: app_time_stats: avg=1582.86ms min=131.07ms max=4481.20ms count=3
+10-30 15:41:17.532  1282  1282 D StateManager: createAtomicAnimation - fromState: Background, toState: Normal, partial trace:
+10-30 15:41:17.532  1282  1282 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.prepareToAnimate(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:22)
+10-30 15:41:17.532  1282  1282 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.<init>(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:11)
+10-30 15:41:17.532  1282  1282 D StateManager: 	at com.android.launcher3.QuickstepTransitionManager.createWallpaperOpenAnimations(go/retraceme 485d0a63b32755c2e0617651e62706492899977786a56dedfba7c7b896a2ddb7:735)
+10-30 15:41:17.563  1413  1664 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+10-30 15:41:17.589 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@397823f in: STOPPED
+10-30 15:41:17.589 13260 13260 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=androidx.activity.ComponentActivity@397823f
+10-30 15:41:17.589   550   662 I ImeTracker: com.google.android.apps.nexuslauncher:ad3f52a0: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-30 15:41:17.589   550   662 I ImeTracker: com.google.android.apps.nexuslauncher:ad3f52a0: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-30 15:41:17.589 10652 10652 I A       : (REDACTED) Created gRPC endpoint for service %s
+10-30 15:41:17.594 13260 13260 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@397823f in: DESTROYED
+10-30 15:41:17.594 13260 13260 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+10-30 15:41:17.594 13260 13260 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@ca582d3
+10-30 15:41:17.601  1413  1664 I AiAiEcho: EchoTargets:
+10-30 15:41:17.601  1413  1664 I AiAiEcho: Filtered by AiAi flag check:
+10-30 15:41:17.601  1413  1664 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+10-30 15:41:17.601  1413  1664 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+10-30 15:41:17.601  1413  1664 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+10-30 15:41:17.601  1413  1664 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-30 15:41:17.604  5889  5889 I SubtypeOperator: SubtypeOperator$1.onUnbindInput():44
+10-30 15:41:17.606  5889  5889 I SubtypeOperator: SubtypeOperator$1.onBindInput():33
+10-30 15:41:17.609  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2404
+10-30 15:41:17.610  5889  5889 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1552 onStartInput(EditorInfo{EditorInfo{packageName=com.google.android.apps.nexuslauncher, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-30 15:41:17.611  5889  5889 W LatinInputMethodServiceBase: LatinInputMethodServiceBase.updateInputViewCoverNavigation():365 Null input view, cannot update padding!
+10-30 15:41:17.621   780   791 I ndroid.systemui: NativeAlloc concurrent mark compact GC freed 15MB AllocSpace bytes, 4(80KB) LOS objects, 49% free, 23MB/46MB, paused 1.021ms,6.410ms total 605.926ms
+10-30 15:41:17.634   550   565 W InputManager-JNI: Input channel object 'b1064d1 com.bellfamily.bastischool/androidx.activity.ComponentActivity (client)' was disposed without first being removed with the input manager!
+10-30 15:41:17.661  5889 13286 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 0, locked = false
+10-30 15:41:17.662  5889 13286 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatusInternal():119 repeatCheckTimes = 1, locked = false
+10-30 15:41:17.664 13293 13293 D VRI[InstrumentationActivityInvoker$EmptyActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-30 15:41:17.692  1282  1282 D SsBaseTemplateCard: No text view can be set up
+10-30 15:41:17.692  1282  1282 D SsBaseTemplateCard: Passed-in item info is null
+10-30 15:41:17.692  1282  1282 D SsBaseTemplateCard: Passed-in item info is null
+10-30 15:41:17.692  1282  1282 D SsBaseTemplateCard: Passed-in item info is null
+10-30 15:41:17.692  1282  1282 I SsBaseTemplateCard: Secondary card pane is null
+10-30 15:41:17.721 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@ea8f6ba]
+10-30 15:41:17.735 13260 13274 I TestRunner: finished: readableChoicesSeparateListeningRetryHintAndKeyboard[MISSING,de=true,font=1.5,orientation=1](com.bellfamily.bastischool.ui.months.MonthsQuizScreenTest)

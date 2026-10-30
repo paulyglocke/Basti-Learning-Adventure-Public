@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.ui.common.CelebrationStateTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:21" hostname="192.168.1.10" time="0.237">
+  <properties/>
+  <testcase name="popOnlyOnceAndSettledAnimalRemainsWhileOtherSlotsStayInteractive" classname="com.bellfamily.bastischool.ui.common.CelebrationStateTest" time="0.001"/>
+  <testcase name="fiveStableIdsAndSemanticAssignmentsAreDeterministicAndBounded" classname="com.bellfamily.bastischool.ui.common.CelebrationStateTest" time="0.002"/>
+  <testcase name="artworkReferencesCoverExactlyTheSemanticPool" classname="com.bellfamily.bastischool.ui.common.CelebrationStateTest" time="0.0"/>
+  <testcase name="completionPersistsBeforeAnyPopsAndRewardResetDoesNotDuplicateProgress" classname="com.bellfamily.bastischool.ui.common.CelebrationStateTest" time="0.233"/>
+  <testcase name="optionalResetHasNoGlobalStateAndKeepsSemanticAssignment" classname="com.bellfamily.bastischool.ui.common.CelebrationStateTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

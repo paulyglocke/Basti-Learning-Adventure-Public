@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.months.MonthsBuildYearFourTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:11:52" hostname="192.168.1.10" time="0.709">
+  <properties/>
+  <testcase name="tenQuestionRoundCompletesAndCheckpointRestoresExactRoundAndSupport" classname="com.bellfamily.bastischool.learning.months.MonthsBuildYearFourTest" time="0.673"/>
+  <testcase name="fiveAndTenSequenceRoundsAreDeterministicUniqueAndNeverInitiallySolved" classname="com.bellfamily.bastischool.learning.months.MonthsBuildYearFourTest" time="0.033"/>
+  <testcase name="completedFiveQuestionRoundRecordsIndependentProgressAndPreservesThreeMonthIdentity" classname="com.bellfamily.bastischool.learning.months.MonthsBuildYearFourTest" time="0.003"/>
+  <testcase name="everyStartingMonthBuildsFourConsecutiveMonthsAcrossYearBoundaries" classname="com.bellfamily.bastischool.learning.months.MonthsBuildYearFourTest" time="0.0"/>
+  <testcase name="wrongRetryHintReplayAndContinuePreserveTheFourMonthTask" classname="com.bellfamily.bastischool.learning.months.MonthsBuildYearFourTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

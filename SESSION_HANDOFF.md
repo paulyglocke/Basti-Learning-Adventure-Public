@@ -3639,3 +3639,29 @@ The full API 35 suite now satisfies the remaining R3 validation item. Keep
 `UX-ANR-01`, physical-device, actual TalkBack, switch-access, child-use and
 offline-voice acceptance separate. The R3 documentation notes remain
 uncommitted; no commit/push authorization has been given.
+
+## Phase 5C.6 — Habitat matching implementation (2026-10-30)
+
+Started `main` at `cd9d25548d76c726d398122593c82090c30abeb8`, matching
+`origin/main`, with a clean working tree. Implemented a seven-question bilingual
+assessed activity with identity `activity.discover.habitat_matching`, revision
+1, independent `animal-habitat-match-session` checkpoint namespace, existing
+DurableSessionHost/Progress Tracker integration, and a question-specific set of
+accepted habitat IDs. Rabbit scene recall accepts both Woodland and Underground;
+Animal Groups AGR1 and its historic four-animal pool remain unchanged. Checkpoint
+schema v2 stores accepted-answer sets and retains v1 singleton-answer decoding.
+
+Visual inspection showed that two-column choice labels became cramped at German
+2×, so the matching choices now use one column at font scales >=1.8. The question
+screen resets scroll position when the question/language/font/viewport changes
+or the route is recomposed. Fifteen genuine API 35 emulator captures and the
+HTML gallery are in `docs/animals-phase5c6-habitat-matching-review/`. Focused
+JVM passed **47/47** and focused API 35 route flow passed 1/1. Fresh full JVM
+passed **607/607**, complete
+unfiltered API 35 instrumentation passed **603/603** with 0 failures/errors/
+skips in 42m 23s, `assembleDebug`, `assembleDebugAndroidTest` and `lintDebug`
+passed (0 lint errors, 5 warnings), and `git diff --check` passed. Complete
+JVM/API reports and API runner diagnostics are retained in the review package.
+The review recommendation is **READY TO COMMIT** for owner review. Physical-
+device/child-use, TalkBack, switch access and audible offline voice quality
+remain owner-managed. This work remains uncommitted and unpushed.

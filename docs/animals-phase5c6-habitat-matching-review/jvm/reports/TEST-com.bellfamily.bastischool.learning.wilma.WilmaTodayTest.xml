@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.wilma.WilmaTodayTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:21" hostname="192.168.1.10" time="0.053">
+  <properties/>
+  <testcase name="allMappingsIncludeBothWeekBoundariesAndCanonicalBilingualWording" classname="com.bellfamily.bastischool.learning.wilma.WilmaTodayTest" time="0.001"/>
+  <testcase name="deterministicBalancedRoundsHaveFourUniqueChoicesAndNoRepeatedPairs" classname="com.bellfamily.bastischool.learning.wilma.WilmaTodayTest" time="0.051"/>
+  <testcase name="existingAudioOwnerSpeaksTodayQuestionInBothLanguagesAndObeysPolicy" classname="com.bellfamily.bastischool.learning.wilma.WilmaTodayTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.months.MonthsQuestionsTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:11:53" hostname="192.168.1.10" time="2.714">
+  <properties/>
+  <testcase name="authoredValidationRejectsChangedWordsOrCorrectIdentity" classname="com.bellfamily.bastischool.learning.months.MonthsQuestionsTest" time="0.002"/>
+  <testcase name="uncertainAtomicCommitRestoresAcceptedAttempt" classname="com.bellfamily.bastischool.learning.months.MonthsQuestionsTest" time="0.036"/>
+  <testcase name="reviewedBilingualWordingForEveryDefinition" classname="com.bellfamily.bastischool.learning.months.MonthsQuestionsTest" time="0.001"/>
+  <testcase name="staleWritersAndCorruptJournalsCannotOverwriteAcceptedWork" classname="com.bellfamily.bastischool.learning.months.MonthsQuestionsTest" time="0.172"/>
+  <testcase name="wrongRetryReplayHintLanguageAndExactPartialRestore" classname="com.bellfamily.bastischool.learning.months.MonthsQuestionsTest" time="0.302"/>
+  <testcase name="seededRoundsAreBalancedUniqueAndHaveNeighbourDistractors" classname="com.bellfamily.bastischool.learning.months.MonthsQuestionsTest" time="0.118"/>
+  <testcase name="allMonthsAllDirectionsAndYearBoundaries" classname="com.bellfamily.bastischool.learning.months.MonthsQuestionsTest" time="0.001"/>
+  <testcase name="failedAttemptAndCompletionWritesRedeliverWithStableKeys" classname="com.bellfamily.bastischool.learning.months.MonthsQuestionsTest" time="0.618"/>
+  <testcase name="completedRoundsRestoreOnceAndAgainStartsFreshFiveOrTen" classname="com.bellfamily.bastischool.learning.months.MonthsQuestionsTest" time="1.463"/>
+  <testcase name="quizAudioLanguagePolicySupportCompletionAndMissingVoice" classname="com.bellfamily.bastischool.learning.months.MonthsQuestionsTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

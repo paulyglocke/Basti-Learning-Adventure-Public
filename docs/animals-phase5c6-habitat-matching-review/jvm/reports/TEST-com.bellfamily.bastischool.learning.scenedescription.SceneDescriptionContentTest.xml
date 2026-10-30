@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.scenedescription.SceneDescriptionContentTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:03" hostname="192.168.1.10" time="0.125">
+  <properties/>
+  <testcase name="loggedFarmReviewLimitationIsRetainedAsAdultData" classname="com.bellfamily.bastischool.learning.scenedescription.SceneDescriptionContentTest" time="0.016"/>
+  <testcase name="generatedDataFingerprintMatchesEveryManifestAndMetadataSource" classname="com.bellfamily.bastischool.learning.scenedescription.SceneDescriptionContentTest" time="0.035"/>
+  <testcase name="germanSpatialAndSequencingPhrasesAreAuthoredNotEnglishFallback" classname="com.bellfamily.bastischool.learning.scenedescription.SceneDescriptionContentTest" time="0.003"/>
+  <testcase name="mountainJourneySupportDoesNotAssertUphillOrDownhillMovement" classname="com.bellfamily.bastischool.learning.scenedescription.SceneDescriptionContentTest" time="0.009"/>
+  <testcase name="unknownIdsAreSafeAndIdentityDoesNotDependOnFilename" classname="com.bellfamily.bastischool.learning.scenedescription.SceneDescriptionContentTest" time="0.003"/>
+  <testcase name="everyApprovedSceneHasGermanForEveryAuthoredRuntimeText" classname="com.bellfamily.bastischool.learning.scenedescription.SceneDescriptionContentTest" time="0.004"/>
+  <testcase name="parkBridgeSupportDescribesVisiblePositionWithoutRequiringClimbing" classname="com.bellfamily.bastischool.learning.scenedescription.SceneDescriptionContentTest" time="0.002"/>
+  <testcase name="repositoryAndNestedCollectionsAreImmutableSnapshots" classname="com.bellfamily.bastischool.learning.scenedescription.SceneDescriptionContentTest" time="0.006"/>
+  <testcase name="nineCategoriesAndEightyOneApprovedScenesKeepAuthoredOrder" classname="com.bellfamily.bastischool.learning.scenedescription.SceneDescriptionContentTest" time="0.003"/>
+  <testcase name="malformedIdsAndBlankAuthoredValuesAreRejected" classname="com.bellfamily.bastischool.learning.scenedescription.SceneDescriptionContentTest" time="0.003"/>
+  <testcase name="separatelyAuthoredLanguageListsAreNotZippedOrExpanded" classname="com.bellfamily.bastischool.learning.scenedescription.SceneDescriptionContentTest" time="0.002"/>
+  <testcase name="everyCanonicalImageAndMetadataReferenceResolvesWithoutAuthoringAssets" classname="com.bellfamily.bastischool.learning.scenedescription.SceneDescriptionContentTest" time="0.035"/>
+  <testcase name="parkCountingUsesFourVisibleBucketsInBothLanguages" classname="com.bellfamily.bastischool.learning.scenedescription.SceneDescriptionContentTest" time="0.002"/>
+  <testcase name="duplicateIdsAndMissingCategoryReferencesFailAtRepositoryBoundary" classname="com.bellfamily.bastischool.learning.scenedescription.SceneDescriptionContentTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

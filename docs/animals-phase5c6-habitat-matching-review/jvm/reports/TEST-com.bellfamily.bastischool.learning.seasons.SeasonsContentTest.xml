@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.seasons.SeasonsContentTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:03" hostname="192.168.1.10" time="0.394">
+  <properties/>
+  <testcase name="malformedOrIncompatibleBrowsingCheckpointIsPreserved" classname="com.bellfamily.bastischool.learning.seasons.SeasonsContentTest" time="0.046"/>
+  <testcase name="browsingCheckpointRestoresEverySelectionAndPhaseWithoutQuiz" classname="com.bellfamily.bastischool.learning.seasons.SeasonsContentTest" time="0.34"/>
+  <testcase name="everyExploreSelectionUsesCanonicalContentInBothLanguages" classname="com.bellfamily.bastischool.learning.seasons.SeasonsContentTest" time="0.004"/>
+  <testcase name="deterministicFiveAndTenUseAllSeasonsAndOrderedAuthoredChoices" classname="com.bellfamily.bastischool.learning.seasons.SeasonsContentTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

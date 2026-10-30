@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.vocabulary.VocabularyContentTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:12" hostname="192.168.1.10" time="0.183">
+  <properties/>
+  <testcase name="invalidChoiceAndIncompatibleActivityContractsReject" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyContentTest" time="0.001"/>
+  <testcase name="malformedOrIncompatibleBrowsingCheckpointIsPreserved" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyContentTest" time="0.036"/>
+  <testcase name="bothMappingsAreDeterministicBoundedAndAvoidUnnecessaryRepetition" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyContentTest" time="0.015"/>
+  <testcase name="exactReviewedWordsHaveSeparateBilingualSpeechAndExplicitTemporaryVisuals" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyContentTest" time="0.001"/>
+  <testcase name="browsingCheckpointRestoresEverySelectionAndPhaseWithoutQuiz" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyContentTest" time="0.129"/>
+  <testcase name="missingBilingualFieldsDuplicateItemsReferencesAndVisualMismatchReject" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyContentTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

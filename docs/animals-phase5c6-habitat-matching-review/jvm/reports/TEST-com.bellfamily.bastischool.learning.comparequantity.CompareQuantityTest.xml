@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.comparequantity.CompareQuantityTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:11:51" hostname="192.168.1.10" time="0.077">
+  <properties/>
+  <testcase name="allTwentyFivePairsHaveCorrectSemanticAnswersAndExactBilingualWords" classname="com.bellfamily.bastischool.learning.comparequantity.CompareQuantityTest" time="0.0"/>
+  <testcase name="replayContainsOnlyPromptAcrossBothLanguagesAllPoliciesAndNavigation" classname="com.bellfamily.bastischool.learning.comparequantity.CompareQuantityTest" time="0.002"/>
+  <testcase name="seededRoundsAreBalancedVariedUniqueAndExactlyRestorable" classname="com.bellfamily.bastischool.learning.comparequantity.CompareQuantityTest" time="0.075"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

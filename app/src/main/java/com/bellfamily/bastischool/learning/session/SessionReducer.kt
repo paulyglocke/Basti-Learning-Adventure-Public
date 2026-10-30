@@ -71,7 +71,7 @@ object SessionReducer {
             is SessionAction.Answer -> {
                 if (current.answer != AnswerState.UNANSWERED || action.attempt != state.nextAttempt ||
                     action.choice !in task.question.choices) return unchanged()
-                val correct = action.choice == task.question.correct
+                val correct = action.choice in task.question.acceptedAnswers
                 val answer = if (correct) AnswerState.CORRECT else if (state.plan.policy.wrongAnswer == WrongAnswerPolicy.RETRY)
                     AnswerState.RETRY_AVAILABLE else AnswerState.INCORRECT
                 val result = AttemptResult(action.attempt, task.question.skill, task.question.context,

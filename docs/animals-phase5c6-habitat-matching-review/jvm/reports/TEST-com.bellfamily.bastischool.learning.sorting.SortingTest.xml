@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.sorting.SortingTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:11" hostname="192.168.1.10" time="0.002">
+  <properties/>
+  <testcase name="noSelectionEmptySpaceUnknownCategoryStaleSessionAndDoubleActionAreIgnored" classname="com.bellfamily.bastischool.learning.sorting.SortingTest" time="0.0"/>
+  <testcase name="incorrectPlacementCanBeCorrectedImmediatelyWithoutAutoSolving" classname="com.bellfamily.bastischool.learning.sorting.SortingTest" time="0.0"/>
+  <testcase name="deterministicOrderAndLanguagePreserveSemanticState" classname="com.bellfamily.bastischool.learning.sorting.SortingTest" time="0.001"/>
+  <testcase name="duplicateMissingAndInvalidMembershipAreRejected" classname="com.bellfamily.bastischool.learning.sorting.SortingTest" time="0.0"/>
+  <testcase name="semanticMembershipWorksWithoutColoursOrUi" classname="com.bellfamily.bastischool.learning.sorting.SortingTest" time="0.0"/>
+  <testcase name="supportNeverPlacesOrIncrementsAttempts" classname="com.bellfamily.bastischool.learning.sorting.SortingTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

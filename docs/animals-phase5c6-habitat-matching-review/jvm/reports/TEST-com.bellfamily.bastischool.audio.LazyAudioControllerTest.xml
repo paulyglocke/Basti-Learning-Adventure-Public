@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.audio.LazyAudioControllerTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:11:46" hostname="192.168.1.10" time="0.003">
+  <properties/>
+  <testcase name="offDuringInitializationCancelsAndOnDoesNotReplay" classname="com.bellfamily.bastischool.audio.LazyAudioControllerTest" time="0.001"/>
+  <testcase name="firstRequestWaitsThenSpeaksWithoutSecondActionAndLaterSpeechReusesEngine" classname="com.bellfamily.bastischool.audio.LazyAudioControllerTest" time="0.0"/>
+  <testcase name="suppressedStaleLowerPriorityAndEmptyRequestsDoNotAllocate" classname="com.bellfamily.bastischool.audio.LazyAudioControllerTest" time="0.0"/>
+  <testcase name="constructionFailureIsTerminalWithoutRepeatedAllocationAttempts" classname="com.bellfamily.bastischool.audio.LazyAudioControllerTest" time="0.0"/>
+  <testcase name="languageChangeDuringInitializationDropsEnglishAndSpeaksOnlyNewGerman" classname="com.bellfamily.bastischool.audio.LazyAudioControllerTest" time="0.001"/>
+  <testcase name="failedInitializationIsExplicitAndDoesNotCreateAnotherEngine" classname="com.bellfamily.bastischool.audio.LazyAudioControllerTest" time="0.0"/>
+  <testcase name="constructionReadinessSettingsCancellationAndUnusedCloseDoNotAllocate" classname="com.bellfamily.bastischool.audio.LazyAudioControllerTest" time="0.0"/>
+  <testcase name="alreadyReadyFactorySpeaksFirstRequestImmediately" classname="com.bellfamily.bastischool.audio.LazyAudioControllerTest" time="0.0"/>
+  <testcase name="closeDuringInitializationClosesOnceAndLateReadyCannotPlay" classname="com.bellfamily.bastischool.audio.LazyAudioControllerTest" time="0.0"/>
+  <testcase name="navigationDuringInitializationPreventsStalePlaybackAndReturnIsSilent" classname="com.bellfamily.bastischool.audio.LazyAudioControllerTest" time="0.0"/>
+  <testcase name="offBlocksEveryKindAndTriggerWithoutCreatingEngine" classname="com.bellfamily.bastischool.audio.LazyAudioControllerTest" time="0.0"/>
+  <testcase name="closeDuringPlaybackClosesOnceAndRejectsLateCompletion" classname="com.bellfamily.bastischool.audio.LazyAudioControllerTest" time="0.001"/>
+  <testcase name="replacementDuringInitializationRetainsOnlyLatestRequest" classname="com.bellfamily.bastischool.audio.LazyAudioControllerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

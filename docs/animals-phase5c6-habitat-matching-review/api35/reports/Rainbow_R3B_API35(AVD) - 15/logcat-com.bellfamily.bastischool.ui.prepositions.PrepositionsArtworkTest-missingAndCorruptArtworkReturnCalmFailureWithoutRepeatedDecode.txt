@@ -1,0 +1,3 @@
+10-30 15:48:17.695 13260 13274 I TestRunner: started: missingAndCorruptArtworkReturnCalmFailureWithoutRepeatedDecode(com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkTest)
+10-30 15:48:17.698 13260 13274 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+10-30 15:48:17.698 13260 13274 I TestRunner: finished: missingAndCorruptArtworkReturnCalmFailureWithoutRepeatedDecode(com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkTest)

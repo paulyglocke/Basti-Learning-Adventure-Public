@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.wilma.WilmaBilingualTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:16" hostname="192.168.1.10" time="0.019">
+  <properties/>
+  <testcase name="bilingualPhaseUsesExistingBrowseCheckpointAndRetainsExploreDay" classname="com.bellfamily.bastischool.learning.wilma.WilmaBilingualTest" time="0.018"/>
+  <testcase name="canonicalPairsAndColoursMatchAcrossLanguages" classname="com.bellfamily.bastischool.learning.wilma.WilmaBilingualTest" time="0.0"/>
+  <testcase name="alternatingLanguageTapsUseOneOwnerAndExistingPolicyWithoutOpeningSpeech" classname="com.bellfamily.bastischool.learning.wilma.WilmaBilingualTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

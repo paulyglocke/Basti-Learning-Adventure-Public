@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.progress.SessionProgressRecorderTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:01" hostname="192.168.1.10" time="0.147">
+  <properties/>
+  <testcase name="retryAfterLanguageChangeDoesNotRelabelPreviouslyRecordedAttemptLanguage" classname="com.bellfamily.bastischool.learning.progress.SessionProgressRecorderTest" time="0.032"/>
+  <testcase name="failedCompletionCanRetrySameLogicalKeyAndOnlyAcknowledgeAfterSuccess" classname="com.bellfamily.bastischool.learning.progress.SessionProgressRecorderTest" time="0.017"/>
+  <testcase name="invalidEffectsFailExplicitlyWithoutWritingAndNarrationIsIgnored" classname="com.bellfamily.bastischool.learning.progress.SessionProgressRecorderTest" time="0.004"/>
+  <testcase name="completionPreservesWrongResultsAndSupportInsteadOfTreatingCompletionAsCorrect" classname="com.bellfamily.bastischool.learning.progress.SessionProgressRecorderTest" time="0.01"/>
+  <testcase name="fiveAndTenTaskCompletionStoreTaskEvidenceNotFakeAttemptHistory" classname="com.bellfamily.bastischool.learning.progress.SessionProgressRecorderTest" time="0.024"/>
+  <testcase name="wrongThenSupportedCorrectPreservesTwoDistinctOutcomesAndAttempts" classname="com.bellfamily.bastischool.learning.progress.SessionProgressRecorderTest" time="0.02"/>
+  <testcase name="completedCheckpointRetryAfterRepositoryRecreationStoresOneCompletion" classname="com.bellfamily.bastischool.learning.progress.SessionProgressRecorderTest" time="0.019"/>
+  <testcase name="sessionAttemptEffectsMapWithoutUiPersistenceFieldsAndDeduplicateOnRetry" classname="com.bellfamily.bastischool.learning.progress.SessionProgressRecorderTest" time="0.019"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

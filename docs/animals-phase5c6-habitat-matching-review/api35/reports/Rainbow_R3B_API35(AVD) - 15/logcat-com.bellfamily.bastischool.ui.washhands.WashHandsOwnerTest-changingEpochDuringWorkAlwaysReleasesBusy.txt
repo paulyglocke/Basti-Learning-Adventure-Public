@@ -1,0 +1,14 @@
+10-30 15:53:36.370 13260 13274 I TestRunner: started: changingEpochDuringWorkAlwaysReleasesBusy(com.bellfamily.bastischool.ui.washhands.WashHandsOwnerTest)
+10-30 15:53:36.396 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@96769d6]
+10-30 15:53:36.420  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5198
+10-30 15:53:36.420  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5198
+10-30 15:53:36.456   780   780 D DefaultDeviceEntrySection: isUdfpsSupported=false
+10-30 15:53:36.460 13293 13293 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@445f387
+10-30 15:53:36.463   550  1951 W InputManager-JNI: Input channel object '150ebcd com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+10-30 15:53:36.515  5889  5922 I SP      : Sync for emoticon_content_description succeeded in 236 ms: no changes
+10-30 15:53:36.515  5889  5922 I SP      : GC for 'emoticon_content_description' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-30 15:53:36.515  5889  5922 I SuperpacksManagerImpl: SuperpacksManagerImpl$19.onSyncSuccess():947 emoticon_content_description.sync() succeeded
+10-30 15:53:36.542  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5199
+10-30 15:53:36.542  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5199
+10-30 15:53:36.555 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@96769d6]
+10-30 15:53:36.556 13260 13274 I TestRunner: finished: changingEpochDuringWorkAlwaysReleasesBusy(com.bellfamily.bastischool.ui.washhands.WashHandsOwnerTest)

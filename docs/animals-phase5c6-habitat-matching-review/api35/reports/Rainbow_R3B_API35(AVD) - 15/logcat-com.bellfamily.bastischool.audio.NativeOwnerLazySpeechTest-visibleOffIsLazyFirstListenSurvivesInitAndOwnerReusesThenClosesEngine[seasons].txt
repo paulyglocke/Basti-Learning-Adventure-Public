@@ -1,0 +1,4 @@
+10-30 15:20:30.852 13260 13274 I TestRunner: started: visibleOffIsLazyFirstListenSurvivesInitAndOwnerReusesThenClosesEngine[seasons](com.bellfamily.bastischool.audio.NativeOwnerLazySpeechTest)
+10-30 15:20:30.853 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@a4871a7]
+10-30 15:20:30.894 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@a4871a7]
+10-30 15:20:30.895 13260 13274 I TestRunner: finished: visibleOffIsLazyFirstListenSurvivesInitAndOwnerReusesThenClosesEngine[seasons](com.bellfamily.bastischool.audio.NativeOwnerLazySpeechTest)

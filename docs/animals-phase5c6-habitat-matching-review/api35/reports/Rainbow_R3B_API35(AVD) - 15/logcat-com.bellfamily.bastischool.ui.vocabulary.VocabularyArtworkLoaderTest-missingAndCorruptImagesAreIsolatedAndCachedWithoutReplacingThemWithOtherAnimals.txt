@@ -1,0 +1,7 @@
+10-30 15:52:52.560 13260 13274 I TestRunner: started: missingAndCorruptImagesAreIsolatedAndCachedWithoutReplacingThemWithOtherAnimals(com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest)
+10-30 15:52:52.587 13293 13293 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@2a5babb
+10-30 15:52:52.588   550  5079 W InputManager-JNI: Input channel object '9df8fdb com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+10-30 15:52:52.629  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5174
+10-30 15:52:52.629  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=5174
+10-30 15:52:52.750 13260 13274 D HWUI    : --- Failed to create image decoder with message 'unimplemented'
+10-30 15:52:52.751 13260 13274 I TestRunner: finished: missingAndCorruptImagesAreIsolatedAndCachedWithoutReplacingThemWithOtherAnimals(com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest)

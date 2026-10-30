@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.session.LearningSessionTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:11" hostname="192.168.1.10" time="0.005">
+  <properties/>
+  <testcase name="replayReplacesAudioWithoutSubmittingAnAttemptAndStaleCallbackIsIgnored" classname="com.bellfamily.bastischool.learning.session.LearningSessionTest" time="0.001"/>
+  <testcase name="languageSwitchIsSilentAndGermanReplayKeepsSameTaskAndScore" classname="com.bellfamily.bastischool.learning.session.LearningSessionTest" time="0.0"/>
+  <testcase name="hintIsManualInstructionRatherThanReplayAndDoesNotCountAnAttempt" classname="com.bellfamily.bastischool.learning.session.LearningSessionTest" time="0.0"/>
+  <testcase name="nativeAudioModePolicyStillControlsQuestionsFeedbackAndReplay" classname="com.bellfamily.bastischool.learning.session.LearningSessionTest" time="0.002"/>
+  <testcase name="completionAcknowledgementDoesNotInterruptSummaryAndCompletedRestoreDoesNotAward" classname="com.bellfamily.bastischool.learning.session.LearningSessionTest" time="0.0"/>
+  <testcase name="backgroundResumeAndCloseCancelSpeechAndNeverReplayOrAward" classname="com.bellfamily.bastischool.learning.session.LearningSessionTest" time="0.0"/>
+  <testcase name="oldEngineCallbacksCannotMutateRestoredSession" classname="com.bellfamily.bastischool.learning.session.LearningSessionTest" time="0.001"/>
+  <testcase name="speechFailureLeavesTaskUsableAndDoesNotChangeLearningResult" classname="com.bellfamily.bastischool.learning.session.LearningSessionTest" time="0.0"/>
+  <testcase name="startUsesAuthoredSpeechAndDoesNotMakeSpeechCompletionAnAnswer" classname="com.bellfamily.bastischool.learning.session.LearningSessionTest" time="0.0"/>
+  <testcase name="restoredAnsweredAndUnansweredSessionsStaySilentUntilReplayInBothLanguages" classname="com.bellfamily.bastischool.learning.session.LearningSessionTest" time="0.001"/>
+  <testcase name="restoreWhileInitializingDropsOldPendingNarration" classname="com.bellfamily.bastischool.learning.session.LearningSessionTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

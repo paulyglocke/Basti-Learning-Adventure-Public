@@ -37,19 +37,23 @@ class ChoiceQuestion(
     val correct: ContentId,
     val correctFeedback: ContentText,
     val wrongFeedback: ContentText,
-    val hint: ContentText? = null
+    val hint: ContentText? = null,
+    acceptedAnswers: Set<ContentId> = setOf(correct)
 ) {
     val choices = frozen(choices)
+    val acceptedAnswers: Set<ContentId> = Collections.unmodifiableSet(acceptedAnswers.toSet())
     init {
         require(difficulty in 1..100)
         require(this.choices.size in 2..8 && this.choices.toSet().size == this.choices.size)
         require(correct in this.choices)
+        require(this.acceptedAnswers.isNotEmpty() && this.acceptedAnswers.all { it in this.choices })
+        require(correct in this.acceptedAnswers)
         require(this.choices.all { it.value.length <= 96 })
         texts().forEach { text -> text.strings().forEach { require(it.length <= 1000) } }
     }
     internal fun texts() = listOfNotNull(instruction, correctFeedback, wrongFeedback, hint)
     internal fun reordered(choices: List<ContentId>) = ChoiceQuestion(definition, skill, context, difficulty,
-        instruction, choices, correct, correctFeedback, wrongFeedback, hint)
+        instruction, choices, correct, correctFeedback, wrongFeedback, hint, acceptedAnswers)
 }
 internal fun ContentText.strings() = listOf(display.en, display.de, speech.en, speech.de)
 data class ChoiceTask(val id: TaskInstanceId, val question: ChoiceQuestion)
@@ -62,13 +66,15 @@ class SessionPlan(
     val contentVersion: ContentVersion,
     val policy: SessionPolicy,
     tasks: List<ChoiceTask>,
-    val completionText: ContentText
+    val completionText: ContentText,
+    /** Fixed authored packs may have a count distinct from the app's ordinary 5/10 round preference. */
+    val taskCount: Int = policy.round.count
 ) {
     val tasks = frozen(tasks)
     init {
         require(activityRevision > 0)
-        require(this.tasks.size == policy.round.count)
-        require(this.tasks.map { it.id } == (1..policy.round.count).map { TaskInstanceId(id, it) })
+        require(taskCount in 3..10 && this.tasks.size == taskCount)
+        require(this.tasks.map { it.id } == (1..taskCount).map { TaskInstanceId(id, it) })
         require(completionText.strings().all { it.length <= 1000 })
         // Bounds the entire authored snapshot, not just the number of questions.
         require((this.tasks.flatMap { it.question.texts() } + completionText)

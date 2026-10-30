@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.sequencing.SequenceAssemblyTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:11" hostname="192.168.1.10" time="0.005">
+  <properties/>
+  <testcase name="staleDuplicateUnknownAndInvalidRemoveAreRejected" classname="com.bellfamily.bastischool.learning.sequencing.SequenceAssemblyTest" time="0.002"/>
+  <testcase name="wrongCheckRemainsEditableHintDoesNotSolveAndSupportSurvivesCorrection" classname="com.bellfamily.bastischool.learning.sequencing.SequenceAssemblyTest" time="0.001"/>
+  <testcase name="freePlacementRemovalAndIncompleteCheck" classname="com.bellfamily.bastischool.learning.sequencing.SequenceAssemblyTest" time="0.0"/>
+  <testcase name="corruptionAndDuplicateMissingPresentationAreRejected" classname="com.bellfamily.bastischool.learning.sequencing.SequenceAssemblyTest" time="0.001"/>
+  <testcase name="deterministicScrambleReusesExistingOrderingContract" classname="com.bellfamily.bastischool.learning.sequencing.SequenceAssemblyTest" time="0.001"/>
+  <testcase name="hintIdentifiesFirstMismatchBeyondCorrectPrefix" classname="com.bellfamily.bastischool.learning.sequencing.SequenceAssemblyTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.audio.AudioControllerTest" tests="23" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:11:46" hostname="192.168.1.10" time="0.014">
+  <properties/>
+  <testcase name="staleAndDuplicateCompletionCannotCompleteNewRequestOrDoubleCompleteOldId" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.005"/>
+  <testcase name="repeatedReplayRestartsSameAuthoredInstructionWithDistinctIdsAndNoQueue" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.001"/>
+  <testcase name="offBlocksAutomaticReplayOptionAndListenWithoutDispatch" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.001"/>
+  <testcase name="questionsSuppressesAutomaticFeedbackPraiseCompletionAndNonInstructionalContent" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.0"/>
+  <testcase name="failedInitializationRejectsPendingAndFutureSpeechExplicitly" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.001"/>
+  <testcase name="languageChangeCancelsOldLanguageAndUsesAuthoredSpeechNotDisplay" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.0"/>
+  <testcase name="questionsAllowsInstructionsTutorialsExplanationsAndAllManualControls" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.001"/>
+  <testcase name="changingPolicyCancelsForbiddenPlaybackAndDoesNotReplayOnEnable" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.0"/>
+  <testcase name="closeIsTerminalIdempotentAndRejectsLateCallbacks" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.001"/>
+  <testcase name="mutedFeedbackAlsoCancelsPendingQuestionAndBlocksDelayedInstruction" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.0"/>
+  <testcase name="safetyBoundaryStripsDecorationAndRejectsEmptyUtterance" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.0"/>
+  <testcase name="otherOwnerSessionAndOldRequestCancellationCannotStopCurrentSpeech" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.001"/>
+  <testcase name="allAllowsEveryAuthoredSpeechKindAndTrigger" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.001"/>
+  <testcase name="feedbackPreventsDelayedInstructionEvenAfterCompletionUntilNextContext" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.0"/>
+  <testcase name="requestIdFromAnotherControllerCannotCancelThisControllerRequest" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.0"/>
+  <testcase name="leavingAndReturningSameOwnerSessionCannotReviveAnOldContext" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.0"/>
+  <testcase name="engineReadinessFailureTerminatesAlreadySubmittedRequest" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.0"/>
+  <testcase name="resultObserverMaySubmitReplayWithoutCorruptingReplacement" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.001"/>
+  <testcase name="engineMissingVoiceFailureAndUnexpectedStopAreExplicitTerminalResults" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.0"/>
+  <testcase name="repeatedOptionSpeakerReplacesWithoutChangingItsSemanticKind" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.0"/>
+  <testcase name="initializationKeepsOnlyLatestPendingRequestAndDispatchesOnce" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.0"/>
+  <testcase name="requestCancellationDoesNotRevokeCurrentContext" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.0"/>
+  <testcase name="cancellationDuringInitializationPreventsPlaybackWhenReady" classname="com.bellfamily.bastischool.audio.AudioControllerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

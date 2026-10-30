@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.seasons.SeasonsCluesTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:03" hostname="192.168.1.10" time="0.376">
+  <properties/>
+  <testcase name="seededRoundsFreezeClueIdentityWordingAndChoicesAndVisitAllEightBeforeRepeating" classname="com.bellfamily.bastischool.learning.seasons.SeasonsCluesTest" time="0.016"/>
+  <testcase name="clueAndReplayUseExistingAudioPolicyInBothLanguages" classname="com.bellfamily.bastischool.learning.seasons.SeasonsCluesTest" time="0.002"/>
+  <testcase name="validatorRejectsWrongAnswerOrChangedClueUnderAnExistingDefinition" classname="com.bellfamily.bastischool.learning.seasons.SeasonsCluesTest" time="0.001"/>
+  <testcase name="catalogueHasTwoDistinctBilingualCluesPerCanonicalSeasonWithoutNamingTheAnswer" classname="com.bellfamily.bastischool.learning.seasons.SeasonsCluesTest" time="0.003"/>
+  <testcase name="journalRestoresRetryHelpLanguageAndCompletionWithoutRegenerationOrDuplicateProgress" classname="com.bellfamily.bastischool.learning.seasons.SeasonsCluesTest" time="0.353"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

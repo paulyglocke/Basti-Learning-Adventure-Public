@@ -1,0 +1,4 @@
+10-30 15:36:04.215 13260 13274 I TestRunner: started: missingModeSilentRestoreLanguageAudioAndIndependentJournal(com.bellfamily.bastischool.ui.months.MonthsOwnerTest)
+10-30 15:36:04.217 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@953de75]
+10-30 15:36:04.485 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@953de75]
+10-30 15:36:04.488 13260 13274 I TestRunner: finished: missingModeSilentRestoreLanguageAudioAndIndependentJournal(com.bellfamily.bastischool.ui.months.MonthsOwnerTest)

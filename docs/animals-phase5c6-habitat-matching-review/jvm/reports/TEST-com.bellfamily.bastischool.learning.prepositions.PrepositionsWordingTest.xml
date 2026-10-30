@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.prepositions.PrepositionsWordingTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:12:00" hostname="192.168.1.10" time="0.001">
+  <properties/>
+  <testcase name="sceneSpecificDistractorsPreserveCasePluralAndContractions" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsWordingTest" time="0.0"/>
+  <testcase name="reviewedCorrectPhrasesRemainExactAcrossAll52Scenes" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsWordingTest" time="0.0"/>
+  <testcase name="questionsAndStemsUseCanonicalSubjectsAndNominativeArticles" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsWordingTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

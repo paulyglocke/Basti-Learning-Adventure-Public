@@ -1,0 +1,13 @@
+10-30 15:26:15.640 13260 13274 I TestRunner: started: canonicalPoolIncludingRepairedHorseDecodesAndCaches(com.bellfamily.bastischool.ui.followinstructions.FollowArtworkTest)
+10-30 15:26:16.081  1282  1514 D EGL_emulation: app_time_stats: avg=210.25ms min=48.40ms max=635.34ms count=5
+10-30 15:26:16.148  1282  1514 D EGL_emulation: app_time_stats: avg=406.44ms min=34.56ms max=1067.07ms count=5
+10-30 15:26:16.184  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4500
+10-30 15:26:16.188   780   929 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@23f6766
+10-30 15:26:16.196  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4500
+10-30 15:26:16.206   550   568 W InputManager-JNI: Input channel object '3f72274 Splash Screen com.bellfamily.bastischool.test (client)' was disposed without first being removed with the input manager!
+10-30 15:26:16.207  1282  1517 I HWUI    : Davey! duration=705ms; Flags=0, FrameTimelineVsyncId=4791477, IntendedVsync=161378483023975, Vsync=161378516357307, InputEventId=0, HandleInputStart=161378531076310, AnimationStart=161378531077143, PerformTraversalsStart=161378531148643, DrawStart=161378531213935, FrameDeadline=161378699690633, FrameInterval=161378531072101, FrameStartTime=16666666, SyncQueued=161378531350018, SyncStart=161378628419726, IssueDrawCommandsStart=161378648153268, SwapBuffers=161379261650893, FrameCompleted=161379285975268, DequeueBufferDuration=3584, QueueBufferDuration=200958, GpuCompleted=161379285975268, SwapBuffersCompleted=161379263642935, DisplayPresentTime=0, CommandSubmissionCompleted=161379261650893,
+10-30 15:26:16.296 13293 13293 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@82f7924
+10-30 15:26:16.307   550  1589 W InputManager-JNI: Input channel object 'f343955 com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+10-30 15:26:16.331  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4501
+10-30 15:26:16.335  1282  1282 I TopTaskTracker: onTaskRemoved: taskId=4501
+10-30 15:26:16.536 13260 13274 I TestRunner: finished: canonicalPoolIncludingRepairedHorseDecodesAndCaches(com.bellfamily.bastischool.ui.followinstructions.FollowArtworkTest)

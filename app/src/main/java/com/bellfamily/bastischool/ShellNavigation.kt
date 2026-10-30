@@ -3,7 +3,7 @@ package com.bellfamily.bastischool
 import java.util.concurrent.atomic.AtomicReference
 import com.bellfamily.bastischool.ui.home.validHomePage
 
-internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS_CHOOSER, SEASONS, WILMA_CHOOSER, WILMA, VOCABULARY_CHOOSER, VOCABULARY, TELL_ME, FOLLOW_LEVELS, FOLLOW_INSTRUCTIONS, FOLLOW_TWO, COLOURS_CHOOSER, COLOURS_EXPLORE, COLOURS_FIND, COLOURS_MATCH, COLOUR_SORT_FROM_CHOOSER, FOUR_COLOUR_SORT, COLOUR_SORT, RAINBOW_EXPLORE, RAINBOW_ORDER, HABITATS_CHOOSER, OCEAN_EXPLORE, WOODLAND_EXPLORE, UNDERGROUND_EXPLORE, FRESHWATER_EXPLORE, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH, COMPARE_QUANTITY, NUMBER_ORDER, ADD_TOGETHER, CLOCK, CLOCK_MAKE, MONTHS_CHOOSER, MONTHS, MONTHS_FIND, MONTHS_RELATIONS, MONTHS_MISSING, MONTHS_BETWEEN, MONTHS_BETWEEN_WHEEL, MONTHS_BUILD_YEAR_LEVELS, MONTHS_BUILD_YEAR, MONTHS_BUILD_YEAR_FOUR, MONTHS_SEASONS, MONTHS_SEASONS_WHEEL }
+internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS_CHOOSER, SEASONS, WILMA_CHOOSER, WILMA, VOCABULARY_CHOOSER, VOCABULARY, TELL_ME, FOLLOW_LEVELS, FOLLOW_INSTRUCTIONS, FOLLOW_TWO, COLOURS_CHOOSER, COLOURS_EXPLORE, COLOURS_FIND, COLOURS_MATCH, COLOUR_SORT_FROM_CHOOSER, FOUR_COLOUR_SORT, COLOUR_SORT, RAINBOW_EXPLORE, RAINBOW_ORDER, HABITATS_CHOOSER, OCEAN_EXPLORE, WOODLAND_EXPLORE, UNDERGROUND_EXPLORE, FRESHWATER_EXPLORE, HABITAT_MATCH, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH, COMPARE_QUANTITY, NUMBER_ORDER, ADD_TOGETHER, CLOCK, CLOCK_MAKE, MONTHS_CHOOSER, MONTHS, MONTHS_FIND, MONTHS_RELATIONS, MONTHS_MISSING, MONTHS_BETWEEN, MONTHS_BETWEEN_WHEEL, MONTHS_BUILD_YEAR_LEVELS, MONTHS_BUILD_YEAR, MONTHS_BUILD_YEAR_FOUR, MONTHS_SEASONS, MONTHS_SEASONS_WHEEL }
 internal enum class BackAction { EXIT, HOME_ROOT, CLOSE_OPTIONS, LEGACY, NATIVE_HOME, DAYS_HUB, SEASONS_CHOOSER, WILMA_CHOOSER, VOCABULARY_CHOOSER, COLOURS_CHOOSER, HABITATS_CHOOSER, ANIMALS_CATEGORY, CLOCK_AREA, MONTHS_AREA, FOLLOW_LEVELS }
 
 /** Options is an overlay on one destination, never another entry in a growing stack. */
@@ -28,6 +28,7 @@ internal data class ShellNavigation(
         ShellScreen.COLOURS_EXPLORE, ShellScreen.COLOURS_FIND, ShellScreen.COLOURS_MATCH, ShellScreen.COLOUR_SORT_FROM_CHOOSER, ShellScreen.FOUR_COLOUR_SORT, ShellScreen.RAINBOW_EXPLORE, ShellScreen.RAINBOW_ORDER -> BackAction.COLOURS_CHOOSER
         ShellScreen.OCEAN_EXPLORE, ShellScreen.WOODLAND_EXPLORE, ShellScreen.UNDERGROUND_EXPLORE, ShellScreen.FRESHWATER_EXPLORE -> BackAction.HABITATS_CHOOSER
         ShellScreen.HABITATS_CHOOSER -> BackAction.ANIMALS_CATEGORY
+        ShellScreen.HABITAT_MATCH -> BackAction.ANIMALS_CATEGORY
         ShellScreen.PREPOSITIONS, ShellScreen.DAYS_SEASONS, ShellScreen.VOCABULARY_CHOOSER, ShellScreen.TELL_ME, ShellScreen.FOLLOW_LEVELS, ShellScreen.COLOUR_SORT, ShellScreen.ANIMAL_GROUPS, ShellScreen.WASH_HANDS, ShellScreen.SUBITISING, ShellScreen.QUANTITY_MATCH -> BackAction.NATIVE_HOME
         ShellScreen.SEASONS -> BackAction.SEASONS_CHOOSER
         ShellScreen.WILMA -> BackAction.WILMA_CHOOSER
@@ -42,6 +43,9 @@ internal data class ShellNavigation(
     fun openTellMe() = ShellNavigation(ShellScreen.TELL_ME)
     fun openWashHands() = ShellNavigation(ShellScreen.WASH_HANDS)
     fun openAnimalGroups() = ShellNavigation(ShellScreen.ANIMAL_GROUPS)
+    fun openHabitatMatching(returnPage: String = "category:ANIMALS") = ShellNavigation(
+        screen = ShellScreen.HABITAT_MATCH,
+        homePage = returnPage.takeIf(::validHomePage) ?: "category:ANIMALS")
     fun openHabitatsChooser(returnPage: String = "category:ANIMALS") = ShellNavigation(
         screen = ShellScreen.HABITATS_CHOOSER,
         homePage = returnPage.takeIf(::validHomePage) ?: "category:ANIMALS")
@@ -105,7 +109,7 @@ internal data class ShellNavigation(
             val parent = ShellScreen.entries.firstOrNull { it.name == origin && it != ShellScreen.OPTIONS }
                 ?: ShellScreen.HOME
             val browsing = destination == ShellScreen.HOME || destination == ShellScreen.OPTIONS && parent == ShellScreen.HOME
-            val habitatRoute = destination in setOf(ShellScreen.HABITATS_CHOOSER, ShellScreen.OCEAN_EXPLORE, ShellScreen.WOODLAND_EXPLORE, ShellScreen.UNDERGROUND_EXPLORE, ShellScreen.FRESHWATER_EXPLORE) ||
+            val habitatRoute = destination in setOf(ShellScreen.HABITATS_CHOOSER, ShellScreen.OCEAN_EXPLORE, ShellScreen.WOODLAND_EXPLORE, ShellScreen.UNDERGROUND_EXPLORE, ShellScreen.FRESHWATER_EXPLORE, ShellScreen.HABITAT_MATCH) ||
                 destination == ShellScreen.OPTIONS && parent in setOf(ShellScreen.HABITATS_CHOOSER, ShellScreen.OCEAN_EXPLORE, ShellScreen.WOODLAND_EXPLORE, ShellScreen.UNDERGROUND_EXPLORE, ShellScreen.FRESHWATER_EXPLORE)
             val route = ShellNavigation(destination, parent, mode ?: "verbs",
                 homePage = homePage?.takeIf { (browsing || habitatRoute) && validHomePage(it) }

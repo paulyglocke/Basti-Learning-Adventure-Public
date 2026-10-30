@@ -1,0 +1,4 @@
+10-30 15:29:28.812 13260 13274 I TestRunner: started: soundOffSelectionIsSilentLanguageSwitchKeepsAnimalAndReplayUsesCurrentAnimal(com.bellfamily.bastischool.ui.habitats.WoodlandExploreOwnerTest)
+10-30 15:29:28.827 13260 13274 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@8992b1b]
+10-30 15:29:28.904 13260 13274 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@8992b1b]
+10-30 15:29:28.904 13260 13274 I TestRunner: finished: soundOffSelectionIsSilentLanguageSwitchKeepsAnimalAndReplayUsesCurrentAnimal(com.bellfamily.bastischool.ui.habitats.WoodlandExploreOwnerTest)

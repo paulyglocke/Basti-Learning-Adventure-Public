@@ -4,6 +4,16 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class ShellNavigationTest {
+    @Test fun habitatMatchingReturnsToAnimalsCategoryAndRestoresOptionsRoute() {
+        val match = ShellNavigation().openHabitatMatching("category:ANIMALS")
+        assertEquals(ShellScreen.HABITAT_MATCH, match.screen)
+        assertEquals(BackAction.ANIMALS_CATEGORY, match.backAction)
+        assertEquals(match, match.openOptions().closeOptions())
+        val restored = ShellNavigation.restore("HABITAT_MATCH", "HOME", "verbs", null, "category:ANIMALS")
+        assertEquals("category:ANIMALS", restored.homePage)
+        assertEquals(BackAction.ANIMALS_CATEGORY, restored.backAction)
+        assertEquals(match, restored.openOptions().closeOptions())
+    }
     @Test fun followLevelsAndBothSavedRoutesReturnThroughTheChooser() {
         val levels = ShellNavigation().openFollowInstructions()
         assertEquals(ShellScreen.FOLLOW_LEVELS, levels.screen)

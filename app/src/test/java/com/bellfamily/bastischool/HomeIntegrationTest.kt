@@ -9,9 +9,9 @@ class HomeIntegrationTest {
     @Test fun liveCardsDispatchToTheirExistingOrNewDestinations() {
         val expected = listOf("TELL_ME", "VOCABULARY_CHOOSER", "WEB", "WEB", "WEB", "DAYS_SEASONS",
             "WEB", "SUBITISING", "QUANTITY_MATCH", "COMPARE_QUANTITY", "NUMBER_ORDER", "CLOCK",
-            "ADD_TOGETHER", "WEB", "PREPOSITIONS", "WEB", "WASH_HANDS", "HABITATS_CHOOSER", "ANIMAL_GROUPS", "COLOURS_CHOOSER", "FOLLOW_LEVELS")
+            "ADD_TOGETHER", "WEB", "PREPOSITIONS", "WEB", "WASH_HANDS", "HABITATS_CHOOSER", "HABITAT_MATCH", "ANIMAL_GROUPS", "COLOURS_CHOOSER", "FOLLOW_LEVELS")
         val cards = homeActivities()
-        assertEquals(21, cards.size)
+        assertEquals(22, cards.size)
         assertEquals(expected, cards.map { it.homeDestination().screen.name })
         cards.filter { it.homeDestination().screen == ShellScreen.WEB }.forEach {
             assertEquals(it.homeId(), it.homeDestination().mode)
@@ -20,10 +20,10 @@ class HomeIntegrationTest {
         assertTrue(cards.none { it.play })
     }
 
-    @Test fun sixBilingualCategoriesCoverTwentyAndMixedRemainsTwentyFirst() {
-        assertEquals(listOf(7,5,2,3,1,2), HomeCategory.entries.map { it.activityIds.size })
+    @Test fun sixBilingualCategoriesCoverTwentyOneAndMixedRemainsLast() {
+        assertEquals(listOf(7,5,2,4,1,2), HomeCategory.entries.map { it.activityIds.size })
         val ids = HomeCategory.entries.flatMap { it.activityIds }
-        assertEquals(20, ids.distinct().size)
+        assertEquals(21, ids.distinct().size)
         assertEquals(homeActivities().map { it.homeId() }.toSet(), ids.toSet() + "mixed")
         assertEquals(listOf("Numbers & Maths","Words & Talking","Time & Seasons","Animals & Nature","Colours","Everyday Skills"), HomeCategory.entries.map { it.en })
         assertEquals(listOf("Zahlen & Rechnen","Wörter & Erzählen","Zeit & Jahreszeiten","Tiere & Natur","Farben","Alltag"), HomeCategory.entries.map { it.de })
@@ -96,6 +96,18 @@ class HomeIntegrationTest {
             assertFalse(restored.ownsWebSession)
         }
         assertEquals(BackAction.NATIVE_HOME, homeActivity("animalGroups").homeDestination().backAction)
+    }
+
+    @Test fun habitatMatchHasItsOwnRouteAndReturnsToTheLaunchingHomePage() {
+        val fromAll = ShellNavigation().browseHome("all").openHabitatMatching("all")
+        assertEquals(ShellScreen.HABITAT_MATCH, fromAll.screen)
+        assertEquals("all", fromAll.homePage)
+        assertEquals(BackAction.ANIMALS_CATEGORY, fromAll.backAction)
+        assertEquals(fromAll, fromAll.openOptions().closeOptions())
+        val fromAnimals = ShellNavigation().openHabitatMatching("category:ANIMALS")
+        assertEquals("category:ANIMALS", fromAnimals.homePage)
+        assertEquals(fromAnimals, ShellNavigation.restore("HABITAT_MATCH", "HOME", "verbs", null,
+            "category:ANIMALS").openOptions().closeOptions())
     }
 
     @Test fun originalAnimalGroupsIdentityPoolAndWaterLandContractRemainUntouched() {

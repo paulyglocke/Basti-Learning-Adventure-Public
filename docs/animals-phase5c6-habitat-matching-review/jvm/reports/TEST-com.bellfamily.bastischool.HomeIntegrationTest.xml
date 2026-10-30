@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.HomeIntegrationTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-10-30T14:11:46" hostname="192.168.1.10" time="0.012">
+  <properties/>
+  <testcase name="homePagesAndOptionsRestoreWithoutNewLearningState" classname="com.bellfamily.bastischool.HomeIntegrationTest" time="0.001"/>
+  <testcase name="habitatMatchHasItsOwnRouteAndReturnsToTheLaunchingHomePage" classname="com.bellfamily.bastischool.HomeIntegrationTest" time="0.0"/>
+  <testcase name="originalAnimalGroupsIdentityPoolAndWaterLandContractRemainUntouched" classname="com.bellfamily.bastischool.HomeIntegrationTest" time="0.008"/>
+  <testcase name="sixBilingualCategoriesCoverTwentyOneAndMixedRemainsLast" classname="com.bellfamily.bastischool.HomeIntegrationTest" time="0.0"/>
+  <testcase name="liveCardsDispatchToTheirExistingOrNewDestinations" classname="com.bellfamily.bastischool.HomeIntegrationTest" time="0.001"/>
+  <testcase name="habitatExploreUsesItsOwnChooserAndKeepsTheAnimalsHomePageAsItsParent" classname="com.bellfamily.bastischool.HomeIntegrationTest" time="0.0"/>
+  <testcase name="olderSavedRoutesAndMalformedHomePagesKeepSafeDefaults" classname="com.bellfamily.bastischool.HomeIntegrationTest" time="0.0"/>
+  <testcase name="activityRootAndNestedBackContractsAreNotReinterpretedAsCategoryBack" classname="com.bellfamily.bastischool.HomeIntegrationTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
