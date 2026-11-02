@@ -125,11 +125,20 @@ class PrepositionsReviewTest {
         val original = PrepositionsContentTest.plan()
         val scene = PositionScene(PositionAnimal.FISH, PositionRelation.OUTSIDE)
         val q = PrepositionsContent.question(scene, listOf(PositionRelation.OUTSIDE, PositionRelation.IN_FRONT_OF,
-            PositionRelation.ON, PositionRelation.UNDER).map { it.id })
-        val forged = SessionPlan(original.id, original.activity, original.activityRevision, original.contentVersion,
-            original.policy, original.tasks.mapIndexed { i, task -> if (i == 0) ChoiceTask(task.id, q) else task },
+            PositionRelation.ON, PositionRelation.UNDER).map { it.id }, PrepositionsContent.revision3Repository)
+        val oldScenes = listOf(scene) + PrepositionsContent.scenes.filter { it != scene }.take(4)
+        val tasks = oldScenes.mapIndexed { i, authoredScene ->
+            val choices = mutableListOf(authoredScene.relation)
+            PositionRelation.entries.forEach { candidate ->
+                if (choices.size < 4 && choices.all { PrepositionsContent.compatible(it, candidate, authoredScene.relation.reference) }) choices += candidate
+            }
+            val oldQuestion = PrepositionsContent.question(authoredScene, choices.map { it.id }, PrepositionsContent.revision3Repository)
+            ChoiceTask(TaskInstanceId(original.id, i + 1), if (i == 0) q else oldQuestion)
+        }
+        val forged = SessionPlan(original.id, original.activity, 3, PrepositionsContent.revision3Repository.version,
+            original.policy, tasks,
             original.completionText)
-        val bytes = SessionCheckpoint.encode(SessionReducer.start(forged, ContentLanguage.GERMAN, PrepositionsContent.repository).state)
+        val bytes = SessionCheckpoint.encode(SessionReducer.start(forged, ContentLanguage.GERMAN, PrepositionsContent.revision3Repository).state)
         assertEquals(SessionRestoreResult.Rejected(CheckpointRejection.MALFORMED), PrepositionsContent.restore(bytes))
     }
 }

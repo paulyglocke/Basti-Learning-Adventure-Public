@@ -47,8 +47,8 @@ data class PositionScene(val animal: PositionAnimal, val relation: PositionRelat
 
 object PrepositionsContent {
     val activity = ActivityId("activity.prepositions")
-    const val REVISION = 3
-    val version = ContentVersion(1, 3)
+    const val REVISION = 4
+    val version = ContentVersion(1, 4)
     val scenes: List<PositionScene> = java.util.Collections.unmodifiableList(PrepositionsArtwork.scenes)
     // Frozen v1 membership; never expand an accepted old round using the v2 catalogue.
     internal val legacyRelations = listOf(PositionRelation.ON, PositionRelation.UNDER, PositionRelation.BEHIND,
@@ -59,6 +59,10 @@ object PrepositionsContent {
     // Only wording changed in v3. Freeze the two changed v2 entries for exact old snapshots.
     internal val revision2Repository: ContentRepository = BundledContentRepository(ContentVersion(1, 2),
         PositionRelation.entries.map { val label = positionLabel(it, 2)
+            PrepositionDefinition(it.id, ContentText(label, label)) }, emptyList())
+    // Frozen v3 definitions: v4 changes only the number of presented choices.
+    internal val revision3Repository: ContentRepository = BundledContentRepository(ContentVersion(1, 3),
+        PositionRelation.entries.map { val label = positionLabel(it, 3)
             PrepositionDefinition(it.id, ContentText(label, label)) }, emptyList())
     val completion = ContentText.plain("Adventure complete! Well done!", "Abenteuer geschafft! Sehr gut!")
     val tutorial = ContentText.plain(
@@ -90,11 +94,7 @@ object PrepositionsContent {
         !(reference == ReferenceObject.CAVE && setOf(a, b) ==
             setOf(PositionRelation.OUTSIDE, PositionRelation.IN_FRONT_OF))
 
-    private fun choices(scene: PositionScene, random: Random): List<ContentId> {
-        val correct = scene.relation
-        val chosen = mutableListOf(correct)
-        // Prefer a concrete spatial contrast before the other seeded distractors.
-        val opposite = when(correct) {
+    internal fun clearContrast(relation: PositionRelation): PositionRelation = when(relation) {
             PositionRelation.ON -> PositionRelation.UNDER
             PositionRelation.UNDER -> PositionRelation.ON
             PositionRelation.ABOVE -> PositionRelation.BELOW
@@ -105,32 +105,38 @@ object PrepositionsContent {
             PositionRelation.OUTSIDE -> PositionRelation.INSIDE
             PositionRelation.NEAR, PositionRelation.NEXT_TO -> PositionRelation.FAR_FROM
             PositionRelation.FAR_FROM -> PositionRelation.NEAR
-            PositionRelation.BETWEEN -> PositionRelation.NEXT_TO
+            PositionRelation.BETWEEN -> PositionRelation.FAR_FROM
         }
-        chosen += opposite
-        for (candidate in PositionRelation.entries.shuffled(random)) {
-            if (chosen.size == 4) break
-            if (chosen.all { compatible(it, candidate, scene.relation.reference) }) chosen += candidate
-        }
-        require(chosen.size == 4)
-        return chosen.shuffled(random).map { it.id }
+    internal fun choices(scene: PositionScene, random: Random): List<ContentId> =
+        listOf(scene.relation, clearContrast(scene.relation)).shuffled(random).map { it.id }
+
+    private fun choiceCount(revision: Int) = if (revision >= 4) 2 else 4
+
+    private fun revisionFor(content: ContentRepository): Int = when (content.version) {
+        legacyRepository.version -> 1
+        revision2Repository.version -> 2
+        revision3Repository.version -> 3
+        version -> REVISION
+        else -> throw IllegalArgumentException("Unsupported Prepositions content")
     }
 
     fun question(scene: PositionScene, choices: List<ContentId>, content: ContentRepository = repository): ChoiceQuestion {
         require(scene in scenes)
-        require(choices.size == 4 && choices.toSet().size == 4 && scene.relation.id in choices)
+        val revision = revisionFor(content)
+        require(choices.size == choiceCount(revision) && choices.toSet().size == choices.size && scene.relation.id in choices)
+        if (revision >= REVISION) require(choices.toSet() == setOf(scene.relation.id, clearContrast(scene.relation).id))
         choices.forEach { require(content.find(it) is PrepositionDefinition) }
-        val revision = when (content.version) {
-            legacyRepository.version -> 1
-            revision2Repository.version -> 2
-            version -> REVISION
-            else -> throw IllegalArgumentException("Unsupported Prepositions content")
-        }
         val phrase = positionPhrase(scene.relation, revision)
         val description = positionDescription(scene, revision)
         val names = choices.map { content.find(it)!!.text }
-        require(names.map { it.display.en }.toSet().size == 4 && names.map { it.display.de }.toSet().size == 4)
-        val instruction = ContentText.plain(
+        require(names.map { it.display.en }.toSet().size == choices.size && names.map { it.display.de }.toSet().size == choices.size)
+        val instruction = if (revision >= REVISION) {
+            val phrases = choices.map { id -> answerPhrase(scene, id, ContentLanguage.ENGLISH, revision) to
+                answerPhrase(scene, id, ContentLanguage.GERMAN, revision) }
+            ContentText.plain(
+                "Where is ${scene.animal.subject.en}? Look at the picture. Choose: ${phrases[0].first} or ${phrases[1].first}.",
+                "Wo ist ${scene.animal.subject.de}? Schau dir das Bild an. Wähle: ${phrases[0].second} oder ${phrases[1].second}.")
+        } else ContentText.plain(
             "Where is ${scene.animal.subject.en}? Look at the picture. Choose: ${names.joinToString(", ") { it.speech.en }}.",
             "Wo ist ${scene.animal.subject.de}? Schau dir das Bild an. Wähle: ${names.joinToString(", ") { it.speech.de }}.")
         return ChoiceQuestion(scene.taskId, SkillId("skill.spatial.${scene.relation.key}"), scene.context, 1,
@@ -143,13 +149,18 @@ object PrepositionsContent {
     fun validate(state: SessionState) {
         val legacy = state.plan.activityRevision == 1 && state.plan.contentVersion == legacyRepository.version
         val revision2 = state.plan.activityRevision == 2 && state.plan.contentVersion == revision2Repository.version
-        require(state.plan.activity == activity && (legacy || revision2 ||
+        val revision3 = state.plan.activityRevision == 3 && state.plan.contentVersion == revision3Repository.version
+        require(state.plan.activity == activity && (legacy || revision2 || revision3 ||
             state.plan.activityRevision == REVISION && state.plan.contentVersion == version))
-        val content = if (legacy) legacyRepository else if (revision2) revision2Repository else repository
+        val content = when { legacy -> legacyRepository; revision2 -> revision2Repository
+            revision3 -> revision3Repository; else -> repository }
         require(state.plan.completionText == completion && state.plan.policy.wrongAnswer == WrongAnswerPolicy.RETRY)
         state.plan.tasks.forEach { task ->
             val scene = scene(task)
             if (legacy) require(scene.animal in legacyAnimals && scene.relation in legacyRelations)
+            if (state.plan.activityRevision >= REVISION) {
+                require(task.question.choices.size == choiceCount(REVISION))
+            } else require(task.question.choices.size == 4)
             if (!legacy && !revision2) {
                 val relations = task.question.choices.map { id -> PositionRelation.entries.single { it.id == id } }
                 relations.forEachIndexed { i, a -> require(relations.drop(i + 1).all { b ->
@@ -166,6 +177,8 @@ object PrepositionsContent {
     /** Exact snapshots only; never regenerate or rewrite a saved round's version. */
     fun restore(bytes: ByteArray): SessionRestoreResult {
         var result = SessionCheckpoint.restore(bytes, activity, REVISION, repository)
+        if (result == SessionRestoreResult.Rejected(CheckpointRejection.INCOMPATIBLE))
+            result = SessionCheckpoint.restore(bytes, activity, 3, revision3Repository)
         if (result == SessionRestoreResult.Rejected(CheckpointRejection.INCOMPATIBLE))
             result = SessionCheckpoint.restore(bytes, activity, 2, revision2Repository)
         if (result == SessionRestoreResult.Rejected(CheckpointRejection.INCOMPATIBLE))

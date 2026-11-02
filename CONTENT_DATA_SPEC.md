@@ -379,25 +379,38 @@ mapping validity is not visual acceptance.
 The live renderer fits the complete reviewed image inside a 4:3 frame; the original
 six-relation PositionGeometry utility is historical regression evidence only, no longer the runtime renderer.
 
-Seeded five/ten-question rounds select distinct scenes, include the correct answer in four
-distinct choices and narrate that exact ordered list. One concrete contrast is preferred
+In revision 3, seeded five/ten-question rounds selected distinct scenes, included the
+correct answer in four distinct choices and narrated that exact ordered list. One concrete contrast was preferred
 (e.g. behind/in front of, near/far from). Competing pairs in/inside, under/below, on/above
 and next_to/near are excluded throughout a new question's choices. On cave references,
 outside/in_front_of are additionally incompatible. Useful opposites remain available.
-Both languages' labels must be unique within a question. No adaptive difficulty or new
-answer interpretation is introduced. Guided Listen retains question, answer stem and
-four full scene-specific answer phrases in displayed order.
+Both languages' labels were unique within a question. Guided Listen retained question,
+answer stem and four full scene-specific answer phrases in displayed order.
 
 Revision-1/content-1.1 checkpoints restore their exact original tasks, choices, wording,
 versions and state against the original six-relation/24-scene contract. They are neither
 regenerated nor expanded mid-round; old pending progress is delivered with its original
-identity/version. Revision-2/content-1.2 active and completed checkpoints likewise retain
+identity/version. Revision-2/content-1.2 and revision-3/content-1.3 active and completed checkpoints likewise retain
 exact saved content and state against their frozen wording (including old BELOW), with
-revision-aware display/audio phrases. Play Again creates v3. New compatibility rules do
+revision-aware display/audio phrases. Later compatibility rules do
 not retrospectively reject old rounds. Unsupported or malformed journals remain intact.
 Shared checkpoint/journal schemas stay 1; Prepositions supplies an explicit compatible
 restore function to DurableSessionHost, whose other consumers retain strict current-version
 restoration. New pictures do not fabricate prior learning history or demonstrate mastery.
+
+### Two-choice Prepositions rounds (2026-11-02)
+
+New rounds use activity revision 4/content 1.4. Every question presents exactly two
+choices: the scene's correct relation and one explicitly authored clear spatial contrast
+(for example, on/under, above/below, behind/in front of, inside/outside, near/far from).
+Between contrasts with far from the two rocks. Choice order remains seeded. The prompt
+and guided Replay name the two full scene-specific alternatives; individual Listen,
+answer evaluation, retries and progress semantics are unchanged. This is a simpler
+recognition choice informed by owner feedback from Basti; it does not add another level
+or claim evidence of broader child testing. Revision-1, -2 and -3 rounds retain their
+original four choices, exact copy and checkpoint identity. Play Again from an older
+completed round starts revision 4. The durable journal path/schema, task/answer IDs,
+skill IDs and progress identities remain unchanged.
 
 ## Native Wilma weekday presentation (2026-09-22)
 

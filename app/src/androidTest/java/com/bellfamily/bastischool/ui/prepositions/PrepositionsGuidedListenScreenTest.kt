@@ -84,7 +84,7 @@ class PrepositionsGuidedListenScreenTest {
         }
         compose.onAllNodes(highlighting(language)).assertCountEquals(0)
         compose.runOnIdle {
-            assertEquals(6,engine.requests.size);assertTrue(engine.requests.all {it.context.language==language})
+            assertEquals(4,engine.requests.size);assertTrue(engine.requests.all {it.context.language==language})
             assertEquals(0,state.value.current.attempts);assertEquals(1,state.value.current.support.replays)
         }
     }
@@ -94,21 +94,21 @@ class PrepositionsGuidedListenScreenTest {
     @OptIn(ExperimentalTestApi::class,androidx.compose.ui.ExperimentalComposeUiApi::class)
     @Test fun individualListenIsSeparateFromImmediateKeyboardAnswerAndNavigationClearsOutline() {
         show(ContentLanguage.ENGLISH)
-        val s=state.value;val third=s.task.question.choices[2]
-        compose.onNodeWithTag("speaker-${third.value}").performScrollTo().performClick()
-        compose.onNodeWithTag("answer-${third.value}").assert(highlighting(ContentLanguage.ENGLISH))
+        val s=state.value;val second=s.task.question.choices[1]
+        compose.onNodeWithTag("speaker-${second.value}").performScrollTo().performClick()
+        compose.onNodeWithTag("answer-${second.value}").assert(highlighting(ContentLanguage.ENGLISH))
         compose.runOnIdle {
             assertEquals(1,engine.requests.size)
-            assertEquals(answerPhrase(PrepositionsContent.scene(s.task),third,s.language)+".",engine.requests.single().text)
+            assertEquals(answerPhrase(PrepositionsContent.scene(s.task),second,s.language)+".",engine.requests.single().text)
             assertEquals(0,state.value.current.attempts)
             assertTrue(input.requestInputMode(InputMode.Keyboard))
         }
-        val answer=compose.onNodeWithTag("answer-${third.value}").performScrollTo()
+        val answer=compose.onNodeWithTag("answer-${second.value}").performScrollTo()
         answer.performSemanticsAction(SemanticsActions.RequestFocus){assertTrue(it())}
         answer.assertIsFocused().performKeyInput {pressKey(Key.Enter)}
-        compose.runOnIdle {assertEquals(1,state.value.current.attempts);assertEquals(third,state.value.current.lastChoice)}
+        compose.runOnIdle {assertEquals(1,state.value.current.attempts);assertEquals(second,state.value.current.lastChoice)}
         compose.onAllNodes(highlighting(ContentLanguage.ENGLISH)).assertCountEquals(0)
-        compose.onNodeWithTag("speaker-${third.value}").performScrollTo().performClick()
+        compose.onNodeWithTag("speaker-${second.value}").performScrollTo().performClick()
         compose.onNodeWithTag("home").performScrollTo().performClick()
         compose.onAllNodes(highlighting(ContentLanguage.ENGLISH)).assertCountEquals(0)
     }

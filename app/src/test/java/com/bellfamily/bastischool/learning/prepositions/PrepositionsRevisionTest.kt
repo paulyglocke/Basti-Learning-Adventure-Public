@@ -100,7 +100,7 @@ class PrepositionsRevisionTest {
         assertEquals(old.state!!.plan.tasks[1].id,resumed.state!!.task.id)
         assertEquals(old.state!!.plan.tasks[1].question.choices,resumed.state!!.task.question.choices)
     }
-    @Test fun oldPendingCompletionDeduplicatesThenPlayAgainStartsV3() {
+    @Test fun oldPendingCompletionDeduplicatesThenPlayAgainStartsV4() {
         val disk=Memory();val old=old(disk);old.open(SessionId("legacy-complete"),RoundLength.FIVE,3,ContentLanguage.GERMAN)
         repeat(5) {answer(old);if(it==4)fail=true;old.dispatch(SessionAction.Next(old.state!!.task.id))}
         fail=false;val resumed=restore(disk)
@@ -108,8 +108,9 @@ class PrepositionsRevisionTest {
         assertEquals(1,resumed.state!!.plan.activityRevision);val completed=SessionCheckpoint.encode(resumed.state!!)
         assertArrayEquals(completed,SessionCheckpoint.encode(restore(disk).state!!))
         assertEquals(1,records.filterIsInstance<CompletionEvent>().size)
-        resumed.newRound(SessionId("new-v3"),RoundLength.TEN,7,ContentLanguage.GERMAN)
-        assertEquals(3,resumed.state!!.plan.activityRevision);assertEquals(ContentVersion(1,3),resumed.state!!.plan.contentVersion)
+        resumed.newRound(SessionId("new-v4"),RoundLength.TEN,7,ContentLanguage.GERMAN)
+        assertEquals(4,resumed.state!!.plan.activityRevision);assertEquals(ContentVersion(1,4),resumed.state!!.plan.contentVersion)
+        assertTrue(resumed.state!!.plan.tasks.all {it.question.choices.size==2})
         assertArrayEquals(SessionCheckpoint.encode(resumed.state!!),SessionCheckpoint.encode(restore(disk).state!!))
     }
     @Test fun v1DoesNotAcceptNewRelationsOrModifiedAuthoredTextAndBadJournalIsUntouched() {
@@ -127,7 +128,9 @@ class PrepositionsRevisionTest {
         assertTrue(PrepositionsContent.restore(encode(v2,PrepositionsContent.version)) is SessionRestoreResult.Rejected)
         // A forged v1 revision with an old content version and a new relation cannot pass reference validation.
         val newScene=PrepositionsContent.scenes.first {it.relation==PositionRelation.ABOVE}
-        val newQuestion=PrepositionsContent.question(newScene,listOf("above","below","behind","in_front_of").map {ContentId("position.$it")})
+        val newQuestion=PrepositionsContent.question(newScene,
+            listOf("above","below","behind","in_front_of").map {ContentId("position.$it")},
+            PrepositionsContent.revision3Repository)
         val forged=SessionPlan(original.id,original.activity,1,content.version,original.policy,
             original.tasks.mapIndexed {i,t->if(i==0)ChoiceTask(t.id,newQuestion)else t},original.completionText)
         val permissive=object:com.bellfamily.bastischool.learning.content.ContentRepository by PrepositionsContent.repository {override val version=content.version}

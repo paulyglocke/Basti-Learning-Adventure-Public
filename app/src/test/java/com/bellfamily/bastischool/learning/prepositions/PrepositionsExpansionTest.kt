@@ -80,21 +80,22 @@ class PrepositionsExpansionTest {
         sentences.forEach {val (key,en,de)=it.split('|');assertEquals(LocalizedText(en,de),PrepositionsContent.scenes.single {s->s.id.value=="scene.prepositions.$key"}.description)}
     }
 
-    @Test fun seededRoundsReachEveryRelationWithDistinctBilingualNonCompetingChoices() {
+    @Test fun seededRoundsReachEveryRelationWithOnlyItsClearSpatialContrast() {
         val reached=mutableSetOf<ContentId>()
         for(round in RoundLength.entries) for(seed in 0L..199L) {
             val plan=PrepositionsContentTest.plan(round,seed)
-            assertEquals(3,plan.activityRevision);assertEquals(ContentVersion(1,3),plan.contentVersion)
+            assertEquals(4,plan.activityRevision);assertEquals(ContentVersion(1,4),plan.contentVersion)
             assertEquals(round.count,plan.tasks.map {it.question.definition}.toSet().size)
             val again=PrepositionsContentTest.plan(round,seed)
             assertArrayEquals(SessionCheckpoint.encode(SessionReducer.start(plan,ContentLanguage.ENGLISH,PrepositionsContent.repository).state),
                 SessionCheckpoint.encode(SessionReducer.start(again,ContentLanguage.ENGLISH,PrepositionsContent.repository).state))
             plan.tasks.forEach {task ->
-                val ids=task.question.choices;assertEquals(4,ids.toSet().size);assertTrue(task.question.correct in ids)
+                val ids=task.question.choices;assertEquals(2,ids.toSet().size);assertTrue(task.question.correct in ids)
                 reached+=task.question.correct
                 val relations=ids.map {id->PositionRelation.entries.single {it.id==id}}
-                assertEquals(4,relations.map {it.label.en}.toSet().size);assertEquals(4,relations.map {it.label.de}.toSet().size)
-                relations.forEachIndexed {i,a->relations.drop(i+1).forEach {b->assertTrue(PrepositionsContent.compatible(a,b,PrepositionsContent.scene(task).relation.reference))}}
+                assertEquals(setOf(PrepositionsContent.scene(task).relation,
+                    PrepositionsContent.clearContrast(PrepositionsContent.scene(task).relation)),relations.toSet())
+                assertEquals(2,relations.map {it.label.en}.toSet().size);assertEquals(2,relations.map {it.label.de}.toSet().size)
             }
         }
         assertEquals(PositionRelation.entries.map {it.id}.toSet(),reached)

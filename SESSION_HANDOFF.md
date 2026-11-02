@@ -1,5 +1,22 @@
 # Session handoff — 2026-10-21
 
+## Prepositions — two-choice follow-up (2026-11-02)
+
+Updated new Prepositions rounds after owner feedback from Basti: each scene now
+offers exactly two large answer rows, the pictured relation and one clear spatial
+contrast (such as on/under, above/below, behind/in front, or inside/outside).
+The seeded order changes, but both EN/DE prompts and guided Replay name the two
+scene-specific alternatives. Existing UI already lays options out as reachable
+vertical rows. No scoring, retry, hint, audio, task or progress semantics changed.
+
+New rounds use activity revision 4/content 1.4. The saved journal namespace and
+schema are unchanged. Frozen revision-1/2/3 rounds still validate and restore with
+their original four choices; Play Again starts revision 4. The question and
+checkpoint tests were updated for this contract, including a revision-3 restore
+fixture. No tests or builds were run in this implementation pass. Next: run focused
+Prepositions JVM and Compose/API checks, then the normal project validation before
+review/commit. Work is uncommitted and unpushed.
+
 ## Phase 5C.1 — Animals & Habitats foundation audit (2026-10-26; docs only)
 
 Verified clean `main` at `745e14c6b9e7c102a67ca977e0291d06904fe173`, matching

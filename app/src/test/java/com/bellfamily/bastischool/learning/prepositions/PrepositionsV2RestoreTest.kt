@@ -93,7 +93,7 @@ class PrepositionsV2RestoreTest {
             if (correct) s.task.question.correct else s.task.question.choices.first { it != s.task.question.correct }))
     }
 
-    @Test fun oldActiveCompletedAndPendingJournalsRetainStateAndAgainStartsReviewedV3() {
+    @Test fun oldActiveCompletedAndPendingJournalsRetainStateAndAgainStartsReviewedV4() {
         val disk = Memory()
         var host: DurableSessionHost = DurableSessionHost(disk, progress, PrepositionsContent.activity, 2, content,
             { id, _, _ -> GenerationResult.Generated(plan(id)) }, {})
@@ -130,10 +130,11 @@ class PrepositionsV2RestoreTest {
         assertArrayEquals(acknowledged, SessionCheckpoint.encode(host.state!!))
         assertEquals(2, host.state!!.plan.activityRevision)
         host.newRound(SessionId("reviewed-round"), RoundLength.FIVE, 8, ContentLanguage.GERMAN)
-        assertEquals(3, host.state!!.plan.activityRevision)
-        assertEquals(ContentVersion(1, 3), host.state!!.plan.contentVersion)
+        assertEquals(4, host.state!!.plan.activityRevision)
+        assertEquals(ContentVersion(1, 4), host.state!!.plan.contentVersion)
         assertEquals(SessionPhase.ACTIVE, host.state!!.phase)
         assertEquals(0, host.state!!.current.attempts)
+        assertEquals(2, host.state!!.task.question.choices.size)
         PrepositionsContent.validate(host.state!!)
     }
 
@@ -150,11 +151,13 @@ class PrepositionsV2RestoreTest {
         val scenes = PrepositionsContent.scenes.filter { it.relation == PositionRelation.BELOW } +
             PrepositionsContent.scenes.first { it.relation == PositionRelation.ABOVE }
         val choices = listOf(PositionRelation.BELOW, PositionRelation.ABOVE, PositionRelation.BEHIND, PositionRelation.IN_FRONT_OF).map { it.id }
-        val reviewedPlan = SessionPlan(id, PrepositionsContent.activity, 3, PrepositionsContent.version,
+        val reviewedPlan = SessionPlan(id, PrepositionsContent.activity, 3, PrepositionsContent.revision3Repository.version,
             SessionPolicy(RoundLength.FIVE), scenes.mapIndexed { i, s ->
-                ChoiceTask(TaskInstanceId(id, i + 1), PrepositionsContent.question(s, choices))
+                ChoiceTask(TaskInstanceId(id, i + 1), PrepositionsContent.question(s, choices, PrepositionsContent.revision3Repository))
             }, PrepositionsContent.completion)
-        val reviewed = SessionReducer.start(reviewedPlan, ContentLanguage.GERMAN, PrepositionsContent.repository).state
+        val reviewedBytes = SessionCheckpoint.encode(SessionReducer.start(reviewedPlan, ContentLanguage.GERMAN,
+            PrepositionsContent.revision3Repository).state)
+        val reviewed = (PrepositionsContent.restore(reviewedBytes) as SessionRestoreResult.Restored).state
         for (s in listOf(state, reviewed)) {
             val engine = FakeSpeechEngine()
             val audio = PrepositionsAudio(DefaultAudioController(engine, AudioMode.QUESTIONS))

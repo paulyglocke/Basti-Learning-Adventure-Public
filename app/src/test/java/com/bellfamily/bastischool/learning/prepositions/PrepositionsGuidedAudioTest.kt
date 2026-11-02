@@ -14,7 +14,7 @@ class PrepositionsGuidedAudioTest {
         audio.effects(transition.state,transition.effects)
     }
 
-    @Test fun guidedReplayUsesSixDistinctUtterancesInVisibleOrderAndHighlightsOnlyAnswers() {
+    @Test fun guidedReplayUsesFourDistinctUtterancesInVisibleOrderAndHighlightsOnlyAnswers() {
         for(language in ContentLanguage.entries) for(mode in listOf(AudioMode.ALL,AudioMode.QUESTIONS)) {
             val engine=FakeSpeechEngine()
             var highlighted:ContentId?=null
@@ -35,7 +35,7 @@ class PrepositionsGuidedAudioTest {
                 assertEquals(answerPhrase(scene,id,language)+".",engine.spoken.last().text)
                 engine.emit(engine.spoken.last().id)
             }
-            assertEquals(6,engine.spoken.size);assertNull(highlighted)
+            assertEquals(4,engine.spoken.size);assertNull(highlighted)
             assertTrue(engine.spoken.all {it.context.language==language && it.trigger==SpeechTrigger.REPLAY})
             assertArrayEquals(saved,SessionCheckpoint.encode(s))
         }
@@ -70,7 +70,7 @@ class PrepositionsGuidedAudioTest {
         val seen=mutableListOf<ContentId?>()
         val audio=PrepositionsAudio(DefaultAudioController(engine,AudioMode.OFF),spokenOption={highlighted=it;seen+=it})
         val s=state();audio.visible(true)
-        replay(audio,s);audio.option(s,s.task.question.choices[2])
+        replay(audio,s);audio.option(s,s.task.question.choices.last())
         assertTrue(engine.spoken.isEmpty());assertTrue(seen.all {it==null})
         audio.mode(AudioMode.ALL);replay(audio,s)
         assertNull(highlighted);assertTrue(engine.spoken.isEmpty())
@@ -89,7 +89,7 @@ class PrepositionsGuidedAudioTest {
             audio.visible(true);replay(audio,s)
             repeat(2){engine.emit(engine.spoken.last().id)}
             val old=engine.spoken.last().id
-            val third=s.task.question.choices[2]
+            val third=s.task.question.choices.last()
             audio.option(s,third)
             assertEquals(third,highlighted)
             assertEquals(answerPhrase(PrepositionsContent.scene(s.task),third,language)+".",engine.spoken.last().text)
@@ -114,7 +114,7 @@ class PrepositionsGuidedAudioTest {
         }
         val audio=PrepositionsAudio(DefaultAudioController(immediate,AudioMode.ALL),spokenOption={highlighted=it})
         audio.visible(true);replay(audio,state())
-        assertEquals(6,immediate.calls);assertNull(highlighted)
+        assertEquals(4,immediate.calls);assertNull(highlighted)
 
         val engine=FakeSpeechEngine()
         val stopped=PrepositionsAudio(DefaultAudioController(engine,AudioMode.ALL),spokenOption={highlighted=it})

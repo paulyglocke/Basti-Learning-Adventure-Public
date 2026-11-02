@@ -25,6 +25,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 import java.io.File
+import java.util.Random
 
 @RunWith(Parameterized::class)
 class PrepositionsArtworkScreenTest(private val language:ContentLanguage,private val orientation:Int) {
@@ -47,11 +48,7 @@ class PrepositionsArtworkScreenTest(private val language:ContentLanguage,private
         val scenes=keys.map {key->PrepositionsContent.scenes.single {it.id.value=="scene.prepositions.$key"}}
         val id=SessionId("artwork-ui")
         val tasks=scenes.mapIndexed {i,s->
-            val relations=mutableListOf(s.relation)
-            PositionRelation.entries.forEach { candidate ->
-                if(relations.size<4 && relations.all {PrepositionsContent.compatible(it,candidate,s.relation.reference)}) relations+=candidate
-            }
-            ChoiceTask(TaskInstanceId(id,i+1),PrepositionsContent.question(s,relations.map {it.id}))
+            ChoiceTask(TaskInstanceId(id,i+1),PrepositionsContent.question(s,PrepositionsContent.choices(s,Random(i.toLong()))))
         }
         val plan=SessionPlan(id,PrepositionsContent.activity,PrepositionsContent.REVISION,PrepositionsContent.version,SessionPolicy(RoundLength.FIVE),tasks,PrepositionsContent.completion)
         val state=mutableStateOf(SessionReducer.start(plan,language,PrepositionsContent.repository).state)

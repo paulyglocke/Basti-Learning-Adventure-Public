@@ -12,19 +12,19 @@ class PrepositionsContentTest {
         assertEquals(52, PrepositionsContent.scenes.map { it.id }.toSet().size)
         assertEquals(listOf("auf", "unter", "hinter", "neben", "in", "zwischen", "über", "unter", "in", "draußen", "vor", "in der Nähe", "weit weg"), PositionRelation.entries.map { it.label.de })
         for (scene in PrepositionsContent.scenes) {
-            val relations = mutableListOf(scene.relation)
-            PositionRelation.entries.forEach { candidate ->
-                if (relations.size < 4 && relations.all { PrepositionsContent.compatible(it, candidate, scene.relation.reference) }) relations += candidate
-            }
-            val choices = relations.map { it.id }
+            val choices = PrepositionsContent.choices(scene, java.util.Random(7))
             val question = PrepositionsContent.question(scene, choices)
+            assertEquals(2, choices.size)
+            assertEquals(setOf(scene.relation.id, PrepositionsContent.clearContrast(scene.relation).id), choices.toSet())
             assertEquals(scene.relation.id, question.correct)
             assertEquals("skill.spatial.${scene.relation.key}", question.skill.value)
             assertTrue(question.correctFeedback.speech.en.endsWith(scene.description.en))
             assertTrue(question.correctFeedback.speech.de.endsWith(scene.description.de))
             assertEquals(scene.relation.phrase.de, question.hint!!.speech.de)
-            assertTrue(question.instruction.speech.en.endsWith(choices.joinToString(", ") { PrepositionsContent.repository.find(it)!!.text.speech.en } + "."))
-            assertTrue(question.instruction.speech.de.endsWith(choices.joinToString(", ") { PrepositionsContent.repository.find(it)!!.text.speech.de } + "."))
+            val phrasesEn = choices.map { answerPhrase(scene, it, ContentLanguage.ENGLISH) }
+            val phrasesDe = choices.map { answerPhrase(scene, it, ContentLanguage.GERMAN) }
+            assertTrue(question.instruction.speech.en.endsWith("${phrasesEn[0]} or ${phrasesEn[1]}."))
+            assertTrue(question.instruction.speech.de.endsWith("${phrasesDe[0]} oder ${phrasesDe[1]}."))
         }
     }
     @Test fun fiveAndTenAreDeterministicWithoutRepeatingScenes() {
@@ -35,7 +35,7 @@ class PrepositionsContentTest {
             first.tasks.zip(second.tasks).forEach { (a,b) ->
                 assertEquals(a.id,b.id); assertEquals(a.question.choices,b.question.choices)
                 assertEquals(a.question.instruction,b.question.instruction)
-                assertEquals(4,a.question.choices.toSet().size)
+                assertEquals(2,a.question.choices.toSet().size)
                 assertTrue(a.question.correct in a.question.choices)
             }
         }
