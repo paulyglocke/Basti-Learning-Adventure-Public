@@ -3664,4 +3664,40 @@ passed (0 lint errors, 5 warnings), and `git diff --check` passed. Complete
 JVM/API reports and API runner diagnostics are retained in the review package.
 The review recommendation is **READY TO COMMIT** for owner review. Physical-
 device/child-use, TalkBack, switch access and audible offline voice quality
-remain owner-managed. This work remains uncommitted and unpushed.
+remain owner-managed. This implementation is committed and pushed as
+`e0791f12cf3e075a2a86068960b920b3efd938a7`.
+
+## Phase 5C.6A — Habitat Matching educational polish (2026-11-01)
+
+Started from clean `main` at `e0791f12cf3e075a2a86068960b920b3efd938a7`,
+matching `origin/main`. The seven questions were reviewed without changing their
+IDs, accepted sets, ordering policy, assessment, activity/revision, content
+version 1.1, checkpoint schema or journal. Rabbit scene recall still accepts
+Woodland and Underground. Copy edits make the Rabbit scene prompt idiomatic,
+shorten Earthworm scene recall and German feedback, replace unfamiliar “warren”
+in the Rabbit prompt, and make Help direct attention to the animal and picture
+choices without revealing an answer. Legacy frozen copy is explicitly allowed
+by the activity validator and covered by checkpoint encode/restore tests.
+
+Reviewing the prior gallery found that short landscape showed the prompt but
+not the animal. Landscape now places the prompt and named animal side by side;
+short-height landscape uses a smaller scalable text style. Fresh genuine
+captures, including the three revised question families, Help, Earthworm
+feedback and before/after short landscape, are in
+`docs/animals-phase5c6a-matching-polish-review/gallery.html`.
+
+Focused matching content/host JVM tests passed **11/11**; the final full JVM
+suite passed **609/609**. Focused API 35 route flow passed **1/1** on
+disposable `emulator-5554`. The first complete unfiltered API 35 run executed
+603 tests with one unrelated Seasons Activity-recreation checkpoint-byte
+assertion failure and no skips; that test passed in isolation. A second
+complete unfiltered run passed **603/603** with zero failures/errors/skips.
+Both full-run reports and the first failure log are retained under the C6A
+review. `assembleDebug`, `assembleDebugAndroidTest`, `lintDebug` and
+`git diff --check` passed; lint has 0 errors and 5 existing warnings. The
+review gallery contains 25 genuine final-source emulator captures, including
+EN/DE copy, feedback, recreation, 1.5×/2× German, landscape and tablet-size
+emulator viewports. Do not use the earlier 607/607 and 603/603 C6 totals as
+validation of C6A production edits. No commit/push is authorized. Owner-managed
+child-use, physical layout, TalkBack/switch access and installed offline
+voice-quality checks remain open.

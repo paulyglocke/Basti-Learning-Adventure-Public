@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.colours.RainbowOrderPersistenceTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-11-02T08:17:58" hostname="192.168.1.10" time="0.644">
+  <properties/>
+  <testcase name="corruptAndWrongLevelJournalsAreRejectedWithoutReplacement" classname="com.bellfamily.bastischool.learning.colours.RainbowOrderPersistenceTest" time="0.027"/>
+  <testcase name="acceptedPlacementAndProgressEventSurviveDeliveryFailureAndRetryWithoutDuplicates" classname="com.bellfamily.bastischool.learning.colours.RainbowOrderPersistenceTest" time="0.067"/>
+  <testcase name="selectedLevelPointerSurvivesRecreationAndRejectsCorruption" classname="com.bellfamily.bastischool.learning.colours.RainbowOrderPersistenceTest" time="0.023"/>
+  <testcase name="failedCheckpointWriteDoesNotExposeAnUncommittedPlacementAsCurrent" classname="com.bellfamily.bastischool.learning.colours.RainbowOrderPersistenceTest" time="0.036"/>
+  <testcase name="levelsHaveSeparateDeterministicTargetsAndStableEvidence" classname="com.bellfamily.bastischool.learning.colours.RainbowOrderPersistenceTest" time="0.001"/>
+  <testcase name="fullRoundPreservesWrongAttemptHelpAndExactRecovery" classname="com.bellfamily.bastischool.learning.colours.RainbowOrderPersistenceTest" time="0.249"/>
+  <testcase name="partialAndCompletedStarterRestoreWithSupportedEvidenceOnlyOnce" classname="com.bellfamily.bastischool.learning.colours.RainbowOrderPersistenceTest" time="0.138"/>
+  <testcase name="anAcknowledgementWriteFailureCanBeRecoveredWithoutDuplicateCompletion" classname="com.bellfamily.bastischool.learning.colours.RainbowOrderPersistenceTest" time="0.102"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

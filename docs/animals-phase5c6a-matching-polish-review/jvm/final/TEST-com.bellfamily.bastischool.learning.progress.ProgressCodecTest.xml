@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.progress.ProgressCodecTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-11-02T08:18:11" hostname="192.168.1.10" time="0.622">
+  <properties/>
+  <testcase name="serializationIsDeterministicAndRoundTripsTypedRecords" classname="com.bellfamily.bastischool.learning.progress.ProgressCodecTest" time="0.004"/>
+  <testcase name="invalidCountsOrderAndTimestampsAreRejected" classname="com.bellfamily.bastischool.learning.progress.ProgressCodecTest" time="0.004"/>
+  <testcase name="capacityIsExplicitAndExistingHistoryIsNotPruned" classname="com.bellfamily.bastischool.learning.progress.ProgressCodecTest" time="0.57"/>
+  <testcase name="incompatibleSchemaRemainsReadOnlyAndPreservesPersistedBytes" classname="com.bellfamily.bastischool.learning.progress.ProgressCodecTest" time="0.036"/>
+  <testcase name="malformedRandomInputAlwaysProducesExplicitFailure" classname="com.bellfamily.bastischool.learning.progress.ProgressCodecTest" time="0.003"/>
+  <testcase name="unknownRecordKindAndExtraFieldsFailClosedEvenWithValidChecksum" classname="com.bellfamily.bastischool.learning.progress.ProgressCodecTest" time="0.001"/>
+  <testcase name="eventIdentitiesAndInvalidModelCombinationsAreValidated" classname="com.bellfamily.bastischool.learning.progress.ProgressCodecTest" time="0.002"/>
+  <testcase name="checksumDetectsChangedBytesAndTruncationCannotReturnPartialRecords" classname="com.bellfamily.bastischool.learning.progress.ProgressCodecTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

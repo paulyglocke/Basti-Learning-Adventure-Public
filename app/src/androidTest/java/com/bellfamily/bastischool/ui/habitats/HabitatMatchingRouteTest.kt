@@ -174,6 +174,8 @@ class HabitatMatchingRouteTest {
                 scenario.recreate(); compose.waitForIdle()
                 compose.onNodeWithTag("habitat-match-progress").assertIsDisplayed()
                 compose.onNodeWithTag("habitat-match-instruction").assertIsDisplayed()
+                compose.onNodeWithTag("habitat-match-animal").assertIsDisplayed()
+                compose.onNodeWithTag("habitat-match-animal-name").assertIsDisplayed()
                 capture("13-short-landscape", 1280, 720)
                 compose.onNodeWithTag("habitat-match-replay").performScrollTo().assertIsDisplayed()
                 shell("wm size 1600x2560")
@@ -184,6 +186,40 @@ class HabitatMatchingRouteTest {
                 capture("15-tablet-landscape-emulator-viewport", 2560, 1600)
                 shell("wm size 1080x2400")
                 scenario.recreate(); compose.waitForIdle()
+
+                // Again creates a fresh production session with the polished copy, independently of any
+                // older in-progress checkpoint restored at test startup.
+                while (vm.state!!.phase == SessionPhase.ACTIVE) {
+                    val q = vm.state!!.task.question
+                    val questionId = HabitatMatchingContent.reviewed(q.definition).id
+                    if (questionId in setOf("rabbit_scenes", "earthworm_scene", "rabbit_shelter")) {
+                        val stableTask = q.definition
+                        capture("polish-$questionId-question-en", 1080, 2400)
+                        chooseLanguage(scenario, vm, german = true)
+                        assertEquals(stableTask, vm.state!!.task.question.definition)
+                        compose.onNodeWithTag("habitat-match-instruction").performScrollTo().assertIsDisplayed()
+                        capture("polish-$questionId-question-de", 1080, 2400)
+                        compose.onNodeWithTag("habitat-match-help").performScrollTo().performClick()
+                        compose.waitUntil(15_000) { !vm.busy && vm.state!!.current.support.hint }
+                        compose.onNodeWithTag("habitat-match-hint").performScrollTo().assertIsDisplayed()
+                        compose.onNodeWithTag("habitat-match-hint")
+                            .assertTextEquals("Schau dir das Tier und die Bilder an. Woran erinnerst du dich?")
+                        capture("polish-$questionId-help-de", 1080, 2400)
+                        chooseLanguage(scenario, vm, german = false)
+                        assertEquals(stableTask, vm.state!!.task.question.definition)
+                        chooseLanguage(scenario, vm, german = true)
+                    }
+                    clickChoice(vm, q.acceptedAnswers.first())
+                    if (questionId == "earthworm_scene") {
+                        compose.onNodeWithTag("habitat-match-feedback-correct").performScrollTo()
+                            .assertTextEquals("Ja! Den Regenwurm haben wir unter der Erde entdeckt.")
+                        capture("polish-earthworm-correct-de", 1080, 2400)
+                    }
+                    val task = vm.state!!.task.id
+                    compose.onNodeWithTag("habitat-match-continue").performScrollTo().performClick()
+                    compose.waitUntil(15_000) { !vm.busy && (vm.state!!.task.id != task || vm.state!!.phase == SessionPhase.COMPLETED) }
+                }
+                assertEquals(SessionPhase.COMPLETED, vm.state!!.phase)
                 scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
                 compose.onNodeWithTag("home-activity-matchHabitats").assertIsDisplayed()
             }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" tests="22" skipped="0" failures="0" errors="0" timestamp="2026-11-02T08:18:25" hostname="192.168.1.10" time="4.637">
+  <properties/>
+  <testcase name="fiveAndTenCompleteOnceAndResumeAtSameIndexScore[FIND]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.752"/>
+  <testcase name="corruptJournalIsNotOverwrittenAndNewRoundHasNewIdentity[FIND]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.201"/>
+  <testcase name="correctScoresOnceAndRestoresExactAnsweredQuestion[FIND]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.062"/>
+  <testcase name="failedCompletionSurvivesRestartWithSameDedupeKey[FIND]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.204"/>
+  <testcase name="realProgressRepositoryAndJournalSurviveRecreationTogether[FIND]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.143"/>
+  <testcase name="failureBeforeJournalCommitDoesNotAcceptOrPersistAnswer[FIND]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.067"/>
+  <testcase name="unansweredRestoreIsSilentAndDoesNotRegenerate[FIND]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.035"/>
+  <testcase name="uncertainJournalWriteRequiresReloadAndCannotLoseAcceptedEffect[FIND]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.039"/>
+  <testcase name="wrongReplayHintRetryAndLanguageMetadataSurvive[FIND]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.165"/>
+  <testcase name="failedAttemptDeliveryIsDurableBeforePublicationAndRetriedAfterRestart[FIND]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.066"/>
+  <testcase name="staleHostCannotOverwriteANewerDurableQuestion[FIND]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.088"/>
+  <testcase name="fiveAndTenCompleteOnceAndResumeAtSameIndexScore[NAME]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="1.73"/>
+  <testcase name="corruptJournalIsNotOverwrittenAndNewRoundHasNewIdentity[NAME]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.251"/>
+  <testcase name="correctScoresOnceAndRestoresExactAnsweredQuestion[NAME]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.041"/>
+  <testcase name="failedCompletionSurvivesRestartWithSameDedupeKey[NAME]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.194"/>
+  <testcase name="realProgressRepositoryAndJournalSurviveRecreationTogether[NAME]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.15"/>
+  <testcase name="failureBeforeJournalCommitDoesNotAcceptOrPersistAnswer[NAME]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.05"/>
+  <testcase name="unansweredRestoreIsSilentAndDoesNotRegenerate[NAME]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.047"/>
+  <testcase name="uncertainJournalWriteRequiresReloadAndCannotLoseAcceptedEffect[NAME]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.064"/>
+  <testcase name="wrongReplayHintRetryAndLanguageMetadataSurvive[NAME]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.188"/>
+  <testcase name="failedAttemptDeliveryIsDurableBeforePublicationAndRetriedAfterRestart[NAME]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.036"/>
+  <testcase name="staleHostCannotOverwriteANewerDurableQuestion[NAME]" classname="com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest" time="0.063"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

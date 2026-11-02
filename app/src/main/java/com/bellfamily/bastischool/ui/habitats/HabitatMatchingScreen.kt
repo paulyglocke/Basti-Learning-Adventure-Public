@@ -1,5 +1,6 @@
 package com.bellfamily.bastischool.ui.habitats
 
+import android.content.res.Configuration
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -20,6 +21,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
@@ -65,8 +67,11 @@ fun HabitatMatchingScreen(
     Column(modifier.fillMaxSize().background(BastiPalette.background).verticalScroll(scrollState)
         .padding(horizontal = BastiSpacing.medium, vertical = BastiSpacing.medium),
         verticalArrangement = Arrangement.spacedBy(BastiSpacing.small)) {
-        NativeActivityTitle(t("Match Animals to Habitats", "Tiere und Lebensräume zuordnen"),
-            Modifier.fillMaxWidth().testTag("habitat-match-title"))
+        val title = t("Match Animals to Habitats", "Tiere und Lebensräume zuordnen")
+        val landscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
+        if (landscape) Text(title, Modifier.fillMaxWidth().testTag("habitat-match-title")
+            .semantics { heading() }, style = BastiTypography.answer, color = BastiPalette.ink)
+        else NativeActivityTitle(title, Modifier.fillMaxWidth().testTag("habitat-match-title"))
         if (state == null) {
             Text(t("Opening…", "Wird geöffnet …"), Modifier.testTag("habitat-match-loading"), color = BastiPalette.ink)
         } else {
@@ -74,17 +79,21 @@ fun HabitatMatchingScreen(
             val item = HabitatMatchingContent.reviewed(question.definition)
             Text("${state.index + 1} ${t("of", "von")} ${state.plan.tasks.size}",
                 Modifier.fillMaxWidth().testTag("habitat-match-progress"), style = BastiTypography.parentInformation, color = BastiPalette.ink)
-            Text(question.instruction.display[language], Modifier.fillMaxWidth().testTag("habitat-match-instruction"),
-                style = BastiTypography.question, color = BastiPalette.ink)
-            Row(Modifier.fillMaxWidth().testTag("habitat-match-animal"),
-                horizontalArrangement = Arrangement.spacedBy(BastiSpacing.medium), verticalAlignment = Alignment.CenterVertically) {
-                animalImages[item.animal.id]?.let { image ->
-                    Image(image, contentDescription = item.animal.name.display[language],
-                        modifier = Modifier.sizeIn(minWidth = 88.dp, minHeight = 88.dp, maxWidth = 120.dp, maxHeight = 120.dp),
-                        contentScale = ContentScale.Fit)
+            if (landscape) {
+                val promptStyle = if (configuration.screenHeightDp < 400)
+                    BastiTypography.parentInformation else BastiTypography.instruction
+                Row(Modifier.fillMaxWidth().testTag("habitat-match-prompt-animal-landscape"),
+                    horizontalArrangement = Arrangement.spacedBy(BastiSpacing.medium), verticalAlignment = Alignment.CenterVertically) {
+                    Text(question.instruction.display[language], Modifier.weight(1f).testTag("habitat-match-instruction"),
+                        style = promptStyle, color = BastiPalette.ink)
+                    MatchingAnimal(item.animal.name.display[language], animalImages[item.animal.id],
+                        Modifier.widthIn(max = 250.dp), compact = true)
                 }
-                Text(item.animal.name.display[language], Modifier.weight(1f).testTag("habitat-match-animal-name"),
-                    style = BastiTypography.answer, color = BastiPalette.ink)
+            } else {
+                Text(question.instruction.display[language], Modifier.fillMaxWidth().testTag("habitat-match-instruction"),
+                    style = BastiTypography.question, color = BastiPalette.ink)
+                MatchingAnimal(item.animal.name.display[language], animalImages[item.animal.id],
+                    Modifier.fillMaxWidth())
             }
             question.choices.chunked(if (configuration.fontScale >= 1.8f) 1 else 2).forEach { row ->
                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(BastiSpacing.small)) {
@@ -157,5 +166,20 @@ fun HabitatMatchingScreen(
             "Die Sprachausgabe ist nicht verfügbar. Prüfe die Offline-Stimmen in den Optionen."))
         NativeActionButton(t("Home", "Startseite"), NativeActionRole.NAVIGATION, onHome,
             Modifier.fillMaxWidth().testTag("habitat-match-home"))
+    }
+}
+
+@Composable
+private fun MatchingAnimal(name: String, image: ImageBitmap?, modifier: Modifier = Modifier, compact: Boolean = false) {
+    Row(modifier.testTag("habitat-match-animal"), horizontalArrangement = Arrangement.spacedBy(BastiSpacing.medium),
+        verticalAlignment = Alignment.CenterVertically) {
+        image?.let {
+            Image(it, contentDescription = name,
+                modifier = if (compact) Modifier.sizeIn(minWidth = 64.dp, minHeight = 64.dp, maxWidth = 76.dp, maxHeight = 76.dp)
+                    else Modifier.sizeIn(minWidth = 88.dp, minHeight = 88.dp, maxWidth = 120.dp, maxHeight = 120.dp),
+                contentScale = ContentScale.Fit)
+        }
+        Text(name, Modifier.weight(1f).testTag("habitat-match-animal-name"),
+            style = BastiTypography.answer, color = BastiPalette.ink)
     }
 }

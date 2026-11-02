@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.follow.FollowTwoTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-11-02T08:18:01" hostname="192.168.1.10" time="0.392">
+  <properties/>
+  <testcase name="retryHintReplayAndLanguageKeepBothTargetsAndSupportEvidence" classname="com.bellfamily.bastischool.learning.follow.FollowTwoTest" time="0.004"/>
+  <testcase name="staleAttemptsAndOtherSessionActionsCannotAdvance" classname="com.bellfamily.bastischool.learning.follow.FollowTwoTest" time="0.001"/>
+  <testcase name="failedAttemptDeliveryRestoresPendingEventWithoutDuplicatingProgress" classname="com.bellfamily.bastischool.learning.follow.FollowTwoTest" time="0.051"/>
+  <testcase name="restoredPartialSecondStepAndCompletedRoundKeepSeparateProgress" classname="com.bellfamily.bastischool.learning.follow.FollowTwoTest" time="0.295"/>
+  <testcase name="wrongSecondStepRetriesWithoutErasingFirstStep" classname="com.bellfamily.bastischool.learning.follow.FollowTwoTest" time="0.005"/>
+  <testcase name="fiveAndTenRoundsAreDeterministicBalancedAndNeverRepeatAnOrderedTask" classname="com.bellfamily.bastischool.learning.follow.FollowTwoTest" time="0.035"/>
+  <testcase name="secondTargetBeforeFirstIsWrongAndFirstSuccessDoesNotFinishQuestion" classname="com.bellfamily.bastischool.learning.follow.FollowTwoTest" time="0.001"/>
+  <testcase name="curatedAnimalsHaveUniqueArtworkAndNaturalGermanObjectForms" classname="com.bellfamily.bastischool.learning.follow.FollowTwoTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phase 5C.6A — Habitat Matching Polish Review</title>
+  <style>
+    :root { color-scheme: light; font: 16px/1.5 system-ui, sans-serif; }
+    body { max-width: 1120px; margin: 0 auto; padding: 24px; background: #f8f6ef; color: #233b4b; }
+    h1, h2 { line-height: 1.2; }
+    section { margin: 2.5rem 0; }
+    figure { margin: 1rem 0 2rem; padding: 16px; background: white; border: 1px solid #a5aaa4; border-radius: 16px; }
+    img { display: block; width: 100%; height: auto; border-radius: 8px; background: #eee; }
+    figcaption { margin-top: 12px; }
+    strong { display: block; }
+    @media (min-width: 800px) { .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; } }
+  </style>
+</head>
+<body>
+  <h1>Phase 5C.6A — Match Animals to Habitats</h1>
+  <p>All images are genuine Android UiAutomation captures from the app running on disposable API 35 <code>emulator-5554</code>. Portrait captures are 1080×2400; the short-landscape emulator viewport is 1280×720. Sound was Off during automated capture.</p>
+
+  <section>
+    <h2>Short landscape before and after</h2>
+    <div class="pair">
+      <figure><img src="../animals-phase5c6-habitat-matching-review/screenshots/13-short-landscape.png" alt="Previous short landscape question where the animal was below the first viewport"><figcaption><strong>Before · English · short-landscape initial viewport · 1280×720 · 1×</strong>The previous layout showed the prompt but placed the animal below the visible area.</figcaption></figure>
+      <figure><img src="screenshots/short-landscape-after.png" alt="Short landscape question showing prompt and named earthworm together"><figcaption><strong>After · English · short-landscape initial viewport · 1280×720 · 1×</strong>The compact horizontal prompt-and-animal row keeps the full question and named Earthworm visible. Habitat choices and Replay remain below the fold and scroll into view.</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Rabbit — multiple scene answers</h2>
+    <div class="pair">
+      <figure><img src="screenshots/rabbit-scenes-question-en.png" alt="Rabbit scene question in English with Woodland, Underground and Ocean choices"><figcaption><strong>Rabbit scene recall · English · active, three choices · 1080×2400 · 1×</strong>Woodland and Underground are both visually offered and remain accepted; Ocean is the distractor.</figcaption></figure>
+      <figure><img src="screenshots/rabbit-scenes-question-de.png" alt="Rabbit scene question in German"><figcaption><strong>Rabbit scene recall · German · active · 1080×2400 · 1×</strong>The revised natural prompt asks where rabbits were seen, without reducing the two valid taught contexts.</figcaption></figure>
+    </div>
+    <figure><img src="screenshots/rabbit-scenes-help-de.png" alt="Rabbit question Help in German"><figcaption><strong>Rabbit Help · German · optional hint shown · 1080×2400 · 1×</strong>The hint asks the child to inspect the animal and pictures and recall learning, without naming the answer.</figcaption></figure>
+  </section>
+
+  <section>
+    <h2>Earthworm — shorter scene recall and feedback</h2>
+    <div class="pair">
+      <figure><img src="screenshots/earthworm-scene-question-en.png" alt="Short Earthworm scene question in English"><figcaption><strong>Earthworm scene recall · English · active · 1080×2400 · 1×</strong>The shortened prompt keeps the taught-scene context and leaves the soil relationship for feedback.</figcaption></figure>
+      <figure><img src="screenshots/earthworm-scene-question-de.png" alt="Short Earthworm scene question in German"><figcaption><strong>Earthworm scene recall · German · active · 1080×2400 · 1×</strong>Short German wording remains aligned in meaning with the English prompt.</figcaption></figure>
+    </div>
+    <div class="pair">
+      <figure><img src="screenshots/earthworm-scene-help-de.png" alt="Earthworm Help in German"><figcaption><strong>Earthworm Help · German · optional hint shown · 1080×2400 · 1×</strong>Help remains a comparison-and-recall prompt rather than an answer giveaway.</figcaption></figure>
+      <figure><img src="screenshots/earthworm-correct-de.png" alt="Earthworm correct feedback in German"><figcaption><strong>Earthworm feedback · German · correct answer and Continue · 1080×2400 · 1×</strong>“Den Regenwurm haben wir unter der Erde entdeckt” is short, natural, and followed by explicit Continue.</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Rabbit — shelter wording</h2>
+    <div class="pair">
+      <figure><img src="screenshots/rabbit-shelter-question-en.png" alt="Wild Rabbit shelter question in English"><figcaption><strong>Rabbit shelter · English · active · 1080×2400 · 1×</strong>The prompt avoids the less familiar word “warren” and explicitly asks about underground shelter.</figcaption></figure>
+      <figure><img src="screenshots/rabbit-shelter-question-de.png" alt="Wild Rabbit shelter question in German"><figcaption><strong>Rabbit shelter · German · active · 1080×2400 · 1×</strong>“Wo finden Wildkaninchen unter der Erde Schutz?” is concise and keeps the shelter context explicit.</figcaption></figure>
+    </div>
+    <figure><img src="screenshots/rabbit-shelter-help-de.png" alt="Rabbit shelter Help in German"><figcaption><strong>Rabbit shelter Help · German · optional hint shown · 1080×2400 · 1×</strong>The common hint encourages using the animal and picture clues and does not reveal a choice.</figcaption></figure>
+  </section>
+
+  <section>
+    <h2>Final-source route and responsive captures</h2>
+    <p>These additional captures were taken in the final focused route test on the same disposable API 35 emulator. Tablet dimensions are emulator viewport overrides, not physical tablet evidence.</p>
+    <div class="pair">
+      <figure><img src="screenshots/final-flow/01-animals-category-en.png" alt="Animals and Nature category"><figcaption><strong>Animals &amp; Nature · English · category navigation · 1080×2400 · 1×</strong>Matching remains alongside the existing animal activities.</figcaption></figure>
+      <figure><img src="screenshots/final-flow/02-first-question-en.png" alt="First matching question in English"><figcaption><strong>Matching question · English · first item, no answer selected · 1080×2400 · 1×</strong>The polished Earthworm prompt, animal and two habitat choices fit in the portrait viewport.</figcaption></figure>
+      <figure><img src="screenshots/final-flow/03-first-question-de.png" alt="First matching question in German"><figcaption><strong>Matching question · German · first item, no answer selected · 1080×2400 · 1×</strong>The longer German title wraps while the prompt, animal and choices remain visible.</figcaption></figure>
+      <figure><img src="screenshots/final-flow/04-wrong-retry-feedback-de.png" alt="Gentle incorrect feedback in German"><figcaption><strong>Retry feedback · German · wrong choice selected · 1080×2400 · 1×</strong>The neutral message and retry action are distinct from the selected habitat outline.</figcaption></figure>
+      <figure><img src="screenshots/final-flow/05-correct-feedback-de.png" alt="Correct answer feedback in German"><figcaption><strong>Correct feedback · German · answer confirmed, Continue available · 1080×2400 · 1×</strong>The answer stays on screen until the child chooses Continue.</figcaption></figure>
+      <figure><img src="screenshots/final-flow/06-continue-2-of-7-de.png" alt="Second question after Continue"><figcaption><strong>Next question · German · 2 of 7 after Continue · 1080×2400 · 1×</strong>Progress advances only after the explicit action.</figcaption></figure>
+      <figure><img src="screenshots/final-flow/07-activity-recreated-session-resumed.png" alt="Question restored after Activity recreation"><figcaption><strong>Restored session · German · Activity recreation · 1080×2400 · 1×</strong>The saved question and choices render after normal Activity recreation; this does not assert OS process-death recovery.</figcaption></figure>
+      <figure><img src="screenshots/final-flow/08-german-1_5x.png" alt="German matching at one and a half text scale"><figcaption><strong>Matching · German · current question · 1080×2400 · 1.5×</strong>Text grows, cards remain legible, and scrolling is available.</figcaption></figure>
+      <figure><img src="screenshots/final-flow/09-german-2x.png" alt="German matching at double text scale"><figcaption><strong>Matching · German · current question · 1080×2400 · 2×</strong>Habitat choices stack vertically; the lower choice remains reachable by scrolling.</figcaption></figure>
+      <figure><img src="screenshots/final-flow/10-completion-and-progress-result.png" alt="Completed matching session"><figcaption><strong>Completion · German · seven questions complete · 1080×2400 · 1×</strong>The completion screen provides replay and a clear return or again action.</figcaption></figure>
+      <figure><img src="screenshots/final-flow/11-options-language-return-en.png" alt="Question after returning from Options"><figcaption><strong>Options return · English · same question restored · 1080×2400 · 1×</strong>Returning from Options preserves the question and selection flow.</figcaption></figure>
+      <figure><img src="screenshots/final-flow/12-phone-landscape.png" alt="Matching question in phone landscape"><figcaption><strong>Matching · English · phone landscape · 2400×1080 · 1×</strong>The prompt and animal sit side by side. Habitat choices and actions continue below and are scroll-reachable.</figcaption></figure>
+      <figure><img src="screenshots/final-flow/14-tablet-portrait-emulator-viewport.png" alt="Tablet portrait emulator viewport"><figcaption><strong>Matching · English · tablet portrait emulator viewport · 1600×2560 · 1×</strong>Animal and paired habitat choices use the wider view without stretching the artwork.</figcaption></figure>
+      <figure><img src="screenshots/final-flow/15-tablet-landscape-emulator-viewport.png" alt="Tablet landscape emulator viewport"><figcaption><strong>Matching · English · tablet landscape emulator viewport · 2560×1600 · 1×</strong>Question, named animal, illustrated choices, Replay, Help and Home fit within the viewport.</figcaption></figure>
+    </div>
+  </section>
+</body>
+</html>

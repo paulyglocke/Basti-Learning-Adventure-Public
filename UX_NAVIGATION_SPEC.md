@@ -380,7 +380,9 @@ language changes restore the current route and selected identity. Sound Off is
 respected by the shared offline audio controller. Explore routes emit no
 attempts, completion, journals or Progress Tracker identities. Original Animal
 Groups routing and its historical saved-session contract remain unchanged.
-Habitat matching is not an active route.
+Habitat matching is available from Animals & Nature. Opening it retains the
+same Home/Options shell, and Back returns to the category without modifying
+the four Explore Habitats routes.
 
 ## Phase 5C.6 — Match Animals to Habitats
 

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.prepositions.PrepositionsHostTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-11-02T08:18:09" hostname="192.168.1.10" time="1.948">
+  <properties/>
+  <testcase name="fiveAndTenCompleteOnceAndResumeAtSameIndexScore" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsHostTest" time="0.795"/>
+  <testcase name="corruptJournalIsNotOverwrittenAndNewRoundHasNewIdentity" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsHostTest" time="0.259"/>
+  <testcase name="correctScoresOnceAndRestoresExactAnsweredQuestion" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsHostTest" time="0.051"/>
+  <testcase name="failedCompletionSurvivesRestartWithSameDedupeKey" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsHostTest" time="0.248"/>
+  <testcase name="realProgressRepositoryAndJournalSurviveRecreationTogether" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsHostTest" time="0.172"/>
+  <testcase name="failureBeforeJournalCommitDoesNotAcceptOrPersistAnswer" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsHostTest" time="0.06"/>
+  <testcase name="unansweredRestoreIsSilentAndDoesNotRegenerate" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsHostTest" time="0.038"/>
+  <testcase name="uncertainJournalWriteRequiresReloadAndCannotLoseAcceptedEffect" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsHostTest" time="0.041"/>
+  <testcase name="wrongReplayHintRetryAndLanguageMetadataSurvive" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsHostTest" time="0.15"/>
+  <testcase name="failedAttemptDeliveryIsDurableBeforePublicationAndRetriedAfterRestart" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsHostTest" time="0.041"/>
+  <testcase name="staleHostCannotOverwriteANewerDurableQuestion" classname="com.bellfamily.bastischool.learning.prepositions.PrepositionsHostTest" time="0.093"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

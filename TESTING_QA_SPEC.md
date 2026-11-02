@@ -737,3 +737,27 @@ failures/errors/skips; focused matching instrumentation **1/1** passed.
 used only disposable `emulator-5554` and took 42m 23s. Full XML, UTP and runner
 diagnostics are retained in the Phase 5C.6 review package. Keep emulator
 viewport overrides distinct from physical-device acceptance.
+
+### Phase 5C.6A — matching copy and responsive polish
+
+Copy-only edits that retain task meaning/answers must be tested against saved
+frozen wording: encode and restore a pre-polish matching checkpoint and verify
+its identity/accepted sets remain intact. New sessions use current copy. Assert
+the unchanged seven task IDs and all accepted-answer sets, especially the two
+valid Rabbit scene contexts. API 35 route review should capture Rabbit,
+Earthworm and Rabbit shelter wording in both languages, Help and Earthworm
+feedback. In short landscape, verify the complete prompt and named animal are
+visible together; choices and Replay may scroll. Final C6A reports belong in
+`docs/animals-phase5c6a-matching-polish-review/`; earlier C6 totals do not
+validate changed production code.
+
+Final Phase 5C.6A acceptance evidence: focused JVM **11/11**, fresh full JVM
+**609/609**, focused matching API 35 **1/1**, and final complete unfiltered API
+35 **603/603**, with 0 failures/errors/skips. An initial complete run had one
+unrelated Seasons checkpoint-serialization assertion fail; the isolated test
+and complete rerun both passed. Keep that initial result in the review record.
+`assembleDebug`, `assembleDebugAndroidTest` and `lintDebug` passed; lint has 0
+errors and 5 existing warnings. The final-source gallery contains 25 genuine
+emulator captures. Do not claim OS process-death, physical-device, actual
+TalkBack/switch-access, offline voice-quality or child-use acceptance from
+these checks.

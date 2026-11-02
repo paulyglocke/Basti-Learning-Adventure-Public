@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.seasons.SeasonsProgressionHostTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-11-02T08:18:19" hostname="192.168.1.10" time="3.083">
+  <properties/>
+  <testcase name="failedQuizEffectRemainsRetryableWithItsOriginalIdentity" classname="com.bellfamily.bastischool.learning.seasons.SeasonsProgressionHostTest" time="0.11"/>
+  <testcase name="findAndRelationAttemptsSupportAndCompletionPersistAcrossSilentRestore" classname="com.bellfamily.bastischool.learning.seasons.SeasonsProgressionHostTest" time="2.602"/>
+  <testcase name="orderingPendingFinalPlacementAndCompletionSurviveRecreation" classname="com.bellfamily.bastischool.learning.seasons.SeasonsProgressionHostTest" time="0.237"/>
+  <testcase name="staleOrderingHostCannotOverwriteAndCorruptionIsPreserved" classname="com.bellfamily.bastischool.learning.seasons.SeasonsProgressionHostTest" time="0.089"/>
+  <testcase name="uncertainOrderingJournalWriteReloadsBeforeRetryWithoutLosingEvent" classname="com.bellfamily.bastischool.learning.seasons.SeasonsProgressionHostTest" time="0.045"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

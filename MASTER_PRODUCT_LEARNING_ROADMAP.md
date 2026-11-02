@@ -1040,6 +1040,22 @@ visual review includes 15 genuine screenshots and emulator viewport checks;
 physical-device, child-use, TalkBack, switch-access and offline voice-quality
 acceptance remain owner-managed.
 
+##### Phase 5C.6A — Educational copy and responsive polish
+
+The seven-question starter received a bounded bilingual clarity pass. Rabbit
+scene recall retains both Woodland and Underground answers; Rabbit shelter
+remains explicitly about shelter. Earthworm and Rabbit prompts use shorter,
+more natural wording, and Help gives a visual recall strategy without naming
+an answer. The previous short-landscape screenshot showed the prompt without
+the animal; the responsive question row now presents the prompt with the named
+animal in the first viewport. Activity identity, assessment, accepted answers,
+content version 1.1 and saved-session semantics remain compatible. Final
+validation passed **609/609 JVM** and, after one unrelated intermittent
+Seasons checkpoint assertion failed once and passed in isolation, a complete
+unfiltered **603/603 API 35 rerun** with zero failures/errors/skips. Focused
+route coverage passed 1/1; APK assembly and lint passed (0 errors, 5 existing
+warnings). See the [C6A educational polish review](docs/animals-phase5c6a-matching-polish-review/REVIEW.md).
+
 ---
 
 ## Reusable learning mechanics

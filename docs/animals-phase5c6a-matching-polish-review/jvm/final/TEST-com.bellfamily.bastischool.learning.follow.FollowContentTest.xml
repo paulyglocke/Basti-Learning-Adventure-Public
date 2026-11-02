@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bellfamily.bastischool.learning.follow.FollowContentTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-11-02T08:18:00" hostname="192.168.1.10" time="0.833">
+  <properties/>
+  <testcase name="reducerSupportsWrongRetryCorrectReplayAndLanguageWithoutChangingTask" classname="com.bellfamily.bastischool.learning.follow.FollowContentTest" time="0.003"/>
+  <testcase name="exactObjectsInstructionsAndAssetsAreBilingual" classname="com.bellfamily.bastischool.learning.follow.FollowContentTest" time="0.001"/>
+  <testcase name="allApprovedAnimalsReachTargetsAndVaryDistractorContexts" classname="com.bellfamily.bastischool.learning.follow.FollowContentTest" time="0.032"/>
+  <testcase name="noConsecutiveTargetsAcrossDeterministicSeedSample" classname="com.bellfamily.bastischool.learning.follow.FollowContentTest" time="0.796"/>
+  <testcase name="generationIsDeterministicAndTargetsPresentedObjects" classname="com.bellfamily.bastischool.learning.follow.FollowContentTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

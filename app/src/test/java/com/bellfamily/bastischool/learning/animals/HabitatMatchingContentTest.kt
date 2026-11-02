@@ -23,8 +23,72 @@ class HabitatMatchingContentTest {
         assertEquals(3, q.options.size)
         assertTrue(q.options.containsAll(q.accepted))
         assertFalse(q.accepted.contains(HabitatMatchingContent.ocean))
-        assertTrue(q.instruction.display.en.contains("Choose a place"))
+        assertEquals("Where did we see rabbits?", q.instruction.display.en)
         assertTrue(q.rationale.contains("both in-app scenes"))
+    }
+
+    @Test fun polishedCopyIsBilingualConciseAndKeepsTheReviewedAnswerSets() {
+        val byId = HabitatMatchingContent.questions.associateBy { it.id }
+        assertEquals("Where did we see rabbits?", byId.getValue("rabbit_scenes").instruction.display.en)
+        assertEquals("Wo haben wir Kaninchen gesehen?", byId.getValue("rabbit_scenes").instruction.display.de)
+        assertEquals("Where did we see the earthworm?", byId.getValue("earthworm_scene").instruction.display.en)
+        assertEquals("Wo haben wir den Regenwurm gesehen?", byId.getValue("earthworm_scene").instruction.display.de)
+        assertEquals("Ja! Den Regenwurm haben wir unter der Erde entdeckt.",
+            byId.getValue("earthworm_scene").correctFeedback.display.de)
+        assertEquals("Where can wild rabbits find shelter underground?", byId.getValue("rabbit_shelter").instruction.display.en)
+        assertEquals("Wo finden Wildkaninchen unter der Erde Schutz?", byId.getValue("rabbit_shelter").instruction.display.de)
+        assertEquals("Look at the animal and the pictures. What do you remember?",
+            byId.getValue("mole_tunnels").hint.display.en)
+        assertEquals("Schau dir das Tier und die Bilder an. Woran erinnerst du dich?",
+            byId.getValue("mole_tunnels").hint.display.de)
+        assertTrue(HabitatMatchingContent.questions.all { it.wrongFeedback.display.en == "Not that place. Try another one." })
+
+        assertEquals(setOf(HabitatMatchingContent.ocean), byId.getValue("dolphin_scene").accepted)
+        assertEquals(setOf(HabitatMatchingContent.woodland, HabitatMatchingContent.underground), byId.getValue("rabbit_scenes").accepted)
+        assertEquals(setOf(HabitatMatchingContent.underground), byId.getValue("mole_tunnels").accepted)
+        assertEquals(setOf(HabitatMatchingContent.underground), byId.getValue("earthworm_scene").accepted)
+        assertEquals(setOf(HabitatMatchingContent.freshwater), byId.getValue("frog_scene").accepted)
+        assertEquals(setOf(HabitatMatchingContent.freshwater), byId.getValue("duck_scene").accepted)
+        assertEquals(setOf(HabitatMatchingContent.underground), byId.getValue("rabbit_shelter").accepted)
+    }
+
+    @Test fun copyPolishPreservesFrozenPriorWordingOnSavedSessions() {
+        val generated = (HabitatMatchingContent.generate(SessionId("legacy-copy"), RoundLength.FIVE, 82L)
+            as GenerationResult.Generated).plan
+        val oldHint = ContentText.plain("Think about the place we explored.", "Denk an den Ort, den wir entdeckt haben.")
+        val tasks = generated.tasks.map { task ->
+            val q = task.question
+            val item = HabitatMatchingContent.reviewed(q.definition)
+            val oldInstruction = when (item.id) {
+                "rabbit_scenes" -> ContentText.plain("Choose a place where we met rabbits.",
+                    "Wähle einen Ort, an dem wir Kaninchen getroffen haben.")
+                "earthworm_scene" -> ContentText.plain("Where did we explore the earthworm moving through soil?",
+                    "Wo haben wir den Regenwurm entdeckt, der sich durch den Boden bewegt?")
+                "rabbit_shelter" -> ContentText.plain("Where can wild rabbits use a warren for shelter?",
+                    "Wo können Wildkaninchen einen Bau als Schutz nutzen?")
+                else -> q.instruction
+            }
+            val oldCorrect = when (item.id) {
+                "earthworm_scene" -> ContentText.plain("Yes! We explored the earthworm in the underground scene.",
+                    "Ja! Wir haben den Regenwurm in der Untergrund-Szene entdeckt.")
+                "rabbit_shelter" -> ContentText.plain("Yes! Wild rabbits can shelter in underground warrens.",
+                    "Ja! Wildkaninchen können in unterirdischen Bauen Schutz finden.")
+                else -> q.correctFeedback
+            }
+            ChoiceTask(task.id, ChoiceQuestion(q.definition, q.skill, q.context, q.difficulty, oldInstruction,
+                q.choices, q.correct, oldCorrect, q.wrongFeedback, oldHint, q.acceptedAnswers))
+        }
+        val oldPlan = SessionPlan(generated.id, generated.activity, generated.activityRevision,
+            generated.contentVersion, generated.policy, tasks, generated.completionText, generated.taskCount)
+        val oldState = SessionReducer.start(oldPlan, ContentLanguage.ENGLISH, HabitatMatchingContent.repository).state
+        val encoded = SessionCheckpoint.encode(oldState)
+        val restored = SessionCheckpoint.restore(encoded, HabitatMatchingContent.activity, HabitatMatchingContent.REVISION,
+            HabitatMatchingContent.repository) as SessionRestoreResult.Restored
+        HabitatMatchingContent.validate(restored.state)
+        assertEquals("Think about the place we explored.", restored.state.task.question.hint!!.display.en)
+        assertEquals(oldState.plan.tasks.map { it.question.instruction }, restored.state.plan.tasks.map { it.question.instruction })
+        assertEquals(oldState.plan.tasks.map { it.question.acceptedAnswers }, restored.state.plan.tasks.map { it.question.acceptedAnswers })
+        assertEquals(HabitatMatchingContent.repository.version, restored.state.plan.contentVersion)
     }
 
     @Test fun animalFactsAndAllSceneAndAnimalAssetsExist() {

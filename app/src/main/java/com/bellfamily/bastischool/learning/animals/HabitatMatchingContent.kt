@@ -51,7 +51,8 @@ object HabitatMatchingContent {
         val sourceFact: String
     )
     private val thinkAgain = ContentText.plain("Not that place. Try another one.", "Dieser Ort passt nicht. Probiere einen anderen.")
-    private val hintText = ContentText.plain("Think about the place we explored.", "Denk an den Ort, den wir entdeckt haben.")
+    private val hintText = ContentText.plain("Look at the animal and the pictures. What do you remember?",
+        "Schau dir das Tier und die Bilder an. Woran erinnerst du dich?")
     val questions: List<ReviewedQuestion> = listOf(
         ReviewedQuestion("dolphin_scene", dolphin,
             ContentText.plain("Where did we explore the dolphin?", "Wo haben wir den Delfin entdeckt?"),
@@ -60,7 +61,7 @@ object HabitatMatchingContent {
             "Asks about the app's pictured marine scene; does not claim dolphins only belong to one environment.",
             "Dolphins live in the sea. / Delfine leben im Meer."),
         ReviewedQuestion("rabbit_scenes", rabbit,
-            ContentText.plain("Choose a place where we met rabbits.", "Wähle einen Ort, an dem wir Kaninchen getroffen haben."),
+            ContentText.plain("Where did we see rabbits?", "Wo haben wir Kaninchen gesehen?"),
             listOf(woodland, underground, ocean), setOf(woodland, underground),
             ContentText.plain("Yes! We explored rabbits in both places.", "Ja! Wir haben Kaninchen an beiden Orten entdeckt."), thinkAgain, hintText,
             "Question-specific accepted answers reflect both in-app scenes. It makes no exhaustive biological classification.",
@@ -72,9 +73,9 @@ object HabitatMatchingContent {
             "Tests the reviewed tunnel fact, not whether a mole has any above-ground interaction.",
             "A mole lives mostly underground and digs tunnels. / Ein Maulwurf lebt überwiegend unter der Erde und gräbt Gänge."),
         ReviewedQuestion("earthworm_scene", earthworm,
-            ContentText.plain("Where did we explore the earthworm moving through soil?", "Wo haben wir den Regenwurm entdeckt, der sich durch den Boden bewegt?"),
+            ContentText.plain("Where did we see the earthworm?", "Wo haben wir den Regenwurm gesehen?"),
             listOf(underground, woodland), setOf(underground),
-            ContentText.plain("Yes! We explored the earthworm in the underground scene.", "Ja! Wir haben den Regenwurm in der Untergrund-Szene entdeckt."), thinkAgain, hintText,
+            ContentText.plain("Yes! We saw the earthworm in the soil.", "Ja! Den Regenwurm haben wir unter der Erde entdeckt."), thinkAgain, hintText,
             "Refers to the app's soil cutaway and does not claim every earthworm lives at one soil depth.",
             "Earthworms move through soil. / Regenwürmer bewegen sich durch den Boden."),
         ReviewedQuestion("frog_scene", frog,
@@ -90,9 +91,9 @@ object HabitatMatchingContent {
             "Asks about the pictured lesson; the word many in the source fact avoids an exclusive habitat claim.",
             "Many ducks swim on ponds and lakes. / Viele Enten schwimmen auf Teichen und Seen."),
         ReviewedQuestion("rabbit_shelter", rabbit,
-            ContentText.plain("Where can wild rabbits use a warren for shelter?", "Wo können Wildkaninchen einen Bau als Schutz nutzen?"),
+            ContentText.plain("Where can wild rabbits find shelter underground?", "Wo finden Wildkaninchen unter der Erde Schutz?"),
             listOf(underground, freshwater), setOf(underground),
-            ContentText.plain("Yes! Wild rabbits can shelter in underground warrens.", "Ja! Wildkaninchen können in unterirdischen Bauen Schutz finden."), thinkAgain, hintText,
+            ContentText.plain("Yes! Wild rabbits can shelter in underground burrows.", "Ja! Wildkaninchen können in unterirdischen Bauen Schutz finden."), thinkAgain, hintText,
             "Explicitly asks about shelter, not the rabbit's only habitat.",
             "Wild rabbits can use underground warrens for shelter. / Wildkaninchen können unterirdische Baue als Schutz nutzen.")
     )
@@ -125,6 +126,30 @@ object HabitatMatchingContent {
     fun animal(id: ContentId): Animal? = animals.firstOrNull { it.id == id }
     fun habitat(id: ContentId): Habitat? = habitats.firstOrNull { it.id == id }
 
+    /** Copy-only v1.1 polish keeps already-saved semantic sessions restorable with their frozen wording. */
+    private fun legacyCopy(question: String, field: String): List<ContentText> = when (question to field) {
+        "*" to "hint" -> listOf(ContentText.plain("Think about the place we explored.",
+            "Denk an den Ort, den wir entdeckt haben."))
+        "rabbit_scenes" to "instruction" -> listOf(ContentText.plain("Choose a place where we met rabbits.",
+            "Wähle einen Ort, an dem wir Kaninchen getroffen haben."))
+        "earthworm_scene" to "instruction" -> listOf(ContentText.plain(
+            "Where did we explore the earthworm moving through soil?",
+            "Wo haben wir den Regenwurm entdeckt, der sich durch den Boden bewegt?"))
+        "earthworm_scene" to "correct" -> listOf(ContentText.plain(
+            "Yes! We explored the earthworm in the underground scene.",
+            "Ja! Wir haben den Regenwurm in der Untergrund-Szene entdeckt."))
+        "rabbit_shelter" to "instruction" -> listOf(ContentText.plain(
+            "Where can wild rabbits use a warren for shelter?",
+            "Wo können Wildkaninchen einen Bau als Schutz nutzen?"))
+        "rabbit_shelter" to "correct" -> listOf(ContentText.plain(
+            "Yes! Wild rabbits can shelter in underground warrens.",
+            "Ja! Wildkaninchen können in unterirdischen Bauen Schutz finden."))
+        else -> emptyList()
+    }
+
+    private fun copyMatches(actual: ContentText, expected: ContentText, question: String, field: String) =
+        actual == expected || actual in legacyCopy(question, field) || actual in legacyCopy("*", field)
+
     fun validate(state: SessionState) {
         val plan = state.plan
         require(plan.activity == activity && plan.activityRevision == REVISION && plan.contentVersion == repository.version)
@@ -135,10 +160,12 @@ object HabitatMatchingContent {
             val item = reviewed(task.question.definition)
             val expected = question(item)
             require(task.question.skill == skill && task.question.context == expected.context && task.question.difficulty == 1)
-            require(task.question.instruction == expected.instruction && task.question.choices.toSet() == expected.choices.toSet())
+            require(copyMatches(task.question.instruction, expected.instruction, item.id, "instruction") &&
+                task.question.choices.toSet() == expected.choices.toSet())
             require(task.question.acceptedAnswers == expected.acceptedAnswers && task.question.correct == expected.correct)
-            require(task.question.correctFeedback == expected.correctFeedback && task.question.wrongFeedback == expected.wrongFeedback)
-            require(task.question.hint == expected.hint)
+            require(copyMatches(task.question.correctFeedback, expected.correctFeedback, item.id, "correct") &&
+                task.question.wrongFeedback == expected.wrongFeedback)
+            require(task.question.hint?.let { copyMatches(it, expected.hint!!, item.id, "hint") } == true)
         }
     }
 
