@@ -31,6 +31,7 @@ Listening:
 - inhibition_instruction
 
 Letters:
+- identify_animal_written_initial (written grapheme matching; retain the selected language and do not infer phoneme knowledge)
 - recognise_D
 - sound_D
 - initial_D
@@ -46,6 +47,7 @@ Numbers:
 - addition_to_20 (separate challenge skill; totals 6–20)
 - subtraction_within_5 (take-away facts, including zero remainder)
 - addition_mixed (separate skill for balanced within-5 and within-20 rounds)
+- make_5 (complete a five-frame number bond)
 
 Spatial:
 - in

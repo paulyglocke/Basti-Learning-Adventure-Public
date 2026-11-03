@@ -26,6 +26,16 @@ class TaskGeneratorTest {
             }
         }
     }
+    @Test fun eachAuthoredCandidateCycleIsExhaustedBeforeAQuestionCanRepeat() {
+        val candidates = F.candidates()
+        val plan = (CandidateTaskGenerator(candidates).generate(
+            F.request(RoundLength.TEN, seed = 117), F.content) as GenerationResult.Generated).plan
+        val pool = candidates.size
+        assertEquals(pool, plan.tasks.take(pool).map { it.question.definition }.distinct().size)
+        assertEquals(pool, plan.tasks.drop(pool).map { it.question.definition }.distinct().size)
+        assertEquals(plan.tasks.take(pool).map { it.question.definition }.toSet(),
+            plan.tasks.drop(pool).map { it.question.definition }.toSet())
+    }
     @Test fun emptyDuplicateOversizedAndMissingContentCandidatesFailExplicitly() {
         val candidates = F.candidates()
         for (bad in listOf(emptyList(), listOf(candidates[0], candidates[0]), List(257) { candidates[0] })) {

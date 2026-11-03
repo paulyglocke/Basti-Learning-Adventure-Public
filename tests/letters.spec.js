@@ -19,6 +19,7 @@ test.beforeEach(async({page,context})=>{
 async function task(page,index){
   await page.evaluate(index=>{
     const random=Math.random;let first=true;
+    if(Array.isArray(state.letterQuestionOrder))state.letterQuestionOrder[0]=index;
     Math.random=()=>{if(first){first=false;return (index+.1)/6}return random()};
     try{renderQuestion()}finally{Math.random=random}
   },index);

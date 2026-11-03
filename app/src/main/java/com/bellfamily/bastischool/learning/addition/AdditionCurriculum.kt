@@ -11,19 +11,6 @@ data class AdditionFact(val left: Int, val right: Int) {
     val unordered get() = minOf(left, right) to maxOf(left, right)
 }
 
-/** Minimum content boundary required by the shared durable choice-session owner. */
-interface ChoiceSessionCurriculum {
-    val activity: ActivityId
-    val revision: Int
-    val repository: ContentRepository
-    val completion: ContentText
-    fun generate(id: SessionId, round: RoundLength, seed: Long): GenerationResult
-    fun validate(state: SessionState)
-
-    fun host(journal: ProgressStorage, progress: ProgressRepository) = DurableSessionHost(
-        journal, progress, activity, revision, repository, ::generate, ::validate)
-}
-
 /** A separately versioned addition range with its own activity, skill and journal. */
 interface AdditionCurriculum : ChoiceSessionCurriculum {
     val skill: SkillId

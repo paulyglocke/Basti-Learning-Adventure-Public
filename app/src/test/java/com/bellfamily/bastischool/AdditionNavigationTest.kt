@@ -35,4 +35,12 @@ class AdditionNavigationTest {
         assertEquals(mixed, ShellNavigation.restore("MIXED_ADDITION", "HOME", "verbs", null))
         assertNotEquals(subtraction, mixed)
     }
+
+    @Test fun makeFiveHasAnIndependentNativeRoute() {
+        val route = ShellNavigation().openMakeFive()
+        assertEquals(ShellScreen.MAKE_FIVE, route.screen)
+        assertEquals(BackAction.NATIVE_HOME, route.backAction)
+        assertEquals(route, route.openOptions().closeOptions())
+        assertEquals(route, ShellNavigation.restore("MAKE_FIVE", "HOME", "verbs", null))
+    }
 }

@@ -68,4 +68,29 @@ class ArithmeticFollowupScreenTest {
         assertTrue(AdditionFact(5, 9) in facts)
         compose.onNodeWithTag("addition-complete").assertExists()
     }
+
+    @Test fun makeFiveShowsFilledAndEmptySpacesAndPractisesEveryBond() {
+        val plan = (MakeFiveContent.generate(SessionId("make-five-screen"), RoundLength.FIVE, 19) as GenerationResult.Generated).plan
+        val state = mutableStateOf(SessionReducer.start(plan, ContentLanguage.ENGLISH, MakeFiveContent.repository).state)
+        compose.setContent {
+            MaterialTheme {
+                MakeFiveScreen(state.value, ContentLanguage.ENGLISH, false, false, false,
+                    { state.value = SessionReducer.reduce(state.value, it).state }, {}, {}, {}, {}, Modifier.width(640.dp).height(360.dp))
+            }
+        }
+        val missing = mutableSetOf<Int>()
+        repeat(5) {
+            val fact = MakeFiveContent.fact(state.value.task.question)
+            missing += fact.missing
+            compose.onNodeWithTag("make-five-prompt").performScrollTo()
+                .assertTextEquals("You have ${fact.shown}. How many more make five?")
+            val cells = List(5) { index -> if (index < fact.shown) "dot" else "empty" }.joinToString(", ")
+            compose.onNodeWithTag("make-five-frame").performScrollTo()
+                .assertContentDescriptionEquals("Five-frame: $cells")
+            compose.onNodeWithTag("make-five-answer-${fact.missing}").performScrollTo().performClick()
+            compose.onNodeWithTag("make-five-next").performScrollTo().performClick()
+        }
+        assertEquals((1..4).toSet(), missing)
+        compose.onNodeWithTag("make-five-complete").assertExists()
+    }
 }

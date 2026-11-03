@@ -43,6 +43,14 @@ function validLegacySession(s){
   if(typeof q.complete!=="boolean"||q.complete!==(q.i===q.items.length)||q.score>q.i+(q.answered?1:0))return false;
   if(!legacyModes.includes(q.mode)||!q.current||typeof q.current.speak!=="string")return false;
   if(!q.complete&&(!Array.isArray(q.questionRandom)||q.questionRandom.length>2048||q.questionRandom.some(n=>!Number.isFinite(n)||n<0||n>=1)||!Number.isInteger(q.questionNumberMax)||q.questionNumberMax<10||q.questionNumberMax>9999))return false;
+  if(q.letterQuestionOrder!==undefined){
+   const poolSize=initialLetterTasks[s.lang].length,letterCount=q.items.filter(x=>x==="letters").length,order=q.letterQuestionOrder;
+   if(!Array.isArray(order)||order.length!==letterCount||order.some(index=>!Number.isInteger(index)||index<0||index>=poolSize))return false;
+   for(let start=0;start<order.length;start+=poolSize){
+    const cycle=order.slice(start,start+poolSize);
+    if(new Set(cycle).size!==cycle.length||(start>0&&cycle[0]===order[start-1]))return false;
+   }
+  }
  }
  if(s.lesson&&(!Number.isInteger(s.lesson.idx)||!verbQs[s.lesson.idx]||typeof s.lesson.fromQuiz!=="boolean"))return false;
  return Number.isFinite(s.scroll)&&s.scroll>=0;

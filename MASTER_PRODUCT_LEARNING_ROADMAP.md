@@ -469,6 +469,13 @@ within-5 and within-20 catalogues, balance the two ranges, include 4+7 and 5+9,
 and write to their own skill and journal. These remain visual choice activities;
 they do not add manipulable objects or automatic mastery claims.
 
+Follow-up — 2026-11-03: Make 5 introduces number bonds through a five-space visual
+frame. Each question names the shown quantity and asks how many spaces are needed
+to complete five; filled and empty spaces remain visually distinct. Short and long
+rounds practise every missing amount with balanced frequency and an independent
+number-bonds skill/journal. This is visual choice practice, not tap-to-place object
+manipulation.
+
 ### Manipulative quantity
 
 Maths should increasingly support manipulation.

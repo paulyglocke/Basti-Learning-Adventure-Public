@@ -3,7 +3,7 @@ package com.bellfamily.bastischool
 import java.util.concurrent.atomic.AtomicReference
 import com.bellfamily.bastischool.ui.home.validHomePage
 
-internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, DAYS_SEASONS, SEASONS_CHOOSER, SEASONS, WILMA_CHOOSER, WILMA, VOCABULARY_CHOOSER, VOCABULARY, TELL_ME, FOLLOW_LEVELS, FOLLOW_INSTRUCTIONS, FOLLOW_TWO, COLOURS_CHOOSER, COLOURS_EXPLORE, COLOURS_FIND, COLOURS_MATCH, COLOUR_SORT_FROM_CHOOSER, FOUR_COLOUR_SORT, COLOUR_SORT, RAINBOW_EXPLORE, RAINBOW_ORDER, HABITATS_CHOOSER, OCEAN_EXPLORE, WOODLAND_EXPLORE, UNDERGROUND_EXPLORE, FRESHWATER_EXPLORE, HABITAT_MATCH, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH, COMPARE_QUANTITY, NUMBER_ORDER, ADD_TOGETHER, ADD_CHALLENGE, SUBTRACTION, MIXED_ADDITION, CLOCK, CLOCK_MAKE, MONTHS_CHOOSER, MONTHS, MONTHS_FIND, MONTHS_RELATIONS, MONTHS_MISSING, MONTHS_BETWEEN, MONTHS_BETWEEN_WHEEL, MONTHS_BUILD_YEAR_LEVELS, MONTHS_BUILD_YEAR, MONTHS_BUILD_YEAR_FOUR, MONTHS_SEASONS, MONTHS_SEASONS_WHEEL }
+internal enum class ShellScreen { HOME, OPTIONS, WEB, PREPOSITIONS, LETTERS, DAYS_SEASONS, SEASONS_CHOOSER, SEASONS, WILMA_CHOOSER, WILMA, VOCABULARY_CHOOSER, VOCABULARY, TELL_ME, FOLLOW_LEVELS, FOLLOW_INSTRUCTIONS, FOLLOW_TWO, COLOURS_CHOOSER, COLOURS_EXPLORE, COLOURS_FIND, COLOURS_MATCH, COLOUR_SORT_FROM_CHOOSER, FOUR_COLOUR_SORT, COLOUR_SORT, RAINBOW_EXPLORE, RAINBOW_ORDER, HABITATS_CHOOSER, OCEAN_EXPLORE, WOODLAND_EXPLORE, UNDERGROUND_EXPLORE, FRESHWATER_EXPLORE, HABITAT_MATCH, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH, COMPARE_QUANTITY, NUMBER_ORDER, ADD_TOGETHER, ADD_CHALLENGE, SUBTRACTION, MIXED_ADDITION, MAKE_FIVE, CLOCK, CLOCK_MAKE, MONTHS_CHOOSER, MONTHS, MONTHS_FIND, MONTHS_RELATIONS, MONTHS_MISSING, MONTHS_BETWEEN, MONTHS_BETWEEN_WHEEL, MONTHS_BUILD_YEAR_LEVELS, MONTHS_BUILD_YEAR, MONTHS_BUILD_YEAR_FOUR, MONTHS_SEASONS, MONTHS_SEASONS_WHEEL }
 internal enum class BackAction { EXIT, HOME_ROOT, CLOSE_OPTIONS, LEGACY, NATIVE_HOME, DAYS_HUB, SEASONS_CHOOSER, WILMA_CHOOSER, VOCABULARY_CHOOSER, COLOURS_CHOOSER, HABITATS_CHOOSER, ANIMALS_CATEGORY, CLOCK_AREA, MONTHS_AREA, FOLLOW_LEVELS }
 
 /** Options is an overlay on one destination, never another entry in a growing stack. */
@@ -22,14 +22,14 @@ internal data class ShellNavigation(
         ShellScreen.CLOCK_MAKE -> BackAction.CLOCK_AREA
         ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO -> BackAction.FOLLOW_LEVELS
         ShellScreen.NUMBER_ORDER -> BackAction.NATIVE_HOME
-        ShellScreen.ADD_TOGETHER, ShellScreen.ADD_CHALLENGE, ShellScreen.SUBTRACTION, ShellScreen.MIXED_ADDITION, ShellScreen.CLOCK -> BackAction.NATIVE_HOME
+        ShellScreen.ADD_TOGETHER, ShellScreen.ADD_CHALLENGE, ShellScreen.SUBTRACTION, ShellScreen.MIXED_ADDITION, ShellScreen.MAKE_FIVE, ShellScreen.CLOCK -> BackAction.NATIVE_HOME
         ShellScreen.COMPARE_QUANTITY -> BackAction.NATIVE_HOME
         ShellScreen.VOCABULARY -> BackAction.VOCABULARY_CHOOSER
         ShellScreen.COLOURS_EXPLORE, ShellScreen.COLOURS_FIND, ShellScreen.COLOURS_MATCH, ShellScreen.COLOUR_SORT_FROM_CHOOSER, ShellScreen.FOUR_COLOUR_SORT, ShellScreen.RAINBOW_EXPLORE, ShellScreen.RAINBOW_ORDER -> BackAction.COLOURS_CHOOSER
         ShellScreen.OCEAN_EXPLORE, ShellScreen.WOODLAND_EXPLORE, ShellScreen.UNDERGROUND_EXPLORE, ShellScreen.FRESHWATER_EXPLORE -> BackAction.HABITATS_CHOOSER
         ShellScreen.HABITATS_CHOOSER -> BackAction.ANIMALS_CATEGORY
         ShellScreen.HABITAT_MATCH -> BackAction.ANIMALS_CATEGORY
-        ShellScreen.PREPOSITIONS, ShellScreen.DAYS_SEASONS, ShellScreen.VOCABULARY_CHOOSER, ShellScreen.TELL_ME, ShellScreen.FOLLOW_LEVELS, ShellScreen.COLOUR_SORT, ShellScreen.ANIMAL_GROUPS, ShellScreen.WASH_HANDS, ShellScreen.SUBITISING, ShellScreen.QUANTITY_MATCH -> BackAction.NATIVE_HOME
+        ShellScreen.PREPOSITIONS, ShellScreen.LETTERS, ShellScreen.DAYS_SEASONS, ShellScreen.VOCABULARY_CHOOSER, ShellScreen.TELL_ME, ShellScreen.FOLLOW_LEVELS, ShellScreen.COLOUR_SORT, ShellScreen.ANIMAL_GROUPS, ShellScreen.WASH_HANDS, ShellScreen.SUBITISING, ShellScreen.QUANTITY_MATCH -> BackAction.NATIVE_HOME
         ShellScreen.SEASONS -> BackAction.SEASONS_CHOOSER
         ShellScreen.WILMA -> BackAction.WILMA_CHOOSER
         ShellScreen.COLOURS_CHOOSER -> BackAction.NATIVE_HOME
@@ -73,6 +73,7 @@ internal data class ShellNavigation(
     fun openAdditionChallenge() = ShellNavigation(ShellScreen.ADD_CHALLENGE)
     fun openSubtraction() = ShellNavigation(ShellScreen.SUBTRACTION)
     fun openMixedAddition() = ShellNavigation(ShellScreen.MIXED_ADDITION)
+    fun openMakeFive() = ShellNavigation(ShellScreen.MAKE_FIVE)
     fun openFollowInstructions() = ShellNavigation(ShellScreen.FOLLOW_LEVELS)
     fun openFollowOne() = ShellNavigation(ShellScreen.FOLLOW_INSTRUCTIONS)
     fun openFollowTwo() = ShellNavigation(ShellScreen.FOLLOW_TWO)
@@ -96,6 +97,7 @@ internal data class ShellNavigation(
     fun openSeasons() = ShellNavigation(ShellScreen.SEASONS_CHOOSER)
     fun openSeasonsActivity() = ShellNavigation(ShellScreen.SEASONS)
     fun openPrepositions() = ShellNavigation(ShellScreen.PREPOSITIONS, mode = "positions")
+    fun openLetters() = ShellNavigation(ShellScreen.LETTERS)
     fun openActivity(mode: String) = ShellNavigation(ShellScreen.WEB, mode = mode)
     fun home(failed: Boolean = false) = ShellNavigation(recoveryFailed = failed)
     fun browseHome(page: String): ShellNavigation {

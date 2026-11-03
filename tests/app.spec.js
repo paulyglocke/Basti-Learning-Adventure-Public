@@ -116,6 +116,29 @@ test('every activity completes in both languages with retries and no negative sc
   expect(errors).toEqual([]);
 });
 
+test('letter targets are shuffled without replacement until their language pack is exhausted', async ({page}) => {
+  for (const lang of ['en', 'de']) {
+    await page.evaluate(lang => {setLang(lang);setRound(10);startGame('letters')}, lang);
+    const seen = [];
+    for (let index = 0; index < 10; index++) {
+      seen.push(await page.evaluate(() => ({letter:state.current.letter,animal:state.current.correct})));
+      if (index === 0) {
+        const snapshot = await page.evaluate(() => serializeLegacySession());
+        await page.evaluate(snapshot => {restoreLegacySession(snapshot)}, snapshot);
+        expect(await page.evaluate(() => ({letter:state.current.letter,animal:state.current.correct}))).toEqual(seen[0]);
+      }
+      const answer = await page.evaluate(() => state.current.correct);
+      await page.locator(`.answer[data-key="${answer}"]`).click();
+      if (index < 9) await page.locator('#nextAction').click();
+    }
+    expect(new Set(seen.slice(0, 6).map(item => item.animal)).size).toBe(6);
+    expect(new Set(seen.slice(6).map(item => item.animal)).size).toBe(4);
+    expect(seen[5].animal).not.toBe(seen[6].animal);
+    expect(new Set(seen.slice(0, 6).map(item => `${item.letter}:${item.animal}`)).size).toBe(6);
+    expect(new Set(seen.slice(6).map(item => `${item.letter}:${item.animal}`)).size).toBe(4);
+  }
+});
+
 test('number generators respect every ceiling, cap objects at 20, and keep maths within 10', async ({page}) => {
   const result = await page.evaluate(() => {
     const failures = [], counts = {};

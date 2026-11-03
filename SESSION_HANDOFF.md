@@ -1,5 +1,18 @@
 # Session handoff — 2026-10-21
 
+## Maths — Make 5 number bonds (2026-11-03)
+
+Added a separate Make 5 activity. It displays a five-space frame with 1–4 dots and
+the remaining spaces empty; the bilingual question identifies the starting amount
+and asks how many more complete five. Rounds are balanced across missing amounts
+1–4, avoid adjacent repeated amounts, and use an independent skill, context, and
+durable session journal. The common choice-session owner is reused.
+
+Focused generator, route/home, and Compose screen tests are included. The full JVM
+suite, app and Android-test assembly, lint, and Android-test Kotlin compilation pass.
+The Compose screen tests were compiled but not run on an emulator in this pass.
+The current changes are local and uncommitted.
+
 ## Maths — Take Away and Mixed Addition (2026-11-03)
 
 Owner asked to add both after the addition challenge. Take Away covers subtraction

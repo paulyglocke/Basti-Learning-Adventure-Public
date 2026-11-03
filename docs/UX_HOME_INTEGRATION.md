@@ -21,7 +21,7 @@ Debug-only preview settings and activity demonstrations remain inspectable.
 | Category | Original entry / unchanged destination |
 |---|---|
 | Numbers & Maths / Zahlen & Rechnen | Numbers → WEB/count; How many? → SUBITISING; Numbers & Groups → QUANTITY_MATCH; More or Fewer → COMPARE_QUANTITY; Number Order → NUMBER_ORDER; Add Together → ADD_TOGETHER; Easy Maths → WEB/math |
-| Words & Talking / Wörter & Erzählen | Tell Me → TELL_ME; Vocabulary Booster → VOCABULARY; Learn Verbs → WEB/verbExplorer; Letters → WEB/letters; Prepositions → PREPOSITIONS (positions mode) |
+| Words & Talking / Wörter & Erzählen | Tell Me → TELL_ME; Vocabulary Booster → VOCABULARY; Learn Verbs → WEB/verbExplorer; Animal First Letters → LETTERS; Prepositions → PREPOSITIONS (positions mode) |
 | Time & Seasons / Zeit & Jahreszeiten | Days & Seasons → DAYS_SEASONS; Clock & Time → CLOCK |
 | Animals & Nature / Tiere & Natur | Animal Actions → WEB/verbs; Animal Groups → ANIMAL_GROUPS |
 | Colours / Farben | Colour Sort → COLOUR_SORT, directly from category card |

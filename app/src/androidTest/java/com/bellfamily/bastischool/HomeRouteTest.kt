@@ -25,9 +25,9 @@ class HomeRouteTest(private val language: String) {
         val oldLanguage = prefs.getString("lang", null)
         val oldAudio = prefs.getString("audioMode", null)
         prefs.edit().putString("lang", language).putString("audioMode", "off").commit()
-        val expectedScreens = listOf("TELL_ME", "VOCABULARY_CHOOSER", "WEB", "WEB", "WEB", "DAYS_SEASONS",
+        val expectedScreens = listOf("TELL_ME", "VOCABULARY_CHOOSER", "WEB", "LETTERS", "WEB", "DAYS_SEASONS",
             "WEB", "SUBITISING", "QUANTITY_MATCH", "COMPARE_QUANTITY", "NUMBER_ORDER", "CLOCK",
-            "ADD_TOGETHER", "ADD_CHALLENGE", "SUBTRACTION", "MIXED_ADDITION", "WEB", "PREPOSITIONS", "WEB", "WASH_HANDS", "HABITATS_CHOOSER", "HABITAT_MATCH", "ANIMAL_GROUPS", "COLOURS_CHOOSER", "FOLLOW_LEVELS")
+            "ADD_TOGETHER", "ADD_CHALLENGE", "SUBTRACTION", "MIXED_ADDITION", "MAKE_FIVE", "WEB", "PREPOSITIONS", "WEB", "WASH_HANDS", "HABITATS_CHOOSER", "HABITAT_MATCH", "ANIMAL_GROUPS", "COLOURS_CHOOSER", "FOLLOW_LEVELS")
         try {
             ActivityScenario.launch(MainActivity::class.java).use { scenario ->
                 homeCardGroups().flatten().forEachIndexed { index, card ->
@@ -36,6 +36,14 @@ class HomeRouteTest(private val language: String) {
                     compose.waitForIdle()
                     if (expectedScreens[index] == "WEB") {
                         compose.renderedLegacy(scenario, if (card.verbExplorer) "verbExplorer" else card.mode!!)
+                    }
+                    if (expectedScreens[index] == "LETTERS") {
+                        compose.waitUntil(10_000) {
+                            compose.onAllNodesWithTag("letters-prompt").fetchSemanticsNodes().isNotEmpty()
+                        }
+                        compose.onNodeWithTag("letters-prompt").assertExists()
+                        compose.onNodeWithTag("letters-letter-card").assertExists()
+                        compose.onNodeWithTag("letters-replay").assertExists()
                     }
                     // Saving demotes ComponentActivity's LifecycleRegistry to CREATED.
                     // Inspect while stopped, then resume normally before exercising Back.

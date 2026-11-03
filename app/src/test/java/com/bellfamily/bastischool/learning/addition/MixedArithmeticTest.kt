@@ -6,6 +6,24 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class MixedArithmeticTest {
+    @Test fun makeFiveRoundsCoverEveryMissingAmountWithNoAdjacentRepeat() {
+        assertNotEquals(AdditionContent.activity, MakeFiveContent.activity)
+        assertNotEquals(AdditionContent.skill, MakeFiveContent.skill)
+        for (round in RoundLength.entries) for (seed in 0L..100L) {
+            val id = SessionId("make-five-$seed-${round.count}")
+            val first = (MakeFiveContent.generate(id, round, seed) as GenerationResult.Generated).plan
+            val second = (MakeFiveContent.generate(id, round, seed) as GenerationResult.Generated).plan
+            val taskFacts = first.tasks.map { MakeFiveContent.fact(it.question) }
+            assertEquals(taskFacts, second.tasks.map { MakeFiveContent.fact(it.question) })
+            val state = SessionReducer.start(first, ContentLanguage.ENGLISH, MakeFiveContent.repository).state
+            MakeFiveContent.validate(state)
+            assertEquals((1..4).toSet(), taskFacts.map { it.shown }.toSet())
+            assertTrue(taskFacts.zipWithNext().none { (a, b) -> a.shown == b.shown })
+            taskFacts.forEach { assertEquals(5, it.shown + it.missing) }
+            first.tasks.forEach { task -> assertEquals(4, task.question.choices.toSet().size) }
+        }
+    }
+
     @Test fun subtractionCoversEveryRemainderAndUsesItsOwnIdentity() {
         assertEquals(15, SubtractionContent.facts.size)
         assertEquals((0..4).toSet(), SubtractionContent.facts.map { it.answer }.toSet())

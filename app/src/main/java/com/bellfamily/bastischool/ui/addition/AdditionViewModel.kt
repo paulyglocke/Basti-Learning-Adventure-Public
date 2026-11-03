@@ -47,7 +47,7 @@ open class AdditionViewModel protected constructor(
         round = if (count == 10) RoundLength.TEN else RoundLength.FIVE
         if (nextLanguage != language || nextMode != mode) { language = nextLanguage; mode = nextMode; epoch++; audio.mode(nextMode); syncLanguage() }
     }
-    fun setVisible(value: Boolean) {
+    open fun setVisible(value: Boolean) {
         if (visible == value) return
         visible = value; epoch++; audio.visible(value)
         if (value && state == null && !busy) {
@@ -64,6 +64,12 @@ open class AdditionViewModel protected constructor(
         val current = state ?: return
         if (!ready()) return
         if (current.phase == SessionPhase.ACTIVE) action(SessionAction.Replay(current.task.id)) else { epoch++; audio.replay(current, language) }
+    }
+    fun option(id: ContentId) {
+        val current = state ?: return
+        val text = curriculum.repository.find(id)?.text ?: return
+        if (!ready()) return
+        epoch++; audio.option(current.plan.id.value, id, language, text)
     }
     fun action(action: SessionAction) { if (!ready()) return; epoch++; audio.cancel(); work { host.dispatch(action) } }
     fun retrySave() {
@@ -105,3 +111,6 @@ class MixedAdditionViewModel(application: Application) : AdditionViewModel(
 
 class SubtractionViewModel(application: Application) : AdditionViewModel(
     application, SubtractionContent, "subtraction-session", { AndroidSystemSpeechEngine(application) })
+
+class MakeFiveViewModel(application: Application) : AdditionViewModel(
+    application, MakeFiveContent, "make-five-session", { AndroidSystemSpeechEngine(application) })

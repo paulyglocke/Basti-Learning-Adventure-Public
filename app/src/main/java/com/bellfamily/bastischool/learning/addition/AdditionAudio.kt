@@ -23,6 +23,9 @@ class AdditionAudio(private val controller: AudioController, private val status:
     fun replay(state: SessionState, language: ContentLanguage) = speak(
         state.task.id.toString(), language, state.task.question.instruction, SpeechKind.INSTRUCTION, SpeechTrigger.REPLAY
     )
+    fun option(session: String, id: ContentId, language: ContentLanguage, text: ContentText) = speak(
+        "$session:${id.value}", language, text, SpeechKind.OPTION, SpeechTrigger.MANUAL
+    )
     private fun speak(id: String, language: ContentLanguage, text: ContentText, kind: SpeechKind, trigger: SpeechTrigger) {
         if (!active) return
         cancel(); val ticket = revision; val context = controller.openContext(owner, SpeechSessionId(id), language)

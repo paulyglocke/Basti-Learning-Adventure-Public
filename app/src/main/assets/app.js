@@ -214,6 +214,15 @@ function initialLetterLabel(id,lang=settings.lang){
  const word=creatures[id][lang];
  return word.charAt(0).toLocaleUpperCase(lang)+word.slice(1);
 }
+function initialLetterQuestionOrder(lang,count){
+ const size=initialLetterTasks[lang].length,order=[];
+ while(order.length<count){
+  const cycle=shuffle(Array.from({length:size},(_,index)=>index));
+  if(order.length&&cycle[0]===order[order.length-1])[cycle[0],cycle[1]]=[cycle[1],cycle[0]];
+  order.push(...cycle);
+ }
+ return order.slice(0,count);
+}
 
 const days=["monday","tuesday","wednesday","thursday","friday","saturday","sunday"];
 const seasons=[
@@ -369,6 +378,7 @@ function startGame(mode){
  state={mode,items:[],i:0,score:0,answered:false,current:null};
  while(state.items.length<settings.round)state.items.push(...(mode==="mixed"?shuffle(["verbs","count","math","positions","letters","time"]):[mode]));
  state.items=state.items.slice(0,settings.round);
+ state.letterQuestionOrder=initialLetterQuestionOrder(settings.lang,state.items.filter(type=>type==="letters").length);
  show("game");$("gameTitle").textContent=titleFor(mode);renderQuestion()
 }
 function renderQuestion(replay=false){
@@ -540,7 +550,9 @@ function renderPosition(){
 }
 
 function renderLetter(){
- const q=sample(initialLetterTasks[settings.lang]);
+ const letterOrdinal=state.items.slice(0,state.i+1).filter(type=>type==="letters").length-1;
+ const selected=state.letterQuestionOrder?.[letterOrdinal];
+ const q=Number.isInteger(selected)?initialLetterTasks[settings.lang][selected]:sample(initialLetterTasks[settings.lang]);
  const items=shuffle([q.word,...q.distractors]);
  const text=fmt(tt("qLetter"),{letter:q.letter});
  const word=initialLetterLabel(q.word);
