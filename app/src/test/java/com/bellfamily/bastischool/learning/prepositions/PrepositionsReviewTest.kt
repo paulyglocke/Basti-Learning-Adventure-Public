@@ -61,7 +61,7 @@ class PrepositionsReviewTest {
         val useful = listOf(PositionRelation.NEAR to PositionRelation.FAR_FROM,
             PositionRelation.BEHIND to PositionRelation.IN_FRONT_OF, PositionRelation.ABOVE to PositionRelation.BELOW,
             PositionRelation.ON to PositionRelation.UNDER, PositionRelation.INSIDE to PositionRelation.OUTSIDE,
-            PositionRelation.BETWEEN to PositionRelation.NEXT_TO)
+            PositionRelation.BETWEEN to PositionRelation.FAR_FROM)
         ReferenceObject.entries.forEach { reference -> useful.forEach { (a, b) ->
             assertTrue(PrepositionsContent.compatible(a, b, reference))
             assertTrue(PrepositionsContent.compatible(b, a, reference))

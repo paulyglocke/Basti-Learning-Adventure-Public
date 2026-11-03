@@ -13,9 +13,18 @@ New rounds use activity revision 4/content 1.4. The saved journal namespace and
 schema are unchanged. Frozen revision-1/2/3 rounds still validate and restore with
 their original four choices; Play Again starts revision 4. The question and
 checkpoint tests were updated for this contract, including a revision-3 restore
-fixture. No tests or builds were run in this implementation pass. Next: run focused
-Prepositions JVM and Compose/API checks, then the normal project validation before
-review/commit. Work is uncommitted and unpushed.
+fixture. Follow-up validation passed the focused Prepositions JVM suite, full JVM
+suite, `compileDebugAndroidTestKotlin`, `assembleDebug`, `lintDebug`, and
+`git diff --check`. The first focused run caught a stale expectation that BETWEEN
+used NEXT_TO; the test now expects its authored FAR_FROM contrast. The focused
+Prepositions Compose suites passed on `Rainbow_R3B_API35` / API 35: 3 guided-listen
+tests and 4 artwork/layout parameter cases. The full 603-test instrumentation run
+was started but stopped after 7 tests because this emulator was progressing too
+slowly; it is not a full-suite pass. `Medium_Phone_API_35` could not install the
+362 MB app APK with 1.1 GB free, so the larger existing AVD was used. The
+implementation was committed and pushed to `main` as
+`5833bd710ad16e8eb59dd918c79bd806a88c8181`. This validation note and the corrected
+review test are local edits, not committed or pushed.
 
 ## Phase 5C.1 — Animals & Habitats foundation audit (2026-10-26; docs only)
 
