@@ -9,9 +9,9 @@ class HomeIntegrationTest {
     @Test fun liveCardsDispatchToTheirExistingOrNewDestinations() {
         val expected = listOf("TELL_ME", "VOCABULARY_CHOOSER", "WEB", "WEB", "WEB", "DAYS_SEASONS",
             "WEB", "SUBITISING", "QUANTITY_MATCH", "COMPARE_QUANTITY", "NUMBER_ORDER", "CLOCK",
-            "ADD_TOGETHER", "ADD_CHALLENGE", "WEB", "PREPOSITIONS", "WEB", "WASH_HANDS", "HABITATS_CHOOSER", "HABITAT_MATCH", "ANIMAL_GROUPS", "COLOURS_CHOOSER", "FOLLOW_LEVELS")
+            "ADD_TOGETHER", "ADD_CHALLENGE", "SUBTRACTION", "MIXED_ADDITION", "WEB", "PREPOSITIONS", "WEB", "WASH_HANDS", "HABITATS_CHOOSER", "HABITAT_MATCH", "ANIMAL_GROUPS", "COLOURS_CHOOSER", "FOLLOW_LEVELS")
         val cards = homeActivities()
-        assertEquals(23, cards.size)
+        assertEquals(25, cards.size)
         assertEquals(expected, cards.map { it.homeDestination().screen.name })
         cards.filter { it.homeDestination().screen == ShellScreen.WEB }.forEach {
             assertEquals(it.homeId(), it.homeDestination().mode)
@@ -20,10 +20,10 @@ class HomeIntegrationTest {
         assertTrue(cards.none { it.play })
     }
 
-    @Test fun sixBilingualCategoriesCoverTwentyOneAndMixedRemainsLast() {
-        assertEquals(listOf(8,5,2,4,1,2), HomeCategory.entries.map { it.activityIds.size })
+    @Test fun sixBilingualCategoriesCoverTwentyFourAndMixedRemainsLast() {
+        assertEquals(listOf(10,5,2,4,1,2), HomeCategory.entries.map { it.activityIds.size })
         val ids = HomeCategory.entries.flatMap { it.activityIds }
-        assertEquals(22, ids.distinct().size)
+        assertEquals(24, ids.distinct().size)
         assertEquals(homeActivities().map { it.homeId() }.toSet(), ids.toSet() + "mixed")
         assertEquals(listOf("Numbers & Maths","Words & Talking","Time & Seasons","Animals & Nature","Colours","Everyday Skills"), HomeCategory.entries.map { it.en })
         assertEquals(listOf("Zahlen & Rechnen","Wörter & Erzählen","Zeit & Jahreszeiten","Tiere & Natur","Farben","Alltag"), HomeCategory.entries.map { it.de })

@@ -463,6 +463,12 @@ Both 5- and 10-question rounds include 4+7 and 5+9; challenge progress and journ
 are independent. This adds a symbolic/numeral-supported practice step without
 changing the original beginner curriculum checkpoint above.
 
+Follow-up — 2026-11-03: added Take Away with visible start and take-away groups,
+nonzero removal and answers 0–4, plus Mixed Addition. Mixed rounds use the existing
+within-5 and within-20 catalogues, balance the two ranges, include 4+7 and 5+9,
+and write to their own skill and journal. These remain visual choice activities;
+they do not add manipulable objects or automatic mastery claims.
+
 ### Manipulative quantity
 
 Maths should increasingly support manipulation.

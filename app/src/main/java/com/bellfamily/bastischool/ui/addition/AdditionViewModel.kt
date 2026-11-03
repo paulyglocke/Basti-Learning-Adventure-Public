@@ -18,7 +18,7 @@ import java.util.concurrent.Executors
 
 open class AdditionViewModel protected constructor(
     application: Application,
-    private val curriculum: AdditionCurriculum,
+    private val curriculum: ChoiceSessionCurriculum,
     journalName: String,
     engineFactory: () -> SpeechEngine
 ) : AndroidViewModel(application) {
@@ -99,3 +99,9 @@ open class AdditionViewModel protected constructor(
 
 class AdditionChallengeViewModel(application: Application) : AdditionViewModel(
     application, AdditionChallengeContent, "addition-challenge-session", { AndroidSystemSpeechEngine(application) })
+
+class MixedAdditionViewModel(application: Application) : AdditionViewModel(
+    application, MixedAdditionContent, "addition-mixed-session", { AndroidSystemSpeechEngine(application) })
+
+class SubtractionViewModel(application: Application) : AdditionViewModel(
+    application, SubtractionContent, "subtraction-session", { AndroidSystemSpeechEngine(application) })

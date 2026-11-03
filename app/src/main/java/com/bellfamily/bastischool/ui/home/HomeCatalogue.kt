@@ -10,7 +10,7 @@ internal enum class HomeCategory(
     val en: String, val de: String, val treatment: BastiCategoryTreatment, val activityIds: List<String>,
 ) {
     MATHS("Numbers & Maths", "Zahlen & Rechnen", BastiCategoryTreatment.MATHS,
-        listOf("count", "subitising", "quantityMatch", "compareQuantity", "numberOrder", "addTogether", "addChallenge", "math")),
+        listOf("count", "subitising", "quantityMatch", "compareQuantity", "numberOrder", "addTogether", "addChallenge", "subtraction", "mixedAddition", "math")),
     WORDS("Words & Talking", "Wörter & Erzählen", BastiCategoryTreatment.WORDS,
         listOf("tellme", "vocabulary", "verbExplorer", "letters", "positions")),
     TIME("Time & Seasons", "Zeit & Jahreszeiten", BastiCategoryTreatment.TIME, listOf("time", "clock")),
@@ -45,6 +45,8 @@ internal fun HomeCard.homeDestination(): ShellNavigation {
         "subitising" -> shell.openSubitising()
         "addTogether" -> shell.openAddTogether()
         "addChallenge" -> shell.openAdditionChallenge()
+        "subtraction" -> shell.openSubtraction()
+        "mixedAddition" -> shell.openMixedAddition()
         "numberOrder" -> shell.openNumberOrder()
         "compareQuantity" -> shell.openCompareQuantity()
         "quantityMatch" -> shell.openQuantityMatch()

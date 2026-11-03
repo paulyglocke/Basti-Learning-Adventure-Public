@@ -1,5 +1,20 @@
 # Session handoff — 2026-10-21
 
+## Maths — Take Away and Mixed Addition (2026-11-03)
+
+Owner asked to add both after the addition challenge. Take Away covers subtraction
+within 5, with a visible starting group, minus sign, and group taken away; remainders
+0–4 are represented. Mixed Addition draws from the existing within-5 and within-20
+addition catalogues, balances the ranges, and includes 4+7 and 5+9 in both round
+lengths. Each has its own activity/skill/context and durable session journal.
+
+The shared session ViewModel now accepts a small choice-curriculum boundary so both
+new tracks reuse the existing persistence, audio, retry, completion and progress
+flow. Focused generator, identity and navigation tests were added. The full JVM suite,
+app/Android-test assembly, lint, and Android-test Kotlin compilation pass. Compose
+instrumentation was compiled but not run on an emulator in this pass. Changes are
+local and uncommitted.
+
 ## Maths — Add Bigger Numbers follow-up (2026-11-03)
 
 Owner feedback said Add Together within 5 felt too basic. Added a separate

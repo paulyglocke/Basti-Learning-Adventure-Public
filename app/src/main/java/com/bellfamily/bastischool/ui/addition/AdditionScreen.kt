@@ -94,7 +94,7 @@ fun AdditionScreen(state: SessionState?, language: ContentLanguage, busy: Boolea
                     Modifier.fillMaxWidth().testTag("addition-answer-${id.value.substringAfter('.') }"),
                     ready && state.current.answer == AnswerState.UNANSWERED && state.nextAttempt != null)
             }
-            if (state.current.support.hint) NativeSupportMessage(AdditionContent.help.display[language])
+            if (state.current.support.hint) NativeSupportMessage(curriculum.help.display[language])
             if (!state.current.locked) NativeActionButton(t("Help", "Hilfe"), NativeActionRole.SECONDARY,
                 { onAction(SessionAction.Hint(state.task.id)) }, Modifier.testTag("addition-help"), ready)
             when (state.current.answer) {

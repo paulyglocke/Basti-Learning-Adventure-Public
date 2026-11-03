@@ -44,6 +44,8 @@ Numbers:
 - more_less
 - addition_to_5
 - addition_to_20 (separate challenge skill; totals 6–20)
+- subtraction_within_5 (take-away facts, including zero remainder)
+- addition_mixed (separate skill for balanced within-5 and within-20 rounds)
 
 Spatial:
 - in

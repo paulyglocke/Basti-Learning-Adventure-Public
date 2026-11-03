@@ -23,4 +23,16 @@ class AdditionNavigationTest {
         assertEquals(route, ShellNavigation.restore("ADD_CHALLENGE", "HOME", "verbs", null))
         assertNotEquals(route, ShellNavigation().openAddTogether())
     }
+
+    @Test fun takeAwayAndMixedAdditionHaveIndependentNativeRoutes() {
+        val subtraction = ShellNavigation().openSubtraction()
+        assertEquals(ShellScreen.SUBTRACTION, subtraction.screen)
+        assertEquals(BackAction.NATIVE_HOME, subtraction.backAction)
+        assertEquals(subtraction, ShellNavigation.restore("SUBTRACTION", "HOME", "verbs", null))
+        val mixed = ShellNavigation().openMixedAddition()
+        assertEquals(ShellScreen.MIXED_ADDITION, mixed.screen)
+        assertEquals(BackAction.NATIVE_HOME, mixed.backAction)
+        assertEquals(mixed, ShellNavigation.restore("MIXED_ADDITION", "HOME", "verbs", null))
+        assertNotEquals(subtraction, mixed)
+    }
 }
