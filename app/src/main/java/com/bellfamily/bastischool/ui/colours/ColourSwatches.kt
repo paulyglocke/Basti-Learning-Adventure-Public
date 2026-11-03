@@ -11,11 +11,17 @@ object ColourSwatches {
     // A clear yellow hue: the former amber sample could be mistaken for orange.
     val yellow = Color(0xFFFFEB3B)
     val green = Color(0xFF2E7D32)
+    val orange = Color(0xFFEF6C00)
+    val purple = Color(0xFF7B1FA2)
+    val pink = Color(0xFFD81B60)
     fun color(id: ContentId): Color = when (id) {
         ColoursContent.red -> red
         ColoursContent.blue -> blue
         ColoursContent.yellow -> yellow
         ColoursContent.green -> green
+        ColoursContent.orange -> orange
+        ColoursContent.purple -> purple
+        ColoursContent.pink -> pink
         else -> error("Unknown introductory colour ${id.value}")
     }
 }

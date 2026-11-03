@@ -12,7 +12,7 @@ data class ColourSample(val id: ContentId, val colour: ContentId, val shape: Col
 
 /** Visual correspondence: the target hue is shown, then matched across a different shape. */
 object MatchColoursContent {
-    const val REVISION = 1
+    const val REVISION = 2
     val activity = ActivityId("activity.colours.match")
     val skill = SkillId("skill.colours.matching")
     val context = LearningContextId("context.colours.different_shapes")
@@ -24,7 +24,7 @@ object MatchColoursContent {
     }
     private val shared = ColoursContent.repository.all()
     val repository: ContentRepository = BundledContentRepository(
-        ContentVersion(1, 1),
+        ContentVersion(1, 2),
         shared + samples.mapIndexed { index, sample ->
             SemanticObjectDefinition(sample.id, ContentText.plain("Choice ${index + 1}", "Auswahl ${index + 1}"))
         }, emptyList()
@@ -34,7 +34,8 @@ object MatchColoursContent {
     fun sample(id: ContentId) = samples.single { it.id == id }
 
     fun question(targetColour: ContentId, targetShape: ColourShape, choices: List<ContentId>): ChoiceQuestion {
-        require(targetColour in ColoursContent.order && choices.size == 4 && choices.toSet().size == 4)
+        require(targetColour in ColoursContent.order && choices.size == ColoursContent.order.size &&
+            choices.toSet().size == ColoursContent.order.size)
         val sampleChoices = choices.map(::sample)
         require(sampleChoices.map { it.colour }.toSet() == ColoursContent.order.toSet())
         require(sampleChoices.single { it.colour == targetColour }.shape != targetShape)
@@ -82,12 +83,15 @@ object MatchColoursContent {
         state.plan.tasks.forEach { task ->
             val target = targetColour(task.question)
             val shape = targetShape(task.question)
-            require(task.question.choices.size == 4)
+            require(task.question.choices.size == ColoursContent.order.size)
             require(task.question.choices.map(::sample).map { it.colour }.toSet() == ColoursContent.order.toSet())
             require(sample(task.question.correct).colour == target)
             require(sample(task.question.correct).shape != shape)
             require(task.question.skill == skill && task.question.context == context)
         }
-        require(state.plan.tasks.map { targetColour(it.question) }.toSet() == ColoursContent.order.toSet())
+        val targets = state.plan.tasks.map { targetColour(it.question) }
+        require(targets.toSet().size == minOf(state.plan.policy.round.count, ColoursContent.order.size))
+        if (state.plan.policy.round.count >= ColoursContent.order.size)
+            require(targets.toSet() == ColoursContent.order.toSet())
     }
 }

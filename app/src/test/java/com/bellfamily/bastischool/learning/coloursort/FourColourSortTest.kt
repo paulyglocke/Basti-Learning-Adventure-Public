@@ -36,7 +36,7 @@ class FourColourSortTest {
     @Test fun separateEightObjectRuleAndRestorationProduceIndependentSingleCompletion() {
         assertNotEquals(ColourSort.activity, FourColourSort.activity)
         assertNotEquals(ColourSort.journalMagic, FourColourSort.journalMagic)
-        assertEquals(ColoursContent.order, FourColourSort.categories)
+        assertEquals(ColoursContent.introductoryOrder, FourColourSort.categories)
         assertEquals(8, FourColourSort.rule.items.size)
         assertEquals(listOf(2, 2, 2, 2), FourColourSort.categories.map { category -> FourColourSort.rule.items.count { it.category == category } })
         val disk = Disk(); val events = mutableListOf<ProgressEvent>(); var host = open(disk, events)

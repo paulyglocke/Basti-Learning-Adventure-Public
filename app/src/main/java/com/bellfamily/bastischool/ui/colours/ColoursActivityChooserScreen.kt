@@ -16,6 +16,7 @@ import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
+import com.bellfamily.bastischool.learning.colours.ColoursContent
 import com.bellfamily.bastischool.learning.models.ContentLanguage
 import com.bellfamily.bastischool.ui.common.*
 import com.bellfamily.bastischool.ui.design.*
@@ -51,11 +52,16 @@ fun ColoursActivityChooserScreen(
             Column(Modifier.padding(BastiSpacing.medium), verticalArrangement = Arrangement.spacedBy(BastiSpacing.medium)) {
                 Text(t("Explore Colours", "Farben entdecken"), style = BastiTypography.question,
                     color = BastiPalette.ink, modifier = Modifier.semantics { heading() })
-                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp),
-                    verticalAlignment = Alignment.CenterVertically) {
-                    listOf(ColourSwatches.red, ColourSwatches.blue, ColourSwatches.yellow, ColourSwatches.green).forEach { color ->
-                        Box(Modifier.weight(1f).sizeIn(minHeight = 48.dp).aspectRatio(1f)
-                            .background(color, CircleShape), contentAlignment = Alignment.Center) {}
+                Column(verticalArrangement = Arrangement.spacedBy(BastiSpacing.small)) {
+                    ColoursContent.order.chunked(4).forEach { row ->
+                        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp),
+                            verticalAlignment = Alignment.CenterVertically) {
+                            row.forEach { id ->
+                                Box(Modifier.weight(1f).sizeIn(minHeight = 36.dp).aspectRatio(1f)
+                                    .background(ColourSwatches.color(id), CircleShape), contentAlignment = Alignment.Center) {}
+                            }
+                            if (row.size < 4) repeat(4 - row.size) { Spacer(Modifier.weight(1f)) }
+                        }
                     }
                 }
                 Text(t("Tap a colour to see and hear its name.", "Tippe auf eine Farbe und höre ihren Namen."),

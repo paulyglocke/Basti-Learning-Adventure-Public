@@ -6,10 +6,10 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class ColoursContentTest {
-    @Test fun fourCanonicalSharedDefinitionsHaveCorrectBilingualNames() {
-        assertEquals(listOf("colour.red", "colour.blue", "colour.yellow", "colour.green"),
+    @Test fun sevenCanonicalSharedDefinitionsHaveCorrectBilingualNames() {
+        assertEquals(listOf("colour.red", "colour.orange", "colour.yellow", "colour.green", "colour.blue", "colour.purple", "colour.pink"),
             ColoursContent.order.map { it.value })
-        assertEquals(listOf("red/rot", "blue/blau", "yellow/gelb", "green/grün"),
+        assertEquals(listOf("red/rot", "orange/orange", "yellow/gelb", "green/grün", "blue/blau", "purple/lila", "pink/rosa"),
             ColoursContent.order.map { id ->
                 val text = ColoursContent.definition(id).text.display
                 "${text.en}/${text.de}"
@@ -46,7 +46,8 @@ class ColoursContentTest {
             assertEquals(first.plan.tasks.map { it.question.choices }, second.plan.tasks.map { it.question.choices })
             val targets = first.plan.tasks.map { it.question.correct }
             assertEquals(round.count, targets.size)
-            assertEquals(ColoursContent.order.toSet(), targets.toSet())
+            assertEquals(minOf(round.count, ColoursContent.order.size), targets.toSet().size)
+            if (round.count >= ColoursContent.order.size) assertEquals(ColoursContent.order.toSet(), targets.toSet())
             assertTrue(targets.zipWithNext().none { (a, b) -> a == b })
             assertTrue(targets.groupingBy { it }.eachCount().values.let { it.max() - it.min() <= 1 })
             assertTrue(first.plan.tasks.all { it.question.choices.toSet() == ColoursContent.order.toSet() })

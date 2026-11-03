@@ -7,18 +7,22 @@ import com.bellfamily.bastischool.learning.models.*
 import com.bellfamily.bastischool.learning.session.*
 import java.util.Random
 
-/** Four reviewed colour concepts. The definitions are shared with the existing colour and weekday cues. */
+/** Seven reviewed colour concepts. The definitions are shared with the existing colour and weekday cues. */
 object ColoursContent {
-    const val REVISION = 1
+    const val REVISION = 2
     val red = ContentId("colour.red")
     val blue = ContentId("colour.blue")
     val yellow = ContentId("colour.yellow")
     val green = ContentId("colour.green")
-    val order = listOf(red, blue, yellow, green)
+    val orange = ContentId("colour.orange")
+    val purple = ContentId("colour.purple")
+    val pink = ContentId("colour.pink")
+    val introductoryOrder = listOf(red, blue, yellow, green)
+    val order = listOf(red, orange, yellow, green, blue, purple, pink)
     private val sharedDefinitions = CoreContent.repository()
     /** Frozen activity pack version; later unrelated CoreContent additions do not invalidate its journal. */
     val repository: ContentRepository = BundledContentRepository(
-        ContentVersion(schema = 1, revision = 1),
+        ContentVersion(schema = 1, revision = 2),
         order.map { id -> sharedDefinitions.find(id) as? ColourDefinition ?: error("Missing shared colour ${id.value}") },
         emptyList()
     )
@@ -29,7 +33,7 @@ object ColoursContent {
     val findTitle = ContentText.plain("Find the Colour", "Finde die Farbe")
 
     fun definition(id: ContentId): ColourDefinition {
-        require(id in order) { "Not in the introductory colour set: ${id.value}" }
+        require(id in order) { "Not in the reviewed colour set: ${id.value}" }
         return repository.find(id) as? ColourDefinition ?: error("Missing shared colour ${id.value}")
     }
 
@@ -94,7 +98,8 @@ object ColoursContent {
                 q.correctFeedback == expected.correctFeedback && q.wrongFeedback == expected.wrongFeedback && q.hint == expected.hint)
             q.correct
         }
-        require(targets.toSet() == order.toSet())
+        require(targets.toSet().size == minOf(state.plan.policy.round.count, order.size))
+        if (state.plan.policy.round.count >= order.size) require(targets.toSet() == order.toSet())
         require(targets.zipWithNext().none { (a, b) -> a == b })
         val counts = targets.groupingBy { it }.eachCount().values
         require(counts.maxOrNull()!! - counts.minOrNull()!! <= 1)

@@ -15,7 +15,7 @@ object FourColourSort : SortingContent {
     val activity = ActivityId("activity.colours.sort.four")
     override val version = ContentVersion(1, 1)
     private val shapes = listOf(ColourSortShape.BALL, ColourSortShape.BLOCK)
-    val categories = ColoursContent.order
+    val categories = ColoursContent.introductoryOrder
     val objects: List<ColourSortObject> = categories.flatMap { colour -> shapes.map { shape ->
         val suffix = shape.name.lowercase()
         val name = ColoursContent.definition(colour).text.display

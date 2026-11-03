@@ -18,12 +18,14 @@ class MatchColoursContentTest {
             a.plan.tasks.forEach { task ->
                 val target = MatchColoursContent.targetColour(task.question)
                 val targetShape = MatchColoursContent.targetShape(task.question)
-                assertEquals(4, task.question.choices.map { MatchColoursContent.sample(it).colour }.toSet().size)
+                assertEquals(ColoursContent.order.size, task.question.choices.map { MatchColoursContent.sample(it).colour }.toSet().size)
                 assertNotEquals(targetShape, MatchColoursContent.sample(task.question.correct).shape)
                 assertTrue(task.question.choices.all { MatchColoursContent.repository.find(it) != null })
                 assertTrue(task.question.choices.any { MatchColoursContent.sample(it).colour == target })
             }
-            assertEquals(ColoursContent.order.toSet(), a.plan.tasks.map { MatchColoursContent.targetColour(it.question) }.toSet())
+            val targets = a.plan.tasks.map { MatchColoursContent.targetColour(it.question) }
+            assertEquals(minOf(round.count, ColoursContent.order.size), targets.toSet().size)
+            if (round.count >= ColoursContent.order.size) assertEquals(ColoursContent.order.toSet(), targets.toSet())
         }
     }
 

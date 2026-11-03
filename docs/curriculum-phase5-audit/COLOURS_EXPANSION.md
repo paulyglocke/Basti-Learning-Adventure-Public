@@ -2,6 +2,8 @@
 
 ## What exists now
 
+**Implementation update:** The Explore, Find and Match activities now use seven reviewed concepts—red, orange, yellow, green, blue, purple and pink—with bilingual names and distinct swatches. Find/Match session packs have their own bumped content revisions. Four-Colour Sort intentionally remains the original red/blue/yellow/green activity and keeps its four-category restore contract.
+
 The Home card **Colour Sort / Farben sortieren** launches one Compose screen directly. `ColourSort` has two category IDs, `colour.red` and `colour.blue`, and four semantic object IDs: red ball, blue ball, red block and blue block. The screen draws the tokens with Compose Canvas; it has no canonical object-image assets. A child taps a token, then a red/blue category. Replay, Help, immediate correction, bilingual feedback and durable exact-state recovery are already present. The screen does not first teach or explore color names.
 
 `CoreContent.repository()` already contains bilingual records for seven colors (`colour.green`, `.red`, `.yellow`, `.blue`, `.purple`, `.orange`, `.pink`). These are shared vocabulary/weekday cue definitions, not evidence of a seven-color learning activity. Wilma uses the seven day colors as a supplementary semantic cue; color is not the weekday identity. Tell Me scene descriptions also contain color words and contextual color observations, but no standalone color course.
