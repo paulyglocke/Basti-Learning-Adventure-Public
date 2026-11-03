@@ -191,13 +191,17 @@ legacy `VectorRaster`, 1 legacy `SetJavaScriptEnabled`) and 2 informational find
 Kotlin reports the existing deprecated `VIBRATOR_SERVICE` warning. Physical-device
 acceptance is **NOT RUN — deferred by owner**.
 
-Current baseline reconciled on 2026-10-08 against `ccc6423`: the [workflow](.github/workflows/build-apk.yml) runs full native JVM tests, Python content/asset/freshness checks, `assembleDebug`, `lintDebug`, release guards and legacy Playwright tests. It has no explicit Android-test compilation/build gate and no instrumentation execution job. Compose/owner/navigation tests exist, including the recent native modes; existence and compilation do not prove execution. Browser speech mocks do not prove native audio, Compose behavior, Android navigation or device compatibility.
+The 2026-10-08 reconciliation against `ccc6423` documented the workflow's then-current checks: full native JVM tests, Python content/asset/freshness checks, `assembleDebug`, `lintDebug`, release guards and legacy Playwright tests. At that point it had no Android-test compilation or instrumentation job.
+
+Current workflow definition (2026-11-03): the build job runs `assembleDebugAndroidTest` and `compileDebugAndroidTestKotlin`. A separate API 35 emulator job runs the focused Prepositions artwork/layout and guided-listen Compose suites (7 parameterized/tests total) on pushes and pull requests. It uploads Android-test reports even on failure. This is a bounded regression gate, not the complete instrumentation suite or hardware/physical acceptance; the newly defined GitHub Actions job has not yet produced a run result.
+
+Compose/owner/navigation test existence and compilation do not prove execution. Browser speech mocks do not prove native audio, Compose behavior, Android navigation or device compatibility.
 
 | Evidence layer | Current recorded status / boundary |
 | --- | --- |
 | JVM/content/build | The 2026-10-08 implementation pass recorded 438 JVM, 36 Python and 55 browser passes, plus debug build/lint and six release guards. [CI for ccc6423](https://github.com/paulyglocke/Basti-Learning-Adventure-Public/actions/runs/37766428034) passed build/browser jobs. |
-| Android-test compilation | `compileDebugAndroidTestKotlin` passed locally for that implementation pass. This is separate from CI and from execution. |
-| Instrumentation execution | Not run for that pass: no emulator/device connected. Earlier recorded emulator passes apply to their named revisions and suites, not automatically to new Maths, Wilma or Prepositions behavior. Current affected-suite execution remains open. |
+| Android-test compilation | Explicit `assembleDebugAndroidTest` and `compileDebugAndroidTestKotlin` workflow gates are now defined. Their first GitHub Actions result is pending; prior local passes remain specific to their recorded revisions. |
+| Instrumentation execution | A bounded API 35 Prepositions Compose suite is now defined in CI. Its first GitHub Actions result is pending. Earlier emulator passes apply only to their named revisions and suites, not automatically to other behaviors. |
 | Physical acceptance | The ledger below records specific owner-reported S24 passes, not blanket acceptance. Preserve other dated evidence within its tested scope. New modes and the remaining S24 matrix are unverified; Fire Max remains outstanding. |
 | Signed distribution / upgrade | Push CI produced a debug artifact; its distribution job was skipped. Stable-signed release packaging requires manual main-branch dispatch. Neither packaging nor release-guard tests prove an in-place physical upgrade. |
 

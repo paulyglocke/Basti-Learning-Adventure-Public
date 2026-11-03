@@ -51,7 +51,7 @@ Already implemented and not active implementation backlog unless a regression is
 
 ## P1 — shared native experience
 
-- Close the native UI validation gap using existing affected Compose/owner/navigation suites on the designated emulator. Add explicit Android-test compilation and bounded emulator regression coverage to CI in a separate task. Current CI runs JVM/Python/browser/build/lint checks, not instrumentation; local compilation is not execution.
+- CI now defines explicit Android-test assembly/compilation and a bounded API 35 Prepositions Compose regression job (artwork/layout and guided Listen). First hosted Actions result is pending; local emulator results are recorded separately. Broader affected-suite and physical S24/Fire acceptance remain tracked in the QA ledger; do not treat this focused job as the full 603-test suite.
 
 - Lightweight shared visual-system baseline (initial rollout 2026-10-04; also reused by the native Maths activities):
   - primary, secondary/replay/help and navigation actions: shared NativeActionButton

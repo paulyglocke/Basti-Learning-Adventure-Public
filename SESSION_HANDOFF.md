@@ -1,5 +1,18 @@
 # Session handoff — 2026-10-21
 
+## CI — bounded Android instrumentation gate (2026-11-03)
+
+The GitHub Actions workflow now explicitly assembles and compiles Android tests,
+then runs the focused Prepositions artwork/layout and guided-listen Compose suites
+on an API 35 x86_64 emulator. The CI AVD uses a 12 GB data partition because the
+362 MB app APK could not install on the smaller local AVD; reports upload on both
+pass and failure. Signed distribution now waits for this job. Locally, workflow
+YAML parsing, `assembleDebugAndroidTest`, `compileDebugAndroidTestKotlin`, and
+`git diff --check` pass; the 4 artwork/layout and 3 guided-listen cases passed
+separately on the local API 35 AVD. The first hosted Actions result is pending.
+This gate does not run the full 603-test instrumentation suite or close physical
+device acceptance. Changes are local and uncommitted.
+
 ## Prepositions — two-choice follow-up (2026-11-02)
 
 Updated new Prepositions rounds after owner feedback from Basti: each scene now
@@ -23,8 +36,8 @@ was started but stopped after 7 tests because this emulator was progressing too
 slowly; it is not a full-suite pass. `Medium_Phone_API_35` could not install the
 362 MB app APK with 1.1 GB free, so the larger existing AVD was used. The
 implementation was committed and pushed to `main` as
-`5833bd710ad16e8eb59dd918c79bd806a88c8181`. This validation note and the corrected
-review test are local edits, not committed or pushed.
+`5833bd710ad16e8eb59dd918c79bd806a88c8181`. The validation correction and review
+test were subsequently committed and pushed as `9a55211`.
 
 ## Phase 5C.1 — Animals & Habitats foundation audit (2026-10-26; docs only)
 
