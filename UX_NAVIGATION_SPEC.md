@@ -8,6 +8,11 @@ UX Refresh Phase 3 integrates the approved illustrated Home with six bilingual b
 
 The illustrated Home owns its compact Grown-ups control and category Back/Home controls, without a duplicate shell header. Native Options and learning destinations retain their existing header. Home preserves the Phase 0 32sp/40sp greeting line-height correction, natural wrapping and scrolling. Available width and font scale choose columns; learning-screen colours and typography are not migrated.
 
+Category pages and All Activities use the reviewed artwork for each activity's
+browsing category as a compact, decorative thumbnail. The activity title and
+description remain the accessible text labels and the image does not replace or
+alter the existing destination.
+
 Category/All Activities Back returns to illustrated Home. Options returns to the exact browsing page; language changes retain that page. Activity-root Back deliberately retains its existing safe Home destination, not a new category parent. Nested learning Back and explicit Home contracts remain unchanged. Browsing pages and supported scroll state survive recreation; no learning checkpoint or progress identity changes.
 
 ## Home and progressive disclosure

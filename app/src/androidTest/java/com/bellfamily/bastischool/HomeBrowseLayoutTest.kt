@@ -72,6 +72,8 @@ class HomeBrowseLayoutTest(private val de: Boolean, private val scale: Float, pr
                 val card=homeActivity(id)
                 readable(if(de)card.titleDe else card.titleEn)
                 readable(if(de)card.descriptionDe else card.descriptionEn)
+                compose.onNodeWithTag("home-activity-art-$id", useUnmergedTree = true)
+                    .performScrollTo().assertIsDisplayed()
                 compose.onNodeWithTag("home-activity-$id").performScrollTo().performClick()
             }
             compose.onNodeWithTag("home-back").performClick()
@@ -79,7 +81,11 @@ class HomeBrowseLayoutTest(private val de: Boolean, private val scale: Float, pr
         assertEquals(6,settings)
         assertEquals(HomeCategory.entries.flatMap { it.activityIds },selected)
         compose.onNodeWithTag("home-all").performScrollTo().performClick()
-        homeActivities().forEach { readable(if(de)it.titleDe else it.titleEn) }
+        homeActivities().forEach {
+            readable(if(de)it.titleDe else it.titleEn)
+            compose.onNodeWithTag("home-activity-art-${it.homeId()}", useUnmergedTree = true)
+                .performScrollTo().assertIsDisplayed()
+        }
         compose.onNodeWithTag("home-activity-mixed").performScrollTo().performClick()
         assertEquals("mixed",selected.last())
         compose.onNodeWithTag("home-home").performClick()

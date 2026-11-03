@@ -136,9 +136,9 @@ internal fun HomeWelcomeCards(german: Boolean, open: (String) -> Unit, compactHe
             .coerceAtMost(if (compactHeight) 2 else 3)
         Column(verticalArrangement = Arrangement.spacedBy(BastiSpacing.medium)) {
             HomeCategory.entries.chunked(columns).forEach { row ->
-                Row(Modifier.fillMaxWidth().height(IntrinsicSize.Min), horizontalArrangement = Arrangement.spacedBy(BastiSpacing.medium)) {
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(BastiSpacing.medium)) {
                     row.forEach { category ->
-                        val cardModifier = Modifier.weight(1f).fillMaxHeight().testTag("home-category-${category.name}")
+                        val cardModifier = Modifier.weight(1f).testTag("home-category-${category.name}")
                         val choose = { open("category:${category.name}") }
                         if (compactHeight) CompactCategoryCard(category, german, choose, cardModifier)
                         else HomeCategoryBannerCard(category, german, choose, cardModifier)
@@ -243,18 +243,27 @@ internal fun HomeActivityGrid(cards: List<HomeCard>, german: Boolean, open: (Str
         val columns = if (maxWidth >= 640.dp * LocalDensity.current.fontScale) 2 else 1
         Column(verticalArrangement = Arrangement.spacedBy(BastiSpacing.medium)) {
             cards.chunked(columns).forEach { row ->
-                Row(Modifier.fillMaxWidth().height(IntrinsicSize.Min), horizontalArrangement = Arrangement.spacedBy(BastiSpacing.medium)) {
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(BastiSpacing.medium)) {
                     row.forEach { card ->
                         val id = card.homeId()
-                        Surface(onClick = { open("activity:$id") }, modifier = Modifier.weight(1f).fillMaxHeight()
+                        Surface(onClick = { open("activity:$id") }, modifier = Modifier.weight(1f)
                             .heightIn(min = BastiSpacing.minimumTarget).testTag("home-activity-$id")
                             .semantics { role = Role.Button }, shape = BastiShapes.card,
                             color = homeCategory(id)?.treatment?.container ?: BastiPalette.secondaryContainer,
                             contentColor = BastiPalette.ink, border = BorderStroke(1.dp, BastiPalette.outline)) {
-                            Column(Modifier.padding(BastiSpacing.medium), verticalArrangement = Arrangement.spacedBy(BastiSpacing.small)) {
-                                Text(if (german) card.titleDe else card.titleEn, Modifier.fillMaxWidth(), style = BastiTypography.answer)
-                                Text(if (german) card.descriptionDe else card.descriptionEn,
-                                    Modifier.fillMaxWidth(), style = BastiTypography.parentInformation)
+                            Row(Modifier.fillMaxWidth().padding(BastiSpacing.medium),
+                                horizontalArrangement = Arrangement.spacedBy(BastiSpacing.medium),
+                                verticalAlignment = Alignment.CenterVertically) {
+                                Image(homeCategoryBannerArt(homeActivityArtCategory(id)),
+                                    contentDescription = null,
+                                    modifier = Modifier.size(88.dp).testTag("home-activity-art-$id"),
+                                    contentScale = ContentScale.Crop)
+                                Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(BastiSpacing.small)) {
+                                    Text(if (german) card.titleDe else card.titleEn,
+                                        Modifier.fillMaxWidth(), style = BastiTypography.answer)
+                                    Text(if (german) card.descriptionDe else card.descriptionEn,
+                                        Modifier.fillMaxWidth(), style = BastiTypography.parentInformation)
+                                }
                             }
                         }
                     }
@@ -264,3 +273,8 @@ internal fun HomeActivityGrid(cards: List<HomeCard>, german: Boolean, open: (Str
         }
     }
 }
+
+/** Activity tiles inherit their section's reviewed artwork; Mixed Adventure uses the animal adventure scene. */
+private fun homeActivityArtCategory(id: String): HomeCategory =
+    if (id == "mixed") HomeCategory.ANIMALS
+    else requireNotNull(homeCategory(id)) { "Home activity '$id' needs an artwork category" }
