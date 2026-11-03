@@ -11,12 +11,12 @@ class ColoursSelectionStoreTest {
     @get:Rule val temp = TemporaryFolder()
     private val storage get() = AtomicProgressStorage(temp.newFolder(), JvmAtomicCommit)
 
-    @Test fun browseSelectionHasIndependentSmallDurableStateAndRejectsNonIntroColours() {
+    @Test fun browseSelectionHasIndependentSmallDurableStateAndAcceptsReviewedColours() {
         val disk = storage
         val store = ColoursSelectionStore(disk)
         assertEquals(ColoursContent.red, store.read())
-        store.write(ColoursContent.green)
-        assertEquals(ColoursContent.green, ColoursSelectionStore(disk).read())
-        assertThrows(IllegalArgumentException::class.java) { store.write(ContentId("colour.purple")) }
+        store.write(ColoursContent.purple)
+        assertEquals(ColoursContent.purple, ColoursSelectionStore(disk).read())
+        assertThrows(IllegalArgumentException::class.java) { store.write(ContentId("colour.indigo")) }
     }
 }
