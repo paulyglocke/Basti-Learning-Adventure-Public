@@ -16,6 +16,9 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.dp
 import com.bellfamily.bastischool.learning.addition.AdditionContent
+import com.bellfamily.bastischool.learning.addition.AdditionCurriculum
+import com.bellfamily.bastischool.learning.addition.AdditionChallengeContent
+import com.bellfamily.bastischool.learning.addition.AdditionFact
 import com.bellfamily.bastischool.learning.models.ContentLanguage
 import com.bellfamily.bastischool.learning.session.*
 import org.junit.Assert.*
@@ -28,10 +31,10 @@ class AdditionScreenTest {
     private lateinit var input: InputModeManager
     private var replays = 0
     private var again = 0
-    private fun show(language: ContentLanguage, short: Boolean = false) {
+    private fun show(language: ContentLanguage, short: Boolean = false, curriculum: AdditionCurriculum = AdditionContent) {
         fun fresh(id: String): SessionState {
-            val plan = (AdditionContent.generate(SessionId(id), RoundLength.FIVE, 4) as GenerationResult.Generated).plan
-            return SessionReducer.start(plan, language, AdditionContent.repository).state
+            val plan = (curriculum.generate(SessionId(id), RoundLength.FIVE, 4) as GenerationResult.Generated).plan
+            return SessionReducer.start(plan, language, curriculum.repository).state
         }
         state = mutableStateOf(fresh("ui-addition"))
         compose.setContent {
@@ -41,16 +44,17 @@ class AdditionScreenTest {
                     AdditionScreen(state.value, language, false, false, false,
                         { state.value = SessionReducer.reduce(state.value, it).state }, { replays++ },
                         { again++; state.value = fresh("again-$again") }, {}, {},
-                        Modifier.width(if (short) 640.dp else 320.dp).height(if (short) 300.dp else 700.dp))
+                        Modifier.width(if (short) 640.dp else 320.dp).height(if (short) 300.dp else 700.dp),
+                        curriculum = curriculum)
                 }
             }
         }
     }
-    private fun groups(language: ContentLanguage) {
-        val fact = AdditionContent.definition(state.value.task.question)
+    private fun groups(language: ContentLanguage, curriculum: AdditionCurriculum = AdditionContent) {
+        val fact = curriculum.definition(state.value.task.question)
         for ((first, n) in listOf(true to fact.left, false to fact.right)) {
             val tag = if (first) "addition-left" else "addition-right"
-            val label = AdditionContent.groupDescription(n, first, language)
+            val label = curriculum.groupDescription(n, first, language)
             compose.onNodeWithTag(tag).performScrollTo().assertContentDescriptionEquals(label).assert(hasNoClickAction())
             compose.onAllNodesWithContentDescription(label, useUnmergedTree = true).assertCountEquals(1)
             compose.onNodeWithTag(tag).onChildren().assertCountEquals(0)
@@ -101,5 +105,28 @@ class AdditionScreenTest {
         compose.onNodeWithTag("addition-complete").assertExists()
         compose.onNodeWithTag("addition-again").assertIsDisplayed().performClick()
         compose.runOnIdle { assertEquals(1, again); assertEquals(0, state.value.current.attempts); assertEquals(SessionPhase.ACTIVE, state.value.phase) }
+    }
+
+    @Test fun challengeShowsTheRequestedAddendsAndTenFrameQuantitiesInGerman() {
+        show(ContentLanguage.GERMAN, short = true, curriculum = AdditionChallengeContent)
+        val seen = mutableSetOf<AdditionFact>()
+        repeat(5) {
+            val fact = AdditionChallengeContent.definition(state.value.task.question)
+            seen += fact
+            groups(ContentLanguage.GERMAN, AdditionChallengeContent)
+            compose.onNodeWithTag("addition-left-number").performScrollTo().assertTextEquals(fact.left.toString())
+            compose.onNodeWithTag("addition-right-number").performScrollTo().assertTextEquals(fact.right.toString())
+            compose.onNodeWithTag("addition-prompt").performScrollTo().assertTextEquals("Wie viele sind es zusammen?")
+            val q = state.value.task.question
+            q.choices.forEach { id ->
+                compose.onNodeWithTag("addition-answer-${id.value.substringAfter('.')}")
+                    .performScrollTo().assertTextEquals(AdditionChallengeContent.numberValue(id).toString())
+            }
+            compose.onNodeWithTag("addition-answer-${q.correct.value.substringAfter('.')}").performScrollTo().performClick()
+            compose.onNodeWithTag("addition-next").performScrollTo().performClick()
+        }
+        assertTrue(AdditionFact(4, 7) in seen)
+        assertTrue(AdditionFact(5, 9) in seen)
+        compose.onNodeWithTag("addition-complete").assertExists()
     }
 }

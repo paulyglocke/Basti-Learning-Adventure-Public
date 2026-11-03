@@ -1,52 +1,56 @@
 package com.bellfamily.bastischool.learning.addition
 
 import com.bellfamily.bastischool.learning.models.*
-import com.bellfamily.bastischool.learning.progress.*
 import com.bellfamily.bastischool.learning.session.*
 import com.bellfamily.bastischool.learning.subitising.SubitisingContent
 import java.util.Collections
 import java.util.Random
 
 /** Concrete ordered pairs only: both groups are nonempty and the combined quantity is at most five. */
-object AdditionContent {
-    data class Fact(val left: Int, val right: Int) {
-        init { require(left in 1..4 && right in 1..4 && left + right <= 5) }
-        val total get() = left + right
-        val unordered get() = minOf(left, right) to maxOf(left, right)
-    }
-    val activity = ActivityId("activity.math.add_within_5")
-    val skill = SkillId("skill.math.addition.within_5")
-    val context = LearningContextId("context.math.addition")
-    const val REVISION = 1
-    val repository = SubitisingContent.repository
-    val title = ContentText.plain("Add Together", "Zusammenzählen")
-    val prompt = ContentText.plain("How many altogether?", "Wie viele sind es zusammen?")
-    val help = ContentText.plain("Put both groups together in your head and count how many there are altogether.",
+object AdditionContent : AdditionCurriculum {
+    override val activity = ActivityId("activity.math.add_within_5")
+    override val skill = SkillId("skill.math.addition.within_5")
+    // Keep the original context ID so saved Add Together checkpoints remain restorable.
+    override val context = LearningContextId("context.math.addition")
+    override val revision = 1
+    override val repository = SubitisingContent.repository
+    override val title = ContentText.plain("Add Together", "Zusammenzählen")
+    override val prompt = ContentText.plain("How many altogether?", "Wie viele sind es zusammen?")
+    override val help = ContentText.plain("Put both groups together in your head and count how many there are altogether.",
         "Stell dir beide Gruppen zusammen vor und zähle, wie viele es insgesamt sind.")
-    val completion = SubitisingContent.completion
-    fun catalogue(): List<Fact> = (1..4).flatMap { left -> (1..(5 - left)).map { right -> Fact(left, right) } }
+    override val completion = SubitisingContent.completion
+    override val useTenFrame = false
+    override fun catalogue(): List<AdditionFact> = (1..4).flatMap { left -> (1..(5 - left)).map { right -> AdditionFact(left, right) } }
     private fun name(n: Int) = SubitisingContent.numbers[n - 1].value.substringAfter('.')
-    private fun number(word: String) = SubitisingContent.quantity(ContentId("number.$word"))
-    fun groupDescription(n: Int, first: Boolean, language: ContentLanguage): String {
+    override fun numberId(number: Int): ContentId {
+        require(number in 1..5)
+        return SubitisingContent.numbers[number - 1]
+    }
+    override fun numberValue(id: ContentId) = SubitisingContent.quantity(id)
+    override fun groupDescription(n: Int, first: Boolean, language: ContentLanguage): String {
         val side = if (language == ContentLanguage.GERMAN) {
             if (first) "Erste Gruppe" else "Zweite Gruppe"
         } else if (first) "First group" else "Second group"
         return "$side, ${SubitisingContent.description(n).display[language]}"
     }
-    fun question(fact: Fact, choices: List<ContentId>) = ChoiceQuestion(
+    override fun question(fact: AdditionFact, choices: List<ContentId>): ChoiceQuestion {
+        require(fact.left in 1..4 && fact.right in 1..4 && fact.total <= 5)
+        return ChoiceQuestion(
         TaskDefinitionId("task.math.add_within_5.${name(fact.left)}.${name(fact.right)}.${name(fact.total)}"),
-        skill, context, 1, prompt, choices, SubitisingContent.numbers[fact.total - 1],
+        skill, context, 1, prompt, choices, numberId(fact.total),
         ContentText.plain("Yes, ${fact.total}!", "Ja, ${fact.total}!"),
         ContentText.plain("Try again.", "Versuch es noch einmal."), help)
+    }
 
-    fun definition(q: ChoiceQuestion): Fact {
+    override fun definition(q: ChoiceQuestion): AdditionFact {
         val p = q.definition.value.split('.')
         require(p.size == 6 && p.take(3) == listOf("task", "math", "add_within_5"))
-        val fact = Fact(number(p[3]), number(p[4]))
-        require(number(p[5]) == fact.total)
+        fun number(word: String) = SubitisingContent.quantity(ContentId("number.$word"))
+        val fact = AdditionFact(number(p[3]), number(p[4]))
+        require(number(p[5]) == fact.total && fact.left in 1..4 && fact.right in 1..4 && fact.total <= 5)
         return fact
     }
-    fun generate(id: SessionId, round: RoundLength, seed: Long): GenerationResult {
+    override fun generate(id: SessionId, round: RoundLength, seed: Long): GenerationResult {
         val random = Random(seed)
         fun <T> shuffle(items: List<T>) = items.toMutableList().also { Collections.shuffle(it, random) }
         val all = catalogue()
@@ -56,7 +60,7 @@ object AdditionContent {
             coverage + shuffle(all.filter { f -> coverage.none { it.unordered == f.unordered } }).first()
         }
         val remaining = shuffle(selected)
-        val ordered = mutableListOf<Fact>()
+        val ordered = mutableListOf<AdditionFact>()
         repeat(selected.size) {
             val counts = remaining.groupingBy { it.total }.eachCount()
             val candidates = remaining.filter { it.total != ordered.lastOrNull()?.total }
@@ -70,13 +74,13 @@ object AdditionContent {
             val choices = shuffle(listOf(correct) + shuffle(SubitisingContent.numbers.filter { it != correct }).take(3))
             ChoiceTask(TaskInstanceId(id, i + 1), question(fact, choices))
         }
-        val plan = SessionPlan(id, activity, REVISION, repository.version, SessionPolicy(round), tasks, completion)
+        val plan = SessionPlan(id, activity, revision, repository.version, SessionPolicy(round), tasks, completion)
         plan.validate(repository)
         return GenerationResult.Generated(plan)
     }
-    fun validate(state: SessionState) {
+    override fun validate(state: SessionState) {
         val p = state.plan
-        require(p.activity == activity && p.activityRevision == REVISION && p.contentVersion == repository.version)
+        require(p.activity == activity && p.activityRevision == revision && p.contentVersion == repository.version)
         require(p.policy.wrongAnswer == WrongAnswerPolicy.RETRY && p.completionText == completion)
         val facts = p.tasks.map { task ->
             val q = task.question
@@ -93,6 +97,4 @@ object AdditionContent {
         if (p.policy.round == RoundLength.TEN) require(facts.toSet() == catalogue().toSet())
         else require(facts.map { it.unordered }.toSet().size == facts.size)
     }
-    fun host(journal: ProgressStorage, progress: ProgressRepository) = DurableSessionHost(
-        journal, progress, activity, REVISION, repository, ::generate, ::validate)
 }

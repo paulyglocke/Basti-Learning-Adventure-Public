@@ -1,5 +1,20 @@
 # Session handoff — 2026-10-21
 
+## Maths — Add Bigger Numbers follow-up (2026-11-03)
+
+Owner feedback said Add Together within 5 felt too basic. Added a separate
+“Add Bigger Numbers” home activity for nonzero addends 3–10 and totals 6–20.
+Each group is displayed in a ten-frame with its numeral; both 5- and 10-question
+rounds include 4+7 and 5+9. The activity has a separate skill, context, and session
+journal. The original Add Together activity retains its activity/skill/context IDs
+so saved rounds continue to restore.
+
+Focused addition and home/navigation JVM tests passed, along with Android-test
+Kotlin compilation. Compose screen instrumentation did not run: the local API 35
+emulator lost its Package Manager service while Gradle was installing the APK
+(`Can't find service: package`). This is an environment failure before assertions,
+not a passing UI result. The feature and these notes are local and uncommitted.
+
 ## CI — bounded Android instrumentation gate (2026-11-03)
 
 The GitHub Actions workflow now explicitly assembles and compiles Android tests,

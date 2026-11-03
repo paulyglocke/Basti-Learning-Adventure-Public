@@ -10,7 +10,7 @@ import org.junit.Test
 class AdditionTest {
     private fun plan(round: RoundLength, seed: Long) =
         (AdditionContent.generate(SessionId("addition"), round, seed) as GenerationResult.Generated).plan
-    private fun question(fact: AdditionContent.Fact): ChoiceQuestion {
+    private fun question(fact: AdditionFact): ChoiceQuestion {
         val correct = SubitisingContent.numbers[fact.total - 1]
         return AdditionContent.question(fact, listOf(correct) + SubitisingContent.numbers.filter { it != correct }.take(3))
     }
@@ -26,9 +26,10 @@ class AdditionTest {
             assertEquals(fact, AdditionContent.definition(q))
             assertEquals(SubitisingContent.numbers[fact.total - 1], q.correct)
         }
-        for ((a, b) in listOf(0 to 1, 1 to 0, -1 to 2, 1 to 5, 3 to 3, 5 to 1)) {
-            assertThrows(IllegalArgumentException::class.java) { AdditionContent.Fact(a, b) }
+        for ((a, b) in listOf(0 to 1, 1 to 0, -1 to 2, 1 to 21, 0 to 5, 10 to 11)) {
+            assertThrows(IllegalArgumentException::class.java) { AdditionFact(a, b) }
         }
+        assertThrows(IllegalArgumentException::class.java) { AdditionContent.question(AdditionFact(1, 5), listOf(SubitisingContent.numbers[4])) }
     }
 
     @Test fun deterministicRoundsCoverTotalsAndChoicesWithoutAdjacentTotalsOrRepeatedFacts() {
@@ -71,7 +72,7 @@ class AdditionTest {
             assertEquals("Put both groups together in your head and count how many there are altogether.", q.hint!!.display.en)
             assertEquals("Stell dir beide Gruppen zusammen vor und zähle, wie viele es insgesamt sind.", q.hint!!.display.de)
         }
-        val q = question(AdditionContent.Fact(1, 1))
+        val q = question(AdditionFact(1, 1))
         val corrupt = ChoiceQuestion(TaskDefinitionId("task.math.add_within_5.one.one.three"),
             q.skill, q.context, q.difficulty, q.instruction, q.choices, q.correct, q.correctFeedback, q.wrongFeedback, q.hint)
         assertThrows(IllegalArgumentException::class.java) { AdditionContent.definition(corrupt) }

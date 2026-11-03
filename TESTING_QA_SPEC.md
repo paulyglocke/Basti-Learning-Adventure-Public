@@ -426,6 +426,7 @@ is asserted by this list.
 | Maths: More or Fewer | Equal-size left/right displays; all Left/Right/Same outcomes; no claim of a separate fewer-question mode; speech does not automatically reveal counts. |
 | Maths: Number Order | BEFORE/AFTER anchors remain within 1–5 without wraparound; MISSING sequence has one clear gap and one semantic group; exact sequence restore. |
 | Maths: Add Together | Two distinguishable nonempty groups and plus sign, totals 2–5; no automatic addend/answer narration; numeric choices reachable in short landscape. |
+| Maths: Add Bigger Numbers | Nonzero addends 3–10, totals 6–20; each group shows a ten-frame and its numeral; both 5- and 10-question rounds include 4+7 and 5+9; four unique numeric choices; independent skill/progress journal; short landscape and EN/DE labels remain reachable. |
 | Wilma TODAY | Explicit Today anchor, Yesterday/Tomorrow prompts, Monday/Sunday wrapping, EN/DE question/option speech and exact mode/anchor restoration. No actual-date inference. |
 | Wilma BILINGUAL | German left/English right, aligned seven-day rows, correct-language tap-to-speak, Off silence, readable 1.5× labels and focus order; no quiz/progress counter or completion flow. |
 | Seasons MISSING / CLUES / MATCH | Gap and clue meaning, independent Listen, correct match preservation after mistakes, exact restoration and appropriate completion. MATCH is a four-season matching set, not a 5/10-question quiz. |

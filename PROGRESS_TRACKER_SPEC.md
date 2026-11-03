@@ -43,6 +43,7 @@ Numbers:
 - subitise_1_to_5
 - more_less
 - addition_to_5
+- addition_to_20 (separate challenge skill; totals 6–20)
 
 Spatial:
 - in

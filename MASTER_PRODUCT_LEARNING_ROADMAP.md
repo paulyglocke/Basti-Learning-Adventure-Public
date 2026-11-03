@@ -455,6 +455,14 @@ separate fewer-question assessment, subtraction, or mastery/generalisation.
 Physical acceptance remains separate. The wider concept list above remains the
 curriculum direction, not a claim that every concept is implemented.
 
+Follow-up — 2026-11-03: owner feedback identified Add Together as too basic for
+continued practice. A separate Add Bigger Numbers activity extends addition with
+nonzero addends 3–10 and totals 6–20, keeps the original within-5 activity and its
+saved progress identity, and uses ten-frame groups with visible addend numerals.
+Both 5- and 10-question rounds include 4+7 and 5+9; challenge progress and journal
+are independent. This adds a symbolic/numeral-supported practice step without
+changing the original beginner curriculum checkpoint above.
+
 ### Manipulative quantity
 
 Maths should increasingly support manipulation.

@@ -3,17 +3,20 @@ package com.bellfamily.bastischool.ui.addition
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.unit.dp
 import com.bellfamily.bastischool.learning.addition.AdditionContent
+import com.bellfamily.bastischool.learning.addition.AdditionCurriculum
 import com.bellfamily.bastischool.learning.models.ContentLanguage
 import com.bellfamily.bastischool.learning.session.*
 import com.bellfamily.bastischool.ui.common.*
@@ -21,14 +24,39 @@ import com.bellfamily.bastischool.ui.subitising.DotPattern
 import com.bellfamily.bastischool.learning.subitising.SubitisingContent
 
 @Composable
-private fun AddendGroup(n: Int, left: Boolean, language: ContentLanguage, modifier: Modifier) {
+private fun AddendGroup(n: Int, left: Boolean, language: ContentLanguage,
+    curriculum: AdditionCurriculum, modifier: Modifier) {
     val side = if (left) "left" else "right"
     Column(modifier.testTag("addition-$side").clearAndSetSemantics {
-        contentDescription = AdditionContent.groupDescription(n, left, language)
+        contentDescription = curriculum.groupDescription(n, left, language)
     }, horizontalAlignment = Alignment.CenterHorizontally) {
+        if (curriculum.useTenFrame) Text(n.toString(), style = MaterialTheme.typography.headlineMedium,
+            modifier = Modifier.testTag("addition-$side-number"))
         BoxWithConstraints(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
             // Equal weighted columns produce identical square fields and dot size on both sides.
-            DotPattern(n, language, Modifier.size(maxWidth.coerceAtMost(224.dp)))
+            if (curriculum.useTenFrame) TenFrameDots(n, Modifier.size(maxWidth.coerceAtMost(224.dp)))
+            else DotPattern(n, language, Modifier.size(maxWidth.coerceAtMost(224.dp)))
+        }
+    }
+}
+
+@Composable
+private fun TenFrameDots(number: Int, modifier: Modifier = Modifier) {
+    require(number in 1..10)
+    BoxWithConstraints(modifier, contentAlignment = Alignment.Center) {
+        val dotSize = (maxWidth / 6).coerceAtMost(32.dp).coerceAtLeast(14.dp)
+        Column(verticalArrangement = Arrangement.Center) {
+            repeat(2) { row ->
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
+                    repeat(5) { column ->
+                        Box(Modifier.weight(1f).aspectRatio(1f), contentAlignment = Alignment.Center) {
+                            if (row * 5 + column < number) {
+                                Box(Modifier.size(dotSize).clip(CircleShape).background(MaterialTheme.colorScheme.primary))
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -36,7 +64,7 @@ private fun AddendGroup(n: Int, left: Boolean, language: ContentLanguage, modifi
 @Composable
 fun AdditionScreen(state: SessionState?, language: ContentLanguage, busy: Boolean, saveFailed: Boolean, audioFailed: Boolean,
     onAction: (SessionAction) -> Unit, onReplay: () -> Unit, onAgain: () -> Unit, onRetry: () -> Unit, onHome: () -> Unit,
-    modifier: Modifier = Modifier, onPop: (String) -> Unit = {}) {
+    modifier: Modifier = Modifier, onPop: (String) -> Unit = {}, curriculum: AdditionCurriculum = AdditionContent) {
     fun t(en: String, de: String) = if (language == ContentLanguage.GERMAN) de else en
     val ready = state != null && state.language == language && !busy && !saveFailed
     if (state?.phase == SessionPhase.COMPLETED) {
@@ -46,22 +74,22 @@ fun AdditionScreen(state: SessionState?, language: ContentLanguage, busy: Boolea
     }
     Column(modifier.fillMaxSize().background(Color(0xFFEAF7FC)).verticalScroll(rememberScrollState()).padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-        NativeActivityTitle(AdditionContent.title.display[language])
+        NativeActivityTitle(curriculum.title.display[language])
         if (state == null) Text(t("Opening…", "Wird geöffnet…")) else {
             NativeQuestionProgress(state.index + 1, state.plan.tasks.size, language)
-            val pair = AdditionContent.definition(state.task.question)
+            val pair = curriculum.definition(state.task.question)
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
-                AddendGroup(pair.left, true, language, Modifier.weight(1f))
+                AddendGroup(pair.left, true, language, curriculum, Modifier.weight(1f))
                 Text("+", style = MaterialTheme.typography.headlineLarge,
                     modifier = Modifier.testTag("addition-plus").clearAndSetSemantics {})
-                AddendGroup(pair.right, false, language, Modifier.weight(1f))
+                AddendGroup(pair.right, false, language, curriculum, Modifier.weight(1f))
             }
             Text(state.task.question.instruction.display[language], style = MaterialTheme.typography.headlineSmall,
                 modifier = Modifier.testTag("addition-prompt"))
             NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY, onReplay,
                 Modifier.fillMaxWidth().testTag("addition-replay"), ready)
             state.task.question.choices.forEach { id ->
-                NativeTextChoice(SubitisingContent.quantity(id).toString(),
+                NativeTextChoice(curriculum.numberValue(id).toString(),
                     { state.nextAttempt?.let { onAction(SessionAction.Answer(it, id)) } },
                     Modifier.fillMaxWidth().testTag("addition-answer-${id.value.substringAfter('.') }"),
                     ready && state.current.answer == AnswerState.UNANSWERED && state.nextAttempt != null)

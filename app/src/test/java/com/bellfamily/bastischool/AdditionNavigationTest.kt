@@ -14,4 +14,13 @@ class AdditionNavigationTest {
         assertEquals(ShellScreen.WEB, ShellNavigation().openActivity("math").screen)
         assertNotEquals(route, ShellNavigation().openSubitising())
     }
+
+    @Test fun challengeHasItsOwnRestorableRouteAndReturnsHome() {
+        val route = ShellNavigation().openAdditionChallenge()
+        assertEquals(ShellScreen.ADD_CHALLENGE, route.screen)
+        assertEquals(BackAction.NATIVE_HOME, route.backAction)
+        assertEquals(route, route.openOptions().closeOptions())
+        assertEquals(route, ShellNavigation.restore("ADD_CHALLENGE", "HOME", "verbs", null))
+        assertNotEquals(route, ShellNavigation().openAddTogether())
+    }
 }

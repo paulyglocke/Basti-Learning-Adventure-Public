@@ -16,10 +16,16 @@ import java.io.File
 import java.util.UUID
 import java.util.concurrent.Executors
 
-class AdditionViewModel @JvmOverloads constructor(
+open class AdditionViewModel protected constructor(
     application: Application,
-    engineFactory: () -> SpeechEngine = { AndroidSystemSpeechEngine(application) }
+    private val curriculum: AdditionCurriculum,
+    journalName: String,
+    engineFactory: () -> SpeechEngine
 ) : AndroidViewModel(application) {
+    @JvmOverloads
+    constructor(application: Application, engineFactory: () -> SpeechEngine = { AndroidSystemSpeechEngine(application) }) :
+        this(application, AdditionContent, "addition-session", engineFactory)
+
     var state by mutableStateOf<SessionState?>(null); private set
     var busy by mutableStateOf(false); private set
     var saveFailed by mutableStateOf(false); private set
@@ -27,7 +33,7 @@ class AdditionViewModel @JvmOverloads constructor(
     private val worker = Executors.newSingleThreadExecutor()
     private val main = Handler(Looper.getMainLooper())
     private val progress = AndroidProgressRepository.create(application)
-    private val host = AdditionContent.host(AtomicProgressStorage(File(application.noBackupFilesDir, "addition-session"), AndroidAtomicCommit), progress)
+    private val host = curriculum.host(AtomicProgressStorage(File(application.noBackupFilesDir, journalName), AndroidAtomicCommit), progress)
     private val audio = AdditionAudio(DefaultAudioController(engineFactory, AudioMode.OFF)) { audioFailed = it is SpeechResult.Failed }
     private var visible = false
     private var closed = false
@@ -90,3 +96,6 @@ class AdditionViewModel @JvmOverloads constructor(
     }
     override fun onCleared() { closed = true; audio.close(); worker.shutdown(); super.onCleared() }
 }
+
+class AdditionChallengeViewModel(application: Application) : AdditionViewModel(
+    application, AdditionChallengeContent, "addition-challenge-session", { AndroidSystemSpeechEngine(application) })
