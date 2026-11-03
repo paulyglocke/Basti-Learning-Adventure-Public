@@ -2,6 +2,7 @@ package com.bellfamily.bastischool.ui.home
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -10,6 +11,7 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
@@ -18,6 +20,7 @@ import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.bellfamily.bastischool.HomeCard
 import com.bellfamily.bastischool.ui.common.NativeActionButton
@@ -138,8 +141,7 @@ internal fun HomeWelcomeCards(german: Boolean, open: (String) -> Unit, compactHe
                         val cardModifier = Modifier.weight(1f).fillMaxHeight().testTag("home-category-${category.name}")
                         val choose = { open("category:${category.name}") }
                         if (compactHeight) CompactCategoryCard(category, german, choose, cardModifier)
-                        else BastiCategoryCard(category.label(german), homeCategoryArt(category), category.treatment,
-                            choose, cardModifier)
+                        else HomeCategoryBannerCard(category, german, choose, cardModifier)
                     }
                 }
             }
@@ -149,6 +151,30 @@ internal fun HomeWelcomeCards(german: Boolean, open: (String) -> Unit, compactHe
         Modifier.fillMaxWidth().semantics { heading() }, style = BastiTypography.homeHeading)
     NativeActionButton(t("All Activities", "Alle Aktivitäten"), NativeActionRole.SECONDARY,
         { open("all") }, Modifier.fillMaxWidth().testTag("home-all"))
+}
+
+@Composable
+private fun HomeCategoryBannerCard(category: HomeCategory, german: Boolean, onClick: () -> Unit, modifier: Modifier) {
+    val fontScale = LocalDensity.current.fontScale
+    val image = homeCategoryBannerArt(category)
+    Surface(onClick = onClick, modifier = modifier.heightIn(min = BastiSpacing.minimumTarget)
+        .semantics { role = Role.Button }, shape = BastiShapes.card,
+        color = category.treatment.container,
+        border = BorderStroke(1.dp, BastiPalette.outline)) {
+        BoxWithConstraints(Modifier.fillMaxWidth()) {
+            val bannerHeight = maxOf(maxWidth * .72f, 112.dp * fontScale)
+            Box(Modifier.fillMaxWidth().height(bannerHeight), contentAlignment = Alignment.BottomCenter) {
+                Image(image, contentDescription = null, modifier = Modifier.matchParentSize(),
+                    contentScale = ContentScale.Crop)
+                Text(category.label(german), Modifier.fillMaxWidth()
+                    .background(Color.Black.copy(alpha = .64f))
+                    .padding(horizontal = BastiSpacing.small, vertical = BastiSpacing.small)
+                    .testTag("home-category-title-${category.name}"),
+                    color = Color.White, style = BastiTypography.answer, fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center)
+            }
+        }
+    }
 }
 
 /** Home chrome only. Material keeps focus/ripple/keyboard semantics. */

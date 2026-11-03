@@ -91,3 +91,13 @@ internal fun homeCategoryArt(category: HomeCategory): Painter {
         }
     }
 }
+
+@Composable
+internal fun homeCategoryBannerArt(category: HomeCategory): Painter = painterResource(when (category) {
+    HomeCategory.MATHS -> R.drawable.home_maths
+    HomeCategory.WORDS -> R.drawable.home_words
+    HomeCategory.TIME -> R.drawable.home_time
+    HomeCategory.ANIMALS -> R.drawable.home_animals
+    HomeCategory.COLOURS -> R.drawable.home_colours
+    HomeCategory.EVERYDAY -> R.drawable.home_everyday
+})
