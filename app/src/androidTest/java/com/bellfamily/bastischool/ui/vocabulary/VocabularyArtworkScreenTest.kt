@@ -83,7 +83,7 @@ class VocabularyArtworkScreenTest(private val german: Boolean, private val orien
             click("word-${item.id.value}")
             compose.onNodeWithTag("vocabulary-art-${item.id.value}", useUnmergedTree = true).performScrollTo().assertIsDisplayed()
             compose.onNodeWithContentDescription(item.text.display[lang]).assertExists()
-            compose.onNodeWithText(item.visual.glyph).assertDoesNotExist()
+            compose.onNodeWithText(requireNotNull(item.visual).glyph).assertDoesNotExist()
         }
         showPhase(VocabularyPhase.FIND)
         val question = state.task.question

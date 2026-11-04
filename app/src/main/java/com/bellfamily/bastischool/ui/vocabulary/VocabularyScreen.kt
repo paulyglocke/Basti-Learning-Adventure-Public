@@ -89,7 +89,9 @@ fun VocabularyScreen(selection:VocabularySelection?,state:SessionState?,language
             NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY, onClick = onReplay,enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("vocabulary-replay"))
             if(state.phase==SessionPhase.ACTIVE) {
                 Text(state.task.question.instruction.display[language],style=MaterialTheme.typography.titleLarge)
-            if(selection.phase==VocabularyPhase.NAME) AnimalPicture(VocabularyContent.item(state.task.question.correct),language,images[state.task.question.correct],Modifier.fillMaxWidth(),imageHeightOverride=160.dp)
+                if(selection.phase==VocabularyPhase.NAME) {
+                    AnimalPicture(VocabularyContent.item(state.task.question.correct),language,images[state.task.question.correct],Modifier.fillMaxWidth(),imageHeightOverride=160.dp)
+                }
                 state.task.question.choices.chunked(2).forEach { row ->
                     Row(horizontalArrangement=Arrangement.spacedBy(8.dp)) {row.forEach { id ->
                         val item=VocabularyContent.item(id)

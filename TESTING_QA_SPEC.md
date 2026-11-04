@@ -195,6 +195,13 @@ The 2026-10-08 reconciliation against `ccc6423` documented the workflow's then-c
 
 Current workflow definition (2026-11-03): the build job runs `assembleDebugAndroidTest` and `compileDebugAndroidTestKotlin`. A separate API 35 emulator job runs the focused Prepositions artwork/layout and guided-listen Compose suites (7 parameterized/tests total) on pushes and pull requests. It uploads Android-test reports even on failure. This is a bounded regression gate, not the complete instrumentation suite or hardware/physical acceptance; the newly defined GitHub Actions job has not yet produced a run result.
 
+2026-11-04 startup incident: the focused CI selection now also includes
+`MainActivityStartupTest` (real shell launch, recreation and background return)
+and `VocabularyArtworkLoaderTest` (all registered assets plus corrupt/missing
+asset isolation). Isolated Compose tests do not prove the app can launch.
+See [the startup investigation](docs/startup-crash-2026-11-04.md) for the broken
+signed artifact, delivery boundary and current validation evidence.
+
 Compose/owner/navigation test existence and compilation do not prove execution. Browser speech mocks do not prove native audio, Compose behavior, Android navigation or device compatibility.
 
 | Evidence layer | Current recorded status / boundary |

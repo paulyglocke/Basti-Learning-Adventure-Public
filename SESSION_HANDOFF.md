@@ -1,5 +1,19 @@
 # Session handoff — 2026-10-21
 
+## Phone startup incident (2026-11-04)
+
+Owner confirmed installation of stable-signed v1019501, built from ca4ac5b.
+That source initializes four school repositories with invalid revision zero
+during MainActivity startup. The correction is already on main in 9ace496,
+but the installed artifact predates it. Repaired Vocabulary JVM artwork,
+Android nullable-visual compilation and loader-count checks plus indentation
+lint; added school repository initialization and real MainActivity lifecycle
+regressions, including the latter in CI. Full JVM 630/630, focused API 35 3/3,
+both APK builds and lint passed (zero errors, seven warnings). Repairs remain
+uncommitted; no replacement signed APK has been generated. Pending Food & Drink
+work is preserved and included in local validation. See
+[the investigation](docs/startup-crash-2026-11-04.md) before distribution.
+
 ## Maths — Make 5 number bonds (2026-11-03)
 
 Added a separate Make 5 activity. It displays a five-space frame with 1–4 dots and

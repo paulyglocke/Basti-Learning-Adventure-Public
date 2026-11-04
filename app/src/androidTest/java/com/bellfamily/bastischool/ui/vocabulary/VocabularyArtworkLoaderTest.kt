@@ -7,7 +7,7 @@ import java.io.ByteArrayInputStream
 import java.io.IOException
 
 class VocabularyArtworkLoaderTest {
-    @Test fun allSixImagesDecodeOnceAtBoundedSizeAndReuseTheSameCache() {
+    @Test fun allImagesDecodeOnceAtBoundedSizeAndReuseTheSameCache() {
         val assets = InstrumentationRegistry.getInstrumentation().targetContext.assets
         var reads = 0
         val loader = VocabularyArtworkLoader { reads++; assets.open(it) }
@@ -15,7 +15,7 @@ class VocabularyArtworkLoaderTest {
         assertEquals(VocabularyArtwork.paths.keys, images.keys)
         images.values.forEach { assertTrue(it.width in 1..384 && it.height in 1..384) }
         assertSame(images, loader.load())
-        assertEquals(12, reads)
+        assertEquals(VocabularyArtwork.paths.size * 2, reads)
     }
 
     @Test fun missingAndCorruptImagesAreIsolatedAndCachedWithoutReplacingThemWithOtherAnimals() {
@@ -32,6 +32,6 @@ class VocabularyArtworkLoaderTest {
         val images = loader.load()
         assertEquals(VocabularyArtwork.paths.keys.drop(1).dropLast(1).toSet(), images.keys)
         assertSame(images, loader.load())
-        assertEquals(10, reads)
+        assertEquals((VocabularyArtwork.paths.size - 2) * 2 + 2, reads)
     }
 }
