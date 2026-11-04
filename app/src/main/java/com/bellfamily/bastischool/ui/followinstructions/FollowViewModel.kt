@@ -10,6 +10,7 @@ import com.bellfamily.bastischool.audio.*
 import com.bellfamily.bastischool.audio.android.AndroidSystemSpeechEngine
 import com.bellfamily.bastischool.learning.follow.*
 import com.bellfamily.bastischool.learning.models.*
+import com.bellfamily.bastischool.learning.schoolskills.SchoolSkillsContent
 import com.bellfamily.bastischool.learning.progress.AtomicProgressStorage
 import com.bellfamily.bastischool.learning.progress.android.*
 import com.bellfamily.bastischool.learning.session.*
@@ -17,7 +18,7 @@ import java.io.File
 import java.util.UUID
 import java.util.concurrent.Executors
 
-enum class FollowLevel { ONE, TWO }
+enum class FollowLevel { ONE, TWO, SCHOOL_SKILLS }
 
 class FollowViewModel @JvmOverloads constructor(
     application: Application,
@@ -25,7 +26,9 @@ class FollowViewModel @JvmOverloads constructor(
 ) : AndroidViewModel(application) {
     var state by mutableStateOf<SessionState?>(null); private set
     var twoState by mutableStateOf<FollowTwoState?>(null); private set
+    var schoolState by mutableStateOf<SessionState?>(null); private set
     var images by mutableStateOf<Map<ContentId, ImageBitmap>>(emptyMap()); private set
+    var schoolScene by mutableStateOf<ImageBitmap?>(null); private set
     var busy by mutableStateOf(false); private set
     var saveFailed by mutableStateOf(false); private set
     var audioFailed by mutableStateOf(false); private set
@@ -34,6 +37,7 @@ class FollowViewModel @JvmOverloads constructor(
     private val progress = AndroidProgressRepository.create(application)
     private val host = FollowContent.host(AtomicProgressStorage(File(application.noBackupFilesDir, "follow-instructions-session"), AndroidAtomicCommit), progress)
     private val twoHost = FollowTwoHost(AtomicProgressStorage(File(application.noBackupFilesDir, "follow-instructions-two-session"), AndroidAtomicCommit), progress)
+    private val schoolHost = SchoolSkillsContent.host(AtomicProgressStorage(File(application.noBackupFilesDir, "school-skills-session"), AndroidAtomicCommit), progress)
     private val loader = FollowArtworkLoader { application.assets.open(it) }
     private val audio = FollowAudio(DefaultAudioController(engineFactory, AudioMode.OFF)) { audioFailed = it is SpeechResult.Failed }
     private var visible = false
@@ -53,9 +57,13 @@ class FollowViewModel @JvmOverloads constructor(
     fun setVisible(value: Boolean, nextLevel: FollowLevel? = FollowLevel.ONE) {
         if (visible == value && level == nextLevel) return
         visible = value; level = nextLevel; epoch++; audio.visible(value && nextLevel != null)
-        if (value && !loaded) { loaded = true; worker.execute { val result = loader.load(); main.post { if (!closed) images = result } } }
+        if (value && !loaded) { loaded = true; worker.execute {
+            val result = loader.load(); val classroom = loader.loadSchoolScene()
+            main.post { if (!closed) { images = result; schoolScene = classroom } }
+        } }
         if (value && nextLevel == FollowLevel.ONE && !busy) ensureOne()
         if (value && nextLevel == FollowLevel.TWO && !busy) ensureTwo()
+        if (value && nextLevel == FollowLevel.SCHOOL_SKILLS && !busy) ensureSchool()
     }
     private fun ensureOne() {
         if (state == null) work { host.open(SessionId(UUID.randomUUID().toString()), round, System.nanoTime(), language) }
@@ -65,27 +73,42 @@ class FollowViewModel @JvmOverloads constructor(
         if (twoState == null) twoWork { twoHost.open(SessionId(UUID.randomUUID().toString()), round, System.nanoTime(), language) }
         else syncLanguage()
     }
+    private fun ensureSchool() {
+        if (schoolState == null) schoolWork { schoolHost.open(SessionId(UUID.randomUUID().toString()), round, System.nanoTime(), language) }
+        else syncLanguage()
+    }
     private fun syncLanguage() {
         if (!busy && level == FollowLevel.ONE && host.state?.language != language && host.state != null)
             work { host.dispatch(SessionAction.Language(language)) }
         if (!busy && level == FollowLevel.TWO && twoHost.state?.language != language && twoHost.state != null)
             twoWork { twoHost.dispatch(FollowTwoAction.Language(language)) }
+        if (!busy && level == FollowLevel.SCHOOL_SKILLS && schoolHost.state?.language != language && schoolHost.state != null)
+            schoolWork { schoolHost.dispatch(SessionAction.Language(language)) }
     }
     fun replay() { state?.let { action(SessionAction.Replay(it.task.id)) } }
     fun action(action: SessionAction) { if (!ready(FollowLevel.ONE)) return; epoch++; audio.cancel(); work { host.dispatch(action) } }
     fun twoAction(action: FollowTwoAction) { if (!ready(FollowLevel.TWO)) return; epoch++; audio.cancel(); twoWork { twoHost.dispatch(action) } }
+    fun schoolAction(action: SessionAction) { if (!ready(FollowLevel.SCHOOL_SKILLS)) return; epoch++; audio.cancel(); schoolWork { schoolHost.dispatch(action) } }
     fun twoReplay() { twoState?.let { twoAction(FollowTwoAction.Replay(it.taskId)) } }
+    fun schoolReplay() { schoolState?.let { schoolAction(SessionAction.Replay(it.task.id)) } }
     fun twoExample() { val current = twoState ?: return; if (ready(FollowLevel.TWO)) {
         epoch++; audio.effects(current.id, language, listOf(SessionEffect.Narrate(FollowTwo.demonstration,
             NarrationKind.INSTRUCTION, SpeechTrigger.MANUAL)))
     } }
     fun retrySave() { if (!busy && level == FollowLevel.ONE) work { host.retryWrites(); emptyList() }
-        else if (!busy && level == FollowLevel.TWO) twoWork { twoHost.retryWrites(); null } }
+        else if (!busy && level == FollowLevel.TWO) twoWork { twoHost.retryWrites(); null }
+        else if (!busy && level == FollowLevel.SCHOOL_SKILLS) schoolWork { schoolHost.retryWrites(); emptyList() } }
     fun again() { if (!ready(FollowLevel.ONE) || state?.phase != SessionPhase.COMPLETED) return; epoch++; audio.cancel(); work { host.newRound(SessionId(UUID.randomUUID().toString()), round, System.nanoTime(), language) } }
     fun twoAgain() { if (!ready(FollowLevel.TWO) || twoState?.completed != true) return; epoch++; audio.cancel()
         twoWork { twoHost.again(SessionId(UUID.randomUUID().toString()), round, System.nanoTime(), language) } }
+    fun schoolAgain() { if (!ready(FollowLevel.SCHOOL_SKILLS) || schoolState?.phase != SessionPhase.COMPLETED) return; epoch++; audio.cancel()
+        schoolWork { schoolHost.newRound(SessionId(UUID.randomUUID().toString()), round, System.nanoTime(), language) } }
     private fun ready(expected: FollowLevel) = visible && level == expected && !busy && !saveFailed &&
-        (if (expected == FollowLevel.ONE) state?.language == language else twoState?.language == language)
+        when (expected) {
+            FollowLevel.ONE -> state?.language == language
+            FollowLevel.TWO -> twoState?.language == language
+            FollowLevel.SCHOOL_SKILLS -> schoolState?.language == language
+        }
     private fun work(operation: () -> List<SessionEffect>) {
         if (busy || closed) return
         busy = true; val token = ++epoch
@@ -123,11 +146,29 @@ class FollowViewModel @JvmOverloads constructor(
             }
         }
     }
+    private fun schoolWork(operation: () -> List<SessionEffect>) {
+        if (busy || closed) return
+        busy = true; val token = ++epoch
+        worker.execute {
+            val result = runCatching(operation)
+            val next = schoolHost.state; val pending = schoolHost.failure
+            main.post {
+                if (!closed) {
+                    busy = false; saveFailed = result.isFailure || pending
+                    if (next != null) schoolState = next
+                    if (!saveFailed && token == epoch && next != null && visible && level == FollowLevel.SCHOOL_SKILLS && next.language == language)
+                        audio.effects(next.plan.id, language, result.getOrDefault(emptyList()))
+                    if (!saveFailed) ensureCurrent()
+                }
+            }
+        }
+    }
     private fun ensureCurrent() {
         if (!visible || busy) return
         when (level) {
             FollowLevel.ONE -> ensureOne()
             FollowLevel.TWO -> ensureTwo()
+            FollowLevel.SCHOOL_SKILLS -> ensureSchool()
             null -> Unit
         }
     }

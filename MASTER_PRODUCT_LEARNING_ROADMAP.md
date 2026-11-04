@@ -894,6 +894,17 @@ Useful language includes:
 
 Prefer contextual scenes and meaningful routines over isolated flashcards.
 
+Checkpoint — 2026-11-04: the Follow the Instructions chooser now includes an
+introductory Useful Words at School round. Five contextual prompts practise one
+possible phrase for asking for help, requesting a repeat, saying a task is unclear,
+asking for a break, and asking where an item belongs. The child matches one of four
+phrases; wording avoids presenting a single social response as universally correct.
+Rounds are balanced 5/10 sessions in English and German, with the approved classroom
+routine scene, Replay/Hint, saved progress and the shared completion flow. This is
+phrase-recognition practice, not a claim about real-world communication or behaviour.
+Following classroom action instructions and broader school routines remain future
+work.
+
 ---
 
 ## Feelings, communication and self-advocacy

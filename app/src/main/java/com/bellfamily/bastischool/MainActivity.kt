@@ -322,6 +322,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.SUBITISING -> nativeSubitising.state?.phase != SessionPhase.COMPLETED
             ShellScreen.LETTERS -> nativeLetters.state?.phase != SessionPhase.COMPLETED
             ShellScreen.FOLLOW_INSTRUCTIONS -> nativeFollow.state?.phase != SessionPhase.COMPLETED
+            ShellScreen.FOLLOW_SCHOOL -> nativeFollow.schoolState?.phase != SessionPhase.COMPLETED
             else -> false
         }
         var language by remember { mutableStateOf(prefs.getString("lang", "en") ?: "en") }
@@ -387,6 +388,7 @@ class MainActivity : ComponentActivity() {
                                     ShellScreen.MAKE_FIVE -> if (language == "de") "Fünf ergänzen" else "Make 5"
                                     ShellScreen.COUNTING_TRAY -> if (language == "de") "Dinosaurier-Zählfeld" else "Dinosaur Counting Tray"
                                     ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO -> if (language == "de") "Anweisungen folgen" else "Follow the Instructions"
+                                    ShellScreen.FOLLOW_SCHOOL -> if (language == "de") "Hilfreiche Worte" else "Useful Words at School"
                                     ShellScreen.SEASONS -> if (language == "de") "Jahreszeiten" else "Seasons"
                                     ShellScreen.SEASONS_CHOOSER -> if (language == "de") "Jahreszeiten" else "Seasons"
                                 },
@@ -710,6 +712,7 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier.padding(padding), onPop = ::popCelebration)
                         ShellScreen.FOLLOW_LEVELS -> FollowLevelsScreen(if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             { changeRoute(navigation.openFollowOne()) }, { changeRoute(navigation.openFollowTwo()) },
+                            { changeRoute(navigation.openFollowSchoolSkills()) },
                             { changeRoute(navigation.home()) }, Modifier.padding(padding))
                         ShellScreen.FOLLOW_INSTRUCTIONS -> FollowScreen(nativeFollow.state, if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             nativeFollow.images, nativeFollow.busy, nativeFollow.saveFailed, nativeFollow.audioFailed,
@@ -721,6 +724,13 @@ class MainActivity : ComponentActivity() {
                             nativeFollow::twoAction, nativeFollow::twoReplay, nativeFollow::twoExample, nativeFollow::twoAgain,
                             nativeFollow::retrySave, { changeRoute(navigation.home()) }, Modifier.padding(padding), ::popCelebration,
                             { changeRoute(navigation.openFollowInstructions()) })
+                        ShellScreen.FOLLOW_SCHOOL -> SchoolSkillsScreen(nativeFollow.schoolState,
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            nativeFollow.schoolScene, nativeFollow.busy, nativeFollow.saveFailed, nativeFollow.audioFailed,
+                            nativeFollow::schoolAction, nativeFollow::schoolReplay,
+                            { celebrationSound.cancel(); nativeFollow.schoolAgain() }, nativeFollow::retrySave,
+                            { changeRoute(navigation.home()) }, { changeRoute(navigation.openFollowInstructions()) },
+                            Modifier.padding(padding), ::popCelebration)
                         ShellScreen.WEB -> Unit
                         ShellScreen.DAYS_SEASONS -> DaysSeasonsHub(
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
@@ -854,7 +864,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.MIXED_ADDITION -> nativeMixedAddition.busy || nativeMixedAddition.saveFailed
             ShellScreen.MAKE_FIVE -> nativeMakeFive.busy || nativeMakeFive.saveFailed
             ShellScreen.COUNTING_TRAY -> nativeCountingTray.busy || nativeCountingTray.saveFailed
-            ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO -> nativeFollow.busy || nativeFollow.saveFailed
+            ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO, ShellScreen.FOLLOW_SCHOOL -> nativeFollow.busy || nativeFollow.saveFailed
             else -> true
         }
         if(unavailable) return
@@ -891,6 +901,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.COUNTING_TRAY -> nativeCountingTray.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.FOLLOW_INSTRUCTIONS -> nativeFollow.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.FOLLOW_TWO -> nativeFollow.twoState?.takeIf {it.completed && it.acknowledged}?.id?.value
+            ShellScreen.FOLLOW_SCHOOL -> nativeFollow.schoolState?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.WILMA -> when(nativeWilma.selection?.phase) {
                 WilmaPhase.ORDER -> nativeWilma.ordering?.takeIf {it.completed}?.id?.value
                 WilmaPhase.FIND, WilmaPhase.RELATIONS, WilmaPhase.TODAY -> nativeWilma.quiz?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
@@ -962,8 +973,8 @@ class MainActivity : ComponentActivity() {
         nativeMakeFive.configure(prefs.getString("lang", "en") ?: "en",
             prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all", prefs.getInt("round", 5))
         nativeMakeFive.setVisible(foreground && route.screen == ShellScreen.MAKE_FIVE)
-        nativeFollow.setVisible(foreground && route.screen in setOf(ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO),
-            when (route.screen) { ShellScreen.FOLLOW_INSTRUCTIONS -> FollowLevel.ONE; ShellScreen.FOLLOW_TWO -> FollowLevel.TWO; else -> null })
+        nativeFollow.setVisible(foreground && route.screen in setOf(ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO, ShellScreen.FOLLOW_SCHOOL),
+            when (route.screen) { ShellScreen.FOLLOW_INSTRUCTIONS -> FollowLevel.ONE; ShellScreen.FOLLOW_TWO -> FollowLevel.TWO; ShellScreen.FOLLOW_SCHOOL -> FollowLevel.SCHOOL_SKILLS; else -> null })
         nativeWilma.setVisible(foreground && route.screen in setOf(ShellScreen.WILMA_CHOOSER, ShellScreen.WILMA))
         updateWebActivity()
     }
@@ -1131,6 +1142,17 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun updateWebActivity() {
+        if (foreground) nativeFollow.configure(prefs.getString("lang", "en") ?: "en",
+            prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
+            prefs.getInt("round", 5))
+        nativeFollow.setVisible(foreground && navigation.screen in setOf(
+            ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO, ShellScreen.FOLLOW_SCHOOL),
+            when (navigation.screen) {
+                ShellScreen.FOLLOW_INSTRUCTIONS -> FollowLevel.ONE
+                ShellScreen.FOLLOW_TWO -> FollowLevel.TWO
+                ShellScreen.FOLLOW_SCHOOL -> FollowLevel.SCHOOL_SKILLS
+                else -> null
+            })
         nativeCountingTray.configure(prefs.getString("lang", "en") ?: "en",
             prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
             prefs.getInt("round", 5))

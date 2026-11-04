@@ -99,6 +99,12 @@ as correct or incorrect. Replay and Help are attached as support to the checked
 attempt; completing a round emits the normal completion event. This keeps exploratory
 touches from inflating practice counts and does not infer mastery.
 
+School Skills phrase-round attempts record recognition of an authored phrase in its
+scenario prompt. They do not imply that the child used that phrase in real life,
+preferred it, or has a social/emotional competency. Phrase examples are possibilities,
+not universal correct responses; keep this activity's skill separate from classroom
+behaviour, speech production or help-seeking mastery.
+
 ## Generalisation
 A skill should only become Secure after success across multiple genuinely varied contexts, not repeated success with one memorised object pairing.
 

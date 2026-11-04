@@ -461,6 +461,19 @@ shared progress-event and completion schemas are unchanged. The Activity-scoped
 ViewModel retains independent level owners and the existing owner-local audio
 lifecycle; silent restore never automatically speaks or records an attempt.
 
+### School Skills phrase starter (2026-11-04)
+
+Useful Words at School is a bounded third destination in the Follow chooser. Its
+`SchoolSkillsContent` owns five authored EN/DE phrase definitions, scenario prompts,
+skill/context identity and a deterministic balanced 5/10 generator with no adjacent
+repeated target. It uses the shared `SessionState`, `DurableSessionHost`, checkpoint
+codec, progress recorder, completion flow and existing Follow audio owner; its saved
+round is independent at `school-skills-session`. The approved classroom routine scene
+is decoded through the existing worker-confined artwork loader, never from Compose.
+Progress means matching an authored phrase to its prompt only; it does not represent
+real-world phrase use, speech production or social behaviour. Broader classroom action
+instructions remain future content, not a new instruction engine.
+
 ## Native sorting: Colour Sort first consumer (2026-09-29)
 
 `learning/sorting/Sorting.kt` is a pure semantic membership primitive: a rule has stable
