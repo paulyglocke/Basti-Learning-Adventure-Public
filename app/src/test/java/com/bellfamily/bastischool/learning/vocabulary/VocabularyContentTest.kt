@@ -84,7 +84,7 @@ class VocabularyContentTest {
         val store=VocabularySelectionStore(disk)
         store.write(VocabularySelection())
         val valid=disk.access {it.read()!!}
-        for(bytes in listOf(byteArrayOf(1),valid+byteArrayOf(0),valid.copyOf().also {it[3]=2})) {
+        for(bytes in listOf(byteArrayOf(1),valid+byteArrayOf(0),valid.copyOf().also {it[3]=3})) {
             disk.access {it.replace(bytes)}
             assertThrows(Exception::class.java) {store.read()}
             assertArrayEquals(bytes,disk.access {it.read()})

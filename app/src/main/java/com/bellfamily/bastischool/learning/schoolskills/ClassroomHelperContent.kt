@@ -57,7 +57,7 @@ object ClassroomHelperContent {
         prompt("bag", "desk", "Put the backpack on the desk.", "Leg den Rucksack auf den Tisch.")
     )
     private val promptByDefinition = prompts.associateBy { it.definition }
-    val repository: ContentRepository = BundledContentRepository(ContentVersion(1, 0), places.map {
+    val repository: ContentRepository = BundledContentRepository(ContentVersion(1, 1), places.map {
         SemanticObjectDefinition(it.id, it.label)
     }, emptyList())
 

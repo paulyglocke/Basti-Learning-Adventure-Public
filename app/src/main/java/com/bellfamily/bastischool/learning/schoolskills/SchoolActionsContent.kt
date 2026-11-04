@@ -31,7 +31,7 @@ object SchoolActionsContent {
             ContentText.plain("Put the book on the shelf.", "Stell das Buch ins Regal."), "school_actions/book_shelf.png")
     )
     private val byId = actions.associateBy { it.id }
-    val repository: ContentRepository = BundledContentRepository(ContentVersion(1, 0), actions.map {
+    val repository: ContentRepository = BundledContentRepository(ContentVersion(1, 1), actions.map {
         SemanticObjectDefinition(it.id, it.label)
     }, emptyList())
 

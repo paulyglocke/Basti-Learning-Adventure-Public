@@ -38,7 +38,7 @@ object SchoolActionTripleContent {
     }
     private val byId = sequences.associateBy { it.id }
     private val indexById = sequences.mapIndexed { index, sequence -> sequence.id to index }.toMap()
-    val repository: ContentRepository = BundledContentRepository(ContentVersion(1, 0), sequences.map {
+    val repository: ContentRepository = BundledContentRepository(ContentVersion(1, 1), sequences.map {
         SemanticObjectDefinition(it.id, it.label)
     }, emptyList())
 
