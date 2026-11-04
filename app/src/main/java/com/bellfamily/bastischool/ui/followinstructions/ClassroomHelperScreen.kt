@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -56,6 +58,9 @@ fun ClassroomHelperScreen(
     val taskKey = state?.task?.question?.definition?.value ?: "opening"
     var selectedItem by rememberSaveable(taskKey) { mutableStateOf<String?>(null) }
     var itemMismatch by rememberSaveable(taskKey) { mutableStateOf(false) }
+    val placementProgress by animateFloatAsState(
+        targetValue = if (state?.current?.answer == AnswerState.CORRECT) 1f else 0f,
+        animationSpec = tween(420), label = "classroom-item-placement")
     val ready = !busy && !saveFailed && state != null && state.language == language
     if (state?.phase == SessionPhase.COMPLETED) {
         NativeCompletionScreen(state.plan.id.value, language, state.plan.completionText.display[language], ready,
@@ -122,12 +127,25 @@ fun ClassroomHelperScreen(
                 }
                 AnswerState.CORRECT -> {
                     NativeSupportMessage(state.task.question.correctFeedback.display[language], Modifier.testTag("classroom-helper-feedback"))
-                    Row(Modifier.fillMaxWidth().background(Color.White, RoundedCornerShape(16.dp)).padding(12.dp),
-                        verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                        images[prompt.item.id]?.let { Image(it, prompt.item.label.display[language], Modifier.size(72.dp).clip(RoundedCornerShape(12.dp))) }
-                        Text("→", style = MaterialTheme.typography.headlineMedium)
-                        images[prompt.place.id]?.let { Image(it, prompt.place.label.display[language], Modifier.size(96.dp).clip(RoundedCornerShape(12.dp))) }
+                    val target = when (prompt.place.id.value.substringAfterLast('.')) {
+                        "desk" -> 100.dp to 64.dp
+                        "cup" -> 112.dp to 110.dp
+                        "teacher" -> 138.dp to 112.dp
+                        "shelf" -> 98.dp to 76.dp
+                        "under_table" -> 142.dp to 120.dp
+                        "inside_bag" -> 94.dp to 96.dp
+                        else -> 158.dp to 126.dp
                     }
+                    Box(Modifier.fillMaxWidth().height(190.dp).clip(RoundedCornerShape(16.dp))
+                        .background(Color.White).testTag("classroom-helper-placement-result"), contentAlignment = Alignment.TopStart) {
+                        images[prompt.place.id]?.let { Image(it, null, Modifier.fillMaxSize(), contentScale = ContentScale.Crop) }
+                        images[prompt.item.id]?.let { Image(it, null,
+                            Modifier.offset(x = 2.dp + (target.first - 2.dp) * placementProgress,
+                                y = 122.dp + (target.second - 122.dp) * placementProgress)
+                                .size(52.dp).clip(RoundedCornerShape(10.dp)), contentScale = ContentScale.Crop) }
+                    }
+                    Text("${prompt.item.label.display[language]} → ${prompt.place.label.display[language]}",
+                        style = MaterialTheme.typography.titleMedium)
                     NativeActionButton(t(if (state.index == state.plan.tasks.lastIndex) "Finish" else "Next",
                         if (state.index == state.plan.tasks.lastIndex) "Fertig" else "Weiter"), NativeActionRole.PRIMARY, {
                         selectedItem = null

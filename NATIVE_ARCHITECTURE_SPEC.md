@@ -503,7 +503,9 @@ object/place prompts use four item tiles and seven destination tiles. The child 
 named item, then a destination; item selection is local exploratory state, while the
 destination is the shared-session answer. Wrong-item selections are not recorded, and a
 wrong destination uses normal durable retry. Board images load on the worker. Progress
-means a selected destination after the named item, not real-world task completion.
+means a selected destination after the named item, not real-world task completion. On
+correct placement, Compose animates the selected item into the destination scene; this
+presentation is ephemeral and does not alter the durable answer/checkpoint contract.
 
 ## Native sorting: Colour Sort first consumer (2026-09-29)
 
