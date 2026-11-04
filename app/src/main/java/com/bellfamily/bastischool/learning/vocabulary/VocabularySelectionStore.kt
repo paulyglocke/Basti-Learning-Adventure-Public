@@ -10,15 +10,16 @@ class VocabularySelectionStore(private val storage: ProgressStorage) {
         val bytes = tx.read() ?: return@access VocabularySelection()
         require(bytes.size in 12..256)
         DataInputStream(ByteArrayInputStream(bytes)).use {
-            require(it.readInt() == 1)
-            val state = VocabularySelection(ContentId(it.readUTF()), VocabularyPhase.valueOf(it.readUTF()))
+            val version=it.readInt();require(version in 1..2)
+            val selected=ContentId(it.readUTF());val phase=VocabularyPhase.valueOf(it.readUTF())
+            val state = VocabularySelection(selected,phase,if(version==1) ContentId("category.animals") else ContentId(it.readUTF()))
             require(it.available() == 0)
             state
         }
     }
     fun write(state: VocabularySelection) {
         val bytes = ByteArrayOutputStream()
-        DataOutputStream(bytes).use { it.writeInt(1); it.writeUTF(state.selected.value); it.writeUTF(state.phase.name) }
+        DataOutputStream(bytes).use { it.writeInt(2); it.writeUTF(state.selected.value); it.writeUTF(state.phase.name);it.writeUTF(state.category.value) }
         storage.access { it.replace(bytes.toByteArray()) }
     }
 }

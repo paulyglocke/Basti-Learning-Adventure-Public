@@ -12,7 +12,12 @@ data class VocabularyCategory(override val id: ContentId, override val text: Con
 }
 
 data class VocabularyDefinition(override val id: ContentId, override val text: ContentText,
-    val category: ContentId, val visual: TemporaryAnimalVisual, val example: ContentText,
-    val findPrompt: ContentText): ContentDefinition {
-    init { require(id == visual.animal); require(category.value.startsWith("category.")) }
+    val category: ContentId, val visual: TemporaryAnimalVisual?, val example: ContentText,
+    val findPrompt: ContentText, val artwork: String? = null): ContentDefinition {
+    init {
+        require(visual == null || id == visual.animal)
+        require(category.value.startsWith("category."))
+        require(artwork == null || artwork.isNotBlank())
+        require(visual != null || artwork != null)
+    }
 }

@@ -89,7 +89,7 @@ fun VocabularyScreen(selection:VocabularySelection?,state:SessionState?,language
             NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY, onClick = onReplay,enabled=canAct,modifier=Modifier.fillMaxWidth().heightIn(min=56.dp).testTag("vocabulary-replay"))
             if(state.phase==SessionPhase.ACTIVE) {
                 Text(state.task.question.instruction.display[language],style=MaterialTheme.typography.titleLarge)
-                if(selection.phase==VocabularyPhase.NAME) AnimalPicture(VocabularyContent.item(state.task.question.correct),language,images[state.task.question.correct],Modifier.fillMaxWidth(),imageHeightOverride=160.dp)
+            if(selection.phase==VocabularyPhase.NAME) AnimalPicture(VocabularyContent.item(state.task.question.correct),language,images[state.task.question.correct],Modifier.fillMaxWidth(),imageHeightOverride=160.dp)
                 state.task.question.choices.chunked(2).forEach { row ->
                     Row(horizontalArrangement=Arrangement.spacedBy(8.dp)) {row.forEach { id ->
                         val item=VocabularyContent.item(id)
@@ -168,7 +168,8 @@ private fun ExploreWordControls(
 ) {
     fun t(en:String,de:String)=if(language==ContentLanguage.GERMAN)de else en
     Column(modifier,verticalArrangement=Arrangement.spacedBy(12.dp)) {
-        Text(t("Explore an animal","Ein Tier entdecken"),style=MaterialTheme.typography.titleLarge)
+        val isClassroom=selection.category==VocabularyContent.classroom
+        Text(if(isClassroom)t("Explore classroom things","Klassenzimmer entdecken") else t("Explore animals","Tiere entdecken"),style=MaterialTheme.typography.titleLarge)
         Text(selection.item.text.display[language],style=MaterialTheme.typography.headlineMedium,
             modifier=Modifier.testTag("vocabulary-word"))
         NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY,
@@ -178,8 +179,8 @@ private fun ExploreWordControls(
             onClick=onExample,enabled=ready,modifier=Modifier.heightIn(min=56.dp).testTag("vocabulary-example"))
         Text(t("Can you say the word in your own sentence? You can ask someone to help.",
             "Kannst du mit dem Wort einen eigenen Satz sagen? Du kannst dir helfen lassen."))
-        Text(t("Choose another animal","Wähle ein anderes Tier"),style=MaterialTheme.typography.titleMedium)
-        NativeChoiceRows(VocabularyContent.items) { item ->
+        Text(if(isClassroom)t("Choose another classroom thing","Wähle etwas anderes aus dem Klassenzimmer") else t("Choose another animal","Wähle ein anderes Tier"),style=MaterialTheme.typography.titleMedium)
+        NativeChoiceRows(VocabularyContent.items(selection.category)) { item ->
             OutlinedButton({onSelect(item.id)},enabled=ready,modifier=Modifier.weight(1f).heightIn(min=56.dp).testTag("word-${item.id.value}")) {
                 Text(item.text.display[language])
             }

@@ -118,6 +118,7 @@ import com.bellfamily.bastischool.learning.seasons.SeasonsPhase
 import com.bellfamily.bastischool.learning.vocabulary.VocabularyPhase
 import com.bellfamily.bastischool.learning.wilma.WilmaPhase
 import com.bellfamily.bastischool.learning.models.ContentLanguage
+import com.bellfamily.bastischool.learning.models.ContentId
 
 private val Sky = Color(0xFF79CEF7)
 private val Grass = Color(0xFFA8E66C)
@@ -140,7 +141,7 @@ internal data class HomeCard(
 
 private val homeCards = listOf(
     HomeCard("💬", "Tell Me!", "Erzähl mal!", "Talk about an adventure picture.", "Erzähle von einem Abenteuerbild.", mode = "tellme"),
-    HomeCard("📚", "Vocabulary Booster", "Wortschatz", "Explore familiar animal words.", "Vertraute Tiernamen entdecken.", mode = "vocabulary"),
+    HomeCard("📚", "Vocabulary Booster", "Wortschatz", "Explore animals and classroom words.", "Tiere und Wörter aus dem Klassenzimmer entdecken.", mode = "vocabulary"),
     HomeCard("🎬", "Learn Verbs", "Verben lernen", "Watch, hear and learn each action.", "Aktionen anschauen, anhören und lernen.", verbExplorer = true),
     HomeCard("🔤", "Animal First Letters", "Tier-Anfangsbuchstaben", "Which animal starts with this letter?", "Welches Tier beginnt mit diesem Buchstaben?", "letters"),
     HomeCard("🔢", "Numbers", "Zahlen", "Count and order numbers up to your level.", "Zahlen zählen und ordnen.", "count"),
@@ -771,6 +772,8 @@ class MainActivity : ComponentActivity() {
                                 nativeVocabulary.phase(phase)
                                 changeRoute(navigation.openVocabularyActivity())
                             },
+                            category = nativeVocabulary.selection?.category ?: ContentId("category.animals"),
+                            onCategory = nativeVocabulary::category,
                             onRetry = nativeVocabulary::retry,
                             onHome = { changeRoute(navigation.home()) },
                             modifier = Modifier.padding(padding))

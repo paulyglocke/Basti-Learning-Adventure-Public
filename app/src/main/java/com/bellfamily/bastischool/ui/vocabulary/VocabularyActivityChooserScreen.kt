@@ -41,13 +41,16 @@ fun VocabularyActivityChooserScreen(
     busy: Boolean,
     saveFailed: Boolean,
     onChoose: (VocabularyPhase) -> Unit,
+    category: ContentId = ContentId("category.animals"),
+    onCategory: (ContentId) -> Unit = {},
     onRetry: () -> Unit,
     onHome: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val german = language == ContentLanguage.GERMAN
     fun t(en: String, de: String) = if (german) de else en
-    val dinosaur = VocabularyContent.item(ContentId("animal.dinosaur"))
+    val selectedCategory = category
+    val cover = VocabularyContent.items(selectedCategory).first()
 
     Column(modifier.fillMaxSize().background(BastiPalette.background)
         .verticalScroll(rememberScrollState())
@@ -56,6 +59,23 @@ fun VocabularyActivityChooserScreen(
         NativeActivityTitle(t("Vocabulary Booster", "Wortschatz"), Modifier.semantics { heading() })
         Text(t("Choose what to do", "Wähle, was du machen möchtest"),
             Modifier.fillMaxWidth(), style = BastiTypography.instruction, color = BastiPalette.ink)
+
+        Text(t("Choose a word set", "Wähle eine Wortgruppe"), Modifier.fillMaxWidth().semantics { heading() },
+            style = BastiTypography.answer, color = BastiPalette.ink)
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(BastiSpacing.small)) {
+            listOf(ContentId("category.animals"), VocabularyContent.classroom).forEach { set ->
+                val title = if(set == VocabularyContent.classroom) t("Classroom things", "Klassenzimmer") else t("Animals", "Tiere")
+                Surface(onClick = { onCategory(set) }, enabled = ready && !busy && !saveFailed,
+                    modifier = Modifier.weight(1f).heightIn(min = BastiSpacing.minimumTarget)
+                        .testTag("vocabulary-category-${set.value.substringAfter('.')}").semantics { role = Role.Button },
+                    shape = BastiShapes.control, color = if(set == selectedCategory) BastiPalette.secondaryContainer else BastiPalette.surface,
+                    contentColor = BastiPalette.ink, border = BorderStroke(1.dp, BastiPalette.outline)) {
+                    Box(Modifier.padding(BastiSpacing.medium), contentAlignment = Alignment.Center) {
+                        Text(title, style = BastiTypography.answer)
+                    }
+                }
+            }
+        }
 
         Surface(onClick = { onChoose(VocabularyPhase.EXPLORE) },
             enabled = ready && !busy && !saveFailed,
@@ -68,21 +88,21 @@ fun VocabularyActivityChooserScreen(
                 if (sideBySide) {
                     Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.spacedBy(BastiSpacing.medium)) {
-                        images[dinosaur.id]?.let { image ->
+                        images[cover.id]?.let { image ->
                             Image(image, contentDescription = null,
                                 Modifier.weight(1f).heightIn(min = 120.dp, max = 200.dp)
                                     .testTag("vocabulary-chooser-artwork"), contentScale = ContentScale.Fit)
                         }
-                        ExploreCopy(language, Modifier.weight(1.2f))
+                        ExploreCopy(language, selectedCategory, Modifier.weight(1.2f))
                     }
                 } else {
                     Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(BastiSpacing.small)) {
-                        images[dinosaur.id]?.let { image ->
+                        images[cover.id]?.let { image ->
                             Image(image, contentDescription = null,
                                 Modifier.fillMaxWidth().heightIn(min = 120.dp, max = 160.dp)
                                     .testTag("vocabulary-chooser-artwork"), contentScale = ContentScale.Fit)
                         }
-                        ExploreCopy(language, Modifier.fillMaxWidth())
+                        ExploreCopy(language, selectedCategory, Modifier.fillMaxWidth())
                     }
                 }
             }
@@ -91,10 +111,10 @@ fun VocabularyActivityChooserScreen(
         Text(t("Practise", "Üben"), Modifier.fillMaxWidth().semantics { heading() },
             style = BastiTypography.answer, color = BastiPalette.ink)
         VocabularyChoice(VocabularyPhase.FIND, t("Find the word", "Finde das Wort"),
-            t("Listen and choose the animal picture.", "Höre zu und wähle das Tierbild."),
+            if(selectedCategory==VocabularyContent.classroom) t("Listen and choose the classroom picture.","Höre zu und wähle das Klassenraumbild.") else t("Listen and choose the animal picture.", "Höre zu und wähle das Tierbild."),
             ready && !busy && !saveFailed, onChoose)
         VocabularyChoice(VocabularyPhase.NAME, t("What is it?", "Was ist das?"),
-            t("Look at the animal and choose its name.", "Sieh dir das Tier an und wähle seinen Namen."),
+            if(selectedCategory==VocabularyContent.classroom) t("Look at the picture and choose its name.","Sieh dir das Bild an und wähle den Namen.") else t("Look at the animal and choose its name.", "Sieh dir das Tier an und wähle seinen Namen."),
             ready && !busy && !saveFailed, onChoose)
 
         if (busy && !ready) Text(t("Opening Vocabulary…", "Wortschatz wird geöffnet …"),
@@ -112,14 +132,17 @@ fun VocabularyActivityChooserScreen(
 }
 
 @Composable
-private fun ExploreCopy(language: ContentLanguage, modifier: Modifier = Modifier) {
+private fun ExploreCopy(language: ContentLanguage, category: ContentId, modifier: Modifier = Modifier) {
     val german = language == ContentLanguage.GERMAN
     Column(modifier, verticalArrangement = Arrangement.spacedBy(BastiSpacing.small)) {
         Text(if (german) "Wörter entdecken" else "Explore words",
             Modifier.fillMaxWidth().semantics { heading() },
             style = BastiTypography.answer, color = BastiPalette.ink)
-        Text(if (german) "Sieh ein Tier, lerne seinen Namen und höre zu."
-            else "See an animal, learn its name and listen.",
+        Text(if(category==VocabularyContent.classroom) {
+            if(german) "Sieh einen Gegenstand, lerne seinen Namen und höre zu." else "See a classroom thing, learn its name and listen."
+        } else {
+            if(german) "Sieh ein Tier, lerne seinen Namen und höre zu." else "See an animal, learn its name and listen."
+        },
             Modifier.fillMaxWidth(), style = BastiTypography.parentInformation, color = BastiPalette.ink)
     }
 }

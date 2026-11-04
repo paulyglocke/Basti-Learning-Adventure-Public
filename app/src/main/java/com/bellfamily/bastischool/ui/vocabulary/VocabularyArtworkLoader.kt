@@ -7,7 +7,7 @@ import com.bellfamily.bastischool.learning.models.ContentId
 import java.io.IOException
 import java.io.InputStream
 
-/** Worker-confined, bounded six-image cache. Failed decodes are cached too. */
+/** Worker-confined, bounded vocabulary-art cache. Failed decodes are cached too. */
 internal class VocabularyArtworkLoader(private val open: (String) -> InputStream) {
     private var cached: Map<ContentId, ImageBitmap>? = null
 

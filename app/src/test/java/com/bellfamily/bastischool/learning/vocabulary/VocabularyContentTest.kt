@@ -15,14 +15,15 @@ class VocabularyContentTest {
             "fish" to ("Fish" to "Fisch"),"horse" to ("Horse" to "Pferd"),"snake" to ("Snake" to "Schlange"),"whale" to ("Whale" to "Wal"))
         assertEquals(expected.keys.map {ContentId("animal.$it")}.toSet(),VocabularyContent.items.map {it.id}.toSet())
         VocabularyContent.items.forEach {item ->
+            val visual=requireNotNull(item.visual)
             val names=expected.getValue(item.id.value.substringAfter('.'))
             assertEquals(names.first,item.text.display.en);assertEquals(names.second,item.text.display.de)
-            assertEquals(item.id,item.visual.animal);assertTrue(item.visual.glyph.isNotBlank())
+            assertEquals(item.id,visual.animal);assertTrue(visual.glyph.isNotBlank())
             assertEquals(ContentId("category.animals"),item.category)
             assertTrue(VocabularyContent.repository.find(item.category) is VocabularyCategory)
             for(lang in ContentLanguage.entries) {
                 assertEquals(item.text.display[lang],item.text.speech[lang])
-                assertFalse(item.findPrompt.speech[lang].contains(item.visual.glyph))
+                assertFalse(item.findPrompt.speech[lang].contains(visual.glyph))
                 assertTrue(item.example.speech[lang].isNotBlank())
             }
         }

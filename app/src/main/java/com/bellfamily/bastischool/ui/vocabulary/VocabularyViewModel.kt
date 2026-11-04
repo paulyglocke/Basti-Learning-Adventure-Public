@@ -33,7 +33,11 @@ class VocabularyViewModel @JvmOverloads constructor(
     private fun storage(name:String)=AtomicProgressStorage(File(getApplication<Application>().noBackupFilesDir,name),AndroidAtomicCommit)
     private val progress=AndroidProgressRepository.create(application)
     private val browse=VocabularySelectionStore(storage("vocabulary-selection"))
-    private val quizzes=listOf(VocabularyPhase.FIND,VocabularyPhase.NAME).associateWith {VocabularyContent.host(it,storage("vocabulary-${it.name.lowercase()}"),progress)}
+    private val categories=listOf(ContentId("category.animals"),VocabularyContent.classroom)
+    private val quizzes=categories.flatMap { category -> listOf(VocabularyPhase.FIND,VocabularyPhase.NAME).map { phase ->
+        (category to phase) to VocabularyContent.host(phase,category,storage("vocabulary-${category.value.substringAfter('.')}-${phase.name.lowercase()}"),progress)
+    }}.toMap()
+    private fun host(category:ContentId,phase:VocabularyPhase)=quizzes[category to phase]
     private val worker=Executors.newSingleThreadExecutor()
     private val main=Handler(Looper.getMainLooper())
     private val audio=VocabularyAudio(DefaultAudioController(engineFactory,AudioMode.OFF)){audioFailed=it is SpeechResult.Failed}
@@ -70,18 +74,19 @@ class VocabularyViewModel @JvmOverloads constructor(
         val differs=quiz?.language?.let {it!=language}==true
         if(!busy && !saveFailed && differs) {
             val lang=language
-            work {quizzes[phase]?.dispatch(SessionAction.Language(lang));emptyList()}
+            work {host(selection?.category ?: selected.category,phase)?.dispatch(SessionAction.Language(lang));emptyList()}
         }
     }
     private fun ready()=visible && !busy && !saveFailed && selection!=null
     private fun boundary(){epoch++;audio.cancel()}
-    private fun openPhase(phase:VocabularyPhase,count:RoundLength,lang:ContentLanguage):List<SessionEffect> {
+    private fun openPhase(phase:VocabularyPhase,category:ContentId,count:RoundLength,lang:ContentLanguage):List<SessionEffect> {
+        val host=host(category,phase)
         val effects=when(phase) {
             VocabularyPhase.EXPLORE -> emptyList()
-            else -> quizzes.getValue(phase).let {if(it.state==null)it.open(id(),count,System.nanoTime(),lang) else emptyList()}
+            else -> host!!.let {if(it.state==null)it.open(id(),count,System.nanoTime(),lang) else emptyList()}
         }
         // A returned phase may have been left in the other language; change identity-neutral text silently.
-        quizzes[phase]?.let {if(it.state?.language!=lang)it.dispatch(SessionAction.Language(lang))}
+        host?.let {if(it.state?.language!=lang)it.dispatch(SessionAction.Language(lang))}
         return effects
     }
     fun phase(phase:VocabularyPhase) {
@@ -89,10 +94,17 @@ class VocabularyViewModel @JvmOverloads constructor(
         boundary();val count=round;val lang=language
         work {
             if(phase==VocabularyPhase.EXPLORE) {
-                quizzes[selected.phase]?.state?.takeIf {it.hintAvailable}?.let {quizzes.getValue(selected.phase).dispatch(SessionAction.Hint(it.task.id))}
+                host(selected.category,selected.phase)?.state?.takeIf {it.hintAvailable}?.let {host(selected.category,selected.phase)?.dispatch(SessionAction.Hint(it.task.id))}
             }
-            val effects=openPhase(phase,count,lang)
+            val effects=openPhase(phase,selected.category,count,lang)
             val next=selected.copy(phase=phase);browse.write(next);selected=next;effects
+        }
+    }
+    fun category(category:ContentId) {
+        if(!ready() || category !in categories || category==selected.category)return
+        boundary();work(exploreSpeech=true){
+            val next=VocabularySelection(VocabularyContent.items(category).first().id,VocabularyPhase.EXPLORE,category)
+            browse.write(next);selected=next;emptyList()
         }
     }
     fun select(item:ContentId) {
@@ -110,13 +122,13 @@ class VocabularyViewModel @JvmOverloads constructor(
     fun example() {if(ready() && selection?.phase==VocabularyPhase.EXPLORE){boundary();audio.example(selection!!.selected,language)}}
     fun action(action:SessionAction) {
         if(!ready())return
-        val host=quizzes[selection!!.phase] ?: return
+        val host=host(selection!!.category,selection!!.phase) ?: return
         boundary();work {host.dispatch(action)}
     }
     fun again() {
         if(!ready() || quiz?.phase!=SessionPhase.COMPLETED)return
-        val phase=selection!!.phase;val count=round;val lang=language
-        boundary();work {quizzes.getValue(phase).newRound(id(),count,System.nanoTime(),lang)}
+        val phase=selection!!.phase;val category=selection!!.category;val count=round;val lang=language
+        boundary();work {host(category,phase)!!.newRound(id(),count,System.nanoTime(),lang)}
     }
     fun retry() {
         if(busy)return
@@ -125,7 +137,7 @@ class VocabularyViewModel @JvmOverloads constructor(
             selected=browse.read()
             // Retry all loaded journals, including an uncertain write immediately before a phase switch.
             quizzes.values.filter {it.state!=null}.forEach {it.retryWrites()}
-            openPhase(selected.phase,count,lang)
+            openPhase(selected.phase,selected.category,count,lang)
             emptyList() // Restore/retry never narrates old instructions.
         }
     }
@@ -135,7 +147,7 @@ class VocabularyViewModel @JvmOverloads constructor(
         worker.execute {
             var failed=false
             val effects=try{operation()}catch(_:Exception){failed=true;emptyList()}
-            val selectedSnapshot=selected;val q=quizzes[selected.phase]?.state
+            val selectedSnapshot=selected;val q=host(selected.category,selected.phase)?.state
             val pendingFailure=quizzes.values.any {it.failure}
             main.post {
                 if(!closed) {
