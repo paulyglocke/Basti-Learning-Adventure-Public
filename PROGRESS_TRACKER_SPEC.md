@@ -116,6 +116,11 @@ separate from one-action recognition; it does not prove real-world action perfor
 The three-actions-in-order challenge applies the same boundary to an ordered triple.
 Progress records selecting a picture sequence, not completing the classroom actions.
 
+Classroom Helper first requires selecting the authored item in the prompt, then records
+the chosen destination. Wrong-item exploration is not an attempt event; destination
+choices are. This evidence describes interaction with the app board only, not moving
+real objects, independence or classroom performance.
+
 ## Generalisation
 A skill should only become Secure after success across multiple genuinely varied contexts, not repeated success with one memorised object pairing.
 

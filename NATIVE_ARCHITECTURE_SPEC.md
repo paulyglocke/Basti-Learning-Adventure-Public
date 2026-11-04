@@ -497,6 +497,14 @@ each four-picture task includes the exact reverse order. Each choice composes th
 worker-loaded action pictures and has an accessible bilingual label. It shares the
 choice-session lifecycle and records sequence matching only.
 
+`ClassroomHelperContent` adds `activity.school.classroom_helper` with its own
+`classroom-helper-session` journal and item-placement skill. Twelve authored bilingual
+object/place prompts use four item tiles and seven destination tiles. The child taps the
+named item, then a destination; item selection is local exploratory state, while the
+destination is the shared-session answer. Wrong-item selections are not recorded, and a
+wrong destination uses normal durable retry. Board images load on the worker. Progress
+means a selected destination after the named item, not real-world task completion.
+
 ## Native sorting: Colour Sort first consumer (2026-09-29)
 
 `learning/sorting/Sorting.kt` is a pure semantic membership primitive: a rule has stable

@@ -920,6 +920,13 @@ from the same five action pictures. Every question includes the exact reverse or
 distractor; 5/10-question rounds do not repeat an ordered triple. Progress records
 sequence-picture matching only. Direct physical-action interaction remains future work.
 
+Checkpoint — 2026-11-04: added Classroom Helper, a reversible two-tap board for 12
+authored object/location instructions. The child chooses the named item, then its
+destination from illustrated targets; wrong-item exploration is supported without an
+attempt record, while destination answers use the durable session flow. Progress reflects
+app-board matching only. On-device child, accessibility and target-size review remains
+deferred.
+
 ---
 
 ## Feelings, communication and self-advocacy

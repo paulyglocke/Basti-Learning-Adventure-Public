@@ -7,6 +7,7 @@ import com.bellfamily.bastischool.learning.follow.FollowContent
 import com.bellfamily.bastischool.learning.models.ContentId
 import com.bellfamily.bastischool.learning.schoolskills.SchoolSkillsContent
 import com.bellfamily.bastischool.learning.schoolskills.SchoolActionsContent
+import com.bellfamily.bastischool.learning.schoolskills.ClassroomHelperContent
 import java.io.InputStream
 
 internal class FollowArtworkLoader(private val open: (String) -> InputStream) {
@@ -65,4 +66,19 @@ internal class FollowArtworkLoader(private val open: (String) -> InputStream) {
         } catch (_: Exception) { null }
         image?.let { action.id to it }
     }.toMap()
+
+    fun loadClassroomBoard(): Map<ContentId, ImageBitmap> {
+        val targets = ClassroomHelperContent.items.map { it.id to it.asset } + ClassroomHelperContent.places.map { it.id to it.asset }
+        return targets.mapNotNull { (id, asset) ->
+        val image = try {
+            val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+            open(asset).use { BitmapFactory.decodeStream(it, null, bounds) }
+            require(bounds.outWidth > 0 && bounds.outHeight > 0)
+            var sample = 1
+            while ((maxOf(bounds.outWidth, bounds.outHeight).toLong() + sample - 1) / sample > 256) sample *= 2
+            open(asset).use { BitmapFactory.decodeStream(it, null, BitmapFactory.Options().apply { inSampleSize = sample })?.asImageBitmap() }
+        } catch (_: Exception) { null }
+        image?.let { id to it }
+        }.toMap()
+    }
 }

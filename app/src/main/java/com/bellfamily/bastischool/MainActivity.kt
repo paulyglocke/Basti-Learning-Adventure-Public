@@ -326,6 +326,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.FOLLOW_SCHOOL_ACTIONS -> nativeFollow.schoolActionsState?.phase != SessionPhase.COMPLETED
             ShellScreen.FOLLOW_SCHOOL_ACTION_SEQUENCE -> nativeFollow.actionSequenceState?.phase != SessionPhase.COMPLETED
             ShellScreen.FOLLOW_SCHOOL_ACTION_TRIPLE -> nativeFollow.actionTripleState?.phase != SessionPhase.COMPLETED
+            ShellScreen.FOLLOW_CLASSROOM_HELPER_BOARD -> nativeFollow.classroomHelperState?.phase != SessionPhase.COMPLETED
             else -> false
         }
         var language by remember { mutableStateOf(prefs.getString("lang", "en") ?: "en") }
@@ -395,6 +396,7 @@ class MainActivity : ComponentActivity() {
                                     ShellScreen.FOLLOW_SCHOOL_ACTIONS -> if (language == "de") "Aktionen im Klassenzimmer" else "Classroom Actions"
                                     ShellScreen.FOLLOW_SCHOOL_ACTION_SEQUENCE -> if (language == "de") "Zwei Aktionen der Reihe nach" else "Two Actions in Order"
                                     ShellScreen.FOLLOW_SCHOOL_ACTION_TRIPLE -> if (language == "de") "Drei Aktionen der Reihe nach" else "Three Actions in Order"
+                                    ShellScreen.FOLLOW_CLASSROOM_HELPER_BOARD -> if (language == "de") "Klassenzimmer-Hilfe" else "Classroom Helper"
                                     ShellScreen.SEASONS -> if (language == "de") "Jahreszeiten" else "Seasons"
                                     ShellScreen.SEASONS_CHOOSER -> if (language == "de") "Jahreszeiten" else "Seasons"
                                 },
@@ -718,7 +720,7 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier.padding(padding), onPop = ::popCelebration)
                         ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO,
                         ShellScreen.FOLLOW_SCHOOL, ShellScreen.FOLLOW_SCHOOL_ACTIONS, ShellScreen.FOLLOW_SCHOOL_ACTION_SEQUENCE,
-                        ShellScreen.FOLLOW_SCHOOL_ACTION_TRIPLE -> FollowRoute(
+                        ShellScreen.FOLLOW_SCHOOL_ACTION_TRIPLE, ShellScreen.FOLLOW_CLASSROOM_HELPER_BOARD -> FollowRoute(
                             navigation.screen, navigation, nativeFollow, language, Modifier.padding(padding),
                             ::changeRoute, { celebrationSound.cancel() }, ::popCelebration)
                         ShellScreen.WEB -> Unit
@@ -857,6 +859,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO, ShellScreen.FOLLOW_SCHOOL, ShellScreen.FOLLOW_SCHOOL_ACTIONS,
             ShellScreen.FOLLOW_SCHOOL_ACTION_SEQUENCE -> nativeFollow.busy || nativeFollow.saveFailed
             ShellScreen.FOLLOW_SCHOOL_ACTION_TRIPLE -> nativeFollow.busy || nativeFollow.saveFailed
+            ShellScreen.FOLLOW_CLASSROOM_HELPER_BOARD -> nativeFollow.busy || nativeFollow.saveFailed
             else -> true
         }
         if(unavailable) return
@@ -897,6 +900,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.FOLLOW_SCHOOL_ACTIONS -> nativeFollow.schoolActionsState?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.FOLLOW_SCHOOL_ACTION_SEQUENCE -> nativeFollow.actionSequenceState?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.FOLLOW_SCHOOL_ACTION_TRIPLE -> nativeFollow.actionTripleState?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
+            ShellScreen.FOLLOW_CLASSROOM_HELPER_BOARD -> nativeFollow.classroomHelperState?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.WILMA -> when(nativeWilma.selection?.phase) {
                 WilmaPhase.ORDER -> nativeWilma.ordering?.takeIf {it.completed}?.id?.value
                 WilmaPhase.FIND, WilmaPhase.RELATIONS, WilmaPhase.TODAY -> nativeWilma.quiz?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
@@ -968,8 +972,8 @@ class MainActivity : ComponentActivity() {
         nativeMakeFive.configure(prefs.getString("lang", "en") ?: "en",
             prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all", prefs.getInt("round", 5))
         nativeMakeFive.setVisible(foreground && route.screen == ShellScreen.MAKE_FIVE)
-        nativeFollow.setVisible(foreground && route.screen in setOf(ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO, ShellScreen.FOLLOW_SCHOOL, ShellScreen.FOLLOW_SCHOOL_ACTIONS, ShellScreen.FOLLOW_SCHOOL_ACTION_SEQUENCE, ShellScreen.FOLLOW_SCHOOL_ACTION_TRIPLE),
-            when (route.screen) { ShellScreen.FOLLOW_INSTRUCTIONS -> FollowLevel.ONE; ShellScreen.FOLLOW_TWO -> FollowLevel.TWO; ShellScreen.FOLLOW_SCHOOL -> FollowLevel.SCHOOL_SKILLS; ShellScreen.FOLLOW_SCHOOL_ACTIONS -> FollowLevel.SCHOOL_ACTIONS; ShellScreen.FOLLOW_SCHOOL_ACTION_SEQUENCE -> FollowLevel.SCHOOL_ACTION_SEQUENCE; ShellScreen.FOLLOW_SCHOOL_ACTION_TRIPLE -> FollowLevel.SCHOOL_ACTION_TRIPLE; else -> null })
+        nativeFollow.setVisible(foreground && route.screen in setOf(ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO, ShellScreen.FOLLOW_SCHOOL, ShellScreen.FOLLOW_SCHOOL_ACTIONS, ShellScreen.FOLLOW_SCHOOL_ACTION_SEQUENCE, ShellScreen.FOLLOW_SCHOOL_ACTION_TRIPLE, ShellScreen.FOLLOW_CLASSROOM_HELPER_BOARD),
+            when (route.screen) { ShellScreen.FOLLOW_INSTRUCTIONS -> FollowLevel.ONE; ShellScreen.FOLLOW_TWO -> FollowLevel.TWO; ShellScreen.FOLLOW_SCHOOL -> FollowLevel.SCHOOL_SKILLS; ShellScreen.FOLLOW_SCHOOL_ACTIONS -> FollowLevel.SCHOOL_ACTIONS; ShellScreen.FOLLOW_SCHOOL_ACTION_SEQUENCE -> FollowLevel.SCHOOL_ACTION_SEQUENCE; ShellScreen.FOLLOW_SCHOOL_ACTION_TRIPLE -> FollowLevel.SCHOOL_ACTION_TRIPLE; ShellScreen.FOLLOW_CLASSROOM_HELPER_BOARD -> FollowLevel.SCHOOL_CLASSROOM_HELPER; else -> null })
         nativeWilma.setVisible(foreground && route.screen in setOf(ShellScreen.WILMA_CHOOSER, ShellScreen.WILMA))
         updateWebActivity()
     }
@@ -1141,7 +1145,7 @@ class MainActivity : ComponentActivity() {
             prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
             prefs.getInt("round", 5))
         nativeFollow.setVisible(foreground && navigation.screen in setOf(
-            ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO, ShellScreen.FOLLOW_SCHOOL, ShellScreen.FOLLOW_SCHOOL_ACTIONS, ShellScreen.FOLLOW_SCHOOL_ACTION_SEQUENCE, ShellScreen.FOLLOW_SCHOOL_ACTION_TRIPLE),
+            ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO, ShellScreen.FOLLOW_SCHOOL, ShellScreen.FOLLOW_SCHOOL_ACTIONS, ShellScreen.FOLLOW_SCHOOL_ACTION_SEQUENCE, ShellScreen.FOLLOW_SCHOOL_ACTION_TRIPLE, ShellScreen.FOLLOW_CLASSROOM_HELPER_BOARD),
             when (navigation.screen) {
                 ShellScreen.FOLLOW_INSTRUCTIONS -> FollowLevel.ONE
                 ShellScreen.FOLLOW_TWO -> FollowLevel.TWO
@@ -1149,6 +1153,7 @@ class MainActivity : ComponentActivity() {
                 ShellScreen.FOLLOW_SCHOOL_ACTIONS -> FollowLevel.SCHOOL_ACTIONS
                 ShellScreen.FOLLOW_SCHOOL_ACTION_SEQUENCE -> FollowLevel.SCHOOL_ACTION_SEQUENCE
                 ShellScreen.FOLLOW_SCHOOL_ACTION_TRIPLE -> FollowLevel.SCHOOL_ACTION_TRIPLE
+                ShellScreen.FOLLOW_CLASSROOM_HELPER_BOARD -> FollowLevel.SCHOOL_CLASSROOM_HELPER
                 else -> null
             })
         nativeCountingTray.configure(prefs.getString("lang", "en") ?: "en",
