@@ -13,6 +13,7 @@ import com.bellfamily.bastischool.learning.models.*
 import com.bellfamily.bastischool.learning.schoolskills.SchoolSkillsContent
 import com.bellfamily.bastischool.learning.schoolskills.SchoolActionsContent
 import com.bellfamily.bastischool.learning.schoolskills.SchoolActionSequenceContent
+import com.bellfamily.bastischool.learning.schoolskills.SchoolActionTripleContent
 import com.bellfamily.bastischool.learning.progress.AtomicProgressStorage
 import com.bellfamily.bastischool.learning.progress.android.*
 import com.bellfamily.bastischool.learning.session.*
@@ -20,7 +21,7 @@ import java.io.File
 import java.util.UUID
 import java.util.concurrent.Executors
 
-enum class FollowLevel { ONE, TWO, SCHOOL_SKILLS, SCHOOL_ACTIONS, SCHOOL_ACTION_SEQUENCE }
+enum class FollowLevel { ONE, TWO, SCHOOL_SKILLS, SCHOOL_ACTIONS, SCHOOL_ACTION_SEQUENCE, SCHOOL_ACTION_TRIPLE }
 
 class FollowViewModel @JvmOverloads constructor(
     application: Application,
@@ -31,6 +32,7 @@ class FollowViewModel @JvmOverloads constructor(
     var schoolState by mutableStateOf<SessionState?>(null); private set
     var schoolActionsState by mutableStateOf<SessionState?>(null); private set
     var actionSequenceState by mutableStateOf<SessionState?>(null); private set
+    var actionTripleState by mutableStateOf<SessionState?>(null); private set
     var images by mutableStateOf<Map<ContentId, ImageBitmap>>(emptyMap()); private set
     var schoolScene by mutableStateOf<ImageBitmap?>(null); private set
     var schoolIllustrations by mutableStateOf<Map<ContentId, ImageBitmap>>(emptyMap()); private set
@@ -46,6 +48,7 @@ class FollowViewModel @JvmOverloads constructor(
     private val schoolHost = SchoolSkillsContent.host(AtomicProgressStorage(File(application.noBackupFilesDir, "school-skills-session"), AndroidAtomicCommit), progress)
     private val schoolActionsHost = SchoolActionsContent.host(AtomicProgressStorage(File(application.noBackupFilesDir, "school-actions-session"), AndroidAtomicCommit), progress)
     private val actionSequenceHost = SchoolActionSequenceContent.host(AtomicProgressStorage(File(application.noBackupFilesDir, "school-action-sequence-session"), AndroidAtomicCommit), progress)
+    private val actionTripleHost = SchoolActionTripleContent.host(AtomicProgressStorage(File(application.noBackupFilesDir, "school-action-triple-session"), AndroidAtomicCommit), progress)
     private val loader = FollowArtworkLoader { application.assets.open(it) }
     private val audio = FollowAudio(DefaultAudioController(engineFactory, AudioMode.OFF)) { audioFailed = it is SpeechResult.Failed }
     private var visible = false
@@ -74,6 +77,7 @@ class FollowViewModel @JvmOverloads constructor(
         if (value && nextLevel == FollowLevel.SCHOOL_SKILLS && !busy) ensureSchool()
         if (value && nextLevel == FollowLevel.SCHOOL_ACTIONS && !busy) ensureSchoolActions()
         if (value && nextLevel == FollowLevel.SCHOOL_ACTION_SEQUENCE && !busy) ensureActionSequence()
+        if (value && nextLevel == FollowLevel.SCHOOL_ACTION_TRIPLE && !busy) ensureActionTriple()
     }
     private fun ensureOne() {
         if (state == null) work { host.open(SessionId(UUID.randomUUID().toString()), round, System.nanoTime(), language) }
@@ -95,6 +99,10 @@ class FollowViewModel @JvmOverloads constructor(
         if (actionSequenceState == null) actionSequenceWork { actionSequenceHost.open(SessionId(UUID.randomUUID().toString()), round, System.nanoTime(), language) }
         else syncLanguage()
     }
+    private fun ensureActionTriple() {
+        if (actionTripleState == null) actionTripleWork { actionTripleHost.open(SessionId(UUID.randomUUID().toString()), round, System.nanoTime(), language) }
+        else syncLanguage()
+    }
     private fun syncLanguage() {
         if (!busy && level == FollowLevel.ONE && host.state?.language != language && host.state != null)
             work { host.dispatch(SessionAction.Language(language)) }
@@ -106,6 +114,8 @@ class FollowViewModel @JvmOverloads constructor(
             schoolActionsWork { schoolActionsHost.dispatch(SessionAction.Language(language)) }
         if (!busy && level == FollowLevel.SCHOOL_ACTION_SEQUENCE && actionSequenceHost.state?.language != language && actionSequenceHost.state != null)
             actionSequenceWork { actionSequenceHost.dispatch(SessionAction.Language(language)) }
+        if (!busy && level == FollowLevel.SCHOOL_ACTION_TRIPLE && actionTripleHost.state?.language != language && actionTripleHost.state != null)
+            actionTripleWork { actionTripleHost.dispatch(SessionAction.Language(language)) }
     }
     fun replay() { state?.let { action(SessionAction.Replay(it.task.id)) } }
     fun action(action: SessionAction) { if (!ready(FollowLevel.ONE)) return; epoch++; audio.cancel(); work { host.dispatch(action) } }
@@ -117,6 +127,8 @@ class FollowViewModel @JvmOverloads constructor(
     fun schoolActionsReplay() { schoolActionsState?.let { schoolActionsAction(SessionAction.Replay(it.task.id)) } }
     fun actionSequenceAction(action: SessionAction) { if (!ready(FollowLevel.SCHOOL_ACTION_SEQUENCE)) return; epoch++; audio.cancel(); actionSequenceWork { actionSequenceHost.dispatch(action) } }
     fun actionSequenceReplay() { actionSequenceState?.let { actionSequenceAction(SessionAction.Replay(it.task.id)) } }
+    fun actionTripleAction(action: SessionAction) { if (!ready(FollowLevel.SCHOOL_ACTION_TRIPLE)) return; epoch++; audio.cancel(); actionTripleWork { actionTripleHost.dispatch(action) } }
+    fun actionTripleReplay() { actionTripleState?.let { actionTripleAction(SessionAction.Replay(it.task.id)) } }
     fun twoExample() { val current = twoState ?: return; if (ready(FollowLevel.TWO)) {
         epoch++; audio.effects(current.id, language, listOf(SessionEffect.Narrate(FollowTwo.demonstration,
             NarrationKind.INSTRUCTION, SpeechTrigger.MANUAL)))
@@ -125,7 +137,8 @@ class FollowViewModel @JvmOverloads constructor(
         else if (!busy && level == FollowLevel.TWO) twoWork { twoHost.retryWrites(); null }
         else if (!busy && level == FollowLevel.SCHOOL_SKILLS) schoolWork { schoolHost.retryWrites(); emptyList() }
         else if (!busy && level == FollowLevel.SCHOOL_ACTIONS) schoolActionsWork { schoolActionsHost.retryWrites(); emptyList() }
-        else if (!busy && level == FollowLevel.SCHOOL_ACTION_SEQUENCE) actionSequenceWork { actionSequenceHost.retryWrites(); emptyList() } }
+        else if (!busy && level == FollowLevel.SCHOOL_ACTION_SEQUENCE) actionSequenceWork { actionSequenceHost.retryWrites(); emptyList() }
+        else if (!busy && level == FollowLevel.SCHOOL_ACTION_TRIPLE) actionTripleWork { actionTripleHost.retryWrites(); emptyList() } }
     fun again() { if (!ready(FollowLevel.ONE) || state?.phase != SessionPhase.COMPLETED) return; epoch++; audio.cancel(); work { host.newRound(SessionId(UUID.randomUUID().toString()), round, System.nanoTime(), language) } }
     fun twoAgain() { if (!ready(FollowLevel.TWO) || twoState?.completed != true) return; epoch++; audio.cancel()
         twoWork { twoHost.again(SessionId(UUID.randomUUID().toString()), round, System.nanoTime(), language) } }
@@ -135,6 +148,8 @@ class FollowViewModel @JvmOverloads constructor(
         schoolActionsWork { schoolActionsHost.newRound(SessionId(UUID.randomUUID().toString()), round, System.nanoTime(), language) } }
     fun actionSequenceAgain() { if (!ready(FollowLevel.SCHOOL_ACTION_SEQUENCE) || actionSequenceState?.phase != SessionPhase.COMPLETED) return; epoch++; audio.cancel()
         actionSequenceWork { actionSequenceHost.newRound(SessionId(UUID.randomUUID().toString()), round, System.nanoTime(), language) } }
+    fun actionTripleAgain() { if (!ready(FollowLevel.SCHOOL_ACTION_TRIPLE) || actionTripleState?.phase != SessionPhase.COMPLETED) return; epoch++; audio.cancel()
+        actionTripleWork { actionTripleHost.newRound(SessionId(UUID.randomUUID().toString()), round, System.nanoTime(), language) } }
     private fun ready(expected: FollowLevel) = visible && level == expected && !busy && !saveFailed &&
         when (expected) {
             FollowLevel.ONE -> state?.language == language
@@ -142,6 +157,7 @@ class FollowViewModel @JvmOverloads constructor(
             FollowLevel.SCHOOL_SKILLS -> schoolState?.language == language
             FollowLevel.SCHOOL_ACTIONS -> schoolActionsState?.language == language
             FollowLevel.SCHOOL_ACTION_SEQUENCE -> actionSequenceState?.language == language
+            FollowLevel.SCHOOL_ACTION_TRIPLE -> actionTripleState?.language == language
         }
     private fun work(operation: () -> List<SessionEffect>) {
         if (busy || closed) return
@@ -231,6 +247,23 @@ class FollowViewModel @JvmOverloads constructor(
             }
         }
     }
+    private fun actionTripleWork(operation: () -> List<SessionEffect>) {
+        if (busy || closed) return
+        busy = true; val token = ++epoch
+        worker.execute {
+            val result = runCatching(operation)
+            val next = actionTripleHost.state; val pending = actionTripleHost.failure
+            main.post {
+                if (!closed) {
+                    busy = false; saveFailed = result.isFailure || pending
+                    if (next != null) actionTripleState = next
+                    if (!saveFailed && token == epoch && next != null && visible && level == FollowLevel.SCHOOL_ACTION_TRIPLE && next.language == language)
+                        audio.effects(next.plan.id, language, result.getOrDefault(emptyList()))
+                    if (!saveFailed) ensureCurrent()
+                }
+            }
+        }
+    }
     private fun ensureCurrent() {
         if (!visible || busy) return
         when (level) {
@@ -239,6 +272,7 @@ class FollowViewModel @JvmOverloads constructor(
             FollowLevel.SCHOOL_SKILLS -> ensureSchool()
             FollowLevel.SCHOOL_ACTIONS -> ensureSchoolActions()
             FollowLevel.SCHOOL_ACTION_SEQUENCE -> ensureActionSequence()
+            FollowLevel.SCHOOL_ACTION_TRIPLE -> ensureActionTriple()
             null -> Unit
         }
     }

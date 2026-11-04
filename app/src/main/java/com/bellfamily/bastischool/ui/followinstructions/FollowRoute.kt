@@ -18,6 +18,7 @@ internal fun FollowRoute(
             { navigate(navigation.openFollowOne()) }, { navigate(navigation.openFollowTwo()) },
             { navigate(navigation.openFollowSchoolSkills()) }, { navigate(navigation.openFollowSchoolActions()) },
             { navigate(navigation.openFollowSchoolActionSequence()) },
+            { navigate(navigation.openFollowSchoolActionTriple()) },
             { navigate(navigation.home()) }, modifier)
         ShellScreen.FOLLOW_INSTRUCTIONS -> FollowScreen(viewModel.state, language, viewModel.images,
             viewModel.busy, viewModel.saveFailed, viewModel.audioFailed, viewModel::action, viewModel::replay,
@@ -38,6 +39,9 @@ internal fun FollowRoute(
             { navigate(navigation.home()) }, { navigate(navigation.openFollowInstructions()) }, onPop)
         ShellScreen.FOLLOW_SCHOOL_ACTION_SEQUENCE -> SchoolActionSequenceRoute(viewModel, languageCode, modifier,
             { cancelCelebration(); viewModel.actionSequenceAgain() },
+            { navigate(navigation.home()) }, { navigate(navigation.openFollowInstructions()) }, onPop)
+        ShellScreen.FOLLOW_SCHOOL_ACTION_TRIPLE -> SchoolActionTripleRoute(viewModel, languageCode, modifier,
+            { cancelCelebration(); viewModel.actionTripleAgain() },
             { navigate(navigation.home()) }, { navigate(navigation.openFollowInstructions()) }, onPop)
         else -> Unit
     }

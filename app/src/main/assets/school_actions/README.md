@@ -3,7 +3,8 @@
 Five text-free, generated storybook scenes illustrate the classroom actions in the
 School Skills listening round. `SchoolActionsContent.Action.illustrationAsset` maps
 each stable action ID to its image. Pictures form answer choices alongside bilingual
-text labels in the one-step round, and are paired in order for the advanced round.
+text labels in the one-step round, and are composed in two- or three-picture order for
+the advanced sequence rounds.
 Instructions remain spoken and visible. The five images are loaded on the existing
 worker thread.
 

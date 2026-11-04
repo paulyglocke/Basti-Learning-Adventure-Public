@@ -33,6 +33,7 @@ object SchoolActionSequenceContent {
         }
     }
     private val byId = sequences.associateBy { it.id }
+    private val indexById = sequences.mapIndexed { index, sequence -> sequence.id to index }.toMap()
     val repository: ContentRepository = BundledContentRepository(ContentVersion(1, 0), sequences.map {
         SemanticObjectDefinition(it.id, it.label)
     }, emptyList())
@@ -46,9 +47,10 @@ object SchoolActionSequenceContent {
     fun question(target: ContentId, choices: List<ContentId>): ChoiceQuestion {
         require(choices.size == 4 && choices.toSet().size == 4 && target in choices)
         choices.forEach(::sequence)
-        val taskChoices = choices.map { it.value.substringAfter(".") }.sorted().joinToString("_")
+        val targetIndex = indexById.getValue(target)
+        val taskChoices = choices.map(indexById::getValue).sorted().joinToString("_")
         return ChoiceQuestion(
-            TaskDefinitionId("task.school.action_order.${target.value.substringAfter(".")}.$taskChoices"),
+            TaskDefinitionId("task.school.action_order.$targetIndex.$taskChoices"),
             skill, context, 2, sequence(target).instruction, choices, target, correct, wrong, hint
         )
     }

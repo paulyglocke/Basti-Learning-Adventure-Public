@@ -915,6 +915,11 @@ English/German prompt names two classroom actions; the child matches the order u
 paired illustrations, with a reversed-order distractor and distinct ordered pairs across
 5/10-question saved rounds. This records sequence recognition, not physical performance.
 
+Checkpoint — 2026-11-04: added a Three Actions in Order challenge using ordered triples
+from the same five action pictures. Every question includes the exact reverse order as a
+distractor; 5/10-question rounds do not repeat an ordered triple. Progress records
+sequence-picture matching only. Direct physical-action interaction remains future work.
+
 ---
 
 ## Feelings, communication and self-advocacy

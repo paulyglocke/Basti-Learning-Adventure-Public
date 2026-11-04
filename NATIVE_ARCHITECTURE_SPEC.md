@@ -490,6 +490,13 @@ rounds do not repeat an ordered pair. It reuses the shared choice-session state,
 host, speech, support, retry and completion flow; its separate skill records matching
 order to pictures, not carrying out the actions.
 
+The three-actions-in-order challenge is a third independent activity identity,
+`SchoolActionTripleContent`, and `school-action-triple-session` journal. Its five-action
+vocabulary yields 60 authored ordered triples; 5/10 rounds sample distinct triples, and
+each four-picture task includes the exact reverse order. Each choice composes the three
+worker-loaded action pictures and has an accessible bilingual label. It shares the
+choice-session lifecycle and records sequence matching only.
+
 ## Native sorting: Colour Sort first consumer (2026-09-29)
 
 `learning/sorting/Sorting.kt` is a pure semantic membership primitive: a rule has stable

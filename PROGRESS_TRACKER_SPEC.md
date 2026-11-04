@@ -113,6 +113,9 @@ The two-actions-in-order challenge records matching an authored ordered instruct
 to a pair of action pictures. Keep its sequence skill and saved activity identity
 separate from one-action recognition; it does not prove real-world action performance.
 
+The three-actions-in-order challenge applies the same boundary to an ordered triple.
+Progress records selecting a picture sequence, not completing the classroom actions.
+
 ## Generalisation
 A skill should only become Secure after success across multiple genuinely varied contexts, not repeated success with one memorised object pairing.
 
