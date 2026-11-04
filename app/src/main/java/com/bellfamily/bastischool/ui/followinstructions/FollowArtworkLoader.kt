@@ -6,6 +6,7 @@ import androidx.compose.ui.graphics.asImageBitmap
 import com.bellfamily.bastischool.learning.follow.FollowContent
 import com.bellfamily.bastischool.learning.models.ContentId
 import com.bellfamily.bastischool.learning.schoolskills.SchoolSkillsContent
+import com.bellfamily.bastischool.learning.schoolskills.SchoolActionsContent
 import java.io.InputStream
 
 internal class FollowArtworkLoader(private val open: (String) -> InputStream) {
@@ -51,5 +52,17 @@ internal class FollowArtworkLoader(private val open: (String) -> InputStream) {
             open(phrase.illustrationAsset).use { BitmapFactory.decodeStream(it, null, BitmapFactory.Options().apply { inSampleSize = sample })?.asImageBitmap() }
         } catch (_: Exception) { null }
         image?.let { phrase.id to it }
+    }.toMap()
+
+    fun loadSchoolActions(): Map<ContentId, ImageBitmap> = SchoolActionsContent.actions.mapNotNull { action ->
+        val image = try {
+            val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+            open(action.illustrationAsset).use { BitmapFactory.decodeStream(it, null, bounds) }
+            require(bounds.outWidth > 0 && bounds.outHeight > 0)
+            var sample = 1
+            while ((maxOf(bounds.outWidth, bounds.outHeight).toLong() + sample - 1) / sample > 512) sample *= 2
+            open(action.illustrationAsset).use { BitmapFactory.decodeStream(it, null, BitmapFactory.Options().apply { inSampleSize = sample })?.asImageBitmap() }
+        } catch (_: Exception) { null }
+        image?.let { action.id to it }
     }.toMap()
 }

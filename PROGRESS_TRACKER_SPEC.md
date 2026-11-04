@@ -105,6 +105,10 @@ preferred it, or has a social/emotional competency. Phrase examples are possibil
 not universal correct responses; keep this activity's skill separate from classroom
 behaviour, speech production or help-seeking mastery.
 
+The separate classroom-actions round records matching a spoken/written classroom
+instruction to its illustrated action. It does not record physical task completion,
+independence, classroom compliance or a generalised ability to follow instructions.
+
 ## Generalisation
 A skill should only become Secure after success across multiple genuinely varied contexts, not repeated success with one memorised object pairing.
 

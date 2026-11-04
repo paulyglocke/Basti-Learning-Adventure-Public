@@ -28,7 +28,7 @@ import com.bellfamily.bastischool.learning.session.*
 import com.bellfamily.bastischool.ui.common.*
 
 @Composable
-fun FollowLevelsScreen(language: ContentLanguage, onOne: () -> Unit, onTwo: () -> Unit, onSchoolSkills: () -> Unit,
+fun FollowLevelsScreen(language: ContentLanguage, onOne: () -> Unit, onTwo: () -> Unit, onSchoolSkills: () -> Unit, onSchoolActions: () -> Unit,
     onHome: () -> Unit, modifier: Modifier = Modifier) {
     fun t(en: String, de: String) = if (language == ContentLanguage.GERMAN) de else en
     Column(modifier.fillMaxSize().background(Color(0xFFEAF7FC)).verticalScroll(rememberScrollState()).padding(16.dp),
@@ -41,6 +41,8 @@ fun FollowLevelsScreen(language: ContentLanguage, onOne: () -> Unit, onTwo: () -
             onTwo, Modifier.fillMaxWidth().heightIn(min = 72.dp).testTag("follow-level-two"))
         NativeActionButton(t("School Skills — Helpful words", "Schule — Hilfreiche Worte"), NativeActionRole.NAVIGATION,
             onSchoolSkills, Modifier.fillMaxWidth().heightIn(min = 72.dp).testTag("follow-school-skills"))
+        NativeActionButton(t("School Skills — Classroom actions", "Schule — Klassenzimmer-Aktionen"), NativeActionRole.NAVIGATION,
+            onSchoolActions, Modifier.fillMaxWidth().heightIn(min = 72.dp).testTag("follow-school-actions"))
         NativeActionButton(t("Home", "Startseite"), NativeActionRole.NAVIGATION, onHome,
             Modifier.fillMaxWidth().testTag("follow-level-home"))
     }

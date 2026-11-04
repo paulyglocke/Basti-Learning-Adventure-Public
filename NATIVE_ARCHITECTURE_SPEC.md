@@ -474,7 +474,13 @@ artwork loader, never from Compose. The active prompt selects its matching illus
 the text choices remain visible and unchanged.
 Progress means matching an authored phrase to its prompt only; it does not represent
 real-world phrase use, speech production or social behaviour. Broader classroom action
-instructions remain future content, not a new instruction engine.
+instructions use a separate `SchoolActionsContent` activity identity and
+`school-actions-session` journal. This route reuses the same shared session owner for
+short spoken/written EN/DE instructions and four illustrated action choices; its five
+targets are balanced in 5/10 rounds, with no adjacent repeated target or repeated
+target/choice-set definition. Action pictures are decoded on the worker. Progress records
+picture matching only, not physical task completion, compliance or generalised ability.
+Broader multi-step classroom routines remain future content, not a new instruction engine.
 
 ## Native sorting: Colour Sort first consumer (2026-09-29)
 

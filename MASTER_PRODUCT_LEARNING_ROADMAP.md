@@ -905,6 +905,11 @@ phrase-recognition practice, not a claim about real-world communication or behav
 Following classroom action instructions and broader school routines remain future
 work.
 
+Checkpoint — 2026-11-04: added a separate Classroom Actions round with five common
+English/German classroom instructions and illustrated choices. Balanced saved rounds
+support recognition of object/action/location language; progress does not assert that
+the child carried out the physical action. Multi-step classroom routines remain future.
+
 ---
 
 ## Feelings, communication and self-advocacy
