@@ -726,7 +726,7 @@ class MainActivity : ComponentActivity() {
                             { changeRoute(navigation.openFollowInstructions()) })
                         ShellScreen.FOLLOW_SCHOOL -> SchoolSkillsScreen(nativeFollow.schoolState,
                             if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
-                            nativeFollow.schoolScene, nativeFollow.busy, nativeFollow.saveFailed, nativeFollow.audioFailed,
+                            nativeFollow.schoolScene, nativeFollow.schoolIllustrations, nativeFollow.busy, nativeFollow.saveFailed, nativeFollow.audioFailed,
                             nativeFollow::schoolAction, nativeFollow::schoolReplay,
                             { celebrationSound.cancel(); nativeFollow.schoolAgain() }, nativeFollow::retrySave,
                             { changeRoute(navigation.home()) }, { changeRoute(navigation.openFollowInstructions()) },

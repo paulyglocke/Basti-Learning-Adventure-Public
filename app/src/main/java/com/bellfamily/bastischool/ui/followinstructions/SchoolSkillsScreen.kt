@@ -17,6 +17,7 @@ import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
+import com.bellfamily.bastischool.learning.models.ContentId
 import com.bellfamily.bastischool.learning.models.ContentLanguage
 import com.bellfamily.bastischool.learning.session.*
 import com.bellfamily.bastischool.learning.schoolskills.SchoolSkillsContent
@@ -24,7 +25,7 @@ import com.bellfamily.bastischool.ui.common.*
 
 @Composable
 fun SchoolSkillsScreen(
-    state: SessionState?, language: ContentLanguage, scene: ImageBitmap?, busy: Boolean,
+    state: SessionState?, language: ContentLanguage, scene: ImageBitmap?, illustrations: Map<ContentId, ImageBitmap>, busy: Boolean,
     saveFailed: Boolean, audioFailed: Boolean, onAction: (SessionAction) -> Unit,
     onReplay: () -> Unit, onAgain: () -> Unit, onRetrySave: () -> Unit,
     onHome: () -> Unit, onLevels: () -> Unit, modifier: Modifier = Modifier,
@@ -42,7 +43,8 @@ fun SchoolSkillsScreen(
         NativeActivityTitle(t("Useful Words at School", "Hilfreiche Worte in der Schule"))
         NativeSupportMessage(t("There are many good ways to ask for what you need. Practise one phrase at a time.",
             "Es gibt viele gute Möglichkeiten, um etwas zu bitten. Übe einen Satz nach dem anderen."))
-        if (scene != null) Image(scene, t("A bright classroom with children sharing, listening and working", "Ein heller Klassenraum mit Kindern, die teilen, zuhören und arbeiten"),
+        val illustration = state?.task?.question?.correct?.let { illustrations[it] } ?: scene
+        if (illustration != null) Image(illustration, t("A classroom illustration showing this situation", "Eine Illustration aus dem Klassenzimmer zu dieser Situation"),
             Modifier.fillMaxWidth().heightIn(max = 190.dp).clip(RoundedCornerShape(18.dp)).testTag("school-skills-scene"),
             contentScale = ContentScale.Crop)
         if (state == null) {

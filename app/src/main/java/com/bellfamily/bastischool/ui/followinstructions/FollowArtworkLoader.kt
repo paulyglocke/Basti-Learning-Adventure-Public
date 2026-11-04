@@ -40,4 +40,16 @@ internal class FollowArtworkLoader(private val open: (String) -> InputStream) {
         } catch (_: Exception) { null }
         return image.also { schoolScene = it }
     }
+
+    fun loadSchoolPhrases(): Map<ContentId, ImageBitmap> = SchoolSkillsContent.phrases.mapNotNull { phrase ->
+        val image = try {
+            val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+            open(phrase.illustrationAsset).use { BitmapFactory.decodeStream(it, null, bounds) }
+            require(bounds.outWidth > 0 && bounds.outHeight > 0)
+            var sample = 1
+            while ((maxOf(bounds.outWidth, bounds.outHeight).toLong() + sample - 1) / sample > 512) sample *= 2
+            open(phrase.illustrationAsset).use { BitmapFactory.decodeStream(it, null, BitmapFactory.Options().apply { inSampleSize = sample })?.asImageBitmap() }
+        } catch (_: Exception) { null }
+        image?.let { phrase.id to it }
+    }.toMap()
 }

@@ -17,14 +17,14 @@ object SchoolSkillsContent {
     val completion = ContentText.plain("You practised helpful words!", "Du hast hilfreiche Worte geübt!")
     val sceneAsset = "SceneDescriptions/classroom_school/canonical/classroom_002_routines.png"
 
-    data class Phrase(val id: ContentId, val text: ContentText)
+    data class Phrase(val id: ContentId, val text: ContentText, val illustrationAsset: String)
 
     val phrases = listOf(
-        Phrase(ContentId("school_phrase.help"), ContentText.plain("Can you help me?", "Kannst du mir helfen?")),
-        Phrase(ContentId("school_phrase.repeat"), ContentText.plain("Can you say that again?", "Kannst du das noch einmal sagen?")),
-        Phrase(ContentId("school_phrase.understand"), ContentText.plain("I don't understand.", "Ich verstehe das nicht.")),
-        Phrase(ContentId("school_phrase.break"), ContentText.plain("Can I have a break?", "Kann ich eine Pause machen?")),
-        Phrase(ContentId("school_phrase.where"), ContentText.plain("Where should I put it?", "Wohin soll ich das legen?"))
+        Phrase(ContentId("school_phrase.help"), ContentText.plain("Can you help me?", "Kannst du mir helfen?"), "school_skills/phrase_help.png"),
+        Phrase(ContentId("school_phrase.repeat"), ContentText.plain("Can you say that again?", "Kannst du das noch einmal sagen?"), "school_skills/phrase_repeat.png"),
+        Phrase(ContentId("school_phrase.understand"), ContentText.plain("I don't understand.", "Ich verstehe das nicht."), "school_skills/phrase_understand.png"),
+        Phrase(ContentId("school_phrase.break"), ContentText.plain("Can I have a break?", "Kann ich eine Pause machen?"), "school_skills/phrase_break.png"),
+        Phrase(ContentId("school_phrase.where"), ContentText.plain("Where should I put it?", "Wohin soll ich das legen?"), "school_skills/phrase_where.png")
     )
     private val byId = phrases.associateBy { it.id }
     val repository: ContentRepository = BundledContentRepository(ContentVersion(1, 1), phrases.map { SemanticObjectDefinition(it.id, it.text) }, emptyList())

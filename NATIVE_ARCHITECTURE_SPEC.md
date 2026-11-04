@@ -469,7 +469,9 @@ skill/context identity and a deterministic balanced 5/10 generator with no adjac
 repeated target. It uses the shared `SessionState`, `DurableSessionHost`, checkpoint
 codec, progress recorder, completion flow and existing Follow audio owner; its saved
 round is independent at `school-skills-session`. The approved classroom routine scene
-is decoded through the existing worker-confined artwork loader, never from Compose.
+and five phrase-specific illustrations are decoded through the existing worker-confined
+artwork loader, never from Compose. The active prompt selects its matching illustration;
+the text choices remain visible and unchanged.
 Progress means matching an authored phrase to its prompt only; it does not represent
 real-world phrase use, speech production or social behaviour. Broader classroom action
 instructions remain future content, not a new instruction engine.

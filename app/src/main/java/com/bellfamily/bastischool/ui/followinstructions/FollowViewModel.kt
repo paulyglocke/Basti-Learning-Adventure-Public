@@ -29,6 +29,7 @@ class FollowViewModel @JvmOverloads constructor(
     var schoolState by mutableStateOf<SessionState?>(null); private set
     var images by mutableStateOf<Map<ContentId, ImageBitmap>>(emptyMap()); private set
     var schoolScene by mutableStateOf<ImageBitmap?>(null); private set
+    var schoolIllustrations by mutableStateOf<Map<ContentId, ImageBitmap>>(emptyMap()); private set
     var busy by mutableStateOf(false); private set
     var saveFailed by mutableStateOf(false); private set
     var audioFailed by mutableStateOf(false); private set
@@ -58,8 +59,8 @@ class FollowViewModel @JvmOverloads constructor(
         if (visible == value && level == nextLevel) return
         visible = value; level = nextLevel; epoch++; audio.visible(value && nextLevel != null)
         if (value && !loaded) { loaded = true; worker.execute {
-            val result = loader.load(); val classroom = loader.loadSchoolScene()
-            main.post { if (!closed) { images = result; schoolScene = classroom } }
+            val result = loader.load(); val classroom = loader.loadSchoolScene(); val illustrations = loader.loadSchoolPhrases()
+            main.post { if (!closed) { images = result; schoolScene = classroom; schoolIllustrations = illustrations } }
         } }
         if (value && nextLevel == FollowLevel.ONE && !busy) ensureOne()
         if (value && nextLevel == FollowLevel.TWO && !busy) ensureTwo()
