@@ -109,6 +109,10 @@ The separate classroom-actions round records matching a spoken/written classroom
 instruction to its illustrated action. It does not record physical task completion,
 independence, classroom compliance or a generalised ability to follow instructions.
 
+The two-actions-in-order challenge records matching an authored ordered instruction pair
+to a pair of action pictures. Keep its sequence skill and saved activity identity
+separate from one-action recognition; it does not prove real-world action performance.
+
 ## Generalisation
 A skill should only become Secure after success across multiple genuinely varied contexts, not repeated success with one memorised object pairing.
 

@@ -910,6 +910,11 @@ English/German classroom instructions and illustrated choices. Balanced saved ro
 support recognition of object/action/location language; progress does not assert that
 the child carried out the physical action. Multi-step classroom routines remain future.
 
+Checkpoint — 2026-11-04: added an advanced Two Actions in Order challenge. Each spoken
+English/German prompt names two classroom actions; the child matches the order using
+paired illustrations, with a reversed-order distractor and distinct ordered pairs across
+5/10-question saved rounds. This records sequence recognition, not physical performance.
+
 ---
 
 ## Feelings, communication and self-advocacy

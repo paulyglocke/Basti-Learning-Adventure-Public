@@ -6,7 +6,7 @@ import com.bellfamily.bastischool.learning.content.ContentRepository
 import java.io.*
 import java.security.MessageDigest
 
-/** Shared write-ahead delivery for the two native choice activities. File format remains version 1.
+/** Shared write-ahead delivery for native choice activities. File format remains version 1.
  * Worker-thread confined; activity content/generation stays outside this persistence boundary. */
 open class DurableSessionHost(private val journal: ProgressStorage, private val progress: ProgressRepository,
     private val activity: ActivityId, private val revision: Int, private val content: ContentRepository,

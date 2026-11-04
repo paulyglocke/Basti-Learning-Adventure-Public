@@ -482,6 +482,14 @@ target/choice-set definition. Action pictures are decoded on the worker. Progres
 picture matching only, not physical task completion, compliance or generalised ability.
 Broader multi-step classroom routines remain future content, not a new instruction engine.
 
+The harder two-actions-in-order route uses `SchoolActionSequenceContent` and its own
+`school-action-sequence-session` journal. It presents distinct ordered pairs from the
+five authored classroom actions, uses four pair-picture choices including the reversed
+pair, and draws both images from the existing action artwork cache. Five- and ten-task
+rounds do not repeat an ordered pair. It reuses the shared choice-session state, durable
+host, speech, support, retry and completion flow; its separate skill records matching
+order to pictures, not carrying out the actions.
+
 ## Native sorting: Colour Sort first consumer (2026-09-29)
 
 `learning/sorting/Sorting.kt` is a pure semantic membership primitive: a rule has stable
