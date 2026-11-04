@@ -36,8 +36,9 @@ Substantial native learning experiences now include:
 - **More or Fewer / Mehr oder weniger** — two groups of 1–5, answering Left/Right/Same to “Which side has more?”; no separate fewer-question mode.
 - **Number Order / Zahlenfolge** — Before, After and Missing number questions within 1–5, without wraparound.
 - **Add Together / Zusammenzählen** — two visible nonempty dot groups, totals 2–5; no zero or subtraction.
+- **Dinosaur Counting Tray / Dinosaurier-Zählfeld** — tap dinosaurs into or out of five spaces to build quantities 1–5, then check the group. Only checked answers create progress evidence.
 
-These five Maths activities are implemented visual choice activities with shared quantity data, native session/progress/audio and 5/10-question rounds. They do not yet provide object manipulation or quantity construction. Making five, number bonds, decomposition, conservation, subtraction and broader manipulation-first Maths remain future curriculum. Implementation does not imply physical-device acceptance.
+The five matching/comparison/order/addition activities above use visual choices and shared quantity data. Dinosaur Counting Tray adds bounded object manipulation. All use native session/progress/audio foundations and 5/10-question rounds where applicable. Number bonds, decomposition, conservation, broader subtraction and generalised manipulation remain future curriculum. Implementation does not imply physical-device acceptance.
 
 These activities increasingly share native content, audio, support, deterministic session, restoration, completion and progress foundations rather than implementing separate state systems for every screen.
 

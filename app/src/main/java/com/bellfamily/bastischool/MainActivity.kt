@@ -99,6 +99,8 @@ import com.bellfamily.bastischool.ui.quantitymatch.*
 import com.bellfamily.bastischool.ui.comparequantity.*
 import com.bellfamily.bastischool.ui.numberorder.*
 import com.bellfamily.bastischool.ui.addition.*
+import com.bellfamily.bastischool.ui.counting.CountingTrayScreen
+import com.bellfamily.bastischool.ui.counting.CountingTrayViewModel
 import com.bellfamily.bastischool.ui.coloursort.*
 import com.bellfamily.bastischool.ui.colours.*
 import com.bellfamily.bastischool.learning.colours.RainbowOrderAction
@@ -154,6 +156,7 @@ private val homeCards = listOf(
     HomeCard("➖", "Take Away", "Wegnehmen", "Take away groups within 5.", "Nimm Mengen bis 5 weg.", "subtraction"),
     HomeCard("🔀", "Mixed Addition", "Gemischte Plusaufgaben", "Mix small sums and bigger addition.", "Mische kleine und größere Plusaufgaben.", "mixedAddition"),
     HomeCard("🖐️", "Make 5", "Fünf ergänzen", "Find the dots that complete a five-frame.", "Finde die Punkte, die das Fünferfeld füllen.", "makeFive"),
+    HomeCard("🦖", "Build a Dinosaur Group", "Dinosauriergruppe legen", "Tap dinosaurs into a five-space tray to make a number.", "Lege Dinosaurier ins Fünferfeld, bis die Zahl passt.", "countingTray"),
     HomeCard("➕", "Easy Maths", "Einfache Mathe", "Add and take away within 10.", "Plus und Minus bis 10.", "math"),
     HomeCard("📦", "Prepositions", "Präpositionen", "In, on, under, behind, next to and between.", "In, auf, unter, hinter, neben und zwischen.", "positions"),
     HomeCard("🌟", "Mixed Adventure", "Gemischtes Abenteuer", "A little bit of everything.", "Von allem ein bisschen.", "mixed"),
@@ -200,6 +203,7 @@ class MainActivity : ComponentActivity() {
     private lateinit var nativeSubtraction: SubtractionViewModel
     private lateinit var nativeMixedAddition: MixedAdditionViewModel
     private lateinit var nativeMakeFive: MakeFiveViewModel
+    private lateinit var nativeCountingTray: CountingTrayViewModel
     private lateinit var nativeFollow: FollowViewModel
     private lateinit var nativeSeasons: SeasonsViewModel
     private lateinit var nativeVocabulary: VocabularyViewModel
@@ -260,6 +264,7 @@ class MainActivity : ComponentActivity() {
         nativeSubtraction = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[SubtractionViewModel::class.java]
         nativeMixedAddition = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[MixedAdditionViewModel::class.java]
         nativeMakeFive = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[MakeFiveViewModel::class.java]
+        nativeCountingTray = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[CountingTrayViewModel::class.java]
         nativeFollow = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[FollowViewModel::class.java]
         configurePositions()
         restoredSession = savedInstanceState?.getString("legacySession")
@@ -308,6 +313,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.HABITAT_MATCH -> nativeHabitatMatching.state?.phase != SessionPhase.COMPLETED
             ShellScreen.ADD_TOGETHER -> nativeAddition.state?.phase != SessionPhase.COMPLETED
             ShellScreen.MAKE_FIVE -> nativeMakeFive.state?.phase != SessionPhase.COMPLETED
+            ShellScreen.COUNTING_TRAY -> nativeCountingTray.state?.completed != true
             ShellScreen.SUBTRACTION -> nativeSubtraction.state?.phase != SessionPhase.COMPLETED
             ShellScreen.MIXED_ADDITION -> nativeMixedAddition.state?.phase != SessionPhase.COMPLETED
             ShellScreen.COMPARE_QUANTITY -> nativeCompareQuantity.state?.phase != SessionPhase.COMPLETED
@@ -379,6 +385,7 @@ class MainActivity : ComponentActivity() {
                                     ShellScreen.SUBTRACTION -> if (language == "de") "Wegnehmen" else "Take Away"
                                     ShellScreen.MIXED_ADDITION -> if (language == "de") "Gemischte Plusaufgaben" else "Mixed Addition"
                                     ShellScreen.MAKE_FIVE -> if (language == "de") "Fünf ergänzen" else "Make 5"
+                                    ShellScreen.COUNTING_TRAY -> if (language == "de") "Dinosaurier-Zählfeld" else "Dinosaur Counting Tray"
                                     ShellScreen.FOLLOW_LEVELS, ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO -> if (language == "de") "Anweisungen folgen" else "Follow the Instructions"
                                     ShellScreen.SEASONS -> if (language == "de") "Jahreszeiten" else "Seasons"
                                     ShellScreen.SEASONS_CHOOSER -> if (language == "de") "Jahreszeiten" else "Seasons"
@@ -694,6 +701,13 @@ class MainActivity : ComponentActivity() {
                             nativeMakeFive.busy, nativeMakeFive.saveFailed, nativeMakeFive.audioFailed,
                             nativeMakeFive::action, nativeMakeFive::replay, { celebrationSound.cancel(); nativeMakeFive.again() }, nativeMakeFive::retrySave,
                             onHome = { changeRoute(navigation.home()) }, modifier = Modifier.padding(padding), onPop = ::popCelebration)
+                        ShellScreen.COUNTING_TRAY -> CountingTrayScreen(nativeCountingTray.state,
+                            if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            nativeCountingTray.busy, nativeCountingTray.saveFailed, nativeCountingTray.audioFailed,
+                            nativeCountingTray::toggle, nativeCountingTray::check, nativeCountingTray::next,
+                            nativeCountingTray::replay, nativeCountingTray::help, { celebrationSound.cancel(); nativeCountingTray.again() },
+                            nativeCountingTray::retrySave, { nativeCountingTray.home(); changeRoute(navigation.home()) },
+                            modifier = Modifier.padding(padding), onPop = ::popCelebration)
                         ShellScreen.FOLLOW_LEVELS -> FollowLevelsScreen(if (language == "de") ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             { changeRoute(navigation.openFollowOne()) }, { changeRoute(navigation.openFollowTwo()) },
                             { changeRoute(navigation.home()) }, Modifier.padding(padding))
@@ -839,6 +853,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.SUBTRACTION -> nativeSubtraction.busy || nativeSubtraction.saveFailed
             ShellScreen.MIXED_ADDITION -> nativeMixedAddition.busy || nativeMixedAddition.saveFailed
             ShellScreen.MAKE_FIVE -> nativeMakeFive.busy || nativeMakeFive.saveFailed
+            ShellScreen.COUNTING_TRAY -> nativeCountingTray.busy || nativeCountingTray.saveFailed
             ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO -> nativeFollow.busy || nativeFollow.saveFailed
             else -> true
         }
@@ -873,6 +888,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.SUBTRACTION -> nativeSubtraction.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.MIXED_ADDITION -> nativeMixedAddition.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.MAKE_FIVE -> nativeMakeFive.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
+            ShellScreen.COUNTING_TRAY -> nativeCountingTray.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.FOLLOW_INSTRUCTIONS -> nativeFollow.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.FOLLOW_TWO -> nativeFollow.twoState?.takeIf {it.completed && it.acknowledged}?.id?.value
             ShellScreen.WILMA -> when(nativeWilma.selection?.phase) {
@@ -1115,6 +1131,10 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun updateWebActivity() {
+        nativeCountingTray.configure(prefs.getString("lang", "en") ?: "en",
+            prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
+            prefs.getInt("round", 5))
+        nativeCountingTray.setVisible(foreground && navigation.screen == ShellScreen.COUNTING_TRAY)
         val active = this@MainActivity.foreground && navigation.screen == ShellScreen.WEB
         webView?.let {
             if (active) it.onResume()

@@ -15,6 +15,7 @@ import com.bellfamily.bastischool.ui.animalgroups.AnimalGroupsViewModel
 import com.bellfamily.bastischool.ui.washhands.WashHandsViewModel
 import androidx.test.core.app.ActivityScenario
 import androidx.test.platform.app.InstrumentationRegistry
+import java.io.File
 import org.json.JSONObject
 import org.junit.Assert.*
 import org.junit.Rule
@@ -109,6 +110,34 @@ class HomeProductionNavigationTest {
         assertEquals("DAYS_SEASONS",saved(scenario).getString("screen"))
         back(scenario)
         assertEquals("home",saved(scenario).getString("homePage"))
+    }
+
+    @Test fun dinosaurCountingTrayLaunchesFromMathsAndBackReturnsToHome() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val prefs = context.getSharedPreferences("basti_shell", 0)
+        val lang = prefs.getString("lang", null); val audio = prefs.getString("audioMode", null)
+        val sound = prefs.getBoolean("sound", true); val round = prefs.getInt("round", 5)
+        val journal = File(context.noBackupFilesDir, "counting-tray-session")
+        val hadJournal = journal.exists(); val previousJournal = if (hadJournal) journal.readBytes() else null
+        var scenario: ActivityScenario<MainActivity>? = null
+        try {
+            prefs.edit().putString("lang", "en").putString("audioMode", "off").commit()
+            scenario = ActivityScenario.launch(MainActivity::class.java)
+            click("home-category-MATHS")
+            click("home-activity-countingTray")
+            compose.waitUntil(10_000) {
+                compose.onAllNodesWithTag("counting-tray-target").fetchSemanticsNodes().isNotEmpty()
+            }
+            compose.onNodeWithTag("counting-tray-prompt").performScrollTo().assertIsDisplayed()
+            compose.onNodeWithTag("counting-tray-slot-1").performScrollTo().assertHasClickAction()
+            back(scenario!!)
+            compose.onNodeWithTag("home-category-MATHS").assertIsDisplayed()
+        } finally {
+            scenario?.close()
+            if (hadJournal) journal.writeBytes(requireNotNull(previousJournal)) else journal.delete()
+            prefs.edit().putString("lang", lang).putString("audioMode", audio).putBoolean("sound", sound)
+                .putInt("round", round).commit()
+        }
     }
 
     @OptIn(ExperimentalTestApi::class)

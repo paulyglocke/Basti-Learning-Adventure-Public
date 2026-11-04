@@ -93,6 +93,12 @@ Differentiate:
 
 Support is not failure.
 
+For Dinosaur Counting Tray, tapping an object into or out of a space is an in-progress
+manipulation and creates no attempt event. Pressing Check records the current count
+as correct or incorrect. Replay and Help are attached as support to the checked
+attempt; completing a round emits the normal completion event. This keeps exploratory
+touches from inflating practice counts and does not infer mastery.
+
 ## Generalisation
 A skill should only become Secure after success across multiple genuinely varied contexts, not repeated success with one memorised object pairing.
 

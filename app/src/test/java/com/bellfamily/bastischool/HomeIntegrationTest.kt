@@ -9,9 +9,9 @@ class HomeIntegrationTest {
     @Test fun liveCardsDispatchToTheirExistingOrNewDestinations() {
         val expected = listOf("TELL_ME", "VOCABULARY_CHOOSER", "WEB", "LETTERS", "WEB", "DAYS_SEASONS",
             "WEB", "SUBITISING", "QUANTITY_MATCH", "COMPARE_QUANTITY", "NUMBER_ORDER", "CLOCK",
-            "ADD_TOGETHER", "ADD_CHALLENGE", "SUBTRACTION", "MIXED_ADDITION", "MAKE_FIVE", "WEB", "PREPOSITIONS", "WEB", "WASH_HANDS", "HABITATS_CHOOSER", "HABITAT_MATCH", "ANIMAL_GROUPS", "COLOURS_CHOOSER", "FOLLOW_LEVELS")
+            "ADD_TOGETHER", "ADD_CHALLENGE", "SUBTRACTION", "MIXED_ADDITION", "MAKE_FIVE", "COUNTING_TRAY", "WEB", "PREPOSITIONS", "WEB", "WASH_HANDS", "HABITATS_CHOOSER", "HABITAT_MATCH", "ANIMAL_GROUPS", "COLOURS_CHOOSER", "FOLLOW_LEVELS")
         val cards = homeActivities()
-        assertEquals(26, cards.size)
+        assertEquals(27, cards.size)
         assertEquals(expected, cards.map { it.homeDestination().screen.name })
         cards.filter { it.homeDestination().screen == ShellScreen.WEB }.forEach {
             assertEquals(it.homeId(), it.homeDestination().mode)
@@ -21,9 +21,9 @@ class HomeIntegrationTest {
     }
 
     @Test fun sixBilingualCategoriesCoverTwentyFiveAndMixedRemainsLast() {
-        assertEquals(listOf(11,5,2,4,1,2), HomeCategory.entries.map { it.activityIds.size })
+        assertEquals(listOf(12,5,2,4,1,2), HomeCategory.entries.map { it.activityIds.size })
         val ids = HomeCategory.entries.flatMap { it.activityIds }
-        assertEquals(25, ids.distinct().size)
+        assertEquals(26, ids.distinct().size)
         assertEquals(homeActivities().map { it.homeId() }.toSet(), ids.toSet() + "mixed")
         assertEquals(listOf("Numbers & Maths","Words & Talking","Time & Seasons","Animals & Nature","Colours","Everyday Skills"), HomeCategory.entries.map { it.en })
         assertEquals(listOf("Zahlen & Rechnen","Wörter & Erzählen","Zeit & Jahreszeiten","Tiere & Natur","Farben","Alltag"), HomeCategory.entries.map { it.de })
@@ -59,6 +59,8 @@ class HomeIntegrationTest {
     @Test fun activityRootAndNestedBackContractsAreNotReinterpretedAsCategoryBack() {
         assertEquals(BackAction.NATIVE_HOME, homeActivity("tellme").homeDestination().backAction)
         assertEquals(BackAction.NATIVE_HOME, homeActivity("letters").homeDestination().backAction)
+        assertEquals(ShellScreen.COUNTING_TRAY, homeActivity("countingTray").homeDestination().screen)
+        assertEquals(BackAction.NATIVE_HOME, homeActivity("countingTray").homeDestination().backAction)
         assertEquals(ShellScreen.LETTERS, homeActivity("letters").homeDestination().screen)
         assertEquals(BackAction.NATIVE_HOME, homeActivity("colourSort").homeDestination().backAction)
         assertEquals(ShellScreen.COLOURS_CHOOSER, homeActivity("colourSort").homeDestination().screen)

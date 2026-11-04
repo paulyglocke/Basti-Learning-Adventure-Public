@@ -476,6 +476,15 @@ rounds practise every missing amount with balanced frequency and an independent
 number-bonds skill/journal. This is visual choice practice, not tap-to-place object
 manipulation.
 
+Follow-up — 2026-11-03: Dinosaur Counting Tray adds the first manipulation-first
+quantity activity. A child taps dinosaurs into or out of five fixed spaces to build
+the requested quantity 1–5, then explicitly checks the group. Object movement alone
+does not record progress; checked answers record attempts, while replay/help support
+is preserved in the shared progress evidence. Deterministic 5/10-question rounds
+cover each quantity evenly with no adjacent repeated target. This is a bounded
+quantity-construction step, not number bonds or a mastery claim; broader objects,
+contexts and operations remain future work.
+
 ### Manipulative quantity
 
 Maths should increasingly support manipulation.
