@@ -15,18 +15,18 @@ class HomePrototypeModelTest {
         assertTrue(homeAssetPaths.getValue(HomeCategory.EVERYDAY).endsWith("classroom_007_school_routines.png"))
     }
 
-    @Test fun sixCategoriesCoverTwentyFiveDistinctExistingIdentities() {
+    @Test fun sixCategoriesCoverTwentySixDistinctExistingIdentities() {
         val ids = HomeCategory.entries.flatMap { it.activityIds }
-        assertEquals(listOf(11, 5, 2, 4, 1, 2), HomeCategory.entries.map { it.activityIds.size })
-        assertEquals(25, ids.size)
-        assertEquals(25, ids.toSet().size)
+        assertEquals(listOf(12, 5, 2, 4, 1, 2), HomeCategory.entries.map { it.activityIds.size })
+        assertEquals(26, ids.size)
+        assertEquals(26, ids.toSet().size)
         assertEquals(homeActivities().map { it.homeId() }.toSet() - "mixed", ids.toSet())
     }
 
-    @Test fun allActivitiesPreservesTwentySixCurrentCardsWithoutFutureGames() {
+    @Test fun allActivitiesPreservesTwentySevenCurrentCardsWithoutFutureGames() {
         val cards = homeActivities()
-        assertEquals(26, cards.size)
-        assertEquals(26, cards.map { it.homeId() }.toSet().size)
+        assertEquals(27, cards.size)
+        assertEquals(27, cards.map { it.homeId() }.toSet().size)
         assertFalse(cards.any { it.play })
         assertEquals("Mixed Adventure", homeActivity("mixed").titleEn)
         assertNull(homeCategory("mixed"))
