@@ -6,6 +6,8 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.*
 import androidx.compose.ui.unit.dp
@@ -31,14 +33,29 @@ import com.bellfamily.bastischool.ui.common.*
         NativeActionButton(t("Listen","Anhören"),NativeActionRole.SECONDARY,{act(SequenceOperation.Replay)},Modifier.fillMaxWidth().testTag("wash-replay"),ready)
         if(state!=null){
             if(state.available.isNotEmpty())Text(t("Choose the next step","Wähle den nächsten Schritt"),style=MaterialTheme.typography.titleLarge)
-            state.available.forEach {id ->
-                val label=WashHands.step(id).text.display[language]
-                OutlinedCard(Modifier.fillMaxWidth()) {
-                    Column(Modifier.padding(12.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
-                        NativeActionButton(label,NativeActionRole.SECONDARY,{act(SequenceOperation.Append(id))},
-                            Modifier.fillMaxWidth().testTag("wash-item-${id.value}").semantics {stateDescription=t("Available step. Add to your order.","Verfügbarer Schritt. Zur Reihenfolge hinzufügen.")},ready)
-                        NativeActionButton(t("Listen: $label","Anhören: $label"),NativeActionRole.SECONDARY,{onListen(id)},
-                            Modifier.fillMaxWidth().testTag("wash-listen-${id.value}"),ready)
+            BoxWithConstraints(Modifier.fillMaxWidth()) {
+                val columns=if(maxWidth>=360.dp*LocalDensity.current.fontScale)2 else 1
+                Column(verticalArrangement=Arrangement.spacedBy(12.dp)) {
+                    state.available.chunked(columns).forEach {row ->
+                        Row(horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+                            row.forEach {id ->
+                                val label=WashHands.step(id).text.display[language]
+                                Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(8.dp)) {
+                                    OutlinedCard(onClick={act(SequenceOperation.Append(id))},enabled=ready,
+                                        modifier=Modifier.fillMaxWidth().testTag("wash-item-${id.value}").semantics {
+                                            stateDescription=t("Available step. Add to your order.","Verfügbarer Schritt. Zur Reihenfolge hinzufügen.")
+                                        }) {
+                                        Column(Modifier.fillMaxWidth().padding(8.dp),horizontalAlignment=Alignment.CenterHorizontally) {
+                                            BundledArtwork(WashHandsArtwork.paths.getValue(id),Modifier.fillMaxWidth().height(120.dp))
+                                            Text(label,Modifier.padding(vertical=8.dp),style=MaterialTheme.typography.titleMedium)
+                                        }
+                                    }
+                                    NativeActionButton(t("Listen: $label","Anhören: $label"),NativeActionRole.SECONDARY,{onListen(id)},
+                                        Modifier.fillMaxWidth().testTag("wash-listen-${id.value}"),ready)
+                                }
+                            }
+                            if(row.size<columns)Spacer(Modifier.weight(1f))
+                        }
                     }
                 }
             }
@@ -50,7 +67,10 @@ import com.bellfamily.bastischool.ui.common.*
                         Text(t("Step ${i+1}","Schritt ${i+1}"),style=MaterialTheme.typography.titleMedium)
                         if(id==null)Text(t("Place a step here","Hier kommt ein Schritt hin")) else {
                             val label=WashHands.step(id).text.display[language]
-                            Text(label)
+                            Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+                                BundledArtwork(WashHandsArtwork.paths.getValue(id),Modifier.size(88.dp))
+                                Text(label,Modifier.weight(1f))
+                            }
                             NativeActionButton(t("Listen: $label","Anhören: $label"),NativeActionRole.SECONDARY,{onListen(id)},
                                 Modifier.fillMaxWidth().testTag("wash-listen-${id.value}"),ready)
                             NativeActionButton(t("Remove step ${i+1}","Schritt ${i+1} zurücklegen"),NativeActionRole.SECONDARY,{act(SequenceOperation.Remove(id))},

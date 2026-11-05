@@ -4,6 +4,14 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class ShellNavigationTest {
+    @Test fun habitatMatchingOptionsRecreationPreservesBothBrowseOrigins() {
+        for(page in listOf("all","category:ANIMALS")) {
+            val before=ShellNavigation().openHabitatMatching(page).openOptions()
+            val restored=ShellNavigation.restore(before.screen.name,before.optionsOrigin.name,before.mode,null,before.homePage)
+            assertEquals(page,restored.closeOptions().homePage)
+            assertEquals(BackAction.ANIMALS_CATEGORY,restored.closeOptions().backAction)
+        }
+    }
     @Test fun habitatMatchingReturnsToAnimalsCategoryAndRestoresOptionsRoute() {
         val match = ShellNavigation().openHabitatMatching("category:ANIMALS")
         assertEquals(ShellScreen.HABITAT_MATCH, match.screen)

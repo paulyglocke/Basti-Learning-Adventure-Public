@@ -1,5 +1,22 @@
 # Session handoff — 2026-10-21
 
+## App sweep first implementation pass (2026-11-05)
+
+Owner gave full approval for the prioritized sweep work. Repaired legacy animal
+Vocabulary journal recovery, Habitat Matching's return page across Options
+recreation, and premature Classroom Things target repetition. Older classroom
+plans and original legacy journals remain intact. Added a complete 27-entry
+activity-thumbnail registry using existing artwork/native diagrams, a shared
+8 MiB background artwork cache and four generated Wash Hands illustrations with
+clickable picture choices. Clarified Number level scope and Follow home copy.
+JVM 642/642 and focused API 35 13/13 passed; both APK builds and lint passed
+(zero errors, seven existing warnings). Five synchronized emulator captures were
+inspected. Focused CI now includes sweep navigation/cache and illustrated
+sequencing regressions. See [review and gallery](docs/app-sweep-implementation-2026-11-05/REVIEW.md).
+The five HTML destinations remain in place; their curriculum-preserving
+migrations are the next separate work. No new signed physical-phone APK or
+physical S24/Fire acceptance is claimed by this implementation pass.
+
 ## Food & Drink vocabulary completion (2026-11-05)
 
 Finished the previously interrupted eight-word Food & Drink set, including

@@ -170,7 +170,7 @@ private val homeCards = listOf(
     HomeCard("🦉", "Match Animals to Habitats", "Tiere und Lebensräume zuordnen", "Match familiar animals with places we explored.", "Ordne bekannte Tiere den entdeckten Orten zu.", mode = "matchHabitats"),
     HomeCard("🐋", "Animal Groups", "Tiere zuordnen", "Group animals by where they live.", "Ordne Tiere nach ihrem Lebensraum zu.", mode = "animalGroups"),
     HomeCard("🎨", "Colour Sort", "Farben sortieren", "Put matching colours together.", "Sortiere Dinge nach ihrer Farbe.", mode = "colourSort"),
-    HomeCard("👂", "Follow the Instructions", "Anweisungen folgen", "Listen and follow one or two steps.", "Höre zu und folge einer oder zwei Anweisungen.", mode = "follow")
+    HomeCard("👂", "Follow the Instructions", "Anweisungen folgen", "Listen, follow steps and practise classroom routines.", "Zuhören, Schritten folgen und Schulabläufe üben.", mode = "follow")
 )
 
 /** Filter only after the historical group boundaries, preserving live entry order. */
@@ -1291,6 +1291,8 @@ internal fun NativeOptions(language: String, audioMode: String, round: Int, numb
         SettingCard(if (language == "de") "Zahlen-Level" else "Number level") {
             FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp)) { listOf(10, 20, 50, 100).forEach { max -> FilterChip(selected = numberMax == max, onClick = { onNumberMax(max) }, label = { Text(max.toString()) }) } }
             Text(if (language == "de") "Aktuelles Maximum: $numberMax" else "Current maximum: $numberMax", modifier = Modifier.padding(top = 8.dp), fontWeight = FontWeight.Bold)
+            Text(if(language=="de") "Gilt für Zahlen und Zahlenfragen im Gemischten Abenteuer. Andere Aktivitäten haben eigene Zahlenbereiche."
+                else "Applies to Numbers and number questions in Mixed Adventure. Other activities use their own number ranges.")
         }
     }
 }

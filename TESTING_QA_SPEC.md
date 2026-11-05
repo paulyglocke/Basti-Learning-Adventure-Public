@@ -207,6 +207,13 @@ covering real category selection, all food artwork, English/German Explore,
 Find completion and Name checkpoint preservation across recreation/category
 switches. See [Food & Drink review](docs/food-vocabulary-review.md).
 
+The same day's sweep repair adds `SweepRepairsRouteTest` and the four
+EN/DE/orientation cases in `WashHandsScreenTest` to that selection. JVM fixtures
+exercise old journal recovery, current-record precedence, uncertain commits and
+preservation of older classroom question plans. Local evidence and the separate
+physical-device/voice acceptance boundary are recorded in the
+[sweep implementation review](docs/app-sweep-implementation-2026-11-05/REVIEW.md).
+
 Compose/owner/navigation test existence and compilation do not prove execution. Browser speech mocks do not prove native audio, Compose behavior, Android navigation or device compatibility.
 
 | Evidence layer | Current recorded status / boundary |

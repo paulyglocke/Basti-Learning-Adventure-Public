@@ -121,24 +121,13 @@ object VocabularyContent {
     }
     fun generate(phase:VocabularyPhase,category:ContentId,id:SessionId,round:RoundLength,seed:Long):GenerationResult {
         if(category==animals)return generate(phase,id,round,seed)
-        if(category==food)return generateFood(phase,id,round,seed)
-        val pack=if(category==classroom)classroomPack else foodPack
-        activity(phase,category)
-        val source=java.util.Random(seed)
-        val candidates=pack.items.flatMap { target ->
-            val distractors=pack.items.map {it.id}.filter {it!=target.id}.toMutableList()
-            java.util.Collections.shuffle(distractors,source)
-            (0..2).map { variant ->
-                val options=(0..2).map { distractors[(variant*2+it)%distractors.size] }
-                question(phase,category,target.id,listOf(target.id)+options,variant)
-            }
-        }
-        return CandidateTaskGenerator(candidates).generate(GenerationRequest(id,activity(phase,category),REVISION,
-            SessionPolicy(round),seed,completion),repository(category))
+        return generateWordCycle(phase,category,id,round,seed)
     }
-    private fun generateFood(phase:VocabularyPhase,id:SessionId,round:RoundLength,seed:Long):GenerationResult {
+    private fun generateWordCycle(phase:VocabularyPhase,category:ContentId,id:SessionId,round:RoundLength,seed:Long):GenerationResult {
+        activity(phase,category)
+        val pack=if(category==classroom)classroomPack else foodPack
         val random=java.util.Random(seed)
-        val ids=foodPack.items.map {it.id}
+        val ids=pack.items.map {it.id}
         val targets=mutableListOf<ContentId>()
         while(targets.size<round.count) {
             val cycle=ids.toMutableList().also {java.util.Collections.shuffle(it,random)}
@@ -154,10 +143,10 @@ object VocabularyContent {
             val pool=distractors.getValue(target)
             val choices=(listOf(target)+(0..2).map {pool[(variant*2+it)%pool.size]})
                 .toMutableList().also {java.util.Collections.shuffle(it,random)}
-            ChoiceTask(TaskInstanceId(id,index+1),question(phase,food,target,choices,variant))
+            ChoiceTask(TaskInstanceId(id,index+1),question(phase,category,target,choices,variant))
         }
-        val plan=SessionPlan(id,activity(phase,food),REVISION,foodPack.repository.version,SessionPolicy(round),tasks,completion)
-        plan.validate(foodPack.repository)
+        val plan=SessionPlan(id,activity(phase,category),REVISION,pack.repository.version,SessionPolicy(round),tasks,completion)
+        plan.validate(pack.repository)
         return GenerationResult.Generated(plan)
     }
     fun validate(phase: VocabularyPhase, state: SessionState) {

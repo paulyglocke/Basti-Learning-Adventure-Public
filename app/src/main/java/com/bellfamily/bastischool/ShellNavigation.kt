@@ -121,7 +121,7 @@ internal data class ShellNavigation(
                 ?: ShellScreen.HOME
             val browsing = destination == ShellScreen.HOME || destination == ShellScreen.OPTIONS && parent == ShellScreen.HOME
             val habitatRoute = destination in setOf(ShellScreen.HABITATS_CHOOSER, ShellScreen.OCEAN_EXPLORE, ShellScreen.WOODLAND_EXPLORE, ShellScreen.UNDERGROUND_EXPLORE, ShellScreen.FRESHWATER_EXPLORE, ShellScreen.HABITAT_MATCH) ||
-                destination == ShellScreen.OPTIONS && parent in setOf(ShellScreen.HABITATS_CHOOSER, ShellScreen.OCEAN_EXPLORE, ShellScreen.WOODLAND_EXPLORE, ShellScreen.UNDERGROUND_EXPLORE, ShellScreen.FRESHWATER_EXPLORE)
+                destination == ShellScreen.OPTIONS && parent in setOf(ShellScreen.HABITATS_CHOOSER, ShellScreen.OCEAN_EXPLORE, ShellScreen.WOODLAND_EXPLORE, ShellScreen.UNDERGROUND_EXPLORE, ShellScreen.FRESHWATER_EXPLORE, ShellScreen.HABITAT_MATCH)
             val route = ShellNavigation(destination, parent, mode ?: "verbs",
                 homePage = homePage?.takeIf { (browsing || habitatRoute) && validHomePage(it) }
                     ?: if (habitatRoute) "category:ANIMALS" else "home")

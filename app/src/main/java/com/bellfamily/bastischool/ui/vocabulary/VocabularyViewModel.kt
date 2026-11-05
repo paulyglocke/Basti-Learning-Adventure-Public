@@ -35,7 +35,10 @@ class VocabularyViewModel @JvmOverloads constructor(
     private val browse=VocabularySelectionStore(storage("vocabulary-selection"))
     private val categories=listOf(ContentId("category.animals"),VocabularyContent.classroom,VocabularyContent.food)
     private val quizzes=categories.flatMap { category -> listOf(VocabularyPhase.FIND,VocabularyPhase.NAME).map { phase ->
-        (category to phase) to VocabularyContent.host(phase,category,storage("vocabulary-${category.value.substringAfter('.')}-${phase.name.lowercase()}"),progress)
+        val current=storage("vocabulary-${category.value.substringAfter('.')}-${phase.name.lowercase()}")
+        val journal=if(category==ContentId("category.animals"))
+            VocabularyJournalRecovery(current,storage("vocabulary-${phase.name.lowercase()}")) else current
+        (category to phase) to VocabularyContent.host(phase,category,journal,progress)
     }}.toMap()
     private fun host(category:ContentId,phase:VocabularyPhase)=quizzes[category to phase]
     private val worker=Executors.newSingleThreadExecutor()

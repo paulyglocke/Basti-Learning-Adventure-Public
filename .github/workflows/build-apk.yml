@@ -80,7 +80,7 @@ jobs:
           disable-animations: true
           script: >-
             ./gradlew connectedDebugAndroidTest
-            -Pandroid.testInstrumentationRunnerArguments.class=com.bellfamily.bastischool.MainActivityStartupTest,com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest,com.bellfamily.bastischool.ui.vocabulary.FoodVocabularyRouteTest,com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest,com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest
+            -Pandroid.testInstrumentationRunnerArguments.class=com.bellfamily.bastischool.MainActivityStartupTest,com.bellfamily.bastischool.SweepRepairsRouteTest,com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest,com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest,com.bellfamily.bastischool.ui.vocabulary.FoodVocabularyRouteTest,com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest,com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest
             --console=plain
       - name: Upload Android instrumentation reports
         if: always()

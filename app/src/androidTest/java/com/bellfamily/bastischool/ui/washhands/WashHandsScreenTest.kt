@@ -55,6 +55,9 @@ class WashHandsScreenTest(private val language:ContentLanguage,private val orien
         fun click(tag:String){node(tag).performScrollTo().assertIsDisplayed().performClick()}
         WashHands.steps.forEach {s->
             node("wash-item-${s.id.value}").performScrollTo().assertIsDisplayed().assertHasClickAction().assertHeightIsAtLeast(56.dp)
+            val tag="bundled-art-${WashHandsArtwork.paths.getValue(s.id)}"
+            compose.waitUntil(10_000) {compose.onAllNodesWithTag(tag,useUnmergedTree=true).fetchSemanticsNodes().isNotEmpty()}
+            compose.onNodeWithTag(tag,useUnmergedTree=true).assertIsDisplayed()
             click("wash-listen-${s.id.value}")
         }
         assertEquals(WashHands.order,heard);assertTrue(state.constructed.isEmpty());assertTrue(operations.isEmpty())

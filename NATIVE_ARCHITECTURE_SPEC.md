@@ -20,6 +20,16 @@ Keep legacy routes usable during migration. An adapter may translate old IDs/set
 
 ## Responsibilities and dependency direction
 
+2026-11-05 recovery/presentation addendum: animal Vocabulary journals use
+`VocabularyJournalRecovery` to read old `vocabulary-find/name` records only when
+the category-specific current store has no record. DurableSessionHost validates
+the legacy bytes before its normal acknowledgement write promotes the state.
+Current records take precedence (including corrupt records, which must remain
+recoverable); legacy records are never written or deleted by the adapter.
+Home activity thumbnails and Wash Hands cards share `BundledArtwork`, with
+worker-thread decoding and an 8 MiB cache. No navigation/progress framework or
+checkpoint schema is introduced. See the [implementation review](docs/app-sweep-implementation-2026-11-05/REVIEW.md).
+
 UX Refresh Phase 1 adds an opt-in Material 3 foundation in `ui/design`, documented
 in [UX_DESIGN_FOUNDATION.md](docs/UX_DESIGN_FOUNDATION.md). Phase 3 opts production
 Home browsing into it; Options and existing learning UI retain their current

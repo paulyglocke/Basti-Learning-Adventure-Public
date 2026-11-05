@@ -254,10 +254,7 @@ internal fun HomeActivityGrid(cards: List<HomeCard>, german: Boolean, open: (Str
                             Row(Modifier.fillMaxWidth().padding(BastiSpacing.medium),
                                 horizontalArrangement = Arrangement.spacedBy(BastiSpacing.medium),
                                 verticalAlignment = Alignment.CenterVertically) {
-                                Image(homeCategoryBannerArt(homeActivityArtCategory(id)),
-                                    contentDescription = null,
-                                    modifier = Modifier.size(88.dp).testTag("home-activity-art-$id"),
-                                    contentScale = ContentScale.Crop)
+                                HomeActivityThumbnail(id,Modifier.size(88.dp).testTag("home-activity-art-$id"))
                                 Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(BastiSpacing.small)) {
                                     Text(if (german) card.titleDe else card.titleEn,
                                         Modifier.fillMaxWidth(), style = BastiTypography.answer)
@@ -273,8 +270,3 @@ internal fun HomeActivityGrid(cards: List<HomeCard>, german: Boolean, open: (Str
         }
     }
 }
-
-/** Activity tiles inherit their section's reviewed artwork; Mixed Adventure uses the animal adventure scene. */
-private fun homeActivityArtCategory(id: String): HomeCategory =
-    if (id == "mixed") HomeCategory.ANIMALS
-    else requireNotNull(homeCategory(id)) { "Home activity '$id' needs an artwork category" }
