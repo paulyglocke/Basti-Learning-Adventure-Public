@@ -202,6 +202,11 @@ asset isolation). Isolated Compose tests do not prove the app can launch.
 See [the startup investigation](docs/startup-crash-2026-11-04.md) for the broken
 signed artifact, delivery boundary and current validation evidence.
 
+2026-11-05: the focused selection also includes `FoodVocabularyRouteTest`,
+covering real category selection, all food artwork, English/German Explore,
+Find completion and Name checkpoint preservation across recreation/category
+switches. See [Food & Drink review](docs/food-vocabulary-review.md).
+
 Compose/owner/navigation test existence and compilation do not prove execution. Browser speech mocks do not prove native audio, Compose behavior, Android navigation or device compatibility.
 
 | Evidence layer | Current recorded status / boundary |

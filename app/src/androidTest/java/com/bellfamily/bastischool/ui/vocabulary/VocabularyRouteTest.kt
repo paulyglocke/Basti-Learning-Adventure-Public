@@ -14,6 +14,7 @@ import androidx.test.platform.app.InstrumentationRegistry
 import com.bellfamily.bastischool.MainActivity
 import com.bellfamily.bastischool.learning.models.ContentId
 import com.bellfamily.bastischool.learning.models.ContentLanguage
+import com.bellfamily.bastischool.learning.vocabulary.VocabularyContent
 import com.bellfamily.bastischool.learning.session.*
 import org.junit.Assert.*
 import org.junit.Rule
@@ -29,10 +30,11 @@ class VocabularyRouteTest {
             fun settled() {compose.waitUntil(10_000) {var ready=false;scenario.onActivity {val vm=ViewModelProvider(it)[VocabularyViewModel::class.java];ready=vm.selection!=null && !vm.busy && !vm.saveFailed};ready}}
             compose.openHomeActivity("Vocabulary Booster")
             settled()
+            compose.onNodeWithTag("vocabulary-category-animals").performScrollTo().performClick();settled()
             compose.onNodeWithTag("vocabulary-open-EXPLORE").performScrollTo().performClick();settled()
             compose.onNodeWithTag("word-animal.horse").performScrollTo().performClick();settled()
             compose.onNodeWithTag("vocabulary-word").assertTextEquals("Horse")
-            compose.waitUntil(10_000) { var count=0;scenario.onActivity { count=ViewModelProvider(it)[VocabularyViewModel::class.java].images.size };count==6 }
+            compose.waitUntil(10_000) { var loaded=false;scenario.onActivity { loaded=VocabularyContent.items.all {item->item.id in ViewModelProvider(it)[VocabularyViewModel::class.java].images} };loaded }
             compose.onNodeWithTag("vocabulary-art-animal.horse",useUnmergedTree=true).performScrollTo().assertIsDisplayed()
             scenario.recreate();settled()
             compose.onNodeWithTag("vocabulary-word").assertTextEquals("Horse")
@@ -73,7 +75,7 @@ class VocabularyRouteTest {
                 assertFalse(web(activity.window.decorView))
                 activity.onBackPressedDispatcher.onBackPressed()
             }
-            compose.onNodeWithTag("vocabulary-open-EXPLORE").assertIsDisplayed()
+            compose.onNodeWithTag("vocabulary-open-EXPLORE").performScrollTo().assertIsDisplayed()
             scenario.onActivity {it.onBackPressedDispatcher.onBackPressed()}
             compose.openHomeActivity("Wortschatz");settled()
             assertArrayEquals(saved,SessionCheckpoint.encode(current()!!))

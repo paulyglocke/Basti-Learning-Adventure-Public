@@ -170,8 +170,11 @@ private fun ExploreWordControls(
 ) {
     fun t(en:String,de:String)=if(language==ContentLanguage.GERMAN)de else en
     Column(modifier,verticalArrangement=Arrangement.spacedBy(12.dp)) {
-        val isClassroom=selection.category==VocabularyContent.classroom
-        Text(if(isClassroom)t("Explore classroom things","Klassenzimmer entdecken") else t("Explore animals","Tiere entdecken"),style=MaterialTheme.typography.titleLarge)
+        Text(when(selection.category) {
+            VocabularyContent.classroom -> t("Explore classroom things","Klassenzimmer entdecken")
+            VocabularyContent.food -> t("Explore food and drink","Essen und Trinken entdecken")
+            else -> t("Explore animals","Tiere entdecken")
+        },style=MaterialTheme.typography.titleLarge)
         Text(selection.item.text.display[language],style=MaterialTheme.typography.headlineMedium,
             modifier=Modifier.testTag("vocabulary-word"))
         NativeActionButton(t("Listen again", "Noch einmal hören"), NativeActionRole.SECONDARY,
@@ -181,7 +184,11 @@ private fun ExploreWordControls(
             onClick=onExample,enabled=ready,modifier=Modifier.heightIn(min=56.dp).testTag("vocabulary-example"))
         Text(t("Can you say the word in your own sentence? You can ask someone to help.",
             "Kannst du mit dem Wort einen eigenen Satz sagen? Du kannst dir helfen lassen."))
-        Text(if(isClassroom)t("Choose another classroom thing","Wähle etwas anderes aus dem Klassenzimmer") else t("Choose another animal","Wähle ein anderes Tier"),style=MaterialTheme.typography.titleMedium)
+        Text(when(selection.category) {
+            VocabularyContent.classroom -> t("Choose another classroom thing","Wähle etwas anderes aus dem Klassenzimmer")
+            VocabularyContent.food -> t("Choose another food or drink","Wähle ein anderes Essen oder Getränk")
+            else -> t("Choose another animal","Wähle ein anderes Tier")
+        },style=MaterialTheme.typography.titleMedium)
         NativeChoiceRows(VocabularyContent.items(selection.category)) { item ->
             OutlinedButton({onSelect(item.id)},enabled=ready,modifier=Modifier.weight(1f).heightIn(min=56.dp).testTag("word-${item.id.value}")) {
                 Text(item.text.display[language])

@@ -33,7 +33,7 @@ class VocabularyViewModel @JvmOverloads constructor(
     private fun storage(name:String)=AtomicProgressStorage(File(getApplication<Application>().noBackupFilesDir,name),AndroidAtomicCommit)
     private val progress=AndroidProgressRepository.create(application)
     private val browse=VocabularySelectionStore(storage("vocabulary-selection"))
-    private val categories=listOf(ContentId("category.animals"),VocabularyContent.classroom)
+    private val categories=listOf(ContentId("category.animals"),VocabularyContent.classroom,VocabularyContent.food)
     private val quizzes=categories.flatMap { category -> listOf(VocabularyPhase.FIND,VocabularyPhase.NAME).map { phase ->
         (category to phase) to VocabularyContent.host(phase,category,storage("vocabulary-${category.value.substringAfter('.')}-${phase.name.lowercase()}"),progress)
     }}.toMap()

@@ -20,5 +20,13 @@ object VocabularyArtwork {
         ContentId("school.shelf") to "school_actions/board/place_shelf.png",
         ContentId("school.teacher") to "school_actions/board/place_teacher.png",
         ContentId("school.cup") to "school_actions/board/place_cup.png",
+        ContentId("food.apple") to "vocabulary/food/apple.jpg",
+        ContentId("food.banana") to "vocabulary/food/banana.jpg",
+        ContentId("food.bread") to "vocabulary/food/bread.jpg",
+        ContentId("food.water") to "vocabulary/food/water.jpg",
+        ContentId("food.milk") to "vocabulary/food/milk.jpg",
+        ContentId("food.cheese") to "vocabulary/food/cheese.jpg",
+        ContentId("food.orange") to "vocabulary/food/orange.jpg",
+        ContentId("food.sandwich") to "vocabulary/food/sandwich.jpg",
     ))
 }

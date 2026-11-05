@@ -141,7 +141,7 @@ internal data class HomeCard(
 
 private val homeCards = listOf(
     HomeCard("💬", "Tell Me!", "Erzähl mal!", "Talk about an adventure picture.", "Erzähle von einem Abenteuerbild.", mode = "tellme"),
-    HomeCard("📚", "Vocabulary Booster", "Wortschatz", "Explore animals and classroom words.", "Tiere und Wörter aus dem Klassenzimmer entdecken.", mode = "vocabulary"),
+    HomeCard("📚", "Vocabulary Booster", "Wortschatz", "Explore animals, classroom words, food and drink.", "Tiere, Klassenzimmer, Essen und Trinken entdecken.", mode = "vocabulary"),
     HomeCard("🎬", "Learn Verbs", "Verben lernen", "Watch, hear and learn each action.", "Aktionen anschauen, anhören und lernen.", verbExplorer = true),
     HomeCard("🔤", "Animal First Letters", "Tier-Anfangsbuchstaben", "Which animal starts with this letter?", "Welches Tier beginnt mit diesem Buchstaben?", "letters"),
     HomeCard("🔢", "Numbers", "Zahlen", "Count and order numbers up to your level.", "Zahlen zählen und ordnen.", "count"),
