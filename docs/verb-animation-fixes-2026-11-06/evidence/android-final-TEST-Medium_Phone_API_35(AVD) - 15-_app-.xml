@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.bellfamily.bastischool.VerbMotionProductionTest" tests="9" failures="0" errors="0" skipped="0" time="368.792" timestamp="2026-11-06T13:16:28" hostname="localhost">
+  <properties>
+    <property name="device" value="Medium_Phone_API_35(AVD) - 15" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="all53LessonsWorkInBothLanguagesAndBackgroundReturnStaysPaused" classname="com.bellfamily.bastischool.VerbMotionProductionTest" time="36.966" />
+  <testcase name="everyProductionAtlasDecodesWithTransparencyAndVisiblePoses" classname="com.bellfamily.bastischool.VerbMotionProductionTest" time="1.033" />
+  <testcase name="allAtlasCellsDecodeWithActualAlphaAndVisiblePixels" classname="com.bellfamily.bastischool.ui.verbmotion.VerbMotionActivityTest" time="0.207" />
+  <testcase name="recreationKeepsSelectionAndLanguageButNeverResumesSpeechOrMotion" classname="com.bellfamily.bastischool.ui.verbmotion.VerbMotionActivityTest" time="4.428" />
+  <testcase name="allPictureStepsAndKeyboardListenRemainReachable[de=false-font=1-landscape=false]" classname="com.bellfamily.bastischool.ui.verbmotion.VerbMotionLayoutTest" time="20.565" />
+  <testcase name="allPictureStepsAndKeyboardListenRemainReachable[de=true-font=1.5-landscape=false]" classname="com.bellfamily.bastischool.ui.verbmotion.VerbMotionLayoutTest" time="35.827" />
+  <testcase name="allPictureStepsAndKeyboardListenRemainReachable[de=true-font=2-landscape=true]" classname="com.bellfamily.bastischool.ui.verbmotion.VerbMotionLayoutTest" time="49.252" />
+  <testcase name="allPictureStepsAndKeyboardListenRemainReachable[de=false-font=1-landscape=true]" classname="com.bellfamily.bastischool.ui.verbmotion.VerbMotionLayoutTest" time="40.674" />
+  <testcase name="actualFramesMoveThenFreezeForPauseBackgroundAndReducedMotion" classname="com.bellfamily.bastischool.ui.verbmotion.VerbMotionScreenTest" time="163.071" />
+</testsuite>

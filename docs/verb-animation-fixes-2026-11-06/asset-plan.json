@@ -1,0 +1,268 @@
+[
+  {
+    "id": "eagle",
+    "columns": 4,
+    "rows": 2,
+    "subject": "The canonical brown eagle with white head, white tail, golden beak and talons. Flying horizontally, facing RIGHT, feet tucked. EIGHT successive wing-stroke poses: wings highest; three-quarter up; halfway up; out horizontally; halfway down; deepest downstroke; halfway down returning; halfway up returning. The chest, head, eye and tail are at identical pixel positions and the same scale in ALL cells; only the articulated wings change. Do not bob or redraw the head between poses.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "rabbit",
+    "columns": 4,
+    "rows": 4,
+    "subject": "The canonical golden rabbit with cream chest/tail and pink inner ears. Frames 1\u20138: a coherent straight-up JUMP, crouch, deeper crouch with focused eyes, push-off with legs extending DOWN, full extension, airborne tucked legs, landing with forefeet down, low compression, upright recovery. Frames 9\u201312: DIG, body/head fixed in low forward posture while near forepaw extends forward, scoops backward, other forepaw scoops, both forepaws recover; no soil (runtime draws it). Frames 13\u201316: NIBBLE: seated upright, forepaws holding a small orange carrot at mouth, jaw closed, small bite, chew, recover. Keep rabbit proportions/eye/chest marks unchanged. Exactly four legs.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "dog",
+    "columns": 4,
+    "rows": 4,
+    "subject": "The canonical golden/white floppy-eared dog, cream paws and tail tip, brown eyes. Frames1\u20134 BARK: planted standing body, alert head/ears closed mouth, open jaw, brief forward effort, close/recover. Frames5\u20138 WAG: exact same planted head/body/feet in ALL FOUR frames, only the tail bends left/up/right/down, whole torso MUST NOT rotate. Frames9\u201314: six coherent side-profile walking/running foot-contact/extension/recovery poses, head/right-facing mouth at consistent location. Frames15\u201316: lower head to pick an invisible ball up near the ground, then raise head with jaw gently open ready to carry it. No ball (runtime draws it).",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "cat",
+    "columns": 4,
+    "rows": 4,
+    "subject": "The canonical orange tabby cat with cream chest/paws, green eyes and striped tail. Frames1\u20134 MEOW: standing still, mouth closed/open/wider/closed with friendly ears/head. Frames5\u20138 SCRATCH: seated body stationary, near forepaw lifted, extended to right towards an invisible vertical scratching post, drawn down in a stroke, lifted again. Frames9\u201316 CHASE: eight coherent running leg-contact/extended/airborne/recovery poses facing right, no mouse. Same cat markings, proportions and head shape throughout.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "horse",
+    "columns": 4,
+    "rows": 4,
+    "subject": "The canonical golden-brown horse, black mane/tail, pale muzzle, white socks. Frames1\u20138 GALLOP: eight anatomically coherent phases of a side-on gallop, with alternating tucked legs, hind-leg push, extension, suspension and foreleg landing. Keep body/head fixed at same scale, four legs only, no rider/tack. Frames9\u201314 KICK: same horse facing RIGHT, brace front legs, lift the near hindleg, bend it, extend it backwards LEFT firmly, draw back, plant it. Frames15\u201316 rest standing closed/open eye. Do not stretch entire body to fake action.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "duck",
+    "columns": 4,
+    "rows": 2,
+    "subject": "The canonical warm golden-brown duck with cream breast, orange bill and feet. Show full body and both feet, not a head. Frames1\u20134 QUACK: stationary body, bill closed, partly open, clearly open, closed again, friendly alert expression. Frames5\u20138 PADDLE: same body held level, visible feet alternating rearward paddling strokes below belly, front foot forward/back then opposite foot forward/back; no water (runtime supplies it).",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "penguin",
+    "columns": 4,
+    "rows": 2,
+    "subject": "A friendly full-body black-and-white penguin with orange bill and two orange feet, consistent with the supplied style. NOT just a head. Frames1\u20134 DIVE: upright at edge, bend forward with flippers tucked, horizontal streamlined body head RIGHT, diagonal head-down entry posture. Frames5\u20138 WADDLE: full upright penguin, left foot planted/right lifted, weight shift, right planted/left lifted, return. Clearly visible feet, coherent anatomy, body/head scale stable.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "snake",
+    "columns": 4,
+    "rows": 2,
+    "subject": "The canonical friendly purple snake with pale pink underside and brown eyes. Frames1\u20136 SLITHER: an elongated low S-shaped body, head RIGHT at fixed height/size. A lateral body wave travels from behind head to tail across six poses; do NOT move one stiff coil. Frames7\u20138 HISS: raised head with a stable small coil, mouth slightly open and thin forked tongue visible, then mouth closed. One continuous limbless body, no detached tail or extra heads.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "frog",
+    "columns": 4,
+    "rows": 2,
+    "subject": "The canonical bright green frog with cream belly and large brown eyes. Show a complete frog with exactly four limbs. EIGHT coherent hop poses: crouch, deeper crouch, hind legs pushing downward/back, extended takeoff, airborne tucked, forefeet landing, hindfeet landing compression, recovery. Face RIGHT in side/three-quarter view, same frog face and scale, feet baseline consistent in grounded poses. No background or lily pad.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "monkey",
+    "columns": 4,
+    "rows": 2,
+    "subject": "The canonical friendly brown monkey with cream face/belly and curved tail. EIGHT climbing poses facing RIGHT: lower left hand grips an invisible vertical tree at the right edge of its body, opposite hand reaches up, both hands grip, opposite foot steps up, hips lift, lower hand releases, reaches higher, all limbs regain grip. Show hands/feet reaching to the SAME imaginary vertical trunk line in every cell. One tail and four limbs, no tree (runtime draws it). No whole-body rotation.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "cow",
+    "columns": 4,
+    "rows": 2,
+    "subject": "A friendly full-body black-and-white dairy cow with small horns, pink muzzle and dark hooves. Frames1\u20134 MOO: planted standing body, neck slightly lifted, mouth closed/partly open/open/closed, gentle effort. Frames5\u20138 GRAZE: planted feet and torso, neck/head lowering towards grass, muzzle low touching an imaginary grass patch, small chew with muzzle low, head rises slightly. No grass (runtime draws it). Preserve exact patches and body scale.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "pig",
+    "columns": 2,
+    "rows": 2,
+    "subject": "A friendly full-body warm pink pig with curly tail and round snout. FOUR OINK poses with body and feet planted: attentive closed mouth, snout lifted slightly, small open mouth/soft cheek movement, relaxed closed mouth. Keep same facial features, body outline and scale, no angry face.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "bee",
+    "columns": 2,
+    "rows": 2,
+    "subject": "A friendly honeybee with golden/black stripes, six little legs, two antennae and two translucent wings. FOUR matched flight/buzz wing poses, wings raised, midstroke, downstroke, returning. Body/head stay fixed, no extra legs or wings; wings visibly change angle. No flowers or honey.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "owl",
+    "columns": 2,
+    "rows": 2,
+    "subject": "A friendly round brown owl with cream facial discs, yellow eyes and small hooked beak, two feet perched on an invisible branch. FOUR hooting poses: attentive closed beak, slightly lifted chin/partly open beak, open beak with gentle throat expansion, closed beak relaxed. Keep feet/body fixed, avoid scaling whole body.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "wolf",
+    "columns": 4,
+    "rows": 2,
+    "subject": "A friendly full-body grey wolf, pale chest and muzzle, bushy tail. EIGHT HOWL poses: rest mouth closed, inhale chest, lift head/snouted muzzle upwards, head high mouth rounded open, hold howl with focussed gentle eyes, smaller mouth, lower head, rest. No aggression or bared scary teeth; expressive sustained sound posture.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "lion",
+    "columns": 4,
+    "rows": 2,
+    "subject": "A friendly full-body golden lion with warm brown mane, cream muzzle and tail tuft. EIGHT ROAR poses: standing alert closed mouth, inhale/chest set, lift chin, open jaw, much wider jaw and visible pink mouth with rounded teeth, sustained exhale/focussed brows, mouth closing, relaxed recovery. Body and planted paws same outline/position/scale throughout; change jaw, eyes and head posture. No threatening aggression.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "chicken",
+    "columns": 2,
+    "rows": 2,
+    "subject": "A friendly full-body white hen with red comb, yellow beak and two yellow feet. FOUR PECK poses, planted feet: head raised, neck bends down/forward RIGHT, beak touches an invisible seed on ground to the right of forefeet, head withdraws. Full bird body with moving neck/head; no seed (runtime draws it).",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "parrot",
+    "columns": 4,
+    "rows": 2,
+    "subject": "A friendly full-body green parrot with red forehead, yellow/blue wing accents and pale hooked beak. Frames1\u20136 FLAP: airborne level body fixed facing RIGHT, wings fully up, halfway up, horizontal, halfway down, down, returning up. Frames7\u20138 COPY SOUNDS: perched stable body listening with closed beak and tilted attentive head, then speaking with open beak. Feet clear, same plumage throughout.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "flamingo",
+    "columns": 2,
+    "rows": 2,
+    "subject": "A friendly full-body pink flamingo with long curved neck and black-tipped beak, exactly two long legs. FOUR subtly matched BALANCE poses: one supporting leg straight and planted while other is folded visibly UP, same posture with eyes blink, eyes open and tiny head turn, return. Every pose clearly shows only ONE foot on ground. No large rocking, no extra legs, same body proportions.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "beaver",
+    "columns": 4,
+    "rows": 2,
+    "subject": "A friendly full-body brown beaver with cream muzzle, small incisors and flat paddle tail. Frames1\u20134 CHEW WOOD: seated, holds a small brown stick at mouth in both forepaws, mouth closed/small bite/open chew/closed again with a small notch visible in stick. Frames5\u20138 BUILD: same animal standing facing RIGHT, holding a short log at chest, leaning forward, placing it low ahead of paws, empty paws recovering upright. The carried log must remain the same small size. No extra scenery.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "spider",
+    "columns": 2,
+    "rows": 2,
+    "subject": "A friendly small brown/black spider with round body and exactly EIGHT legs, non-scary warm eyes. FOUR WEB-WORK poses: body centred, front legs reach right, one front leg draws a thin visible silk filament from spinneret behind abdomen, front legs reach up, recover. Keep all eight legs connected coherently, no completed web or background (runtime draws anchored growing strands).",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "elephant",
+    "columns": 4,
+    "rows": 2,
+    "subject": "A friendly full-body grey elephant with big ears, pale small tusks, exactly four legs and one long trunk. Frames1\u20134 TRUNK USE: planted body, trunk reaching forward RIGHT and down, tip curling around a small brown branch, trunk raises the same branch, trunk lowers to place it down. Frames5\u20138 STOMP: same elephant, one forefoot planted and other raised clearly, raised forefoot higher with weight supported by other three legs, firm lowered/ground-contact pose, settled stance. Body scale fixed, no whole-body bounce, no water spraying.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "giraffe",
+    "columns": 2,
+    "rows": 2,
+    "subject": "A friendly full-body golden giraffe with consistent brown patches, long neck and four slender legs. FOUR REACH HIGH LEAVES poses: all four hooves planted, normal head, stretch ONLY neck/head upward, muzzle reaching the upper-right corner towards invisible leaves, nibble and recover. Legs/body never elongate. No tree/leaves (runtime draws them).",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "crab",
+    "columns": 2,
+    "rows": 2,
+    "subject": "A friendly full-body orange crab front-facing with two claws and eight walking legs. FOUR SIDEWAYS WALK contact poses: alternating legs lift/plant to walk RIGHT while body/front face stay facing viewer, opposite legs move, first legs plant, return. Same shell/eyes/scale, no extra claws or detached legs. No background.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "octopus",
+    "columns": 2,
+    "rows": 2,
+    "subject": "A friendly red/purple octopus with a rounded head and exactly eight arms. FOUR SQUIRT INK poses: relaxed floating, mantle slightly contracted with a small visible siphon tube aimed to the lower RIGHT, contracting/exhaling through that siphon, recovering. Head/eyes remain fixed size and location, arms have a small coherent motion. No ink cloud/background (runtime draws the emitted ink from siphon).",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "otter",
+    "columns": 2,
+    "rows": 2,
+    "subject": "A friendly full-body brown otter with pale face/chest, floating on its BACK, belly facing UP, head and nose raised and above imagined water, hindfeet clearly at the opposite end. FOUR subtle matching back-floating poses: paws resting on belly, one paw adjusts, gentle head tilt/blink, return. Keep actual reclined back-down belly-up silhouette in all cells. No water (runtime draws it).",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "bat",
+    "columns": 2,
+    "rows": 2,
+    "subject": "A friendly small brown full-body bat, already hanging UPSIDE DOWN by BOTH little feet at the TOP CENTRE of each cell, head at the bottom, wings folded around its body. FOUR almost-still sleeping poses: eyes gently closed, tiny breathing change, half-blink/drowsy eyes, closed again. Feet exactly same anchor location in all cells. Do NOT rotate a flying bat; show a genuine hanging anatomy. Entire animal inside each cell with clear 10% margin, no branch (runtime draws support).",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "hedgehog",
+    "columns": 4,
+    "rows": 2,
+    "subject": "A friendly full-body brown hedgehog with cream face/belly and small feet. EIGHT CURL INTO BALL poses: standing extended, lower head, tuck muzzle inward, fold front feet, tuck back feet, body rounds with face almost hidden, complete round spiny ball with no exposed feet or tail, slight peek/recovery. Same animal scale/markings, silhouette MUST genuinely change to round rather than shrinking an unchanged animal.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "kangaroo",
+    "columns": 2,
+    "rows": 2,
+    "subject": "A friendly full-body golden kangaroo with a visibly open belly pouch holding ONE small joey. The joey's little head and ears remain clearly visible seated INSIDE the pouch in ALL FOUR poses. Four subtle standing/carrying poses: mother steady with joey peeking, mother shifts weight slightly while joey stays supported, mother looks down at joey, return. Exactly two arms and two legs on mother, no extra babies or loose baby outside pouch.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "tiger",
+    "columns": 4,
+    "rows": 2,
+    "subject": "A friendly full-body orange tiger with consistent black stripes, white cheeks/chest and long tail. EIGHT POUNCE poses: low crouch, deeper coil with focussed eyes, hindleg push backwards/down, long forward extension to RIGHT, airborne with forepaws reaching, forepaws touch down, low landing compression, recovery. Four legs only, same body/head size and stripes throughout, no prey or violent scene.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "seal",
+    "columns": 2,
+    "rows": 2,
+    "subject": "A friendly full-body grey seal seated upright, two front flippers clearly visible. FOUR CLAP poses: front flippers separated out to both sides, coming inward, BOTH front flippers visibly touch together at chest, separated again. Keep head/body stationary, exactly two front flippers and coherent hind flippers, no body bob to fake clapping.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "snail",
+    "columns": 2,
+    "rows": 2,
+    "subject": "A friendly full-body brown snail with a coherent spiral shell and pale soft muscular foot. FOUR slow-crawl poses with body/shell scale fixed: foot extended forward RIGHT, foot glides beneath shell, slight foot contraction, extended again; two eye stalks gently move/blink. Low grounded body, no hopping or whole-shell scaling.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "butterfly",
+    "columns": 2,
+    "rows": 2,
+    "subject": "A friendly full-body blue butterfly with dark wing edges and small slim body, two antennae and six tiny legs. FOUR FLUTTER poses: paired wings fully open, half closed, nearly closed/up, half open again. Body/head fixed, wings hinge coherently, no extra wings. Symmetric clear silhouette readable at small size.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "ant",
+    "columns": 2,
+    "rows": 2,
+    "subject": "A friendly full-body dark brown ant with three body segments, exactly six legs and two antennae, facing RIGHT. Holds one small green leaf securely in its mandibles in ALL FOUR walking poses. Four coherent alternating leg-contact walking poses with body/leaf size and grip fixed. Leaf should be clearly visible as carried food, not floating nearby.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "dragon",
+    "columns": 2,
+    "rows": 2,
+    "subject": "The canonical friendly red/orange story dragon with pale yellow belly, small orange wings and golden horns. FOUR BREATHE FIRE poses facing RIGHT: mouth closed/inhale chest, mouth opens and head extends, mouth WIDE open with focussed effort, mouth closes/relaxes. Body/paws planted, same character identity. No actual flame/background (runtime draws a short flame attached to mouth). No scary aggression.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "dinosaur",
+    "columns": 2,
+    "rows": 2,
+    "subject": "The canonical friendly green long-necked dinosaur with pale yellow belly, small dark spots, long curved tail and FOUR legs. FOUR STOMP poses: all feet planted, near forefoot lifts with weight supported by the other three feet, near forefoot raised high, firm contact with forefoot planted and body settling. Preserve the canonical long-necked character and exactly four legs; head/torso/leg lengths stay identical, no whole-body scaling or generic bounce.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "sauropod",
+    "columns": 2,
+    "rows": 2,
+    "subject": "A friendly full-body blue/teal long-necked sauropod, pale belly, four solid legs and long tail. FOUR NECK STRETCH poses: all four feet planted, head normal, long neck straightens upward from its base, head reaches highest with gentle focused eyes, neck relaxes slightly. Only neck articulation changes; torso and leg lengths MUST remain identical. No new limbs, no tree.",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  },
+  {
+    "id": "shark",
+    "columns": 2,
+    "rows": 2,
+    "subject": "A friendly full-body generic grey SHARK with white underside, clear gill slits, tall dorsal fin, paired pectoral fins and a vertical asymmetrical tail; not a dolphin (no mammal blowhole or horizontal flukes). FOUR SWIM poses: body level facing RIGHT, tail bends left, tail crosses centre, tail bends right, returns. Head/eye/body stay the same shape and scale, true tail-driven swimming. Rounded child-friendly teeth only if mouth visible. No water (runtime supplies it).",
+    "status": "implemented; source and production-rendered poses visually reviewed"
+  }
+]

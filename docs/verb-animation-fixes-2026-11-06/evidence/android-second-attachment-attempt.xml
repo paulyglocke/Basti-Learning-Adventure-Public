@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.bellfamily.bastischool.VerbMotionProductionTest" tests="2" failures="1" errors="0" skipped="0" time="477.236" timestamp="2026-11-06T11:40:00" hostname="localhost">
+  <properties>
+    <property name="device" value="Medium_Phone_API_35(AVD) - 15" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="all53LessonsWorkInBothLanguagesAndBackgroundReturnStaysPaused" classname="com.bellfamily.bastischool.VerbMotionProductionTest" time="395.351">
+    <failure>java.lang.IllegalArgumentException: Required value was null.
+at com.bellfamily.bastischool.VerbMotionProductionTest.eval$lambda$13(VerbMotionProductionTest.kt:92)
+at com.bellfamily.bastischool.VerbMotionProductionTest.$r8$lambda$Gd_wnIvjzfv2VuuuQRc76nDfyls(Unknown Source:0)
+at com.bellfamily.bastischool.VerbMotionProductionTest$$ExternalSyntheticLambda5.perform(D8$$SyntheticClass:0)
+at androidx.test.core.app.ActivityScenario.lambda$onActivity$2$androidx-test-core-app-ActivityScenario(ActivityScenario.java:794)
+at androidx.test.core.app.ActivityScenario$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:487)
+at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at android.app.Instrumentation$SyncRunnable.run(Instrumentation.java:2612)
+at android.os.Handler.handleCallback(Handler.java:959)
+at android.os.Handler.dispatchMessage(Handler.java:100)
+at android.os.Looper.loopOnce(Looper.java:232)
+at android.os.Looper.loop(Looper.java:317)
+at android.app.ActivityThread.main(ActivityThread.java:8705)
+at java.lang.reflect.Method.invoke(Native Method)
+at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:886)
+</failure>
+  </testcase>
+  <testcase name="everyProductionAtlasDecodesWithTransparencyAndVisiblePoses" classname="com.bellfamily.bastischool.VerbMotionProductionTest" time="64.629" />
+</testsuite>

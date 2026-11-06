@@ -1225,6 +1225,8 @@ class MainActivity : ComponentActivity() {
     }
 
     private inner class AppBridge(private val context: Context, private val owner: WebView, private val mailbox: LegacyCheckpoint) {
+        @JavascriptInterface fun reducedMotion(): Boolean = android.provider.Settings.Global.getFloat(
+            context.contentResolver, android.provider.Settings.Global.ANIMATOR_DURATION_SCALE, 1f) == 0f
         @JavascriptInterface fun saveSession(json: String) { mailbox.publish(json) }
         @JavascriptInterface fun onWebHome() = runOnUiThread {
             if (webView === owner && navigation.screen == ShellScreen.WEB) changeRoute(navigation.home())

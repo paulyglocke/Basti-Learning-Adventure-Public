@@ -10,6 +10,15 @@ These are implementation requirements, not claims that the target already exists
 
 ## Current baseline and migration
 
+The 2026-11-06 verb repair keeps the existing 53-lesson WebView curriculum and
+session adapter. `verb-motion-content.js` maps unchanged English lesson keys to
+presentation metadata; `verb-motion.js` owns only one disposable Canvas player,
+authored sprite timing, scene props and static teaching pictures. Speech remains
+with `audioGuidance`/`LegacySpeech`, and no assessment/progress state moves into
+the player. Main assets under `VerbMotion/` are also consumed by the debug-only
+Compose Jump/Fly/Snap preview. This is an incremental correctness/artwork repair,
+not native parity for the full curriculum. See the [repair review](docs/verb-animation-fixes-2026-11-06/README.md).
+
 At Documentation Pass 2, [MainActivity.kt](app/src/main/java/com/bellfamily/bastischool/MainActivity.kt) owned Compose home/Options/top bar, enum navigation, remembered screen state, SharedPreferences, WebView hosting and Android TTS, while [app.js](app/src/main/assets/app.js) and [index.html](app/src/main/assets/index.html) owned all learning activities. That paragraph is a historical migration baseline, not current implementation reality.
 
 Current source still uses the same hybrid shell, but shared native content/audio/session/progress foundations are implemented and native Compose learning areas include Prepositions, Seasons, Wilma’s Week, Vocabulary Booster and Months. Months spans the Year Wheel, recognition/relations/missing-month quizzes and selectable three- and four-month ordered Build the Year levels. Phase 6 illustrated Months ↔ Seasons is implemented and automated validation is complete. Shared completion/action/support presentation and deterministic restoration/progress delivery are also implemented. The typed 81-scene Scene Description catalogue drives native Tell Me / Erzähl mal, an open-ended text/artwork conversation outside the quiz framework. Legacy HTML/JavaScript remains only for unmigrated routes and must stay usable until tested native parity exists. Physical-device acceptance remains tracked separately in TESTING_QA_SPEC.md.

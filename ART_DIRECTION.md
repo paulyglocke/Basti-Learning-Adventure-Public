@@ -39,6 +39,13 @@ A canonical illustration should be reusable across Vocabulary, Prepositions, com
 
 Create activity-specific poses or action frames when they teach meaning—such as slithering, flying, snapping or swimming—but do not independently redesign the same animal for every screen. Stable semantic content IDs remain separate from asset filenames so artwork can improve without changing learning identity.
 
+The [verb motion repair](docs/verb-animation-fixes-2026-11-06/README.md) uses
+39 reusable animal pose atlases across all 53 existing lessons, following owner
+approval of the audit repairs. Related actions share one animal identity; body
+parts articulate and scene props show contact/results. Native Jump/Fly/Snap
+previews consume the same production WebP assets. Historical four-pose PNGs stay
+in debug assets for comparison. Physical/child acceptance remains separate.
+
 Prioritise replacement of explicit temporary glyph/emoji placeholders before producing decorative variants.
 
 ## Recurring learning mascot — Wilma

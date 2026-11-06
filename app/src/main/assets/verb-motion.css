@@ -1,0 +1,23 @@
+.verb-motion-stage{width:100%;max-width:760px;height:auto;aspect-ratio:16/9;background:#fff5df;border:2px solid #bac9bd;border-radius:24px;box-shadow:none;position:relative;overflow:hidden;margin-inline:auto}
+.verb-motion-stage::before,.verb-motion-stage::after{display:none!important}
+.verb-motion-stage .verb-motion-canvas{position:static;display:block;left:auto;top:auto;width:100%;height:100%;font-size:inherit;line-height:normal;filter:none;transform:none!important;animation:none!important}
+.verb-motion-stage .verb-motion-canvas.hidden{display:none}
+.verb-motion-stage.showing-pictures{height:auto;aspect-ratio:auto;max-width:none;overflow:visible;background:transparent;border:0}
+.verb-picture-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.verb-picture-steps.hidden{display:none}
+.verb-picture-steps figure{margin:0;padding:8px;background:#fffaf0;border:2px solid #c5d0c2;border-radius:16px;min-width:0}
+.verb-picture-steps canvas{display:block;width:100%;height:auto;border-radius:12px}
+.verb-picture-steps figcaption{padding:8px 2px;font-size:18px;font-weight:800;color:#244450;overflow-wrap:anywhere}
+.verb-motion-controls{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.verb-motion-controls button,.verb-model-guide button{font:inherit;font-weight:800;min-height:52px;border-radius:16px;border:2px solid #668275;padding:12px 18px;background:#e4efe4;color:#24483a;cursor:pointer;white-space:normal}
+.verb-motion-controls button{flex:1 1 145px}
+.verb-motion-controls button:disabled{opacity:.6;cursor:default}
+.verb-motion-controls button[hidden]{display:none}
+.verb-motion-status{color:#3e5c53;font-size:17px;font-weight:700;min-height:24px;margin:8px 0}
+.verb-model-guide{border:2px solid #ccd8c5;border-radius:16px;padding:12px 16px;margin:12px 0;background:#f3f5e9;line-height:1.5}
+.verb-model-guide summary{font-weight:800;cursor:pointer;min-height:44px;display:flex;align-items:center}
+.verb-model-guide summary::after{content:"+";font-size:24px;margin-inline-start:auto;padding-inline-start:12px}
+.verb-model-guide[open] summary::after{content:"−"}
+.verb-model-guide p{font-size:19px}
+.verbLibraryCard img{width:80px;height:80px;object-fit:contain}
+@media(max-width:430px){.verb-picture-steps{grid-template-columns:1fr}.verbLibraryCard img{width:54px;height:54px}}

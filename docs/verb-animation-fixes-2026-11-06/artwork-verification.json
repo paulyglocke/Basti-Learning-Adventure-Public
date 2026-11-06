@@ -1,0 +1,895 @@
+{
+  "atlases": 39,
+  "poses": 264,
+  "atlasBytes": 23476858,
+  "records": [
+    {
+      "animal": "eagle",
+      "path": "app/src/main/assets/VerbMotion/eagle.webp",
+      "size": [
+        1536,
+        768
+      ],
+      "grid": [
+        4,
+        2
+      ],
+      "coverage": [
+        0.286,
+        0.2383,
+        0.2279,
+        0.2158,
+        0.2114,
+        0.2073,
+        0.2155,
+        0.2315
+      ],
+      "bytes": 543872,
+      "sha256": "45dbd76004a4a1c0ddd0547a9eba603e877420c584c03ac4e1faf2d29628c2db"
+    },
+    {
+      "animal": "rabbit",
+      "path": "app/src/main/assets/VerbMotion/rabbit.webp",
+      "size": [
+        1536,
+        1536
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "coverage": [
+        0.2386,
+        0.2345,
+        0.235,
+        0.2281,
+        0.1941,
+        0.1842,
+        0.2253,
+        0.2213,
+        0.2573,
+        0.2625,
+        0.2589,
+        0.2679,
+        0.2484,
+        0.2483,
+        0.249,
+        0.2487
+      ],
+      "bytes": 1790152,
+      "sha256": "bb9a73bad613a1d9361d15fe02f352f7dcac07f0cc85daeed8745ed1c2730a8f"
+    },
+    {
+      "animal": "dog",
+      "path": "app/src/main/assets/VerbMotion/dog.webp",
+      "size": [
+        1536,
+        1536
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "coverage": [
+        0.3311,
+        0.3388,
+        0.3348,
+        0.3337,
+        0.3289,
+        0.3412,
+        0.3295,
+        0.325,
+        0.2889,
+        0.296,
+        0.3044,
+        0.308,
+        0.2835,
+        0.3025,
+        0.3094,
+        0.3157
+      ],
+      "bytes": 2063650,
+      "sha256": "0a0c8f6f42d78cd47306b4ede942f06e4d8ac9db78b95591338586e6a7587a9a"
+    },
+    {
+      "animal": "cat",
+      "path": "app/src/main/assets/VerbMotion/cat.webp",
+      "size": [
+        1536,
+        1536
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "coverage": [
+        0.3473,
+        0.3485,
+        0.3492,
+        0.347,
+        0.3295,
+        0.334,
+        0.3415,
+        0.337,
+        0.2769,
+        0.2683,
+        0.2534,
+        0.2365,
+        0.2553,
+        0.2668,
+        0.2788,
+        0.3035
+      ],
+      "bytes": 1717762,
+      "sha256": "37d96c946cff6e07deac8029b1ee78c4d3bac5dcbf9c4911886f16613e0c4e74"
+    },
+    {
+      "animal": "horse",
+      "path": "app/src/main/assets/VerbMotion/horse.webp",
+      "size": [
+        1536,
+        1536
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "coverage": [
+        0.1698,
+        0.1651,
+        0.1625,
+        0.1552,
+        0.1523,
+        0.1621,
+        0.1594,
+        0.1683,
+        0.1837,
+        0.1805,
+        0.1801,
+        0.1811,
+        0.1802,
+        0.1893,
+        0.1918,
+        0.1928
+      ],
+      "bytes": 1550066,
+      "sha256": "1bfa7302f2ec1d4e4e383f8b25d1d7d880cc220f62d2796caadd279cb1c9d9a6"
+    },
+    {
+      "animal": "duck",
+      "path": "app/src/main/assets/VerbMotion/duck.webp",
+      "size": [
+        1536,
+        768
+      ],
+      "grid": [
+        4,
+        2
+      ],
+      "coverage": [
+        0.3145,
+        0.3154,
+        0.3188,
+        0.314,
+        0.3174,
+        0.3098,
+        0.3157,
+        0.3092
+      ],
+      "bytes": 780238,
+      "sha256": "a8b7db0c02a9fd1d88893e543ced90af1feccd12e77da04f4583789377b87723"
+    },
+    {
+      "animal": "penguin",
+      "path": "app/src/main/assets/VerbMotion/penguin.webp",
+      "size": [
+        1536,
+        768
+      ],
+      "grid": [
+        4,
+        2
+      ],
+      "coverage": [
+        0.2493,
+        0.2287,
+        0.1921,
+        0.1941,
+        0.2559,
+        0.2621,
+        0.264,
+        0.2632
+      ],
+      "bytes": 477854,
+      "sha256": "16454f0727f6a244bdd46799f39ed123c046321f9abbd3f43b085ce005a18239"
+    },
+    {
+      "animal": "snake",
+      "path": "app/src/main/assets/VerbMotion/snake.webp",
+      "size": [
+        1536,
+        768
+      ],
+      "grid": [
+        4,
+        2
+      ],
+      "coverage": [
+        0.1399,
+        0.1451,
+        0.1551,
+        0.1627,
+        0.1638,
+        0.1399,
+        0.1952,
+        0.1928
+      ],
+      "bytes": 419364,
+      "sha256": "6f550aec36a741ad2aa59a579f172f579d8cf72f3470ed99a453d95e5df5e7a4"
+    },
+    {
+      "animal": "frog",
+      "path": "app/src/main/assets/VerbMotion/frog.webp",
+      "size": [
+        1536,
+        768
+      ],
+      "grid": [
+        4,
+        2
+      ],
+      "coverage": [
+        0.2526,
+        0.2139,
+        0.2219,
+        0.1904,
+        0.176,
+        0.2132,
+        0.2343,
+        0.2466
+      ],
+      "bytes": 650374,
+      "sha256": "470f1fb55f484f5ef84d9c3c9fc44159ee1009f572023c3c4f0546efdd69d8a8"
+    },
+    {
+      "animal": "monkey",
+      "path": "app/src/main/assets/VerbMotion/monkey.webp",
+      "size": [
+        1536,
+        768
+      ],
+      "grid": [
+        4,
+        2
+      ],
+      "coverage": [
+        0.2453,
+        0.2573,
+        0.2556,
+        0.2453,
+        0.2394,
+        0.2254,
+        0.2148,
+        0.2136
+      ],
+      "bytes": 648880,
+      "sha256": "e5a7854459ff84b5a0672294deb2c8f27229c86b4f26167dd28a54db8fba14b4"
+    },
+    {
+      "animal": "cow",
+      "path": "app/src/main/assets/VerbMotion/cow.webp",
+      "size": [
+        1536,
+        768
+      ],
+      "grid": [
+        4,
+        2
+      ],
+      "coverage": [
+        0.2396,
+        0.2393,
+        0.2403,
+        0.2362,
+        0.2279,
+        0.2219,
+        0.2216,
+        0.2174
+      ],
+      "bytes": 678518,
+      "sha256": "45342a35ba885d02705a51fc0b4935bf220d7de7a91fecb3123ed64e8f7dd6a7"
+    },
+    {
+      "animal": "pig",
+      "path": "app/src/main/assets/VerbMotion/pig.webp",
+      "size": [
+        768,
+        768
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "coverage": [
+        0.1983,
+        0.2019,
+        0.2,
+        0.1991
+      ],
+      "bytes": 326888,
+      "sha256": "a98446a1162e7c7d9a3360a47751d2ed2e86ad38c484215907afaf61941b5937"
+    },
+    {
+      "animal": "bee",
+      "path": "app/src/main/assets/VerbMotion/bee.webp",
+      "size": [
+        768,
+        768
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "coverage": [
+        0.2429,
+        0.2002,
+        0.1598,
+        0.1998
+      ],
+      "bytes": 395328,
+      "sha256": "e801ae2e7f50be6f9c3809c769aabda0d4132c00553073e1c79e47de0f378470"
+    },
+    {
+      "animal": "owl",
+      "path": "app/src/main/assets/VerbMotion/owl.webp",
+      "size": [
+        768,
+        768
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "coverage": [
+        0.3198,
+        0.3232,
+        0.3277,
+        0.3195
+      ],
+      "bytes": 339044,
+      "sha256": "b21d588d8c75205f1e82aaae2a0a2635c559c7fe91857db8d9692c7da625735e"
+    },
+    {
+      "animal": "wolf",
+      "path": "app/src/main/assets/VerbMotion/wolf.webp",
+      "size": [
+        1536,
+        768
+      ],
+      "grid": [
+        4,
+        2
+      ],
+      "coverage": [
+        0.2733,
+        0.2858,
+        0.3002,
+        0.3072,
+        0.3118,
+        0.2927,
+        0.2853,
+        0.2798
+      ],
+      "bytes": 681464,
+      "sha256": "8b1441ae910ad40cf63a509d1a24df31b75a2c060184a1a16cf66430856215b4"
+    },
+    {
+      "animal": "lion",
+      "path": "app/src/main/assets/VerbMotion/lion.webp",
+      "size": [
+        1536,
+        768
+      ],
+      "grid": [
+        4,
+        2
+      ],
+      "coverage": [
+        0.3515,
+        0.3561,
+        0.365,
+        0.3693,
+        0.376,
+        0.3675,
+        0.3614,
+        0.352
+      ],
+      "bytes": 805880,
+      "sha256": "4564994e8bf16418697775178449a1be75c2a483581ec79835878645c79ecc1b"
+    },
+    {
+      "animal": "chicken",
+      "path": "app/src/main/assets/VerbMotion/chicken.webp",
+      "size": [
+        768,
+        768
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "coverage": [
+        0.2573,
+        0.2546,
+        0.2349,
+        0.2564
+      ],
+      "bytes": 282402,
+      "sha256": "351cb2ca27c673c06f438f62639ffecae5a95f4a1ee418b43bebebf6d2b8ada7"
+    },
+    {
+      "animal": "parrot",
+      "path": "app/src/main/assets/VerbMotion/parrot.webp",
+      "size": [
+        1536,
+        768
+      ],
+      "grid": [
+        4,
+        2
+      ],
+      "coverage": [
+        0.2612,
+        0.1885,
+        0.1773,
+        0.183,
+        0.1765,
+        0.2049,
+        0.151,
+        0.1513
+      ],
+      "bytes": 557626,
+      "sha256": "20429c689cbb6c3651911427935b2ad97936a6a4eb21891321063592d5a751d8"
+    },
+    {
+      "animal": "flamingo",
+      "path": "app/src/main/assets/VerbMotion/flamingo.webp",
+      "size": [
+        768,
+        768
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "coverage": [
+        0.121,
+        0.1211,
+        0.1204,
+        0.1225
+      ],
+      "bytes": 229474,
+      "sha256": "28ec368caee0d4182c012ed9c46175227b2b410aa70f5e80ea7c10a40ff318fd"
+    },
+    {
+      "animal": "beaver",
+      "path": "app/src/main/assets/VerbMotion/beaver.webp",
+      "size": [
+        1536,
+        768
+      ],
+      "grid": [
+        4,
+        2
+      ],
+      "coverage": [
+        0.3513,
+        0.3509,
+        0.3508,
+        0.351,
+        0.3014,
+        0.3003,
+        0.3089,
+        0.3121
+      ],
+      "bytes": 1159242,
+      "sha256": "eaa9c4a865017efbe184ff13378a6cd16716b8cac863284c475cc6a97722fbf2"
+    },
+    {
+      "animal": "spider",
+      "path": "app/src/main/assets/VerbMotion/spider.webp",
+      "size": [
+        768,
+        768
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "coverage": [
+        0.2228,
+        0.2279,
+        0.2326,
+        0.2409
+      ],
+      "bytes": 327434,
+      "sha256": "4defed144f6c482b23f5fb3c856726af545c4497092bc6bdc8ded4e04743845f"
+    },
+    {
+      "animal": "elephant",
+      "path": "app/src/main/assets/VerbMotion/elephant.webp",
+      "size": [
+        1536,
+        768
+      ],
+      "grid": [
+        4,
+        2
+      ],
+      "coverage": [
+        0.2873,
+        0.2985,
+        0.2796,
+        0.2891,
+        0.2877,
+        0.2927,
+        0.2968,
+        0.2892
+      ],
+      "bytes": 574930,
+      "sha256": "469f7032155223ae7aa003cbe6e202ddcf60524cd4efc520f5fc20a3359d4bd9"
+    },
+    {
+      "animal": "giraffe",
+      "path": "app/src/main/assets/VerbMotion/giraffe.webp",
+      "size": [
+        768,
+        768
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "coverage": [
+        0.1413,
+        0.1458,
+        0.1486,
+        0.1482
+      ],
+      "bytes": 232094,
+      "sha256": "ac15ff375a0b82493edb35609c5edf934e1d9b64aabb008c272d6f4ad495b3ca"
+    },
+    {
+      "animal": "crab",
+      "path": "app/src/main/assets/VerbMotion/crab.webp",
+      "size": [
+        768,
+        768
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "coverage": [
+        0.3148,
+        0.3023,
+        0.3063,
+        0.3157
+      ],
+      "bytes": 410648,
+      "sha256": "28f6d1118351994d049877f3f038fdf37bb3180e12d30b6435e9c45b86f54e61"
+    },
+    {
+      "animal": "octopus",
+      "path": "app/src/main/assets/VerbMotion/octopus.webp",
+      "size": [
+        768,
+        768
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "coverage": [
+        0.335,
+        0.2782,
+        0.2545,
+        0.3222
+      ],
+      "bytes": 367056,
+      "sha256": "8aebaa6d6eb89321f24cae277259c89e7451bdc054923f1624d87e0e8feee77e"
+    },
+    {
+      "animal": "otter",
+      "path": "app/src/main/assets/VerbMotion/otter.webp",
+      "size": [
+        768,
+        768
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "coverage": [
+        0.2537,
+        0.2622,
+        0.2626,
+        0.2537
+      ],
+      "bytes": 279750,
+      "sha256": "eb6ee35d31d1047e69f32f961ab9a10f4b2cc5bad33b06e56a227cf98182a0d4"
+    },
+    {
+      "animal": "bat",
+      "path": "app/src/main/assets/VerbMotion/bat.webp",
+      "size": [
+        768,
+        768
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "coverage": [
+        0.196,
+        0.196,
+        0.1966,
+        0.1963
+      ],
+      "bytes": 211512,
+      "sha256": "af14f5d1b5a5856e34df238822025586a9cf78c305cce308938cc020f4dc3f73"
+    },
+    {
+      "animal": "hedgehog",
+      "path": "app/src/main/assets/VerbMotion/hedgehog.webp",
+      "size": [
+        1536,
+        768
+      ],
+      "grid": [
+        4,
+        2
+      ],
+      "coverage": [
+        0.4606,
+        0.4301,
+        0.411,
+        0.3932,
+        0.3926,
+        0.391,
+        0.3889,
+        0.3976
+      ],
+      "bytes": 949108,
+      "sha256": "5a9759fce0a6aaed2c7473daf49b4787ba5a2dadfcf80646dfbf70fb01c53b76"
+    },
+    {
+      "animal": "kangaroo",
+      "path": "app/src/main/assets/VerbMotion/kangaroo.webp",
+      "size": [
+        768,
+        768
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "coverage": [
+        0.1904,
+        0.195,
+        0.1937,
+        0.1946
+      ],
+      "bytes": 237602,
+      "sha256": "b4a36b7a9e1348593dd01d66f83f9972750152098650ec847cc123316f0e1dde"
+    },
+    {
+      "animal": "tiger",
+      "path": "app/src/main/assets/VerbMotion/tiger.webp",
+      "size": [
+        1536,
+        768
+      ],
+      "grid": [
+        4,
+        2
+      ],
+      "coverage": [
+        0.1873,
+        0.1775,
+        0.1877,
+        0.1721,
+        0.166,
+        0.1803,
+        0.1819,
+        0.2077
+      ],
+      "bytes": 530544,
+      "sha256": "87d02991161fcc792a1241a3c1e7f92db6c04012f895962a51183472a4b4cc35"
+    },
+    {
+      "animal": "seal",
+      "path": "app/src/main/assets/VerbMotion/seal.webp",
+      "size": [
+        768,
+        768
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "coverage": [
+        0.3467,
+        0.3168,
+        0.3117,
+        0.3447
+      ],
+      "bytes": 295546,
+      "sha256": "4ac8deadca3378a3e251c171bf580ad709cad9d3b4ef866babd5892096cc92e7"
+    },
+    {
+      "animal": "snail",
+      "path": "app/src/main/assets/VerbMotion/snail.webp",
+      "size": [
+        768,
+        768
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "coverage": [
+        0.3357,
+        0.3322,
+        0.3251,
+        0.3354
+      ],
+      "bytes": 374032,
+      "sha256": "913af5764a2a4261e9acad71edbe3c6328d42470950685a86c699712cdc27c28"
+    },
+    {
+      "animal": "butterfly",
+      "path": "app/src/main/assets/VerbMotion/butterfly.webp",
+      "size": [
+        768,
+        768
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "coverage": [
+        0.3338,
+        0.2267,
+        0.174,
+        0.2747
+      ],
+      "bytes": 328544,
+      "sha256": "e8850462e248a92160fa1d343d79dd1505c12d7a5a5a230103d38b05add2c351"
+    },
+    {
+      "animal": "ant",
+      "path": "app/src/main/assets/VerbMotion/ant.webp",
+      "size": [
+        768,
+        768
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "coverage": [
+        0.1994,
+        0.1974,
+        0.1994,
+        0.1975
+      ],
+      "bytes": 254872,
+      "sha256": "a1a1b2725af7094822984ef5f1856a97672a7f2321e13725bf9cea2d6574685b"
+    },
+    {
+      "animal": "dragon",
+      "path": "app/src/main/assets/VerbMotion/dragon.webp",
+      "size": [
+        768,
+        768
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "coverage": [
+        0.3331,
+        0.3344,
+        0.3403,
+        0.3324
+      ],
+      "bytes": 405926,
+      "sha256": "1695f17391522d9a9a1ff39dcc2589421f495d48bda750e5b798b6048fef36ed"
+    },
+    {
+      "animal": "dinosaur",
+      "path": "app/src/main/assets/VerbMotion/dinosaur.webp",
+      "size": [
+        768,
+        768
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "coverage": [
+        0.2737,
+        0.2648,
+        0.2663,
+        0.2735
+      ],
+      "bytes": 298406,
+      "sha256": "03e3f49bc5e676956a0e7dfb70d1fb0d3e23ed21b75fa513753c50222172df49"
+    },
+    {
+      "animal": "sauropod",
+      "path": "app/src/main/assets/VerbMotion/sauropod.webp",
+      "size": [
+        768,
+        768
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "coverage": [
+        0.184,
+        0.1892,
+        0.2028,
+        0.197
+      ],
+      "bytes": 231910,
+      "sha256": "e411b629a76286c230a9fe9ee5abb1288674d5edba95516d6de9648a22cf2087"
+    },
+    {
+      "animal": "shark",
+      "path": "app/src/main/assets/VerbMotion/shark.webp",
+      "size": [
+        768,
+        768
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "coverage": [
+        0.188,
+        0.1817,
+        0.1852,
+        0.1825
+      ],
+      "bytes": 176406,
+      "sha256": "e304d15c28938f157cb431ef109efc8c1c5b74041f5cceb6d3598366b812a78d"
+    },
+    {
+      "animal": "croc",
+      "path": "app/src/main/assets/VerbMotion/croc.webp",
+      "size": [
+        1536,
+        768
+      ],
+      "grid": [
+        4,
+        2
+      ],
+      "coverage": [
+        0.4018,
+        0.4007,
+        0.403,
+        0.4064,
+        0.408,
+        0.4049,
+        0.3998,
+        0.3991
+      ],
+      "bytes": 892460,
+      "sha256": "7db146361fa32ebd8f2e65d27ce1cc16d5349960ea6fd36117000fb2216ee22d"
+    }
+  ]
+}

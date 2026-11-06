@@ -47,14 +47,20 @@ for(const lang of ['en','de']){
   await page.evaluate(()=>document.querySelector(`.answer[data-key="${state.current.correct}"]`).click());
   const quiz=await view(page);
   await page.locator('.learnVerbInline button').click();
-  const lesson=await page.locator('#verbExplorerContent').innerHTML();
+  await expect(page.locator('.verb-motion-stage')).toHaveAttribute('data-state','ready');
+  const lesson=await page.evaluate(()=>({identity:activeLesson,words:document.querySelector('.verbWords').textContent,explanation:document.querySelector('.verbExplain').textContent}));
   for(let n=0;n<3;n++){
    await page.evaluate(()=>{spoken=[];openOptions();openOptions()});
+   // Entering Options intentionally pauses motion. The paused lesson, including
+   // its exact frame, must then survive the complete round-trip unchanged.
+   const paused=await page.locator('#verbExplorerContent').innerHTML();
    await page.clock.runFor(500);
    expect(await page.evaluate(()=>spoken)).toEqual([]);
    await page.evaluate(()=>navigateBack());
    await expect(page.locator('#verbExplorer')).toBeVisible();
-   expect(await page.locator('#verbExplorerContent').innerHTML()).toBe(lesson);
+   expect(await page.locator('#verbExplorerContent').innerHTML()).toBe(paused);
+   expect(await page.evaluate(()=>({identity:activeLesson,words:document.querySelector('.verbWords').textContent,explanation:document.querySelector('.verbExplain').textContent}))).toEqual(lesson);
+   expect(await page.evaluate(()=>VerbMotion.state().playing)).toBe(false);
   }
   const snapshot=await page.evaluate(()=>serializeLegacySession());
   await reboot(page,snapshot,lang);

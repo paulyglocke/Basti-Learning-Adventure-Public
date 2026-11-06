@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.bellfamily.bastischool.VerbMotionProductionTest" tests="2" failures="1" errors="0" skipped="0" time="499.731" timestamp="2026-11-06T11:27:38" hostname="localhost">
+  <properties>
+    <property name="device" value="Medium_Phone_API_35(AVD) - 15" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="all53LessonsWorkInBothLanguagesAndBackgroundReturnStaysPaused" classname="com.bellfamily.bastischool.VerbMotionProductionTest" time="480.576">
+    <failure>androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 10000 ms
+at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
+at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
+at com.bellfamily.bastischool.HomeTestNavigationKt.renderedLegacy(HomeTestNavigation.kt:26)
+at com.bellfamily.bastischool.VerbMotionProductionTest.all53LessonsWorkInBothLanguagesAndBackgroundReturnStaysPaused(VerbMotionProductionTest.kt:53)
+</failure>
+  </testcase>
+  <testcase name="everyProductionAtlasDecodesWithTransparencyAndVisiblePoses" classname="com.bellfamily.bastischool.VerbMotionProductionTest" time="16.757" />
+</testsuite>

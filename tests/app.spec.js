@@ -68,7 +68,9 @@ test('all 53 bilingual lessons render and replay speech including quoted explana
       const lesson = await page.evaluate(i => ({title: verbQs[i].v[settings.lang], explanation: verbLessons[verbQs[i].v.en][settings.lang]}), i);
       await expect(page.locator('.mainWord')).toHaveText(lesson.title);
       await expect(page.locator('.verbInfoCard').first()).toContainText(lesson.explanation);
-      expect(await page.locator('.animatedAnimal').evaluate(e => getComputedStyle(e).animationName)).not.toBe('none');
+      await expect(page.locator('.verb-motion-stage')).toHaveAttribute('data-state','ready');
+      expect(await page.evaluate(()=>VerbMotion.state().ready)).toBe(true);
+      await expect(page.locator('.animatedAnimal')).toHaveAttribute('role','img');
       await page.locator('#lessonListen').click();
       expect(await page.evaluate(() => spoken.at(-1).text)).toContain(lesson.explanation);
       expect(await page.evaluate(() => spoken.at(-1).lang)).toBe(lang);

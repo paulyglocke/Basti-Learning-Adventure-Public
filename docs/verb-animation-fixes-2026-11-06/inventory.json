@@ -1,0 +1,5572 @@
+{
+  "method": "Eight deterministic production-player screenshots per lesson, offline, English/German checked.",
+  "errors": [],
+  "lessons": [
+    {
+      "index": 0,
+      "en": "fly",
+      "de": "fliegen",
+      "id": "verb.fly",
+      "animal": "eagle",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "mode": "fly",
+      "duration": 1600,
+      "still": [
+        0,
+        3,
+        5,
+        7
+      ],
+      "contact": "contacts/01-fly.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 7
+          }
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "en": "jump",
+      "de": "springen",
+      "id": "verb.jump",
+      "animal": "rabbit",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "mode": "jump",
+      "duration": 2600,
+      "still": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "contact": "contacts/02-jump.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 220,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 220,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 261.4597060718628,
+            "size": 220,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 221.4170199417049,
+            "size": 220,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 238.35894057793686,
+            "size": 220,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 299.99999999999994,
+            "size": 220,
+            "flip": false,
+            "frame": 7
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 220,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 220,
+            "flip": false,
+            "frame": 0
+          }
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "en": "hop",
+      "de": "hüpfen",
+      "id": "verb.hop",
+      "animal": "frog",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "mode": "hop",
+      "duration": 2200,
+      "still": [
+        1,
+        3,
+        4,
+        6
+      ],
+      "contact": "contacts/03-hop.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 220,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 220,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 272.0582869021005,
+            "size": 220,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 243.02733945773605,
+            "size": 220,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 255.31023191900422,
+            "size": 220,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 299.99999999999994,
+            "size": 220,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 220,
+            "flip": false,
+            "frame": 7
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 220,
+            "flip": false,
+            "frame": 7
+          }
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "en": "swim in the sea",
+      "de": "im Meer schwimmen",
+      "id": "verb.swim_in_the_sea",
+      "animal": "shark",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "swim",
+      "duration": 2200,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/04-swim-in-the-sea.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 180,
+            "base": 295,
+            "size": 240,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 194.92736,
+            "base": 295,
+            "size": 240,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 233.56288,
+            "base": 295,
+            "size": 240,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 286.68672,
+            "base": 295,
+            "size": 240,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 345.07904,
+            "base": 295,
+            "size": 240,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 399.52,
+            "base": 295,
+            "size": 240,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 440.78975999999994,
+            "base": 295,
+            "size": 240,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 459.66848,
+            "base": 295,
+            "size": 240,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "en": "dive underwater",
+      "de": "unter Wasser tauchen",
+      "id": "verb.dive_underwater",
+      "animal": "penguin",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "dive",
+      "duration": 3200,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/05-dive-underwater.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 180,
+            "base": 165,
+            "size": 170,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 180,
+            "base": 165,
+            "size": 170,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 214,
+            "base": 181.66666666666669,
+            "size": 170,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 250.6153846153846,
+            "base": 210.83333333333331,
+            "size": 170,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 287.2307692307692,
+            "base": 240,
+            "size": 170,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 323.8461538461538,
+            "base": 269.16666666666663,
+            "size": 170,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 350,
+            "base": 290,
+            "size": 170,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 350,
+            "base": 290,
+            "size": 170,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "en": "climb",
+      "de": "klettern",
+      "id": "verb.climb",
+      "animal": "monkey",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "mode": "climb",
+      "duration": 3200,
+      "still": [
+        0,
+        2,
+        5,
+        7
+      ],
+      "contact": "contacts/06-climb.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 355,
+            "base": 315,
+            "size": 230,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 355,
+            "base": 301,
+            "size": 230,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 355,
+            "base": 287,
+            "size": 230,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 355,
+            "base": 273,
+            "size": 230,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 355,
+            "base": 259,
+            "size": 230,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 355,
+            "base": 245,
+            "size": 230,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 355,
+            "base": 231,
+            "size": 230,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 355,
+            "base": 217,
+            "size": 230,
+            "flip": false,
+            "frame": 7
+          }
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "en": "slither",
+      "de": "sich schlängeln",
+      "id": "verb.slither",
+      "animal": "snake",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mode": "slither",
+      "duration": 2400,
+      "still": [
+        0,
+        2,
+        4,
+        5
+      ],
+      "contact": "contacts/07-slither.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 170,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 185.99360000000001,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 227.3888,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 284.30719999999997,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 346.8704,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 405.2,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 449.4176,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 469.6448,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 5
+          }
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "en": "gallop",
+      "de": "galoppieren",
+      "id": "verb.gallop",
+      "animal": "horse",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "mode": "run",
+      "duration": 1600,
+      "still": [
+        0,
+        2,
+        5,
+        7
+      ],
+      "contact": "contacts/08-gallop.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 170,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 185.99360000000001,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 227.3888,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 284.30719999999997,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 346.8704,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 405.2,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 449.4176,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 469.6448,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "en": "bark",
+      "de": "bellen",
+      "id": "verb.bark",
+      "animal": "dog",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "sound",
+      "duration": 1800,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/09-bark.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "en": "meow",
+      "de": "miauen",
+      "id": "verb.meow",
+      "animal": "cat",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "sound",
+      "duration": 2000,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/10-meow.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "en": "roar",
+      "de": "brüllen",
+      "id": "verb.roar",
+      "animal": "lion",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "mode": "sound",
+      "duration": 3200,
+      "still": [
+        0,
+        3,
+        4,
+        7
+      ],
+      "contact": "contacts/11-roar.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "en": "moo",
+      "de": "muhen",
+      "id": "verb.moo",
+      "animal": "cow",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "sound",
+      "duration": 2400,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/12-moo.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "en": "oink",
+      "de": "grunzen",
+      "id": "verb.oink",
+      "animal": "pig",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "sound",
+      "duration": 2000,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/13-oink.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "en": "quack",
+      "de": "quaken",
+      "id": "verb.quack",
+      "animal": "duck",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "sound",
+      "duration": 1800,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/14-quack.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "en": "buzz",
+      "de": "summen",
+      "id": "verb.buzz",
+      "animal": "bee",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "buzz",
+      "duration": 900,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/15-buzz.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "en": "hoot",
+      "de": "uhu rufen",
+      "id": "verb.hoot",
+      "animal": "owl",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "perchSound",
+      "duration": 2400,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/16-hoot.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 280,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 280,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 280,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 280,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 280,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 280,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 280,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 280,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "en": "howl",
+      "de": "heulen",
+      "id": "verb.howl",
+      "animal": "wolf",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "mode": "sound",
+      "duration": 3600,
+      "still": [
+        0,
+        3,
+        4,
+        7
+      ],
+      "contact": "contacts/17-howl.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "en": "hiss",
+      "de": "zischen",
+      "id": "verb.hiss",
+      "animal": "snake",
+      "frames": [
+        7,
+        6,
+        6,
+        7
+      ],
+      "mode": "hiss",
+      "duration": 2400,
+      "still": [
+        7,
+        6,
+        6,
+        7
+      ],
+      "contact": "contacts/18-hiss.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "en": "peck",
+      "de": "picken",
+      "id": "verb.peck",
+      "animal": "chicken",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "peck",
+      "duration": 1800,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/19-peck.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "en": "dig",
+      "de": "graben",
+      "id": "verb.dig",
+      "animal": "rabbit",
+      "frames": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "mode": "dig",
+      "duration": 2400,
+      "still": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "contact": "contacts/20-dig.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 8
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 8
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 9
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 9
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 10
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 10
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 11
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 11
+          }
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "en": "scratch",
+      "de": "kratzen",
+      "id": "verb.scratch",
+      "animal": "cat",
+      "frames": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "mode": "scratch",
+      "duration": 2200,
+      "still": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "contact": "contacts/21-scratch.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "en": "kick",
+      "de": "treten",
+      "id": "verb.kick",
+      "animal": "horse",
+      "frames": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "mode": "kick",
+      "duration": 2600,
+      "still": [
+        8,
+        9,
+        11,
+        13
+      ],
+      "contact": "contacts/22-kick.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 8
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 8
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 9
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 10
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 11
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 12
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 13
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 13
+          }
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "en": "wag its tail",
+      "de": "mit dem Schwanz wedeln",
+      "id": "verb.wag_its_tail",
+      "animal": "dog",
+      "frames": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "mode": "wag",
+      "duration": 1200,
+      "still": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "contact": "contacts/23-wag-its-tail.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "en": "flap its wings",
+      "de": "mit den Flügeln schlagen",
+      "id": "verb.flap_its_wings",
+      "animal": "parrot",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mode": "flap",
+      "duration": 1200,
+      "still": [
+        0,
+        2,
+        4,
+        5
+      ],
+      "contact": "contacts/24-flap-its-wings.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 5
+          }
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "en": "stand on one leg",
+      "de": "auf einem Bein stehen",
+      "id": "verb.stand_on_one_leg",
+      "animal": "flamingo",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "balance",
+      "duration": 6000,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/25-stand-on-one-leg.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "en": "build a dam",
+      "de": "einen Damm bauen",
+      "id": "verb.build_a_dam",
+      "animal": "beaver",
+      "frames": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "mode": "dam",
+      "duration": 5000,
+      "still": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "contact": "contacts/26-build-a-dam.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 285,
+            "base": 300,
+            "size": 250,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 285,
+            "base": 300,
+            "size": 250,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 285,
+            "base": 300,
+            "size": 250,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 285,
+            "base": 300,
+            "size": 250,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 285,
+            "base": 300,
+            "size": 250,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 285,
+            "base": 300,
+            "size": 250,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 285,
+            "base": 300,
+            "size": 250,
+            "flip": false,
+            "frame": 7
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 285,
+            "base": 300,
+            "size": 250,
+            "flip": false,
+            "frame": 7
+          }
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "en": "spin a web",
+      "de": "ein Netz spinnen",
+      "id": "verb.spin_a_web",
+      "animal": "spider",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "web",
+      "duration": 5000,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/27-spin-a-web.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 280,
+            "size": 190,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 280,
+            "size": 190,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 280,
+            "size": 190,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 280,
+            "size": 190,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 280,
+            "size": 190,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 280,
+            "size": 190,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 280,
+            "size": 190,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 280,
+            "size": 190,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "en": "use a trunk",
+      "de": "einen Rüssel benutzen",
+      "id": "verb.use_a_trunk",
+      "animal": "elephant",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "trunk",
+      "duration": 3800,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/28-use-a-trunk.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "en": "reach high leaves",
+      "de": "hohe Blätter erreichen",
+      "id": "verb.reach_high_leaves",
+      "animal": "giraffe",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "leaves",
+      "duration": 3200,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/29-reach-high-leaves.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "en": "walk sideways",
+      "de": "seitwärts laufen",
+      "id": "verb.walk_sideways",
+      "animal": "crab",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "sideways",
+      "duration": 2200,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/30-walk-sideways.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 170,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 185.99360000000001,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 227.3888,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 284.30719999999997,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 346.8704,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 405.2,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 449.4176,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 469.6448,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "en": "squirt ink",
+      "de": "Tinte spritzen",
+      "id": "verb.squirt_ink",
+      "animal": "octopus",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "ink",
+      "duration": 3400,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/31-squirt-ink.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 346,
+            "size": 205,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 346,
+            "size": 205,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 346,
+            "size": 205,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 346,
+            "size": 205,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 346,
+            "size": 205,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 346,
+            "size": 205,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 346,
+            "size": 205,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 346,
+            "size": 205,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "en": "float on its back",
+      "de": "auf dem Rücken treiben",
+      "id": "verb.float_on_its_back",
+      "animal": "otter",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "float",
+      "duration": 6000,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/32-float-on-its-back.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 175,
+            "size": 255,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 177.31153972832738,
+            "size": 255,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 177.94686175218607,
+            "size": 255,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 176.44526102230515,
+            "size": 255,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 173.89562634194596,
+            "size": 255,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 172.14683045111454,
+            "size": 255,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 172.46701622349394,
+            "size": 255,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 174.62400029930708,
+            "size": 255,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "en": "copy sounds",
+      "de": "Geräusche nachmachen",
+      "id": "verb.copy_sounds",
+      "animal": "parrot",
+      "frames": [
+        6,
+        6,
+        7,
+        7
+      ],
+      "mode": "copy",
+      "duration": 4000,
+      "still": [
+        6,
+        6,
+        7,
+        7
+      ],
+      "contact": "contacts/33-copy-sounds.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "en": "sleep upside down",
+      "de": "kopfüber schlafen",
+      "id": "verb.sleep_upside_down",
+      "animal": "bat",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "hang",
+      "duration": 7000,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/34-sleep-upside-down.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 225,
+            "size": 215,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 225,
+            "size": 215,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 225,
+            "size": 215,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 225,
+            "size": 215,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 225,
+            "size": 215,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 225,
+            "size": 215,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 225,
+            "size": 215,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 225,
+            "size": 215,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "en": "snap its jaws",
+      "de": "mit dem Maul zuschnappen",
+      "id": "verb.snap_its_jaws",
+      "animal": "croc",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "mode": "snap",
+      "duration": 2800,
+      "still": [
+        0,
+        2,
+        4,
+        7
+      ],
+      "contact": "contacts/35-snap-its-jaws.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 319.91885135872,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 314.47144389138964,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 311.04,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 333.88256000000007,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320.0004826665805,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "en": "stomp",
+      "de": "stampfen",
+      "id": "verb.stomp",
+      "animal": "elephant",
+      "frames": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "mode": "stomp",
+      "duration": 2400,
+      "still": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "contact": "contacts/36-stomp.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "en": "nibble",
+      "de": "knabbern",
+      "id": "verb.nibble",
+      "animal": "rabbit",
+      "frames": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "mode": "eat",
+      "duration": 2200,
+      "still": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "contact": "contacts/37-nibble.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 12
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 12
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 13
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 13
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 14
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 14
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 15
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 15
+          }
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "en": "chew wood",
+      "de": "Holz benagen",
+      "id": "verb.chew_wood",
+      "animal": "beaver",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "eat",
+      "duration": 2400,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/38-chew-wood.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "en": "waddle",
+      "de": "watscheln",
+      "id": "verb.waddle",
+      "animal": "penguin",
+      "frames": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "mode": "waddle",
+      "duration": 2800,
+      "still": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "contact": "contacts/39-waddle.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 170,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 185.99360000000001,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 227.3888,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 284.30719999999997,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 346.8704,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 405.2,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 449.4176,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 469.6448,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "en": "paddle on a pond",
+      "de": "auf einem Teich paddeln",
+      "id": "verb.paddle_on_a_pond",
+      "animal": "duck",
+      "frames": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "mode": "paddle",
+      "duration": 2400,
+      "still": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "contact": "contacts/40-paddle-on-a-pond.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 180,
+            "base": 225,
+            "size": 240,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 194.92736,
+            "base": 225,
+            "size": 240,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 233.56288,
+            "base": 225,
+            "size": 240,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 286.68672,
+            "base": 225,
+            "size": 240,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 345.07904,
+            "base": 225,
+            "size": 240,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 399.52,
+            "base": 225,
+            "size": 240,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 440.78975999999994,
+            "base": 225,
+            "size": 240,
+            "flip": false,
+            "frame": 7
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 459.66848,
+            "base": 225,
+            "size": 240,
+            "flip": false,
+            "frame": 7
+          }
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "en": "curl into a ball",
+      "de": "sich zu einer Kugel einrollen",
+      "id": "verb.curl_into_a_ball",
+      "animal": "hedgehog",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "mode": "curl",
+      "duration": 4000,
+      "still": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "contact": "contacts/41-curl-into-a-ball.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "en": "carry its baby in a pouch",
+      "de": "sein Baby im Beutel tragen",
+      "id": "verb.carry_its_baby_in_a_pouch",
+      "animal": "kangaroo",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "pouch",
+      "duration": 6000,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/42-carry-its-baby-in-a-pouch.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 330,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 330,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 330,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 330,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 330,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 330,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 330,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 330,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "en": "pounce",
+      "de": "anspringen",
+      "id": "verb.pounce",
+      "animal": "tiger",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "mode": "pounce",
+      "duration": 2800,
+      "still": [
+        0,
+        2,
+        5,
+        7
+      ],
+      "contact": "contacts/43-pounce.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 200,
+            "base": 300,
+            "size": 250,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 200,
+            "base": 300,
+            "size": 250,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 216.46592,
+            "base": 268.68601118338853,
+            "size": 250,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 298.50368,
+            "base": 236.15132870263523,
+            "size": 250,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 394.08896000000004,
+            "base": 249.9166392195737,
+            "size": 250,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 440,
+            "base": 299.99999999999994,
+            "size": 250,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 440,
+            "base": 300,
+            "size": 250,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 440,
+            "base": 300,
+            "size": 250,
+            "flip": false,
+            "frame": 7
+          }
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "en": "graze on grass",
+      "de": "Gras fressen",
+      "id": "verb.graze_on_grass",
+      "animal": "cow",
+      "frames": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "mode": "graze",
+      "duration": 3200,
+      "still": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "contact": "contacts/44-graze-on-grass.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 4
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 5
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 6
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 7
+          }
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "en": "clap its flippers",
+      "de": "mit den Flossen klatschen",
+      "id": "verb.clap_its_flippers",
+      "animal": "seal",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "clap",
+      "duration": 1600,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/45-clap-its-flippers.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "en": "chase mice",
+      "de": "Mäuse jagen",
+      "id": "verb.chase_mice",
+      "animal": "cat",
+      "frames": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "mode": "chase",
+      "duration": 2400,
+      "still": [
+        8,
+        10,
+        13,
+        15
+      ],
+      "contact": "contacts/46-chase-mice.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 170,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 8
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 183.86112,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 9
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 219.73696,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 10
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 269.06624,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 11
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 323.28768,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 12
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 373.84,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 13
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 412.16192,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 14
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 429.69216,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 15
+          }
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "en": "fetch a ball",
+      "de": "einen Ball holen",
+      "id": "verb.fetch_a_ball",
+      "animal": "dog",
+      "frames": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "mode": "fetch",
+      "duration": 5400,
+      "still": [
+        8,
+        14,
+        11,
+        15
+      ],
+      "contact": "contacts/47-fetch-a-ball.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 170,
+            "base": 300,
+            "size": 235,
+            "flip": false,
+            "frame": 8
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 296.0207407407408,
+            "base": 300,
+            "size": 235,
+            "flip": false,
+            "frame": 10
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 446.43259259259264,
+            "base": 300,
+            "size": 235,
+            "flip": false,
+            "frame": 12
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 450,
+            "base": 300,
+            "size": 235,
+            "flip": false,
+            "frame": 15
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 420.87999999999994,
+            "base": 300,
+            "size": 235,
+            "flip": true,
+            "frame": 11
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 289.07000000000005,
+            "base": 300,
+            "size": 235,
+            "flip": true,
+            "frame": 11
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 177.84000000000003,
+            "base": 300,
+            "size": 235,
+            "flip": true,
+            "frame": 12
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 170,
+            "base": 300,
+            "size": 235,
+            "flip": true,
+            "frame": 15
+          }
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "en": "crawl slowly",
+      "de": "langsam kriechen",
+      "id": "verb.crawl_slowly",
+      "animal": "snail",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "crawl",
+      "duration": 6000,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/48-crawl-slowly.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 170,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 185.99360000000001,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 227.3888,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 284.30719999999997,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 346.8704,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 405.2,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 449.4176,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 469.6448,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "en": "flutter",
+      "de": "flattern",
+      "id": "verb.flutter",
+      "animal": "butterfly",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "flutter",
+      "duration": 1200,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/49-flutter.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 285,
+            "size": 260,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "en": "carry food",
+      "de": "Futter tragen",
+      "id": "verb.carry_food",
+      "animal": "ant",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "carry",
+      "duration": 3400,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/50-carry-food.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 170,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 185.99360000000001,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 227.3888,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 284.30719999999997,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 346.8704,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 405.2,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 449.4176,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 469.6448,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "en": "breathe fire",
+      "de": "Feuer speien",
+      "id": "verb.breathe_fire",
+      "animal": "dragon",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "fire",
+      "duration": 3200,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/51-breathe-fire.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "en": "stomp like a dinosaur",
+      "de": "wie ein Dinosaurier stampfen",
+      "id": "verb.stomp_like_a_dinosaur",
+      "animal": "dinosaur",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "stomp",
+      "duration": 2600,
+      "still": [
+        0,
+        1,
+        3,
+        3
+      ],
+      "contact": "contacts/52-stomp-like-a-dinosaur.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "en": "stretch its long neck",
+      "de": "seinen langen Hals strecken",
+      "id": "verb.stretch_its_long_neck",
+      "animal": "sauropod",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "mode": "neck",
+      "duration": 3600,
+      "still": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "contact": "contacts/53-stretch-its-long-neck.png",
+      "samples": [
+        {
+          "fraction": 0,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.14,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 0
+          }
+        },
+        {
+          "fraction": 0.28,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.42,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 1
+          }
+        },
+        {
+          "fraction": 0.56,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.7,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 2
+          }
+        },
+        {
+          "fraction": 0.84,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        },
+        {
+          "fraction": 0.98,
+          "pose": {
+            "x": 320,
+            "base": 300,
+            "size": 270,
+            "flip": false,
+            "frame": 3
+          }
+        }
+      ]
+    }
+  ]
+}

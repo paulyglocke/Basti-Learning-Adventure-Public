@@ -1,5 +1,86 @@
 # Session handoff — 2026-10-21
 
+## All 53 verb animation repairs (2026-11-06, completed locally)
+
+Owner explicitly approved fixing every finding in the complete verb audit.
+Implemented all 53 presentation mappings using 39 shared original WebP animal
+atlases (264 physical poses) plus small library thumbnails. Corrected articulated
+actions, water, bat support/framing, exact Chase/Fetch routing, visible objects/
+results, parent sound modelling, finite playback, Pause and four EN/DE picture
+steps. Android animation-scale zero and browser reduced motion force static
+pictures. No curriculum, question generation, saved question/score, checkpoint
+schema or progress identity changed. The existing WebView route remains; this
+is not full native curriculum parity. Native Jump/Fly/Snap use the same main
+assets, with eight rabbit/eagle poses and approved Snap v2 retained.
+
+Final validation: full JVM **649/649**; full offline browser **63/63**; combined
+API 35 **9/9** (seven native preview checks plus two production checks). All 53
+lessons were exercised in both languages, with four picture steps, lifecycle and
+Home/library return. All 39 production atlases/264 source cells decode with alpha.
+Both debug builds and lint pass (0 errors/7 existing warnings). All 53 EN/DE
+production contact sheets/424 samples were visually reviewed, with zero browser
+page errors. Seven clean Android route screenshots, runner reports, exact artwork
+prompts, source/APK hashes and the gallery are in
+[the repair review](docs/verb-animation-fixes-2026-11-06/README.md).
+
+Earlier new-test attempts exposed cold-WebView, view-attachment and asynchronous
+Back assumptions; the final test waits for each real state. The one-CPU emulator
+also showed a System UI hang. The final clean run used Medium_Phone_API_35 /
+emulator-5554 with `-no-snapshot -gpu host -cores 4 -memory 6144`. Keep these
+resource overrides when reproducing; the stored AVD configuration was not changed.
+No physical device, pm-clear, wipe-data or snapshot deletion was used. Gradle
+managed its disposable debug test APK installations/uninstallations. Airplane mode
+was temporarily enabled and restored to its original value 0 after capture.
+The three native clips were refreshed and visually checked; the native gallery
+now links shared main artwork and retains original four-pose comparisons.
+
+Owner subsequently authorized committing and pushing this completed work to main.
+Implementation baseline: a990f34. Physical/child/TalkBack/installed offline voice
+acceptance remains separate.
+
+## All-verb animation review (completed 2026-11-06)
+
+Reviewed all 53 legacy lessons at eight deterministic CSS-cycle samples each
+(424 stage samples / 53 contact sheets), checked every EN/DE title/animation
+mapping and inspected the three genuine native preview recordings. Zero page
+errors in the completed capture. No animation/product code changed in this audit.
+Native Fly is the next refinement: registered wing poses or layers with a fixed
+torso/head; Jump needs smaller push-off/landing refinements; Snap v2 remains the
+current benchmark. Older lessons need true moving parts, visible objects/results
+and sound models where relevant. Source-confirmed gaps include five missing water
+layers and generic fallback routing for Chase mice / Fetch a ball; the browser bat
+is clipped and needs target-device confirmation. Every verb has an individual
+priority/recommendation in the [full review](docs/verb-animation-audit-2026-11-05/REVIEW.md),
+with a linked screenshot gallery and machine-readable inventory. Earlier native
+prototype validation remains 649 JVM / 8 API 35; no fresh app test run or physical
+acceptance is claimed for this documentation review. All work remains local.
+
+## Three-verb native motion proof (2026-11-05, local)
+
+Follow-up: owner requested a stronger, more expressive crocodile snap. Added
+`snap-v2.png`, an eight-pose 1600×800 atlas generated from the original identity:
+focused anticipation, wider opening/hold, 80ms closure, closed-jaw squint and small
+damped native recoil. Four still teaching stages retain their logical identities
+and use physical frames 0/2/4/7. The renderer supports per-sample grids without
+stretching. Original art and clip remain for comparison in the gallery. Fresh
+JVM **649/649**, API 35 **8/8**, both debug builds and lint passed (0 errors,
+7 existing warnings); packaged final asset dimensions were verified. Updated
+recordings/prompts/evidence are in the same review. Still local/uncommitted.
+
+Owner approved a visual proof for jump/fly/snap before the full verb migration.
+Added an explicit-launch debug-only `VerbMotionActivity` using three generated,
+canonical-reference 2×2 pose atlases: rabbit jump, eagle fly, crocodile snap. Native
+timelines, Watch again/Pause, separate EN/DE Listen, optional/forced reduced-motion
+picture steps, silent recreation and immediate lifecycle suspension are implemented.
+No production entry, legacy lesson, progress journal or app preference is changed.
+Full JVM **648/648**, focused API 35 **8/8**, both debug APK builds and lint passed
+(zero errors, seven existing warnings). The visual review corrected clipped rabbit
+ears and an initially invisible paused eagle; initial fixture timing errors were
+also corrected. See [review, recordings and prompts](docs/verb-motion-preview/REVIEW.md).
+Owner/child comprehension, physical devices and real offline speech remain to be
+reviewed before extending this four-pose study or replacing the 53 legacy lessons.
+This task did not request commit/push; changes remain local for visual review.
+
 ## App sweep first implementation pass (2026-11-05)
 
 Owner gave full approval for the prioritized sweep work. Repaired legacy animal

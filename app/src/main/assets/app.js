@@ -282,12 +282,12 @@ function stopSpeech(){
  try{if(window.Android&&Android.stopSpeaking)Android.stopSpeaking()}catch(e){}
  if("speechSynthesis" in window)speechSynthesis.cancel();
 }
-function suspendAudio(){stopSpeech();for(const osc of popTones){try{osc.stop()}catch(e){}}popTones.clear();if(popContext)popContext.suspend().catch(()=>{})}
+function suspendAudio(){stopSpeech();window.VerbMotion?.suspend();for(const osc of popTones){try{osc.stop()}catch(e){}}popTones.clear();if(popContext)popContext.suspend().catch(()=>{})}
 function scheduleSpeech(text,kind="question",onDone=null){
  stopSpeech();if(restoringSession||shellSuspended)return;const owner=speechSerial;
  speechTimer=setTimeout(()=>{speechTimer=null;if(owner===speechSerial)audioGuidance.say(text,kind,false,onDone)},220);
 }
-function show(id){stopSpeech();document.body.classList.remove("completionView");activeScreen=id;["home","game","options","verbExplorer"].forEach(x=>$(x).classList.toggle("hidden",x!==id));window.scrollTo(0,0)}
+function show(id){stopSpeech();if(id!=="verbExplorer")window.VerbMotion?.suspend();document.body.classList.remove("completionView");activeScreen=id;["home","game","options","verbExplorer"].forEach(x=>$(x).classList.toggle("hidden",x!==id));window.scrollTo(0,0)}
 function updateDeviceInfo(){$("deviceInfo").textContent=`📱 ${tt(innerWidth>=850?"tablet":"phone")}`}
 
 function applyLanguage(){
@@ -577,32 +577,13 @@ function renderTime(){
 }
 
 function animationForVerb(en){
- const v=en.toLowerCase();
- const detailed={
-  jump:"anim-jump-detail",hop:"anim-jump-detail",pounce:"anim-pounce-detail",gallop:"anim-run-detail",chase:"anim-run-detail",fetch:"anim-fetch-detail",
-  climb:"anim-climb-detail", "swim in the sea":"anim-swim-detail", "dive underwater":"anim-dive-detail", "paddle on a pond":"anim-paddle-detail", "float on its back":"anim-float-detail", "squirt ink":"anim-ink-detail",
-  slither:"anim-slither-detail", "crawl slowly":"anim-crawl-detail", "walk sideways":"anim-side-detail", dig:"anim-dig-detail", scratch:"anim-scratch-detail", kick:"anim-kick-detail", "flap its wings":"anim-flap-detail", flutter:"anim-flap-detail",
-  snap:"anim-snap-detail", "snap its jaws":"anim-snap-detail", roar:"anim-roar-detail", howl:"anim-howl-detail", bark:"anim-bark-detail", peck:"anim-peck-detail", stomp:"anim-stomp-detail", "stomp like a dinosaur":"anim-stomp-detail",
-  "build a dam":"anim-build-detail", "spin a web":"anim-web-detail", "stand on one leg":"anim-balance-detail", "wag its tail":"anim-wag-detail", "curl into a ball":"anim-curl-detail"
- };
- if(detailed[v])return {cls:detailed[v],scene:/swim|dive|paddle|float|ink/.test(v)?"water":"",extra:/climb/.test(v)?'<div class="climbTree">🌳</div>':/build a dam/.test(v)?'<div class="damProps">🪵💧</div>':/spin a web/.test(v)?'<div class="webProps">🕸️</div>':""};
- if(/breathe fire/.test(v))return {cls:"anim-fire",scene:"",extra:'<div class="firePuff">🔥</div>'};
- if(/fly|flap|flutter/.test(v))return {cls:"anim-fly",scene:"",extra:""};
- if(/swim|dive|paddle|float|squirt ink/.test(v))return {cls:"anim-swim",scene:"water",extra:'<div class="waterWave"></div>'};
- if(/jump|hop|pounce/.test(v))return {cls:"anim-jump",scene:"",extra:""};
- if(/slither|crawl|walk sideways/.test(v))return {cls:"anim-slide",scene:"",extra:""};
- if(/gallop|chase|fetch/.test(v))return {cls:"anim-run",scene:"",extra:""};
- if(/bark|meow|roar|moo|oink|quack|buzz|hoot|howl|hiss|copy sounds/.test(v))return {cls:"anim-sound",scene:/hoot|sleep upside down/.test(v)?"night":"",extra:""};
- if(/stomp|kick|snap/.test(v))return {cls:"anim-stomp",scene:"",extra:""};
- if(/sleep upside down/.test(v))return {cls:"anim-hang",scene:"night",extra:""};
- if(/curl/.test(v))return {cls:"anim-curl",scene:"",extra:""};
- if(/climb/.test(v))return {cls:"anim-climb",scene:"",extra:'<div class="climbTree">🌳</div>'};
- if(/stretch|reach high/.test(v))return {cls:"anim-stretch",scene:"",extra:""};
- return {cls:"anim-bob",scene:"",extra:""};
+ const motion=window.VerbMotionContent.lessons[en];
+ if(!motion)throw new Error("Missing authored verb motion: "+en);
+ return {cls:"verb-motion-canvas",scene:motion.mode,extra:"",frames:motion.frames,duration:motion.duration};
 }
 function renderVerbLibrary(){
- activeLesson=null;stopSpeech();applyLanguage();
- const cards=verbQs.map((q,i)=>`<button class="verbLibraryCard" onclick="openVerbLesson(${i},false)"><div class="verbAnimal">${creatures[q.a].emoji}</div><div><div class="verbEn">${settings.lang==="en"?q.v.en:q.v.de}</div><div class="verbDe">${settings.lang==="en"?q.v.de:q.v.en}</div></div></button>`).join("");
+ activeLesson=null;stopSpeech();window.VerbMotion?.unmount();applyLanguage();
+ const cards=verbQs.map((q,i)=>`<button class="verbLibraryCard" onclick="openVerbLesson(${i},false)"><img class="verbAnimal" src="VerbMotion/${q.a}-thumb.webp" loading="lazy" alt=""><div><div class="verbEn">${settings.lang==="en"?q.v.en:q.v.de}</div><div class="verbDe">${settings.lang==="en"?q.v.de:q.v.en}</div></div></button>`).join("");
  $("verbExplorerContent").innerHTML=`<p class="verbExplorerIntro">${tt("verbLibraryIntro")}</p><div class="verbLibraryGrid">${cards}</div>`;
 }
 function openVerbExplorer(){show("verbExplorer");renderVerbLibrary();if(audioGuidance.tutorial("verbExplorer"))audioGuidance.present("verbExplorer","","tutorial");checkpointSession()}
@@ -610,14 +591,18 @@ function openVerbLessonByEnglish(en,fromQuiz=false){
  const idx=verbQs.findIndex(q=>q.v.en===en);if(idx>=0)openVerbLesson(idx,fromQuiz);
 }
 function openVerbLesson(idx,fromQuiz=false){
- const q=verbQs[idx],lesson=verbLessons[q.v.en]||{en:q.v.en,de:q.v.de},anim=animationForVerb(q.v.en);
+ const q=verbQs[idx],lesson=verbLessons[q.v.en]||{en:q.v.en,de:q.v.de};
  show("verbExplorer");
  activeLesson={idx,fromQuiz};
  const main=settings.lang==="en"?q.v.en:q.v.de,other=settings.lang==="en"?q.v.de:q.v.en;
  const explanation=lesson[settings.lang];
  const example=settings.lang==="en"?`Look at the ${creatures[q.a].en}. It can ${q.v.en}.`:`${germanCreatureName(q.a).replace(/^./,c=>c.toUpperCase())} kann ${q.v.de}.`;
  const spoken=settings.lang==="en"?`${q.v.en}. ${explanation}. ${example}`:`${q.v.de}. ${explanation}. ${example}`;
- $("verbExplorerContent").innerHTML=`<div class="verbLesson"><div class="verbAnimStage ${anim.scene}"><div class="animatedAnimal ${anim.cls}">${creatures[q.a].emoji}</div>${anim.extra}</div><div class="verbWords"><div class="mainWord">${main}</div><div class="translationWord">${other}</div></div><div class="verbExplain"><div class="verbInfoCard"><strong>${tt("whatMeans")}</strong>${explanation}</div><div class="verbInfoCard"><strong>${tt("example")}</strong>${example}</div><div class="verbInfoCard tryCard" style="grid-column:1/-1"><strong>${tt("tryIt")}</strong>${tt("tryPrompt")}</div></div><div class="verbLessonActions"><button class="verbLessonBtn" id="lessonListen">🔊 ${settings.lang==="en"?"Listen":"Anhören"}</button><button class="verbLessonBtn primary" onclick="${fromQuiz?'show(\'game\')':'renderVerbLibrary()'}">${fromQuiz?(settings.lang==="en"?"Back to question":"Zurück zur Frage"):tt("allVerbs")}</button></div></div>`;
+ const model=window.VerbMotion.soundLesson(q.v.en)?`<details class="verb-model-guide" ${q.v.en==="copy sounds"?"open":""}><summary>${settings.lang==="de"?"Das Geräusch gemeinsam vormachen":"Make the sound together"}</summary><p>${window.VerbMotion.guide(settings.lang)}</p><button type="button" id="verbModelListen">${settings.lang==="de"?"Anleitung anhören":"Hear the instructions"}</button></details>`:"";
+ $("verbExplorerContent").innerHTML=`<div class="verbLesson">${window.VerbMotion.markup(q.v.en,settings.lang,example)}<div class="verbWords"><div class="mainWord">${main}</div><div class="translationWord">${other}</div></div><div class="verbExplain"><div class="verbInfoCard"><strong>${tt("whatMeans")}</strong>${explanation}</div><div class="verbInfoCard"><strong>${tt("example")}</strong>${example}</div><div class="verbInfoCard tryCard" style="grid-column:1/-1"><strong>${tt("tryIt")}</strong>${tt("tryPrompt")}</div></div>${model}<div class="verbLessonActions"><button class="verbLessonBtn" id="lessonListen">🔊 ${settings.lang==="en"?"Listen":"Anhören"}</button><button class="verbLessonBtn primary" onclick="${fromQuiz?'show(\'game\')':'renderVerbLibrary()'}">${fromQuiz?(settings.lang==="en"?"Back to question":"Zurück zur Frage"):tt("allVerbs")}</button></div></div>`;
+ window.VerbMotion.mount($("verbExplorerContent"),q.v.en,settings.lang,{autoplay:!restoringSession&&!shellSuspended,
+  visible:()=>activeScreen==="verbExplorer"&&!shellSuspended&&!restoringSession,interrupt:stopSpeech});
+ const guide=$("verbModelListen");if(guide)guide.onclick=()=>audioGuidance.say(window.VerbMotion.guide(settings.lang),"instruction",true);
  // Bind text as data, never as JavaScript inside an HTML attribute (e.g. 'hoo').
  $("verbExplorerContent").querySelector(".verbLessonBtn").onclick=()=>audioGuidance.say(spoken,"vocab",true);
  $("verbExplorerContent").querySelectorAll(".roundBtn,.verbLessonBtn.primary").forEach(b=>b.onclick=backFromLesson);

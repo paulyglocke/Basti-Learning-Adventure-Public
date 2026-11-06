@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Basti — jump, fly and snap</title>
+<style>
+  :root{color-scheme:light;font-family:system-ui,sans-serif;color:#203e4a;background:#faf8ef}
+  body{max-width:1400px;margin:auto;padding:28px}h1{font-size:clamp(2rem,5vw,3.5rem);margin:12px 0}
+  .intro{max-width:780px;line-height:1.6}.eyebrow{color:#316c56;font-weight:700;letter-spacing:.12em}
+  main{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:24px;margin:28px 0}
+  article{background:#fffdf7;border:1px solid #d5ddce;border-radius:22px;padding:20px}
+  h2{margin-top:0}video{display:block;width:100%;max-height:640px;background:#faf8ef;border-radius:12px}
+  article p{min-height:3em;line-height:1.5}a{color:#2b6b52}details{margin-top:20px}summary{cursor:pointer;padding:12px 0;font-weight:650}
+  details img{display:block;width:100%;height:auto;background:#fff5df;border-radius:12px}
+  .still{max-width:450px;width:100%;border-radius:16px}footer{border-top:1px solid #d5ddce;padding:20px 0;line-height:1.6}
+</style>
+<p class="eyebrow">BASTI · MOTION PREVIEW</p>
+<h1>Jump, fly and snap</h1>
+<p class="intro">Refreshed recordings of the real native Android preview, now using the shared artwork from the <a href="../verb-animation-fixes-2026-11-06/index.html">53-lesson repair</a>. Rabbit and eagle have eight movement poses; the expressive eight-pose crocodile is retained. The clips contain no recorded narration; Listen uses the app's offline English/German speech.</p>
+<main>
+  <article><h2>Jump · Springen</h2><p>Look for the crouch, push-off, time in the air and landing.</p>
+    <video controls muted loop playsinline preload="metadata" poster="native/jump.png" aria-label="Native rabbit jump demonstration"><source src="native/jump.mp4" type="video/mp4"></video>
+    <p><a href="native/jump.mp4">Open jump video</a></p>
+    <details><summary>Shared rabbit artwork</summary><p>The first eight poses show jumping; the remaining eight support digging and nibbling.</p><img src="../../app/src/main/assets/VerbMotion/rabbit.webp" alt="Sixteen matched rabbit poses, including eight jump stages"></details>
+    <details><summary>Original four-pose preview</summary><video controls muted loop playsinline preload="none" src="native/jump-v1.mp4" aria-label="Previous four-pose rabbit jump"></video></details>
+  </article>
+  <article><h2>Fly · Fliegen</h2><p>Look for the wings lifting, spreading and sweeping down.</p>
+    <video controls muted loop playsinline preload="metadata" poster="native/fly.png" aria-label="Native eagle wing-stroke demonstration"><source src="native/fly.mp4" type="video/mp4"></video>
+    <p><a href="native/fly.mp4">Open fly video</a></p>
+    <details><summary>Compare the eight poses</summary><img src="../../app/src/main/assets/VerbMotion/eagle.webp" alt="Eight matched eagle wing poses with stable body placement"></details>
+    <details><summary>Original four-pose preview</summary><video controls muted loop playsinline preload="none" src="native/fly-v1.mp4" aria-label="Previous four-pose eagle flight"></video></details>
+  </article>
+  <article id="snap"><h2>Snap · Zuschnappen — v2</h2><p>Eight poses: focused anticipation, a wider opening, an 80ms snap and a small settling recoil.</p>
+    <video controls muted loop playsinline preload="metadata" poster="native/snap.png" aria-label="Native crocodile jaw demonstration"><source src="native/snap.mp4" type="video/mp4"></video>
+    <p><a href="native/snap.mp4">Open snap video</a></p>
+    <details><summary>Compare the eight poses</summary><img src="../../app/src/main/assets/VerbMotion/croc.webp" alt="Eight matched crocodile poses with focused brows, wider jaw opening, forceful closure and a squint"></details>
+    <details><summary>Compare with the original four-pose loop</summary><video controls muted loop playsinline preload="none" aria-label="Previous four-pose crocodile snap"><source src="native/snap-v1.mp4" type="video/mp4"></video></details>
+  </article>
+</main>
+<h2>Picture steps</h2>
+<p class="intro">Picture steps are available on request and replace motion when the device has animations switched off. Each step retains its own bilingual label.</p>
+<a href="native/snap-de-steps.png"><img class="still" src="native/snap-de-steps.png" alt="Actual German picture-step preview for the crocodile"></a>
+<footer>Review question: can Basti tell what the animal is doing without reading the verb?<br>
+These three Compose previews remain debug-only. The full curriculum uses its existing route with the new production player. Physical device and child review remain separate. <a href="REVIEW.md">Implementation and verification notes</a>.</footer>
+</html>

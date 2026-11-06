@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.bellfamily.bastischool.VerbMotionProductionTest" tests="2" failures="1" errors="0" skipped="0" time="772.854" timestamp="2026-11-06T12:58:33" hostname="localhost">
+  <properties>
+    <property name="device" value="Medium_Phone_API_35(AVD) - 15" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="all53LessonsWorkInBothLanguagesAndBackgroundReturnStaysPaused" classname="com.bellfamily.bastischool.VerbMotionProductionTest" time="681.098">
+    <failure>java.lang.AssertionError: Failed: assertExists.
+Reason: Expected exactly '1' node but could not find any node that satisfies: (Text + EditableText contains 'What shall we explore?' (ignoreCase: false))
+
+at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow(SemanticsNodeInteraction.kt:178)
+at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow$default(SemanticsNodeInteraction.kt:150)
+at androidx.compose.ui.test.SemanticsNodeInteraction.assertExists(SemanticsNodeInteraction.kt:125)
+at androidx.compose.ui.test.SemanticsNodeInteraction.assertExists$default(SemanticsNodeInteraction.kt:124)
+at com.bellfamily.bastischool.VerbMotionProductionTest.all53LessonsWorkInBothLanguagesAndBackgroundReturnStaysPaused(VerbMotionProductionTest.kt:85)
+</failure>
+  </testcase>
+  <testcase name="everyProductionAtlasDecodesWithTransparencyAndVisiblePoses" classname="com.bellfamily.bastischool.VerbMotionProductionTest" time="68.178" />
+</testsuite>

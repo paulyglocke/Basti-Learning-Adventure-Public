@@ -1,0 +1,105 @@
+{
+  "baseCommit": "a990f34",
+  "sourceSha256": {
+    "app/src/main/assets/app.js": "b6c77c6849d28b22666925a04f9c55f4b41f63924c99cfbd1dbe5ddf3e9bf100",
+    "app/src/main/assets/index.html": "c6b3d57bf55b25c623254f5cdfbe8d1fbec84d7e3a47c93eed93eee849802a12",
+    "app/src/main/assets/verb-motion.js": "d64291bdd7e4132fdaa43f43337bedd97f8adff0d2e8a6eaf7a6a5e4b166e10d",
+    "app/src/main/assets/verb-motion-content.js": "217290deea5f47e62a7f0a40ab2eb5c3ae40995f0056715043bc15b8bc2f4617",
+    "app/src/main/assets/verb-motion.css": "f206daa06f40d645521bae7e4241fce6fb073a207ae9e50eb0b79861075bf22f",
+    "app/src/main/java/com/bellfamily/bastischool/MainActivity.kt": "2b34b67e498f0cbdbe31d86e7c0d59f060f63a3ca9995499056120ead4af02a5"
+  },
+  "jvm": {
+    "tests": 649,
+    "failures": 0,
+    "errors": 0
+  },
+  "browser": {
+    "tests": 63,
+    "failures": 0
+  },
+  "nativePreviewApi35": {
+    "tests": 7,
+    "failures": 0
+  },
+  "productionAndroid": {
+    "tests": 2,
+    "failures": 0
+  },
+  "emulator": {
+    "avd": "Medium_Phone_API_35",
+    "serial": "emulator-5554",
+    "api": 35,
+    "cpus": 4,
+    "ramMiB": 6144,
+    "graphics": "host",
+    "network": "airplane mode during validation",
+    "airplaneModeRestored": 0
+  },
+  "combinedAndroidApi35": {
+    "tests": 9,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "debugApkSha256": "49d7607e3f918fac41b4f5902863b508a4bda81e0ea51bfc370679d6c7312160",
+  "lint": {
+    "errors": 0,
+    "warnings": 7
+  },
+  "nativeReviewClips": {
+    "jump": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 720,
+          "height": 1600,
+          "nb_frames": "268"
+        }
+      ],
+      "format": {
+        "duration": "8.392789"
+      },
+      "sha256": "550ccfcc71f455fffb57c8128b731184feb055f0a5f82bb905fef15d5b38d82a",
+      "visualReview": "Sampled actual recorded frames show the intended action."
+    },
+    "fly": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 720,
+          "height": 1600,
+          "nb_frames": "76"
+        }
+      ],
+      "format": {
+        "duration": "8.368944"
+      },
+      "sha256": "0fae89d0bcba18b21a6f65b334427e884a5deac938f46a4616c5cbc82d57b7f4",
+      "visualReview": "Sampled actual recorded frames show the intended action."
+    },
+    "snap": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 720,
+          "height": 1600,
+          "nb_frames": "243"
+        }
+      ],
+      "format": {
+        "duration": "7.740789"
+      },
+      "sha256": "928047119cef36911392c1709df22f71e9143c3ecae0a2c2f8796f9b52fcd0be",
+      "visualReview": "Sampled actual recorded frames show the intended action."
+    }
+  },
+  "postValidationPackaging": {
+    "change": "Removed one extra trailing blank line from verb-motion-content.js; behavior unchanged. Cleaned documentation whitespace.",
+    "assembleDebug": "passed",
+    "instrumentedApkSha256": "9b55dfae5a5f063cd79d5ea7257bb5ddd1896161eb89f7784fbfcd1a27fcf484",
+    "instrumentedContentMapSha256": "1e7713b30f9a78004e2ee8bb3266e8d0eebe51014468ac142764c7915970ef69"
+  }
+}

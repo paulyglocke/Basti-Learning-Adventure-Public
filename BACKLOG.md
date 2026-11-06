@@ -107,7 +107,16 @@ Already implemented and not active implementation backlog unless a regression is
 - Build the Bridge.
 - Dinosaur Rescue.
 - Crocodile Snap.
-- Native/action-specific Verb Explorer polish.
+- Full native Verb Explorer migration remains. The owner-authorized
+  [53-lesson presentation repair](docs/verb-animation-fixes-2026-11-06/README.md)
+  replaces fixed animal glyphs with reusable authored poses, repairs water/bat/
+  Chase/Fetch gaps, and adds visible objects/results, pause/picture controls and
+  adult sound modelling. Native eagle/rabbit previews share the improved assets;
+  the approved crocodile v2 is retained. This repairs the existing WebView route
+  without changing curriculum/checkpoints or claiming a completed native migration.
+- Review the repaired lessons and [native preview](docs/verb-motion-preview/index.html)
+  with Basti on S24/Fire; child comprehension, actual TalkBack and installed
+  offline voice quality remain owner-managed acceptance.
 - Broader original illustration/animation polish.
 - Real-world and Move & Learn missions.
 - Final app-wide visual polish: Home, buttons/cards, typography, spacing, transitions, feedback states and cohesive decorative motifs.
