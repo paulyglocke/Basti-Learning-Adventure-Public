@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.bellfamily.bastischool.MainActivityStartupTest" tests="30" failures="1" errors="0" skipped="0" time="160.188" timestamp="2026-11-09T10:10:12" hostname="localhost">
+  <properties>
+    <property name="device" value="Basti_ThreePass_20261106(AVD) - 15" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="homeSurvivesLaunchRecreationAndBackgroundReturn" classname="com.bellfamily.bastischool.MainActivityStartupTest" time="2.605" />
+  <testcase name="matchingOptionsRecreationReturnsToBothOriginalBrowsePages" classname="com.bellfamily.bastischool.SweepRepairsRouteTest" time="2.223" />
+  <testcase name="thumbnailAndStepPicturesDecodeAtBoundedSizeAndMissingArtIsSafe" classname="com.bellfamily.bastischool.SweepRepairsRouteTest" time="0.005" />
+  <testcase name="activityThumbnailsAreVisibleThroughRealBrowsePages" classname="com.bellfamily.bastischool.SweepRepairsRouteTest" time="1.554" />
+  <testcase name="quizLessonSettingsRecreationAndCompletionPreserveExactQuestionAndChoices" classname="com.bellfamily.bastischool.ui.verbs.VerbsRouteTest" time="3.597" />
+  <testcase name="bothLevelsKeepFixedEggsRestoreAddedEggsAndCompleteWithSharedRewards" classname="com.bellfamily.bastischool.ui.bonds.NumberBondsRouteTest" time="7.157" />
+  <testcase name="listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1]" classname="com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest" time="2.658" />
+  <testcase name="listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1]" classname="com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest" time="2.466" />
+  <testcase name="listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0]" classname="com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest" time="11.321">
+    <failure>androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 10000 ms
+at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
+at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
+at com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest.listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable(WashHandsScreenTest.kt:59)
+</failure>
+  </testcase>
+  <testcase name="listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-8]" classname="com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest" time="4.587" />
+  <testcase name="allImagesDecodeOnceAtBoundedSizeAndReuseTheSameCache" classname="com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest" time="0.185" />
+  <testcase name="missingAndCorruptImagesAreIsolatedAndCachedWithoutReplacingThemWithOtherAnimals" classname="com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest" time="0.116" />
+  <testcase name="foodExploreFindNameLanguageAndCategorySwitchPreserveSavedPractice" classname="com.bellfamily.bastischool.ui.vocabulary.FoodVocabularyRouteTest" time="3.804" />
+  <testcase name="artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[ENGLISH-1]" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest" time="2.97" />
+  <testcase name="artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-1]" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest" time="3.173" />
+  <testcase name="artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-0]" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest" time="3.509" />
+  <testcase name="artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-8]" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest" time="5.656" />
+  <testcase name="germanGuidedOutlineAdvancesAndClearsAtLargeTextNarrowWidth" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest" time="0.895" />
+  <testcase name="englishGuidedOutlineAdvancesAndClearsAtLargeTextNarrowWidth" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest" time="0.926" />
+  <testcase name="individualListenIsSeparateFromImmediateKeyboardAnswerAndNavigationClearsOutline" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest" time="0.956" />
+  <testcase name="everyHomeEntryOpensItsExistingDestinationAndReturnsHome[en]" classname="com.bellfamily.bastischool.HomeRouteTest" time="28.721" />
+  <testcase name="everyHomeEntryOpensItsExistingDestinationAndReturnsHome[de]" classname="com.bellfamily.bastischool.HomeRouteTest" time="28.092" />
+  <testcase name="all53NativeLessonsWorkInBothLanguagesWithPictureStepsAndPausedBackgroundReturn" classname="com.bellfamily.bastischool.VerbMotionProductionTest" time="24.869" />
+  <testcase name="everyProductionAtlasDecodesWithTransparencyAndVisiblePoses" classname="com.bellfamily.bastischool.VerbMotionProductionTest" time="0.706" />
+  <testcase name="soundOffIsLazyBackgroundDropsPendingEntranceAndOnlyCurrentCompletedIntroductionIsConsumed" classname="com.bellfamily.bastischool.ui.verbs.VerbExplorerOwnerTest" time="0.002" />
+  <testcase name="all53NativeStoryboardsRenderAndUnderwaterAnimalsRemainVisible" classname="com.bellfamily.bastischool.ui.verbs.VerbSceneReviewTest" time="4.735" />
+  <testcase name="longLessonAndBothBoardsKeepPicturesLargeTouchTargetsAndKeyboardActionsReachable[de=false-font=1-landscape=false]" classname="com.bellfamily.bastischool.ui.verbs.VerbsBondsLayoutTest" time="2.731" />
+  <testcase name="longLessonAndBothBoardsKeepPicturesLargeTouchTargetsAndKeyboardActionsReachable[de=true-font=1.5-landscape=false]" classname="com.bellfamily.bastischool.ui.verbs.VerbsBondsLayoutTest" time="2.219" />
+  <testcase name="longLessonAndBothBoardsKeepPicturesLargeTouchTargetsAndKeyboardActionsReachable[de=true-font=2-landscape=true]" classname="com.bellfamily.bastischool.ui.verbs.VerbsBondsLayoutTest" time="2.388" />
+  <testcase name="longLessonAndBothBoardsKeepPicturesLargeTouchTargetsAndKeyboardActionsReachable[de=false-font=1-landscape=true]" classname="com.bellfamily.bastischool.ui.verbs.VerbsBondsLayoutTest" time="4.131" />
+</testsuite>

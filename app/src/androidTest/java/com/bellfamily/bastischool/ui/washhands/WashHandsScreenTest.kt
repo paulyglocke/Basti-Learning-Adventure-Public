@@ -3,7 +3,7 @@ package com.bellfamily.bastischool.ui.washhands
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.view.Surface
-import androidx.activity.ComponentActivity
+import com.bellfamily.bastischool.ui.testing.LayoutTestActivity
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.ExperimentalComposeUiApi
@@ -32,9 +32,11 @@ class WashHandsScreenTest(private val language:ContentLanguage,private val orien
         arrayOf<Any>(ContentLanguage.GERMAN,ActivityInfo.SCREEN_ORIENTATION_PORTRAIT),
         arrayOf<Any>(ContentLanguage.GERMAN,ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE),
         arrayOf<Any>(ContentLanguage.GERMAN,ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE))}
-    @get:Rule val compose=createAndroidComposeRule<ComponentActivity>()
+    @get:Rule val compose=createAndroidComposeRule<LayoutTestActivity>()
     @Test fun listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable() {
-        compose.activity.requestedOrientation=orientation
+        // This is a component layout test. Keep its composition host alive while
+        // rotating; actual MainActivity recreation is covered by production routes.
+        compose.runOnUiThread {compose.activity.requestedOrientation=orientation}
         val landscape=orientation!=ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         compose.waitUntil(10_000){compose.activity.resources.configuration.orientation==if(landscape)Configuration.ORIENTATION_LANDSCAPE else Configuration.ORIENTATION_PORTRAIT}
         val rotation=when(orientation){ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE->Surface.ROTATION_90;ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE->Surface.ROTATION_270;else->Surface.ROTATION_0}

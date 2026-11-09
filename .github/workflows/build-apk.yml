@@ -36,6 +36,8 @@ jobs:
           python3 -m venv "$RUNNER_TEMP/basti-python"
           "$RUNNER_TEMP/basti-python/bin/python" -m pip install -r scripts/requirements.txt
           echo "$RUNNER_TEMP/basti-python/bin" >> "$GITHUB_PATH"
+      - name: Verify shared verb catalogue adapters
+        run: python3 tools/generate_verbs.py --check
       - name: Test CI version policy
         run: python3 -m unittest discover -s scripts -p 'test_*.py'
       - name: Test and build development APK
@@ -80,7 +82,7 @@ jobs:
           disable-animations: true
           script: >-
             ./gradlew connectedDebugAndroidTest
-            -Pandroid.testInstrumentationRunnerArguments.class=com.bellfamily.bastischool.MainActivityStartupTest,com.bellfamily.bastischool.SweepRepairsRouteTest,com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest,com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest,com.bellfamily.bastischool.ui.vocabulary.FoodVocabularyRouteTest,com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest,com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest
+            -Pandroid.testInstrumentationRunnerArguments.class=com.bellfamily.bastischool.MainActivityStartupTest,com.bellfamily.bastischool.SweepRepairsRouteTest,com.bellfamily.bastischool.ui.verbs.VerbsRouteTest,com.bellfamily.bastischool.ui.bonds.NumberBondsRouteTest,com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest,com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest,com.bellfamily.bastischool.ui.vocabulary.FoodVocabularyRouteTest,com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest,com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest
             --console=plain
       - name: Upload Android instrumentation reports
         if: always()
@@ -157,4 +159,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx playwright install --with-deps chromium
+      - name: Verify retained motion comparison samples
+        run: node tools/verb_motion_parity.cjs --check
       - run: npm test

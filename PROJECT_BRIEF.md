@@ -80,7 +80,7 @@ The current source is hybrid Compose + legacy WebView. Home and Options are nati
 3. Seasons / Jahreszeiten
 4. Wilma’s Week / Wilmas Woche
 
-Legacy bundled routes remain available for Animal Actions, Numbers, Easy Maths, Letters, Learn Verbs / Verb Explorer, Mixed Adventure and remaining calendar content until tested native parity allows retirement.
+Native Home now opens Animal Actions and all 53 Verb Explorer lessons in Kotlin, alongside separate concrete Build 5/Build 10 boards. Numbers, Easy Maths and Mixed Adventure remain web destinations. Older saved WEB verb routes remain compatible until their removal gate is accepted.
 
 Mixed Adventure should combine different exercise types so the child cannot simply learn one repetitive answer pattern.
 
@@ -353,7 +353,7 @@ End-of-round feedback should be encouraging and simple.
 
 The app is hybrid Compose + legacy WebView. Kotlin owns the native home, Options, top bar, shell navigation, transitional SharedPreferences, retained WebView hosting and Android TTS integration. Native Prepositions, Seasons, Wilma’s Week, Vocabulary Booster and Months use shared typed content, audio, deterministic session/restoration and durable local progress-event foundations. The 81-scene Scene Description catalogue drives the native Tell Me / Erzähl mal open-ended text/artwork activity; content revision 11 includes a three-scene third-question pilot. Current automated validation and physical-acceptance gaps are recorded in SESSION_HANDOFF.md and TESTING_QA_SPEC.md.
 
-Legacy HTML/JavaScript still owns unmigrated quiz modes, the 53 Verb Explorer lessons, tutorials and their legacy scoring/completion/animation behavior. The shared native progress foundation is implemented, but the parent-facing Progress dashboard and broader adaptation/classification experience are not.
+Legacy HTML/JavaScript still owns unmigrated quiz modes and compatible historical verb sessions. Native Verb Explorer/Animal Actions share the authored catalogue, animation assets, typed native session owner and shared progress; they do not execute JavaScript. The shared native progress foundation is implemented, but the parent-facing Progress dashboard and broader adaptation/classification experience are not.
 
 Important files include:
 - app/src/main/java/com/bellfamily/bastischool/MainActivity.kt

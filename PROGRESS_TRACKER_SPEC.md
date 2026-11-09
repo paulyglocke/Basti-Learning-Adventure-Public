@@ -93,6 +93,20 @@ Differentiate:
 
 Support is not failure.
 
+Native Animal Actions records animal/action recognition through the shared choice
+session host. Opening Learn this verb records hint support before returning to the
+same task. Pronunciation controls, watching a lesson and imitating an animal do
+not create correctness evidence or speech-production/mastery claims. Old web scores
+are not converted into invented native attempts.
+
+Concrete Build 5/Build 10 use separate `skill.math.number_bonds.build_5` and
+`skill.math.number_bonds.build_10` identities. Adding/removing an egg creates no
+attempt. Check records the constructed total, selected language, attempts and
+Replay/Help support; a supported success remains success. Completion is deduplicated
+through the existing repository. Keep these contexts separate from choice-based
+Make 5 and Dinosaur Counting Tray; do not infer generalised mastery from filling a
+fixed frame.
+
 For Dinosaur Counting Tray, tapping an object into or out of a space is an in-progress
 manipulation and creates no attempt event. Pressing Check records the current count
 as correct or incorrect. Replay and Help are attached as support to the checked

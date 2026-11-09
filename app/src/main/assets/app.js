@@ -25,169 +25,11 @@ const T={
  }
 };
 
-const creatures={
- dragon:{emoji:"🐉",en:"dragon",de:"Drache",enPlural:"dragons",dePlural:"Drachen"},
- dinosaur:{emoji:"🦖",en:"dinosaur",de:"Dinosaurier",enPlural:"dinosaurs",dePlural:"Dinosaurier"},
- sauropod:{emoji:"🦕",en:"long-neck dinosaur",de:"Langhals-Dinosaurier",enPlural:"long-neck dinosaurs",dePlural:"Langhals-Dinosaurier"},
- snake:{emoji:"🐍",en:"snake",de:"Schlange",enPlural:"snakes",dePlural:"Schlangen"},
- croc:{emoji:"🐊",en:"crocodile",de:"Krokodil",enPlural:"crocodiles",dePlural:"Krokodile"},
- whale:{emoji:"🐋",en:"whale",de:"Wal",enPlural:"whales",dePlural:"Wale"},
- shark:{emoji:"🦈",en:"shark",de:"Hai",enPlural:"sharks",dePlural:"Haie"},
- eagle:{emoji:"🦅",en:"eagle",de:"Adler",enPlural:"eagles",dePlural:"Adler"},
- rabbit:{emoji:"🐇",en:"rabbit",de:"Kaninchen",enPlural:"rabbits",dePlural:"Kaninchen"},
- fish:{emoji:"🐟",en:"fish",de:"Fisch",enPlural:"fish",dePlural:"Fische"},
- horse:{emoji:"🐎",en:"horse",de:"Pferd",enPlural:"horses",dePlural:"Pferde"},
- monkey:{emoji:"🐒",en:"monkey",de:"Affe",enPlural:"monkeys",dePlural:"Affen"},
- dog:{emoji:"🐕",en:"dog",de:"Hund",enPlural:"dogs",dePlural:"Hunde"},
- cat:{emoji:"🐈",en:"cat",de:"Katze",enPlural:"cats",dePlural:"Katzen"},
- frog:{emoji:"🐸",en:"frog",de:"Frosch",enPlural:"frogs",dePlural:"Frösche"},
- penguin:{emoji:"🐧",en:"penguin",de:"Pinguin",enPlural:"penguins",dePlural:"Pinguine"},
- lion:{emoji:"🦁",en:"lion",de:"Löwe",enPlural:"lions",dePlural:"Löwen"},
- tiger:{emoji:"🐅",en:"tiger",de:"Tiger",enPlural:"tigers",dePlural:"Tiger"},
- cow:{emoji:"🐄",en:"cow",de:"Kuh",enPlural:"cows",dePlural:"Kühe"},
- pig:{emoji:"🐖",en:"pig",de:"Schwein",enPlural:"pigs",dePlural:"Schweine"},
- duck:{emoji:"🦆",en:"duck",de:"Ente",enPlural:"ducks",dePlural:"Enten"},
- bee:{emoji:"🐝",en:"bee",de:"Biene",enPlural:"bees",dePlural:"Bienen"},
- owl:{emoji:"🦉",en:"owl",de:"Eule",enPlural:"owls",dePlural:"Eulen"},
- wolf:{emoji:"🐺",en:"wolf",de:"Wolf",enPlural:"wolves",dePlural:"Wölfe"},
- chicken:{emoji:"🐔",en:"chicken",de:"Huhn",enPlural:"chickens",dePlural:"Hühner"},
- parrot:{emoji:"🦜",en:"parrot",de:"Papagei",enPlural:"parrots",dePlural:"Papageien"},
- flamingo:{emoji:"🦩",en:"flamingo",de:"Flamingo",enPlural:"flamingos",dePlural:"Flamingos"},
- beaver:{emoji:"🦫",en:"beaver",de:"Biber",enPlural:"beavers",dePlural:"Biber"},
- spider:{emoji:"🕷️",en:"spider",de:"Spinne",enPlural:"spiders",dePlural:"Spinnen"},
- elephant:{emoji:"🐘",en:"elephant",de:"Elefant",enPlural:"elephants",dePlural:"Elefanten"},
- giraffe:{emoji:"🦒",en:"giraffe",de:"Giraffe",enPlural:"giraffes",dePlural:"Giraffen"},
- crab:{emoji:"🦀",en:"crab",de:"Krabbe",enPlural:"crabs",dePlural:"Krabben"},
- octopus:{emoji:"🐙",en:"octopus",de:"Oktopus",enPlural:"octopuses",dePlural:"Oktopusse"},
- otter:{emoji:"🦦",en:"otter",de:"Otter",enPlural:"otters",dePlural:"Otter"},
- bat:{emoji:"🦇",en:"bat",de:"Fledermaus",enPlural:"bats",dePlural:"Fledermäuse"},
- seal:{emoji:"🦭",en:"seal",de:"Robbe",enPlural:"seals",dePlural:"Robben"},
- snail:{emoji:"🐌",en:"snail",de:"Schnecke",enPlural:"snails",dePlural:"Schnecken"},
- hedgehog:{emoji:"🦔",en:"hedgehog",de:"Igel",enPlural:"hedgehogs",dePlural:"Igel"},
- kangaroo:{emoji:"🦘",en:"kangaroo",de:"Känguru",enPlural:"kangaroos",dePlural:"Kängurus"},
- butterfly:{emoji:"🦋",en:"butterfly",de:"Schmetterling",enPlural:"butterflies",dePlural:"Schmetterlinge"},
- ant:{emoji:"🐜",en:"ant",de:"Ameise",enPlural:"ants",dePlural:"Ameisen"},
- mouse:{emoji:"🐁",en:"mouse",de:"Maus",enPlural:"mice",dePlural:"Mäuse"}
-};
+const creatures=window.VerbCatalogue.animals;
 
-const verbQs=[
- {v:{en:"fly",de:"fliegen"},a:"eagle",d:["croc","horse","penguin"]},
- {v:{en:"jump",de:"springen"},a:"rabbit",d:["snake","fish","snail"]},
- {v:{en:"hop",de:"hüpfen"},a:"frog",d:["shark","snake","whale"]},
- {v:{en:"swim in the sea",de:"im Meer schwimmen"},a:"shark",d:["horse","eagle","rabbit"]},
- {v:{en:"dive underwater",de:"unter Wasser tauchen"},a:"penguin",d:["giraffe","cow","snail"]},
- {v:{en:"climb",de:"klettern"},a:"monkey",d:["whale","fish","horse"]},
- {v:{en:"slither",de:"sich schlängeln"},a:"snake",d:["dog","horse","eagle"]},
- {v:{en:"gallop",de:"galoppieren"},a:"horse",d:["fish","snake","penguin"]},
- {v:{en:"bark",de:"bellen"},a:"dog",d:["cat","frog","fish"]},
- {v:{en:"meow",de:"miauen"},a:"cat",d:["dog","croc","whale"]},
- {v:{en:"roar",de:"brüllen"},a:"lion",d:["rabbit","fish","penguin"]},
- {v:{en:"moo",de:"muhen"},a:"cow",d:["cat","duck","lion"]},
- {v:{en:"oink",de:"grunzen"},a:"pig",d:["horse","duck","frog"]},
- {v:{en:"quack",de:"quaken"},a:"duck",d:["dog","cow","lion"]},
- {v:{en:"buzz",de:"summen"},a:"bee",d:["rabbit","horse","cow"]},
- {v:{en:"hoot",de:"uhu rufen"},a:"owl",d:["pig","cow","rabbit"]},
- {v:{en:"howl",de:"heulen"},a:"wolf",d:["rabbit","duck","fish"]},
- {v:{en:"hiss",de:"zischen"},a:"snake",d:["cow","duck","horse"]},
- {v:{en:"peck",de:"picken"},a:"chicken",d:["whale","snake","cat"]},
- {v:{en:"dig",de:"graben"},a:"rabbit",d:["whale","eagle","fish"]},
- {v:{en:"scratch",de:"kratzen"},a:"cat",d:["fish","snail","whale"]},
- {v:{en:"kick",de:"treten"},a:"horse",d:["fish","snake","snail"]},
- {v:{en:"wag its tail",de:"mit dem Schwanz wedeln"},a:"dog",d:["fish","snake","snail"]},
- {v:{en:"flap its wings",de:"mit den Flügeln schlagen"},a:"parrot",d:["cow","cat","horse"]},
- {v:{en:"stand on one leg",de:"auf einem Bein stehen"},a:"flamingo",d:["cow","dog","elephant"]},
- {v:{en:"build a dam",de:"einen Damm bauen"},a:"beaver",d:["tiger","horse","duck"]},
- {v:{en:"spin a web",de:"ein Netz spinnen"},a:"spider",d:["frog","cow","horse"]},
- {v:{en:"use a trunk",de:"einen Rüssel benutzen"},a:"elephant",d:["horse","dog","duck"]},
- {v:{en:"reach high leaves",de:"hohe Blätter erreichen"},a:"giraffe",d:["snail","frog","mouse"]},
- {v:{en:"walk sideways",de:"seitwärts laufen"},a:"crab",d:["horse","elephant","giraffe"]},
- {v:{en:"squirt ink",de:"Tinte spritzen"},a:"octopus",d:["lion","cow","rabbit"]},
- {v:{en:"float on its back",de:"auf dem Rücken treiben"},a:"otter",d:["giraffe","horse","chicken"]},
- {v:{en:"copy sounds",de:"Geräusche nachmachen"},a:"parrot",d:["cow","snail","croc"]},
- {v:{en:"sleep upside down",de:"kopfüber schlafen"},a:"bat",d:["horse","cow","penguin"]},
- {v:{en:"snap its jaws",de:"mit dem Maul zuschnappen"},a:"croc",d:["rabbit","horse","eagle"]},
- {v:{en:"stomp",de:"stampfen"},a:"elephant",d:["butterfly","snail","bee"]},
- {v:{en:"nibble",de:"knabbern"},a:"rabbit",d:["shark","eagle","croc"]},
- {v:{en:"chew wood",de:"Holz benagen"},a:"beaver",d:["eagle","shark","cow"]},
- {v:{en:"waddle",de:"watscheln"},a:"penguin",d:["horse","tiger","giraffe"]},
- {v:{en:"paddle on a pond",de:"auf einem Teich paddeln"},a:"duck",d:["giraffe","lion","horse"]},
- {v:{en:"curl into a ball",de:"sich zu einer Kugel einrollen"},a:"hedgehog",d:["giraffe","horse","whale"]},
- {v:{en:"carry its baby in a pouch",de:"sein Baby im Beutel tragen"},a:"kangaroo",d:["cow","cat","eagle"]},
- {v:{en:"pounce",de:"anspringen"},a:"tiger",d:["snail","whale","penguin"]},
- {v:{en:"graze on grass",de:"Gras fressen"},a:"cow",d:["eagle","shark","octopus"]},
- {v:{en:"clap its flippers",de:"mit den Flossen klatschen"},a:"seal",d:["horse","cat","rabbit"]},
- {v:{en:"chase mice",de:"Mäuse jagen"},a:"cat",d:["cow","penguin","giraffe"]},
- {v:{en:"fetch a ball",de:"einen Ball holen"},a:"dog",d:["octopus","snail","shark"]},
- {v:{en:"crawl slowly",de:"langsam kriechen"},a:"snail",d:["eagle","horse","shark"]},
- {v:{en:"flutter",de:"flattern"},a:"butterfly",d:["cow","croc","whale"]},
- {v:{en:"carry food",de:"Futter tragen"},a:"ant",d:["whale","giraffe","horse"]},
- {v:{en:"breathe fire",de:"Feuer speien"},a:"dragon",d:["rabbit","whale","cow"]},
- {v:{en:"stomp like a dinosaur",de:"wie ein Dinosaurier stampfen"},a:"dinosaur",d:["bee","butterfly","snail"]},
- {v:{en:"stretch its long neck",de:"seinen langen Hals strecken"},a:"sauropod",d:["frog","mouse","crab"]}
-];
-
-// Fix accidental distractor ids that are not in the creature dictionary by replacing them at load time.
-const fallbackCreatureIds=Object.keys(creatures);
-for(const q of verbQs){
-  q.d=q.d.map(id=>creatures[id]?id:sampleStatic(fallbackCreatureIds.filter(x=>x!==q.a)));
-}
-function sampleStatic(a){return a[Math.floor(Math.random()*a.length)]}
-
-const verbLessons={
-  "fly":{en:"move through the air",de:"sich durch die Luft bewegen"},
-  "jump":{en:"push your body up from the ground",de:"den Körper vom Boden nach oben bewegen"},
-  "hop":{en:"make a small jump, often on two feet or one leg",de:"einen kleinen Sprung machen"},
-  "swim in the sea":{en:"move through water in the sea",de:"sich im Meer durch das Wasser bewegen"},
-  "dive underwater":{en:"go down under the water",de:"unter die Wasseroberfläche tauchen"},
-  "climb":{en:"go up something, like a tree or rock",de:"an etwas nach oben gehen, zum Beispiel an einem Baum"},
-  "slither":{en:"move along the ground like a snake",de:"sich wie eine Schlange über den Boden bewegen"},
-  "gallop":{en:"run very fast like a horse",de:"wie ein Pferd sehr schnell laufen"},
-  "bark":{en:"make the sound a dog makes",de:"das Geräusch machen, das ein Hund macht"},
-  "meow":{en:"make the sound a cat makes",de:"das Geräusch machen, das eine Katze macht"},
-  "roar":{en:"make a very loud animal sound",de:"ein sehr lautes Tiergeräusch machen"},
-  "moo":{en:"make the sound a cow makes",de:"das Geräusch machen, das eine Kuh macht"},
-  "oink":{en:"make the sound a pig makes",de:"das Geräusch machen, das ein Schwein macht"},
-  "quack":{en:"make the sound a duck makes",de:"das Geräusch machen, das eine Ente macht"},
-  "buzz":{en:"make a humming sound like a bee",de:"wie eine Biene summen"},
-  "hoot":{en:"make the 'hoo' sound an owl makes",de:"das Uhu-Geräusch einer Eule machen"},
-  "howl":{en:"make a long, loud sound like a wolf",de:"einen langen, lauten Laut wie ein Wolf machen"},
-  "hiss":{en:"make a long 'sss' sound like a snake",de:"einen langen Sss-Laut wie eine Schlange machen"},
-  "peck":{en:"tap or pick at something with a beak",de:"mit dem Schnabel nach etwas picken"},
-  "dig":{en:"make a hole in the ground",de:"ein Loch in den Boden machen"},
-  "scratch":{en:"rub or scrape with claws or nails",de:"mit Krallen oder Nägeln kratzen"},
-  "kick":{en:"hit or push with a foot or leg",de:"mit dem Fuß oder Bein stoßen"},
-  "wag its tail":{en:"move the tail from side to side",de:"den Schwanz hin und her bewegen"},
-  "flap its wings":{en:"move the wings up and down",de:"die Flügel auf und ab bewegen"},
-  "stand on one leg":{en:"balance with only one foot on the ground",de:"nur auf einem Bein stehen und das Gleichgewicht halten"},
-  "build a dam":{en:"make a wall that slows or stops water",de:"eine Wand bauen, die Wasser bremst oder stoppt"},
-  "spin a web":{en:"make a web from thin silk threads",de:"ein Netz aus dünnen Fäden machen"},
-  "use a trunk":{en:"move or pick things up with a long nose",de:"mit einem langen Rüssel Dinge bewegen oder aufnehmen"},
-  "reach high leaves":{en:"stretch up to get leaves that are high",de:"sich nach oben strecken, um hohe Blätter zu erreichen"},
-  "walk sideways":{en:"move to the side instead of straight ahead",de:"seitlich statt geradeaus laufen"},
-  "squirt ink":{en:"shoot out dark ink into the water",de:"dunkle Tinte ins Wasser spritzen"},
-  "float on its back":{en:"lie on the water with the back underneath",de:"mit dem Rücken auf dem Wasser treiben"},
-  "copy sounds":{en:"make a sound that sounds like another sound",de:"ein Geräusch nachmachen"},
-  "sleep upside down":{en:"sleep while hanging with the head lower than the feet",de:"kopfüber hängend schlafen"},
-  "snap its jaws":{en:"close the mouth very quickly and strongly",de:"das Maul sehr schnell und kräftig zuschnappen"},
-  "stomp":{en:"put the feet down with a strong, heavy step",de:"mit schweren Schritten auf den Boden stampfen"},
-  "nibble":{en:"eat with lots of small bites",de:"mit vielen kleinen Bissen essen"},
-  "chew wood":{en:"bite and grind wood with the teeth",de:"Holz mit den Zähnen benagen"},
-  "waddle":{en:"walk with short steps while rocking side to side",de:"mit kurzen Schritten watscheln"},
-  "paddle on a pond":{en:"move through water using the feet",de:"sich mit den Füßen durch das Wasser bewegen"},
-  "curl into a ball":{en:"make the body round like a ball",de:"den Körper zu einer Kugel einrollen"},
-  "carry its baby in a pouch":{en:"keep and carry a baby in a body pouch",de:"sein Baby in einem Beutel tragen"},
-  "pounce":{en:"jump quickly onto something",de:"schnell auf etwas springen"},
-  "graze on grass":{en:"eat grass from the ground",de:"Gras vom Boden fressen"},
-  "clap its flippers":{en:"bring the flippers together like clapping",de:"die Flossen wie beim Klatschen zusammenbewegen"},
-  "chase mice":{en:"run after mice to catch them",de:"Mäusen hinterherlaufen"},
-  "fetch a ball":{en:"go to a ball, pick it up and bring it back",de:"einen Ball holen und zurückbringen"},
-  "crawl slowly":{en:"move slowly close to the ground",de:"sich langsam dicht am Boden bewegen"},
-  "flutter":{en:"move wings quickly and lightly",de:"die Flügel schnell und leicht bewegen"},
-  "carry food":{en:"take food from one place to another",de:"Futter von einem Ort zu einem anderen tragen"},
-  "breathe fire":{en:"blow fire out of the mouth in a story",de:"in einer Geschichte Feuer aus dem Maul speien"},
-  "stomp like a dinosaur":{en:"walk with big, heavy dinosaur steps",de:"mit großen, schweren Dinosaurier-Schritten stampfen"},
-  "stretch its long neck":{en:"make the neck reach as far as it can",de:"den langen Hals so weit wie möglich strecken"},
-};
+// Shared authored catalogue; indexed order is retained for existing legacy checkpoints.
+const verbQs=window.VerbCatalogue.verbs.map(v=>({v:v.label,a:v.animal,d:[...v.distractors]}));
+const verbLessons=Object.fromEntries(window.VerbCatalogue.verbs.map(v=>[v.label.en,v.explanation]));
 
 // Written initial letters, NOT phonemes. Locale packs deliberately specify their
 // own letter/word mappings; translating an animal must not create a phonics task.
@@ -596,7 +438,7 @@ function openVerbLesson(idx,fromQuiz=false){
  activeLesson={idx,fromQuiz};
  const main=settings.lang==="en"?q.v.en:q.v.de,other=settings.lang==="en"?q.v.de:q.v.en;
  const explanation=lesson[settings.lang];
- const example=settings.lang==="en"?`Look at the ${creatures[q.a].en}. It can ${q.v.en}.`:`${germanCreatureName(q.a).replace(/^./,c=>c.toUpperCase())} kann ${q.v.de}.`;
+ const example=window.VerbCatalogue.verbs[idx].example[settings.lang];
  const spoken=settings.lang==="en"?`${q.v.en}. ${explanation}. ${example}`:`${q.v.de}. ${explanation}. ${example}`;
  const model=window.VerbMotion.soundLesson(q.v.en)?`<details class="verb-model-guide" ${q.v.en==="copy sounds"?"open":""}><summary>${settings.lang==="de"?"Das Geräusch gemeinsam vormachen":"Make the sound together"}</summary><p>${window.VerbMotion.guide(settings.lang)}</p><button type="button" id="verbModelListen">${settings.lang==="de"?"Anleitung anhören":"Hear the instructions"}</button></details>`:"";
  $("verbExplorerContent").innerHTML=`<div class="verbLesson">${window.VerbMotion.markup(q.v.en,settings.lang,example)}<div class="verbWords"><div class="mainWord">${main}</div><div class="translationWord">${other}</div></div><div class="verbExplain"><div class="verbInfoCard"><strong>${tt("whatMeans")}</strong>${explanation}</div><div class="verbInfoCard"><strong>${tt("example")}</strong>${example}</div><div class="verbInfoCard tryCard" style="grid-column:1/-1"><strong>${tt("tryIt")}</strong>${tt("tryPrompt")}</div></div>${model}<div class="verbLessonActions"><button class="verbLessonBtn" id="lessonListen">🔊 ${settings.lang==="en"?"Listen":"Anhören"}</button><button class="verbLessonBtn primary" onclick="${fromQuiz?'show(\'game\')':'renderVerbLibrary()'}">${fromQuiz?(settings.lang==="en"?"Back to question":"Zurück zur Frage"):tt("allVerbs")}</button></div></div>`;

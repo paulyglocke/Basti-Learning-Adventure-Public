@@ -44,7 +44,7 @@ The [verb motion repair](docs/verb-animation-fixes-2026-11-06/README.md) uses
 approval of the audit repairs. Related actions share one animal identity; body
 parts articulate and scene props show contact/results. Native Jump/Fly/Snap
 previews consume the same production WebP assets. Historical four-pose PNGs stay
-in debug assets for comparison. Physical/child acceptance remains separate.
+in debug assets for comparison. The full native Verb Explorer/Animal Actions renderer now reuses these same 39 atlases, scene props and four authored teaching steps. Build 5/10 use native illustrated eggs/nests rather than emoji. Physical/child acceptance remains separate.
 
 Prioritise replacement of explicit temporary glyph/emoji placeholders before producing decorative variants.
 

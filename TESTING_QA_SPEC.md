@@ -6,6 +6,39 @@ This document defines verification and feature completion gates. [NATIVE_ARCHITE
 
 **A feature is not done only because it builds.** Record evidence for its behavior and relevant device risks. A code-complete slice awaiting required hardware checks must be labelled as such, not fully verified or eligible for legacy removal.
 
+## Native verbs, concrete number bonds and CI repair (2026-11-09, local)
+
+Code and local automated/visual verification are complete from baseline `9397155`.
+The new native routes cover all 53 Verb Explorer lessons, Animal Actions and
+separate Build 5/Build 10 concrete boards. Legacy saved WEB rounds remain supported.
+Physical acceptance is pending; this checkpoint does not authorize legacy removal.
+
+- PASS — full JVM **663/663**, retained browser **63/63**, both debug APK assemblies,
+  and lint (0 errors, 7 existing warnings, 2 informational findings).
+- PASS — combined API 35 selection **30/30**, including all 20 current focused-CI
+  cases, Home routing, all 53 lessons in both languages, four teaching pictures,
+  lifecycle/recreation, question/choice/lock preservation, Hint/speaker semantics,
+  both number-bond levels and exact placements, rewards, audio ownership and renderer
+  bounds/water checks. This is selected coverage, not full app instrumentation.
+- PASS — four phone and **4/4 separate tablet** layout configurations cover EN/DE,
+  1×/1.5×/2× text, portrait/landscape, keyboard, minimum targets and reachability.
+- PASS — authored/generated catalogue consistency, 689 deterministic native/legacy
+  motion comparisons, 39 offline atlases / 264 source cells and packaged/source
+  adapter equality. Legacy Sound Off preferences have a regression check.
+- Reviewed — all 53 Android-renderer storyboards. The gallery distinguishes these
+  exports from 38 actual UI captures and labels component/scrolled examples.
+- Repaired — the hosted Options lookup failure now waits for actual matching and
+  overlay semantics. Larger local runs also exposed recursive Compose scrolling
+  and orientation/recreation assumptions in fixtures. Strict checks remain intact;
+  earlier failures and final clean results are retained in the evidence directory.
+
+See [the review and exact evidence](docs/native-verbs-bonds-2026-11-07/README.md).
+Testing used a separate API 35 AVD; its temporary airplane setting and display
+were restored, and it is closed. No physical phone was touched. Physical S24/Fire,
+actual TalkBack/switch use, child comprehension, installed offline voice quality
+and signed in-place upgrades are NOT RUN — owner-managed acceptance. New work
+remains local/uncommitted; hosted GitHub CI has not run on this revision.
+
 ## UX Refresh Phase 4B — Seasons chooser and content-first Explore (committed 2026-10-20)
 
 The Days & Seasons route now opens a dedicated bilingual Seasons chooser. Its

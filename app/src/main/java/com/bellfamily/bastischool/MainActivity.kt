@@ -99,6 +99,11 @@ import com.bellfamily.bastischool.ui.quantitymatch.*
 import com.bellfamily.bastischool.ui.comparequantity.*
 import com.bellfamily.bastischool.ui.numberorder.*
 import com.bellfamily.bastischool.ui.addition.*
+import com.bellfamily.bastischool.ui.verbs.*
+import com.bellfamily.bastischool.ui.bonds.*
+import com.bellfamily.bastischool.learning.bonds.BondLevel
+import com.bellfamily.bastischool.learning.verbs.VerbContent
+import com.bellfamily.bastischool.learning.session.CompletionState
 import com.bellfamily.bastischool.ui.counting.CountingTrayScreen
 import com.bellfamily.bastischool.ui.counting.CountingTrayViewModel
 import com.bellfamily.bastischool.ui.coloursort.*
@@ -156,6 +161,8 @@ private val homeCards = listOf(
     HomeCard("➕", "Add Bigger Numbers", "Größere Zahlen addieren", "Add groups up to 20.", "Addiere Gruppen bis 20.", "addChallenge"),
     HomeCard("➖", "Take Away", "Wegnehmen", "Take away groups within 5.", "Nimm Mengen bis 5 weg.", "subtraction"),
     HomeCard("🔀", "Mixed Addition", "Gemischte Plusaufgaben", "Mix small sums and bigger addition.", "Mische kleine und größere Plusaufgaben.", "mixedAddition"),
+    HomeCard("", "Build 5", "Fünf legen", "Add eggs to complete a group of five.", "Ergänze Eier zu einer Gruppe mit fünf.", "buildFive"),
+    HomeCard("", "Build 10", "Zehn legen", "Add eggs to complete a group of ten.", "Ergänze Eier zu einer Gruppe mit zehn.", "buildTen"),
     HomeCard("🖐️", "Make 5", "Fünf ergänzen", "Find the dots that complete a five-frame.", "Finde die Punkte, die das Fünferfeld füllen.", "makeFive"),
     HomeCard("🦖", "Build a Dinosaur Group", "Dinosauriergruppe legen", "Tap dinosaurs into a five-space tray to make a number.", "Lege Dinosaurier ins Fünferfeld, bis die Zahl passt.", "countingTray"),
     HomeCard("➕", "Easy Maths", "Einfache Mathe", "Add and take away within 10.", "Plus und Minus bis 10.", "math"),
@@ -204,6 +211,10 @@ class MainActivity : ComponentActivity() {
     private lateinit var nativeSubtraction: SubtractionViewModel
     private lateinit var nativeMixedAddition: MixedAdditionViewModel
     private lateinit var nativeMakeFive: MakeFiveViewModel
+    private lateinit var nativeVerbs: VerbsQuizViewModel
+    private lateinit var nativeVerbExplorer: VerbExplorerViewModel
+    private lateinit var nativeBuildFive: BuildFiveViewModel
+    private lateinit var nativeBuildTen: BuildTenViewModel
     private lateinit var nativeCountingTray: CountingTrayViewModel
     private lateinit var nativeFollow: FollowViewModel
     private lateinit var nativeSeasons: SeasonsViewModel
@@ -267,11 +278,15 @@ class MainActivity : ComponentActivity() {
         nativeMakeFive = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[MakeFiveViewModel::class.java]
         nativeCountingTray = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[CountingTrayViewModel::class.java]
         nativeFollow = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[FollowViewModel::class.java]
+        nativeVerbs = ViewModelProvider(this)[VerbsQuizViewModel::class.java]
+        nativeVerbExplorer = ViewModelProvider(this)[VerbExplorerViewModel::class.java]
+        nativeBuildFive = ViewModelProvider(this)[BuildFiveViewModel::class.java]
+        nativeBuildTen = ViewModelProvider(this)[BuildTenViewModel::class.java]
         configurePositions()
         restoredSession = savedInstanceState?.getString("legacySession")
         navigation = ShellNavigation.restore(savedInstanceState?.getString("screen"),
             savedInstanceState?.getString("optionsOrigin"), savedInstanceState?.getString("webMode"), restoredSession,
-            savedInstanceState?.getString("homePage"))
+            savedInstanceState?.getString("homePage"), savedInstanceState?.getString("verbId"))
         if (!navigation.ownsWebSession) restoredSession = null
         checkpoint = LegacyCheckpoint(restoredSession)
         tts = TextToSpeech(this) { status ->
@@ -307,6 +322,10 @@ class MainActivity : ComponentActivity() {
         // need a second copy in the shell. Completion screens retain the shell title
         // because their content is a summary rather than the active activity heading.
         val contentOwnsTitle = when (screen) {
+            ShellScreen.VERB_LIBRARY, ShellScreen.VERB_LESSON -> true
+            ShellScreen.VERB_QUIZ -> nativeVerbs.state?.phase != SessionPhase.COMPLETED
+            ShellScreen.BUILD_FIVE -> nativeBuildFive.state?.completed != true
+            ShellScreen.BUILD_TEN -> nativeBuildTen.state?.completed != true
             ShellScreen.CLOCK, ShellScreen.FOLLOW_LEVELS, ShellScreen.COLOURS_CHOOSER,
             ShellScreen.COLOURS_EXPLORE, ShellScreen.COLOURS_FIND, ShellScreen.COLOURS_MATCH, ShellScreen.FOUR_COLOUR_SORT,
             ShellScreen.RAINBOW_EXPLORE, ShellScreen.RAINBOW_ORDER, ShellScreen.HABITATS_CHOOSER,
@@ -355,6 +374,10 @@ class MainActivity : ComponentActivity() {
                                 when (screen) {
                                     ShellScreen.HOME -> if (language == "de") "Bastis Lernabenteuer" else "Basti's Learning Adventure"
                                     ShellScreen.OPTIONS -> if (language == "de") "Optionen" else "Options"
+                                    ShellScreen.VERB_LIBRARY, ShellScreen.VERB_LESSON -> if(language=="de") "Verben entdecken" else "Verb Explorer"
+                                    ShellScreen.VERB_QUIZ -> if(language=="de") "Tieraktionen" else "Animal Actions"
+                                    ShellScreen.BUILD_FIVE -> if(language=="de") "Fünf legen" else "Build 5"
+                                    ShellScreen.BUILD_TEN -> if(language=="de") "Zehn legen" else "Build 10"
                                     ShellScreen.WEB -> if (language == "de") "Lernen" else "Learning"
                                     ShellScreen.PREPOSITIONS -> if (language == "de") "Wo ist es?" else "Where is it?"
                                     ShellScreen.LETTERS -> if (language == "de") "Tier-Anfangsbuchstaben" else "Animal First Letters"
@@ -434,6 +457,18 @@ class MainActivity : ComponentActivity() {
                             HomeBrowseScreen(navigation.homePage, language == "de", ::openHomePage,
                                 ::launchHomeActivity, Modifier.padding(padding), navigation.recoveryFailed)
                         }
+                        ShellScreen.VERB_LIBRARY -> VerbLibraryScreen(if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            {changeRoute(navigation.openVerbLesson(it))},Modifier.padding(padding))
+                        ShellScreen.VERB_QUIZ -> VerbQuizScreen(nativeVerbs,if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            {changeRoute(navigation.openVerbLesson(it))},{changeRoute(navigation.home())},Modifier.padding(padding),::popCelebration)
+                        ShellScreen.VERB_LESSON -> VerbContent.byId[navigation.verbId]?.let { lesson ->
+                            VerbLessonScreen(lesson,if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,navigation.mode=="verbs",nativeVerbExplorer.audioFailed,
+                                {nativeVerbExplorer.listen(lesson,it)},nativeVerbExplorer::interrupt,{changeRoute(navigation.returnFromVerb())},Modifier.padding(padding),{nativeVerbExplorer.entered(lesson)})
+                        }
+                        ShellScreen.BUILD_FIVE -> NumberBondsScreen(nativeBuildFive,BondLevel.FIVE,if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            {changeRoute(navigation.home())},Modifier.padding(padding),::popCelebration)
+                        ShellScreen.BUILD_TEN -> NumberBondsScreen(nativeBuildTen,BondLevel.TEN,if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            {changeRoute(navigation.home())},Modifier.padding(padding),::popCelebration)
                         ShellScreen.OPTIONS -> NativeOptions(language, audioMode, round, numberMax, padding, audioStatus,
                             largerSupportText = largerSupportText,
                             onLargerSupportText = {
@@ -858,6 +893,9 @@ class MainActivity : ComponentActivity() {
             ShellScreen.SUBTRACTION -> nativeSubtraction.busy || nativeSubtraction.saveFailed
             ShellScreen.MIXED_ADDITION -> nativeMixedAddition.busy || nativeMixedAddition.saveFailed
             ShellScreen.MAKE_FIVE -> nativeMakeFive.busy || nativeMakeFive.saveFailed
+            ShellScreen.VERB_QUIZ -> nativeVerbs.busy || nativeVerbs.saveFailed
+            ShellScreen.BUILD_FIVE -> nativeBuildFive.busy || nativeBuildFive.saveFailed
+            ShellScreen.BUILD_TEN -> nativeBuildTen.busy || nativeBuildTen.saveFailed
             ShellScreen.COUNTING_TRAY -> nativeCountingTray.busy || nativeCountingTray.saveFailed
             ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO, ShellScreen.FOLLOW_SCHOOL, ShellScreen.FOLLOW_SCHOOL_ACTIONS,
             ShellScreen.FOLLOW_SCHOOL_ACTION_SEQUENCE -> nativeFollow.busy || nativeFollow.saveFailed
@@ -896,6 +934,9 @@ class MainActivity : ComponentActivity() {
             ShellScreen.SUBTRACTION -> nativeSubtraction.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.MIXED_ADDITION -> nativeMixedAddition.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.MAKE_FIVE -> nativeMakeFive.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
+            ShellScreen.VERB_QUIZ -> nativeVerbs.state?.takeIf { it.phase == SessionPhase.COMPLETED && it.completion == CompletionState.ACKNOWLEDGED }?.plan?.id?.value
+            ShellScreen.BUILD_FIVE -> nativeBuildFive.state?.takeIf { it.completed && it.acknowledged }?.id?.value
+            ShellScreen.BUILD_TEN -> nativeBuildTen.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.COUNTING_TRAY -> nativeCountingTray.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.FOLLOW_INSTRUCTIONS -> nativeFollow.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.FOLLOW_TWO -> nativeFollow.twoState?.takeIf {it.completed && it.acknowledged}?.id?.value
@@ -923,6 +964,8 @@ class MainActivity : ComponentActivity() {
         backGate.invalidate()
         if (route.screen == ShellScreen.HOME && (navigation.screen == ShellScreen.TELL_ME ||
                 navigation.screen == ShellScreen.OPTIONS && navigation.optionsOrigin == ShellScreen.TELL_ME)) nativeTellMe.home()
+        if(route.screen==ShellScreen.VERB_LESSON && navigation.screen in setOf(ShellScreen.VERB_LIBRARY,ShellScreen.VERB_QUIZ))
+            route.verbId?.let(nativeVerbExplorer::prepareLesson)
         navigation = route
         nativePositions.setVisible(foreground && route.screen == ShellScreen.PREPOSITIONS)
         nativeLetters.configure(prefs.getString("lang", "en") ?: "en",
@@ -1032,6 +1075,7 @@ class MainActivity : ComponentActivity() {
                 syncSettings()
                 changeRoute(navigation.closeOptions())
             }
+            BackAction.VERB_RETURN -> changeRoute(navigation.returnFromVerb())
             BackAction.LEGACY -> {
                 val owner = webView
                 if (owner == null || !webReady) { changeRoute(navigation.home()); return }
@@ -1159,6 +1203,15 @@ class MainActivity : ComponentActivity() {
                 ShellScreen.FOLLOW_CLASSROOM_HELPER_BOARD -> FollowLevel.SCHOOL_CLASSROOM_HELPER
                 else -> null
             })
+        val nativeAudioMode=shellAudioMode(prefs.getString("audioMode",null),prefs.getBoolean("sound",true))
+        nativeVerbs.configure(prefs.getString("lang","en")?:"en",nativeAudioMode,prefs.getInt("round",5))
+        nativeVerbs.setVisible(foreground && navigation.screen==ShellScreen.VERB_QUIZ)
+        nativeVerbExplorer.configure(prefs.getString("lang","en")?:"en",nativeAudioMode)
+        nativeVerbExplorer.setVisible(foreground && navigation.screen==ShellScreen.VERB_LESSON)
+        nativeBuildFive.configure(prefs.getString("lang","en")?:"en",nativeAudioMode,prefs.getInt("round",5))
+        nativeBuildFive.setVisible(foreground && navigation.screen==ShellScreen.BUILD_FIVE)
+        nativeBuildTen.configure(prefs.getString("lang","en")?:"en",nativeAudioMode,prefs.getInt("round",5))
+        nativeBuildTen.setVisible(foreground && navigation.screen==ShellScreen.BUILD_TEN)
         nativeCountingTray.configure(prefs.getString("lang", "en") ?: "en",
             prefs.getString("audioMode", if (prefs.getBoolean("sound", true)) "all" else "off") ?: "all",
             prefs.getInt("round", 5))
@@ -1259,6 +1312,7 @@ class MainActivity : ComponentActivity() {
         outState.putString("optionsOrigin", navigation.optionsOrigin.name)
         outState.putString("webMode", navigation.mode)
         outState.putString("homePage", navigation.homePage)
+        outState.putString("verbId", navigation.verbId)
         if (navigation.ownsWebSession) outState.putString("legacySession", checkpoint.read())
         super.onSaveInstanceState(outState)
     }
@@ -1270,7 +1324,7 @@ class MainActivity : ComponentActivity() {
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun NativeOptions(language: String, audioMode: String, round: Int, numberMax: Int, padding: PaddingValues, audioStatus: String, largerSupportText: Boolean, onLargerSupportText: (Boolean) -> Unit, onLanguage: (String) -> Unit, onAudioMode: (String) -> Unit, onRound: (Int) -> Unit, onNumberMax: (Int) -> Unit, onResetTutorials: () -> Unit) {
-    Column(Modifier.fillMaxSize().padding(padding).padding(16.dp).background(Color(0xFFF9FCFE)).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(14.dp)) {
+    Column(Modifier.fillMaxSize().testTag("options-screen").padding(padding).padding(16.dp).background(Color(0xFFF9FCFE)).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(14.dp)) {
         Text(if (language == "de") "Optionen" else "Options", fontSize = 30.sp, fontWeight = FontWeight.Black, color = Ink)
         SettingCard(if (language == "de") "Sprache" else "Language") {
             FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) { FilterChip(selected = language == "en", onClick = { onLanguage("en") }, label = { Text("🇬🇧 English") }); FilterChip(selected = language == "de", onClick = { onLanguage("de") }, label = { Text("🇩🇪 Deutsch") }) }

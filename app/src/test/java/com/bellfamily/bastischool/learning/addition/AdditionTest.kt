@@ -80,7 +80,7 @@ class AdditionTest {
         assertEquals("Zweite Gruppe, Ein Punkt", AdditionContent.groupDescription(1, false, ContentLanguage.GERMAN))
     }
 
-    @Test fun audioReplayOnlyPromptInBothLanguagesWithExistingPolicyAndSilentNavigation() {
+    @Test fun audioReplayUsesPromptOrCompletionInBothLanguagesWithExistingPolicyAndSilentNavigation() {
         for (language in ContentLanguage.entries) for (mode in AudioMode.entries) {
             val engine = FakeSpeechEngine()
             val audio = AdditionAudio(DefaultAudioController(engine, mode))
@@ -99,6 +99,12 @@ class AdditionTest {
                 audio.effects(state.plan.id, language, answer.effects)
                 assertEquals(before + if (mode == AudioMode.ALL) 1 else 0, engine.spoken.size)
                 state = SessionReducer.reduce(answer.state, SessionAction.Next(answer.state.task.id)).state
+            }
+            val beforeSummary = engine.spoken.size
+            audio.replay(state, language)
+            if(mode == AudioMode.OFF) assertEquals(beforeSummary,engine.spoken.size) else {
+                assertEquals(state.plan.completionText.speech[language],engine.spoken.last().text)
+                assertEquals(SpeechKind.COMPLETION,engine.spoken.last().kind)
             }
             val before = engine.spoken.size
             audio.visible(false); audio.replay(state, language); audio.visible(true)

@@ -1,0 +1,7 @@
+{
+  "debugApkSha256": "ad5f74e3b90abbef3f9ae99f36289f1659d52da53c55b715c4e8217fee70d849",
+  "catalogueAdaptersSha256": {
+    "app/src/main/java/com/bellfamily/bastischool/learning/verbs/VerbRecords.kt": "cb1d0af32e2592e462661b6e993d5360682d9fbef00091dcecf4ceaf08e9e18f",
+    "app/src/main/assets/verb-catalogue.js": "9d6661967d84f475a0d22af72129ae9d9960d7508c6a8182449932339096dfe5"
+  }
+}

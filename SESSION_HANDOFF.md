@@ -1,5 +1,58 @@
 # Session handoff — 2026-10-21
 
+## Native verbs, concrete number bonds and CI repair (completed locally 2026-11-09)
+
+Owner asked to handle all three recommendations in one pass and to continue after
+interruption. Baseline `main` is `9397155`. Implementation and local verification
+are complete. The owner subsequently authorized committing and pushing this
+checkpoint to `main` on 2026-11-09. The evidence records the pre-push validation
+state; hosted CI results must be checked after the push.
+
+Native Learn Verbs/Verb Explorer covers all 53 lessons, with the reviewed artwork,
+scene props, finite animation, Pause, four bilingual picture steps and offline
+speech. Animal Actions uses the existing durable choice host and shared progress,
+unique question/target selection, supported retry, Hint evidence and shared balloon
+completion. Lessons preserve the exact owning quiz through Options/recreation.
+`content/verbs.json` owns all content, including 106 explicit example sentences;
+the generator emits typed Kotlin records and the retained web adapter. Native
+routes do not depend on JavaScript. Existing saved WEB rounds and Mixed Adventure
+remain compatible; do not delete the legacy route before its acceptance gate.
+
+Build 5/Build 10 are separate concrete egg-board activities. Given eggs stay fixed;
+added eggs are reversible. Only Check records an attempt, successful work shows
+the equation and Next, and each level restores its exact board through an
+independent durable journal using shared progress/pending-write recovery.
+Existing Make 5 and Dinosaur Counting Tray remain available. Home has 29 entries:
+26 native and three web (Numbers, Easy Maths, Mixed Adventure).
+
+Repaired the Options lookup in SweepRepairsRouteTest behind hosted failure
+42228198480 on 9397155. Tests wait for the actual destination and recreated overlay.
+Also corrected two test-fixture lifecycle/scroll assumptions exposed by the larger
+run; all assertions remain. Hosted CI has not run on this new local work.
+
+Final verification: **663/663 JVM**, **63/63 browser**, **30/30 combined API 35**
+(including the 20-test CI selection), plus **4/4 tablet layouts**; zero
+failures/errors/skips. Both debug APK assemblies and lint pass (0 errors,
+7 existing warnings, 2 informational findings). Catalogue and 689-sample motion
+parity checks pass. All 53 lessons were exercised in both languages; 39 atlases /
+264 source cells decode offline. Successful-playback-only intro receipts and the
+legacy `sound=false` preference fallback have regression checks.
+
+[Review and validation](docs/native-verbs-bonds-2026-11-07/README.md) includes
+38 UI screenshots, 53 visually reviewed native-renderer storyboards, retained
+initial failure reports, final runner results, source/APK hashes and a gallery.
+Final instrumented debug APK SHA-256:
+`ad5f74e3b90abbef3f9ae99f36289f1659d52da53c55b715c4e8217fee70d849`.
+
+Validation used a separate 12 GB API 35 AVD, Basti_ThreePass_20261106, four CPUs,
+6 GB RAM and host graphics. Original Medium_Phone_API_35 lacked installation
+space and was preserved. Airplane mode is restored to original 0; display overrides
+are reset to physical 1080×2400 / 420 dpi; our emulator is closed. No physical
+device, pm-clear, wipe-data or snapshot deletion was used. Gradle managed its
+disposable test APK installations/uninstallations. Physical S24/Fire, actual
+TalkBack/switch, installed offline voice quality, child comprehension and signed
+in-place upgrade acceptance remain owner-managed checks, not claimed as passed.
+
 ## All 53 verb animation repairs (2026-11-06, completed locally)
 
 Owner explicitly approved fixing every finding in the complete verb audit.

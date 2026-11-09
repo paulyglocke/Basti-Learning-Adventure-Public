@@ -26,6 +26,9 @@ open class AdditionViewModel protected constructor(
     constructor(application: Application, engineFactory: () -> SpeechEngine = { AndroidSystemSpeechEngine(application) }) :
         this(application, AdditionContent, "addition-session", engineFactory)
 
+    protected open val narrateNewRound = false
+    protected open fun narration(state:SessionState,effects:List<SessionEffect>) = effects
+    protected open fun narrated(text:ContentText,result:SpeechResult) {}
     var state by mutableStateOf<SessionState?>(null); private set
     var busy by mutableStateOf(false); private set
     var saveFailed by mutableStateOf(false); private set
@@ -34,7 +37,7 @@ open class AdditionViewModel protected constructor(
     private val main = Handler(Looper.getMainLooper())
     private val progress = AndroidProgressRepository.create(application)
     private val host = curriculum.host(AtomicProgressStorage(File(application.noBackupFilesDir, journalName), AndroidAtomicCommit), progress)
-    private val audio = AdditionAudio(DefaultAudioController(engineFactory, AudioMode.OFF)) { audioFailed = it is SpeechResult.Failed }
+    private val audio = AdditionAudio(DefaultAudioController(engineFactory, AudioMode.OFF), {audioFailed = it is SpeechResult.Failed}, ::narrated)
     private var visible = false
     private var closed = false
     private var language = ContentLanguage.ENGLISH
@@ -52,7 +55,7 @@ open class AdditionViewModel protected constructor(
         visible = value; epoch++; audio.visible(value)
         if (value && state == null && !busy) {
             val count = round; val lang = language
-            work { if (host.state == null) host.open(SessionId(UUID.randomUUID().toString()), count, System.nanoTime(), lang); emptyList() }
+            work { if (host.state == null) { val effects=host.open(SessionId(UUID.randomUUID().toString()), count, System.nanoTime(), lang); if(narrateNewRound)effects else emptyList() } else emptyList() }
         }
     }
     private fun syncLanguage() {
@@ -94,7 +97,7 @@ open class AdditionViewModel protected constructor(
                 if (!closed) {
                     busy = false; saveFailed = failed || pending
                     if (!failed) state = next
-                    if (!failed && !saveFailed && token == epoch && next != null && visible && next.language == language) audio.effects(next.plan.id, language, effects)
+                    if (!failed && !saveFailed && token == epoch && next != null && visible && next.language == language) audio.effects(next.plan.id, language, narration(next,effects))
                     if (!saveFailed) syncLanguage()
                 }
             }

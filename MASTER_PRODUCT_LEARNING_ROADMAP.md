@@ -485,6 +485,13 @@ cover each quantity evenly with no adjacent repeated target. This is a bounded
 quantity-construction step, not number bonds or a mastery claim; broader objects,
 contexts and operations remain future work.
 
+Follow-up — started 2026-11-07: separate Build 5 and Build 10 activities extend
+concrete construction to number bonds. A fixed starting group of eggs is completed
+by reversible additions, followed by Check and an explicit part-whole equation.
+Only checked work creates shared progress; existing Make 5 and Counting Tray remain
+available with their saved identities. Broader object/context generalisation remains
+future curriculum; physical acceptance is separate.
+
 ### Manipulative quantity
 
 Maths should increasingly support manipulation.
@@ -1300,7 +1307,15 @@ The deciding question is:
 
 ## Verb Explorer
 
-Verb Explorer should evolve toward action-specific native motion.
+Implementation checkpoint — started 2026-11-07: native Explore and Animal Actions
+now share all 53 authored bilingual lessons, original pose atlases and action-specific
+Canvas scenes. Quiz-linked lessons retain exact saved questions; four static steps,
+Pause, silent restoration and shared native progress/completion are implemented.
+The old WEB route remains for compatible saved bundles and Mixed Adventure until
+the removal gate is accepted. Automated/physical evidence is tracked in
+`docs/native-verbs-bonds-2026-11-07/README.md` and TESTING_QA_SPEC.md.
+
+Further reuse should be driven by a concrete curriculum need.
 
 Potential early verbs:
 

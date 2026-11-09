@@ -4,7 +4,8 @@ import com.bellfamily.bastischool.audio.*
 import com.bellfamily.bastischool.learning.models.*
 import com.bellfamily.bastischool.learning.session.*
 
-class AdditionAudio(private val controller: AudioController, private val status: (SpeechResult?) -> Unit = {}) {
+class AdditionAudio(private val controller: AudioController, private val status: (SpeechResult?) -> Unit = {},
+    private val narrated: (ContentText,SpeechResult)->Unit = {_,_->}) {
     private val owner = SpeechOwner("native-addition")
     private var active = false
     private var revision = 0L
@@ -21,7 +22,8 @@ class AdditionAudio(private val controller: AudioController, private val status:
         }
     }
     fun replay(state: SessionState, language: ContentLanguage) = speak(
-        state.task.id.toString(), language, state.task.question.instruction, SpeechKind.INSTRUCTION, SpeechTrigger.REPLAY
+        state.task.id.toString(), language, if(state.phase==SessionPhase.COMPLETED)state.plan.completionText else state.task.question.instruction,
+        if(state.phase==SessionPhase.COMPLETED)SpeechKind.COMPLETION else SpeechKind.INSTRUCTION, SpeechTrigger.REPLAY
     )
     fun option(session: String, id: ContentId, language: ContentLanguage, text: ContentText) = speak(
         "$session:${id.value}", language, text, SpeechKind.OPTION, SpeechTrigger.MANUAL
@@ -29,7 +31,7 @@ class AdditionAudio(private val controller: AudioController, private val status:
     private fun speak(id: String, language: ContentLanguage, text: ContentText, kind: SpeechKind, trigger: SpeechTrigger) {
         if (!active) return
         cancel(); val ticket = revision; val context = controller.openContext(owner, SpeechSessionId(id), language)
-        controller.speak(SpeechRequest.fromContent(context, text, kind, trigger)) { if (active && ticket == revision) status(it.result) }
+        controller.speak(SpeechRequest.fromContent(context, text, kind, trigger)) { if (active && ticket == revision) {status(it.result);narrated(text,it.result)} }
     }
     fun close() { active = false; cancel(); controller.close() }
 }

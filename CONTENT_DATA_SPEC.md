@@ -6,6 +6,26 @@ This document owns canonical content identity, schema contracts and validation. 
 
 Presentation must derive from structured data. Do not independently hardcode a fact, picture arrangement, question, correct answer and feedback. The broader contracts below remain targets for incremental extraction from existing JavaScript arrays; the first native subset is described next. Start with the fields needed by the first migrated activity, not a general-purpose authoring platform.
 
+## Shared native verb catalogue and concrete number bonds (2026-11-07)
+
+`content/verbs.json` is the authored source for the 53 bilingual verb lessons,
+42 animal labels, reviewed distractors, four teaching captions and 39 motion
+atlas references. `tools/generate_verbs.py --check` prevents drift between typed
+native records and the retained web adapter. Native logic uses semantic verb,
+animal, task and skill IDs; frame placement is presentation metadata. Canonical
+legacy order and distractors are retained for saved WEB questions. The explicit
+`croc` alias resolves to `animal.crocodile`. Examples, meanings and translation
+come from the same record in Explore and Animal Actions. Native 5/10 rounds use
+unique lesson and target-animal IDs; no runtime label matching or generic fallback.
+
+Build 5 and Build 10 define concrete part-whole construction separately from
+choice-based Make 5. Starting amounts are 1–4 or 1–9; the remaining spaces accept
+reversible additions. Seeded 5/10 rounds visit a complete starting-amount cycle
+before necessary repeats and avoid adjacent repetition. Bilingual prompts, fixed
+starting masks, checked totals, support and exact placement masks are validated
+by the bounded level-specific journal. No existing activity revision or shared
+checkpoint schema changes.
+
 ## Implemented native foundation (2026-09-22)
 
 The pure Kotlin `learning/models` and `learning/content` packages now provide semantic `ContentId`/`AssetId`, `ContentLanguage`, required `LocalizedText`, separate display/speech `ContentText`, positive schema/revision `ContentVersion`, and immutable colour, weekday and season definitions. `CoreContent.repository()` creates a validated offline snapshot with seven colours, seven weekdays, four seasons and four local image references. No activity consumes it yet; legacy content/routes are unchanged.

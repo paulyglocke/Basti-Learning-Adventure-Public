@@ -20,7 +20,7 @@ Already implemented and not active implementation backlog unless a regression is
 - Interactive Seasons & Months Wheel is implemented as a distinct Explore/Match route with fixed centre artwork, a snapping Canvas ring and a separate revisioned browsing checkpoint. Focused JVM and API 35 automated coverage pass; solved-state English/German screenshots were inspected. Physical-device acceptance is **NOT RUN — deferred by owner**.
 - Seasonal Weather Exploration Phase 2 extends that wheel's Explore mode with native quadrant-clipped effects, curated alternatives, bilingual manual speech and static reduced-motion presentation. No new route or quiz/progress identity. See SESSION_HANDOFF.md for current validation/review status; physical-device acceptance remains deferred.
 - native Wilma Explore/Find Day/Before-After/Ordering, TODAY with an explicit hypothetical anchor, and non-quiz BILINGUAL learning (ordering auto-follow owner-verified on S24; TODAY/BILINGUAL and Fire acceptance pending)
-- native Maths 1–5: How many? (Subitising), Numbers & Groups (both matching directions), More or Fewer (Left/Right/Same to a more question), Number Order (BEFORE/AFTER/MISSING), Add Together (totals 2–5), Add Bigger Numbers (addends 3–10, totals 6–20), Take Away (within 5, including zero remainder), Mixed Addition (balanced beginner/challenge rounds), Make 5 (complete five-frame number bonds), and Dinosaur Counting Tray (tap-to-build quantity construction, 1–5). Each activity has its own skill and journal. The tray is the first manipulation mode; broader manipulation-first Maths remains future work.
+- native Maths 1–5: How many? (Subitising), Numbers & Groups (both matching directions), More or Fewer (Left/Right/Same to a more question), Number Order (BEFORE/AFTER/MISSING), Add Together (totals 2–5), Add Bigger Numbers (addends 3–10, totals 6–20), Take Away (within 5, including zero remainder), Mixed Addition (balanced beginner/challenge rounds), Make 5 (complete five-frame number bonds), and Dinosaur Counting Tray (tap-to-build quantity construction, 1–5). Each activity has its own skill and journal. The tray is the first manipulation mode; Build 5/Build 10 add concrete number bonds as separate activities; broader object/context generalisation remains future work.
 - native Vocabulary starter slice: six animal words plus eight-word illustrated Classroom Things and Food & Drink sets, each with Explore/Find/Name and separate quiz journals. Food rounds visit each word before repeating, avoid adjacent repeats, and change answer choices for repeated words in ten-question rounds.
 - Classroom Things now uses the same target-cycle policy for new rounds; saved older plans still restore unchanged. Old animal journal names are recovered when a current category-specific record is absent.
 - Activity-specific thumbnails and four illustrated Wash Hands choices are implemented. The latter retains the existing four-step sequence and saved progress identities. See the sweep implementation review for current verification and physical acceptance gaps.
@@ -53,7 +53,7 @@ Already implemented and not active implementation backlog unless a regression is
 
 ## P1 — shared native experience
 
-- CI now defines explicit Android-test assembly/compilation and a bounded API 35 Prepositions Compose regression job (artwork/layout and guided Listen). First hosted Actions result is pending; local emulator results are recorded separately. Broader affected-suite and physical S24/Fire acceptance remain tracked in the QA ledger; do not treat this focused job as the full 603-test suite.
+- CI includes explicit Android-test assembly/compilation, catalogue drift checks, startup, sweep navigation, Vocabulary/Prepositions/Wash Hands and the new native verb/number-bond production routes. The current source passes the complete job selection locally; hosted status changes only after a new push. Wider automated and physical S24/Fire acceptance remain tracked separately in the QA ledger.
 
 - Lightweight shared visual-system baseline (initial rollout 2026-10-04; also reused by the native Maths activities):
   - primary, secondary/replay/help and navigation actions: shared NativeActionButton
@@ -91,7 +91,7 @@ Already implemented and not active implementation backlog unless a regression is
 - Grow Vocabulary toward roughly 50–80 reviewed words through shared curriculum additions rather than one monolithic vocabulary task.
 - Tell Me! / Erzähl mal v1: **native text/artwork consumer implemented; automated pilot validation passes, physical acceptance pending.** Home → nine authored categories → nine ordered pictures, explicit TALK/Next, optional authored Help and collapsed grown-up support, calm score-free completion. No speech input/TTS/grading/progress fabrication. Options/recreation retain the conversation; Home/new process resets to category selection. Content revision 11 adds C only to Ocean .03, Classroom .02 and Zoo .08; A/B/C/A rotation is validated, and the other 78 scenes retain A/B/A. API 35 route/layout tests and JVM content/rotation tests pass at `466315c`. Independent German and physical S24/Fire Max acceptance remain open; see `docs/tellme-variety/PILOT_VALIDATION.md`.
 - Memory Pairs variants: picture/picture, word/picture, number/quantity, case, bilingual, animal/action, animal/habitat, emotion/expression and season/clue where educationally appropriate.
-- Future manipulation-first Maths: generalise beyond the Dinosaur Counting Tray to other objects and contexts, then explore making 5, part-whole decomposition, one more/less, conservation, number stories, patterns, shapes and spatial/measurement concepts. Do not duplicate the existing bounded tray or five choice-based 1–5 activities.
+- Future manipulation-first Maths: generalise the Dinosaur Counting Tray and concrete Build 5/10 boards to other objects and contexts, then explore one more/less, conservation, number stories, patterns, shapes and spatial/measurement concepts. Do not duplicate the existing construction boards or choice-based activities.
 - Extend native Animal First Letters into a reviewed Letters & Sounds progression, keeping written letter matching distinct from true phoneme instruction. The current native written-initial activity uses canonical animal art and unique 5/10 target rounds; rhyme, phoneme work, tracing and grapheme↔phoneme content remain future curriculum.
 - Focus & Flex variants built on shared instruction/rule systems.
 - Feelings and calm self-advocacy language.
@@ -107,13 +107,13 @@ Already implemented and not active implementation backlog unless a regression is
 - Build the Bridge.
 - Dinosaur Rescue.
 - Crocodile Snap.
-- Full native Verb Explorer migration remains. The owner-authorized
-  [53-lesson presentation repair](docs/verb-animation-fixes-2026-11-06/README.md)
-  replaces fixed animal glyphs with reusable authored poses, repairs water/bat/
-  Chase/Fetch gaps, and adds visible objects/results, pause/picture controls and
-  adult sound modelling. Native eagle/rabbit previews share the improved assets;
-  the approved crocodile v2 is retained. This repairs the existing WebView route
-  without changing curriculum/checkpoints or claiming a completed native migration.
+- Native Verb Explorer/Animal Actions implementation is complete in the current
+  working tree, using all 53 shared lessons and existing animation artwork. Validate
+  and physically review the combined checkpoint before retiring historical WEB
+  bundle compatibility or migrating the remaining Numbers/Easy Maths/Mixed routes.
+- Concrete Build 5/Build 10 are separate new number-bond activities. Generalise to
+  other objects/contexts later; do not duplicate these boards or replace Make 5/tray
+  journals. Current automated/physical evidence is in the combined review.
 - Review the repaired lessons and [native preview](docs/verb-motion-preview/index.html)
   with Basti on S24/Fire; child comprehension, actual TalkBack and installed
   offline voice quality remain owner-managed acceptance.

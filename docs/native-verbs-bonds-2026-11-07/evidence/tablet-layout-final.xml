@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.bellfamily.bastischool.ui.verbs.VerbsBondsLayoutTest" tests="4" failures="0" errors="0" skipped="0" time="16.531" timestamp="2026-11-09T10:04:57" hostname="localhost">
+  <properties>
+    <property name="device" value="Basti_ThreePass_20261106(AVD) - 15" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="longLessonAndBothBoardsKeepPicturesLargeTouchTargetsAndKeyboardActionsReachable[de=false-font=1-landscape=false]" classname="com.bellfamily.bastischool.ui.verbs.VerbsBondsLayoutTest" time="4.643" />
+  <testcase name="longLessonAndBothBoardsKeepPicturesLargeTouchTargetsAndKeyboardActionsReachable[de=true-font=1.5-landscape=false]" classname="com.bellfamily.bastischool.ui.verbs.VerbsBondsLayoutTest" time="3.305" />
+  <testcase name="longLessonAndBothBoardsKeepPicturesLargeTouchTargetsAndKeyboardActionsReachable[de=true-font=2-landscape=true]" classname="com.bellfamily.bastischool.ui.verbs.VerbsBondsLayoutTest" time="3.118" />
+  <testcase name="longLessonAndBothBoardsKeepPicturesLargeTouchTargetsAndKeyboardActionsReachable[de=false-font=1-landscape=true]" classname="com.bellfamily.bastischool.ui.verbs.VerbsBondsLayoutTest" time="4.431" />
+</testsuite>

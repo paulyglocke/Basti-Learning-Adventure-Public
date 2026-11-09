@@ -210,6 +210,30 @@ reveals Next; advancement is child-controlled. Completion uses the shared flow.
 
 Use a consistent support ladder where applicable: independent attempt → Replay → subtle visual/verbal hint → stronger model/help → optional parent help. Support is useful progress information, not failure.
 
+## Native verbs and Build 5/10 (2026-11-07)
+
+Learn Verbs opens a native illustrated library of 53 actions. Lessons expose the
+selected-language word, translation, meaning, example, Try it, Listen, Watch again,
+Pause and four picture steps. Sound lessons include grown-up modelling guidance.
+New entrances can narrate; Options, recreation and background return stay silent
+and paused. System animation-scale zero forces static steps.
+
+Animal Actions opens its own native saved question round. Learn this verb records
+support before showing the corresponding lesson. Both visible Back to question and
+system Back restore the same question, choice order, answer lock and score. Options
+preserves the selected lesson and its origin. Separate animal speakers pronounce
+without selecting. A wrong answer offers Retry and learning support; correct answers
+lock until explicit Next. This is a deliberate supportive retry policy for new native
+rounds; old saved WEB rounds retain their original behavior and completion.
+
+Build 5/10 are separate Home activities. Starting eggs are labelled, fixed and
+visually distinct from additions; each empty nest accepts an egg and each added egg
+can be removed. No precise dragging is required. Check evaluates the whole board;
+wrong checks keep the construction editable. Success shows the part-whole equation
+and an explicit Next. No clock, automatic advancement or penalty. Help, Replay,
+large touch targets, accessible descriptions, scrolling and common completion actions
+remain available. The board is not a replacement for the existing Make 5 or tray.
+
 ## Child-facing progress and scoring
 Future native activities should emphasise task/mission progress, effort and completion rather than a prominent numerical score. Prefer **Mission 3 of 5** over **Score 3 / 5**. Completion rewards should not require perfect answers.
 

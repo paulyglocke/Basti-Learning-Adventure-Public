@@ -41,6 +41,8 @@ internal object HomeActivityArtwork {
         "subtraction" to HomeActivityArt(diagram="take-away"),
         "mixedAddition" to HomeActivityArt(diagram="mixed-addition"),
         "makeFive" to HomeActivityArt(diagram="five-frame"),
+        "buildFive" to HomeActivityArt(diagram="bond-five"),
+        "buildTen" to HomeActivityArt(diagram="bond-ten"),
         "countingTray" to HomeActivityArt(diagram="dinosaur-tray"),
         "math" to HomeActivityArt(diagram="story-maths"),
         "positions" to HomeActivityArt(asset="Prepositions/scenes/scene_prepositions_dinosaur_on.png"),
@@ -100,6 +102,16 @@ private fun Diagram(kind:String) {
     Canvas(Modifier.fillMaxSize()) {
         scale(size.width/100f,size.height/100f,Offset.Zero) {
             when(kind) {
+                "bond-five", "bond-ten" -> {
+                    val total=if(kind=="bond-five")5 else 10
+                    label(if(total==5)"5" else "10",50f,27f,23f)
+                    repeat(total){i->
+                        val x=13f+(i%5)*17f;val y=if(total==5)55f else 43f+(i/5)*25f
+                        drawOval(if(i<3)Color(0xFFF4D69A)else Color(0xFFB8DDD0),Offset(x,y),Size(10f,17f))
+                        drawOval(artInk,Offset(x,y),Size(10f,17f),style=Stroke(1.2f))
+                    }
+                }
+
                 "numerals" -> {
                     repeat(3) {group->
                         val center=23f+group*27f

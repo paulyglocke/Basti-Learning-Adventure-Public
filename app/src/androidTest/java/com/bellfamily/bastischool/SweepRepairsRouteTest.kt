@@ -24,7 +24,19 @@ class SweepRepairsRouteTest {
             ActivityScenario.launch(MainActivity::class.java).use { scenario ->
                 fun back(){scenario.onActivity {it.onBackPressedDispatcher.onBackPressed()};compose.waitForIdle()}
                 fun optionsRoundTrip(){
-                    compose.onNodeWithText("⚙ Options").performClick();scenario.recreate();compose.waitForIdle();back();back()
+                    // Home has no shell header. Wait for the actual destination after
+                    // the scroll/click, and for the recreated Options overlay before Back.
+                    compose.waitUntil(10_000) {
+                        compose.onAllNodesWithTag("habitat-match-title").fetchSemanticsNodes().size == 1 &&
+                            compose.onAllNodesWithTag("shell-options").fetchSemanticsNodes().size == 1
+                    }
+                    compose.onNodeWithTag("shell-options").performClick()
+                    compose.waitUntil(10_000) { compose.onAllNodesWithTag("options-screen").fetchSemanticsNodes().size == 1 }
+                    scenario.recreate();compose.waitForIdle()
+                    compose.waitUntil(10_000) { compose.onAllNodesWithTag("options-screen").fetchSemanticsNodes().size == 1 }
+                    back()
+                    compose.waitUntil(10_000) { compose.onAllNodesWithTag("habitat-match-title").fetchSemanticsNodes().size == 1 }
+                    back()
                 }
                 compose.openHomeActivity("Match Animals to Habitats");optionsRoundTrip()
                 compose.onNodeWithText("All Activities").assertExists()

@@ -10,7 +10,33 @@ These are implementation requirements, not claims that the target already exists
 
 ## Current baseline and migration
 
-The 2026-11-06 verb repair keeps the existing 53-lesson WebView curriculum and
+The native Verb Explorer/Animal Actions implementation (started 2026-11-07) uses
+one authored `content/verbs.json` catalogue, generated typed Kotlin records and a
+retained web adapter. Native routes execute no JavaScript. `VerbContent` supplies
+all 53 lessons and deterministic animal-choice rounds; the existing durable choice
+host owns quiz restoration, support and shared progress. The native Canvas player
+owns only bounded presentation, one decoded atlas, finite playback and four static
+steps. `VERB_LESSON` stores a validated semantic lesson ID plus its quiz/library
+origin in existing shell saved state. Options returns to that exact destination;
+background and recreation stay paused/silent. New introduction flags use the
+existing shell preferences, per language and reset epoch, and are consumed only
+after successful current playback. No new audio engine or settings store.
+
+Build 5 and Build 10 share the bounded NumberBonds state machine, audio adapter,
+Compose board and write-ahead journal. Each level has its own activity/skill and
+journal; fixed starting objects and editable additions are distinct. Only Check
+emits attempts, and explicit Next completes a round through shared progress and
+completion presentation. Existing Make 5 and Counting Tray identities/data stay
+independent.
+
+Legacy WEB bundles, tutorials and Mixed Adventure remain readable through the
+retained implementation. Do not delete that compatibility route or fabricate
+native progress from old web scores. Physical acceptance remains separate; the
+current evidence and remaining gates are in
+[the combined review](docs/native-verbs-bonds-2026-11-07/README.md).
+
+
+The earlier 2026-11-06 verb repair kept the existing 53-lesson WebView curriculum and
 session adapter. `verb-motion-content.js` maps unchanged English lesson keys to
 presentation metadata; `verb-motion.js` owns only one disposable Canvas player,
 authored sprite timing, scene props and static teaching pictures. Speech remains
