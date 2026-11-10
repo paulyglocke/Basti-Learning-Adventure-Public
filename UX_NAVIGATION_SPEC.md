@@ -1,5 +1,22 @@
 # UX and Navigation Specification
 
+## Memory Pairs starter (2026-11-09)
+
+Home → Animals & Nature / All Activities → Memory Pairs opens a board chooser.
+Both Animal pictures and Numbers and groups offer 4/6/8-card boards. Back from a
+game returns to the chooser; chooser Back and explicit Home return to Home.
+Options/language/recreation preserve the exact configuration and visible turn.
+Each configuration resumes its own board; Play again is explicit after completion.
+
+Two revealed cards stay face up until child-controlled continuation. A mismatch
+uses calm guidance and Turn cards back over; matches stay found. No timed hiding,
+flip score, penalty or required animation. Show me a pair models and then hides
+on request; it does not award a match. Hidden cards expose only position/face-down
+semantics, never identity. Revealed cards have independent Listen controls; Replay
+reads the current phase, including completion. Shared balloons use the existing
+completion and audio policy. All controls remain reachable by scrolling/keyboard.
+
+
 ## Role and baseline
 
 This document owns child/parent navigation, information organisation and shared interaction behavior. [MASTER_PRODUCT_LEARNING_ROADMAP.md](MASTER_PRODUCT_LEARNING_ROADMAP.md) owns curriculum; [GAME_DESIGN_SPEC.md](GAME_DESIGN_SPEC.md) owns game mechanics; [PROGRESS_TRACKER_SPEC.md](PROGRESS_TRACKER_SPEC.md) owns skill states and adaptation. Use [VOICE_AUDIO_SPEC.md](VOICE_AUDIO_SPEC.md) for speech policy, [ART_DIRECTION.md](ART_DIRECTION.md) for visuals and [TESTING_QA_SPEC.md](TESTING_QA_SPEC.md) for acceptance checks.

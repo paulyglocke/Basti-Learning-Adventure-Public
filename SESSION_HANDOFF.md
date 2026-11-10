@@ -1,5 +1,58 @@
 # Session handoff — 2026-10-21
 
+## Memory Pairs starter (completed locally 2026-11-10)
+
+Owner accepted the next recommendation with Continue: animal picture pairs plus
+number ↔ quantity, 4/6/8 cards, saved boards, bilingual audio and shared balloons.
+Baseline `main` is `2ff8820`. Implementation/selected local verification are
+complete. The owner subsequently authorized committing and pushing this
+checkpoint to main on 2026-11-10. Evidence describes the pre-push validation state.
+
+`learning/memory` shares one semantic matching state machine across both modes.
+Six configuration journals retain deck, visible turn, found pairs, exposures,
+support and pending shared progress. A second reveal records one pair attempt;
+Help models without fabricated success, mismatches stay visible until requested,
+and final Continue completes through deduplicated shared progress/rewards.
+Play again changes the pair set/deck. Hidden semantics never disclose identity.
+Native MEMORY_CHOOSER/GAME routes preserve validated mode/size through Options,
+language and recreation; Back returns to chooser. Home now has 30 live entries,
+27 native and three web. Both modes reuse existing content/artwork and lazy audio.
+The completion codec additionally accepts two-task evidence without a wire-format
+change; new code reads all previous records, while old-reader downgrades after
+writing two-pair completion are unsupported.
+
+Validation: **675/675 JVM**, **63/63 browser**, both debug assemblies and lint
+(0 errors, 7 existing warnings, 2 informational findings). Final Memory API 35
+**6/6**, tablet layouts **4/4**, zero failures/errors/skips. All six configurations
+were completed through actual UI; fresh-owner silent recovery, config races,
+constant card size, large text and keyboard are covered. Existing startup/sweep/
+verbs/bonds/Wash Hands/Vocabulary/Prepositions and bilingual 30-entry Home checks
+passed **22/22** in a retained combined28 attempt. That attempt was 27/28 overall
+because the new route's Compose PixelCopy screenshot timed out. The capture helper
+now uses actual UiAutomation display screenshots; the clean focused 6/tablet 4
+runs use byte-identical runtime source/APK. No behavior assertion was removed.
+Earlier focused 5/6 was a fixed-control test-scroll assumption, also corrected.
+Visual review corrected actual card-height shifts on reveal before final checks.
+
+[Review and gallery](docs/memory-pairs-2026-11-09/README.md): 41 genuine captures
+(25 production routes, 8 phone components, 8 tablet components), final/initial
+reports, source/APK hashes and machine-readable validation. Runtime debug APK:
+`ff1893d64ece2a6cc3d621f94120991728cec79179a715a0f847e42374c854ed`.
+
+Prior hosted run 42623953143 on 2ff8820: app build and Android instrumentation passed;
+browser setup failed when ubuntu-latest moved to unsupported Ubuntu 26.04 for
+locked Playwright 1.51.1. Only the browser job is now pinned to supported 24.04;
+new Memory route/owner checks join Android CI. Hosted confirmation awaits a push.
+No signed release or physical acceptance is claimed. Physical S24/Fire, actual
+TalkBack/switch, child comprehension and offline voice quality remain owner checks.
+
+Dedicated Basti_ThreePass_20261106 used 4 CPUs, 6 GB RAM, host graphics and 12 GB data. Its display
+is restored to 1080×2400 / 420 dpi, airplane mode to original 0, and emulator is closed.
+Original AVD and physical devices were untouched; no pm-clear/wipe/snapshot deletion.
+Gradle managed disposable test installations. Test fixtures restored six Memory
+store directories and native-progress after exercising them. No active test work
+or implementation remains for this checkpoint. Commit/push is now authorized.
+
 ## Native verbs, concrete number bonds and CI repair (completed locally 2026-11-09)
 
 Owner asked to handle all three recommendations in one pass and to continue after

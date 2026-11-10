@@ -24,6 +24,7 @@ import com.bellfamily.bastischool.ui.common.BundledArtwork
 internal data class HomeActivityArt(val asset:String?=null,val diagram:String?=null)
 internal object HomeActivityArtwork {
     val entries=mapOf(
+        "memoryPairs" to HomeActivityArt(diagram="memory-pairs"),
         "tellme" to HomeActivityArt(asset="SceneDescriptions/countryside_farm/canonical/farm_008_farmyard_friends.png"),
         "vocabulary" to HomeActivityArt(diagram="word-pictures"),
         "verbExplorer" to HomeActivityArt(asset="Animals/canonical/eagle.png"),
@@ -112,6 +113,14 @@ private fun Diagram(kind:String) {
                     }
                 }
 
+                "memory-pairs" -> {
+                    repeat(4) { i ->
+                        val x=10f+(i%2)*44f;val y=9f+(i/2)*44f
+                        drawRoundRect(if(i==0||i==3)Color(0xFFE4F1DD)else Color(0xFF245A67),Offset(x,y),Size(34f,38f),androidx.compose.ui.geometry.CornerRadius(5f))
+                        if(i==0||i==3) dots(3,x+5f,y+10f,artGreen)
+                        else drawCircle(Color(0xFFF4D79E),7f,Offset(x+17f,y+19f),style=Stroke(2f))
+                    }
+                }
                 "numerals" -> {
                     repeat(3) {group->
                         val center=23f+group*27f

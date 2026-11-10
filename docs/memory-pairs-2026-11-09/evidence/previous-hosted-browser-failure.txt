@@ -1,0 +1,10 @@
+Run: https://github.com/paulyglocke/Basti-Learning-Adventure-Public/actions/runs/42623953143
+Commit: 2ff8820bc7f89c0b0421a7df61a1fbf152a77352
+Build and Android instrumentation: success.
+Browser job: failure before tests, 2026-11-09T13:16:28Z.
+Runner: ubuntu-latest resolved to Ubuntu 26.04.1 / ubuntu-26.04 image 20261101.186.1.
+Installer: Playwright 1.51.1.
+Cannot install dependencies for ubuntu26.04-x64 with Playwright 1.51.1!
+Error: ERROR: Playwright does not support chromium on ubuntu26.04-x64
+Repair: pin only the browser job to supported ubuntu-24.04; keep the current test dependency lockfile.
+Hosted validation of this local repair requires a future push.

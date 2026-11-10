@@ -79,7 +79,10 @@ Already implemented and not active implementation backlog unless a regression is
 - **School Skills starter (2026-11-04):** the Follow chooser includes contextual help-seeking phrases, classroom action picture matching, two-/three-actions-in-order challenges, and a touch-based Classroom Helper with 12 item/place instructions. Activities have separate saved progress identities; progress records app interactions only, not real-world behaviour or physical task completion. Physical-device acceptance is **NOT RUN — deferred by owner**.
 - Extend that engine later rather than creating separate frameworks for School Skills, Remember the Mission, inhibition/rule switching and compatible Move & Learn prompts.
 - Colour Sort establishes the first semantic sorting primitive with four red/blue native tokens, tap-to-place, durable restoration and shared progress/completion. Physical S24 acceptance remains pending. Future consumers must bring real content; drag, expanded colours and other curricula are not implemented.
-- Build Memory Pairs on a reusable semantic matching model when that work starts.
+- Memory Pairs starter is implemented: animal picture pairs plus numeral ↔ quantity,
+  4/6/8-card boards, one semantic matching model, exact saved turns, model help and
+  shared progress/rewards. Verification/physical acceptance is tracked in the
+  [Memory Pairs review](docs/memory-pairs-2026-11-09/README.md).
 - Extend content/data schemas only for concrete activity needs; avoid speculative framework work.
 - Review German grammar, language-specific phonics, number-zero semantics and native custom-number entry when their relevant activities are touched.
 
@@ -90,7 +93,9 @@ Already implemented and not active implementation backlog unless a regression is
 - Review Classroom Helper on-device for tap-target size, TalkBack flow and child usability. Consider more action pairs only after that review; keep object selection reversible, wrong-item exploration unscored, and location attempts clearly recoverable.
 - Grow Vocabulary toward roughly 50–80 reviewed words through shared curriculum additions rather than one monolithic vocabulary task.
 - Tell Me! / Erzähl mal v1: **native text/artwork consumer implemented; automated pilot validation passes, physical acceptance pending.** Home → nine authored categories → nine ordered pictures, explicit TALK/Next, optional authored Help and collapsed grown-up support, calm score-free completion. No speech input/TTS/grading/progress fabrication. Options/recreation retain the conversation; Home/new process resets to category selection. Content revision 11 adds C only to Ocean .03, Classroom .02 and Zoo .08; A/B/C/A rotation is validated, and the other 78 scenes retain A/B/A. API 35 route/layout tests and JVM content/rotation tests pass at `466315c`. Independent German and physical S24/Fire Max acceptance remain open; see `docs/tellme-variety/PILOT_VALIDATION.md`.
-- Memory Pairs variants: picture/picture, word/picture, number/quantity, case, bilingual, animal/action, animal/habitat, emotion/expression and season/clue where educationally appropriate.
+- Further Memory Pairs variants: word/picture, letter case, bilingual, animal/action,
+  animal/habitat, emotion/expression and season/clue where educationally appropriate.
+  Picture/picture and number/quantity starter boards are implemented; do not duplicate them.
 - Future manipulation-first Maths: generalise the Dinosaur Counting Tray and concrete Build 5/10 boards to other objects and contexts, then explore one more/less, conservation, number stories, patterns, shapes and spatial/measurement concepts. Do not duplicate the existing construction boards or choice-based activities.
 - Extend native Animal First Letters into a reviewed Letters & Sounds progression, keeping written letter matching distinct from true phoneme instruction. The current native written-initial activity uses canonical animal art and unique 5/10 target rounds; rhyme, phoneme work, tracing and grapheme↔phoneme content remain future curriculum.
 - Focus & Flex variants built on shared instruction/rule systems.

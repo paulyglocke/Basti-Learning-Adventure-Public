@@ -3,8 +3,8 @@ package com.bellfamily.bastischool
 import java.util.concurrent.atomic.AtomicReference
 import com.bellfamily.bastischool.ui.home.validHomePage
 
-internal enum class ShellScreen { HOME, OPTIONS, WEB, VERB_LIBRARY, VERB_QUIZ, VERB_LESSON, BUILD_FIVE, BUILD_TEN, PREPOSITIONS, LETTERS, DAYS_SEASONS, SEASONS_CHOOSER, SEASONS, WILMA_CHOOSER, WILMA, VOCABULARY_CHOOSER, VOCABULARY, TELL_ME, FOLLOW_LEVELS, FOLLOW_INSTRUCTIONS, FOLLOW_TWO, FOLLOW_SCHOOL, FOLLOW_SCHOOL_ACTIONS, FOLLOW_SCHOOL_ACTION_SEQUENCE, FOLLOW_SCHOOL_ACTION_TRIPLE, FOLLOW_CLASSROOM_HELPER_BOARD, COLOURS_CHOOSER, COLOURS_EXPLORE, COLOURS_FIND, COLOURS_MATCH, COLOUR_SORT_FROM_CHOOSER, FOUR_COLOUR_SORT, COLOUR_SORT, RAINBOW_EXPLORE, RAINBOW_ORDER, HABITATS_CHOOSER, OCEAN_EXPLORE, WOODLAND_EXPLORE, UNDERGROUND_EXPLORE, FRESHWATER_EXPLORE, HABITAT_MATCH, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH, COMPARE_QUANTITY, NUMBER_ORDER, ADD_TOGETHER, ADD_CHALLENGE, SUBTRACTION, MIXED_ADDITION, MAKE_FIVE, COUNTING_TRAY, CLOCK, CLOCK_MAKE, MONTHS_CHOOSER, MONTHS, MONTHS_FIND, MONTHS_RELATIONS, MONTHS_MISSING, MONTHS_BETWEEN, MONTHS_BETWEEN_WHEEL, MONTHS_BUILD_YEAR_LEVELS, MONTHS_BUILD_YEAR, MONTHS_BUILD_YEAR_FOUR, MONTHS_SEASONS, MONTHS_SEASONS_WHEEL }
-internal enum class BackAction { EXIT, HOME_ROOT, CLOSE_OPTIONS, LEGACY, VERB_RETURN, NATIVE_HOME, DAYS_HUB, SEASONS_CHOOSER, WILMA_CHOOSER, VOCABULARY_CHOOSER, COLOURS_CHOOSER, HABITATS_CHOOSER, ANIMALS_CATEGORY, CLOCK_AREA, MONTHS_AREA, FOLLOW_LEVELS }
+internal enum class ShellScreen { HOME, OPTIONS, WEB, MEMORY_CHOOSER, MEMORY_GAME, VERB_LIBRARY, VERB_QUIZ, VERB_LESSON, BUILD_FIVE, BUILD_TEN, PREPOSITIONS, LETTERS, DAYS_SEASONS, SEASONS_CHOOSER, SEASONS, WILMA_CHOOSER, WILMA, VOCABULARY_CHOOSER, VOCABULARY, TELL_ME, FOLLOW_LEVELS, FOLLOW_INSTRUCTIONS, FOLLOW_TWO, FOLLOW_SCHOOL, FOLLOW_SCHOOL_ACTIONS, FOLLOW_SCHOOL_ACTION_SEQUENCE, FOLLOW_SCHOOL_ACTION_TRIPLE, FOLLOW_CLASSROOM_HELPER_BOARD, COLOURS_CHOOSER, COLOURS_EXPLORE, COLOURS_FIND, COLOURS_MATCH, COLOUR_SORT_FROM_CHOOSER, FOUR_COLOUR_SORT, COLOUR_SORT, RAINBOW_EXPLORE, RAINBOW_ORDER, HABITATS_CHOOSER, OCEAN_EXPLORE, WOODLAND_EXPLORE, UNDERGROUND_EXPLORE, FRESHWATER_EXPLORE, HABITAT_MATCH, ANIMAL_GROUPS, WASH_HANDS, SUBITISING, QUANTITY_MATCH, COMPARE_QUANTITY, NUMBER_ORDER, ADD_TOGETHER, ADD_CHALLENGE, SUBTRACTION, MIXED_ADDITION, MAKE_FIVE, COUNTING_TRAY, CLOCK, CLOCK_MAKE, MONTHS_CHOOSER, MONTHS, MONTHS_FIND, MONTHS_RELATIONS, MONTHS_MISSING, MONTHS_BETWEEN, MONTHS_BETWEEN_WHEEL, MONTHS_BUILD_YEAR_LEVELS, MONTHS_BUILD_YEAR, MONTHS_BUILD_YEAR_FOUR, MONTHS_SEASONS, MONTHS_SEASONS_WHEEL }
+internal enum class BackAction { EXIT, HOME_ROOT, CLOSE_OPTIONS, LEGACY, VERB_RETURN, MEMORY_CHOOSER, NATIVE_HOME, DAYS_HUB, SEASONS_CHOOSER, WILMA_CHOOSER, VOCABULARY_CHOOSER, COLOURS_CHOOSER, HABITATS_CHOOSER, ANIMALS_CATEGORY, CLOCK_AREA, MONTHS_AREA, FOLLOW_LEVELS }
 
 /** Options is an overlay on one destination, never another entry in a growing stack. */
 internal data class ShellNavigation(
@@ -13,12 +13,16 @@ internal data class ShellNavigation(
     val mode: String = "verbs",
     val recoveryFailed: Boolean = false,
     val homePage: String = "home",
-    val verbId: String? = null
+    val verbId: String? = null,
+    val memoryMode: String = "animals",
+    val memoryPairs: Int = 2
 ) {
     val backAction: BackAction get() = when (screen) {
         ShellScreen.HOME -> if (homePage == "home") BackAction.EXIT else BackAction.HOME_ROOT
         ShellScreen.OPTIONS -> BackAction.CLOSE_OPTIONS
         ShellScreen.WEB -> BackAction.LEGACY
+        ShellScreen.MEMORY_GAME -> BackAction.MEMORY_CHOOSER
+        ShellScreen.MEMORY_CHOOSER -> BackAction.NATIVE_HOME
         ShellScreen.VERB_LESSON -> BackAction.VERB_RETURN
         ShellScreen.VERB_LIBRARY, ShellScreen.VERB_QUIZ, ShellScreen.BUILD_FIVE, ShellScreen.BUILD_TEN -> BackAction.NATIVE_HOME
         ShellScreen.MONTHS, ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BETWEEN, ShellScreen.MONTHS_BETWEEN_WHEEL, ShellScreen.MONTHS_BUILD_YEAR_LEVELS, ShellScreen.MONTHS_BUILD_YEAR, ShellScreen.MONTHS_BUILD_YEAR_FOUR, ShellScreen.MONTHS_SEASONS, ShellScreen.MONTHS_SEASONS_WHEEL -> BackAction.MONTHS_AREA
@@ -43,6 +47,11 @@ internal data class ShellNavigation(
     fun openOptions() = if (screen == ShellScreen.OPTIONS) this else copy(screen = ShellScreen.OPTIONS, optionsOrigin = screen)
     fun closeOptions() = if (screen == ShellScreen.OPTIONS) copy(screen = optionsOrigin, optionsOrigin = ShellScreen.HOME) else this
     fun openDaysSeasons() = ShellNavigation(ShellScreen.DAYS_SEASONS)
+    fun openMemoryChooser() = ShellNavigation(ShellScreen.MEMORY_CHOOSER)
+    fun openMemory(config: com.bellfamily.bastischool.learning.memory.MemoryConfig) = ShellNavigation(
+        ShellScreen.MEMORY_GAME, memoryMode=config.mode.key, memoryPairs=config.pairs)
+    val memoryConfig get() = com.bellfamily.bastischool.learning.memory.MemoryConfig(
+        com.bellfamily.bastischool.learning.memory.MemoryMode.entries.single { it.key==memoryMode },memoryPairs)
     fun openTellMe() = ShellNavigation(ShellScreen.TELL_ME)
     fun openWashHands() = ShellNavigation(ShellScreen.WASH_HANDS)
     fun openAnimalGroups() = ShellNavigation(ShellScreen.ANIMAL_GROUPS)
@@ -125,7 +134,7 @@ internal data class ShellNavigation(
 
     companion object {
         val modes = setOf("verbs", "count", "math", "positions", "letters", "time", "mixed", "verbExplorer")
-        fun restore(screen: String?, origin: String?, mode: String?, session: String?, homePage: String? = null, verbId: String? = null): ShellNavigation {
+        fun restore(screen: String?, origin: String?, mode: String?, session: String?, homePage: String? = null, verbId: String? = null, memoryMode: String? = null, memoryPairs: Int = 2): ShellNavigation {
             if (screen == null) return ShellNavigation()
             val destination = ShellScreen.entries.firstOrNull { it.name == screen }
                 ?: return ShellNavigation(recoveryFailed = true)
@@ -136,7 +145,10 @@ internal data class ShellNavigation(
                 destination == ShellScreen.OPTIONS && parent in setOf(ShellScreen.HABITATS_CHOOSER, ShellScreen.OCEAN_EXPLORE, ShellScreen.WOODLAND_EXPLORE, ShellScreen.UNDERGROUND_EXPLORE, ShellScreen.FRESHWATER_EXPLORE, ShellScreen.HABITAT_MATCH)
             if ((destination==ShellScreen.VERB_LESSON || destination==ShellScreen.OPTIONS&&parent==ShellScreen.VERB_LESSON) &&
                 !com.bellfamily.bastischool.learning.verbs.VerbContent.byId.containsKey(verbId)) return ShellNavigation(recoveryFailed=true)
+            val memoryRoute = destination == ShellScreen.MEMORY_GAME || destination == ShellScreen.OPTIONS && parent == ShellScreen.MEMORY_GAME
+            if(memoryRoute && (memoryMode !in setOf("animals","numbers") || memoryPairs !in 2..4)) return ShellNavigation(recoveryFailed=true)
             val route = ShellNavigation(destination, parent, mode ?: "verbs", verbId=verbId,
+                memoryMode=if(memoryRoute)requireNotNull(memoryMode)else "animals",memoryPairs=if(memoryRoute)memoryPairs else 2,
                 homePage = homePage?.takeIf { (browsing || habitatRoute) && validHomePage(it) }
                     ?: if (habitatRoute) "category:ANIMALS" else "home")
             if (route.ownsWebSession && (mode !in modes || !LegacyCheckpoint.accepts(session))) return ShellNavigation(recoveryFailed = true)

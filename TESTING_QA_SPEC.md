@@ -6,6 +6,42 @@ This document defines verification and feature completion gates. [NATIVE_ARCHITE
 
 **A feature is not done only because it builds.** Record evidence for its behavior and relevant device risks. A code-complete slice awaiting required hardware checks must be labelled as such, not fully verified or eligible for legacy removal.
 
+## Memory Pairs starter (2026-11-10, locally verified)
+
+Animal picture and numeral ↔ quantity matching use one semantic state machine and
+six independent configurations (4/6/8 cards). Tests cover hidden-card semantics,
+constant target size through reveal, deliberate two-card selection, retained
+mismatch/model phases, Help/Replay accounting, exact turns, real Options/language
+recreation, independent journals, completion and shared balloons. Board size is
+independent of the global 5/10-question setting.
+
+- PASS — full JVM **675/675**, browser **63/63**, both debug APK assemblies and
+  lint (0 errors, 7 existing warnings, 2 informational findings).
+- PASS — final focused API 35 **6/6**, zero failures/errors/skips: actual UI
+  completion of all six configurations, restoration/translation, lazy Sound Off,
+  silent fresh-owner recovery, late configuration races and four EN/DE phone
+  layouts at 1×/1.5×/2×, portrait/landscape, keyboard and >=48dp targets.
+- PASS — **4/4 separate tablet** layout cases on the same production source.
+- PASS — existing startup/sweep/verbs/bonds/Wash Hands/Vocabulary/Prepositions and
+  bilingual 30-entry Home regressions **22/22** in the retained combined run.
+  That run was 27/28 overall due to the new route's PixelCopy capture timeout.
+  The final focused 6 switched only the capture helper to actual Android display
+  screenshots and passed; runtime source/APK identity is recorded. This is not
+  a clean single28-case run or full app-wide instrumentation claim.
+- Reviewed — representative chooser, animal/quantity match, reward, ordinary-text
+  phone and German 2× tablet screenshots. All41 genuine captures are in the gallery;
+  component/scrolled captures are labelled. An actual card-height shift found in
+  review was repaired and has layout regression checks. The initial focused 5/6
+  fixed-control test-scroll failure and later PixelCopy report are retained.
+
+See [the review, gallery and exact evidence](docs/memory-pairs-2026-11-09/README.md).
+Emulator display/airplane settings were restored and it is closed. Physical
+S24/Fire, actual TalkBack/switch, child comprehension, installed offline voice
+quality and signed upgrade acceptance remain NOT RUN — owner-managed checks.
+The prior hosted build/Android jobs passed; browser setup failed on unsupported
+Ubuntu 26.04. The browser job now pins supported 24.04; hosted confirmation of
+this local change requires a future push. Work remains local/uncommitted.
+
 ## Native verbs, concrete number bonds and CI repair (2026-11-09, local)
 
 Code and local automated/visual verification are complete from baseline `9397155`.

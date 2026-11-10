@@ -123,6 +123,7 @@ import com.bellfamily.bastischool.learning.seasons.SeasonsPhase
 import com.bellfamily.bastischool.learning.vocabulary.VocabularyPhase
 import com.bellfamily.bastischool.learning.wilma.WilmaPhase
 import com.bellfamily.bastischool.learning.models.ContentLanguage
+import com.bellfamily.bastischool.ui.memory.*
 import com.bellfamily.bastischool.learning.models.ContentId
 
 private val Sky = Color(0xFF79CEF7)
@@ -170,7 +171,7 @@ private val homeCards = listOf(
     HomeCard("🌟", "Mixed Adventure", "Gemischtes Abenteuer", "A little bit of everything.", "Von allem ein bisschen.", "mixed"),
     HomeCard("🐉", "Dragon Treasure Hunt", "Drachenschatz", "A future adventure game.", "Ein zukünftiges Abenteuerspiel.", play = true),
     HomeCard("🦖", "Dinosaur Rescue", "Dinosaurier-Rettung", "A future adventure game.", "Ein zukünftiges Abenteuerspiel.", play = true),
-    HomeCard("🧠", "Memory Pairs", "Paare merken", "A future memory game.", "Ein zukünftiges Merkspiel.", play = true),
+    HomeCard("", "Memory Pairs", "Paare merken", "Find animal pairs or match numbers and groups.", "Finde Tierpaare oder ordne Zahlen und Mengen zu.", mode = "memoryPairs"),
     HomeCard("🐊", "Crocodile Snap", "Krokodil-Schnapp", "A future reaction game.", "Ein zukünftiges Reaktionsspiel.", play = true),
     HomeCard("🧼", "Wash Hands", "Hände waschen", "Put the steps in order.", "Ordne die Schritte.", mode = "washHands"),
     HomeCard("🌊", "Explore Habitats", "Lebensräume entdecken", "Explore a place and meet its animals.", "Entdecke einen Lebensraum und lerne seine Tiere kennen.", mode = "exploreHabitats"),
@@ -214,6 +215,7 @@ class MainActivity : ComponentActivity() {
     private lateinit var nativeVerbs: VerbsQuizViewModel
     private lateinit var nativeVerbExplorer: VerbExplorerViewModel
     private lateinit var nativeBuildFive: BuildFiveViewModel
+    private lateinit var nativeMemory: MemoryPairsViewModel
     private lateinit var nativeBuildTen: BuildTenViewModel
     private lateinit var nativeCountingTray: CountingTrayViewModel
     private lateinit var nativeFollow: FollowViewModel
@@ -282,11 +284,13 @@ class MainActivity : ComponentActivity() {
         nativeVerbExplorer = ViewModelProvider(this)[VerbExplorerViewModel::class.java]
         nativeBuildFive = ViewModelProvider(this)[BuildFiveViewModel::class.java]
         nativeBuildTen = ViewModelProvider(this)[BuildTenViewModel::class.java]
+        nativeMemory = ViewModelProvider(this)[MemoryPairsViewModel::class.java]
         configurePositions()
         restoredSession = savedInstanceState?.getString("legacySession")
         navigation = ShellNavigation.restore(savedInstanceState?.getString("screen"),
             savedInstanceState?.getString("optionsOrigin"), savedInstanceState?.getString("webMode"), restoredSession,
-            savedInstanceState?.getString("homePage"), savedInstanceState?.getString("verbId"))
+            savedInstanceState?.getString("homePage"), savedInstanceState?.getString("verbId"),
+            savedInstanceState?.getString("memoryMode"), savedInstanceState?.getInt("memoryPairs",2) ?: 2)
         if (!navigation.ownsWebSession) restoredSession = null
         checkpoint = LegacyCheckpoint(restoredSession)
         tts = TextToSpeech(this) { status ->
@@ -322,6 +326,8 @@ class MainActivity : ComponentActivity() {
         // need a second copy in the shell. Completion screens retain the shell title
         // because their content is a summary rather than the active activity heading.
         val contentOwnsTitle = when (screen) {
+            ShellScreen.MEMORY_CHOOSER -> true
+            ShellScreen.MEMORY_GAME -> nativeMemory.state?.completed != true
             ShellScreen.VERB_LIBRARY, ShellScreen.VERB_LESSON -> true
             ShellScreen.VERB_QUIZ -> nativeVerbs.state?.phase != SessionPhase.COMPLETED
             ShellScreen.BUILD_FIVE -> nativeBuildFive.state?.completed != true
@@ -374,6 +380,7 @@ class MainActivity : ComponentActivity() {
                                 when (screen) {
                                     ShellScreen.HOME -> if (language == "de") "Bastis Lernabenteuer" else "Basti's Learning Adventure"
                                     ShellScreen.OPTIONS -> if (language == "de") "Optionen" else "Options"
+                                    ShellScreen.MEMORY_CHOOSER, ShellScreen.MEMORY_GAME -> if(language=="de") "Paare merken" else "Memory Pairs"
                                     ShellScreen.VERB_LIBRARY, ShellScreen.VERB_LESSON -> if(language=="de") "Verben entdecken" else "Verb Explorer"
                                     ShellScreen.VERB_QUIZ -> if(language=="de") "Tieraktionen" else "Animal Actions"
                                     ShellScreen.BUILD_FIVE -> if(language=="de") "Fünf legen" else "Build 5"
@@ -457,6 +464,10 @@ class MainActivity : ComponentActivity() {
                             HomeBrowseScreen(navigation.homePage, language == "de", ::openHomePage,
                                 ::launchHomeActivity, Modifier.padding(padding), navigation.recoveryFailed)
                         }
+                        ShellScreen.MEMORY_CHOOSER -> MemoryPairsChooser(if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            {changeRoute(navigation.openMemory(it))},Modifier.padding(padding))
+                        ShellScreen.MEMORY_GAME -> MemoryPairsScreen(nativeMemory,navigation.memoryConfig,if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            {changeRoute(navigation.openMemoryChooser())},{changeRoute(navigation.home())},Modifier.padding(padding),::popCelebration,{celebrationSound.cancel()})
                         ShellScreen.VERB_LIBRARY -> VerbLibraryScreen(if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             {changeRoute(navigation.openVerbLesson(it))},Modifier.padding(padding))
                         ShellScreen.VERB_QUIZ -> VerbQuizScreen(nativeVerbs,if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
@@ -896,6 +907,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.VERB_QUIZ -> nativeVerbs.busy || nativeVerbs.saveFailed
             ShellScreen.BUILD_FIVE -> nativeBuildFive.busy || nativeBuildFive.saveFailed
             ShellScreen.BUILD_TEN -> nativeBuildTen.busy || nativeBuildTen.saveFailed
+            ShellScreen.MEMORY_GAME -> nativeMemory.busy || nativeMemory.saveFailed
             ShellScreen.COUNTING_TRAY -> nativeCountingTray.busy || nativeCountingTray.saveFailed
             ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO, ShellScreen.FOLLOW_SCHOOL, ShellScreen.FOLLOW_SCHOOL_ACTIONS,
             ShellScreen.FOLLOW_SCHOOL_ACTION_SEQUENCE -> nativeFollow.busy || nativeFollow.saveFailed
@@ -937,6 +949,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.VERB_QUIZ -> nativeVerbs.state?.takeIf { it.phase == SessionPhase.COMPLETED && it.completion == CompletionState.ACKNOWLEDGED }?.plan?.id?.value
             ShellScreen.BUILD_FIVE -> nativeBuildFive.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.BUILD_TEN -> nativeBuildTen.state?.takeIf { it.completed && it.acknowledged }?.id?.value
+            ShellScreen.MEMORY_GAME -> nativeMemory.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.COUNTING_TRAY -> nativeCountingTray.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.FOLLOW_INSTRUCTIONS -> nativeFollow.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
             ShellScreen.FOLLOW_TWO -> nativeFollow.twoState?.takeIf {it.completed && it.acknowledged}?.id?.value
@@ -1075,6 +1088,7 @@ class MainActivity : ComponentActivity() {
                 syncSettings()
                 changeRoute(navigation.closeOptions())
             }
+            BackAction.MEMORY_CHOOSER -> changeRoute(navigation.openMemoryChooser())
             BackAction.VERB_RETURN -> changeRoute(navigation.returnFromVerb())
             BackAction.LEGACY -> {
                 val owner = webView
@@ -1204,6 +1218,9 @@ class MainActivity : ComponentActivity() {
                 else -> null
             })
         val nativeAudioMode=shellAudioMode(prefs.getString("audioMode",null),prefs.getBoolean("sound",true))
+        nativeMemory.configure(prefs.getString("lang","en")?:"en",nativeAudioMode)
+        nativeMemory.setVisible(foreground && navigation.screen==ShellScreen.MEMORY_GAME,
+            if(navigation.screen==ShellScreen.MEMORY_GAME)navigation.memoryConfig else null)
         nativeVerbs.configure(prefs.getString("lang","en")?:"en",nativeAudioMode,prefs.getInt("round",5))
         nativeVerbs.setVisible(foreground && navigation.screen==ShellScreen.VERB_QUIZ)
         nativeVerbExplorer.configure(prefs.getString("lang","en")?:"en",nativeAudioMode)
@@ -1313,6 +1330,8 @@ class MainActivity : ComponentActivity() {
         outState.putString("webMode", navigation.mode)
         outState.putString("homePage", navigation.homePage)
         outState.putString("verbId", navigation.verbId)
+        outState.putString("memoryMode", navigation.memoryMode)
+        outState.putInt("memoryPairs", navigation.memoryPairs)
         if (navigation.ownsWebSession) outState.putString("legacySession", checkpoint.read())
         super.onSaveInstanceState(outState)
     }

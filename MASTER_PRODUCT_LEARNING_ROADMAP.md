@@ -2218,6 +2218,15 @@ Shared rules:
 
 ---
 
+## Memory Pairs starter checkpoint — 2026-11-09
+
+Native animal picture pairs and numeral ↔ quantity matching use one semantic
+matching state machine, 4/6/8-card boards, child-controlled reveal/review, explicit
+model help and separate saved configurations. They reuse canonical Vocabulary art,
+shared audio, progress and balloons. Other pair variants remain future curriculum;
+physical acceptance stays separate. See the
+[Memory Pairs review](docs/memory-pairs-2026-11-09/README.md).
+
 ## Near-term decision framework
 
 When choosing the next task, prefer work that does at least one of the following:

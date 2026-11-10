@@ -1,0 +1,463 @@
+{
+  "baseline": "2ff8820bc7f89c0b0421a7df61a1fbf152a77352",
+  "debugApkSha256": "ff1893d64ece2a6cc3d621f94120991728cec79179a715a0f847e42374c854ed",
+  "runtimeSourceSha256": {
+    "app/src/main/java/com/bellfamily/bastischool/MainActivity.kt": "3d2d8850ffe883a766f924dfe684bbb0dd58b6a9e9eadc6886c88b858d211554",
+    "app/src/main/java/com/bellfamily/bastischool/ShellNavigation.kt": "946de1c7d3a75d50ee779d7915f5d10eb852cdc2c680fa342006b6b27ec76b5e",
+    "app/src/main/java/com/bellfamily/bastischool/learning/memory/MemoryPairs.kt": "6155e53b04d8d9d033d3609de666a13a3f26cd830447368677d739b36b85f083",
+    "app/src/main/java/com/bellfamily/bastischool/learning/memory/MemoryPairsAudio.kt": "caf2798f65ebaa10e98187d27b0d6374ccdd47fd0e632e51663c06ae2091711d",
+    "app/src/main/java/com/bellfamily/bastischool/learning/memory/MemoryPairsHost.kt": "34cab0e1681fc08bee041d5aff7ffc041402ad7b8a78b20c33b30d1d5a49ebf4",
+    "app/src/main/java/com/bellfamily/bastischool/learning/progress/ProgressCodec.kt": "5e844573976a39dc420c0b0e33f2616d3fd8e287284eb3dcc3963f12cd648561",
+    "app/src/main/java/com/bellfamily/bastischool/learning/progress/ProgressModels.kt": "c5d3b4df5f39cc8e3e6b4578362d2ec9032a6d49bd095da585ec8521a4957fbb",
+    "app/src/main/java/com/bellfamily/bastischool/ui/home/HomeActivityArtwork.kt": "e3f055ad65f8053b8901117f417666f65ca8d315a825b2834a7aeeb1270501e7",
+    "app/src/main/java/com/bellfamily/bastischool/ui/home/HomeCatalogue.kt": "be222eba2a477358cc8b7a4d73a5ff00db47b85f294e6443eba7b0068292c685",
+    "app/src/main/java/com/bellfamily/bastischool/ui/memory/MemoryPairsScreen.kt": "0e8c5c46841708f790fd7649064069f1a8f3697b6b1e1e27f3b0dcbfafa9fbd1",
+    "app/src/main/java/com/bellfamily/bastischool/ui/memory/MemoryPairsViewModel.kt": "fbf6c5a7a6341f3953d1aa4fe84bb6c2ea0bf620d39a2f466f3f4d96583a3fa7"
+  },
+  "completed": "2026-11-10",
+  "status": "implemented; selected automated and representative visual checks passed; physical acceptance pending",
+  "tests": {
+    "jvm": {
+      "tests": 675,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "browser": {
+      "tests": 63,
+      "failures": 0,
+      "skipped": 0
+    },
+    "memoryPhoneFocused": {
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "tabletLayouts": {
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "existingRegressions": {
+      "tests": 22,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "retainedCombinedAttempt": {
+      "tests": 28,
+      "failures": 1,
+      "errors": 0,
+      "skipped": 0
+    },
+    "lint": {
+      "errors": 0,
+      "existingWarnings": 7,
+      "information": 2
+    },
+    "debugAndTestApkAssembly": "passed"
+  },
+  "coverageNotes": [
+    "The combined28 run passed27, with a new-route PixelCopy screenshot timeout. Existing22 all passed. The final six Memory checks then passed using UiAutomation display capture.",
+    "Runtime source and APK are identical between the combined attempt and final focused/tablet runs; only test capture changed.",
+    "This is selected coverage, not full app-wide instrumentation."
+  ],
+  "captures": {
+    "memory-animals-4-board.png": {
+      "sha256": "200b0b71de49cdce24ea0254a46f063398589c450814612bf5a8220f026b5700",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-animals-4-complete-de.png": {
+      "sha256": "e186954bce7b1df37d245333ea69c6c445b04da963673c5d6e88bf76fffadf72",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-animals-4-different-de.png": {
+      "sha256": "6cbda0addf40f6feab9b9eb00f7fd19bd843945d2c668c96827752c4a5b71bd1",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-animals-4-match-de.png": {
+      "sha256": "19c9cb066856438ac9ae87a2ad9bd1f9049d685bab7d8a80d6bb518a10ff3281",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-animals-6-board.png": {
+      "sha256": "38691282600d51c742cf9199931995a78980e83715296c079d910b1b00ed1b01",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-animals-6-complete-de.png": {
+      "sha256": "8ad1f69771d7316b8a26046128d523ac2c175d80822e84c3df80d298528c70b2",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-animals-6-different-de.png": {
+      "sha256": "6b90a0a7cd8284b17974f9cd43881b41da60ed7fa2e80bca69104cfe80d72ac2",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-animals-6-match-de.png": {
+      "sha256": "b58908098bbe50d8f4b4e322134095a354e22be894607cbbdc4900f802cb897d",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-animals-8-board.png": {
+      "sha256": "7e88c45888e43fdd28a093bb7a62b944ff224fb8b7bdd184b616877ff392926d",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-animals-8-complete-de.png": {
+      "sha256": "8ad1f69771d7316b8a26046128d523ac2c175d80822e84c3df80d298528c70b2",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-animals-8-different-de.png": {
+      "sha256": "f7b4cf930af88629aeb197cec890a406524c77402f17bd21af4d826f13927b51",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-animals-8-match-de.png": {
+      "sha256": "99029b9da28e388e21db8070d88307a86625912b9516dff883ef823d15a87833",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-chooser-en.png": {
+      "sha256": "e653c2cde59940b356008a3a26e303f8f211d7660581283b420e8b74fbd781cf",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-layout-animals-phone-de-15-portrait.png": {
+      "sha256": "bbab05ea2d9e9f6aaa1317c20f4bea6a418949e6f9c8352ab41255c9f4e33a6c",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "component layout"
+    },
+    "memory-layout-animals-phone-de-20-landscape.png": {
+      "sha256": "1c734395b3ffafa78d8bb4691d6079fd16ca55fb5a324bf7215911f527b28594",
+      "pixels": [
+        2400,
+        1080
+      ],
+      "kind": "component layout"
+    },
+    "memory-layout-animals-phone-en-10-landscape.png": {
+      "sha256": "7812ec0e1ccb207d81404ca9624c977d93de10dd813bbf6aed44bc5a76de3c49",
+      "pixels": [
+        2400,
+        1080
+      ],
+      "kind": "component layout"
+    },
+    "memory-layout-animals-phone-en-10-portrait.png": {
+      "sha256": "facc7a5969ca58a413c03736fd2271839e65e3a6d1988f3dddb0fc45b60afe45",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "component layout"
+    },
+    "memory-layout-animals-tablet-de-15-portrait.png": {
+      "sha256": "60e90f16c3d100ae12547386fd8ea608b7632f793928430c84a8a05dcd509775",
+      "pixels": [
+        1600,
+        2560
+      ],
+      "kind": "component layout"
+    },
+    "memory-layout-animals-tablet-de-20-landscape.png": {
+      "sha256": "c2f7f996cbf17df199c0ba1f847a23986b77b3f9590807755bf54f03bcd7bf59",
+      "pixels": [
+        2560,
+        1600
+      ],
+      "kind": "component layout"
+    },
+    "memory-layout-animals-tablet-en-10-landscape.png": {
+      "sha256": "282f8ef6fa231c52d8fef16a6ce66c25df09deacbd725e5e767a950050dc1eb2",
+      "pixels": [
+        2560,
+        1600
+      ],
+      "kind": "component layout"
+    },
+    "memory-layout-animals-tablet-en-10-portrait.png": {
+      "sha256": "05d8e2e0ae47eec389aab11605474b4e933673cd7dec87e4336e9006af4e88c0",
+      "pixels": [
+        1600,
+        2560
+      ],
+      "kind": "component layout"
+    },
+    "memory-layout-numbers-phone-de-15-portrait.png": {
+      "sha256": "4693b3214ff2909cb71b5291983aa227ae839da214f04f52fb4516e8f2990ec5",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "component layout"
+    },
+    "memory-layout-numbers-phone-de-20-landscape.png": {
+      "sha256": "48d5a41e003358f49b46b71837239641e058b4607ba95e0e314c09e07e8dd548",
+      "pixels": [
+        2400,
+        1080
+      ],
+      "kind": "component layout"
+    },
+    "memory-layout-numbers-phone-en-10-landscape.png": {
+      "sha256": "0b15dcaa6eb73911bfe1a4f4c3764fa9b37733126b7f5330be7bae04eac2cfd8",
+      "pixels": [
+        2400,
+        1080
+      ],
+      "kind": "component layout"
+    },
+    "memory-layout-numbers-phone-en-10-portrait.png": {
+      "sha256": "e856f903a055e4301db9677ec7a2846dfb0d66fa324ac43233ccfd7b6779dfa4",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "component layout"
+    },
+    "memory-layout-numbers-tablet-de-15-portrait.png": {
+      "sha256": "1e284487fb8a95d19560d1fffe104a1a5dd3f7420bc243835b9833b66e25741a",
+      "pixels": [
+        1600,
+        2560
+      ],
+      "kind": "component layout"
+    },
+    "memory-layout-numbers-tablet-de-20-landscape.png": {
+      "sha256": "b2715b5c8f447c1efdc3073d4908ed90842eef6ce35e4ffc645be028c803c124",
+      "pixels": [
+        2560,
+        1600
+      ],
+      "kind": "component layout"
+    },
+    "memory-layout-numbers-tablet-en-10-landscape.png": {
+      "sha256": "efeaefc0ee6a6818f5db2d267dd96e6eac8427d4ec204989e99f7f6c91b50d0f",
+      "pixels": [
+        2560,
+        1600
+      ],
+      "kind": "component layout"
+    },
+    "memory-layout-numbers-tablet-en-10-portrait.png": {
+      "sha256": "dbd916540efec0e79050a376ea0336f3c7b9bb19f19ff8d6b1af9f8ee1948d3a",
+      "pixels": [
+        1600,
+        2560
+      ],
+      "kind": "component layout"
+    },
+    "memory-numbers-4-board.png": {
+      "sha256": "fe1fe2d1c12cd7914a6ca5450d86e675726c71045f7ed3d09cf83846f03445ad",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-numbers-4-complete-de.png": {
+      "sha256": "a73ed7bd76e03674aaf78f58705b107e1d72ab85579fe666fd5a951a89f8b3bd",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-numbers-4-different-de.png": {
+      "sha256": "9016033f4517d314dc1555630799fc8546eb71d267ca83180c775afeea06dfa4",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-numbers-4-match-de.png": {
+      "sha256": "08be81c2590bde6bab846e2c73a6759af6c8ae29b259ab2fd23c7ab49e94bec1",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-numbers-6-board.png": {
+      "sha256": "66158f551ae903b082cc185c4a7356d9653f92ca7999ca2a8bad93af6ded0b23",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-numbers-6-complete-de.png": {
+      "sha256": "a73ed7bd76e03674aaf78f58705b107e1d72ab85579fe666fd5a951a89f8b3bd",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-numbers-6-different-de.png": {
+      "sha256": "e930c58b486045cab3a1e723771c0af0a236c629f04c1b437c3677061376973a",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-numbers-6-match-de.png": {
+      "sha256": "52c4cab839a6414fbb34abad1bf3bc820968734f6feea47ca6312a4ec3296f41",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-numbers-8-board.png": {
+      "sha256": "3ac4e1cbd7446c699c43da547e11aee2de12c351abd259e8f69277108d284745",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-numbers-8-complete-de.png": {
+      "sha256": "6f090ddffb710a31e209f45a28a4e36e2b0944e3f3a189b6d0bf5aa481c82ba1",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-numbers-8-different-de.png": {
+      "sha256": "56761b507dc41d485a0994123e7c260a33b5f5e7aef3785d3937c0efdb13fcc5",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    },
+    "memory-numbers-8-match-de.png": {
+      "sha256": "db78101ebd93931a37b61f1fa781e14a01e279440d884486cda4f4500c7ca904",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "kind": "production route"
+    }
+  },
+  "captureCounts": {
+    "productionRoute": 25,
+    "componentPhone": 8,
+    "componentTablet": 8,
+    "total": 41
+  },
+  "emulator": {
+    "avd": "Basti_ThreePass_20261106",
+    "api": 35,
+    "cpu": 4,
+    "ramMB": 6144,
+    "dataGB": 12,
+    "graphics": "host",
+    "originalPhonePixels": [
+      1080,
+      2400
+    ],
+    "originalPhoneDensity": 420,
+    "tabletOverridePixels": [
+      1600,
+      2560
+    ],
+    "tabletDensity": 240,
+    "displayRestored": true,
+    "airplaneOriginal": 0,
+    "airplaneRestored": 0,
+    "closed": true,
+    "originalAvdAndPhysicalDevicesUntouched": true
+  },
+  "ci": {
+    "previousRun": 42623953143,
+    "build": "success",
+    "androidInstrumentation": "success",
+    "browser": "failed before tests: Playwright1.51.1 unsupported on new Ubuntu26.04 runner",
+    "localRepair": "browser job pinned to supported Ubuntu24.04; Memory route and owner join focused Android selection",
+    "hostedConfirmation": "pending future push"
+  },
+  "sourceSha256": {
+    ".github/workflows/build-apk.yml": "9cdf6e72187109311e9418456a9ce02f40d41e3980828cff23954b7e0cc6048e",
+    "app/src/androidTest/java/com/bellfamily/bastischool/HomeRouteTest.kt": "4401c670ee0b02ef60eb39ad8d132898600ba4be927db4056db236fcbe026308",
+    "app/src/androidTest/java/com/bellfamily/bastischool/ui/memory/MemoryPairsLayoutTest.kt": "8a201692fcd3780a999f407efc442daa5c26ca4a690151e009ffbfd7f85f4825",
+    "app/src/androidTest/java/com/bellfamily/bastischool/ui/memory/MemoryPairsOwnerTest.kt": "ce27cbba048ec0bd0b018bd364b4d9ec172b70236f3daf0610364e0924f7a71b",
+    "app/src/androidTest/java/com/bellfamily/bastischool/ui/memory/MemoryPairsRouteTest.kt": "64bc0764135786e73766e7ab94fd4c00a638ad297680f9ebdb78cfdca547513b",
+    "app/src/androidTest/java/com/bellfamily/bastischool/ui/memory/MemoryReviewCapture.kt": "e6974de9073a8d6ab0345ffad418cb9796ce1f7ae35980850a3d25926c7cdade",
+    "app/src/main/java/com/bellfamily/bastischool/MainActivity.kt": "3d2d8850ffe883a766f924dfe684bbb0dd58b6a9e9eadc6886c88b858d211554",
+    "app/src/main/java/com/bellfamily/bastischool/ShellNavigation.kt": "946de1c7d3a75d50ee779d7915f5d10eb852cdc2c680fa342006b6b27ec76b5e",
+    "app/src/main/java/com/bellfamily/bastischool/learning/memory/MemoryPairs.kt": "6155e53b04d8d9d033d3609de666a13a3f26cd830447368677d739b36b85f083",
+    "app/src/main/java/com/bellfamily/bastischool/learning/memory/MemoryPairsAudio.kt": "caf2798f65ebaa10e98187d27b0d6374ccdd47fd0e632e51663c06ae2091711d",
+    "app/src/main/java/com/bellfamily/bastischool/learning/memory/MemoryPairsHost.kt": "34cab0e1681fc08bee041d5aff7ffc041402ad7b8a78b20c33b30d1d5a49ebf4",
+    "app/src/main/java/com/bellfamily/bastischool/learning/progress/ProgressCodec.kt": "5e844573976a39dc420c0b0e33f2616d3fd8e287284eb3dcc3963f12cd648561",
+    "app/src/main/java/com/bellfamily/bastischool/learning/progress/ProgressModels.kt": "c5d3b4df5f39cc8e3e6b4578362d2ec9032a6d49bd095da585ec8521a4957fbb",
+    "app/src/main/java/com/bellfamily/bastischool/ui/home/HomeActivityArtwork.kt": "e3f055ad65f8053b8901117f417666f65ca8d315a825b2834a7aeeb1270501e7",
+    "app/src/main/java/com/bellfamily/bastischool/ui/home/HomeCatalogue.kt": "be222eba2a477358cc8b7a4d73a5ff00db47b85f294e6443eba7b0068292c685",
+    "app/src/main/java/com/bellfamily/bastischool/ui/memory/MemoryPairsScreen.kt": "0e8c5c46841708f790fd7649064069f1a8f3697b6b1e1e27f3b0dcbfafa9fbd1",
+    "app/src/main/java/com/bellfamily/bastischool/ui/memory/MemoryPairsViewModel.kt": "fbf6c5a7a6341f3953d1aa4fe84bb6c2ea0bf620d39a2f466f3f4d96583a3fa7",
+    "app/src/test/java/com/bellfamily/bastischool/HomeCardsTest.kt": "3dab0dd8301d10c283cca3cee2bf8d5f1fddd3a4f0f7ed5bb9c26c65164a5e2e",
+    "app/src/test/java/com/bellfamily/bastischool/HomeIntegrationTest.kt": "9d667f658a207da806d37c6d2063a44390c3e5f70be2fe1d99c14f952163a499",
+    "app/src/test/java/com/bellfamily/bastischool/MemoryNavigationTest.kt": "c7e353435d80e718c733c6e3e31efdfe7eb37c23d7dc5e4eaa16bf0549a4f136",
+    "app/src/test/java/com/bellfamily/bastischool/learning/memory/MemoryPairsTest.kt": "c2c4849c25ba790ddc6783b944d55942fe2da75cbf1bb40980beaaeda5913cf3",
+    "app/src/testDebug/java/com/bellfamily/bastischool/ui/homeprototype/HomePrototypeModelTest.kt": "00a383aee30b9db46758e281880cf3f3b93dc7b09a2aca683a5bb9ecb2b8f2c8"
+  },
+  "limits": [
+    "Changes remain local; not committed or pushed.",
+    "No signed build or physical installation/upgrade performed.",
+    "Physical S24/Fire, actual TalkBack/switch, child comprehension and installed offline voice quality remain owner-managed acceptance."
+  ]
+}

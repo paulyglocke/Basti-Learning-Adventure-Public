@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTest" tests="6" failures="1" errors="0" skipped="0" time="194.467" timestamp="2026-11-09T17:35:20" hostname="localhost">
+  <properties>
+    <property name="device" value="Basti_ThreePass_20261106(AVD) - 15" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="allSixBoardsRestoreTurnsTranslateUseSupportAndCompleteWithSharedBalloons" classname="com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTest" time="67.343">
+    <failure>java.lang.AssertionError: Semantic Node has no parent layout with a Scroll SemanticsAction
+at androidx.compose.ui.test.ActionsKt.scrollToNode(Actions.kt:92)
+at androidx.compose.ui.test.ActionsKt.performScrollTo(Actions.kt:77)
+at com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTest.allSixBoardsRestoreTurnsTranslateUseSupportAndCompleteWithSharedBalloons$lambda$16$lambda$15$click(MemoryPairsRouteTest.kt:44)
+at com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTest.allSixBoardsRestoreTurnsTranslateUseSupportAndCompleteWithSharedBalloons$lambda$16(MemoryPairsRouteTest.kt:85)
+at com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTest.$r8$lambda$Lzc4dtcBXihMlHVBoI6AnXPdla0(Unknown Source:0)
+at com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTest$$ExternalSyntheticLambda1.invoke(D8$$SyntheticClass:0)
+at com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTestKt.isolatedMemoryStores(MemoryPairsRouteTest.kt:26)
+at com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTest.allSixBoardsRestoreTurnsTranslateUseSupportAndCompleteWithSharedBalloons(MemoryPairsRouteTest.kt:34)
+</failure>
+  </testcase>
+  <testcase name="offIsLazyFreshOwnerRestoresSilentlyAndSwitchingWhileLoadingCannotPublishAnotherBoard" classname="com.bellfamily.bastischool.ui.memory.MemoryPairsOwnerTest" time="1.537" />
+  <testcase name="bothEightCardBoardsKeepTargetsHelpFeedbackAndKeyboardReachable[de=false-font=1-landscape=false]" classname="com.bellfamily.bastischool.ui.memory.MemoryPairsLayoutTest" time="20.645" />
+  <testcase name="bothEightCardBoardsKeepTargetsHelpFeedbackAndKeyboardReachable[de=true-font=1.5-landscape=false]" classname="com.bellfamily.bastischool.ui.memory.MemoryPairsLayoutTest" time="19.022" />
+  <testcase name="bothEightCardBoardsKeepTargetsHelpFeedbackAndKeyboardReachable[de=true-font=2-landscape=true]" classname="com.bellfamily.bastischool.ui.memory.MemoryPairsLayoutTest" time="26.198" />
+  <testcase name="bothEightCardBoardsKeepTargetsHelpFeedbackAndKeyboardReachable[de=false-font=1-landscape=true]" classname="com.bellfamily.bastischool.ui.memory.MemoryPairsLayoutTest" time="44.305" />
+</testsuite>

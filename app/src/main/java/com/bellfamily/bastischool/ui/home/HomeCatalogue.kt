@@ -15,7 +15,7 @@ internal enum class HomeCategory(
         listOf("tellme", "vocabulary", "verbExplorer", "letters", "positions")),
     TIME("Time & Seasons", "Zeit & Jahreszeiten", BastiCategoryTreatment.TIME, listOf("time", "clock")),
     ANIMALS("Animals & Nature", "Tiere & Natur", BastiCategoryTreatment.ANIMALS,
-        listOf("verbs", "exploreHabitats", "animalGroups", "matchHabitats")),
+        listOf("verbs", "exploreHabitats", "animalGroups", "matchHabitats", "memoryPairs")),
     COLOURS("Colours", "Farben", BastiCategoryTreatment.COLOURS, listOf("colourSort")),
     EVERYDAY("Everyday Skills", "Alltag", BastiCategoryTreatment.EVERYDAY, listOf("washHands", "follow"));
 
@@ -41,6 +41,7 @@ internal fun HomeCard.homeDestination(): ShellNavigation {
     require(!play && this in homeActivities())
     val shell = ShellNavigation()
     return when (homeId()) {
+        "memoryPairs" -> shell.openMemoryChooser()
         "clock" -> shell.openClock()
         "subitising" -> shell.openSubitising()
         "verbExplorer" -> shell.openVerbLibrary()

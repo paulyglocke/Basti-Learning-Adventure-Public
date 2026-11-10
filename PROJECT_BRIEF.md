@@ -10,6 +10,11 @@ The app should feel like a friendly children's game rather than homework. It sho
 
 The target child is approximately 6–7 years old. Keep vocabulary, explanations, instructions, and visual complexity age-appropriate. Do not make exercises unnecessarily advanced just because the app technically can support them.
 
+Current game addition (2026-11-09): Memory Pairs offers animal picture matching
+and numeral ↔ quantity matching with 4/6/8-card boards, exact saved turns, bilingual
+audio, model help and shared balloons/progress. This bounded starter is independent
+of the normal 5/10-question preference; physical acceptance remains separate.
+
 ## 2. Core design principles
 
 - Audio-first: core activities should be usable without independent reading.

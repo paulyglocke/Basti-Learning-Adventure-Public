@@ -27,7 +27,7 @@ class HomeRouteTest(private val language: String) {
         prefs.edit().putString("lang", language).putString("audioMode", "off").commit()
         val expectedScreens = listOf("TELL_ME", "VOCABULARY_CHOOSER", "VERB_LIBRARY", "LETTERS", "WEB", "DAYS_SEASONS",
             "VERB_QUIZ", "SUBITISING", "QUANTITY_MATCH", "COMPARE_QUANTITY", "NUMBER_ORDER", "CLOCK",
-            "ADD_TOGETHER", "ADD_CHALLENGE", "SUBTRACTION", "MIXED_ADDITION", "BUILD_FIVE", "BUILD_TEN", "MAKE_FIVE", "COUNTING_TRAY", "WEB", "PREPOSITIONS", "WEB", "WASH_HANDS", "HABITATS_CHOOSER", "HABITAT_MATCH", "ANIMAL_GROUPS", "COLOURS_CHOOSER", "FOLLOW_LEVELS")
+            "ADD_TOGETHER", "ADD_CHALLENGE", "SUBTRACTION", "MIXED_ADDITION", "BUILD_FIVE", "BUILD_TEN", "MAKE_FIVE", "COUNTING_TRAY", "WEB", "PREPOSITIONS", "WEB", "MEMORY_CHOOSER", "WASH_HANDS", "HABITATS_CHOOSER", "HABITAT_MATCH", "ANIMAL_GROUPS", "COLOURS_CHOOSER", "FOLLOW_LEVELS")
         try {
             ActivityScenario.launch(MainActivity::class.java).use { scenario ->
                 homeCardGroups().flatten().forEachIndexed { index, card ->

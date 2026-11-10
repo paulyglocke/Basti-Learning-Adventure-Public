@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTest" tests="28" failures="1" errors="0" skipped="0" time="1679.321" timestamp="2026-11-09T21:12:58" hostname="localhost">
+  <properties>
+    <property name="device" value="Basti_ThreePass_20261106(AVD) - 15" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="allSixBoardsRestoreTurnsTranslateUseSupportAndCompleteWithSharedBalloons" classname="com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTest" time="160.563">
+    <failure>java.lang.AssertionError: Failed waiting for PixelCopy!
+at androidx.compose.ui.test.android.WindowCapture_androidKt.generateBitmapFromPixelCopy(WindowCapture.android.kt:156)
+at androidx.compose.ui.test.android.WindowCapture_androidKt.generateBitmap(WindowCapture.android.kt:135)
+at androidx.compose.ui.test.android.WindowCapture_androidKt.access$generateBitmap(WindowCapture.android.kt:1)
+at androidx.compose.ui.test.android.WindowCapture_androidKt$captureRegionToImage$1$1.invoke(WindowCapture.android.kt:53)
+at androidx.compose.ui.test.android.WindowCapture_androidKt$captureRegionToImage$1$1.invoke(WindowCapture.android.kt:49)
+at androidx.compose.ui.test.android.WindowCapture_androidKt.withDrawingEnabled(WindowCapture.android.kt:91)
+at androidx.compose.ui.test.android.WindowCapture_androidKt.access$withDrawingEnabled(WindowCapture.android.kt:1)
+at androidx.compose.ui.test.android.WindowCapture_androidKt$captureRegionToImage$1.invoke(WindowCapture.android.kt:49)
+at androidx.compose.ui.test.android.WindowCapture_androidKt$captureRegionToImage$1.invoke(WindowCapture.android.kt:47)
+at androidx.compose.ui.test.android.WindowCapture_androidKt.runWithRetryWhenNoData(WindowCapture.android.kt:66)
+at androidx.compose.ui.test.android.WindowCapture_androidKt.captureRegionToImage(WindowCapture.android.kt:47)
+at androidx.compose.ui.test.AndroidImageHelpers_androidKt.captureToImage(AndroidImageHelpers.android.kt:97)
+at com.bellfamily.bastischool.NativeReviewCaptureKt.captureNativeReview(NativeReviewCapture.kt:22)
+at com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTest.allSixBoardsRestoreTurnsTranslateUseSupportAndCompleteWithSharedBalloons$lambda$16(MemoryPairsRouteTest.kt:54)
+at com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTest.$r8$lambda$Lzc4dtcBXihMlHVBoI6AnXPdla0(Unknown Source:0)
+at com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTest$$ExternalSyntheticLambda1.invoke(D8$$SyntheticClass:0)
+at com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTestKt.isolatedMemoryStores(MemoryPairsRouteTest.kt:26)
+at com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTest.allSixBoardsRestoreTurnsTranslateUseSupportAndCompleteWithSharedBalloons(MemoryPairsRouteTest.kt:34)
+</failure>
+  </testcase>
+  <testcase name="offIsLazyFreshOwnerRestoresSilentlyAndSwitchingWhileLoadingCannotPublishAnotherBoard" classname="com.bellfamily.bastischool.ui.memory.MemoryPairsOwnerTest" time="19.548" />
+  <testcase name="bothEightCardBoardsKeepTargetsHelpFeedbackAndKeyboardReachable[de=false-font=1-landscape=false]" classname="com.bellfamily.bastischool.ui.memory.MemoryPairsLayoutTest" time="39.194" />
+  <testcase name="bothEightCardBoardsKeepTargetsHelpFeedbackAndKeyboardReachable[de=true-font=1.5-landscape=false]" classname="com.bellfamily.bastischool.ui.memory.MemoryPairsLayoutTest" time="21.827" />
+  <testcase name="bothEightCardBoardsKeepTargetsHelpFeedbackAndKeyboardReachable[de=true-font=2-landscape=true]" classname="com.bellfamily.bastischool.ui.memory.MemoryPairsLayoutTest" time="31.738" />
+  <testcase name="bothEightCardBoardsKeepTargetsHelpFeedbackAndKeyboardReachable[de=false-font=1-landscape=true]" classname="com.bellfamily.bastischool.ui.memory.MemoryPairsLayoutTest" time="23.035" />
+  <testcase name="homeSurvivesLaunchRecreationAndBackgroundReturn" classname="com.bellfamily.bastischool.MainActivityStartupTest" time="21.855" />
+  <testcase name="matchingOptionsRecreationReturnsToBothOriginalBrowsePages" classname="com.bellfamily.bastischool.SweepRepairsRouteTest" time="23.228" />
+  <testcase name="thumbnailAndStepPicturesDecodeAtBoundedSizeAndMissingArtIsSafe" classname="com.bellfamily.bastischool.SweepRepairsRouteTest" time="0.882" />
+  <testcase name="activityThumbnailsAreVisibleThroughRealBrowsePages" classname="com.bellfamily.bastischool.SweepRepairsRouteTest" time="18.231" />
+  <testcase name="quizLessonSettingsRecreationAndCompletionPreserveExactQuestionAndChoices" classname="com.bellfamily.bastischool.ui.verbs.VerbsRouteTest" time="47.096" />
+  <testcase name="bothLevelsKeepFixedEggsRestoreAddedEggsAndCompleteWithSharedRewards" classname="com.bellfamily.bastischool.ui.bonds.NumberBondsRouteTest" time="155.505" />
+  <testcase name="listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1]" classname="com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest" time="38.674" />
+  <testcase name="listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1]" classname="com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest" time="32.333" />
+  <testcase name="listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0]" classname="com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest" time="37.48" />
+  <testcase name="listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-8]" classname="com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest" time="36.298" />
+  <testcase name="allImagesDecodeOnceAtBoundedSizeAndReuseTheSameCache" classname="com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest" time="5.743" />
+  <testcase name="missingAndCorruptImagesAreIsolatedAndCachedWithoutReplacingThemWithOtherAnimals" classname="com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest" time="2.191" />
+  <testcase name="foodExploreFindNameLanguageAndCategorySwitchPreserveSavedPractice" classname="com.bellfamily.bastischool.ui.vocabulary.FoodVocabularyRouteTest" time="41.986" />
+  <testcase name="artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[ENGLISH-1]" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest" time="37.113" />
+  <testcase name="artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-1]" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest" time="36.205" />
+  <testcase name="artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-0]" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest" time="44.361" />
+  <testcase name="artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-8]" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest" time="40.327" />
+  <testcase name="germanGuidedOutlineAdvancesAndClearsAtLargeTextNarrowWidth" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest" time="19.811" />
+  <testcase name="englishGuidedOutlineAdvancesAndClearsAtLargeTextNarrowWidth" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest" time="15.702" />
+  <testcase name="individualListenIsSeparateFromImmediateKeyboardAnswerAndNavigationClearsOutline" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest" time="14.652" />
+  <testcase name="everyHomeEntryOpensItsExistingDestinationAndReturnsHome[en]" classname="com.bellfamily.bastischool.HomeRouteTest" time="338.67" />
+  <testcase name="everyHomeEntryOpensItsExistingDestinationAndReturnsHome[de]" classname="com.bellfamily.bastischool.HomeRouteTest" time="356.074" />
+</testsuite>

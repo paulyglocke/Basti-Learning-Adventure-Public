@@ -82,7 +82,7 @@ jobs:
           disable-animations: true
           script: >-
             ./gradlew connectedDebugAndroidTest
-            -Pandroid.testInstrumentationRunnerArguments.class=com.bellfamily.bastischool.MainActivityStartupTest,com.bellfamily.bastischool.SweepRepairsRouteTest,com.bellfamily.bastischool.ui.verbs.VerbsRouteTest,com.bellfamily.bastischool.ui.bonds.NumberBondsRouteTest,com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest,com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest,com.bellfamily.bastischool.ui.vocabulary.FoodVocabularyRouteTest,com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest,com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest
+            -Pandroid.testInstrumentationRunnerArguments.class=com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTest,com.bellfamily.bastischool.ui.memory.MemoryPairsOwnerTest,com.bellfamily.bastischool.MainActivityStartupTest,com.bellfamily.bastischool.SweepRepairsRouteTest,com.bellfamily.bastischool.ui.verbs.VerbsRouteTest,com.bellfamily.bastischool.ui.bonds.NumberBondsRouteTest,com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest,com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest,com.bellfamily.bastischool.ui.vocabulary.FoodVocabularyRouteTest,com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest,com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest
             --console=plain
       - name: Upload Android instrumentation reports
         if: always()
@@ -150,7 +150,8 @@ jobs:
           if-no-files-found: error
 
   browser-tests:
-    runs-on: ubuntu-latest
+    # Playwright 1.51.1 supports 24.04; ubuntu-latest now selects unsupported 26.04.
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

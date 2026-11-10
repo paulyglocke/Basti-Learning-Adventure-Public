@@ -1,0 +1,17 @@
+{
+  "baseline": "2ff8820bc7f89c0b0421a7df61a1fbf152a77352",
+  "debugApkSha256": "ff1893d64ece2a6cc3d621f94120991728cec79179a715a0f847e42374c854ed",
+  "runtimeSourceSha256": {
+    "app/src/main/java/com/bellfamily/bastischool/MainActivity.kt": "3d2d8850ffe883a766f924dfe684bbb0dd58b6a9e9eadc6886c88b858d211554",
+    "app/src/main/java/com/bellfamily/bastischool/ShellNavigation.kt": "946de1c7d3a75d50ee779d7915f5d10eb852cdc2c680fa342006b6b27ec76b5e",
+    "app/src/main/java/com/bellfamily/bastischool/learning/memory/MemoryPairs.kt": "6155e53b04d8d9d033d3609de666a13a3f26cd830447368677d739b36b85f083",
+    "app/src/main/java/com/bellfamily/bastischool/learning/memory/MemoryPairsAudio.kt": "caf2798f65ebaa10e98187d27b0d6374ccdd47fd0e632e51663c06ae2091711d",
+    "app/src/main/java/com/bellfamily/bastischool/learning/memory/MemoryPairsHost.kt": "34cab0e1681fc08bee041d5aff7ffc041402ad7b8a78b20c33b30d1d5a49ebf4",
+    "app/src/main/java/com/bellfamily/bastischool/learning/progress/ProgressCodec.kt": "5e844573976a39dc420c0b0e33f2616d3fd8e287284eb3dcc3963f12cd648561",
+    "app/src/main/java/com/bellfamily/bastischool/learning/progress/ProgressModels.kt": "c5d3b4df5f39cc8e3e6b4578362d2ec9032a6d49bd095da585ec8521a4957fbb",
+    "app/src/main/java/com/bellfamily/bastischool/ui/home/HomeActivityArtwork.kt": "e3f055ad65f8053b8901117f417666f65ca8d315a825b2834a7aeeb1270501e7",
+    "app/src/main/java/com/bellfamily/bastischool/ui/home/HomeCatalogue.kt": "be222eba2a477358cc8b7a4d73a5ff00db47b85f294e6443eba7b0068292c685",
+    "app/src/main/java/com/bellfamily/bastischool/ui/memory/MemoryPairsScreen.kt": "0e8c5c46841708f790fd7649064069f1a8f3697b6b1e1e27f3b0dcbfafa9fbd1",
+    "app/src/main/java/com/bellfamily/bastischool/ui/memory/MemoryPairsViewModel.kt": "fbf6c5a7a6341f3953d1aa4fe84bb6c2ea0bf620d39a2f466f3f4d96583a3fa7"
+  }
+}

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.bellfamily.bastischool.ui.memory.MemoryPairsLayoutTest" tests="4" failures="0" errors="0" skipped="0" time="103.366" timestamp="2026-11-10T08:58:29" hostname="localhost">
+  <properties>
+    <property name="device" value="Basti_ThreePass_20261106(AVD) - 15" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="bothEightCardBoardsKeepTargetsHelpFeedbackAndKeyboardReachable[de=false-font=1-landscape=false]" classname="com.bellfamily.bastischool.ui.memory.MemoryPairsLayoutTest" time="26.831" />
+  <testcase name="bothEightCardBoardsKeepTargetsHelpFeedbackAndKeyboardReachable[de=true-font=1.5-landscape=false]" classname="com.bellfamily.bastischool.ui.memory.MemoryPairsLayoutTest" time="24.636" />
+  <testcase name="bothEightCardBoardsKeepTargetsHelpFeedbackAndKeyboardReachable[de=true-font=2-landscape=true]" classname="com.bellfamily.bastischool.ui.memory.MemoryPairsLayoutTest" time="20.55" />
+  <testcase name="bothEightCardBoardsKeepTargetsHelpFeedbackAndKeyboardReachable[de=false-font=1-landscape=true]" classname="com.bellfamily.bastischool.ui.memory.MemoryPairsLayoutTest" time="21.962" />
+</testsuite>

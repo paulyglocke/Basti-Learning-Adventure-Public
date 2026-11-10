@@ -1,5 +1,21 @@
 # Progress Tracker Specification
 
+## Memory Pairs evidence (2026-11-09)
+
+One completed two-card selection records a shared attempt; first flips, repeated
+clicks, listening and modelling never fabricate an attempt. Picture pairs use
+`skill.memory.picture_pairs`; numeral ↔ quantity uses
+`skill.math.number_quantity_pairs`. Context identifies mode and 2/3/4-pair board.
+Mismatches record the selected relationship without child-facing negative scoring.
+Successful matching records cumulative Replay/Hint support for that relationship;
+completion is deduplicated through the same repository, including two-pair boards.
+Two-pair completion extends the existing codec allowlist without a wire-format
+change. New code reads previous progress; downgrading to an older reader after
+writing two-pair completion evidence is unsupported. Per-card exposure counts remain in the board journal; no shared exposure-event
+schema or parent dashboard is introduced. Do not infer vocabulary production,
+reading skill, generalised memory mastery or speed-based ability from this game.
+
+
 ## Goal
 Answer:
 1. What has Basti practised?

@@ -1,5 +1,14 @@
 # Art Direction & Asset Rules
 
+## Memory Pairs starter (2026-11-09)
+
+Animal cards reuse the six canonical Vocabulary PNGs. Card backs, dot groups and
+the distinct Home matching thumbnail are native Canvas illustrations. Hidden
+faces do not leak animal identity through decorative differences. Matching is
+reinforced by readable Pair found text and border treatment, not colour alone.
+No generated replacement animals or extra raster assets are needed for this slice.
+
+
 ## Production rule
 Avoid emoji as final production artwork.
 Emoji may remain temporarily as migration placeholders only.

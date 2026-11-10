@@ -668,6 +668,12 @@ attribute/colour recognition, free placement, three-step actions or inhibition.
 
 Build one shared matching engine rather than separate matching implementations for each content type. It should support picture ↔ picture, number ↔ quantity, uppercase ↔ lowercase, English ↔ German, animal ↔ action, animal ↔ habitat and emotion ↔ expression.
 
+Implementation checkpoint — 2026-11-09: native animal picture pairs and
+number ↔ quantity boards implement 4/6/8 cards with child-controlled turn review,
+explicit model help, saved configurations, bilingual audio and shared progress/
+balloons. Remaining pair types below are future curriculum. Automated/physical
+status is tracked in TESTING_QA_SPEC.md and the Memory Pairs review.
+
 ## Role
 
 Second recommended game.

@@ -1,5 +1,23 @@
 # Content and Data Specification
 
+## Memory Pairs starter content (2026-11-09)
+
+Animal picture matching consumes the six shared Vocabulary animal IDs, bilingual
+labels and canonical artwork mapping. Number matching consumes semantic numbers
+1–5, with one numeral and one dot-group face per relationship. Exactly 2/3/4
+unique relationships produce 4/6/8 unique card IDs; animal pictures intentionally
+appear twice as the matching pair. Seeded generation shuffles positions; Play again
+changes the selected relationship set and deck relative to its previous board.
+No duplicated translated-word catalogue or label-equality correctness check.
+
+Each mode/size has its own bounded checksummed journal preserving deck, phase,
+first/second reveal, found mask, per-card exposures, per-pair attempts/support and
+completion acknowledgement. A modelled pair creates exposure/Hint support, never
+a fabricated correct selection. Board sizes are explicit and independent of the
+global 5/10-question setting. Future relationship types must add reviewed content;
+this starter does not implement word, phonics, habitat or bilingual pair variants.
+
+
 ## Role
 
 This document owns canonical content identity, schema contracts and validation. [MASTER_PRODUCT_LEARNING_ROADMAP.md](MASTER_PRODUCT_LEARNING_ROADMAP.md) defines what to teach; [NATIVE_ARCHITECTURE_SPEC.md](NATIVE_ARCHITECTURE_SPEC.md) defines storage/runtime ownership. Progress meaning belongs to [PROGRESS_TRACKER_SPEC.md](PROGRESS_TRACKER_SPEC.md), speech policy to [VOICE_AUDIO_SPEC.md](VOICE_AUDIO_SPEC.md), and artwork rules to [ART_DIRECTION.md](ART_DIRECTION.md).

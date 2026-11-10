@@ -1,5 +1,23 @@
 # Native Architecture Specification
 
+## Native Memory Pairs starter (2026-11-09)
+
+`learning/memory` owns a pure semantic matching state machine used by animal
+picture pairs and numeral ↔ quantity pairs. `MemoryCard` stores relationship ID,
+face kind and copy identity; positions and translated labels never define a match.
+`MemoryPairsHost` uses the existing atomic storage/progress interfaces for six
+configuration-specific write-ahead journals. The Activity-scoped owner confines
+storage to one worker, reconciles late language/configuration changes and rejects
+stale speech after navigation/backgrounding. A fresh owner restores silently.
+
+MEMORY_CHOOSER and MEMORY_GAME use validated mode/2–4-pair arguments in shell
+saved state; Options retains both. Unknown arguments safely return Home. This is
+a native activity with no WebView dependency, new audio engine or settings store.
+The existing progress codec also accepts two-task completions; previous record
+sizes and the wire format/version remain compatible. Review/acceptance evidence
+is in [the Memory Pairs review](docs/memory-pairs-2026-11-09/README.md).
+
+
 ## Role and scope
 
 This document owns native boundaries, state ownership, persistence and migration gates. [MASTER_PRODUCT_LEARNING_ROADMAP.md](MASTER_PRODUCT_LEARNING_ROADMAP.md) owns product direction; [CONTENT_DATA_SPEC.md](CONTENT_DATA_SPEC.md) owns shared schemas; [UX_NAVIGATION_SPEC.md](UX_NAVIGATION_SPEC.md) owns navigation behavior; [TESTING_QA_SPEC.md](TESTING_QA_SPEC.md) owns verification. Domain behavior remains in [PROGRESS_TRACKER_SPEC.md](PROGRESS_TRACKER_SPEC.md), [GAME_DESIGN_SPEC.md](GAME_DESIGN_SPEC.md) and [VOICE_AUDIO_SPEC.md](VOICE_AUDIO_SPEC.md).
