@@ -1,4 +1,64 @@
-# Session handoff — 2026-10-21
+# Session handoff — 2026-11-11
+
+## Pattern Builder (2026-11-11, completed locally)
+
+Owner approved AB/AAB/ABC animal/shape patterns after the Memory Pairs checkpoint
+was committed and pushed as `456ab280624095d15379acb3fb583b13c082bfde`, the baseline
+for this work. The owner subsequently requested committing and pushing Pattern
+Builder to main on 2026-11-11. The retained validation describes the pre-commit
+state. Prior hosted baseline run 42793753994 passed all required jobs; hosted
+checks for the new commit are separate from the local results below.
+
+Implemented `learning/patterns` rules/content, checksummed write-ahead host and
+shared-controller audio; `ui/patterns` chooser, owner and construction boards;
+validated PATTERN_CHOOSER/GAME routing; and a new illustrated Home entry in Maths.
+Home has 31 entries: 28 native and three retained web entries. Repeated symbols
+have a bounded reducer while old unique-item sequencing guards stay unchanged.
+Two example groups remain fixed above the workspace on narrow screens and beside
+it on wider screens. Work scrolls independently and resets for a new question.
+
+Saved 5/10 rounds alternate animal/shape contexts and avoid identical tasks and
+repeated animal combinations. Play again changes the plan and avoids immediate
+boundary repetition. Three journals freeze rules, symbols, palettes, placements,
+checked answers and support. Only complete changed Check records an attempt;
+edits/Undo/pronunciation are unscored. Wrong work remains editable; correct work
+locks until Next. Options/language/recreation retain the board; fresh-owner restore
+is silent. Progress, lazy speech, atomic storage and balloon rewards are shared.
+
+Final verification: **689/689 JVM**, both debug APKs, lint (0 errors, 7 existing
+warnings, 2 informational findings), **10/10 selected API 35 phone** and **4/4
+separate tablet layouts**, all zero failures/errors/skips. Phone selection covers
+all three rules in real 5/5/10 rounds, restoration, Options, rewards, owner/lifecycle,
+four layouts, startup and three existing sweep cases. Layouts cover every rule and
+both contexts in EN/DE, 1×/1.5×/2×, portrait/landscape, keyboard, >=48dp targets,
+constant slots and fixed-reference visibility. Catalogue generation and motion
+parity checks pass. The new route/owner cases join the previous 22 in the focused
+24-case CI gate. Local results do not claim all 24, full app instrumentation or a
+new browser run; retained web runtime is unchanged.
+
+Review: [implementation and gallery](docs/pattern-builder-2026-11-10/README.md).
+It contains 49 genuine final screenshots: 17 production phone, 16 phone component,
+16 tablet component. Representative screenshots were visually reviewed. Raw JVM
+reports, Android XML/logs, lint findings, exact source/APK hashes, capture inventory
+and emulator cleanup proof are retained. Final APK/source identity matches both
+successful Android runs. Shared UiAutomation screenshot extraction is reused by
+the retained Memory capture wrapper without changing its behavior.
+
+Earlier runs are preserved separately: pre-refinement phone 10/10, a DDMLib
+property timeout with no app assertions, and a zero-test Android system failure.
+The earlier disposable AVD's temporary backing directory disappeared and could
+no longer launch. Final runs used an independent persistent API 35 AVD,
+`Basti_Pattern_20261111`, 12 GB data, four CPUs, 6 GB RAM and host graphics. Only
+hardware config was copied; original Medium Phone userdata was untouched and its
+config hash is unchanged. After tests, display overrides were reset to original
+1080×2400/density 420, airplane restored to original 0, and the emulator gracefully
+closed; adb confirms no attached device. No physical device, data wipe or snapshot
+deletion. The lost earlier disposable state was unavailable to restore.
+
+No implementation work remains for this slice. Physical S24/Fire, actual TalkBack/
+switch access, child comprehension, installed offline voice quality and signed
+in-place upgrade acceptance remain owner-managed and NOT RUN. These emulator
+checks do not authorize legacy removal. No tests/emulator are still running.
 
 ## Memory Pairs starter (completed locally 2026-11-10)
 

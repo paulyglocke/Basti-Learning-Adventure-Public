@@ -446,3 +446,21 @@ give neutral retry feedback. A correct choice exposes an explicit Continue.
 Options returns to the activity and language switching preserves the current
 question identity and assessment state. Back returns to the Animals & Nature
 category; Home returns to illustrated Home.
+
+## Pattern Builder (2026-11-10)
+
+Home → Numbers & Maths / All Activities → Pattern Builder opens three illustrated
+rule choices (AB/AAB/ABC). Two example groups remain visible while the child fills
+the next group. Picture choices are reusable, so AAB can use the same picture
+twice. Tap a placed picture to remove it, or Undo the last occupied space. Only a
+complete changed Check evaluates; unchanged incorrect work cannot score again.
+A wrong answer stays editable with calm guidance. Success locks until explicit
+Next; completing the round uses shared balloons and immediate navigation.
+
+Separate Listen controls never place a piece. Help explains the repeating unit
+without filling the board; supported success retains Hint evidence. Options,
+language and recreation preserve exact work. Back from a game returns to its
+level chooser, chooser Back/explicit Home return Home, and each level resumes its
+own round. There is no timer, precision drag requirement, flip/attempt grade or
+mandatory animation. Symbol position/meaning, shape and labels provide cues;
+colour alone never identifies the answer. Controls remain scroll/keyboard reachable.

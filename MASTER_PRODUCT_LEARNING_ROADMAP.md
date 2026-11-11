@@ -2227,6 +2227,16 @@ shared audio, progress and balloons. Other pair variants remain future curriculu
 physical acceptance stays separate. See the
 [Memory Pairs review](docs/memory-pairs-2026-11-09/README.md).
 
+## Pattern Builder starter checkpoint — 2026-11-10
+
+Native AB/AAB/ABC extension uses visible repeating groups, reversible picture
+placement and explicit Check. Alternating animal/shape contexts reuse canonical
+content and provide bounded variation, with separate rule skills, saved 5/10
+rounds, bilingual audio and shared balloons. This adds the introductory Patterns
+concept; free-form pattern creation, missing-middle patterns, adaptive difficulty
+and story-game application remain future curriculum. Evidence/physical status:
+[Pattern Builder review](docs/pattern-builder-2026-11-10/README.md).
+
 ## Near-term decision framework
 
 When choosing the next task, prefer work that does at least one of the following:

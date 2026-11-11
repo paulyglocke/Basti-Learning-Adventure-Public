@@ -1,0 +1,1048 @@
+{
+  "tests": 689,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "suites": [
+    {
+      "name": "com.bellfamily.bastischool.AdditionNavigationTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "3a845a39d782a797dffcb6bb5035a5d4ef58aee7239638583f716e41ad357f08"
+    },
+    {
+      "name": "com.bellfamily.bastischool.ClockNavigationTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "1353291619c86c1650f2b7db4c3c00457bbd1b78652d24ec6c988bf0a14da0d5"
+    },
+    {
+      "name": "com.bellfamily.bastischool.CompareQuantityNavigationTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "f98575ffe3ea326db12870489c65e779de8120deb514bf2f6a0523b85f1fabd2"
+    },
+    {
+      "name": "com.bellfamily.bastischool.HomeActivityArtworkTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "925e75bfffd3bd92bb273713553d151f47036961eeedab863f1f6585c1c9b869"
+    },
+    {
+      "name": "com.bellfamily.bastischool.HomeCardsTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "d0ebf6a09fa49a90087c9eb2f58bd2ff3f4a4d93ad376b68d11aa48ebdee34ad"
+    },
+    {
+      "name": "com.bellfamily.bastischool.HomeIntegrationTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "ee5069656e377be2d51a68d93409994167c2d8545414380305fadc02a6c9035c"
+    },
+    {
+      "name": "com.bellfamily.bastischool.LegacySpeechTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "de07670dafe36cd122317261f67aff9090e0ae67df3895a9754d3fb68a351c6e"
+    },
+    {
+      "name": "com.bellfamily.bastischool.MemoryNavigationTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "a38a52de80ebc6828ef8a59763469b8ff04c394e7e092d3115cb34c9bceb25e2"
+    },
+    {
+      "name": "com.bellfamily.bastischool.MonthsNavigationTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "8de743861214b8be14e296e3038c9332c149c33c19fd86d40c1d806c0f7f66b1"
+    },
+    {
+      "name": "com.bellfamily.bastischool.NumberOrderNavigationTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "4e4f8f2a01373b1882e2255359e570cb41963e43b22bf0cdff6fb70185962892"
+    },
+    {
+      "name": "com.bellfamily.bastischool.PatternNavigationTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "f2fd8196b1fc34d7e0f797b9bb763bf68bad457c6c730477b8f55e07d58ae210"
+    },
+    {
+      "name": "com.bellfamily.bastischool.PrepositionsNavigationTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "57d6d947ec16a75f48f5e5f4221f7b499e3ba2137ba2e7fb07a4563f51193181"
+    },
+    {
+      "name": "com.bellfamily.bastischool.QuantityMatchNavigationTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "8cbeba397490774dceac1350047d3653e4eaabd7539ad677c2b139f5501d37af"
+    },
+    {
+      "name": "com.bellfamily.bastischool.SeasonsNavigationTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "fd9d2cd55ac50b4fa53efe8094227f2888b64a91f39ed416d4f028be27238385"
+    },
+    {
+      "name": "com.bellfamily.bastischool.ShellAudioPreferencesTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "797b0915d6b346869f265e5afbf4f70b0d034e3bf32932c58498df8fbc717c63"
+    },
+    {
+      "name": "com.bellfamily.bastischool.ShellNavigationTest",
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "744207bb843a4a0de1e06c83d2114826242d11e37b2af7f09f6f453307078be0"
+    },
+    {
+      "name": "com.bellfamily.bastischool.SubitisingNavigationTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "0396bf6c287358f7cd2b9bbfb175413827a6b134a013fefc631ef18fe3332b16"
+    },
+    {
+      "name": "com.bellfamily.bastischool.TellMeNavigationTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "e6be37850398dd1e94f8457c144a7ce1e8c4cfde88ec1c42510e13b299f7e22f"
+    },
+    {
+      "name": "com.bellfamily.bastischool.VocabularyNavigationTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "8808e4ea9ba0ad2ab7a53e69c5e7e59ac98ad228876c7304b14cb0df29ceb944"
+    },
+    {
+      "name": "com.bellfamily.bastischool.WilmaNavigationTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "d0212c57149f2ae2ca7e1f9bb5446d1ccb61b4f0c4dcba806e00543575090621"
+    },
+    {
+      "name": "com.bellfamily.bastischool.audio.AudioControllerTest",
+      "tests": 23,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "0b0c9bc528d59e1ccce66730c2e174c64136c4928165ef44d411c37f98fbe69c"
+    },
+    {
+      "name": "com.bellfamily.bastischool.audio.CelebrationSoundTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "9321b14348996b07ba06107595da6532d66f5bef579dac5a702f11d560a07919"
+    },
+    {
+      "name": "com.bellfamily.bastischool.audio.LazyAudioControllerTest",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "52c8881379789d70ff445f92bf296041e8c96cd1464575d57024362512238060"
+    },
+    {
+      "name": "com.bellfamily.bastischool.audio.SpeechSanitizerTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "ad6096cb8ab6904a87d6b78a67215e25e935dcdf5a8dd928971772ba2d7d1f6f"
+    },
+    {
+      "name": "com.bellfamily.bastischool.audio.SystemSpeechEngineTest",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "af7718cf75b49bc375ebc9a26713bdc9e0e87d4f4193e00702022e52cb3a54bc"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.addition.AdditionChallengeTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "b47d38b5f844028243c1fe6f5219f9459ac9c846a0cf1cf69d3f99f2efce0530"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.addition.AdditionHostTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "dd02d2bd7631090b036cf15c563e38a59bbe35e82bfe19ce15dc3bd00f62569d"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.addition.AdditionTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "75a64fe199427d6f3e09f19f08a58eb36be6a35b3fa84c55feffe338d55933bb"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.addition.MixedArithmeticTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "f1441a1098f8602c52a95c36d4a4f10df7eb1b341e4f441c339f8550f7aeae78"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.animalgroups.AnimalGroupsHostTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "ba569563d65445c17f343128f07bc14e91b50b6c87dba1f20d6c384234e46a88"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.animalgroups.AnimalGroupsTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "49b5f5936c6f9d5852b83ac9826389fb951f98a4a425007cedcfd4545c779429"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.animals.HabitatExploreContentTest",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "6d98e1d85dba25150545e2657c60ef461bb8b81f7fbee0276060fcacaafee090"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.animals.HabitatMatchingContentTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "643ce5511ed7c4eb946ea09f33d96a5c252206b4a534b53748658b641acea352"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.animals.HabitatMatchingHostTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "0dec784ce6915a53b064a14f1d78d75b09c09c38f297b4dd3b8c28fe57fa4105"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.bonds.NumberBondsTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "b8ecec9efbbe33c25eff89102346d15ec4617b110ce23cde337764c17725ac9d"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.clock.ClockPracticeTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "5976fbec5e122f9466e97e136191fa82b1850b624fbda638e62183a7a99927ac"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.clock.ClockTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "9dd979ec19bc1a1c5186881d0dd217c7a72f4671b5080429b11660405a2dea6c"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.colours.ColoursContentTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "680af3597fdb66e2276aa55abd0a25575c1667f848f2cdf481d86a1885382f0a"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.colours.ColoursHostTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "a798c6f021a41e42bf36d441d4bd78e1971734567d088e33e195d3c18a15ccd9"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.colours.ColoursSelectionStoreTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "d6321f4f667b8650ef6be5d108d7dae9125172a3c640c5bd15be2531bc6eef8b"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.colours.MatchColoursContentTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "c328c6cd19b434f7f9820676e662021331e41f7558a785c0c9b6046851ae93dc"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.colours.RainbowContentTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "12afbfbbbf5036e7fd0bb6cce83fe32f5e3820b73caf22d8d6d092055719ea24"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.colours.RainbowOrderPersistenceTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "31a8e9e28086a58a7059e99b096f476269189d796767b49a7d1c0990d772d86b"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.coloursort.ColourSortHistoricalCompatibilityTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "66a641bcea5441207b5b595d6180013d18d17e431a6cd222c8c3aa528c279e12"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.coloursort.ColourSortHostTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "40a523c79b181165a192e180e256de1cd6b2d848a526ea4c5710e93f35de126a"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.coloursort.ColourSortTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "ad49989183fb8c1229e9c1ee7f063724caaa5f06f995f8a7feb889b8bc27a2f5"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.coloursort.FourColourSortTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "07e603c617c46b78c3ef83b57c77d589ee3305dba138852b06bb674c4bdacecf"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.comparequantity.CompareQuantityHostTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "84791857c3e76badbee7c3d8919069623bb32f92a130659f52d357e83e0fb394"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.comparequantity.CompareQuantityTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "1afdb7cc04be31a63956dbf9be2af61612513c86efeb3ef63a99a307d72d5267"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.content.ContentRepositoryTest",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "f0776da59fa3eeea398da7e4dd6592fa7a2c03e9fb17938c98c19e7486be5bce"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.content.SeasonContentTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "8115b9b98fd54cfd19745216c2ac7204971ecd13feee263debace9599f24cf68"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.counting.CountingTrayTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "b632a9b96cc66e2e8df857ab579def4802ac73744abab68909c660a1ea4ba01c"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.follow.FollowContentTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "0f57f0b2aa825a70a80a61b028ebad763e47d3a7cd7222d8f36ef096df6ff332"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.follow.FollowRecoveryTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "b28eb401abed3c19e28216a1b48e7321fd383f83d13c81fa569b3847b7c8125d"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.follow.FollowTwoTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "8aff1ffd2861b4725b17e00b7356979790cf5c767b7d03266dfc7f4b731e2f1f"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.letters.LettersContentTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "ac886263d1e42cd254accc23ce098bd1656d6dd7570ae27051eaab93719f0a48"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.memory.MemoryPairsTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "bcb74460dca71e2c5063366068a695c2962b7c23583b00b62488387010309ba8"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.months.MonthsBetweenTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "cd011f77a025a9becc676618b2d2f32e17dd88b849e7ffeaea18b5fd79747716"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.months.MonthsBuildYearFourTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "39e7e7d30f8aede0eb35cba7c14bbe13e18718f27d18e751927223b10a0b9747"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.months.MonthsBuildYearTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "f7f8979f140afac889d13597516d2eb37465afc4db2e6d14482ffb893a45cd1f"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.months.MonthsMissingTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "458f7a0a3a444c90e9cc6d22cdba2211040d3544e11341b4eaf7d1b527909b97"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.months.MonthsQuestionsTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "e9f9fd89e8dfe616eb387becb1801ba131c419abc2e148499920494c573d786f"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.months.MonthsSeasonWheelTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "f3fcb33c6a848cba637b2803a0b35d2f016b940aa7bdb1a6573bf67db50f423a"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.months.MonthsSeasonsMatchTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "29976281b5aae35562714857df4d5148b45c1cb737562e756176d8e6ed12848c"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.months.MonthsTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "282ef698da96fb45fb7fc81e06d14d1c0274c10f82adace7af517597811d6759"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.months.MonthsWeatherTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "2c1095647774fad0cbfe26e3dda78a574c7654d1fe145e888ef19f609709c976"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.numberorder.NumberOrderHostTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "f7fa59e91b5ff2ecc127537e4d4b86dd7ec4b51fd44fb499544bb425b887e312"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.numberorder.NumberOrderTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "4d3f35175774921d9704233ab05e681051cfa7ac62110efb3c74cbb60ed359e7"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.patterns.PatternBuilderTest",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "ee2f1ac5f443dc1cab2887020c8a4c9b1cfe23b1b88f978975857436aada3056"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.prepositions.PrepositionsAudioTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "8ed0c1e560d1827ed1dc74150d6b192b12784ef428fba317830787bc2131f950"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.prepositions.PrepositionsContentTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "0597935d17eef565a213086eae11453a1ce032464c39321958508edeb0ffa78d"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.prepositions.PrepositionsExpansionTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "04504bf9a3932013208903878a2782910b59a20fab40a6cc6447795d83d0d6cf"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.prepositions.PrepositionsGuidedAudioTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "7c9b78070a02c134c46fdb3962a8c01c916215fd96d37a7dd168563ae0a38a2d"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.prepositions.PrepositionsHostTest",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "d6c6ff00f75b15dbbf328c4aa55784602532b455b9fe2ec36c8ed8c6d2f68346"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.prepositions.PrepositionsReviewTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "97bf3ed928b8b314e08a9e7cb08c02aa9fcbb512a6218eebadb232cf323dceea"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.prepositions.PrepositionsRevisionTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "34c558c7279f58861d8096d2ab64ecbe06921ee3e52db54e4465748b6c453057"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.prepositions.PrepositionsV2RestoreTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "d25654aa98c1d2f58c20627be3d698db68f82991565de1e6898cbf93dcf3c28d"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.prepositions.PrepositionsWordingTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "2202872901bc192b4fa2271ca3dc49e7b0284a6c8986d462f152c21fd21c2710"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.progress.ProgressCodecTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "c8e38bc969601b859e12abff92a068468b41e36c47386cf5ac9db06fba1ef69c"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.progress.ProgressRepositoryTest",
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "61e9798ada213df33f56616f4dc4aa472342cb72dc412ba0678e338adf33d471"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.progress.SessionProgressRecorderTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "ecac85d57d8daab0ed7bd9abc2e02fc176024c9a23159a4b62301612dea1660e"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.quantitymatch.QuantityMatchHostTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "e483dd61d3ad03c1f832432741a438c3056d940f12726ece523ba71ab99b35a2"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.quantitymatch.QuantityMatchTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "76caa1fe35bf63f356bf56828f9b589447f28c068e8406bcd0449cd7c2ef56ed"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.scenedescription.SceneDescriptionContentTest",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "313fc1cf01239b58493081d8a6f5d0168d11d9019bddf91cdf9005702113b8b8"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.schoolskills.SchoolContentStartupTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "d7001a3a57fba40bb60e48be0c19119607115f9c03612670ca20ed28a9aefe41"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.seasons.SeasonsAudioTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "674d864e572a9e980f7336d3929064bcf81ee24cdd0f294e227e3e4eb01cda14"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.seasons.SeasonsCluesTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "53289ead077e3a21970351e329084c544d0bbbc0ab8cef5c2c597322a96a1569"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.seasons.SeasonsCombinedTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "703fb124f68f29f52589355e4ac675a5e50bcdd921cdd19696054f58f2a8d717"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.seasons.SeasonsContentTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "d6cbd6ece288f5b33ab7d210d11cce129e3d78edc19eeae39de2e4c6dd5406e5"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.seasons.SeasonsCycleTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "aec1d48bfa1d79112664601cd6897de18f0cfc94e7b20760bfe5101172dcad71"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.seasons.SeasonsHostTest",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "984a93bc35aec52b519ba367006ed2fd653c1ee841bae1f9969a12a9cff9631b"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.seasons.SeasonsMatchTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "824529ddcb4995f3aabd3639245fbb85cc7b169464cae137bd842245a8b54783"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.seasons.SeasonsMissingTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "d381ad5064911e29e8a8a32bbf42715896b7c20bf2bb382d6dde3e8559b0cea4"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.seasons.SeasonsOrderTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "9f64941f54aebef412230770af56babd42384ec2ff2a34d9cf3d851d26e072a3"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.seasons.SeasonsProgressionHostTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "d287836a1dde2e64e24e4a9ea63680555ccd914a6c58efacf45ff5d4a48e7c9e"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.sequencing.SequenceAssemblyTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "5dfeb7e6cf243f72e2ba38c84bf46edd38bad58ee994e963ebaaaa6388d94e37"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.session.LearningSessionTest",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "aa9acd332cd6beeeb6c14632b97a17303b166260efe9b2b1dfcfada095394f7c"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.session.SessionCheckpointTest",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "721543b87824b8fcdfced3f4da770a781e01b534f599c24677ea0cb8e2bcc59e"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.session.SessionReducerTest",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "91eedece6876a7848fe6e31057e35e3c18b7ef6ce100bcd1c85eb593044e4a4d"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.session.TaskGeneratorTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "db81f8cb7829a65192190af05f2e4a9decc001f15cb16ca061141edd4dbfb3d4"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.sorting.SortingHostCompatibilityTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "b33d8eebad51a6e4d324d9cce166c731b28ac62652f043ad336e89fbe2f64789"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.sorting.SortingTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "598f9d0e5acca61cd1684b21f0f1c0553fe327c2f97fdb4747b9bedaa7df8c00"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.subitising.SubitisingTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "78afec1de5bd40c980128b03e9d9fe59d3264e8d8ee737942b40884b75342750"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.tellme.TellMeFlowTest",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "24a35a5965093001272fc75387c4b84ccc560776fdfe92c692c723e5a791ce07"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.tellme.TellMeQuestionRotationTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "3ce704e80a4d31de9896f2cafffff76397049507a821a187599e7e404bbe47d8"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.verbs.VerbContentTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "c00de0d17367055834b9f4fe09d8325f261982682ebf09d303e607ee3ff8d418"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.verbs.VerbIntroductionsTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "eb1612386c8897f7accbfa89ea2022de8ef814e126ff76ba81d818d0b159e8f3"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.vocabulary.ClassroomVocabularyCycleTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "12280444d871616f32820b82b480ea0181d1908e427b8b93cc3281f333d2848c"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.vocabulary.FoodVocabularyContentTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "f44889f8b1800c7b522951146c199058b9a5a266adc9c0237b8059af4c53d5f8"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.vocabulary.VocabularyAudioTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "adf04a509e6b0e2cb07f34aa7f23787d06e86429fefd2d645c8d494da6e53b00"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.vocabulary.VocabularyContentTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "ce9477784a6c7418b3a078f38bf5efc947f7d6e017b3bd87190d634856f85be7"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.vocabulary.VocabularyHostTest",
+      "tests": 22,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "0723962f4d477c29007161f0bca65b653549014f8e43ad8153a18415602ef302"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.vocabulary.VocabularyJournalRecoveryTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "37b2437c353686708671a30247a72e983a515dd731ddc9baef1d9b34b449ed26"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.washhands.WashHandsHostTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "64802a19214e16c5c6195a33465907bcf03eaaa109fd46d407df1883a626a458"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.washhands.WashHandsTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "ed5db93e02ec6e89a1ebd3a55ee2771f2837d147267ddf907d772a3e6451d465"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.wilma.WilmaAudioTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "20f7b9d68cbf1eaf129374009f1f78f5b45ba0d0ecce3ea6bc9828ec3f9a9c65"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.wilma.WilmaBilingualTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "c9859a795213a1689d52c06ed85517c1ad1478f2433343515fdd0702f70212ab"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.wilma.WilmaContentTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "4e3f96732060966c52bcc0c3e1a7a69781c134d2c6a3f13e998c98305e181956"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.wilma.WilmaHostTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "a274fca17f60798f388d18ba6f455948a9034a1bda8b5fd61c50db22e5ed832a"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.wilma.WilmaOrderTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "9f06b4a0338f5ed3c5707417bd245e68597b1dfc547c9d3fb016479461eaded6"
+    },
+    {
+      "name": "com.bellfamily.bastischool.learning.wilma.WilmaTodayTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "60241919e45e65057c3350869c6c0f39cf98d24db190164872fe10563f785398"
+    },
+    {
+      "name": "com.bellfamily.bastischool.ui.clock.ClockHandDecorationTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "71075fe7fe27baaf639b38828e3e5ca651501e9d313ba95001133f3b733ee1f4"
+    },
+    {
+      "name": "com.bellfamily.bastischool.ui.colours.ColourSwatchesTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "c3751c77c7f3622c60dee73ed4063c11379334d2670333b43945966cee1673c0"
+    },
+    {
+      "name": "com.bellfamily.bastischool.ui.common.CelebrationStateTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "c74fc07ea4c77bb708a6e3b66c59b7908868069bb4370b0e3bbf0f64e822f48a"
+    },
+    {
+      "name": "com.bellfamily.bastischool.ui.design.BastiDesignTokensTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "ea834e31b6012b9290600c433f0474bd8924ef29f841932706cec1887f4d502f"
+    },
+    {
+      "name": "com.bellfamily.bastischool.ui.homeprototype.HomePrototypeModelTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "204e8300cd0e9e2f1ef34857804cc820e1de15933e100482487837ecaa88ec25"
+    },
+    {
+      "name": "com.bellfamily.bastischool.ui.verbmotion.VerbMotionAudioTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "b0a58f2fcc86d2319f8923f604e0a8bda832a58b7d7d471d949ffa57ce0f8f10"
+    },
+    {
+      "name": "com.bellfamily.bastischool.ui.verbmotion.VerbMotionModelTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "e292180c9cee5436be09ba33ea5013dba7add208a5d92b205af5815b5aa2ad76"
+    },
+    {
+      "name": "com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "a7086599298b13cc6ef65c438d385e3471930e123d16c9775541f1987200041a"
+    },
+    {
+      "name": "com.bellfamily.bastischool.ui.wilma.WilmaDayColoursTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "5b76684e6b604646f1fa708a24a9accc85a9bdbbd102ed83bd426eea239959a6"
+    }
+  ]
+}

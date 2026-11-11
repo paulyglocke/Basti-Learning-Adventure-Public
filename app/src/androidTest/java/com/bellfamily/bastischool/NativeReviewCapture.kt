@@ -22,3 +22,12 @@ internal fun captureNativeReview(name:String,compose:ComposeTestRule) {
     compose.waitForIdle();val bitmap=compose.onRoot().captureToImage().asAndroidBitmap()
     try{saveNativeReviewBitmap(name,bitmap)}finally{bitmap.recycle()}
 }
+
+/** Genuine display capture shared by new native review suites; avoids PixelCopy callback timeouts. */
+internal fun captureNativeDisplayReview(name:String,compose:ComposeTestRule) {
+    compose.waitForIdle()
+    val instrumentation=InstrumentationRegistry.getInstrumentation()
+    instrumentation.waitForIdleSync()
+    val bitmap=checkNotNull(instrumentation.uiAutomation.takeScreenshot()) { "Missing emulator screenshot" }
+    try { saveNativeReviewBitmap(name,bitmap) } finally { bitmap.recycle() }
+}

@@ -1,0 +1,24 @@
+{
+  "baseCommit": "456ab280624095d15379acb3fb583b13c082bfde",
+  "debugApkSha256": "881606cb25f049efc00f69f6fb4cf39ef1ea5aec29e43a19ff64f57010007b6f",
+  "testApkSha256": "730a68e714d73b3a11fa7e760e6ab3177687081a547c0a2f98951e712cd6f6d1",
+  "runtimeSourceSha256": {
+    "app/src/main/java/com/bellfamily/bastischool/MainActivity.kt": "fe2cf7df7fd75eedee007917bcce2cd98e4cced5bc174e9f20d1d0bfc25d10f5",
+    "app/src/main/java/com/bellfamily/bastischool/ShellNavigation.kt": "e060745cf3039d940b0a49f1ad06727356eb281b55170432853dae5fbbe28a6d",
+    "app/src/main/java/com/bellfamily/bastischool/learning/patterns/PatternAudio.kt": "93fcc6a868e75eb0183afb50dc6a4fa73564d534ab77be3f53b3fcc148038f58",
+    "app/src/main/java/com/bellfamily/bastischool/learning/patterns/PatternBuilder.kt": "f60a326ea33d0043f8128f281f215ee457bf55c1383ecfb6a22863bf00d9f96a",
+    "app/src/main/java/com/bellfamily/bastischool/learning/patterns/PatternHost.kt": "4e5859799301d66615bc68bd166e670b4142f0f72b08c81a4829683c9253c846",
+    "app/src/main/java/com/bellfamily/bastischool/ui/home/HomeActivityArtwork.kt": "f527f7fb6918f852a919b5883a1708620f16a26e732db16d5d51b262b1eb634c",
+    "app/src/main/java/com/bellfamily/bastischool/ui/home/HomeCatalogue.kt": "5d9103fa76de85f2db318165f8095943213faca16ef1b0aae5b3fdddceb573f0",
+    "app/src/main/java/com/bellfamily/bastischool/ui/patterns/PatternBuilderScreen.kt": "bcbe782b3beb8a99c9cd04bee4f13e72105bb40ab66ac7f124fff7838fec0dd3",
+    "app/src/main/java/com/bellfamily/bastischool/ui/patterns/PatternBuilderViewModel.kt": "7c3ba6841f2a94f17762cd2d944d8a04d08748225715b70c0f376729e5c4d180"
+  },
+  "androidTestSourceSha256": {
+    "app/src/androidTest/java/com/bellfamily/bastischool/HomeRouteTest.kt": "d5df6c24a7dddd6dd8e4e797148642874c9e213cfea94122cefebc58d5f75a35",
+    "app/src/androidTest/java/com/bellfamily/bastischool/NativeReviewCapture.kt": "2940d2aa3a56fdbdd743f5741fbb66074cb1deb14b2475adc34022810b01ea17",
+    "app/src/androidTest/java/com/bellfamily/bastischool/ui/memory/MemoryReviewCapture.kt": "c35ee07e0612b7aec9b4e55314c1fa6c7ee86b0cc258af7a7daa46c692e9f4a8",
+    "app/src/androidTest/java/com/bellfamily/bastischool/ui/patterns/PatternLayoutTest.kt": "11bbce22627b20f2e23b9b80ae93f4c32aa2ab6183e789f91cec9ebdaeb4ab8e",
+    "app/src/androidTest/java/com/bellfamily/bastischool/ui/patterns/PatternOwnerTest.kt": "dc07b0d694f0a585938b11c913454fcbb631606ae5bcadd3aa150360d1b785a1",
+    "app/src/androidTest/java/com/bellfamily/bastischool/ui/patterns/PatternRouteTest.kt": "2a5367a2f09079738241fe58a9bd975864c3d1bd2724b186dc251c35ed070c83"
+  }
+}

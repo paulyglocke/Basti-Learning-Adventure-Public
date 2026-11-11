@@ -928,3 +928,20 @@ Practice still exposes digital time only after a correct Check. The semantic tim
 drag geometry, snapping, task selection, speech, attempts and persistence are unchanged.
 Narrow-screen label readability and overlap at representative times require rendered
 EN/DE large-text portrait/landscape review before declaring visual acceptance.
+
+## Pattern Builder starter (2026-11-10)
+
+`learning/patterns` owns frozen semantic tasks, editable repeated-symbol
+construction and three level-specific write-ahead journals. PatternBuilder cannot
+reuse the distinct-item constraint of SequenceAssembly/OrderedPlacement: AAB
+intentionally repeats one symbol. Those existing sequencing contracts stay strict.
+AtomicProgressStorage, the shared ProgressRepository and lazy audio controller are
+reused; no universal game/persistence framework or runtime web dependency is added.
+
+The Activity-scoped owner serializes disk work, retains exact tasks/choices/edits,
+reconciles language and rejects late results from another level. PATTERN_CHOOSER
+and PATTERN_GAME store a validated ab/aab/abc argument in shell saved state;
+Options retains it and invalid values return safe Home. New tasks can narrate;
+restoration/return is silent. The shared completion screen/balloons own only
+presentation, with existing route/foreground/audio sound guards. Evidence and
+physical acceptance status are in the [review](docs/pattern-builder-2026-11-10/README.md).

@@ -15,6 +15,12 @@ and numeral ↔ quantity matching with 4/6/8-card boards, exact saved turns, bil
 audio, model help and shared balloons/progress. This bounded starter is independent
 of the normal 5/10-question preference; physical acceptance remains separate.
 
+Pattern Builder (2026-11-10) adds native AB/AAB/ABC animal/shape extension with
+visible examples, reversible placements, explicit Check, bilingual audio, saved
+5/10 rounds and shared balloons. Home now contains 31 live activities (28 native,
+three retained web routes). Automated evidence and physical acceptance remain
+separate; see the [review](docs/pattern-builder-2026-11-10/README.md).
+
 ## 2. Core design principles
 
 - Audio-first: core activities should be usable without independent reading.

@@ -1,0 +1,115 @@
+{
+  "errors": 0,
+  "warnings": 7,
+  "information": 2,
+  "issues": [
+    {
+      "id": "UnusedAttribute",
+      "severity": "Warning",
+      "message": "Attribute `enableOnBackInvokedCallback` is only used in API level 33 and higher (current min is 23)",
+      "locations": [
+        {
+          "file": "/Users/paulbell/Basti-Learning-Adventure-Public/app/src/main/AndroidManifest.xml",
+          "line": "19",
+          "column": "9"
+        }
+      ]
+    },
+    {
+      "id": "UnusedAttribute",
+      "severity": "Warning",
+      "message": "Attribute `resizeableActivity` is only used in API level 24 and higher (current min is 23)",
+      "locations": [
+        {
+          "file": "/Users/paulbell/Basti-Learning-Adventure-Public/app/src/main/AndroidManifest.xml",
+          "line": "20",
+          "column": "9"
+        }
+      ]
+    },
+    {
+      "id": "VectorRaster",
+      "severity": "Warning",
+      "message": "Limit vector icons sizes to 200\u00d7200 to keep icon drawing fast; see https://developer.android.com/studio/write/vector-asset-studio#when for more",
+      "locations": [
+        {
+          "file": "/Users/paulbell/Basti-Learning-Adventure-Public/app/src/main/res/drawable/hour_hand_dinosaur.xml",
+          "line": "3",
+          "column": "83"
+        }
+      ]
+    },
+    {
+      "id": "VectorRaster",
+      "severity": "Warning",
+      "message": "Limit vector icons sizes to 200\u00d7200 to keep icon drawing fast; see https://developer.android.com/studio/write/vector-asset-studio#when for more",
+      "locations": [
+        {
+          "file": "/Users/paulbell/Basti-Learning-Adventure-Public/app/src/main/res/drawable/minute_hand_dragon.xml",
+          "line": "3",
+          "column": "83"
+        }
+      ]
+    },
+    {
+      "id": "ModifierParameter",
+      "severity": "Warning",
+      "message": "Modifier parameter should be the first optional parameter",
+      "locations": [
+        {
+          "file": "/Users/paulbell/Basti-Learning-Adventure-Public/app/src/main/java/com/bellfamily/bastischool/ui/vocabulary/VocabularyActivityChooserScreen.kt",
+          "line": "48",
+          "column": "5"
+        }
+      ]
+    },
+    {
+      "id": "SetJavaScriptEnabled",
+      "severity": "Warning",
+      "message": "Using `setJavaScriptEnabled` can introduce XSS vulnerabilities into your application, review carefully",
+      "locations": [
+        {
+          "file": "/Users/paulbell/Basti-Learning-Adventure-Public/app/src/main/java/com/bellfamily/bastischool/MainActivity.kt",
+          "line": "1281",
+          "column": "13"
+        }
+      ]
+    },
+    {
+      "id": "AutoboxingStateCreation",
+      "severity": "Information",
+      "message": "Prefer `mutableIntStateOf` instead of `mutableStateOf`",
+      "locations": [
+        {
+          "file": "/Users/paulbell/Basti-Learning-Adventure-Public/app/src/main/java/com/bellfamily/bastischool/MainActivity.kt",
+          "line": "367",
+          "column": "33"
+        }
+      ]
+    },
+    {
+      "id": "AutoboxingStateCreation",
+      "severity": "Information",
+      "message": "Prefer `mutableIntStateOf` instead of `mutableStateOf`",
+      "locations": [
+        {
+          "file": "/Users/paulbell/Basti-Learning-Adventure-Public/app/src/main/java/com/bellfamily/bastischool/MainActivity.kt",
+          "line": "369",
+          "column": "37"
+        }
+      ]
+    },
+    {
+      "id": "UseOfNonLambdaOffsetOverload",
+      "severity": "Warning",
+      "message": "State backed values should use the lambda overload of Modifier.offset",
+      "locations": [
+        {
+          "file": "/Users/paulbell/Basti-Learning-Adventure-Public/app/src/main/java/com/bellfamily/bastischool/ui/followinstructions/ClassroomHelperScreen.kt",
+          "line": "143",
+          "column": "38"
+        }
+      ]
+    }
+  ]
+}

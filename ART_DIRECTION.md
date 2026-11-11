@@ -155,3 +155,13 @@ Spring and summer must remain distinguishable at small app-card sizes. Do not de
 The images remain language-neutral. Season names, descriptions, accessibility text and speech are supplied by app content/code.
 
 Production assets may later be converted to appropriately sized high-quality WebP after visual comparison on the target Samsung and Fire devices.
+
+## Pattern Builder starter (2026-11-10)
+
+Animal patterns reuse canonical Vocabulary artwork; no animal is redesigned.
+Circle, square and triangle use clean native Canvas geometry with a shared fill
+colour, so the material isolates shape rather than colour discrimination. Empty
+slots use an explicit question mark, not decorative emoji. Fixed example rows,
+reversible slots and reusable picture choices remain visually distinct. The Home
+thumbnail illustrates an alternating shape sequence. No new raster assets are
+required; physical clarity/child comprehension remain owner-managed acceptance.

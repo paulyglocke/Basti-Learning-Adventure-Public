@@ -574,3 +574,20 @@ creates the existing four-task CompletionEvent; earlier supported/incorrect chec
 distinguishable. Editing, removal and per-step Listen emit nothing. Instruction Replay
 records replay support; Hint records hint support. Step Listen is normal audio-first content
 access and does not lower independence. No score or mastery claim is displayed.
+
+## Pattern Builder content (2026-11-10)
+
+AB, AAB and ABC are explicit semantic rules, not translated-string or colour
+comparisons. Animals consume the six shared Vocabulary IDs/labels/artwork. Typed
+shape.circle, shape.square and shape.triangle symbols own bilingual labels and
+native shape presentation. Each task freezes a two-cycle example, a shuffled
+reusable palette and one-cycle extension target. Repetition within the pattern
+is intentional; the given example is immutable and is never a removable piece.
+
+Seeded 5/10 rounds alternate animal/shape contexts, have unique task identities
+and unique unordered animal combinations within a round. Play again changes the
+plan and avoids repeating the preceding final task immediately. Exact frozen
+plans, placements, checked answers, per-task support and pending progress are
+bounded/checksummed in three journals. Round-setting changes affect the next new
+round, while existing saved rounds keep their length. Content revision and activity
+revision remain local to this new curriculum; old session formats are untouched.

@@ -391,3 +391,18 @@ Progress Repository accepts them; stable attempt/session event IDs make recovery
 idempotent. Starter and Full journals are independent and do not reuse or migrate
 any existing Colours journal. Rainbow Explore remains unscored. No shared progress
 schema or deduplication format changed.
+
+## Pattern Builder evidence (2026-11-10)
+
+Separate skill.reasoning.pattern.ab/aab/abc identities record checked pattern
+extensions, using actual context.patterns.animals/shapes contexts. Placing,
+removing, undoing and pronouncing pictures creates no attempt. An incomplete
+Check or repeated unchanged incorrect Check also creates none. A complete changed
+Check records the ordered submitted group, selected language and cumulative
+Replay/Hint support. Correct work locks; explicit Next and pending-write recovery
+deliver one shared completion event for the existing 5/10 round lengths.
+
+Help names the repeating group without awarding success. Do not infer reading,
+shape naming, generalised reasoning mastery or real-world transfer from this
+bounded extension task. No new progress wire format, dashboard, scoring scheme
+or activity-specific progress repository is introduced.

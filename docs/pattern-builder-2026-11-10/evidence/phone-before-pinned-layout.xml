@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.bellfamily.bastischool.ui.patterns.PatternRouteTest" tests="10" failures="0" errors="0" skipped="0" time="537.077" timestamp="2026-11-10T14:39:29" hostname="localhost">
+  <properties>
+    <property name="device" value="Basti_ThreePass_20261106(AVD) - 15" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="allThreeRulesKeepTheirExamplesRestoreEditedAndCheckedWorkAndCompleteFiveAndTenRounds" classname="com.bellfamily.bastischool.ui.patterns.PatternRouteTest" time="160.316" />
+  <testcase name="offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently" classname="com.bellfamily.bastischool.ui.patterns.PatternOwnerTest" time="6.394" />
+  <testcase name="everyRuleAndContextKeepsTheExampleFixedAndProvidesReachableKeyboardConstruction[de=false-font=1-landscape=false]" classname="com.bellfamily.bastischool.ui.patterns.PatternLayoutTest" time="40.531" />
+  <testcase name="everyRuleAndContextKeepsTheExampleFixedAndProvidesReachableKeyboardConstruction[de=true-font=1.5-landscape=false]" classname="com.bellfamily.bastischool.ui.patterns.PatternLayoutTest" time="37.777" />
+  <testcase name="everyRuleAndContextKeepsTheExampleFixedAndProvidesReachableKeyboardConstruction[de=true-font=2-landscape=true]" classname="com.bellfamily.bastischool.ui.patterns.PatternLayoutTest" time="78.933" />
+  <testcase name="everyRuleAndContextKeepsTheExampleFixedAndProvidesReachableKeyboardConstruction[de=false-font=1-landscape=true]" classname="com.bellfamily.bastischool.ui.patterns.PatternLayoutTest" time="109.533" />
+  <testcase name="homeSurvivesLaunchRecreationAndBackgroundReturn" classname="com.bellfamily.bastischool.MainActivityStartupTest" time="22.803" />
+  <testcase name="matchingOptionsRecreationReturnsToBothOriginalBrowsePages" classname="com.bellfamily.bastischool.SweepRepairsRouteTest" time="36.629" />
+  <testcase name="thumbnailAndStepPicturesDecodeAtBoundedSizeAndMissingArtIsSafe" classname="com.bellfamily.bastischool.SweepRepairsRouteTest" time="0.398" />
+  <testcase name="activityThumbnailsAreVisibleThroughRealBrowsePages" classname="com.bellfamily.bastischool.SweepRepairsRouteTest" time="30.607" />
+</testsuite>

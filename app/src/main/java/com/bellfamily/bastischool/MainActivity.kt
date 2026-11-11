@@ -124,6 +124,7 @@ import com.bellfamily.bastischool.learning.vocabulary.VocabularyPhase
 import com.bellfamily.bastischool.learning.wilma.WilmaPhase
 import com.bellfamily.bastischool.learning.models.ContentLanguage
 import com.bellfamily.bastischool.ui.memory.*
+import com.bellfamily.bastischool.ui.patterns.*
 import com.bellfamily.bastischool.learning.models.ContentId
 
 private val Sky = Color(0xFF79CEF7)
@@ -178,7 +179,8 @@ private val homeCards = listOf(
     HomeCard("🦉", "Match Animals to Habitats", "Tiere und Lebensräume zuordnen", "Match familiar animals with places we explored.", "Ordne bekannte Tiere den entdeckten Orten zu.", mode = "matchHabitats"),
     HomeCard("🐋", "Animal Groups", "Tiere zuordnen", "Group animals by where they live.", "Ordne Tiere nach ihrem Lebensraum zu.", mode = "animalGroups"),
     HomeCard("🎨", "Colour Sort", "Farben sortieren", "Put matching colours together.", "Sortiere Dinge nach ihrer Farbe.", mode = "colourSort"),
-    HomeCard("👂", "Follow the Instructions", "Anweisungen folgen", "Listen, follow steps and practise classroom routines.", "Zuhören, Schritten folgen und Schulabläufe üben.", mode = "follow")
+    HomeCard("👂", "Follow the Instructions", "Anweisungen folgen", "Listen, follow steps and practise classroom routines.", "Zuhören, Schritten folgen und Schulabläufe üben.", mode = "follow"),
+    HomeCard("", "Pattern Builder", "Muster bauen", "Continue patterns with animals and shapes.", "Setze Muster mit Tieren und Formen fort.", mode = "patternBuilder")
 )
 
 /** Filter only after the historical group boundaries, preserving live entry order. */
@@ -215,6 +217,7 @@ class MainActivity : ComponentActivity() {
     private lateinit var nativeVerbs: VerbsQuizViewModel
     private lateinit var nativeVerbExplorer: VerbExplorerViewModel
     private lateinit var nativeBuildFive: BuildFiveViewModel
+    private lateinit var nativePatterns: PatternBuilderViewModel
     private lateinit var nativeMemory: MemoryPairsViewModel
     private lateinit var nativeBuildTen: BuildTenViewModel
     private lateinit var nativeCountingTray: CountingTrayViewModel
@@ -285,12 +288,13 @@ class MainActivity : ComponentActivity() {
         nativeBuildFive = ViewModelProvider(this)[BuildFiveViewModel::class.java]
         nativeBuildTen = ViewModelProvider(this)[BuildTenViewModel::class.java]
         nativeMemory = ViewModelProvider(this)[MemoryPairsViewModel::class.java]
+        nativePatterns = ViewModelProvider(this)[PatternBuilderViewModel::class.java]
         configurePositions()
         restoredSession = savedInstanceState?.getString("legacySession")
         navigation = ShellNavigation.restore(savedInstanceState?.getString("screen"),
             savedInstanceState?.getString("optionsOrigin"), savedInstanceState?.getString("webMode"), restoredSession,
             savedInstanceState?.getString("homePage"), savedInstanceState?.getString("verbId"),
-            savedInstanceState?.getString("memoryMode"), savedInstanceState?.getInt("memoryPairs",2) ?: 2)
+            savedInstanceState?.getString("memoryMode"), savedInstanceState?.getInt("memoryPairs",2) ?: 2, savedInstanceState?.getString("patternLevel"))
         if (!navigation.ownsWebSession) restoredSession = null
         checkpoint = LegacyCheckpoint(restoredSession)
         tts = TextToSpeech(this) { status ->
@@ -326,6 +330,8 @@ class MainActivity : ComponentActivity() {
         // need a second copy in the shell. Completion screens retain the shell title
         // because their content is a summary rather than the active activity heading.
         val contentOwnsTitle = when (screen) {
+            ShellScreen.PATTERN_CHOOSER -> true
+            ShellScreen.PATTERN_GAME -> nativePatterns.state?.completed != true
             ShellScreen.MEMORY_CHOOSER -> true
             ShellScreen.MEMORY_GAME -> nativeMemory.state?.completed != true
             ShellScreen.VERB_LIBRARY, ShellScreen.VERB_LESSON -> true
@@ -380,6 +386,7 @@ class MainActivity : ComponentActivity() {
                                 when (screen) {
                                     ShellScreen.HOME -> if (language == "de") "Bastis Lernabenteuer" else "Basti's Learning Adventure"
                                     ShellScreen.OPTIONS -> if (language == "de") "Optionen" else "Options"
+                                    ShellScreen.PATTERN_CHOOSER, ShellScreen.PATTERN_GAME -> if(language=="de") "Muster bauen" else "Pattern Builder"
                                     ShellScreen.MEMORY_CHOOSER, ShellScreen.MEMORY_GAME -> if(language=="de") "Paare merken" else "Memory Pairs"
                                     ShellScreen.VERB_LIBRARY, ShellScreen.VERB_LESSON -> if(language=="de") "Verben entdecken" else "Verb Explorer"
                                     ShellScreen.VERB_QUIZ -> if(language=="de") "Tieraktionen" else "Animal Actions"
@@ -464,6 +471,10 @@ class MainActivity : ComponentActivity() {
                             HomeBrowseScreen(navigation.homePage, language == "de", ::openHomePage,
                                 ::launchHomeActivity, Modifier.padding(padding), navigation.recoveryFailed)
                         }
+                        ShellScreen.PATTERN_CHOOSER -> PatternChooser(if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            {changeRoute(navigation.openPatternBuilder(it))},Modifier.padding(padding))
+                        ShellScreen.PATTERN_GAME -> PatternBuilderScreen(nativePatterns,navigation.patternConfig,if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                            {changeRoute(navigation.openPatternChooser())},{changeRoute(navigation.home())},Modifier.padding(padding),::popCelebration,{celebrationSound.cancel()})
                         ShellScreen.MEMORY_CHOOSER -> MemoryPairsChooser(if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             {changeRoute(navigation.openMemory(it))},Modifier.padding(padding))
                         ShellScreen.MEMORY_GAME -> MemoryPairsScreen(nativeMemory,navigation.memoryConfig,if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
@@ -907,6 +918,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.VERB_QUIZ -> nativeVerbs.busy || nativeVerbs.saveFailed
             ShellScreen.BUILD_FIVE -> nativeBuildFive.busy || nativeBuildFive.saveFailed
             ShellScreen.BUILD_TEN -> nativeBuildTen.busy || nativeBuildTen.saveFailed
+            ShellScreen.PATTERN_GAME -> nativePatterns.busy || nativePatterns.saveFailed
             ShellScreen.MEMORY_GAME -> nativeMemory.busy || nativeMemory.saveFailed
             ShellScreen.COUNTING_TRAY -> nativeCountingTray.busy || nativeCountingTray.saveFailed
             ShellScreen.FOLLOW_INSTRUCTIONS, ShellScreen.FOLLOW_TWO, ShellScreen.FOLLOW_SCHOOL, ShellScreen.FOLLOW_SCHOOL_ACTIONS,
@@ -949,6 +961,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.VERB_QUIZ -> nativeVerbs.state?.takeIf { it.phase == SessionPhase.COMPLETED && it.completion == CompletionState.ACKNOWLEDGED }?.plan?.id?.value
             ShellScreen.BUILD_FIVE -> nativeBuildFive.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.BUILD_TEN -> nativeBuildTen.state?.takeIf { it.completed && it.acknowledged }?.id?.value
+            ShellScreen.PATTERN_GAME -> nativePatterns.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.MEMORY_GAME -> nativeMemory.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.COUNTING_TRAY -> nativeCountingTray.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.FOLLOW_INSTRUCTIONS -> nativeFollow.state?.takeIf {it.phase == SessionPhase.COMPLETED}?.plan?.id?.value
@@ -1088,6 +1101,7 @@ class MainActivity : ComponentActivity() {
                 syncSettings()
                 changeRoute(navigation.closeOptions())
             }
+            BackAction.PATTERN_CHOOSER -> changeRoute(navigation.openPatternChooser())
             BackAction.MEMORY_CHOOSER -> changeRoute(navigation.openMemoryChooser())
             BackAction.VERB_RETURN -> changeRoute(navigation.returnFromVerb())
             BackAction.LEGACY -> {
@@ -1218,6 +1232,9 @@ class MainActivity : ComponentActivity() {
                 else -> null
             })
         val nativeAudioMode=shellAudioMode(prefs.getString("audioMode",null),prefs.getBoolean("sound",true))
+        nativePatterns.configure(prefs.getString("lang","en")?:"en",nativeAudioMode,prefs.getInt("round",5))
+        nativePatterns.setVisible(foreground && navigation.screen==ShellScreen.PATTERN_GAME,
+            if(navigation.screen==ShellScreen.PATTERN_GAME)navigation.patternConfig else null)
         nativeMemory.configure(prefs.getString("lang","en")?:"en",nativeAudioMode)
         nativeMemory.setVisible(foreground && navigation.screen==ShellScreen.MEMORY_GAME,
             if(navigation.screen==ShellScreen.MEMORY_GAME)navigation.memoryConfig else null)
@@ -1332,6 +1349,7 @@ class MainActivity : ComponentActivity() {
         outState.putString("verbId", navigation.verbId)
         outState.putString("memoryMode", navigation.memoryMode)
         outState.putInt("memoryPairs", navigation.memoryPairs)
+        outState.putString("patternLevel", navigation.patternLevel)
         if (navigation.ownsWebSession) outState.putString("legacySession", checkpoint.read())
         super.onSaveInstanceState(outState)
     }
@@ -1361,7 +1379,7 @@ internal fun NativeOptions(language: String, audioMode: String, round: Int, numb
         }
         SupportTextSetting(language, largerSupportText, onLargerSupportText)
         SettingCard(if (language == "de") "Fragen pro Runde" else "Questions per round") {
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) { FilterChip(selected = round == 5, onClick = { onRound(5) }, label = { Text("5") }); FilterChip(selected = round == 10, onClick = { onRound(10) }, label = { Text("10") }) }
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) { FilterChip(selected = round == 5, onClick = { onRound(5) }, label = { Text("5") }, modifier = Modifier.testTag("options-round-5")); FilterChip(selected = round == 10, onClick = { onRound(10) }, label = { Text("10") }, modifier = Modifier.testTag("options-round-10")) }
         }
         SettingCard(if (language == "de") "Zahlen-Level" else "Number level") {
             FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp)) { listOf(10, 20, 50, 100).forEach { max -> FilterChip(selected = numberMax == max, onClick = { onNumberMax(max) }, label = { Text(max.toString()) }) } }

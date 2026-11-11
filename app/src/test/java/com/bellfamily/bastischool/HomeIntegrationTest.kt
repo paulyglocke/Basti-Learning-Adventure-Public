@@ -9,9 +9,9 @@ class HomeIntegrationTest {
     @Test fun liveCardsDispatchToTheirExistingOrNewDestinations() {
         val expected = listOf("TELL_ME", "VOCABULARY_CHOOSER", "VERB_LIBRARY", "LETTERS", "WEB", "DAYS_SEASONS",
             "VERB_QUIZ", "SUBITISING", "QUANTITY_MATCH", "COMPARE_QUANTITY", "NUMBER_ORDER", "CLOCK",
-            "ADD_TOGETHER", "ADD_CHALLENGE", "SUBTRACTION", "MIXED_ADDITION", "BUILD_FIVE", "BUILD_TEN", "MAKE_FIVE", "COUNTING_TRAY", "WEB", "PREPOSITIONS", "WEB", "MEMORY_CHOOSER", "WASH_HANDS", "HABITATS_CHOOSER", "HABITAT_MATCH", "ANIMAL_GROUPS", "COLOURS_CHOOSER", "FOLLOW_LEVELS")
+            "ADD_TOGETHER", "ADD_CHALLENGE", "SUBTRACTION", "MIXED_ADDITION", "BUILD_FIVE", "BUILD_TEN", "MAKE_FIVE", "COUNTING_TRAY", "WEB", "PREPOSITIONS", "WEB", "MEMORY_CHOOSER", "WASH_HANDS", "HABITATS_CHOOSER", "HABITAT_MATCH", "ANIMAL_GROUPS", "COLOURS_CHOOSER", "FOLLOW_LEVELS", "PATTERN_CHOOSER")
         val cards = homeActivities()
-        assertEquals(30, cards.size)
+        assertEquals(31, cards.size)
         assertEquals(expected, cards.map { it.homeDestination().screen.name })
         cards.filter { it.homeDestination().screen == ShellScreen.WEB }.forEach {
             assertEquals(it.homeId(), it.homeDestination().mode)
@@ -21,9 +21,9 @@ class HomeIntegrationTest {
     }
 
     @Test fun sixBilingualCategoriesCoverTwentyFiveAndMixedRemainsLast() {
-        assertEquals(listOf(14,5,2,5,1,2), HomeCategory.entries.map { it.activityIds.size })
+        assertEquals(listOf(15,5,2,5,1,2), HomeCategory.entries.map { it.activityIds.size })
         val ids = HomeCategory.entries.flatMap { it.activityIds }
-        assertEquals(29, ids.distinct().size)
+        assertEquals(30, ids.distinct().size)
         assertEquals(homeActivities().map { it.homeId() }.toSet(), ids.toSet() + "mixed")
         assertEquals(listOf("Numbers & Maths","Words & Talking","Time & Seasons","Animals & Nature","Colours","Everyday Skills"), HomeCategory.entries.map { it.en })
         assertEquals(listOf("Zahlen & Rechnen","Wörter & Erzählen","Zeit & Jahreszeiten","Tiere & Natur","Farben","Alltag"), HomeCategory.entries.map { it.de })

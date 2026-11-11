@@ -1621,3 +1621,13 @@ It is a coherent learning world in which:
 - games reinforce talking, listening, maths, school readiness and curiosity
 
 The games should make learning feel like an adventure while the underlying system quietly tracks what has been practised, what is becoming secure, and what would be useful to practise next.
+
+## Pattern Builder starter checkpoint (2026-11-10)
+
+A standalone native Pattern Builder introduces AB/AAB/ABC using animal/shape
+contexts, two visible example groups and reversible one-group extension. It shares
+content, audio, progress and completion, while keeping a bounded repeated-symbol
+state machine separate from the existing unique-object sequencing tasks. This
+provides a later consumer opportunity for Build the Bridge and rescue patterns;
+it does not implement either story game or its physics/construction systems.
+See the [Pattern Builder review](docs/pattern-builder-2026-11-10/README.md).

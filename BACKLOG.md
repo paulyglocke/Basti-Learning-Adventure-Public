@@ -96,7 +96,12 @@ Already implemented and not active implementation backlog unless a regression is
 - Further Memory Pairs variants: word/picture, letter case, bilingual, animal/action,
   animal/habitat, emotion/expression and season/clue where educationally appropriate.
   Picture/picture and number/quantity starter boards are implemented; do not duplicate them.
-- Future manipulation-first Maths: generalise the Dinosaur Counting Tray and concrete Build 5/10 boards to other objects and contexts, then explore one more/less, conservation, number stories, patterns, shapes and spatial/measurement concepts. Do not duplicate the existing construction boards or choice-based activities.
+- Future manipulation-first Maths: generalise the Dinosaur Counting Tray and concrete Build 5/10 boards to other objects and contexts, then explore one more/less, conservation, number stories, richer pattern tasks, shapes and spatial/measurement concepts. Do not duplicate the existing construction boards or choice-based activities.
+- Pattern Builder starter is implemented: AB/AAB/ABC with reversible animal/shape
+  construction, visible examples, explicit Check, independent saved rounds and
+  shared progress/audio/balloons. Extend later to missing-middle/free creation or
+  story applications; do not duplicate the starter. Current verification and
+  physical acceptance are tracked in the [review](docs/pattern-builder-2026-11-10/README.md).
 - Extend native Animal First Letters into a reviewed Letters & Sounds progression, keeping written letter matching distinct from true phoneme instruction. The current native written-initial activity uses canonical animal art and unique 5/10 target rounds; rhyme, phoneme work, tracing and grapheme↔phoneme content remain future curriculum.
 - Focus & Flex variants built on shared instruction/rule systems.
 - Feelings and calm self-advocacy language.

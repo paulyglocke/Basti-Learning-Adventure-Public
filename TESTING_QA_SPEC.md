@@ -6,6 +6,47 @@ This document defines verification and feature completion gates. [NATIVE_ARCHITE
 
 **A feature is not done only because it builds.** Record evidence for its behavior and relevant device risks. A code-complete slice awaiting required hardware checks must be labelled as such, not fully verified or eligible for legacy removal.
 
+## Pattern Builder starter (2026-11-11, local verification)
+
+AB, AAB and ABC construction alternate canonical animal and native shape contexts
+in saved 5/10-question rounds. Given examples remain visible while work scrolls.
+Repeated symbols are intentional; the existing unique-item sequencing contracts
+remain strict. Only a complete changed Check records an attempt. Unchecked edits,
+Undo and pronunciation are unscored; Help models the unit without completing it.
+
+- PASS — full JVM **689/689**, zero failures/errors/skips; both debug APK
+  assemblies and lint (0 errors, 7 existing warnings, 2 informational findings).
+- PASS — final focused API 35 phone **10/10**, zero failures/errors/skips:
+  Pattern route/owner, four layouts, startup and three sweep navigation cases.
+  Actual UI completes all three rules in 5/5/10-question rounds and verifies
+  partial/wrong/locked restoration, real Options/language changes, separate
+  pronunciation, Help, exact shared progress, navigation and balloon rewards.
+  Owner checks cover lazy Sound Off, late configuration results, fresh-owner
+  silent restore and canceled background speech. Layout checks cover all six
+  rule/context combinations in EN/DE at 1×/1.5×/2×, portrait/landscape, keyboard,
+  constant placement size, >=48dp targets and fixed reference visibility.
+- PASS — **4/4 separate tablet** layout cases on the same source/APKs, zero
+  failures/errors/skips. Tablet dimensions use emulator display overrides.
+- Reviewed — representative chooser, partial/retry, animal/shape solution,
+  reward, ordinary-text tablet and German 2× phone/tablet captures. The gallery
+  contains 49 genuine screenshots and distinguishes production routes from
+  component tests. This does not claim individual visual review of every image.
+
+The configured CI gate contains 24 selected cases; this local 10-case selection
+does not claim all 24 or complete app instrumentation. Retained web runtime was
+unchanged; no new browser run is claimed. The earlier pre-refinement 10/10 and
+emulator infrastructure failures that ran zero app tests are preserved separately.
+Current source/APK hashes and raw reports are in the
+[Pattern review](docs/pattern-builder-2026-11-10/README.md).
+Test display/airplane settings were restored and the emulator was gracefully
+closed. The original Medium Phone configuration hash is unchanged; its userdata
+and physical devices were untouched. The owner subsequently requested committing
+and pushing this checkpoint on 2026-11-11; retained evidence describes local
+pre-commit validation, not hosted checks for the new commit.
+Physical S24/Fire, actual TalkBack/switch use, child comprehension, installed
+offline voice quality and signed upgrade acceptance remain NOT RUN —
+owner-managed checks. No legacy removal follows from these emulator results.
+
 ## Memory Pairs starter (2026-11-10, locally verified)
 
 Animal picture and numeral ↔ quantity matching use one semantic state machine and

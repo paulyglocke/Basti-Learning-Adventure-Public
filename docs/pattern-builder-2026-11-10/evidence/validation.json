@@ -1,0 +1,483 @@
+{
+  "feature": "Native Pattern Builder starter",
+  "baselineCommit": "456ab280624095d15379acb3fb583b13c082bfde",
+  "completedAtUtc": "2026-11-11T10:34:52.391896+00:00",
+  "localUncommitted": true,
+  "pushed": false,
+  "scope": {
+    "rules": [
+      "AB",
+      "AAB",
+      "ABC"
+    ],
+    "contexts": [
+      "animals",
+      "shapes"
+    ],
+    "roundLengths": [
+      5,
+      10
+    ],
+    "canonicalAnimalCount": 6,
+    "nativeShapeCount": 3,
+    "scoring": "Only complete changed Check submissions record attempts. Editing, Undo and pronunciation are unscored.",
+    "roundVariety": "Alternating contexts, no identical tasks, unique animal combinations; Play again changes exact plan and avoids immediate boundary repetition.",
+    "sharedServices": [
+      "progress",
+      "lazy bilingual speech",
+      "atomic storage",
+      "completion balloons"
+    ]
+  },
+  "jvm": {
+    "tests": 689,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "phone": {
+    "tests": 10,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "report": "phone-final.xml",
+    "cases": [
+      "com.bellfamily.bastischool.ui.patterns.PatternRouteTest.allThreeRulesKeepTheirExamplesRestoreEditedAndCheckedWorkAndCompleteFiveAndTenRounds",
+      "com.bellfamily.bastischool.ui.patterns.PatternOwnerTest.offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently",
+      "com.bellfamily.bastischool.ui.patterns.PatternLayoutTest.everyRuleAndContextKeepsTheExampleFixedAndProvidesReachableKeyboardConstruction[de=false-font=1-landscape=false]",
+      "com.bellfamily.bastischool.ui.patterns.PatternLayoutTest.everyRuleAndContextKeepsTheExampleFixedAndProvidesReachableKeyboardConstruction[de=true-font=1.5-landscape=false]",
+      "com.bellfamily.bastischool.ui.patterns.PatternLayoutTest.everyRuleAndContextKeepsTheExampleFixedAndProvidesReachableKeyboardConstruction[de=true-font=2-landscape=true]",
+      "com.bellfamily.bastischool.ui.patterns.PatternLayoutTest.everyRuleAndContextKeepsTheExampleFixedAndProvidesReachableKeyboardConstruction[de=false-font=1-landscape=true]",
+      "com.bellfamily.bastischool.MainActivityStartupTest.homeSurvivesLaunchRecreationAndBackgroundReturn",
+      "com.bellfamily.bastischool.SweepRepairsRouteTest.matchingOptionsRecreationReturnsToBothOriginalBrowsePages",
+      "com.bellfamily.bastischool.SweepRepairsRouteTest.thumbnailAndStepPicturesDecodeAtBoundedSizeAndMissingArtIsSafe",
+      "com.bellfamily.bastischool.SweepRepairsRouteTest.activityThumbnailsAreVisibleThroughRealBrowsePages"
+    ]
+  },
+  "tablet": {
+    "tests": 4,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "report": "tablet-final.xml",
+    "cases": [
+      "com.bellfamily.bastischool.ui.patterns.PatternLayoutTest.everyRuleAndContextKeepsTheExampleFixedAndProvidesReachableKeyboardConstruction[de=false-font=1-landscape=false]",
+      "com.bellfamily.bastischool.ui.patterns.PatternLayoutTest.everyRuleAndContextKeepsTheExampleFixedAndProvidesReachableKeyboardConstruction[de=true-font=1.5-landscape=false]",
+      "com.bellfamily.bastischool.ui.patterns.PatternLayoutTest.everyRuleAndContextKeepsTheExampleFixedAndProvidesReachableKeyboardConstruction[de=true-font=2-landscape=true]",
+      "com.bellfamily.bastischool.ui.patterns.PatternLayoutTest.everyRuleAndContextKeepsTheExampleFixedAndProvidesReachableKeyboardConstruction[de=false-font=1-landscape=true]"
+    ]
+  },
+  "build": {
+    "debugApk": true,
+    "instrumentationApk": true,
+    "log": "package-build-lint-run.txt"
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 7,
+    "information": 2
+  },
+  "sourceAndApkIdentity": "instrumented-artifact.json",
+  "identityMatchesFinalSourceAndBothApks": true,
+  "unitSourceSha256": {
+    "app/src/test/java/com/bellfamily/bastischool/HomeCardsTest.kt": "fdb5ad0062e6412b8aa3a6f78d4e8b16382341550580c9a89d6b9b789ff3b3ab",
+    "app/src/test/java/com/bellfamily/bastischool/HomeIntegrationTest.kt": "cbbe83217b10ce9bcf9c8ef6196c59524651aa9be185b2b2286314214927f8ae",
+    "app/src/test/java/com/bellfamily/bastischool/PatternNavigationTest.kt": "0385eddd483cc03cdf2393f6aa7b838f009efdf1ebd8ace65f1385d27d1395ea",
+    "app/src/test/java/com/bellfamily/bastischool/learning/patterns/PatternBuilderTest.kt": "0a3645a5a284997c73f4da8ab32d2e90264dce3e99427b022051371d187a45ab",
+    "app/src/testDebug/java/com/bellfamily/bastischool/ui/homeprototype/HomePrototypeModelTest.kt": "96fc21f8e3bd30de2d8cb9f8cd98629f918036ff1e7f4f1dadc1affa5ab9617f"
+  },
+  "consistency": {
+    "generatedVerbCatalogue": "PASS",
+    "nativeLegacyMotionParity": "PASS",
+    "gitDiffWhitespace": "PASS"
+  },
+  "captureCounts": {
+    "production-phone": 17,
+    "component-phone": 16,
+    "component-tablet": 16
+  },
+  "captures": [
+    {
+      "file": "captures/pattern-aab-animals-solved-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "7fba7c31b791e51ec9a77ab30cb71dbadf9fa60f409f311dbbddc22da1a3144f"
+    },
+    {
+      "file": "captures/pattern-aab-complete-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "e49fa104274358f028895cd9ed16ca725dcb1ee1b0a8cdced8a2608940c3e6fc"
+    },
+    {
+      "file": "captures/pattern-aab-partial-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "a15dc9cd2ddd13ad10a45f46ea0736548a16269137df205804a8a5471b1033c2"
+    },
+    {
+      "file": "captures/pattern-aab-retry-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "218ef76c0e72b27666801b332a7a4d72c61046738875fd60012bd44c327bab8c"
+    },
+    {
+      "file": "captures/pattern-aab-shapes-solved-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "3f25a060c65917cba8900423d0c29323da00f750e03a6fcb383b7296191d0582"
+    },
+    {
+      "file": "captures/pattern-ab-animals-solved-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "88e516547388e41f434975f92d8f0b2c60743232b0276f0c8ef559a62ac93230"
+    },
+    {
+      "file": "captures/pattern-ab-complete-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "35b707e2d048d4cedde76c6b66f3a266c1feb077afc8050a3bc64dc0079fe949"
+    },
+    {
+      "file": "captures/pattern-ab-partial-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "00bf5bf3583d81171213ec2085c5781f4acebaa0ffe99e8486df1a3fb0f257ed"
+    },
+    {
+      "file": "captures/pattern-ab-retry-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "2c0d3a4741204e57da70cb51e6279e71c681fa556db1d9adb04742583464769b"
+    },
+    {
+      "file": "captures/pattern-ab-shapes-solved-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "918fd1686615faa754dfe6b787c2b9fc1eb8f23518963af4bf6e099aa88fd7e4"
+    },
+    {
+      "file": "captures/pattern-abc-animals-solved-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "e657c3aae3d0ecb26ff4967601d2d19ba67fb77fc1b09906b0afcb51e4834866"
+    },
+    {
+      "file": "captures/pattern-abc-complete-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "63d5da0e111720ee635bb40ee0ebb0295d6079dfbe7307cb4fadae40165d0a86"
+    },
+    {
+      "file": "captures/pattern-abc-partial-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "69e62c9749d2dd306856f6754d47b0eadd8fa52dfd76c297bb4d07268995fba3"
+    },
+    {
+      "file": "captures/pattern-abc-retry-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "7a5cc04e3af347de861b70113e3fa50c3229618d8e58a77e157a2326b51e96ed"
+    },
+    {
+      "file": "captures/pattern-abc-shapes-solved-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "ea711ccde4638482bedfe155baa00cf1200a4719d7ee2828e9e28f05826d46cc"
+    },
+    {
+      "file": "captures/pattern-chooser-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "4be8f3c1fa2a23cdff788da80036ad6e8f9dd6237f1c7d340716524292bd2bcb"
+    },
+    {
+      "file": "captures/pattern-chooser-en.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "6b0d448254222af22e099c4495444774585314372be53b6d2cc17563e0f08091"
+    },
+    {
+      "file": "captures/pattern-layout-ab-animals-phone-de-15-portrait.png",
+      "kind": "component-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "359655f7790a56c05650ac2aca017ad55c9b1a64fdc40b551836a45b9223af3c"
+    },
+    {
+      "file": "captures/pattern-layout-ab-animals-phone-de-20-landscape.png",
+      "kind": "component-phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "d8fd96854bd56cb7820a07d78a2669b76d94f5179d3d45f3186e10f75f32271b"
+    },
+    {
+      "file": "captures/pattern-layout-ab-animals-phone-en-10-landscape.png",
+      "kind": "component-phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "ef6755d036be75a89ed6d6cfec4c49957d8cf779acdfc9c4e1889a68feba4fb8"
+    },
+    {
+      "file": "captures/pattern-layout-ab-animals-phone-en-10-portrait.png",
+      "kind": "component-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "c804616cab5e3ed1f4b247bd78c2a6846194805e581121363beb7bd254301d5d"
+    },
+    {
+      "file": "captures/pattern-layout-ab-animals-tablet-de-15-portrait.png",
+      "kind": "component-tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "1072f7ccf4aa319d87b2983955216428bf2d6caa5e0dbfc2ed8d3344db405c64"
+    },
+    {
+      "file": "captures/pattern-layout-ab-animals-tablet-de-20-landscape.png",
+      "kind": "component-tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "2b3679dec4338a51fd7d561dbfa9aecf87eccd886f94147f2a33b52846b47efb"
+    },
+    {
+      "file": "captures/pattern-layout-ab-animals-tablet-en-10-landscape.png",
+      "kind": "component-tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "493465b38a653d7b636f18cf30e61ae215bad1b2c98eba157efd38765dc17cbf"
+    },
+    {
+      "file": "captures/pattern-layout-ab-animals-tablet-en-10-portrait.png",
+      "kind": "component-tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "baf60839c132f812794c8bb22dedc6ac7c1ae35425c0228eb8c89e71d4fe5f08"
+    },
+    {
+      "file": "captures/pattern-layout-ab-shapes-phone-de-15-portrait.png",
+      "kind": "component-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "fa844849b30eef7330c53f8a81012e110ce5435c08d8d478ebc5b85f2c859182"
+    },
+    {
+      "file": "captures/pattern-layout-ab-shapes-phone-de-20-landscape.png",
+      "kind": "component-phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "25862afa235272a75a3e4c54f6d0f6819f172e54bb3859779ffee5146c1deb78"
+    },
+    {
+      "file": "captures/pattern-layout-ab-shapes-phone-en-10-landscape.png",
+      "kind": "component-phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "6ddc97336496ae4fb57b69f01b47a79f817af9eecd1156f981637aedf9d834da"
+    },
+    {
+      "file": "captures/pattern-layout-ab-shapes-phone-en-10-portrait.png",
+      "kind": "component-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "d3b0f6f387201e0e9d05b5add7d2bc101e43cf6f6fd7a0dc7e407543f2718c8d"
+    },
+    {
+      "file": "captures/pattern-layout-ab-shapes-tablet-de-15-portrait.png",
+      "kind": "component-tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "b1f3e0311ab5949335b6dc4bf3feb988ac2b7742870fb076853560221b76e2d6"
+    },
+    {
+      "file": "captures/pattern-layout-ab-shapes-tablet-de-20-landscape.png",
+      "kind": "component-tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "6f5277028fc2ece4af303728aab0b68ea5256201d932912e164ed1c0572dda16"
+    },
+    {
+      "file": "captures/pattern-layout-ab-shapes-tablet-en-10-landscape.png",
+      "kind": "component-tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "49a76d863c771a0b70f3b9a4a70122bbe65753774ca994d0054bf6956e0fbcef"
+    },
+    {
+      "file": "captures/pattern-layout-ab-shapes-tablet-en-10-portrait.png",
+      "kind": "component-tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "013fa55453756a602c0a539157beab5428ed6ef773c4a1b641e5abf8041445c8"
+    },
+    {
+      "file": "captures/pattern-layout-abc-animals-phone-de-15-portrait.png",
+      "kind": "component-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "3f345c030020f91847013ec511ea55fb38ff3cae7d296c2002deca957e5c3474"
+    },
+    {
+      "file": "captures/pattern-layout-abc-animals-phone-de-20-landscape.png",
+      "kind": "component-phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "888e9e5bca23be2e70e3db68ca6d1100d9b8d5db9f41a401ae70426c5692f28e"
+    },
+    {
+      "file": "captures/pattern-layout-abc-animals-phone-en-10-landscape.png",
+      "kind": "component-phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "73dfba051242c6570264d4c682dcbbae121ee2ba081f469f35254899ce6c2125"
+    },
+    {
+      "file": "captures/pattern-layout-abc-animals-phone-en-10-portrait.png",
+      "kind": "component-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "ccdd6a46484ce3120166ca634eca505f7704691f3501f8eefb1d92dfd0453f62"
+    },
+    {
+      "file": "captures/pattern-layout-abc-animals-tablet-de-15-portrait.png",
+      "kind": "component-tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "dfb2b89cabf957b02e0c38e429f498e54b9ebbd13604c2bdf761f0d6fce4426a"
+    },
+    {
+      "file": "captures/pattern-layout-abc-animals-tablet-de-20-landscape.png",
+      "kind": "component-tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "c3799d359720fb787793b795da004e611de99d7590e546906bf30a49d0ffa7fc"
+    },
+    {
+      "file": "captures/pattern-layout-abc-animals-tablet-en-10-landscape.png",
+      "kind": "component-tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "b211a2fa66915601cfc5ecc64846412615df23713f28390e2dfa5d9b673b3397"
+    },
+    {
+      "file": "captures/pattern-layout-abc-animals-tablet-en-10-portrait.png",
+      "kind": "component-tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "7e79187a539cf702069065707a8d502c44078cb79dd35924eca121719b89b2c4"
+    },
+    {
+      "file": "captures/pattern-layout-abc-shapes-phone-de-15-portrait.png",
+      "kind": "component-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "de18a854ea42476fbf82e2c8ee44e8099cacfcc9a8f6ed77933d45af31b30fab"
+    },
+    {
+      "file": "captures/pattern-layout-abc-shapes-phone-de-20-landscape.png",
+      "kind": "component-phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "91f7f80c857a947c8af65264444d4bd3259e4d216101328d3506184495a127e3"
+    },
+    {
+      "file": "captures/pattern-layout-abc-shapes-phone-en-10-landscape.png",
+      "kind": "component-phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "c480c015c3ebc5b9e3d8faa95c30095f761a28d9ea2fde93c9eaa647c6531c45"
+    },
+    {
+      "file": "captures/pattern-layout-abc-shapes-phone-en-10-portrait.png",
+      "kind": "component-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "db16deddae96e80ad1528d046f2fcb24b1cce8bba773e10dc81b55989d4df3e5"
+    },
+    {
+      "file": "captures/pattern-layout-abc-shapes-tablet-de-15-portrait.png",
+      "kind": "component-tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "39a8f028933fb07cde64dc496d0e53e1c44de1da15438532560e81967edeeb88"
+    },
+    {
+      "file": "captures/pattern-layout-abc-shapes-tablet-de-20-landscape.png",
+      "kind": "component-tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "51c1aa67dd844fadc0d6f4612cf41979e5303b9725ce61f0fd06faecd8391dc5"
+    },
+    {
+      "file": "captures/pattern-layout-abc-shapes-tablet-en-10-landscape.png",
+      "kind": "component-tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "027bc31e135ed2f0088c04310e086bf16e154bcf19080f5588bda69b1a8c8a8c"
+    },
+    {
+      "file": "captures/pattern-layout-abc-shapes-tablet-en-10-portrait.png",
+      "kind": "component-tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "00a9fa3182334e6648fc70b3431f95f3b8226533a3e7afab62df582160f899a4"
+    }
+  ],
+  "representativeVisualReview": [
+    "pattern-chooser-en.png",
+    "pattern-ab-shapes-solved-de.png",
+    "pattern-aab-complete-de.png",
+    "pattern-abc-animals-solved-de.png",
+    "pattern-layout-ab-animals-phone-de-20-landscape.png",
+    "pattern-aab-partial-de.png",
+    "pattern-aab-retry-de.png",
+    "pattern-layout-abc-shapes-tablet-en-10-portrait.png",
+    "pattern-layout-abc-animals-tablet-de-20-landscape.png"
+  ],
+  "allCapturesIndividuallyVisuallyReviewed": false,
+  "emulatorConfiguration": "emulator-configuration.json",
+  "emulatorCleanup": "emulator-cleanup.json",
+  "earlierRuns": {
+    "prePinnedLayoutPhone": "10 passed; superseded for current layout, report retained separately.",
+    "propertyTimeout": "No app assertions ran; report/log retained.",
+    "interruptedRuntime": "Zero app tests; Android system service failures and missing disposable AVD temporary backing directory; report/log retained."
+  },
+  "coverageLimits": {
+    "configuredCiSelection": 24,
+    "localPhoneSelection": 10,
+    "fullAppInstrumentationRun": false,
+    "newBrowserRun": false,
+    "unchangedWebRuntime": true,
+    "previousHostedBaselineRun": {
+      "id": "42793753994",
+      "status": "SUCCESS",
+      "scope": "Baseline only; no hosted run for these uncommitted changes."
+    },
+    "notRun": [
+      "physical Samsung S24",
+      "physical Fire tablet",
+      "actual TalkBack and switch access",
+      "child comprehension",
+      "installed offline voice quality",
+      "signed in-place upgrade"
+    ]
+  }
+}
