@@ -125,6 +125,7 @@ import com.bellfamily.bastischool.learning.wilma.WilmaPhase
 import com.bellfamily.bastischool.learning.models.ContentLanguage
 import com.bellfamily.bastischool.ui.memory.*
 import com.bellfamily.bastischool.ui.patterns.*
+import com.bellfamily.bastischool.ui.quantitychange.*
 import com.bellfamily.bastischool.learning.models.ContentId
 
 private val Sky = Color(0xFF79CEF7)
@@ -180,7 +181,8 @@ private val homeCards = listOf(
     HomeCard("🐋", "Animal Groups", "Tiere zuordnen", "Group animals by where they live.", "Ordne Tiere nach ihrem Lebensraum zu.", mode = "animalGroups"),
     HomeCard("🎨", "Colour Sort", "Farben sortieren", "Put matching colours together.", "Sortiere Dinge nach ihrer Farbe.", mode = "colourSort"),
     HomeCard("👂", "Follow the Instructions", "Anweisungen folgen", "Listen, follow steps and practise classroom routines.", "Zuhören, Schritten folgen und Schulabläufe üben.", mode = "follow"),
-    HomeCard("", "Pattern Builder", "Muster bauen", "Continue patterns with animals and shapes.", "Setze Muster mit Tieren und Formen fort.", mode = "patternBuilder")
+    HomeCard("", "Pattern Builder", "Muster bauen", "Continue patterns with animals and shapes.", "Setze Muster mit Tieren und Formen fort.", mode = "patternBuilder"),
+    HomeCard("", "One More / One Less", "Eins mehr / eins weniger", "Add or take away one animal, then check your group.", "Lege ein Tier dazu oder nimm eins weg und prüfe deine Gruppe.", mode = "quantityChange")
 )
 
 /** Filter only after the historical group boundaries, preserving live entry order. */
@@ -217,6 +219,7 @@ class MainActivity : ComponentActivity() {
     private lateinit var nativeVerbs: VerbsQuizViewModel
     private lateinit var nativeVerbExplorer: VerbExplorerViewModel
     private lateinit var nativeBuildFive: BuildFiveViewModel
+    private lateinit var nativeQuantityChange: QuantityChangeViewModel
     private lateinit var nativePatterns: PatternBuilderViewModel
     private lateinit var nativeMemory: MemoryPairsViewModel
     private lateinit var nativeBuildTen: BuildTenViewModel
@@ -288,13 +291,15 @@ class MainActivity : ComponentActivity() {
         nativeBuildFive = ViewModelProvider(this)[BuildFiveViewModel::class.java]
         nativeBuildTen = ViewModelProvider(this)[BuildTenViewModel::class.java]
         nativeMemory = ViewModelProvider(this)[MemoryPairsViewModel::class.java]
+        nativeQuantityChange = ViewModelProvider(this)[QuantityChangeViewModel::class.java]
         nativePatterns = ViewModelProvider(this)[PatternBuilderViewModel::class.java]
         configurePositions()
         restoredSession = savedInstanceState?.getString("legacySession")
         navigation = ShellNavigation.restore(savedInstanceState?.getString("screen"),
             savedInstanceState?.getString("optionsOrigin"), savedInstanceState?.getString("webMode"), restoredSession,
             savedInstanceState?.getString("homePage"), savedInstanceState?.getString("verbId"),
-            savedInstanceState?.getString("memoryMode"), savedInstanceState?.getInt("memoryPairs",2) ?: 2, savedInstanceState?.getString("patternLevel"))
+            savedInstanceState?.getString("memoryMode"), savedInstanceState?.getInt("memoryPairs",2) ?: 2, savedInstanceState?.getString("patternLevel"),
+            savedInstanceState?.getString("quantityMode"), savedInstanceState?.getInt("quantityLimit",5) ?: 5)
         if (!navigation.ownsWebSession) restoredSession = null
         checkpoint = LegacyCheckpoint(restoredSession)
         tts = TextToSpeech(this) { status ->
@@ -330,6 +335,8 @@ class MainActivity : ComponentActivity() {
         // need a second copy in the shell. Completion screens retain the shell title
         // because their content is a summary rather than the active activity heading.
         val contentOwnsTitle = when (screen) {
+            ShellScreen.QUANTITY_CHANGE_CHOOSER -> true
+            ShellScreen.QUANTITY_CHANGE_GAME -> nativeQuantityChange.state?.completed != true
             ShellScreen.PATTERN_CHOOSER -> true
             ShellScreen.PATTERN_GAME -> nativePatterns.state?.completed != true
             ShellScreen.MEMORY_CHOOSER -> true
@@ -386,6 +393,7 @@ class MainActivity : ComponentActivity() {
                                 when (screen) {
                                     ShellScreen.HOME -> if (language == "de") "Bastis Lernabenteuer" else "Basti's Learning Adventure"
                                     ShellScreen.OPTIONS -> if (language == "de") "Optionen" else "Options"
+                                    ShellScreen.QUANTITY_CHANGE_CHOOSER, ShellScreen.QUANTITY_CHANGE_GAME -> if(language=="de") "Eins mehr / eins weniger" else "One More / One Less"
                                     ShellScreen.PATTERN_CHOOSER, ShellScreen.PATTERN_GAME -> if(language=="de") "Muster bauen" else "Pattern Builder"
                                     ShellScreen.MEMORY_CHOOSER, ShellScreen.MEMORY_GAME -> if(language=="de") "Paare merken" else "Memory Pairs"
                                     ShellScreen.VERB_LIBRARY, ShellScreen.VERB_LESSON -> if(language=="de") "Verben entdecken" else "Verb Explorer"
@@ -471,14 +479,9 @@ class MainActivity : ComponentActivity() {
                             HomeBrowseScreen(navigation.homePage, language == "de", ::openHomePage,
                                 ::launchHomeActivity, Modifier.padding(padding), navigation.recoveryFailed)
                         }
-                        ShellScreen.PATTERN_CHOOSER -> PatternChooser(if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
-                            {changeRoute(navigation.openPatternBuilder(it))},Modifier.padding(padding))
-                        ShellScreen.PATTERN_GAME -> PatternBuilderScreen(nativePatterns,navigation.patternConfig,if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
-                            {changeRoute(navigation.openPatternChooser())},{changeRoute(navigation.home())},Modifier.padding(padding),::popCelebration,{celebrationSound.cancel()})
-                        ShellScreen.MEMORY_CHOOSER -> MemoryPairsChooser(if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
-                            {changeRoute(navigation.openMemory(it))},Modifier.padding(padding))
-                        ShellScreen.MEMORY_GAME -> MemoryPairsScreen(nativeMemory,navigation.memoryConfig,if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
-                            {changeRoute(navigation.openMemoryChooser())},{changeRoute(navigation.home())},Modifier.padding(padding),::popCelebration,{celebrationSound.cancel()})
+                        ShellScreen.QUANTITY_CHANGE_CHOOSER, ShellScreen.QUANTITY_CHANGE_GAME,
+                        ShellScreen.PATTERN_CHOOSER, ShellScreen.PATTERN_GAME,
+                        ShellScreen.MEMORY_CHOOSER, ShellScreen.MEMORY_GAME -> ConstructionActivities(screen,padding,language)
                         ShellScreen.VERB_LIBRARY -> VerbLibraryScreen(if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                             {changeRoute(navigation.openVerbLesson(it))},Modifier.padding(padding))
                         ShellScreen.VERB_QUIZ -> VerbQuizScreen(nativeVerbs,if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
@@ -869,6 +872,26 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    // Keep construction-game composition below the JVM method-size limit as the catalogue grows.
+    @Composable
+    private fun ConstructionActivities(screen: ShellScreen, padding: PaddingValues, language: String) {
+        when(screen) {
+            ShellScreen.QUANTITY_CHANGE_CHOOSER -> QuantityChangeChooser(if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                {changeRoute(navigation.openQuantityChange(it))},Modifier.padding(padding))
+            ShellScreen.QUANTITY_CHANGE_GAME -> QuantityChangeScreen(nativeQuantityChange,navigation.quantityConfig,if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                {changeRoute(navigation.openQuantityChangeChooser())},{changeRoute(navigation.home())},Modifier.padding(padding),::popCelebration,{celebrationSound.cancel()})
+            ShellScreen.PATTERN_CHOOSER -> PatternChooser(if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                {changeRoute(navigation.openPatternBuilder(it))},Modifier.padding(padding))
+            ShellScreen.PATTERN_GAME -> PatternBuilderScreen(nativePatterns,navigation.patternConfig,if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                {changeRoute(navigation.openPatternChooser())},{changeRoute(navigation.home())},Modifier.padding(padding),::popCelebration,{celebrationSound.cancel()})
+            ShellScreen.MEMORY_CHOOSER -> MemoryPairsChooser(if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                {changeRoute(navigation.openMemory(it))},Modifier.padding(padding))
+            ShellScreen.MEMORY_GAME -> MemoryPairsScreen(nativeMemory,navigation.memoryConfig,if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                {changeRoute(navigation.openMemoryChooser())},{changeRoute(navigation.home())},Modifier.padding(padding),::popCelebration,{celebrationSound.cancel()})
+            else -> error("Not a construction destination: $screen")
+        }
+    }
+
     private val monthScreens = setOf(ShellScreen.MONTHS, ShellScreen.MONTHS_FIND, ShellScreen.MONTHS_RELATIONS, ShellScreen.MONTHS_MISSING, ShellScreen.MONTHS_BETWEEN, ShellScreen.MONTHS_BETWEEN_WHEEL, ShellScreen.MONTHS_BUILD_YEAR_LEVELS, ShellScreen.MONTHS_BUILD_YEAR, ShellScreen.MONTHS_BUILD_YEAR_FOUR, ShellScreen.MONTHS_SEASONS, ShellScreen.MONTHS_SEASONS_WHEEL)
     private fun monthsMode(screen: ShellScreen) = when(screen) {
         ShellScreen.MONTHS_FIND -> MonthsMode.FIND
@@ -918,6 +941,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.VERB_QUIZ -> nativeVerbs.busy || nativeVerbs.saveFailed
             ShellScreen.BUILD_FIVE -> nativeBuildFive.busy || nativeBuildFive.saveFailed
             ShellScreen.BUILD_TEN -> nativeBuildTen.busy || nativeBuildTen.saveFailed
+            ShellScreen.QUANTITY_CHANGE_GAME -> nativeQuantityChange.busy || nativeQuantityChange.saveFailed
             ShellScreen.PATTERN_GAME -> nativePatterns.busy || nativePatterns.saveFailed
             ShellScreen.MEMORY_GAME -> nativeMemory.busy || nativeMemory.saveFailed
             ShellScreen.COUNTING_TRAY -> nativeCountingTray.busy || nativeCountingTray.saveFailed
@@ -961,6 +985,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.VERB_QUIZ -> nativeVerbs.state?.takeIf { it.phase == SessionPhase.COMPLETED && it.completion == CompletionState.ACKNOWLEDGED }?.plan?.id?.value
             ShellScreen.BUILD_FIVE -> nativeBuildFive.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.BUILD_TEN -> nativeBuildTen.state?.takeIf { it.completed && it.acknowledged }?.id?.value
+            ShellScreen.QUANTITY_CHANGE_GAME -> nativeQuantityChange.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.PATTERN_GAME -> nativePatterns.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.MEMORY_GAME -> nativeMemory.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.COUNTING_TRAY -> nativeCountingTray.state?.takeIf { it.completed && it.acknowledged }?.id?.value
@@ -1101,6 +1126,7 @@ class MainActivity : ComponentActivity() {
                 syncSettings()
                 changeRoute(navigation.closeOptions())
             }
+            BackAction.QUANTITY_CHANGE_CHOOSER -> changeRoute(navigation.openQuantityChangeChooser())
             BackAction.PATTERN_CHOOSER -> changeRoute(navigation.openPatternChooser())
             BackAction.MEMORY_CHOOSER -> changeRoute(navigation.openMemoryChooser())
             BackAction.VERB_RETURN -> changeRoute(navigation.returnFromVerb())
@@ -1232,6 +1258,9 @@ class MainActivity : ComponentActivity() {
                 else -> null
             })
         val nativeAudioMode=shellAudioMode(prefs.getString("audioMode",null),prefs.getBoolean("sound",true))
+        nativeQuantityChange.configure(prefs.getString("lang","en")?:"en",nativeAudioMode,prefs.getInt("round",5))
+        nativeQuantityChange.setVisible(foreground && navigation.screen==ShellScreen.QUANTITY_CHANGE_GAME,
+            if(navigation.screen==ShellScreen.QUANTITY_CHANGE_GAME)navigation.quantityConfig else null)
         nativePatterns.configure(prefs.getString("lang","en")?:"en",nativeAudioMode,prefs.getInt("round",5))
         nativePatterns.setVisible(foreground && navigation.screen==ShellScreen.PATTERN_GAME,
             if(navigation.screen==ShellScreen.PATTERN_GAME)navigation.patternConfig else null)
@@ -1350,6 +1379,8 @@ class MainActivity : ComponentActivity() {
         outState.putString("memoryMode", navigation.memoryMode)
         outState.putInt("memoryPairs", navigation.memoryPairs)
         outState.putString("patternLevel", navigation.patternLevel)
+        outState.putString("quantityMode", navigation.quantityMode)
+        outState.putInt("quantityLimit", navigation.quantityLimit)
         if (navigation.ownsWebSession) outState.putString("legacySession", checkpoint.read())
         super.onSaveInstanceState(outState)
     }

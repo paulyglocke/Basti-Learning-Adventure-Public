@@ -1,4 +1,69 @@
-# Session handoff — 2026-11-11
+# Session handoff — 2026-11-12
+
+## One More / One Less (2026-11-12, completed locally)
+
+Owner approved Add one/Take one away within 5/10, Undo, bilingual audio, saved
+5/10 rounds and shared balloons. The implementation baseline is
+`4ff84245018f59e5b407a8727b34f6b31fae36ab`. The owner subsequently requested
+committing and pushing this checkpoint to main on 2026-11-12. Retained evidence
+describes pre-commit local validation; hosted checks are separate. No agents used.
+No implementation or local verification
+work remains for this slice. No test/emulator/Gradle command remains running.
+
+`learning/quantitychange` owns typed relative-quantity tasks, pure reducer, atomic
+write-ahead host and shared lazy audio; `ui/quantitychange` owns chooser/owner/boards.
+QUANTITY_CHANGE_CHOOSER/GAME restore validated mode/limit through Options/recreation.
+Home has 32 entries (29 native, three retained web), Maths 16. Canonical Vocabulary
+art/IDs and NumberBonds number IDs are reused. MORE starts 0..limit-1; LESS 1..limit,
+including zero. Only changed checked counts record attempts; equivalent rearranged
+wrong counts cannot re-score. Undo retains 100 masks. Wrong work stays editable;
+success locks until Next. Four independent journals preserve exact state/support/
+pending progress. Starting frame stays pinned; work scrolls independently. Shared
+progress/audio/balloons and old data/codec/signing stay compatible. No new raster art.
+
+The large shell composable reached JVM MethodTooLargeException. Six Quantity/
+Pattern/Memory chooser/game branches moved into private
+ConstructionActivities(screen,padding,language). Existing production game routes,
+startup and bilingual 32-entry Home passed the regression selection.
+
+Final evidence: **704/704 JVM**, both debug APKs, lint (0 errors, 7 existing warnings,
+2 information), new actual route/owner **2/2**, final phone layouts **4/4** and
+final tablet layouts **4/4**, zero failures/errors/skips in those checks. Actual UI
+completes all four configurations, including zero and 5/10 rounds, with exact 34
+attempts/four completions and shared balloons. Layouts cover both boundaries per
+config, keyboard/Undo, min targets, fixed references and EN/DE 1×/1.5×/2×.
+
+Qualification: original combined selection **33/34**; one old German portrait
+Wash Hands image wait timed out. Unchanged isolated Wash Hands **4/4** passed on
+same APKs; cause/fix not claimed. Do not claim a clean single34-case run. The run
+includes all configured focused-CI26 plus layouts/counting/Home, not full app
+instrumentation. No new browser/hosted result; web source unchanged.
+
+Initial tablet **3/4** found a fixture rotation race; only QuantityChangeLayoutTest
+now waits for actual decor rotation/geometry and measured Compose orientation.
+Original assertions retained. Final phone/tablet4 each pass with the final test APK;
+runtime and app APK remain EXACTLY unchanged from the route/regression run.
+The final phone/tablet checks used direct AndroidJUnitRunner after Gradle discovery
+stalled. Raw status text and labelled derived JSON summaries retain four status0
+completions, OK(4 tests) and result -1 each. Initial/final source/test APK hashes and
+verified installed app hash are retained. Earlier property/install/discovery issues
+ran no app tests; one Android system failure required a no-wipe AVD restart. Logs
+and reports preserved separately. Do not present direct summaries as Gradle XML.
+
+[Review and gallery](docs/one-more-less-2026-11-11/README.md) has 54 genuine final
+captures: 22 production phone, 16 final phone components, 16 final tablet components.
+Representative final images visually reviewed. Raw JVM ZIP/XML/logs, initial failed
+reports, direct runner logs, source/APK identities, capture hashes and cleanup are
+in the evidence directory. Catalogue generation/motion parity and final whitespace/
+gallery integrity checks pass. Records describe pre-commit local validation.
+
+Only owned API35 AVD Basti_Pattern_20261111/emulator-5554 used (4 CPU/6 GB/12 GB,
+host GPU). Tablet override 1600x2560/density240; restored original1080x2400/density420
+and airplane0, then gracefully closed. adb confirms no attached device. Original
+Medium Phone config hash unchanged; original userdata/physical devices untouched;
+no data wipe/snapshot deletion. Physical S24/Fire, actual TalkBack/switch, child use,
+installed offline voices and signed upgrade remain NOT RUN — owner-managed checks.
+These local results do not authorize legacy removal.
 
 ## Pattern Builder (2026-11-11, completed locally)
 

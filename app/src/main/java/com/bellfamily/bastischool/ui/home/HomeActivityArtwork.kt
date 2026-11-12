@@ -24,6 +24,7 @@ import com.bellfamily.bastischool.ui.common.BundledArtwork
 internal data class HomeActivityArt(val asset:String?=null,val diagram:String?=null)
 internal object HomeActivityArtwork {
     val entries=mapOf(
+        "quantityChange" to HomeActivityArt(diagram="one-step-quantity"),
         "patternBuilder" to HomeActivityArt(diagram="repeating-pattern"),
         "memoryPairs" to HomeActivityArt(diagram="memory-pairs"),
         "tellme" to HomeActivityArt(asset="SceneDescriptions/countryside_farm/canonical/farm_008_farmyard_friends.png"),
@@ -114,6 +115,11 @@ private fun Diagram(kind:String) {
                     }
                 }
 
+                "one-step-quantity" -> {
+                    repeat(3) { i -> drawCircle(artBlue,7f,Offset(18f+i*30f,25f)) }
+                    label("+1",50f,56f,18f)
+                    repeat(4) { i -> drawCircle(artBlue,7f,Offset(12f+i*25f,78f)) }
+                }
                 "repeating-pattern" -> {
                     repeat(4) { i ->
                         val x=14f+i*24f

@@ -406,3 +406,14 @@ Help names the repeating group without awarding success. Do not infer reading,
 shape naming, generalised reasoning mastery or real-world transfer from this
 bounded extension task. No new progress wire format, dashboard, scoring scheme
 or activity-specific progress repository is introduced.
+
+## One More / One Less evidence (2026-11-11)
+
+Separate `skill.math.one_more.within_5/within_10` and
+`skill.math.one_less.within_5/within_10` identities record checked relative quantity
+construction. Context identifies the canonical animal. Unscored taps, Undo and
+Help never fabricate attempts or a successful model. Only Check with a changed
+quantity records a semantic number response; zero is valid. Replay/Hint support
+is retained on attempts and shared deduplicated 5/10 completion. Evidence means
+constructing a relative quantity in this app, not generalised maths mastery or
+proof of counting aloud, reading numerals or obeying an action instruction.

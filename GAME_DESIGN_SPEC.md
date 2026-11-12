@@ -1631,3 +1631,14 @@ state machine separate from the existing unique-object sequencing tasks. This
 provides a later consumer opportunity for Build the Bridge and rescue patterns;
 it does not implement either story game or its physics/construction systems.
 See the [Pattern Builder review](docs/pattern-builder-2026-11-10/README.md).
+
+## One More / One Less starter (2026-11-11)
+
+Relative quantity construction keeps a visible starting reference and an editable
+animal group. Four mode/range choices isolate add-one/take-one-away within 5/10.
+Child-controlled edits/Undo/Help are unscored; changed quantity Check submissions
+provide calm feedback, lock success until Next and share ordinary balloon rewards.
+Zero is taught explicitly when removing the last animal or beginning an add-one
+question from an empty group. This adds a concrete relationship beyond building
+an absolute target; other operations/stories remain future curriculum. Verification:
+[review](docs/one-more-less-2026-11-11/README.md).

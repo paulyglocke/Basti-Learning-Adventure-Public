@@ -591,3 +591,18 @@ plans, placements, checked answers, per-task support and pending progress are
 bounded/checksummed in three journals. Round-setting changes affect the next new
 round, while existing saved rounds keep their length. Content revision and activity
 revision remain local to this new curriculum; old session formats are untouched.
+
+## Relative quantity content (2026-11-11)
+
+`ChangeConfig` combines MORE/LESS with explicit limits 5/10; task meaning is the
+starting count, operation and canonical animal ID, independent of labels/positions.
+MORE starts at 0 until the limit; LESS starts at 1 through the limit. Expected
+quantity derives as start ± 1. Zero is `number.zero` and an explicitly empty group;
+semantic number IDs reuse NumberBonds and animal labels/art reuse Vocabulary.
+
+Seeded 5/10 plans complete starting-amount cycles before necessary repeats, balance
+amount frequency, prohibit adjacent equal starts/animals and never repeat an exact
+start/animal task in the round. New rounds change their plan and avoid repeating
+the preceding final start/animal immediately. Four checksummed journals freeze tasks,
+current mask, bounded undo history, last checked quantities/support and pending
+progress. No older activity revisions or shared checkpoint schemas change.

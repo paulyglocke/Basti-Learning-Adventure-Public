@@ -464,3 +464,19 @@ level chooser, chooser Back/explicit Home return Home, and each level resumes it
 own round. There is no timer, precision drag requirement, flip/attempt grade or
 mandatory animation. Symbol position/meaning, shape and labels provide cues;
 colour alone never identifies the answer. Controls remain scroll/keyboard reachable.
+
+## One More / One Less (2026-11-11)
+
+Home → Numbers & Maths / All Activities → One More / One Less opens separate Add
+one and Take one away choices, each up to 5/10. Game Back returns to this chooser;
+chooser Back and explicit Home return Home. Options/language/recreation preserve
+the exact selected configuration and board; each configuration has its own round.
+
+A read-only starting frame remains pinned above the independently scrolling work
+on narrow screens and beside it on wide screens. Tap an empty space to add one
+animal; tap an occupied space to remove it. Undo restores recent moves (last 100).
+Empty work is a real zero group, not incomplete/unavailable work. Check evaluates
+quantity; equivalent rearrangements of an unchanged wrong count cannot score twice.
+Wrong groups stay editable; success locks and shows the equation until Next.
+Help describes one change without changing the board. No timer/negative score.
+Canonical animal art, native frames and shared audio/progress/balloons are reused.

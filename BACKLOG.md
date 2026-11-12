@@ -96,7 +96,12 @@ Already implemented and not active implementation backlog unless a regression is
 - Further Memory Pairs variants: word/picture, letter case, bilingual, animal/action,
   animal/habitat, emotion/expression and season/clue where educationally appropriate.
   Picture/picture and number/quantity starter boards are implemented; do not duplicate them.
-- Future manipulation-first Maths: generalise the Dinosaur Counting Tray and concrete Build 5/10 boards to other objects and contexts, then explore one more/less, conservation, number stories, richer pattern tasks, shapes and spatial/measurement concepts. Do not duplicate the existing construction boards or choice-based activities.
+- Future manipulation-first Maths: generalise the Dinosaur Counting Tray and concrete Build 5/10 boards to other objects and contexts, then explore conservation, number stories, richer pattern tasks, shapes and spatial/measurement concepts. Do not duplicate the existing construction boards or choice-based activities.
+- One More / One Less starter is implemented: separate add-one/take-one-away
+  construction within 5/10, explicit zero, reversible edits/Undo, saved rounds and
+  shared audio/progress/balloons. Broader objects, conservation and number stories
+  remain future curriculum. Current verification/physical gaps:
+  [review](docs/one-more-less-2026-11-11/README.md).
 - Pattern Builder starter is implemented: AB/AAB/ABC with reversible animal/shape
   construction, visible examples, explicit Check, independent saved rounds and
   shared progress/audio/balloons. Extend later to missing-middle/free creation or

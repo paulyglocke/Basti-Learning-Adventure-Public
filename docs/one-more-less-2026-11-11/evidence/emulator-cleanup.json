@@ -1,0 +1,16 @@
+{
+  "avd": "Basti_Pattern_20261111",
+  "serial": "emulator-5554",
+  "physicalSize": "1080x2400",
+  "displayOverride": null,
+  "densityDpi": 420,
+  "densityOverride": null,
+  "originalAirplaneMode": 0,
+  "restoredAirplaneMode": 0,
+  "gracefulCloseAcknowledged": true,
+  "adbDevicesAfterClose": [],
+  "originalMediumPhoneConfigUnchanged": true,
+  "originalMediumPhoneConfigSha256": "c4ab33993685273776e9286aee0b948e48192f5ab61046d564447d7a12e7034c",
+  "dataWiped": false,
+  "physicalDevicesContacted": false
+}

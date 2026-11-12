@@ -21,6 +21,11 @@ visible examples, reversible placements, explicit Check, bilingual audio, saved
 three retained web routes). Automated evidence and physical acceptance remain
 separate; see the [review](docs/pattern-builder-2026-11-10/README.md).
 
+One More / One Less (2026-11-11) adds reversible add-one/take-one-away construction
+within 5/10, pinned starting groups, explicit zero, bilingual audio and four saved
+configurations. Home now has 32 live activities (29 native, three retained web).
+See the [review](docs/one-more-less-2026-11-11/README.md) for current verification.
+
 ## 2. Core design principles
 
 - Audio-first: core activities should be usable without independent reading.

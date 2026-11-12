@@ -945,3 +945,21 @@ Options retains it and invalid values return safe Home. New tasks can narrate;
 restoration/return is silent. The shared completion screen/balloons own only
 presentation, with existing route/foreground/audio sound guards. Evidence and
 physical acceptance status are in the [review](docs/pattern-builder-2026-11-10/README.md).
+
+## One More / One Less (2026-11-11)
+
+`learning/quantitychange` owns typed mode/range/task semantics and a pure bitmask
+construction reducer, using canonical Vocabulary animal IDs and existing number
+IDs. Four bounded write-ahead journals reuse atomic storage/shared progress with
+exact masks, up to 100 undo states, frozen plans, support and pending events.
+The Activity-scoped owner confines hosts to one worker, guards late configuration
+results and speech epochs, restores silently and retains a saved round's length.
+Existing counting/bonds journals, progress codecs and preferences remain compatible.
+
+The large shell composable reached the JVM method-size limit while adding routes.
+Six Quantity Change/Pattern/Memory chooser/game branches now render in the private
+`ConstructionActivities` composable with explicit screen/padding/language inputs.
+Navigation/lifecycle/persistence still belong to the existing shell; this is a
+bounded rendering extraction, not a new router. Actual existing-game routes and
+bilingual Home are included in the selected regression run. Current evidence:
+[review](docs/one-more-less-2026-11-11/README.md).

@@ -2259,3 +2259,13 @@ toward:
 **experience → explore → manipulate → notice → correct → recall → apply → generalise**
 
 while preserving the calm, reliable and child-friendly experience already established.
+
+## One More / One Less starter checkpoint — 2026-11-11
+
+Native quantity change extends concrete counting with Add one and Take one away,
+each within 5 or 10. Starting groups remain visible while a separate reversible
+board changes. Addition begins at 0–4/0–9; subtraction at 1–5/1–10, including one
+becoming zero. Canonical animal contexts vary in saved 5/10 rounds. Only explicit
+changed Check submissions create shared evidence; Help and Undo remain exploratory.
+This is bounded relative-quantity practice, not generalised mastery or arbitrary
+operations. See [implementation/validation](docs/one-more-less-2026-11-11/README.md).

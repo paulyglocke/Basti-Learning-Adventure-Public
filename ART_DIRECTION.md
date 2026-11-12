@@ -165,3 +165,12 @@ slots use an explicit question mark, not decorative emoji. Fixed example rows,
 reversible slots and reusable picture choices remain visually distinct. The Home
 thumbnail illustrates an alternating shape sequence. No new raster assets are
 required; physical clarity/child comprehension remain owner-managed acceptance.
+
+## One More / One Less starter (2026-11-11)
+
+All group objects use the existing six canonical Vocabulary animal PNGs. Native
+frames distinguish immutable starting quantities and editable work, with deliberate
+empty-space semantics and explicit zero copy. Frame sizes stay constant during
+moves; colour is supplementary to labels/position and occupied/empty state. The
+Home diagram illustrates three objects becoming four. No new raster generation or
+redesign of accepted animals is needed. Physical/child-use clarity stays separate.

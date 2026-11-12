@@ -6,6 +6,49 @@ This document defines verification and feature completion gates. [NATIVE_ARCHITE
 
 **A feature is not done only because it builds.** Record evidence for its behavior and relevant device risks. A code-complete slice awaiting required hardware checks must be labelled as such, not fully verified or eligible for legacy removal.
 
+## One More / One Less starter (2026-11-12, locally verified)
+
+Four add-one/take-one-away configurations within 5/10 use canonical animals,
+pinned initial groups, reversible exploratory edits, bounded multi-step Undo,
+explicit zero and changed-quantity Check submissions. Equivalent rearrangements
+of an unchanged wrong count cannot re-score. Success locks until Next; Help
+changes no objects or success evidence. Independent journals retain exact tasks,
+masks, undo history, support and pending shared progress.
+
+- PASS — full JVM **704/704**, zero failures/errors/skips; both debug APKs and
+  lint (0 errors, 7 existing warnings, 2 informational findings).
+- PASS — new actual route/owner **2/2**: all four configurations completed in
+  5/10/5/10 rounds; Options/language, edited/wrong/locked recreation, Undo/Help,
+  zero, exact 34 attempts/four completions, navigation and shared balloons. Owner
+  checks lazy OFF, late configuration results, cancellation and silent restore.
+- PASS — final phone **4/4** and tablet **4/4** component layouts: every mode/range
+  at both start boundaries, EN/DE, 1×/1.5×/2×, portrait/landscape, keyboard, Undo,
+  zero, >=48dp targets, constant slots and fixed reference visibility.
+- Qualified — combined selection **33/34**, including all 26 focused-CI cases plus
+  layouts, Counting Tray and bilingual 32-entry Home. One old German portrait
+  Wash Hands image wait timed out; unchanged isolated Wash Hands **4/4** passed.
+  Original failure retained; no root cause/fix or clean single 34-case pass claimed.
+- Repaired fixture — first tablet **3/4** measured before window rotation settled.
+  Only the new layout test now awaits actual decor/Compose geometry. Original
+  assertions retained; final phone/tablet pass on the identical runtime/app APK.
+- Runner qualification — property/install/discovery failures ran no app tests.
+  Same AVD restarted without a wipe; final layouts used direct AndroidJUnitRunner.
+  Raw status text and labelled derived JSON summaries retained, not fabricated
+  Gradle XML. Initial/final test APK identities are distinct; app/source identical.
+- Reviewed — representative chooser, edited/solved/zero/reward, final phone 2×,
+  tablet ordinary-text and German 2× captures. Gallery contains 54 genuine images,
+  clearly separating actual production routes and component tests. Tablet is an
+  emulator display override, not physical-device evidence.
+
+[Review, raw evidence and artifact identity](docs/one-more-less-2026-11-11/README.md).
+Original display/airplane settings were restored and the emulator gracefully closed;
+original Medium Phone config hash is unchanged. The owner subsequently requested
+committing and pushing this checkpoint on 2026-11-12; retained evidence describes
+pre-commit local validation.
+No new browser suite/hosted run/full app instrumentation claim. Physical S24/Fire,
+actual TalkBack/switch, child comprehension, installed offline voices and signed
+upgrade remain NOT RUN — owner-managed checks. No legacy removal follows.
+
 ## Pattern Builder starter (2026-11-11, local verification)
 
 AB, AAB and ABC construction alternate canonical animal and native shape contexts

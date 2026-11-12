@@ -1,0 +1,219 @@
+{
+  "tests": 34,
+  "passed": 33,
+  "failures": 1,
+  "errors": 0,
+  "skipped": 0,
+  "newQuantityChangeCases": {
+    "tests": 6,
+    "passed": 6,
+    "failures": 0
+  },
+  "cases": [
+    {
+      "class": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeRouteTest",
+      "name": "allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeOwnerTest",
+      "name": "offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.patterns.PatternRouteTest",
+      "name": "allThreeRulesKeepTheirExamplesRestoreEditedAndCheckedWorkAndCompleteFiveAndTenRounds",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.patterns.PatternOwnerTest",
+      "name": "offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTest",
+      "name": "allSixBoardsRestoreTurnsTranslateUseSupportAndCompleteWithSharedBalloons",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.memory.MemoryPairsOwnerTest",
+      "name": "offIsLazyFreshOwnerRestoresSilentlyAndSwitchingWhileLoadingCannotPublishAnotherBoard",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.MainActivityStartupTest",
+      "name": "homeSurvivesLaunchRecreationAndBackgroundReturn",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.SweepRepairsRouteTest",
+      "name": "matchingOptionsRecreationReturnsToBothOriginalBrowsePages",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.SweepRepairsRouteTest",
+      "name": "thumbnailAndStepPicturesDecodeAtBoundedSizeAndMissingArtIsSafe",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.SweepRepairsRouteTest",
+      "name": "activityThumbnailsAreVisibleThroughRealBrowsePages",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.verbs.VerbsRouteTest",
+      "name": "quizLessonSettingsRecreationAndCompletionPreserveExactQuestionAndChoices",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.bonds.NumberBondsRouteTest",
+      "name": "bothLevelsKeepFixedEggsRestoreAddedEggsAndCompleteWithSharedRewards",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest",
+      "name": "listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1]",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest",
+      "name": "listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1]",
+      "passed": false,
+      "failure": "androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 10000 ms\nat androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)\nat androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)\nat com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest.listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable(WashHandsScreenTest.kt:61)\n"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest",
+      "name": "listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0]",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest",
+      "name": "listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-8]",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest",
+      "name": "allImagesDecodeOnceAtBoundedSizeAndReuseTheSameCache",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest",
+      "name": "missingAndCorruptImagesAreIsolatedAndCachedWithoutReplacingThemWithOtherAnimals",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.vocabulary.FoodVocabularyRouteTest",
+      "name": "foodExploreFindNameLanguageAndCategorySwitchPreserveSavedPractice",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest",
+      "name": "artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[ENGLISH-1]",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest",
+      "name": "artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-1]",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest",
+      "name": "artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-0]",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest",
+      "name": "artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-8]",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest",
+      "name": "germanGuidedOutlineAdvancesAndClearsAtLargeTextNarrowWidth",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest",
+      "name": "englishGuidedOutlineAdvancesAndClearsAtLargeTextNarrowWidth",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest",
+      "name": "individualListenIsSeparateFromImmediateKeyboardAnswerAndNavigationClearsOutline",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeLayoutTest",
+      "name": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=false-font=1-landscape=false]",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeLayoutTest",
+      "name": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=true-font=1.5-landscape=false]",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeLayoutTest",
+      "name": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=true-font=2-landscape=true]",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeLayoutTest",
+      "name": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=false-font=1-landscape=true]",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.counting.CountingTrayScreenTest",
+      "name": "germanLargeTextAndShortLandscapeKeepFiveTapTargetsReachable",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.counting.CountingTrayScreenTest",
+      "name": "englishBuildCheckAdjustAndSuccessUseTheTapTray",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.HomeRouteTest",
+      "name": "everyHomeEntryOpensItsExistingDestinationAndReturnsHome[en]",
+      "passed": true,
+      "failure": null
+    },
+    {
+      "class": "com.bellfamily.bastischool.HomeRouteTest",
+      "name": "everyHomeEntryOpensItsExistingDestinationAndReturnsHome[de]",
+      "passed": true,
+      "failure": null
+    }
+  ],
+  "qualification": "The combined run is 33/34, not a clean 34-case pass. The unchanged isolated Wash Hands rerun passed all four cases; original failure retained."
+}

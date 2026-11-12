@@ -1,0 +1,577 @@
+{
+  "feature": "Native One More / One Less starter",
+  "baselineCommit": "4ff84245018f59e5b407a8727b34f6b31fae36ab",
+  "started": "2026-11-11",
+  "completedAtUtc": "2026-11-12T09:44:55.154278+00:00",
+  "localUncommitted": true,
+  "pushed": false,
+  "scope": {
+    "modes": [
+      "Add one",
+      "Take one away"
+    ],
+    "limits": [
+      5,
+      10
+    ],
+    "roundLengths": [
+      5,
+      10
+    ],
+    "configurations": 4,
+    "canonicalAnimalContexts": 6,
+    "startingReferencePinned": true,
+    "undoHistoryLimit": 100,
+    "zeroExplicit": true,
+    "scoring": "Only changed checked quantities record attempts; exploratory edits/Undo/Help never fabricate success. Equivalent rearrangement of unchanged wrong count cannot re-score.",
+    "sharedSystems": [
+      "canonical vocabulary artwork and IDs",
+      "number IDs",
+      "atomic storage",
+      "progress",
+      "lazy bilingual audio",
+      "balloon completion"
+    ]
+  },
+  "jvm": {
+    "tests": 704,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "build": {
+    "debugApk": "PASS",
+    "testApk": "PASS",
+    "lint": {
+      "errors": 0,
+      "warnings": 7,
+      "information": 2
+    },
+    "originalLog": "build-lint-run.txt",
+    "finalFixtureBuildLog": "layout-fixture-build-lint-run.txt"
+  },
+  "phoneCombined": {
+    "tests": 34,
+    "passed": 33,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 0,
+    "newActivityCasesPassed": 6,
+    "report": "phone-combined-initial.xml",
+    "qualification": "Old German portrait Wash Hands image wait timed out once; unchanged isolated four-case rerun passed. This is not a clean single34-case run."
+  },
+  "washHandsRecheck": {
+    "tests": 4,
+    "passed": 4,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "report": "wash-hands-recheck.xml",
+    "sourceOrApkChanged": false,
+    "rootCauseOrFixClaimed": false
+  },
+  "finalPhoneLayouts": {
+    "source": "Derived from the raw AndroidJUnitRunner status log, not a Gradle XML report.",
+    "tests": 4,
+    "passed": 4,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "runner": "direct Android instrumentation",
+    "rawLog": "phone-layout-final-direct.txt",
+    "durationSeconds": 164.782,
+    "cases": [
+      {
+        "class": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeLayoutTest",
+        "name": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=false-font=1-landscape=false]",
+        "passed": true
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeLayoutTest",
+        "name": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=true-font=1.5-landscape=false]",
+        "passed": true
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeLayoutTest",
+        "name": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=true-font=2-landscape=true]",
+        "passed": true
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeLayoutTest",
+        "name": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=false-font=1-landscape=true]",
+        "passed": true
+      }
+    ]
+  },
+  "finalTabletLayouts": {
+    "source": "Derived from the raw AndroidJUnitRunner status log, not a Gradle XML report.",
+    "tests": 4,
+    "passed": 4,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "runner": "direct Android instrumentation",
+    "rawLog": "tablet-layout-final-direct.txt",
+    "durationSeconds": 205.863,
+    "cases": [
+      {
+        "class": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeLayoutTest",
+        "name": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=false-font=1-landscape=false]",
+        "passed": true
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeLayoutTest",
+        "name": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=true-font=1.5-landscape=false]",
+        "passed": true
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeLayoutTest",
+        "name": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=true-font=2-landscape=true]",
+        "passed": true
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeLayoutTest",
+        "name": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=false-font=1-landscape=true]",
+        "passed": true
+      }
+    ]
+  },
+  "configuredFocusedCiCases": 26,
+  "newHostedRun": false,
+  "fullAppInstrumentationRun": false,
+  "browser": {
+    "runtimeChanged": false,
+    "newSuiteRun": false
+  },
+  "artifacts": {
+    "initial": "instrumented-artifact.json",
+    "finalFixture": "layout-final-artifact.json",
+    "sameRuntimeSourceAndAppApkForAllRuns": true,
+    "testSourceChange": "Only layout fixture waits for actual decor/Compose geometry; original size/keyboard/reference assertions retained.",
+    "installedAppHashVerified": true,
+    "directRunnerInstallationEvidence": "direct-runner-install.json"
+  },
+  "initialTabletLayout": {
+    "tests": 4,
+    "passed": 3,
+    "failures": 1,
+    "report": "tablet-initial-layout.xml",
+    "finding": "Fixture measured portrait width before landscape window settled; final fixture explicitly awaits window/decor and Compose root geometry."
+  },
+  "infrastructureAttempts": {
+    "tabletPropertyTimeout": "No app tests; synthetic report/log preserved.",
+    "phoneInstallerInterruption": "Zero app tests; Android package service unavailable, system process reported DeadSystemException. Same AVD restarted without wipe.",
+    "phoneDiscoveryCancelled": "No app tests; stalled Gradle DDMLib discovery canceled, then same compiled tests run directly through AndroidJUnitRunner."
+  },
+  "finalRunner": "Direct AndroidJUnitRunner raw status text with derived JSON summaries, not Gradle XML. Both raw logs report OK (4 tests), four status-code0 completions and result code -1.",
+  "emulatorConfiguration": "emulator-configuration.json",
+  "emulatorCleanup": "emulator-cleanup.json",
+  "consistency": {
+    "generatedVerbCatalogue": "PASS",
+    "nativeLegacyMotionParity": "PASS"
+  },
+  "captureCounts": {
+    "production-phone": 22,
+    "component-phone": 16,
+    "component-tablet": 16
+  },
+  "captures": [
+    {
+      "file": "captures/quantity-change-chooser-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "90f071c9413c1077cbbb8b27c0b4d70eac91524328de45b23d315d62bcf658f5"
+    },
+    {
+      "file": "captures/quantity-change-chooser-en.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "3eb3e3dcf27e1d831689ce10675d8c89158f331a482242c9cfae81540553f4d7"
+    },
+    {
+      "file": "captures/quantity-change-layout-less-five-phone-de-15-portrait.png",
+      "kind": "component-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "c00d2a8508dc20765d1ea93d355cb8d49e646fe0760d256651c9238a5b88ce21"
+    },
+    {
+      "file": "captures/quantity-change-layout-less-five-phone-de-20-landscape.png",
+      "kind": "component-phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "3d241f5379e787c9aefc4a832e1f4739377cca0f515c300ca0ff599bcb30778b"
+    },
+    {
+      "file": "captures/quantity-change-layout-less-five-phone-en-10-landscape.png",
+      "kind": "component-phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "7b9b4fa57d73808e3eeda57896f3c12bd23beeee41cf5f0abd1497b9e4b143ff"
+    },
+    {
+      "file": "captures/quantity-change-layout-less-five-phone-en-10-portrait.png",
+      "kind": "component-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "b66979b4dda73ec2274e4547696be364bdc3809ef1b731148377739ff42363d2"
+    },
+    {
+      "file": "captures/quantity-change-layout-less-five-tablet-de-15-portrait.png",
+      "kind": "component-tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "9af7c01bac5f3a7420068448f98b285e5ee50b48eb39c3886f8adabb89f14297"
+    },
+    {
+      "file": "captures/quantity-change-layout-less-five-tablet-de-20-landscape.png",
+      "kind": "component-tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "86f56964220b1da5aae1df4f330a4455ac4887c4091d2e4ee742d8c6c981ee4d"
+    },
+    {
+      "file": "captures/quantity-change-layout-less-five-tablet-en-10-landscape.png",
+      "kind": "component-tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "579e524200f51984e43e1e1f58263e17442366b51edd3a2ce787efc651abc0cb"
+    },
+    {
+      "file": "captures/quantity-change-layout-less-five-tablet-en-10-portrait.png",
+      "kind": "component-tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "67757d074022d9dabd2de8e09de1e99ec5c9057a370daa9904260630a748fa4d"
+    },
+    {
+      "file": "captures/quantity-change-layout-less-ten-phone-de-15-portrait.png",
+      "kind": "component-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "d704584d115f2c1bf2bcbe23ee522ae11dc8239ea35a1c4af9d4a9d659bdeeb7"
+    },
+    {
+      "file": "captures/quantity-change-layout-less-ten-phone-de-20-landscape.png",
+      "kind": "component-phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "52b67d410c4839bf8da1040b21536c8133b25e9ef6de4fd32e61356034f89f6d"
+    },
+    {
+      "file": "captures/quantity-change-layout-less-ten-phone-en-10-landscape.png",
+      "kind": "component-phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "3d1998df7a7c1e30e57086745ee85fb88c1c07da8ebd492c3e87dd9611570261"
+    },
+    {
+      "file": "captures/quantity-change-layout-less-ten-phone-en-10-portrait.png",
+      "kind": "component-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "1403ebae5a8a328577528f8d382af17468ed5bd3f221765433afc75125797b5b"
+    },
+    {
+      "file": "captures/quantity-change-layout-less-ten-tablet-de-15-portrait.png",
+      "kind": "component-tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "9739ff9ff648a3a0846bb286ac00cdd658dd37d69fd3afdbd8287c42c8d2dd6b"
+    },
+    {
+      "file": "captures/quantity-change-layout-less-ten-tablet-de-20-landscape.png",
+      "kind": "component-tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "ec9d459cd1fdfeee35ede227327cb94ae46e5c8ffe630ad0ff6ff48b6b9ef618"
+    },
+    {
+      "file": "captures/quantity-change-layout-less-ten-tablet-en-10-landscape.png",
+      "kind": "component-tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "6762379aa6dc7c2b04e05a6b73cd060e73fe7e87c6d126ad9b1d2521ab636706"
+    },
+    {
+      "file": "captures/quantity-change-layout-less-ten-tablet-en-10-portrait.png",
+      "kind": "component-tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "ba53e11230dc32c8c3ed7e658998f2e0e479b496fb0228f842e7e335cecd3198"
+    },
+    {
+      "file": "captures/quantity-change-layout-more-five-phone-de-15-portrait.png",
+      "kind": "component-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "f0d4b470a5923a33b35b95862e0467bf3ae06907637947aad66b9cb3b4028ebe"
+    },
+    {
+      "file": "captures/quantity-change-layout-more-five-phone-de-20-landscape.png",
+      "kind": "component-phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "229a3b1fa6ec94ce1bb8a27e934eda89f107db2dd9cfed786735b3d8b8f899f2"
+    },
+    {
+      "file": "captures/quantity-change-layout-more-five-phone-en-10-landscape.png",
+      "kind": "component-phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "5000f1fdfd71273b8dd16c2da6cffcfcbb8b01ea9e3664aea7608a7caef14191"
+    },
+    {
+      "file": "captures/quantity-change-layout-more-five-phone-en-10-portrait.png",
+      "kind": "component-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "45ba015f15e965bb2f7d42bc96d7df78f35c9b6259107aa436c50b322f0e8778"
+    },
+    {
+      "file": "captures/quantity-change-layout-more-five-tablet-de-15-portrait.png",
+      "kind": "component-tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "4261b6969cf83a90878362fd64b9730b1a4d909f28a6afe5d501ed0d0f2c21e2"
+    },
+    {
+      "file": "captures/quantity-change-layout-more-five-tablet-de-20-landscape.png",
+      "kind": "component-tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "12967bcec2e33ec29ca98c42006a2477680ef0e2930e9b703fef2b03e4a4de52"
+    },
+    {
+      "file": "captures/quantity-change-layout-more-five-tablet-en-10-landscape.png",
+      "kind": "component-tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "210ba3c111a471af20b3f9356f46e74feff38694f91e1d7c5a9b52821041f45e"
+    },
+    {
+      "file": "captures/quantity-change-layout-more-five-tablet-en-10-portrait.png",
+      "kind": "component-tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "7c18260e71d0fc5e0e23443e148caa6c1b0c259603abd1ec01f45cefed17a58b"
+    },
+    {
+      "file": "captures/quantity-change-layout-more-ten-phone-de-15-portrait.png",
+      "kind": "component-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "e81d4f87038aceecde680a1be9845493f9250761cf88641379f703f4498a6e58"
+    },
+    {
+      "file": "captures/quantity-change-layout-more-ten-phone-de-20-landscape.png",
+      "kind": "component-phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "626ae246bffd752022999bc0296781f948d9a6303294e93c3a63601191b2eb5a"
+    },
+    {
+      "file": "captures/quantity-change-layout-more-ten-phone-en-10-landscape.png",
+      "kind": "component-phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "b2774ad1fdaaa3eaedbbf8cda82a1bba859dba124b28745ed6a5d00646c2ff75"
+    },
+    {
+      "file": "captures/quantity-change-layout-more-ten-phone-en-10-portrait.png",
+      "kind": "component-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "570bd3f6f1d3f44ac553ffce10298d9fa06344b744540e4fdac93cdfcdfe9fe4"
+    },
+    {
+      "file": "captures/quantity-change-layout-more-ten-tablet-de-15-portrait.png",
+      "kind": "component-tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "739b41adb1d0374d8d7d307e1453200a783c0bcc0add06951b9bbeb1c479b790"
+    },
+    {
+      "file": "captures/quantity-change-layout-more-ten-tablet-de-20-landscape.png",
+      "kind": "component-tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "6ef5bdfe6e2a81d963c4cf1f48f87ae2b5291a3d16800f20a8e01b6c4e47aa10"
+    },
+    {
+      "file": "captures/quantity-change-layout-more-ten-tablet-en-10-landscape.png",
+      "kind": "component-tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "58b512abbe11dfa9423a8b7b34a312862c645cf81f7cf4ebc6c7792acdcf8efb"
+    },
+    {
+      "file": "captures/quantity-change-layout-more-ten-tablet-en-10-portrait.png",
+      "kind": "component-tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "02b7e242e66e53997e977309cf0e5b4f1ddbd41d11e4cef32970e56d34c50484"
+    },
+    {
+      "file": "captures/quantity-change-less-five-complete-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "93e9cdbd00c358c01f82de16a2323efe40f103e6a7747c697a42848a683d25b4"
+    },
+    {
+      "file": "captures/quantity-change-less-five-partial-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "065968ec78d8f1fea9e3d254d693624d486fb27eca40edc60baaf503f8cb36fe"
+    },
+    {
+      "file": "captures/quantity-change-less-five-retry-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "439ddb9e9edc76e482c40d1921351e244ad261055ead34ca0f391cb88ad90a59"
+    },
+    {
+      "file": "captures/quantity-change-less-five-solved-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "2637cee827e4b45ddb66440fc27a012dfa6ddff5cb184d921278ca65affaa8e2"
+    },
+    {
+      "file": "captures/quantity-change-less-five-zero-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "c67813717106779cc014ab78deeb9bd2f7bb918f22c34d1b4f2f4f545cb4cef2"
+    },
+    {
+      "file": "captures/quantity-change-less-ten-complete-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "b8a36a78a489f7b932e040dc69e7fa78d9e89dae7cd7b6d198f48236699dd373"
+    },
+    {
+      "file": "captures/quantity-change-less-ten-partial-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "816578e42c75f1485e6579d2c121ae1a7d2a165f97a20158b54a71cff342931d"
+    },
+    {
+      "file": "captures/quantity-change-less-ten-retry-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "9faa0f1f1c63f0ab48cbf49cb5a24de8b35839d60f7ae59b76fd96aa8badcc73"
+    },
+    {
+      "file": "captures/quantity-change-less-ten-solved-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "59617804e94237ca8b9d089e830d690beb2d6f0afe0719039a12790bfa526fb7"
+    },
+    {
+      "file": "captures/quantity-change-less-ten-zero-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "6243caaa37e6f1d6488fda15c722223688c433a63de4e2d67c865809d40416b2"
+    },
+    {
+      "file": "captures/quantity-change-more-five-complete-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "c7869df318e2af66a1357f0be4c30a9272785a7f66fc94b9df9cd5e0af8a497b"
+    },
+    {
+      "file": "captures/quantity-change-more-five-from-zero-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "734adc9d1237c0c7617b0e41669e41949e3232c883c35aca196f96ffe50f3909"
+    },
+    {
+      "file": "captures/quantity-change-more-five-partial-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "aba6b3e377afe2f6303cda095bef9885cda1a94e121340610a410f2b9bed0f3d"
+    },
+    {
+      "file": "captures/quantity-change-more-five-retry-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "37cd0ba51520200b2f34a47aaae77648a74d6bb666faf5c11766ad6c3de4eaae"
+    },
+    {
+      "file": "captures/quantity-change-more-five-solved-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "df93998de3c05a981dac6f57cef52397891a5a0bcf6188bb20dbd4910eb46bde"
+    },
+    {
+      "file": "captures/quantity-change-more-ten-complete-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "cfcc9fbd84b00acb578f6db4eb02a0627b7231158e024d789cd3101f5848ed0d"
+    },
+    {
+      "file": "captures/quantity-change-more-ten-from-zero-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "3b35d3459881babb151679d5342717d3e7e3865e4dded68fd7a9d8a32dfd8d24"
+    },
+    {
+      "file": "captures/quantity-change-more-ten-partial-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "8d1a6e642efd87862999fd5fd631b2e72c49f50c4ddfe9cadc7ca6304c2afcf8"
+    },
+    {
+      "file": "captures/quantity-change-more-ten-retry-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "2f24c37566c5fdc028d721f49407964cc6aa8e0e3b211ff16bb14fa25032807c"
+    },
+    {
+      "file": "captures/quantity-change-more-ten-solved-de.png",
+      "kind": "production-phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "d81e294cd85c4cc23a5d88e554a553464dd61e6774588b49a384168eaaa59d5b"
+    }
+  ],
+  "representativeVisualReview": [
+    "quantity-change-chooser-en.png",
+    "quantity-change-more-five-solved-de.png",
+    "quantity-change-less-five-partial-de.png",
+    "quantity-change-less-ten-zero-de.png",
+    "quantity-change-more-ten-complete-de.png",
+    "quantity-change-layout-less-ten-phone-de-20-landscape.png",
+    "quantity-change-layout-more-ten-tablet-en-10-portrait.png",
+    "quantity-change-layout-less-ten-tablet-de-20-landscape.png"
+  ],
+  "allCapturesIndividuallyVisuallyReviewed": false,
+  "notRun": [
+    "physical Samsung S24",
+    "physical Fire tablet",
+    "actual TalkBack and switch access",
+    "child comprehension",
+    "installed offline voice quality",
+    "signed in-place upgrade"
+  ]
+}

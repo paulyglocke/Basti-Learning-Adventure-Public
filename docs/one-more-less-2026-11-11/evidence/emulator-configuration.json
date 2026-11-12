@@ -1,0 +1,21 @@
+{
+  "avd": "Basti_Pattern_20261111",
+  "serial": "emulator-5554",
+  "api": 35,
+  "physicalSize": [
+    1080,
+    2400
+  ],
+  "physicalDensityDpi": 420,
+  "originalAirplaneMode": 0,
+  "testAirplaneMode": 1,
+  "cpu": 4,
+  "memoryMB": 6144,
+  "dataBytes": 12884901888,
+  "gpu": "host",
+  "noSnapshots": true,
+  "originalMediumPhoneConfigSha256": "c4ab33993685273776e9286aee0b948e48192f5ab61046d564447d7a12e7034c",
+  "originalMediumPhoneConfigUnchanged": true,
+  "dataWiped": false,
+  "physicalDevicesContacted": false
+}

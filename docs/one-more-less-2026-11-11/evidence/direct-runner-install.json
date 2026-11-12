@@ -1,0 +1,9 @@
+{
+  "serial": "emulator-5554",
+  "installedAppApkSha256": "9f566bcc8ac762d617bb04e7a29607d74484e3d4d50b6aeab1baa71487b5f90b",
+  "matchesDebugApk": true,
+  "testApkInstall": "adb install -r -t: Success",
+  "runner": "com.bellfamily.bastischool.test/androidx.test.runner.AndroidJUnitRunner",
+  "reason": "Gradle DDMLib discovery stalled with no app tests after emulator restart. Direct Android runner avoids that host discovery step.",
+  "dataCleared": false
+}

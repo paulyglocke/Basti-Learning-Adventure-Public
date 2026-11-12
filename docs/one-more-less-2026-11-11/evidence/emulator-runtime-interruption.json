@@ -1,0 +1,10 @@
+{
+  "phoneLayoutAppTestsStarted": 0,
+  "installerError": "cmd: Can't find service: package",
+  "systemDiagnostic": "AndroidRuntime reported DeadSystemException in com.google.android.apps.messaging:rcs and a new zygote start. No Basti app crash was reported in that diagnostic.",
+  "dataStorage": "12G total, 981M used, 11G available (9% used)",
+  "action": "Gracefully stopped and restarted the same persistent AVD without wiping data or using snapshots.",
+  "originalAirplaneMode": 0,
+  "restorationStillRequiredAtRestart": true,
+  "finalRestorationEvidence": "emulator-cleanup.json"
+}

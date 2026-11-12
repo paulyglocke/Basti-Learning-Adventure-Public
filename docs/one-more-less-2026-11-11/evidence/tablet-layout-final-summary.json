@@ -1,0 +1,33 @@
+{
+  "source": "Derived from the raw AndroidJUnitRunner status log, not a Gradle XML report.",
+  "tests": 4,
+  "passed": 4,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "runner": "direct Android instrumentation",
+  "rawLog": "tablet-layout-final-direct.txt",
+  "durationSeconds": 205.863,
+  "cases": [
+    {
+      "class": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeLayoutTest",
+      "name": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=false-font=1-landscape=false]",
+      "passed": true
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeLayoutTest",
+      "name": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=true-font=1.5-landscape=false]",
+      "passed": true
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeLayoutTest",
+      "name": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=true-font=2-landscape=true]",
+      "passed": true
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeLayoutTest",
+      "name": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=false-font=1-landscape=true]",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "baselineCommit": "4ff84245018f59e5b407a8727b34f6b31fae36ab",
+  "debugApkSha256": "9f566bcc8ac762d617bb04e7a29607d74484e3d4d50b6aeab1baa71487b5f90b",
+  "testApkSha256": "e054cd9953b87c824290e779b6de55dd11c5bbf7a7cf9336bfa083b80f090346",
+  "runtimeSourceSha256": {
+    "app/src/main/java/com/bellfamily/bastischool/MainActivity.kt": "bff886a4ea67f0209855a3fac6215482032fbb9b39cb481868ad1af91d746a4e",
+    "app/src/main/java/com/bellfamily/bastischool/ShellNavigation.kt": "a3e980deadf305bfeadf5464937016a83507587070508e64e4bec2607f064602",
+    "app/src/main/java/com/bellfamily/bastischool/learning/quantitychange/QuantityChange.kt": "20317832bb84ee5aa27eb41641c53d0d891a015c23fbf6970dc12a806cffcede",
+    "app/src/main/java/com/bellfamily/bastischool/learning/quantitychange/QuantityChangeAudio.kt": "01b956f5fea2e873a297fcbfa004e986c7650bb0f3d4e15c0e840bb17e7b4d4d",
+    "app/src/main/java/com/bellfamily/bastischool/learning/quantitychange/QuantityChangeHost.kt": "60102f65d5b4e3962dee516d693d60352944f4a39532eb2083a384502fb01cd9",
+    "app/src/main/java/com/bellfamily/bastischool/ui/home/HomeActivityArtwork.kt": "007725885cbecaa95f642240fa9c1d5c1c7ff61c0fe71dace17cf9844d69a4e0",
+    "app/src/main/java/com/bellfamily/bastischool/ui/home/HomeCatalogue.kt": "6ecec8bbb2978d7ed7f6bbc692d020aafa28dfa093e993082f6a8e3d0435d3cd",
+    "app/src/main/java/com/bellfamily/bastischool/ui/quantitychange/QuantityChangeScreen.kt": "9a27619abfc5a550deed203c78c28e026c55ca68e116b8675549706f3b2b5333",
+    "app/src/main/java/com/bellfamily/bastischool/ui/quantitychange/QuantityChangeViewModel.kt": "c8f268a2ed633939e256bbceb59a44bf536020dcc60fec4c54c122cfc4fae88c"
+  },
+  "testSourceSha256": {
+    "app/src/androidTest/java/com/bellfamily/bastischool/HomeRouteTest.kt": "a7977430f250f0f4f655de7869893aa62d04bd0777e7f9070153224c9a22a249",
+    "app/src/androidTest/java/com/bellfamily/bastischool/ui/quantitychange/QuantityChangeLayoutTest.kt": "421dd96c242ff25f053a59459582b5370e695417dd0825a4888a7582ff6a9658",
+    "app/src/androidTest/java/com/bellfamily/bastischool/ui/quantitychange/QuantityChangeOwnerTest.kt": "2025d482873472039690447596af3d9028622cc64a516ddfc38c45aea0978042",
+    "app/src/androidTest/java/com/bellfamily/bastischool/ui/quantitychange/QuantityChangeRouteTest.kt": "ff67302921da7d13db04a3680a96871485477f95e5b0d666a47007f178170bb8",
+    "app/src/test/java/com/bellfamily/bastischool/HomeCardsTest.kt": "b8ad0339edfab904a36534662daa68ff24824152341bf01f52f0df348b9743f5",
+    "app/src/test/java/com/bellfamily/bastischool/HomeIntegrationTest.kt": "a8b8442b736f8d12b9bc39fce0d31fd198f95cafb2df50d14cc93f5bceed8125",
+    "app/src/test/java/com/bellfamily/bastischool/QuantityChangeNavigationTest.kt": "db0894166c3419e38b82a166c1fe494ccf94f1aef0b51dad2cd3b9c7279c3440",
+    "app/src/test/java/com/bellfamily/bastischool/learning/quantitychange/QuantityChangeTest.kt": "2a11fe2f66d9c3343d96669fae6646d92ce2f12f8b4ade2b9ae4f6f589762161",
+    "app/src/testDebug/java/com/bellfamily/bastischool/ui/homeprototype/HomePrototypeModelTest.kt": "4120e55c5d641cfede59e92ac2d65c002dede62f43948efdb75a567f6a4484fd"
+  }
+}
