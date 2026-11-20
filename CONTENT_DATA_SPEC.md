@@ -606,3 +606,19 @@ start/animal task in the round. New rounds change their plan and avoid repeating
 the preceding final start/animal immediately. Four checksummed journals freeze tasks,
 current mask, bounded undo history, last checked quantities/support and pending
 progress. No older activity revisions or shared checkpoint schemas change.
+
+
+## Number Stories (2026-11-16)
+
+StoryTask freezes starting quantity, change amount and semantic scene. Scene
+records reference existing `animal.dinosaur` / `food.apple` IDs, canonical bilingual
+singulars and reviewed plurals. Narration, reference, checked target, equation and
+progress evidence derive from those facts. Starts are positive; changes are 1–5;
+results stay within the selected 5/10 limit, including zero for taking away.
+Seeded rounds contain unique arithmetic facts, alternate settings, avoid adjacent
+repeated answers, contain multi-object changes and cover the top addition boundary
+or a zero remainder. Play again avoids the previous boundary fact/result/setting.
+Four v1 journals preserve exact work, Undo, checked counts, support and pending
+evidence. No old catalogue/session revision changes.
+
+Implementation and validation: [Number Stories review](docs/number-stories-2026-11-16/README.md).

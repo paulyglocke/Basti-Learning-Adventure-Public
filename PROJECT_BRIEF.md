@@ -429,3 +429,14 @@ These are useful future directions but should not prevent shipping a stable V1.
 ## 22. Instructions for coding agents
 
 Follow AGENTS.md for mandatory operating rules, source inspection and verification. Preserve the useful learning content above while following the master specs for future direction.
+
+
+## Number Stories (2026-11-16)
+
+Number Stories / Rechengeschichten adds native illustrated adding/taking-away
+situations in pond and picnic contexts, within 5/10, with reversible work, saved
+5/10 rounds, bilingual audio, progress and shared balloons. Home now has 33 live
+activities (30 native, three retained web), Maths 17. Physical acceptance remains
+separate.
+
+Implementation and validation: [Number Stories review](docs/number-stories-2026-11-16/README.md).

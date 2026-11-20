@@ -480,3 +480,17 @@ quantity; equivalent rearrangements of an unchanged wrong count cannot score twi
 Wrong groups stay editable; success locks and shows the equation until Next.
 Help describes one change without changing the board. No timer/negative score.
 Canonical animal art, native frames and shared audio/progress/balloons are reused.
+
+
+## Number Stories (2026-11-16)
+
+Home adds Number Stories / Rechengeschichten in Maths: 33 live entries, 30 native
+and three retained web; Maths has 17. Chooser offers adding/taking away within 5/10.
+Back from a game returns to its chooser, then Home; Options preserves mode/limit
+and exact board. Invalid saved arguments recover safely to Home. Initial group
+and change remain pinned while story/work/actions scroll. Empty and occupied
+spaces add/remove one object; Undo is reversible and unscored. Wrong work stays
+editable, solved work locks until explicit Next, and zero is visible. Equation
+appears after successful Check. Completion reuses shared balloons.
+
+Implementation and validation: [Number Stories review](docs/number-stories-2026-11-16/README.md).

@@ -1,0 +1,169 @@
+{
+  "baseline": "6b19a5246374efad6d77eddd6fd9c750c5613b97",
+  "status": "Pre-commit implementation and selected local verification complete. Physical acceptance remains separate.",
+  "resumedValidationDate": "2026-11-20",
+  "jvm": {
+    "tests": 719,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "Error": 0,
+    "Warning": 7,
+    "Information": 2
+  },
+  "apks": {
+    "app/build/outputs/apk/debug/app-debug.apk": "38214aa506d675c9f815fa6df4f7ee5bf861a23bc3ddb1796bea575838ef4a1c",
+    "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": "c1862cd3586bc6280f5b1bf3a88a6bf1985b98328807a81a2fb9224527691e65"
+  },
+  "phone": {
+    "source": "phone-final.txt",
+    "format": "Derived from direct AndroidJUnitRunner raw text; not Gradle XML",
+    "tests": 11,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "instrumentationCode": -1,
+    "cases": [
+      {
+        "class": "com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest",
+        "test": "allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.numberstories.NumberStoriesOwnerTest",
+        "test": "offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest",
+        "test": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=false-font=1-landscape=false]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest",
+        "test": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=true-font=1.5-landscape=false]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest",
+        "test": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=true-font=2-landscape=true]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest",
+        "test": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=false-font=1-landscape=true]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeRouteTest",
+        "test": "allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeOwnerTest",
+        "test": "offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.MainActivityStartupTest",
+        "test": "homeSurvivesLaunchRecreationAndBackgroundReturn",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.HomeRouteTest",
+        "test": "everyHomeEntryOpensItsExistingDestinationAndReturnsHome[en]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.HomeRouteTest",
+        "test": "everyHomeEntryOpensItsExistingDestinationAndReturnsHome[de]",
+        "outcome": "passed"
+      }
+    ]
+  },
+  "tablet": {
+    "source": "tablet-final.txt",
+    "format": "Derived from direct AndroidJUnitRunner raw text; not Gradle XML",
+    "tests": 4,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "instrumentationCode": -1,
+    "cases": [
+      {
+        "class": "com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest",
+        "test": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=false-font=1-landscape=false]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest",
+        "test": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=true-font=1.5-landscape=false]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest",
+        "test": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=true-font=2-landscape=true]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest",
+        "test": "allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=false-font=1-landscape=true]",
+        "outcome": "passed"
+      }
+    ]
+  },
+  "captures": {
+    "total": 84,
+    "counts": {
+      "phone-production": 20,
+      "phone-component": 32,
+      "tablet-component": 32
+    },
+    "inventory": "capture-inventory.json",
+    "visuallyReviewed": 15,
+    "visualReview": "visual-review.json"
+  },
+  "sourceManifest": "tested-source.json",
+  "resumedInstalledApks": "resumed-installed-apks.json",
+  "recordedSourceAndApkHashesStillMatch": true,
+  "supportingChecks": {
+    "verbCatalogueGeneration": "passed",
+    "retainedMotionParity": "passed",
+    "galleryLinks": "passed",
+    "sourceAndDocumentWhitespace": "passed; retained raw logs excluded (five tool-emitted trailing spaces preserved verbatim)"
+  },
+  "cleanup": {
+    "avd": "Basti_Pattern_20261111",
+    "serial": "emulator-5554",
+    "restoredSize": [
+      1080,
+      2400
+    ],
+    "restoredDensity": 420,
+    "displayOverridesCleared": true,
+    "airplaneMode": 1,
+    "matchesOriginalAirplaneMode": true,
+    "gracefulClose": true,
+    "attachedDevicesAfterClose": [],
+    "originalMediumPhoneConfigSha256": "c4ab33993685273776e9286aee0b948e48192f5ab61046d564447d7a12e7034c",
+    "originalMediumPhoneConfigUnchanged": true,
+    "noWipeOrSnapshotDeletion": true,
+    "physicalDevicesUsed": false
+  },
+  "scope": {
+    "fullAppInstrumentation": false,
+    "newBrowserSuite": false,
+    "hostedValidation": false,
+    "physicalDevices": false,
+    "realTalkBackOrSwitchAccess": false,
+    "audibleOfflineVoices": false,
+    "childUse": false,
+    "signedUpgrade": false
+  },
+  "earlierAttempts": [
+    "initial-phone-runner.txt",
+    "resume-sandbox-adb-failure.txt"
+  ]
+}

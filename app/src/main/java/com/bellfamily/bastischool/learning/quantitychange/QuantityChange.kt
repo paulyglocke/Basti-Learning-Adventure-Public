@@ -5,6 +5,7 @@ import com.bellfamily.bastischool.learning.session.*
 import com.bellfamily.bastischool.learning.progress.*
 import com.bellfamily.bastischool.learning.bonds.NumberBonds
 import com.bellfamily.bastischool.learning.vocabulary.VocabularyContent
+import com.bellfamily.bastischool.learning.quantity.QuantityWork
 import java.util.Collections
 import java.util.Random
 
@@ -28,7 +29,7 @@ object QuantityChange {
     val complete=ContentText.plain("You changed every group!","Du hast alle Gruppen verändert!")
     val animals get()=VocabularyContent.items.map{it.id}
     fun label(id:ContentId)=VocabularyContent.item(id).text
-    fun initialMask(task:ChangeTask)=(1 shl task.start)-1
+    fun initialMask(task:ChangeTask)=QuantityWork.filled(task.start)
     fun target(task:ChangeTask,config:ChangeConfig)=task.start+config.mode.delta
     fun prompt(task:ChangeTask,config:ChangeConfig):ContentText {
         val en=when(task.start){0->"There are no animals yet.";1->"There is one animal.";else->"There are ${task.start} animals."}
@@ -88,9 +89,7 @@ object QuantityChange {
             require(tasks.zipWithNext().all{(a,b)->a.start!=b.start&&a.animal!=b.animal})
             val counts=config.starts.map{n->tasks.count{it.start==n}};require(counts.max()-counts.min()<=1)
             require(index in tasks.indices&&results.size==tasks.size)
-            fun valid(m:Int)=m>=0&&m<(1 shl config.range.limit)
-            require(valid(mask)&&undoMasks.size<=100&&undoMasks.all(::valid))
-            require((undoMasks+mask).zipWithNext().all{(a,b)->Integer.bitCount(a xor b)==1})
+            QuantityWork(mask,undoMasks).validate(config.range.limit)
             require(results.take(index).all{it.solved}&&results.drop(index+1).all{it==Result()})
             results.forEachIndexed{i,r->r.checkedCount?.let{require(it in 0..config.range.limit);require(r.solved==(it==target(tasks[i],config)))}}
             require(!current.solved||count==answer)
@@ -113,8 +112,8 @@ object QuantityChange {
         if(s.completed)return s
         fun result(r:Result)=s.copy(results=s.results.mapIndexed{i,old->if(i==s.index)r else old})
         return when(a) {
-            is Action.Toggle->if(s.current.solved||a.slot !in 0 until s.config.range.limit)s else s.copy(mask=s.mask xor(1 shl a.slot),undoMasks=(s.undoMasks+s.mask).takeLast(100))
-            Action.Undo->if(s.current.solved||s.undoMasks.isEmpty())s else s.copy(mask=s.undoMasks.last(),undoMasks=s.undoMasks.dropLast(1))
+            is Action.Toggle->if(s.current.solved||a.slot !in 0 until s.config.range.limit)s else QuantityWork(s.mask,s.undoMasks).toggle(a.slot,s.config.range.limit).let{s.copy(mask=it.mask,undoMasks=it.undo)}
+            Action.Undo->if(s.current.solved||s.undoMasks.isEmpty())s else QuantityWork(s.mask,s.undoMasks).undo().let{s.copy(mask=it.mask,undoMasks=it.undo)}
             Action.Check->if(s.current.solved||s.needsCorrection||s.current.attempts>=10000)s else {
                 val solved=s.count==s.answer;result(s.current.copy(attempts=s.current.attempts+1,wrong=s.current.wrong+if(solved)0 else 1,solved=solved,checkedCount=s.count))
             }

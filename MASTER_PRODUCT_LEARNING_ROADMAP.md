@@ -2269,3 +2269,15 @@ becoming zero. Canonical animal contexts vary in saved 5/10 rounds. Only explici
 changed Check submissions create shared evidence; Help and Undo remain exploratory.
 This is bounded relative-quantity practice, not generalised mastery or arbitrary
 operations. See [implementation/validation](docs/one-more-less-2026-11-11/README.md).
+
+
+## Number Stories (2026-11-16)
+
+Number Stories applies concrete addition/taking away in two familiar settings:
+canonical dinosaurs by a native pond and canonical apples on a native picnic
+blanket. Separate within-5/within-10 choices use changes of 1–5, reversible edits,
+explicit Check, zero, saved 5/10 rounds and shared rewards. It is a bounded story
+application slice, not generalised mastery, adaptive progression or a replacement
+for One More / One Less. Physical/child acceptance remains separate.
+
+Implementation and validation: [Number Stories review](docs/number-stories-2026-11-16/README.md).

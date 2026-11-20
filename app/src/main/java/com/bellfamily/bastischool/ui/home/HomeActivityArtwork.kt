@@ -24,6 +24,7 @@ import com.bellfamily.bastischool.ui.common.BundledArtwork
 internal data class HomeActivityArt(val asset:String?=null,val diagram:String?=null)
 internal object HomeActivityArtwork {
     val entries=mapOf(
+        "numberStories" to HomeActivityArt(diagram="number-stories"),
         "quantityChange" to HomeActivityArt(diagram="one-step-quantity"),
         "patternBuilder" to HomeActivityArt(diagram="repeating-pattern"),
         "memoryPairs" to HomeActivityArt(diagram="memory-pairs"),
@@ -65,6 +66,10 @@ internal fun HomeActivityThumbnail(id:String,modifier:Modifier=Modifier) {
     Box(modifier.clip(RoundedCornerShape(12.dp)).background(Color(0xFFFFF6E7))) {
         if(art.asset!=null) BundledArtwork(art.asset,Modifier.fillMaxSize(),256)
         else when(art.diagram) {
+            "number-stories" -> Row(Modifier.fillMaxSize()) {
+                BundledArtwork("Animals/canonical/dinosaur.png",Modifier.weight(1f).fillMaxHeight().background(Color(0xFFDDECCC)),256)
+                BundledArtwork("vocabulary/food/apple.jpg",Modifier.weight(1f).fillMaxHeight(),256)
+            }
             "word-pictures" -> Row(Modifier.fillMaxSize()) {
                 BundledArtwork("school_actions/board/object_book.png",Modifier.weight(1f).fillMaxHeight(),256)
                 BundledArtwork("vocabulary/food/apple.jpg",Modifier.weight(1f).fillMaxHeight(),256)

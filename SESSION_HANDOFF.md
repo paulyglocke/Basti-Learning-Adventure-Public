@@ -1,4 +1,50 @@
-# Session handoff — 2026-11-12
+# Session handoff — 2026-11-20
+
+## Number Stories (2026-11-16, completed locally 2026-11-20)
+
+Owner approved Number Stories after committing/pushing One More / One Less at
+6b19a5246374efad6d77eddd6fd9c750c5613b97. The owner subsequently requested
+committing and pushing this checkpoint to main on 2026-11-20. Retained evidence
+describes pre-commit local validation; hosted checks are separate.
+No agents used. Native structured story model/host/audio, chooser/owner/board,
+validated shell routing, Home entry and tests are implemented locally. Four
+configurations add/take away 1–5 within 5/10, alternating pond/dinosaur and
+picnic/apple contexts with unique arithmetic facts. Pinned starting group/change,
+reversible work/Undo, zero, checked evidence and shared balloons are included.
+Small QuantityWork helper is shared with One More / One Less without journal changes.
+
+Final build4 passed **719/719 JVM**, both APKs and lint (0 errors, 7 existing
+warnings, 2 informational findings). Final API 35 phone **11/11** and tablet
+**4/4** passed, zero failures/errors/skips. Phone covers Number Stories route/
+owner/four layouts, existing quantity route/owner, startup and bilingual 33-entry
+Home. New route completes all four configurations with exact 34 attempts/four
+completions, Options/language, edited/wrong/solved restoration, Undo/Help, zero
+and shared balloons. Layouts cover all eight mode/range/setting combinations,
+EN/DE 1×/1.5×/2×, portrait/landscape, keyboard, stable >=48dp slots and pinned
+starting frames. Recorded source and both APKs match their retained hashes.
+
+Initial phone **6/11** remains recorded: taking-away screenshot names contained
+underscores rejected by the capture helper. Hyphenated names and scene clipping
+were applied before final build4. The resumed sandbox ADB failure ran no tests;
+the authorized retry passed all four tablet cases. Raw direct-runner logs and
+labelled derived JSON summaries are retained, not represented as Gradle XML.
+
+[Review and gallery](docs/number-stories-2026-11-16/README.md): 84 genuine captures
+(20 production phone, 32 phone components, 32 tablet components), 15 visually
+reviewed; complete build/XML/runner/source/APK/capture evidence is retained.
+Catalogue generation, motion parity, source/document whitespace and gallery
+integrity pass. Raw logs retain five tool-emitted trailing spaces verbatim.
+No new browser, full-app instrumentation or hosted result is claimed.
+
+Only owned Basti_Pattern_20261111/emulator-5554 used, four CPUs/6 GB/host GPU,
+without snapshots/wipe. Tablet override1600x2560/density240 cleared back to
+1080x2400/density420; original airplane1 preserved. AVD gracefully closed; ADB
+confirms no attached devices. Original Medium Phone config hash is unchanged;
+original userdata and physical devices untouched. No test/emulator work remains.
+Physical S24/Fire, actual TalkBack/switch, child use, audible installed offline
+voices and signed upgrade remain NOT RUN. No legacy removal follows. No local
+implementation or verification work remains for this checkpoint.
+
 
 ## One More / One Less (2026-11-12, completed locally)
 

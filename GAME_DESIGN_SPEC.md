@@ -1642,3 +1642,16 @@ Zero is taught explicitly when removing the last animal or beginning an add-one
 question from an empty group. This adds a concrete relationship beyond building
 an absolute target; other operations/stories remain future curriculum. Verification:
 [review](docs/one-more-less-2026-11-11/README.md).
+
+
+## Number Stories (2026-11-16)
+
+Number Stories extends quantity construction to situations with 1–5 objects
+arriving/leaving in pond and picnic settings. Separate adding/taking-away and
+within-5/within-10 choices keep one learning job clear. Start and change stay
+visible, wrong work can be edited, Undo restores each move, and continuation is
+child-controlled. Unique arithmetic facts and alternating scenes prevent an
+identical question within a round. Canonical objects intentionally repeat within
+a group because those objects are the quantity being counted.
+
+Implementation and validation: [Number Stories review](docs/number-stories-2026-11-16/README.md).

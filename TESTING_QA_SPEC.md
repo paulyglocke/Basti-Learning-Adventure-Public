@@ -947,3 +947,30 @@ errors and 5 existing warnings. The final-source gallery contains 25 genuine
 emulator captures. Do not claim OS process-death, physical-device, actual
 TalkBack/switch-access, offline voice-quality or child-use acceptance from
 these checks.
+
+
+## Number Stories (2026-11-16)
+
+Native adding/taking-away situations within 5/10 use pond/dinosaur and picnic/apple
+settings. Structured unique facts derive narration, targets and equations; fixed
+initial references/change, editable boards, bounded Undo, explicit zero, changed
+Check evidence and four atomic journals preserve the existing shared contracts.
+Final local verification (completed 2026-11-20): **719/719 JVM**, both debug APKs,
+lint (0 errors, 7 existing warnings, 2 informational findings), **11/11 phone**
+and **4/4 tablet** checks, with zero test failures/errors/skips. Phone covers
+the new route/owner, four layouts, existing quantity route/owner, startup and
+bilingual 33-entry Home. Tablet repeats all eight mode/range/setting combinations
+at EN/DE 1×/1.5×/2× in portrait/landscape, keyboard, Undo, zero, stable >=48dp
+slots and fixed-reference visibility. The gallery has 84 genuine captures
+(20 production, 32 phone component, 32 tablet component); 15 were visually reviewed.
+Raw direct-runner text, explicitly labelled derived summaries, source/APK hashes,
+initial screenshot-fixture failures and cleanup are in
+[the review](docs/number-stories-2026-11-16/README.md). Recorded source and both
+APKs stayed identical during resumed validation. Emulator overrides were cleared,
+original airplane mode 1 preserved, and the owned AVD closed; original Medium
+Phone configuration hash is unchanged. Catalogue/motion and source/document
+whitespace/gallery
+checks pass. Two new route/owner cases join the focused CI selection.
+This does not claim hosted or full-app
+instrumentation validation. Physical S24/Fire, child use, audible installed offline
+voices, true TalkBack/switch operation and signed upgrade remain NOT RUN.

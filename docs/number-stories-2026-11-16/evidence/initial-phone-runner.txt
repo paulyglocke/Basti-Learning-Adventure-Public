@@ -1,0 +1,263 @@
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest:
+INSTRUMENTATION_STATUS: test=allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalArgumentException: Failed requirement.
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.saveNativeReviewBitmap(NativeReviewCapture.kt:13)
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.captureNativeDisplayReview(NativeReviewCapture.kt:32)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest.allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds$lambda$12(NumberStoriesRouteTest.kt:56)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest.$r8$lambda$w-SaDERavklMcYzWX_Lqr8eBobw(Unknown Source:0)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest$$ExternalSyntheticLambda6.invoke(D8$$SyntheticClass:0)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTestKt.isolatedNumberStoriesStores(NumberStoriesRouteTest.kt:24)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest.allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds(NumberStoriesRouteTest.kt:29)
+
+INSTRUMENTATION_STATUS: stream=
+Error in allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds(com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest):
+java.lang.IllegalArgumentException: Failed requirement.
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.saveNativeReviewBitmap(NativeReviewCapture.kt:13)
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.captureNativeDisplayReview(NativeReviewCapture.kt:32)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest.allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds$lambda$12(NumberStoriesRouteTest.kt:56)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest.$r8$lambda$w-SaDERavklMcYzWX_Lqr8eBobw(Unknown Source:0)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest$$ExternalSyntheticLambda6.invoke(D8$$SyntheticClass:0)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTestKt.isolatedNumberStoriesStores(NumberStoriesRouteTest.kt:24)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest.allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds(NumberStoriesRouteTest.kt:29)
+
+INSTRUMENTATION_STATUS: test=allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.numberstories.NumberStoriesOwnerTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ui.numberstories.NumberStoriesOwnerTest:
+INSTRUMENTATION_STATUS: test=offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.numberstories.NumberStoriesOwnerTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest:
+INSTRUMENTATION_STATUS: test=allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=false-font=1-landscape=false]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalArgumentException: Failed requirement.
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.saveNativeReviewBitmap(NativeReviewCapture.kt:13)
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.captureNativeDisplayReview(NativeReviewCapture.kt:32)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest.allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero(NumberStoriesLayoutTest.kt:99)
+
+INSTRUMENTATION_STATUS: stream=
+Error in allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=false-font=1-landscape=false](com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest):
+java.lang.IllegalArgumentException: Failed requirement.
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.saveNativeReviewBitmap(NativeReviewCapture.kt:13)
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.captureNativeDisplayReview(NativeReviewCapture.kt:32)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest.allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero(NumberStoriesLayoutTest.kt:99)
+
+INSTRUMENTATION_STATUS: test=allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=false-font=1-landscape=false]
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=true-font=1.5-landscape=false]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalArgumentException: Failed requirement.
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.saveNativeReviewBitmap(NativeReviewCapture.kt:13)
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.captureNativeDisplayReview(NativeReviewCapture.kt:32)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest.allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero(NumberStoriesLayoutTest.kt:99)
+
+INSTRUMENTATION_STATUS: stream=
+Error in allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=true-font=1.5-landscape=false](com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest):
+java.lang.IllegalArgumentException: Failed requirement.
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.saveNativeReviewBitmap(NativeReviewCapture.kt:13)
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.captureNativeDisplayReview(NativeReviewCapture.kt:32)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest.allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero(NumberStoriesLayoutTest.kt:99)
+
+INSTRUMENTATION_STATUS: test=allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=true-font=1.5-landscape=false]
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=true-font=2-landscape=true]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalArgumentException: Failed requirement.
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.saveNativeReviewBitmap(NativeReviewCapture.kt:13)
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.captureNativeDisplayReview(NativeReviewCapture.kt:32)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest.allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero(NumberStoriesLayoutTest.kt:99)
+
+INSTRUMENTATION_STATUS: stream=
+Error in allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=true-font=2-landscape=true](com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest):
+java.lang.IllegalArgumentException: Failed requirement.
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.saveNativeReviewBitmap(NativeReviewCapture.kt:13)
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.captureNativeDisplayReview(NativeReviewCapture.kt:32)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest.allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero(NumberStoriesLayoutTest.kt:99)
+
+INSTRUMENTATION_STATUS: test=allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=true-font=2-landscape=true]
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=false-font=1-landscape=true]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalArgumentException: Failed requirement.
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.saveNativeReviewBitmap(NativeReviewCapture.kt:13)
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.captureNativeDisplayReview(NativeReviewCapture.kt:32)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest.allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero(NumberStoriesLayoutTest.kt:99)
+
+INSTRUMENTATION_STATUS: stream=
+Error in allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=false-font=1-landscape=true](com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest):
+java.lang.IllegalArgumentException: Failed requirement.
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.saveNativeReviewBitmap(NativeReviewCapture.kt:13)
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.captureNativeDisplayReview(NativeReviewCapture.kt:32)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest.allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero(NumberStoriesLayoutTest.kt:99)
+
+INSTRUMENTATION_STATUS: test=allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=false-font=1-landscape=true]
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.quantitychange.QuantityChangeRouteTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ui.quantitychange.QuantityChangeRouteTest:
+INSTRUMENTATION_STATUS: test=allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.quantitychange.QuantityChangeRouteTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.quantitychange.QuantityChangeOwnerTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ui.quantitychange.QuantityChangeOwnerTest:
+INSTRUMENTATION_STATUS: test=offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.quantitychange.QuantityChangeOwnerTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.MainActivityStartupTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.MainActivityStartupTest:
+INSTRUMENTATION_STATUS: test=homeSurvivesLaunchRecreationAndBackgroundReturn
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.MainActivityStartupTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=homeSurvivesLaunchRecreationAndBackgroundReturn
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.HomeRouteTest
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.HomeRouteTest:
+INSTRUMENTATION_STATUS: test=everyHomeEntryOpensItsExistingDestinationAndReturnsHome[en]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.HomeRouteTest
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=everyHomeEntryOpensItsExistingDestinationAndReturnsHome[en]
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.HomeRouteTest
+INSTRUMENTATION_STATUS: current=11
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=everyHomeEntryOpensItsExistingDestinationAndReturnsHome[de]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.HomeRouteTest
+INSTRUMENTATION_STATUS: current=11
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=everyHomeEntryOpensItsExistingDestinationAndReturnsHome[de]
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 283.497
+There were 5 failures:
+1) allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds(com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest)
+java.lang.IllegalArgumentException: Failed requirement.
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.saveNativeReviewBitmap(NativeReviewCapture.kt:13)
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.captureNativeDisplayReview(NativeReviewCapture.kt:32)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest.allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds$lambda$12(NumberStoriesRouteTest.kt:56)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest.$r8$lambda$w-SaDERavklMcYzWX_Lqr8eBobw(Unknown Source:0)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest$$ExternalSyntheticLambda6.invoke(D8$$SyntheticClass:0)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTestKt.isolatedNumberStoriesStores(NumberStoriesRouteTest.kt:24)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest.allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds(NumberStoriesRouteTest.kt:29)
+2) allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=false-font=1-landscape=false](com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest)
+java.lang.IllegalArgumentException: Failed requirement.
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.saveNativeReviewBitmap(NativeReviewCapture.kt:13)
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.captureNativeDisplayReview(NativeReviewCapture.kt:32)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest.allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero(NumberStoriesLayoutTest.kt:99)
+3) allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=true-font=1.5-landscape=false](com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest)
+java.lang.IllegalArgumentException: Failed requirement.
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.saveNativeReviewBitmap(NativeReviewCapture.kt:13)
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.captureNativeDisplayReview(NativeReviewCapture.kt:32)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest.allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero(NumberStoriesLayoutTest.kt:99)
+4) allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=true-font=2-landscape=true](com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest)
+java.lang.IllegalArgumentException: Failed requirement.
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.saveNativeReviewBitmap(NativeReviewCapture.kt:13)
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.captureNativeDisplayReview(NativeReviewCapture.kt:32)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest.allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero(NumberStoriesLayoutTest.kt:99)
+5) allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero[de=false-font=1-landscape=true](com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest)
+java.lang.IllegalArgumentException: Failed requirement.
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.saveNativeReviewBitmap(NativeReviewCapture.kt:13)
+	at com.bellfamily.bastischool.NativeReviewCaptureKt.captureNativeDisplayReview(NativeReviewCapture.kt:32)
+	at com.bellfamily.bastischool.ui.numberstories.NumberStoriesLayoutTest.allConfigurationsKeepTheStartingReferenceAndSupportKeyboardUndoAndZero(NumberStoriesLayoutTest.kt:99)
+
+FAILURES!!!
+Tests run: 11,  Failures: 5
+
+
+INSTRUMENTATION_CODE: -1

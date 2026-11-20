@@ -963,3 +963,17 @@ Navigation/lifecycle/persistence still belong to the existing shell; this is a
 bounded rendering extraction, not a new router. Actual existing-game routes and
 bilingual Home are included in the selected regression run. Current evidence:
 [review](docs/one-more-less-2026-11-11/README.md).
+
+
+## Number Stories (2026-11-16)
+
+`learning/numberstories` owns structured facts, reducer, checksummed per-config
+write-ahead journals and shared-controller audio. `ui/numberstories` owns the
+worker-confined Activity owner and native chooser/board. `QuantityWork` now has a
+second genuine consumer and shares only mask validation, reversible toggles and
+bounded Undo with One More / One Less; that activity's v1 wire format is unchanged.
+NUMBER_STORIES_CHOOSER/GAME use validated saved mode/limit arguments. Construction
+routes stay in the private shell renderer to preserve the JVM method-size limit.
+Storage, speech policy, progress codec and balloon presentation remain shared.
+
+Implementation and validation: [Number Stories review](docs/number-stories-2026-11-16/README.md).

@@ -1,0 +1,19 @@
+{
+  "baseline": "6b19a5246374efad6d77eddd6fd9c750c5613b97",
+  "jvm": {
+    "tests": 719,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "artifacts": {
+    "app/build/outputs/apk/debug/app-debug.apk": "6a4cefaedefe1c7fb5e2cbed08b21d299a5236e898bef54b5d6514fad3c6ff3a",
+    "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": "e7fe545a81580ebdf5e2e157dc0d419dde16aafddc5f5d67c8a713fa0b0a9f28"
+  },
+  "lint": {
+    "Error": 0,
+    "Warning": 7,
+    "Information": 2
+  },
+  "scope": "Pre-commit local build; no hosted or physical-device claim"
+}

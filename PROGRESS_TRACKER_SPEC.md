@@ -417,3 +417,17 @@ quantity records a semantic number response; zero is valid. Replay/Hint support
 is retained on attempts and shared deduplicated 5/10 completion. Evidence means
 constructing a relative quantity in this app, not generalised maths mastery or
 proof of counting aloud, reading numerals or obeying an action instruction.
+
+
+## Number Stories (2026-11-16)
+
+Number Stories uses separate
+`skill.math.number_stories.{add|take_away}.within_{5|10}` skills and matching
+activity identities. Context identifies pond/dinosaur or picnic/apple. Only a
+changed checked count creates an attempt; edits, Undo and listening create no
+assessment result. Equivalent rearrangements of the last wrong count cannot
+resubmit it. Support stays attached; completed rounds deliver deduplicated normal
+5/10-task evidence through the existing write-ahead outbox. No speech scoring or
+claim of generalised real-world skill.
+
+Implementation and validation: [Number Stories review](docs/number-stories-2026-11-16/README.md).

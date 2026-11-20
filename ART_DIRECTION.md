@@ -174,3 +174,15 @@ empty-space semantics and explicit zero copy. Frame sizes stay constant during
 moves; colour is supplementary to labels/position and occupied/empty state. The
 Home diagram illustrates three objects becoming four. No new raster generation or
 redesign of accepted animals is needed. Physical/child-use clarity stays separate.
+
+
+## Number Stories (2026-11-16)
+
+Number Stories reuses the canonical dinosaur PNG and Vocabulary apple JPG,
+including its ivory picture background. Native Canvas provides language-neutral
+pond/bank and picnic cloth; it contains no extra dinosaurs or apples. Countable
+objects appear only in clearly labelled starting/work frames, with accessible
+slot actions. The Home thumbnail pairs the same two canonical objects. No new
+raster generation, emoji, imported art or copied habitat animals.
+
+Implementation and validation: [Number Stories review](docs/number-stories-2026-11-16/README.md).

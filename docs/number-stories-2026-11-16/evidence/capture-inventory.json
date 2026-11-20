@@ -1,0 +1,598 @@
+{
+  "total": 84,
+  "counts": {
+    "phone-production": 20,
+    "phone-component": 32,
+    "tablet-component": 32
+  },
+  "captures": [
+    {
+      "file": "captures/number-stories-add-five-complete-de.png",
+      "kind": "phone-production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "27d5163fb71af29fc01f233464a3e22eb1556161fa9e10afd2acd3d453c86212"
+    },
+    {
+      "file": "captures/number-stories-add-five-partial-de.png",
+      "kind": "phone-production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "249d3f19eaddc90cb7a330483c812306631012dff4d23b1310b6d7f7f7d3abc6"
+    },
+    {
+      "file": "captures/number-stories-add-five-retry-de.png",
+      "kind": "phone-production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "b4c3041e0d3286826baf1ae71d440e6a3e37cfc64a72839bc48ba3ea4fc0a1a3"
+    },
+    {
+      "file": "captures/number-stories-add-five-solved-de.png",
+      "kind": "phone-production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "53bb71a3669963d5ddc31df6767c997e7c931d64f96fac712782ece5b254f3de"
+    },
+    {
+      "file": "captures/number-stories-add-ten-complete-de.png",
+      "kind": "phone-production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "4ef5b97ef990baa0900157b0e82a6e47ab1efdaa21cc507d34ab4cdbdacd3e81"
+    },
+    {
+      "file": "captures/number-stories-add-ten-partial-de.png",
+      "kind": "phone-production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "b66d47e74b1591e98fc5e7ec5c7629e43de72ab90ad27e08af7e8b5fe703951d"
+    },
+    {
+      "file": "captures/number-stories-add-ten-retry-de.png",
+      "kind": "phone-production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "7d5d00b3667375c06e0a8ec22198d84f511a84492f0c6e9ae5375f2c52a218c7"
+    },
+    {
+      "file": "captures/number-stories-add-ten-solved-de.png",
+      "kind": "phone-production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "0d2cbc4eb20c89a178de1d79217ae4c7d38eb5cb74e328b2dbad26de7f3e5cbd"
+    },
+    {
+      "file": "captures/number-stories-chooser-de.png",
+      "kind": "phone-production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "8c287d5305f3d674902cd3cc8cbe365d8ba06c8b7426072ef765fe970c8f5173"
+    },
+    {
+      "file": "captures/number-stories-chooser-en.png",
+      "kind": "phone-production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "b4a58db7c30315a33aab85d8734fa97c9c5620a1d2328371dc2506abc2d6cc73"
+    },
+    {
+      "file": "captures/number-stories-layout-add-five-picnic-phone-de-15-portrait.png",
+      "kind": "phone-component",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "cf9cf7aa458829de96729db70facf80d0541dbf903c9d4b9f24cfa219e1b2570"
+    },
+    {
+      "file": "captures/number-stories-layout-add-five-picnic-phone-de-20-landscape.png",
+      "kind": "phone-component",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "55297e904469c241a4f7ab368fc2ecf4f7e633477fd8929e33512ff7371c5f86"
+    },
+    {
+      "file": "captures/number-stories-layout-add-five-picnic-phone-en-10-landscape.png",
+      "kind": "phone-component",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "51411c59966ddd38b83e709e8be505a47d5fa1e67fcb0de2d600d27e37c52ada"
+    },
+    {
+      "file": "captures/number-stories-layout-add-five-picnic-phone-en-10-portrait.png",
+      "kind": "phone-component",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "8a4fdba8c4e111aff7e09a1b23ecfaf361eefd47e59d6127002c3aa16bd48dae"
+    },
+    {
+      "file": "captures/number-stories-layout-add-five-picnic-tablet-de-15-portrait.png",
+      "kind": "tablet-component",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "f02c124710bff6634c159cc22f8ac7d7c93aebd98ac3731dbe5f3c30b7b9a7dc"
+    },
+    {
+      "file": "captures/number-stories-layout-add-five-picnic-tablet-de-20-landscape.png",
+      "kind": "tablet-component",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "ca97dba9cf2b0c373ebfbf699436922f39ba4b6ea5f6044336f2caedac17b9fb"
+    },
+    {
+      "file": "captures/number-stories-layout-add-five-picnic-tablet-en-10-landscape.png",
+      "kind": "tablet-component",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "f513efc9490c4b020e38dbf7a125dedf6411a2b4ad6f363fc1c1d4b302088008"
+    },
+    {
+      "file": "captures/number-stories-layout-add-five-picnic-tablet-en-10-portrait.png",
+      "kind": "tablet-component",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "8efde874f8a433f17b242be5d07a094fb00b0a5a3adafd60a2db0b1d766a603f"
+    },
+    {
+      "file": "captures/number-stories-layout-add-five-pond-phone-de-15-portrait.png",
+      "kind": "phone-component",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "792c6f5d9ef706a18ba6dcadb374d7731830879be5c7a668a9bd80edc9d93d6e"
+    },
+    {
+      "file": "captures/number-stories-layout-add-five-pond-phone-de-20-landscape.png",
+      "kind": "phone-component",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "723cedc31992cc9d3bd097ae2d82cf9a8687dca72fbd831303066b1e6dafa401"
+    },
+    {
+      "file": "captures/number-stories-layout-add-five-pond-phone-en-10-landscape.png",
+      "kind": "phone-component",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "80ef21156deed85deac3426de73d493680287c311cc4747ec9d26fdaaf96df94"
+    },
+    {
+      "file": "captures/number-stories-layout-add-five-pond-phone-en-10-portrait.png",
+      "kind": "phone-component",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "fb866187ffe23f53c29a2c0337a32f81aaeed6b4ff780dfd4390d9dfade3659b"
+    },
+    {
+      "file": "captures/number-stories-layout-add-five-pond-tablet-de-15-portrait.png",
+      "kind": "tablet-component",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "833fffcdbab486ed2f81222f1829c0bacef60f67c52cc774737c79cb25315e24"
+    },
+    {
+      "file": "captures/number-stories-layout-add-five-pond-tablet-de-20-landscape.png",
+      "kind": "tablet-component",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "7c4c4568258dd62e31a303d1fe2852ba1b1a102c3570a64424972d3f7390cac2"
+    },
+    {
+      "file": "captures/number-stories-layout-add-five-pond-tablet-en-10-landscape.png",
+      "kind": "tablet-component",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "bcd586e8ca1931790d7682950d4dcdaca4b7b9738ec79f88a54bf679ba448c54"
+    },
+    {
+      "file": "captures/number-stories-layout-add-five-pond-tablet-en-10-portrait.png",
+      "kind": "tablet-component",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "cbebab179144eb3e6a6ec129e86de1695290bf84ce300eedf1f0bb9d92d4fe66"
+    },
+    {
+      "file": "captures/number-stories-layout-add-ten-picnic-phone-de-15-portrait.png",
+      "kind": "phone-component",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "64eede4f8482cc19cea8b0a9ef87af0744c57052fa267fa004d4e43632e8d9c5"
+    },
+    {
+      "file": "captures/number-stories-layout-add-ten-picnic-phone-de-20-landscape.png",
+      "kind": "phone-component",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "78235a148f211b9181d579f6ed2cca0cd2da9bd6393c7e36844b5ccfc23e27d0"
+    },
+    {
+      "file": "captures/number-stories-layout-add-ten-picnic-phone-en-10-landscape.png",
+      "kind": "phone-component",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "161f702263098679b2a3f1b570d89d2ad86cb538cc4327d447a92b7c996e11b9"
+    },
+    {
+      "file": "captures/number-stories-layout-add-ten-picnic-phone-en-10-portrait.png",
+      "kind": "phone-component",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "f7460653efdd19ef85d3547eb526071b8085632607fd93498cef20684e9d21a0"
+    },
+    {
+      "file": "captures/number-stories-layout-add-ten-picnic-tablet-de-15-portrait.png",
+      "kind": "tablet-component",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "823ad7621fc9a3281b32248c89533188dd6fc6ccdf677e41df0a90d09995ed5c"
+    },
+    {
+      "file": "captures/number-stories-layout-add-ten-picnic-tablet-de-20-landscape.png",
+      "kind": "tablet-component",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "de4d4c044a8559c0cc19b1fd2950be3dbd735ea23e3b2c398dc8142859c9d103"
+    },
+    {
+      "file": "captures/number-stories-layout-add-ten-picnic-tablet-en-10-landscape.png",
+      "kind": "tablet-component",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "f6f582137a5b8a4d4bc764c2ad75207b7c8fb3d33b40076f6dc6a1c2054f672d"
+    },
+    {
+      "file": "captures/number-stories-layout-add-ten-picnic-tablet-en-10-portrait.png",
+      "kind": "tablet-component",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "4d2fd500642a8f803fe0221d9327036ae9f1d362be9f387b15dbc9bf5cfeb39d"
+    },
+    {
+      "file": "captures/number-stories-layout-add-ten-pond-phone-de-15-portrait.png",
+      "kind": "phone-component",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "43a933221d8d167399acf64776502e4782a20c0e5f29738bcc14c3f25c515aa2"
+    },
+    {
+      "file": "captures/number-stories-layout-add-ten-pond-phone-de-20-landscape.png",
+      "kind": "phone-component",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "189cbc229b42d9d45ef0ddfa12519c6281cf1cbf536cfa28f96d80a4283d3105"
+    },
+    {
+      "file": "captures/number-stories-layout-add-ten-pond-phone-en-10-landscape.png",
+      "kind": "phone-component",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "10d9b51c863f4c38c514a4f63a8f18624f788628e721c0d70eff7ab04ceabac7"
+    },
+    {
+      "file": "captures/number-stories-layout-add-ten-pond-phone-en-10-portrait.png",
+      "kind": "phone-component",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "366e328ec83f14b0238eb949a60a97e05c3c9723f8abe9a3785e028856cbc943"
+    },
+    {
+      "file": "captures/number-stories-layout-add-ten-pond-tablet-de-15-portrait.png",
+      "kind": "tablet-component",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "051e24e0c69fcd275e9f30a2f8cc35204f3d72fadd67d1287db8f8828559813d"
+    },
+    {
+      "file": "captures/number-stories-layout-add-ten-pond-tablet-de-20-landscape.png",
+      "kind": "tablet-component",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "50bee8755c724e2ad08fc036d26146210303b275bc0b464c5b3a06f4732cda8b"
+    },
+    {
+      "file": "captures/number-stories-layout-add-ten-pond-tablet-en-10-landscape.png",
+      "kind": "tablet-component",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "b0a4e951786435d3e04b4dc71d67f808caebde4ced593369bc6162131349f159"
+    },
+    {
+      "file": "captures/number-stories-layout-add-ten-pond-tablet-en-10-portrait.png",
+      "kind": "tablet-component",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "699a6c7239a19b83f8b4559768a0df6ea092f172930c85d06deeda6c4ec63bd6"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-five-picnic-phone-de-15-portrait.png",
+      "kind": "phone-component",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "160056dcf515e08ba81d4de4294592a5ee2e361a85ae3e2149849117b433b1d6"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-five-picnic-phone-de-20-landscape.png",
+      "kind": "phone-component",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "8caf9eb473792d2fb887beda93959771a77f44d5b2376d8e44b53d25436d17e2"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-five-picnic-phone-en-10-landscape.png",
+      "kind": "phone-component",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "32160ed57ab9ff0baa56708c654e918f33eab16a2d0c7c140e289df0d380cba8"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-five-picnic-phone-en-10-portrait.png",
+      "kind": "phone-component",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "c67191e4c406b3991ddff553fecc7ccdb0bf8199c97ec132bc649367cacd77d8"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-five-picnic-tablet-de-15-portrait.png",
+      "kind": "tablet-component",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "ae64e1d0f113e9b7a99fa895e75f01b2df4c1e119e9601f7010c17ff08c4fcc3"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-five-picnic-tablet-de-20-landscape.png",
+      "kind": "tablet-component",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "3298994d67ff4cc8cc233a0c1e3b8dbc6fc088a34c26a1088ccd726e132ca137"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-five-picnic-tablet-en-10-landscape.png",
+      "kind": "tablet-component",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "e253bba4c7161bb2f0833e598390dff09cfb0465a342a11218382d6c17ccaf5a"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-five-picnic-tablet-en-10-portrait.png",
+      "kind": "tablet-component",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "54dcc91122e8b264e71ad16a5e0833ac95e492a7bdb7d6d18af6ff68bbce8aa5"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-five-pond-phone-de-15-portrait.png",
+      "kind": "phone-component",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "f9117841b53df1977bc98daaa05fb02397879ff26ea03600111e0600ea751fb7"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-five-pond-phone-de-20-landscape.png",
+      "kind": "phone-component",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "457364d9d30b6bf337264dc217033e41f7bac193a5483c830d3d3bd7a9f33c9f"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-five-pond-phone-en-10-landscape.png",
+      "kind": "phone-component",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "3dcc353376d151126d638766d978cbf59485f3f61a03b4ba9a91c3b2225180c2"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-five-pond-phone-en-10-portrait.png",
+      "kind": "phone-component",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "b08cff0d32582246606866c566dce542df30c780147d668eb4c3650e98c1e8b7"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-five-pond-tablet-de-15-portrait.png",
+      "kind": "tablet-component",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "20f7faab24a11c763b085b4958daec281446d9f1d8c1e66ffda087331a0d5ab6"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-five-pond-tablet-de-20-landscape.png",
+      "kind": "tablet-component",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "1363b1ed3651f2f7bd496c9c13d6e2ac6fec0a6a8150be3d95a8f2a4bc98cc65"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-five-pond-tablet-en-10-landscape.png",
+      "kind": "tablet-component",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "5207827ee2bba93879f12e3ea239611135303025cfb7319cfafecb115d695efa"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-five-pond-tablet-en-10-portrait.png",
+      "kind": "tablet-component",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "da30ee320f3edcbffa737eb3f56b7eb61f689843e2751f933f8733a0cd3899ca"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-ten-picnic-phone-de-15-portrait.png",
+      "kind": "phone-component",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "62a158aff9faa30df05a7d99c32f46feccf67feeab09b677e945a81c7f25082d"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-ten-picnic-phone-de-20-landscape.png",
+      "kind": "phone-component",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "08b5f02c9a2688b8af997d6da06943578ae84b2a3b6955ad3c850322afce0280"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-ten-picnic-phone-en-10-landscape.png",
+      "kind": "phone-component",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "d4319b7915b5d370a341e6447964106f471ddddc11cbb350edfd67cbeb3f0ed9"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-ten-picnic-phone-en-10-portrait.png",
+      "kind": "phone-component",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "8ef541fec847eec2513e81ec62150cbc9cbe00bd9f8e28f4261e187262ad4abc"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-ten-picnic-tablet-de-15-portrait.png",
+      "kind": "tablet-component",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "cbe62d121a87b3f660a5856cc5909ee31e4a7a08161f5f49253294bbb82e68d3"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-ten-picnic-tablet-de-20-landscape.png",
+      "kind": "tablet-component",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "f6c389daaca59a8cbfd450447efba4a57b4fd61284590998c34de2581cb2d2ad"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-ten-picnic-tablet-en-10-landscape.png",
+      "kind": "tablet-component",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "004d1123bb69157297cd83a1dfbbfcb7092ac6ee5aca664edcdf2fa8ba59d07c"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-ten-picnic-tablet-en-10-portrait.png",
+      "kind": "tablet-component",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "d4b980ff62c9e8aff36324b16adf9ef5ea47b51939ffdf527c56e2f2ac1ec6a8"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-ten-pond-phone-de-15-portrait.png",
+      "kind": "phone-component",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "3ed978417cf4e107bbc3e57078962fe9bb09c99a51b5b8fa9f135958611ea96c"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-ten-pond-phone-de-20-landscape.png",
+      "kind": "phone-component",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "9a6cb0a976ab413162cc088b929f7265e056c05d2ceca05a36a68dcbd7db74fb"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-ten-pond-phone-en-10-landscape.png",
+      "kind": "phone-component",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "7f55b5e299d5958a3506469a41b137b59af8b7b78278bd276f211eebcd459ae9"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-ten-pond-phone-en-10-portrait.png",
+      "kind": "phone-component",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "4bf8f365b8cdd0dd67e82e558226e16c63d06e57e32092104bc99f70171c2320"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-ten-pond-tablet-de-15-portrait.png",
+      "kind": "tablet-component",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "91fc5748eecf0f89d94db41e59184965cdfa569333b00c81d8c02128f27ead8d"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-ten-pond-tablet-de-20-landscape.png",
+      "kind": "tablet-component",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "d2cf58790aa94201ec523c0a81d22ea302cb35f6f062141c67d30b395278d694"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-ten-pond-tablet-en-10-landscape.png",
+      "kind": "tablet-component",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "c0231ee4fdc61c128b3b57e2c2fce4f9f636a4dd08739a14caa4e9b9afb025a1"
+    },
+    {
+      "file": "captures/number-stories-layout-take-away-ten-pond-tablet-en-10-portrait.png",
+      "kind": "tablet-component",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "dff1cd8d8a2f0e288c5815ca53bdd632ebe2beeb4e98df4a9c32eb65ac31ec1f"
+    },
+    {
+      "file": "captures/number-stories-take-away-five-complete-de.png",
+      "kind": "phone-production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "c76d13af009dda27a8231ffd64c93bc85934af0c58be3060ec40731c9b8b2e55"
+    },
+    {
+      "file": "captures/number-stories-take-away-five-partial-de.png",
+      "kind": "phone-production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "0eb448f027ea867aed64934881d5c2e3030c3996e6f87b4eab78c9aa827a05d3"
+    },
+    {
+      "file": "captures/number-stories-take-away-five-retry-de.png",
+      "kind": "phone-production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "78c0f535155b14b177ffe46426d89ecd5ee5bc269f777faeea521b9991b1341e"
+    },
+    {
+      "file": "captures/number-stories-take-away-five-solved-de.png",
+      "kind": "phone-production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "1a4756b7feacce5cb52d54a1fc941d2ee4fcb228dc3f9cfed5ae4734288ec8c6"
+    },
+    {
+      "file": "captures/number-stories-take-away-five-zero-de.png",
+      "kind": "phone-production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "7e149cd55008e356b67a33f844852a70929e5ebadd69a0632281ceeebcd787a4"
+    },
+    {
+      "file": "captures/number-stories-take-away-ten-complete-de.png",
+      "kind": "phone-production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "7c06dc1e49a1b92f42d31bd3bffb23007f89f90bf3a36a6858e060a126bb4a2e"
+    },
+    {
+      "file": "captures/number-stories-take-away-ten-partial-de.png",
+      "kind": "phone-production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "6e4e3bdb7bbf5c6ded3a9d1a5d9ccccb59c532afaaa0c85a5710ee7536c21791"
+    },
+    {
+      "file": "captures/number-stories-take-away-ten-retry-de.png",
+      "kind": "phone-production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "de07cbf4c6bcbbc7913a6289231ef2d7991dbe49d3787e58c0944d52a92a84d9"
+    },
+    {
+      "file": "captures/number-stories-take-away-ten-solved-de.png",
+      "kind": "phone-production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "9ec0434434b83caf9f729c73b7f444636db702a6b60bea507457f427c417d9fa"
+    },
+    {
+      "file": "captures/number-stories-take-away-ten-zero-de.png",
+      "kind": "phone-production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "c2008a010fde553cb81986a9bf8a111b83b7a2675093fd04df656d421fb0d924"
+    }
+  ]
+}

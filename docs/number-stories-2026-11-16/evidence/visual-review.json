@@ -1,0 +1,33 @@
+{
+  "reviewDate": "2026-11-20",
+  "scope": "Representative genuine captures inspected visually; behavior is established by the separate runner evidence.",
+  "captures": [
+    "number-stories-chooser-en.png",
+    "number-stories-add-ten-partial-de.png",
+    "number-stories-layout-add-ten-pond-phone-de-20-landscape.png",
+    "number-stories-take-away-five-zero-de.png",
+    "number-stories-add-five-solved-de.png",
+    "number-stories-take-away-ten-retry-de.png",
+    "number-stories-add-five-complete-de.png",
+    "number-stories-layout-take-away-ten-picnic-phone-de-15-portrait.png",
+    "number-stories-layout-add-five-pond-tablet-en-10-portrait.png",
+    "number-stories-layout-add-ten-picnic-tablet-en-10-portrait.png",
+    "number-stories-layout-take-away-ten-pond-tablet-de-15-portrait.png",
+    "number-stories-layout-add-ten-picnic-tablet-de-20-landscape.png",
+    "number-stories-layout-take-away-five-pond-tablet-de-20-landscape.png",
+    "number-stories-layout-add-ten-pond-tablet-en-10-landscape.png",
+    "number-stories-layout-take-away-ten-picnic-tablet-en-10-landscape.png"
+  ],
+  "findings": [
+    "Starting quantities remain visible during work-area scrolling.",
+    "Pond and picnic scenery introduces no extra countable dinosaurs or apples.",
+    "Inspected text wraps legibly, including German 1.5x portrait and 2x landscape.",
+    "Long work areas scroll; partial text at a scroll boundary is expected.",
+    "Component captures omit the production shell and can show keyboard focus.",
+    "Canonical apple artwork retains its ivory image background."
+  ],
+  "limits": [
+    "Emulator display override is not physical tablet validation.",
+    "Voice audibility, real TalkBack/switch use and child comprehension were not assessed."
+  ]
+}
