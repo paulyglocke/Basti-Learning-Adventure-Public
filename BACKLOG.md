@@ -151,3 +151,5 @@ Already implemented and not active implementation backlog unless a regression is
   reversible work, shared audio/progress/rewards. Conservation, richer contexts,
   mixed operations and adaptive progression remain future work. Local validation
   and physical acceptance scope are in [the review](docs/number-stories-2026-11-16/README.md).
+
+- Same Amount starter implemented (2026-11-20), locally verified 2026-11-23: quantity-preserving rearrangement and Before/Now comparison within 5/10, with occasional explicit one-object changes. See the [review](docs/same-amount-2026-11-20/README.md). Broader conservation contexts and physical acceptance remain separate.

@@ -1,0 +1,166 @@
+{
+  "date": "2026-11-23",
+  "baseline": "44e2eae398257d9d6f5933e75eded1b3154ead96",
+  "status": "implemented and locally verified; evidence describes pre-commit validation; owner authorized commit/push on 2026-11-23",
+  "build": {
+    "baseline": "44e2eae398257d9d6f5933e75eded1b3154ead96",
+    "jvm": {
+      "tests": 732,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "lint": {
+      "Error": 0,
+      "Warning": 7,
+      "Information": 2
+    },
+    "artifacts": {
+      "app/build/outputs/apk/debug/app-debug.apk": "3d2e90ab90cdc12e3c3e2f958be3aba37ad8b0893d4c82ebf664a20427bc60d8",
+      "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": "9cb150332b6b327c07e482f4ad07eb71002183021043fb8991e698a9adb3497f"
+    },
+    "build": "testDebugUnitTest assembleDebug assembleDebugAndroidTest lintDebug; BUILD SUCCESSFUL in 3m 29s",
+    "scope": "Fresh runtime with one shared board bitmap and loading/retry gate; final Android checks follow separately"
+  },
+  "installedApks": {
+    "serial": "emulator-5554",
+    "runtimeSha256": "3d2e90ab90cdc12e3c3e2f958be3aba37ad8b0893d4c82ebf664a20427bc60d8",
+    "testApkSha256": "9cb150332b6b327c07e482f4ad07eb71002183021043fb8991e698a9adb3497f",
+    "matchesLocalArtifacts": true
+  },
+  "testedSourceManifest": "tested-source.json",
+  "jvmXmlArchive": "jvm-xml.zip",
+  "lintXml": "lint.xml",
+  "phone": {
+    "source": "phone-final.txt",
+    "format": "Derived from direct AndroidJUnitRunner raw text; not Gradle XML",
+    "tests": 11,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "instrumentationCode": -1,
+    "cases": [
+      {
+        "class": "com.bellfamily.bastischool.ui.conservation.ConservationRouteTest",
+        "test": "bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.conservation.ConservationOwnerTest",
+        "test": "offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest",
+        "test": "bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=false-font=1-landscape=false]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest",
+        "test": "bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=true-font=1.5-landscape=false]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest",
+        "test": "bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=true-font=2-landscape=true]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest",
+        "test": "bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=false-font=1-landscape=true]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest",
+        "test": "allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.numberstories.NumberStoriesOwnerTest",
+        "test": "offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.MainActivityStartupTest",
+        "test": "homeSurvivesLaunchRecreationAndBackgroundReturn",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.HomeRouteTest",
+        "test": "everyHomeEntryOpensItsExistingDestinationAndReturnsHome[en]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.HomeRouteTest",
+        "test": "everyHomeEntryOpensItsExistingDestinationAndReturnsHome[de]",
+        "outcome": "passed"
+      }
+    ]
+  },
+  "tablet": {
+    "source": "tablet-final.txt",
+    "format": "Derived from direct AndroidJUnitRunner raw text; not Gradle XML",
+    "tests": 4,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "instrumentationCode": -1,
+    "cases": [
+      {
+        "class": "com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest",
+        "test": "bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=false-font=1-landscape=false]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest",
+        "test": "bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=true-font=1.5-landscape=false]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest",
+        "test": "bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=true-font=2-landscape=true]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest",
+        "test": "bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=false-font=1-landscape=true]",
+        "outcome": "passed"
+      }
+    ]
+  },
+  "captures": {
+    "total": 74,
+    "productionPhone": 10,
+    "phoneComponents": 32,
+    "tabletComponents": 32,
+    "visuallyReviewed": 13,
+    "inventory": "capture-inventory.json",
+    "visualReview": "visual-review.json"
+  },
+  "emulatorCleanup": "emulator-cleanup.json",
+  "scope": {
+    "newBrowserRun": false,
+    "fullAppInstrumentation": false,
+    "newHostedRun": false,
+    "physicalDeviceAcceptance": false,
+    "actualTalkBackSwitch": false,
+    "childUse": false,
+    "audibleInstalledOfflineVoices": false,
+    "signedUpgrade": false
+  },
+  "qualifications": [
+    "Initial runtime 11/11 does not validate refined artwork runtime.",
+    "Initial partially rendered countable groups corrected by one shared decoded board bitmap and loading/retry gate. Earlier global/per-cell readiness attempts retained separately.",
+    "Earlier component-only runs deliberately interrupted to update APKs.",
+    "Two post-install runner attempts exited before tests began; Android startup ANRs retained. Same AVD restarted without wipe; identical APK normal cold launch 1664ms then final phone11/11 and tablet4/4 passed. Root cause and broader startup/performance acceptance not established.",
+    "Final build metadata records observed result; raw initial build logs remain separate. Runner summaries are derived raw AndroidJUnitRunner text, not Gradle XML."
+  ],
+  "integrity": "integrity.json",
+  "supplementalChecks": {
+    "catalogueGeneration": "passed: python3 tools/generate_verbs.py --check",
+    "verbMotionParity": "passed: node tools/verb_motion_parity.cjs --check",
+    "trackedDiffWhitespace": "passed: git diff --check",
+    "sourceDocumentWhitespace": "passed; new files included; raw logs preserved",
+    "galleryLinks": "150 local references exist, 74 unique final PNGs"
+  }
+}

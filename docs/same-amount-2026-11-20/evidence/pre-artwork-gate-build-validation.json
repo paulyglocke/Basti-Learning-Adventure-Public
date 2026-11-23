@@ -1,0 +1,19 @@
+{
+  "baseline": "44e2eae398257d9d6f5933e75eded1b3154ead96",
+  "jvm": {
+    "tests": 732,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "Error": 0,
+    "Warning": 7,
+    "Information": 2
+  },
+  "artifacts": {
+    "app/build/outputs/apk/debug/app-debug.apk": "9fdfec1a6d113008983c7f56125333ed963c220b872920973a7fcf37a7f339cf",
+    "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": "cc8858976607d87cb4f6d24f633f4bfd43ca7e813897eff8c5f45582a47744a3"
+  },
+  "scope": "JVM/runtime build3 unchanged. Test APK rebuilt successfully in 3s after capture readiness checks were scoped to occupied reference and visible work cells."
+}

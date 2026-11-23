@@ -622,3 +622,9 @@ Four v1 journals preserve exact work, Undo, checked counts, support and pending
 evidence. No old catalogue/session revision changes.
 
 Implementation and validation: [Number Stories review](docs/number-stories-2026-11-16/README.md).
+
+## Same Amount (2026-11-20)
+
+ConservationTask freezes Before count, SAME/FEWER/MORE relation, canonical object ID and the initial Now mask. Now count derives from those facts, with changes restricted to 0/−1/+1 and counts bounded by 5/10 including zero. Deterministic 5/10 rounds contain 3/6 unchanged trials and 1/2 of each actual change, alternate dinosaur/apple contexts and use unique count/relation/object facts. Seeded placements differ from the compact reference. Independent CNS1 v1 journals retain the complete task plan; restoration never regenerates it.
+
+Implementation and current verification: [Same Amount review](docs/same-amount-2026-11-20/README.md).

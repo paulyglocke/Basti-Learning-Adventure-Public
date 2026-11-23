@@ -24,6 +24,7 @@ import com.bellfamily.bastischool.ui.common.BundledArtwork
 internal data class HomeActivityArt(val asset:String?=null,val diagram:String?=null)
 internal object HomeActivityArtwork {
     val entries=mapOf(
+        "conservation" to HomeActivityArt(diagram="same-amount"),
         "numberStories" to HomeActivityArt(diagram="number-stories"),
         "quantityChange" to HomeActivityArt(diagram="one-step-quantity"),
         "patternBuilder" to HomeActivityArt(diagram="repeating-pattern"),
@@ -110,6 +111,11 @@ private fun Diagram(kind:String) {
     Canvas(Modifier.fillMaxSize()) {
         scale(size.width/100f,size.height/100f,Offset.Zero) {
             when(kind) {
+                "same-amount" -> {
+                    repeat(3){i->drawCircle(artGreen,7f,Offset(35f+i*14f,30f))}
+                    repeat(3){i->drawCircle(artBlue,7f,Offset(18f+i*32f,68f))}
+                    label("=",50f,55f,20f)
+                }
                 "bond-five", "bond-ten" -> {
                     val total=if(kind=="bond-five")5 else 10
                     label(if(total==5)"5" else "10",50f,27f,23f)

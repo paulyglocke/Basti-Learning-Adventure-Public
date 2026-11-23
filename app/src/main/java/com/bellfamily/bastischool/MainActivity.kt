@@ -126,6 +126,7 @@ import com.bellfamily.bastischool.learning.models.ContentLanguage
 import com.bellfamily.bastischool.ui.memory.*
 import com.bellfamily.bastischool.ui.patterns.*
 import com.bellfamily.bastischool.ui.numberstories.*
+import com.bellfamily.bastischool.ui.conservation.*
 import com.bellfamily.bastischool.ui.quantitychange.*
 import com.bellfamily.bastischool.learning.models.ContentId
 
@@ -184,7 +185,8 @@ private val homeCards = listOf(
     HomeCard("👂", "Follow the Instructions", "Anweisungen folgen", "Listen, follow steps and practise classroom routines.", "Zuhören, Schritten folgen und Schulabläufe üben.", mode = "follow"),
     HomeCard("", "Pattern Builder", "Muster bauen", "Continue patterns with animals and shapes.", "Setze Muster mit Tieren und Formen fort.", mode = "patternBuilder"),
     HomeCard("", "One More / One Less", "Eins mehr / eins weniger", "Add or take away one animal, then check your group.", "Lege ein Tier dazu oder nimm eins weg und prüfe deine Gruppe.", mode = "quantityChange"),
-    HomeCard("", "Number Stories", "Rechengeschichten", "Build the answer to stories by the pond and at a picnic.", "Baue die Antwort zu Geschichten am Teich und beim Picknick.", mode = "numberStories")
+    HomeCard("", "Number Stories", "Rechengeschichten", "Build the answer to stories by the pond and at a picnic.", "Baue die Antwort zu Geschichten am Teich und beim Picknick.", mode = "numberStories"),
+    HomeCard("", "Same Amount", "Gleich viele", "Move pictures and compare how many there are before and now.", "Verschiebe Bilder und vergleiche die Anzahl vorher und jetzt.", mode = "conservation")
 )
 
 /** Filter only after the historical group boundaries, preserving live entry order. */
@@ -221,6 +223,7 @@ class MainActivity : ComponentActivity() {
     private lateinit var nativeVerbs: VerbsQuizViewModel
     private lateinit var nativeVerbExplorer: VerbExplorerViewModel
     private lateinit var nativeBuildFive: BuildFiveViewModel
+    private lateinit var nativeConservation: ConservationViewModel
     private lateinit var nativeNumberStories: NumberStoriesViewModel
     private lateinit var nativeQuantityChange: QuantityChangeViewModel
     private lateinit var nativePatterns: PatternBuilderViewModel
@@ -294,6 +297,7 @@ class MainActivity : ComponentActivity() {
         nativeBuildFive = ViewModelProvider(this)[BuildFiveViewModel::class.java]
         nativeBuildTen = ViewModelProvider(this)[BuildTenViewModel::class.java]
         nativeMemory = ViewModelProvider(this)[MemoryPairsViewModel::class.java]
+        nativeConservation = ViewModelProvider(this)[ConservationViewModel::class.java]
         nativeNumberStories = ViewModelProvider(this)[NumberStoriesViewModel::class.java]
         nativeQuantityChange = ViewModelProvider(this)[QuantityChangeViewModel::class.java]
         nativePatterns = ViewModelProvider(this)[PatternBuilderViewModel::class.java]
@@ -304,7 +308,7 @@ class MainActivity : ComponentActivity() {
             savedInstanceState?.getString("homePage"), savedInstanceState?.getString("verbId"),
             savedInstanceState?.getString("memoryMode"), savedInstanceState?.getInt("memoryPairs",2) ?: 2, savedInstanceState?.getString("patternLevel"),
             savedInstanceState?.getString("quantityMode"), savedInstanceState?.getInt("quantityLimit",5) ?: 5,
-            savedInstanceState?.getString("storyMode"), savedInstanceState?.getInt("storyLimit",5) ?: 5)
+            savedInstanceState?.getString("storyMode"), savedInstanceState?.getInt("storyLimit",5) ?: 5, savedInstanceState?.getInt("conservationLimit",5) ?: 5)
         if (!navigation.ownsWebSession) restoredSession = null
         checkpoint = LegacyCheckpoint(restoredSession)
         tts = TextToSpeech(this) { status ->
@@ -340,6 +344,8 @@ class MainActivity : ComponentActivity() {
         // need a second copy in the shell. Completion screens retain the shell title
         // because their content is a summary rather than the active activity heading.
         val contentOwnsTitle = when (screen) {
+            ShellScreen.CONSERVATION_CHOOSER -> true
+            ShellScreen.CONSERVATION_GAME -> nativeConservation.state?.completed != true
             ShellScreen.NUMBER_STORIES_CHOOSER -> true
             ShellScreen.QUANTITY_CHANGE_CHOOSER -> true
             ShellScreen.NUMBER_STORIES_GAME -> nativeNumberStories.state?.completed != true
@@ -400,6 +406,7 @@ class MainActivity : ComponentActivity() {
                                 when (screen) {
                                     ShellScreen.HOME -> if (language == "de") "Bastis Lernabenteuer" else "Basti's Learning Adventure"
                                     ShellScreen.OPTIONS -> if (language == "de") "Optionen" else "Options"
+                                    ShellScreen.CONSERVATION_CHOOSER, ShellScreen.CONSERVATION_GAME -> if(language=="de") "Gleich viele" else "Same Amount"
                                     ShellScreen.NUMBER_STORIES_CHOOSER, ShellScreen.NUMBER_STORIES_GAME -> if(language=="de") "Rechengeschichten" else "Number Stories"
                                     ShellScreen.QUANTITY_CHANGE_CHOOSER, ShellScreen.QUANTITY_CHANGE_GAME -> if(language=="de") "Eins mehr / eins weniger" else "One More / One Less"
                                     ShellScreen.PATTERN_CHOOSER, ShellScreen.PATTERN_GAME -> if(language=="de") "Muster bauen" else "Pattern Builder"
@@ -487,6 +494,7 @@ class MainActivity : ComponentActivity() {
                             HomeBrowseScreen(navigation.homePage, language == "de", ::openHomePage,
                                 ::launchHomeActivity, Modifier.padding(padding), navigation.recoveryFailed)
                         }
+                        ShellScreen.CONSERVATION_CHOOSER, ShellScreen.CONSERVATION_GAME,
                         ShellScreen.NUMBER_STORIES_CHOOSER, ShellScreen.NUMBER_STORIES_GAME,
                         ShellScreen.QUANTITY_CHANGE_CHOOSER, ShellScreen.QUANTITY_CHANGE_GAME,
                         ShellScreen.PATTERN_CHOOSER, ShellScreen.PATTERN_GAME,
@@ -885,6 +893,10 @@ class MainActivity : ComponentActivity() {
     @Composable
     private fun ConstructionActivities(screen: ShellScreen, padding: PaddingValues, language: String) {
         when(screen) {
+            ShellScreen.CONSERVATION_CHOOSER -> ConservationChooser(if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                {changeRoute(navigation.openConservation(it))},Modifier.padding(padding))
+            ShellScreen.CONSERVATION_GAME -> ConservationScreen(nativeConservation,navigation.conservationConfig,if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                {changeRoute(navigation.openConservationChooser())},{changeRoute(navigation.home())},Modifier.padding(padding),::popCelebration,{celebrationSound.cancel()})
             ShellScreen.NUMBER_STORIES_CHOOSER -> NumberStoriesChooser(if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                 {changeRoute(navigation.openNumberStories(it))},Modifier.padding(padding))
             ShellScreen.NUMBER_STORIES_GAME -> NumberStoriesScreen(nativeNumberStories,navigation.storyConfig,if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
@@ -954,6 +966,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.VERB_QUIZ -> nativeVerbs.busy || nativeVerbs.saveFailed
             ShellScreen.BUILD_FIVE -> nativeBuildFive.busy || nativeBuildFive.saveFailed
             ShellScreen.BUILD_TEN -> nativeBuildTen.busy || nativeBuildTen.saveFailed
+            ShellScreen.CONSERVATION_GAME -> nativeConservation.busy || nativeConservation.saveFailed
             ShellScreen.NUMBER_STORIES_GAME -> nativeNumberStories.busy || nativeNumberStories.saveFailed
             ShellScreen.QUANTITY_CHANGE_GAME -> nativeQuantityChange.busy || nativeQuantityChange.saveFailed
             ShellScreen.PATTERN_GAME -> nativePatterns.busy || nativePatterns.saveFailed
@@ -999,6 +1012,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.VERB_QUIZ -> nativeVerbs.state?.takeIf { it.phase == SessionPhase.COMPLETED && it.completion == CompletionState.ACKNOWLEDGED }?.plan?.id?.value
             ShellScreen.BUILD_FIVE -> nativeBuildFive.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.BUILD_TEN -> nativeBuildTen.state?.takeIf { it.completed && it.acknowledged }?.id?.value
+            ShellScreen.CONSERVATION_GAME -> nativeConservation.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.NUMBER_STORIES_GAME -> nativeNumberStories.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.QUANTITY_CHANGE_GAME -> nativeQuantityChange.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.PATTERN_GAME -> nativePatterns.state?.takeIf { it.completed && it.acknowledged }?.id?.value
@@ -1141,6 +1155,7 @@ class MainActivity : ComponentActivity() {
                 syncSettings()
                 changeRoute(navigation.closeOptions())
             }
+            BackAction.CONSERVATION_CHOOSER -> changeRoute(navigation.openConservationChooser())
             BackAction.NUMBER_STORIES_CHOOSER -> changeRoute(navigation.openNumberStoriesChooser())
             BackAction.QUANTITY_CHANGE_CHOOSER -> changeRoute(navigation.openQuantityChangeChooser())
             BackAction.PATTERN_CHOOSER -> changeRoute(navigation.openPatternChooser())
@@ -1274,6 +1289,9 @@ class MainActivity : ComponentActivity() {
                 else -> null
             })
         val nativeAudioMode=shellAudioMode(prefs.getString("audioMode",null),prefs.getBoolean("sound",true))
+        nativeConservation.configure(prefs.getString("lang","en")?:"en",nativeAudioMode,prefs.getInt("round",5))
+        nativeConservation.setVisible(foreground && navigation.screen==ShellScreen.CONSERVATION_GAME,
+            if(navigation.screen==ShellScreen.CONSERVATION_GAME)navigation.conservationConfig else null)
         nativeNumberStories.configure(prefs.getString("lang","en")?:"en",nativeAudioMode,prefs.getInt("round",5))
         nativeNumberStories.setVisible(foreground && navigation.screen==ShellScreen.NUMBER_STORIES_GAME,
             if(navigation.screen==ShellScreen.NUMBER_STORIES_GAME)navigation.storyConfig else null)
@@ -1400,6 +1418,7 @@ class MainActivity : ComponentActivity() {
         outState.putString("patternLevel", navigation.patternLevel)
         outState.putString("storyMode", navigation.storyMode)
         outState.putString("quantityMode", navigation.quantityMode)
+        outState.putInt("conservationLimit", navigation.conservationLimit)
         outState.putInt("storyLimit", navigation.storyLimit)
         outState.putInt("quantityLimit", navigation.quantityLimit)
         if (navigation.ownsWebSession) outState.putString("legacySession", checkpoint.read())

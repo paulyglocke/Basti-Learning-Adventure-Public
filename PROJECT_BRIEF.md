@@ -440,3 +440,9 @@ activities (30 native, three retained web), Maths 17. Physical acceptance remain
 separate.
 
 Implementation and validation: [Number Stories review](docs/number-stories-2026-11-16/README.md).
+
+## Same Amount (2026-11-20)
+
+Same Amount / Gleich viele adds reversible quantity rearrangement and Before/Now comparison within 5/10, with two familiar objects, occasional real one-object changes, bilingual speech, saved rounds and shared progress/rewards. Home has 34 live entries: 31 native and three retained web; Maths has 18. Verification and physical acceptance are separate.
+
+Implementation and current verification: [Same Amount review](docs/same-amount-2026-11-20/README.md).

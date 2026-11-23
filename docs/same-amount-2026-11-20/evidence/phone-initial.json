@@ -1,0 +1,66 @@
+{
+  "source": "phone-initial.txt",
+  "format": "Derived from direct AndroidJUnitRunner raw text; not Gradle XML",
+  "tests": 11,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "instrumentationCode": -1,
+  "cases": [
+    {
+      "class": "com.bellfamily.bastischool.ui.conservation.ConservationRouteTest",
+      "test": "bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.conservation.ConservationOwnerTest",
+      "test": "offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest",
+      "test": "bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=false-font=1-landscape=false]",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest",
+      "test": "bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=true-font=1.5-landscape=false]",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest",
+      "test": "bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=true-font=2-landscape=true]",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest",
+      "test": "bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=false-font=1-landscape=true]",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest",
+      "test": "allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.numberstories.NumberStoriesOwnerTest",
+      "test": "offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.MainActivityStartupTest",
+      "test": "homeSurvivesLaunchRecreationAndBackgroundReturn",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.HomeRouteTest",
+      "test": "everyHomeEntryOpensItsExistingDestinationAndReturnsHome[en]",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.HomeRouteTest",
+      "test": "everyHomeEntryOpensItsExistingDestinationAndReturnsHome[de]",
+      "outcome": "passed"
+    }
+  ]
+}

@@ -431,3 +431,9 @@ resubmit it. Support stays attached; completed rounds deliver deduplicated norma
 claim of generalised real-world skill.
 
 Implementation and validation: [Number Stories review](docs/number-stories-2026-11-16/README.md).
+
+## Same Amount (2026-11-20)
+
+Only changed checked relations produce attempts. SAME tasks report `skill.math.quantity_conservation.within_{5|10}`; changed tasks report `skill.math.quantity_change_comparison.within_{5|10}`. Context identifies dinosaur/apple; content responses are quantity.fewer/same/more. Moving, selecting, Undo and listening are unscored; support persists across retries. Completion uses shared deduplicated 5/10-task evidence. A correct answer does not establish that the child moved objects, used one-to-one matching or mastered conservation generally.
+
+Implementation and current verification: [Same Amount review](docs/same-amount-2026-11-20/README.md).

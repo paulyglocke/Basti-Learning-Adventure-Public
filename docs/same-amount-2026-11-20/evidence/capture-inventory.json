@@ -1,0 +1,528 @@
+{
+  "total": 74,
+  "productionPhone": 10,
+  "phoneComponents": 32,
+  "tabletComponents": 32,
+  "provenance": "/sdcard/Download/basti-native-verbs-bonds-20261107/conservation-final-capture-start",
+  "deviceListing": "final-device-capture-files.json",
+  "images": [
+    {
+      "file": "conservation-chooser-de.png",
+      "kind": "production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "3fb0010ad93ae5e868a3b0fa7397f26909a4fa590101212f7a815c1958b73deb"
+    },
+    {
+      "file": "conservation-chooser-en.png",
+      "kind": "production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "31d96dad48204fba47e968fe8cf8701e49213d7e2bde95f0d68ee82727855216"
+    },
+    {
+      "file": "conservation-five-complete-de.png",
+      "kind": "production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "d55c4e8d91e7bb086fdf199cbd7f6822e369fed0d5ee60871e6990c3616951f9"
+    },
+    {
+      "file": "conservation-five-moved-en.png",
+      "kind": "production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "dfae22aff302f4ede5b62d4ff3867b415a0752a2dbdb15857ce4bde03f04e3d9"
+    },
+    {
+      "file": "conservation-five-retry.png",
+      "kind": "production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "da69b59c22742be27841a025de3bcb4cded714e49b869cee7e7f0be46067ba65"
+    },
+    {
+      "file": "conservation-five-solved-de.png",
+      "kind": "production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "3834472d76517c413b9ffe77398fc365e94175e26b743b244e37faaeaa1afd5b"
+    },
+    {
+      "file": "conservation-layout-five-fewer-dinosaur-phone-de-15-portrait.png",
+      "kind": "phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "95c13593288813c026b0444be168f0491fb625ae43b33c1e56a0e52fa575a898"
+    },
+    {
+      "file": "conservation-layout-five-fewer-dinosaur-phone-de-20-landscape.png",
+      "kind": "phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "ef856dc2b57988b215c80ae129ac51f86ceba772458f64618b86063cd1fe3e24"
+    },
+    {
+      "file": "conservation-layout-five-fewer-dinosaur-phone-en-10-landscape.png",
+      "kind": "phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "b3142bb823acba95cd0426bfa56c513297076750088ebf254321b0293b49ee72"
+    },
+    {
+      "file": "conservation-layout-five-fewer-dinosaur-phone-en-10-portrait.png",
+      "kind": "phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "f8616bc29c3e94043aa7b9f35e74def8a92b370f4bd8b5c0a7a866c383e68f1b"
+    },
+    {
+      "file": "conservation-layout-five-fewer-dinosaur-tablet-de-15-portrait.png",
+      "kind": "tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "6a249f26c71f3baf17690948eae3c01117cf5223f5e88c88eed3c8e25c85d509"
+    },
+    {
+      "file": "conservation-layout-five-fewer-dinosaur-tablet-de-20-landscape.png",
+      "kind": "tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "4496c977eeacdd9c78a5622205de8023f1c950e885e9ed6eafbc1c3778dbdd6a"
+    },
+    {
+      "file": "conservation-layout-five-fewer-dinosaur-tablet-en-10-landscape.png",
+      "kind": "tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "c1a0aaf36bf31c95d5029ce3da30a79e3472e2828dff57eea395a38da5bd43a2"
+    },
+    {
+      "file": "conservation-layout-five-fewer-dinosaur-tablet-en-10-portrait.png",
+      "kind": "tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "7e5e967ea836c4fbc6ace771022314538a5ac854359ee7ec82f642981983da57"
+    },
+    {
+      "file": "conservation-layout-five-more-apple-phone-de-15-portrait.png",
+      "kind": "phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "61ea87b45db50537a6d1b9b4dd02122d6d85c9a69ef9c412af203e3076996215"
+    },
+    {
+      "file": "conservation-layout-five-more-apple-phone-de-20-landscape.png",
+      "kind": "phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "b4aa3dbf954742d6787e868c3df9015c06a0ba112636eefb057411b6c41e1fa7"
+    },
+    {
+      "file": "conservation-layout-five-more-apple-phone-en-10-landscape.png",
+      "kind": "phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "3d5e5d68676ea714dd36e99ba25164db5caa77a7263efa6afc6237ef77b686da"
+    },
+    {
+      "file": "conservation-layout-five-more-apple-phone-en-10-portrait.png",
+      "kind": "phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "00d932c07f4c7bc462516b516dae03f0d53250dc1b88898ccb1165c4fef460ac"
+    },
+    {
+      "file": "conservation-layout-five-more-apple-tablet-de-15-portrait.png",
+      "kind": "tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "22c3a91efde62a2b5f3a5f210592fb5e2de143be759c451d92087213a4d2ac41"
+    },
+    {
+      "file": "conservation-layout-five-more-apple-tablet-de-20-landscape.png",
+      "kind": "tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "cf46e66c4ecaed581305616db98d29b845751d7a1daf526d01ff3ad78c0d1183"
+    },
+    {
+      "file": "conservation-layout-five-more-apple-tablet-en-10-landscape.png",
+      "kind": "tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "1233696784cb84b7ed5bb8ba344fc39ad0d1fca6c61fb95cfb18790d8de69d6c"
+    },
+    {
+      "file": "conservation-layout-five-more-apple-tablet-en-10-portrait.png",
+      "kind": "tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "204fa5251b2a27aa62d8128600025592676846a92e9749764d3cb5227bfca4dc"
+    },
+    {
+      "file": "conservation-layout-five-same-apple-phone-de-15-portrait.png",
+      "kind": "phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "182a058a66d3ffb75d97d6ed8611493597543225ed5022d20b89f02832db47bd"
+    },
+    {
+      "file": "conservation-layout-five-same-apple-phone-de-20-landscape.png",
+      "kind": "phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "3b6cbbebfeae682df45d40643d339614e71f1b0941a436bc48e218be0884cd2d"
+    },
+    {
+      "file": "conservation-layout-five-same-apple-phone-en-10-landscape.png",
+      "kind": "phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "30ea450170a1d52d3506ce12bf99d8bdad370565f9217243eff0dc0a7293a8ed"
+    },
+    {
+      "file": "conservation-layout-five-same-apple-phone-en-10-portrait.png",
+      "kind": "phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "2971abab68cee7982e57272c9d518517e1a233534fedf971651e81b60cc5d0c8"
+    },
+    {
+      "file": "conservation-layout-five-same-apple-tablet-de-15-portrait.png",
+      "kind": "tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "e3a16884db6da8e23f09da08a3338eccbcf419598f44dadb18c5fdd18ee723fe"
+    },
+    {
+      "file": "conservation-layout-five-same-apple-tablet-de-20-landscape.png",
+      "kind": "tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "e5469864277f82d4baf4f96aae8b87b9a67ae8ce579ba31a71da7cd608a3f952"
+    },
+    {
+      "file": "conservation-layout-five-same-apple-tablet-en-10-landscape.png",
+      "kind": "tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "aad4dbe0791f43599196c8c5f8a06c9acfa9a6b15ca2a010376c1d8b643bc0dd"
+    },
+    {
+      "file": "conservation-layout-five-same-apple-tablet-en-10-portrait.png",
+      "kind": "tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "393fc4cc4aed461264496dd903561bb1db423915d515074f03cfb1db7a4ba13e"
+    },
+    {
+      "file": "conservation-layout-five-same-dinosaur-phone-de-15-portrait.png",
+      "kind": "phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "2ba5e9e5244fbdec8ded3f094e09d4e4550fafd05e6c9b183c7ba05a370805b0"
+    },
+    {
+      "file": "conservation-layout-five-same-dinosaur-phone-de-20-landscape.png",
+      "kind": "phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "a1ca6fe8de408bd88de625e0f46fec83dd41765f013ab57d796afe57d65fc05a"
+    },
+    {
+      "file": "conservation-layout-five-same-dinosaur-phone-en-10-landscape.png",
+      "kind": "phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "057fab17128067e87faee703a57686b267e33aad22876542fc81a9c56f2d9ebc"
+    },
+    {
+      "file": "conservation-layout-five-same-dinosaur-phone-en-10-portrait.png",
+      "kind": "phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "f038c690b73a4cf913a23de601afe1c93e13ede27176d09948cae7305e26f5e2"
+    },
+    {
+      "file": "conservation-layout-five-same-dinosaur-tablet-de-15-portrait.png",
+      "kind": "tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "4c4c7584e3ff5728869fc5cb4822323f5f553ce3e8f4a6a6d02c72fa1870dadb"
+    },
+    {
+      "file": "conservation-layout-five-same-dinosaur-tablet-de-20-landscape.png",
+      "kind": "tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "b256358d8ca4c5fa4dd8b8d542ecc5f58926cc1dc6c9ebbc2c5c1ac1d733a02e"
+    },
+    {
+      "file": "conservation-layout-five-same-dinosaur-tablet-en-10-landscape.png",
+      "kind": "tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "00bda158c8260a5f642e07937193c5f3e4ebc56a6aee922559650352fea99dc9"
+    },
+    {
+      "file": "conservation-layout-five-same-dinosaur-tablet-en-10-portrait.png",
+      "kind": "tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "14bdb92a84dff94694e3f979d06905c9a1532f27bee92d6dc72d1ba5954983d0"
+    },
+    {
+      "file": "conservation-layout-ten-fewer-dinosaur-phone-de-15-portrait.png",
+      "kind": "phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "7e83a51c121c5404acad0d0f6754744c4a3bd91ae7dae2d46f76340636318e8e"
+    },
+    {
+      "file": "conservation-layout-ten-fewer-dinosaur-phone-de-20-landscape.png",
+      "kind": "phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "631bc3f8f31c2f978ef789c3bc972fad76a5641f02bdfe4970cbb764dca90bad"
+    },
+    {
+      "file": "conservation-layout-ten-fewer-dinosaur-phone-en-10-landscape.png",
+      "kind": "phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "f229e1e972549d5578f985a8b5671b4dc552810bf0d1baaddacbe538d3a90a67"
+    },
+    {
+      "file": "conservation-layout-ten-fewer-dinosaur-phone-en-10-portrait.png",
+      "kind": "phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "1f0ed7fea8f121e56a7650f8538d1da1a766dc54e4bcbcd0f722219fd37df519"
+    },
+    {
+      "file": "conservation-layout-ten-fewer-dinosaur-tablet-de-15-portrait.png",
+      "kind": "tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "6cd041c0e281bee89dd10ccf21c96ad6fb46588d810a735addf7d222081f7acd"
+    },
+    {
+      "file": "conservation-layout-ten-fewer-dinosaur-tablet-de-20-landscape.png",
+      "kind": "tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "ed7bc4243074a3056e55a930295dc03797642562da68f55ebe2d89f43f753a45"
+    },
+    {
+      "file": "conservation-layout-ten-fewer-dinosaur-tablet-en-10-landscape.png",
+      "kind": "tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "5f51ad479f4d0b5ed28de6379ba7bcca7884470a982e6b494f92198d7182b3b5"
+    },
+    {
+      "file": "conservation-layout-ten-fewer-dinosaur-tablet-en-10-portrait.png",
+      "kind": "tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "ef9800e8ea1f8d4529d330778facfdcc71aac0b149d184484de7e152f8a024eb"
+    },
+    {
+      "file": "conservation-layout-ten-more-apple-phone-de-15-portrait.png",
+      "kind": "phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "8ef1844a439a0f2345ebddccc08cc47a133aab71fe9c5ce5b324f5ace7069983"
+    },
+    {
+      "file": "conservation-layout-ten-more-apple-phone-de-20-landscape.png",
+      "kind": "phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "8d0a9e9a647edf66e30563e4f8fb0fabb77e1eae90c4c365dec22a48cb9fbd46"
+    },
+    {
+      "file": "conservation-layout-ten-more-apple-phone-en-10-landscape.png",
+      "kind": "phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "7502c11913f3dd29f618f3d952249bd9bebe88dc9cbac29d6048f734c81a9c44"
+    },
+    {
+      "file": "conservation-layout-ten-more-apple-phone-en-10-portrait.png",
+      "kind": "phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "0f3795e89d629c416c2633f7ca1b1844d63e71811c49fd440aedf4247a33e6ed"
+    },
+    {
+      "file": "conservation-layout-ten-more-apple-tablet-de-15-portrait.png",
+      "kind": "tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "0fbe78ad960144a856e08c089feca9bf411b72e372998685afe03867d7dcc208"
+    },
+    {
+      "file": "conservation-layout-ten-more-apple-tablet-de-20-landscape.png",
+      "kind": "tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "acf5f681f138e6100280c311fe803d7b216ace339cf5c7692efc6008791c5d28"
+    },
+    {
+      "file": "conservation-layout-ten-more-apple-tablet-en-10-landscape.png",
+      "kind": "tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "1529944124e298a2f26c6c427aa607b4da802d02fc4870d1f52f7e77d90f7e1f"
+    },
+    {
+      "file": "conservation-layout-ten-more-apple-tablet-en-10-portrait.png",
+      "kind": "tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "5d24c00ed2588b8b7d246c915f7c0521aab572ba6da77e6c47578171e8580634"
+    },
+    {
+      "file": "conservation-layout-ten-same-apple-phone-de-15-portrait.png",
+      "kind": "phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "8531bb86d032d9a09ffdc6e512a9d3afdbec38321b3316d42a7a76c7dc085904"
+    },
+    {
+      "file": "conservation-layout-ten-same-apple-phone-de-20-landscape.png",
+      "kind": "phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "7f3c9db9b919629162582a5ab053ba83f18fe0ae232d7fbac778bef1a61a89ef"
+    },
+    {
+      "file": "conservation-layout-ten-same-apple-phone-en-10-landscape.png",
+      "kind": "phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "452c00cdeb08786466f55b3b157aa7ca98f79cbd90c53701611ce91727c8a0ea"
+    },
+    {
+      "file": "conservation-layout-ten-same-apple-phone-en-10-portrait.png",
+      "kind": "phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "dc188fa94b4c92feb7d927b317356213114215320d05320fc819b4bed1df95d8"
+    },
+    {
+      "file": "conservation-layout-ten-same-apple-tablet-de-15-portrait.png",
+      "kind": "tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "994befe4a7ccae7d9cf301d7ecc24c90597c994f20298f9a34392f025dac67f9"
+    },
+    {
+      "file": "conservation-layout-ten-same-apple-tablet-de-20-landscape.png",
+      "kind": "tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "cee43260ddc897ea6f6ea279d6b7a4b09809f2e8d57dff473c9f6163bb8dbfad"
+    },
+    {
+      "file": "conservation-layout-ten-same-apple-tablet-en-10-landscape.png",
+      "kind": "tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "2d7afcf60e3c5cd4ddffb145eade10714b06b2e940b4f2a0464fe530c2284f11"
+    },
+    {
+      "file": "conservation-layout-ten-same-apple-tablet-en-10-portrait.png",
+      "kind": "tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "6eac1e4e9a9880551ea7c16e9388b5e3429aabedf676161889912566de3556d8"
+    },
+    {
+      "file": "conservation-layout-ten-same-dinosaur-phone-de-15-portrait.png",
+      "kind": "phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "5c19d479927ea48d686885240cf801da600fb27de7cd3f84f5762a5cce84da01"
+    },
+    {
+      "file": "conservation-layout-ten-same-dinosaur-phone-de-20-landscape.png",
+      "kind": "phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "c2199bfed4de3e9d1be77831eabb831177b50baf88e1c55ebf4a509856a11b5d"
+    },
+    {
+      "file": "conservation-layout-ten-same-dinosaur-phone-en-10-landscape.png",
+      "kind": "phone",
+      "width": 2400,
+      "height": 1080,
+      "sha256": "1b471ae11777fefee90520603822e4a573516bea51b8e90453ccc5fdc20dfaea"
+    },
+    {
+      "file": "conservation-layout-ten-same-dinosaur-phone-en-10-portrait.png",
+      "kind": "phone",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "b6458ff2fc864f5e519a86e8d6f4ee8676b15e90a71bdb06c757bb03f3220ce3"
+    },
+    {
+      "file": "conservation-layout-ten-same-dinosaur-tablet-de-15-portrait.png",
+      "kind": "tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "a11cb09588376eb56c033928f206e276a51ac121f8c234e2914c8ce2c622e496"
+    },
+    {
+      "file": "conservation-layout-ten-same-dinosaur-tablet-de-20-landscape.png",
+      "kind": "tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "df880297af1f92b654c789a2f66a1b59277e76761d9341a8e1af6d99aa00e739"
+    },
+    {
+      "file": "conservation-layout-ten-same-dinosaur-tablet-en-10-landscape.png",
+      "kind": "tablet",
+      "width": 2560,
+      "height": 1600,
+      "sha256": "5f73915c492cca00163315eb3a0813eafe09f0cafa149eeefff9bb9820ba714a"
+    },
+    {
+      "file": "conservation-layout-ten-same-dinosaur-tablet-en-10-portrait.png",
+      "kind": "tablet",
+      "width": 1600,
+      "height": 2560,
+      "sha256": "c3c72606eada7f11ccc8866672c36c44f83b11a81c5729e9fe6fc1a8ced553d7"
+    },
+    {
+      "file": "conservation-ten-complete-de.png",
+      "kind": "production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "b995fa285df1debf1453bfbf2121b04f1f08108a186e0834ac729c3da154f27e"
+    },
+    {
+      "file": "conservation-ten-moved-de.png",
+      "kind": "production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "f76a711dd5cef3f89902ae31b4bcd3a2b3ace7ff36105a47330ce2ea9478657f"
+    },
+    {
+      "file": "conservation-ten-retry.png",
+      "kind": "production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "1d5ec7ffc6923611b16e03c92be22866253da9565785f22b2770ecc65ac39bc2"
+    },
+    {
+      "file": "conservation-ten-solved-de.png",
+      "kind": "production",
+      "width": 1080,
+      "height": 2400,
+      "sha256": "88e7a85b588ef61b71553093aebec10f11ac7a3a70eb5c1d58e94d453b89349e"
+    }
+  ]
+}

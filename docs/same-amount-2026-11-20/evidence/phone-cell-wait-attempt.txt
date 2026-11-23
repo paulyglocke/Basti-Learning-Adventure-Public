@@ -1,0 +1,160 @@
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationRouteTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ui.conservation.ConservationRouteTest:
+INSTRUMENTATION_STATUS: test=bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationRouteTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stack=androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 10000 ms
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
+	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress$lambda$17$lambda$16$capture(ConservationRouteTest.kt:42)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress$lambda$17(ConservationRouteTest.kt:83)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.$r8$lambda$Pl_cbDIvaqo6ySDueizNylUnqoY(Unknown Source:0)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTestKt.isolatedConservationStores(ConservationRouteTest.kt:24)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(ConservationRouteTest.kt:29)
+
+INSTRUMENTATION_STATUS: stream=
+Error in bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(com.bellfamily.bastischool.ui.conservation.ConservationRouteTest):
+androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 10000 ms
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
+	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress$lambda$17$lambda$16$capture(ConservationRouteTest.kt:42)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress$lambda$17(ConservationRouteTest.kt:83)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.$r8$lambda$Pl_cbDIvaqo6ySDueizNylUnqoY(Unknown Source:0)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTestKt.isolatedConservationStores(ConservationRouteTest.kt:24)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(ConservationRouteTest.kt:29)
+
+INSTRUMENTATION_STATUS: test=bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationOwnerTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ui.conservation.ConservationOwnerTest:
+INSTRUMENTATION_STATUS: test=offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationOwnerTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest:
+INSTRUMENTATION_STATUS: test=bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=false-font=1-landscape=false]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=false-font=1-landscape=false]
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=true-font=1.5-landscape=false]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stack=androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 10000 ms
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
+	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
+	at com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest.bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks(ConservationLayoutTest.kt:105)
+
+INSTRUMENTATION_STATUS: stream=
+Error in bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=true-font=1.5-landscape=false](com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest):
+androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 10000 ms
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
+	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
+	at com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest.bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks(ConservationLayoutTest.kt:105)
+
+INSTRUMENTATION_STATUS: test=bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=true-font=1.5-landscape=false]
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=true-font=2-landscape=true]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=true-font=2-landscape=true]
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=false-font=1-landscape=true]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stack=androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 10000 ms
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
+	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
+	at com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest.bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks(ConservationLayoutTest.kt:105)
+
+INSTRUMENTATION_STATUS: stream=
+Error in bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=false-font=1-landscape=true](com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest):
+androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 10000 ms
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
+	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
+	at com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest.bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks(ConservationLayoutTest.kt:105)
+
+INSTRUMENTATION_STATUS: test=bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=false-font=1-landscape=true]
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_RESULT: stream=
+
+Time: 74.484
+There were 3 failures:
+1) bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(com.bellfamily.bastischool.ui.conservation.ConservationRouteTest)
+androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 10000 ms
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
+	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress$lambda$17$lambda$16$capture(ConservationRouteTest.kt:42)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress$lambda$17(ConservationRouteTest.kt:83)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.$r8$lambda$Pl_cbDIvaqo6ySDueizNylUnqoY(Unknown Source:0)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTestKt.isolatedConservationStores(ConservationRouteTest.kt:24)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(ConservationRouteTest.kt:29)
+2) bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=true-font=1.5-landscape=false](com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest)
+androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 10000 ms
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
+	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
+	at com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest.bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks(ConservationLayoutTest.kt:105)
+3) bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=false-font=1-landscape=true](com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest)
+androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 10000 ms
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
+	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
+	at com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest.bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks(ConservationLayoutTest.kt:105)
+
+FAILURES!!!
+Tests run: 6,  Failures: 3
+
+
+INSTRUMENTATION_CODE: -1

@@ -974,3 +974,11 @@ checks pass. Two new route/owner cases join the focused CI selection.
 This does not claim hosted or full-app
 instrumentation validation. Physical S24/Fire, child use, audible installed offline
 voices, true TalkBack/switch operation and signed upgrade remain NOT RUN.
+
+## Same Amount (2026-11-20)
+
+Final local verification (2026-11-23): 732/732 JVM, debug app/test assemblies and lint (0 errors, 7 existing warnings, 2 informational findings). Final combined API 35 phone selection passed 11/11; final tablet layouts passed 4/4, zero failures/errors/skips. Checks cover conserved count across selection/movement/Undo, zero and maximum boundaries, mixed relation generation, changed explicit assessment, exact saved selection/answer/history, deduplicated uncertain progress writes, silent lazy audio ownership and compatible Number Stories nouns. Phone includes actual new route/owner/four layouts, existing Number Stories route/owner, startup and bilingual 34-entry Home. Layouts cover both ranges/objects, zero/max, EN/DE 1×/1.5×/2×, portrait/landscape, keyboard and >=48dp targets. Seventy-four genuine final screenshots, thirteen visually reviewed, are tied to the final source/APK hashes.
+
+Earlier failed/interrupted image-readiness fixtures and post-install zero-test startup ANRs remain separately recorded. Shared board bitmap decoding/loading gate corrected partially rendered groups; final runtime passed after a no-wipe restart of the same AVD. Root cause and general startup/performance acceptance are not established. No new browser, full-app instrumentation or hosted result is claimed. Physical S24/Fire, child use, real TalkBack/switch access, audible offline voices and signed upgrade remain NOT RUN.
+
+Implementation and current verification: [Same Amount review](docs/same-amount-2026-11-20/README.md).

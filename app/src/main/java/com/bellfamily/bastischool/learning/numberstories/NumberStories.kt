@@ -4,11 +4,10 @@ import com.bellfamily.bastischool.learning.models.*
 import com.bellfamily.bastischool.learning.session.*
 import com.bellfamily.bastischool.learning.progress.*
 import com.bellfamily.bastischool.learning.bonds.NumberBonds
-import com.bellfamily.bastischool.learning.vocabulary.VocabularyContent
+import com.bellfamily.bastischool.learning.quantity.QuantityObjects
 import com.bellfamily.bastischool.learning.quantity.QuantityWork
 import java.util.Collections
 import java.util.Random
-import java.util.Locale
 
 enum class StoryMode(val key:String,val delta:Int,val title:ContentText) {
     ADD("add",1,ContentText.plain("More arrive","Es kommen welche dazu")),
@@ -20,9 +19,9 @@ data class StoryConfig(val mode:StoryMode,val range:StoryRange) {
     companion object { val all=StoryMode.entries.flatMap{m->StoryRange.entries.map{StoryConfig(m,it)}} }
 }
 enum class StoryScene(val key:String,val objectId:ContentId,val title:ContentText,val plural:ContentText) {
-    POND("pond",ContentId("animal.dinosaur"),ContentText.plain("By the pond","Am Teich"),ContentText.plain("dinosaurs","Dinosaurier")),
-    PICNIC("picnic",ContentId("food.apple"),ContentText.plain("At the picnic","Beim Picknick"),ContentText.plain("apples","Äpfel"));
-    fun noun(count:Int,language:ContentLanguage):String = if(count!=1)plural.display[language] else VocabularyContent.item(objectId).text.display[language].let{if(language==ContentLanguage.ENGLISH)it.lowercase(Locale.ROOT)else it}
+    POND("pond",ContentId("animal.dinosaur"),ContentText.plain("By the pond","Am Teich"),QuantityObjects.plural(ContentId("animal.dinosaur"))),
+    PICNIC("picnic",ContentId("food.apple"),ContentText.plain("At the picnic","Beim Picknick"),QuantityObjects.plural(ContentId("food.apple")));
+    fun noun(count:Int,language:ContentLanguage):String = QuantityObjects.noun(objectId,count,language)
 }
 data class StoryTask(val start:Int,val amount:Int,val scene:StoryScene)
 

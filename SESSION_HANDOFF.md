@@ -1,4 +1,53 @@
-# Session handoff — 2026-11-20
+# Session handoff — 2026-11-23
+
+## Same Amount (2026-11-20, completed locally 2026-11-23)
+
+Owner approved the proposed conservation activity after Number Stories commit
+44e2eae398257d9d6f5933e75eded1b3154ead96 was pushed to main. The owner subsequently
+requested committing and pushing this checkpoint to main on 2026-11-23. Retained
+evidence describes pre-commit local validation; hosted checks are separate.
+No agents used. New model/host/audio, native owner/
+chooser/board, shell/Home integration and tests are implemented locally.
+Two within-5/10 journals preserve selection, count-preserving moves, Undo,
+answers/support and write-ahead shared progress. Shared count nouns extracted
+from Number Stories without text/old journal changes. Home has 34 entries,
+31 native and three retained web; Maths has 18. Both levels use 60% conservation,
+20% removal and 20% addition, alternating dinosaur/apple contexts. Only changed
+explicit Check records an attempt; moves/Undo/selection are unscored. Correct
+work locks until Next. Conservation and real-change comparisons have distinct skills.
+
+Final fresh build passed **732/732 JVM**, both debug APKs and lint (0 errors,
+7 existing warnings, 2 informational findings). Final combined phone **11/11**
+and tablet layouts **4/4** passed, zero failures/errors/skips, on the recorded
+source/APK hashes. Phone covers new route/owner/four layouts, existing Number
+Stories route/owner, startup and bilingual Home. The new route completes both
+levels with exact 17 attempts/two completions, including nine conservation tasks.
+Layouts cover EN/DE 1×/1.5×/2×, portrait/landscape, both ranges/objects,
+zero/max, keyboard movement/Undo/Help, >=48dp targets and fixed reference visibility.
+
+Visual review found partially rendered groups after recreation. The board now
+decodes its active object once and shares that bitmap across all occupied cells,
+showing loading/retry until ready. Earlier image-wait fixture failures and stopped
+component runs remain retained separately. Two post-install attempts ran zero tests;
+Android recorded startup ANRs without an app exception. The same AVD restarted
+without wiping; the same APK launched normally and passed final checks. No root
+cause or general startup/performance fix is claimed.
+
+[Review and gallery](docs/same-amount-2026-11-20/README.md): **74** genuine final
+captures (10 production phone, 32 phone components, 32 tablet components), thirteen
+visually reviewed. Raw runner logs, derived summaries, JVM XML ZIP/lint XML,
+source/APK identities, capture inventory and cleanup proof are retained. Catalogue
+generation, verb-motion parity, source/document whitespace and gallery integrity
+pass. No new browser, full-app instrumentation or hosted result is claimed.
+
+Only owned Basti_Pattern_20261111/emulator-5554 used, without snapshots/wipe.
+Tablet overrides reset to original1080x2400/density420 and original airplane1
+preserved; AVD gracefully closed with process exit0 and no devices attached.
+Original Medium Phone config hash unchanged; original userdata/physical devices
+untouched. No local implementation, verification or emulator work remains.
+Physical S24/Fire, child use, actual TalkBack/switch operation, audible installed
+offline voices and signed upgrade remain NOT RUN.
+
 
 ## Number Stories (2026-11-16, completed locally 2026-11-20)
 

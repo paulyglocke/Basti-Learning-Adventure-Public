@@ -1,0 +1,44 @@
+{
+  "avd": "Basti_Pattern_20261111",
+  "serial": "emulator-5554",
+  "displayReset": {
+    "size": {
+      "chunk_id": "b9f5ff",
+      "wall_time_seconds": 0.384868917,
+      "exit_code": 0,
+      "original_token_count": 7,
+      "output": "Physical size: 1080x2400\n"
+    },
+    "density": {
+      "chunk_id": "d21309",
+      "wall_time_seconds": 0.214342833,
+      "exit_code": 0,
+      "original_token_count": 6,
+      "output": "Physical density: 420\n"
+    }
+  },
+  "airplaneMode": {
+    "chunk_id": "f2e3ea",
+    "wall_time_seconds": 0.110124208,
+    "exit_code": 0,
+    "original_token_count": 1,
+    "output": "1\n"
+  },
+  "gracefulClose": "adb -s emulator-5554 emu kill: OK: killing emulator, bye bye; OK",
+  "emulatorProcessExitCode": 0,
+  "attachedDevices": {
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "aadc5f",
+      "wall_time_seconds": 0.000013542,
+      "exit_code": 0,
+      "original_token_count": 7,
+      "output": "List of devices attached\n\n"
+    }
+  },
+  "originalMediumConfigSha256": "c4ab33993685273776e9286aee0b948e48192f5ab61046d564447d7a12e7034c",
+  "originalMediumConfigUnchanged": true,
+  "originalMediumUserdataUntouched": true,
+  "physicalDevicesUsed": false,
+  "wipeUninstallOrSnapshotRemoval": false
+}

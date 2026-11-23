@@ -1,0 +1,7 @@
+Starting: Intent { cmp=com.bellfamily.bastischool/.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.bellfamily.bastischool/.MainActivity
+TotalTime: 1664
+WaitTime: 1666
+Complete

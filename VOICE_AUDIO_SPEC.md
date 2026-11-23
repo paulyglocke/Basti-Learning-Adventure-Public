@@ -943,3 +943,9 @@ edits, navigation, background, language changes and disposal. No new engine,
 settings store or pronunciation scoring.
 
 Implementation and validation: [Number Stories review](docs/number-stories-2026-11-16/README.md).
+
+## Same Amount (2026-11-20)
+
+Same Amount narrates the starting quantity, actual change facts and comparison question in independently authored EN/DE. Replay reads the current phase; Help explains moving/counting/one-to-one comparison without selecting an answer. The owner reuses lazy DefaultAudioController, ALL/QUESTIONS/OFF, owned cancellation and silent restoration. Moving/answer selection/navigation/background/language changes cancel obsolete speech. No new engine, settings store or speech scoring.
+
+Implementation and current verification: [Same Amount review](docs/same-amount-2026-11-20/README.md).

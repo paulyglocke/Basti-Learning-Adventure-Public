@@ -1,0 +1,71 @@
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationRouteTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ui.conservation.ConservationRouteTest:
+INSTRUMENTATION_STATUS: test=bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationRouteTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Missing rendered artwork in [conservation-slot-5] for conservation-five-retry; image nodes=7
+	at com.bellfamily.bastischool.ui.conservation.ConservationCaptureKt.captureConservationReview(ConservationCapture.kt:22)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress$lambda$15$lambda$14$capture(ConservationRouteTest.kt:37)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress$lambda$15(ConservationRouteTest.kt:64)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.$r8$lambda$-ZJH8FRwYTqKCBTEiIHBXH8YFkI(Unknown Source:0)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest$$ExternalSyntheticLambda2.invoke(D8$$SyntheticClass:0)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTestKt.isolatedConservationStores(ConservationRouteTest.kt:23)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(ConservationRouteTest.kt:28)
+	... 51 trimmed
+Caused by: androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 10000 ms
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
+	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
+	at com.bellfamily.bastischool.ui.conservation.ConservationCaptureKt.captureConservationReview(ConservationCapture.kt:19)
+	... 58 more
+
+INSTRUMENTATION_STATUS: stream=
+Error in bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(com.bellfamily.bastischool.ui.conservation.ConservationRouteTest):
+java.lang.AssertionError: Missing rendered artwork in [conservation-slot-5] for conservation-five-retry; image nodes=7
+	at com.bellfamily.bastischool.ui.conservation.ConservationCaptureKt.captureConservationReview(ConservationCapture.kt:22)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress$lambda$15$lambda$14$capture(ConservationRouteTest.kt:37)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress$lambda$15(ConservationRouteTest.kt:64)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.$r8$lambda$-ZJH8FRwYTqKCBTEiIHBXH8YFkI(Unknown Source:0)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest$$ExternalSyntheticLambda2.invoke(D8$$SyntheticClass:0)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTestKt.isolatedConservationStores(ConservationRouteTest.kt:23)
+	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(ConservationRouteTest.kt:28)
+	... 51 trimmed
+Caused by: androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 10000 ms
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
+	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
+	at com.bellfamily.bastischool.ui.conservation.ConservationCaptureKt.captureConservationReview(ConservationCapture.kt:19)
+	... 58 more
+
+INSTRUMENTATION_STATUS: test=bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationOwnerTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ui.conservation.ConservationOwnerTest:
+INSTRUMENTATION_STATUS: test=offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationOwnerTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=6
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ui.conservation.ConservationLayoutTest:
+INSTRUMENTATION_STATUS: test=bothRangesKeepBeforeVisibleAndSupportKeyboardMovementUndoAndRelationChecks[de=false-font=1-landscape=false]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_RESULT: shortMsg=Process crashed.
+INSTRUMENTATION_CODE: 0

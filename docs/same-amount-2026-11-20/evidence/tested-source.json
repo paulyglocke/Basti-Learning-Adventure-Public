@@ -1,0 +1,23 @@
+{
+  "app/src/androidTest/java/com/bellfamily/bastischool/HomeRouteTest.kt": "891b599de8a49797d3f8fdcd1c04d0c05f2d886590cb14605b29f7604e49d968",
+  "app/src/androidTest/java/com/bellfamily/bastischool/ui/conservation/ConservationCapture.kt": "3e54f9a0ddc8908f42ad64d51a5585da67b5577f6459e8bd8c9a76857298b005",
+  "app/src/androidTest/java/com/bellfamily/bastischool/ui/conservation/ConservationLayoutTest.kt": "79be4958821ad09749a4569fd8ef40aed53c1573c12433badaae3627139a1560",
+  "app/src/androidTest/java/com/bellfamily/bastischool/ui/conservation/ConservationOwnerTest.kt": "11c57fb68be729eec835bf287d1f895122dae6e1bce5678d016719ae90ce8613",
+  "app/src/androidTest/java/com/bellfamily/bastischool/ui/conservation/ConservationRouteTest.kt": "0b1d5d39cf789f1cecc85782373637e50d81d1ccce93702d5ec5e58bac678a4a",
+  "app/src/main/java/com/bellfamily/bastischool/MainActivity.kt": "cb1823c4251cfc58e1943d19c98b6bc875899cc59ab628e892e0f325e83aab82",
+  "app/src/main/java/com/bellfamily/bastischool/ShellNavigation.kt": "abbf3e23232e73c8e92019819c002fbf56209b1c09cc3fa2d7e3b3f4c7a3fc92",
+  "app/src/main/java/com/bellfamily/bastischool/learning/conservation/Conservation.kt": "9f5ad7d378d2d1df242fe0473680788301b7433a06f6cbc04428851b380bb92b",
+  "app/src/main/java/com/bellfamily/bastischool/learning/conservation/ConservationAudio.kt": "6efa72d9b319c98bbcae4698d8f0c2079e5ccb2d1b2ad79879fb189fd3ce281d",
+  "app/src/main/java/com/bellfamily/bastischool/learning/conservation/ConservationHost.kt": "8329c25906813127cc90f07523630172750789d21fe8d2b1d3c87134e327ebca",
+  "app/src/main/java/com/bellfamily/bastischool/learning/numberstories/NumberStories.kt": "e5347bda650d6f0cd61b61a22fd6180dccb0af9e2c5c6c561510eeebf1e72c45",
+  "app/src/main/java/com/bellfamily/bastischool/learning/quantity/QuantityObjects.kt": "db97282a1191d74549bb296c693ae356dd5fe4568b78a40c65b6e6327b28854d",
+  "app/src/main/java/com/bellfamily/bastischool/ui/conservation/ConservationScreen.kt": "a4c55bb535dc1a07ef1a5b93a8013459b24acaaaf5bde42f6c75aabca9663ae7",
+  "app/src/main/java/com/bellfamily/bastischool/ui/conservation/ConservationViewModel.kt": "a4f1aec1e7ec51b4948ba5ba9c721171a638bd81923196ee5a64dcb615abb667",
+  "app/src/main/java/com/bellfamily/bastischool/ui/home/HomeActivityArtwork.kt": "d3a42f5433e1cab7959d3977ae6bc1ab763b486b907c5761220c5f51fdafd689",
+  "app/src/main/java/com/bellfamily/bastischool/ui/home/HomeCatalogue.kt": "03dd057d1bc74c4c38c5941854efb9b7921475dd84eba8da459bec6078a10862",
+  "app/src/test/java/com/bellfamily/bastischool/ConservationNavigationTest.kt": "16430c43c0760ebeab781ebda90c2ecfd3ed194cdc7f9a27d91dc3ca9145f67e",
+  "app/src/test/java/com/bellfamily/bastischool/HomeCardsTest.kt": "01f5c92a7c38de13e60185ce29f235a77eaef611e926940ec7f9801d9331e342",
+  "app/src/test/java/com/bellfamily/bastischool/HomeIntegrationTest.kt": "76b6d07dd1211052568a850e3058f9582807dbe294cdcb93590b00bad71df78f",
+  "app/src/test/java/com/bellfamily/bastischool/learning/conservation/ConservationTest.kt": "688a0927865659342164a2285ae9e4f8818d4c06fa4e36e3e23472de1ef0ba7f",
+  "app/src/testDebug/java/com/bellfamily/bastischool/ui/homeprototype/HomePrototypeModelTest.kt": "a46bbe257a3e15d3237c19407ef3a0c6d8cea43904c8743bf2145b21c2da4e6b"
+}

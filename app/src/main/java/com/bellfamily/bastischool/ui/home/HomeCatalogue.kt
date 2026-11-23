@@ -10,7 +10,7 @@ internal enum class HomeCategory(
     val en: String, val de: String, val treatment: BastiCategoryTreatment, val activityIds: List<String>,
 ) {
     MATHS("Numbers & Maths", "Zahlen & Rechnen", BastiCategoryTreatment.MATHS,
-        listOf("count", "subitising", "quantityMatch", "countingTray", "compareQuantity", "numberOrder", "addTogether", "addChallenge", "subtraction", "mixedAddition", "makeFive", "buildFive", "buildTen", "patternBuilder", "quantityChange", "numberStories", "math")),
+        listOf("count", "subitising", "quantityMatch", "countingTray", "compareQuantity", "numberOrder", "addTogether", "addChallenge", "subtraction", "mixedAddition", "makeFive", "buildFive", "buildTen", "patternBuilder", "quantityChange", "numberStories", "conservation", "math")),
     WORDS("Words & Talking", "Wörter & Erzählen", BastiCategoryTreatment.WORDS,
         listOf("tellme", "vocabulary", "verbExplorer", "letters", "positions")),
     TIME("Time & Seasons", "Zeit & Jahreszeiten", BastiCategoryTreatment.TIME, listOf("time", "clock")),
@@ -41,6 +41,7 @@ internal fun HomeCard.homeDestination(): ShellNavigation {
     require(!play && this in homeActivities())
     val shell = ShellNavigation()
     return when (homeId()) {
+        "conservation" -> shell.openConservationChooser()
         "numberStories" -> shell.openNumberStoriesChooser()
         "quantityChange" -> shell.openQuantityChangeChooser()
         "patternBuilder" -> shell.openPatternChooser()

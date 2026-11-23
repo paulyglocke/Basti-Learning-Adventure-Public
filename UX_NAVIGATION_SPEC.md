@@ -494,3 +494,9 @@ editable, solved work locks until explicit Next, and zero is visible. Equation
 appears after successful Check. Completion reuses shared balloons.
 
 Implementation and validation: [Number Stories review](docs/number-stories-2026-11-16/README.md).
+
+## Same Amount (2026-11-20)
+
+Home → Same Amount / Gleich viele → within 5/10 opens a saved group. Back returns to its chooser, then Home; Options/recreation retain range and exact work. Before remains fixed above or beside scrolling Now. Tap an occupied place to select/cancel, then an empty place to move; keyboard Enter works through normal button semantics. Undo reverses moves. Selection, moves and answer choice are unscored. Explicit Check submits Fewer/Same/More; the same last wrong relation cannot resubmit through rearrangement. Wrong work stays editable; solved work locks until Next. Shared balloons complete the round.
+
+Implementation and current verification: [Same Amount review](docs/same-amount-2026-11-20/README.md).

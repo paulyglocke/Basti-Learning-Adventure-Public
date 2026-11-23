@@ -17,16 +17,16 @@ class HomePrototypeModelTest {
 
     @Test fun sixCategoriesCoverTwentySixDistinctExistingIdentities() {
         val ids = HomeCategory.entries.flatMap { it.activityIds }
-        assertEquals(listOf(17, 5, 2, 5, 1, 2), HomeCategory.entries.map { it.activityIds.size })
-        assertEquals(32, ids.size)
-        assertEquals(32, ids.toSet().size)
+        assertEquals(listOf(18, 5, 2, 5, 1, 2), HomeCategory.entries.map { it.activityIds.size })
+        assertEquals(33, ids.size)
+        assertEquals(33, ids.toSet().size)
         assertEquals(homeActivities().map { it.homeId() }.toSet() - "mixed", ids.toSet())
     }
 
     @Test fun allActivitiesPreservesTwentySevenCurrentCardsWithoutFutureGames() {
         val cards = homeActivities()
-        assertEquals(33, cards.size)
-        assertEquals(33, cards.map { it.homeId() }.toSet().size)
+        assertEquals(34, cards.size)
+        assertEquals(34, cards.map { it.homeId() }.toSet().size)
         assertFalse(cards.any { it.play })
         assertEquals("Mixed Adventure", homeActivity("mixed").titleEn)
         assertNull(homeCategory("mixed"))

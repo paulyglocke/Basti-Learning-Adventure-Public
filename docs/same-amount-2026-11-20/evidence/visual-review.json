@@ -1,0 +1,73 @@
+{
+  "method": "Human visual inspection of original final UiAutomation PNGs through view_image; no image alteration",
+  "count": 13,
+  "scope": "Representative samples, not an exhaustive pixel review of all 74 captures or physical acceptance",
+  "notes": "Component screenshots omit the production shell. Scrollable workspace clips at viewport edges; canonical apple artwork retains its original ivory background.",
+  "images": [
+    {
+      "file": "conservation-chooser-de.png",
+      "sha256": "3fb0010ad93ae5e868a3b0fa7397f26909a4fa590101212f7a815c1958b73deb",
+      "finding": "German two-level chooser is legible; canonical dinosaur artwork visible."
+    },
+    {
+      "file": "conservation-ten-moved-de.png",
+      "sha256": "f76a711dd5cef3f89902ae31b4bcd3a2b3ace7ff36105a47330ce2ea9478657f",
+      "finding": "Production restored/moved board has one apple in each group; Before stays above the scrollable body."
+    },
+    {
+      "file": "conservation-five-retry.png",
+      "sha256": "da69b59c22742be27841a025de3bcb4cded714e49b869cee7e7f0be46067ba65",
+      "finding": "Four dinosaurs visible in both groups after recreation; wrong feedback keeps work editable."
+    },
+    {
+      "file": "conservation-ten-solved-de.png",
+      "sha256": "88e7a85b588ef61b71553093aebec10f11ac7a3a70eb5c1d58e94d453b89349e",
+      "finding": "Production correct feedback and explicit Next readable with complete reference artwork."
+    },
+    {
+      "file": "conservation-five-complete-de.png",
+      "sha256": "d55c4e8d91e7bb086fdf199cbd7f6822e369fed0d5ee60871e6990c3616951f9",
+      "finding": "Shared German balloon completion visible; this image is not evidence of a completed pop animation."
+    },
+    {
+      "file": "conservation-layout-ten-same-apple-phone-de-20-landscape.png",
+      "sha256": "7f3c9db9b919629162582a5ab053ba83f18fe0ae232d7fbac778bef1a61a89ef",
+      "finding": "At German 2x landscape eight apples visible in each group; fixed reference remains clear."
+    },
+    {
+      "file": "conservation-layout-ten-fewer-dinosaur-phone-de-15-portrait.png",
+      "sha256": "7e83a51c121c5404acad0d0f6754744c4a3bd91ae7dae2d46f76340636318e8e",
+      "finding": "German 1.5x portrait zero group and feedback legible with fixed Before reference."
+    },
+    {
+      "file": "conservation-layout-five-more-apple-phone-en-10-portrait.png",
+      "sha256": "00d932c07f4c7bc462516b516dae03f0d53250dc1b88898ccb1165c4fef460ac",
+      "finding": "Four-to-five comparison, Help and correct feedback legible in narrow portrait."
+    },
+    {
+      "file": "conservation-layout-ten-same-dinosaur-tablet-en-10-portrait.png",
+      "sha256": "c3c72606eada7f11ccc8866672c36c44f83b11a81c5729e9fe6fc1a8ced553d7",
+      "finding": "Three dinosaurs in each group; fixed reference beside the workspace; all pictures complete."
+    },
+    {
+      "file": "conservation-layout-ten-more-apple-tablet-en-10-portrait.png",
+      "sha256": "5d24c00ed2588b8b7d246c915f7c0521aab572ba6da77e6c47578171e8580634",
+      "finding": "Nine-to-ten apple comparison fully visible with Help and explicit Next."
+    },
+    {
+      "file": "conservation-layout-five-fewer-dinosaur-tablet-de-15-portrait.png",
+      "sha256": "6a249f26c71f3baf17690948eae3c01117cf5223f5e88c88eed3c8e25c85d509",
+      "finding": "One-to-zero comparison, empty work grid and German feedback fully legible at 1.5x."
+    },
+    {
+      "file": "conservation-layout-ten-same-apple-tablet-de-20-landscape.png",
+      "sha256": "cee43260ddc897ea6f6ea279d6b7a4b09809f2e8d57dff473c9f6163bb8dbfad",
+      "finding": "Eight apples visible in each group with German 2x feedback. Scrolled body clips Replay at the viewport edge as intended."
+    },
+    {
+      "file": "conservation-layout-ten-more-apple-tablet-en-10-landscape.png",
+      "sha256": "1529944124e298a2f26c6c427aa607b4da802d02fc4870d1f52f7e77d90f7e1f",
+      "finding": "Nine-to-ten apple comparison, Help, feedback and Next fully visible in landscape."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "baseline": "44e2eae398257d9d6f5933e75eded1b3154ead96",
+  "jvm": {
+    "tests": 732,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "Error": 0,
+    "Warning": 7,
+    "Information": 2
+  },
+  "artifacts": {
+    "app/build/outputs/apk/debug/app-debug.apk": "3d2e90ab90cdc12e3c3e2f958be3aba37ad8b0893d4c82ebf664a20427bc60d8",
+    "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": "9cb150332b6b327c07e482f4ad07eb71002183021043fb8991e698a9adb3497f"
+  },
+  "build": "testDebugUnitTest assembleDebug assembleDebugAndroidTest lintDebug; BUILD SUCCESSFUL in 3m 29s",
+  "scope": "Fresh runtime with one shared board bitmap and loading/retry gate; final Android checks follow separately"
+}

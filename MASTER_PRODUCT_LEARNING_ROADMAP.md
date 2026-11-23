@@ -2281,3 +2281,9 @@ application slice, not generalised mastery, adaptive progression or a replacemen
 for One More / One Less. Physical/child acceptance remains separate.
 
 Implementation and validation: [Number Stories review](docs/number-stories-2026-11-16/README.md).
+
+## Same Amount (2026-11-20)
+
+Same Amount / Gleich viele adds a bounded conservation-of-quantity starter: rearrange canonical dinosaurs or apples, then compare Now with a pinned Before group. Within-5/10 rounds mix 60% unchanged quantity with explicit one-object additions/removals. This is comparison evidence across two objects and arrangements, not generalised conservation mastery. Broader contexts, free object scaling, liquid/area conservation and adaptive progression remain future work.
+
+Implementation and current verification: [Same Amount review](docs/same-amount-2026-11-20/README.md).

@@ -1655,3 +1655,9 @@ identical question within a round. Canonical objects intentionally repeat within
 a group because those objects are the quantity being counted.
 
 Implementation and validation: [Number Stories review](docs/number-stories-2026-11-16/README.md).
+
+## Same Amount (2026-11-20)
+
+Same Amount isolates quantity from position: the Before frame remains fixed while objects in Now move to empty places. Most trials conserve the starting count, while occasional explicit additions/removals prevent a constant Same answer. Two-tap movement and Undo are reversible, untimed and do not alter quantity. Explicit checked comparison, calm retries and child-controlled Next preserve the shared learning grammar.
+
+Implementation and current verification: [Same Amount review](docs/same-amount-2026-11-20/README.md).

@@ -186,3 +186,9 @@ slot actions. The Home thumbnail pairs the same two canonical objects. No new
 raster generation, emoji, imported art or copied habitat animals.
 
 Implementation and validation: [Number Stories review](docs/number-stories-2026-11-16/README.md).
+
+## Same Amount (2026-11-20)
+
+Same Amount reuses canonical dinosaur PNG/apple JPG and shared bundled artwork decoding. Before and Now use clearly separate labelled frames; empty places show neutral marks rather than add/remove affordances. Selected pictures use both a border and selection semantics; answer selection has a checkmark and written summary. The Home icon compares three compact dots with three spread dots. No new raster art, emoji or decorative countable objects. Before/Now occupied cells share a single decoded bitmap and appear together after the board loading gate.
+
+Implementation and current verification: [Same Amount review](docs/same-amount-2026-11-20/README.md).

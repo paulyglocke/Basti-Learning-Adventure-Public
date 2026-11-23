@@ -977,3 +977,9 @@ routes stay in the private shell renderer to preserve the JVM method-size limit.
 Storage, speech policy, progress codec and balloon presentation remain shared.
 
 Implementation and validation: [Number Stories review](docs/number-stories-2026-11-16/README.md).
+
+## Same Amount (2026-11-20)
+
+`learning/conservation` owns the pure comparison/move reducer and two bounded checksummed write-ahead journals. `ui/conservation` owns native chooser/board and worker-confined lifecycle/audio coordination. A move atomically clears one occupied place and fills one empty place; the count never changes. Selection, answer, masks, Undo, support and pending progress survive restoration. Existing QuantityWork contracts/journals stay unchanged. Shared QuantityObjects extracts reviewed dinosaur/apple count nouns for Number Stories and this genuine second consumer; old StoryScene names and strings remain compatible. The board decodes its active object once through BundledArtworkCache and shares the resulting bitmap across Before/Now. A loading/retry view blocks answer input until that bitmap is ready, preventing partially drawn groups after recreation.
+
+Implementation and current verification: [Same Amount review](docs/same-amount-2026-11-20/README.md).
