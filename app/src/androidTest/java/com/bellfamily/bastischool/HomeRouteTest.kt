@@ -1,11 +1,15 @@
 package com.bellfamily.bastischool
 
 import android.os.Bundle
+import android.util.Log
+import android.app.Activity
+import android.app.Application
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
 import androidx.test.core.app.ActivityScenario
 import androidx.test.platform.app.InstrumentationRegistry
-import androidx.lifecycle.Lifecycle
+import java.util.concurrent.atomic.AtomicReference
+import org.json.JSONObject
 import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
@@ -32,47 +36,87 @@ class HomeRouteTest(private val language: String) {
             ActivityScenario.launch(MainActivity::class.java).use { scenario ->
                 homeCardGroups().flatten().forEachIndexed { index, card ->
                     val title = if (language == "de") card.titleDe else card.titleEn
-                    compose.openHomeActivity(title)
-                    compose.waitForIdle()
-                    if (expectedScreens[index] == "WEB") {
-                        compose.renderedLegacy(scenario, if (card.verbExplorer) "verbExplorer" else card.mode!!)
-                    }
-                    if (expectedScreens[index] == "LETTERS") {
-                        compose.waitUntil(10_000) {
-                            compose.onAllNodesWithTag("letters-prompt").fetchSemanticsNodes().isNotEmpty()
+                    Log.i("HomeRouteTest", "Opening $language ${index + 1}/${expectedScreens.size}: $title (${card.mode})")
+                    try {
+                        compose.openHomeActivity(title)
+                        compose.waitForIdle()
+                        val legacyMode = if (card.verbExplorer) "verbExplorer" else card.mode
+                        val before = if (expectedScreens[index] == "WEB") {
+                            try {
+                                compose.renderedLegacy(scenario, legacyMode!!)
+                            } catch (failure: Throwable) {
+                                Log.e("HomeRouteTest", "Home $language entry ${index + 1}: $title ($legacyMode) did not render", failure)
+                                throw failure
+                            }
+                        } else null
+                        if (expectedScreens[index] == "LETTERS") {
+                            compose.waitUntil(10_000) {
+                                compose.onAllNodesWithTag("letters-prompt").fetchSemanticsNodes().isNotEmpty()
+                            }
+                            compose.onNodeWithTag("letters-prompt").assertExists()
+                            compose.onNodeWithTag("letters-letter-card").assertExists()
+                            compose.onNodeWithTag("letters-replay").assertExists()
                         }
-                        compose.onNodeWithTag("letters-prompt").assertExists()
-                        compose.onNodeWithTag("letters-letter-card").assertExists()
-                        compose.onNodeWithTag("letters-replay").assertExists()
-                    }
-                    // Saving demotes ComponentActivity's LifecycleRegistry to CREATED.
-                    // Inspect while stopped, then resume normally before exercising Back.
-                    scenario.moveToState(Lifecycle.State.CREATED)
-                    scenario.onActivity { activity ->
-                        val saved = Bundle()
-                        instrumentation.callActivityOnSaveInstanceState(activity, saved)
+                        // Capture a real framework save and verify the restored destination.
+                        // Directly calling onSaveInstanceState bypasses that lifecycle contract.
+                        val saved = recreateAndCaptureState(scenario)
                         assertEquals(title, expectedScreens[index], saved.getString("screen"))
                         if (expectedScreens[index] == "WEB") {
-                            assertEquals(title, if (card.verbExplorer) "verbExplorer" else card.mode, saved.getString("webMode"))
+                            assertEquals(title, legacyMode, saved.getString("webMode"))
                         }
-                    }
-                    scenario.moveToState(Lifecycle.State.RESUMED)
-                    compose.waitForIdle()
-                    // No answers, scores or completed sessions are needed to check entry dispatch.
-                    scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
-                    if (expectedScreens[index] in setOf("HABITATS_CHOOSER", "HABITAT_MATCH")) {
-                        // Explore Habitats is nested; Back restores the browse page that launched it.
-                        compose.onNodeWithText(if (language == "de") "Alle Aktivitäten" else "All Activities")
-                            .performScrollTo().assertIsDisplayed()
+                        compose.waitForIdle()
+                        if (before != null) {
+                            val after = compose.renderedLegacy(scenario, legacyMode!!)
+                            assertEquals(title, before.getString("text"), after.getString("text"))
+                            assertEquals(title,
+                                JSONObject(before.getString("checkpoint")).getJSONObject("state").toString(),
+                                JSONObject(after.getString("checkpoint")).getJSONObject("state").toString())
+                        }
+                        Log.i("HomeRouteTest", "Restored $language ${index + 1}: $title")
+                        // No answers, scores or completed sessions are needed to check entry dispatch.
                         scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
-                    } else {
-                        val greeting = if (language == "de") "Was wollen wir entdecken?" else "What shall we explore?"
-                        compose.waitUntil(10_000) { compose.onAllNodesWithText(greeting).fetchSemanticsNodes().size == 1 }
+                        if (expectedScreens[index] in setOf("HABITATS_CHOOSER", "HABITAT_MATCH")) {
+                            // Explore Habitats is nested; Back restores the browse page that launched it.
+                            compose.onNodeWithText(if (language == "de") "Alle Aktivitäten" else "All Activities")
+                                .performScrollTo().assertIsDisplayed()
+                            scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
+                        } else {
+                            val greeting = if (language == "de") "Was wollen wir entdecken?" else "What shall we explore?"
+                            compose.waitUntil(10_000) { compose.onAllNodesWithText(greeting).fetchSemanticsNodes().size == 1 }
+                        }
+                    } catch (failure: Throwable) {
+                        Log.e("HomeRouteTest", "Failed $language entry ${index + 1}: $title", failure)
+                        throw failure
                     }
                 }
             }
         } finally {
             prefs.edit().putString("lang", oldLanguage).putString("audioMode", oldAudio).commit()
+        }
+    }
+
+    private fun recreateAndCaptureState(scenario: ActivityScenario<MainActivity>): Bundle {
+        val application = InstrumentationRegistry.getInstrumentation().targetContext.applicationContext as Application
+        lateinit var original: MainActivity
+        scenario.onActivity { original = it }
+        val saved = AtomicReference<Bundle?>(null)
+        val callbacks = object : Application.ActivityLifecycleCallbacks {
+            override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {
+                if (activity === original) saved.set(Bundle(outState))
+            }
+            override fun onActivityCreated(activity: Activity, state: Bundle?) {}
+            override fun onActivityStarted(activity: Activity) {}
+            override fun onActivityResumed(activity: Activity) {}
+            override fun onActivityPaused(activity: Activity) {}
+            override fun onActivityStopped(activity: Activity) {}
+            override fun onActivityDestroyed(activity: Activity) {}
+        }
+        application.registerActivityLifecycleCallbacks(callbacks)
+        return try {
+            scenario.recreate()
+            checkNotNull(saved.get()) { "Framework did not save the Home destination during recreation" }
+        } finally {
+            application.unregisterActivityLifecycleCallbacks(callbacks)
         }
     }
 }

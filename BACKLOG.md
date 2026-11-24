@@ -36,7 +36,7 @@ Already implemented and not active implementation backlog unless a regression is
 
 ## P0 — trusted daily build
 
-- Investigate the English all-Home retained-WebView DOM timeout observed during Length comparison validation (host and software renderer). German Home35 passed; root cause is unconfirmed. Keep this failure distinct from passed native route/owner/layout checks; see [evidence](docs/length-comparison-2026-11-23/README.md).
+- Investigate the Compose SlotTable disposal crash seen after Wash Hands entry during the initial Home diagnostic run. The corrected framework-recreation/readiness selection passed 12/12, including all 35 Home entries in both languages, but no runtime crash fix or renderer-performance root cause is established. Keep this separate from the now-passing Home verification; see [evidence](docs/home-legacy-timeout-2026-11-24/README.md).
 
 - Physically accept the implemented shared native completion celebration: five balloons, one-time pop, canonical animal reveal, brief local confetti, Sound Off-aware SFX, immediate Continue/Home, no progress/session coupling. Cleaned celebration artwork is physically verified on S24 (`a8877b5`); do not repeat transparency cleanup. Remaining motion/audio/accessibility checks and Fire Max acceptance are separate.
 - S24 same-key in-place upgrade is proven: 1003901 / 1.1.39.1 → 1004501 / 1.1.45.1 (owner-reported physical evidence in BUILD_NOTES.md). Keep signing/versioning as maintenance; perform the equivalent Fire Max upgrade check.

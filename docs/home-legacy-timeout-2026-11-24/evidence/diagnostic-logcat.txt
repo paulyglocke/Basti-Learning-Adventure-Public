@@ -1,0 +1,117 @@
+--------- beginning of main
+11-24 12:48:44.037 D/AndroidRuntime(  362): >>>>>> START com.android.internal.os.ZygoteInit uid 0 <<<<<<
+11-24 12:48:44.042 I/AndroidRuntime(  362): Using default boot image
+11-24 12:48:44.042 I/AndroidRuntime(  362): Leaving lock profiling enabled
+11-24 12:48:47.246 I/AndroidRuntime(  807): VM exiting with result code 0, cleanup skipped.
+11-24 12:48:50.528 W/chromium( 1154): [1124/124850.528754:WARNING:dns_config_service_android.cc(81)] Failed to read DnsConfig.
+11-24 12:48:51.150 W/chromium( 1333): [1124/124851.150577:WARNING:dns_config_service_android.cc(81)] Failed to read DnsConfig.
+11-24 12:48:53.696 W/chromium( 1897): [1124/124853.696708:WARNING:dns_config_service_android.cc(81)] Failed to read DnsConfig.
+11-24 12:48:53.804 W/chromium( 1537): [1124/124853.794737:WARNING:url_request_context_config.cc(716)] Unrecognized Cronet experimental option "enable_telemetry" with params "true
+11-24 12:48:53.804 W/chromium( 1537): 
+11-24 12:48:53.808 W/chromium( 1537): [1124/124853.808152:WARNING:dns_config_service_android.cc(81)] Failed to read DnsConfig.
+11-24 12:48:54.415 E/chromium( 1537): [1124/124854.411734:ERROR:variations_seed_loader.cc(37)] Seed missing signature.
+11-24 12:48:54.417 I/chromium( 1537): [1124/124854.416880:INFO:variations_seed_loader.cc(66)] Failed to open file for reading.: No such file or directory (2)
+11-24 12:48:55.460 W/chromium( 1537): [WARNING:dns_config_service_android.cc(81)] Failed to read DnsConfig.
+11-24 12:48:57.011 W/chromium( 1354): [1124/124857.011804:WARNING:dns_config_service_android.cc(81)] Failed to read DnsConfig.
+11-24 12:48:57.344 W/chromium( 1003): [1124/124857.344219:WARNING:dns_config_service_android.cc(81)] Failed to read DnsConfig.
+11-24 12:49:06.805 W/chromium( 1749): [1124/124906.805051:WARNING:dns_config_service_android.cc(81)] Failed to read DnsConfig.
+11-24 12:51:06.981 D/AndroidRuntime( 3110): >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+11-24 12:51:07.012 I/AndroidRuntime( 3110): Using default boot image
+11-24 12:51:07.012 I/AndroidRuntime( 3110): Leaving lock profiling enabled
+11-24 12:51:07.669 D/AndroidRuntime( 3110): Calling main entry com.android.commands.am.Am
+11-24 12:51:09.062 I/TestRunner( 3121): run started: 2 tests
+11-24 12:51:09.065 I/TestRunner( 3121): started: everyHomeEntryOpensItsExistingDestinationAndReturnsHome[en](com.bellfamily.bastischool.HomeRouteTest)
+11-24 12:51:30.138 I/HomeRouteTest( 3121): Opening en 1/35: Tell Me! (tellme)
+11-24 12:51:57.388 I/HomeRouteTest( 3121): Opening en 2/35: Vocabulary Booster (vocabulary)
+11-24 12:52:05.355 I/HomeRouteTest( 3121): Opening en 3/35: Learn Verbs (null)
+11-24 12:52:11.819 I/HomeRouteTest( 3121): Opening en 4/35: Animal First Letters (letters)
+11-24 12:52:18.705 I/HomeRouteTest( 3121): Opening en 5/35: Numbers (count)
+11-24 12:52:21.792 E/chromium( 3121): [1124/125221.790784:ERROR:variations_seed_loader.cc(37)] Seed missing signature.
+11-24 12:52:21.794 I/chromium( 3121): [1124/125221.793312:INFO:variations_seed_loader.cc(66)] Failed to open file for reading.: No such file or directory (2)
+11-24 12:52:23.812 W/chromium( 3121): [WARNING:dns_config_service_android.cc(81)] Failed to read DnsConfig.
+11-24 12:52:25.792 W/chromium( 3268): [WARNING:runtime_features.cc(694)] SharedStorage for M118+ cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI,SharedStorageAPIM118 in addition.
+11-24 12:52:25.792 W/chromium( 3268): [WARNING:runtime_features.cc(730)] AttributionReportingCrossAppWeb cannot be enabled in this configuration. Use --enable-features=ConversionMeasurement,AttributionReportingCrossAppWeb in addition.
+11-24 12:52:27.629 I/chromium( 3268): [INFO:viewport_data.cc(133)] E2E_Used ViewportFitCover
+11-24 12:52:28.044 I/chromium( 3268): [INFO:document_style_environment_variables.cc(104)] E2E_Used SafeAreaInsetBottom
+11-24 12:52:28.627 I/chromium( 3268): [INFO:document_style_environment_variables.cc(104)] E2E_Used SafeAreaInsetBottom
+11-24 12:52:29.425 I/chromium( 3268): [INFO:document_style_environment_variables.cc(104)] E2E_Used SafeAreaInsetBottom
+11-24 12:52:34.740 E/chromium( 3121): [ERROR:aw_browser_terminator.cc(154)] Renderer process (3268) crash detected (code -1).
+11-24 12:52:34.852 I/HomeRouteTest( 3121): Opening en 6/35: Days & Seasons (time)
+11-24 12:52:39.785 I/HomeRouteTest( 3121): Opening en 7/35: Animal Actions (verbs)
+11-24 12:52:46.776 I/HomeRouteTest( 3121): Opening en 8/35: How many? (subitising)
+11-24 12:52:53.447 I/HomeRouteTest( 3121): Opening en 9/35: Numbers & Groups (quantityMatch)
+11-24 12:52:58.126 I/HomeRouteTest( 3121): Opening en 10/35: More or Fewer (compareQuantity)
+11-24 12:53:00.945 I/HomeRouteTest( 3121): Opening en 11/35: Number Order (numberOrder)
+11-24 12:53:13.567 I/HomeRouteTest( 3121): Opening en 12/35: Clock & Time (clock)
+11-24 12:53:24.012 I/HomeRouteTest( 3121): Opening en 13/35: Add Together (addTogether)
+11-24 12:53:32.324 I/HomeRouteTest( 3121): Opening en 14/35: Add Bigger Numbers (addChallenge)
+11-24 12:53:44.036 I/HomeRouteTest( 3121): Opening en 15/35: Take Away (subtraction)
+11-24 12:53:54.207 I/HomeRouteTest( 3121): Opening en 16/35: Mixed Addition (mixedAddition)
+11-24 12:53:57.477 I/HomeRouteTest( 3121): Opening en 17/35: Build 5 (buildFive)
+11-24 12:54:06.930 I/HomeRouteTest( 3121): Opening en 18/35: Build 10 (buildTen)
+11-24 12:54:19.246 I/HomeRouteTest( 3121): Opening en 19/35: Make 5 (makeFive)
+11-24 12:54:33.243 I/HomeRouteTest( 3121): Opening en 20/35: Build a Dinosaur Group (countingTray)
+11-24 12:54:51.231 I/HomeRouteTest( 3121): Opening en 21/35: Easy Maths (math)
+11-24 12:54:55.339 W/chromium( 3468): [WARNING:runtime_features.cc(694)] SharedStorage for M118+ cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI,SharedStorageAPIM118 in addition.
+11-24 12:54:55.340 W/chromium( 3468): [WARNING:runtime_features.cc(730)] AttributionReportingCrossAppWeb cannot be enabled in this configuration. Use --enable-features=ConversionMeasurement,AttributionReportingCrossAppWeb in addition.
+11-24 12:54:55.553 I/chromium( 3468): [INFO:viewport_data.cc(133)] E2E_Used ViewportFitCover
+11-24 12:54:55.604 I/chromium( 3468): [INFO:document_style_environment_variables.cc(104)] E2E_Used SafeAreaInsetBottom
+11-24 12:55:05.334 E/chromium( 3121): [ERROR:aw_browser_terminator.cc(154)] Renderer process (3468) crash detected (code -1).
+11-24 12:55:05.433 I/HomeRouteTest( 3121): Opening en 22/35: Prepositions (positions)
+11-24 12:55:20.786 I/HomeRouteTest( 3121): Opening en 23/35: Mixed Adventure (mixed)
+11-24 12:55:24.758 W/chromium( 3505): [WARNING:runtime_features.cc(694)] SharedStorage for M118+ cannot be enabled in this configuration. Use --enable-features=SharedStorageAPI,SharedStorageAPIM118 in addition.
+11-24 12:55:24.758 W/chromium( 3505): [WARNING:runtime_features.cc(730)] AttributionReportingCrossAppWeb cannot be enabled in this configuration. Use --enable-features=ConversionMeasurement,AttributionReportingCrossAppWeb in addition.
+11-24 12:55:25.490 I/chromium( 3505): [INFO:viewport_data.cc(133)] E2E_Used ViewportFitCover
+11-24 12:55:25.672 I/chromium( 3505): [INFO:document_style_environment_variables.cc(104)] E2E_Used SafeAreaInsetBottom
+11-24 12:55:42.238 E/chromium( 3121): [ERROR:aw_browser_terminator.cc(154)] Renderer process (3505) crash detected (code -1).
+11-24 12:55:42.691 I/HomeRouteTest( 3121): Opening en 24/35: Memory Pairs (memoryPairs)
+11-24 12:55:56.551 I/HomeRouteTest( 3121): Opening en 25/35: Wash Hands (washHands)
+11-24 12:56:36.856 D/AndroidRuntime( 3121): Shutting down VM
+--------- beginning of crash
+11-24 12:56:36.857 E/AndroidRuntime( 3121): FATAL EXCEPTION: main
+11-24 12:56:36.857 E/AndroidRuntime( 3121): Process: com.bellfamily.bastischool, PID: 3121
+11-24 12:56:36.857 E/AndroidRuntime( 3121): java.lang.RuntimeException: Unable to destroy activity {com.bellfamily.bastischool/com.bellfamily.bastischool.MainActivity}: java.lang.ArrayIndexOutOfBoundsException: length=2720; index=-1891
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.ActivityThread.performDestroyActivity(ActivityThread.java:5963)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.ActivityThread.handleDestroyActivity(ActivityThread.java:5995)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.servertransaction.DestroyActivityItem.execute(DestroyActivityItem.java:46)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.servertransaction.ActivityTransactionItem.execute(ActivityTransactionItem.java:60)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.servertransaction.TransactionExecutor.executeLifecycleItem(TransactionExecutor.java:225)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.servertransaction.TransactionExecutor.executeTransactionItems(TransactionExecutor.java:107)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:81)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2636)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.os.Handler.dispatchMessage(Handler.java:107)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.os.Looper.loopOnce(Looper.java:232)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.os.Looper.loop(Looper.java:317)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.ActivityThread.main(ActivityThread.java:8705)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at java.lang.reflect.Method.invoke(Native Method)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:886)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): Caused by: java.lang.ArrayIndexOutOfBoundsException: length=2720; index=-1891
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.runtime.SlotTableKt.dataAnchor(SlotTable.kt:4003)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.runtime.SlotTableKt.access$dataAnchor(SlotTable.kt:1)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.runtime.SlotWriter.moveSlotGapTo(SlotTable.kt:2989)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.runtime.SlotWriter.removeSlots(SlotTable.kt:3198)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.runtime.SlotWriter.removeGroup(SlotTable.kt:2266)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.runtime.ComposerKt.removeCurrentGroup(Composer.kt:4182)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.runtime.CompositionImpl.dispose(Composition.kt:783)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.ui.layout.LayoutNodeSubcompositionsState.disposeCurrentNodes(SubcomposeLayout.kt:609)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.ui.layout.LayoutNodeSubcompositionsState.onRelease(SubcomposeLayout.kt:423)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.ui.node.LayoutNode.onRelease(LayoutNode.kt:1439)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.runtime.CompositionImpl$RememberEventDispatcher.dispatchRememberObservers(Composition.kt:1350)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.runtime.CompositionImpl.dispose(Composition.kt:787)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.ui.platform.WrappedComposition.dispose(Wrapper.android.kt:169)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.ui.platform.WrappedComposition.onStateChanged(Wrapper.android.kt:177)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.lifecycle.LifecycleRegistry$ObserverWithState.dispatchEvent(LifecycleRegistry.jvm.kt:320)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.lifecycle.LifecycleRegistry.backwardPass(LifecycleRegistry.jvm.kt:272)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.lifecycle.LifecycleRegistry.sync(LifecycleRegistry.jvm.kt:289)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.lifecycle.LifecycleRegistry.moveToState(LifecycleRegistry.jvm.kt:142)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.lifecycle.LifecycleRegistry.handleLifecycleEvent(LifecycleRegistry.jvm.kt:124)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.lifecycle.ReportFragment$Companion.dispatch$lifecycle_runtime_release(ReportFragment.android.kt:190)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.lifecycle.ReportFragment$LifecycleCallbacks.onActivityPreDestroyed(ReportFragment.android.kt:146)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.Activity.dispatchActivityPreDestroyed(Activity.java:1721)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.Activity.performDestroy(Activity.java:9288)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.Instrumentation.callActivityOnDestroy(Instrumentation.java:1561)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.test.runner.MonitoringInstrumentation.callActivityOnDestroy(MonitoringInstrumentation.java:753)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.ActivityThread.performDestroyActivity(ActivityThread.java:5950)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	... 14 more
+11-24 12:56:43.351 I/AndroidRuntime( 3110): VM exiting with result code 0.

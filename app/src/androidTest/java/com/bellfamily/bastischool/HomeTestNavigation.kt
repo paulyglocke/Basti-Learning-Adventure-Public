@@ -5,6 +5,8 @@ import androidx.compose.ui.test.junit4.ComposeTestRule
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
+import android.os.SystemClock
+import android.util.Log
 import androidx.test.core.app.ActivityScenario
 import java.util.concurrent.atomic.AtomicReference
 import org.json.JSONArray
@@ -22,20 +24,46 @@ internal fun legacyView(view: View): WebView? = if (view is WebView) view else
 
 /** Inspect the live DOM and its layout, not just the Kotlin destination or WebView existence. */
 internal fun ComposeTestRule.renderedLegacy(scenario: ActivityScenario<MainActivity>, mode: String): JSONObject {
+    val started = SystemClock.elapsedRealtime()
+    var progress = -1
+    // Compose idling does not include the WebView renderer or its local document load.
+    // Give that asynchronous startup its own bounded wait before checking the live DOM.
+    try {
+        waitUntil(30_000) {
+            scenario.onActivity { activity ->
+                progress = legacyView(activity.window.decorView)?.progress ?: -1
+            }
+            progress == 100
+        }
+    } catch (failure: ComposeTimeoutException) {
+        throw AssertionError("Legacy $mode document did not load (progress=$progress)", failure)
+    }
+    Log.i("HomeLegacyReady", "$mode document loaded after ${SystemClock.elapsedRealtime() - started}ms")
     val value = AtomicReference<String?>(null)
-    waitUntil(10_000) {
-        scenario.onActivity { activity -> legacyView(activity.window.decorView)?.evaluateJavascript("""
-            (() => {
-              if (typeof activeScreen === 'undefined' || window.__shellMode !== '$mode') return null;
-              const root = document.getElementById(activeScreen);
-              const body = document.getElementById(activeScreen === 'verbExplorer' ? 'verbExplorerContent' : 'gameContent');
-              if (!root || !body || root.classList.contains('hidden') || !body.innerText.trim()) return null;
-              const bounds = body.getBoundingClientRect();
-              return JSON.stringify({mode: window.__shellMode, screen: activeScreen, text: body.innerText,
-                width: bounds.width, height: bounds.height, checkpoint: serializeLegacySession()});
-            })()
-        """.trimIndent()) { value.set(it) } }
-        value.get()?.let { it != "null" && it != "undefined" } == true
+    var pending = false
+    try {
+        waitUntil(10_000) {
+            scenario.onActivity { activity ->
+                val view = legacyView(activity.window.decorView)
+                if (view != null && !pending) {
+                    pending = true
+                    view.evaluateJavascript("""
+                (() => {
+                  if (typeof activeScreen === 'undefined' || window.__shellMode !== '$mode') return null;
+                  const root = document.getElementById(activeScreen);
+                  const body = document.getElementById(activeScreen === 'verbExplorer' ? 'verbExplorerContent' : 'gameContent');
+                  if (!root || !body || root.classList.contains('hidden') || !body.innerText.trim()) return null;
+                  const bounds = body.getBoundingClientRect();
+                  return JSON.stringify({mode: window.__shellMode, screen: activeScreen, text: body.innerText,
+                    width: bounds.width, height: bounds.height, checkpoint: serializeLegacySession()});
+                })()
+                    """.trimIndent()) { value.set(it); pending = false }
+                }
+            }
+            value.get()?.let { it != "null" && it != "undefined" } == true
+        }
+    } catch (failure: ComposeTimeoutException) {
+        throw AssertionError("Legacy $mode loaded but its activity DOM did not render (last=${value.get()})", failure)
     }
     val result = JSONObject(JSONArray("[${value.get()}]").getString(0))
     assertEquals(mode, result.getString("mode"))
@@ -43,5 +71,6 @@ internal fun ComposeTestRule.renderedLegacy(scenario: ActivityScenario<MainActiv
     assertTrue(result.getString("text").isNotBlank())
     assertTrue(result.getDouble("width") > 0)
     assertTrue(result.getDouble("height") > 0)
+    Log.i("HomeLegacyReady", "$mode DOM verified after ${SystemClock.elapsedRealtime() - started}ms")
     return result
 }

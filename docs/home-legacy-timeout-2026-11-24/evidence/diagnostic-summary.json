@@ -1,0 +1,12 @@
+{
+  "format": "Derived direct runner text, not Gradle XML",
+  "source": "home-diagnostic.txt",
+  "plannedTests": 2,
+  "startedTests": 1,
+  "passed": 0,
+  "reportedFailures": 1,
+  "runnerAborted": true,
+  "instrumentationCode": 0,
+  "observed": "All three English web entries rendered. A Compose SlotTable disposal exception ended the run after Wash Hands entry25. German was not started.",
+  "rootCause": "Not established; distinct from the prior DOM timeout"
+}

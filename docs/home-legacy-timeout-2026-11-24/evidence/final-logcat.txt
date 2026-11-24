@@ -1,0 +1,286 @@
+--------- beginning of main
+11-24 12:48:44.037 D/AndroidRuntime(  362): >>>>>> START com.android.internal.os.ZygoteInit uid 0 <<<<<<
+11-24 12:48:44.042 I/AndroidRuntime(  362): Using default boot image
+11-24 12:48:44.042 I/AndroidRuntime(  362): Leaving lock profiling enabled
+11-24 12:48:47.246 I/AndroidRuntime(  807): VM exiting with result code 0, cleanup skipped.
+11-24 12:51:06.981 D/AndroidRuntime( 3110): >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+11-24 12:51:07.012 I/AndroidRuntime( 3110): Using default boot image
+11-24 12:51:07.012 I/AndroidRuntime( 3110): Leaving lock profiling enabled
+11-24 12:51:07.669 D/AndroidRuntime( 3110): Calling main entry com.android.commands.am.Am
+11-24 12:51:09.062 I/TestRunner( 3121): run started: 2 tests
+11-24 12:51:09.065 I/TestRunner( 3121): started: everyHomeEntryOpensItsExistingDestinationAndReturnsHome[en](com.bellfamily.bastischool.HomeRouteTest)
+11-24 12:51:30.138 I/HomeRouteTest( 3121): Opening en 1/35: Tell Me! (tellme)
+11-24 12:51:57.388 I/HomeRouteTest( 3121): Opening en 2/35: Vocabulary Booster (vocabulary)
+11-24 12:52:05.355 I/HomeRouteTest( 3121): Opening en 3/35: Learn Verbs (null)
+11-24 12:52:11.819 I/HomeRouteTest( 3121): Opening en 4/35: Animal First Letters (letters)
+11-24 12:52:18.705 I/HomeRouteTest( 3121): Opening en 5/35: Numbers (count)
+11-24 12:52:34.852 I/HomeRouteTest( 3121): Opening en 6/35: Days & Seasons (time)
+11-24 12:52:39.785 I/HomeRouteTest( 3121): Opening en 7/35: Animal Actions (verbs)
+11-24 12:52:46.776 I/HomeRouteTest( 3121): Opening en 8/35: How many? (subitising)
+11-24 12:52:53.447 I/HomeRouteTest( 3121): Opening en 9/35: Numbers & Groups (quantityMatch)
+11-24 12:52:58.126 I/HomeRouteTest( 3121): Opening en 10/35: More or Fewer (compareQuantity)
+11-24 12:53:00.945 I/HomeRouteTest( 3121): Opening en 11/35: Number Order (numberOrder)
+11-24 12:53:13.567 I/HomeRouteTest( 3121): Opening en 12/35: Clock & Time (clock)
+11-24 12:53:24.012 I/HomeRouteTest( 3121): Opening en 13/35: Add Together (addTogether)
+11-24 12:53:32.324 I/HomeRouteTest( 3121): Opening en 14/35: Add Bigger Numbers (addChallenge)
+11-24 12:53:44.036 I/HomeRouteTest( 3121): Opening en 15/35: Take Away (subtraction)
+11-24 12:53:54.207 I/HomeRouteTest( 3121): Opening en 16/35: Mixed Addition (mixedAddition)
+11-24 12:53:57.477 I/HomeRouteTest( 3121): Opening en 17/35: Build 5 (buildFive)
+11-24 12:54:06.930 I/HomeRouteTest( 3121): Opening en 18/35: Build 10 (buildTen)
+11-24 12:54:19.246 I/HomeRouteTest( 3121): Opening en 19/35: Make 5 (makeFive)
+11-24 12:54:33.243 I/HomeRouteTest( 3121): Opening en 20/35: Build a Dinosaur Group (countingTray)
+11-24 12:54:51.231 I/HomeRouteTest( 3121): Opening en 21/35: Easy Maths (math)
+11-24 12:55:05.433 I/HomeRouteTest( 3121): Opening en 22/35: Prepositions (positions)
+11-24 12:55:20.786 I/HomeRouteTest( 3121): Opening en 23/35: Mixed Adventure (mixed)
+11-24 12:55:42.691 I/HomeRouteTest( 3121): Opening en 24/35: Memory Pairs (memoryPairs)
+11-24 12:55:56.551 I/HomeRouteTest( 3121): Opening en 25/35: Wash Hands (washHands)
+11-24 12:56:36.856 D/AndroidRuntime( 3121): Shutting down VM
+--------- beginning of crash
+11-24 12:56:36.857 E/AndroidRuntime( 3121): FATAL EXCEPTION: main
+11-24 12:56:36.857 E/AndroidRuntime( 3121): Process: com.bellfamily.bastischool, PID: 3121
+11-24 12:56:36.857 E/AndroidRuntime( 3121): java.lang.RuntimeException: Unable to destroy activity {com.bellfamily.bastischool/com.bellfamily.bastischool.MainActivity}: java.lang.ArrayIndexOutOfBoundsException: length=2720; index=-1891
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.ActivityThread.performDestroyActivity(ActivityThread.java:5963)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.ActivityThread.handleDestroyActivity(ActivityThread.java:5995)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.servertransaction.DestroyActivityItem.execute(DestroyActivityItem.java:46)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.servertransaction.ActivityTransactionItem.execute(ActivityTransactionItem.java:60)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.servertransaction.TransactionExecutor.executeLifecycleItem(TransactionExecutor.java:225)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.servertransaction.TransactionExecutor.executeTransactionItems(TransactionExecutor.java:107)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:81)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2636)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.os.Handler.dispatchMessage(Handler.java:107)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.os.Looper.loopOnce(Looper.java:232)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.os.Looper.loop(Looper.java:317)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.ActivityThread.main(ActivityThread.java:8705)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at java.lang.reflect.Method.invoke(Native Method)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:886)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): Caused by: java.lang.ArrayIndexOutOfBoundsException: length=2720; index=-1891
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.runtime.SlotTableKt.dataAnchor(SlotTable.kt:4003)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.runtime.SlotTableKt.access$dataAnchor(SlotTable.kt:1)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.runtime.SlotWriter.moveSlotGapTo(SlotTable.kt:2989)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.runtime.SlotWriter.removeSlots(SlotTable.kt:3198)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.runtime.SlotWriter.removeGroup(SlotTable.kt:2266)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.runtime.ComposerKt.removeCurrentGroup(Composer.kt:4182)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.runtime.CompositionImpl.dispose(Composition.kt:783)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.ui.layout.LayoutNodeSubcompositionsState.disposeCurrentNodes(SubcomposeLayout.kt:609)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.ui.layout.LayoutNodeSubcompositionsState.onRelease(SubcomposeLayout.kt:423)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.ui.node.LayoutNode.onRelease(LayoutNode.kt:1439)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.runtime.CompositionImpl$RememberEventDispatcher.dispatchRememberObservers(Composition.kt:1350)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.runtime.CompositionImpl.dispose(Composition.kt:787)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.ui.platform.WrappedComposition.dispose(Wrapper.android.kt:169)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.compose.ui.platform.WrappedComposition.onStateChanged(Wrapper.android.kt:177)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.lifecycle.LifecycleRegistry$ObserverWithState.dispatchEvent(LifecycleRegistry.jvm.kt:320)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.lifecycle.LifecycleRegistry.backwardPass(LifecycleRegistry.jvm.kt:272)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.lifecycle.LifecycleRegistry.sync(LifecycleRegistry.jvm.kt:289)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.lifecycle.LifecycleRegistry.moveToState(LifecycleRegistry.jvm.kt:142)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.lifecycle.LifecycleRegistry.handleLifecycleEvent(LifecycleRegistry.jvm.kt:124)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.lifecycle.ReportFragment$Companion.dispatch$lifecycle_runtime_release(ReportFragment.android.kt:190)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.lifecycle.ReportFragment$LifecycleCallbacks.onActivityPreDestroyed(ReportFragment.android.kt:146)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.Activity.dispatchActivityPreDestroyed(Activity.java:1721)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.Activity.performDestroy(Activity.java:9288)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.Instrumentation.callActivityOnDestroy(Instrumentation.java:1561)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at androidx.test.runner.MonitoringInstrumentation.callActivityOnDestroy(MonitoringInstrumentation.java:753)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	at android.app.ActivityThread.performDestroyActivity(ActivityThread.java:5950)
+11-24 12:56:36.857 E/AndroidRuntime( 3121): 	... 14 more
+11-24 12:56:43.351 I/AndroidRuntime( 3110): VM exiting with result code 0.
+11-24 13:10:07.513 D/AndroidRuntime( 4059): >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+11-24 13:10:07.556 I/AndroidRuntime( 4059): Using default boot image
+11-24 13:10:07.556 I/AndroidRuntime( 4059): Leaving lock profiling enabled
+11-24 13:10:08.402 D/AndroidRuntime( 4059): Calling main entry com.android.commands.am.Am
+11-24 13:10:14.056 I/TestRunner( 4069): run started: 12 tests
+11-24 13:10:14.065 I/TestRunner( 4069): started: everyHomeEntryOpensItsExistingDestinationAndReturnsHome[en](com.bellfamily.bastischool.HomeRouteTest)
+11-24 13:10:28.073 I/HomeRouteTest( 4069): Opening en 1/35: Tell Me! (tellme)
+11-24 13:10:39.992 I/HomeRouteTest( 4069): Restored en 1: Tell Me!
+11-24 13:10:41.795 I/HomeRouteTest( 4069): Opening en 2/35: Vocabulary Booster (vocabulary)
+11-24 13:10:47.924 I/HomeRouteTest( 4069): Restored en 2: Vocabulary Booster
+11-24 13:10:48.550 I/HomeRouteTest( 4069): Opening en 3/35: Learn Verbs (null)
+11-24 13:10:56.795 I/HomeRouteTest( 4069): Restored en 3: Learn Verbs
+11-24 13:10:57.348 I/HomeRouteTest( 4069): Opening en 4/35: Animal First Letters (letters)
+11-24 13:11:02.381 I/HomeRouteTest( 4069): Restored en 4: Animal First Letters
+11-24 13:11:02.446 I/HomeRouteTest( 4069): Opening en 5/35: Numbers (count)
+11-24 13:11:07.612 I/HomeLegacyReady( 4069): count document loaded after 75ms
+11-24 13:11:07.640 I/HomeLegacyReady( 4069): count DOM verified after 104ms
+11-24 13:11:15.488 I/HomeLegacyReady( 4069): count document loaded after 1095ms
+11-24 13:11:16.852 I/HomeLegacyReady( 4069): count DOM verified after 2459ms
+11-24 13:11:16.858 I/HomeRouteTest( 4069): Restored en 5: Numbers
+11-24 13:11:19.015 I/HomeRouteTest( 4069): Opening en 6/35: Days & Seasons (time)
+11-24 13:11:23.502 I/HomeRouteTest( 4069): Restored en 6: Days & Seasons
+11-24 13:11:24.534 I/HomeRouteTest( 4069): Opening en 7/35: Animal Actions (verbs)
+11-24 13:11:28.139 I/HomeRouteTest( 4069): Restored en 7: Animal Actions
+11-24 13:11:28.494 I/HomeRouteTest( 4069): Opening en 8/35: How many? (subitising)
+11-24 13:11:31.051 I/HomeRouteTest( 4069): Restored en 8: How many?
+11-24 13:11:31.495 I/HomeRouteTest( 4069): Opening en 9/35: Numbers & Groups (quantityMatch)
+11-24 13:11:32.440 I/HomeRouteTest( 4069): Restored en 9: Numbers & Groups
+11-24 13:11:32.517 I/HomeRouteTest( 4069): Opening en 10/35: More or Fewer (compareQuantity)
+11-24 13:11:34.730 I/HomeRouteTest( 4069): Restored en 10: More or Fewer
+11-24 13:11:35.078 I/HomeRouteTest( 4069): Opening en 11/35: Number Order (numberOrder)
+11-24 13:11:36.809 I/HomeRouteTest( 4069): Restored en 11: Number Order
+11-24 13:11:36.849 I/HomeRouteTest( 4069): Opening en 12/35: Clock & Time (clock)
+11-24 13:11:37.167 I/HomeRouteTest( 4069): Restored en 12: Clock & Time
+11-24 13:11:37.207 I/HomeRouteTest( 4069): Opening en 13/35: Add Together (addTogether)
+11-24 13:11:37.465 I/HomeRouteTest( 4069): Restored en 13: Add Together
+11-24 13:11:37.538 I/HomeRouteTest( 4069): Opening en 14/35: Add Bigger Numbers (addChallenge)
+11-24 13:11:38.144 I/HomeRouteTest( 4069): Restored en 14: Add Bigger Numbers
+11-24 13:11:38.391 I/HomeRouteTest( 4069): Opening en 15/35: Take Away (subtraction)
+11-24 13:11:42.586 I/HomeRouteTest( 4069): Restored en 15: Take Away
+11-24 13:11:43.149 I/HomeRouteTest( 4069): Opening en 16/35: Mixed Addition (mixedAddition)
+11-24 13:11:46.949 I/HomeRouteTest( 4069): Restored en 16: Mixed Addition
+11-24 13:11:47.085 I/HomeRouteTest( 4069): Opening en 17/35: Build 5 (buildFive)
+11-24 13:11:49.438 I/HomeRouteTest( 4069): Restored en 17: Build 5
+11-24 13:11:49.562 I/HomeRouteTest( 4069): Opening en 18/35: Build 10 (buildTen)
+11-24 13:11:51.253 I/HomeRouteTest( 4069): Restored en 18: Build 10
+11-24 13:11:51.545 I/HomeRouteTest( 4069): Opening en 19/35: Make 5 (makeFive)
+11-24 13:11:53.537 I/HomeRouteTest( 4069): Restored en 19: Make 5
+11-24 13:11:53.711 I/HomeRouteTest( 4069): Opening en 20/35: Build a Dinosaur Group (countingTray)
+11-24 13:11:55.566 I/HomeRouteTest( 4069): Restored en 20: Build a Dinosaur Group
+11-24 13:11:55.691 I/HomeRouteTest( 4069): Opening en 21/35: Easy Maths (math)
+11-24 13:11:59.513 I/HomeLegacyReady( 4069): math document loaded after 1747ms
+11-24 13:11:59.661 I/HomeLegacyReady( 4069): math DOM verified after 1895ms
+11-24 13:12:02.517 I/HomeLegacyReady( 4069): math document loaded after 1354ms
+11-24 13:12:02.644 I/HomeLegacyReady( 4069): math DOM verified after 1481ms
+11-24 13:12:02.645 I/HomeRouteTest( 4069): Restored en 21: Easy Maths
+11-24 13:12:03.708 I/HomeRouteTest( 4069): Opening en 22/35: Prepositions (positions)
+11-24 13:12:05.558 I/HomeRouteTest( 4069): Restored en 22: Prepositions
+11-24 13:12:05.748 I/HomeRouteTest( 4069): Opening en 23/35: Mixed Adventure (mixed)
+11-24 13:12:09.064 I/HomeLegacyReady( 4069): mixed document loaded after 1076ms
+11-24 13:12:09.948 I/HomeLegacyReady( 4069): mixed DOM verified after 1960ms
+11-24 13:12:13.708 I/HomeLegacyReady( 4069): mixed document loaded after 1240ms
+11-24 13:12:13.745 I/HomeLegacyReady( 4069): mixed DOM verified after 1277ms
+11-24 13:12:13.747 I/HomeRouteTest( 4069): Restored en 23: Mixed Adventure
+11-24 13:12:14.221 I/HomeRouteTest( 4069): Opening en 24/35: Memory Pairs (memoryPairs)
+11-24 13:12:16.360 I/HomeRouteTest( 4069): Restored en 24: Memory Pairs
+11-24 13:12:16.561 I/HomeRouteTest( 4069): Opening en 25/35: Wash Hands (washHands)
+11-24 13:12:19.344 I/HomeRouteTest( 4069): Restored en 25: Wash Hands
+11-24 13:12:19.661 I/HomeRouteTest( 4069): Opening en 26/35: Explore Habitats (exploreHabitats)
+11-24 13:12:22.141 I/HomeRouteTest( 4069): Restored en 26: Explore Habitats
+11-24 13:12:22.588 I/HomeRouteTest( 4069): Opening en 27/35: Match Animals to Habitats (matchHabitats)
+11-24 13:12:26.061 I/HomeRouteTest( 4069): Restored en 27: Match Animals to Habitats
+11-24 13:12:26.560 I/HomeRouteTest( 4069): Opening en 28/35: Animal Groups (animalGroups)
+11-24 13:12:29.294 I/HomeRouteTest( 4069): Restored en 28: Animal Groups
+11-24 13:12:29.825 I/HomeRouteTest( 4069): Opening en 29/35: Colour Sort (colourSort)
+11-24 13:12:32.493 I/HomeRouteTest( 4069): Restored en 29: Colour Sort
+11-24 13:12:32.779 I/HomeRouteTest( 4069): Opening en 30/35: Follow the Instructions (follow)
+11-24 13:12:36.007 I/HomeRouteTest( 4069): Restored en 30: Follow the Instructions
+11-24 13:12:36.162 I/HomeRouteTest( 4069): Opening en 31/35: Pattern Builder (patternBuilder)
+11-24 13:12:39.226 I/HomeRouteTest( 4069): Restored en 31: Pattern Builder
+11-24 13:12:40.129 I/HomeRouteTest( 4069): Opening en 32/35: One More / One Less (quantityChange)
+11-24 13:12:46.482 I/HomeRouteTest( 4069): Restored en 32: One More / One Less
+11-24 13:12:46.674 I/HomeRouteTest( 4069): Opening en 33/35: Number Stories (numberStories)
+11-24 13:12:49.076 I/HomeRouteTest( 4069): Restored en 33: Number Stories
+11-24 13:12:49.261 I/HomeRouteTest( 4069): Opening en 34/35: Same Amount (conservation)
+11-24 13:12:51.621 I/HomeRouteTest( 4069): Restored en 34: Same Amount
+11-24 13:12:52.080 I/HomeRouteTest( 4069): Opening en 35/35: Longer / Shorter (lengthComparison)
+11-24 13:12:54.634 I/HomeRouteTest( 4069): Restored en 35: Longer / Shorter
+11-24 13:12:59.411 I/TestRunner( 4069): finished: everyHomeEntryOpensItsExistingDestinationAndReturnsHome[en](com.bellfamily.bastischool.HomeRouteTest)
+11-24 13:12:59.674 I/TestRunner( 4069): started: everyHomeEntryOpensItsExistingDestinationAndReturnsHome[de](com.bellfamily.bastischool.HomeRouteTest)
+11-24 13:13:09.301 I/HomeRouteTest( 4069): Opening de 1/35: Erzähl mal! (tellme)
+11-24 13:13:15.938 I/HomeRouteTest( 4069): Restored de 1: Erzähl mal!
+11-24 13:13:16.268 I/HomeRouteTest( 4069): Opening de 2/35: Wortschatz (vocabulary)
+11-24 13:13:17.883 I/HomeRouteTest( 4069): Restored de 2: Wortschatz
+11-24 13:13:18.018 I/HomeRouteTest( 4069): Opening de 3/35: Verben lernen (null)
+11-24 13:13:21.768 I/HomeRouteTest( 4069): Restored de 3: Verben lernen
+11-24 13:13:21.878 I/HomeRouteTest( 4069): Opening de 4/35: Tier-Anfangsbuchstaben (letters)
+11-24 13:13:24.746 I/HomeRouteTest( 4069): Restored de 4: Tier-Anfangsbuchstaben
+11-24 13:13:25.042 I/HomeRouteTest( 4069): Opening de 5/35: Zahlen (count)
+11-24 13:13:28.089 I/HomeLegacyReady( 4069): count document loaded after 1024ms
+11-24 13:13:28.291 I/HomeLegacyReady( 4069): count DOM verified after 1226ms
+11-24 13:13:32.861 I/HomeLegacyReady( 4069): count document loaded after 2888ms
+11-24 13:13:33.670 I/HomeLegacyReady( 4069): count DOM verified after 3700ms
+11-24 13:13:33.672 I/HomeRouteTest( 4069): Restored de 5: Zahlen
+11-24 13:13:34.434 I/HomeRouteTest( 4069): Opening de 6/35: Tage & Jahreszeiten (time)
+11-24 13:13:36.384 I/HomeRouteTest( 4069): Restored de 6: Tage & Jahreszeiten
+11-24 13:13:36.527 I/HomeRouteTest( 4069): Opening de 7/35: Tier-Aktionen (verbs)
+11-24 13:13:38.931 I/HomeRouteTest( 4069): Restored de 7: Tier-Aktionen
+11-24 13:13:39.488 I/HomeRouteTest( 4069): Opening de 8/35: Wie viele? (subitising)
+11-24 13:13:43.221 I/HomeRouteTest( 4069): Restored de 8: Wie viele?
+11-24 13:13:43.400 I/HomeRouteTest( 4069): Opening de 9/35: Zahlen & Mengen (quantityMatch)
+11-24 13:13:46.010 I/HomeRouteTest( 4069): Restored de 9: Zahlen & Mengen
+11-24 13:13:46.324 I/HomeRouteTest( 4069): Opening de 10/35: Mehr oder weniger (compareQuantity)
+11-24 13:13:48.408 I/HomeRouteTest( 4069): Restored de 10: Mehr oder weniger
+11-24 13:13:48.539 I/HomeRouteTest( 4069): Opening de 11/35: Zahlenfolge (numberOrder)
+11-24 13:13:50.850 I/HomeRouteTest( 4069): Restored de 11: Zahlenfolge
+11-24 13:13:51.155 I/HomeRouteTest( 4069): Opening de 12/35: Uhr & Zeit (clock)
+11-24 13:13:53.604 I/HomeRouteTest( 4069): Restored de 12: Uhr & Zeit
+11-24 13:13:53.801 I/HomeRouteTest( 4069): Opening de 13/35: Zusammenzählen (addTogether)
+11-24 13:13:55.709 I/HomeRouteTest( 4069): Restored de 13: Zusammenzählen
+11-24 13:13:55.966 I/HomeRouteTest( 4069): Opening de 14/35: Größere Zahlen addieren (addChallenge)
+11-24 13:13:57.665 I/HomeRouteTest( 4069): Restored de 14: Größere Zahlen addieren
+11-24 13:13:58.682 I/HomeRouteTest( 4069): Opening de 15/35: Wegnehmen (subtraction)
+11-24 13:14:02.245 I/HomeRouteTest( 4069): Restored de 15: Wegnehmen
+11-24 13:14:02.436 I/HomeRouteTest( 4069): Opening de 16/35: Gemischte Plusaufgaben (mixedAddition)
+11-24 13:14:05.896 I/HomeRouteTest( 4069): Restored de 16: Gemischte Plusaufgaben
+11-24 13:14:07.450 I/HomeRouteTest( 4069): Opening de 17/35: Fünf legen (buildFive)
+11-24 13:14:12.906 I/HomeRouteTest( 4069): Restored de 17: Fünf legen
+11-24 13:14:13.197 I/HomeRouteTest( 4069): Opening de 18/35: Zehn legen (buildTen)
+11-24 13:14:15.486 I/HomeRouteTest( 4069): Restored de 18: Zehn legen
+11-24 13:14:15.605 I/HomeRouteTest( 4069): Opening de 19/35: Fünf ergänzen (makeFive)
+11-24 13:14:18.267 I/HomeRouteTest( 4069): Restored de 19: Fünf ergänzen
+11-24 13:14:18.507 I/HomeRouteTest( 4069): Opening de 20/35: Dinosauriergruppe legen (countingTray)
+11-24 13:14:21.355 I/HomeRouteTest( 4069): Restored de 20: Dinosauriergruppe legen
+11-24 13:14:21.610 I/HomeRouteTest( 4069): Opening de 21/35: Einfache Mathe (math)
+11-24 13:14:25.762 I/HomeLegacyReady( 4069): math document loaded after 1612ms
+11-24 13:14:25.971 I/HomeLegacyReady( 4069): math DOM verified after 1822ms
+11-24 13:14:27.229 I/HomeLegacyReady( 4069): math document loaded after 178ms
+11-24 13:14:27.440 I/HomeLegacyReady( 4069): math DOM verified after 388ms
+11-24 13:14:27.441 I/HomeRouteTest( 4069): Restored de 21: Einfache Mathe
+11-24 13:14:28.912 I/HomeRouteTest( 4069): Opening de 22/35: Präpositionen (positions)
+11-24 13:14:30.928 I/HomeRouteTest( 4069): Restored de 22: Präpositionen
+11-24 13:14:31.074 I/HomeRouteTest( 4069): Opening de 23/35: Gemischtes Abenteuer (mixed)
+11-24 13:14:34.568 I/HomeLegacyReady( 4069): mixed document loaded after 1187ms
+11-24 13:14:35.613 I/HomeLegacyReady( 4069): mixed DOM verified after 2232ms
+11-24 13:14:38.790 I/HomeLegacyReady( 4069): mixed document loaded after 2025ms
+11-24 13:14:38.875 I/HomeLegacyReady( 4069): mixed DOM verified after 2110ms
+11-24 13:14:38.876 I/HomeRouteTest( 4069): Restored de 23: Gemischtes Abenteuer
+11-24 13:14:39.498 I/HomeRouteTest( 4069): Opening de 24/35: Paare merken (memoryPairs)
+11-24 13:14:42.378 I/HomeRouteTest( 4069): Restored de 24: Paare merken
+11-24 13:14:42.555 I/HomeRouteTest( 4069): Opening de 25/35: Hände waschen (washHands)
+11-24 13:14:45.257 I/HomeRouteTest( 4069): Restored de 25: Hände waschen
+11-24 13:14:45.397 I/HomeRouteTest( 4069): Opening de 26/35: Lebensräume entdecken (exploreHabitats)
+11-24 13:14:48.040 I/HomeRouteTest( 4069): Restored de 26: Lebensräume entdecken
+11-24 13:14:48.754 I/HomeRouteTest( 4069): Opening de 27/35: Tiere und Lebensräume zuordnen (matchHabitats)
+11-24 13:14:50.702 I/HomeRouteTest( 4069): Restored de 27: Tiere und Lebensräume zuordnen
+11-24 13:14:51.239 I/HomeRouteTest( 4069): Opening de 28/35: Tiere zuordnen (animalGroups)
+11-24 13:14:54.050 I/HomeRouteTest( 4069): Restored de 28: Tiere zuordnen
+11-24 13:14:54.309 I/HomeRouteTest( 4069): Opening de 29/35: Farben sortieren (colourSort)
+11-24 13:14:56.573 I/HomeRouteTest( 4069): Restored de 29: Farben sortieren
+11-24 13:14:56.774 I/HomeRouteTest( 4069): Opening de 30/35: Anweisungen folgen (follow)
+11-24 13:14:59.849 I/HomeRouteTest( 4069): Restored de 30: Anweisungen folgen
+11-24 13:15:00.536 I/HomeRouteTest( 4069): Opening de 31/35: Muster bauen (patternBuilder)
+11-24 13:15:00.865 I/HomeRouteTest( 4069): Restored de 31: Muster bauen
+11-24 13:15:00.900 I/HomeRouteTest( 4069): Opening de 32/35: Eins mehr / eins weniger (quantityChange)
+11-24 13:15:01.237 I/HomeRouteTest( 4069): Restored de 32: Eins mehr / eins weniger
+11-24 13:15:01.271 I/HomeRouteTest( 4069): Opening de 33/35: Rechengeschichten (numberStories)
+11-24 13:15:01.550 I/HomeRouteTest( 4069): Restored de 33: Rechengeschichten
+11-24 13:15:01.769 I/HomeRouteTest( 4069): Opening de 34/35: Gleich viele (conservation)
+11-24 13:15:03.565 I/HomeRouteTest( 4069): Restored de 34: Gleich viele
+11-24 13:15:03.834 I/HomeRouteTest( 4069): Opening de 35/35: Länger / kürzer (lengthComparison)
+11-24 13:15:05.139 I/HomeRouteTest( 4069): Restored de 35: Länger / kürzer
+11-24 13:15:09.970 I/TestRunner( 4069): finished: everyHomeEntryOpensItsExistingDestinationAndReturnsHome[de](com.bellfamily.bastischool.HomeRouteTest)
+11-24 13:15:09.987 I/TestRunner( 4069): started: numbersWebContentAndExactQuestionSurviveOptionsAndRecreation(com.bellfamily.bastischool.HomeProductionNavigationTest)
+11-24 13:15:21.598 I/HomeLegacyReady( 4069): count document loaded after 1262ms
+11-24 13:15:21.792 I/HomeLegacyReady( 4069): count DOM verified after 1456ms
+11-24 13:15:26.147 I/HomeLegacyReady( 4069): count document loaded after 157ms
+11-24 13:15:26.629 I/HomeLegacyReady( 4069): count DOM verified after 639ms
+11-24 13:15:28.160 I/HomeLegacyReady( 4069): count document loaded after 264ms
+11-24 13:15:28.579 I/HomeLegacyReady( 4069): count DOM verified after 682ms
+11-24 13:15:32.121 I/TestRunner( 4069): finished: numbersWebContentAndExactQuestionSurviveOptionsAndRecreation(com.bellfamily.bastischool.HomeProductionNavigationTest)
+11-24 13:15:32.405 I/TestRunner( 4069): started: alignRestoreUndoRetryAndCompleteFiveAndTenWithSharedProgress(com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest)
+11-24 13:17:25.436 I/TestRunner( 4069): finished: alignRestoreUndoRetryAndCompleteFiveAndTenWithSharedProgress(com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest)
+11-24 13:17:25.460 I/TestRunner( 4069): started: offStaysLazyHiddenResultsStaySilentAndFreshOwnersRestoreExactWork(com.bellfamily.bastischool.ui.length.LengthComparisonOwnerTest)
+11-24 13:17:28.547 I/TestRunner( 4069): finished: offStaysLazyHiddenResultsStaySilentAndFreshOwnersRestoreExactWork(com.bellfamily.bastischool.ui.length.LengthComparisonOwnerTest)
+11-24 13:17:28.550 I/TestRunner( 4069): started: bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(com.bellfamily.bastischool.ui.conservation.ConservationRouteTest)
+11-24 13:18:46.378 I/TestRunner( 4069): finished: bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(com.bellfamily.bastischool.ui.conservation.ConservationRouteTest)
+11-24 13:18:46.401 I/TestRunner( 4069): started: offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently(com.bellfamily.bastischool.ui.conservation.ConservationOwnerTest)
+11-24 13:18:48.770 I/TestRunner( 4069): finished: offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently(com.bellfamily.bastischool.ui.conservation.ConservationOwnerTest)
+11-24 13:18:48.776 I/TestRunner( 4069): started: homeSurvivesLaunchRecreationAndBackgroundReturn(com.bellfamily.bastischool.MainActivityStartupTest)
+11-24 13:18:57.675 I/TestRunner( 4069): finished: homeSurvivesLaunchRecreationAndBackgroundReturn(com.bellfamily.bastischool.MainActivityStartupTest)
+11-24 13:18:57.803 I/TestRunner( 4069): started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-24 13:19:16.920 I/TestRunner( 4069): finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-24 13:19:16.971 I/TestRunner( 4069): started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-24 13:19:35.011 I/TestRunner( 4069): finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-24 13:19:35.048 I/TestRunner( 4069): started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-24 13:19:57.515 I/TestRunner( 4069): finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-24 13:19:57.584 I/TestRunner( 4069): started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-8](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-24 13:20:19.158 I/TestRunner( 4069): finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-8](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-24 13:20:19.166 I/TestRunner( 4069): run finished: 12 tests, 0 failed, 0 ignored
+11-24 13:20:19.743 I/AndroidRuntime( 4059): VM exiting with result code 0.

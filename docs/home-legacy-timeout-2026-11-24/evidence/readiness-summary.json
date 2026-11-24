@@ -1,0 +1,46 @@
+{
+  "runtimePid": 4069,
+  "homeEntriesOpened": 70,
+  "homeEntriesActuallyRecreated": 70,
+  "perLanguage": {
+    "en": 35,
+    "de": 35
+  },
+  "documentWaitMillis": [
+    75,
+    1095,
+    1747,
+    1354,
+    1076,
+    1240,
+    1024,
+    2888,
+    1612,
+    178,
+    1187,
+    2025,
+    1262,
+    157,
+    264
+  ],
+  "totalDomReadyMillis": [
+    104,
+    2459,
+    1895,
+    1481,
+    1960,
+    1277,
+    1226,
+    3700,
+    1822,
+    388,
+    2232,
+    2110,
+    1456,
+    639,
+    682
+  ],
+  "maxDocumentWaitMillis": 2888,
+  "maxTotalDomReadyMillis": 3700,
+  "qualification": "Observed timings on this final API35 run, not a performance target or proof of the earlier renderer slowdown cause. Timeout budget is 30s document load then 10s DOM readiness."
+}

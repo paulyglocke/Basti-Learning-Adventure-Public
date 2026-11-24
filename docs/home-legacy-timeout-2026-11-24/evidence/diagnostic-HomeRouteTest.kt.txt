@@ -1,0 +1,85 @@
+package com.bellfamily.bastischool
+
+import android.os.Bundle
+import android.util.Log
+import androidx.compose.ui.test.*
+import androidx.compose.ui.test.junit4.createEmptyComposeRule
+import androidx.test.core.app.ActivityScenario
+import androidx.test.platform.app.InstrumentationRegistry
+import androidx.lifecycle.Lifecycle
+import org.junit.Assert.*
+import org.junit.Rule
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.junit.runners.Parameterized
+
+@RunWith(Parameterized::class)
+class HomeRouteTest(private val language: String) {
+    @get:Rule val compose = createEmptyComposeRule()
+    companion object {
+        @JvmStatic @Parameterized.Parameters(name="{0}") fun cases() = listOf("en", "de")
+    }
+
+    @Test fun everyHomeEntryOpensItsExistingDestinationAndReturnsHome() {
+        val instrumentation = InstrumentationRegistry.getInstrumentation()
+        val prefs = instrumentation.targetContext.getSharedPreferences("basti_shell", 0)
+        val oldLanguage = prefs.getString("lang", null)
+        val oldAudio = prefs.getString("audioMode", null)
+        prefs.edit().putString("lang", language).putString("audioMode", "off").commit()
+        val expectedScreens = listOf("TELL_ME", "VOCABULARY_CHOOSER", "VERB_LIBRARY", "LETTERS", "WEB", "DAYS_SEASONS",
+            "VERB_QUIZ", "SUBITISING", "QUANTITY_MATCH", "COMPARE_QUANTITY", "NUMBER_ORDER", "CLOCK",
+            "ADD_TOGETHER", "ADD_CHALLENGE", "SUBTRACTION", "MIXED_ADDITION", "BUILD_FIVE", "BUILD_TEN", "MAKE_FIVE", "COUNTING_TRAY", "WEB", "PREPOSITIONS", "WEB", "MEMORY_CHOOSER", "WASH_HANDS", "HABITATS_CHOOSER", "HABITAT_MATCH", "ANIMAL_GROUPS", "COLOURS_CHOOSER", "FOLLOW_LEVELS", "PATTERN_CHOOSER", "QUANTITY_CHANGE_CHOOSER", "NUMBER_STORIES_CHOOSER", "CONSERVATION_CHOOSER", "LENGTH_COMPARE")
+        try {
+            ActivityScenario.launch(MainActivity::class.java).use { scenario ->
+                homeCardGroups().flatten().forEachIndexed { index, card ->
+                    val title = if (language == "de") card.titleDe else card.titleEn
+                    Log.i("HomeRouteTest", "Opening $language ${index + 1}/${expectedScreens.size}: $title (${card.mode})")
+                    compose.openHomeActivity(title)
+                    compose.waitForIdle()
+                    if (expectedScreens[index] == "WEB") {
+                        val mode = if (card.verbExplorer) "verbExplorer" else card.mode!!
+                        try {
+                            compose.renderedLegacy(scenario, mode)
+                        } catch (failure: Throwable) {
+                            throw AssertionError("Home $language entry ${index + 1}: $title ($mode) did not render", failure)
+                        }
+                    }
+                    if (expectedScreens[index] == "LETTERS") {
+                        compose.waitUntil(10_000) {
+                            compose.onAllNodesWithTag("letters-prompt").fetchSemanticsNodes().isNotEmpty()
+                        }
+                        compose.onNodeWithTag("letters-prompt").assertExists()
+                        compose.onNodeWithTag("letters-letter-card").assertExists()
+                        compose.onNodeWithTag("letters-replay").assertExists()
+                    }
+                    // Saving demotes ComponentActivity's LifecycleRegistry to CREATED.
+                    // Inspect while stopped, then resume normally before exercising Back.
+                    scenario.moveToState(Lifecycle.State.CREATED)
+                    scenario.onActivity { activity ->
+                        val saved = Bundle()
+                        instrumentation.callActivityOnSaveInstanceState(activity, saved)
+                        assertEquals(title, expectedScreens[index], saved.getString("screen"))
+                        if (expectedScreens[index] == "WEB") {
+                            assertEquals(title, if (card.verbExplorer) "verbExplorer" else card.mode, saved.getString("webMode"))
+                        }
+                    }
+                    scenario.moveToState(Lifecycle.State.RESUMED)
+                    compose.waitForIdle()
+                    // No answers, scores or completed sessions are needed to check entry dispatch.
+                    scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
+                    if (expectedScreens[index] in setOf("HABITATS_CHOOSER", "HABITAT_MATCH")) {
+                        // Explore Habitats is nested; Back restores the browse page that launched it.
+                        compose.onNodeWithText(if (language == "de") "Alle Aktivitäten" else "All Activities")
+                            .performScrollTo().assertIsDisplayed()
+                        scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
+                    } else {
+                        val greeting = if (language == "de") "Was wollen wir entdecken?" else "What shall we explore?"
+                        compose.waitUntil(10_000) { compose.onAllNodesWithText(greeting).fetchSemanticsNodes().size == 1 }
+                    }
+                }
+            }
+        } finally {
+            prefs.edit().putString("lang", oldLanguage).putString("audioMode", oldAudio).commit()
+        }
+    }
+}

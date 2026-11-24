@@ -1,5 +1,48 @@
 # Session handoff — 2026-11-24
 
+## Home legacy verification (2026-11-24, locally complete)
+
+Owner approved tracing the English Home timeout and verifying both languages
+plus focused native regressions after commit `7992003c342a9434eb7a270437b23bb28eb44471`.
+Initially clean main/origin/main. Owner subsequently requested committing and
+pushing this checkpoint on 2026-11-24. Evidence below records local validation
+before publication; hosted checks are separate. No agents used. [Review](docs/home-legacy-timeout-2026-11-24/README.md).
+
+TEST CODE ONLY: HomeTestNavigation separates bounded 30s document loading from
+unchanged 10s live DOM validation, one JS probe at a time, with phase diagnostics.
+HomeRouteTest captures actual framework saves through Activity recreation
+instead of manual callbacks/lifecycle cycling. All route/mode assertions remain;
+each web route must also restore exact question text/serialized state.
+
+Final **12/12 API35** passed, zero failures/errors/skips, 605.11s. Home EN 35+DE 35,
+all 70 actual recreations; Numbers WebView Options/recreation (1); Length route/owner (2);
+Same Amount route/owner (2); startup (1); Wash Hands components (4). Per-entry logs verify
+all 70 opens/restores and six exact retained-web question restorations. Build/lint
+passed 29s (0 errors, 7 existing warnings, 2 info). No new JVM run: runtime unchanged,
+previous742/742 evidence belongs to Length checkpoint. Final raw runner,
+derived JSON, logcat, phase timings, source/installed APK identities in review.
+
+App SHA256 unchanged 52fc7528e07b8c589f07b417c3904b45222666072591fb370e81cef28e4862b0;
+final test a8c05ba106017aad5767d6695c2bd2118ff65b26c124930dc0ae61ae27938ea9.
+Initial diagnostic test4c4dc807c20fcdd8c45151e6f5f74e5b39e3d9a441f5c3b2232878203be5b67a
+reached all three English web entries, then crashed disposing Compose SlotTable
+after opening Wash Hands; DE not started. Earlier renderer slowdown near DOM
+timeout and separate disposal crash are not root-caused. Neither recurred in
+final selection. Do not claim a runtime crash/performance fix; BACKLOG retains
+the disposal-crash follow-up. Earlier Length failure records are unchanged.
+
+Only owned Basti_Pattern_20261111/emulator-5554 used, no wipe/uninstall/app clear/
+snapshot deletion. Before tests, stopped app no_backup/shared_prefs/app_webview
+copied to cache/home-timeout-20261124-before. After tests, generated directories
+moved intact to cache/home-timeout-20261124-generated and originals moved back;
+all 88 original file paths/bytes hash-match. Do not discard generated audit data.
+Original1080×2400 / density 420, airplane mode 1, animation settings 1.0/1.0/null unchanged. Medium
+Phone config SHA c4ab33993685273776e9286aee0b948e48192f5ab61046d564447d7a12e7034c
+unchanged. Owned emulator closed gracefully; no emulator process or attached
+device remains. No active validation left. Original Medium Phone and physical
+userdata untouched. Physical/child/actual TalkBack/switch/offline voice,
+browser/hosted/full-app acceptance remain separate.
+
 ## Longer / Shorter (implemented locally; scoped verification complete)
 
 Owner approved direct length comparison after Same Amount commit
@@ -33,10 +76,11 @@ Runtime unchanged; strengthened helper waits for expected enabled controls,
 presented frames and target foreground package. Solved Next is scrolled into
 view. Original pending-frame image is retained as an earlier capture failure.
 
-**Open P0:** broader English all-Home check timed out in retained-WebView DOM
+**Open P0 at that checkpoint:** broader English all-Home check timed out in retained-WebView DOM
 wait on both host and software renderer; German all35 passed. Cause unknown,
 no legacy fix claimed, and native passes do not close it. BACKLOG records the
-follow-up. Earlier compile/JVM/fixture failures, Launcher ANR interruption,
+follow-up at that time; the Home section above records current verification and
+the separate disposal-crash follow-up. Earlier compile/JVM/fixture failures, Launcher ANR interruption,
 zero-test exits, partial11 selection (8 pass/1 fixture failure, stopped during
 Home EN), earlier before-copy passes and both Home attempts remain separate.
 

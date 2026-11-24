@@ -1,0 +1,16 @@
+{
+  "verified": true,
+  "scope": [
+    "no_backup",
+    "shared_prefs",
+    "app_webview"
+  ],
+  "fileInventoryAndHashesMatch": true,
+  "files": 88,
+  "generatedDataPreservedAt": "cache/home-timeout-20261124-generated",
+  "originalBackupMovedBackIntoPlace": true,
+  "wipeUninstallClearOrSnapshotDeletion": false,
+  "originalMediumPhoneConfigSha256": "c4ab33993685273776e9286aee0b948e48192f5ab61046d564447d7a12e7034c",
+  "originalMediumPhoneConfigUnchanged": true,
+  "qualification": "Exact file paths and bytes compared while the target app is stopped; cache and review screenshots are separate generated test artifacts."
+}

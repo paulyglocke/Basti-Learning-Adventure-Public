@@ -1,0 +1,48 @@
+{
+  "baseline": "7992003c342a9434eb7a270437b23bb28eb44471",
+  "date": "2026-11-24",
+  "scope": "Test-only WebView document/DOM synchronization and framework saved-state/recreation verification",
+  "applicationOrDependenciesChanged": false,
+  "runtimeSha256": "52fc7528e07b8c589f07b417c3904b45222666072591fb370e81cef28e4862b0",
+  "testApkSha256": "a8c05ba106017aad5767d6695c2bd2118ff65b26c124930dc0ae61ae27938ea9",
+  "buildAndLint": "readiness-build.log: passed in29s",
+  "lint": {
+    "errors": 0,
+    "warnings": 7,
+    "information": 2
+  },
+  "finalInstrumentation": {
+    "tests": 12,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "durationSeconds": 605.11,
+    "raw": "final-selection.txt",
+    "derived": "final-selection.json"
+  },
+  "home": {
+    "languages": [
+      "en",
+      "de"
+    ],
+    "entriesPerLanguage": 35,
+    "actualRecreations": 70,
+    "retainedWebExactQuestionRestorations": 6,
+    "perEntryLogs": "final-logcat.txt",
+    "phaseTimings": "readiness-summary.json"
+  },
+  "otherFinalCases": [
+    "Numbers WebView Options/exact recreation",
+    "Length route and owner",
+    "Same Amount route and owner",
+    "Native startup",
+    "Wash Hands four component cases"
+  ],
+  "jvm": "No new JVM run: runtime unchanged; 742/742 baseline evidence remains in the Length comparison checkpoint",
+  "initialDiagnostic": "diagnostic-summary.json",
+  "remainingUncertainty": "Specific renderer slowdown behind old timeout and separate initial Compose disposal crash not root-caused; no runtime fix or general performance improvement claimed",
+  "dataRestore": "88 original files verified by exact inventory and hashes; generated data retained in cache",
+  "cleanup": "cleanup.json",
+  "commitPush": "Owner requested committing and pushing this checkpoint on 2026-11-24. Evidence describes local pre-publication validation; hosted checks are separate.",
+  "hostedFullAppPhysicalBrowserClaims": false
+}

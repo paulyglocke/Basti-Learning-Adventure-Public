@@ -1,0 +1,6 @@
+{
+  "app/build/outputs/apk/debug/app-debug.apk": "52fc7528e07b8c589f07b417c3904b45222666072591fb370e81cef28e4862b0",
+  "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": "a8c05ba106017aad5767d6695c2bd2118ff65b26c124930dc0ae61ae27938ea9",
+  "app/src/androidTest/java/com/bellfamily/bastischool/HomeRouteTest.kt": "4a9e85709066dec946fa8d7f08f8e2f6a817ae14f630b5133a38b68402ebdb1f",
+  "app/src/androidTest/java/com/bellfamily/bastischool/HomeTestNavigation.kt": "83dbdb7de30a36615a48b8ad12bbbd07cbd3aa710d9d7e3e63af2a1df116fcd1"
+}
