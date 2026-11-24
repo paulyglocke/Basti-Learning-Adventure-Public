@@ -1,0 +1,5 @@
+{
+  "app/build/outputs/apk/debug/app-debug.apk": "52fc7528e07b8c589f07b417c3904b45222666072591fb370e81cef28e4862b0",
+  "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": "1cbecbb45beb9b22cefba152766059809b5eb3af58599167330e461cd12dfe33",
+  "app/src/androidTest/java/com/bellfamily/bastischool/HomeDisposalProbe.kt": "7a8a98c42e5be10d52ac79e5d1b70f7d5d951cba4e9582333a8b909c2412ad30"
+}

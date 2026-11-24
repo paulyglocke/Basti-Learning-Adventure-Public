@@ -1,0 +1,126 @@
+package com.bellfamily.bastischool
+
+import android.os.Bundle
+import java.util.concurrent.atomic.AtomicReference
+import org.json.JSONArray
+import org.json.JSONObject
+import android.util.Log
+import androidx.compose.ui.test.*
+import androidx.compose.ui.test.junit4.createEmptyComposeRule
+import androidx.compose.ui.test.junit4.ComposeTestRule
+import androidx.test.core.app.ActivityScenario
+import androidx.test.platform.app.InstrumentationRegistry
+import androidx.lifecycle.Lifecycle
+import org.junit.Assert.*
+import org.junit.Rule
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.junit.runners.Parameterized
+
+@RunWith(Parameterized::class)
+class HomeDisposalProbe(private val language: String) {
+    @get:Rule val compose = createEmptyComposeRule()
+    companion object {
+        @JvmStatic @Parameterized.Parameters(name="{0}") fun cases() = listOf("en")
+    }
+
+    @Test fun everyHomeEntryOpensItsExistingDestinationAndReturnsHome() {
+        val instrumentation = InstrumentationRegistry.getInstrumentation()
+        val prefs = instrumentation.targetContext.getSharedPreferences("basti_shell", 0)
+        val oldLanguage = prefs.getString("lang", null)
+        val oldAudio = prefs.getString("audioMode", null)
+        prefs.edit().putString("lang", language).putString("audioMode", "off").commit()
+        val expectedScreens = listOf("TELL_ME", "VOCABULARY_CHOOSER", "VERB_LIBRARY", "LETTERS", "WEB", "DAYS_SEASONS",
+            "VERB_QUIZ", "SUBITISING", "QUANTITY_MATCH", "COMPARE_QUANTITY", "NUMBER_ORDER", "CLOCK",
+            "ADD_TOGETHER", "ADD_CHALLENGE", "SUBTRACTION", "MIXED_ADDITION", "BUILD_FIVE", "BUILD_TEN", "MAKE_FIVE", "COUNTING_TRAY", "WEB", "PREPOSITIONS", "WEB", "MEMORY_CHOOSER", "WASH_HANDS", "HABITATS_CHOOSER", "HABITAT_MATCH", "ANIMAL_GROUPS", "COLOURS_CHOOSER", "FOLLOW_LEVELS", "PATTERN_CHOOSER", "QUANTITY_CHANGE_CHOOSER", "NUMBER_STORIES_CHOOSER", "CONSERVATION_CHOOSER", "LENGTH_COMPARE")
+        try {
+            ActivityScenario.launch(MainActivity::class.java).use { scenario ->
+                homeCardGroups().flatten().take(25).forEachIndexed { index, card ->
+                    val title = if (language == "de") card.titleDe else card.titleEn
+                    Log.i("HomeDisposalProbe", "Opening $language ${index + 1}/${expectedScreens.size}: $title (${card.mode})")
+                    try {
+                        compose.openHomeActivity(title)
+                        Log.i("HomeDisposalProbe", "wait for idle: $title")
+                        compose.waitForIdle()
+                        if (expectedScreens[index] == "WEB") {
+                            val mode = if (card.verbExplorer) "verbExplorer" else card.mode!!
+                            try {
+                                compose.probeRenderedLegacy(scenario, mode)
+                            } catch (failure: Throwable) {
+                                throw AssertionError("Home $language entry ${index + 1}: $title ($mode) did not render", failure)
+                            }
+                        }
+                        if (expectedScreens[index] == "LETTERS") {
+                            compose.waitUntil(10_000) {
+                                compose.onAllNodesWithTag("letters-prompt").fetchSemanticsNodes().isNotEmpty()
+                            }
+                            compose.onNodeWithTag("letters-prompt").assertExists()
+                            compose.onNodeWithTag("letters-letter-card").assertExists()
+                            compose.onNodeWithTag("letters-replay").assertExists()
+                        }
+                        // Saving demotes ComponentActivity's LifecycleRegistry to CREATED.
+                        // Inspect while stopped, then resume normally before exercising Back.
+                        Log.i("HomeDisposalProbe", "stop Activity: $title")
+                        scenario.moveToState(Lifecycle.State.CREATED)
+                        scenario.onActivity { activity ->
+                            val saved = Bundle()
+                            Log.i("HomeDisposalProbe", "manual save: $title")
+                            instrumentation.callActivityOnSaveInstanceState(activity, saved)
+                            assertEquals(title, expectedScreens[index], saved.getString("screen"))
+                            if (expectedScreens[index] == "WEB") {
+                                assertEquals(title, if (card.verbExplorer) "verbExplorer" else card.mode, saved.getString("webMode"))
+                            }
+                        }
+                        Log.i("HomeDisposalProbe", "resume Activity: $title")
+                        scenario.moveToState(Lifecycle.State.RESUMED)
+                        Log.i("HomeDisposalProbe", "wait for idle: $title")
+                        compose.waitForIdle()
+                        // No answers, scores or completed sessions are needed to check entry dispatch.
+                        Log.i("HomeDisposalProbe", "Back: $title")
+                            scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
+                        if (expectedScreens[index] in setOf("HABITATS_CHOOSER", "HABITAT_MATCH")) {
+                            // Explore Habitats is nested; Back restores the browse page that launched it.
+                            compose.onNodeWithText(if (language == "de") "Alle Aktivitäten" else "All Activities")
+                                .performScrollTo().assertIsDisplayed()
+                            Log.i("HomeDisposalProbe", "Back: $title")
+                        scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
+                        } else {
+                            val greeting = if (language == "de") "Was wollen wir entdecken?" else "What shall we explore?"
+                            compose.waitUntil(10_000) { compose.onAllNodesWithText(greeting).fetchSemanticsNodes().size == 1 }
+                        }
+                    } catch (failure: Throwable) {
+                        Log.e("HomeDisposalProbe", "FAIL BEFORE TEARDOWN entry ${index + 1}: $title", failure)
+                        throw failure
+                    }
+                }
+            }
+        } finally {
+            prefs.edit().putString("lang", oldLanguage).putString("audioMode", oldAudio).commit()
+        }
+    }
+}
+
+internal fun ComposeTestRule.probeRenderedLegacy(scenario: ActivityScenario<MainActivity>, mode: String): JSONObject {
+    val value = AtomicReference<String?>(null)
+    waitUntil(10_000) {
+        scenario.onActivity { activity -> legacyView(activity.window.decorView)?.evaluateJavascript("""
+            (() => {
+              if (typeof activeScreen === 'undefined' || window.__shellMode !== '$mode') return null;
+              const root = document.getElementById(activeScreen);
+              const body = document.getElementById(activeScreen === 'verbExplorer' ? 'verbExplorerContent' : 'gameContent');
+              if (!root || !body || root.classList.contains('hidden') || !body.innerText.trim()) return null;
+              const bounds = body.getBoundingClientRect();
+              return JSON.stringify({mode: window.__shellMode, screen: activeScreen, text: body.innerText,
+                width: bounds.width, height: bounds.height, checkpoint: serializeLegacySession()});
+            })()
+        """.trimIndent()) { value.set(it) } }
+        value.get()?.let { it != "null" && it != "undefined" } == true
+    }
+    val result = JSONObject(JSONArray("[${value.get()}]").getString(0))
+    assertEquals(mode, result.getString("mode"))
+    assertEquals(if(mode=="verbExplorer") "verbExplorer" else "game", result.getString("screen"))
+    assertTrue(result.getString("text").isNotBlank())
+    assertTrue(result.getDouble("width") > 0)
+    assertTrue(result.getDouble("height") > 0)
+    return result
+}

@@ -1,0 +1,289 @@
+--------- beginning of main
+11-24 13:57:33.139 D/AndroidRuntime(  359): >>>>>> START com.android.internal.os.ZygoteInit uid 0 <<<<<<
+11-24 13:57:33.143 I/AndroidRuntime(  359): Using default boot image
+11-24 13:57:33.143 I/AndroidRuntime(  359): Leaving lock profiling enabled
+11-24 13:57:36.151 I/AndroidRuntime(  834): VM exiting with result code 0, cleanup skipped.
+11-24 14:18:12.422 D/AndroidRuntime( 3706): >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+11-24 14:18:12.452 I/AndroidRuntime( 3706): Using default boot image
+11-24 14:18:12.452 I/AndroidRuntime( 3706): Leaving lock profiling enabled
+11-24 14:18:13.285 D/AndroidRuntime( 3706): Calling main entry com.android.commands.am.Am
+11-24 14:18:16.737 I/TestRunner( 3717): run started: 1 tests
+11-24 14:18:16.743 I/TestRunner( 3717): started: everyHomeEntryOpensItsExistingDestinationAndReturnsHome[en](com.bellfamily.bastischool.HomeDisposalProbe)
+11-24 14:18:28.432 I/HomeDisposalProbe( 3717): Opening en 1/35: Tell Me! (tellme)
+11-24 14:18:33.532 I/HomeDisposalProbe( 3717): wait for idle: Tell Me!
+11-24 14:18:38.534 I/HomeDisposalProbe( 3717): stop Activity: Tell Me!
+11-24 14:18:42.123 I/HomeDisposalProbe( 3717): manual save: Tell Me!
+11-24 14:18:42.140 I/HomeDisposalProbe( 3717): resume Activity: Tell Me!
+11-24 14:18:42.652 I/HomeDisposalProbe( 3717): wait for idle: Tell Me!
+11-24 14:18:43.056 I/HomeDisposalProbe( 3717): Back: Tell Me!
+11-24 14:18:44.980 I/HomeDisposalProbe( 3717): Opening en 2/35: Vocabulary Booster (vocabulary)
+11-24 14:18:46.580 I/HomeDisposalProbe( 3717): wait for idle: Vocabulary Booster
+11-24 14:18:47.291 I/HomeDisposalProbe( 3717): stop Activity: Vocabulary Booster
+11-24 14:18:50.817 I/HomeDisposalProbe( 3717): manual save: Vocabulary Booster
+11-24 14:18:50.819 I/HomeDisposalProbe( 3717): resume Activity: Vocabulary Booster
+11-24 14:18:52.282 I/HomeDisposalProbe( 3717): wait for idle: Vocabulary Booster
+11-24 14:18:53.088 I/HomeDisposalProbe( 3717): Back: Vocabulary Booster
+11-24 14:18:54.465 I/HomeDisposalProbe( 3717): Opening en 3/35: Learn Verbs (null)
+11-24 14:18:55.451 I/HomeDisposalProbe( 3717): wait for idle: Learn Verbs
+11-24 14:18:56.129 I/HomeDisposalProbe( 3717): stop Activity: Learn Verbs
+11-24 14:18:58.340 I/HomeDisposalProbe( 3717): manual save: Learn Verbs
+11-24 14:18:58.420 I/HomeDisposalProbe( 3717): resume Activity: Learn Verbs
+11-24 14:18:58.778 I/HomeDisposalProbe( 3717): wait for idle: Learn Verbs
+11-24 14:18:59.847 I/HomeDisposalProbe( 3717): Back: Learn Verbs
+11-24 14:19:01.031 I/HomeDisposalProbe( 3717): Opening en 4/35: Animal First Letters (letters)
+11-24 14:19:02.774 I/HomeDisposalProbe( 3717): wait for idle: Animal First Letters
+11-24 14:19:03.525 I/HomeDisposalProbe( 3717): stop Activity: Animal First Letters
+11-24 14:19:05.219 I/HomeDisposalProbe( 3717): manual save: Animal First Letters
+11-24 14:19:05.220 I/HomeDisposalProbe( 3717): resume Activity: Animal First Letters
+11-24 14:19:05.754 I/HomeDisposalProbe( 3717): wait for idle: Animal First Letters
+11-24 14:19:06.270 I/HomeDisposalProbe( 3717): Back: Animal First Letters
+11-24 14:19:08.532 I/HomeDisposalProbe( 3717): Opening en 5/35: Numbers (count)
+11-24 14:19:10.423 I/HomeDisposalProbe( 3717): wait for idle: Numbers
+11-24 14:19:12.230 I/HomeDisposalProbe( 3717): stop Activity: Numbers
+11-24 14:19:15.136 I/HomeDisposalProbe( 3717): manual save: Numbers
+11-24 14:19:15.146 I/HomeDisposalProbe( 3717): resume Activity: Numbers
+11-24 14:19:15.825 I/HomeDisposalProbe( 3717): wait for idle: Numbers
+11-24 14:19:19.282 I/HomeDisposalProbe( 3717): Back: Numbers
+11-24 14:19:20.380 I/HomeDisposalProbe( 3717): Opening en 6/35: Days & Seasons (time)
+11-24 14:19:22.944 I/HomeDisposalProbe( 3717): wait for idle: Days & Seasons
+11-24 14:19:23.367 I/HomeDisposalProbe( 3717): stop Activity: Days & Seasons
+11-24 14:19:27.885 I/HomeDisposalProbe( 3717): manual save: Days & Seasons
+11-24 14:19:27.930 I/HomeDisposalProbe( 3717): resume Activity: Days & Seasons
+11-24 14:19:28.879 I/HomeDisposalProbe( 3717): wait for idle: Days & Seasons
+11-24 14:19:29.436 I/HomeDisposalProbe( 3717): Back: Days & Seasons
+11-24 14:19:32.344 I/HomeDisposalProbe( 3717): Opening en 7/35: Animal Actions (verbs)
+11-24 14:19:36.730 I/HomeDisposalProbe( 3717): wait for idle: Animal Actions
+11-24 14:19:37.425 I/HomeDisposalProbe( 3717): stop Activity: Animal Actions
+11-24 14:19:40.148 I/HomeDisposalProbe( 3717): manual save: Animal Actions
+11-24 14:19:40.156 I/HomeDisposalProbe( 3717): resume Activity: Animal Actions
+11-24 14:19:41.858 I/HomeDisposalProbe( 3717): wait for idle: Animal Actions
+11-24 14:19:42.972 I/HomeDisposalProbe( 3717): Back: Animal Actions
+11-24 14:19:46.822 I/HomeDisposalProbe( 3717): Opening en 8/35: How many? (subitising)
+11-24 14:19:48.879 I/HomeDisposalProbe( 3717): wait for idle: How many?
+11-24 14:19:49.292 I/HomeDisposalProbe( 3717): stop Activity: How many?
+11-24 14:19:56.437 I/HomeDisposalProbe( 3717): manual save: How many?
+11-24 14:19:56.528 I/HomeDisposalProbe( 3717): resume Activity: How many?
+11-24 14:19:56.802 I/HomeDisposalProbe( 3717): wait for idle: How many?
+11-24 14:19:58.109 I/HomeDisposalProbe( 3717): Back: How many?
+11-24 14:19:58.959 I/HomeDisposalProbe( 3717): Opening en 9/35: Numbers & Groups (quantityMatch)
+11-24 14:20:02.101 I/HomeDisposalProbe( 3717): wait for idle: Numbers & Groups
+11-24 14:20:02.635 I/HomeDisposalProbe( 3717): stop Activity: Numbers & Groups
+11-24 14:20:05.762 I/HomeDisposalProbe( 3717): manual save: Numbers & Groups
+11-24 14:20:05.769 I/HomeDisposalProbe( 3717): resume Activity: Numbers & Groups
+11-24 14:20:06.418 I/HomeDisposalProbe( 3717): wait for idle: Numbers & Groups
+11-24 14:20:08.780 I/HomeDisposalProbe( 3717): Back: Numbers & Groups
+11-24 14:20:09.666 I/HomeDisposalProbe( 3717): Opening en 10/35: More or Fewer (compareQuantity)
+11-24 14:20:12.546 I/HomeDisposalProbe( 3717): wait for idle: More or Fewer
+11-24 14:20:12.978 I/HomeDisposalProbe( 3717): stop Activity: More or Fewer
+11-24 14:20:15.360 I/HomeDisposalProbe( 3717): manual save: More or Fewer
+11-24 14:20:15.361 I/HomeDisposalProbe( 3717): resume Activity: More or Fewer
+11-24 14:20:16.963 I/HomeDisposalProbe( 3717): wait for idle: More or Fewer
+11-24 14:20:18.499 I/HomeDisposalProbe( 3717): Back: More or Fewer
+11-24 14:20:20.664 I/HomeDisposalProbe( 3717): Opening en 11/35: Number Order (numberOrder)
+11-24 14:20:22.727 I/HomeDisposalProbe( 3717): wait for idle: Number Order
+11-24 14:20:23.887 I/HomeDisposalProbe( 3717): stop Activity: Number Order
+11-24 14:20:26.556 I/HomeDisposalProbe( 3717): manual save: Number Order
+11-24 14:20:26.562 I/HomeDisposalProbe( 3717): resume Activity: Number Order
+11-24 14:20:27.882 I/HomeDisposalProbe( 3717): wait for idle: Number Order
+11-24 14:20:28.816 I/HomeDisposalProbe( 3717): Back: Number Order
+11-24 14:20:30.054 I/HomeDisposalProbe( 3717): Opening en 12/35: Clock & Time (clock)
+11-24 14:20:30.973 I/HomeDisposalProbe( 3717): wait for idle: Clock & Time
+11-24 14:20:31.077 I/HomeDisposalProbe( 3717): stop Activity: Clock & Time
+11-24 14:20:31.660 I/HomeDisposalProbe( 3717): manual save: Clock & Time
+11-24 14:20:31.660 I/HomeDisposalProbe( 3717): resume Activity: Clock & Time
+11-24 14:20:31.675 I/HomeDisposalProbe( 3717): wait for idle: Clock & Time
+11-24 14:20:31.694 I/HomeDisposalProbe( 3717): Back: Clock & Time
+11-24 14:20:31.793 I/HomeDisposalProbe( 3717): Opening en 13/35: Add Together (addTogether)
+11-24 14:20:31.923 I/HomeDisposalProbe( 3717): wait for idle: Add Together
+11-24 14:20:31.986 I/HomeDisposalProbe( 3717): stop Activity: Add Together
+11-24 14:20:32.933 I/HomeDisposalProbe( 3717): manual save: Add Together
+11-24 14:20:32.936 I/HomeDisposalProbe( 3717): resume Activity: Add Together
+11-24 14:20:33.218 I/HomeDisposalProbe( 3717): wait for idle: Add Together
+11-24 14:20:33.381 I/HomeDisposalProbe( 3717): Back: Add Together
+11-24 14:20:34.657 I/HomeDisposalProbe( 3717): Opening en 14/35: Add Bigger Numbers (addChallenge)
+11-24 14:20:37.352 I/HomeDisposalProbe( 3717): wait for idle: Add Bigger Numbers
+11-24 14:20:37.792 I/HomeDisposalProbe( 3717): stop Activity: Add Bigger Numbers
+11-24 14:20:39.675 I/HomeDisposalProbe( 3717): manual save: Add Bigger Numbers
+11-24 14:20:39.686 I/HomeDisposalProbe( 3717): resume Activity: Add Bigger Numbers
+11-24 14:20:39.963 I/HomeDisposalProbe( 3717): wait for idle: Add Bigger Numbers
+11-24 14:20:40.949 I/HomeDisposalProbe( 3717): Back: Add Bigger Numbers
+11-24 14:20:43.302 I/HomeDisposalProbe( 3717): Opening en 15/35: Take Away (subtraction)
+11-24 14:20:44.360 I/HomeDisposalProbe( 3717): wait for idle: Take Away
+11-24 14:20:44.950 I/HomeDisposalProbe( 3717): stop Activity: Take Away
+11-24 14:20:46.847 I/HomeDisposalProbe( 3717): manual save: Take Away
+11-24 14:20:46.857 I/HomeDisposalProbe( 3717): resume Activity: Take Away
+11-24 14:20:47.066 I/HomeDisposalProbe( 3717): wait for idle: Take Away
+11-24 14:20:47.502 I/HomeDisposalProbe( 3717): Back: Take Away
+11-24 14:20:48.322 I/HomeDisposalProbe( 3717): Opening en 16/35: Mixed Addition (mixedAddition)
+11-24 14:20:50.734 I/HomeDisposalProbe( 3717): wait for idle: Mixed Addition
+11-24 14:20:51.012 I/HomeDisposalProbe( 3717): stop Activity: Mixed Addition
+11-24 14:20:52.671 I/HomeDisposalProbe( 3717): manual save: Mixed Addition
+11-24 14:20:52.672 I/HomeDisposalProbe( 3717): resume Activity: Mixed Addition
+11-24 14:20:53.018 I/HomeDisposalProbe( 3717): wait for idle: Mixed Addition
+11-24 14:20:54.555 I/HomeDisposalProbe( 3717): Back: Mixed Addition
+11-24 14:20:54.996 I/HomeDisposalProbe( 3717): Opening en 17/35: Build 5 (buildFive)
+11-24 14:20:56.206 I/HomeDisposalProbe( 3717): wait for idle: Build 5
+11-24 14:20:56.287 I/HomeDisposalProbe( 3717): stop Activity: Build 5
+11-24 14:20:56.909 I/HomeDisposalProbe( 3717): manual save: Build 5
+11-24 14:20:56.910 I/HomeDisposalProbe( 3717): resume Activity: Build 5
+11-24 14:20:56.929 I/HomeDisposalProbe( 3717): wait for idle: Build 5
+11-24 14:20:56.941 I/HomeDisposalProbe( 3717): Back: Build 5
+11-24 14:20:57.027 I/HomeDisposalProbe( 3717): Opening en 18/35: Build 10 (buildTen)
+11-24 14:20:57.144 I/HomeDisposalProbe( 3717): wait for idle: Build 10
+11-24 14:20:57.221 I/HomeDisposalProbe( 3717): stop Activity: Build 10
+11-24 14:20:59.965 I/HomeDisposalProbe( 3717): manual save: Build 10
+11-24 14:20:59.965 I/HomeDisposalProbe( 3717): resume Activity: Build 10
+11-24 14:21:00.230 I/HomeDisposalProbe( 3717): wait for idle: Build 10
+11-24 14:21:01.141 I/HomeDisposalProbe( 3717): Back: Build 10
+11-24 14:21:07.631 I/HomeDisposalProbe( 3717): Opening en 19/35: Make 5 (makeFive)
+11-24 14:21:10.112 I/HomeDisposalProbe( 3717): wait for idle: Make 5
+11-24 14:21:10.845 I/HomeDisposalProbe( 3717): stop Activity: Make 5
+11-24 14:21:14.389 I/HomeDisposalProbe( 3717): manual save: Make 5
+11-24 14:21:14.453 I/HomeDisposalProbe( 3717): resume Activity: Make 5
+11-24 14:21:14.876 I/HomeDisposalProbe( 3717): wait for idle: Make 5
+11-24 14:21:16.221 I/HomeDisposalProbe( 3717): Back: Make 5
+11-24 14:21:17.234 I/HomeDisposalProbe( 3717): Opening en 20/35: Build a Dinosaur Group (countingTray)
+11-24 14:21:19.142 I/HomeDisposalProbe( 3717): wait for idle: Build a Dinosaur Group
+11-24 14:21:19.734 I/HomeDisposalProbe( 3717): stop Activity: Build a Dinosaur Group
+11-24 14:21:26.093 I/HomeDisposalProbe( 3717): manual save: Build a Dinosaur Group
+11-24 14:21:26.095 I/HomeDisposalProbe( 3717): resume Activity: Build a Dinosaur Group
+11-24 14:21:27.690 I/HomeDisposalProbe( 3717): wait for idle: Build a Dinosaur Group
+11-24 14:21:28.666 I/HomeDisposalProbe( 3717): Back: Build a Dinosaur Group
+11-24 14:21:30.010 I/HomeDisposalProbe( 3717): Opening en 21/35: Easy Maths (math)
+11-24 14:21:30.555 I/HomeDisposalProbe( 3717): wait for idle: Easy Maths
+11-24 14:21:32.542 I/HomeDisposalProbe( 3717): stop Activity: Easy Maths
+11-24 14:21:35.449 I/HomeDisposalProbe( 3717): manual save: Easy Maths
+11-24 14:21:35.450 I/HomeDisposalProbe( 3717): resume Activity: Easy Maths
+11-24 14:21:35.557 I/HomeDisposalProbe( 3717): wait for idle: Easy Maths
+11-24 14:21:37.003 I/HomeDisposalProbe( 3717): Back: Easy Maths
+11-24 14:21:37.392 I/HomeDisposalProbe( 3717): Opening en 22/35: Prepositions (positions)
+11-24 14:21:38.919 I/HomeDisposalProbe( 3717): wait for idle: Prepositions
+11-24 14:21:39.105 I/HomeDisposalProbe( 3717): stop Activity: Prepositions
+11-24 14:21:41.524 I/HomeDisposalProbe( 3717): manual save: Prepositions
+11-24 14:21:41.552 I/HomeDisposalProbe( 3717): resume Activity: Prepositions
+11-24 14:21:41.754 I/HomeDisposalProbe( 3717): wait for idle: Prepositions
+11-24 14:21:43.038 I/HomeDisposalProbe( 3717): Back: Prepositions
+11-24 14:21:43.659 I/HomeDisposalProbe( 3717): Opening en 23/35: Mixed Adventure (mixed)
+11-24 14:21:44.224 I/HomeDisposalProbe( 3717): wait for idle: Mixed Adventure
+11-24 14:21:45.764 I/HomeDisposalProbe( 3717): stop Activity: Mixed Adventure
+11-24 14:21:48.123 I/HomeDisposalProbe( 3717): manual save: Mixed Adventure
+11-24 14:21:48.124 I/HomeDisposalProbe( 3717): resume Activity: Mixed Adventure
+11-24 14:21:48.261 I/HomeDisposalProbe( 3717): wait for idle: Mixed Adventure
+11-24 14:21:49.555 I/HomeDisposalProbe( 3717): Back: Mixed Adventure
+11-24 14:21:50.269 I/HomeDisposalProbe( 3717): Opening en 24/35: Memory Pairs (memoryPairs)
+11-24 14:21:51.410 I/HomeDisposalProbe( 3717): wait for idle: Memory Pairs
+11-24 14:21:51.920 I/HomeDisposalProbe( 3717): stop Activity: Memory Pairs
+11-24 14:21:53.207 I/HomeDisposalProbe( 3717): manual save: Memory Pairs
+11-24 14:21:53.223 I/HomeDisposalProbe( 3717): resume Activity: Memory Pairs
+11-24 14:21:53.517 I/HomeDisposalProbe( 3717): wait for idle: Memory Pairs
+11-24 14:21:53.747 I/HomeDisposalProbe( 3717): Back: Memory Pairs
+11-24 14:21:54.333 I/HomeDisposalProbe( 3717): Opening en 25/35: Wash Hands (washHands)
+11-24 14:21:55.545 I/HomeDisposalProbe( 3717): wait for idle: Wash Hands
+11-24 14:21:55.804 I/HomeDisposalProbe( 3717): stop Activity: Wash Hands
+11-24 14:21:57.402 I/HomeDisposalProbe( 3717): manual save: Wash Hands
+11-24 14:21:57.409 I/HomeDisposalProbe( 3717): resume Activity: Wash Hands
+11-24 14:21:57.584 I/HomeDisposalProbe( 3717): wait for idle: Wash Hands
+11-24 14:21:57.852 I/HomeDisposalProbe( 3717): Back: Wash Hands
+11-24 14:22:03.550 I/TestRunner( 3717): finished: everyHomeEntryOpensItsExistingDestinationAndReturnsHome[en](com.bellfamily.bastischool.HomeDisposalProbe)
+11-24 14:22:03.569 I/TestRunner( 3717): run finished: 1 tests, 0 failed, 0 ignored
+11-24 14:22:03.729 I/AndroidRuntime( 3706): VM exiting with result code 0.
+11-24 14:23:57.441 D/AndroidRuntime( 4325): >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+11-24 14:23:57.469 I/AndroidRuntime( 4325): Using default boot image
+11-24 14:23:57.469 I/AndroidRuntime( 4325): Leaving lock profiling enabled
+11-24 14:23:58.009 D/AndroidRuntime( 4325): Calling main entry com.android.commands.am.Am
+11-24 14:24:02.127 I/TestRunner( 4336): run started: 2 tests
+11-24 14:24:02.130 I/TestRunner( 4336): started: editsWrongWorkCompletionAndNewRoundSurviveLifecycleAndRepeatedDisposal[en](com.bellfamily.bastischool.ui.washhands.WashHandsLifecycleTest)
+11-24 14:24:18.053 I/WashLifecycle( 4336): en begin empty background: available=4, completed=false
+11-24 14:24:22.358 I/WashLifecycle( 4336): en preserved empty background
+11-24 14:24:25.109 I/WashLifecycle( 4336): en begin partial recreation: available=3, completed=false
+11-24 14:24:25.319 I/WashLifecycle( 4336): en preserved partial recreation
+11-24 14:24:25.320 I/WashLifecycle( 4336): en begin partial Options recreation: available=3, completed=false
+11-24 14:24:25.754 I/WashLifecycle( 4336): en preserved partial Options recreation
+11-24 14:24:25.755 I/WashLifecycle( 4336): en begin partial Home disposal: available=3, completed=false
+11-24 14:24:26.096 I/WashLifecycle( 4336): en preserved partial Home disposal
+11-24 14:24:33.910 I/WashLifecycle( 4336): en begin wrong background: available=0, completed=false
+11-24 14:24:36.173 I/WashLifecycle( 4336): en preserved wrong background
+11-24 14:24:36.174 I/WashLifecycle( 4336): en begin wrong recreation: available=0, completed=false
+11-24 14:24:36.344 I/WashLifecycle( 4336): en preserved wrong recreation
+11-24 14:24:47.138 I/WashLifecycle( 4336): en begin completion recreation: available=0, completed=true
+11-24 14:24:48.275 I/WashLifecycle( 4336): en preserved completion recreation
+11-24 14:24:48.281 I/WashLifecycle( 4336): en begin completion Options recreation: available=0, completed=true
+11-24 14:24:51.851 I/WashLifecycle( 4336): en preserved completion Options recreation
+11-24 14:24:52.550 I/WashLifecycle( 4336): en begin new round Home disposal 0: available=4, completed=false
+11-24 14:24:54.574 I/WashLifecycle( 4336): en preserved new round Home disposal 0
+11-24 14:24:54.722 I/WashLifecycle( 4336): en begin new round background 0: available=4, completed=false
+11-24 14:24:58.042 I/WashLifecycle( 4336): en preserved new round background 0
+11-24 14:24:58.055 I/WashLifecycle( 4336): en begin new round Home disposal 1: available=4, completed=false
+11-24 14:25:00.881 I/WashLifecycle( 4336): en preserved new round Home disposal 1
+11-24 14:25:00.882 I/WashLifecycle( 4336): en begin new round background 1: available=4, completed=false
+11-24 14:25:01.556 I/WashLifecycle( 4336): en preserved new round background 1
+11-24 14:25:01.565 I/WashLifecycle( 4336): en begin new round Home disposal 2: available=4, completed=false
+11-24 14:25:02.561 I/WashLifecycle( 4336): en preserved new round Home disposal 2
+11-24 14:25:03.421 I/WashLifecycle( 4336): en begin new round background 2: available=4, completed=false
+11-24 14:25:10.656 I/WashLifecycle( 4336): en preserved new round background 2
+11-24 14:25:10.660 I/WashLifecycle( 4336): en begin new round Home disposal 3: available=4, completed=false
+11-24 14:25:10.964 I/WashLifecycle( 4336): en preserved new round Home disposal 3
+11-24 14:25:10.966 I/WashLifecycle( 4336): en begin new round background 3: available=4, completed=false
+11-24 14:25:11.613 I/WashLifecycle( 4336): en preserved new round background 3
+11-24 14:25:11.613 I/WashLifecycle( 4336): en begin new round recreation: available=4, completed=false
+11-24 14:25:11.721 I/WashLifecycle( 4336): en preserved new round recreation
+11-24 14:25:11.723 I/WashLifecycle( 4336): en closing Activity with available-step grid mounted
+11-24 14:25:18.931 I/WashLifecycle( 4336): en Activity disposed; exactly eight checked-position attempts and one completion
+11-24 14:25:21.399 I/TestRunner( 4336): finished: editsWrongWorkCompletionAndNewRoundSurviveLifecycleAndRepeatedDisposal[en](com.bellfamily.bastischool.ui.washhands.WashHandsLifecycleTest)
+11-24 14:25:21.432 I/TestRunner( 4336): started: editsWrongWorkCompletionAndNewRoundSurviveLifecycleAndRepeatedDisposal[de](com.bellfamily.bastischool.ui.washhands.WashHandsLifecycleTest)
+11-24 14:25:26.704 I/WashLifecycle( 4336): de begin empty background: available=4, completed=false
+11-24 14:25:28.632 I/WashLifecycle( 4336): de preserved empty background
+11-24 14:25:31.153 I/WashLifecycle( 4336): de begin partial recreation: available=3, completed=false
+11-24 14:25:32.043 I/WashLifecycle( 4336): de preserved partial recreation
+11-24 14:25:32.045 I/WashLifecycle( 4336): de begin partial Options recreation: available=3, completed=false
+11-24 14:25:33.464 I/WashLifecycle( 4336): de preserved partial Options recreation
+11-24 14:25:33.467 I/WashLifecycle( 4336): de begin partial Home disposal: available=3, completed=false
+11-24 14:25:35.229 I/WashLifecycle( 4336): de preserved partial Home disposal
+11-24 14:25:39.837 I/WashLifecycle( 4336): de begin wrong background: available=0, completed=false
+11-24 14:25:44.984 I/WashLifecycle( 4336): de preserved wrong background
+11-24 14:25:44.989 I/WashLifecycle( 4336): de begin wrong recreation: available=0, completed=false
+11-24 14:25:45.195 I/WashLifecycle( 4336): de preserved wrong recreation
+11-24 14:25:48.066 I/WashLifecycle( 4336): de begin completion recreation: available=0, completed=true
+11-24 14:25:48.426 I/WashLifecycle( 4336): de preserved completion recreation
+11-24 14:25:48.441 I/WashLifecycle( 4336): de begin completion Options recreation: available=0, completed=true
+11-24 14:25:51.077 I/WashLifecycle( 4336): de preserved completion Options recreation
+11-24 14:25:51.687 I/WashLifecycle( 4336): de begin new round Home disposal 0: available=4, completed=false
+11-24 14:25:55.112 I/WashLifecycle( 4336): de preserved new round Home disposal 0
+11-24 14:25:55.129 I/WashLifecycle( 4336): de begin new round background 0: available=4, completed=false
+11-24 14:25:59.723 I/WashLifecycle( 4336): de preserved new round background 0
+11-24 14:25:59.761 I/WashLifecycle( 4336): de begin new round Home disposal 1: available=4, completed=false
+11-24 14:26:03.704 I/WashLifecycle( 4336): de preserved new round Home disposal 1
+11-24 14:26:04.627 I/WashLifecycle( 4336): de begin new round background 1: available=4, completed=false
+11-24 14:26:09.315 I/WashLifecycle( 4336): de preserved new round background 1
+11-24 14:26:09.329 I/WashLifecycle( 4336): de begin new round Home disposal 2: available=4, completed=false
+11-24 14:26:13.775 I/WashLifecycle( 4336): de preserved new round Home disposal 2
+11-24 14:26:13.856 I/WashLifecycle( 4336): de begin new round background 2: available=4, completed=false
+11-24 14:26:17.654 I/WashLifecycle( 4336): de preserved new round background 2
+11-24 14:26:17.655 I/WashLifecycle( 4336): de begin new round Home disposal 3: available=4, completed=false
+11-24 14:26:21.729 I/WashLifecycle( 4336): de preserved new round Home disposal 3
+11-24 14:26:21.730 I/WashLifecycle( 4336): de begin new round background 3: available=4, completed=false
+11-24 14:26:25.266 I/WashLifecycle( 4336): de preserved new round background 3
+11-24 14:26:25.269 I/WashLifecycle( 4336): de begin new round recreation: available=4, completed=false
+11-24 14:26:26.820 I/WashLifecycle( 4336): de preserved new round recreation
+11-24 14:26:26.831 I/WashLifecycle( 4336): de closing Activity with available-step grid mounted
+11-24 14:26:33.247 I/WashLifecycle( 4336): de Activity disposed; exactly eight checked-position attempts and one completion
+11-24 14:26:34.115 I/TestRunner( 4336): finished: editsWrongWorkCompletionAndNewRoundSurviveLifecycleAndRepeatedDisposal[de](com.bellfamily.bastischool.ui.washhands.WashHandsLifecycleTest)
+11-24 14:26:34.122 I/TestRunner( 4336): run finished: 2 tests, 0 failed, 0 ignored
+11-24 14:26:34.438 I/AndroidRuntime( 4325): VM exiting with result code 0.
+11-24 14:27:11.335 D/AndroidRuntime( 4607): >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+11-24 14:27:11.366 I/AndroidRuntime( 4607): Using default boot image
+11-24 14:27:11.366 I/AndroidRuntime( 4607): Leaving lock profiling enabled
+11-24 14:27:11.849 D/AndroidRuntime( 4607): Calling main entry com.android.commands.am.Am
+11-24 14:27:14.994 I/TestRunner( 4618): run started: 5 tests
+11-24 14:27:15.010 I/TestRunner( 4618): started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-24 14:27:45.059 I/TestRunner( 4618): finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-24 14:27:45.087 I/TestRunner( 4618): started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-24 14:28:10.400 I/TestRunner( 4618): finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-24 14:28:10.452 I/TestRunner( 4618): started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-24 14:28:28.552 I/TestRunner( 4618): finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-24 14:28:28.643 I/TestRunner( 4618): started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-8](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-24 14:28:52.855 I/TestRunner( 4618): finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-8](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-24 14:28:52.905 I/TestRunner( 4618): started: homeSurvivesLaunchRecreationAndBackgroundReturn(com.bellfamily.bastischool.MainActivityStartupTest)
+11-24 14:29:06.068 I/TestRunner( 4618): finished: homeSurvivesLaunchRecreationAndBackgroundReturn(com.bellfamily.bastischool.MainActivityStartupTest)
+11-24 14:29:06.105 I/TestRunner( 4618): run finished: 5 tests, 0 failed, 0 ignored
+11-24 14:29:06.392 I/AndroidRuntime( 4607): VM exiting with result code 0.

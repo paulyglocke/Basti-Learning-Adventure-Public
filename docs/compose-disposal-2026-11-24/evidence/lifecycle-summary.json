@@ -1,0 +1,24 @@
+{
+  "cases": {
+    "en": {
+      "journalPreservationChecks": 17,
+      "finalMountedGridActivityDisposals": 1,
+      "frameworkRecreations": 6,
+      "backgroundRoundTrips": 6,
+      "homeDisposals": 5,
+      "checkedPositionAttempts": 8,
+      "completions": 1
+    },
+    "de": {
+      "journalPreservationChecks": 17,
+      "finalMountedGridActivityDisposals": 1,
+      "frameworkRecreations": 6,
+      "backgroundRoundTrips": 6,
+      "homeDisposals": 5,
+      "checkedPositionAttempts": 8,
+      "completions": 1
+    }
+  },
+  "log": "final-logcat.txt",
+  "qualification": "Preservation/disposal log counts verified against successful route assertions; recreation/background/Home counts describe the actions performed in each case, not separate JUnit cases. No original crash reproduced."
+}

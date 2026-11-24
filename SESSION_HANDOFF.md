@@ -1,5 +1,49 @@
 # Session handoff — 2026-11-24
 
+## Compose disposal investigation (2026-11-24, evidence/coverage checkpoint)
+
+User said "Ok, next task" after Home commit
+`fbc7f54d60992dc69be61f1fcd591c616afb314b`; investigated remaining disposal crash.
+Initially clean main/origin/main. Owner subsequently requested committing and
+pushing this checkpoint on 2026-11-24. Evidence records local validation before
+publication; hosted checks are separate. No agents used. [Review](docs/compose-disposal-2026-11-24/README.md).
+
+**Crash NOT reproduced, root cause OPEN, no runtime/dependency fix claimed.**
+Historical probe replayed first 25 entries through Wash Hands with the earlier
+manual-save sequence/original 10s web helper and pre-teardown diagnostics:
+passed 1/1 in 226.832s. Temporary probe removed from sources/final test APK;
+source and identities retained in evidence. Missing diagnostic import initially
+failed compilation; corrected before execution, error log retained separately.
+
+New WashHandsLifecycleTest EN/DE passed 2/2 in 151.996s, on actual shell/owner:
+partial/wrong/completed/new round, framework recreation, Options/background/Home
+disposal and Activity teardown with grid mounted. Per language: 17 exact journal
+checks, 6 recreations, 6 background round trips, 5 Home disposals, final Activity
+teardown, exactly8 checked-position attempts/1 completion. Scoped original
+stores restored in finally. New two parameter cases join future focused CI.
+Existing Wash Hands components (4) + startup (1) passed 5/5 in 111.106s on same artifacts.
+Build/lint passed in 28s (0 errors, 7 existing warnings, 2 info). No hosted/full-app/
+browser result claimed. Runtime/Home source unchanged; previous742 JVM/70 Home
+recreations are baseline, not rerun. BACKLOG retains next-recurrence/first-error
+follow-up; do not claim crash fixed or normal-lifecycle cause proven.
+
+App remains 52fc7528e07b8c589f07b417c3904b45222666072591fb370e81cef28e4862b0;
+final test 1f50fcd2a9c756bb3c77a73d2f6be3b3b68dbef102e0265614bd84bbfffd37a7.
+Source/installed hashes, strict derived summaries of raw direct-runner text,
+phase logcat, 34 preservation observations and cleanup are in the review.
+
+Only owned Basti_Pattern_20261111/emulator-5554 used without wipe/uninstall/app
+clear/snapshot deletion. Original no_backup/shared_prefs/app_webview copied to
+cache/compose-disposal-20261124-before, tested directories retained intact at
+cache/compose-disposal-20261124-generated, originals moved back and all 88 file
+paths/bytes verified. No active lifecycle backups. Original 1080×2400 / density 420,
+airplane mode 1, animation settings 1.0/1.0/null unchanged. Original Medium Phone config SHA
+c4ab33993685273776e9286aee0b948e48192f5ab61046d564447d7a12e7034c unchanged;
+original Medium Phone/physical userdata untouched. Owned emulator closed
+gracefully; process/device absence verified. No active validation remains.
+Physical S24/Fire, child use, true TalkBack/switch and audible offline voices
+remain separate owner-managed acceptance.
+
 ## Home legacy verification (2026-11-24, locally complete)
 
 Owner approved tracing the English Home timeout and verifying both languages

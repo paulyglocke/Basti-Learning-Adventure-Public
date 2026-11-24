@@ -1,0 +1,2 @@
+52fc7528e07b8c589f07b417c3904b45222666072591fb370e81cef28e4862b0  /data/app/~~_v0scwo4pyzDKSMfa2Z8gw==/com.bellfamily.bastischool-AYbJgzj762V8KvAYSufy3Q==/base.apk
+1f50fcd2a9c756bb3c77a73d2f6be3b3b68dbef102e0265614bd84bbfffd37a7  /data/app/~~ZFEaNroHWrg8p6z2EvPwdw==/com.bellfamily.bastischool.test-qi4s4a1z3Nx6JqGqvpQX6w==/base.apk

@@ -1,0 +1,21 @@
+{
+  "source": "lifecycle-focused.txt",
+  "format": "Derived from direct AndroidJUnitRunner raw text; not Gradle XML",
+  "tests": 2,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "instrumentationCode": -1,
+  "cases": [
+    {
+      "class": "com.bellfamily.bastischool.ui.washhands.WashHandsLifecycleTest",
+      "test": "editsWrongWorkCompletionAndNewRoundSurviveLifecycleAndRepeatedDisposal[en]",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.washhands.WashHandsLifecycleTest",
+      "test": "editsWrongWorkCompletionAndNewRoundSurviveLifecycleAndRepeatedDisposal[de]",
+      "outcome": "passed"
+    }
+  ]
+}

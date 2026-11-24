@@ -1,0 +1,9 @@
+{
+  "addedClass": "com.bellfamily.bastischool.ui.washhands.WashHandsLifecycleTest",
+  "parameterCases": [
+    "en",
+    "de"
+  ],
+  "configured": true,
+  "hostedExecution": "No hosted result recorded during local validation. Owner subsequently requested committing and pushing this checkpoint on 2026-11-24."
+}

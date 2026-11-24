@@ -1,0 +1,21 @@
+{
+  "ownedAvd": "Basti_Pattern_20261111",
+  "serial": "emulator-5554",
+  "settingsBeforeAfterMatch": true,
+  "settings": {
+    "size": "Physical size: 1080x2400",
+    "density": "Physical density: 420",
+    "airplane": "1",
+    "animationScales": [
+      "1.0",
+      "1.0",
+      "null"
+    ]
+  },
+  "activeLifecycleBackups": [],
+  "dataRestoration": "data-restoration.json",
+  "gracefulEmulatorShutdown": true,
+  "emulatorProcessAbsent": true,
+  "adbDevicesAfter": "List of devices attached\n\n",
+  "originalMediumPhoneAndPhysicalUserdataTouched": false
+}

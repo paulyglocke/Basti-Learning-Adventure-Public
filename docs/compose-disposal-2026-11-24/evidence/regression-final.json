@@ -1,0 +1,36 @@
+{
+  "source": "regression-final.txt",
+  "format": "Derived from direct AndroidJUnitRunner raw text; not Gradle XML",
+  "tests": 5,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "instrumentationCode": -1,
+  "cases": [
+    {
+      "class": "com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest",
+      "test": "listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1]",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest",
+      "test": "listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1]",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest",
+      "test": "listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0]",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest",
+      "test": "listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-8]",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.MainActivityStartupTest",
+      "test": "homeSurvivesLaunchRecreationAndBackgroundReturn",
+      "outcome": "passed"
+    }
+  ]
+}
