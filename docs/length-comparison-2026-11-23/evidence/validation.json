@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-24",
+  "baseline": "63b271189ff379162e253b29df7824a66bdd77f5",
+  "status": "Implemented locally; focused native checks pass; broader English legacy Home failure remains open",
+  "jvm": {
+    "tests": 742,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 7,
+    "informational": 2
+  },
+  "runtimeApkSha256": "52fc7528e07b8c589f07b417c3904b45222666072591fb370e81cef28e4862b0",
+  "runs": [
+    {
+      "scope": "Final app native phone selection: length route, owner, four layouts, Same Amount route/owner, startup",
+      "result": "9/9 passed",
+      "raw": "phone-final.txt",
+      "testArtifacts": "before-capture-apk-hashes.json"
+    },
+    {
+      "scope": "Test-only capture helper strengthened: production route and four phone layouts replayed",
+      "result": "5/5 passed",
+      "raw": "phone-capture-final.txt",
+      "testArtifacts": "apk-hashes.json"
+    },
+    {
+      "scope": "Four layouts repeated on 1600x2560/density240 tablet viewport",
+      "result": "4/4 passed",
+      "raw": "tablet-final.txt",
+      "testArtifacts": "apk-hashes.json"
+    }
+  ],
+  "repeatedCaseQualification": "Separate scoped runs; replay five and tablet four are repeated cases, not additional unique tests",
+  "broaderHome": {
+    "scope": "Earlier before-copy app; not part of native9 selection",
+    "english": "Failed retained-WebView DOM wait on host and software retry; cause unconfirmed; P0 remains open",
+    "german": "All35 entries passed on host renderer",
+    "evidence": "home-host-attempt.json"
+  },
+  "captures": {
+    "total": 74,
+    "production": 10,
+    "phoneComponents": 32,
+    "tabletComponents": 32,
+    "visuallyReviewed": 12,
+    "inventory": "capture-inventory.json",
+    "visualReview": "visual-review.json",
+    "unalteredDevicePng": true
+  },
+  "catalogueGenerationCheck": "passed",
+  "verbMotionParityCheck": "passed",
+  "physicalS24Fire": "NOT RUN",
+  "actualTalkBackSwitchChildOfflineVoiceSignedUpgrade": "NOT RUN",
+  "newBrowserFullAppHostedClaims": false,
+  "emulatorCleanup": "emulator-cleanup.json",
+  "commitPush": "Owner requested committing and pushing this checkpoint on 2026-11-24. Results describe local pre-publication validation; hosted execution is separate."
+}

@@ -1,0 +1,20 @@
+{
+  "app/src/androidTest/java/com/bellfamily/bastischool/ui/length/LengthComparisonLayoutTest.kt": "7c50c0309881650fb0a036d426dbb37c46efc3ce090728f7e482830d1e208f4b",
+  "app/src/androidTest/java/com/bellfamily/bastischool/ui/length/LengthComparisonOwnerTest.kt": "aad58092e71c6337a39e8380ae9300a778437b448140deb3d793eb824e9ab48a",
+  "app/src/androidTest/java/com/bellfamily/bastischool/ui/length/LengthComparisonRouteTest.kt": "bae7829bac3464468cef19a71df19d9c42fac925fde8ce94e9d5cbecb2de08e4",
+  "app/src/main/java/com/bellfamily/bastischool/learning/length/LengthComparison.kt": "3f49fe684d28555b2f6bb4042c5b1147b72734d321e0a14c8d26923548854aa2",
+  "app/src/main/java/com/bellfamily/bastischool/learning/length/LengthComparisonAudio.kt": "084cfcbb9fea0cb644b1fdbab720698dd496b8885178f7aa41e751db5d41aae3",
+  "app/src/main/java/com/bellfamily/bastischool/learning/length/LengthComparisonHost.kt": "109ddadba4afe857cc8e11c8505e4a5d0f8192b7eeae4c31420f78ce58bfa276",
+  "app/src/main/java/com/bellfamily/bastischool/ui/length/LengthComparisonScreen.kt": "14ebb2565d6bf9e987663359a9123ceb38279a79ac1dc519dad8c9ec209b1c15",
+  "app/src/main/java/com/bellfamily/bastischool/ui/length/LengthComparisonViewModel.kt": "904c719f0d03924383515000a76280badf66a5c63442633ede367906c89b861a",
+  "app/src/test/java/com/bellfamily/bastischool/LengthComparisonNavigationTest.kt": "6ada7e6059731bfbf4113839bf46b15bd5e242caca55998647cb7348512183b3",
+  "app/src/test/java/com/bellfamily/bastischool/learning/length/LengthComparisonTest.kt": "4f3a3c6b9ab27a12ec937a5b4e0b0f1f39b8a4c3de02b7c69e67e900009a8eb8",
+  "app/src/androidTest/java/com/bellfamily/bastischool/HomeRouteTest.kt": "9630d8846cbb546e6e00d93dd2b0aaf8d6055795120972b423f7e342ff57b740",
+  "app/src/main/java/com/bellfamily/bastischool/MainActivity.kt": "5940edb0ebd9587d8afcbaa2a128844bc161fcf129f2b87ad8cd2a1731bc7f70",
+  "app/src/main/java/com/bellfamily/bastischool/ShellNavigation.kt": "7cf5dd84fa809f6140d76977d9cfe237a8671eda8e230e728897e06d2234deec",
+  "app/src/main/java/com/bellfamily/bastischool/ui/home/HomeActivityArtwork.kt": "d525a78f3ca1568ef3edb3adb4f9f69dd5dbcde26648a8f3082bc41415d38c39",
+  "app/src/main/java/com/bellfamily/bastischool/ui/home/HomeCatalogue.kt": "5b9726057223ebe526f7c3cec04d3c2a3eacb5ae46f4a50dcdb902d21f5870f6",
+  "app/src/test/java/com/bellfamily/bastischool/HomeCardsTest.kt": "f24e26d45bd259024c341ff9aa7a8f3b871931bc24575998304075e092d8c6af",
+  "app/src/test/java/com/bellfamily/bastischool/HomeIntegrationTest.kt": "23843c9e8dbe7c002b52720cadf9081aadd7e144e794e1d09768b12233e2be16",
+  "app/src/testDebug/java/com/bellfamily/bastischool/ui/homeprototype/HomePrototypeModelTest.kt": "694abd4aa7ce6ebfcab2bbf862f9165762e73c5d4605a3eaea627679133a7df3"
+}

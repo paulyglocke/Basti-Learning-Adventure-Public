@@ -1661,3 +1661,10 @@ Implementation and validation: [Number Stories review](docs/number-stories-2026-
 Same Amount isolates quantity from position: the Before frame remains fixed while objects in Now move to empty places. Most trials conserve the starting count, while occasional explicit additions/removals prevent a constant Same answer. Two-tap movement and Undo are reversible, untimed and do not alter quantity. Explicit checked comparison, calm retries and child-controlled Next preserve the shared learning grammar.
 
 Implementation and current verification: [Same Amount review](docs/same-amount-2026-11-20/README.md).
+
+
+## Longer / Shorter (2026-11-23)
+
+Longer / Shorter isolates direct length comparison: select and translate two labelled strips to a common starting line, compare their other ends, choose Shorter/Same length/Longer and explicitly Check. Controls avoid precision dragging; Undo and calm feedback support exploration. Check waits for alignment, keeping setup errors unscored. Colour and initial position vary independently of relation. Wrong work remains editable and child-controlled Next follows success; same last wrong relation cannot score again through movement.
+
+Implementation and verification: [Length comparison review](docs/length-comparison-2026-11-23/README.md).

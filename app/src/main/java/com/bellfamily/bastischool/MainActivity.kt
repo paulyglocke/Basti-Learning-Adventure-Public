@@ -127,6 +127,7 @@ import com.bellfamily.bastischool.ui.memory.*
 import com.bellfamily.bastischool.ui.patterns.*
 import com.bellfamily.bastischool.ui.numberstories.*
 import com.bellfamily.bastischool.ui.conservation.*
+import com.bellfamily.bastischool.ui.length.*
 import com.bellfamily.bastischool.ui.quantitychange.*
 import com.bellfamily.bastischool.learning.models.ContentId
 
@@ -186,7 +187,8 @@ private val homeCards = listOf(
     HomeCard("", "Pattern Builder", "Muster bauen", "Continue patterns with animals and shapes.", "Setze Muster mit Tieren und Formen fort.", mode = "patternBuilder"),
     HomeCard("", "One More / One Less", "Eins mehr / eins weniger", "Add or take away one animal, then check your group.", "Lege ein Tier dazu oder nimm eins weg und prüfe deine Gruppe.", mode = "quantityChange"),
     HomeCard("", "Number Stories", "Rechengeschichten", "Build the answer to stories by the pond and at a picnic.", "Baue die Antwort zu Geschichten am Teich und beim Picknick.", mode = "numberStories"),
-    HomeCard("", "Same Amount", "Gleich viele", "Move pictures and compare how many there are before and now.", "Verschiebe Bilder und vergleiche die Anzahl vorher und jetzt.", mode = "conservation")
+    HomeCard("", "Same Amount", "Gleich viele", "Move pictures and compare how many there are before and now.", "Verschiebe Bilder und vergleiche die Anzahl vorher und jetzt.", mode = "conservation"),
+    HomeCard("", "Longer / Shorter", "Länger / kürzer", "Line up two strips and compare their lengths.", "Lege zwei Streifen an eine Linie und vergleiche ihre Längen.", mode = "lengthComparison")
 )
 
 /** Filter only after the historical group boundaries, preserving live entry order. */
@@ -223,6 +225,7 @@ class MainActivity : ComponentActivity() {
     private lateinit var nativeVerbs: VerbsQuizViewModel
     private lateinit var nativeVerbExplorer: VerbExplorerViewModel
     private lateinit var nativeBuildFive: BuildFiveViewModel
+    private lateinit var nativeLength: LengthComparisonViewModel
     private lateinit var nativeConservation: ConservationViewModel
     private lateinit var nativeNumberStories: NumberStoriesViewModel
     private lateinit var nativeQuantityChange: QuantityChangeViewModel
@@ -297,6 +300,7 @@ class MainActivity : ComponentActivity() {
         nativeBuildFive = ViewModelProvider(this)[BuildFiveViewModel::class.java]
         nativeBuildTen = ViewModelProvider(this)[BuildTenViewModel::class.java]
         nativeMemory = ViewModelProvider(this)[MemoryPairsViewModel::class.java]
+        nativeLength = ViewModelProvider(this)[LengthComparisonViewModel::class.java]
         nativeConservation = ViewModelProvider(this)[ConservationViewModel::class.java]
         nativeNumberStories = ViewModelProvider(this)[NumberStoriesViewModel::class.java]
         nativeQuantityChange = ViewModelProvider(this)[QuantityChangeViewModel::class.java]
@@ -344,6 +348,7 @@ class MainActivity : ComponentActivity() {
         // need a second copy in the shell. Completion screens retain the shell title
         // because their content is a summary rather than the active activity heading.
         val contentOwnsTitle = when (screen) {
+            ShellScreen.LENGTH_COMPARE -> nativeLength.state?.completed != true
             ShellScreen.CONSERVATION_CHOOSER -> true
             ShellScreen.CONSERVATION_GAME -> nativeConservation.state?.completed != true
             ShellScreen.NUMBER_STORIES_CHOOSER -> true
@@ -406,6 +411,7 @@ class MainActivity : ComponentActivity() {
                                 when (screen) {
                                     ShellScreen.HOME -> if (language == "de") "Bastis Lernabenteuer" else "Basti's Learning Adventure"
                                     ShellScreen.OPTIONS -> if (language == "de") "Optionen" else "Options"
+                                    ShellScreen.LENGTH_COMPARE -> if(language=="de") "Länger / kürzer" else "Longer / Shorter"
                                     ShellScreen.CONSERVATION_CHOOSER, ShellScreen.CONSERVATION_GAME -> if(language=="de") "Gleich viele" else "Same Amount"
                                     ShellScreen.NUMBER_STORIES_CHOOSER, ShellScreen.NUMBER_STORIES_GAME -> if(language=="de") "Rechengeschichten" else "Number Stories"
                                     ShellScreen.QUANTITY_CHANGE_CHOOSER, ShellScreen.QUANTITY_CHANGE_GAME -> if(language=="de") "Eins mehr / eins weniger" else "One More / One Less"
@@ -494,7 +500,7 @@ class MainActivity : ComponentActivity() {
                             HomeBrowseScreen(navigation.homePage, language == "de", ::openHomePage,
                                 ::launchHomeActivity, Modifier.padding(padding), navigation.recoveryFailed)
                         }
-                        ShellScreen.CONSERVATION_CHOOSER, ShellScreen.CONSERVATION_GAME,
+                        ShellScreen.LENGTH_COMPARE, ShellScreen.CONSERVATION_CHOOSER, ShellScreen.CONSERVATION_GAME,
                         ShellScreen.NUMBER_STORIES_CHOOSER, ShellScreen.NUMBER_STORIES_GAME,
                         ShellScreen.QUANTITY_CHANGE_CHOOSER, ShellScreen.QUANTITY_CHANGE_GAME,
                         ShellScreen.PATTERN_CHOOSER, ShellScreen.PATTERN_GAME,
@@ -893,6 +899,8 @@ class MainActivity : ComponentActivity() {
     @Composable
     private fun ConstructionActivities(screen: ShellScreen, padding: PaddingValues, language: String) {
         when(screen) {
+            ShellScreen.LENGTH_COMPARE -> LengthComparisonScreen(nativeLength,if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
+                {changeRoute(navigation.home())},Modifier.padding(padding),::popCelebration,{celebrationSound.cancel()})
             ShellScreen.CONSERVATION_CHOOSER -> ConservationChooser(if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
                 {changeRoute(navigation.openConservation(it))},Modifier.padding(padding))
             ShellScreen.CONSERVATION_GAME -> ConservationScreen(nativeConservation,navigation.conservationConfig,if(language=="de")ContentLanguage.GERMAN else ContentLanguage.ENGLISH,
@@ -966,6 +974,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.VERB_QUIZ -> nativeVerbs.busy || nativeVerbs.saveFailed
             ShellScreen.BUILD_FIVE -> nativeBuildFive.busy || nativeBuildFive.saveFailed
             ShellScreen.BUILD_TEN -> nativeBuildTen.busy || nativeBuildTen.saveFailed
+            ShellScreen.LENGTH_COMPARE -> nativeLength.busy || nativeLength.saveFailed
             ShellScreen.CONSERVATION_GAME -> nativeConservation.busy || nativeConservation.saveFailed
             ShellScreen.NUMBER_STORIES_GAME -> nativeNumberStories.busy || nativeNumberStories.saveFailed
             ShellScreen.QUANTITY_CHANGE_GAME -> nativeQuantityChange.busy || nativeQuantityChange.saveFailed
@@ -1012,6 +1021,7 @@ class MainActivity : ComponentActivity() {
             ShellScreen.VERB_QUIZ -> nativeVerbs.state?.takeIf { it.phase == SessionPhase.COMPLETED && it.completion == CompletionState.ACKNOWLEDGED }?.plan?.id?.value
             ShellScreen.BUILD_FIVE -> nativeBuildFive.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.BUILD_TEN -> nativeBuildTen.state?.takeIf { it.completed && it.acknowledged }?.id?.value
+            ShellScreen.LENGTH_COMPARE -> nativeLength.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.CONSERVATION_GAME -> nativeConservation.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.NUMBER_STORIES_GAME -> nativeNumberStories.state?.takeIf { it.completed && it.acknowledged }?.id?.value
             ShellScreen.QUANTITY_CHANGE_GAME -> nativeQuantityChange.state?.takeIf { it.completed && it.acknowledged }?.id?.value
@@ -1289,6 +1299,8 @@ class MainActivity : ComponentActivity() {
                 else -> null
             })
         val nativeAudioMode=shellAudioMode(prefs.getString("audioMode",null),prefs.getBoolean("sound",true))
+        nativeLength.configure(prefs.getString("lang","en")?:"en",nativeAudioMode,prefs.getInt("round",5))
+        nativeLength.setVisible(foreground && navigation.screen==ShellScreen.LENGTH_COMPARE)
         nativeConservation.configure(prefs.getString("lang","en")?:"en",nativeAudioMode,prefs.getInt("round",5))
         nativeConservation.setVisible(foreground && navigation.screen==ShellScreen.CONSERVATION_GAME,
             if(navigation.screen==ShellScreen.CONSERVATION_GAME)navigation.conservationConfig else null)

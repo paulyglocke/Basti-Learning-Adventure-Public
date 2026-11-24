@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-24",
+  "ownedAvd": "Basti_Pattern_20261111",
+  "serial": "emulator-5554",
+  "originalPhoneSize": "Physical size: 1080x2400",
+  "originalPhoneDensity": "Physical density: 420",
+  "displayOverridesCleared": true,
+  "airplane": "1",
+  "animationSettingsUnchanged": {
+    "window_animation_scale": "1.0",
+    "transition_animation_scale": "1.0",
+    "animator_duration_scale": "null"
+  },
+  "originalMediumPhoneConfigSha256": "c4ab33993685273776e9286aee0b948e48192f5ab61046d564447d7a12e7034c",
+  "mediumPhoneConfigUnchanged": true,
+  "activeLengthBackups": [],
+  "retainedHistoricalEmptyBackup": "length-test-backup-16828137478851",
+  "scopedStoresPresent": {
+    "length-comparison-session": true,
+    "native-progress": false
+  },
+  "scopedStoreQualification": "The existing length checkpoint is retained; its events.bin predates the final native runs (2026-11-23 22:13). Initial absence restoration describes the earlier interruption recovery only. Final tests isolate and restore whatever scoped stores precede each run; no final checkpoint deletion was performed.",
+  "shellPrefsAfterScopedTests": {
+    "round": "5",
+    "sound": "false",
+    "numberMax": "10",
+    "lang": "en",
+    "audioMode": "off"
+  },
+  "shellPrefsQualification": "Match the recorded pre-final-run values; original values before the first interrupted attempt were not separately backed up. Only language left by the stopped duplicate Home test was explicitly restored earlier; see settings-restoration.json.",
+  "syntheticInterruptedStoresRetainedInCache": true,
+  "wipeUninstallOrAppClear": false,
+  "shutdown": "Graceful adb emu kill succeeded; owned PID 4818 absent and adb devices empty",
+  "ownedPid": 4818,
+  "ownedProcessAbsent": true,
+  "adbDevicesAfter": "List of devices attached\n\n"
+}

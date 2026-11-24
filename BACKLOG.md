@@ -24,6 +24,7 @@ Already implemented and not active implementation backlog unless a regression is
 - native Vocabulary starter slice: six animal words plus eight-word illustrated Classroom Things and Food & Drink sets, each with Explore/Find/Name and separate quiz journals. Food rounds visit each word before repeating, avoid adjacent repeats, and change answer choices for repeated words in ten-question rounds.
 - Classroom Things now uses the same target-cycle policy for new rounds; saved older plans still restore unchanged. Old animal journal names are recovered when a current category-specific record is absent.
 - Activity-specific thumbnails and four illustrated Wash Hands choices are implemented. The latter retains the existing four-step sequence and saved progress identities. See the sweep implementation review for current verification and physical acceptance gaps.
+- Longer / Shorter: direct length comparison with movable strips, shared starting line, Undo, saved bilingual 5/10 rounds and shared progress. Current validation and physical acceptance scope are in [the review](docs/length-comparison-2026-11-23/README.md). Rulers/measurement units and further comparison contexts remain future work.
 - shared native completion celebration reused across native practice activities (automated evidence in BUILD_NOTES.md; physical acceptance remains below)
 - stable external distribution signing and monotonic CI versioning
 - Samsung landscape safe-inset fix
@@ -34,6 +35,8 @@ Already implemented and not active implementation backlog unless a regression is
 - Wash Hands: bounded four-step build/check/remove sequencing implemented; reuses existing ordering shuffle, with separate whole-sequence control-of-error. Included in the latest full JVM validation; physical acceptance remains pending, with instrumentation evidence tied to its tested revision. No full Practical Life curriculum.
 
 ## P0 — trusted daily build
+
+- Investigate the English all-Home retained-WebView DOM timeout observed during Length comparison validation (host and software renderer). German Home35 passed; root cause is unconfirmed. Keep this failure distinct from passed native route/owner/layout checks; see [evidence](docs/length-comparison-2026-11-23/README.md).
 
 - Physically accept the implemented shared native completion celebration: five balloons, one-time pop, canonical animal reveal, brief local confetti, Sound Off-aware SFX, immediate Continue/Home, no progress/session coupling. Cleaned celebration artwork is physically verified on S24 (`a8877b5`); do not repeat transparency cleanup. Remaining motion/audio/accessibility checks and Fire Max acceptance are separate.
 - S24 same-key in-place upgrade is proven: 1003901 / 1.1.39.1 → 1004501 / 1.1.45.1 (owner-reported physical evidence in BUILD_NOTES.md). Keep signing/versioning as maintenance; perform the equivalent Fire Max upgrade check.
@@ -99,7 +102,7 @@ Already implemented and not active implementation backlog unless a regression is
 - Future manipulation-first Maths: generalise the Dinosaur Counting Tray and concrete Build 5/10 boards to other objects and contexts, then explore conservation, number stories, richer pattern tasks, shapes and spatial/measurement concepts. Do not duplicate the existing construction boards or choice-based activities.
 - One More / One Less starter is implemented: separate add-one/take-one-away
   construction within 5/10, explicit zero, reversible edits/Undo, saved rounds and
-  shared audio/progress/balloons. Conservation and broader story curricula
+  shared audio/progress/balloons. Broader conservation and story curricula
   remain future curriculum. Current verification/physical gaps:
   [review](docs/one-more-less-2026-11-11/README.md).
 - Pattern Builder starter is implemented: AB/AAB/ABC with reversible animal/shape
@@ -148,7 +151,7 @@ Already implemented and not active implementation backlog unless a regression is
 
 - Number Stories starter implemented (2026-11-16): adding/taking away 1–5 objects
   within 5/10 across pond/dinosaur and picnic/apple settings, saved 5/10 rounds,
-  reversible work, shared audio/progress/rewards. Conservation, richer contexts,
+  reversible work, shared audio/progress/rewards. Broader conservation, richer contexts,
   mixed operations and adaptive progression remain future work. Local validation
   and physical acceptance scope are in [the review](docs/number-stories-2026-11-16/README.md).
 

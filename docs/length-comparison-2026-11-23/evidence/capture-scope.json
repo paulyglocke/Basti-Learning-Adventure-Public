@@ -1,0 +1,13 @@
+{
+  "scope": "Test-only capture readiness: wait for expected enabled controls, presented frames, target foreground package; solved Next scrolled into view. Runtime APK unchanged. All behavior assertions retained.",
+  "changedSources": [
+    "app/src/androidTest/java/com/bellfamily/bastischool/ui/length/LengthComparisonLayoutTest.kt",
+    "app/src/androidTest/java/com/bellfamily/bastischool/ui/length/LengthComparisonRouteTest.kt",
+    "app/src/androidTest/java/com/bellfamily/bastischool/ui/length/LengthComparisonCapture.kt"
+  ],
+  "build": "build7-capture.log",
+  "native9Artifacts": "before-capture-apk-hashes.json",
+  "captureReplayArtifacts": "apk-hashes.json",
+  "captureReplay": "phone-capture-final.txt",
+  "tablet": "tablet-final.txt"
+}

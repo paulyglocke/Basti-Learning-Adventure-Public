@@ -949,3 +949,10 @@ Implementation and validation: [Number Stories review](docs/number-stories-2026-
 Same Amount narrates the starting quantity, actual change facts and comparison question in independently authored EN/DE. Replay reads the current phase; Help explains moving/counting/one-to-one comparison without selecting an answer. The owner reuses lazy DefaultAudioController, ALL/QUESTIONS/OFF, owned cancellation and silent restoration. Moving/answer selection/navigation/background/language changes cancel obsolete speech. No new engine, settings store or speech scoring.
 
 Implementation and current verification: [Same Amount review](docs/same-amount-2026-11-20/README.md).
+
+
+## Longer / Shorter (2026-11-23)
+
+Longer / Shorter uses the shared lazy native audio controller with independently authored English/German prompts, Replay, Help, constructive comparison feedback and completion. The question identifies bottom B and top A so letter reading is not required to locate the strips. Automatic question speech respects QUESTIONS/ALL; manual Replay/Help obey existing OFF policy. Selection/movement/Undo cancel stale speech without assessment. Hide/background/Options/language/owner disposal invalidate pending speech. Fresh journal restoration is silent. Missing offline voices leave visual/touch work usable; no separate TTS client or speech scoring is introduced.
+
+Implementation and verification: [Length comparison review](docs/length-comparison-2026-11-23/README.md).

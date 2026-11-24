@@ -1,0 +1,59 @@
+{
+  "format": "Derived direct AndroidJUnitRunner raw text; incomplete selection, not Gradle XML",
+  "source": "phone-fixture-selection-interrupted.txt",
+  "selected": 11,
+  "started": 10,
+  "completed": 9,
+  "passed": 8,
+  "failed": 1,
+  "cases": [
+    {
+      "className": "com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest",
+      "test": "alignRestoreUndoRetryAndCompleteFiveAndTenWithSharedProgress",
+      "statusCode": -2
+    },
+    {
+      "className": "com.bellfamily.bastischool.ui.length.LengthComparisonOwnerTest",
+      "test": "offStaysLazyHiddenResultsStaySilentAndFreshOwnersRestoreExactWork",
+      "statusCode": 0
+    },
+    {
+      "className": "com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest",
+      "test": "fixedStripsShareScaleAndRemainVisibleDuringKeyboardMovesAndChecks[de=false-font=1-landscape=false]",
+      "statusCode": 0
+    },
+    {
+      "className": "com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest",
+      "test": "fixedStripsShareScaleAndRemainVisibleDuringKeyboardMovesAndChecks[de=true-font=1.5-landscape=false]",
+      "statusCode": 0
+    },
+    {
+      "className": "com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest",
+      "test": "fixedStripsShareScaleAndRemainVisibleDuringKeyboardMovesAndChecks[de=true-font=2-landscape=true]",
+      "statusCode": 0
+    },
+    {
+      "className": "com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest",
+      "test": "fixedStripsShareScaleAndRemainVisibleDuringKeyboardMovesAndChecks[de=false-font=1-landscape=true]",
+      "statusCode": 0
+    },
+    {
+      "className": "com.bellfamily.bastischool.ui.conservation.ConservationRouteTest",
+      "test": "bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress",
+      "statusCode": 0
+    },
+    {
+      "className": "com.bellfamily.bastischool.ui.conservation.ConservationOwnerTest",
+      "test": "offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently",
+      "statusCode": 0
+    },
+    {
+      "className": "com.bellfamily.bastischool.MainActivityStartupTest",
+      "test": "homeSurvivesLaunchRecreationAndBackgroundReturn",
+      "statusCode": 0
+    }
+  ],
+  "interrupted": "HomeRouteTest[en]; blank display and no completed test result, explicitly stopped; resulting Process crashed/code0 records that stop",
+  "notStarted": "HomeRouteTest[de]",
+  "qualification": "Route failure was fixed completion-button scroll assumption; only route fixture changed. All runtime code and app APK byte-identical for final focused rerun; owner/layout/regression classes unchanged."
+}

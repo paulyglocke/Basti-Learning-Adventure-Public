@@ -1,0 +1,19 @@
+{
+  "source": "home-software-attempt-interrupted.txt",
+  "format": "Derived direct runner text; incomplete, not Gradle XML",
+  "selected": 2,
+  "started": 2,
+  "completed": 1,
+  "passed": 0,
+  "failed": 1,
+  "cases": [
+    {
+      "className": "com.bellfamily.bastischool.HomeRouteTest",
+      "test": "everyHomeEntryOpensItsExistingDestinationAndReturnsHome[en]",
+      "statusCode": -2
+    }
+  ],
+  "interrupted": "Duplicate DE case explicitly stopped; earlier DE35-entry pass retained; Process crashed/code0 is the stop",
+  "environment": "Same AVD restarted without wipe, GPU override swiftshader; same app/test APKs",
+  "qualification": "English retained-web DOM timeout repeated; backend change did not resolve it. Root cause and general startup/performance fix not established."
+}

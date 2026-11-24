@@ -1,0 +1,9 @@
+{
+  "changedFiles": [
+    "app/src/androidTest/java/com/bellfamily/bastischool/ui/length/LengthComparisonRouteTest.kt"
+  ],
+  "runtimeApkByteIdentical": true,
+  "ownerAndLayoutClassesUnchanged": true,
+  "earlierSelection": "phone-fixture-selection-interrupted.json",
+  "finalRoute": "route-final.json"
+}

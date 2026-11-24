@@ -1,0 +1,11 @@
+{
+  "source": "home-host-attempt.txt",
+  "format": "Derived direct runner text; not Gradle XML",
+  "tests": 2,
+  "passed": 1,
+  "failed": 1,
+  "english": "failed: renderedLegacy DOM wait timeout",
+  "german": "passed: all35 entries",
+  "durationSeconds": 586.487,
+  "qualification": "No root cause or app fix established. Sample thread excerpt retained; full emulator bugreport kept outside repo in private tmp."
+}

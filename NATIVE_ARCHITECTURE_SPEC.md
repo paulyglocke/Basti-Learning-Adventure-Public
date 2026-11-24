@@ -983,3 +983,10 @@ Implementation and validation: [Number Stories review](docs/number-stories-2026-
 `learning/conservation` owns the pure comparison/move reducer and two bounded checksummed write-ahead journals. `ui/conservation` owns native chooser/board and worker-confined lifecycle/audio coordination. A move atomically clears one occupied place and fills one empty place; the count never changes. Selection, answer, masks, Undo, support and pending progress survive restoration. Existing QuantityWork contracts/journals stay unchanged. Shared QuantityObjects extracts reviewed dinosaur/apple count nouns for Number Stories and this genuine second consumer; old StoryScene names and strings remain compatible. The board decodes its active object once through BundledArtworkCache and shares the resulting bitmap across Before/Now. A loading/retry view blocks answer input until that bitmap is ready, preventing partially drawn groups after recreation.
 
 Implementation and current verification: [Same Amount review](docs/same-amount-2026-11-20/README.md).
+
+
+## Longer / Shorter (2026-11-23)
+
+`learning/length` owns a pure typed direct-comparison reducer, seeded frozen 5/10 plans, LNC1 checksummed write-ahead host and shared-controller audio. `ui/length` owns the single native LENGTH_COMPARE route, fixed strip board and serialized owner. The independent `length-comparison-session` journal preserves lengths, colours, positions, selection, Undo, answers/support and pending shared events. Fresh restore is silent; async speech is invalidated on hiding/language changes. Existing quantities and journals remain compatible.
+
+Implementation and verification: [Length comparison review](docs/length-comparison-2026-11-23/README.md).

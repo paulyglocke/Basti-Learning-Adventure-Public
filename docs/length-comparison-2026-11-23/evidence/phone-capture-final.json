@@ -1,0 +1,36 @@
+{
+  "source": "phone-capture-final.txt",
+  "format": "Derived from direct AndroidJUnitRunner raw text; not Gradle XML",
+  "tests": 5,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "instrumentationCode": -1,
+  "cases": [
+    {
+      "class": "com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest",
+      "test": "alignRestoreUndoRetryAndCompleteFiveAndTenWithSharedProgress",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest",
+      "test": "fixedStripsShareScaleAndRemainVisibleDuringKeyboardMovesAndChecks[de=false-font=1-landscape=false]",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest",
+      "test": "fixedStripsShareScaleAndRemainVisibleDuringKeyboardMovesAndChecks[de=true-font=1.5-landscape=false]",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest",
+      "test": "fixedStripsShareScaleAndRemainVisibleDuringKeyboardMovesAndChecks[de=true-font=2-landscape=true]",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest",
+      "test": "fixedStripsShareScaleAndRemainVisibleDuringKeyboardMovesAndChecks[de=false-font=1-landscape=true]",
+      "outcome": "passed"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "baseline": "63b271189ff379162e253b29df7824a66bdd77f5",
+  "jvm": {
+    "tests": 742,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "Error": 0,
+    "Warning": 7,
+    "Information": 2
+  },
+  "artifacts": {
+    "app/build/outputs/apk/debug/app-debug.apk": "7840f41c8c20dfdb656be86c71d094d07d336a4c8cd1c3e7913f063a895a1171",
+    "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": "babc05aaecdd71b1e9e13c3ebb31d55d888cdc11e0a487b62eeb7a4af3f9f79e"
+  },
+  "command": "./gradlew testDebugUnitTest assembleDebug assembleDebugAndroidTest lintDebug --console=plain",
+  "result": "BUILD SUCCESSFUL in 2m 36s",
+  "raw": "build3-final.log",
+  "finalArtifacts": {
+    "app/build/outputs/apk/debug/app-debug.apk": "7840f41c8c20dfdb656be86c71d094d07d336a4c8cd1c3e7913f063a895a1171",
+    "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": "d709218695d3b3c562e48a9f1567797d2d66e59a212597efb000635b4de41483"
+  },
+  "fixtureFollowup": "./gradlew assembleDebugAndroidTest lintDebug --console=plain; BUILD SUCCESSFUL in41s; runtime APK byte-identical",
+  "fixtureRaw": "build4-fixture.log"
+}

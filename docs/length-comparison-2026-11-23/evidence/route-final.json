@@ -1,0 +1,16 @@
+{
+  "source": "route-final.txt",
+  "format": "Derived from direct AndroidJUnitRunner raw text; not Gradle XML",
+  "tests": 1,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "instrumentationCode": -1,
+  "cases": [
+    {
+      "class": "com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest",
+      "test": "alignRestoreUndoRetryAndCompleteFiveAndTenWithSharedProgress",
+      "outcome": "passed"
+    }
+  ]
+}

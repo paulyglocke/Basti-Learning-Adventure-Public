@@ -192,3 +192,10 @@ Implementation and validation: [Number Stories review](docs/number-stories-2026-
 Same Amount reuses canonical dinosaur PNG/apple JPG and shared bundled artwork decoding. Before and Now use clearly separate labelled frames; empty places show neutral marks rather than add/remove affordances. Selected pictures use both a border and selection semantics; answer selection has a checkmark and written summary. The Home icon compares three compact dots with three spread dots. No new raster art, emoji or decorative countable objects. Before/Now occupied cells share a single decoded bitmap and appear together after the board loading gate.
 
 Implementation and current verification: [Same Amount review](docs/same-amount-2026-11-20/README.md).
+
+
+## Longer / Shorter (2026-11-23)
+
+Longer / Shorter uses native Canvas strips with constant thickness and a common nine-unit drawing scale. Identical dark start lines, A/B labels, contrasting outlines, selection borders/semantics and written answer selection provide cues beyond colour. Four rotated strip colours are unrelated to the comparison answer. Translation never stretches or rescales a strip. No decorative countable marks, emoji, raster generation, ruler ticks or physical-unit promises are added. The Home thumbnail shows two unequal aligned strips.
+
+Implementation and verification: [Length comparison review](docs/length-comparison-2026-11-23/README.md).

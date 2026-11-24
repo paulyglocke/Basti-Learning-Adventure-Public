@@ -1,0 +1,9 @@
+{
+  "date": "2026-11-24",
+  "verifiedOnDevice": true,
+  "serial": "emulator-5554",
+  "sha256": {
+    "com.bellfamily.bastischool": "52fc7528e07b8c589f07b417c3904b45222666072591fb370e81cef28e4862b0",
+    "com.bellfamily.bastischool.test": "edcd87ea5e13472ac2d8b410bc0532e45d15cf8cde03df81551dfee42239f812"
+  }
+}

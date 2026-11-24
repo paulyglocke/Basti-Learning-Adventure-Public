@@ -2287,3 +2287,10 @@ Implementation and validation: [Number Stories review](docs/number-stories-2026-
 Same Amount / Gleich viele adds a bounded conservation-of-quantity starter: rearrange canonical dinosaurs or apples, then compare Now with a pinned Before group. Within-5/10 rounds mix 60% unchanged quantity with explicit one-object additions/removals. This is comparison evidence across two objects and arrangements, not generalised conservation mastery. Broader contexts, free object scaling, liquid/area conservation and adaptive progression remain future work.
 
 Implementation and current verification: [Same Amount review](docs/same-amount-2026-11-20/README.md).
+
+
+## Longer / Shorter (2026-11-23)
+
+Longer / Shorter introduces direct length comparison with two native strips. Move their starts to a common line, compare B with A, then explicitly check Shorter/Same length/Longer. Stable shared geometry, varied colours/initial translations and reversible movement isolate length from position. This is introductory direct-comparison evidence; units, rulers, ordering, animal-size facts and generalised measurement remain future curriculum.
+
+Implementation and verification: [Length comparison review](docs/length-comparison-2026-11-23/README.md).

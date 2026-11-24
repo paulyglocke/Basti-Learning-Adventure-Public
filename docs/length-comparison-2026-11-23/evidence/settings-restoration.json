@@ -1,0 +1,61 @@
+{
+  "scope": "Restores the language left by the explicitly stopped duplicate Home DE case to the EN value preceding that case; all other entries preserved",
+  "before": {
+    "round": [
+      "int",
+      "5",
+      null
+    ],
+    "sound": [
+      "boolean",
+      "false",
+      null
+    ],
+    "numberMax": [
+      "int",
+      "10",
+      null
+    ],
+    "lang": [
+      "string",
+      null,
+      "de"
+    ],
+    "audioMode": [
+      "string",
+      null,
+      "off"
+    ]
+  },
+  "after": {
+    "round": [
+      "int",
+      "5",
+      null
+    ],
+    "sound": [
+      "boolean",
+      "false",
+      null
+    ],
+    "numberMax": [
+      "int",
+      "10",
+      null
+    ],
+    "lang": [
+      "string",
+      null,
+      "en"
+    ],
+    "audioMode": [
+      "string",
+      null,
+      "off"
+    ]
+  },
+  "changedKeys": [
+    "lang"
+  ],
+  "originalPreFirstInterruptedRunValues": "Not separately backed up; only owned QA AVD used, no physical/original Medium Phone userdata touched"
+}

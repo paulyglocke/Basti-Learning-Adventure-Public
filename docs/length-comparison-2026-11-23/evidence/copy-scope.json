@@ -1,0 +1,12 @@
+{
+  "changedFiles": [
+    "app/src/main/java/com/bellfamily/bastischool/learning/length/LengthComparison.kt",
+    "app/src/main/java/com/bellfamily/bastischool/ui/length/LengthComparisonScreen.kt"
+  ],
+  "changes": [
+    "Bottom B/top A explicitly named in spoken and visible question",
+    "Selected strip already on line reports that completed setup",
+    "One step/Schritt singular in accessibility descriptions"
+  ],
+  "qualifications": "Earlier native Android results refer to before-copy artifacts; final native selection/tablet rerun follow separately."
+}

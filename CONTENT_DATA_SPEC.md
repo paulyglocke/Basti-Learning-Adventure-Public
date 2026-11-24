@@ -628,3 +628,10 @@ Implementation and validation: [Number Stories review](docs/number-stories-2026-
 ConservationTask freezes Before count, SAME/FEWER/MORE relation, canonical object ID and the initial Now mask. Now count derives from those facts, with changes restricted to 0/−1/+1 and counts bounded by 5/10 including zero. Deterministic 5/10 rounds contain 3/6 unchanged trials and 1/2 of each actual change, alternate dinosaur/apple contexts and use unique count/relation/object facts. Seeded placements differ from the compact reference. Independent CNS1 v1 journals retain the complete task plan; restoration never regenerates it.
 
 Implementation and current verification: [Same Amount review](docs/same-amount-2026-11-20/README.md).
+
+
+## Longer / Shorter (2026-11-23)
+
+Direct-comparison tasks freeze A/B lengths of 2..6 internal drawing units (unequal lengths differ by at least two), distinct initial offsets 1..3 and one of four palette rotations. Both rows always share the same scale; no real-world centimetres or animal measurements are implied. Seeded 5/10 rounds balance all three relations within one task, without repeated ordered length pairs; new rounds avoid the prior first/final pair at the opening. LNC1 schema1/content1.1 stores the complete task plan. Stable relation IDs are length.shorter/length.same/length.longer.
+
+Implementation and verification: [Length comparison review](docs/length-comparison-2026-11-23/README.md).

@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-24",
+  "reviewed": 12,
+  "method": "Viewed original final device PNG files; no image edits",
+  "qualification": "Visual sample review, not physical/child or actual TalkBack acceptance. Component captures omit the production shell; scrolled text can be clipped at the viewport boundary while strips remain fixed.",
+  "captures": [
+    {
+      "name": "length-5-moved-en.png",
+      "sha256": "8d78ee019da954d72553fd49b43a660fd275cf8411bb3a3bc4708ea1cd666b11",
+      "observation": "A is aligned and selected, B remains offset. Status correctly says A starts on the line. Left/align disabled at zero; right and Undo available."
+    },
+    {
+      "name": "length-5-retry.png",
+      "sha256": "09b45036e49f7821da6597612f9e1ac434e9375877cfa62dfa53464e39a96e6d",
+      "observation": "Both equal strips align; incorrect Shorter choice remains editable with constructive retry feedback. Both strips remain fixed while controls scroll."
+    },
+    {
+      "name": "length-5-solved-de.png",
+      "sha256": "c1fed2f1d81dc3b3636e389076bba1d5c1f1bdd11ff15a9f724603b1fae55530",
+      "observation": "Equal aligned strips, German Help and correct equality feedback, enabled Weiter and Home visible. Pending-write frame is absent."
+    },
+    {
+      "name": "length-5-complete-de.png",
+      "sha256": "2ee18dba44d4404ba354706a45779e4fb25be12d67b602dc533bf8ae76565115",
+      "observation": "Actual production completion shell with replay, Play again, Home, four balloons and revealed clownfish after one pop."
+    },
+    {
+      "name": "length-layout-a6-b6-phone-en-10-portrait-start.png",
+      "sha256": "1f18898bbf840c1b7f44fa4aae1ae837cbb1705bc6fba5f71d4501d2f973829f",
+      "observation": "Equal maximum lengths retain equal pixel widths despite different starting positions; both fit the track. Unselected move and Check controls disabled."
+    },
+    {
+      "name": "length-layout-a2-b2-phone-de-15-portrait-solved.png",
+      "sha256": "4a8006e75b65f1acadb2ca74d8d6997ca7ac03a24834da0a20d1a233b54f3e2e",
+      "observation": "Equal minimum lengths align; German 1.5x Help/feedback wrap legibly, enabled Weiter visible below. Scroll viewport clips earlier question at its boundary."
+    },
+    {
+      "name": "length-layout-a6-b2-phone-de-20-landscape-solved.png",
+      "sha256": "1ec49951dd729d3a233cff985b776e70fd5a29984880c0808c4524d36499b13f",
+      "observation": "German 2x landscape: short B and long A fixed at left, correct shorter feedback and Weiter visible at right. Help is partly scrolled above the viewport."
+    },
+    {
+      "name": "length-layout-a2-b6-phone-en-10-landscape-solved.png",
+      "sha256": "6064433c512e006667d87543b29f23bae8b31aae940470154463f06027b5ca48",
+      "observation": "English landscape: long B and short A align; correct longer feedback, Next and Home fit the scrolling right pane."
+    },
+    {
+      "name": "length-layout-a6-b6-tablet-en-10-portrait-start.png",
+      "sha256": "e05ad0a087f4c65adbf25642ae56c7c77dd3a6751634ff9b3c1c138dcdefe07b",
+      "observation": "Tablet portrait uses two columns. Equal maximum strips have matching widths and distinct offsets; complete question/controls fit at right."
+    },
+    {
+      "name": "length-layout-a2-b2-tablet-de-15-portrait-solved.png",
+      "sha256": "f3abfd16c527d81519e21d63e1a1484b50dc3515912ec1af2a93203eb7371fd3",
+      "observation": "Tablet portrait German 1.5x: equal minimum strips align; question, Help, equality feedback and Weiter visible with readable wrapping."
+    },
+    {
+      "name": "length-layout-a6-b2-tablet-de-20-landscape-solved.png",
+      "sha256": "b9112c32ffbec1e80e39503149a606e12a85be181f2d1fadcec65a07042fa32c",
+      "observation": "Tablet landscape German 2x: fixed aligned unequal strips and complete shorter feedback with Weiter fit without overlap."
+    },
+    {
+      "name": "length-layout-a2-b6-tablet-en-10-landscape-solved.png",
+      "sha256": "999b696b1113bc86907d2a7e4ee40ebf5499fbd11c2fb6299d26c65f47910ab9",
+      "observation": "Tablet landscape English: aligned longer B matches feedback; question, Help, Next and Home fit the right pane."
+    }
+  ]
+}

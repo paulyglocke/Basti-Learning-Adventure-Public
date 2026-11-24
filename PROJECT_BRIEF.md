@@ -446,3 +446,10 @@ Implementation and validation: [Number Stories review](docs/number-stories-2026-
 Same Amount / Gleich viele adds reversible quantity rearrangement and Before/Now comparison within 5/10, with two familiar objects, occasional real one-object changes, bilingual speech, saved rounds and shared progress/rewards. Home has 34 live entries: 31 native and three retained web; Maths has 18. Verification and physical acceptance are separate.
 
 Implementation and current verification: [Same Amount review](docs/same-amount-2026-11-20/README.md).
+
+
+## Longer / Shorter (2026-11-23)
+
+Longer / Shorter / Länger / kürzer adds manipulation-first direct length comparison: translate A/B strips to a common start, compare B with A, Undo, explicit Check, bilingual audio, saved 5/10 rounds and shared progress/balloons. Home has 35 live entries: 32 native and three retained web; Maths has 19. Physical acceptance and broader measurement curriculum remain separate.
+
+Implementation and verification: [Length comparison review](docs/length-comparison-2026-11-23/README.md).

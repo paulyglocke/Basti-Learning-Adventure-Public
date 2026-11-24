@@ -982,3 +982,12 @@ Final local verification (2026-11-23): 732/732 JVM, debug app/test assemblies an
 Earlier failed/interrupted image-readiness fixtures and post-install zero-test startup ANRs remain separately recorded. Shared board bitmap decoding/loading gate corrected partially rendered groups; final runtime passed after a no-wipe restart of the same AVD. Root cause and general startup/performance acceptance are not established. No new browser, full-app instrumentation or hosted result is claimed. Physical S24/Fire, child use, real TalkBack/switch access, audible offline voices and signed upgrade remain NOT RUN.
 
 Implementation and current verification: [Same Amount review](docs/same-amount-2026-11-20/README.md).
+
+
+## Longer / Shorter (2026-11-23)
+
+Final app validation (2026-11-24): 742/742 JVM, both debug APKs and lint (0 errors, 7 existing warnings, 2 informational findings); focused native phone selection 9/9 passed. Checks cover balanced deterministic generation, unchanged lengths across bounded movement/Undo, alignment-gated and changed-answer assessment, saved phases, corrupt/uncertain/concurrent journals, deduplicated shared progress and lazy silent audio ownership. Phone includes production 5/10 route, owner, four EN/DE large-text/keyboard layouts, existing Same Amount route/owner and startup. The test-only capture helper was strengthened without changing the app APK; the actual route plus four phone layouts passed again (5/5). These repeat part of the nine-case selection. Final tablet layouts passed 4/4 at 1600×2560 / density 240. All three scoped native selections have zero failures/errors/skips; repeated cases are not additional unique tests. Seventy-four genuine final screenshots (twelve visually reviewed) are tied to final app/capture-test identities and verified device hashes. Emulator overrides were cleared and the owned AVD closed.
+
+A separate all-Home check passed German35 but failed English in the retained-WebView DOM wait; a software-renderer English retry also failed. Root cause is unconfirmed, and this is an open P0 follow-up, not a successful bilingual Home check. Earlier fixture failures/interrupted attempts remain separately retained. No new browser, full-app instrumentation or hosted result is claimed. Physical S24/Fire, actual TalkBack/switch use, child comprehension, audible installed offline voices and signed upgrade remain NOT RUN.
+
+Implementation and verification: [Length comparison review](docs/length-comparison-2026-11-23/README.md).

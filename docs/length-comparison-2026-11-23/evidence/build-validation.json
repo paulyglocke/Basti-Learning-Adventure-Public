@@ -1,0 +1,22 @@
+{
+  "baseline": "63b271189ff379162e253b29df7824a66bdd77f5",
+  "jvm": {
+    "tests": 742,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "Error": 0,
+    "Warning": 7,
+    "Information": 2
+  },
+  "artifacts": {
+    "app/build/outputs/apk/debug/app-debug.apk": "52fc7528e07b8c589f07b417c3904b45222666072591fb370e81cef28e4862b0",
+    "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": "d709218695d3b3c562e48a9f1567797d2d66e59a212597efb000635b4de41483"
+  },
+  "command": "./gradlew testDebugUnitTest assembleDebug assembleDebugAndroidTest lintDebug --console=plain",
+  "result": "BUILD SUCCESSFUL in 1m 55s",
+  "raw": "build6-final.log",
+  "scope": "Final bottom/top, aligned-status and singular-step copy; final native Android checks recorded separately"
+}

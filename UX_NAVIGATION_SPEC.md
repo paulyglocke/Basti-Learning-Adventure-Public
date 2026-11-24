@@ -500,3 +500,10 @@ Implementation and validation: [Number Stories review](docs/number-stories-2026-
 Home → Same Amount / Gleich viele → within 5/10 opens a saved group. Back returns to its chooser, then Home; Options/recreation retain range and exact work. Before remains fixed above or beside scrolling Now. Tap an occupied place to select/cancel, then an empty place to move; keyboard Enter works through normal button semantics. Undo reverses moves. Selection, moves and answer choice are unscored. Explicit Check submits Fewer/Same/More; the same last wrong relation cannot resubmit through rearrangement. Wrong work stays editable; solved work locks until Next. Shared balloons complete the round.
 
 Implementation and current verification: [Same Amount review](docs/same-amount-2026-11-20/README.md).
+
+
+## Longer / Shorter (2026-11-23)
+
+Home → Longer / Shorter / Länger / kürzer opens the saved direct-comparison round; Back returns Home. Tap strip A/B to select/cancel, then use To the starting line or discrete left/right controls; normal button semantics support keyboard. Undo restores positions and clears selection. Both strips stay fixed above or beside scrolling controls, using identical horizontal scale. Check is enabled only after both starts align and a changed relation is chosen. Moves/selection/Undo are unscored; solved work locks until Next. Options/recreation retain exact work. Shared balloons complete the round.
+
+Implementation and verification: [Length comparison review](docs/length-comparison-2026-11-23/README.md).

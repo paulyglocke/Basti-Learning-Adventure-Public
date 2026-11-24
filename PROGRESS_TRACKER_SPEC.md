@@ -437,3 +437,10 @@ Implementation and validation: [Number Stories review](docs/number-stories-2026-
 Only changed checked relations produce attempts. SAME tasks report `skill.math.quantity_conservation.within_{5|10}`; changed tasks report `skill.math.quantity_change_comparison.within_{5|10}`. Context identifies dinosaur/apple; content responses are quantity.fewer/same/more. Moving, selecting, Undo and listening are unscored; support persists across retries. Completion uses shared deduplicated 5/10-task evidence. A correct answer does not establish that the child moved objects, used one-to-one matching or mastered conservation generally.
 
 Implementation and current verification: [Same Amount review](docs/same-amount-2026-11-20/README.md).
+
+
+## Longer / Shorter (2026-11-23)
+
+Longer / Shorter records only explicit changed comparison checks after both starts align. `activity.math.length_comparison` revision1 uses `skill.math.length.direct_comparison` and `context.math.length.strips`, with task IDs from the frozen ordered length pair. Palette and translation do not change the semantic task. Selection, alignment/movement and Undo are exploratory, not additional attempts. Replay/Help support accompanies checked evidence. Idempotent shared 5/10 completion follows final Next; no movement proficiency, ruler skill or generalised measurement mastery is claimed. Accessibility descriptions expose equivalent internal drawing lengths in comparison units; nonvisual measured comparison is not proof of visual discrimination.
+
+Implementation and verification: [Length comparison review](docs/length-comparison-2026-11-23/README.md).

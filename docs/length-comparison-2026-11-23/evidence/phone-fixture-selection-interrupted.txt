@@ -1,0 +1,163 @@
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest:
+INSTRUMENTATION_STATUS: test=alignRestoreUndoRetryAndCompleteFiveAndTenWithSharedProgress
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Semantic Node has no parent layout with a Scroll SemanticsAction
+	at androidx.compose.ui.test.ActionsKt.scrollToNode(Actions.kt:92)
+	at androidx.compose.ui.test.ActionsKt.performScrollTo(Actions.kt:77)
+	at com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest.alignRestoreUndoRetryAndCompleteFiveAndTenWithSharedProgress$lambda$13$lambda$12$click(LengthComparisonRouteTest.kt:37)
+	at com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest.alignRestoreUndoRetryAndCompleteFiveAndTenWithSharedProgress$lambda$13(LengthComparisonRouteTest.kt:82)
+	at com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest.$r8$lambda$AQ7xTLmxgBVdBEUwiaAOERxjBdw(Unknown Source:0)
+	at com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at com.bellfamily.bastischool.ui.length.LengthComparisonRouteTestKt.isolatedLengthStores(LengthComparisonRouteTest.kt:23)
+	at com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest.alignRestoreUndoRetryAndCompleteFiveAndTenWithSharedProgress(LengthComparisonRouteTest.kt:28)
+
+INSTRUMENTATION_STATUS: stream=
+Error in alignRestoreUndoRetryAndCompleteFiveAndTenWithSharedProgress(com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest):
+java.lang.AssertionError: Semantic Node has no parent layout with a Scroll SemanticsAction
+	at androidx.compose.ui.test.ActionsKt.scrollToNode(Actions.kt:92)
+	at androidx.compose.ui.test.ActionsKt.performScrollTo(Actions.kt:77)
+	at com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest.alignRestoreUndoRetryAndCompleteFiveAndTenWithSharedProgress$lambda$13$lambda$12$click(LengthComparisonRouteTest.kt:37)
+	at com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest.alignRestoreUndoRetryAndCompleteFiveAndTenWithSharedProgress$lambda$13(LengthComparisonRouteTest.kt:82)
+	at com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest.$r8$lambda$AQ7xTLmxgBVdBEUwiaAOERxjBdw(Unknown Source:0)
+	at com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at com.bellfamily.bastischool.ui.length.LengthComparisonRouteTestKt.isolatedLengthStores(LengthComparisonRouteTest.kt:23)
+	at com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest.alignRestoreUndoRetryAndCompleteFiveAndTenWithSharedProgress(LengthComparisonRouteTest.kt:28)
+
+INSTRUMENTATION_STATUS: test=alignRestoreUndoRetryAndCompleteFiveAndTenWithSharedProgress
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.length.LengthComparisonOwnerTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ui.length.LengthComparisonOwnerTest:
+INSTRUMENTATION_STATUS: test=offStaysLazyHiddenResultsStaySilentAndFreshOwnersRestoreExactWork
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.length.LengthComparisonOwnerTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=offStaysLazyHiddenResultsStaySilentAndFreshOwnersRestoreExactWork
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest:
+INSTRUMENTATION_STATUS: test=fixedStripsShareScaleAndRemainVisibleDuringKeyboardMovesAndChecks[de=false-font=1-landscape=false]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=fixedStripsShareScaleAndRemainVisibleDuringKeyboardMovesAndChecks[de=false-font=1-landscape=false]
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=fixedStripsShareScaleAndRemainVisibleDuringKeyboardMovesAndChecks[de=true-font=1.5-landscape=false]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=fixedStripsShareScaleAndRemainVisibleDuringKeyboardMovesAndChecks[de=true-font=1.5-landscape=false]
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=fixedStripsShareScaleAndRemainVisibleDuringKeyboardMovesAndChecks[de=true-font=2-landscape=true]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=fixedStripsShareScaleAndRemainVisibleDuringKeyboardMovesAndChecks[de=true-font=2-landscape=true]
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=fixedStripsShareScaleAndRemainVisibleDuringKeyboardMovesAndChecks[de=false-font=1-landscape=true]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=fixedStripsShareScaleAndRemainVisibleDuringKeyboardMovesAndChecks[de=false-font=1-landscape=true]
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationRouteTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ui.conservation.ConservationRouteTest:
+INSTRUMENTATION_STATUS: test=bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationRouteTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationOwnerTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ui.conservation.ConservationOwnerTest:
+INSTRUMENTATION_STATUS: test=offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationOwnerTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.MainActivityStartupTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.MainActivityStartupTest:
+INSTRUMENTATION_STATUS: test=homeSurvivesLaunchRecreationAndBackgroundReturn
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.MainActivityStartupTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=homeSurvivesLaunchRecreationAndBackgroundReturn
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.HomeRouteTest
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.HomeRouteTest:
+INSTRUMENTATION_STATUS: test=everyHomeEntryOpensItsExistingDestinationAndReturnsHome[en]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_RESULT: shortMsg=Process crashed.
+INSTRUMENTATION_CODE: 0

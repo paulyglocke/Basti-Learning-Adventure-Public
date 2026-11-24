@@ -1,4 +1,62 @@
-# Session handoff — 2026-11-23
+# Session handoff — 2026-11-24
+
+## Longer / Shorter (implemented locally; scoped verification complete)
+
+Owner approved direct length comparison after Same Amount commit
+`63b271189ff379162e253b29df7824a66bdd77f5`. Owner requested committing and
+pushing this checkpoint on 2026-11-24. Validation below is local; hosted checks
+are separate. No agents used. Implementation and
+review: [Length comparison](docs/length-comparison-2026-11-23/README.md),
+[74-image gallery](docs/length-comparison-2026-11-23/index.html).
+
+Native model/host/audio/owner and one Home route compare bottom B with top A.
+Both starts align before explicit Check; bounded movement and Undo are
+unscored. Frozen balanced 5/10 rounds and LNC1 preserve exact work, pending
+shared progress and deduplicated delivery. Existing audio modes, silent
+restoration and balloons are reused. Home35 = native32/web3; Maths19.
+
+Final app: **742/742 JVM**, both debug assemblies and lint (0 errors,
+7 existing warnings, 2 info). Final focused phone selection **9/9**: new
+route/owner/four layouts, Same Amount route/owner and startup. A test-only
+capture readiness change then replayed route+four phone layouts **5/5**;
+final tablet layouts **4/4**. These repeat cases across distinct scoped runs.
+All three have zero failures/errors/skips. Raw runner text and labelled
+derived summaries, build logs, archived JVM XML, lint, source/APK hashes,
+74 marker-fresh unaltered PNGs with verified device hashes and twelve final
+visual reviews are in the review package. Catalogue and verb-motion parity,
+source/doc whitespace and gallery links pass. New route/owner join future CI.
+
+Runtime SHA256 `52fc7528e07b8c589f07b417c3904b45222666072591fb370e81cef28e4862b0`.
+The native9 run used test `d709218695d3b3c562e48a9f1567797d2d66e59a212597efb000635b4de41483`.
+Capture replay/tablet used test `edcd87ea5e13472ac2d8b410bc0532e45d15cf8cde03df81551dfee42239f812`.
+Runtime unchanged; strengthened helper waits for expected enabled controls,
+presented frames and target foreground package. Solved Next is scrolled into
+view. Original pending-frame image is retained as an earlier capture failure.
+
+**Open P0:** broader English all-Home check timed out in retained-WebView DOM
+wait on both host and software renderer; German all35 passed. Cause unknown,
+no legacy fix claimed, and native passes do not close it. BACKLOG records the
+follow-up. Earlier compile/JVM/fixture failures, Launcher ANR interruption,
+zero-test exits, partial11 selection (8 pass/1 fixture failure, stopped during
+Home EN), earlier before-copy passes and both Home attempts remain separate.
+
+Only owned Basti_Pattern_20261111/emulator-5554 used without wipe, uninstall,
+app clear or snapshot deletion. Overrides cleared: original1080×2400/density420,
+airplane1 and animation1.0/1.0/null unchanged. Original Medium Phone config SHA
+`c4ab33993685273776e9286aee0b948e48192f5ab61046d564447d7a12e7034c` unchanged.
+Owned AVD closed gracefully; PID4818 absent and adb devices empty. No active
+scoped backups remain; historical empty backup and interrupted synthetic stores
+retained in cache. Initial absence restoration described the first recovery;
+the length checkpoint predating final tests remains intact. Final shell prefs
+match recorded pre-final-run en/off/5/false/10; original preferences before the
+first interruption were not separately recorded. See cleanup/settings evidence.
+Original Medium Phone and physical-device userdata untouched.
+
+No browser, full-app instrumentation or hosted result claimed. Physical
+S24/Fire, child comprehension, actual TalkBack/switch access, audible installed
+offline voices and signed upgrade remain NOT RUN. No validation process is
+left running. Next actionable technical follow-up is the English Home timeout.
+
 
 ## Same Amount (2026-11-20, completed locally 2026-11-23)
 

@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-24",
+  "galleryImages": 74,
+  "galleryLocalReferencesVerified": 150,
+  "readmeLinksVerified": true,
+  "capturesVerified": 74,
+  "visualReviewHashesVerified": 12,
+  "sourceFilesVerified": 19,
+  "apkHashesVerified": true,
+  "jvmArchiveCounts": {
+    "tests": 742,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "sourceDocumentWhitespaceFiles": 36,
+  "rawEvidenceWhitespacePreserved": true,
+  "emulatorCleanupVerified": true,
+  "sha256": {
+    "index.html": "432ef67d926a4d926be052212931a7a75a37e8ffa51b955b8d27b60de0f8f30a",
+    "README.md": "f9e1f54c3f1bb62d1f2f5bcc5f6a0ad4895c2146467db6c1cc1ac877153e4b69",
+    "evidence/phone-final.txt": "cd448cba334c6b3d0d64bdf7fd7fc02e61dfa57b028a7dd4baf07eb5365a7559",
+    "evidence/phone-capture-final.txt": "345ddd4673139065731f7c9fee8a07aa122a88049877dc0a1e8f8b9d634ef8b2",
+    "evidence/tablet-final.txt": "0239838890f784f8bd47306308fb18bd2a2858c3551bbb2d408e0807e14b6537",
+    "evidence/jvm-xml.zip": "4056a457cc6671b1e04df746e182324bef144ae5dacae849a180cdda1cfa0bbb",
+    "evidence/lint.xml": "c8e898161708c09c602b5e0854e01be41376cd5aa6331155005d879c0a3853bb",
+    "evidence/tested-source.json": "edd6d456fef57c0d52006ad72a00357bfc312ce4eaaebba8f0f7598f68cd9c2b",
+    "evidence/apk-hashes.json": "7f649538d2a3cc8cba9c93b3498235fc7f37bc1349868c80205bfb048f64dfc6",
+    "evidence/capture-inventory.json": "63021c84ca48950a7a7ad415df3c7e6ef07c0140776f7faa71ddf40d2ebdd7fb",
+    "evidence/visual-review.json": "a2bdfe785ce695dfeb3e65011529e7831fa69407df08aeaacdd08a92de5ce5ab",
+    "evidence/emulator-cleanup.json": "3f1e52f20f9e407ff70bceaefe433be3562ec2be2dcc3be982eb7ea8374a2700",
+    "evidence/validation.json": "fb5ed44834ff95e76d93f596c9c144703ee0d61ac473ff6d6ddc98868a5746b9"
+  }
+}

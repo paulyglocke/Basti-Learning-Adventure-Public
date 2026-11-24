@@ -1,0 +1,20 @@
+{
+  "firstRunner": "phone-initial-launcher-interrupted.txt",
+  "result": "Interrupted while first test was active; no completed test result; ADB closed with exit255 during no-wipe emulator shutdown",
+  "observedDialog": "Pixel Launcher isn't responding",
+  "capture": "initial-captures/length-5-start-en-launcher-anr.png",
+  "backup": "cache/length-test-backup-16828137478851",
+  "backupWasEmpty": true,
+  "originalScopedStores": "Both length-comparison-session and native-progress were absent before the interrupted test; empty backup verified before and after restart",
+  "syntheticStoresRetainedAt": "cache/length-initial-interrupted-state",
+  "originalAbsenceRestoredBy": "Moved both synthetic stores intact from no_backup to cache after restart; no deletion",
+  "otherJournalsTouched": false,
+  "wipeOrSnapshots": false,
+  "normalLaunchAfterRestart": {
+    "status": "ok",
+    "launchState": "COLD",
+    "totalTimeMs": 2027,
+    "waitTimeMs": 2030
+  },
+  "qualification": "No startup/performance root cause or general fix established"
+}
