@@ -444,3 +444,10 @@ Implementation and current verification: [Same Amount review](docs/same-amount-2
 Longer / Shorter records only explicit changed comparison checks after both starts align. `activity.math.length_comparison` revision1 uses `skill.math.length.direct_comparison` and `context.math.length.strips`, with task IDs from the frozen ordered length pair. Palette and translation do not change the semantic task. Selection, alignment/movement and Undo are exploratory, not additional attempts. Replay/Help support accompanies checked evidence. Idempotent shared 5/10 completion follows final Next; no movement proficiency, ruler skill or generalised measurement mastery is claimed. Accessibility descriptions expose equivalent internal drawing lengths in comparison units; nonvisual measured comparison is not proof of visual discrimination.
 
 Implementation and verification: [Length comparison review](docs/length-comparison-2026-11-23/README.md).
+
+
+## Order by Length (2026-11-25)
+
+activity.math.length_order revision1 reports skill.math.length.order_three in context.math.length.strips. One explicit Check of a complete changed three-strip order emits one whole-order AttemptEvent. Per-position guesses, placement, removal and Undo are unscored. Replay/Help support persists, and final Next emits deduplicated 5/10-task completion through the existing shared progress store. Correct order does not prove ruler skill or generalised measurement. Accessibility descriptions expose internal comparison lengths, so nonvisual measured ordering is not visual-discrimination evidence.
+
+Implementation and local validation: [Order by Length review](docs/length-order-2026-11-25/README.md).

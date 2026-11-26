@@ -1,0 +1,159 @@
+{
+  "date": "2026-11-26",
+  "baseline": "8703c4e8e3a6fddaf1f891ac8b7b4e89ad798986",
+  "jvm": {
+    "tests": 751,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "phoneNew": {
+    "source": "phone-focused2.txt",
+    "format": "Derived from direct AndroidJUnitRunner raw text; not Gradle XML",
+    "tests": 6,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "instrumentationCode": -1,
+    "cases": [
+      {
+        "class": "com.bellfamily.bastischool.ui.length.LengthOrderingRouteTest",
+        "test": "orderUndoRemoveRetryRestoreFiveAndTenAndKeepComparisonJournal",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.length.LengthOrderingOwnerTest",
+        "test": "offStaysLazyHiddenResultsStaySilentAndFreshOwnersRestoreExactWork",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.length.LengthOrderingLayoutTest",
+        "test": "sharedScaleFixedBoardKeyboardPlacementUndoAndChangedCheckRemainReachable[de=false-font=1-landscape=false]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.length.LengthOrderingLayoutTest",
+        "test": "sharedScaleFixedBoardKeyboardPlacementUndoAndChangedCheckRemainReachable[de=true-font=1.5-landscape=false]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.length.LengthOrderingLayoutTest",
+        "test": "sharedScaleFixedBoardKeyboardPlacementUndoAndChangedCheckRemainReachable[de=true-font=2-landscape=true]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.length.LengthOrderingLayoutTest",
+        "test": "sharedScaleFixedBoardKeyboardPlacementUndoAndChangedCheckRemainReachable[de=false-font=1-landscape=true]",
+        "outcome": "passed"
+      }
+    ]
+  },
+  "phoneCompatibility": {
+    "source": "phone-regression.txt",
+    "format": "Derived from direct AndroidJUnitRunner raw text; not Gradle XML",
+    "tests": 9,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "instrumentationCode": -1,
+    "cases": [
+      {
+        "class": "com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest",
+        "test": "alignRestoreUndoRetryAndCompleteFiveAndTenWithSharedProgress",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.length.LengthComparisonOwnerTest",
+        "test": "offStaysLazyHiddenResultsStaySilentAndFreshOwnersRestoreExactWork",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest",
+        "test": "fixedStripsShareScaleAndRemainVisibleDuringKeyboardMovesAndChecks[de=false-font=1-landscape=false]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest",
+        "test": "fixedStripsShareScaleAndRemainVisibleDuringKeyboardMovesAndChecks[de=true-font=1.5-landscape=false]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest",
+        "test": "fixedStripsShareScaleAndRemainVisibleDuringKeyboardMovesAndChecks[de=true-font=2-landscape=true]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.length.LengthComparisonLayoutTest",
+        "test": "fixedStripsShareScaleAndRemainVisibleDuringKeyboardMovesAndChecks[de=false-font=1-landscape=true]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.HomeRouteTest",
+        "test": "everyHomeEntryOpensItsExistingDestinationAndReturnsHome[en]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.HomeRouteTest",
+        "test": "everyHomeEntryOpensItsExistingDestinationAndReturnsHome[de]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.MainActivityStartupTest",
+        "test": "homeSurvivesLaunchRecreationAndBackgroundReturn",
+        "outcome": "passed"
+      }
+    ]
+  },
+  "tabletLayouts": {
+    "source": "tablet-layouts.txt",
+    "format": "Derived from direct AndroidJUnitRunner raw text; not Gradle XML",
+    "tests": 4,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "instrumentationCode": -1,
+    "cases": [
+      {
+        "class": "com.bellfamily.bastischool.ui.length.LengthOrderingLayoutTest",
+        "test": "sharedScaleFixedBoardKeyboardPlacementUndoAndChangedCheckRemainReachable[de=false-font=1-landscape=false]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.length.LengthOrderingLayoutTest",
+        "test": "sharedScaleFixedBoardKeyboardPlacementUndoAndChangedCheckRemainReachable[de=true-font=1.5-landscape=false]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.length.LengthOrderingLayoutTest",
+        "test": "sharedScaleFixedBoardKeyboardPlacementUndoAndChangedCheckRemainReachable[de=true-font=2-landscape=true]",
+        "outcome": "passed"
+      },
+      {
+        "class": "com.bellfamily.bastischool.ui.length.LengthOrderingLayoutTest",
+        "test": "sharedScaleFixedBoardKeyboardPlacementUndoAndChangedCheckRemainReachable[de=false-font=1-landscape=true]",
+        "outcome": "passed"
+      }
+    ]
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 7,
+    "information": 2
+  },
+  "captures": {
+    "total": 42,
+    "production": 10,
+    "phoneComponents": 16,
+    "tabletComponents": 16,
+    "visuallyReviewed": 12,
+    "unaltered": true
+  },
+  "limits": [
+    "Tablet cases repeat four phone layouts, not additional unique cases",
+    "Physical/child/TalkBack/switch/audible offline voice/signed-upgrade acceptance not run",
+    "Hosted/browser/full-app instrumentation not run",
+    "Historical Compose disposal crash remains open"
+  ],
+  "restoration": "data-restoration.json",
+  "cleanup": "cleanup.json"
+}

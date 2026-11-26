@@ -1,0 +1,308 @@
+{
+  "fileCount": 74,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "6023b4e5dd201be5d78a50a6b4fccfd1fe4062e6ab7149998dae703b01f7aada"
+    },
+    {
+      "path": "build_gallery.py",
+      "sha256": "5ccecc17a4cb1239be7beb5f2fe058d5973d205396e8eac30d8c5016518c15cd"
+    },
+    {
+      "path": "captures/length-order-10-complete-de.png",
+      "sha256": "a643eef65cf57bde46076e3ba61e98f3a62d70da2229c6df2db4e70793edfba9"
+    },
+    {
+      "path": "captures/length-order-10-partial-de.png",
+      "sha256": "39d09cc30a04df86b1b12e656c12e8d0f57411a0cb8204bf9ed48ad478f79006"
+    },
+    {
+      "path": "captures/length-order-10-retry.png",
+      "sha256": "448917cd0945f614aaadea2dda3af6f386c9dbefdba74890fa9c9ab882ef9e3b"
+    },
+    {
+      "path": "captures/length-order-10-solved-de.png",
+      "sha256": "0f52ed5b61d762c6a085a830817f936c8d2946cfc8b07c8c1fd098c9fee493d3"
+    },
+    {
+      "path": "captures/length-order-10-start-de.png",
+      "sha256": "8c4747946a75d5fe7e05f3d92e426c547b6f6ece07077360d05ce4f916e01c68"
+    },
+    {
+      "path": "captures/length-order-5-complete-de.png",
+      "sha256": "85222fd06ae1a4a28f93fa98928137032a93f12148bdfaf8aaae05e3210661cd"
+    },
+    {
+      "path": "captures/length-order-5-partial-en.png",
+      "sha256": "413e5d5b3c67f9c9babd22549461769a10d67bfb548722904062772afc0b24d8"
+    },
+    {
+      "path": "captures/length-order-5-retry.png",
+      "sha256": "3dbe092c5fdb5c00366e5110f2f7dc096acdc727ceca7038da5bdde3fcfe38c8"
+    },
+    {
+      "path": "captures/length-order-5-solved-de.png",
+      "sha256": "89474957f27bb3fa0839a823742e79093496480b4a929574a4b703ca016bfaf3"
+    },
+    {
+      "path": "captures/length-order-5-start-en.png",
+      "sha256": "451ba19b46a3b9151a44d236b23a556e7f03768b999bb266984acbaee8ec43c2"
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-phone-de-15-portrait-solved.png",
+      "sha256": "12b64c72a2bb42b86d992c6e967ea4e455d15589f20ad0ab733ebd52667ab990"
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-phone-de-15-portrait-start.png",
+      "sha256": "28d344a6931d7cd0908328dfa18ee9316102898548c9c3b380c6b6a99dba6292"
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-phone-de-20-landscape-solved.png",
+      "sha256": "0b0c7482eab830b6207628e9cc9b2310da49491002df5ce3243399c81672c40f"
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-phone-de-20-landscape-start.png",
+      "sha256": "5b6aeb2d00b237fc2e27c4fcd7ce1f3b5c4d0fd2d922077a1b11c1740eb12494"
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-phone-en-10-landscape-solved.png",
+      "sha256": "97b9e19219fcad1cd9ad0793e329a62e9429ca689d3e9f84fd3b1c76137f7341"
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-phone-en-10-landscape-start.png",
+      "sha256": "f984ff515fea750ca2494b2367dd0dcce217700fa5e59b23573ebef99bee67ed"
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-phone-en-10-portrait-solved.png",
+      "sha256": "ab6e71a90aa4f85f267c63dbaafa286a53727cbec797136ae493c8239174f45c"
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-phone-en-10-portrait-start.png",
+      "sha256": "9fce1f7b26c1b376ed41e48262b8891369a7f48b4f2c464fbcb1e15c97a588a6"
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-tablet-de-15-portrait-solved.png",
+      "sha256": "54d7ba585069463fdcfc94ecb810e7e2d3b4e372e7015b304cb58342e3296d60"
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-tablet-de-15-portrait-start.png",
+      "sha256": "9673e6e0d0f6b6546b7cae875e1c46ebebf1f7bd5594e8aea57f6bc0fa5ce706"
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-tablet-de-20-landscape-solved.png",
+      "sha256": "8295b0844e98b9797779804c634a8c0fdf8c132ba6f598b9fca46398777d3b85"
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-tablet-de-20-landscape-start.png",
+      "sha256": "1f13281f154bbaa530b3e1fa68c0875127191c219c9573188d48dfdc16871f0d"
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-tablet-en-10-landscape-solved.png",
+      "sha256": "b8d83cc5e6509c5b13a531710ea73f1e676eb72583f6c122d52bc67089dc31fa"
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-tablet-en-10-landscape-start.png",
+      "sha256": "c2019c093ed94c79cb1fe375cad6d6f58930c43a93eafa064a296265f10fa7be"
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-tablet-en-10-portrait-solved.png",
+      "sha256": "f3b2a1f09c8e082b16c4545d742d6072e58b6a737e556cdbde37c45a47eeb07d"
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-tablet-en-10-portrait-start.png",
+      "sha256": "4fba1472bfb1ad53d01c9b7b9ee08c813317cd6a2b0441f817fbc74a41f32544"
+    },
+    {
+      "path": "captures/length-order-layout-2-6-8-phone-de-15-portrait-solved.png",
+      "sha256": "be132e04f141f840851d98a28d5597bd91df353b953367f7f40cabef41393521"
+    },
+    {
+      "path": "captures/length-order-layout-2-6-8-phone-de-15-portrait-start.png",
+      "sha256": "865fa59591b1dd8bdc7bbefebd06e37a28efbf0e27e3a18a8b974fa3ddc8ca01"
+    },
+    {
+      "path": "captures/length-order-layout-2-6-8-phone-de-20-landscape-solved.png",
+      "sha256": "673142138e5c0b3106c444339f782a53509fd1052ece7efce14403e67097b2e2"
+    },
+    {
+      "path": "captures/length-order-layout-2-6-8-phone-de-20-landscape-start.png",
+      "sha256": "0254ffb522595e911194f9ecf613df72478033c102e1bd7eace48315872328e5"
+    },
+    {
+      "path": "captures/length-order-layout-2-6-8-phone-en-10-landscape-solved.png",
+      "sha256": "516d6c10afc4c1e12bc68f70994704ebf1afc82014307015ec12ffb302a2a555"
+    },
+    {
+      "path": "captures/length-order-layout-2-6-8-phone-en-10-landscape-start.png",
+      "sha256": "ad7b6fc818fc6fdbf8a79bddcfdda3689659c16dc56e4017378a7dcb70d6ff13"
+    },
+    {
+      "path": "captures/length-order-layout-2-6-8-phone-en-10-portrait-solved.png",
+      "sha256": "1467e9879c644a39818f80f701ca4068cd209a13b9ff103a1d7cc29f6c137512"
+    },
+    {
+      "path": "captures/length-order-layout-2-6-8-phone-en-10-portrait-start.png",
+      "sha256": "768fbb8880ae14b9599e301cb0573761ba24886c788959d4df4703d5b744d10e"
+    },
+    {
+      "path": "captures/length-order-layout-2-6-8-tablet-de-15-portrait-solved.png",
+      "sha256": "3a3600975ddb586ccdebfd5796f72055af7fa4de907140475fb82eea5143e720"
+    },
+    {
+      "path": "captures/length-order-layout-2-6-8-tablet-de-15-portrait-start.png",
+      "sha256": "53b773f44d47a32b364bac1893ac230bc1b7b27aaa1857134ec8b0920d47ad58"
+    },
+    {
+      "path": "captures/length-order-layout-2-6-8-tablet-de-20-landscape-solved.png",
+      "sha256": "6aedc52c256c607f6bf55cc56caeb0901e3764e7d550a05fac8f7bdc0d8c4416"
+    },
+    {
+      "path": "captures/length-order-layout-2-6-8-tablet-de-20-landscape-start.png",
+      "sha256": "ab7410de779c9e287190fd566a4b8901a5cc0fdf025ae1d6bff1bbd93efc7540"
+    },
+    {
+      "path": "captures/length-order-layout-2-6-8-tablet-en-10-landscape-solved.png",
+      "sha256": "e7655e36688397d3be8e2287e80770f39df98f3254b6e9189cf5ea235c0f4cb3"
+    },
+    {
+      "path": "captures/length-order-layout-2-6-8-tablet-en-10-landscape-start.png",
+      "sha256": "d22b5c8ae8f9fa1665b9bda51107312505bee9bae324174f578f76d8ae2d9be5"
+    },
+    {
+      "path": "captures/length-order-layout-2-6-8-tablet-en-10-portrait-solved.png",
+      "sha256": "0c39626ec14f38160b73d0c2dc63009750cf2cd55716ff2e6e548469c4df0398"
+    },
+    {
+      "path": "captures/length-order-layout-2-6-8-tablet-en-10-portrait-start.png",
+      "sha256": "237d4ca8ff399e74d6457280d4d33c086086bcff1bac40a756d5dc702025d2d8"
+    },
+    {
+      "path": "evidence/build-validation.json",
+      "sha256": "5857e94a5b23eee47306db45b89014e815d667029011a35ac0415aff3baadb04"
+    },
+    {
+      "path": "evidence/build1.log",
+      "sha256": "0cf861d5f9a774962468379c8426832ee1bf7b51a7d25f99e4931eb8b509feb5"
+    },
+    {
+      "path": "evidence/build2.log",
+      "sha256": "adfae829f1a4326ed23e26d732b9781103e3f0be56044e36c085f4a17b5e0c23"
+    },
+    {
+      "path": "evidence/capture-inventory.json",
+      "sha256": "12fcecce9f7e95563eb99982a365484ef8a27d3aaecf3b7d37cfae8904d677be"
+    },
+    {
+      "path": "evidence/ci-selection.json",
+      "sha256": "d192ac7f4e979dbcad11f6545174a5e21013fba3c30f4717473c69f7a423477b"
+    },
+    {
+      "path": "evidence/cleanup.json",
+      "sha256": "15a93222f3e6af5551b28fc1c903280570696b4352ca559c01f865640ff76a4c"
+    },
+    {
+      "path": "evidence/data-restoration.json",
+      "sha256": "cf02d97dab50b674fde7d42ee9e9446381bc08477d7006306431a740a5e02ee3"
+    },
+    {
+      "path": "evidence/device-data-before.txt",
+      "sha256": "f560cf4cbb1847c15b673db19d54bf0f5a20ed9fe91ffcd624d36ab94d9c3162"
+    },
+    {
+      "path": "evidence/device-data-restored.txt",
+      "sha256": "f560cf4cbb1847c15b673db19d54bf0f5a20ed9fe91ffcd624d36ab94d9c3162"
+    },
+    {
+      "path": "evidence/device-settings-after.txt",
+      "sha256": "78f4eb669e24e1d003b9d84bba7e93b8da173ee0645794196af29d77648e6ced"
+    },
+    {
+      "path": "evidence/device-settings-before.txt",
+      "sha256": "78f4eb669e24e1d003b9d84bba7e93b8da173ee0645794196af29d77648e6ced"
+    },
+    {
+      "path": "evidence/final-identities.json",
+      "sha256": "84ba2172247d4c9dabc41734724612063f0d4717d696a2eb7e50d3e3427ebf5c"
+    },
+    {
+      "path": "evidence/final-logcat.txt",
+      "sha256": "447a19b8fef6ec92b14d2959e91cc5faf676ed97e049ee4bb6d3099a22ad84f8"
+    },
+    {
+      "path": "evidence/initial-home-prototype-count.xml",
+      "sha256": "619aba5495bdb8a9b4416d3ead841c1e54d6d2d5e3cdffb4ed3a16891d487a25"
+    },
+    {
+      "path": "evidence/initial-home-table-failures.xml",
+      "sha256": "43a35995f2987fe7543193e3bd959882f0805fb97385afbd935ae98c0b59a796"
+    },
+    {
+      "path": "evidence/jvm-xml.zip",
+      "sha256": "3bbdf27a349b3b31fd2c3814602b209893e86ec24cc711c884e9fe80c520bb76"
+    },
+    {
+      "path": "evidence/lint.xml",
+      "sha256": "6f954a624fcbab0ec7e0aa476eb68e37ef2873ad7204f83cf23f14db5702ca0f"
+    },
+    {
+      "path": "evidence/model-first.log",
+      "sha256": "59e6aeb4c9219732b885e54c40a871c2416d9e6b3301edabf92a8b6a688221ae"
+    },
+    {
+      "path": "evidence/phone-focused1.txt",
+      "sha256": "9e6d8dd1919cdd337dd72a094417829b32eae1da77f4b032b1d743ffef746740"
+    },
+    {
+      "path": "evidence/phone-focused2.json",
+      "sha256": "7bb9b02df40380fc418c198179098e8578ef6f03e260d1d5c3d0951d1ada8830"
+    },
+    {
+      "path": "evidence/phone-focused2.txt",
+      "sha256": "911bb4256f539f85bda52298417956cf238bc2e949a3c888099b75498395961b"
+    },
+    {
+      "path": "evidence/phone-regression.json",
+      "sha256": "1341207ba6c4686b225e1ebe86e7da1e052df6e188e91d4c88cad175dfb4081b"
+    },
+    {
+      "path": "evidence/phone-regression.txt",
+      "sha256": "bba9250e689207cbc9787e20f08c74e935e5abf1312034b14df090baf0a2acee"
+    },
+    {
+      "path": "evidence/scoped-backups-after.txt",
+      "sha256": "4527ab0b1b4b061ece371168d72b397e40da6c62ad995aaa5202187c12bc02ad"
+    },
+    {
+      "path": "evidence/shutdown-request.json",
+      "sha256": "e858344569c55837147c98500b945918e8d1c6d4414cbf578a33e2faa7ce6759"
+    },
+    {
+      "path": "evidence/tablet-layouts.json",
+      "sha256": "582011fc6d9782822190d17191b435a4c02ecdb4945bd3f27f99bdaa95383b97"
+    },
+    {
+      "path": "evidence/tablet-layouts.txt",
+      "sha256": "c2c3fdd98b57e9e3191b03cc52d5304a06d0ec8bfebd53bdbeb8da6a29069bc8"
+    },
+    {
+      "path": "evidence/validation.json",
+      "sha256": "388e2a9e56d569ea8f586e530c28cedc368696453ef3c4d13617528f978aa771"
+    },
+    {
+      "path": "evidence/visual-review.json",
+      "sha256": "23e3eeaf7c347965eb4a761966773fef49217017d84e5709a963f9ce9b83b901"
+    },
+    {
+      "path": "index.html",
+      "sha256": "d247ada2b73f89affaa15a791d6a8cb55b1538f44be76b7574592c91ad507f61"
+    }
+  ],
+  "checks": {
+    "testedSourceAndApksUnchanged": true,
+    "allCaptureHashesMatch": true,
+    "allReviewLinksExist": true,
+    "galleryImages": 42,
+    "visualReviews": 12
+  }
+}

@@ -199,3 +199,10 @@ Implementation and current verification: [Same Amount review](docs/same-amount-2
 Longer / Shorter uses native Canvas strips with constant thickness and a common nine-unit drawing scale. Identical dark start lines, A/B labels, contrasting outlines, selection borders/semantics and written answer selection provide cues beyond colour. Four rotated strip colours are unrelated to the comparison answer. Translation never stretches or rescales a strip. No decorative countable marks, emoji, raster generation, ruler ticks or physical-unit promises are added. The Home thumbnail shows two unequal aligned strips.
 
 Implementation and verification: [Length comparison review](docs/length-comparison-2026-11-23/README.md).
+
+
+## Order by Length (2026-11-25)
+
+Order by Length shares the existing Canvas strip renderer: fixed thickness, dark identical starts, constant nine-unit horizontal scale and four palette rotations. Source/destination cells share equal usable widths (within one physical-pixel layout rounding); moving never changes length. Letters and numbered empty places supplement geometry without making colour instructional. The Home thumbnail shows three aligned increasing bars. No new raster artwork, emoji, ruler ticks or physical-unit promises.
+
+Implementation and local validation: [Order by Length review](docs/length-order-2026-11-25/README.md).

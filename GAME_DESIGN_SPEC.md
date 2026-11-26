@@ -1668,3 +1668,10 @@ Implementation and current verification: [Same Amount review](docs/same-amount-2
 Longer / Shorter isolates direct length comparison: select and translate two labelled strips to a common starting line, compare their other ends, choose Shorter/Same length/Longer and explicitly Check. Controls avoid precision dragging; Undo and calm feedback support exploration. Check waits for alignment, keeping setup errors unscored. Colour and initial position vary independently of relation. Wrong work remains editable and child-controlled Next follows success; same last wrong relation cannot score again through movement.
 
 Implementation and verification: [Length comparison review](docs/length-comparison-2026-11-23/README.md).
+
+
+## Order by Length (2026-11-25)
+
+Order by Length isolates a shortest-to-longest relation among three distinct strips with common start lines and constant scale. Tap placement/removal and bounded Undo avoid precision dragging. The tray loses each placed strip rather than duplicating it. Wrong work remains editable with constructive guidance; explicit Check assesses the complete order, and child-controlled Next follows success. No timer, automatic rearrangement, automatic success or positional guess scoring is added.
+
+Implementation and local validation: [Order by Length review](docs/length-order-2026-11-25/README.md).

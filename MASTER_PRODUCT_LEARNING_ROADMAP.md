@@ -2291,6 +2291,13 @@ Implementation and current verification: [Same Amount review](docs/same-amount-2
 
 ## Longer / Shorter (2026-11-23)
 
-Longer / Shorter introduces direct length comparison with two native strips. Move their starts to a common line, compare B with A, then explicitly check Shorter/Same length/Longer. Stable shared geometry, varied colours/initial translations and reversible movement isolate length from position. This is introductory direct-comparison evidence; units, rulers, ordering, animal-size facts and generalised measurement remain future curriculum.
+Longer / Shorter introduces direct length comparison with two native strips. Move their starts to a common line, compare B with A, then explicitly check Shorter/Same length/Longer. Stable shared geometry, varied colours/initial translations and reversible movement isolate length from position. This is introductory direct-comparison evidence; units, rulers, animal-size facts and generalised measurement remain future curriculum. The separate three-strip ordering starter is described below.
 
 Implementation and verification: [Length comparison review](docs/length-comparison-2026-11-23/README.md).
+
+
+## Order by Length (2026-11-25)
+
+Order by Length / Nach Länge ordnen extends direct comparison to three distinct strips, arranged shortest-to-longest through reversible tap placement and explicit Check. This is a bounded ordering starter with saved 5/10 rounds, EN/DE audio and shared progress/rewards. Internal drawing units are not ruler instruction; real-world measurement, equal-length ties, broader objects and generalisation remain future curriculum.
+
+Implementation and local validation: [Order by Length review](docs/length-order-2026-11-25/README.md).

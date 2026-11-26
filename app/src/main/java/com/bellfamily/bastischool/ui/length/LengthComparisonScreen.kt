@@ -10,11 +10,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.CornerRadius
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.*
 import androidx.compose.ui.unit.dp
@@ -104,7 +100,6 @@ internal fun LengthComparisonContent(state: LengthComparison.State?, language: C
 @Composable
 private fun StripBoard(state: LengthComparison.State, language: ContentLanguage, ready: Boolean, onSelect: (Strip) -> Unit) {
     val de=language==ContentLanguage.GERMAN
-    val colours=listOf(Color(0xFF367C87),Color(0xFFB66531),Color(0xFF7260A8),Color(0xFF4B8051))
     Column(Modifier.fillMaxWidth().testTag("length-board"),verticalArrangement=Arrangement.spacedBy(6.dp)) {
         Text(if(de)"Startlinie"else"Starting line",style=MaterialTheme.typography.bodyMedium)
         Strip.entries.forEach { strip ->
@@ -122,12 +117,7 @@ private fun StripBoard(state: LengthComparison.State, language: ContentLanguage,
                 Row(Modifier.fillMaxSize().padding(horizontal=8.dp),verticalAlignment=Alignment.CenterVertically) {
                     Text(strip.name,Modifier.width(26.dp).clearAndSetSemantics{},style=MaterialTheme.typography.titleMedium)
                     Canvas(Modifier.weight(1f).fillMaxHeight().testTag("length-track-${strip.name.lowercase()}").clearAndSetSemantics{}) {
-                        val margin=6.dp.toPx();val unit=(size.width-2*margin)/9f
-                        val x=margin+position*unit
-                        drawLine(Color(0xFF244951),Offset(margin,4.dp.toPx()),Offset(margin,size.height-4.dp.toPx()),3.dp.toPx())
-                        val top=(size.height-26.dp.toPx())/2;val rect=Size(length*unit,26.dp.toPx())
-                        drawRoundRect(colours[(state.task.palette+strip.ordinal)%colours.size],Offset(x,top),rect,CornerRadius(3.dp.toPx()))
-                        drawRoundRect(Color(0xFF244951),Offset(x,top),rect,CornerRadius(3.dp.toPx()),style=Stroke(1.5.dp.toPx()))
+                        drawLengthStrip(length,position,state.task.palette+strip.ordinal)
                     }
                 }
             }

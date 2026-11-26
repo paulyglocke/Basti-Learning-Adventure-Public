@@ -1,0 +1,66 @@
+{
+  "reviewedCount": 12,
+  "images": [
+    {
+      "path": "captures/length-order-5-partial-en.png",
+      "sha256": "413e5d5b3c67f9c9babd22549461769a10d67bfb548722904062772afc0b24d8",
+      "observation": "Production: placed teal A keeps its length on the right; its source becomes empty, other strips remain. Undo available; incomplete Check disabled."
+    },
+    {
+      "path": "captures/length-order-5-retry.png",
+      "sha256": "3dbe092c5fdb5c00366e5110f2f7dc096acdc727ceca7038da5bdde3fcfe38c8",
+      "observation": "Production: descending order stays visible with calm correction guidance; unchanged Check is disabled. Controls below are in the scroll pane."
+    },
+    {
+      "path": "captures/length-order-5-solved-de.png",
+      "sha256": "89474957f27bb3fa0839a823742e79093496480b4a929574a4b703ca016bfaf3",
+      "observation": "Production: ascending strips, German support/feedback and fully visible Weiter. All three strips remain pinned."
+    },
+    {
+      "path": "captures/length-order-5-complete-de.png",
+      "sha256": "85222fd06ae1a4a28f93fa98928137032a93f12148bdfaf8aaae05e3210661cd",
+      "observation": "Production: German completion with reachable play-again/Home/Replay and shared balloons; popped balloon reveals the canonical dinosaur."
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-phone-en-10-portrait-start.png",
+      "sha256": "9fce1f7b26c1b376ed41e48262b8891369a7f48b4f2c464fbcb1e15c97a588a6",
+      "observation": "Component: clear unequal lengths and common starts; numbered empty destinations; disabled Undo/Check. Component fixture omits production shell/insets."
+    },
+    {
+      "path": "captures/length-order-layout-2-6-8-phone-de-15-portrait-solved.png",
+      "sha256": "be132e04f141f840851d98a28d5597bd91df353b953367f7f40cabef41393521",
+      "observation": "Component: fixed ascending board and readable German guidance; Weiter visible after scrolling. Instructions clip at the scroll boundary as expected."
+    },
+    {
+      "path": "captures/length-order-layout-2-6-8-phone-de-20-landscape-solved.png",
+      "sha256": "673142138e5c0b3106c444339f782a53509fd1052ece7efce14403e67097b2e2",
+      "observation": "Component: 2x German text scrolls independently; all strips remain visible on the left and Weiter is reachable on the right."
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-phone-en-10-landscape-start.png",
+      "sha256": "f984ff515fea750ca2494b2367dd0dcce217700fa5e59b23573ebef99bee67ed",
+      "observation": "Component: two-column landscape board keeps tray and empty destinations fixed; title/instructions/actions occupy the right scroll pane."
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-tablet-en-10-portrait-start.png",
+      "sha256": "4fba1472bfb1ad53d01c9b7b9ee08c813317cd6a2b0441f817fbc74a41f32544",
+      "observation": "Component: tablet portrait uses wide two-panel layout; constant strip scale and all initial controls visible with ample space."
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-tablet-de-15-portrait-solved.png",
+      "sha256": "54d7ba585069463fdcfc94ecb810e7e2d3b4e372e7015b304cb58342e3296d60",
+      "observation": "Component: German 1.5x support/feedback and Weiter fit in the right pane; ascending board remains fixed."
+    },
+    {
+      "path": "captures/length-order-layout-2-6-8-tablet-de-20-landscape-solved.png",
+      "sha256": "6aedc52c256c607f6bf55cc56caeb0901e3764e7d550a05fac8f7bdc0d8c4416",
+      "observation": "Component: German 2x landscape guidance and forward action readable; 2/6/8 proportions consistent in the destination cells."
+    },
+    {
+      "path": "captures/length-order-layout-2-4-8-tablet-en-10-landscape-start.png",
+      "sha256": "c2019c093ed94c79cb1fe375cad6d6f58930c43a93eafa064a296265f10fa7be",
+      "observation": "Component: full tray and numbered empty places at equal widths; actions fit and Check remains disabled before construction."
+    }
+  ],
+  "limits": "Component captures omit production shell/insets: status icons can overlap the fixture top text and navigation overlays the bottom edge. Scrolled text may clip at the viewport boundary. Production captures include shell/insets. No physical-device, TalkBack, audible voice or child acceptance inferred."
+}

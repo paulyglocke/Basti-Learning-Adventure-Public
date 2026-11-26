@@ -24,6 +24,7 @@ import com.bellfamily.bastischool.ui.common.BundledArtwork
 internal data class HomeActivityArt(val asset:String?=null,val diagram:String?=null)
 internal object HomeActivityArtwork {
     val entries=mapOf(
+        "lengthOrder" to HomeActivityArt(diagram="length-order"),
         "lengthComparison" to HomeActivityArt(diagram="length-comparison"),
         "conservation" to HomeActivityArt(diagram="same-amount"),
         "numberStories" to HomeActivityArt(diagram="number-stories"),
@@ -112,6 +113,12 @@ private fun Diagram(kind:String) {
     Canvas(Modifier.fillMaxSize()) {
         scale(size.width/100f,size.height/100f,Offset.Zero) {
             when(kind) {
+                "length-order" -> {
+                    drawLine(artInk,Offset(16f,18f),Offset(16f,90f),2f)
+                    listOf(24f,45f,68f).forEachIndexed { i,length ->
+                        drawRoundRect(if(i==1)artBlue else artGreen,Offset(16f,24f+i*23f),Size(length,12f),androidx.compose.ui.geometry.CornerRadius(3f))
+                    }
+                }
                 "length-comparison" -> {
                     drawLine(artInk,Offset(16f,20f),Offset(16f,82f),2f)
                     drawRoundRect(artGreen,Offset(16f,30f),Size(45f,13f),androidx.compose.ui.geometry.CornerRadius(3f))

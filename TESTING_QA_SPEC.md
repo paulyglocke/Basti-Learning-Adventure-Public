@@ -1007,3 +1007,27 @@ No app/dependency change or reproduced crash. A one-off replay of the earlier ma
 New actual EN/DE WashHandsLifecycleTest passed 2/2 (151.996s): partial/wrong/completed/new-round work, Options with framework recreation, background/return, repeated Home disposal and Activity teardown with the available-step grid mounted. Thirty-four exact journal-byte checks cover lifecycle preservation; each language performs six actual recreations, six background round trips, five Home disposals and one final mounted-grid Activity teardown. Eight checked-position attempts and one completion per case prove navigation/restoration does not duplicate progress. Scoped original stores are restored in finally.
 
 Existing four Wash Hands layouts plus startup passed 5/5 (111.106s) on the same final test APK. Build/lint passed in 28s (0 errors, 7 existing warnings, 2 info). Two new parameter cases join future focused CI; no hosted result claimed. No new JVM/full-Home run: unchanged runtime's 742 JVM and Home 70 recreation results are baseline evidence. All88 original journal/preference/WebView-profile files restored and hash-verified, settings/original Medium Phone config unchanged, generated data retained, owned AVD closed. Physical/child/actual TalkBack/switch/offline voice and browser/hosted/full-app acceptance remain separate. [Review and raw evidence](docs/compose-disposal-2026-11-24/README.md).
+
+
+## Order by Length (2026-11-25; locally verified 2026-11-26)
+
+Code-complete native three-strip ordering starter; physical acceptance remains
+separate. Full JVM 751/751 passed; both debug APKs and lint passed (0 errors,
+7 existing warnings, 2 information). New phone 6/6 passed: production 5/10 route,
+exact restoration/Undo/retry, shared 17 attempts/two completions, old comparison
+journal preservation, lazy silent owner and four EN/DE keyboard/large-text
+component layouts. Compatibility 9/9 passed: old comparison route/owner/four
+layouts, Home EN36/DE36 with all 72 framework recreations, and startup. Tablet 4/4
+repeats new layouts at 1600×2560 / density 240; not 19 unique cases. All completed
+selections have zero failures/errors/skips. Forty-two unaltered captures match
+device hashes; twelve visually reviewed. Initial stale Home assertions and the
+blocked pre-run adb invocation are retained separately. Phone phase logcat rolled
+out before archive across the overnight pause; completed raw runner text remains.
+The historical Compose disposal crash remains OPEN; no runtime fix claimed.
+
+Only owned AVD used; all 88 original app file paths/bytes and settings restored,
+generated data retained, overrides cleared, Medium Phone configuration unchanged,
+owned emulator gracefully closed and process/device absence verified. Future CI
+adds new route/owner; no hosted/full-app/browser result claimed. S24/Fire, child,
+actual TalkBack/switch, audible offline voices and signed upgrade remain NOT RUN.
+See [review/gallery/evidence](docs/length-order-2026-11-25/README.md).

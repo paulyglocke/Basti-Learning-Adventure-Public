@@ -990,3 +990,10 @@ Implementation and current verification: [Same Amount review](docs/same-amount-2
 `learning/length` owns a pure typed direct-comparison reducer, seeded frozen 5/10 plans, LNC1 checksummed write-ahead host and shared-controller audio. `ui/length` owns the single native LENGTH_COMPARE route, fixed strip board and serialized owner. The independent `length-comparison-session` journal preserves lengths, colours, positions, selection, Undo, answers/support and pending shared events. Fresh restore is silent; async speech is invalidated on hiding/language changes. Existing quantities and journals remain compatible.
 
 Implementation and verification: [Length comparison review](docs/length-comparison-2026-11-23/README.md).
+
+
+## Order by Length (2026-11-25)
+
+LENGTH_ORDER is a separate native route and owner in learning/length and ui/length. LengthOrderWork structurally adapts the existing SequenceAssembly free construction/removal/Check model; it does not change Wash Hands. Independent LNO1 write-ahead storage in length-order-session retains plans, ordered strip IDs, Undo, assessments, support and pending shared events. Schema1/content1.1/activity revision1. The comparison route and LNC1 journal remain compatible. Both activities now call the same unchanged Canvas strip drawing math.
+
+Implementation and local validation: [Order by Length review](docs/length-order-2026-11-25/README.md).

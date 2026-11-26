@@ -635,3 +635,10 @@ Implementation and current verification: [Same Amount review](docs/same-amount-2
 Direct-comparison tasks freeze A/B lengths of 2..6 internal drawing units (unequal lengths differ by at least two), distinct initial offsets 1..3 and one of four palette rotations. Both rows always share the same scale; no real-world centimetres or animal measurements are implied. Seeded 5/10 rounds balance all three relations within one task, without repeated ordered length pairs; new rounds avoid the prior first/final pair at the opening. LNC1 schema1/content1.1 stores the complete task plan. Stable relation IDs are length.shorter/length.same/length.longer.
 
 Implementation and verification: [Length comparison review](docs/length-comparison-2026-11-23/README.md).
+
+
+## Order by Length (2026-11-25)
+
+LengthOrderTask freezes three distinct A/B/C lengths from 2..8 drawing units, each adjacent sorted gap at least two, an initially unsorted presentation and a palette rotation. Five-task rounds use five distinct unordered triples; ten-task rounds use all ten possible triples. ID assignment, tray order and colour vary independently. A new opening avoids the previous first/final assigned length triple. LNO1 stores the entire frozen plan; restore does not regenerate it. No physical units, ruler marks or animal-size facts are implied.
+
+Implementation and local validation: [Order by Length review](docs/length-order-2026-11-25/README.md).

@@ -1,0 +1,11 @@
+{
+  "ownedAvd": "Basti_Pattern_20261111",
+  "serial": "emulator-5554",
+  "gracefulShutdown": true,
+  "ownedProcessAbsent": true,
+  "adbDevicesAfter": "List of devices attached\n\n",
+  "originalMediumPhoneAndPhysicalUserdataTouched": false,
+  "dataAndSettings": "data-restoration.json",
+  "activeScopedTestBackups": [],
+  "retainedHistoricalEmptyBackup": "cache/length-test-backup-16828137478851"
+}

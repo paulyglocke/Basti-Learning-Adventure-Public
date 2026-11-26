@@ -1,3 +1,47 @@
+# Session handoff — 2026-11-26
+
+## Order by Length (implemented; scoped local verification complete)
+
+Owner approved three-strip ordering on 2026-11-25 after baseline
+`8703c4e8e3a6fddaf1f891ac8b7b4e89ad798986`. Owner requested committing and
+pushing this checkpoint on 2026-11-26. Evidence records local validation before
+publication; hosted checks are separate. No agents used. [Review](docs/length-order-2026-11-25/README.md),
+[42-image gallery](docs/length-order-2026-11-25/index.html).
+
+Separate lengthOrder/LENGTH_ORDER Home entry, LNO1 journal, SequenceAssembly
+adapter, shared progress/audio/balloons. Fixed tray/three places, tap append,
+return/remove with shifting, Undo and explicit whole-order Check. Saved 5/10
+rounds, changed-wrong-order gate, silent exact restoration. Home 36 (33 native/
+three web), Maths 20. Comparison route/journal compatible; identical strip Canvas
+math shared. Domain specs/brief/backlog and future CI route/owner updated.
+
+751/751 JVM passed; both debug APKs/lint passed (0 errors, 7 existing warnings,
+2 information). New phone 6/6 passed, compatibility 9/9 passed (old comparison
+route/owner/four layouts, Home EN36/DE36 with 72 actual framework recreations,
+startup), tablet 4/4 passed. Tablet repeats four new phone layouts at a different
+viewport; not 19 unique cases. Forty-two fresh unaltered PNGs device-hash verified;
+twelve visually reviewed. Raw completed runner logs, strict derived summaries,
+JVM XML/lint and source/installed APK identities in review. Phone phase logcat
+rolled out before archiving across overnight pause; completed raw runner records
+remain. First build's three stale Home assertions corrected; failures retained.
+
+Final app SHA 68bb0c320c5617aae312e84ffb0eff73ad9cb8cbcebf913565564d61fbebe508;
+test SHA f19e816d11f54f2c19a10dff69c9f6a0ec0f1130d867eb10370ddae2c12a5c59.
+Known historical Compose disposal crash remains OPEN; no runtime crash fix claimed.
+No hosted/full-app/browser result claimed. Physical S24/Fire, child use, actual
+TalkBack/switch, audible offline voices and signed upgrade remain NOT RUN.
+
+Only owned Basti_Pattern_20261111/emulator-5554 used, no wipe/uninstall/app clear/
+snapshot deletion. Original no_backup/shared_prefs/app_webview copied intact to
+cache/length-order-20261125-before; tested directories retained intact in
+cache/length-order-20261125-generated and originals moved back. All 88 original
+paths/bytes match. Original 1080×2400 / density 420, airplane 1 and animations 1.0/1.0/null
+restored/preserved. Medium Phone config SHA
+c4ab33993685273776e9286aee0b948e48192f5ab61046d564447d7a12e7034c unchanged.
+No active scoped backups; historical empty length-test-backup retained. Owned
+emulator closed gracefully; process/device absence verified. No active validation
+remains. Original Medium Phone/physical userdata untouched. Prior handoff follows.
+
 # Session handoff — 2026-11-24
 
 ## Compose disposal investigation (2026-11-24, evidence/coverage checkpoint)

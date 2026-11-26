@@ -1,0 +1,11 @@
+--------- beginning of main
+11-26 12:49:26.636 17213 17322 I TestRunner: run started: 4 tests
+11-26 12:49:26.652 17213 17322 I TestRunner: started: sharedScaleFixedBoardKeyboardPlacementUndoAndChangedCheckRemainReachable[de=false-font=1-landscape=false](com.bellfamily.bastischool.ui.length.LengthOrderingLayoutTest)
+11-26 12:50:16.057 17213 17322 I TestRunner: finished: sharedScaleFixedBoardKeyboardPlacementUndoAndChangedCheckRemainReachable[de=false-font=1-landscape=false](com.bellfamily.bastischool.ui.length.LengthOrderingLayoutTest)
+11-26 12:50:16.091 17213 17322 I TestRunner: started: sharedScaleFixedBoardKeyboardPlacementUndoAndChangedCheckRemainReachable[de=true-font=1.5-landscape=false](com.bellfamily.bastischool.ui.length.LengthOrderingLayoutTest)
+11-26 12:50:49.247 17213 17322 I TestRunner: finished: sharedScaleFixedBoardKeyboardPlacementUndoAndChangedCheckRemainReachable[de=true-font=1.5-landscape=false](com.bellfamily.bastischool.ui.length.LengthOrderingLayoutTest)
+11-26 12:50:49.363 17213 17322 I TestRunner: started: sharedScaleFixedBoardKeyboardPlacementUndoAndChangedCheckRemainReachable[de=true-font=2-landscape=true](com.bellfamily.bastischool.ui.length.LengthOrderingLayoutTest)
+11-26 12:51:23.030 17213 17322 I TestRunner: finished: sharedScaleFixedBoardKeyboardPlacementUndoAndChangedCheckRemainReachable[de=true-font=2-landscape=true](com.bellfamily.bastischool.ui.length.LengthOrderingLayoutTest)
+11-26 12:51:23.131 17213 17322 I TestRunner: started: sharedScaleFixedBoardKeyboardPlacementUndoAndChangedCheckRemainReachable[de=false-font=1-landscape=true](com.bellfamily.bastischool.ui.length.LengthOrderingLayoutTest)
+11-26 12:52:06.073 17213 17322 I TestRunner: finished: sharedScaleFixedBoardKeyboardPlacementUndoAndChangedCheckRemainReachable[de=false-font=1-landscape=true](com.bellfamily.bastischool.ui.length.LengthOrderingLayoutTest)
+11-26 12:52:06.126 17213 17322 I TestRunner: run finished: 4 tests, 0 failed, 0 ignored

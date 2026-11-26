@@ -956,3 +956,10 @@ Implementation and current verification: [Same Amount review](docs/same-amount-2
 Longer / Shorter uses the shared lazy native audio controller with independently authored English/German prompts, Replay, Help, constructive comparison feedback and completion. The question identifies bottom B and top A so letter reading is not required to locate the strips. Automatic question speech respects QUESTIONS/ALL; manual Replay/Help obey existing OFF policy. Selection/movement/Undo cancel stale speech without assessment. Hide/background/Options/language/owner disposal invalidate pending speech. Fresh journal restoration is silent. Missing offline voices leave visual/touch work usable; no separate TTS client or speech scoring is introduced.
 
 Implementation and verification: [Length comparison review](docs/length-comparison-2026-11-23/README.md).
+
+
+## Order by Length (2026-11-25)
+
+Order by Length authors EN/DE question, Replay, Help, feedback and completion independently. Narration identifies left/right and top/bottom; reading A/B/C is not needed. Help explains comparing strip ends without selecting the next strip. The owner reuses lazy DefaultAudioController, existing ALL/QUESTIONS/OFF policy, silent restoration and cancellation on edits, hiding/background, Options, language change and disposal. No new speech engine, settings store or speech scoring.
+
+Implementation and local validation: [Order by Length review](docs/length-order-2026-11-25/README.md).

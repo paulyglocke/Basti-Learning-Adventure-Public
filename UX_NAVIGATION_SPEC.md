@@ -507,3 +507,10 @@ Implementation and current verification: [Same Amount review](docs/same-amount-2
 Home → Longer / Shorter / Länger / kürzer opens the saved direct-comparison round; Back returns Home. Tap strip A/B to select/cancel, then use To the starting line or discrete left/right controls; normal button semantics support keyboard. Undo restores positions and clears selection. Both strips stay fixed above or beside scrolling controls, using identical horizontal scale. Check is enabled only after both starts align and a changed relation is chosen. Moves/selection/Undo are unscored; solved work locks until Next. Options/recreation retain exact work. Shared balloons complete the round.
 
 Implementation and verification: [Length comparison review](docs/length-comparison-2026-11-23/README.md).
+
+
+## Order by Length (2026-11-25)
+
+Home adds Order by Length / Nach Länge ordnen (lengthOrder → LENGTH_ORDER), bringing Home to 36 entries: 33 native/three retained web; Maths 20. Back returns Home. A fixed left tray and three equal-width right places remain visible while controls scroll. Tap a strip to append it; tap a placed strip to return it, shifting later strips up; Undo reverses edits. Full changed orders enable Check. The last wrong order cannot resubmit through removal/replacement/Undo; success locks until Next. Options/recreation preserve exact work and saved rounds. Completion uses shared balloons.
+
+Implementation and local validation: [Order by Length review](docs/length-order-2026-11-25/README.md).

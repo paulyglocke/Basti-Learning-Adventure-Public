@@ -1,0 +1,102 @@
+{
+  "apks": [
+    {
+      "package": "com.bellfamily.bastischool",
+      "artifact": "app/build/outputs/apk/debug/app-debug.apk",
+      "sha256": "68bb0c320c5617aae312e84ffb0eff73ad9cb8cbcebf913565564d61fbebe508",
+      "installedPath": "/data/app/~~u78uUAtdI1uYKDNJiyZeWQ==/com.bellfamily.bastischool-JPBrJkt7RzLUklt0oFIEIw==/base.apk"
+    },
+    {
+      "package": "com.bellfamily.bastischool.test",
+      "artifact": "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+      "sha256": "f19e816d11f54f2c19a10dff69c9f6a0ec0f1130d867eb10370ddae2c12a5c59",
+      "installedPath": "/data/app/~~XRFUL7ZBYpkLtrn9omttgQ==/com.bellfamily.bastischool.test-Y5zvryEdHRIAeoeli-65PA==/base.apk"
+    }
+  ],
+  "sources": [
+    {
+      "path": "app/src/androidTest/java/com/bellfamily/bastischool/ui/length/LengthOrderingCapture.kt",
+      "sha256": "65fa82bb2223c4365bf4ca17e9c756d9b7482d37c254ef74ab0d0b7c95ebf123"
+    },
+    {
+      "path": "app/src/androidTest/java/com/bellfamily/bastischool/ui/length/LengthOrderingLayoutTest.kt",
+      "sha256": "a7171e475eb539b709c6ad6e982f26701aed00d4a11d9c143fdfb209adefa365"
+    },
+    {
+      "path": "app/src/androidTest/java/com/bellfamily/bastischool/ui/length/LengthOrderingOwnerTest.kt",
+      "sha256": "162c1668e8f9a7c76bb1275795f52ec051dffab447d6e2f72b310f896477f420"
+    },
+    {
+      "path": "app/src/androidTest/java/com/bellfamily/bastischool/ui/length/LengthOrderingRouteTest.kt",
+      "sha256": "b13080476bb17ab5a7e2cfe7e923d498603b09f33c5be6aa4b91eceb6f392ecc"
+    },
+    {
+      "path": "app/src/main/java/com/bellfamily/bastischool/learning/length/LengthOrdering.kt",
+      "sha256": "827813a24e10d22f2ff611f3d657215db501bb8e6e6e89d777c3f5f5b76d1d34"
+    },
+    {
+      "path": "app/src/main/java/com/bellfamily/bastischool/learning/length/LengthOrderingAudio.kt",
+      "sha256": "feb5775aba6654ab0f54ad04e06cfbb2d8c03a0bed0c637c425f4dcc37b9d232"
+    },
+    {
+      "path": "app/src/main/java/com/bellfamily/bastischool/learning/length/LengthOrderingHost.kt",
+      "sha256": "4eda8e83ca5b9d4a24481be1e9bcab70e9f04dc834416cb2ff19f51723cdf54d"
+    },
+    {
+      "path": "app/src/main/java/com/bellfamily/bastischool/ui/length/LengthOrderingScreen.kt",
+      "sha256": "cf19260ce39361eb3feec27be83f7460a070dcf47c874e7c113339dee43cd3b4"
+    },
+    {
+      "path": "app/src/main/java/com/bellfamily/bastischool/ui/length/LengthOrderingViewModel.kt",
+      "sha256": "077083e6ffc068aa6bcecb6e69f92f76968826dedd6b60b290522725c72e53f0"
+    },
+    {
+      "path": "app/src/main/java/com/bellfamily/bastischool/ui/length/LengthStripDrawing.kt",
+      "sha256": "de0e5ee55a252ebc30559d7ef8a13a60d94c860b61dbaa2def47c76862569c54"
+    },
+    {
+      "path": "app/src/test/java/com/bellfamily/bastischool/LengthOrderingNavigationTest.kt",
+      "sha256": "211baa8f620d50049fafb09e841ff66a2c3cb4167651243324f59de91a89f78a"
+    },
+    {
+      "path": "app/src/test/java/com/bellfamily/bastischool/learning/length/LengthOrderingTest.kt",
+      "sha256": "808ad10b66e13fe6ba7b7585db64cab2eab951c7a3837cfe2f6afcac4a4660f0"
+    },
+    {
+      "path": "app/src/androidTest/java/com/bellfamily/bastischool/HomeRouteTest.kt",
+      "sha256": "4c47dcf62b6449d00b5529ed9efba141d08e882e558e039707e94bdaeea1826d"
+    },
+    {
+      "path": "app/src/main/java/com/bellfamily/bastischool/MainActivity.kt",
+      "sha256": "663345295347ff388d20aaa359d6f116ff6af89367ed19624c0d6334e1a2ec8b"
+    },
+    {
+      "path": "app/src/main/java/com/bellfamily/bastischool/ShellNavigation.kt",
+      "sha256": "be38b5f9fd3f218878513aaec43f665aa6ac59f43b00343696df84137a57ccae"
+    },
+    {
+      "path": "app/src/main/java/com/bellfamily/bastischool/ui/home/HomeActivityArtwork.kt",
+      "sha256": "13015358e61ee5c4679dd64d68940494cf6dfa45ed27c1536697144f4f738f0e"
+    },
+    {
+      "path": "app/src/main/java/com/bellfamily/bastischool/ui/home/HomeCatalogue.kt",
+      "sha256": "d5dace3b3509d8b4472b990baca82d974278518d18fedcf70f57ed4a53402a40"
+    },
+    {
+      "path": "app/src/main/java/com/bellfamily/bastischool/ui/length/LengthComparisonScreen.kt",
+      "sha256": "b81e263e1203644486802aeb7224fe1e291a0f9677f7f9e276dea282a00bcb0e"
+    },
+    {
+      "path": "app/src/test/java/com/bellfamily/bastischool/HomeCardsTest.kt",
+      "sha256": "342fd6a1ea1fdb75ce5c80d701a055fb7cdf76098651f186dec5bcbb8ef8b56c"
+    },
+    {
+      "path": "app/src/test/java/com/bellfamily/bastischool/HomeIntegrationTest.kt",
+      "sha256": "8e99b16a9437e05791549eedcb9e1cf47be843414683eb887afca67f82ca564c"
+    },
+    {
+      "path": "app/src/testDebug/java/com/bellfamily/bastischool/ui/homeprototype/HomePrototypeModelTest.kt",
+      "sha256": "490bb2684fabfc23b01a25180a6701bdc0d404b2162dced2335abd141aa1ecb1"
+    }
+  ]
+}

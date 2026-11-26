@@ -453,3 +453,10 @@ Implementation and current verification: [Same Amount review](docs/same-amount-2
 Longer / Shorter / Länger / kürzer adds manipulation-first direct length comparison: translate A/B strips to a common start, compare B with A, Undo, explicit Check, bilingual audio, saved 5/10 rounds and shared progress/balloons. Home has 35 live entries: 32 native and three retained web; Maths has 19. Physical acceptance and broader measurement curriculum remain separate.
 
 Implementation and verification: [Length comparison review](docs/length-comparison-2026-11-23/README.md).
+
+
+## Order by Length (2026-11-25)
+
+Order by Length / Nach Länge ordnen adds a separate native three-strip ordering activity with fixed tray/places, reversible edits/Undo, explicit Check, bilingual audio, exact saved 5/10 rounds and shared progress/balloons. Home now has 36 live entries: 33 native and three retained web; Maths 20. The two-strip Longer / Shorter activity remains available. Physical acceptance and broader measurement curriculum remain separate.
+
+Implementation and local validation: [Order by Length review](docs/length-order-2026-11-25/README.md).

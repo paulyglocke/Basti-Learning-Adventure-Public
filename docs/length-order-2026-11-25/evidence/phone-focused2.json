@@ -1,0 +1,41 @@
+{
+  "source": "phone-focused2.txt",
+  "format": "Derived from direct AndroidJUnitRunner raw text; not Gradle XML",
+  "tests": 6,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "instrumentationCode": -1,
+  "cases": [
+    {
+      "class": "com.bellfamily.bastischool.ui.length.LengthOrderingRouteTest",
+      "test": "orderUndoRemoveRetryRestoreFiveAndTenAndKeepComparisonJournal",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.length.LengthOrderingOwnerTest",
+      "test": "offStaysLazyHiddenResultsStaySilentAndFreshOwnersRestoreExactWork",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.length.LengthOrderingLayoutTest",
+      "test": "sharedScaleFixedBoardKeyboardPlacementUndoAndChangedCheckRemainReachable[de=false-font=1-landscape=false]",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.length.LengthOrderingLayoutTest",
+      "test": "sharedScaleFixedBoardKeyboardPlacementUndoAndChangedCheckRemainReachable[de=true-font=1.5-landscape=false]",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.length.LengthOrderingLayoutTest",
+      "test": "sharedScaleFixedBoardKeyboardPlacementUndoAndChangedCheckRemainReachable[de=true-font=2-landscape=true]",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.bellfamily.bastischool.ui.length.LengthOrderingLayoutTest",
+      "test": "sharedScaleFixedBoardKeyboardPlacementUndoAndChangedCheckRemainReachable[de=false-font=1-landscape=true]",
+      "outcome": "passed"
+    }
+  ]
+}
