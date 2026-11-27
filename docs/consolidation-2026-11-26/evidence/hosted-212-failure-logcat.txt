@@ -1,0 +1,865 @@
+11-24 13:42:49.998  4168  4184 I TestRunner: started: bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(com.bellfamily.bastischool.ui.conservation.ConservationRouteTest)
+11-24 13:42:50.040  4168  4184 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@cbc4617]
+11-24 13:42:50.078  4331  4331 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@99c243f
+11-24 13:42:50.090   554   573 W InputManager-JNI: Input channel object '6b33277 com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+11-24 13:42:50.103  1133  1133 I TopTaskTracker: onTaskRemoved: taskId=9
+11-24 13:42:50.103  1133  1133 I TopTaskTracker: onTaskRemoved: taskId=9
+11-24 13:42:50.121  4168  4184 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+11-24 13:42:50.125   554   573 V GrammaticalInflectionUtils: AttributionSource: AttributionSource { uid = 10209, packageName = null, attributionTag = null, token = android.os.Binder@c0f982, deviceId = 0, next = null } does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+11-24 13:42:50.223  1133  1133 W SplitSelectStateCtor: Missing session instanceIds
+11-24 13:42:50.223  1133  1133 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+11-24 13:42:50.229   900   981 D SplashScreenView: Build android.window.SplashScreenView{8b43818 V.E...... ......ID 0,0-0,0}
+11-24 13:42:50.229   900   981 D SplashScreenView: Icon: view: null drawable: null size: 0
+11-24 13:42:50.229   900   981 D SplashScreenView: Branding: view: android.view.View{8636271 G.ED..... ......I. 0,0-0,0 #1020503 android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+11-24 13:42:50.234  1133  1133 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=10, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.bellfamily.bastischool/.MainActivity }
+11-24 13:42:50.237   428   428 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-24 13:42:50.247  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@f7a6f88 in: PRE_ON_CREATE
+11-24 13:42:50.247  4168  4168 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+11-24 13:42:50.302  4168  4168 I TextToSpeech: Sucessfully bound to com.google.android.tts
+11-24 13:42:50.306  4168  4197 I TextToSpeech: Connected to TTS engine
+11-24 13:42:50.308   485   534 W IPCThreadState: Sending oneway calls to frozen process.
+11-24 13:42:50.331  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@f7a6f88 in: CREATED
+11-24 13:42:50.331  4168  4168 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@f7a6f88
+11-24 13:42:50.331  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@f7a6f88 in: STARTED
+11-24 13:42:50.331  4168  4168 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@f7a6f88
+11-24 13:42:50.343  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@f7a6f88 in: RESUMED
+11-24 13:42:50.385  4168  4168 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@f7a6f88
+11-24 13:42:50.410  2201  2226 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:50.410  2201  2226 I GoogleTTSServiceImpl: currentLocale = en-US
+11-24 13:42:50.435  4168  4168 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+11-24 13:42:50.513  1410  1840 I BistoHotwordHelper: (REDACTED) getHotwordActive::active query: %s, watch: %s, devices connected: %s
+11-24 13:42:50.574  1133  1133 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-24 13:42:50.603  1133  1133 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+11-24 13:42:50.604  1133  1577 D EGL_emulation: app_time_stats: avg=124.69ms min=21.55ms max=276.41ms count=9
+11-24 13:42:50.625  1133  1577 D EGL_emulation: app_time_stats: avg=353.67ms min=72.80ms max=627.51ms count=3
+11-24 13:42:50.682  2201  2226 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:50.682  2201  2226 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+11-24 13:42:50.685  4168  4258 I TextToSpeech: Setting up the connection to TTS engine...
+11-24 13:42:50.760  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:50.827   554   576 W ziparchive: Unable to open '/data/app/~~LCbYlEkSFILlFKJtymN_xA==/com.bellfamily.bastischool-0855vMvqVoPVVQhzTfYaWQ==/base.dm': No such file or directory
+11-24 13:42:50.828   554   576 I ActivityTaskManager: Displayed com.bellfamily.bastischool/.MainActivity for user 0: +704ms
+11-24 13:42:50.830  4331  4336 I astischool.test: Compiler allocated 5174KB to compile void android.view.ViewRootImpl.performTraversals()
+11-24 13:42:50.846   900   980 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@2c0bdc4
+11-24 13:42:50.855  1479  1701 I WebViewFactory: Loading com.google.android.webview version 124.0.6367.219 (code 636771938)
+11-24 13:42:50.864   485   534 W IPCThreadState: Sending oneway calls to frozen process.
+11-24 13:42:50.867   554  1707 W InputManager-JNI: Input channel object 'fcb7174 Splash Screen com.bellfamily.bastischool (client)' was disposed without first being removed with the input manager!
+11-24 13:42:50.881  1133  1133 D BaseDepthController: setSurface:
+11-24 13:42:50.881  1133  1133 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+11-24 13:42:50.881  1133  1133 D BaseDepthController: 	mSurface: null
+11-24 13:42:50.881  1133  1133 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+11-24 13:42:50.881  1133  1133 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+11-24 13:42:50.881  1133  1133 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 31f9979659277bb965985aff1272c33e3c3c9e755b77166d20a2465454178f2c:4)
+11-24 13:42:50.881  1133  1133 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 31f9979659277bb965985aff1272c33e3c3c9e755b77166d20a2465454178f2c:1)
+11-24 13:42:50.881  1133  1133 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme 31f9979659277bb965985aff1272c33e3c3c9e755b77166d20a2465454178f2c:34)
+11-24 13:42:50.881  1133  1133 D StatsLog: LAUNCHER_ONSTOP
+11-24 13:42:50.888  1133  1812 D OneSearchSuggestProvider: Shut down the binder channel
+11-24 13:42:50.889  1133  1133 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+11-24 13:42:50.898  1479  1701 W ziparchive: Unable to open '/data/app/~~WtHYgfYjzXgHMhe3wDrHrA==/com.google.android.trichromelibrary_636771938-YKWLL6obmgktJ5KYD-vsBQ==/TrichromeLibrary.dm': No such file or directory
+11-24 13:42:50.898  1479  1701 W ziparchive: Unable to open '/data/app/~~WtHYgfYjzXgHMhe3wDrHrA==/com.google.android.trichromelibrary_636771938-YKWLL6obmgktJ5KYD-vsBQ==/TrichromeLibrary.dm': No such file or directory
+11-24 13:42:50.898  1479  1701 W earchbox:search: Entry not found
+11-24 13:42:50.930   356   356 I netd    : tetherGetStats() -> {[]} <0.43ms>
+11-24 13:42:50.933   554   676 I ImeTracker: com.bellfamily.bastischool:a2ecd23a: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+11-24 13:42:50.933   554   676 I ImeTracker: com.bellfamily.bastischool:a2ecd23a: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-24 13:42:50.932  1479  1701 D nativeloader: Configuring clns-8 for other apk /data/app/~~WtHYgfYjzXgHMhe3wDrHrA==/com.google.android.trichromelibrary_636771938-YKWLL6obmgktJ5KYD-vsBQ==/TrichromeLibrary.apk. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~GqSjn5Ndq-FT-PHmjBmDXQ==/com.google.android.webview-iGuXLNTGhN7RmYdr4Xvr5A==/lib/x86_64:/data/app/~~GqSjn5Ndq-FT-PHmjBmDXQ==/com.google.android.webview-iGuXLNTGhN7RmYdr4Xvr5A==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~WtHYgfYjzXgHMhe3wDrHrA==/com.google.android.trichromelibrary_636771938-YKWLL6obmgktJ5KYD-vsBQ==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+11-24 13:42:50.938  1479  1701 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+11-24 13:42:50.961  1363  1363 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3157
+11-24 13:42:50.963  1363  1363 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 0, locked = false
+11-24 13:42:50.964  1363  1363 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.bellfamily.bastischool, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+11-24 13:42:50.965  1363  1363 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2248 repeatCheckTimes = 1, locked = false
+11-24 13:42:50.966  1363  1363 I AndroidIME: InputBundleManager.loadActiveInputBundleId():450 loadActiveInputBundleId: und-Latn-x-password, password
+11-24 13:42:50.968  1479  1701 D nativeloader: Configuring clns-9 for other apk /data/app/~~GqSjn5Ndq-FT-PHmjBmDXQ==/com.google.android.webview-iGuXLNTGhN7RmYdr4Xvr5A==/WebViewGoogle.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~GqSjn5Ndq-FT-PHmjBmDXQ==/com.google.android.webview-iGuXLNTGhN7RmYdr4Xvr5A==/lib/x86_64:/data/app/~~GqSjn5Ndq-FT-PHmjBmDXQ==/com.google.android.webview-iGuXLNTGhN7RmYdr4Xvr5A==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~WtHYgfYjzXgHMhe3wDrHrA==/com.google.android.trichromelibrary_636771938-YKWLL6obmgktJ5KYD-vsBQ==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+11-24 13:42:50.980  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:51.034  4168  4168 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-24 13:42:51.034  4168  4168 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-24 13:42:51.065  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:51.082  1479  1701 I cr_WVCFactoryProvider: Loaded version=124.0.6367.219 minSdkVersion=29 isBundle=false multiprocess=true packageId=2
+11-24 13:42:51.089  1479  1701 D nativeloader: Load /data/app/~~WtHYgfYjzXgHMhe3wDrHrA==/com.google.android.trichromelibrary_636771938-YKWLL6obmgktJ5KYD-vsBQ==/TrichromeLibrary.apk!/lib/x86_64/libmonochrome_64.so using ns clns-9 from class loader (caller=/data/app/~~GqSjn5Ndq-FT-PHmjBmDXQ==/com.google.android.webview-iGuXLNTGhN7RmYdr4Xvr5A==/WebViewGoogle.apk): ok
+11-24 13:42:51.110  1479  1701 D nativeloader: Load /system/lib64/libwebviewchromium_plat_support.so using ns clns-9 from class loader (caller=/data/app/~~GqSjn5Ndq-FT-PHmjBmDXQ==/com.google.android.webview-iGuXLNTGhN7RmYdr4Xvr5A==/WebViewGoogle.apk): ok
+11-24 13:42:51.117  1479  4374 I chromium: [1124/134251.113957:INFO:variations_seed_loader.cc(66)] Failed to open file for reading.: No such file or directory (2)
+11-24 13:42:51.118  1479  4374 I cr_VariationsUtils: Failed reading seed file "/data/user/0/com.google.android.googlequicksearchbox/app_webview/variations_seed_new"
+11-24 13:42:51.118  1479  4374 I chromium: [1124/134251.118875:INFO:variations_seed_loader.cc(66)] Failed to open file for reading.: No such file or directory (2)
+11-24 13:42:51.118  1479  4374 I cr_VariationsUtils: Failed reading seed file "/data/user/0/com.google.android.googlequicksearchbox/app_webview/variations_seed"
+11-24 13:42:51.119  1479  4372 I cr_VariationsUtils: Requesting new seed from IVariationsSeedServer
+11-24 13:42:51.125   554  1727 V GrammaticalInflectionUtils: AttributionSource: AttributionSource { uid = 10151, packageName = null, attributionTag = null, token = android.os.Binder@c0f982, deviceId = 0, next = null } does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+11-24 13:42:51.132  1479  1479 I cr_LibraryLoader: Successfully loaded native library
+11-24 13:42:51.135  1479  1479 I cr_CachingUmaRecorder: Flushed 7 samples from 7 histograms, 0 samples were dropped.
+11-24 13:42:51.138  1479  1479 I cr_CombinedPProvider: #registerProvider() provider:WV.V7@89f6105 isPolicyCacheEnabled:false policyProvidersSize:0
+11-24 13:42:51.139  1479  1479 I cr_PolicyProvider: #setManagerAndSource() 0
+11-24 13:42:51.152   554  1727 V GrammaticalInflectionUtils: AttributionSource: AttributionSource { uid = 99000, packageName = null, attributionTag = null, token = android.os.Binder@c0f982, deviceId = 0, next = null } does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+11-24 13:42:51.161   360   360 D Zygote  : Forked child process 4377
+11-24 13:42:51.168  1000  1000 W webview_zygote: Waiting for a thread to finish unregistering
+11-24 13:42:51.169  1000  1000 I Zygote  : Entering forkRepeatedly native zygote loop
+11-24 13:42:51.176  1000  1000 D Zygote  : Forked child process 4378
+11-24 13:42:51.181  4378  4378 I ocessService0:0: Using CollectorTypeCMC GC.
+11-24 13:42:51.182  4378  4378 W ocessService0:0: Unexpected CPU variant for x86: x86_64.
+11-24 13:42:51.182  4378  4378 W ocessService0:0: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+11-24 13:42:51.183  1487  1487 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+11-24 13:42:51.183  1487  1487 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+11-24 13:42:51.185  4378  4378 E ocessService0:0: Not starting debugger since process cannot load the jdwp agent.
+11-24 13:42:51.190  4377  4377 I webview_service: Using CollectorTypeCMC GC.
+11-24 13:42:51.191  4377  4377 W webview_service: Unexpected CPU variant for x86: x86_64.
+11-24 13:42:51.191  4377  4377 W webview_service: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+11-24 13:42:51.192  4377  4377 E webview_service: Not starting debugger since process cannot load the jdwp agent.
+11-24 13:42:51.194  4377  4377 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+11-24 13:42:51.195  4378  4378 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+11-24 13:42:51.239  4378  4378 D CompatChangeReporter: Compat change id reported: 242716250; UID 99000; state: ENABLED
+11-24 13:42:51.245  4377  4377 D CompatChangeReporter: Compat change id reported: 242716250; UID 10151; state: ENABLED
+11-24 13:42:51.250  4168  4174 I ily.bastischool: Background concurrent mark compact GC freed 11MB AllocSpace bytes, 26(1136KB) LOS objects, 49% free, 15MB/31MB, paused 1.568ms,21.703ms total 203.814ms
+11-24 13:42:51.254  4378  4378 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+11-24 13:42:51.261  4377  4377 W ziparchive: Unable to open '/data/app/~~WtHYgfYjzXgHMhe3wDrHrA==/com.google.android.trichromelibrary_636771938-YKWLL6obmgktJ5KYD-vsBQ==/TrichromeLibrary.dm': No such file or directory
+11-24 13:42:51.261  4377  4377 W ziparchive: Unable to open '/data/app/~~WtHYgfYjzXgHMhe3wDrHrA==/com.google.android.trichromelibrary_636771938-YKWLL6obmgktJ5KYD-vsBQ==/TrichromeLibrary.dm': No such file or directory
+11-24 13:42:51.261  1479  1479 I cr_CombinedPProvider: #linkNativeInternal() 1
+11-24 13:42:51.262  1479  1479 I cr_AppResProvider: #getApplicationRestrictionsFromUserManager() Bundle[EMPTY_PARCEL]
+11-24 13:42:51.262  1479  1479 I cr_PolicyProvider: #notifySettingsAvailable() 0
+11-24 13:42:51.262  1479  1479 I cr_CombinedPProvider: #onSettingsAvailable() 0
+11-24 13:42:51.262  1479  1479 I cr_CombinedPProvider: #flushPolicies()
+11-24 13:42:51.270  4378  4378 I LoadedApk: No resource references to update in package com.google.android.trichromelibrary
+11-24 13:42:51.273  4378  4378 I cr_WebViewApkApp: Launched version=124.0.6367.219 minSdkVersion=29 isBundle=false processName=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0
+11-24 13:42:51.276  4377  4377 W webview_service: Entry not found
+11-24 13:42:51.280  4377  4377 D nativeloader: Configuring clns-7 for other apk /data/app/~~WtHYgfYjzXgHMhe3wDrHrA==/com.google.android.trichromelibrary_636771938-YKWLL6obmgktJ5KYD-vsBQ==/TrichromeLibrary.apk. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~GqSjn5Ndq-FT-PHmjBmDXQ==/com.google.android.webview-iGuXLNTGhN7RmYdr4Xvr5A==/lib/x86_64:/data/app/~~GqSjn5Ndq-FT-PHmjBmDXQ==/com.google.android.webview-iGuXLNTGhN7RmYdr4Xvr5A==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~WtHYgfYjzXgHMhe3wDrHrA==/com.google.android.trichromelibrary_636771938-YKWLL6obmgktJ5KYD-vsBQ==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.webview
+11-24 13:42:51.281  4377  4377 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+11-24 13:42:51.288  4378  4378 I cr_ChildProcessService: Creating new ChildProcessService pid=4378
+11-24 13:42:51.288  4377  4377 D nativeloader: Configuring clns-8 for other apk /data/app/~~GqSjn5Ndq-FT-PHmjBmDXQ==/com.google.android.webview-iGuXLNTGhN7RmYdr4Xvr5A==/WebViewGoogle.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~GqSjn5Ndq-FT-PHmjBmDXQ==/com.google.android.webview-iGuXLNTGhN7RmYdr4Xvr5A==/lib/x86_64:/data/app/~~GqSjn5Ndq-FT-PHmjBmDXQ==/com.google.android.webview-iGuXLNTGhN7RmYdr4Xvr5A==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~WtHYgfYjzXgHMhe3wDrHrA==/com.google.android.trichromelibrary_636771938-YKWLL6obmgktJ5KYD-vsBQ==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.webview
+11-24 13:42:51.315  4377  4377 V GraphicsEnvironment: Currently set values for:
+11-24 13:42:51.315  4377  4377 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+11-24 13:42:51.315  4377  4377 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+11-24 13:42:51.315  4377  4377 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+11-24 13:42:51.315  4377  4377 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-24 13:42:51.317  4377  4377 I LoadedApk: No resource references to update in package com.google.android.trichromelibrary
+11-24 13:42:51.318  4377  4377 I cr_WebViewApkApp: Launched version=124.0.6367.219 minSdkVersion=29 isBundle=false processName=com.google.android.webview:webview_service
+11-24 13:42:51.334  4168  4176 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/GoogleTTS/GoogleTTS.apk' with 1 weak references
+11-24 13:42:51.336  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:51.374  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:51.548  4377  4423 I cr_VariationsUtils: Scheduling seed download job
+11-24 13:42:51.557  4377  4377 D CompatChangeReporter: Compat change id reported: 253665015; UID 10151; state: ENABLED
+11-24 13:42:51.560   554   573 D ConnectivityService: requestNetwork for uid/pid:1000/554 asUid: 10151 activeRequest: null callbackRequest: 140 [NetworkRequest [ REQUEST id=141, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10151 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647 isUidTracked: false
+11-24 13:42:51.563   554   815 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=141, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10151 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+11-24 13:42:51.563   554   815 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=141, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10151 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+11-24 13:42:51.563   554   815 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=141, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10151 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+11-24 13:42:51.563   554   815 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=141, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10151 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+11-24 13:42:51.568   554   822 D ConnectivityService: NetReassign [141 : null → 101] [c 0] [a 0] [i 6]
+11-24 13:42:51.581   554   650 V GrammaticalInflectionUtils: AttributionSource: AttributionSource { uid = 10151, packageName = null, attributionTag = null, token = android.os.Binder@c0f982, deviceId = 0, next = null } does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+11-24 13:42:51.593   360   360 D Zygote  : Forked child process 4433
+11-24 13:42:51.600  1388  1649 W MediaProvider: isAppCloneUserPair for user 0: false
+11-24 13:42:51.602  4377  4408 I cr_VariationsUtils: Downloading new seed [fastMode=FALSE]
+11-24 13:42:51.610   356  4434 I resolv  : GetAddrInfoHandler::run: {101 101 101 983141 10151 0}
+11-24 13:42:51.611   356  4435 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+11-24 13:42:51.612   356  4436 I resolv  : res_nmkquery: (QUERY, IN, A)
+11-24 13:42:51.614  4433  4433 I iew:webview_apk: Using CollectorTypeCMC GC.
+11-24 13:42:51.615   356  4435 I resolv  : res_nsend: used send_dg 75 terrno: 0
+11-24 13:42:51.616   356  4436 I resolv  : res_nsend: used send_dg 63 terrno: 0
+11-24 13:42:51.616   356  4436 I resolv  : doQuery: rcode=0, ancount=1, return value=63
+11-24 13:42:51.616   356  4435 I resolv  : doQuery: rcode=0, ancount=1, return value=75
+11-24 13:42:51.617  4433  4433 W iew:webview_apk: Unexpected CPU variant for x86: x86_64.
+11-24 13:42:51.617  4433  4433 W iew:webview_apk: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, default
+11-24 13:42:51.617  4377  4408 D TrafficStats: tagSocket(86) with statsTag=0xffffffff, statsUid=-1
+11-24 13:42:51.619  4433  4433 E iew:webview_apk: Not starting debugger since process cannot load the jdwp agent.
+11-24 13:42:51.621   554   822 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+11-24 13:42:51.621   554   822 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+11-24 13:42:51.621   554   822 D InetDiagMessage: Destroyed live tcp sockets for uids={10199} in 1ms
+11-24 13:42:51.624  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:51.638  4433  4433 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+11-24 13:42:51.649   356  4447 I resolv  : GetAddrInfoHandler::run: {101 262245 101 983141 10144 0}
+11-24 13:42:51.649   356  4448 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+11-24 13:42:51.649   356  4449 I resolv  : res_nmkquery: (QUERY, IN, A)
+11-24 13:42:51.650   356  4449 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x7af3501241d0
+11-24 13:42:51.650   356  4449 I resolv  : doQuery: rcode=0, ancount=8, return value=160
+11-24 13:42:51.650   356  4448 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x7af4d0129b50
+11-24 13:42:51.650   356  4448 I resolv  : doQuery: rcode=0, ancount=8, return value=256
+11-24 13:42:51.666  4433  4433 D CompatChangeReporter: Compat change id reported: 242716250; UID 10151; state: ENABLED
+11-24 13:42:51.683  4433  4433 W ziparchive: Unable to open '/data/app/~~WtHYgfYjzXgHMhe3wDrHrA==/com.google.android.trichromelibrary_636771938-YKWLL6obmgktJ5KYD-vsBQ==/TrichromeLibrary.dm': No such file or directory
+11-24 13:42:51.683  4433  4433 W ziparchive: Unable to open '/data/app/~~WtHYgfYjzXgHMhe3wDrHrA==/com.google.android.trichromelibrary_636771938-YKWLL6obmgktJ5KYD-vsBQ==/TrichromeLibrary.dm': No such file or directory
+11-24 13:42:51.684  4433  4433 W iew:webview_apk: Entry not found
+11-24 13:42:51.685  4433  4433 D nativeloader: Configuring clns-7 for other apk /data/app/~~WtHYgfYjzXgHMhe3wDrHrA==/com.google.android.trichromelibrary_636771938-YKWLL6obmgktJ5KYD-vsBQ==/TrichromeLibrary.apk. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~GqSjn5Ndq-FT-PHmjBmDXQ==/com.google.android.webview-iGuXLNTGhN7RmYdr4Xvr5A==/lib/x86_64:/data/app/~~GqSjn5Ndq-FT-PHmjBmDXQ==/com.google.android.webview-iGuXLNTGhN7RmYdr4Xvr5A==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~WtHYgfYjzXgHMhe3wDrHrA==/com.google.android.trichromelibrary_636771938-YKWLL6obmgktJ5KYD-vsBQ==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.webview
+11-24 13:42:51.685  4433  4433 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+11-24 13:42:51.689  4433  4433 D nativeloader: Configuring clns-8 for other apk /data/app/~~GqSjn5Ndq-FT-PHmjBmDXQ==/com.google.android.webview-iGuXLNTGhN7RmYdr4Xvr5A==/WebViewGoogle.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~GqSjn5Ndq-FT-PHmjBmDXQ==/com.google.android.webview-iGuXLNTGhN7RmYdr4Xvr5A==/lib/x86_64:/data/app/~~GqSjn5Ndq-FT-PHmjBmDXQ==/com.google.android.webview-iGuXLNTGhN7RmYdr4Xvr5A==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~WtHYgfYjzXgHMhe3wDrHrA==/com.google.android.trichromelibrary_636771938-YKWLL6obmgktJ5KYD-vsBQ==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.webview
+11-24 13:42:51.729  4377  4408 I cr_VariationsSeedFetch: Fetched first run seed in 125 ms
+11-24 13:42:51.724  4433  4433 V GraphicsEnvironment: Currently set values for:
+11-24 13:42:51.730  4433  4433 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+11-24 13:42:51.730  4433  4433 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+11-24 13:42:51.730  4433  4433 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+11-24 13:42:51.730  4433  4433 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-24 13:42:51.762  4433  4433 I LoadedApk: No resource references to update in package com.google.android.trichromelibrary
+11-24 13:42:51.763  4433  4433 I cr_WebViewApkApp: Launched version=124.0.6367.219 minSdkVersion=29 isBundle=false processName=com.google.android.webview:webview_apk
+11-24 13:42:51.825  1217  3985 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService started execution. cause:9 exec_start_elapsed_seconds: 214 [CONTEXT service_id=218 ]
+11-24 13:42:51.826  4433  4433 D nativeloader: Load /data/app/~~WtHYgfYjzXgHMhe3wDrHrA==/com.google.android.trichromelibrary_636771938-YKWLL6obmgktJ5KYD-vsBQ==/TrichromeLibrary.apk!/lib/x86_64/libmonochrome_64.so using ns clns-8 from class loader (caller=/data/app/~~GqSjn5Ndq-FT-PHmjBmDXQ==/com.google.android.webview-iGuXLNTGhN7RmYdr4Xvr5A==/WebViewGoogle.apk): ok
+11-24 13:42:51.836  4433  4433 I cr_LibraryLoader: Successfully loaded native library
+11-24 13:42:51.867  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:51.885  1217  4243 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService finished executing. cause:9 result: 1 elapsed_millis: 130 uptime_millis: 130 exec_start_elapsed_seconds: 214 [CONTEXT service_id=218 ]
+11-24 13:42:51.893   356  4459 I resolv  : GetAddrInfoHandler::run: {101 101 101 983141 10151 0}
+11-24 13:42:51.895   356  4460 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+11-24 13:42:51.895   356  4461 I resolv  : res_nmkquery: (QUERY, IN, A)
+11-24 13:42:51.900   356  4460 I resolv  : res_nsend: used send_dg 67 terrno: 0
+11-24 13:42:51.900   356  4460 I resolv  : doQuery: rcode=0, ancount=1, return value=67
+11-24 13:42:51.904   356  4461 I resolv  : res_nsend: used send_dg 55 terrno: 0
+11-24 13:42:51.904   356  4461 I resolv  : doQuery: rcode=0, ancount=1, return value=55
+11-24 13:42:51.905  4433  4454 D TrafficStats: tagSocket(101) with statsTag=0xffffffff, statsUid=-1
+11-24 13:42:51.959  1133  2157 I IPCThreadState: oneway function results for code 2 on binder at 0x71d0b32904d0 will be dropped but finished with status UNKNOWN_TRANSACTION
+11-24 13:42:51.967  4433  4454 W cr_AWNetworkFetcherTask: IOException during downloadToFile.
+11-24 13:42:51.967  4433  4454 W cr_AWNetworkFetcherTask: java.io.IOException: Cleartext HTTP traffic to edgedl.me.gvt1.com not permitted
+11-24 13:42:51.967  4433  4454 W cr_AWNetworkFetcherTask: 	at com.android.okhttp.HttpHandler$CleartextURLFilter.checkURLPermitted(HttpHandler.java:127)
+11-24 13:42:51.967  4433  4454 W cr_AWNetworkFetcherTask: 	at com.android.okhttp.internal.huc.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:462)
+11-24 13:42:51.967  4433  4454 W cr_AWNetworkFetcherTask: 	at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:411)
+11-24 13:42:51.967  4433  4454 W cr_AWNetworkFetcherTask: 	at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponseCode(HttpURLConnectionImpl.java:542)
+11-24 13:42:51.967  4433  4454 W cr_AWNetworkFetcherTask: 	at org.chromium.android_webview.nonembedded.NetworkFetcherTask.download(chromium-TrichromeWebViewGoogle6432.apk-stable-636771938:56)
+11-24 13:42:51.970   356  4466 I resolv  : GetAddrInfoHandler::run: {101 101 101 983141 10151 0}
+11-24 13:42:51.971   356  4467 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+11-24 13:42:51.971   356  4468 I resolv  : res_nmkquery: (QUERY, IN, A)
+11-24 13:42:51.995   356  4468 I resolv  : res_nsend: used send_dg 52 terrno: 0
+11-24 13:42:51.995   356  4468 I resolv  : doQuery: rcode=0, ancount=1, return value=52
+11-24 13:42:51.995   356  4467 I resolv  : res_nsend: used send_dg 64 terrno: 0
+11-24 13:42:51.995   356  4467 I resolv  : doQuery: rcode=0, ancount=1, return value=64
+11-24 13:42:51.998  4433  4454 D TrafficStats: tagSocket(104) with statsTag=0xffffffff, statsUid=-1
+11-24 13:42:52.001   356   356 I netd    : tetherGetStats() -> {[]} <0.76ms>
+11-24 13:42:52.003  1133  1133 D SearchTargetUtil: query= size=15
+11-24 13:42:52.004  1133  1133 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=ssi payments two deposits december 2026,input_query=android.app.search.Query@cd1d5b9,group_id=web212287,response_id=eddbd3fa-0c95-4767-960b-45dab85961c1,support_query_builder=false,} searchAction=ssi payments two deposits december 2026 searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=true,suggestion_action_rpc=2,}ParentID: null targetID: 88b45e8c-78d9-4715-838a-3cfa092781aa
+11-24 13:42:52.009  1133  1133 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=sophia eris go fund me,input_query=android.app.search.Query@cd1d5b9,group_id=web212287,response_id=eddbd3fa-0c95-4767-960b-45dab85961c1,support_query_builder=false,} searchAction=sophia eris go fund me searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=true,suggestion_action_rpc=2,}ParentID: null targetID: 0498fb37-4d9d-4e95-bf98-866f2548fc29
+11-24 13:42:52.009  1133  1133 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=protect our neighbors act green card,input_query=android.app.search.Query@cd1d5b9,group_id=web212287,response_id=eddbd3fa-0c95-4767-960b-45dab85961c1,support_query_builder=false,} searchAction=protect our neighbors act green card searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=true,suggestion_action_rpc=2,}ParentID: null targetID: 27c68957-a530-4537-9894-3f999a074914
+11-24 13:42:52.009  1133  1133 D SearchTargetUtil: layoutType=extra_tall_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{bitmap_url=data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHwAfAMBIgACEQEDEQH/xAAcAAACAwEBAQEAAAAAAAAAAAAEBQMGBwIBAAj/xAA4EAACAQMDAQYEAwgCAwEAAAABAgMABBEFEiExBhMiQVFhFDJxkVKBoRUjQmKxwdHhB3IkU/AW/8QAGQEAAwEBAQAAAAAAAAAAAAAAAQMEAAIF/8QAIREAAgMAAwACAwEAAAAAAAAAAAECAxEEEiETMSJBYTL/2gAMAwEAAhEDEQA/AMtlnml33JuFDBiMHg4z6CnFhIs2kTaLPKqETCdyo8TgYOaYwyR2mmmTUIhHIxZmaeAklx5dOfLAFJtItrptQjuXt3WCRSg3DqB0GKoFjEJGZmnSR3mMLR5kAO7jAz9hSvSL9bGFzcgCBnKyMnLK+OhH3p86Tpy9qwGccx0nEV7De3RsrdJsyhjA6BgQV4OKxtIrltICollOJd6gcR+IH8+lduun3t5Ml1qHcOr9CnHAwRuJ/pUt9ezOVSXRRE4HiBjA+2BXWmTGzhjWXTmvIpIwyyJDuKjzB9xRDoKn7FhuxI4uJYomBfCjB9M+1d3t5aTXjzWKqEYDMYQgLx5VBcSr8TK0WnrHGwwyBWUNgnnn615BGY/DLA0Y6gFetABKswJ6Uy0+HRriDUpdSleKaK1zalQcGTPQ4/vS9ZIfwiob6QCMLEdne+F8fxD0/U0DM93seqgV5JHvTqoXOWycZHpUhZFUL1wOTUU0i92Qi5JomBrCOSa5Hw7LCxc7Hk5C/pTPW7S6REkvNYjuQBhQBx96Vx90bcqwctnI20xtr3Q4bYRnS+8nA5eQFt5x7HiujgC0+CCVt1xqENpjoXUk5qeS/uY3ZYdckZc9RkA0M01uWJ+G2qT4QD8op7bz9nXiUtZSZ6HKyH+nFExL2sf4mWGCS4hjTfmSR5G3L7Yx5+tB2mmLd3q/s7UUWOEK2SxY7s+lLJ5orwb37wz44JYnP3Jp3p47Nm3EzyXFvcxgZUXJUu3txiuTom1e81Ozt1g+Lt5WPhMyzFWx/MpyB96i7LwXG+a4E8DrwpLMWb1/+5pbeOmpPLL3sspUkI7PkkeWfKnekW+lxWwlhuJkuVjDSIsoBHHJ25waBmB9ppJ5J1ijdNg8W5ZFVs+mQc/lR2gw6tDpiOtzF3TZZInJBOfPcOB9Kr18be7nuJY5XYqxILHO4e/oafdmbiz+G7prqZbgLzHIwCEZ42gj6efnQbwKWl40nQdyi6u5907ADBBfH0zRVxoyPGYEHefySqGz96mRbtGhkMiwWgC7y0mPLyFSWdvH8ZJPFdtIhOQNuMfn51FK2SZ6EKI9TNe0elWdldK9oGVHJDqRja3t7UivkiiFvKRuVZRuX1HmK0ztrpttNo9/eSIRIgDoc4CtkdPc1mMqK0WHyVVgTj086prl2Wkt0OjwlvPhZriSazUx28rbo0P8Ax0qE28aYYOT6g9KK1S1SynKQiRYJFWW27zq8Zzzn6igkfDbg3I8qYJB4nYSF0AGSdvFPdM1260+DuJ7BmHVZEjGQfcHrSV4ZNxnCqiKem7nJPUCvt79e8fP/Y10gE97PNeXXxYt0TvvlVQMf6poO109mBAdOg8Ix8/+BS/S4hKJ5HO3DYLetfXFpDLJu3t+YzRAWKyWyi0gTdxCJZnJ8cZyo8sH0pZY3V7BMLi3tvjA7MhjWIYXBGPKjdWgvJb+F5TCQz4UC5BYAklQ2BgDnihNTvbzRL1BEpikkiy4/EdxOTg4PBFcJYxjaaGbLbXt073+m3FmscRPdyQKqs2R6dT9aD017S31KSA27yBivdHut4GeDxg4GcdaJtry91PSYZZYy8TJhz3gQK44yvmSRglenFA3t1qVlpXeuYo1eWIRbJNwZMNnJ9SeT+VZh/RN2ptNMcM+nhhcq+JMIAreXAFBaZfQ280ZktYyskEeCEB2nJBP6CpLoQLe747y2MvhLYhYHHrnGDRmh6fHcWrJdF2dXEMPdpuD/wAXB/OuWwxWF30rW4dWsylo+2SHwyxyJk48jzRKTMAC0pLem7NAaL2bvNK7691IlJ7hSio3Vh1Bx5UUsIEm45NQW+M9GqWxFnbuKSfs5HcLuxFcjeoPBUg8kexrPhj61sQCvbPG8avER4kcZBouTsH2bm01bie2ltm7re3dv6/Wn8efmE3Jjr0xm51SfUdNs7W7KlrMEREIFIj/AA56nmgdox8vNaQ//H7WlzJcafqFnNDIhVUuBhlz9+aRX3YrVrKNpSsc0S9Xhff+nWqO6Jfjkiri2WTu2ac92WAcKnKj196f3K6Fbp8JaWPxSFcrdynbJ9f9UnkiWFmJyWH81dJq5gglha1jds5SST+Djnjzrmab+juLS+wWBYrSRnDZUgleeG9vrRi3MBUHuF5GelLoZItpjZCwfnwrnn19qeRJKI1AtJkGBhcLnp505CWJWsEs7K5W+K968cbwBXLAsTznHnj1qfTbaMiOeUzSBEOArDPzEYGeOgph2wtdPsraFbPALzY4XqMZ5x18qEtLeG7tmtFux3KIC8wRlBOemCM/nXC0ZmDJu0Oi2A7q001nuUG0XE4392emdvTOOuBQFg9ve3NxFbWsjl2EpCgBUweoU9KWavC76hNOsaIpPhSPoF8v0qy/8eWBlv2aZUKOgZSHBIIPII6itLxemi9eIsuk9kJ7qcajq1x3KyJsWMKC5Xy46Crn2Z0ew0u9jhsoj4/EzyHceB5elAzXThy2aO7NSPLqJcEnYhJz9v71FG/tLCyVSjHRn2nhaRLSUt4QzK5PuBikHwTlvDgg+dW6SKK4R4ZhvRvmXPT/ABQKaMyHC3IKeRK84ru2pyeo4ptUVjFdjYCe6jtg3BOZD+FR1p3rLE6dOYxhQQSB+EGprW0is42WLLM3zsepqTEciSROmFdSp56g13XX0icWW9pFP+IHliiLa9MZypwaVX8MtjPJHJkd2fuPWo7e6jmD91IGaMgOvmvGeaibkmWx6tCrt12a+MhOpaNbjvs5uIVHzD1UVnsWlTTRPKymCMHGZgV3H2HWtjgnKdGrjVbGx1qIC6jVblB+6uAOV+vqKorv8xibOOn6jJ9Nt/g8zLL+9EEbyRsMABm+U/amq6zBGzgQMcuSSRnJ9snpS3WNF1HR9VaLUVcxysC9xEMq6Z6j6elC6pcN8YyWd/cXMEYCo7rg49Kui9RDOOPB0+oLI8wnjldWIURz2m1YwSMsx8zxgdOtG3U1lqOmvNYWdvbXcc0kRVFAVwGIGc+1KZ9W1aCxsNU+LZmuHkhZHjyH24OSfP8A1QDRXds7XV3B3IlnYoM9WxyR7VvoH2HXGlXEjlgqCM87UbJHFaJ2c0m20TRosRL8bcRh5pCBlc8hR6VTOzUd5q12qbFNsjKZWB2kDP6/SrrqGpRvdSDcF5OAal5E2lhVxa/dOpH3sVHnVi7NWsQt7lJfEzkAjdghfy96qbzNEUMaGV2GQB5D1ouC/ubHU7CZv4p1glH8rjj9aTRU1+Qy+xf5RfgyIMKAo9BXDTYqJ1lBxxUZjkPlVpGTmbnqR9K4BRXZ1B3N1OOtRd056kj6KakjiPnn8xW02CztDpz6nboIiFkT5ieNy+lY9HfyRT3F3ZTotysjKeeGx5EelbnqYMel3bxjxiFtv1IxWRdo/wBmRX6dxMkWYxmOW32FG9Oev1rj40/Tr5WsQdofaC31VChxBdIP
+11-24 13:42:52.009  1133  1133 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=triple star system,input_query=android.app.search.Query@cd1d5b9,group_id=web212287,response_id=eddbd3fa-0c95-4767-960b-45dab85961c1,support_query_builder=false,} searchAction=triple star system searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=true,suggestion_action_rpc=2,}ParentID: null targetID: 0137756e-2c48-4f48-818d-c055afad56ba
+11-24 13:42:52.009  1133  1133 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=black friday sales,input_query=android.app.search.Query@cd1d5b9,group_id=web212287,response_id=eddbd3fa-0c95-4767-960b-45dab85961c1,support_query_builder=false,} searchAction=black friday sales searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=true,suggestion_action_rpc=2,}ParentID: null targetID: 2c28fbbe-d9d9-4016-8ee2-c9f7d7dc5ce4
+11-24 13:42:52.009  1133  1133 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=nyt strands hints,input_query=android.app.search.Query@cd1d5b9,group_id=web212287,response_id=eddbd3fa-0c95-4767-960b-45dab85961c1,support_query_builder=false,} searchAction=nyt strands hints searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=true,suggestion_action_rpc=2,}ParentID: null targetID: 15d1b850-982f-4e20-819d-70f3aac3cff3
+11-24 13:42:52.009  1133  1133 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=mathematics riemann hypothesis,input_query=android.app.search.Query@cd1d5b9,group_id=web212287,response_id=eddbd3fa-0c95-4767-960b-45dab85961c1,support_query_builder=false,} searchAction=mathematics riemann hypothesis searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=true,suggestion_action_rpc=2,}ParentID: null targetID: 0b851679-afad-42ce-9bca-0110273190af
+11-24 13:42:52.009  1133  1133 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=appeals court pregnancy accommodations,input_query=android.app.search.Query@cd1d5b9,group_id=web212287,response_id=eddbd3fa-0c95-4767-960b-45dab85961c1,support_query_builder=false,} searchAction=appeals court pregnancy accommodations searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=true,suggestion_action_rpc=2,}ParentID: null targetID: 8368502a-0c65-4190-a525-b47115035b8e
+11-24 13:42:52.009  1133  1133 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=tarik skubal mets contract,input_query=android.app.search.Query@cd1d5b9,group_id=web212287,response_id=eddbd3fa-0c95-4767-960b-45dab85961c1,support_query_builder=false,} searchAction=tarik skubal mets contract searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=true,suggestion_action_rpc=2,}ParentID: null targetID: 285b6202-3ba0-4e9d-a3de-303ecd2e4558
+11-24 13:42:52.009  1133  1133 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=november beaver moon supermoon,input_query=android.app.search.Query@cd1d5b9,group_id=web212287,response_id=eddbd3fa-0c95-4767-960b-45dab85961c1,support_query_builder=false,} searchAction=november beaver moon supermoon searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=true,suggestion_action_rpc=2,}ParentID: null targetID: 5c525467-84ab-4e78-ad42-c1f71602ef73
+11-24 13:42:52.009  1133  1133 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=pope leo xiv new saint decree,input_query=android.app.search.Query@cd1d5b9,group_id=web212287,response_id=eddbd3fa-0c95-4767-960b-45dab85961c1,support_query_builder=false,} searchAction=pope leo xiv new saint decree searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=true,suggestion_action_rpc=2,}ParentID: null targetID: e842fe6f-6d4e-4214-b7fd-59074c399148
+11-24 13:42:52.009  1133  1133 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=1970 plymouth road runner pilot car,input_query=android.app.search.Query@cd1d5b9,group_id=web212287,response_id=eddbd3fa-0c95-4767-960b-45dab85961c1,support_query_builder=false,} searchAction=1970 plymouth road runner pilot car searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=true,suggestion_action_rpc=2,}ParentID: null targetID: e9f687c8-1672-4f03-b768-51025c6e4ae6
+11-24 13:42:52.009  1133  1133 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=ps5 pro console,input_query=android.app.search.Query@cd1d5b9,group_id=web212287,response_id=eddbd3fa-0c95-4767-960b-45dab85961c1,support_query_builder=false,} searchAction=ps5 pro console searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=true,suggestion_action_rpc=2,}ParentID: null targetID: f92bd45c-6ecf-43f7-97f1-b4dc5e99214a
+11-24 13:42:52.009  1133  1133 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox extras=Bundle{suggestion_type=33,suggest_truncate_start=false,is_answer=false,is_entity=false,is_personal=false,suggest_raw_text=iowa army lead azide detonation,input_query=android.app.search.Query@cd1d5b9,group_id=web212287,response_id=eddbd3fa-0c95-4767-960b-45dab85961c1,support_query_builder=false,} searchAction=iowa army lead azide detonation searchActionExtras=Bundle{learn_more_url=https://support.google.com/websearch/answer/106230?hl=106230,suggestion_action_text=Report this,should_start_for_result=true,allow_pinning=true,skip_logging_in_target_handler=true,suggestion_action_rpc=2,}ParentID: null targetID: 8a7961ac-4f26-41e3-80d4-04a679562df7
+11-24 13:42:52.039  1067  1067 D TelephonyManager: requestModemActivityInfo: Sending result to app: ModemActivityInfo{ mTimestamp=214818 mSleepTimeMs=0 mIdleTimeMs=214798 mActivityStatsTechSpecificInfo=[{mRat=UNKNOWN,mFrequencyRange=UNKNOWN,mTxTimeMs[]=[0, 0, 0, 0, 0],mRxTimeMs=0}]}
+11-24 13:42:52.060  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:52.064  4168  4187 D EGL_emulation: app_time_stats: avg=64.91ms min=23.16ms max=212.75ms count=18
+11-24 13:42:52.088  1133  1159 W System  : A resource failed to call release.
+11-24 13:42:52.089  1133  1159 W s.nexuslauncher: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~LCbYlEkSFILlFKJtymN_xA==/com.bellfamily.bastischool-0855vMvqVoPVVQhzTfYaWQ==/base.apk' with 1 weak references
+11-24 13:42:52.089  1133  1159 W System  : A resource failed to call release.
+11-24 13:42:52.089  1133  1159 W System  : A resource failed to call release.
+11-24 13:42:52.089  1133  1159 W System  : A resource failed to call release.
+11-24 13:42:52.102  4168  4173 I ily.bastischool: Compiler allocated 4529KB to compile void com.bellfamily.bastischool.ui.conservation.ConservationScreenKt$ConservationContent$work$1.invoke(androidx.compose.ui.Modifier, androidx.compose.runtime.Composer, int)
+11-24 13:42:52.167  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:52.220  4168  4168 I ActivityThread: Schedule relaunch activity: com.bellfamily.bastischool.MainActivity
+11-24 13:42:52.224  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@f7a6f88 in: PAUSED
+11-24 13:42:52.228  4168  4168 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@f7a6f88
+11-24 13:42:52.229  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@f7a6f88 in: STOPPED
+11-24 13:42:52.229  4168  4168 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@f7a6f88
+11-24 13:42:52.238  1479  1495 W earchbox:search: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~GqSjn5Ndq-FT-PHmjBmDXQ==/com.google.android.webview-iGuXLNTGhN7RmYdr4Xvr5A==/WebViewGoogle.apk' with 2 weak references
+11-24 13:42:52.246   554   554 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+11-24 13:42:52.246  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@f7a6f88 in: DESTROYED
+11-24 13:42:52.246  4168  4168 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-24 13:42:52.248  4168  4179 I TextToSpeech: Disconnected from TTS engine
+11-24 13:42:52.251  4168  4168 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@9488b24
+11-24 13:42:52.252  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@fa4d3ad in: PRE_ON_CREATE
+11-24 13:42:52.252  4168  4168 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was DESTROYED
+11-24 13:42:52.257  4168  4168 I TextToSpeech: Sucessfully bound to com.google.android.tts
+11-24 13:42:52.259  4168  4179 I TextToSpeech: Connected to TTS engine
+11-24 13:42:52.260  4168  4168 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+11-24 13:42:52.262  2201  2226 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:52.262  2201  2226 I GoogleTTSServiceImpl: currentLocale = en-US
+11-24 13:42:52.263  2201  2226 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:52.263  2201  2226 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+11-24 13:42:52.263  4168  4258 I TextToSpeech: Setting up the connection to TTS engine...
+11-24 13:42:52.265  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@fa4d3ad in: CREATED
+11-24 13:42:52.265  4168  4168 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@fa4d3ad
+11-24 13:42:52.265  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@fa4d3ad in: STARTED
+11-24 13:42:52.266  4168  4168 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@fa4d3ad
+11-24 13:42:52.266  4168  4168 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-24 13:42:52.266  4168  4168 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-24 13:42:52.268  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@fa4d3ad in: RESUMED
+11-24 13:42:52.268  4168  4168 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@fa4d3ad
+11-24 13:42:52.273  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:52.276  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:52.421  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:52.469  4168  4168 I ActivityThread: Schedule relaunch activity: com.bellfamily.bastischool.MainActivity
+11-24 13:42:52.495  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@fa4d3ad in: PAUSED
+11-24 13:42:52.495  4168  4168 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@fa4d3ad
+11-24 13:42:52.496  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@fa4d3ad in: STOPPED
+11-24 13:42:52.496  4168  4168 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@fa4d3ad
+11-24 13:42:52.502   554   554 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+11-24 13:42:52.504  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@fa4d3ad in: DESTROYED
+11-24 13:42:52.504  4168  4168 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-24 13:42:52.506  4168  4180 I TextToSpeech: Disconnected from TTS engine
+11-24 13:42:52.507  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@fb7f5fe in: PRE_ON_CREATE
+11-24 13:42:52.508  4168  4168 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was DESTROYED
+11-24 13:42:52.510  4168  4168 I TextToSpeech: Sucessfully bound to com.google.android.tts
+11-24 13:42:52.512  4168  4180 I TextToSpeech: Connected to TTS engine
+11-24 13:42:52.513  4168  4168 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+11-24 13:42:52.515  2201  2226 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:52.516  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@fb7f5fe in: CREATED
+11-24 13:42:52.516  4168  4168 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@fb7f5fe
+11-24 13:42:52.517  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@fb7f5fe in: STARTED
+11-24 13:42:52.517  4168  4168 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@fb7f5fe
+11-24 13:42:52.517  4168  4168 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-24 13:42:52.517  4168  4168 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-24 13:42:52.517  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@fb7f5fe in: RESUMED
+11-24 13:42:52.517  4168  4168 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@fb7f5fe
+11-24 13:42:52.521  2201  2226 I GoogleTTSServiceImpl: currentLocale = en-US
+11-24 13:42:52.521  2201  2226 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:52.522  2201  2226 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+11-24 13:42:52.522  4168  4258 I TextToSpeech: Setting up the connection to TTS engine...
+11-24 13:42:52.522  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:52.525  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:52.711  1388  1649 W MediaProvider: isAppCloneUserPair for user 0: false
+11-24 13:42:52.738  1217  4141 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService started execution. cause:9 exec_start_elapsed_seconds: 215 [CONTEXT service_id=218 ]
+11-24 13:42:52.743  1217  3985 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService finished executing. cause:9 result: 1 elapsed_millis: 15 uptime_millis: 15 exec_start_elapsed_seconds: 215 [CONTEXT service_id=218 ]
+11-24 13:42:52.797  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:53.088  4168  4187 D EGL_emulation: app_time_stats: avg=42.87ms min=13.78ms max=191.47ms count=22
+11-24 13:42:53.163  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:53.180  4168  4168 I ActivityThread: Schedule relaunch activity: com.bellfamily.bastischool.MainActivity
+11-24 13:42:53.181  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@fb7f5fe in: PAUSED
+11-24 13:42:53.182  4168  4168 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@fb7f5fe
+11-24 13:42:53.182  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@fb7f5fe in: STOPPED
+11-24 13:42:53.182  4168  4168 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@fb7f5fe
+11-24 13:42:53.186  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@fb7f5fe in: DESTROYED
+11-24 13:42:53.186  4168  4168 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-24 13:42:53.189  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@5ffc7c4 in: PRE_ON_CREATE
+11-24 13:42:53.189  4168  4168 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was DESTROYED
+11-24 13:42:53.191  4168  4168 I TextToSpeech: Sucessfully bound to com.google.android.tts
+11-24 13:42:53.191   554   554 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+11-24 13:42:53.192  4168  4211 I TextToSpeech: Connected to TTS engine
+11-24 13:42:53.194  2201  3783 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:53.194  2201  3783 I GoogleTTSServiceImpl: currentLocale = en-US
+11-24 13:42:53.194  2201  3783 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:53.195  2201  3783 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+11-24 13:42:53.195  4168  4258 I TextToSpeech: Setting up the connection to TTS engine...
+11-24 13:42:53.203  4168  4168 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+11-24 13:42:53.205  4168  4180 I TextToSpeech: Disconnected from TTS engine
+11-24 13:42:53.209  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@5ffc7c4 in: CREATED
+11-24 13:42:53.209  4168  4168 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@5ffc7c4
+11-24 13:42:53.209  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@5ffc7c4 in: STARTED
+11-24 13:42:53.209  4168  4168 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@5ffc7c4
+11-24 13:42:53.209  4168  4168 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-24 13:42:53.209  4168  4168 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-24 13:42:53.210  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@5ffc7c4 in: RESUMED
+11-24 13:42:53.211  4168  4168 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@5ffc7c4
+11-24 13:42:53.214  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:53.218  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:53.336  4168  4176 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/GoogleTTS/GoogleTTS.apk' with 1 weak references
+11-24 13:42:53.361  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:53.481  4168  4168 I ActivityThread: Schedule relaunch activity: com.bellfamily.bastischool.MainActivity
+11-24 13:42:53.482  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@5ffc7c4 in: PAUSED
+11-24 13:42:53.483  4168  4168 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@5ffc7c4
+11-24 13:42:53.483  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@5ffc7c4 in: STOPPED
+11-24 13:42:53.483  4168  4168 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@5ffc7c4
+11-24 13:42:53.489  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@5ffc7c4 in: DESTROYED
+11-24 13:42:53.490  4168  4168 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-24 13:42:53.490   554   554 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+11-24 13:42:53.497  4168  4211 I TextToSpeech: Disconnected from TTS engine
+11-24 13:42:53.506  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@7df281 in: PRE_ON_CREATE
+11-24 13:42:53.506  4168  4168 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was DESTROYED
+11-24 13:42:53.513  4168  4168 I TextToSpeech: Sucessfully bound to com.google.android.tts
+11-24 13:42:53.516  4168  4211 I TextToSpeech: Connected to TTS engine
+11-24 13:42:53.517  4168  4168 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+11-24 13:42:53.520  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@7df281 in: CREATED
+11-24 13:42:53.523  4168  4168 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@7df281
+11-24 13:42:53.523  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@7df281 in: STARTED
+11-24 13:42:53.523  4168  4168 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@7df281
+11-24 13:42:53.524  4168  4168 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-24 13:42:53.524  4168  4168 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-24 13:42:53.524  2201  3783 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:53.524  2201  3783 I GoogleTTSServiceImpl: currentLocale = en-US
+11-24 13:42:53.524  2201  3783 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:53.524  2201  3783 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+11-24 13:42:53.525  4168  4258 I TextToSpeech: Setting up the connection to TTS engine...
+11-24 13:42:53.535  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@7df281 in: RESUMED
+11-24 13:42:53.535  4168  4168 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@7df281
+11-24 13:42:53.539  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:53.542  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:53.724  1388  1650 W MediaProvider: isAppCloneUserPair for user 0: false
+11-24 13:42:53.742  1217  4243 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService started execution. cause:9 exec_start_elapsed_seconds: 216 [CONTEXT service_id=218 ]
+11-24 13:42:53.748  1217  4478 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService finished executing. cause:9 result: 1 elapsed_millis: 8 uptime_millis: 8 exec_start_elapsed_seconds: 216 [CONTEXT service_id=218 ]
+11-24 13:42:53.797  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:53.950  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:53.975  1487  4487 I GmscoreIpa: Starting mediastore instant index [CONTEXT service_id=255 ]
+11-24 13:42:54.102  4168  4187 D EGL_emulation: app_time_stats: avg=40.22ms min=12.70ms max=184.92ms count=23
+11-24 13:42:54.220  4168  4168 I ActivityThread: Schedule relaunch activity: com.bellfamily.bastischool.MainActivity
+11-24 13:42:54.234  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@7df281 in: PAUSED
+11-24 13:42:54.234  4168  4168 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@7df281
+11-24 13:42:54.235  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@7df281 in: STOPPED
+11-24 13:42:54.235  4168  4168 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@7df281
+11-24 13:42:54.241   554   554 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+11-24 13:42:54.241  4168  4180 I TextToSpeech: Disconnected from TTS engine
+11-24 13:42:54.241  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@7df281 in: DESTROYED
+11-24 13:42:54.241  4168  4168 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-24 13:42:54.244  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@d84d85f in: PRE_ON_CREATE
+11-24 13:42:54.244  4168  4168 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was DESTROYED
+11-24 13:42:54.246  4168  4180 I TextToSpeech: Connected to TTS engine
+11-24 13:42:54.246  4168  4168 I TextToSpeech: Sucessfully bound to com.google.android.tts
+11-24 13:42:54.248  4168  4168 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+11-24 13:42:54.250  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@d84d85f in: CREATED
+11-24 13:42:54.250  4168  4168 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@d84d85f
+11-24 13:42:54.251  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@d84d85f in: STARTED
+11-24 13:42:54.251  4168  4168 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@d84d85f
+11-24 13:42:54.251  4168  4168 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-24 13:42:54.251  4168  4168 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-24 13:42:54.251  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@d84d85f in: RESUMED
+11-24 13:42:54.251  4168  4168 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@d84d85f
+11-24 13:42:54.258  2201  2226 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:54.259  2201  2226 I GoogleTTSServiceImpl: currentLocale = en-US
+11-24 13:42:54.260  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:54.262  2201  2226 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:54.262  2201  2226 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+11-24 13:42:54.263  4168  4258 I TextToSpeech: Setting up the connection to TTS engine...
+11-24 13:42:54.274  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:54.338  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:54.364  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:54.580  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:54.715  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:54.890  1388  1650 W MediaProvider: isAppCloneUserPair for user 0: false
+11-24 13:42:54.894  4168  4168 I ActivityThread: Schedule relaunch activity: com.bellfamily.bastischool.MainActivity
+11-24 13:42:54.896  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@d84d85f in: PAUSED
+11-24 13:42:54.896  4168  4168 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@d84d85f
+11-24 13:42:54.896  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@d84d85f in: STOPPED
+11-24 13:42:54.897  4168  4168 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@d84d85f
+11-24 13:42:54.901   554   554 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+11-24 13:42:54.901  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@d84d85f in: DESTROYED
+11-24 13:42:54.902  4168  4168 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-24 13:42:54.902  4168  4178 I TextToSpeech: Disconnected from TTS engine
+11-24 13:42:54.905  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@ed5b740 in: PRE_ON_CREATE
+11-24 13:42:54.905  4168  4168 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was DESTROYED
+11-24 13:42:54.907  4168  4168 I TextToSpeech: Sucessfully bound to com.google.android.tts
+11-24 13:42:54.909  4168  4178 I TextToSpeech: Connected to TTS engine
+11-24 13:42:54.911  4168  4168 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+11-24 13:42:54.915  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@ed5b740 in: CREATED
+11-24 13:42:54.916  4168  4168 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@ed5b740
+11-24 13:42:54.917  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@ed5b740 in: STARTED
+11-24 13:42:54.917  4168  4168 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@ed5b740
+11-24 13:42:54.918  4168  4168 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-24 13:42:54.918  4168  4168 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-24 13:42:54.918  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@ed5b740 in: RESUMED
+11-24 13:42:54.918  4168  4168 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@ed5b740
+11-24 13:42:54.924  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:54.926  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:54.926  1217  3985 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService started execution. cause:9 exec_start_elapsed_seconds: 217 [CONTEXT service_id=218 ]
+11-24 13:42:54.928  1217  3985 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService finished executing. cause:9 result: 1 elapsed_millis: 13 uptime_millis: 13 exec_start_elapsed_seconds: 217 [CONTEXT service_id=218 ]
+11-24 13:42:54.951  2201  2226 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:54.985  2201  2226 I GoogleTTSServiceImpl: currentLocale = en-US
+11-24 13:42:54.988  2201  2226 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:54.988  2201  2226 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+11-24 13:42:54.992  4168  4258 I TextToSpeech: Setting up the connection to TTS engine...
+11-24 13:42:55.054   554   567 I system_server: Background concurrent mark compact GC freed 23MB AllocSpace bytes, 31(620KB) LOS objects, 48% free, 25MB/49MB, paused 584us,1.224ms total 153.561ms
+11-24 13:42:55.059   554   568 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-24 13:42:55.059   554   568 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-24 13:42:55.059   554   568 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-24 13:42:55.061   554   569 W system_server: ApkAssets: Deleting an ApkAssets object '<empty> and /product/priv-app/Velvet/Velvet.apk' with 1 weak references
+11-24 13:42:55.062   554   569 W system_server: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/LatinIMEGooglePrebuilt/LatinIMEGooglePrebuilt.apk' with 1 weak references
+11-24 13:42:55.063   554   569 W system_server: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/GoogleTTS/GoogleTTS.apk' with 1 weak references
+11-24 13:42:55.085  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:55.111  4168  4187 D EGL_emulation: app_time_stats: avg=42.28ms min=17.40ms max=167.33ms count=22
+11-24 13:42:55.166  4168  4174 W ily.bastischool: Cleared Reference was only reachable from finalizer (only reported once)
+11-24 13:42:55.213  4168  4174 I ily.bastischool: Background concurrent mark compact GC freed 14MB AllocSpace bytes, 5(168KB) LOS objects, 49% free, 17MB/34MB, paused 837us,3.483ms total 111.060ms
+11-24 13:42:55.232  4168  4176 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/GoogleTTS/GoogleTTS.apk' with 1 weak references
+11-24 13:42:55.297  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:55.467   554  1707 W IPCThreadState: Sending oneway calls to frozen process.
+11-24 13:42:55.509   900  1007 D EGL_emulation: app_time_stats: avg=1447.09ms min=11.54ms max=4827.29ms count=4
+11-24 13:42:55.565  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:55.706  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:55.900  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:55.999  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:56.119  4168  4187 D EGL_emulation: app_time_stats: avg=32.10ms min=17.14ms max=47.36ms count=29
+11-24 13:42:56.140  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:56.332  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:56.436  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:56.584  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:56.929  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:57.214  1388  3486 W MediaProvider: isAppCloneUserPair for user 0: false
+11-24 13:42:57.229  1217  4141 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService started execution. cause:9 exec_start_elapsed_seconds: 220 [CONTEXT service_id=218 ]
+11-24 13:42:57.231  1217  4478 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService finished executing. cause:9 result: 1 elapsed_millis: 6 uptime_millis: 6 exec_start_elapsed_seconds: 220 [CONTEXT service_id=218 ]
+11-24 13:42:57.251  4168  4187 D EGL_emulation: app_time_stats: avg=32.05ms min=12.86ms max=151.11ms count=32
+11-24 13:42:57.254   554   822 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+11-24 13:42:57.255   554   822 D InetDiagMessage: Destroyed 3 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+11-24 13:42:57.255   554   822 D InetDiagMessage: Destroyed live tcp sockets for uids={10151} in 1ms
+11-24 13:42:57.255   554   822 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+11-24 13:42:57.255   554   822 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+11-24 13:42:57.255   554   822 D InetDiagMessage: Destroyed live tcp sockets for uids={20151} in 1ms
+11-24 13:42:57.298  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:57.373  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:57.548  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:57.636  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:57.799  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:57.863  4168  4168 I ActivityThread: Schedule relaunch activity: com.bellfamily.bastischool.MainActivity
+11-24 13:42:57.869  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@ed5b740 in: PAUSED
+11-24 13:42:57.869  4168  4168 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@ed5b740
+11-24 13:42:57.869  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@ed5b740 in: STOPPED
+11-24 13:42:57.869  4168  4168 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@ed5b740
+11-24 13:42:57.879   554   554 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+11-24 13:42:57.879  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@ed5b740 in: DESTROYED
+11-24 13:42:57.879  4168  4168 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-24 13:42:57.880  4168  4180 I TextToSpeech: Disconnected from TTS engine
+11-24 13:42:57.881  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c731f94 in: PRE_ON_CREATE
+11-24 13:42:57.881  4168  4168 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was DESTROYED
+11-24 13:42:57.889  4168  4168 I TextToSpeech: Sucessfully bound to com.google.android.tts
+11-24 13:42:57.892  4168  4168 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+11-24 13:42:57.894  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c731f94 in: CREATED
+11-24 13:42:57.894  4168  4168 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@c731f94
+11-24 13:42:57.895  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c731f94 in: STARTED
+11-24 13:42:57.895  4168  4168 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@c731f94
+11-24 13:42:57.895  4168  4168 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-24 13:42:57.895  4168  4168 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-24 13:42:57.895  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c731f94 in: RESUMED
+11-24 13:42:57.895  4168  4168 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@c731f94
+11-24 13:42:57.901  4168  4180 I TextToSpeech: Connected to TTS engine
+11-24 13:42:57.906  2201  2226 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:57.907  2201  2226 I GoogleTTSServiceImpl: currentLocale = en-US
+11-24 13:42:57.911  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:57.923  2201  2226 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:57.924  2201  2226 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+11-24 13:42:57.925  4168  4258 I TextToSpeech: Setting up the connection to TTS engine...
+11-24 13:42:57.979  4042  4044 I AidlLazyServiceRegistrar: Process has 0 (of 1 available) client(s) in use after notification artd has clients: 0
+11-24 13:42:57.979  4042  4044 I AidlLazyServiceRegistrar: Trying to shut down the service. No clients in use for any service in process.
+11-24 13:42:57.985  4042  4044 I AidlLazyServiceRegistrar: Unregistered all clients and exiting
+11-24 13:42:58.051  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:58.167  4168  4168 I ActivityThread: Schedule relaunch activity: com.bellfamily.bastischool.MainActivity
+11-24 13:42:58.173  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c731f94 in: PAUSED
+11-24 13:42:58.173  4168  4168 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@c731f94
+11-24 13:42:58.173  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c731f94 in: STOPPED
+11-24 13:42:58.173  4168  4168 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@c731f94
+11-24 13:42:58.183  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c731f94 in: DESTROYED
+11-24 13:42:58.183  4168  4168 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-24 13:42:58.184   554   554 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+11-24 13:42:58.185  4168  4180 I TextToSpeech: Disconnected from TTS engine
+11-24 13:42:58.187  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@eae75d7 in: PRE_ON_CREATE
+11-24 13:42:58.187  4168  4168 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was DESTROYED
+11-24 13:42:58.195  4168  4180 I TextToSpeech: Connected to TTS engine
+11-24 13:42:58.196  4168  4168 I TextToSpeech: Sucessfully bound to com.google.android.tts
+11-24 13:42:58.198  2201  3783 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:58.198  2201  3783 I GoogleTTSServiceImpl: currentLocale = en-US
+11-24 13:42:58.199  2201  3783 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:58.199  2201  3783 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+11-24 13:42:58.199  4168  4258 I TextToSpeech: Setting up the connection to TTS engine...
+11-24 13:42:58.200  4168  4168 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+11-24 13:42:58.203  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@eae75d7 in: CREATED
+11-24 13:42:58.204  4168  4168 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@eae75d7
+11-24 13:42:58.204  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@eae75d7 in: STARTED
+11-24 13:42:58.205  4168  4168 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@eae75d7
+11-24 13:42:58.205  4168  4168 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-24 13:42:58.205  4168  4168 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-24 13:42:58.206  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@eae75d7 in: RESUMED
+11-24 13:42:58.206  4168  4168 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@eae75d7
+11-24 13:42:58.210  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:58.213  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:58.327  4168  4176 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/GoogleTTS/GoogleTTS.apk' with 1 weak references
+11-24 13:42:58.426  1388  3486 W MediaProvider: isAppCloneUserPair for user 0: false
+11-24 13:42:58.444  1217  4478 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService started execution. cause:9 exec_start_elapsed_seconds: 221 [CONTEXT service_id=218 ]
+11-24 13:42:58.445  1217  4141 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService finished executing. cause:9 result: 1 elapsed_millis: 9 uptime_millis: 9 exec_start_elapsed_seconds: 221 [CONTEXT service_id=218 ]
+11-24 13:42:58.450  4168  4187 D EGL_emulation: app_time_stats: avg=40.86ms min=15.20ms max=207.64ms count=28
+11-24 13:42:58.513  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:58.797  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:58.835  4168  4168 I ActivityThread: Schedule relaunch activity: com.bellfamily.bastischool.MainActivity
+11-24 13:42:58.837  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@eae75d7 in: PAUSED
+11-24 13:42:58.837  4168  4168 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@eae75d7
+11-24 13:42:58.838  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@eae75d7 in: STOPPED
+11-24 13:42:58.838  4168  4168 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@eae75d7
+11-24 13:42:58.843   554   822 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+11-24 13:42:58.844   554   822 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+11-24 13:42:58.844   554   822 D InetDiagMessage: Destroyed live tcp sockets for uids={10142} in 1ms
+11-24 13:42:58.846  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@eae75d7 in: DESTROYED
+11-24 13:42:58.846  4168  4168 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-24 13:42:58.847   554   554 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+11-24 13:42:58.850  4168  4180 I TextToSpeech: Disconnected from TTS engine
+11-24 13:42:58.851  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@5216163 in: PRE_ON_CREATE
+11-24 13:42:58.851  4168  4168 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was DESTROYED
+11-24 13:42:58.862  4168  4168 I TextToSpeech: Sucessfully bound to com.google.android.tts
+11-24 13:42:58.865  4168  4370 I TextToSpeech: Connected to TTS engine
+11-24 13:42:58.865  4168  4168 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+11-24 13:42:58.868  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@5216163 in: CREATED
+11-24 13:42:58.868  4168  4168 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@5216163
+11-24 13:42:58.869  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@5216163 in: STARTED
+11-24 13:42:58.870  4168  4168 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@5216163
+11-24 13:42:58.870  4168  4168 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-24 13:42:58.870  4168  4168 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-24 13:42:58.871  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@5216163 in: RESUMED
+11-24 13:42:58.872  4168  4168 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@5216163
+11-24 13:42:58.877  2201  3783 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:58.885  2201  3783 I GoogleTTSServiceImpl: currentLocale = en-US
+11-24 13:42:58.885  2201  3783 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:58.885  2201  3783 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+11-24 13:42:58.888  4168  4258 I TextToSpeech: Setting up the connection to TTS engine...
+11-24 13:42:58.889  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:59.020  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:59.134  4168  4168 I ActivityThread: Schedule relaunch activity: com.bellfamily.bastischool.MainActivity
+11-24 13:42:59.137  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@5216163 in: PAUSED
+11-24 13:42:59.138  4168  4168 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@5216163
+11-24 13:42:59.138  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@5216163 in: STOPPED
+11-24 13:42:59.138  4168  4168 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@5216163
+11-24 13:42:59.154  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@5216163 in: DESTROYED
+11-24 13:42:59.154  4168  4168 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-24 13:42:59.157  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@27a578 in: PRE_ON_CREATE
+11-24 13:42:59.157  4168  4168 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was DESTROYED
+11-24 13:42:59.160  4168  4180 I TextToSpeech: Disconnected from TTS engine
+11-24 13:42:59.160   554   554 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+11-24 13:42:59.162  4168  4168 I TextToSpeech: Sucessfully bound to com.google.android.tts
+11-24 13:42:59.165  4168  4180 I TextToSpeech: Connected to TTS engine
+11-24 13:42:59.167  4168  4168 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+11-24 13:42:59.169  2201  3783 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:59.169  2201  3783 I GoogleTTSServiceImpl: currentLocale = en-US
+11-24 13:42:59.170  2201  3783 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:59.171  2201  3783 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+11-24 13:42:59.172  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@27a578 in: CREATED
+11-24 13:42:59.172  4168  4168 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@27a578
+11-24 13:42:59.172  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@27a578 in: STARTED
+11-24 13:42:59.172  4168  4168 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@27a578
+11-24 13:42:59.172  4168  4168 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-24 13:42:59.172  4168  4168 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-24 13:42:59.172  4168  4258 I TextToSpeech: Setting up the connection to TTS engine...
+11-24 13:42:59.173  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@27a578 in: RESUMED
+11-24 13:42:59.173  4168  4168 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@27a578
+11-24 13:42:59.177  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:59.178  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:59.383  3120  4524 I GMS_MM_Logger: Memory Metric Logging not allowed. Stopping.
+11-24 13:42:59.384  1388  3486 W MediaProvider: isAppCloneUserPair for user 0: false
+11-24 13:42:59.401  1217  4141 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService started execution. cause:9 exec_start_elapsed_seconds: 222 [CONTEXT service_id=218 ]
+11-24 13:42:59.404  1217  4478 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService finished executing. cause:9 result: 1 elapsed_millis: 7 uptime_millis: 7 exec_start_elapsed_seconds: 222 [CONTEXT service_id=218 ]
+11-24 13:42:59.450  4168  4187 D EGL_emulation: app_time_stats: avg=41.75ms min=16.54ms max=204.07ms count=23
+11-24 13:42:59.553  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:59.631  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:59.785  4168  4168 I ActivityThread: Schedule relaunch activity: com.bellfamily.bastischool.MainActivity
+11-24 13:42:59.786  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@27a578 in: PAUSED
+11-24 13:42:59.787  4168  4168 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@27a578
+11-24 13:42:59.787  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@27a578 in: STOPPED
+11-24 13:42:59.787  4168  4168 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@27a578
+11-24 13:42:59.803  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@27a578 in: DESTROYED
+11-24 13:42:59.804   554   554 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+11-24 13:42:59.805  4168  4197 I TextToSpeech: Disconnected from TTS engine
+11-24 13:42:59.805  4168  4168 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-24 13:42:59.806  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c1cce3c in: PRE_ON_CREATE
+11-24 13:42:59.806  4168  4168 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was DESTROYED
+11-24 13:42:59.811  4168  4168 I TextToSpeech: Sucessfully bound to com.google.android.tts
+11-24 13:42:59.812  4168  4197 I TextToSpeech: Connected to TTS engine
+11-24 13:42:59.814  4168  4168 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+11-24 13:42:59.816  2201  3783 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:59.817  2201  3783 I GoogleTTSServiceImpl: currentLocale = en-US
+11-24 13:42:59.817  2201  3783 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:42:59.818  2201  3783 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+11-24 13:42:59.818  4168  4258 I TextToSpeech: Setting up the connection to TTS engine...
+11-24 13:42:59.819  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c1cce3c in: CREATED
+11-24 13:42:59.819  4168  4168 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@c1cce3c
+11-24 13:42:59.820  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c1cce3c in: STARTED
+11-24 13:42:59.820  4168  4168 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@c1cce3c
+11-24 13:42:59.820  4168  4168 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-24 13:42:59.820  4168  4168 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-24 13:42:59.821  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c1cce3c in: RESUMED
+11-24 13:42:59.821  4168  4168 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@c1cce3c
+11-24 13:42:59.843  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:59.902  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:59.905  4168  4176 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/GoogleTTS/GoogleTTS.apk' with 1 weak references
+11-24 13:42:59.925  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:42:59.927   554   822 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+11-24 13:42:59.927   554   822 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+11-24 13:42:59.927   554   822 D InetDiagMessage: Destroyed live tcp sockets for uids={10210} in 1ms
+11-24 13:43:00.050  1402  1639 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-24 13:43:00.050  1402  1639 I AiAiEcho: EchoTargets:
+11-24 13:43:00.050  1402  1639 I AiAiEcho: Filtered by AiAi flag check:
+11-24 13:43:00.050  1402  1639 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-24 13:43:00.050  1402  1639 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+11-24 13:43:00.050  1402  1639 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-24 13:43:00.050  1402  1639 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-24 13:43:00.050  1402  1639 I AiAiEcho: EchoTargets:
+11-24 13:43:00.050  1402  1639 I AiAiEcho: Filtered by AiAi flag check:
+11-24 13:43:00.050  1402  1639 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-24 13:43:00.050  1402  1639 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+11-24 13:43:00.050  1402  1639 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-24 13:43:00.050  1402  1639 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-24 13:43:00.050  1402  1639 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+11-24 13:43:00.052  1133  1133 D SsBaseTemplateCard: No text view can be set up
+11-24 13:43:00.054  1133  1133 D SsBaseTemplateCard: Passed-in item info is null
+11-24 13:43:00.054  1133  1133 D SsBaseTemplateCard: Passed-in item info is null
+11-24 13:43:00.054  1133  1133 D SsBaseTemplateCard: Passed-in item info is null
+11-24 13:43:00.054  1133  1133 I SsBaseTemplateCard: Secondary card pane is null
+11-24 13:43:00.055   900   900 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-24 13:43:00.100  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:43:00.105   900  1007 D EGL_emulation: app_time_stats: avg=4596.07ms min=4596.07ms max=4596.07ms count=1
+11-24 13:43:00.281  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:43:00.452  1388  1650 W MediaProvider: isAppCloneUserPair for user 0: false
+11-24 13:43:00.459  4168  4168 I ActivityThread: Schedule relaunch activity: com.bellfamily.bastischool.MainActivity
+11-24 13:43:00.460  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c1cce3c in: PAUSED
+11-24 13:43:00.460  4168  4168 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@c1cce3c
+11-24 13:43:00.460  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c1cce3c in: STOPPED
+11-24 13:43:00.460  4168  4168 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@c1cce3c
+11-24 13:43:00.464  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@c1cce3c in: DESTROYED
+11-24 13:43:00.464  4168  4168 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-24 13:43:00.465   554   554 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+11-24 13:43:00.466  4168  4370 I TextToSpeech: Disconnected from TTS engine
+11-24 13:43:00.468  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@b78747c in: PRE_ON_CREATE
+11-24 13:43:00.468  4168  4168 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was DESTROYED
+11-24 13:43:00.471  4168  4168 I TextToSpeech: Sucessfully bound to com.google.android.tts
+11-24 13:43:00.475  4168  4168 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+11-24 13:43:00.475  4168  4197 I TextToSpeech: Connected to TTS engine
+11-24 13:43:00.478  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@b78747c in: CREATED
+11-24 13:43:00.478  1388  1393 I FuseDaemon: Background concurrent mark compact GC freed 2952KB AllocSpace bytes, 5(164KB) LOS objects, 49% free, 3142KB/6284KB, paused 51us,11.949ms total 26.996ms
+11-24 13:43:00.478  4168  4168 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.bellfamily.bastischool.MainActivity@b78747c
+11-24 13:43:00.479  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@b78747c in: STARTED
+11-24 13:43:00.479  4168  4168 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.bellfamily.bastischool.MainActivity@b78747c
+11-24 13:43:00.479  4168  4168 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-24 13:43:00.479  4168  4168 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-24 13:43:00.480  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@b78747c in: RESUMED
+11-24 13:43:00.480  4168  4168 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.bellfamily.bastischool.MainActivity@b78747c
+11-24 13:43:00.486  1217  4478 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService started execution. cause:9 exec_start_elapsed_seconds: 223 [CONTEXT service_id=218 ]
+11-24 13:43:00.489  1217  4478 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService finished executing. cause:9 result: 1 elapsed_millis: 15 uptime_millis: 15 exec_start_elapsed_seconds: 223 [CONTEXT service_id=218 ]
+11-24 13:43:00.489  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:43:00.490  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:43:00.492  2201  3783 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:43:00.494  2201  3783 I GoogleTTSServiceImpl: currentLocale = en-US
+11-24 13:43:00.497  2201  3783 W RankedDispatcher: The requested voice is not available for this app identifier
+11-24 13:43:00.497  2201  3783 I GoogleTTSServiceImpl: For default lang en-us is name en-US-language (en-us-x-iog-server)
+11-24 13:43:00.504  4168  4258 I TextToSpeech: Setting up the connection to TTS engine...
+11-24 13:43:00.519  4168  4187 D EGL_emulation: app_time_stats: avg=38.41ms min=18.77ms max=180.44ms count=25
+11-24 13:43:00.780  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:43:00.951  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:43:01.234  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:43:01.501  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:43:01.537  4168  4187 D EGL_emulation: app_time_stats: avg=32.90ms min=16.38ms max=83.61ms count=29
+11-24 13:43:01.621  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:43:01.909  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:43:02.120   554   822 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+11-24 13:43:02.121   554   822 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+11-24 13:43:02.121   554   822 D InetDiagMessage: Destroyed live tcp sockets for uids={99000} in 2ms
+11-24 13:43:02.247  4168  4174 I ily.bastischool: Background concurrent mark compact GC freed 15MB AllocSpace bytes, 3(72KB) LOS objects, 49% free, 14MB/28MB, paused 230us,9.747ms total 244.829ms
+11-24 13:43:02.253  4168  4176 W ily.bastischool: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/GoogleTTS/GoogleTTS.apk' with 1 weak references
+11-24 13:43:02.268   554   822 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+11-24 13:43:02.271   554   822 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+11-24 13:43:02.271   554   822 D InetDiagMessage: Destroyed live tcp sockets for uids={10151} in 4ms
+11-24 13:43:02.316  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:43:02.550  4168  4187 D EGL_emulation: app_time_stats: avg=32.20ms min=12.39ms max=53.86ms count=29
+11-24 13:43:02.591  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:43:02.783  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:43:03.080  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:43:03.395  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:43:03.561  4168  4187 D EGL_emulation: app_time_stats: avg=28.53ms min=12.34ms max=44.22ms count=31
+11-24 13:43:03.919  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:43:04.150  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:43:04.418  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:43:04.566  4168  4187 D EGL_emulation: app_time_stats: avg=30.72ms min=13.55ms max=41.89ms count=30
+11-24 13:43:04.669  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:43:05.096  1388  3486 W MediaProvider: isAppCloneUserPair for user 0: false
+11-24 13:43:05.112  1217  3985 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService started execution. cause:9 exec_start_elapsed_seconds: 227 [CONTEXT service_id=218 ]
+11-24 13:43:05.116  1217  4141 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.ipa.base.IpaGcmTaskService finished executing. cause:9 result: 1 elapsed_millis: 7 uptime_millis: 7 exec_start_elapsed_seconds: 227 [CONTEXT service_id=218 ]
+11-24 13:43:05.150  4168  4173 I ily.bastischool: Method exceeds compiler instruction limit: 27534 in void com.bellfamily.bastischool.MainActivity$BastiApp$1$1$3.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+11-24 13:43:05.466   554  1707 W IPCThreadState: Sending oneway calls to frozen process.
+11-24 13:43:06.957   356   356 I netd    : tetherGetStats() -> {[]} <0.39ms>
+11-24 13:43:15.221   554  1729 V GrammaticalInflectionUtils: AttributionSource: AttributionSource { uid = 10210, packageName = null, attributionTag = null, token = android.os.Binder@c0f982, deviceId = 0, next = null } does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+11-24 13:43:15.229   900   981 D SplashScreenView: Build android.window.SplashScreenView{1b65420 V.E...... ......ID 0,0-0,0}
+11-24 13:43:15.229   900   981 D SplashScreenView: Icon: view: null drawable: null size: 0
+11-24 13:43:15.229   900   981 D SplashScreenView: Branding: view: android.view.View{903c1d9 G.ED..... ......I. 0,0-0,0 #1020503 android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+11-24 13:43:15.231  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@b78747c in: PAUSED
+11-24 13:43:15.232  4168  4168 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.bellfamily.bastischool.MainActivity@b78747c
+11-24 13:43:15.235   554  1729 W IPCThreadState: Sending oneway calls to frozen process.
+11-24 13:43:15.235   485   536 W IPCThreadState: Sending oneway calls to frozen process.
+11-24 13:43:15.235  1133  1133 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=11, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity }
+11-24 13:43:15.237   428   428 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-24 13:43:15.264   356   356 I netd    : tetherGetStats() -> {[]} <0.55ms>
+11-24 13:43:15.317  4168  4168 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-24 13:43:15.336  1133  1133 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=7, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10000100 cmp=com.google.android.apps.nexuslauncher/.NexusLauncherActivity }
+11-24 13:43:15.337   428   428 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+11-24 13:43:15.368  4331  4348 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+11-24 13:43:15.369  4331  4348 I EGL_emulation: Opening libGLESv2_emulation.so
+11-24 13:43:15.392  4331  4348 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-24 13:43:15.396  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@b78747c in: STOPPED
+11-24 13:43:15.397  4168  4168 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.bellfamily.bastischool.MainActivity@b78747c
+11-24 13:43:15.433  4168  4168 D LifecycleMonitor: Lifecycle status change: com.bellfamily.bastischool.MainActivity@b78747c in: DESTROYED
+11-24 13:43:15.434  4168  4168 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+11-24 13:43:15.436   554   554 W ServiceConnector.Impl: mayInterruptIfRunning not supported - ignoring
+11-24 13:43:15.437  4168  4180 I TextToSpeech: Disconnected from TTS engine
+11-24 13:43:15.479   554  1729 W IPCThreadState: Sending oneway calls to frozen process.
+11-24 13:43:15.496   554  1714 W InputManager-JNI: Input channel object 'eff3bf8 com.bellfamily.bastischool/com.bellfamily.bastischool.MainActivity (client)' was disposed without first being removed with the input manager!
+11-24 13:43:15.499  1133  1133 D StatsLog: LAUNCHER_ONRESUME
+11-24 13:43:15.502   554  1417 W AppSearchIcing: icing-search-engine.cc:321: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+11-24 13:43:15.502  1133  1812 D OneSearchSuggestProvider: AppSearch 0-state cache not available, fallback to AGA
+11-24 13:43:15.502  1133  1812 D OneSearchSuggestProvider: java.util.concurrent.CompletionException: java.util.NoSuchElementException: No value present
+11-24 13:43:15.502  1133  1812 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:308)
+11-24 13:43:15.502  1133  1812 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:323)
+11-24 13:43:15.502  1133  1812 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:684)
+11-24 13:43:15.502  1133  1812 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:486)
+11-24 13:43:15.502  1133  1812 D OneSearchSuggestProvider: 	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2138)
+11-24 13:43:15.502  1133  1812 D OneSearchSuggestProvider: 	at com.google.android.apps.nexuslauncher.allapps.E0.onResult(go/retraceme 31f9979659277bb965985aff1272c33e3c3c9e755b77166d20a2465454178f2c:67)
+11-24 13:43:15.502  1133  1812 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1.lambda$onResult$0(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:144)
+11-24 13:43:15.502  1133  1812 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1.$r8$lambda$CEk3q8sDAQVhU3rQwVueB8FAj_M(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:1)
+11-24 13:43:15.502  1133  1812 D OneSearchSuggestProvider: 	at android.app.appsearch.SearchSessionUtil$1$$ExternalSyntheticLambda0.run(go/retraceme 64eee9e9f568ff45978879ad2ff83146f2618ee8a88278736fbdf5fae931976e:22)
+11-24 13:43:15.502  1133  1812 D OneSearchSuggestProvider: 	at android.os.Handler.handleCallback(Handler.java:959)
+11-24 13:43:15.502  1133  1812 D OneSearchSuggestProvider: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+11-24 13:43:15.502  1133  1812 D OneSearchSuggestProvider: 	at android.os.Looper.loopOnce(Looper.java:232)
+11-24 13:43:15.502  1133  1812 D OneSearchSuggestProvider: 	at android.os.Looper.loop(Looper.java:317)
+11-24 13:43:15.502  1133  1812 D OneSearchSuggestProvider: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+11-24 13:43:15.502  1133  1812 D OneSearchSuggestProvider: Caused by: java.util.NoSuchElementException: No value present
+11-24 13:43:15.502  1133  1812 D OneSearchSuggestProvider: 	at java.util.Optional.get(Optional.java:143)
+11-24 13:43:15.502  1133  1812 D OneSearchSuggestProvider: 	at com.google.android.apps.nexuslauncher.allapps.E0.onResult(go/retraceme 31f9979659277bb965985aff1272c33e3c3c9e755b77166d20a2465454178f2c:28)
+11-24 13:43:15.502  1133  1812 D OneSearchSuggestProvider: 	... 8 more
+11-24 13:43:15.503  1133  1812 D OneSearchSuggestProvider: Created the binder channel successfully for end point service =com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService , mChannel=i1{delegate=f{logId=9, target=directaddress:///AndroidComponentAddress%5BIntent%20%7B%20act=grpc.io.action.BIND%20cmp=com.google.android.googlequicksearchbox/com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService%20%7D%5D}} , mOneSearchConnection=l2.Z@c1f8c0a
+11-24 13:43:15.507  1133  1133 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=6}
+11-24 13:43:15.518  1402  1639 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+11-24 13:43:15.518  1402  1639 I AiAiEcho: EchoTargets:
+11-24 13:43:15.518  1402  1639 I AiAiEcho: Filtered by AiAi flag check:
+11-24 13:43:15.518  1402  1639 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+11-24 13:43:15.518  1402  1639 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata:  [CONTEXT ratelimit_period="10 SECONDS" ]
+11-24 13:43:15.518  1402  1639 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+11-24 13:43:15.519  1402  1639 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+11-24 13:43:15.519  1133  1176 D QuickstepModelDelegate: notifyAppTargetEvent action=1 launchLocation=workspace/0/[-1,-1]/[1,1]
+11-24 13:43:15.529  4168  4184 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@cbc4617]
+11-24 13:43:15.532  1133  1133 D BaseDepthController: setSurface:
+11-24 13:43:15.532  1133  1133 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+11-24 13:43:15.532  1133  1133 D BaseDepthController: 	mSurface: Surface(name=com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity)/@0x852f2e0
+11-24 13:43:15.534  4168  4184 E TestRunner: failed: bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(com.bellfamily.bastischool.ui.conservation.ConservationRouteTest)
+11-24 13:43:15.537  4168  4184 E TestRunner: ----- begin exception -----
+11-24 13:43:15.537  4168  4184 E TestRunner: androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 10000 ms
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at com.bellfamily.bastischool.ui.conservation.ConservationCaptureKt.captureConservationReview(ConservationCapture.kt:13)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress$lambda$15$lambda$14$capture(ConservationRouteTest.kt:37)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress$lambda$15(ConservationRouteTest.kt:83)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.$r8$lambda$-ZJH8FRwYTqKCBTEiIHBXH8YFkI(Unknown Source:0)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTestKt.isolatedConservationStores(ConservationRouteTest.kt:23)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(ConservationRouteTest.kt:28)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at java.lang.reflect.Method.invoke(Native Method)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:272)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:271)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.withDisposableContent(ComposeUiTest.android.kt:505)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1$1.invoke(ComposeUiTest.android.kt:333)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withComposeIdlingResource(ComposeUiTest.android.kt:385)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withComposeIdlingResource(ComposeUiTest.android.kt:219)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1.invoke(ComposeUiTest.android.kt:332)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withWindowRecomposer(ComposeUiTest.android.kt:359)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withWindowRecomposer(ComposeUiTest.android.kt:219)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1.invoke(ComposeUiTest.android.kt:331)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withTestCoroutines(ComposeUiTest.android.kt:372)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withTestCoroutines(ComposeUiTest.android.kt:219)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1.invoke(ComposeUiTest.android.kt:330)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.EspressoLink.withStrategy(EspressoLink.android.kt:66)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1.invoke(ComposeUiTest.android.kt:329)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.IdlingResourceRegistry.withRegistry(IdlingResourceRegistry.jvm.kt:155)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1.invoke(ComposeUiTest.android.kt:328)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.ComposeRootRegistry.withRegistry(ComposeRootRegistry.android.kt:146)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.runTest(ComposeUiTest.android.kt:327)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1.evaluate(AndroidComposeTestRule.android.kt:271)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:128)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:27)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+11-24 13:43:15.537  4168  4184 E TestRunner: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
+11-24 13:43:15.541  4168  4184 E TestRunner: ----- end exception -----
+11-24 13:43:15.545  4168  4184 I TestRunner: finished: bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(com.bellfamily.bastischool.ui.conservation.ConservationRouteTest)

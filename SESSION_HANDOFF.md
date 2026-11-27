@@ -1,3 +1,103 @@
+# Session handoff — 2026-11-27
+
+## Artwork publication candidate (local verification complete)
+
+Owner's “go whats next?” authorized the next consolidation step. Baseline `8e3407f`;
+earlier consolidation plan/inventory/docs are included. Owner requested commit and
+push on 2026-11-27 after local verification; hosted candidate results remain pending.
+No agents. [Review](docs/artwork-ci-diagnostics-2026-11-27/README.md),
+[diagnosis](docs/artwork-ci-diagnostics-2026-11-27/ROOT_CAUSE.md),
+[delivery plan](docs/CONSOLIDATION_PLAN.md).
+
+Diagnostic-only tests reproduced actual blank pictures (affected selection 3/5).
+Temporary trace found 100/161 bitmap publications on workers after successful decode;
+tracing perturbed timing and passed 5/5, so it is not the correction. Controlled
+unconfined-caller regression fails before (main Looper absent) and passes after.
+Final runtime removes trace logging and adds loadArtworkForUi: IO decoding, explicit
+Main.immediate publication, cancellation rejecting obsolete results. BundledArtwork
+and Same Amount board use it, including main-thread board reset. Content, journals,
+asset/cache bounds, audio and assessment are preserved.
+
+First-error helper preserves original 10s bounds/count/tree predicates and subsequent
+assertions; records phase/count/original exception/tree/Activity/window/genuine PNG.
+Secondary failures cannot replace the original exception. CI wrapper collects bounded
+diagnostics before teardown, preserves Gradle exit and refuses additional/offline
+attached devices. Existing 24 classes retain relative order; two new classes add four
+cases, for 26 classes/40 cases. Seven Python wrapper tests pass.
+
+Final verification: full JVM 751/751, both APKs and lint pass (0 errors, 7 warnings,
+2 information); publication 2/2; affected 5/5; complete configured Android 40/40,
+207.781s, zero failures/errors/skips. These counts overlap. Raw targeted runner,
+strict summaries, original failures, source hashes, JVM XML ZIP/lint and installed
+identities are in the review. Build7-fix.log is the final build. No active validation.
+App SHA fa0b72de989893050dcc8327ecbfae7c5cddd744760754ee845f8a66fb52ed33;
+test SHA 6aa8ac02b8144cfc014863254ed1749f39c28b35ac061250aabea26dceebe03f.
+
+Owned Basti_Pattern_20261111/API35 arm64, SwiftShader software, 1080×1920/density420,
+animations disabled. A connected physical phone was never targeted. Local tests used
+explicit `-s emulator-5554`, not connected Gradle. All 88 original app-file paths/bytes
+restored/hash-verified; settings restored including null animator scale, original
+geometry and unchanged Medium Phone config hash. Generated directories retained intact
+at cache/artwork-diagnostics-20261127-generated. Owned emulator closed gracefully;
+process/owned serial absent. Stable/physical/Medium Phone data untouched.
+
+Next after publication: inspect the complete hosted Android job and
+first-error artifacts; local pass does not close hosted gate or establish every old
+timeout's cause. Historical Compose disposal and emulator-system watchdog remain
+separate. Physical/child/assistive/audible voice batch remains owner-managed/pending.
+Review existing capture-helper timing before another gallery: pulled German chooser
+shows three dinosaurs, but English chooser filename actually contains Home; retained
+and explicitly excluded from chooser visual acceptance. No device-hash claim for
+these two pulls. Original diagnostic screenshots show the actual pre-fix missing art.
+
+The following checkpoint record is historical; its “next task” was completed by this
+follow-up. Preserve original failures and evidence rather than rewriting them.
+
+# Session handoff — 2026-11-27
+
+## Consolidation checkpoint 1 (started; first-step documentation/triage complete)
+
+Owner approved saving the PM/senior-engineering plan and starting first steps.
+Baseline `8e3407f7f22eec7e1622855214c2bf2e58a19990`, initially clean main/origin/main.
+No commit/push authorized for this work. No agents used.
+
+Saved [plan](docs/CONSOLIDATION_PLAN.md), [source-reconciled 36-entry inventory](docs/ACTIVITY_ACCEPTANCE.md),
+[owner-managed device batch](docs/DEVICE_ACCEPTANCE_BATCH.md), and [checkpoint review](docs/consolidation-2026-11-26/README.md).
+Master roadmap/backlog link approved sequence; curated Today’s Adventure is brought
+forward after consolidation. README/brief/backlog current summaries reconciled;
+QA ledger points to live hosted status. Historical evidence retained.
+
+Hosted run 212/8703c4e: build/browser passed, Android 33/34; failure is final German
+chooser three-dinosaur artwork wait at ConservationCapture.kt:13, route line 83.
+Run 213/8e3407f: build/browser passed, Android 35/36; German portrait WashHandsScreenTest
+line 61 awaits an image node. Same Amount passed 213; neither rootcause diagnosed/fixed.
+Original ZIPs match GitHub SHA256 digests, original XML/case logcats/job text retained;
+strict inspect_hosted_reports.py derives explicit failed-case summaries. See triage.
+Historical Compose disposal cause remains OPEN and separate.
+
+Local unchanged app/test five-case attempt at Pixel 2 dimensions/density/animations 0
+DID NOT COMPLETE: Same Amount Espresso idle timeout, English Wash Hands teardown
+STOPPED→DESTROYED failure, German portrait started, runner SYSTEM HAS CRASHED.
+No passes claimed. Crash buffer identifies emulator system-process HardwareBuffer
+finalizer watchdog and subsequent DeadSystemException. This is not a hosted
+artwork-wait reproduction or app root cause. No source/assertion/timeout change.
+
+Cleanup COMPLETE: original 88 no_backup/shared_prefs/app_webview paths/bytes copied
+intact/verified before, generated directories retained intact in cache/consolidation-20261126-generated,
+originals moved back and all 88 hash-match. Original 1080×2400 / density 420, airplane 1,
+animations 1.0/1.0/null and rotation settings restored/preserved. Medium Phone config
+SHA c4ab33993685273776e9286aee0b948e48192f5ab61046d564447d7a12e7034c unchanged.
+Only historical empty length-test-backup remains; no new active scoped backups.
+Owned Basti_Pattern_20261111/emulator-5554 closed gracefully; process/device absence
+verified. No active validation remains. Stable/physical/Medium Phone data untouched.
+
+Next bounded engineering task: first-error artwork-wait diagnostics (expected/actual
+nodes, step/phase, unmerged tree, Activity/window, genuine screenshot) before teardown,
+with original bounds/assertions preserved; verify diagnostics then reproduce on a
+healthy no-wipe software-rendered disposable session and hosted selection when push
+authorized. Checkpoint 1/Android gate remain OPEN. No new full JVM/browser/build/physical
+acceptance claimed. Physical work remains owner-managed. Prior handoff follows.
+
 # Session handoff — 2026-11-26
 
 ## Order by Length (implemented; scoped local verification complete)

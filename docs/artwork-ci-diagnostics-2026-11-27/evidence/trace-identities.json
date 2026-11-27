@@ -1,0 +1,14 @@
+[
+  {
+    "path": "app/build/outputs/apk/debug/app-debug.apk",
+    "sha256": "4fc0fffcdc96072628b49b734621c018e3c83e2a44c9120dc128ec13684b7915"
+  },
+  {
+    "path": "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+    "sha256": "2cb3614d28dbe171b75c4f4843a998bbc891578d92386d2b729fec59e3fe4a4d"
+  },
+  {
+    "path": "app/src/main/java/com/bellfamily/bastischool/ui/common/BundledArtwork.kt",
+    "sha256": "0351ce23e8eac18be95c762401ba80c0532ac2c4eee678ec7dbe4898bcb8d3e9"
+  }
+]

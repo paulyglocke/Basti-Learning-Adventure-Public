@@ -1,0 +1,58 @@
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ArtworkPublicationTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ArtworkPublicationTest:
+INSTRUMENTATION_STATUS: test=cancellationWhileDecodingRejectsTheLatePicture
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ArtworkPublicationTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=cancellationWhileDecodingRejectsTheLatePicture
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ArtworkPublicationTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=workerCompletionPublishesOnMainEvenForUnconfinedCaller
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ArtworkPublicationTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: An IO completion must not publish UI state on its worker expected same:<Looper (main, tid 2) {d0a52a}> was not:<null>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotSame(Assert.java:829)
+	at org.junit.Assert.assertSame(Assert.java:772)
+	at com.bellfamily.bastischool.ArtworkPublicationTest.workerCompletionPublishesOnMainEvenForUnconfinedCaller(ArtworkPublicationTest.kt:42)
+
+INSTRUMENTATION_STATUS: stream=
+Error in workerCompletionPublishesOnMainEvenForUnconfinedCaller(com.bellfamily.bastischool.ArtworkPublicationTest):
+java.lang.AssertionError: An IO completion must not publish UI state on its worker expected same:<Looper (main, tid 2) {d0a52a}> was not:<null>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotSame(Assert.java:829)
+	at org.junit.Assert.assertSame(Assert.java:772)
+	at com.bellfamily.bastischool.ArtworkPublicationTest.workerCompletionPublishesOnMainEvenForUnconfinedCaller(ArtworkPublicationTest.kt:42)
+
+INSTRUMENTATION_STATUS: test=workerCompletionPublishesOnMainEvenForUnconfinedCaller
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_RESULT: stream=
+
+Time: 0.088
+There was 1 failure:
+1) workerCompletionPublishesOnMainEvenForUnconfinedCaller(com.bellfamily.bastischool.ArtworkPublicationTest)
+java.lang.AssertionError: An IO completion must not publish UI state on its worker expected same:<Looper (main, tid 2) {d0a52a}> was not:<null>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotSame(Assert.java:829)
+	at org.junit.Assert.assertSame(Assert.java:772)
+	at com.bellfamily.bastischool.ArtworkPublicationTest.workerCompletionPublishesOnMainEvenForUnconfinedCaller(ArtworkPublicationTest.kt:42)
+
+FAILURES!!!
+Tests run: 2,  Failures: 1
+
+
+INSTRUMENTATION_CODE: -1

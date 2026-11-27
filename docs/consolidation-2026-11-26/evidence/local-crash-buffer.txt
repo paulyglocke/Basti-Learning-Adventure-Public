@@ -1,0 +1,47 @@
+--------- beginning of crash
+11-26 18:35:58.693  4322  4322 F libc    : crash_dump helper failed to exec, or was killed
+11-26 18:36:03.310  4322  4323 F libc    : Fatal signal 6 (SIGABRT), code -6 (SI_TKILL) in tid 4323 (Signal Catcher), pid 4322 (id.apps.restore)
+11-26 19:22:39.888   549   566 E AndroidRuntime: *** FATAL EXCEPTION IN SYSTEM PROCESS: FinalizerWatchdogDaemon
+11-26 19:22:39.888   549   566 E AndroidRuntime: java.util.concurrent.TimeoutException: android.hardware.HardwareBuffer.finalize() timed out after 10 seconds
+11-26 19:22:39.888   549   566 E AndroidRuntime: 	at java.lang.Daemons$Daemon.isRunning(Unknown Source:0)
+11-26 19:22:39.888   549   566 E AndroidRuntime: 	at java.lang.Daemons$FinalizerDaemon.runInternal(Daemons.java:315)
+11-26 19:22:39.888   549   566 E AndroidRuntime: 	at java.lang.Daemons$Daemon.run(Daemons.java:131)
+11-26 19:22:39.888   549   566 E AndroidRuntime: 	at java.lang.Thread.run(Thread.java:1012)
+11-26 19:24:45.794  4648  4648 E AndroidRuntime: FATAL EXCEPTION: main
+11-26 19:24:45.794  4648  4648 E AndroidRuntime: Process: com.google.android.apps.messaging, PID: 4648
+11-26 19:24:45.794  4648  4648 E AndroidRuntime: DeadSystemException: The system died; earlier logs will point to the root cause
+11-26 19:24:47.202  4648  4957 E AndroidRuntime: FATAL EXCEPTION: DG
+11-26 19:24:47.202  4648  4957 E AndroidRuntime: Process: com.google.android.apps.messaging, PID: 4648
+11-26 19:24:47.202  4648  4957 E AndroidRuntime: DeadSystemException: The system died; earlier logs will point to the root cause
+11-26 19:24:53.891  1240  1492 E AndroidRuntime: FATAL EXCEPTION: GoogleApiHandler
+11-26 19:24:53.891  1240  1492 E AndroidRuntime: Process: com.google.android.gms, PID: 1240
+11-26 19:24:53.891  1240  1492 E AndroidRuntime: DeadSystemException: The system died; earlier logs will point to the root cause
+11-26 19:24:59.266  1240  4890 E AndroidRuntime: FATAL EXCEPTION: [com.google.android.gms.chimera.container.intentoperation.GmsIntentOperationChimeraService-Executor] idle
+11-26 19:24:59.266  1240  4890 E AndroidRuntime: Process: com.google.android.gms, PID: 1240
+11-26 19:24:59.266  1240  4890 E AndroidRuntime: DeadSystemException: The system died; earlier logs will point to the root cause
+11-26 19:25:08.930  4648  4691 E AndroidRuntime: FATAL EXCEPTION: GoogleApiHandler
+11-26 19:25:08.930  4648  4691 E AndroidRuntime: Process: com.google.android.apps.messaging, PID: 4648
+11-26 19:25:08.930  4648  4691 E AndroidRuntime: DeadSystemException: The system died; earlier logs will point to the root cause
+11-26 19:25:11.007  1028  1028 E AndroidRuntime: FATAL EXCEPTION: main
+11-26 19:25:11.007  1028  1028 E AndroidRuntime: Process: com.google.android.gms.persistent, PID: 1028
+11-26 19:25:11.007  1028  1028 E AndroidRuntime: DeadSystemException: The system died; earlier logs will point to the root cause
+11-26 19:25:14.061  4608  4810 E AndroidRuntime: FATAL EXCEPTION: com.google.android.apps.wellbeing
+11-26 19:25:14.061  4608  4810 E AndroidRuntime: Process: com.google.android.apps.nexuslauncher, PID: 4608
+11-26 19:25:14.061  4608  4810 E AndroidRuntime: DeadSystemException: The system died; earlier logs will point to the root cause
+11-26 19:25:17.049  4721  4721 E AndroidRuntime: FATAL EXCEPTION: main
+11-26 19:25:17.049  4721  4721 E AndroidRuntime: Process: com.google.android.apps.wellbeing, PID: 4721
+11-26 19:25:17.049  4721  4721 E AndroidRuntime: DeadSystemException: The system died; earlier logs will point to the root cause
+11-26 19:25:21.379  1028  1171 E AndroidRuntime: FATAL EXCEPTION: GoogleApiHandler
+11-26 19:25:21.379  1028  1171 E AndroidRuntime: Process: com.google.android.gms.persistent, PID: 1028
+11-26 19:25:21.379  1028  1171 E AndroidRuntime: DeadSystemException: The system died; earlier logs will point to the root cause
+11-26 19:25:29.310  4936  4936 E AndroidRuntime: FATAL EXCEPTION: main
+11-26 19:25:29.310  4936  4936 E AndroidRuntime: Process: com.google.android.permissioncontroller, PID: 4936
+11-26 19:25:29.310  4936  4936 E AndroidRuntime: DeadSystemException: The system died; earlier logs will point to the root cause
+11-26 19:25:30.135  1028  4101 E AndroidRuntime: FATAL EXCEPTION: lowpool[21]
+11-26 19:25:30.135  1028  4101 E AndroidRuntime: Process: com.google.android.gms.persistent, PID: 1028
+11-26 19:25:30.135  1028  4101 E AndroidRuntime: DeadSystemException: The system died; earlier logs will point to the root cause
+11-26 19:31:31.496  5750  5750 E AndroidRuntime: FATAL EXCEPTION: main
+11-26 19:31:31.496  5750  5750 E AndroidRuntime: Process: com.android.systemui, PID: 5750
+11-26 19:31:31.496  5750  5750 E AndroidRuntime: DeadSystemException: The system died; earlier logs will point to the root cause
+11-26 19:38:30.591   171   171 F libc    : crash_dump helper failed to exec, or was killed
+11-26 19:38:30.699   181   181 F libc    : crash_dump helper failed to exec, or was killed

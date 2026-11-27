@@ -6,6 +6,31 @@ This document defines verification and feature completion gates. [NATIVE_ARCHITE
 
 **A feature is not done only because it builds.** Record evidence for its behavior and relevant device risks. A code-complete slice awaiting required hardware checks must be labelled as such, not fully verified or eligible for legacy removal.
 
+## Current consolidation status — 2026-11-27
+
+[Checkpoint 1](docs/consolidation-2026-11-26/README.md) preserves the current hosted
+reports: run 212 Android 33/34 (Same Amount final chooser artwork wait), run 213
+Android 35/36 (Wash Hands German portrait artwork wait); build/browser passed both.
+The Android gate remains OPEN. These timeouts are distinct from the older
+unreproduced Compose disposal crash. A local five-case attempt at hosted display/
+animation settings was interrupted by Espresso idling/teardown failures and an
+emulator system-process crash; it is not a completed pass or reproduction of either
+hosted artwork wait. That initial attempt did not establish a correction.
+
+The subsequent [artwork investigation](docs/artwork-ci-diagnostics-2026-11-27/README.md)
+reproduced real missing pictures with diagnostic-only tests, identified worker-thread
+state publication, and added explicit IO-decode/main-publication confinement. The
+controlled regression fails before and passes after (2/2); affected cases pass 5/5
+and the complete configured selection passes 40/40 locally. Full JVM 751/751, both
+APKs/lint and Python runner checks 7/7 pass. Original readiness bounds, predicates
+and learning assertions remain; first-error evidence is collected before teardown.
+The Android hosted gate stays OPEN pending publication and execution of this
+candidate. The historical Compose crash and physical acceptance remain separate.
+
+Use the [current inventory](docs/ACTIVITY_ACCEPTANCE.md) for source-reconciled entry
+counts/evidence layers and [device batch](docs/DEVICE_ACCEPTANCE_BATCH.md) for pending
+owner-managed physical work. Historical passes below retain their original scope.
+
 ## One More / One Less starter (2026-11-12, locally verified)
 
 Four add-one/take-one-away configurations within 5/10 use canonical animals,

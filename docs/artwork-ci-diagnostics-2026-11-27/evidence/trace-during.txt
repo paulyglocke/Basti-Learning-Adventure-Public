@@ -1,0 +1,805 @@
+--------- beginning of main
+11-27 14:33:31.278  4537  4537 I BundledArtworkTrace: rendered 620425737 SceneDescriptions/countryside_farm/canonical/farm_008_farmyard_friends.png bitmap=false
+11-27 14:33:31.278  4537  4537 I BundledArtworkTrace: rendered 1747932339 school_actions/board/object_book.png bitmap=false
+11-27 14:33:31.278  4537  4537 I BundledArtworkTrace: rendered 1747932338 vocabulary/food/apple.jpg bitmap=false
+11-27 14:33:31.278  4537  4537 I BundledArtworkTrace: rendered 620427273 Animals/canonical/eagle.png bitmap=false
+11-27 14:33:31.278  4537  4537 I BundledArtworkTrace: rendered 1713012902 Animals/canonical/dinosaur.png bitmap=false
+11-27 14:33:31.278  4537  4537 I BundledArtworkTrace: rendered 620421385 Seasons/blossoming_lakeside_spring_meadow.png bitmap=false
+11-27 14:33:31.278  4537  4537 I BundledArtworkTrace: rendered 620422153 Animals/canonical/frog.png bitmap=false
+11-27 14:33:31.278  4537  4537 I BundledArtworkTrace: rendered 1551825574 Animals/canonical/dinosaur.png bitmap=false
+11-27 14:33:31.278  4537  4537 I BundledArtworkTrace: rendered 620409097 Prepositions/scenes/scene_prepositions_dinosaur_on.png bitmap=false
+11-27 14:33:31.278  4537  4537 I BundledArtworkTrace: rendered 620409865 SceneDescriptions/jungle_rainforest/canonical/jungle_001_actions.png bitmap=false
+11-27 14:33:31.278  4537  4537 I BundledArtworkTrace: rendered 620411401 wash_hands/soap.jpg bitmap=false
+11-27 14:33:31.278  4537  4537 I BundledArtworkTrace: rendered 620412169 SceneDescriptions/ocean_underwater/canonical/ocean_001_reef_actions.png bitmap=false
+11-27 14:33:31.278  4537  4537 I BundledArtworkTrace: rendered 1517650086 Animals/canonical/whale.png bitmap=false
+11-27 14:33:31.278  4537  4537 I BundledArtworkTrace: rendered -1530178382 Animals/canonical/rabbit.png bitmap=false
+11-27 14:33:31.278  4537  4537 I BundledArtworkTrace: rendered -1530178381 Animals/canonical/dolphin.png bitmap=false
+11-27 14:33:31.278  4537  4537 I BundledArtworkTrace: rendered 620407049 school_actions/book_desk.png bitmap=false
+11-27 14:33:31.278  4537  4537 I BundledArtworkTrace: rendered 501961907 Animals/canonical/dinosaur.png bitmap=false
+11-27 14:33:31.278  4537  4537 I BundledArtworkTrace: rendered 501961906 vocabulary/food/apple.jpg bitmap=false
+11-27 14:33:31.353  4537  4537 I BundledArtworkTrace: start 620425737 SceneDescriptions/countryside_farm/canonical/farm_008_farmyard_friends.png
+11-27 14:33:31.360  4537  4537 I BundledArtworkTrace: start 1747932339 school_actions/board/object_book.png
+11-27 14:33:31.360  4537  4537 I BundledArtworkTrace: start 1747932338 vocabulary/food/apple.jpg
+11-27 14:33:31.361  4537  4537 I BundledArtworkTrace: start 620427273 Animals/canonical/eagle.png
+11-27 14:33:31.364  4537  4537 I BundledArtworkTrace: start 1713012902 Animals/canonical/dinosaur.png
+11-27 14:33:31.364  4537  4537 I BundledArtworkTrace: start 620421385 Seasons/blossoming_lakeside_spring_meadow.png
+11-27 14:33:31.364  4537  4537 I BundledArtworkTrace: start 620422153 Animals/canonical/frog.png
+11-27 14:33:31.365  4537  4537 I BundledArtworkTrace: start 1551825574 Animals/canonical/dinosaur.png
+11-27 14:33:31.365  4537  4537 I BundledArtworkTrace: start 620409097 Prepositions/scenes/scene_prepositions_dinosaur_on.png
+11-27 14:33:31.366  4537  4537 I BundledArtworkTrace: start 620409865 SceneDescriptions/jungle_rainforest/canonical/jungle_001_actions.png
+11-27 14:33:31.376  4537  4537 I BundledArtworkTrace: start 620411401 wash_hands/soap.jpg
+11-27 14:33:31.376  4537  4537 I BundledArtworkTrace: start 620412169 SceneDescriptions/ocean_underwater/canonical/ocean_001_reef_actions.png
+11-27 14:33:31.377  4537  4537 I BundledArtworkTrace: start 1517650086 Animals/canonical/whale.png
+11-27 14:33:31.377  4537  4537 I BundledArtworkTrace: start -1530178382 Animals/canonical/rabbit.png
+11-27 14:33:31.378  4537  4537 I BundledArtworkTrace: start -1530178381 Animals/canonical/dolphin.png
+11-27 14:33:31.378  4537  4537 I BundledArtworkTrace: start 620407049 school_actions/book_desk.png
+11-27 14:33:31.379  4537  4537 I BundledArtworkTrace: start 501961907 Animals/canonical/dinosaur.png
+11-27 14:33:31.379  4537  4537 I BundledArtworkTrace: start 501961906 vocabulary/food/apple.jpg
+11-27 14:33:31.426  4537  4579 I BundledArtworkTrace: loaded 620425737 SceneDescriptions/countryside_farm/canonical/farm_008_farmyard_friends.png bitmap=true
+11-27 14:33:31.435  4537  4579 I BundledArtworkTrace: published 620425737 SceneDescriptions/countryside_farm/canonical/farm_008_farmyard_friends.png bitmap=true
+11-27 14:33:31.481  4537  4583 I BundledArtworkTrace: loaded 620427273 Animals/canonical/eagle.png bitmap=true
+11-27 14:33:31.481  4537  4583 I BundledArtworkTrace: published 620427273 Animals/canonical/eagle.png bitmap=true
+11-27 14:33:31.488  4537  4582 I BundledArtworkTrace: loaded 1747932338 vocabulary/food/apple.jpg bitmap=true
+11-27 14:33:31.488  4537  4582 I BundledArtworkTrace: published 1747932338 vocabulary/food/apple.jpg bitmap=true
+11-27 14:33:31.491  4537  4580 I BundledArtworkTrace: loaded 1747932339 school_actions/board/object_book.png bitmap=true
+11-27 14:33:31.491  4537  4580 I BundledArtworkTrace: published 1747932339 school_actions/board/object_book.png bitmap=true
+11-27 14:33:31.555  4537  4585 I BundledArtworkTrace: loaded 620422153 Animals/canonical/frog.png bitmap=true
+11-27 14:33:31.555  4537  4585 I BundledArtworkTrace: published 620422153 Animals/canonical/frog.png bitmap=true
+11-27 14:33:31.587  4537  4537 I BundledArtworkTrace: rendered 620425737 SceneDescriptions/countryside_farm/canonical/farm_008_farmyard_friends.png bitmap=true
+11-27 14:33:31.587  4537  4537 I BundledArtworkTrace: rendered 1747932339 school_actions/board/object_book.png bitmap=true
+11-27 14:33:31.587  4537  4537 I BundledArtworkTrace: rendered 1747932338 vocabulary/food/apple.jpg bitmap=true
+11-27 14:33:31.587  4537  4537 I BundledArtworkTrace: rendered 620427273 Animals/canonical/eagle.png bitmap=true
+11-27 14:33:31.587  4537  4537 I BundledArtworkTrace: rendered 620422153 Animals/canonical/frog.png bitmap=true
+11-27 14:33:31.622  4537  4584 I BundledArtworkTrace: loaded 620421385 Seasons/blossoming_lakeside_spring_meadow.png bitmap=true
+11-27 14:33:31.622  4537  4584 I BundledArtworkTrace: published 620421385 Seasons/blossoming_lakeside_spring_meadow.png bitmap=true
+11-27 14:33:31.645  4537  4586 I BundledArtworkTrace: loaded 1713012902 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:31.645  4537  4586 I BundledArtworkTrace: published 1713012902 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:31.709  4537  4581 I BundledArtworkTrace: loaded 620409097 Prepositions/scenes/scene_prepositions_dinosaur_on.png bitmap=true
+11-27 14:33:31.709  4537  4587 I BundledArtworkTrace: loaded 1551825574 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:31.713  4537  4581 I BundledArtworkTrace: published 620409097 Prepositions/scenes/scene_prepositions_dinosaur_on.png bitmap=true
+11-27 14:33:31.713  4537  4587 I BundledArtworkTrace: published 1551825574 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:31.758  4537  4589 I BundledArtworkTrace: loaded 620409865 SceneDescriptions/jungle_rainforest/canonical/jungle_001_actions.png bitmap=true
+11-27 14:33:31.758  4537  4589 I BundledArtworkTrace: published 620409865 SceneDescriptions/jungle_rainforest/canonical/jungle_001_actions.png bitmap=true
+11-27 14:33:31.759  4537  4591 I BundledArtworkTrace: loaded 620411401 wash_hands/soap.jpg bitmap=true
+11-27 14:33:31.759  4537  4591 I BundledArtworkTrace: published 620411401 wash_hands/soap.jpg bitmap=true
+11-27 14:33:31.768  4537  4537 I BundledArtworkTrace: rendered 1713012902 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:31.768  4537  4537 I BundledArtworkTrace: rendered 620421385 Seasons/blossoming_lakeside_spring_meadow.png bitmap=true
+11-27 14:33:31.768  4537  4537 I BundledArtworkTrace: rendered 1551825574 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:31.768  4537  4537 I BundledArtworkTrace: rendered 620409097 Prepositions/scenes/scene_prepositions_dinosaur_on.png bitmap=true
+11-27 14:33:31.768  4537  4537 I BundledArtworkTrace: rendered 620409865 SceneDescriptions/jungle_rainforest/canonical/jungle_001_actions.png bitmap=true
+11-27 14:33:31.769  4537  4537 I BundledArtworkTrace: rendered 620411401 wash_hands/soap.jpg bitmap=true
+11-27 14:33:31.793  4537  4588 I BundledArtworkTrace: loaded 620412169 SceneDescriptions/ocean_underwater/canonical/ocean_001_reef_actions.png bitmap=true
+11-27 14:33:31.793  4537  4588 I BundledArtworkTrace: published 620412169 SceneDescriptions/ocean_underwater/canonical/ocean_001_reef_actions.png bitmap=true
+11-27 14:33:31.796  4537  4537 I BundledArtworkTrace: rendered 620412169 SceneDescriptions/ocean_underwater/canonical/ocean_001_reef_actions.png bitmap=true
+11-27 14:33:31.804  4537  4537 I BundledArtworkTrace: loaded -1530178382 Animals/canonical/rabbit.png bitmap=true
+11-27 14:33:31.805  4537  4537 I BundledArtworkTrace: published -1530178382 Animals/canonical/rabbit.png bitmap=true
+11-27 14:33:31.808  4537  4537 I BundledArtworkTrace: rendered -1530178382 Animals/canonical/rabbit.png bitmap=true
+11-27 14:33:31.826  4537  4590 I BundledArtworkTrace: loaded 1517650086 Animals/canonical/whale.png bitmap=true
+11-27 14:33:31.826  4537  4590 I BundledArtworkTrace: published 1517650086 Animals/canonical/whale.png bitmap=true
+11-27 14:33:31.830  4537  4537 I BundledArtworkTrace: rendered 1517650086 Animals/canonical/whale.png bitmap=true
+11-27 14:33:31.840  4537  4537 I BundledArtworkTrace: loaded 620407049 school_actions/book_desk.png bitmap=true
+11-27 14:33:31.840  4537  4537 I BundledArtworkTrace: published 620407049 school_actions/book_desk.png bitmap=true
+11-27 14:33:31.842  4537  4537 I BundledArtworkTrace: rendered 620407049 school_actions/book_desk.png bitmap=true
+11-27 14:33:31.862  4537  4594 I BundledArtworkTrace: loaded -1530178381 Animals/canonical/dolphin.png bitmap=true
+11-27 14:33:31.862  4537  4594 I BundledArtworkTrace: published -1530178381 Animals/canonical/dolphin.png bitmap=true
+11-27 14:33:31.862  4537  4598 I BundledArtworkTrace: loaded 501961906 vocabulary/food/apple.jpg bitmap=true
+11-27 14:33:31.862  4537  4598 I BundledArtworkTrace: published 501961906 vocabulary/food/apple.jpg bitmap=true
+11-27 14:33:31.862  4537  4597 I BundledArtworkTrace: loaded 501961907 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:31.862  4537  4597 I BundledArtworkTrace: published 501961907 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:31.871  4537  4537 I BundledArtworkTrace: rendered -1530178381 Animals/canonical/dolphin.png bitmap=true
+11-27 14:33:31.871  4537  4537 I BundledArtworkTrace: rendered 501961907 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:32.014  4537  4537 I BundledArtworkTrace: rendered 2078950036 Animals/canonical/dinosaur.png bitmap=false
+11-27 14:33:32.014  4537  4537 I BundledArtworkTrace: rendered 2078954132 Animals/canonical/dinosaur.png bitmap=false
+11-27 14:33:32.014  4537  4537 I BundledArtworkTrace: rendered 2078958228 Animals/canonical/dinosaur.png bitmap=false
+11-27 14:33:32.024  4537  4537 I BundledArtworkTrace: start 2078950036 Animals/canonical/dinosaur.png
+11-27 14:33:32.025  4537  4537 I BundledArtworkTrace: start 2078954132 Animals/canonical/dinosaur.png
+11-27 14:33:32.026  4537  4537 I BundledArtworkTrace: start 2078958228 Animals/canonical/dinosaur.png
+11-27 14:33:32.028  4537  4537 I BundledArtworkTrace: loaded 2078950036 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:32.029  4537  4537 I BundledArtworkTrace: published 2078950036 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:32.029  4537  4537 I BundledArtworkTrace: loaded 2078954132 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:32.029  4537  4537 I BundledArtworkTrace: published 2078954132 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:32.029  4537  4537 I BundledArtworkTrace: loaded 2078958228 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:32.029  4537  4537 I BundledArtworkTrace: published 2078958228 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:32.030  4537  4537 I BundledArtworkTrace: rendered 2078950036 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:32.030  4537  4537 I BundledArtworkTrace: rendered 2078954132 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:32.030  4537  4537 I BundledArtworkTrace: rendered 2078958228 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:32.743  4537  4537 I BundledArtworkTrace: rendered 2078950036 Animals/canonical/dinosaur.png bitmap=false
+11-27 14:33:32.743  4537  4537 I BundledArtworkTrace: rendered 2078954132 Animals/canonical/dinosaur.png bitmap=false
+11-27 14:33:32.743  4537  4537 I BundledArtworkTrace: rendered 2078958228 Animals/canonical/dinosaur.png bitmap=false
+11-27 14:33:32.747  4537  4537 I BundledArtworkTrace: start 2078950036 Animals/canonical/dinosaur.png
+11-27 14:33:32.747  4537  4537 I BundledArtworkTrace: start 2078954132 Animals/canonical/dinosaur.png
+11-27 14:33:32.748  4537  4537 I BundledArtworkTrace: start 2078958228 Animals/canonical/dinosaur.png
+11-27 14:33:32.749  4537  4537 I BundledArtworkTrace: loaded 2078958228 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:32.749  4537  4537 I BundledArtworkTrace: published 2078958228 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:32.749  4537  4537 I BundledArtworkTrace: loaded 2078950036 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:32.749  4537  4537 I BundledArtworkTrace: published 2078950036 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:32.749  4537  4537 I BundledArtworkTrace: loaded 2078954132 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:32.749  4537  4537 I BundledArtworkTrace: published 2078954132 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:32.750  4537  4537 I BundledArtworkTrace: rendered 2078950036 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:32.750  4537  4537 I BundledArtworkTrace: rendered 2078954132 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:32.750  4537  4537 I BundledArtworkTrace: rendered 2078958228 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:36.851  4537  4537 I BundledArtworkTrace: rendered 2078950036 Animals/canonical/dinosaur.png bitmap=false
+11-27 14:33:36.851  4537  4537 I BundledArtworkTrace: rendered 2078954132 Animals/canonical/dinosaur.png bitmap=false
+11-27 14:33:36.851  4537  4537 I BundledArtworkTrace: rendered 2078958228 Animals/canonical/dinosaur.png bitmap=false
+11-27 14:33:36.854  4537  4537 I BundledArtworkTrace: start 2078950036 Animals/canonical/dinosaur.png
+11-27 14:33:36.855  4537  4537 I BundledArtworkTrace: start 2078954132 Animals/canonical/dinosaur.png
+11-27 14:33:36.855  4537  4537 I BundledArtworkTrace: start 2078958228 Animals/canonical/dinosaur.png
+11-27 14:33:36.855  4537  4537 I BundledArtworkTrace: loaded 2078950036 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:36.855  4537  4537 I BundledArtworkTrace: published 2078950036 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:36.856  4537  4537 I BundledArtworkTrace: loaded 2078954132 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:36.856  4537  4537 I BundledArtworkTrace: published 2078954132 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:36.856  4537  4537 I BundledArtworkTrace: loaded 2078958228 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:36.856  4537  4537 I BundledArtworkTrace: published 2078958228 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:36.857  4537  4537 I BundledArtworkTrace: rendered 2078950036 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:36.857  4537  4537 I BundledArtworkTrace: rendered 2078954132 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:36.857  4537  4537 I BundledArtworkTrace: rendered 2078958228 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:37.029  4537  4537 I BundledArtworkTrace: rendered 2078950036 Animals/canonical/dinosaur.png bitmap=false
+11-27 14:33:37.029  4537  4537 I BundledArtworkTrace: rendered 2078954132 Animals/canonical/dinosaur.png bitmap=false
+11-27 14:33:37.029  4537  4537 I BundledArtworkTrace: rendered 2078958228 Animals/canonical/dinosaur.png bitmap=false
+11-27 14:33:37.032  4537  4537 I BundledArtworkTrace: start 2078950036 Animals/canonical/dinosaur.png
+11-27 14:33:37.035  4537  4537 I BundledArtworkTrace: start 2078954132 Animals/canonical/dinosaur.png
+11-27 14:33:37.035  4537  4537 I BundledArtworkTrace: start 2078958228 Animals/canonical/dinosaur.png
+11-27 14:33:37.035  4537  4593 I BundledArtworkTrace: loaded 2078950036 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:37.035  4537  4593 I BundledArtworkTrace: published 2078950036 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:37.035  4537  4590 I BundledArtworkTrace: loaded 2078958228 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:37.035  4537  4590 I BundledArtworkTrace: published 2078958228 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:37.036  4537  4597 I BundledArtworkTrace: loaded 2078954132 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:37.036  4537  4597 I BundledArtworkTrace: published 2078954132 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:37.065  4537  4537 I BundledArtworkTrace: rendered 2078950036 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:37.067  4537  4537 I BundledArtworkTrace: rendered 2078954132 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:37.067  4537  4537 I BundledArtworkTrace: rendered 2078958228 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:42.589  4537  4537 I BundledArtworkTrace: rendered 2078950036 Animals/canonical/dinosaur.png bitmap=false
+11-27 14:33:42.589  4537  4537 I BundledArtworkTrace: rendered 2078954132 Animals/canonical/dinosaur.png bitmap=false
+11-27 14:33:42.589  4537  4537 I BundledArtworkTrace: rendered 2078958228 Animals/canonical/dinosaur.png bitmap=false
+11-27 14:33:42.591  4537  4537 I BundledArtworkTrace: start 2078950036 Animals/canonical/dinosaur.png
+11-27 14:33:42.591  4537  4537 I BundledArtworkTrace: start 2078954132 Animals/canonical/dinosaur.png
+11-27 14:33:42.591  4537  4537 I BundledArtworkTrace: start 2078958228 Animals/canonical/dinosaur.png
+11-27 14:33:42.594  4537  4590 I BundledArtworkTrace: loaded 2078954132 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:42.595  4537  4590 I BundledArtworkTrace: published 2078954132 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:42.595  4537  4592 I BundledArtworkTrace: loaded 2078950036 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:42.595  4537  4592 I BundledArtworkTrace: published 2078950036 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:42.601  4537  4597 I BundledArtworkTrace: loaded 2078958228 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:42.601  4537  4597 I BundledArtworkTrace: published 2078958228 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:42.618  4537  4537 I BundledArtworkTrace: rendered 2078950036 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:42.618  4537  4537 I BundledArtworkTrace: rendered 2078954132 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:42.618  4537  4537 I BundledArtworkTrace: rendered 2078958228 Animals/canonical/dinosaur.png bitmap=true
+11-27 14:33:44.001  4537  4537 I BundledArtworkTrace: start -145422347 wash_hands/water_on.jpg
+11-27 14:33:44.001  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/rinse.jpg
+11-27 14:33:44.002  4537  4537 I BundledArtworkTrace: start -134936587 wash_hands/wet.jpg
+11-27 14:33:44.002  4537  4537 I BundledArtworkTrace: start -138082315 wash_hands/soap.jpg
+11-27 14:33:44.002  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:44.003  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:44.003  4537  4537 I BundledArtworkTrace: rendered -134936587 wash_hands/wet.jpg bitmap=false
+11-27 14:33:44.003  4537  4537 I BundledArtworkTrace: rendered -138082315 wash_hands/soap.jpg bitmap=false
+11-27 14:33:44.052  4537  4598 I BundledArtworkTrace: loaded -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:44.055  4537  4598 I BundledArtworkTrace: published -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:44.056  4537  4592 I BundledArtworkTrace: loaded -148568075 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:44.058  4537  4590 I BundledArtworkTrace: loaded -134936587 wash_hands/wet.jpg bitmap=true
+11-27 14:33:44.058  4537  4590 I BundledArtworkTrace: published -134936587 wash_hands/wet.jpg bitmap=true
+11-27 14:33:44.058  4537  4592 I BundledArtworkTrace: published -148568075 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:44.059  4537  4597 I BundledArtworkTrace: loaded -138082315 wash_hands/soap.jpg bitmap=true
+11-27 14:33:44.059  4537  4597 I BundledArtworkTrace: published -138082315 wash_hands/soap.jpg bitmap=true
+11-27 14:33:44.061  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:44.061  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:44.061  4537  4537 I BundledArtworkTrace: rendered -134936587 wash_hands/wet.jpg bitmap=true
+11-27 14:33:44.061  4537  4537 I BundledArtworkTrace: rendered -138082315 wash_hands/soap.jpg bitmap=true
+11-27 14:33:44.876  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:44.879  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/wet.jpg bitmap=false
+11-27 14:33:44.879  4537  4537 I BundledArtworkTrace: rendered -134936587 wash_hands/soap.jpg bitmap=false
+11-27 14:33:44.882  4537  4537 I BundledArtworkTrace: start -1309278753 wash_hands/rinse.jpg
+11-27 14:33:44.885  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/wet.jpg
+11-27 14:33:44.885  4537  4537 I BundledArtworkTrace: start -134936587 wash_hands/soap.jpg
+11-27 14:33:44.886  4537  4537 I BundledArtworkTrace: loaded -1309278753 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:44.891  4537  4537 I BundledArtworkTrace: published -1309278753 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:44.891  4537  4537 I BundledArtworkTrace: loaded -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:44.891  4537  4537 I BundledArtworkTrace: published -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:44.891  4537  4537 I BundledArtworkTrace: loaded -134936587 wash_hands/soap.jpg bitmap=true
+11-27 14:33:44.891  4537  4537 I BundledArtworkTrace: published -134936587 wash_hands/soap.jpg bitmap=true
+11-27 14:33:44.892  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:44.892  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:44.892  4537  4537 I BundledArtworkTrace: rendered -134936587 wash_hands/soap.jpg bitmap=true
+11-27 14:33:44.950  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/soap.jpg bitmap=false
+11-27 14:33:44.952  4537  4537 I BundledArtworkTrace: start -1309295137 wash_hands/soap.jpg
+11-27 14:33:44.953  4537  4590 I BundledArtworkTrace: loaded -1309295137 wash_hands/soap.jpg bitmap=true
+11-27 14:33:44.953  4537  4590 I BundledArtworkTrace: published -1309295137 wash_hands/soap.jpg bitmap=true
+11-27 14:33:44.974  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/soap.jpg bitmap=true
+11-27 14:33:45.014  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/wet.jpg bitmap=false
+11-27 14:33:45.019  4537  4537 I BundledArtworkTrace: start -1309311521 wash_hands/wet.jpg
+11-27 14:33:45.020  4537  4537 I BundledArtworkTrace: loaded -1309311521 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.020  4537  4537 I BundledArtworkTrace: published -1309311521 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.025  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.102  4537  4537 I BundledArtworkTrace: rendered -1309327905 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:45.105  4537  4537 I BundledArtworkTrace: start -1309327905 wash_hands/water_on.jpg
+11-27 14:33:45.106  4537  4537 I BundledArtworkTrace: loaded -1309327905 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:45.106  4537  4537 I BundledArtworkTrace: published -1309327905 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:45.107  4537  4537 I BundledArtworkTrace: rendered -1309327905 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:45.400  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/soap.jpg bitmap=false
+11-27 14:33:45.400  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/wet.jpg bitmap=false
+11-27 14:33:45.400  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:45.400  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:45.402  4537  4537 I BundledArtworkTrace: start -1309278753 wash_hands/soap.jpg
+11-27 14:33:45.406  4537  4537 I BundledArtworkTrace: start -1309295137 wash_hands/wet.jpg
+11-27 14:33:45.406  4537  4537 I BundledArtworkTrace: start -1309311521 wash_hands/water_on.jpg
+11-27 14:33:45.408  4537  4537 I BundledArtworkTrace: loaded -1309311521 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:45.408  4537  4537 I BundledArtworkTrace: published -1309311521 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:45.408  4537  4537 I BundledArtworkTrace: start -145422347 wash_hands/rinse.jpg
+11-27 14:33:45.408  4537  4537 I BundledArtworkTrace: loaded -1309278753 wash_hands/soap.jpg bitmap=true
+11-27 14:33:45.408  4537  4537 I BundledArtworkTrace: published -1309278753 wash_hands/soap.jpg bitmap=true
+11-27 14:33:45.408  4537  4537 I BundledArtworkTrace: loaded -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.408  4537  4537 I BundledArtworkTrace: published -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.410  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/soap.jpg bitmap=true
+11-27 14:33:45.410  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.410  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:45.410  4537  4537 I BundledArtworkTrace: loaded -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:45.410  4537  4537 I BundledArtworkTrace: published -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:45.410  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:45.485  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/wet.jpg bitmap=false
+11-27 14:33:45.485  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:45.485  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/soap.jpg bitmap=false
+11-27 14:33:45.487  4537  4537 I BundledArtworkTrace: start -1309278753 wash_hands/wet.jpg
+11-27 14:33:45.487  4537  4537 I BundledArtworkTrace: start -1309295137 wash_hands/water_on.jpg
+11-27 14:33:45.487  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/soap.jpg
+11-27 14:33:45.490  4537  4590 I BundledArtworkTrace: loaded -1309278753 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.490  4537  4590 I BundledArtworkTrace: published -1309278753 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.491  4537  4590 I BundledArtworkTrace: loaded -1309295137 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:45.491  4537  4590 I BundledArtworkTrace: published -1309295137 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:45.491  4537  4590 I BundledArtworkTrace: loaded -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:45.491  4537  4590 I BundledArtworkTrace: published -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:45.512  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.512  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:45.512  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:45.615  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:45.615  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/wet.jpg bitmap=false
+11-27 14:33:45.615  4537  4537 I BundledArtworkTrace: rendered -134936587 wash_hands/soap.jpg bitmap=false
+11-27 14:33:45.619  4537  4537 I BundledArtworkTrace: start -1309278753 wash_hands/water_on.jpg
+11-27 14:33:45.619  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/wet.jpg
+11-27 14:33:45.621  4537  4537 I BundledArtworkTrace: loaded -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.621  4537  4537 I BundledArtworkTrace: published -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.622  4537  4537 I BundledArtworkTrace: start -134936587 wash_hands/soap.jpg
+11-27 14:33:45.622  4537  4537 I BundledArtworkTrace: loaded -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:45.623  4537  4537 I BundledArtworkTrace: published -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:45.623  4537  4537 I BundledArtworkTrace: loaded -134936587 wash_hands/soap.jpg bitmap=true
+11-27 14:33:45.623  4537  4537 I BundledArtworkTrace: published -134936587 wash_hands/soap.jpg bitmap=true
+11-27 14:33:45.623  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:45.623  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.623  4537  4537 I BundledArtworkTrace: rendered -134936587 wash_hands/soap.jpg bitmap=true
+11-27 14:33:45.736  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:45.736  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:45.736  4537  4537 I BundledArtworkTrace: rendered -134936587 wash_hands/wet.jpg bitmap=false
+11-27 14:33:45.736  4537  4537 I BundledArtworkTrace: rendered -138082315 wash_hands/soap.jpg bitmap=false
+11-27 14:33:45.739  4537  4537 I BundledArtworkTrace: start -145422347 wash_hands/water_on.jpg
+11-27 14:33:45.739  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/rinse.jpg
+11-27 14:33:45.740  4537  4537 I BundledArtworkTrace: start -134936587 wash_hands/wet.jpg
+11-27 14:33:45.740  4537  4537 I BundledArtworkTrace: start -138082315 wash_hands/soap.jpg
+11-27 14:33:45.741  4537  4537 I BundledArtworkTrace: loaded -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:45.741  4537  4537 I BundledArtworkTrace: published -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:45.742  4537  4537 I BundledArtworkTrace: loaded -148568075 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:45.742  4537  4537 I BundledArtworkTrace: published -148568075 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:45.742  4537  4537 I BundledArtworkTrace: loaded -138082315 wash_hands/soap.jpg bitmap=true
+11-27 14:33:45.742  4537  4537 I BundledArtworkTrace: published -138082315 wash_hands/soap.jpg bitmap=true
+11-27 14:33:45.742  4537  4537 I BundledArtworkTrace: loaded -134936587 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.742  4537  4537 I BundledArtworkTrace: published -134936587 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.742  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:45.742  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:45.742  4537  4537 I BundledArtworkTrace: rendered -134936587 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.742  4537  4537 I BundledArtworkTrace: rendered -138082315 wash_hands/soap.jpg bitmap=true
+11-27 14:33:45.822  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:45.822  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:45.822  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/wet.jpg bitmap=false
+11-27 14:33:45.822  4537  4537 I BundledArtworkTrace: rendered -134936587 wash_hands/soap.jpg bitmap=false
+11-27 14:33:45.825  4537  4537 I BundledArtworkTrace: start -1309278753 wash_hands/water_on.jpg
+11-27 14:33:45.825  4537  4537 I BundledArtworkTrace: start -145422347 wash_hands/rinse.jpg
+11-27 14:33:45.825  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/wet.jpg
+11-27 14:33:45.825  4537  4537 I BundledArtworkTrace: start -134936587 wash_hands/soap.jpg
+11-27 14:33:45.826  4537  4591 I BundledArtworkTrace: loaded -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:45.826  4537  4590 I BundledArtworkTrace: loaded -134936587 wash_hands/soap.jpg bitmap=true
+11-27 14:33:45.826  4537  4591 I BundledArtworkTrace: published -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:45.826  4537  4590 I BundledArtworkTrace: published -134936587 wash_hands/soap.jpg bitmap=true
+11-27 14:33:45.826  4537  4588 I BundledArtworkTrace: loaded -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:45.826  4537  4588 I BundledArtworkTrace: published -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:45.827  4537  4594 I BundledArtworkTrace: loaded -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.827  4537  4594 I BundledArtworkTrace: published -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.848  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:45.853  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:45.853  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.853  4537  4537 I BundledArtworkTrace: rendered -134936587 wash_hands/soap.jpg bitmap=true
+11-27 14:33:45.886  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/wet.jpg bitmap=false
+11-27 14:33:45.887  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/soap.jpg bitmap=false
+11-27 14:33:45.889  4537  4537 I BundledArtworkTrace: start -1309295137 wash_hands/wet.jpg
+11-27 14:33:45.889  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/soap.jpg
+11-27 14:33:45.889  4537  4592 I BundledArtworkTrace: loaded -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.889  4537  4592 I BundledArtworkTrace: published -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.889  4537  4592 I BundledArtworkTrace: loaded -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:45.889  4537  4592 I BundledArtworkTrace: published -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:45.914  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:45.914  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:45.983  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/soap.jpg bitmap=false
+11-27 14:33:45.992  4537  4537 I BundledArtworkTrace: start -1309311521 wash_hands/soap.jpg
+11-27 14:33:45.998  4537  4591 I BundledArtworkTrace: loaded -1309311521 wash_hands/soap.jpg bitmap=true
+11-27 14:33:46.003  4537  4591 I BundledArtworkTrace: published -1309311521 wash_hands/soap.jpg bitmap=true
+11-27 14:33:46.022  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/soap.jpg bitmap=true
+11-27 14:33:46.071  4537  4537 I BundledArtworkTrace: rendered -1309327905 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:46.075  4537  4537 I BundledArtworkTrace: start -1309327905 wash_hands/rinse.jpg
+11-27 14:33:46.076  4537  4591 I BundledArtworkTrace: loaded -1309327905 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:46.077  4537  4591 I BundledArtworkTrace: published -1309327905 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:46.097  4537  4537 I BundledArtworkTrace: rendered -1309327905 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:46.870  4537  4537 I BundledArtworkTrace: start -145422347 wash_hands/water_on.jpg
+11-27 14:33:46.870  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/rinse.jpg
+11-27 14:33:46.871  4537  4537 I BundledArtworkTrace: start -134936587 wash_hands/wet.jpg
+11-27 14:33:46.871  4537  4537 I BundledArtworkTrace: start -138082315 wash_hands/soap.jpg
+11-27 14:33:46.871  4537  4593 I BundledArtworkTrace: loaded -148568075 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:46.871  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:46.871  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:46.871  4537  4537 I BundledArtworkTrace: rendered -134936587 wash_hands/wet.jpg bitmap=false
+11-27 14:33:46.871  4537  4537 I BundledArtworkTrace: rendered -138082315 wash_hands/soap.jpg bitmap=false
+11-27 14:33:46.871  4537  4593 I BundledArtworkTrace: published -148568075 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:46.871  4537  4593 I BundledArtworkTrace: loaded -134936587 wash_hands/wet.jpg bitmap=true
+11-27 14:33:46.871  4537  4593 I BundledArtworkTrace: published -134936587 wash_hands/wet.jpg bitmap=true
+11-27 14:33:46.871  4537  4598 I BundledArtworkTrace: loaded -138082315 wash_hands/soap.jpg bitmap=true
+11-27 14:33:46.871  4537  4598 I BundledArtworkTrace: published -138082315 wash_hands/soap.jpg bitmap=true
+11-27 14:33:46.871  4537  4594 I BundledArtworkTrace: loaded -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:46.871  4537  4594 I BundledArtworkTrace: published -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:46.905  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:46.905  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:46.905  4537  4537 I BundledArtworkTrace: rendered -134936587 wash_hands/wet.jpg bitmap=true
+11-27 14:33:46.905  4537  4537 I BundledArtworkTrace: rendered -138082315 wash_hands/soap.jpg bitmap=true
+11-27 14:33:47.719  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:47.719  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/wet.jpg bitmap=false
+11-27 14:33:47.719  4537  4537 I BundledArtworkTrace: rendered -134936587 wash_hands/soap.jpg bitmap=false
+11-27 14:33:47.722  4537  4537 I BundledArtworkTrace: start -1309278753 wash_hands/rinse.jpg
+11-27 14:33:47.722  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/wet.jpg
+11-27 14:33:47.722  4537  4537 I BundledArtworkTrace: start -134936587 wash_hands/soap.jpg
+11-27 14:33:47.722  4537  4537 I BundledArtworkTrace: loaded -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:47.722  4537  4537 I BundledArtworkTrace: published -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:47.722  4537  4537 I BundledArtworkTrace: loaded -134936587 wash_hands/soap.jpg bitmap=true
+11-27 14:33:47.722  4537  4537 I BundledArtworkTrace: published -134936587 wash_hands/soap.jpg bitmap=true
+11-27 14:33:47.722  4537  4537 I BundledArtworkTrace: loaded -1309278753 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:47.722  4537  4537 I BundledArtworkTrace: published -1309278753 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:47.723  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:47.723  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:47.723  4537  4537 I BundledArtworkTrace: rendered -134936587 wash_hands/soap.jpg bitmap=true
+11-27 14:33:47.785  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/soap.jpg bitmap=false
+11-27 14:33:47.787  4537  4537 I BundledArtworkTrace: start -1309295137 wash_hands/soap.jpg
+11-27 14:33:47.788  4537  4597 I BundledArtworkTrace: loaded -1309295137 wash_hands/soap.jpg bitmap=true
+11-27 14:33:47.788  4537  4597 I BundledArtworkTrace: published -1309295137 wash_hands/soap.jpg bitmap=true
+11-27 14:33:47.808  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/soap.jpg bitmap=true
+11-27 14:33:47.855  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/wet.jpg bitmap=false
+11-27 14:33:47.858  4537  4537 I BundledArtworkTrace: start -1309311521 wash_hands/wet.jpg
+11-27 14:33:47.860  4537  4537 I BundledArtworkTrace: loaded -1309311521 wash_hands/wet.jpg bitmap=true
+11-27 14:33:47.860  4537  4537 I BundledArtworkTrace: published -1309311521 wash_hands/wet.jpg bitmap=true
+11-27 14:33:47.861  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/wet.jpg bitmap=true
+11-27 14:33:47.931  4537  4537 I BundledArtworkTrace: rendered -1309327905 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:47.933  4537  4537 I BundledArtworkTrace: start -1309327905 wash_hands/water_on.jpg
+11-27 14:33:47.934  4537  4597 I BundledArtworkTrace: loaded -1309327905 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:47.934  4537  4597 I BundledArtworkTrace: published -1309327905 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:47.955  4537  4537 I BundledArtworkTrace: rendered -1309327905 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:48.299  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/soap.jpg bitmap=false
+11-27 14:33:48.299  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/wet.jpg bitmap=false
+11-27 14:33:48.299  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:48.299  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:48.301  4537  4537 I BundledArtworkTrace: start -1309278753 wash_hands/soap.jpg
+11-27 14:33:48.302  4537  4537 I BundledArtworkTrace: start -1309295137 wash_hands/wet.jpg
+11-27 14:33:48.302  4537  4537 I BundledArtworkTrace: start -1309311521 wash_hands/water_on.jpg
+11-27 14:33:48.302  4537  4537 I BundledArtworkTrace: start -145422347 wash_hands/rinse.jpg
+11-27 14:33:48.302  4537  4537 I BundledArtworkTrace: loaded -1309278753 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.302  4537  4537 I BundledArtworkTrace: published -1309278753 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.302  4537  4537 I BundledArtworkTrace: loaded -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:48.302  4537  4537 I BundledArtworkTrace: published -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:48.302  4537  4537 I BundledArtworkTrace: loaded -1309311521 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:48.302  4537  4537 I BundledArtworkTrace: published -1309311521 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:48.302  4537  4537 I BundledArtworkTrace: loaded -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:48.302  4537  4537 I BundledArtworkTrace: published -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:48.302  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.302  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:48.302  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:48.302  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:48.389  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/wet.jpg bitmap=false
+11-27 14:33:48.389  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:48.389  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/soap.jpg bitmap=false
+11-27 14:33:48.392  4537  4537 I BundledArtworkTrace: start -1309278753 wash_hands/wet.jpg
+11-27 14:33:48.392  4537  4537 I BundledArtworkTrace: start -1309295137 wash_hands/water_on.jpg
+11-27 14:33:48.392  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/soap.jpg
+11-27 14:33:48.392  4537  4597 I BundledArtworkTrace: loaded -1309278753 wash_hands/wet.jpg bitmap=true
+11-27 14:33:48.392  4537  4597 I BundledArtworkTrace: published -1309278753 wash_hands/wet.jpg bitmap=true
+11-27 14:33:48.393  4537  4597 I BundledArtworkTrace: loaded -1309295137 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:48.393  4537  4597 I BundledArtworkTrace: published -1309295137 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:48.393  4537  4594 I BundledArtworkTrace: loaded -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.393  4537  4594 I BundledArtworkTrace: published -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.417  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/wet.jpg bitmap=true
+11-27 14:33:48.417  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:48.417  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.485  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:48.486  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/wet.jpg bitmap=false
+11-27 14:33:48.486  4537  4537 I BundledArtworkTrace: rendered -134936587 wash_hands/soap.jpg bitmap=false
+11-27 14:33:48.487  4537  4537 I BundledArtworkTrace: start -1309278753 wash_hands/water_on.jpg
+11-27 14:33:48.488  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/wet.jpg
+11-27 14:33:48.488  4537  4537 I BundledArtworkTrace: start -134936587 wash_hands/soap.jpg
+11-27 14:33:48.488  4537  4593 I BundledArtworkTrace: loaded -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:48.488  4537  4593 I BundledArtworkTrace: published -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:48.488  4537  4593 I BundledArtworkTrace: loaded -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:48.488  4537  4593 I BundledArtworkTrace: published -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:48.488  4537  4594 I BundledArtworkTrace: loaded -134936587 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.488  4537  4594 I BundledArtworkTrace: published -134936587 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.509  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:48.510  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:48.510  4537  4537 I BundledArtworkTrace: rendered -134936587 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.609  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:48.609  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:48.609  4537  4537 I BundledArtworkTrace: rendered -134936587 wash_hands/wet.jpg bitmap=false
+11-27 14:33:48.609  4537  4537 I BundledArtworkTrace: rendered -138082315 wash_hands/soap.jpg bitmap=false
+11-27 14:33:48.612  4537  4537 I BundledArtworkTrace: start -145422347 wash_hands/water_on.jpg
+11-27 14:33:48.612  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/rinse.jpg
+11-27 14:33:48.612  4537  4537 I BundledArtworkTrace: start -134936587 wash_hands/wet.jpg
+11-27 14:33:48.612  4537  4537 I BundledArtworkTrace: start -138082315 wash_hands/soap.jpg
+11-27 14:33:48.614  4537  4537 I BundledArtworkTrace: loaded -134936587 wash_hands/wet.jpg bitmap=true
+11-27 14:33:48.615  4537  4537 I BundledArtworkTrace: published -134936587 wash_hands/wet.jpg bitmap=true
+11-27 14:33:48.615  4537  4537 I BundledArtworkTrace: loaded -138082315 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.615  4537  4537 I BundledArtworkTrace: published -138082315 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.615  4537  4537 I BundledArtworkTrace: loaded -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:48.615  4537  4537 I BundledArtworkTrace: published -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:48.615  4537  4537 I BundledArtworkTrace: loaded -148568075 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:48.615  4537  4537 I BundledArtworkTrace: published -148568075 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:48.616  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:48.616  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:48.616  4537  4537 I BundledArtworkTrace: rendered -134936587 wash_hands/wet.jpg bitmap=true
+11-27 14:33:48.616  4537  4537 I BundledArtworkTrace: rendered -138082315 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.682  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:48.682  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:48.682  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/wet.jpg bitmap=false
+11-27 14:33:48.682  4537  4537 I BundledArtworkTrace: rendered -134936587 wash_hands/soap.jpg bitmap=false
+11-27 14:33:48.684  4537  4537 I BundledArtworkTrace: start -1309278753 wash_hands/water_on.jpg
+11-27 14:33:48.688  4537  4537 I BundledArtworkTrace: start -145422347 wash_hands/rinse.jpg
+11-27 14:33:48.689  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/wet.jpg
+11-27 14:33:48.689  4537  4537 I BundledArtworkTrace: start -134936587 wash_hands/soap.jpg
+11-27 14:33:48.690  4537  4537 I BundledArtworkTrace: loaded -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:48.690  4537  4537 I BundledArtworkTrace: published -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:48.690  4537  4537 I BundledArtworkTrace: loaded -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:48.690  4537  4537 I BundledArtworkTrace: published -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:48.690  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:48.690  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:48.690  4537  4537 I BundledArtworkTrace: loaded -134936587 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.690  4537  4537 I BundledArtworkTrace: published -134936587 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.691  4537  4537 I BundledArtworkTrace: rendered -134936587 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.691  4537  4597 I BundledArtworkTrace: loaded -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:48.691  4537  4597 I BundledArtworkTrace: published -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:48.713  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:48.769  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/wet.jpg bitmap=false
+11-27 14:33:48.769  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/soap.jpg bitmap=false
+11-27 14:33:48.771  4537  4537 I BundledArtworkTrace: start -1309295137 wash_hands/wet.jpg
+11-27 14:33:48.771  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/soap.jpg
+11-27 14:33:48.771  4537  4597 I BundledArtworkTrace: loaded -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:48.771  4537  4597 I BundledArtworkTrace: published -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:48.771  4537  4597 I BundledArtworkTrace: loaded -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.771  4537  4597 I BundledArtworkTrace: published -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.793  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:48.794  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.889  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/soap.jpg bitmap=false
+11-27 14:33:48.903  4537  4537 I BundledArtworkTrace: start -1309311521 wash_hands/soap.jpg
+11-27 14:33:48.907  4537  4537 I BundledArtworkTrace: loaded -1309311521 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.907  4537  4537 I BundledArtworkTrace: published -1309311521 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.907  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/soap.jpg bitmap=true
+11-27 14:33:48.947  4537  4537 I BundledArtworkTrace: rendered -1309327905 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:48.951  4537  4537 I BundledArtworkTrace: start -1309327905 wash_hands/rinse.jpg
+11-27 14:33:48.952  4537  4537 I BundledArtworkTrace: loaded -1309327905 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:48.952  4537  4537 I BundledArtworkTrace: published -1309327905 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:48.954  4537  4537 I BundledArtworkTrace: rendered -1309327905 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:49.755  4537  4537 I BundledArtworkTrace: start -145422347 wash_hands/water_on.jpg
+11-27 14:33:49.755  4537  4537 I BundledArtworkTrace: start -145424139 wash_hands/rinse.jpg
+11-27 14:33:49.755  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/wet.jpg
+11-27 14:33:49.756  4537  4537 I BundledArtworkTrace: start -148569867 wash_hands/soap.jpg
+11-27 14:33:49.756  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:49.756  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:49.756  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/wet.jpg bitmap=false
+11-27 14:33:49.756  4537  4537 I BundledArtworkTrace: rendered -148569867 wash_hands/soap.jpg bitmap=false
+11-27 14:33:49.756  4537  4593 I BundledArtworkTrace: loaded -145424139 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:49.760  4537  4593 I BundledArtworkTrace: published -145424139 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:49.760  4537  4593 I BundledArtworkTrace: loaded -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:49.760  4537  4593 I BundledArtworkTrace: published -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:49.761  4537  4593 I BundledArtworkTrace: loaded -148569867 wash_hands/soap.jpg bitmap=true
+11-27 14:33:49.761  4537  4593 I BundledArtworkTrace: published -148569867 wash_hands/soap.jpg bitmap=true
+11-27 14:33:49.761  4537  4594 I BundledArtworkTrace: loaded -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:49.761  4537  4594 I BundledArtworkTrace: published -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:49.842  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:49.842  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:49.842  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:49.842  4537  4537 I BundledArtworkTrace: rendered -148569867 wash_hands/soap.jpg bitmap=true
+11-27 14:33:50.685  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:50.685  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/wet.jpg bitmap=false
+11-27 14:33:50.686  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/soap.jpg bitmap=false
+11-27 14:33:50.693  4537  4537 I BundledArtworkTrace: start -1309278753 wash_hands/rinse.jpg
+11-27 14:33:50.694  4537  4537 I BundledArtworkTrace: start -145424139 wash_hands/wet.jpg
+11-27 14:33:50.694  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/soap.jpg
+11-27 14:33:50.694  4537  4590 I BundledArtworkTrace: loaded -145424139 wash_hands/wet.jpg bitmap=true
+11-27 14:33:50.695  4537  4590 I BundledArtworkTrace: published -145424139 wash_hands/wet.jpg bitmap=true
+11-27 14:33:50.695  4537  4598 I BundledArtworkTrace: loaded -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:50.698  4537  4598 I BundledArtworkTrace: published -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:50.701  4537  4591 I BundledArtworkTrace: loaded -1309278753 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:50.701  4537  4591 I BundledArtworkTrace: published -1309278753 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:50.719  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:50.719  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/wet.jpg bitmap=true
+11-27 14:33:50.720  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:50.797  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/soap.jpg bitmap=false
+11-27 14:33:50.799  4537  4537 I BundledArtworkTrace: start -1309295137 wash_hands/soap.jpg
+11-27 14:33:50.799  4537  4591 I BundledArtworkTrace: loaded -1309295137 wash_hands/soap.jpg bitmap=true
+11-27 14:33:50.799  4537  4591 I BundledArtworkTrace: published -1309295137 wash_hands/soap.jpg bitmap=true
+11-27 14:33:50.826  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/soap.jpg bitmap=true
+11-27 14:33:50.900  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/wet.jpg bitmap=false
+11-27 14:33:50.909  4537  4537 I BundledArtworkTrace: start -1309311521 wash_hands/wet.jpg
+11-27 14:33:50.909  4537  4537 I BundledArtworkTrace: loaded -1309311521 wash_hands/wet.jpg bitmap=true
+11-27 14:33:50.909  4537  4537 I BundledArtworkTrace: published -1309311521 wash_hands/wet.jpg bitmap=true
+11-27 14:33:50.910  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/wet.jpg bitmap=true
+11-27 14:33:50.965  4537  4537 I BundledArtworkTrace: rendered -1309327905 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:50.969  4537  4537 I BundledArtworkTrace: start -1309327905 wash_hands/water_on.jpg
+11-27 14:33:50.970  4537  4537 I BundledArtworkTrace: loaded -1309327905 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:50.972  4537  4537 I BundledArtworkTrace: published -1309327905 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:50.973  4537  4537 I BundledArtworkTrace: rendered -1309327905 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:51.289  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/soap.jpg bitmap=false
+11-27 14:33:51.289  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/wet.jpg bitmap=false
+11-27 14:33:51.289  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:51.290  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:51.292  4537  4537 I BundledArtworkTrace: start -1309278753 wash_hands/soap.jpg
+11-27 14:33:51.292  4537  4537 I BundledArtworkTrace: start -1309295137 wash_hands/wet.jpg
+11-27 14:33:51.292  4537  4537 I BundledArtworkTrace: start -1309311521 wash_hands/water_on.jpg
+11-27 14:33:51.292  4537  4537 I BundledArtworkTrace: start -145422347 wash_hands/rinse.jpg
+11-27 14:33:51.292  4537  4594 I BundledArtworkTrace: loaded -1309278753 wash_hands/soap.jpg bitmap=true
+11-27 14:33:51.292  4537  4594 I BundledArtworkTrace: published -1309278753 wash_hands/soap.jpg bitmap=true
+11-27 14:33:51.293  4537  4594 I BundledArtworkTrace: loaded -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:51.293  4537  4594 I BundledArtworkTrace: published -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:51.293  4537  4594 I BundledArtworkTrace: loaded -1309311521 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:51.293  4537  4594 I BundledArtworkTrace: published -1309311521 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:51.293  4537  4594 I BundledArtworkTrace: loaded -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:51.293  4537  4594 I BundledArtworkTrace: published -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:51.314  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/soap.jpg bitmap=true
+11-27 14:33:51.314  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:51.314  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:51.314  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:51.389  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/wet.jpg bitmap=false
+11-27 14:33:51.389  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:51.389  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/soap.jpg bitmap=false
+11-27 14:33:51.391  4537  4537 I BundledArtworkTrace: start -1309278753 wash_hands/wet.jpg
+11-27 14:33:51.391  4537  4537 I BundledArtworkTrace: start -1309295137 wash_hands/water_on.jpg
+11-27 14:33:51.391  4537  4537 I BundledArtworkTrace: start -145424139 wash_hands/soap.jpg
+11-27 14:33:51.391  4537  4588 I BundledArtworkTrace: loaded -1309278753 wash_hands/wet.jpg bitmap=true
+11-27 14:33:51.391  4537  4598 I BundledArtworkTrace: loaded -145424139 wash_hands/soap.jpg bitmap=true
+11-27 14:33:51.392  4537  4598 I BundledArtworkTrace: published -145424139 wash_hands/soap.jpg bitmap=true
+11-27 14:33:51.392  4537  4588 I BundledArtworkTrace: published -1309278753 wash_hands/wet.jpg bitmap=true
+11-27 14:33:51.392  4537  4590 I BundledArtworkTrace: loaded -1309295137 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:51.393  4537  4590 I BundledArtworkTrace: published -1309295137 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:51.413  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/wet.jpg bitmap=true
+11-27 14:33:51.413  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:51.413  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/soap.jpg bitmap=true
+11-27 14:33:51.524  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:51.524  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/wet.jpg bitmap=false
+11-27 14:33:51.524  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/soap.jpg bitmap=false
+11-27 14:33:51.527  4537  4537 I BundledArtworkTrace: start -1309278753 wash_hands/water_on.jpg
+11-27 14:33:51.527  4537  4537 I BundledArtworkTrace: start -145424139 wash_hands/wet.jpg
+11-27 14:33:51.527  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/soap.jpg
+11-27 14:33:51.530  4537  4590 I BundledArtworkTrace: loaded -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:51.530  4537  4590 I BundledArtworkTrace: published -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:51.530  4537  4597 I BundledArtworkTrace: loaded -145424139 wash_hands/wet.jpg bitmap=true
+11-27 14:33:51.530  4537  4597 I BundledArtworkTrace: published -145424139 wash_hands/wet.jpg bitmap=true
+11-27 14:33:51.530  4537  4597 I BundledArtworkTrace: loaded -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:51.530  4537  4597 I BundledArtworkTrace: published -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:51.549  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:51.549  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/wet.jpg bitmap=true
+11-27 14:33:51.549  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:51.658  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:51.658  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:51.658  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/wet.jpg bitmap=false
+11-27 14:33:51.658  4537  4537 I BundledArtworkTrace: rendered -148569867 wash_hands/soap.jpg bitmap=false
+11-27 14:33:51.664  4537  4537 I BundledArtworkTrace: start -145422347 wash_hands/water_on.jpg
+11-27 14:33:51.667  4537  4537 I BundledArtworkTrace: start -145424139 wash_hands/rinse.jpg
+11-27 14:33:51.667  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/wet.jpg
+11-27 14:33:51.667  4537  4537 I BundledArtworkTrace: start -148569867 wash_hands/soap.jpg
+11-27 14:33:51.668  4537  4537 I BundledArtworkTrace: loaded -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:51.668  4537  4537 I BundledArtworkTrace: published -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:51.668  4537  4537 I BundledArtworkTrace: loaded -145424139 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:51.668  4537  4537 I BundledArtworkTrace: published -145424139 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:51.668  4537  4537 I BundledArtworkTrace: loaded -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:51.668  4537  4537 I BundledArtworkTrace: published -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:51.668  4537  4537 I BundledArtworkTrace: loaded -148569867 wash_hands/soap.jpg bitmap=true
+11-27 14:33:51.668  4537  4537 I BundledArtworkTrace: published -148569867 wash_hands/soap.jpg bitmap=true
+11-27 14:33:51.670  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:51.670  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:51.670  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:51.670  4537  4537 I BundledArtworkTrace: rendered -148569867 wash_hands/soap.jpg bitmap=true
+11-27 14:33:51.749  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:51.750  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:51.750  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/wet.jpg bitmap=false
+11-27 14:33:51.750  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/soap.jpg bitmap=false
+11-27 14:33:51.752  4537  4537 I BundledArtworkTrace: start -1309278753 wash_hands/water_on.jpg
+11-27 14:33:51.752  4537  4537 I BundledArtworkTrace: start -145422347 wash_hands/rinse.jpg
+11-27 14:33:51.752  4537  4537 I BundledArtworkTrace: start -145424139 wash_hands/wet.jpg
+11-27 14:33:51.752  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/soap.jpg
+11-27 14:33:51.752  4537  4597 I BundledArtworkTrace: loaded -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:51.752  4537  4597 I BundledArtworkTrace: published -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:51.752  4537  4591 I BundledArtworkTrace: loaded -145424139 wash_hands/wet.jpg bitmap=true
+11-27 14:33:51.753  4537  4591 I BundledArtworkTrace: published -145424139 wash_hands/wet.jpg bitmap=true
+11-27 14:33:51.753  4537  4598 I BundledArtworkTrace: loaded -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:51.753  4537  4598 I BundledArtworkTrace: published -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:51.753  4537  4597 I BundledArtworkTrace: loaded -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:51.753  4537  4597 I BundledArtworkTrace: published -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:51.773  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:51.773  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:51.773  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/wet.jpg bitmap=true
+11-27 14:33:51.773  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:51.931  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/wet.jpg bitmap=false
+11-27 14:33:51.941  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/soap.jpg bitmap=false
+11-27 14:33:51.950  4537  4537 I BundledArtworkTrace: start -1309295137 wash_hands/wet.jpg
+11-27 14:33:51.951  4537  4537 I BundledArtworkTrace: start -145424139 wash_hands/soap.jpg
+11-27 14:33:51.951  4537  4537 I BundledArtworkTrace: loaded -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:51.951  4537  4537 I BundledArtworkTrace: published -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:51.951  4537  4537 I BundledArtworkTrace: loaded -145424139 wash_hands/soap.jpg bitmap=true
+11-27 14:33:51.951  4537  4537 I BundledArtworkTrace: published -145424139 wash_hands/soap.jpg bitmap=true
+11-27 14:33:51.952  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:51.952  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/soap.jpg bitmap=true
+11-27 14:33:52.047  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/soap.jpg bitmap=false
+11-27 14:33:52.049  4537  4537 I BundledArtworkTrace: start -1309311521 wash_hands/soap.jpg
+11-27 14:33:52.049  4537  4597 I BundledArtworkTrace: loaded -1309311521 wash_hands/soap.jpg bitmap=true
+11-27 14:33:52.050  4537  4597 I BundledArtworkTrace: published -1309311521 wash_hands/soap.jpg bitmap=true
+11-27 14:33:52.075  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/soap.jpg bitmap=true
+11-27 14:33:52.170  4537  4537 I BundledArtworkTrace: rendered -1309327905 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:52.183  4537  4537 I BundledArtworkTrace: start -1309327905 wash_hands/rinse.jpg
+11-27 14:33:52.183  4537  4537 I BundledArtworkTrace: loaded -1309327905 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:52.183  4537  4537 I BundledArtworkTrace: published -1309327905 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:52.184  4537  4537 I BundledArtworkTrace: rendered -1309327905 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:53.477  4537  4537 I BundledArtworkTrace: start -145422347 wash_hands/water_on.jpg
+11-27 14:33:53.477  4537  4537 I BundledArtworkTrace: start -145424139 wash_hands/rinse.jpg
+11-27 14:33:53.477  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/wet.jpg
+11-27 14:33:53.477  4537  4537 I BundledArtworkTrace: start -148569867 wash_hands/soap.jpg
+11-27 14:33:53.477  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:53.477  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:53.477  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/wet.jpg bitmap=false
+11-27 14:33:53.477  4537  4537 I BundledArtworkTrace: rendered -148569867 wash_hands/soap.jpg bitmap=false
+11-27 14:33:53.477  4537  4598 I BundledArtworkTrace: loaded -145424139 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:53.477  4537  4598 I BundledArtworkTrace: published -145424139 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:53.478  4537  4597 I BundledArtworkTrace: loaded -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:53.478  4537  4597 I BundledArtworkTrace: published -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:53.478  4537  4598 I BundledArtworkTrace: loaded -148569867 wash_hands/soap.jpg bitmap=true
+11-27 14:33:53.478  4537  4598 I BundledArtworkTrace: published -148569867 wash_hands/soap.jpg bitmap=true
+11-27 14:33:53.479  4537  4592 I BundledArtworkTrace: loaded -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:53.479  4537  4592 I BundledArtworkTrace: published -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:53.517  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:53.517  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:53.517  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:53.517  4537  4537 I BundledArtworkTrace: rendered -148569867 wash_hands/soap.jpg bitmap=true
+11-27 14:33:54.468  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:54.469  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/wet.jpg bitmap=false
+11-27 14:33:54.469  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/soap.jpg bitmap=false
+11-27 14:33:54.470  4537  4537 I BundledArtworkTrace: start -1309278753 wash_hands/rinse.jpg
+11-27 14:33:54.471  4537  4537 I BundledArtworkTrace: start -145424139 wash_hands/wet.jpg
+11-27 14:33:54.471  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/soap.jpg
+11-27 14:33:54.471  4537  4590 I BundledArtworkTrace: loaded -145424139 wash_hands/wet.jpg bitmap=true
+11-27 14:33:54.471  4537  4590 I BundledArtworkTrace: published -145424139 wash_hands/wet.jpg bitmap=true
+11-27 14:33:54.472  4537  4590 I BundledArtworkTrace: loaded -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:54.472  4537  4590 I BundledArtworkTrace: published -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:54.472  4537  4594 I BundledArtworkTrace: loaded -1309278753 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:54.472  4537  4594 I BundledArtworkTrace: published -1309278753 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:54.497  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:54.497  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/wet.jpg bitmap=true
+11-27 14:33:54.497  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:54.591  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/soap.jpg bitmap=false
+11-27 14:33:54.593  4537  4537 I BundledArtworkTrace: start -1309295137 wash_hands/soap.jpg
+11-27 14:33:54.594  4537  4537 I BundledArtworkTrace: loaded -1309295137 wash_hands/soap.jpg bitmap=true
+11-27 14:33:54.594  4537  4537 I BundledArtworkTrace: published -1309295137 wash_hands/soap.jpg bitmap=true
+11-27 14:33:54.594  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/soap.jpg bitmap=true
+11-27 14:33:54.674  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/wet.jpg bitmap=false
+11-27 14:33:54.682  4537  4537 I BundledArtworkTrace: start -1309311521 wash_hands/wet.jpg
+11-27 14:33:54.683  4537  4537 I BundledArtworkTrace: loaded -1309311521 wash_hands/wet.jpg bitmap=true
+11-27 14:33:54.683  4537  4537 I BundledArtworkTrace: published -1309311521 wash_hands/wet.jpg bitmap=true
+11-27 14:33:54.684  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/wet.jpg bitmap=true
+11-27 14:33:54.738  4537  4537 I BundledArtworkTrace: rendered -1309327905 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:54.745  4537  4537 I BundledArtworkTrace: start -1309327905 wash_hands/water_on.jpg
+11-27 14:33:54.747  4537  4592 I BundledArtworkTrace: loaded -1309327905 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:54.747  4537  4592 I BundledArtworkTrace: published -1309327905 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:54.770  4537  4537 I BundledArtworkTrace: rendered -1309327905 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:55.125  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/soap.jpg bitmap=false
+11-27 14:33:55.125  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/wet.jpg bitmap=false
+11-27 14:33:55.125  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:55.126  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:55.129  4537  4537 I BundledArtworkTrace: start -1309278753 wash_hands/soap.jpg
+11-27 14:33:55.129  4537  4537 I BundledArtworkTrace: start -1309295137 wash_hands/wet.jpg
+11-27 14:33:55.129  4537  4537 I BundledArtworkTrace: start -1309311521 wash_hands/water_on.jpg
+11-27 14:33:55.129  4537  4537 I BundledArtworkTrace: start -145422347 wash_hands/rinse.jpg
+11-27 14:33:55.129  4537  4597 I BundledArtworkTrace: loaded -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:55.129  4537  4597 I BundledArtworkTrace: published -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:55.129  4537  4594 I BundledArtworkTrace: loaded -1309311521 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:55.129  4537  4594 I BundledArtworkTrace: published -1309311521 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:55.129  4537  4594 I BundledArtworkTrace: loaded -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:55.129  4537  4594 I BundledArtworkTrace: published -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:55.130  4537  4592 I BundledArtworkTrace: loaded -1309278753 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.130  4537  4592 I BundledArtworkTrace: published -1309278753 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.159  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.159  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:55.159  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:55.159  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:55.242  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/wet.jpg bitmap=false
+11-27 14:33:55.242  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:55.242  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/soap.jpg bitmap=false
+11-27 14:33:55.244  4537  4537 I BundledArtworkTrace: start -1309278753 wash_hands/wet.jpg
+11-27 14:33:55.244  4537  4537 I BundledArtworkTrace: start -1309295137 wash_hands/water_on.jpg
+11-27 14:33:55.245  4537  4537 I BundledArtworkTrace: start -145424139 wash_hands/soap.jpg
+11-27 14:33:55.247  4537  4593 I BundledArtworkTrace: loaded -1309278753 wash_hands/wet.jpg bitmap=true
+11-27 14:33:55.247  4537  4593 I BundledArtworkTrace: published -1309278753 wash_hands/wet.jpg bitmap=true
+11-27 14:33:55.247  4537  4593 I BundledArtworkTrace: loaded -1309295137 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:55.247  4537  4593 I BundledArtworkTrace: published -1309295137 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:55.247  4537  4593 I BundledArtworkTrace: loaded -145424139 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.247  4537  4593 I BundledArtworkTrace: published -145424139 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.271  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/wet.jpg bitmap=true
+11-27 14:33:55.272  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:55.272  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.341  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:55.342  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/wet.jpg bitmap=false
+11-27 14:33:55.342  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/soap.jpg bitmap=false
+11-27 14:33:55.345  4537  4537 I BundledArtworkTrace: start -1309278753 wash_hands/water_on.jpg
+11-27 14:33:55.345  4537  4537 I BundledArtworkTrace: start -145424139 wash_hands/wet.jpg
+11-27 14:33:55.345  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/soap.jpg
+11-27 14:33:55.348  4537  4592 I BundledArtworkTrace: loaded -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:55.348  4537  4592 I BundledArtworkTrace: published -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:55.348  4537  4588 I BundledArtworkTrace: loaded -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.348  4537  4588 I BundledArtworkTrace: published -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.348  4537  4593 I BundledArtworkTrace: loaded -145424139 wash_hands/wet.jpg bitmap=true
+11-27 14:33:55.348  4537  4593 I BundledArtworkTrace: published -145424139 wash_hands/wet.jpg bitmap=true
+11-27 14:33:55.374  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:55.374  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/wet.jpg bitmap=true
+11-27 14:33:55.374  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.456  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:55.457  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:55.457  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/wet.jpg bitmap=false
+11-27 14:33:55.457  4537  4537 I BundledArtworkTrace: rendered -148569867 wash_hands/soap.jpg bitmap=false
+11-27 14:33:55.462  4537  4537 I BundledArtworkTrace: start -145422347 wash_hands/water_on.jpg
+11-27 14:33:55.463  4537  4537 I BundledArtworkTrace: start -145424139 wash_hands/rinse.jpg
+11-27 14:33:55.463  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/wet.jpg
+11-27 14:33:55.463  4537  4537 I BundledArtworkTrace: start -148569867 wash_hands/soap.jpg
+11-27 14:33:55.466  4537  4598 I BundledArtworkTrace: loaded -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:55.467  4537  4598 I BundledArtworkTrace: published -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:55.467  4537  4591 I BundledArtworkTrace: loaded -145424139 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:55.467  4537  4591 I BundledArtworkTrace: published -145424139 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:55.467  4537  4588 I BundledArtworkTrace: loaded -148569867 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.467  4537  4588 I BundledArtworkTrace: published -148569867 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.467  4537  4593 I BundledArtworkTrace: loaded -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:55.467  4537  4593 I BundledArtworkTrace: published -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:55.503  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:55.503  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:55.503  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/wet.jpg bitmap=true
+11-27 14:33:55.503  4537  4537 I BundledArtworkTrace: rendered -148569867 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.581  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/water_on.jpg bitmap=false
+11-27 14:33:55.582  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:55.582  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/wet.jpg bitmap=false
+11-27 14:33:55.582  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/soap.jpg bitmap=false
+11-27 14:33:55.585  4537  4537 I BundledArtworkTrace: start -1309278753 wash_hands/water_on.jpg
+11-27 14:33:55.585  4537  4537 I BundledArtworkTrace: start -145422347 wash_hands/rinse.jpg
+11-27 14:33:55.585  4537  4537 I BundledArtworkTrace: start -145424139 wash_hands/wet.jpg
+11-27 14:33:55.585  4537  4537 I BundledArtworkTrace: start -148568075 wash_hands/soap.jpg
+11-27 14:33:55.586  4537  4537 I BundledArtworkTrace: loaded -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:55.586  4537  4537 I BundledArtworkTrace: published -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:55.586  4537  4537 I BundledArtworkTrace: loaded -145424139 wash_hands/wet.jpg bitmap=true
+11-27 14:33:55.586  4537  4537 I BundledArtworkTrace: published -145424139 wash_hands/wet.jpg bitmap=true
+11-27 14:33:55.586  4537  4537 I BundledArtworkTrace: rendered -1309278753 wash_hands/water_on.jpg bitmap=true
+11-27 14:33:55.586  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/wet.jpg bitmap=true
+11-27 14:33:55.586  4537  4537 I BundledArtworkTrace: loaded -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.586  4537  4537 I BundledArtworkTrace: published -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.586  4537  4537 I BundledArtworkTrace: loaded -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:55.586  4537  4537 I BundledArtworkTrace: published -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:55.586  4537  4537 I BundledArtworkTrace: rendered -145422347 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:55.586  4537  4537 I BundledArtworkTrace: rendered -148568075 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.711  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/wet.jpg bitmap=false
+11-27 14:33:55.712  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/soap.jpg bitmap=false
+11-27 14:33:55.714  4537  4537 I BundledArtworkTrace: start -1309295137 wash_hands/wet.jpg
+11-27 14:33:55.714  4537  4537 I BundledArtworkTrace: start -145424139 wash_hands/soap.jpg
+11-27 14:33:55.715  4537  4537 I BundledArtworkTrace: loaded -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:55.715  4537  4537 I BundledArtworkTrace: published -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:55.715  4537  4537 I BundledArtworkTrace: rendered -1309295137 wash_hands/wet.jpg bitmap=true
+11-27 14:33:55.716  4537  4593 I BundledArtworkTrace: loaded -145424139 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.716  4537  4593 I BundledArtworkTrace: published -145424139 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.745  4537  4537 I BundledArtworkTrace: rendered -145424139 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.818  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/soap.jpg bitmap=false
+11-27 14:33:55.829  4537  4537 I BundledArtworkTrace: start -1309311521 wash_hands/soap.jpg
+11-27 14:33:55.833  4537  4594 I BundledArtworkTrace: loaded -1309311521 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.833  4537  4594 I BundledArtworkTrace: published -1309311521 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.875  4537  4537 I BundledArtworkTrace: rendered -1309311521 wash_hands/soap.jpg bitmap=true
+11-27 14:33:55.914  4537  4537 I BundledArtworkTrace: rendered -1309327905 wash_hands/rinse.jpg bitmap=false
+11-27 14:33:55.929  4537  4537 I BundledArtworkTrace: start -1309327905 wash_hands/rinse.jpg
+11-27 14:33:55.933  4537  4537 I BundledArtworkTrace: loaded -1309327905 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:55.933  4537  4537 I BundledArtworkTrace: published -1309327905 wash_hands/rinse.jpg bitmap=true
+11-27 14:33:55.934  4537  4537 I BundledArtworkTrace: rendered -1309327905 wash_hands/rinse.jpg bitmap=true

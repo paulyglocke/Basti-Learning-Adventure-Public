@@ -1,0 +1,11 @@
+package com.bellfamily.bastischool.ui.common
+
+import androidx.compose.ui.graphics.ImageBitmap
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+
+/** Decode independently of the caller's dispatcher; publish only a current result. */
+internal suspend fun loadArtworkForUi(load: () -> ImageBitmap?, publish: (ImageBitmap?) -> Unit) {
+    val loaded = withContext(Dispatchers.IO) { load() }
+    publish(loaded)
+}

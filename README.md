@@ -12,37 +12,38 @@ Core learning remains fully offline, without accounts, advertising, Google Play 
 
 ## Current implementation
 
-The app is currently a **hybrid Kotlin/Jetpack Compose + legacy WebView** application undergoing an incremental native migration.
+Current source baseline: `8e3407f` (2026-11-26). Home exposes **36 live entries:
+33 native and three retained web**, with 20 entries in Numbers & Maths. Entry
+counts include choosers with several modes; they are not counts of screens or skills.
+The [current activity/acceptance inventory](docs/ACTIVITY_ACCEPTANCE.md) lists every
+entry, initial destination, evidence layer and remaining acceptance work.
 
-The illustrated Home groups the existing catalogue into six bilingual categories,
-with all 20 working entries available under All Activities. Colours opens Colour
-Sort directly; Grown-ups opens the existing native Options. Learning destinations,
-audio and saved progress are preserved. This UX integration is awaiting owner
-review; see [implementation and validation notes](docs/UX_HOME_INTEGRATION.md).
+Native curriculum includes communication/Vocabulary/written initials; 53 verb lessons
+and Animal Actions; Prepositions; Days/Seasons/Months/Clock; Colours/Rainbow;
+Habitats/Animal Groups; Follow/School Skills/Wash Hands; Memory Pairs; and Maths
+from quantity recognition through concrete number bonds, quantity change, number
+stories, conservation, patterns and direct length comparison/ordering. These starter
+implementations do not imply broader curriculum or generalised mastery.
 
-Substantial native learning experiences now include:
+Numbers, Easy Maths and Mixed Adventure remain local WebView destinations. Historical
+WEB verb checkpoints remain compatible. Retain legacy content, recovery and browser
+coverage until tested native parity and physical retirement gates are satisfied.
 
-- **Prepositions** — 52 scenes across 13 relations, activity revision 3/content 1.3, guided Listen and exact v1/v2 saved-round recovery. Both replacement batches are source-reviewed as resolved: 52 CLEAR, zero BORDERLINE or ARTWORK_FIX_REQUIRED. See the [scene audit](PREPOSITIONS_CONTENT_AUDIT.md); source-art review is not physical acceptance.
-- **Seasons** — Explore, recognition, Next/Before, Build the Year, Missing Season (`MISSING`), Season Clues (`CLUES`), Match season to clue (`MATCH`) and combined Before/After (`COMBINED`).
-- **Months** — native Year Wheel exploration, Find Month, Before/Next, Between, Missing Month, selectable three- and four-month Build the Year ordering levels, illustrated Months ↔ Seasons grouping, and an interactive Seasons & Months Wheel. The new wheel keeps the supplied four-season illustration fixed while the 12-month Canvas ring turns and snaps; it has Explore/Match modes and bilingual support. Focused JVM and API 35 checks pass, and solved-state English/German screenshots were inspected. Physical-device acceptance is **NOT RUN — deferred by owner**.
-- **Wilma's Week / Wilmas Woche** — Explore, Find Day, Before/After, weekday ordering, explicitly anchored Today/Yesterday/Tomorrow (`TODAY`) and non-quiz German/English weekday learning (`BILINGUAL`). TODAY uses a hypothetical weekday, not the device date.
-- **Vocabulary Booster** — bilingual vocabulary exploration and picture/word recognition.
-- **Follow the Instructions / Anweisungen folgen** — directly selectable one-step and ordered two-step bilingual listening levels with six illustrated animals, spoken instructions, replay, hints and saved 5/10-question rounds. School Skills includes contextual help-seeking phrases, illustrated classroom-action matching, two- and three-action order challenges, and a touch-based Classroom Helper where Basti selects an item and then its destination. Progress records app responses only; it does not claim real-world task completion. Physical-device acceptance is **NOT RUN — deferred by owner**.
-- **Colour Sort** — a bounded native tap-to-place sorting set with semantic membership, support and durable progress.
-- **Tell Me** — picture-led expressive-language activities encouraging description and conversation without automatic speech scoring. Content revision 11 has A/B/C/A rotation for three pilot scenes and A/B/A for the other 78; pilot JVM and emulator route/layout checks pass, while independent German and physical-device acceptance remain open.
-- **Animal Groups / Wash Hands** — bounded animal sorting and four-step practical-life sequencing.
-- **How many? / Wie viele?** — subitising stable dot patterns from 1–5.
-- **Numbers & Groups / Zahlen & Mengen** — quantity → numeral and numeral → quantity matching, 1–5.
-- **More or Fewer / Mehr oder weniger** — two groups of 1–5, answering Left/Right/Same to “Which side has more?”; no separate fewer-question mode.
-- **Number Order / Zahlenfolge** — Before, After and Missing number questions within 1–5, without wraparound.
-- **Add Together / Zusammenzählen** — two visible nonempty dot groups, totals 2–5; no zero or subtraction.
-- **Dinosaur Counting Tray / Dinosaurier-Zählfeld** — tap dinosaurs into or out of five spaces to build quantities 1–5, then check the group. Only checked answers create progress evidence.
+Recent local evidence: 751/751 JVM, app/test assemblies and lint passed; scoped
+phone 15 and tablet 4 cases passed. Hosted build/browser jobs also passed on this
+baseline, but the Android gate is **OPEN** after an artwork-readiness timeout.
+[Current investigation](docs/consolidation-2026-11-26/README.md).
 
-The five matching/comparison/order/addition activities above use visual choices and shared quantity data. Dinosaur Counting Tray adds bounded object manipulation. All use native session/progress/audio foundations and 5/10-question rounds where applicable. Number bonds, decomposition, conservation, broader subtraction and generalised manipulation remain future curriculum. Implementation does not imply physical-device acceptance.
+The [artwork publication correction](docs/artwork-ci-diagnostics-2026-11-27/README.md)
+now passes the complete configured Android selection locally (40/40), full JVM
+(751/751), both APK assemblies and lint. Hosted confirmation is pending publication;
+historical Compose disposal and physical acceptance remain separate.
 
-These activities increasingly share native content, audio, support, deterministic session, restoration, completion and progress foundations rather than implementing separate state systems for every screen.
-
-Legacy learning activities remain bundled locally while native replacements are developed and validated. The long-term target remains a fully native Jetpack Compose application with no runtime WebView/HTML/JavaScript dependency.
+The owner-approved [consolidation plan](docs/CONSOLIDATION_PLAN.md) prioritizes a
+trusted baseline, refinement of existing experiences, maintainability and then a
+small curated Today’s Adventure. Physical Samsung/Fire, child, actual assistive
+technology and audible offline voice acceptance remain separate from automation.
+[Batched device-review preparation](docs/DEVICE_ACCEPTANCE_BATCH.md).
 
 ## Learning philosophy
 

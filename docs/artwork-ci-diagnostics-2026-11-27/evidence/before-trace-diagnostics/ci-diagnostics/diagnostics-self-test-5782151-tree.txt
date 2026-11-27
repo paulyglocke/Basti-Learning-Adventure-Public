@@ -1,0 +1,5 @@
+Printing with useUnmergedTree = 'true'
+Node #1 at (l=0.0, t=0.0, r=1080.0, b=1920.0)px
+ |-Node #3 at (l=0.0, t=0.0, r=283.0, b=43.0)px, Tag: 'diagnostic-present'
+   Text = '[Diagnostic fixture]'
+   Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]

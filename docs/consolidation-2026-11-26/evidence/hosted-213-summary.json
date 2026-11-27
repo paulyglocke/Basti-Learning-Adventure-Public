@@ -1,0 +1,272 @@
+{
+  "source": "hosted-213-reports.zip",
+  "sha256": "2c30a2f227e4f856886b8a7dd84c05a7bba9ec1763509c97d11781822ef9c4b9",
+  "format": "Derived from original hosted Android JUnit XML; not new execution",
+  "tests": 36,
+  "failures": 1,
+  "errors": 0,
+  "skipped": 0,
+  "suites": [
+    {
+      "path": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "tests": 36,
+      "failures": 1,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "cases": [
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.length.LengthOrderingRouteTest",
+      "name": "orderUndoRemoveRetryRestoreFiveAndTenAndKeepComparisonJournal",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.length.LengthOrderingOwnerTest",
+      "name": "offStaysLazyHiddenResultsStaySilentAndFreshOwnersRestoreExactWork",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest",
+      "name": "alignRestoreUndoRetryAndCompleteFiveAndTenWithSharedProgress",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.length.LengthComparisonOwnerTest",
+      "name": "offStaysLazyHiddenResultsStaySilentAndFreshOwnersRestoreExactWork",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.conservation.ConservationRouteTest",
+      "name": "bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.conservation.ConservationOwnerTest",
+      "name": "offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest",
+      "name": "allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.numberstories.NumberStoriesOwnerTest",
+      "name": "offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeRouteTest",
+      "name": "allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.quantitychange.QuantityChangeOwnerTest",
+      "name": "offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.patterns.PatternRouteTest",
+      "name": "allThreeRulesKeepTheirExamplesRestoreEditedAndCheckedWorkAndCompleteFiveAndTenRounds",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.patterns.PatternOwnerTest",
+      "name": "offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTest",
+      "name": "allSixBoardsRestoreTurnsTranslateUseSupportAndCompleteWithSharedBalloons",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.memory.MemoryPairsOwnerTest",
+      "name": "offIsLazyFreshOwnerRestoresSilentlyAndSwitchingWhileLoadingCannotPublishAnotherBoard",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.MainActivityStartupTest",
+      "name": "homeSurvivesLaunchRecreationAndBackgroundReturn",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.SweepRepairsRouteTest",
+      "name": "matchingOptionsRecreationReturnsToBothOriginalBrowsePages",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.SweepRepairsRouteTest",
+      "name": "thumbnailAndStepPicturesDecodeAtBoundedSizeAndMissingArtIsSafe",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.SweepRepairsRouteTest",
+      "name": "activityThumbnailsAreVisibleThroughRealBrowsePages",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.verbs.VerbsRouteTest",
+      "name": "quizLessonSettingsRecreationAndCompletionPreserveExactQuestionAndChoices",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.bonds.NumberBondsRouteTest",
+      "name": "bothLevelsKeepFixedEggsRestoreAddedEggsAndCompleteWithSharedRewards",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest",
+      "name": "listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1]",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest",
+      "name": "listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1]",
+      "outcome": "failure",
+      "stack": "androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 10000 ms\nat androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)\nat androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)\nat com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest.listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable(WashHandsScreenTest.kt:61)\n"
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest",
+      "name": "listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0]",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest",
+      "name": "listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-8]",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.washhands.WashHandsLifecycleTest",
+      "name": "editsWrongWorkCompletionAndNewRoundSurviveLifecycleAndRepeatedDisposal[en]",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.washhands.WashHandsLifecycleTest",
+      "name": "editsWrongWorkCompletionAndNewRoundSurviveLifecycleAndRepeatedDisposal[de]",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest",
+      "name": "allImagesDecodeOnceAtBoundedSizeAndReuseTheSameCache",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest",
+      "name": "missingAndCorruptImagesAreIsolatedAndCachedWithoutReplacingThemWithOtherAnimals",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.vocabulary.FoodVocabularyRouteTest",
+      "name": "foodExploreFindNameLanguageAndCategorySwitchPreserveSavedPractice",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest",
+      "name": "artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[ENGLISH-1]",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest",
+      "name": "artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-1]",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest",
+      "name": "artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-0]",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest",
+      "name": "artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-8]",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest",
+      "name": "germanGuidedOutlineAdvancesAndClearsAtLargeTextNarrowWidth",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest",
+      "name": "englishGuidedOutlineAdvancesAndClearsAtLargeTextNarrowWidth",
+      "outcome": "passed",
+      "stack": null
+    },
+    {
+      "suite": "outputs/androidTest-results/connected/debug/TEST-emulator-5554 - 15-_app-.xml",
+      "classname": "com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest",
+      "name": "individualListenIsSeparateFromImmediateKeyboardAnswerAndNavigationClearsOutline",
+      "outcome": "passed",
+      "stack": null
+    }
+  ]
+}

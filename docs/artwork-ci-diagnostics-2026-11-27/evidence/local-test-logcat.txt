@@ -1,0 +1,842 @@
+--------- beginning of system
+11-27 11:17:58.730   551   551 I ActivityManager: Memory class: 192
+11-27 11:17:59.783   551   588 I ActivityManager: Connection with lmkd established
+11-27 11:18:00.995   551   551 W ActivityManager: Unable to start service Intent { act=android.service.notification.NotificationListenerService cmp=com.google.android.apps.nexuslauncher/com.android.launcher3.notification.NotificationListener } U=0: not found
+11-27 11:18:00.996   551   551 W ActivityManager: Unable to start service Intent { act=android.service.notification.NotificationListenerService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.common.notification.service.AiAiNotificationListenerService } U=0: not found
+11-27 11:18:00.996   551   551 W ActivityManager: Unable to start service Intent { act=android.service.notification.NotificationAssistantService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.common.notification.service.AiAiNotificationAssistantService } U=0: not found
+11-27 11:18:01.950   551   551 I ActivityManager: System now ready
+11-27 11:18:02.109   551   551 W ActivityManager: Too early to start/bind service in system_server: Phase=550 ComponentInfo{com.android.server.telecom/com.android.server.telecom.components.TelecomService}
+11-27 11:18:02.110   551   551 W ActivityManager: Too early to start/bind service in system_server: Phase=550 ComponentInfo{com.android.server.telecom/com.android.server.telecom.components.TelecomService}
+11-27 11:18:02.255   551   586 I ActivityManager: Start proc 786:com.android.systemui/u0a174 for service {com.android.systemui/com.android.systemui.wallpapers.ImageWallpaper}
+11-27 11:18:02.332   551   586 I ActivityManager: Start proc 808:WebViewLoader-arm64-v8a/1037 [android.webkit.WebViewLibraryLoader$RelroFileCreator] for 
+11-27 11:18:02.617   551   571 I ActivityManager: Process WebViewLoader-arm64-v8a (pid 808) has died: psvc PER 
+11-27 11:18:02.751   551   586 I ActivityManager: Start proc 856:com.android.networkstack.process/1073 for service {com.google.android.networkstack/com.android.server.NetworkStackService}
+11-27 11:18:02.777   551   551 I ActivityManager: Current user:0
+11-27 11:18:03.064   551   586 W ActivityManager: Slow operation: 106ms so far, now at startProcess: done updating battery stats
+11-27 11:18:03.064   551   586 W ActivityManager: Slow operation: 106ms so far, now at startProcess: building log message
+11-27 11:18:03.064   551   586 I ActivityManager: Start proc 898:com.android.se/1068 for added application com.android.se
+11-27 11:18:03.064   551   586 W ActivityManager: Slow operation: 106ms so far, now at startProcess: starting to update pids map
+11-27 11:18:03.064   551   586 W ActivityManager: Slow operation: 106ms so far, now at startProcess: done updating pids map
+11-27 11:18:03.064   551   586 W ActivityManager: Slow operation: 104ms so far, now at startProcess: asking zygote to start proc
+11-27 11:18:03.070   551   586 W ActivityManager: Slow operation: 110ms so far, now at startProcess: returned from zygote!
+11-27 11:18:03.070   551   586 W ActivityManager: Slow operation: 111ms so far, now at startProcess: done updating battery stats
+11-27 11:18:03.070   551   586 W ActivityManager: Slow operation: 111ms so far, now at startProcess: building log message
+11-27 11:18:03.070   551   586 I ActivityManager: Start proc 918:com.android.phone/1001 for added application com.android.phone
+11-27 11:18:03.070   551   586 W ActivityManager: Slow operation: 111ms so far, now at startProcess: starting to update pids map
+11-27 11:18:03.070   551   586 W ActivityManager: Slow operation: 111ms so far, now at startProcess: done updating pids map
+11-27 11:18:03.087   551   586 I ActivityManager: Start proc 929:com.android.settings/1000 for top-activity {com.android.settings/com.android.settings.FallbackHome}
+11-27 11:18:03.115   551   586 I ActivityManager: Start proc 938:com.google.android.ext.services/u0a196 for service {com.google.android.ext.services/android.ext.services.autofill.InlineSuggestionRenderServiceImpl}
+11-27 11:18:03.306   551   551 W ActivityManager: Unable to start service Intent { act=android.service.notification.NotificationListenerService cmp=com.google.android.apps.nexuslauncher/com.android.launcher3.notification.NotificationListener } U=0: not found
+11-27 11:18:03.306   551   551 W ActivityManager: Unable to start service Intent { act=android.service.notification.NotificationListenerService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.common.notification.service.AiAiNotificationListenerService } U=0: not found
+11-27 11:18:03.307   551   551 W ActivityManager: Unable to start service Intent { act=android.service.notification.NotificationAssistantService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.common.notification.service.AiAiNotificationAssistantService } U=0: not found
+11-27 11:18:03.329   551   551 W ActivityManager: Unable to start service Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } U=0: not found
+11-27 11:18:03.333   551   586 I ActivityManager: Start proc 979:com.google.android.gms.persistent/u0a136 for broadcast {com.google.android.gms/com.google.android.gms.chimera.GmsIntentOperationService$PersistentTrustedReceiver}
+11-27 11:18:03.337   551   551 W ActivityManager: Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@f1ac4b1
+11-27 11:18:03.337   551   551 W ActivityManager: Unable to start service Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } U=0: not found
+11-27 11:18:03.344   551   551 W ActivityManager: Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@cb458e9
+11-27 11:18:03.578   551   571 W ActivityManager: Unable to start service Intent { act=android.service.smartspace.SmartspaceService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiSmartspaceService } U=0: not found
+11-27 11:18:03.578   551   571 W ActivityManager: Unable to start service Intent { act=android.service.smartspace.SmartspaceService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiSmartspaceService } U=0: not found
+11-27 11:18:03.579   551   571 W ActivityManager: Unable to start service Intent { act=android.service.smartspace.SmartspaceService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiSmartspaceService } U=0: not found
+11-27 11:18:03.579   551   571 W ActivityManager: Unable to start service Intent { act=android.service.smartspace.SmartspaceService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiSmartspaceService } U=0: not found
+11-27 11:18:03.580   551   551 W ActivityManager: Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@2d84e72
+11-27 11:18:03.580   551   551 W ActivityManager: Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@c2c52c3
+11-27 11:18:03.580   551   551 W ActivityManager: Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@5e8d740
+11-27 11:18:03.580   551   551 W ActivityManager: Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@1395679
+11-27 11:18:04.411   551   586 I ActivityManager: Start proc 1063:com.google.android.permissioncontroller/u0a193 for broadcast {com.google.android.permissioncontroller/com.android.permissioncontroller.privacysources.SafetyCenterReceiver}
+11-27 11:18:04.466   551   571 W ActivityManager: pid 918 com.android.phone sent binder code 54 with flags 2 to frozen apps and got error -74
+11-27 11:18:04.481   551   571 W ActivityManager: Unable to start service Intent { act=com.google.android.chimera.BoundService.START dat=chimera-action: cmp=com.google.android.gms/.chimera.PersistentApiService } U=0: not found
+11-27 11:18:04.482   551   571 W ActivityManager: Unbind failed: could not find connection for android.os.BinderProxy@d198a02
+11-27 11:18:04.663   551   586 I ActivityManager: Start proc 1088:com.google.android.cellbroadcastreceiver/u0a179 for broadcast {com.google.android.cellbroadcastreceiver/com.android.cellbroadcastreceiver.CellBroadcastReceiver}
+11-27 11:18:10.410   551   586 W ActivityManager: Slow operation: 60ms so far, now at startProcess: returned from zygote!
+11-27 11:18:10.411   551   586 W ActivityManager: Slow operation: 60ms so far, now at startProcess: done updating battery stats
+11-27 11:18:10.411   551   586 W ActivityManager: Slow operation: 60ms so far, now at startProcess: building log message
+11-27 11:18:10.411   551   586 I ActivityManager: Start proc 1117:com.google.android.apps.nexuslauncher/u0a169 for service {com.google.android.apps.nexuslauncher/com.android.quickstep.TouchInteractionService}
+11-27 11:18:10.411   551   586 W ActivityManager: Slow operation: 60ms so far, now at startProcess: starting to update pids map
+11-27 11:18:10.411   551   586 W ActivityManager: Slow operation: 60ms so far, now at startProcess: done updating pids map
+11-27 11:18:10.415   551   577 I ActivityManager: About to commit checkpoint
+11-27 11:18:10.497   551   586 W ActivityManager: Slow operation: 55ms so far, now at startProcess: returned from zygote!
+11-27 11:18:10.585   551   586 W ActivityManager: Slow operation: 143ms so far, now at startProcess: done updating battery stats
+11-27 11:18:10.590   551   586 W ActivityManager: Slow operation: 147ms so far, now at startProcess: building log message
+11-27 11:18:10.590   551   586 I ActivityManager: Start proc 1127:com.google.android.inputmethod.latin/u0a149 for service {com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME}
+11-27 11:18:10.590   551   586 W ActivityManager: Slow operation: 148ms so far, now at startProcess: starting to update pids map
+11-27 11:18:10.590   551   586 W ActivityManager: Slow operation: 148ms so far, now at startProcess: done updating pids map
+11-27 11:18:10.893   551   577 I ActivityManager: User 0 state changed from BOOTING to RUNNING_LOCKED
+11-27 11:18:11.079   551   620 W ActivityManager: Slow operation: 207ms so far, now at startProcess: done updating battery stats
+11-27 11:18:11.079   551   620 W ActivityManager: Slow operation: 207ms so far, now at startProcess: building log message
+11-27 11:18:11.079   551   620 I ActivityManager: Start proc 1154:com.google.android.apps.wellbeing/u0a135 for on-hold
+11-27 11:18:11.079   551   620 W ActivityManager: Slow operation: 207ms so far, now at startProcess: starting to update pids map
+11-27 11:18:11.079   551   620 W ActivityManager: Slow operation: 207ms so far, now at startProcess: done updating pids map
+11-27 11:18:11.550   551   574 I ActivityManager: User 0 state changed from RUNNING_LOCKED to RUNNING_UNLOCKING
+11-27 11:18:11.719   551   586 I ActivityManager: Start proc 1195:com.google.android.providers.media.module/u0a198 for service {com.google.android.providers.media.module/com.android.providers.media.fuse.ExternalStorageServiceImpl}
+11-27 11:18:11.755   551   586 I ActivityManager: Start proc 1196:com.google.android.as/u0a130 for service {com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService}
+11-27 11:18:11.850   551   586 I ActivityManager: Start proc 1221:com.google.android.googlequicksearchbox:interactor/u0a137 for service {com.google.android.googlequicksearchbox/com.google.android.voiceinteraction.GsaVoiceInteractionService}
+11-27 11:18:12.807   551   621 W ActivityManager: Slow operation: 102ms so far, now at attachApplicationLocked: before bindApplication
+11-27 11:18:12.813   551   621 W ActivityManager: Slow operation: 107ms so far, now at attachApplicationLocked: immediately before bindApplication
+11-27 11:18:12.884   551   621 W ActivityManager: Slow operation: 179ms so far, now at attachApplicationLocked: immediately after bindApplication
+11-27 11:18:12.884   551   621 W ActivityManager: Slow operation: 179ms so far, now at attachApplicationLocked: after updateLruProcessLocked
+11-27 11:18:12.887   551   621 W ActivityManager: Slow operation: 181ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+11-27 11:18:13.048   551   917 W ActivityManager: Slow operation: 89ms so far, now at attachApplicationLocked: immediately before bindApplication
+11-27 11:18:13.133   551   917 W ActivityManager: Slow operation: 174ms so far, now at attachApplicationLocked: immediately after bindApplication
+11-27 11:18:13.133   551   917 W ActivityManager: Slow operation: 174ms so far, now at attachApplicationLocked: after updateLruProcessLocked
+11-27 11:18:13.142   551   917 W ActivityManager: Slow operation: 182ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+11-27 11:18:13.442   551   585 I ActivityManager: User 0 state changed from RUNNING_UNLOCKING to RUNNING_UNLOCKED
+11-27 11:18:13.442   551   586 W ActivityManager: Slow operation: 143ms so far, now at startProcess: returned from zygote!
+11-27 11:18:13.538   551   586 W ActivityManager: Slow operation: 310ms so far, now at startProcess: done updating battery stats
+11-27 11:18:13.538   551   586 W ActivityManager: Slow operation: 325ms so far, now at startProcess: building log message
+11-27 11:18:13.538   551   586 I ActivityManager: Start proc 1248:com.android.printspooler/u0a117 for service {com.android.printspooler/com.android.printspooler.model.PrintSpoolerService}
+11-27 11:18:13.538   551   586 W ActivityManager: Slow operation: 325ms so far, now at startProcess: starting to update pids map
+11-27 11:18:13.538   551   586 W ActivityManager: Slow operation: 325ms so far, now at startProcess: done updating pids map
+11-27 11:18:13.538   551   586 W ActivityManager: Slow operation: 261ms so far, now at startProcess: asking zygote to start proc
+11-27 11:18:13.551   551   586 W ActivityManager: Slow operation: 273ms so far, now at startProcess: returned from zygote!
+11-27 11:18:13.552   551   586 W ActivityManager: Slow operation: 275ms so far, now at startProcess: done updating battery stats
+11-27 11:18:13.552   551   586 W ActivityManager: Slow operation: 275ms so far, now at startProcess: building log message
+11-27 11:18:13.552   551   586 I ActivityManager: Start proc 1272:com.google.android.apps.messaging:rcs/u0a134 for service {com.google.android.apps.messaging/com.google.android.ims.binding.SystemBindingService}
+11-27 11:18:13.552   551   586 W ActivityManager: Slow operation: 275ms so far, now at startProcess: starting to update pids map
+11-27 11:18:13.602   551   586 W ActivityManager: Slow operation: 286ms so far, now at startProcess: done updating pids map
+11-27 11:18:13.603   551   586 W ActivityManager: Slow operation: 97ms so far, now at startProcess: asking zygote to start proc
+11-27 11:18:13.616   551   585 I ActivityManager: Posting BOOT_COMPLETED user #0
+11-27 11:18:13.630   551   586 W ActivityManager: Slow operation: 123ms so far, now at startProcess: returned from zygote!
+11-27 11:18:13.673   551   586 W ActivityManager: Slow operation: 166ms so far, now at startProcess: done updating battery stats
+11-27 11:18:13.673   551   586 W ActivityManager: Slow operation: 166ms so far, now at startProcess: building log message
+11-27 11:18:13.673   551   586 I ActivityManager: Start proc 1290:com.android.emulator.multidisplay/1000 for added application com.android.emulator.multidisplay
+11-27 11:18:13.673   551   586 W ActivityManager: Slow operation: 166ms so far, now at startProcess: starting to update pids map
+11-27 11:18:13.673   551   586 W ActivityManager: Slow operation: 166ms so far, now at startProcess: done updating pids map
+11-27 11:18:14.888   551   917 W ActivityManager: Slow operation: 505ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+11-27 11:18:14.888   551   917 W ActivityManager: Slow operation: 506ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+11-27 11:18:15.075   551   571 W ActivityManager: Slow operation: 117ms so far, now at attachApplicationLocked: before bindApplication
+--------- beginning of main
+11-27 11:18:15.084   551   917 I ActivityManager: Broadcasting: Intent { act=com.android.emulator.multidisplay.START flg=0x400000 cmp=com.android.emulator.multidisplay/.MultiDisplayServiceReceiver }
+11-27 11:18:15.087   551   571 W ActivityManager: Slow operation: 129ms so far, now at attachApplicationLocked: immediately before bindApplication
+11-27 11:18:15.143   551   571 W ActivityManager: Slow operation: 186ms so far, now at attachApplicationLocked: immediately after bindApplication
+11-27 11:18:15.144   551   571 W ActivityManager: Slow operation: 186ms so far, now at attachApplicationLocked: after updateLruProcessLocked
+11-27 11:18:15.153   551   571 W ActivityManager: Slow operation: 196ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+11-27 11:18:15.705   551   917 I ActivityManager: Enqueued broadcast Intent { act=com.android.emulator.multidisplay.START flg=0x400000 cmp=com.android.emulator.multidisplay/.MultiDisplayServiceReceiver }: 0
+11-27 11:18:20.684   551   585 W ActivityManager: Slow operation: 558ms so far, now at startProcess: done creating new process record
+11-27 11:18:20.684   551   585 W ActivityManager: Slow operation: 559ms so far, now at startProcess: stepping in to startProcess
+11-27 11:18:21.276   551   585 W ActivityManager: Slow operation: 367ms so far, now at startProcess: building args
+11-27 11:18:21.277   551   585 W ActivityManager: Slow operation: 1151ms so far, now at startProcess: done starting proc!
+11-27 11:18:21.277   551   585 I ActivityManager: reportOnUserCompletedEvent(0): stored=10, eligible=111
+11-27 11:18:21.282   551   586 W ActivityManager: Slow operation: 374ms so far, now at startProcess: asking zygote to start proc
+11-27 11:18:21.330   551   913 I ActivityManager: Broadcasting: Intent { act=com.android.emulator.multidisplay.START flg=0x400000 cmp=com.android.emulator.multidisplay/.MultiDisplayServiceReceiver }
+11-27 11:18:21.331   551   913 I ActivityManager: Enqueued broadcast Intent { act=com.android.emulator.multidisplay.START flg=0x400000 cmp=com.android.emulator.multidisplay/.MultiDisplayServiceReceiver }: 0
+11-27 11:18:21.502   551   586 W ActivityManager: Slow operation: 594ms so far, now at startProcess: returned from zygote!
+11-27 11:18:21.507   551   577 I ActivityManager: PendingStartActivityUids startActivity to updateOomAdj delay:1065ms, uid:10169
+11-27 11:18:21.529   551   586 W ActivityManager: Slow operation: 621ms so far, now at startProcess: done updating battery stats
+11-27 11:18:21.529   551   586 W ActivityManager: Slow operation: 621ms so far, now at startProcess: building log message
+11-27 11:18:21.529   551   586 I ActivityManager: Start proc 1354:com.android.traceur/u0a120 for broadcast {com.android.traceur/com.android.traceur.Receiver}
+11-27 11:18:21.529   551   586 W ActivityManager: Slow operation: 621ms so far, now at startProcess: starting to update pids map
+11-27 11:18:21.529   551   586 W ActivityManager: Slow operation: 621ms so far, now at startProcess: done updating pids map
+11-27 11:18:21.529   551   586 W ActivityManager: Slow operation: 246ms so far, now at startProcess: asking zygote to start proc
+11-27 11:18:21.611   551   586 W ActivityManager: Slow operation: 328ms so far, now at startProcess: returned from zygote!
+11-27 11:18:21.611   551   586 W ActivityManager: Slow operation: 328ms so far, now at startProcess: done updating battery stats
+11-27 11:18:21.611   551   586 W ActivityManager: Slow operation: 328ms so far, now at startProcess: building log message
+11-27 11:18:21.611   551   586 I ActivityManager: Start proc 1358:com.android.localtransport/1000 for service {com.android.localtransport/com.android.localtransport.LocalTransportService}
+11-27 11:18:21.611   551   586 W ActivityManager: Slow operation: 328ms so far, now at startProcess: starting to update pids map
+11-27 11:18:21.611   551   586 W ActivityManager: Slow operation: 328ms so far, now at startProcess: done updating pids map
+11-27 11:18:21.624   551  1008 W ActivityManager: Slow operation: 4917ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+11-27 11:18:21.624   551  1008 W ActivityManager: Slow operation: 4917ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+11-27 11:18:21.624   551  1008 W ActivityManager: Slow operation: 4917ms so far, now at finishAttachApplicationInner: after updateOomAdjLocked
+11-27 11:18:21.678   551   586 W ActivityManager: Slow operation: 55ms so far, now at startProcess: asking zygote to start proc
+11-27 11:18:21.685   551   586 W ActivityManager: Slow operation: 62ms so far, now at startProcess: returned from zygote!
+11-27 11:18:21.723   551   586 W ActivityManager: Slow operation: 99ms so far, now at startProcess: done updating battery stats
+11-27 11:18:21.723   551   586 W ActivityManager: Slow operation: 100ms so far, now at startProcess: building log message
+11-27 11:18:21.723   551   586 I ActivityManager: Start proc 1361:com.android.keychain/1000 for service {com.android.keychain/com.android.keychain.KeyChainService}
+11-27 11:18:21.765   551   586 W ActivityManager: Slow operation: 142ms so far, now at startProcess: starting to update pids map
+11-27 11:18:21.765   551   586 W ActivityManager: Slow operation: 142ms so far, now at startProcess: done updating pids map
+11-27 11:18:21.985   551   586 W ActivityManager: Slow operation: 161ms so far, now at startProcess: returned from zygote!
+11-27 11:18:21.985   551   586 W ActivityManager: Slow operation: 161ms so far, now at startProcess: done updating battery stats
+11-27 11:18:21.985   551   586 W ActivityManager: Slow operation: 161ms so far, now at startProcess: building log message
+11-27 11:18:21.985   551   586 I ActivityManager: Start proc 1365:com.google.android.gms/u0a136 for service {com.google.android.gms/com.google.android.gms.chimera.GmsBoundBrokerService}
+11-27 11:18:21.985   551   586 W ActivityManager: Slow operation: 161ms so far, now at startProcess: starting to update pids map
+11-27 11:18:21.985   551   586 W ActivityManager: Slow operation: 161ms so far, now at startProcess: done updating pids map
+11-27 11:18:22.264   551   850 W ActivityManager: Slow operation: 244ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+11-27 11:18:22.264   551   850 W ActivityManager: Slow operation: 244ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+11-27 11:18:22.357   551   902 W ActivityManager: Slow operation: 90ms so far, now at attachApplicationLocked: immediately after bindApplication
+11-27 11:18:22.357   551   902 W ActivityManager: Slow operation: 90ms so far, now at attachApplicationLocked: after updateLruProcessLocked
+11-27 11:18:22.358   551   902 W ActivityManager: Slow operation: 92ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+11-27 11:18:22.475   551   586 W ActivityManager: Slow operation: 109ms so far, now at startProcess: returned from zygote!
+11-27 11:18:22.774   551   586 W ActivityManager: Slow operation: 409ms so far, now at startProcess: done updating battery stats
+11-27 11:18:22.774   551   586 W ActivityManager: Slow operation: 409ms so far, now at startProcess: building log message
+11-27 11:18:22.774   551   586 I ActivityManager: Start proc 1407:com.google.android.googlequicksearchbox:search/u0a137 for service {com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService}
+11-27 11:18:22.774   551   586 W ActivityManager: Slow operation: 409ms so far, now at startProcess: starting to update pids map
+11-27 11:18:22.775   551   586 W ActivityManager: Slow operation: 409ms so far, now at startProcess: done updating pids map
+11-27 11:18:22.805   551   574 I ActivityManager: Broadcast completed: result=0
+11-27 11:18:22.806   551   917 W ActivityManager: pid 551 system sent binder code 1 with flags 1 to frozen apps and got error -32
+11-27 11:18:22.847   551   574 I ActivityManager: Broadcast completed: result=0
+11-27 11:18:23.233   551   586 I ActivityManager: Start proc 1477:android.process.acore/u0a84 for content provider {com.android.providers.contacts/com.android.providers.contacts.ContactsProvider2}
+11-27 11:18:23.309   551   586 W ActivityManager: Slow operation: 67ms so far, now at startProcess: returned from zygote!
+11-27 11:18:23.321   551   586 W ActivityManager: Slow operation: 80ms so far, now at startProcess: done updating battery stats
+11-27 11:18:23.321   551   586 W ActivityManager: Slow operation: 80ms so far, now at startProcess: building log message
+11-27 11:18:23.321   551   586 I ActivityManager: Start proc 1499:com.android.vending/u0a133 for broadcast {com.android.vending/com.google.android.finsky.simhandler.SimStateReceiver}
+11-27 11:18:23.321   551   586 W ActivityManager: Slow operation: 80ms so far, now at startProcess: starting to update pids map
+11-27 11:18:23.321   551   586 W ActivityManager: Slow operation: 80ms so far, now at startProcess: done updating pids map
+11-27 11:18:24.268   551   620 W ActivityManager: Slow operation: 64ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+11-27 11:18:24.268   551   620 W ActivityManager: Slow operation: 64ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+11-27 11:18:24.343   551   586 I ActivityManager: Start proc 1655:com.google.android.as.oss/u0a122 for service {com.google.android.as.oss/com.google.android.apps.miphone.astrea.grpc.AstreaGrpcService}
+11-27 11:18:24.352   551   586 I ActivityManager: Start proc 1669:com.google.android.gms.unstable/u0a136 for service {com.google.android.gms/com.google.android.gms.droidguard.DroidGuardService}
+11-27 11:18:25.672   551   586 W ActivityManager: Slow operation: 92ms so far, now at startProcess: returned from zygote!
+11-27 11:18:25.672   551   586 W ActivityManager: Slow operation: 93ms so far, now at startProcess: done updating battery stats
+11-27 11:18:25.672   551   586 W ActivityManager: Slow operation: 93ms so far, now at startProcess: building log message
+11-27 11:18:25.672   551   586 I ActivityManager: Start proc 1758:android.process.media/u0a90 for content provider {com.android.providers.downloads/com.android.providers.downloads.DownloadProvider}
+11-27 11:18:25.672   551   586 W ActivityManager: Slow operation: 93ms so far, now at startProcess: starting to update pids map
+11-27 11:18:25.672   551   586 W ActivityManager: Slow operation: 93ms so far, now at startProcess: done updating pids map
+11-27 11:18:26.339   551   586 W ActivityManager: Slow operation: 56ms so far, now at startProcess: returned from zygote!
+11-27 11:18:26.340   551   586 W ActivityManager: Slow operation: 56ms so far, now at startProcess: done updating battery stats
+11-27 11:18:26.340   551   586 W ActivityManager: Slow operation: 56ms so far, now at startProcess: building log message
+11-27 11:18:26.340   551   586 I ActivityManager: Start proc 1833:com.google.android.apps.wallpaper/u0a173 for content provider {com.google.android.apps.wallpaper/com.google.android.apps.wallpaper.provider.RecentWallpapersProvider}
+11-27 11:18:26.340   551   586 W ActivityManager: Slow operation: 56ms so far, now at startProcess: starting to update pids map
+11-27 11:18:26.340   551   586 W ActivityManager: Slow operation: 57ms so far, now at startProcess: done updating pids map
+11-27 11:18:26.353   551   586 I ActivityManager: Start proc 1836:com.google.android.apps.messaging/u0a134 for broadcast {com.google.android.apps.messaging/com.google.android.apps.messaging.shared.simstatetracker.AsyncTelephonySimStateReceiver}
+11-27 11:18:26.487   551  1394 W ActivityManager: Slow operation: 54ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+11-27 11:18:28.808   551   586 W ActivityManager: Slow operation: 78ms so far, now at startProcess: returned from zygote!
+11-27 11:18:28.809   551   586 W ActivityManager: Slow operation: 79ms so far, now at startProcess: done updating battery stats
+11-27 11:18:28.809   551   586 W ActivityManager: Slow operation: 79ms so far, now at startProcess: building log message
+11-27 11:18:28.809   551   586 I ActivityManager: Start proc 1942:com.android.vending:background/u0a133 for service {com.android.vending/com.google.frameworks.client.data.android.server.play.BackgroundProcessEndpointService}
+11-27 11:18:28.809   551   586 W ActivityManager: Slow operation: 79ms so far, now at startProcess: starting to update pids map
+11-27 11:18:28.809   551   586 W ActivityManager: Slow operation: 79ms so far, now at startProcess: done updating pids map
+11-27 11:18:28.819   551   586 I ActivityManager: Start proc 1943:com.google.android.partnersetup/u0a129 for broadcast {com.google.android.partnersetup/com.google.android.partnersetup.PhoneStateReceiver}
+11-27 11:18:29.269   551   586 I ActivityManager: Start proc 1995:com.google.android.deskclock/u0a152 for broadcast {com.google.android.deskclock/com.android.deskclock.AlarmInitReceiver}
+11-27 11:18:30.346   551  1420 I ActivityManager: Start proc 2051:com.google.android.webview:webview_service/u0a154 for service {com.google.android.webview/org.chromium.android_webview.services.VariationsSeedServer}
+11-27 11:18:30.595   551  1419 W ActivityManager: Unable to start service Intent { cmp=com.google.android.apps.tachyon/.clientapi.ClientApiService } U=0: not found
+11-27 11:18:30.649   551   586 W ActivityManager: Slow operation: 150ms so far, now at startProcess: returned from zygote!
+11-27 11:18:30.649   551   586 W ActivityManager: Slow operation: 150ms so far, now at startProcess: done updating battery stats
+11-27 11:18:30.649   551   586 W ActivityManager: Slow operation: 151ms so far, now at startProcess: building log message
+11-27 11:18:30.649   551   586 I ActivityManager: Start proc 2088:com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u0ai9000 for  {com.google.android.googlequicksearchbox/org.chromium.content.app.SandboxedProcessService0:0}
+11-27 11:18:30.649   551   586 W ActivityManager: Slow operation: 151ms so far, now at startProcess: starting to update pids map
+11-27 11:18:30.649   551   586 W ActivityManager: Slow operation: 151ms so far, now at startProcess: done updating pids map
+11-27 11:18:30.758   551  1419 W ActivityManager: Slow operation: 66ms so far, now at attachApplicationLocked: immediately after bindApplication
+11-27 11:18:30.758   551  1419 W ActivityManager: Slow operation: 66ms so far, now at attachApplicationLocked: after updateLruProcessLocked
+11-27 11:18:30.759   551  1419 W ActivityManager: Slow operation: 67ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+11-27 11:18:31.005   551  1339 W ActivityManager: Slow operation: 78ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+11-27 11:18:31.006   551  1339 W ActivityManager: Slow operation: 78ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+11-27 11:18:31.109   551   586 W ActivityManager: Slow operation: 52ms so far, now at startProcess: returned from zygote!
+11-27 11:18:31.109   551   586 W ActivityManager: Slow operation: 52ms so far, now at startProcess: done updating battery stats
+11-27 11:18:31.110   551   586 W ActivityManager: Slow operation: 52ms so far, now at startProcess: building log message
+11-27 11:18:31.110   551   586 I ActivityManager: Start proc 2136:com.google.android.onetimeinitializer/u0a124 for broadcast {com.google.android.onetimeinitializer/com.google.android.onetimeinitializer.OneTimeInitializerReceiver}
+11-27 11:18:31.110   551   586 W ActivityManager: Slow operation: 52ms so far, now at startProcess: starting to update pids map
+11-27 11:18:31.110   551   586 W ActivityManager: Slow operation: 52ms so far, now at startProcess: done updating pids map
+11-27 11:18:31.301   551   586 W ActivityManager: Slow operation: 55ms so far, now at startProcess: returned from zygote!
+11-27 11:18:31.301   551   586 W ActivityManager: Slow operation: 55ms so far, now at startProcess: done updating battery stats
+11-27 11:18:31.301   551   586 W ActivityManager: Slow operation: 55ms so far, now at startProcess: building log message
+11-27 11:18:31.301   551   586 I ActivityManager: Start proc 2168:com.android.externalstorage/u0a91 for broadcast {com.android.externalstorage/com.android.externalstorage.MountReceiver}
+11-27 11:18:31.302   551   586 W ActivityManager: Slow operation: 55ms so far, now at startProcess: starting to update pids map
+11-27 11:18:31.302   551   586 W ActivityManager: Slow operation: 55ms so far, now at startProcess: done updating pids map
+11-27 11:18:31.592   551   586 I ActivityManager: Start proc 2196:com.android.vending:quick_launch/u0a133 for service {com.android.vending/com.google.frameworks.client.data.android.server.play.QuickLaunchProcessEndpointService}
+11-27 11:18:31.822   551   586 I ActivityManager: Start proc 2208:com.android.camera2/u0a139 for broadcast {com.android.camera2/com.android.camera.SetActivitiesCameraReceiver}
+11-27 11:18:32.461   551   586 W ActivityManager: Slow operation: 98ms so far, now at startProcess: returned from zygote!
+11-27 11:18:32.461   551   586 W ActivityManager: Slow operation: 99ms so far, now at startProcess: done updating battery stats
+11-27 11:18:32.461   551   586 W ActivityManager: Slow operation: 99ms so far, now at startProcess: building log message
+11-27 11:18:32.461   551   586 I ActivityManager: Start proc 2234:com.android.dynsystem/1000 for broadcast {com.android.dynsystem/com.android.dynsystem.BootCompletedReceiver}
+11-27 11:18:32.461   551   586 W ActivityManager: Slow operation: 99ms so far, now at startProcess: starting to update pids map
+11-27 11:18:32.461   551   586 W ActivityManager: Slow operation: 99ms so far, now at startProcess: done updating pids map
+11-27 11:18:33.069   551   586 W ActivityManager: Slow operation: 75ms so far, now at startProcess: returned from zygote!
+11-27 11:18:33.070   551   586 W ActivityManager: Slow operation: 76ms so far, now at startProcess: done updating battery stats
+11-27 11:18:33.070   551   586 W ActivityManager: Slow operation: 76ms so far, now at startProcess: building log message
+11-27 11:18:33.070   551   586 I ActivityManager: Start proc 2273:com.android.dynsystem:dynsystem/1000 for service {com.android.dynsystem/com.android.dynsystem.DynamicSystemInstallationService}
+11-27 11:18:33.070   551   586 W ActivityManager: Slow operation: 76ms so far, now at startProcess: starting to update pids map
+11-27 11:18:33.070   551   586 W ActivityManager: Slow operation: 76ms so far, now at startProcess: done updating pids map
+11-27 11:18:33.089   551   586 W ActivityManager: Slow operation: 69ms so far, now at startProcess: returned from zygote!
+11-27 11:18:33.089   551   586 W ActivityManager: Slow operation: 69ms so far, now at startProcess: done updating battery stats
+11-27 11:18:33.089   551   586 W ActivityManager: Slow operation: 69ms so far, now at startProcess: building log message
+11-27 11:18:33.089   551   586 I ActivityManager: Start proc 2274:com.android.imsserviceentitlement/u0a125 for broadcast {com.android.imsserviceentitlement/com.android.imsserviceentitlement.fcm.FcmRegistrationReceiver}
+11-27 11:18:33.089   551   586 W ActivityManager: Slow operation: 69ms so far, now at startProcess: starting to update pids map
+11-27 11:18:33.089   551   586 W ActivityManager: Slow operation: 69ms so far, now at startProcess: done updating pids map
+11-27 11:18:33.732   551   586 I ActivityManager: Start proc 2313:com.android.managedprovisioning/u0a97 for broadcast {com.android.managedprovisioning/com.android.managedprovisioning.BootReminder}
+11-27 11:18:33.863   551   586 I ActivityManager: Start proc 2326:com.google.android.rkpdapp/u0a181 for service {com.google.android.rkpdapp/com.android.rkpdapp.service.RemoteProvisioningService}
+11-27 11:18:34.021   551   586 I ActivityManager: Start proc 2349:com.google.android.tts/u0a140 for service {com.google.android.tts/com.google.android.apps.speech.tts.googletts.service.GoogleTtsService}
+11-27 11:18:34.092   551   586 I ActivityManager: Start proc 2360:com.android.providers.calendar/u0a86 for broadcast {com.android.providers.calendar/com.android.providers.calendar.CalendarReceiver}
+11-27 11:18:34.285   551   586 I ActivityManager: Start proc 2384:com.android.shell/2000 for broadcast {com.android.shell/com.android.shell.HeapDumpReceiver}
+11-27 11:18:34.596   551   586 I ActivityManager: Start proc 2409:com.google.android.apps.restore/u0a128 for broadcast {com.google.android.apps.restore/androidx.work.impl.background.systemalarm.RescheduleReceiver}
+11-27 11:18:35.246   551   586 W ActivityManager: Slow operation: 118ms so far, now at startProcess: returned from zygote!
+11-27 11:18:35.246   551   586 W ActivityManager: Slow operation: 118ms so far, now at startProcess: done updating battery stats
+11-27 11:18:35.246   551   586 W ActivityManager: Slow operation: 118ms so far, now at startProcess: building log message
+11-27 11:18:35.246   551   586 I ActivityManager: Start proc 2462:com.google.android.configupdater/u0a121 for broadcast {com.google.android.configupdater/com.google.android.configupdater.MainReceiver}
+11-27 11:18:35.246   551   586 W ActivityManager: Slow operation: 118ms so far, now at startProcess: starting to update pids map
+11-27 11:18:35.246   551   586 W ActivityManager: Slow operation: 118ms so far, now at startProcess: done updating pids map
+11-27 11:18:35.876   551   850 I ActivityManager: Background started FGS: Allowed [callingPackage: com.google.android.apps.messaging; callingUid: 10134; uidState: BFGS; uidBFSL: [BFSL]; intent: Intent { cmp=com.google.android.apps.messaging/com.google.apps.tiktok.concurrent.InternalForegroundService (has extras) }; code:PROC_STATE_BFGS; tempAllowListReason:<22981a4 android.intent.action.BOOT_COMPLETED/u0,reasonCode:BOOT_COMPLETED,duration:20000,callingUid:1000>; targetSdkVersion:35; callerTargetSdkVersion:35; startForegroundCount:0; bindFromPackage:null: isBindService:false]
+11-27 11:18:35.923   551  1008 W ActivityManager: Foreground service started from background can not have location/camera/microphone access: service com.google.android.apps.messaging/com.google.apps.tiktok.concurrent.InternalForegroundService
+11-27 11:18:36.551   551   586 I ActivityManager: Start proc 2501:com.google.android.federatedcompute/u0a195 for broadcast {com.google.android.federatedcompute/com.android.federatedcompute.services.FederatedComputeBroadcastReceiver}
+11-27 11:18:36.888   551   586 I ActivityManager: Start proc 2525:com.google.android.healthconnect.controller/u0a182 for broadcast {com.google.android.healthconnect.controller/com.android.healthconnect.controller.safetycenter.SafetySourceBroadcastReceiver}
+11-27 11:18:37.219   551   586 I ActivityManager: Start proc 2544:com.google.android.ondevicepersonalization.services/u0a194 for broadcast {com.google.android.ondevicepersonalization.services/com.android.ondevicepersonalization.services.OnDevicePersonalizationBroadcastReceiver}
+11-27 11:18:37.397   551   850 I ActivityManager: Start proc 2567:com.google.android.packageinstaller/u0a95 for broadcast {com.google.android.packageinstaller/com.android.packageinstaller.common.TemporaryFileManager}
+11-27 11:18:37.460   551   586 W ActivityManager: Slow operation: 95ms so far, now at startProcess: returned from zygote!
+11-27 11:18:37.556   551   586 I ActivityManager: Start proc 2579:com.google.android.settings.intelligence/u0a132 for broadcast {com.google.android.settings.intelligence/com.google.android.settings.intelligence.modules.batterywidget.impl.BatteryWidgetBootBroadcastReceiver}
+11-27 11:18:37.823   551   586 I ActivityManager: Start proc 2606:com.android.chrome/u0a138 for broadcast {com.android.chrome/com.google.android.apps.chrome.rlz.RevenueStatsConfigurationUpdateReceiver}
+11-27 11:18:37.951   551   574 I ActivityManager: Finished processing BOOT_COMPLETED for u0
+11-27 11:18:38.962   551   621 W ActivityManager: Unable to start service Intent { act=com.google.android.gms.credential.manager.tasks.PasswordSharingSubscriptionTaskBoundService.ACTION_TASK_READY pkg=com.google.android.gms } U=0: not found
+11-27 11:18:40.470   551   586 W ActivityManager: Slow operation: 73ms so far, now at startProcess: returned from zygote!
+11-27 11:18:40.473   551   586 W ActivityManager: Slow operation: 77ms so far, now at startProcess: done updating battery stats
+11-27 11:18:40.473   551   586 W ActivityManager: Slow operation: 77ms so far, now at startProcess: building log message
+11-27 11:18:40.473   551   586 I ActivityManager: Start proc 2709:com.android.emergency/u0a168 for content provider {com.android.emergency/com.android.emergency.EmergencySearchIndexablesProvider}
+11-27 11:18:40.474   551   586 W ActivityManager: Slow operation: 77ms so far, now at startProcess: starting to update pids map
+11-27 11:18:40.474   551   586 W ActivityManager: Slow operation: 77ms so far, now at startProcess: done updating pids map
+11-27 11:18:40.508   551   586 I ActivityManager: Start proc 2717:com.google.android.gms.ui/u0a136 for content provider {com.google.android.gms/com.google.android.gms.app.search.GmsSearchIndexablesProvider}
+11-27 11:18:40.541   551   586 I ActivityManager: Start proc 2736:com.google.android.marvin.talkback/u0a160 for content provider {com.google.android.marvin.talkback/com.google.android.accessibility.talkback.preference.search.TalkBackSearchIndexablesProvider}
+11-27 11:18:40.838   551   850 W ActivityManager: pid 1365 com.google.android.gms sent binder code 1 with flags 2 to frozen apps and got error -2147483646
+11-27 11:29:39.062   551   917 I ActivityManager: Killing 2709:com.android.emergency/u0a168 (adj 905): empty #17
+11-27 11:29:39.075   551   917 I ActivityManager: Killing 1354:com.android.traceur/u0a120 (adj 905): empty #18
+11-27 11:29:39.076   551   917 I ActivityManager: Killing 1942:com.android.vending:background/u0a133 (adj 905): empty #19
+11-27 11:29:39.085   551   917 I ActivityManager: Killing 1995:com.google.android.deskclock/u0a152 (adj 905): empty #20
+11-27 11:29:39.086   551   917 I ActivityManager: Killing 1499:com.android.vending/u0a133 (adj 905): empty #21
+11-27 11:29:39.088   551   917 I ActivityManager: Killing 2196:com.android.vending:quick_launch/u0a133 (adj 915): empty #22
+11-27 11:29:39.093   551   917 I ActivityManager: Killing 2360:com.android.providers.calendar/u0a86 (adj 905): empty #23
+11-27 11:29:39.093   551   917 I ActivityManager: Killing 2349:com.google.android.tts/u0a140 (adj 905): empty #24
+11-27 11:29:39.096   551   917 I ActivityManager: Killing 2567:com.google.android.packageinstaller/u0a95 (adj 905): empty #25
+11-27 11:29:39.099   551   917 I ActivityManager: Killing 2544:com.google.android.ondevicepersonalization.services/u0a194 (adj 905): empty #26
+11-27 11:29:39.100   551   917 I ActivityManager: Killing 2501:com.google.android.federatedcompute/u0a195 (adj 905): empty #27
+11-27 11:29:39.101   551   917 I ActivityManager: Killing 2462:com.google.android.configupdater/u0a121 (adj 905): empty #28
+11-27 11:29:39.101   551   917 I ActivityManager: Killing 2409:com.google.android.apps.restore/u0a128 (adj 905): empty #29
+11-27 11:29:39.105   551   917 I ActivityManager: Killing 2384:com.android.shell/2000 (adj 905): empty #30
+11-27 11:29:39.108   551   917 I ActivityManager: Killing 2313:com.android.managedprovisioning/u0a97 (adj 905): empty #31
+11-27 11:29:39.109   551   917 I ActivityManager: Killing 2274:com.android.imsserviceentitlement/u0a125 (adj 905): empty #32
+11-27 11:29:39.110   551   917 I ActivityManager: Killing 2273:com.android.dynsystem:dynsystem/1000 (adj 915): empty #33
+11-27 11:29:39.111   551   917 I ActivityManager: Killing 2234:com.android.dynsystem/1000 (adj 915): empty #34
+11-27 11:29:39.115   551   917 I ActivityManager: Killing 2208:com.android.camera2/u0a139 (adj 905): empty #35
+11-27 11:29:39.115   551   917 I ActivityManager: Killing 1361:com.android.keychain/1000 (adj 925): empty #36
+11-27 11:29:39.116   551   917 I ActivityManager: Killing 2168:com.android.externalstorage/u0a91 (adj 905): empty #37
+11-27 11:29:39.117   551   917 I ActivityManager: Killing 2051:com.google.android.webview:webview_service/u0a154 (adj 905): empty #38
+11-27 11:29:39.118   551   917 I ActivityManager: Killing 2136:com.google.android.onetimeinitializer/u0a124 (adj 905): empty #39
+11-27 11:29:39.119   551   917 I ActivityManager: Killing 1358:com.android.localtransport/1000 (adj 925): empty #40
+11-27 11:29:39.120   551   917 I ActivityManager: Killing 1248:com.android.printspooler/u0a117 (adj 935): empty #41
+11-27 11:29:39.384   551   850 W ActivityManager: Scheduling restart of crashed service com.android.vending/com.google.frameworks.client.data.android.server.play.QuickLaunchProcessEndpointService in 1000ms for connection
+11-27 11:29:39.400   551   850 W ActivityManager: Scheduling restart of crashed service com.android.vending/com.google.frameworks.client.data.android.server.play.BackgroundProcessEndpointService in 10984ms for connection
+11-27 11:35:12.433   551   586 W ActivityManager: Slow operation: 181ms so far, now at startProcess: returned from zygote!
+11-27 11:35:12.433   551   586 W ActivityManager: Slow operation: 181ms so far, now at startProcess: done updating battery stats
+11-27 11:35:12.434   551   586 W ActivityManager: Slow operation: 182ms so far, now at startProcess: building log message
+11-27 11:35:12.434   551   586 I ActivityManager: Start proc 3120:com.google.android.configupdater/u0a121 for broadcast {com.google.android.configupdater/com.google.android.configupdater.PhenotypeBroadcastReceiver}
+11-27 11:35:12.434   551   586 W ActivityManager: Slow operation: 182ms so far, now at startProcess: starting to update pids map
+11-27 11:35:12.434   551   586 W ActivityManager: Slow operation: 182ms so far, now at startProcess: done updating pids map
+11-27 11:35:12.767   551   774 I ActivityManager: Killing 1088:com.google.android.cellbroadcastreceiver/u0a179 (adj 905): empty #17
+11-27 11:35:19.640   551  1779 I ActivityManager: Killing 2525:com.google.android.healthconnect.controller/u0a182 (adj 905): empty #17
+11-27 12:53:01.593   551  1394 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=0: from pid 3247
+11-27 12:53:01.630   551  1394 I ActivityManager: Killing 2736:com.google.android.marvin.talkback/u0a160 (adj 985): empty #17
+11-27 12:53:01.667   551  1394 I ActivityManager: Killing 1833:com.google.android.apps.wallpaper/u0a173 (adj 985): empty #18
+11-27 12:53:01.669   551  1394 I ActivityManager: Killing 1758:android.process.media/u0a90 (adj 995): empty #19
+11-27 12:53:50.789   551   585 I ActivityManager: Force stopping com.bellfamily.bastischool.test appid=10200 user=-1: installPackageLI
+11-27 12:53:51.347   551   610 I ActivityManager: Force stopping com.bellfamily.bastischool.test appid=10200 user=0: pkg removed
+11-27 12:53:51.572   551   586 W ActivityManager: Slow operation: 156ms so far, now at startProcess: returned from zygote!
+11-27 12:53:51.573   551   586 W ActivityManager: Slow operation: 157ms so far, now at startProcess: done updating battery stats
+11-27 12:53:51.573   551   586 W ActivityManager: Slow operation: 157ms so far, now at startProcess: building log message
+11-27 12:53:51.573   551   586 I ActivityManager: Start proc 3581:com.android.vending/u0a133 for broadcast {com.android.vending/com.google.android.finsky.packagemonitor.impl.PackageMonitorReceiverImpl$RegisteredReceiver}
+11-27 12:53:51.573   551   586 W ActivityManager: Slow operation: 157ms so far, now at startProcess: starting to update pids map
+11-27 12:53:51.573   551   586 W ActivityManager: Slow operation: 157ms so far, now at startProcess: done updating pids map
+11-27 12:53:51.573   551   586 W ActivityManager: Slow operation: 135ms so far, now at startProcess: asking zygote to start proc
+11-27 12:53:51.592   551   586 W ActivityManager: Slow operation: 155ms so far, now at startProcess: returned from zygote!
+11-27 12:53:51.592   551   586 W ActivityManager: Slow operation: 155ms so far, now at startProcess: done updating battery stats
+11-27 12:53:51.592   551   586 W ActivityManager: Slow operation: 155ms so far, now at startProcess: building log message
+11-27 12:53:51.592   551   586 I ActivityManager: Start proc 3582:com.android.keychain/1000 for service {com.android.keychain/com.android.keychain.KeyChainService}
+11-27 12:53:51.592   551   586 W ActivityManager: Slow operation: 155ms so far, now at startProcess: starting to update pids map
+11-27 12:53:51.592   551   586 W ActivityManager: Slow operation: 155ms so far, now at startProcess: done updating pids map
+11-27 12:53:53.570   551   586 W ActivityManager: Slow operation: 122ms so far, now at startProcess: returned from zygote!
+11-27 12:53:53.581   551   586 W ActivityManager: Slow operation: 133ms so far, now at startProcess: done updating battery stats
+11-27 12:53:53.581   551   586 W ActivityManager: Slow operation: 133ms so far, now at startProcess: building log message
+11-27 12:53:53.581   551   586 I ActivityManager: Start proc 3660:com.android.vending:background/u0a133 for broadcast {com.android.vending/com.google.android.finsky.packagemonitor.backgroundimpl.BackgroundPackageMonitorReceiverImpl$RegisteredReceiver}
+11-27 12:53:53.581   551   586 W ActivityManager: Slow operation: 133ms so far, now at startProcess: starting to update pids map
+11-27 12:53:53.581   551   586 W ActivityManager: Slow operation: 133ms so far, now at startProcess: done updating pids map
+11-27 12:53:54.188   551  3099 I ActivityManager: Background started FGS: Allowed [callingPackage: com.android.vending; callingUid: 10133; uidState: TRNB; uidBFSL: n/a; intent: Intent { cmp=com.android.vending/com.google.android.finsky.foregroundcoordinator.impl.ForegroundCoordinatorService }; code:BACKGROUND_ACTIVITY_PERMISSION; tempAllowListReason:<,reasonCode:SYSTEM_ALLOW_LISTED,duration:9223372036854775807,callingUid:-1>; targetSdkVersion:34; callerTargetSdkVersion:34; startForegroundCount:0; bindFromPackage:null: isBindService:false]
+11-27 12:53:54.559   551   586 I ActivityManager: Start proc 3779:com.android.vending:quick_launch/u0a133 for service {com.android.vending/com.google.frameworks.client.data.android.server.play.QuickLaunchProcessEndpointService}
+11-27 12:54:02.727   551  1419 I ActivityManager: Killing 2606:com.android.chrome/u0a138 (adj 965): empty #17
+11-27 12:54:04.917   551   571 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=0: start instr
+11-27 12:54:04.963   551   586 I ActivityManager: Start proc 3825:com.bellfamily.bastischool/u0a199 for added application com.bellfamily.bastischool
+11-27 12:54:06.570  3825  3839 I TestRunner: run started: 2 tests
+11-27 12:54:06.571  3825  3839 I TestRunner: started: supplementaryFailureCannotReplaceOriginalFailure(com.bellfamily.bastischool.NativeArtworkDiagnosticsTest)
+11-27 12:54:07.659   551  1419 I ActivityManager: Killing 1655:com.google.android.as.oss/u0a122 (adj 975): empty #17
+11-27 12:54:07.660   551  1419 I ActivityManager: Killing 2717:com.google.android.gms.ui/u0a136 (adj 975): empty #18
+11-27 12:54:07.760   551   586 W ActivityManager: Slow operation: 202ms so far, now at startProcess: returned from zygote!
+11-27 12:54:07.760   551   586 W ActivityManager: Slow operation: 202ms so far, now at startProcess: done updating battery stats
+11-27 12:54:07.760   551   586 W ActivityManager: Slow operation: 202ms so far, now at startProcess: building log message
+11-27 12:54:07.760   551   586 I ActivityManager: Start proc 3858:com.bellfamily.bastischool.test/u0a200 for next-top-activity {com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity}
+11-27 12:54:07.760   551   586 W ActivityManager: Slow operation: 202ms so far, now at startProcess: starting to update pids map
+11-27 12:54:07.889   551   586 W ActivityManager: Slow operation: 330ms so far, now at startProcess: done updating pids map
+11-27 12:54:09.062  3825  3839 I TestRunner: finished: supplementaryFailureCannotReplaceOriginalFailure(com.bellfamily.bastischool.NativeArtworkDiagnosticsTest)
+11-27 12:54:09.095  3825  3839 I TestRunner: started: missingArtworkRecordsExpectedStateBeforeTeardownAndKeepsTimeout(com.bellfamily.bastischool.NativeArtworkDiagnosticsTest)
+11-27 12:54:11.110  3825  3839 E TestRunner: failed: missingArtworkRecordsExpectedStateBeforeTeardownAndKeepsTimeout(com.bellfamily.bastischool.NativeArtworkDiagnosticsTest)
+11-27 12:54:11.112  3825  3839 E TestRunner: ----- begin exception -----
+11-27 12:54:11.112  3825  3839 E TestRunner: org.json.JSONException: No value for foregroundPackage
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at org.json.JSONObject.get(JSONObject.java:398)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at org.json.JSONObject.getString(JSONObject.java:559)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at com.bellfamily.bastischool.NativeArtworkDiagnosticsTest.missingArtworkRecordsExpectedStateBeforeTeardownAndKeepsTimeout(NativeArtworkDiagnosticsTest.kt:40)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at java.lang.reflect.Method.invoke(Native Method)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:272)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:271)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.withDisposableContent(ComposeUiTest.android.kt:505)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1$1.invoke(ComposeUiTest.android.kt:333)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withComposeIdlingResource(ComposeUiTest.android.kt:385)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withComposeIdlingResource(ComposeUiTest.android.kt:219)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1.invoke(ComposeUiTest.android.kt:332)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withWindowRecomposer(ComposeUiTest.android.kt:359)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withWindowRecomposer(ComposeUiTest.android.kt:219)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1.invoke(ComposeUiTest.android.kt:331)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withTestCoroutines(ComposeUiTest.android.kt:372)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withTestCoroutines(ComposeUiTest.android.kt:219)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1.invoke(ComposeUiTest.android.kt:330)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at androidx.compose.ui.test.EspressoLink.withStrategy(EspressoLink.android.kt:66)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1.invoke(ComposeUiTest.android.kt:329)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at androidx.compose.ui.test.IdlingResourceRegistry.withRegistry(IdlingResourceRegistry.jvm.kt:155)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1.invoke(ComposeUiTest.android.kt:328)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at androidx.compose.ui.test.ComposeRootRegistry.withRegistry(ComposeRootRegistry.android.kt:146)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.runTest(ComposeUiTest.android.kt:327)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1.evaluate(AndroidComposeTestRule.android.kt:271)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+11-27 12:54:11.112  3825  3839 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:128)
+11-27 12:54:11.113  3825  3839 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:27)
+11-27 12:54:11.113  3825  3839 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+11-27 12:54:11.113  3825  3839 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+11-27 12:54:11.113  3825  3839 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+11-27 12:54:11.113  3825  3839 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+11-27 12:54:11.113  3825  3839 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+11-27 12:54:11.113  3825  3839 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-27 12:54:11.113  3825  3839 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+11-27 12:54:11.113  3825  3839 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+11-27 12:54:11.113  3825  3839 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+11-27 12:54:11.113  3825  3839 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+11-27 12:54:11.113  3825  3839 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+11-27 12:54:11.113  3825  3839 E TestRunner: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+11-27 12:54:11.113  3825  3839 E TestRunner: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
+11-27 12:54:11.113  3825  3839 E TestRunner: ----- end exception -----
+11-27 12:54:11.122  3825  3839 I TestRunner: finished: missingArtworkRecordsExpectedStateBeforeTeardownAndKeepsTimeout(com.bellfamily.bastischool.NativeArtworkDiagnosticsTest)
+11-27 12:54:11.131  3825  3839 I TestRunner: run finished: 2 tests, 1 failed, 0 ignored
+11-27 12:54:11.367   551  1419 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=0: finished inst
+11-27 12:54:11.394   551  1419 E ActivityManager: Unable to freeze binder for 3825: -11
+11-27 12:54:11.398   551  1419 I ActivityManager: Killing 3825:com.bellfamily.bastischool/u0a199 (adj 0): stop com.bellfamily.bastischool due to finished inst
+11-27 12:54:11.493   551   577 W ActivityManager: setHasOverlayUi called on unknown pid: 3825
+11-27 14:10:32.413   551   586 W ActivityManager: Slow operation: 98ms so far, now at startProcess: returned from zygote!
+11-27 14:10:32.413   551   586 W ActivityManager: Slow operation: 98ms so far, now at startProcess: done updating battery stats
+11-27 14:10:32.413   551   586 W ActivityManager: Slow operation: 98ms so far, now at startProcess: building log message
+11-27 14:10:32.413   551   586 I ActivityManager: Start proc 4009:com.google.android.apps.wallpaper/u0a173 for broadcast {com.google.android.apps.wallpaper/com.android.wallpaper.module.DailyLoggingAlarmReceiver}
+11-27 14:10:32.413   551   586 W ActivityManager: Slow operation: 98ms so far, now at startProcess: starting to update pids map
+11-27 14:10:32.414   551   586 W ActivityManager: Slow operation: 98ms so far, now at startProcess: done updating pids map
+11-27 14:26:39.445   551   585 I ActivityManager: Force stopping com.bellfamily.bastischool.test appid=10200 user=-1: installPackageLI
+11-27 14:26:39.452   551   585 I ActivityManager: Killing 3858:com.bellfamily.bastischool.test/u0a200 (adj 900): stop com.bellfamily.bastischool.test due to installPackageLI
+11-27 14:26:39.473   551   585 I ActivityManager: Killing 3120:com.google.android.configupdater/u0a121 (adj 985): empty #17
+11-27 14:26:39.477   551   585 I ActivityManager: Killing 1477:android.process.acore/u0a84 (adj 985): empty #18
+11-27 14:26:39.711   551   577 W ActivityManager: setHasOverlayUi called on unknown pid: 3858
+11-27 14:26:39.961   551   610 I ActivityManager: Force stopping com.bellfamily.bastischool.test appid=10200 user=0: pkg removed
+11-27 14:26:48.226   551  3914 W ActivityManager: stopServiceToken startId 12 is last, but have 2 remaining args
+11-27 14:27:07.586   551  1008 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=0: start instr
+11-27 14:27:07.637   551   586 I ActivityManager: Start proc 4122:com.bellfamily.bastischool/u0a199 for added application com.bellfamily.bastischool
+11-27 14:27:09.014  4122  4137 I TestRunner: run started: 2 tests
+11-27 14:27:09.017  4122  4137 I TestRunner: started: supplementaryFailureCannotReplaceOriginalFailure(com.bellfamily.bastischool.NativeArtworkDiagnosticsTest)
+11-27 14:27:09.807   551   586 I ActivityManager: Start proc 4149:com.bellfamily.bastischool.test/u0a200 for next-top-activity {com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity}
+11-27 14:27:10.795  4122  4137 I TestRunner: finished: supplementaryFailureCannotReplaceOriginalFailure(com.bellfamily.bastischool.NativeArtworkDiagnosticsTest)
+11-27 14:27:10.821  4122  4137 I TestRunner: started: missingArtworkRecordsExpectedStateBeforeTeardownAndKeepsTimeout(com.bellfamily.bastischool.NativeArtworkDiagnosticsTest)
+11-27 14:27:11.921  4122  4137 I TestRunner: finished: missingArtworkRecordsExpectedStateBeforeTeardownAndKeepsTimeout(com.bellfamily.bastischool.NativeArtworkDiagnosticsTest)
+11-27 14:27:11.927  4122  4137 I TestRunner: run finished: 2 tests, 0 failed, 0 ignored
+11-27 14:27:11.999   551  1419 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=0: finished inst
+11-27 14:27:12.000   551  1419 E ActivityManager: Unable to freeze binder for 4122: -11
+11-27 14:27:12.239   551  1419 I ActivityManager: Killing 4122:com.bellfamily.bastischool/u0a199 (adj 0): stop com.bellfamily.bastischool due to finished inst
+11-27 14:27:12.367   551   577 W ActivityManager: setHasOverlayUi called on unknown pid: 4122
+11-27 14:27:54.513   551   917 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=0: start instr
+11-27 14:27:54.654   551   586 W ActivityManager: Slow operation: 93ms so far, now at startProcess: returned from zygote!
+11-27 14:27:54.654   551   586 W ActivityManager: Slow operation: 93ms so far, now at startProcess: done updating battery stats
+11-27 14:27:54.657   551   586 W ActivityManager: Slow operation: 96ms so far, now at startProcess: building log message
+11-27 14:27:54.657   551   586 I ActivityManager: Start proc 4204:com.bellfamily.bastischool/u0a199 for added application com.bellfamily.bastischool
+11-27 14:27:54.657   551   586 W ActivityManager: Slow operation: 96ms so far, now at startProcess: starting to update pids map
+11-27 14:27:54.660   551   586 W ActivityManager: Slow operation: 98ms so far, now at startProcess: done updating pids map
+11-27 14:27:56.172  4204  4218 I TestRunner: run started: 5 tests
+11-27 14:27:56.174  4204  4218 I TestRunner: started: bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(com.bellfamily.bastischool.ui.conservation.ConservationRouteTest)
+11-27 14:27:57.249   551   586 W ActivityManager: Slow operation: 82ms so far, now at startProcess: returned from zygote!
+11-27 14:27:57.249   551   586 W ActivityManager: Slow operation: 82ms so far, now at startProcess: done updating battery stats
+11-27 14:27:57.249   551   586 W ActivityManager: Slow operation: 82ms so far, now at startProcess: building log message
+11-27 14:27:57.249   551   586 I ActivityManager: Start proc 4227:com.google.android.tts/u0a140 for service {com.google.android.tts/com.google.android.apps.speech.tts.googletts.service.GoogleTtsService}
+11-27 14:27:57.249   551   586 W ActivityManager: Slow operation: 82ms so far, now at startProcess: starting to update pids map
+11-27 14:27:57.249   551   586 W ActivityManager: Slow operation: 82ms so far, now at startProcess: done updating pids map
+11-27 14:28:10.083   551  4191 I ActivityManager: Killing 2326:com.google.android.rkpdapp/u0a181 (adj 975): empty #17
+11-27 14:28:10.360  4204  4218 E TestRunner: failed: bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(com.bellfamily.bastischool.ui.conservation.ConservationRouteTest)
+11-27 14:28:10.362  4204  4218 E TestRunner: ----- begin exception -----
+11-27 14:28:10.362  4204  4218 E TestRunner: androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 10000 ms
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at com.bellfamily.bastischool.NativeArtworkReadinessKt.waitForNativeArtwork$lambda$4(NativeArtworkReadiness.kt:40)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at com.bellfamily.bastischool.NativeArtworkReadinessKt.$r8$lambda$it59UVGPZI5Gbo4SqU05PXRYqX4(Unknown Source:0)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at com.bellfamily.bastischool.NativeArtworkReadinessKt$$ExternalSyntheticLambda2.invoke(D8$$SyntheticClass:0)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at com.bellfamily.bastischool.NativeArtworkReadinessKt.withNativeFailureDiagnostics(NativeArtworkReadiness.kt:21)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at com.bellfamily.bastischool.NativeArtworkReadinessKt.waitForNativeArtwork(NativeArtworkReadiness.kt:37)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at com.bellfamily.bastischool.NativeArtworkReadinessKt.waitForNativeArtwork$default(NativeArtworkReadiness.kt:30)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at com.bellfamily.bastischool.ui.conservation.ConservationCaptureKt.captureConservationReview(ConservationCapture.kt:15)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress$lambda$15$lambda$14$capture(ConservationRouteTest.kt:37)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress$lambda$15(ConservationRouteTest.kt:42)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.$r8$lambda$-ZJH8FRwYTqKCBTEiIHBXH8YFkI(Unknown Source:0)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTestKt.isolatedConservationStores(ConservationRouteTest.kt:23)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(ConservationRouteTest.kt:28)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at java.lang.reflect.Method.invoke(Native Method)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:272)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:271)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.withDisposableContent(ComposeUiTest.android.kt:505)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1$1.invoke(ComposeUiTest.android.kt:333)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withComposeIdlingResource(ComposeUiTest.android.kt:385)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withComposeIdlingResource(ComposeUiTest.android.kt:219)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1.invoke(ComposeUiTest.android.kt:332)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withWindowRecomposer(ComposeUiTest.android.kt:359)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withWindowRecomposer(ComposeUiTest.android.kt:219)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1.invoke(ComposeUiTest.android.kt:331)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withTestCoroutines(ComposeUiTest.android.kt:372)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withTestCoroutines(ComposeUiTest.android.kt:219)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1.invoke(ComposeUiTest.android.kt:330)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.EspressoLink.withStrategy(EspressoLink.android.kt:66)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1.invoke(ComposeUiTest.android.kt:329)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.IdlingResourceRegistry.withRegistry(IdlingResourceRegistry.jvm.kt:155)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1.invoke(ComposeUiTest.android.kt:328)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.ComposeRootRegistry.withRegistry(ComposeRootRegistry.android.kt:146)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.runTest(ComposeUiTest.android.kt:327)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1.evaluate(AndroidComposeTestRule.android.kt:271)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:128)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:27)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+11-27 14:28:10.362  4204  4218 E TestRunner: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
+11-27 14:28:10.362  4204  4218 E TestRunner: ----- end exception -----
+11-27 14:28:10.363  4204  4218 I TestRunner: finished: bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(com.bellfamily.bastischool.ui.conservation.ConservationRouteTest)
+11-27 14:28:10.381  4204  4218 I TestRunner: started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 14:28:14.753  4204  4218 I TestRunner: finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 14:28:14.843  4204  4218 I TestRunner: started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 14:28:18.492  4204  4218 I TestRunner: finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 14:28:18.523  4204  4218 I TestRunner: started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 14:28:31.201  4204  4218 E TestRunner: failed: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 14:28:31.202  4204  4218 E TestRunner: ----- begin exception -----
+11-27 14:28:31.202  4204  4218 E TestRunner: androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 10000 ms
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at com.bellfamily.bastischool.NativeArtworkReadinessKt.waitForNativeArtwork$lambda$4(NativeArtworkReadiness.kt:40)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at com.bellfamily.bastischool.NativeArtworkReadinessKt.$r8$lambda$it59UVGPZI5Gbo4SqU05PXRYqX4(Unknown Source:0)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at com.bellfamily.bastischool.NativeArtworkReadinessKt$$ExternalSyntheticLambda2.invoke(D8$$SyntheticClass:0)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at com.bellfamily.bastischool.NativeArtworkReadinessKt.withNativeFailureDiagnostics(NativeArtworkReadiness.kt:21)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at com.bellfamily.bastischool.NativeArtworkReadinessKt.waitForNativeArtwork(NativeArtworkReadiness.kt:37)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at com.bellfamily.bastischool.NativeArtworkReadinessKt.waitForNativeArtwork$default(NativeArtworkReadiness.kt:30)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest.listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable(WashHandsScreenTest.kt:62)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at java.lang.reflect.Method.invoke(Native Method)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:272)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:271)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.withDisposableContent(ComposeUiTest.android.kt:505)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1$1.invoke(ComposeUiTest.android.kt:333)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withComposeIdlingResource(ComposeUiTest.android.kt:385)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withComposeIdlingResource(ComposeUiTest.android.kt:219)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1.invoke(ComposeUiTest.android.kt:332)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withWindowRecomposer(ComposeUiTest.android.kt:359)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withWindowRecomposer(ComposeUiTest.android.kt:219)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1.invoke(ComposeUiTest.android.kt:331)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withTestCoroutines(ComposeUiTest.android.kt:372)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withTestCoroutines(ComposeUiTest.android.kt:219)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1.invoke(ComposeUiTest.android.kt:330)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.EspressoLink.withStrategy(EspressoLink.android.kt:66)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1.invoke(ComposeUiTest.android.kt:329)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.IdlingResourceRegistry.withRegistry(IdlingResourceRegistry.jvm.kt:155)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1.invoke(ComposeUiTest.android.kt:328)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.ComposeRootRegistry.withRegistry(ComposeRootRegistry.android.kt:146)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.runTest(ComposeUiTest.android.kt:327)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1.evaluate(AndroidComposeTestRule.android.kt:271)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:128)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:27)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:128)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:27)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+11-27 14:28:31.202  4204  4218 E TestRunner: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
+11-27 14:28:31.202  4204  4218 E TestRunner: ----- end exception -----
+11-27 14:28:31.202  4204  4218 I TestRunner: finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 14:28:31.219  4204  4218 I TestRunner: started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-8](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 14:28:38.131  4204  4218 I TestRunner: finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-8](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 14:28:38.143  4204  4218 I TestRunner: run finished: 5 tests, 2 failed, 0 ignored
+11-27 14:28:38.196   551   850 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=0: finished inst
+11-27 14:28:38.321   551   850 E ActivityManager: Unable to freeze binder for 4204: -11
+11-27 14:28:38.334   551   850 I ActivityManager: Killing 4204:com.bellfamily.bastischool/u0a199 (adj 0): stop com.bellfamily.bastischool due to finished inst
+11-27 14:28:38.803   551   577 W ActivityManager: setHasOverlayUi called on unknown pid: 4204
+11-27 14:32:39.221   551   585 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=-1: installPackageLI
+11-27 14:32:39.370   551   610 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=0: pkg removed
+11-27 14:33:21.738   551   585 I ActivityManager: Force stopping com.bellfamily.bastischool.test appid=10200 user=-1: installPackageLI
+11-27 14:33:21.776   551   585 E ActivityManager: Unable to freeze binder for 4149: -11
+11-27 14:33:21.777   551   585 I ActivityManager: Killing 4149:com.bellfamily.bastischool.test/u0a200 (adj 900): stop com.bellfamily.bastischool.test due to installPackageLI
+11-27 14:33:21.785   551   610 I ActivityManager: Force stopping com.bellfamily.bastischool.test appid=10200 user=0: pkg removed
+11-27 14:33:22.007   551   577 W ActivityManager: setHasOverlayUi called on unknown pid: 4149
+11-27 14:33:28.250   551  1394 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=0: start instr
+11-27 14:33:28.271   551   586 I ActivityManager: Start proc 4537:com.bellfamily.bastischool/u0a199 for added application com.bellfamily.bastischool
+11-27 14:33:29.458  4537  4551 I TestRunner: run started: 5 tests
+11-27 14:33:29.459  4537  4551 I TestRunner: started: bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(com.bellfamily.bastischool.ui.conservation.ConservationRouteTest)
+11-27 14:33:42.951   551   586 W ActivityManager: Slow operation: 87ms so far, now at startProcess: returned from zygote!
+11-27 14:33:42.951   551   586 W ActivityManager: Slow operation: 88ms so far, now at startProcess: done updating battery stats
+11-27 14:33:42.951   551   586 W ActivityManager: Slow operation: 88ms so far, now at startProcess: building log message
+11-27 14:33:42.951   551   586 I ActivityManager: Start proc 4691:com.bellfamily.bastischool.test/u0a200 for next-top-activity {com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity}
+11-27 14:33:42.951   551   586 W ActivityManager: Slow operation: 88ms so far, now at startProcess: starting to update pids map
+11-27 14:33:42.970   551   586 W ActivityManager: Slow operation: 106ms so far, now at startProcess: done updating pids map
+11-27 14:33:43.449  4537  4551 I TestRunner: finished: bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(com.bellfamily.bastischool.ui.conservation.ConservationRouteTest)
+11-27 14:33:43.477  4537  4551 I TestRunner: started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 14:33:46.493  4537  4551 I TestRunner: finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 14:33:46.510  4537  4551 I TestRunner: started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 14:33:49.321  4537  4551 I TestRunner: finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 14:33:49.325  4537  4551 I TestRunner: started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 14:33:52.945  4537  4551 I TestRunner: finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 14:33:52.984  4537  4551 I TestRunner: started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-8](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 14:33:56.802  4537  4551 I TestRunner: finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-8](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 14:33:56.805  4537  4551 I TestRunner: run finished: 5 tests, 0 failed, 0 ignored
+11-27 14:33:56.894   551  1394 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=0: finished inst
+11-27 14:33:56.901   551  1394 E ActivityManager: Unable to freeze binder for 4537: -11
+11-27 14:33:56.914   551  1394 I ActivityManager: Killing 4537:com.bellfamily.bastischool/u0a199 (adj 0): stop com.bellfamily.bastischool due to finished inst
+11-27 14:33:56.983   551   577 W ActivityManager: setHasOverlayUi called on unknown pid: 4537
+11-27 14:33:56.985   551   551 W ActivityManager: pid 551 system sent binder code 2 with flags 1 to frozen apps and got error -32
+11-27 14:36:50.384   551   585 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=-1: installPackageLI
+11-27 14:36:50.579   551   610 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=0: pkg removed
+11-27 14:37:19.267   551   585 I ActivityManager: Force stopping com.bellfamily.bastischool.test appid=10200 user=-1: installPackageLI
+11-27 14:37:19.296   551   585 E ActivityManager: Unable to freeze binder for 4691: -11
+11-27 14:37:19.298   551   585 I ActivityManager: Killing 4691:com.bellfamily.bastischool.test/u0a200 (adj 900): stop com.bellfamily.bastischool.test due to installPackageLI
+11-27 14:37:19.425   551   610 I ActivityManager: Force stopping com.bellfamily.bastischool.test appid=10200 user=0: pkg removed
+11-27 14:37:19.463   551   577 W ActivityManager: setHasOverlayUi called on unknown pid: 4691
+11-27 14:37:32.724   551   621 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=0: start instr
+11-27 14:37:32.751   551   586 I ActivityManager: Start proc 4933:com.bellfamily.bastischool/u0a199 for added application com.bellfamily.bastischool
+11-27 14:37:33.771  4933  4947 I TestRunner: run started: 2 tests
+11-27 14:37:33.773  4933  4947 I TestRunner: started: cancellationWhileDecodingRejectsTheLatePicture(com.bellfamily.bastischool.ArtworkPublicationTest)
+11-27 14:37:33.833  4933  4947 I TestRunner: finished: cancellationWhileDecodingRejectsTheLatePicture(com.bellfamily.bastischool.ArtworkPublicationTest)
+11-27 14:37:33.837  4933  4947 I TestRunner: started: workerCompletionPublishesOnMainEvenForUnconfinedCaller(com.bellfamily.bastischool.ArtworkPublicationTest)
+11-27 14:37:33.850  4933  4947 E TestRunner: failed: workerCompletionPublishesOnMainEvenForUnconfinedCaller(com.bellfamily.bastischool.ArtworkPublicationTest)
+11-27 14:37:33.852  4933  4947 E TestRunner: ----- begin exception -----
+11-27 14:37:33.852  4933  4947 E TestRunner: java.lang.AssertionError: An IO completion must not publish UI state on its worker expected same:<Looper (main, tid 2) {d0a52a}> was not:<null>
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.Assert.fail(Assert.java:89)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.Assert.failNotSame(Assert.java:829)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.Assert.assertSame(Assert.java:772)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at com.bellfamily.bastischool.ArtworkPublicationTest.workerCompletionPublishesOnMainEvenForUnconfinedCaller(ArtworkPublicationTest.kt:42)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at java.lang.reflect.Method.invoke(Native Method)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:128)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:27)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+11-27 14:37:33.852  4933  4947 E TestRunner: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
+11-27 14:37:33.852  4933  4947 E TestRunner: ----- end exception -----
+11-27 14:37:33.853  4933  4947 I TestRunner: finished: workerCompletionPublishesOnMainEvenForUnconfinedCaller(com.bellfamily.bastischool.ArtworkPublicationTest)
+11-27 14:37:33.859  4933  4947 I TestRunner: run finished: 2 tests, 1 failed, 0 ignored
+11-27 14:37:33.869   551   621 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=0: finished inst
+11-27 14:37:33.869   551   621 E ActivityManager: Unable to freeze binder for 4933: -11
+11-27 14:37:33.872   551   621 I ActivityManager: Killing 4933:com.bellfamily.bastischool/u0a199 (adj 0): stop com.bellfamily.bastischool due to finished inst
+11-27 15:08:53.815   551   585 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=-1: installPackageLI
+11-27 15:08:54.127   551   610 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=0: pkg removed
+11-27 15:09:02.836   551   913 W ActivityManager: stopServiceToken startId 14 is last, but have 1 remaining args
+11-27 15:09:11.556   551   585 I ActivityManager: Force stopping com.bellfamily.bastischool.test appid=10200 user=-1: installPackageLI
+11-27 15:09:11.614   551   610 I ActivityManager: Force stopping com.bellfamily.bastischool.test appid=10200 user=0: pkg removed
+11-27 15:09:26.831   551  4191 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=0: start instr
+11-27 15:09:26.890   551   586 I ActivityManager: Start proc 5106:com.bellfamily.bastischool/u0a199 for added application com.bellfamily.bastischool
+11-27 15:09:26.890   551   586 W ActivityManager: Slow operation: 51ms so far, now at startProcess: done updating pids map
+11-27 15:09:28.259  5106  5120 I TestRunner: run started: 2 tests
+11-27 15:09:28.261  5106  5120 I TestRunner: started: cancellationWhileDecodingRejectsTheLatePicture(com.bellfamily.bastischool.ArtworkPublicationTest)
+11-27 15:09:28.326  5106  5120 I TestRunner: finished: cancellationWhileDecodingRejectsTheLatePicture(com.bellfamily.bastischool.ArtworkPublicationTest)
+11-27 15:09:28.331  5106  5120 I TestRunner: started: workerCompletionPublishesOnMainEvenForUnconfinedCaller(com.bellfamily.bastischool.ArtworkPublicationTest)
+11-27 15:09:28.335  5106  5120 I TestRunner: finished: workerCompletionPublishesOnMainEvenForUnconfinedCaller(com.bellfamily.bastischool.ArtworkPublicationTest)
+11-27 15:09:28.336  5106  5120 I TestRunner: run finished: 2 tests, 0 failed, 0 ignored
+11-27 15:09:28.350   551   887 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=0: finished inst
+11-27 15:09:28.351   551   887 E ActivityManager: Unable to freeze binder for 5106: -11
+11-27 15:09:28.353   551   887 I ActivityManager: Killing 5106:com.bellfamily.bastischool/u0a199 (adj 0): stop com.bellfamily.bastischool due to finished inst
+11-27 15:10:11.253   551   887 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=0: start instr
+11-27 15:10:11.282   551   586 I ActivityManager: Start proc 5140:com.bellfamily.bastischool/u0a199 for added application com.bellfamily.bastischool
+11-27 15:10:12.124  5140  5154 I TestRunner: run started: 5 tests
+11-27 15:10:12.125  5140  5154 I TestRunner: started: bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(com.bellfamily.bastischool.ui.conservation.ConservationRouteTest)
+11-27 15:10:27.077   551   586 W ActivityManager: Slow operation: 65ms so far, now at startProcess: returned from zygote!
+11-27 15:10:27.077   551   586 W ActivityManager: Slow operation: 66ms so far, now at startProcess: done updating battery stats
+11-27 15:10:27.077   551   586 W ActivityManager: Slow operation: 66ms so far, now at startProcess: building log message
+11-27 15:10:27.077   551   586 I ActivityManager: Start proc 5283:com.bellfamily.bastischool.test/u0a200 for next-top-activity {com.bellfamily.bastischool.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity}
+11-27 15:10:27.080   551   586 W ActivityManager: Slow operation: 69ms so far, now at startProcess: starting to update pids map
+11-27 15:10:27.102   551   586 W ActivityManager: Slow operation: 91ms so far, now at startProcess: done updating pids map
+11-27 15:10:27.490  5140  5154 I TestRunner: finished: bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(com.bellfamily.bastischool.ui.conservation.ConservationRouteTest)
+11-27 15:10:27.500  5140  5154 I TestRunner: started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 15:10:30.654  5140  5154 I TestRunner: finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 15:10:30.656  5140  5154 I TestRunner: started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 15:10:33.825  5140  5154 I TestRunner: finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 15:10:33.837  5140  5154 I TestRunner: started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 15:10:37.630  5140  5154 I TestRunner: finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 15:10:37.642  5140  5154 I TestRunner: started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-8](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 15:10:42.096  5140  5154 I TestRunner: finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-8](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 15:10:42.104  5140  5154 I TestRunner: run finished: 5 tests, 0 failed, 0 ignored
+11-27 15:10:42.162   551  3097 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=0: finished inst
+11-27 15:10:42.171   551  3097 E ActivityManager: Unable to freeze binder for 5140: -11
+11-27 15:10:42.199   551  3097 I ActivityManager: Killing 5140:com.bellfamily.bastischool/u0a199 (adj 0): stop com.bellfamily.bastischool due to finished inst
+11-27 15:10:42.237   551   577 W ActivityManager: setHasOverlayUi called on unknown pid: 5140
+11-27 15:10:42.238   551   551 W ActivityManager: pid 551 system sent binder code 2 with flags 1 to frozen apps and got error -32
+11-27 15:11:36.008   551  5384 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=0: start instr
+11-27 15:11:36.031   551   586 I ActivityManager: Start proc 5396:com.bellfamily.bastischool/u0a199 for added application com.bellfamily.bastischool
+11-27 15:11:36.960  5396  5410 I TestRunner: run started: 40 tests
+11-27 15:11:36.963  5396  5410 I TestRunner: started: supplementaryFailureCannotReplaceOriginalFailure(com.bellfamily.bastischool.NativeArtworkDiagnosticsTest)
+11-27 15:11:37.994  5396  5410 I TestRunner: finished: supplementaryFailureCannotReplaceOriginalFailure(com.bellfamily.bastischool.NativeArtworkDiagnosticsTest)
+11-27 15:11:37.998  5396  5410 I TestRunner: started: missingArtworkRecordsExpectedStateBeforeTeardownAndKeepsTimeout(com.bellfamily.bastischool.NativeArtworkDiagnosticsTest)
+11-27 15:11:39.081  5396  5410 I TestRunner: finished: missingArtworkRecordsExpectedStateBeforeTeardownAndKeepsTimeout(com.bellfamily.bastischool.NativeArtworkDiagnosticsTest)
+11-27 15:11:39.101  5396  5410 I TestRunner: started: cancellationWhileDecodingRejectsTheLatePicture(com.bellfamily.bastischool.ArtworkPublicationTest)
+11-27 15:11:39.107  5396  5410 I TestRunner: finished: cancellationWhileDecodingRejectsTheLatePicture(com.bellfamily.bastischool.ArtworkPublicationTest)
+11-27 15:11:39.109  5396  5410 I TestRunner: started: workerCompletionPublishesOnMainEvenForUnconfinedCaller(com.bellfamily.bastischool.ArtworkPublicationTest)
+11-27 15:11:39.190  5396  5410 I TestRunner: finished: workerCompletionPublishesOnMainEvenForUnconfinedCaller(com.bellfamily.bastischool.ArtworkPublicationTest)
+11-27 15:11:39.193  5396  5410 I TestRunner: started: orderUndoRemoveRetryRestoreFiveAndTenAndKeepComparisonJournal(com.bellfamily.bastischool.ui.length.LengthOrderingRouteTest)
+11-27 15:11:56.696  5396  5410 I TestRunner: finished: orderUndoRemoveRetryRestoreFiveAndTenAndKeepComparisonJournal(com.bellfamily.bastischool.ui.length.LengthOrderingRouteTest)
+11-27 15:11:56.709  5396  5410 I TestRunner: started: offStaysLazyHiddenResultsStaySilentAndFreshOwnersRestoreExactWork(com.bellfamily.bastischool.ui.length.LengthOrderingOwnerTest)
+11-27 15:11:57.063  5396  5410 I TestRunner: finished: offStaysLazyHiddenResultsStaySilentAndFreshOwnersRestoreExactWork(com.bellfamily.bastischool.ui.length.LengthOrderingOwnerTest)
+11-27 15:11:57.065  5396  5410 I TestRunner: started: alignRestoreUndoRetryAndCompleteFiveAndTenWithSharedProgress(com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest)
+11-27 15:12:14.143  5396  5410 I TestRunner: finished: alignRestoreUndoRetryAndCompleteFiveAndTenWithSharedProgress(com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest)
+11-27 15:12:14.160  5396  5410 I TestRunner: started: offStaysLazyHiddenResultsStaySilentAndFreshOwnersRestoreExactWork(com.bellfamily.bastischool.ui.length.LengthComparisonOwnerTest)
+11-27 15:12:14.625  5396  5410 I TestRunner: finished: offStaysLazyHiddenResultsStaySilentAndFreshOwnersRestoreExactWork(com.bellfamily.bastischool.ui.length.LengthComparisonOwnerTest)
+11-27 15:12:14.629  5396  5410 I TestRunner: started: bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(com.bellfamily.bastischool.ui.conservation.ConservationRouteTest)
+11-27 15:12:27.707  5396  5410 I TestRunner: finished: bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(com.bellfamily.bastischool.ui.conservation.ConservationRouteTest)
+11-27 15:12:27.727  5396  5410 I TestRunner: started: offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently(com.bellfamily.bastischool.ui.conservation.ConservationOwnerTest)
+11-27 15:12:28.029  5396  5410 I TestRunner: finished: offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently(com.bellfamily.bastischool.ui.conservation.ConservationOwnerTest)
+11-27 15:12:28.030  5396  5410 I TestRunner: started: allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds(com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest)
+11-27 15:12:51.074  5396  5410 I TestRunner: finished: allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds(com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest)
+11-27 15:12:51.078  5396  5410 I TestRunner: started: offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently(com.bellfamily.bastischool.ui.numberstories.NumberStoriesOwnerTest)
+11-27 15:12:51.380  5396  5410 I TestRunner: finished: offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently(com.bellfamily.bastischool.ui.numberstories.NumberStoriesOwnerTest)
+11-27 15:12:51.381  5396  5410 I TestRunner: started: allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds(com.bellfamily.bastischool.ui.quantitychange.QuantityChangeRouteTest)
+11-27 15:13:11.118  5396  5410 I TestRunner: finished: allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds(com.bellfamily.bastischool.ui.quantitychange.QuantityChangeRouteTest)
+11-27 15:13:11.122  5396  5410 I TestRunner: started: offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently(com.bellfamily.bastischool.ui.quantitychange.QuantityChangeOwnerTest)
+11-27 15:13:11.505  5396  5410 I TestRunner: finished: offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently(com.bellfamily.bastischool.ui.quantitychange.QuantityChangeOwnerTest)
+11-27 15:13:11.506  5396  5410 I TestRunner: started: allThreeRulesKeepTheirExamplesRestoreEditedAndCheckedWorkAndCompleteFiveAndTenRounds(com.bellfamily.bastischool.ui.patterns.PatternRouteTest)
+11-27 15:13:31.917  5396  5410 I TestRunner: finished: allThreeRulesKeepTheirExamplesRestoreEditedAndCheckedWorkAndCompleteFiveAndTenRounds(com.bellfamily.bastischool.ui.patterns.PatternRouteTest)
+11-27 15:13:31.920  5396  5410 I TestRunner: started: offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently(com.bellfamily.bastischool.ui.patterns.PatternOwnerTest)
+11-27 15:13:32.342  5396  5410 I TestRunner: finished: offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently(com.bellfamily.bastischool.ui.patterns.PatternOwnerTest)
+11-27 15:13:32.345  5396  5410 I TestRunner: started: allSixBoardsRestoreTurnsTranslateUseSupportAndCompleteWithSharedBalloons(com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTest)
+11-27 15:13:49.904  5396  5410 I TestRunner: finished: allSixBoardsRestoreTurnsTranslateUseSupportAndCompleteWithSharedBalloons(com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTest)
+11-27 15:13:49.907  5396  5410 I TestRunner: started: offIsLazyFreshOwnerRestoresSilentlyAndSwitchingWhileLoadingCannotPublishAnotherBoard(com.bellfamily.bastischool.ui.memory.MemoryPairsOwnerTest)
+11-27 15:13:50.327  5396  5410 I TestRunner: finished: offIsLazyFreshOwnerRestoresSilentlyAndSwitchingWhileLoadingCannotPublishAnotherBoard(com.bellfamily.bastischool.ui.memory.MemoryPairsOwnerTest)
+11-27 15:13:50.329  5396  5410 I TestRunner: started: homeSurvivesLaunchRecreationAndBackgroundReturn(com.bellfamily.bastischool.MainActivityStartupTest)
+11-27 15:13:51.229   551   577 I ActivityManager: updateOomAdj start time is before than pendingPid added, don't delete it
+11-27 15:13:51.373  5396  5410 I TestRunner: finished: homeSurvivesLaunchRecreationAndBackgroundReturn(com.bellfamily.bastischool.MainActivityStartupTest)
+11-27 15:13:51.375  5396  5410 I TestRunner: started: matchingOptionsRecreationReturnsToBothOriginalBrowsePages(com.bellfamily.bastischool.SweepRepairsRouteTest)
+11-27 15:13:53.164  5396  5410 I TestRunner: finished: matchingOptionsRecreationReturnsToBothOriginalBrowsePages(com.bellfamily.bastischool.SweepRepairsRouteTest)
+11-27 15:13:53.168  5396  5410 I TestRunner: started: thumbnailAndStepPicturesDecodeAtBoundedSizeAndMissingArtIsSafe(com.bellfamily.bastischool.SweepRepairsRouteTest)
+11-27 15:13:53.205  5396  5410 I TestRunner: finished: thumbnailAndStepPicturesDecodeAtBoundedSizeAndMissingArtIsSafe(com.bellfamily.bastischool.SweepRepairsRouteTest)
+11-27 15:13:53.209  5396  5410 I TestRunner: started: activityThumbnailsAreVisibleThroughRealBrowsePages(com.bellfamily.bastischool.SweepRepairsRouteTest)
+11-27 15:13:54.641  5396  5410 I TestRunner: finished: activityThumbnailsAreVisibleThroughRealBrowsePages(com.bellfamily.bastischool.SweepRepairsRouteTest)
+11-27 15:13:54.642  5396  5410 I TestRunner: started: quizLessonSettingsRecreationAndCompletionPreserveExactQuestionAndChoices(com.bellfamily.bastischool.ui.verbs.VerbsRouteTest)
+11-27 15:13:58.097  5396  5410 I TestRunner: finished: quizLessonSettingsRecreationAndCompletionPreserveExactQuestionAndChoices(com.bellfamily.bastischool.ui.verbs.VerbsRouteTest)
+11-27 15:13:58.114  5396  5410 I TestRunner: started: bothLevelsKeepFixedEggsRestoreAddedEggsAndCompleteWithSharedRewards(com.bellfamily.bastischool.ui.bonds.NumberBondsRouteTest)
+11-27 15:14:05.743  5396  5410 I TestRunner: finished: bothLevelsKeepFixedEggsRestoreAddedEggsAndCompleteWithSharedRewards(com.bellfamily.bastischool.ui.bonds.NumberBondsRouteTest)
+11-27 15:14:05.762  5396  5410 I TestRunner: started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 15:14:08.992  5396  5410 I TestRunner: finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 15:14:09.004  5396  5410 I TestRunner: started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 15:14:13.374  5396  5410 I TestRunner: finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 15:14:13.377  5396  5410 I TestRunner: started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 15:14:17.356  5396  5410 I TestRunner: finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 15:14:17.394  5396  5410 I TestRunner: started: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-8](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 15:14:21.177   551   577 I ActivityManager: updateOomAdj start time is before than pendingPid added, don't delete it
+11-27 15:14:21.258  5396  5410 I TestRunner: finished: listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-8](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest)
+11-27 15:14:21.297  5396  5410 I TestRunner: started: editsWrongWorkCompletionAndNewRoundSurviveLifecycleAndRepeatedDisposal[en](com.bellfamily.bastischool.ui.washhands.WashHandsLifecycleTest)
+11-27 15:14:29.140  5396  5410 I TestRunner: finished: editsWrongWorkCompletionAndNewRoundSurviveLifecycleAndRepeatedDisposal[en](com.bellfamily.bastischool.ui.washhands.WashHandsLifecycleTest)
+11-27 15:14:29.152  5396  5410 I TestRunner: started: editsWrongWorkCompletionAndNewRoundSurviveLifecycleAndRepeatedDisposal[de](com.bellfamily.bastischool.ui.washhands.WashHandsLifecycleTest)
+11-27 15:14:38.559  5396  5410 I TestRunner: finished: editsWrongWorkCompletionAndNewRoundSurviveLifecycleAndRepeatedDisposal[de](com.bellfamily.bastischool.ui.washhands.WashHandsLifecycleTest)
+11-27 15:14:38.575  5396  5410 I TestRunner: started: allImagesDecodeOnceAtBoundedSizeAndReuseTheSameCache(com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest)
+11-27 15:14:39.148  5396  5410 I TestRunner: finished: allImagesDecodeOnceAtBoundedSizeAndReuseTheSameCache(com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest)
+11-27 15:14:39.150  5396  5410 I TestRunner: started: missingAndCorruptImagesAreIsolatedAndCachedWithoutReplacingThemWithOtherAnimals(com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest)
+11-27 15:14:39.269  5396  5410 I TestRunner: finished: missingAndCorruptImagesAreIsolatedAndCachedWithoutReplacingThemWithOtherAnimals(com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest)
+11-27 15:14:39.271  5396  5410 I TestRunner: started: foodExploreFindNameLanguageAndCategorySwitchPreserveSavedPractice(com.bellfamily.bastischool.ui.vocabulary.FoodVocabularyRouteTest)
+11-27 15:14:45.526  5396  5410 I TestRunner: finished: foodExploreFindNameLanguageAndCategorySwitchPreserveSavedPractice(com.bellfamily.bastischool.ui.vocabulary.FoodVocabularyRouteTest)
+11-27 15:14:45.547  5396  5410 I TestRunner: started: artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[ENGLISH-1](com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest)
+11-27 15:14:49.139  5396  5410 I TestRunner: finished: artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[ENGLISH-1](com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest)
+11-27 15:14:49.156  5396  5410 I TestRunner: started: artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-1](com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest)
+11-27 15:14:52.925  5396  5410 I TestRunner: finished: artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-1](com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest)
+11-27 15:14:52.957  5396  5410 I TestRunner: started: artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-0](com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest)
+11-27 15:14:57.430  5396  5410 I TestRunner: finished: artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-0](com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest)
+11-27 15:14:57.436  5396  5410 I TestRunner: started: artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-8](com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest)
+11-27 15:15:01.879  5396  5410 I TestRunner: finished: artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-8](com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest)
+11-27 15:15:01.880  5396  5410 I TestRunner: started: germanGuidedOutlineAdvancesAndClearsAtLargeTextNarrowWidth(com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest)
+11-27 15:15:02.697  5396  5410 I TestRunner: finished: germanGuidedOutlineAdvancesAndClearsAtLargeTextNarrowWidth(com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest)
+11-27 15:15:02.702  5396  5410 I TestRunner: started: englishGuidedOutlineAdvancesAndClearsAtLargeTextNarrowWidth(com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest)
+11-27 15:15:03.639  5396  5410 I TestRunner: finished: englishGuidedOutlineAdvancesAndClearsAtLargeTextNarrowWidth(com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest)
+11-27 15:15:03.642  5396  5410 I TestRunner: started: individualListenIsSeparateFromImmediateKeyboardAnswerAndNavigationClearsOutline(com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest)
+11-27 15:15:04.728  5396  5410 I TestRunner: finished: individualListenIsSeparateFromImmediateKeyboardAnswerAndNavigationClearsOutline(com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest)
+11-27 15:15:04.740  5396  5410 I TestRunner: run finished: 40 tests, 0 failed, 0 ignored
+11-27 15:15:04.786   551  1008 I ActivityManager: Force stopping com.bellfamily.bastischool appid=10199 user=0: finished inst
+11-27 15:15:04.786   551  1008 E ActivityManager: Unable to freeze binder for 5396: -11
+11-27 15:15:04.786   551  1008 I ActivityManager: Killing 5396:com.bellfamily.bastischool/u0a199 (adj 0): stop com.bellfamily.bastischool due to finished inst
+11-27 15:15:04.966   551   577 W ActivityManager: setHasOverlayUi called on unknown pid: 5396
+11-27 15:15:04.966   551   551 W ActivityManager: pid 551 system sent binder code 2 with flags 1 to frozen apps and got error -32

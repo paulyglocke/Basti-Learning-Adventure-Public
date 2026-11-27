@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-27",
+  "baseline": "8e3407f7f22eec7e1622855214c2bf2e58a19990",
+  "reportInspectorChecks": [
+    "original hosted 212: counts/failure/digest/XML verified",
+    "original hosted 213: counts/failure/digest/XML verified",
+    "wrong expected count rejected",
+    "missing suites rejected",
+    "contradictory failure counts rejected"
+  ],
+  "runtimeAndAndroidTestSourcesUnchanged": true,
+  "localAttempt": {
+    "expectedTests": 5,
+    "successfulCases": 0,
+    "statusCodes": [
+      1,
+      -2,
+      1,
+      -2,
+      1
+    ],
+    "completedSelection": false,
+    "runnerAborted": true
+  },
+  "hostedGate": "OPEN",
+  "newDocumentRelativeLinksAndWhitespace": "passed",
+  "physicalAcceptance": "NOT RUN; owner-managed"
+}

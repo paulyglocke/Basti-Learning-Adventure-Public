@@ -1,0 +1,7 @@
+.Supplementary Android diagnostics unavailable: cannot save diagnostics
+.Supplementary Android diagnostics unavailable: Command 'adb' timed out after 15 seconds
+...
+----------------------------------------------------------------------
+Ran 5 tests in 0.010s
+
+OK

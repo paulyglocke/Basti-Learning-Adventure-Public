@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest" tests="34" failures="1" errors="0" skipped="0" time="269.899" timestamp="2026-11-24T13:46:51" hostname="localhost">
+  <properties>
+    <property name="device" value="emulator-5554 - 15" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="alignRestoreUndoRetryAndCompleteFiveAndTenWithSharedProgress" classname="com.bellfamily.bastischool.ui.length.LengthComparisonRouteTest" time="28.902" />
+  <testcase name="offStaysLazyHiddenResultsStaySilentAndFreshOwnersRestoreExactWork" classname="com.bellfamily.bastischool.ui.length.LengthComparisonOwnerTest" time="0.65" />
+  <testcase name="bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress" classname="com.bellfamily.bastischool.ui.conservation.ConservationRouteTest" time="25.525">
+    <failure>androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 10000 ms
+at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
+at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
+at com.bellfamily.bastischool.ui.conservation.ConservationCaptureKt.captureConservationReview(ConservationCapture.kt:13)
+at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress$lambda$15$lambda$14$capture(ConservationRouteTest.kt:37)
+at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress$lambda$15(ConservationRouteTest.kt:83)
+at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.$r8$lambda$-ZJH8FRwYTqKCBTEiIHBXH8YFkI(Unknown Source:0)
+at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+at com.bellfamily.bastischool.ui.conservation.ConservationRouteTestKt.isolatedConservationStores(ConservationRouteTest.kt:23)
+at com.bellfamily.bastischool.ui.conservation.ConservationRouteTest.bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(ConservationRouteTest.kt:28)
+</failure>
+  </testcase>
+  <testcase name="offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently" classname="com.bellfamily.bastischool.ui.conservation.ConservationOwnerTest" time="0.536" />
+  <testcase name="allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds" classname="com.bellfamily.bastischool.ui.numberstories.NumberStoriesRouteTest" time="35.13" />
+  <testcase name="offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently" classname="com.bellfamily.bastischool.ui.numberstories.NumberStoriesOwnerTest" time="0.314" />
+  <testcase name="allFourChoicesRestoreEditsUndoWrongAndSolvedWorkAndCompleteFiveAndTenRounds" classname="com.bellfamily.bastischool.ui.quantitychange.QuantityChangeRouteTest" time="26.948" />
+  <testcase name="offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently" classname="com.bellfamily.bastischool.ui.quantitychange.QuantityChangeOwnerTest" time="0.316" />
+  <testcase name="allThreeRulesKeepTheirExamplesRestoreEditedAndCheckedWorkAndCompleteFiveAndTenRounds" classname="com.bellfamily.bastischool.ui.patterns.PatternRouteTest" time="29.137" />
+  <testcase name="offIsLazyLateLevelResultsAreRejectedAndFreshOwnersRestoreSilently" classname="com.bellfamily.bastischool.ui.patterns.PatternOwnerTest" time="0.46" />
+  <testcase name="allSixBoardsRestoreTurnsTranslateUseSupportAndCompleteWithSharedBalloons" classname="com.bellfamily.bastischool.ui.memory.MemoryPairsRouteTest" time="22.537" />
+  <testcase name="offIsLazyFreshOwnerRestoresSilentlyAndSwitchingWhileLoadingCannotPublishAnotherBoard" classname="com.bellfamily.bastischool.ui.memory.MemoryPairsOwnerTest" time="0.383" />
+  <testcase name="homeSurvivesLaunchRecreationAndBackgroundReturn" classname="com.bellfamily.bastischool.MainActivityStartupTest" time="1.824" />
+  <testcase name="matchingOptionsRecreationReturnsToBothOriginalBrowsePages" classname="com.bellfamily.bastischool.SweepRepairsRouteTest" time="2.676" />
+  <testcase name="thumbnailAndStepPicturesDecodeAtBoundedSizeAndMissingArtIsSafe" classname="com.bellfamily.bastischool.SweepRepairsRouteTest" time="0.179" />
+  <testcase name="activityThumbnailsAreVisibleThroughRealBrowsePages" classname="com.bellfamily.bastischool.SweepRepairsRouteTest" time="2.008" />
+  <testcase name="quizLessonSettingsRecreationAndCompletionPreserveExactQuestionAndChoices" classname="com.bellfamily.bastischool.ui.verbs.VerbsRouteTest" time="4.72" />
+  <testcase name="bothLevelsKeepFixedEggsRestoreAddedEggsAndCompleteWithSharedRewards" classname="com.bellfamily.bastischool.ui.bonds.NumberBondsRouteTest" time="12.75" />
+  <testcase name="listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1]" classname="com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest" time="4.785" />
+  <testcase name="listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1]" classname="com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest" time="4.373" />
+  <testcase name="listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0]" classname="com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest" time="5.083" />
+  <testcase name="listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-8]" classname="com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest" time="5.035" />
+  <testcase name="editsWrongWorkCompletionAndNewRoundSurviveLifecycleAndRepeatedDisposal[en]" classname="com.bellfamily.bastischool.ui.washhands.WashHandsLifecycleTest" time="11.886" />
+  <testcase name="editsWrongWorkCompletionAndNewRoundSurviveLifecycleAndRepeatedDisposal[de]" classname="com.bellfamily.bastischool.ui.washhands.WashHandsLifecycleTest" time="11.307" />
+  <testcase name="allImagesDecodeOnceAtBoundedSizeAndReuseTheSameCache" classname="com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest" time="0.458" />
+  <testcase name="missingAndCorruptImagesAreIsolatedAndCachedWithoutReplacingThemWithOtherAnimals" classname="com.bellfamily.bastischool.ui.vocabulary.VocabularyArtworkLoaderTest" time="0.105" />
+  <testcase name="foodExploreFindNameLanguageAndCategorySwitchPreserveSavedPractice" classname="com.bellfamily.bastischool.ui.vocabulary.FoodVocabularyRouteTest" time="6.357" />
+  <testcase name="artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[ENGLISH-1]" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest" time="4.452" />
+  <testcase name="artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-1]" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest" time="3.91" />
+  <testcase name="artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-0]" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest" time="5.613" />
+  <testcase name="artworkDescriptionsChoicesActionsAndFailureStayUsableAtLargeFont[GERMAN-8]" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsArtworkScreenTest" time="5.448" />
+  <testcase name="germanGuidedOutlineAdvancesAndClearsAtLargeTextNarrowWidth" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest" time="1.17" />
+  <testcase name="englishGuidedOutlineAdvancesAndClearsAtLargeTextNarrowWidth" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest" time="1.069" />
+  <testcase name="individualListenIsSeparateFromImmediateKeyboardAnswerAndNavigationClearsOutline" classname="com.bellfamily.bastischool.ui.prepositions.PrepositionsGuidedListenScreenTest" time="1.751" />
+</testsuite>

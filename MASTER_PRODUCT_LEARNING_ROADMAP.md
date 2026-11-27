@@ -1840,6 +1840,16 @@ Fast-feeling recognition and satisfying animation without countdown or reaction-
 
 ## Development priorities
 
+### Approved consolidation sequence — 2026-11-26
+
+The next delivery sequence is [Consolidation and release readiness](docs/CONSOLIDATION_PLAN.md):
+trusted baseline → refined daily experience → sustainable engineering → connected learning.
+Checkpoint 1 is active: diagnose hosted Android failures, reconcile the activity/acceptance
+inventory and prepare batched physical review. Preserve the existing learning/runtime
+contracts. The small curated Today’s Adventure is brought forward after these checkpoints;
+full story/adaptive systems remain later work. Hardware acceptance stays owner-managed
+and pending where deferred; independent consolidation continues.
+
 ### P0 — Trusted daily build
 
 The current native baseline should remain trustworthy while expansion resumes.
@@ -1925,7 +1935,7 @@ Priority capabilities:
 12. **Motion Demonstration**
     - establish through a small instructional-animation proof before broad rollout.
 
-Shared buttons, titles, quiz progress, support messages and completion are already implemented; remaining design work needs a bounded consumer. Native UI regression execution and an explicit Android-test CI gate remain validation work, separate from those presentation components.
+Shared buttons, titles, quiz progress, support messages and completion are already implemented; remaining design work needs a bounded consumer. An explicit startup/focused Android-test CI gate is implemented; its current failures and wider Home/layout coverage remain consolidation work, separate from those presentation components.
 
 Do not build speculative mega-frameworks.
 
@@ -2040,7 +2050,7 @@ Priority areas:
 - Dragon Treasure Hunt;
 - Build the Bridge;
 - Crocodile Snap;
-- Today’s Adventure;
+- Today’s Adventure progress-informed version (the curated slice is brought forward in the approved consolidation sequence);
 - Discovery Book;
 - native/action-specific Verb Explorer;
 - richer deterministic animation;

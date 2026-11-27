@@ -1,0 +1,973 @@
+{
+  "source": "trace-final.txt",
+  "publications": 161,
+  "workerPublications": 100,
+  "events": [
+    {
+      "process": 4537,
+      "thread": 4579,
+      "event": "620425737 SceneDescriptions/countryside_farm/canonical/farm_008_farmyard_friends.png bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4583,
+      "event": "620427273 Animals/canonical/eagle.png bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4582,
+      "event": "1747932338 vocabulary/food/apple.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4580,
+      "event": "1747932339 school_actions/board/object_book.png bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4585,
+      "event": "620422153 Animals/canonical/frog.png bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4584,
+      "event": "620421385 Seasons/blossoming_lakeside_spring_meadow.png bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4586,
+      "event": "1713012902 Animals/canonical/dinosaur.png bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4581,
+      "event": "620409097 Prepositions/scenes/scene_prepositions_dinosaur_on.png bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4587,
+      "event": "1551825574 Animals/canonical/dinosaur.png bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4589,
+      "event": "620409865 SceneDescriptions/jungle_rainforest/canonical/jungle_001_actions.png bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4591,
+      "event": "620411401 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4588,
+      "event": "620412169 SceneDescriptions/ocean_underwater/canonical/ocean_001_reef_actions.png bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1530178382 Animals/canonical/rabbit.png bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4590,
+      "event": "1517650086 Animals/canonical/whale.png bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "620407049 school_actions/book_desk.png bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4594,
+      "event": "-1530178381 Animals/canonical/dolphin.png bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4598,
+      "event": "501961906 vocabulary/food/apple.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4597,
+      "event": "501961907 Animals/canonical/dinosaur.png bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "2078950036 Animals/canonical/dinosaur.png bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "2078954132 Animals/canonical/dinosaur.png bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "2078958228 Animals/canonical/dinosaur.png bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "2078958228 Animals/canonical/dinosaur.png bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "2078950036 Animals/canonical/dinosaur.png bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "2078954132 Animals/canonical/dinosaur.png bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "2078950036 Animals/canonical/dinosaur.png bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "2078954132 Animals/canonical/dinosaur.png bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "2078958228 Animals/canonical/dinosaur.png bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4593,
+      "event": "2078950036 Animals/canonical/dinosaur.png bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4590,
+      "event": "2078958228 Animals/canonical/dinosaur.png bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4597,
+      "event": "2078954132 Animals/canonical/dinosaur.png bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4590,
+      "event": "2078954132 Animals/canonical/dinosaur.png bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4592,
+      "event": "2078950036 Animals/canonical/dinosaur.png bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4597,
+      "event": "2078958228 Animals/canonical/dinosaur.png bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4598,
+      "event": "-145422347 wash_hands/water_on.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4590,
+      "event": "-134936587 wash_hands/wet.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4592,
+      "event": "-148568075 wash_hands/rinse.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4597,
+      "event": "-138082315 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309278753 wash_hands/rinse.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-148568075 wash_hands/wet.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-134936587 wash_hands/soap.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4590,
+      "event": "-1309295137 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309311521 wash_hands/wet.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309327905 wash_hands/water_on.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309311521 wash_hands/water_on.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309278753 wash_hands/soap.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309295137 wash_hands/wet.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-145422347 wash_hands/rinse.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4590,
+      "event": "-1309278753 wash_hands/wet.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4590,
+      "event": "-1309295137 wash_hands/water_on.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4590,
+      "event": "-148568075 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-148568075 wash_hands/wet.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309278753 wash_hands/water_on.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-134936587 wash_hands/soap.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-145422347 wash_hands/water_on.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-148568075 wash_hands/rinse.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-138082315 wash_hands/soap.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-134936587 wash_hands/wet.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4591,
+      "event": "-1309278753 wash_hands/water_on.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4590,
+      "event": "-134936587 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4588,
+      "event": "-145422347 wash_hands/rinse.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4594,
+      "event": "-148568075 wash_hands/wet.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4592,
+      "event": "-1309295137 wash_hands/wet.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4592,
+      "event": "-148568075 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4591,
+      "event": "-1309311521 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4591,
+      "event": "-1309327905 wash_hands/rinse.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4593,
+      "event": "-148568075 wash_hands/rinse.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4593,
+      "event": "-134936587 wash_hands/wet.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4598,
+      "event": "-138082315 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4594,
+      "event": "-145422347 wash_hands/water_on.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-148568075 wash_hands/wet.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-134936587 wash_hands/soap.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309278753 wash_hands/rinse.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4597,
+      "event": "-1309295137 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309311521 wash_hands/wet.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4597,
+      "event": "-1309327905 wash_hands/water_on.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309278753 wash_hands/soap.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309295137 wash_hands/wet.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309311521 wash_hands/water_on.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-145422347 wash_hands/rinse.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4597,
+      "event": "-1309278753 wash_hands/wet.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4597,
+      "event": "-1309295137 wash_hands/water_on.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4594,
+      "event": "-148568075 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4593,
+      "event": "-1309278753 wash_hands/water_on.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4593,
+      "event": "-148568075 wash_hands/wet.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4594,
+      "event": "-134936587 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-134936587 wash_hands/wet.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-138082315 wash_hands/soap.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-145422347 wash_hands/water_on.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-148568075 wash_hands/rinse.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-145422347 wash_hands/rinse.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-148568075 wash_hands/wet.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-134936587 wash_hands/soap.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4597,
+      "event": "-1309278753 wash_hands/water_on.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4597,
+      "event": "-1309295137 wash_hands/wet.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4597,
+      "event": "-148568075 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309311521 wash_hands/soap.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309327905 wash_hands/rinse.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4593,
+      "event": "-145424139 wash_hands/rinse.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4593,
+      "event": "-148568075 wash_hands/wet.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4593,
+      "event": "-148569867 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4594,
+      "event": "-145422347 wash_hands/water_on.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4590,
+      "event": "-145424139 wash_hands/wet.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4598,
+      "event": "-148568075 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4591,
+      "event": "-1309278753 wash_hands/rinse.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4591,
+      "event": "-1309295137 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309311521 wash_hands/wet.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309327905 wash_hands/water_on.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4594,
+      "event": "-1309278753 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4594,
+      "event": "-1309295137 wash_hands/wet.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4594,
+      "event": "-1309311521 wash_hands/water_on.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4594,
+      "event": "-145422347 wash_hands/rinse.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4598,
+      "event": "-145424139 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4588,
+      "event": "-1309278753 wash_hands/wet.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4590,
+      "event": "-1309295137 wash_hands/water_on.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4590,
+      "event": "-1309278753 wash_hands/water_on.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4597,
+      "event": "-145424139 wash_hands/wet.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4597,
+      "event": "-148568075 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-145422347 wash_hands/water_on.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-145424139 wash_hands/rinse.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-148568075 wash_hands/wet.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-148569867 wash_hands/soap.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4597,
+      "event": "-1309278753 wash_hands/water_on.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4591,
+      "event": "-145424139 wash_hands/wet.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4598,
+      "event": "-148568075 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4597,
+      "event": "-145422347 wash_hands/rinse.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309295137 wash_hands/wet.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-145424139 wash_hands/soap.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4597,
+      "event": "-1309311521 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309327905 wash_hands/rinse.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4598,
+      "event": "-145424139 wash_hands/rinse.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4597,
+      "event": "-148568075 wash_hands/wet.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4598,
+      "event": "-148569867 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4592,
+      "event": "-145422347 wash_hands/water_on.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4590,
+      "event": "-145424139 wash_hands/wet.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4590,
+      "event": "-148568075 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4594,
+      "event": "-1309278753 wash_hands/rinse.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309295137 wash_hands/soap.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309311521 wash_hands/wet.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4592,
+      "event": "-1309327905 wash_hands/water_on.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4597,
+      "event": "-1309295137 wash_hands/wet.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4594,
+      "event": "-1309311521 wash_hands/water_on.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4594,
+      "event": "-145422347 wash_hands/rinse.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4592,
+      "event": "-1309278753 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4593,
+      "event": "-1309278753 wash_hands/wet.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4593,
+      "event": "-1309295137 wash_hands/water_on.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4593,
+      "event": "-145424139 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4592,
+      "event": "-1309278753 wash_hands/water_on.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4588,
+      "event": "-148568075 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4593,
+      "event": "-145424139 wash_hands/wet.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4598,
+      "event": "-145422347 wash_hands/water_on.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4591,
+      "event": "-145424139 wash_hands/rinse.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4588,
+      "event": "-148569867 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4593,
+      "event": "-148568075 wash_hands/wet.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309278753 wash_hands/water_on.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-145424139 wash_hands/wet.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-148568075 wash_hands/soap.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-145422347 wash_hands/rinse.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309295137 wash_hands/wet.jpg bitmap=true",
+      "onMain": true
+    },
+    {
+      "process": 4537,
+      "thread": 4593,
+      "event": "-145424139 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4594,
+      "event": "-1309311521 wash_hands/soap.jpg bitmap=true",
+      "onMain": false
+    },
+    {
+      "process": 4537,
+      "thread": 4537,
+      "event": "-1309327905 wash_hands/rinse.jpg bitmap=true",
+      "onMain": true
+    }
+  ]
+}

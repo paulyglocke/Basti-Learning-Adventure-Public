@@ -1,0 +1,18 @@
+{
+  "testedSourceHashes": 11,
+  "priorEvidenceHashes": 29,
+  "installedApkHashesMatch": true,
+  "jvm": {
+    "tests": 751,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "localConfiguredCases": 40,
+  "readinessAssertionsPreserved": true,
+  "originalCiClassesPreserved": 24,
+  "documentationLinks": 223,
+  "restoredOriginalFiles": 88,
+  "ownedEmulatorStopped": true,
+  "hostedCandidateRun": "pending publication"
+}

@@ -1,0 +1,147 @@
+Printing with useUnmergedTree = 'true'
+Node #945 at (l=0.0, t=0.0, r=1920.0, b=1080.0)px
+ |-Node #946 at (l=0.0, t=0.0, r=1920.0, b=1080.0)px
+   IsTraversalGroup = 'true'
+   VerticalScrollAxisRange = 'ScrollAxisRange(value=880.0, maxValue=2946.0, reverseScrolling=false)'
+   Actions = [ScrollBy, ScrollByOffset]
+    |-Node #947 at (l=42.0, t=-838.0, r=591.0, b=-739.0)px
+    | Text = '[Hände waschen]'
+    | Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |-Node #948 at (l=42.0, t=-707.0, r=1878.0, b=-434.0)px
+    | Text = '[Hör dir die Schritte an. Tippe sie der Reihe nach an und prüfe dann. Du kannst einen Schritt zurücklegen und es noch einmal versuchen.]'
+    | Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |-Node #949 at (l=42.0, t=-402.0, r=1878.0, b=-255.0)px, Tag: 'wash-replay'
+    | Focused = 'false'
+    | Role = 'Button'
+    | Actions = [OnClick, RequestFocus]
+    | MergeDescendants = 'true'
+    |  |-Node #951 at (l=84.0, t=-370.0, r=1836.0, b=-287.0)px
+    |    Text = '[Anhören]'
+    |    Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |-Node #952 at (l=42.0, t=-223.0, r=893.0, b=-132.0)px
+    | Text = '[Wähle den nächsten Schritt]'
+    | Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |-Node #988 at (l=42.0, t=-100.0, r=944.0, b=390.0)px, Tag: 'wash-item-step.wash_hands.water_on'
+    | Focused = 'false'
+    | StateDescription = 'Verfügbarer Schritt. Zur Reihenfolge hinzufügen.'
+    | Actions = [OnClick, RequestFocus]
+    | MergeDescendants = 'true'
+    |  |-Node #1024 at (l=63.0, t=-79.0, r=923.0, b=236.0)px, Tag: 'bundled-art-wash_hands/water_on.jpg'
+    |  |-Node #992 at (l=241.0, t=257.0, r=745.0, b=348.0)px
+    |    Text = '[Wasser anmachen]'
+    |    Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |-Node #993 at (l=42.0, t=411.0, r=944.0, b=558.0)px, Tag: 'wash-listen-step.wash_hands.water_on'
+    | Focused = 'false'
+    | Role = 'Button'
+    | Actions = [OnClick, RequestFocus]
+    | MergeDescendants = 'true'
+    |  |-Node #995 at (l=84.0, t=443.0, r=902.0, b=526.0)px
+    |    Text = '[Anhören: Wasser anmachen]'
+    |    Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |-Node #997 at (l=976.0, t=-100.0, r=1878.0, b=390.0)px, Tag: 'wash-item-step.wash_hands.rinse'
+    | Focused = 'false'
+    | StateDescription = 'Verfügbarer Schritt. Zur Reihenfolge hinzufügen.'
+    | Actions = [OnClick, RequestFocus]
+    | MergeDescendants = 'true'
+    |  |-Node #1001 at (l=1205.0, t=257.0, r=1650.0, b=348.0)px
+    |    Text = '[Hände abspülen]'
+    |    Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |-Node #1002 at (l=976.0, t=411.0, r=1878.0, b=558.0)px, Tag: 'wash-listen-step.wash_hands.rinse'
+    | Focused = 'false'
+    | Role = 'Button'
+    | Actions = [OnClick, RequestFocus]
+    | MergeDescendants = 'true'
+    |  |-Node #1004 at (l=1018.0, t=443.0, r=1836.0, b=526.0)px
+    |    Text = '[Anhören: Hände abspülen]'
+    |    Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |-Node #1007 at (l=42.0, t=590.0, r=944.0, b=1080.0)px, Tag: 'wash-item-step.wash_hands.wet'
+    | Focused = 'false'
+    | StateDescription = 'Verfügbarer Schritt. Zur Reihenfolge hinzufügen.'
+    | Actions = [OnClick, RequestFocus]
+    | MergeDescendants = 'true'
+    |  |-Node #1011 at (l=214.0, t=947.0, r=772.0, b=1038.0)px
+    |    Text = '[Hände nass machen]'
+    |    Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |-Node #1012 at (l=42.0, t=1101.0, r=944.0, b=1248.0)px, Tag: 'wash-listen-step.wash_hands.wet'
+    | Focused = 'false'
+    | Role = 'Button'
+    | Actions = [OnClick, RequestFocus]
+    | MergeDescendants = 'true'
+    |  |-Node #1014 at (l=84.0, t=1133.0, r=902.0, b=1216.0)px
+    |    Text = '[Anhören: Hände nass machen]'
+    |    Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |-Node #1016 at (l=976.0, t=590.0, r=1878.0, b=1080.0)px, Tag: 'wash-item-step.wash_hands.soap'
+    | Focused = 'false'
+    | StateDescription = 'Verfügbarer Schritt. Zur Reihenfolge hinzufügen.'
+    | Actions = [OnClick, RequestFocus]
+    | MergeDescendants = 'true'
+    |  |-Node #1020 at (l=1176.0, t=947.0, r=1679.0, b=1038.0)px
+    |    Text = '[Mit Seife waschen]'
+    |    Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |-Node #1021 at (l=976.0, t=1101.0, r=1878.0, b=1248.0)px, Tag: 'wash-listen-step.wash_hands.soap'
+    | Focused = 'false'
+    | Role = 'Button'
+    | Actions = [OnClick, RequestFocus]
+    | MergeDescendants = 'true'
+    |  |-Node #1023 at (l=1018.0, t=1133.0, r=1836.0, b=1216.0)px
+    |    Text = '[Anhören: Mit Seife waschen]'
+    |    Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |-Node #954 at (l=42.0, t=1280.0, r=604.0, b=1371.0)px
+    | Text = '[Deine Reihenfolge]'
+    | Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |-Node #955 at (l=42.0, t=1403.0, r=1878.0, b=1670.0)px, Tag: 'wash-position-1'
+    | IsTraversalGroup = 'true'
+    |  |-Node #958 at (l=74.0, t=1435.0, r=307.0, b=1526.0)px
+    |  | Text = '[Schritt 1]'
+    |  | Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |  |-Node #959 at (l=74.0, t=1547.0, r=820.0, b=1638.0)px
+    |    Text = '[Hier kommt ein Schritt hin]'
+    |    Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |-Node #960 at (l=42.0, t=1702.0, r=1878.0, b=1969.0)px, Tag: 'wash-position-2'
+    | IsTraversalGroup = 'true'
+    |  |-Node #963 at (l=74.0, t=1734.0, r=307.0, b=1825.0)px
+    |  | Text = '[Schritt 2]'
+    |  | Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |  |-Node #964 at (l=74.0, t=1846.0, r=820.0, b=1937.0)px
+    |    Text = '[Hier kommt ein Schritt hin]'
+    |    Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |-Node #965 at (l=42.0, t=2001.0, r=1878.0, b=2268.0)px, Tag: 'wash-position-3'
+    | IsTraversalGroup = 'true'
+    |  |-Node #968 at (l=74.0, t=2033.0, r=307.0, b=2124.0)px
+    |  | Text = '[Schritt 3]'
+    |  | Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |  |-Node #969 at (l=74.0, t=2145.0, r=820.0, b=2236.0)px
+    |    Text = '[Hier kommt ein Schritt hin]'
+    |    Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |-Node #970 at (l=42.0, t=2300.0, r=1878.0, b=2567.0)px, Tag: 'wash-position-4'
+    | IsTraversalGroup = 'true'
+    |  |-Node #973 at (l=74.0, t=2332.0, r=307.0, b=2423.0)px
+    |  | Text = '[Schritt 4]'
+    |  | Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |  |-Node #974 at (l=74.0, t=2444.0, r=820.0, b=2535.0)px
+    |    Text = '[Hier kommt ein Schritt hin]'
+    |    Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |-Node #975 at (l=42.0, t=2599.0, r=1878.0, b=2746.0)px, Tag: 'wash-help'
+    | Focused = 'false'
+    | Role = 'Button'
+    | Actions = [OnClick, RequestFocus]
+    | MergeDescendants = 'true'
+    |  |-Node #977 at (l=84.0, t=2631.0, r=1836.0, b=2714.0)px
+    |    Text = '[Hilfe]'
+    |    Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |-Node #978 at (l=42.0, t=2778.0, r=1878.0, b=2925.0)px, Tag: 'wash-check'
+    | Role = 'Button'
+    | [Disabled]
+    | Actions = [OnClick]
+    | MergeDescendants = 'true'
+    |  |-Node #980 at (l=84.0, t=2810.0, r=1836.0, b=2893.0)px
+    |    Text = '[Prüfen]'
+    |    Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |-Node #981 at (l=42.0, t=2957.0, r=1878.0, b=3104.0)px, Tag: 'wash-home'
+      Focused = 'false'
+      Role = 'Button'
+      Actions = [OnClick, RequestFocus]
+      MergeDescendants = 'true'
+       |-Node #983 at (l=84.0, t=2989.0, r=1836.0, b=3072.0)px
+         Text = '[Zurück zum Start]'
+         Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]

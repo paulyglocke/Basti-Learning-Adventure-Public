@@ -74,10 +74,11 @@ internal fun ConservationContent(state:Conservation.State?,config:ConservationRa
     var artFailed by remember(assets,path){mutableStateOf(false)}
     var artRequest by remember{mutableIntStateOf(0)}
     LaunchedEffect(assets,path,artRequest) {
-        picture=null;artFailed=false
+        withContext(Dispatchers.Main.immediate) {picture=null;artFailed=false}
         if(path!=null) {
-            val decoded=withContext(Dispatchers.IO){BundledArtworkCache.load(assets,path,256)}
-            picture=decoded;artFailed=decoded==null
+            loadArtworkForUi({BundledArtworkCache.load(assets,path,256)}) {
+                picture=it;artFailed=it==null
+            }
         }
     }
     if(state!=null&&state.config==config&&picture==null) {

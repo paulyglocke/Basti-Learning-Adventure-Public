@@ -4,6 +4,7 @@ import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.view.Surface
 import com.bellfamily.bastischool.ui.testing.LayoutTestActivity
+import com.bellfamily.bastischool.waitForNativeArtwork
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.ExperimentalComposeUiApi
@@ -58,7 +59,7 @@ class WashHandsScreenTest(private val language:ContentLanguage,private val orien
         WashHands.steps.forEach {s->
             node("wash-item-${s.id.value}").performScrollTo().assertIsDisplayed().assertHasClickAction().assertHeightIsAtLeast(56.dp)
             val tag="bundled-art-${WashHandsArtwork.paths.getValue(s.id)}"
-            compose.waitUntil(10_000) {compose.onAllNodesWithTag(tag,useUnmergedTree=true).fetchSemanticsNodes().isNotEmpty()}
+            waitForNativeArtwork(compose, "wash-${language.name}-$orientation-step-${s.id.value}", tag)
             compose.onNodeWithTag(tag,useUnmergedTree=true).assertIsDisplayed()
             click("wash-listen-${s.id.value}")
         }

@@ -1,0 +1,10 @@
+.Expected only emulator-5554 ready; refusing connected-device tests: [['emulator-5554', 'device'], ['physical-phone', 'device']]
+.Supplementary Android diagnostics unavailable: cannot save diagnostics
+.Supplementary Android diagnostics unavailable: Command 'adb' timed out after 15 seconds
+...Expected only emulator-5554 ready; refusing connected-device tests: []
+Expected only emulator-5554 ready; refusing connected-device tests: [['emulator-5554', 'offline']]
+.
+----------------------------------------------------------------------
+Ran 7 tests in 0.015s
+
+OK

@@ -1,0 +1,27 @@
+{
+  "repository": "paulyglocke/Basti-Learning-Adventure-Public",
+  "sources": [
+    {
+      "run": 212,
+      "sha": "8703c4e8e3a6fddaf1f891ac8b7b4e89ad798986",
+      "job": 138484665754,
+      "artifact": 14927090667,
+      "url": "https://github.com/paulyglocke/Basti-Learning-Adventure-Public/actions/runs/45405409410",
+      "originalArchiveSha256": "4db6c08afd869210d235a1b785ee06ad2d9f9a4bd1d99bb1bb4e4cdf394def44",
+      "build": "passed",
+      "browser": "passed",
+      "android": "failed"
+    },
+    {
+      "run": 213,
+      "sha": "8e3407f7f22eec7e1622855214c2bf2e58a19990",
+      "job": 139978568985,
+      "artifact": 15127627861,
+      "url": "https://github.com/paulyglocke/Basti-Learning-Adventure-Public/actions/runs/45839921923",
+      "originalArchiveSha256": "2c30a2f227e4f856886b8a7dd84c05a7bba9ec1763509c97d11781822ef9c4b9",
+      "build": "passed",
+      "browser": "passed",
+      "android": "failed"
+    }
+  ]
+}

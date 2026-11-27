@@ -4,3 +4,7 @@ gradlew text eol=lf
 *.jar binary
 *.apk binary
 *.png binary
+
+# Preserve captured evidence bytes and their recorded SHA-256 identities.
+docs/consolidation-2026-11-26/evidence/** -text
+docs/artwork-ci-diagnostics-2026-11-27/evidence/** -text

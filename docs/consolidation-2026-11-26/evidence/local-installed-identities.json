@@ -1,0 +1,14 @@
+[
+  {
+    "package": "com.bellfamily.bastischool",
+    "artifact": "app/build/outputs/apk/debug/app-debug.apk",
+    "sha256": "68bb0c320c5617aae312e84ffb0eff73ad9cb8cbcebf913565564d61fbebe508",
+    "installedPath": "/data/app/~~u78uUAtdI1uYKDNJiyZeWQ==/com.bellfamily.bastischool-JPBrJkt7RzLUklt0oFIEIw==/base.apk"
+  },
+  {
+    "package": "com.bellfamily.bastischool.test",
+    "artifact": "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+    "sha256": "f19e816d11f54f2c19a10dff69c9f6a0ec0f1130d867eb10370ddae2c12a5c59",
+    "installedPath": "/data/app/~~XRFUL7ZBYpkLtrn9omttgQ==/com.bellfamily.bastischool.test-Y5zvryEdHRIAeoeli-65PA==/base.apk"
+  }
+]

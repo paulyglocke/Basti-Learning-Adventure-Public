@@ -1,0 +1,207 @@
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationRouteTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ui.conservation.ConservationRouteTest:
+INSTRUMENTATION_STATUS: test=bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationRouteTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stack=androidx.test.espresso.IdlingResourceTimeoutException: Wait for [Compose-Espresso link] to become idle timed out
+	at androidx.test.espresso.IdlingPolicy.handleTimeout(IdlingPolicy.java:4)
+	at androidx.test.espresso.base.UiControllerImpl$5.resourcesHaveTimedOut(UiControllerImpl.java:1)
+	at androidx.test.espresso.base.IdlingResourceRegistry$Dispatcher.handleTimeout(IdlingResourceRegistry.java:4)
+	at androidx.test.espresso.base.IdlingResourceRegistry$Dispatcher.handleMessage(IdlingResourceRegistry.java:6)
+	at android.os.Handler.dispatchMessage(Handler.java:103)
+	at androidx.test.espresso.base.Interrogator.loopAndInterrogate(Interrogator.java:14)
+	at androidx.test.espresso.base.UiControllerImpl.loopUntil(UiControllerImpl.java:8)
+	at androidx.test.espresso.base.UiControllerImpl.loopMainThreadUntilIdle(UiControllerImpl.java:16)
+	at androidx.test.espresso.Espresso$1.run(Espresso.java:1)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:487)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at android.os.Handler.handleCallback(Handler.java:959)
+	at android.os.Handler.dispatchMessage(Handler.java:100)
+	at android.os.Looper.loopOnce(Looper.java:232)
+	at android.os.Looper.loop(Looper.java:317)
+	at android.app.ActivityThread.main(ActivityThread.java:8705)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:886)
+
+INSTRUMENTATION_STATUS: stream=
+Error in bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress(com.bellfamily.bastischool.ui.conservation.ConservationRouteTest):
+androidx.test.espresso.IdlingResourceTimeoutException: Wait for [Compose-Espresso link] to become idle timed out
+	at androidx.test.espresso.IdlingPolicy.handleTimeout(IdlingPolicy.java:4)
+	at androidx.test.espresso.base.UiControllerImpl$5.resourcesHaveTimedOut(UiControllerImpl.java:1)
+	at androidx.test.espresso.base.IdlingResourceRegistry$Dispatcher.handleTimeout(IdlingResourceRegistry.java:4)
+	at androidx.test.espresso.base.IdlingResourceRegistry$Dispatcher.handleMessage(IdlingResourceRegistry.java:6)
+	at android.os.Handler.dispatchMessage(Handler.java:103)
+	at androidx.test.espresso.base.Interrogator.loopAndInterrogate(Interrogator.java:14)
+	at androidx.test.espresso.base.UiControllerImpl.loopUntil(UiControllerImpl.java:8)
+	at androidx.test.espresso.base.UiControllerImpl.loopMainThreadUntilIdle(UiControllerImpl.java:16)
+	at androidx.test.espresso.Espresso$1.run(Espresso.java:1)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:487)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at android.os.Handler.handleCallback(Handler.java:959)
+	at android.os.Handler.dispatchMessage(Handler.java:100)
+	at android.os.Looper.loopOnce(Looper.java:232)
+	at android.os.Looper.loop(Looper.java:317)
+	at android.app.ActivityThread.main(ActivityThread.java:8705)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:886)
+
+INSTRUMENTATION_STATUS: test=bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest:
+INSTRUMENTATION_STATUS: test=listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Activity never becomes requested state "[DESTROYED]" (last lifecycle transition = "STOPPED")
+	at androidx.test.core.app.ActivityScenario.waitForActivityToBecomeAnyOf(ActivityScenario.java:454)
+	at androidx.test.core.app.ActivityScenario.moveToState(ActivityScenario.java:689)
+	at androidx.test.core.app.ActivityScenario.close(ActivityScenario.java:421)
+	at androidx.test.ext.junit.rules.ActivityScenarioRule.after(ActivityScenarioRule.java:117)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:59)
+	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:272)
+	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:271)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.withDisposableContent(ComposeUiTest.android.kt:505)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1$1.invoke(ComposeUiTest.android.kt:333)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withComposeIdlingResource(ComposeUiTest.android.kt:385)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withComposeIdlingResource(ComposeUiTest.android.kt:219)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1.invoke(ComposeUiTest.android.kt:332)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withWindowRecomposer(ComposeUiTest.android.kt:359)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withWindowRecomposer(ComposeUiTest.android.kt:219)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1.invoke(ComposeUiTest.android.kt:331)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withTestCoroutines(ComposeUiTest.android.kt:372)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withTestCoroutines(ComposeUiTest.android.kt:219)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1.invoke(ComposeUiTest.android.kt:330)
+	at androidx.compose.ui.test.EspressoLink.withStrategy(EspressoLink.android.kt:66)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1.invoke(ComposeUiTest.android.kt:329)
+	at androidx.compose.ui.test.IdlingResourceRegistry.withRegistry(IdlingResourceRegistry.jvm.kt:155)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1.invoke(ComposeUiTest.android.kt:328)
+	at androidx.compose.ui.test.ComposeRootRegistry.withRegistry(ComposeRootRegistry.android.kt:146)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.runTest(ComposeUiTest.android.kt:327)
+	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1.evaluate(AndroidComposeTestRule.android.kt:271)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
+
+INSTRUMENTATION_STATUS: stream=
+Error in listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1](com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest):
+java.lang.AssertionError: Activity never becomes requested state "[DESTROYED]" (last lifecycle transition = "STOPPED")
+	at androidx.test.core.app.ActivityScenario.waitForActivityToBecomeAnyOf(ActivityScenario.java:454)
+	at androidx.test.core.app.ActivityScenario.moveToState(ActivityScenario.java:689)
+	at androidx.test.core.app.ActivityScenario.close(ActivityScenario.java:421)
+	at androidx.test.ext.junit.rules.ActivityScenarioRule.after(ActivityScenarioRule.java:117)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:59)
+	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:272)
+	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:271)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.withDisposableContent(ComposeUiTest.android.kt:505)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1$1.invoke(ComposeUiTest.android.kt:333)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withComposeIdlingResource(ComposeUiTest.android.kt:385)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withComposeIdlingResource(ComposeUiTest.android.kt:219)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1.invoke(ComposeUiTest.android.kt:332)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withWindowRecomposer(ComposeUiTest.android.kt:359)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withWindowRecomposer(ComposeUiTest.android.kt:219)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1.invoke(ComposeUiTest.android.kt:331)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withTestCoroutines(ComposeUiTest.android.kt:372)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withTestCoroutines(ComposeUiTest.android.kt:219)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1.invoke(ComposeUiTest.android.kt:330)
+	at androidx.compose.ui.test.EspressoLink.withStrategy(EspressoLink.android.kt:66)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1.invoke(ComposeUiTest.android.kt:329)
+	at androidx.compose.ui.test.IdlingResourceRegistry.withRegistry(IdlingResourceRegistry.jvm.kt:155)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1.invoke(ComposeUiTest.android.kt:328)
+	at androidx.compose.ui.test.ComposeRootRegistry.withRegistry(ComposeRootRegistry.android.kt:146)
+	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.runTest(ComposeUiTest.android.kt:327)
+	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1.evaluate(AndroidComposeTestRule.android.kt:271)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
+
+INSTRUMENTATION_STATUS: test=listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1]
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1]
+INSTRUMENTATION_STATUS_CODE: 1
+onError: commandError=false message=INSTRUMENTATION_ABORTED: System has crashed.
+INSTRUMENTATION_ABORTED: System has crashed.

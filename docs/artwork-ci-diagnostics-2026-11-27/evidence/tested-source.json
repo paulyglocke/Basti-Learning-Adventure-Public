@@ -1,0 +1,46 @@
+[
+  {
+    "path": "app/src/androidTest/java/com/bellfamily/bastischool/ArtworkPublicationTest.kt",
+    "sha256": "7d03c96b9a79abbf7b0c67600ab643c308229fd1fdcf49341df8af3f1a8d70c2"
+  },
+  {
+    "path": "app/src/androidTest/java/com/bellfamily/bastischool/NativeArtworkDiagnosticsTest.kt",
+    "sha256": "a8f88e54646c009fc235dd4a23857cd14a69a3952e7102db7374bb568e319b6e"
+  },
+  {
+    "path": "app/src/androidTest/java/com/bellfamily/bastischool/NativeArtworkReadiness.kt",
+    "sha256": "2af97aa34d384ab1e2e0e8e0423aa6611f05bd26aa7df9434c37bad2462e694a"
+  },
+  {
+    "path": "app/src/main/java/com/bellfamily/bastischool/ui/common/ArtworkLoad.kt",
+    "sha256": "e04e3aa70174f0efc30da67bcafd79d29c534237fa9db93353778deddc099ebb"
+  },
+  {
+    "path": "scripts/run_android_instrumentation.py",
+    "sha256": "14f6c9410dada5503fa11252b3e3866fbc574d080d8957678adcfeff6358395e"
+  },
+  {
+    "path": "scripts/test_android_instrumentation.py",
+    "sha256": "6795875325c994f45fa8148c3c1f0ab672a8c569d4335cf28c7073269ca4b3b1"
+  },
+  {
+    "path": ".github/workflows/build-apk.yml",
+    "sha256": "3c52fedcf4d3cd20554dba4feb8c7f60aee1b25ea65659e4e2f140f91b357d2d"
+  },
+  {
+    "path": "app/src/androidTest/java/com/bellfamily/bastischool/ui/conservation/ConservationCapture.kt",
+    "sha256": "ef618e5df9c4cd336c2c7800ba3421cd7fc97839e06241ad602bc6dd85a61d60"
+  },
+  {
+    "path": "app/src/androidTest/java/com/bellfamily/bastischool/ui/washhands/WashHandsScreenTest.kt",
+    "sha256": "37975cd3d1b49a12b8c05ec13576e5375df76d176bfdb57cfa4ad456f2d91cb4"
+  },
+  {
+    "path": "app/src/main/java/com/bellfamily/bastischool/ui/common/BundledArtwork.kt",
+    "sha256": "feba5f0fb3756f0e4dd0d73a83f3d027c778f8749c44cddde34e0f526c51e2ca"
+  },
+  {
+    "path": "app/src/main/java/com/bellfamily/bastischool/ui/conservation/ConservationScreen.kt",
+    "sha256": "0a8841df4450624a445a86e38724f9f9eb35a703ceb538e57720f8424dd83a51"
+  }
+]

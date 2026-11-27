@@ -4,9 +4,19 @@ This is the execution queue, not the full curriculum. Product direction lives in
 
 Completed implementation history and validation evidence belong in [BUILD_NOTES.md](BUILD_NOTES.md) and [SESSION_HANDOFF.md](SESSION_HANDOFF.md), not as a growing list of checked-off backlog items.
 
+## Active delivery sequence — 2026-11-26
+
+Follow [the approved consolidation plan](docs/CONSOLIDATION_PLAN.md), beginning with
+checkpoint 1: diagnose the two hosted Android timeouts, reconcile the
+[current inventory](docs/ACTIVITY_ACCEPTANCE.md), repair stale summaries and prepare
+[one batched device review](docs/DEVICE_ACCEPTANCE_BATCH.md). Exact progress and
+remaining investigations are in [the checkpoint review](docs/consolidation-2026-11-26/README.md).
+Subsequent checkpoints refine the daily experience, improve maintainability and then
+introduce a small curated Today’s Adventure using existing content.
+
 ## Established baseline
 
-Status reconciled against `35fc129` on 2026-10-14 and updated for Months Phase 7. “Implemented” does not mean physically accepted; current validation layers and device gaps are in [TESTING_QA_SPEC.md](TESTING_QA_SPEC.md).
+Current entry/runtime status is reconciled against `8e3407f` on 2026-11-26 in [the inventory](docs/ACTIVITY_ACCEPTANCE.md); individual evidence keeps its tested revision. “Implemented” does not mean physically accepted; current validation layers and device gaps are in [TESTING_QA_SPEC.md](TESTING_QA_SPEC.md).
 
 Already implemented and not active implementation backlog unless a regression is found:
 
@@ -14,7 +24,7 @@ Already implemented and not active implementation backlog unless a regression is
 - shared native audio controller/system-TTS boundary
 - deterministic native session/checkpoint framework
 - durable deduplicated native progress-event storage
-- native Prepositions activity revision 3/content 1.3, with exact v1/v2 recovery and guided Listen
+- native Prepositions activity revision 4/content 1.4, with exact v1–v3 recovery and guided Listen
 - native Seasons Explore/recognition, Next/Before, Build the Year, MISSING, CLUES, MATCH and COMBINED (only the specifically recorded earlier flows are owner-verified on S24; newer modes await acceptance)
 - native Months Year Wheel Explore/Listen, Find Month, Before/Next, Missing Month, Between, selectable three- and four-month Build the Year, and introductory Months ↔ Seasons grouping. Phase 7 automated validation is complete; physical-device acceptance is **NOT RUN — deferred by owner**. Evidence is recorded in SESSION_HANDOFF.md.
 - Interactive Seasons & Months Wheel is implemented as a distinct Explore/Match route with fixed centre artwork, a snapping Canvas ring and a separate revisioned browsing checkpoint. Focused JVM and API 35 automated coverage pass; solved-state English/German screenshots were inspected. Physical-device acceptance is **NOT RUN — deferred by owner**.
@@ -36,11 +46,19 @@ Already implemented and not active implementation backlog unless a regression is
 
 ## P0 — trusted daily build
 
+- Publish the locally verified artwork-publication candidate when authorized and
+  inspect the complete hosted Android result and first-error reports. The main-thread
+  publication regression fails before/passes after; local configured selection is
+  40/40 with unchanged readiness bounds/assertions. Hosted gate remains OPEN. See
+  [review](docs/artwork-ci-diagnostics-2026-11-27/README.md). Also correct the existing
+  screenshot helper's capture timing before accepting another gallery: one English
+  chooser filename contains Home despite passing semantic assertions.
+
 - Capture and isolate the next Compose SlotTable disposal recurrence, including the first exception before teardown. The historical replay and new EN/DE actual lifecycle cases did not reproduce it; Wash Hands disposal/restoration now has a focused CI guard. Keep the cause open and separate from passed Home verification; no runtime fix is established. See [investigation](docs/compose-disposal-2026-11-24/README.md).
 
 - Physically accept the implemented shared native completion celebration: five balloons, one-time pop, canonical animal reveal, brief local confetti, Sound Off-aware SFX, immediate Continue/Home, no progress/session coupling. Cleaned celebration artwork is physically verified on S24 (`a8877b5`); do not repeat transparency cleanup. Remaining motion/audio/accessibility checks and Fire Max acceptance are separate.
 - S24 same-key in-place upgrade is proven: 1003901 / 1.1.39.1 → 1004501 / 1.1.45.1 (owner-reported physical evidence in BUILD_NOTES.md). Keep signing/versioning as maintenance; perform the equivalent Fire Max upgrade check.
-- Finish the unverified S24 Ultra matrix across the current native baseline, including the five Maths activities, Wilma TODAY/BILINGUAL, Seasons MISSING/CLUES/MATCH/COMBINED and Prepositions v3/guided Listen. Follow the expanded TESTING_QA_SPEC checklist; specifically owner-passed earlier Seasons flows/normal restore/completion and Wilma auto-follow remain closed unless a regression is found:
+- Finish the unverified S24 Ultra matrix across the current native baseline, including current Maths recognition/construction families, Wilma TODAY/BILINGUAL, Seasons MISSING/CLUES/MATCH/COMBINED and Prepositions v4/guided Listen. Follow the expanded TESTING_QA_SPEC checklist; specifically owner-passed earlier Seasons flows/normal restore/completion and Wilma auto-follow remain closed unless a regression is found:
   - airplane-mode EN/DE and missing-voice behavior
   - Sound Off / Replay
   - portrait + both landscapes
@@ -56,7 +74,7 @@ Already implemented and not active implementation backlog unless a regression is
 
 ## P1 — shared native experience
 
-- CI includes explicit Android-test assembly/compilation, catalogue drift checks, startup, sweep navigation, Vocabulary/Prepositions/Wash Hands and the new native verb/number-bond production routes. The current source passes the complete job selection locally; hosted status changes only after a new push. Wider automated and physical S24/Fire acceptance remain tracked separately in the QA ledger.
+- CI includes explicit Android-test assembly/compilation, catalogue drift checks, startup, sweep navigation, Vocabulary/Prepositions/Wash Hands and the new native verb/number-bond production routes. Hosted build/browser passed at `8e3407f`, but the Android gate is open after two separate artwork-readiness failures across runs 212/213; see [current evidence](docs/consolidation-2026-11-26/README.md). Local scoped passes do not close that gate. Wider automated and physical S24/Fire acceptance remain tracked separately in the QA ledger.
 
 - Lightweight shared visual-system baseline (initial rollout 2026-10-04; also reused by the native Maths activities):
   - primary, secondary/replay/help and navigation actions: shared NativeActionButton
@@ -76,7 +94,7 @@ Already implemented and not active implementation backlog unless a regression is
 - First minimal support setting: Options can enlarge existing NativeSupportMessage hints/retry guidance by 25% (default Off), independently of learning/support accounting and in addition to device font scaling. Validate physical readability/scrolling on S24/Fire. Further settings require a concrete consumer; no diagnosis-labelled modes or speculative support states. The one Boolean remains in the transitional shell preference store pending the planned DataStore migration.
 - Complete/reuse the existing canonical animal-art library; do not recreate accepted art.
 - Vocabulary now uses the six existing canonical animal PNGs in Explore/FIND/NAME; temporary glyph rendering is removed. Physical recognition, clarity, landscape/large-text and accessibility review on S24/Fire remain. Review other temporary native representations only in later bounded work.
-- Prepositions uses all 52 scene PNGs across 13 relations, activity revision 3/content 1.3, with exact v1/1.1 and v2/1.2 recovery. BELOW uses “unter”, INSIDE “in”; OUTSIDE retains “außerhalb der Höhle”. The six cave fixes and ten later borderline replacements are resolved by source-art review: 52 CLEAR, zero BORDERLINE or ARTWORK_FIX_REQUIRED; original observations remain in the audit. Physical S24/Fire clarity, guided Listen, bilingual distinctions and old-round upgrade acceptance remain open, including the replacement distance/threshold distinctions in the device matrix.
+- Prepositions uses all 52 scene PNGs across 13 relations, activity revision 4/content 1.4, with exact v1–v3 recovery. BELOW uses “unter”, INSIDE “in”; OUTSIDE retains “außerhalb der Höhle”. The six cave fixes and ten later borderline replacements are resolved by source-art review: 52 CLEAR, zero BORDERLINE or ARTWORK_FIX_REQUIRED; original observations remain in the audit. Physical S24/Fire clarity, guided Listen, bilingual distinctions and old-round upgrade acceptance remain open, including the replacement distance/threshold distinctions in the device matrix.
 - Reuse the small Wilma/Seasons `OrderedPlacement` helper for future concrete sequencing consumers; extend it only for a demonstrated need.
 - **Follow the Instructions introductory levels implemented (2026-10-14):** direct Level 1 one-step and Level 2 ordered two-step selection use four illustrated choices from the six approved animals, bilingual offline speech, deterministic 5/10 rounds, replay/hints and separate saved progress. New Level 1 rounds correct German accusative articles at revision 4/content 1.4; older checkpoints retain their historical wording. Three-step, adjective/colour-object, spatial, multi-scene, adaptive and advanced listening variants remain deferred. Physical-device acceptance is **NOT RUN — deferred by owner**.
 - **School Skills starter (2026-11-04):** the Follow chooser includes contextual help-seeking phrases, classroom action picture matching, two-/three-actions-in-order challenges, and a touch-based Classroom Helper with 12 item/place instructions. Activities have separate saved progress identities; progress records app interactions only, not real-world behaviour or physical task completion. Physical-device acceptance is **NOT RUN — deferred by owner**.
@@ -99,7 +117,7 @@ Already implemented and not active implementation backlog unless a regression is
 - Further Memory Pairs variants: word/picture, letter case, bilingual, animal/action,
   animal/habitat, emotion/expression and season/clue where educationally appropriate.
   Picture/picture and number/quantity starter boards are implemented; do not duplicate them.
-- Future manipulation-first Maths: generalise the Dinosaur Counting Tray and concrete Build 5/10 boards to other objects and contexts, then explore conservation, number stories, richer pattern tasks, shapes and spatial/measurement concepts. Do not duplicate the existing construction boards or choice-based activities.
+- Future manipulation-first Maths: generalise the Dinosaur Counting Tray and concrete Build 5/10 boards to other objects and contexts, deepen existing conservation, number stories and pattern starters, then explore shapes and broader spatial/measurement concepts. Do not duplicate the existing construction boards or choice-based activities.
 - One More / One Less starter is implemented: separate add-one/take-one-away
   construction within 5/10, explicit zero, reversible edits/Undo, saved rounds and
   shared audio/progress/balloons. Broader conservation and story curricula
@@ -125,8 +143,7 @@ Already implemented and not active implementation backlog unless a regression is
 - Build the Bridge.
 - Dinosaur Rescue.
 - Crocodile Snap.
-- Native Verb Explorer/Animal Actions implementation is complete in the current
-  working tree, using all 53 shared lessons and existing animation artwork. Validate
+- Native Verb Explorer/Animal Actions implementation is committed, using all 53 shared lessons and existing animation artwork. Validate
   and physically review the combined checkpoint before retiring historical WEB
   bundle compatibility or migrating the remaining Numbers/Easy Maths/Mixed routes.
 - Concrete Build 5/Build 10 are separate new number-bond activities. Generalise to

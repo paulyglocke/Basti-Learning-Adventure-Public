@@ -14,8 +14,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import java.io.IOException
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 
 /** Shared by Home thumbnails and illustrated sequencing cards; decoded off the UI thread. */
 @Composable
@@ -23,7 +21,7 @@ fun BundledArtwork(path:String,modifier:Modifier=Modifier,maxDimension:Int=384) 
     val assets=LocalContext.current.applicationContext.assets
     var picture by remember(assets,path,maxDimension) {mutableStateOf<ImageBitmap?>(null)}
     LaunchedEffect(assets,path,maxDimension) {
-        picture=withContext(Dispatchers.IO) {BundledArtworkCache.load(assets,path,maxDimension)}
+        loadArtworkForUi({BundledArtworkCache.load(assets,path,maxDimension)}, {picture=it})
     }
     Box(modifier) {
         picture?.let {Image(it,null,Modifier.fillMaxSize().testTag("bundled-art-$path"),contentScale=ContentScale.Fit)}

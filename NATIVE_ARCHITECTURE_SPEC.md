@@ -80,7 +80,12 @@ the legacy bytes before its normal acknowledgement write promotes the state.
 Current records take precedence (including corrupt records, which must remain
 recoverable); legacy records are never written or deleted by the adapter.
 Home activity thumbnails and Wash Hands cards share `BundledArtwork`, with
-worker-thread decoding and an 8 MiB cache. No navigation/progress framework or
+worker-thread decoding and an 8 MiB cache. Image state publication uses the shared
+`loadArtworkForUi` boundary: decoding stays on IO, publication explicitly returns to
+Main.immediate even when an effect inherits an unconfined dispatcher. The Same Amount
+board loader uses the same boundary. Cancellation rejects obsolete results; asset
+keys, cache limits and loading/retry behavior remain caller-owned. See the
+[artwork publication review](docs/artwork-ci-diagnostics-2026-11-27/ROOT_CAUSE.md). No navigation/progress framework or
 checkpoint schema is introduced. See the [implementation review](docs/app-sweep-implementation-2026-11-05/REVIEW.md).
 
 UX Refresh Phase 1 adds an opt-in Material 3 foundation in `ui/design`, documented

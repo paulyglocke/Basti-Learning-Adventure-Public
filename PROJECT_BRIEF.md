@@ -17,13 +17,13 @@ of the normal 5/10-question preference; physical acceptance remains separate.
 
 Pattern Builder (2026-11-10) adds native AB/AAB/ABC animal/shape extension with
 visible examples, reversible placements, explicit Check, bilingual audio, saved
-5/10 rounds and shared balloons. Home now contains 31 live activities (28 native,
+5/10 rounds and shared balloons. Home then contained 31 live activities (28 native,
 three retained web routes). Automated evidence and physical acceptance remain
 separate; see the [review](docs/pattern-builder-2026-11-10/README.md).
 
 One More / One Less (2026-11-11) adds reversible add-one/take-one-away construction
 within 5/10, pinned starting groups, explicit zero, bilingual audio and four saved
-configurations. Home now has 32 live activities (29 native, three retained web).
+configurations. Home then had 32 live activities (29 native, three retained web).
 See the [review](docs/one-more-less-2026-11-11/README.md) for current verification.
 
 ## 2. Core design principles
@@ -89,16 +89,25 @@ The app should look polished and cheerful, with a nature/adventure theme. Avoid 
 
 ## 6. Home screen / learning areas
 
-The current source is hybrid Compose + legacy WebView. Home and Options are native. Four substantial learning areas now run natively in Compose:
+At source baseline `8e3407f` (2026-11-26), native Home and Options dispatch 36 live
+Home entries: 33 native and three retained web; Maths contains 20. Native families
+span communication, Vocabulary, written initials, 53 verb lessons/Animal Actions,
+time/calendar, Prepositions, Colours, habitats, listening/school routines, Memory
+and recognition/manipulation/application Maths. The [current inventory](docs/ACTIVITY_ACCEPTANCE.md)
+records exact entries and separates implementation, automated and physical evidence.
 
-1. Vocabulary Booster / Wortschatz
-2. Where is it? / Wo ist es? (Prepositions)
-3. Seasons / Jahreszeiten
-4. Wilma’s Week / Wilmas Woche
+Numbers, Easy Maths and Mixed Adventure remain web destinations. Older saved WEB
+verb routes remain compatible until the retirement gate is accepted. The app remains
+hybrid during this incremental migration.
 
-Native Home now opens Animal Actions and all 53 Verb Explorer lessons in Kotlin, alongside separate concrete Build 5/Build 10 boards. Numbers, Easy Maths and Mixed Adventure remain web destinations. Older saved WEB verb routes remain compatible until their removal gate is accepted.
-
-Mixed Adventure should combine different exercise types so the child cannot simply learn one repetitive answer pattern.
+The owner approved [consolidation and release readiness](docs/CONSOLIDATION_PLAN.md):
+trusted baseline → refined daily experience → sustainable engineering → connected
+learning. The small curated Today’s Adventure is brought forward after the initial
+consolidation checkpoints. Current hosted Android failures, device-review preparation
+and exact work status are in [the checkpoint review](docs/consolidation-2026-11-26/README.md).
+The [artwork follow-up](docs/artwork-ci-diagnostics-2026-11-27/README.md) adds explicit
+main-thread image publication and first-error CI evidence. Its complete configured
+Android selection passes 40/40 locally; hosted confirmation is the next gate.
 
 ## 7. Number learning
 

@@ -1,0 +1,80 @@
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationRouteTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ui.conservation.ConservationRouteTest:
+INSTRUMENTATION_STATUS: test=bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.conservation.ConservationRouteTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=bothRangesMoveUndoRestoreRetryAndCompleteWithSharedProgress
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=
+com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest:
+INSTRUMENTATION_STATUS: test=listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[ENGLISH-1]
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-1]
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-0]
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-8]
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.bellfamily.bastischool.ui.washhands.WashHandsScreenTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=listenKeyboardBuildCheckUndoHintAndCompletionRemainReachable[GERMAN-8]
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 27.347
+
+OK (5 tests)
+
+
+INSTRUMENTATION_CODE: -1

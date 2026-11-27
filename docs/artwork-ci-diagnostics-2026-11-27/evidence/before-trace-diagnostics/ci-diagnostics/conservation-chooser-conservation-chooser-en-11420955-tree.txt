@@ -1,0 +1,62 @@
+Printing with useUnmergedTree = 'true'
+Node #1 at (l=0.0, t=0.0, r=1080.0, b=1920.0)px
+ |-Node #2 at (l=0.0, t=0.0, r=1080.0, b=1920.0)px
+   IsTraversalGroup = 'true'
+    |-Node #395 at (l=0.0, t=252.0, r=1080.0, b=1857.0)px, Tag: 'conservation-chooser'
+    | IsTraversalGroup = 'true'
+    | VerticalScrollAxisRange = 'ScrollAxisRange(value=0.0, maxValue=0.0, reverseScrolling=false)'
+    | Actions = [ScrollBy, ScrollByOffset]
+    |  |-Node #396 at (l=42.0, t=294.0, r=504.0, b=389.0)px
+    |  | Text = '[Same Amount]'
+    |  | [Heading]
+    |  | Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |  |-Node #397 at (l=42.0, t=431.0, r=1038.0, b=579.0)px
+    |  | Text = '[Close together or spread out: is it still the same amount?]'
+    |  | Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |  |-Node #398 at (l=42.0, t=621.0, r=1038.0, b=1552.0)px
+    |    IsTraversalGroup = 'true'
+    |     |-Node #400 at (l=84.0, t=663.0, r=906.0, b=726.0)px
+    |     | Text = '[Move pictures. Compare Before and Now.]'
+    |     | Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |     |-Node #423 at (l=395.0, t=758.0, r=685.0, b=994.0)px, Tag: 'bundled-art-Animals/canonical/dinosaur.png'
+    |     |-Node #424 at (l=706.0, t=758.0, r=996.0, b=994.0)px, Tag: 'bundled-art-Animals/canonical/dinosaur.png'
+    |     |-Node #405 at (l=84.0, t=1026.0, r=996.0, b=1152.0)px
+    |     | Text = '[Usually only the places change. Sometimes one is added or taken away.]'
+    |     | Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |     |-Node #406 at (l=84.0, t=1184.0, r=996.0, b=1331.0)px, Tag: 'conservation-start-five'
+    |     | Focused = 'false'
+    |     | Role = 'Button'
+    |     | Actions = [OnClick, RequestFocus]
+    |     | MergeDescendants = 'true'
+    |     |  |-Node #408 at (l=126.0, t=1231.0, r=954.0, b=1284.0)px
+    |     |    Text = '[Up to 5]'
+    |     |    Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |     |-Node #409 at (l=84.0, t=1363.0, r=996.0, b=1510.0)px, Tag: 'conservation-start-ten'
+    |       Focused = 'false'
+    |       Role = 'Button'
+    |       Actions = [OnClick, RequestFocus]
+    |       MergeDescendants = 'true'
+    |        |-Node #411 at (l=126.0, t=1410.0, r=954.0, b=1463.0)px
+    |          Text = '[Up to 10]'
+    |          Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+    |-Node #412 at (l=0.0, t=63.0, r=1080.0, b=252.0)px
+      IsTraversalGroup = 'true'
+      VerticalScrollAxisRange = 'ScrollAxisRange(value=0.0, maxValue=0.0, reverseScrolling=false)'
+      Actions = [ScrollBy, ScrollByOffset]
+       |-Node #415 at (l=11.0, t=84.0, r=158.0, b=231.0)px, Tag: 'shell-back'
+       | Focused = 'false'
+       | Role = 'Button'
+       | ContentDescription = '[Back]'
+       | Actions = [OnClick, RequestFocus]
+       | MergeDescendants = 'true'
+       |  |-Node #417 at (l=66.0, t=131.0, r=103.0, b=184.0)px
+       |    Text = '[←]'
+       |    Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]
+       |-Node #420 at (l=771.0, t=84.0, r=1069.0, b=231.0)px, Tag: 'shell-options'
+         Focused = 'false'
+         Role = 'Button'
+         Actions = [OnClick, RequestFocus]
+         MergeDescendants = 'true'
+          |-Node #422 at (l=834.0, t=131.0, r=1006.0, b=184.0)px
+            Text = '[⚙ Options]'
+            Actions = [SetTextSubstitution, ShowTextSubstitution, ClearTextSubstitution, GetTextLayoutResult]

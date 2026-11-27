@@ -1,0 +1,121 @@
+{
+  "fileCount": 29,
+  "files": [
+    {
+      "path": "FAILURE_TRIAGE.md",
+      "sha256": "1efe5b83688af85eddd7934308f7dd29436966869f86240f9537e877153f1567"
+    },
+    {
+      "path": "README.md",
+      "sha256": "ad483f9897a2c788eda5d6056aae7c9b97dbb4f811057dec4ece8f4c3cc00c75"
+    },
+    {
+      "path": "evidence/activity-inventory.json",
+      "sha256": "b56c8753bdc79365351cba9cd20945b46f6abe2c6b2be86a55764a1f6d7e73c0"
+    },
+    {
+      "path": "evidence/device-cleanup.json",
+      "sha256": "015d50ef5cbbca13d010760d2676ff471a1acacc43a9aff0b8000466a72a1746"
+    },
+    {
+      "path": "evidence/device-data-before.txt",
+      "sha256": "f560cf4cbb1847c15b673db19d54bf0f5a20ed9fe91ffcd624d36ab94d9c3162"
+    },
+    {
+      "path": "evidence/device-data-restored.txt",
+      "sha256": "f560cf4cbb1847c15b673db19d54bf0f5a20ed9fe91ffcd624d36ab94d9c3162"
+    },
+    {
+      "path": "evidence/device-restoration.json",
+      "sha256": "dc12ed1babb8673b99110a348aa76bc4e2fa87bbff266e59adbefb7ec4a5166d"
+    },
+    {
+      "path": "evidence/device-settings-after.json",
+      "sha256": "25440fd1827352f0c9c79d892c392b2213abf79fb107ae4f0326280a98ce7aa8"
+    },
+    {
+      "path": "evidence/device-settings-before.json",
+      "sha256": "25440fd1827352f0c9c79d892c392b2213abf79fb107ae4f0326280a98ce7aa8"
+    },
+    {
+      "path": "evidence/device-settings-ci-profile.json",
+      "sha256": "533189edbb38bbfa60b7f713e687e5bfd54c64d17b7427f70b1ca85873514f7b"
+    },
+    {
+      "path": "evidence/hosted-212-android.log",
+      "sha256": "52dc62b69cc81e4cffa7e6a01daf6ba8c0d03a43bd50813b112d6f191e69b62d"
+    },
+    {
+      "path": "evidence/hosted-212-failure-logcat.txt",
+      "sha256": "4f916d09339135e8088eea4e3c669417d41e8199088ed6211aa5a36efa76179e"
+    },
+    {
+      "path": "evidence/hosted-212-failure.xml",
+      "sha256": "7e86d57c43f3cca1b05253de811f58d06a34f88155b3bce5dd2ad94fa23db8c1"
+    },
+    {
+      "path": "evidence/hosted-212-reports.zip",
+      "sha256": "4db6c08afd869210d235a1b785ee06ad2d9f9a4bd1d99bb1bb4e4cdf394def44"
+    },
+    {
+      "path": "evidence/hosted-212-summary.json",
+      "sha256": "bf2f8cd5d42b75558ebd8703ee409edc18a445c2cdcf06a5bafb621294a00cad"
+    },
+    {
+      "path": "evidence/hosted-213-android.log",
+      "sha256": "93dd138a13185fc03803f6cc951547c071e1ef5fa19fb3e8302a69788ef6577b"
+    },
+    {
+      "path": "evidence/hosted-213-failure-logcat.txt",
+      "sha256": "3db2db529c4266193c4174845581111082a1631f4a5e7c731288475852ef8c62"
+    },
+    {
+      "path": "evidence/hosted-213-failure.xml",
+      "sha256": "e3ce73c472c75203a243c0623ae844c27bc69cfb9b52f14e1d383b478375b555"
+    },
+    {
+      "path": "evidence/hosted-213-reports.zip",
+      "sha256": "2c30a2f227e4f856886b8a7dd84c05a7bba9ec1763509c97d11781822ef9c4b9"
+    },
+    {
+      "path": "evidence/hosted-213-summary.json",
+      "sha256": "a0a56d8eb63b4f53dfd519bb675eb654c4047c7dd72438cad36200d2463327b9"
+    },
+    {
+      "path": "evidence/hosted-reports-summary.json",
+      "sha256": "2f6db5d67974b68d93374138823ba573fb65b41b31928ab35c06a91c50c6beb6"
+    },
+    {
+      "path": "evidence/hosted-sources.json",
+      "sha256": "bb21c17e60c78f10f9306386169d341feedd7556ebd9d77094f768e97e8f232d"
+    },
+    {
+      "path": "evidence/local-baseline-five.txt",
+      "sha256": "6889093d8cf729cbf474e5f3df0c1a8e03327983dc87bb60c2e7420fde05eb0f"
+    },
+    {
+      "path": "evidence/local-crash-buffer.txt",
+      "sha256": "7167ac83dce8b5c01235f3e502314bceeb2a8234a6950499209a0f2ccb3cb49b"
+    },
+    {
+      "path": "evidence/local-installed-identities.json",
+      "sha256": "ad2e5f93736ce4d1ba6f28ecf818fd385e1733529469fe787268be9d54148f02"
+    },
+    {
+      "path": "evidence/local-test-logcat.txt",
+      "sha256": "41c0870e7a461c403ee63bfe6e11f4c59a74f62df246222cd75b8855e7b3c1b9"
+    },
+    {
+      "path": "evidence/scoped-backups-observation.txt",
+      "sha256": "4527ab0b1b4b061ece371168d72b397e40da6c62ad995aaa5202187c12bc02ad"
+    },
+    {
+      "path": "evidence/validation.json",
+      "sha256": "8a38e94a39702b37d07d4ea99f85013610e50491d565b865d499d526f93c1d23"
+    },
+    {
+      "path": "inspect_hosted_reports.py",
+      "sha256": "af72e9176f6fc58f89cc343a2421c479b8973c73a2ba74f39363362385648dc3"
+    }
+  ]
+}
